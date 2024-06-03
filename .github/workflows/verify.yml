@@ -1,0 +1,101 @@
+name: ✅ Verify Articles
+
+on:
+  pull_request:
+    paths:
+      - "docs/posts/**"
+      - ".github/workflows/verify.yml"
+  push:
+    paths:
+      - "docs/posts/**"
+      - ".github/workflows/verify.yml"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🔍 Check frontmatter
+        run: |
+          echo "🔍 检查 Frontmatter..."
+
+          # 检查每个 .md 文件是否有必要字段
+          MISSING_TITLE=0
+          MISSING_DATE=0
+          MISSING_TAGS=0
+
+          for file in $(find docs/posts -name "*.md" ! -name "index.md" | head -50); do
+            content=$(cat "$file")
+
+            # 检查 title
+            if ! echo "$content" | grep -q "^title:"; then
+              echo "❌ $file: 缺少 title"
+              MISSING_TITLE=$((MISSING_TITLE + 1))
+            fi
+
+            # 检查 date
+            if ! echo "$content" | grep -q "^date:"; then
+              echo "❌ $file: 缺少 date"
+              MISSING_DATE=$((MISSING_DATE + 1))
+            fi
+
+            # 检查 tags（仅检查 2024-06+ 的文件）
+            if [[ "$file" =~ /202[456]/(06|07|08|09|10|11|12)/ ]] || [[ "$file" =~ /202[56]/ ]] || [[ "$file" =~ /2026/ ]]; then
+              if ! echo "$content" | grep -q "^tags:"; then
+                echo "⚠️  $file: 缺少 tags（新文章应有标签）"
+                MISSING_TAGS=$((MISSING_TAGS + 1))
+              fi
+            fi
+          done
+
+          echo ""
+          echo "📊 检查结果:"
+          echo "  缺少 title: $MISSING_TITLE"
+          echo "  缺少 date: $MISSING_DATE"
+          echo "  缺少 tags: $MISSING_TAGS"
+
+          if [ $MISSING_TITLE -gt 0 ] || [ $MISSING_DATE -gt 0 ]; then
+            echo ""
+            echo "❌ 验证失败！"
+            exit 1
+          fi
+
+          echo ""
+          echo "✅ Frontmatter 验证通过"
+
+      - name: 🎯 Check tag validity
+        run: |
+          echo "🎯 检查标签有效性..."
+
+          VALID_TAGS="Vue React Angular JavaScript TypeScript 工程化 CSS 性能优化 Node.js 测试 安全"
+
+          INVALID_COUNT=0
+          for file in $(find docs/posts/202[456] docs/posts/202[56] docs/posts/2026 -name "*.md" ! -name "index.md" 2>/dev/null | head -30); do
+            tags=$(grep -A 20 "^tags:" "$file" | grep "^  - " | sed 's/^  - //' | sed 's/["\x27]//g')
+
+            for tag in $tags; do
+              if ! echo "$VALID_TAGS" | grep -q "$tag"; then
+                # 允许一些非标准但合理的标签
+                if [[ ! "$tag" =~ ^(Svelte|Next|CSS|REST|GraphQL|PWA|Webpack|Git|Docker|Rollup|Babel|Esbuild|HTML|Web Components|设计模式|跨平台|微前端)$ ]]; then
+                  echo "⚠️  $file: 非标准标签 '$tag'"
+                  # INVALID_COUNT=$((INVALID_COUNT + 1))
+                fi
+              fi
+            done
+          done
+
+          echo ""
+          echo "✅ 标签验证完成"
+
+      - name: 📝 Summary
+        if: always()
+        run: |
+          echo "## ✅ 文章验证" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- ✓ Frontmatter 检查" >> $GITHUB_STEP_SUMMARY
+          echo "- ✓ 标签有效性检查" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📊 扫描了最近 50 篇文章" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,79 @@
+name: 📝 Monthly Articles Commit
+
+on:
+  schedule:
+    # 每月 1 号 UTC 10:00 执行（北京时间 18:00）
+    - cron: "0 10 1 * *"
+  workflow_dispatch:
+    inputs:
+      month:
+        description: "Month to commit (e.g., 2024-06)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  commit-articles:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🔧 Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: 🎯 Determine month
+        id: month
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            MONTH="${{ github.event.inputs.month }}"
+          else
+            # 自动计算当前月份的前一个月
+            MONTH=$(date -u -d "last month" +%Y-%m)
+          fi
+
+          echo "month=$MONTH" >> $GITHUB_OUTPUT
+          echo "📅 将提交: $MONTH 的文章"
+
+      - name: 📝 Run monthly commit script
+        run: |
+          MONTH=${{ steps.month.outputs.month }}
+          SCRIPT="git-scripts/commit-${MONTH}.sh"
+
+          if [ ! -f "$SCRIPT" ]; then
+            echo "❌ 脚本不存在: $SCRIPT"
+            exit 1
+          fi
+
+          echo "✓ 执行: $SCRIPT"
+          bash "$SCRIPT"
+
+      - name: 🚀 Push commits
+        run: |
+          if [ -n "$(git log --oneline -1 --not origin/main)" ]; then
+            echo "✓ 发现新提交，推送到远程..."
+            git push origin main
+            echo "✅ 推送完成"
+          else
+            echo "✓ 没有新提交需要推送"
+          fi
+
+      - name: 📢 Create summary
+        if: always()
+        run: |
+          MONTH=${{ steps.month.outputs.month }}
+          echo "## 📝 月度文章提交完成" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**月份**: $MONTH" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**最新提交**:" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          git log --oneline -3 >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
