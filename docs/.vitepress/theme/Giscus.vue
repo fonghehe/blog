@@ -47,13 +47,14 @@ onMounted(() => {
   if (shouldShow.value) loadGiscus();
 });
 
-// 路由切换时重新加载（SPA 导航）
+// 路由切换后（DOM 更新完成后）重新加载
 watch(
   () => route.path,
   () => {
     if (shouldShow.value) loadGiscus();
     else if (container.value) container.value.innerHTML = "";
   },
+  { flush: "post" },
 );
 
 // 切换深色/浅色主题时同步通知 giscus iframe
@@ -71,7 +72,7 @@ watch(isDark, (dark) => {
 </script>
 
 <template>
-  <div v-if="shouldShow" ref="container" class="giscus-wrapper" />
+  <div v-show="shouldShow" ref="container" class="giscus-wrapper" />
 </template>
 
 <style scoped>
