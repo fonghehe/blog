@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { data as allPosts } from "../../posts.data";
 import { ref, computed, watch } from "vue";
+import { withBase } from "vitepress";
 
 interface Category {
   id: string;
@@ -195,7 +196,7 @@ const archiveLinks = (() => {
     const maxMonth = y === 2025 ? 12 : 12;
     const months = Array.from({ length: maxMonth }, (_, i) => ({
       label: `${i + 1}月`,
-      path: `/archive/${y}/${String(i + 1).padStart(2, "0")}/`,
+      path: withBase(`/archive/${y}/${String(i + 1).padStart(2, "0")}/`),
     }));
     result.push({ year: String(y), months });
   }
@@ -265,7 +266,7 @@ const archiveLinks = (() => {
     <ul class="article-list">
       <li v-for="post in pagedPosts" :key="post.url" class="article-item">
         <time class="article-date">{{ formatDate(post.date) }}</time>
-        <a :href="post.url" class="article-title">{{ post.title }}</a>
+        <a :href="withBase(post.url)" class="article-title">{{ post.title }}</a>
       </li>
       <li v-if="pagedPosts.length === 0" class="no-results">
         没有找到匹配的文章

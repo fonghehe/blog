@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { data as allPosts } from "../../posts.data";
 import { computed } from "vue";
-import { useRoute } from "vitepress";
+import { useRoute, withBase } from "vitepress";
 
 const route = useRoute();
 
@@ -59,20 +59,20 @@ function formatDate(d: string) {
         <ul class="posts-in-month">
           <li v-for="post in group.posts" :key="post.url" class="post-item">
             <time class="post-date">{{ formatDate(post.date) }}</time>
-            <a :href="post.url" class="post-title">{{ post.title }}</a>
+            <a :href="withBase(post.url)" class="post-title">{{ post.title }}</a>
           </li>
         </ul>
       </div>
     </div>
 
     <div class="archive-nav">
-      <a href="/archive/" class="nav-link">← 返回归档</a>
-      <a href="/posts/" class="nav-link">查看所有文章 →</a>
+      <a :href="withBase('/archive/')" class="nav-link">← 返回归档</a>
+      <a :href="withBase('/posts/')" class="nav-link">查看所有文章 →</a>
     </div>
   </div>
   <div v-else class="no-posts">
     <p>{{ year ? `${year} 年没有文章` : "获取年份失败" }}</p>
-    <a href="/archive/">返回归档 →</a>
+    <a :href="withBase('/archive/')">返回归档 →</a>
   </div>
 </template>
 
