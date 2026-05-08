@@ -1,11 +1,20 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { useData } from "vitepress";
 
 const { frontmatter } = useData();
+
+// 用 computed 保证 SPA 导航时响应式更新
+const shouldShow = computed(
+  () =>
+    frontmatter.value.title &&
+    frontmatter.value.layout !== "home" &&
+    !frontmatter.value.hideTitle,
+);
 </script>
 
 <template>
-  <h1 v-if="frontmatter.title" class="article-h1">
+  <h1 v-if="shouldShow" class="article-h1">
     {{ frontmatter.title }}
   </h1>
 </template>

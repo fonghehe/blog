@@ -5,7 +5,7 @@ import { useRoute, withBase } from "vitepress";
 
 const route = useRoute();
 
-// 从路由 /archive/2018/ 中提取年份
+// 从路由中提取年份，兼容 /archive/2018/ 和 /blog/archive/2018/
 const yearMatch = route.path.match(/\/archive\/(\d{4})\//);
 const year = yearMatch ? parseInt(yearMatch[1]) : null;
 
@@ -49,9 +49,10 @@ function formatDate(d: string) {
 
     <div class="months-list">
       <div
-        v-for="group in postsGroupedByMonth"
+        v-for="(group, index) in postsGroupedByMonth"
         :key="group.month"
         class="month-group"
+        :id="index === postsGroupedByMonth.length - 1 ? 'latest' : undefined"
       >
         <h3 class="month-title">
           {{ group.month }} 月 ({{ group.posts.length }} 篇)

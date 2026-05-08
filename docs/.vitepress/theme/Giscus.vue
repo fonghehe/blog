@@ -1,10 +1,19 @@
 <script setup lang="ts">
-import { onMounted, watch, ref } from "vue";
+import { onMounted, watch, ref, computed } from "vue";
 import { useData, useRoute } from "vitepress";
 
-const { isDark } = useData();
+const { isDark, frontmatter } = useData();
 const route = useRoute();
 const container = ref<HTMLElement>();
+
+// 首页、文章列表页、归档索引页不显示评论框
+const HIDE_COMMENT_PATHS = ["/blog/", "/blog/posts/", "/blog/archive/"];
+const shouldShow = computed(() => {
+  if (frontmatter.value.layout === "home") return false;
+  if (frontmatter.value.comment === false) return false;
+  if (HIDE_COMMENT_PATHS.includes(route.path)) return false;
+  return true;
+});
 
 const GISCUS_REPO = "fonghehe/blog";
 const GISCUS_REPO_ID = "MDEwOlJlcG9zaXRvcnkyMTUxOTg3MTQ=";
@@ -34,10 +43,18 @@ function loadGiscus() {
   container.value.appendChild(script);
 }
 
-onMounted(loadGiscus);
+onMounted(() => {
+  if (shouldShow.value) loadGiscus();
+});
 
 // 路由切换时重新加载（SPA 导航）
-watch(() => route.path, loadGiscus);
+watch(
+  () => route.path,
+  () => {
+    if (shouldShow.value) loadGiscus();
+    else if (container.value) container.value.innerHTML = "";
+  },
+);
 
 // 切换深色/浅色主题时同步通知 giscus iframe
 watch(isDark, (dark) => {
@@ -54,7 +71,7 @@ watch(isDark, (dark) => {
 </script>
 
 <template>
-  <div ref="container" class="giscus-wrapper" />
+  <div v-if="shouldShow" ref="container" class="giscus-wrapper" />
 </template>
 
 <style scoped>
