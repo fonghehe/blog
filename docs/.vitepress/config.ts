@@ -7,6 +7,7 @@ function escapeMustache(content: string): string {
 }
 
 export default defineConfig({
+  base: "/blog/",
   title: "前端成长记录",
   description: "一个前端工程师从 2018 年开始的学习与成长记录",
   lang: "zh-CN",
