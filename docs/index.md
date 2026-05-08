@@ -11,7 +11,7 @@ hero:
       link: /posts/
     - theme: alt
       text: 从 2018 年起
-      link: /posts/
+      link: /archive/2018/
 
 features:
   - title: Vue 生态
