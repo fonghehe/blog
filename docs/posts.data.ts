@@ -10,7 +10,7 @@ interface Post {
 declare const data: Post[];
 export { data };
 
-export default createContentLoader("posts/**/*.md", {
+export default createContentLoader(["posts/**/*.md", "archive/**/*.md"], {
   transform(raw): Post[] {
     return raw
       .filter((p) => {
