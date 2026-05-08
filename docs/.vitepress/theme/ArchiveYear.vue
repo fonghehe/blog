@@ -59,7 +59,9 @@ function formatDate(d: string) {
         <ul class="posts-in-month">
           <li v-for="post in group.posts" :key="post.url" class="post-item">
             <time class="post-date">{{ formatDate(post.date) }}</time>
-            <a :href="withBase(post.url)" class="post-title">{{ post.title }}</a>
+            <a :href="withBase(post.url)" class="post-title">{{
+              post.title
+            }}</a>
           </li>
         </ul>
       </div>
