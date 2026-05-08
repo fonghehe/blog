@@ -25,34 +25,23 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "24"
-
       - name: 📦 Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: latest
           run_install: false
 
-      - name: 📦 Get pnpm store directory
-        shell: bash
-        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: 📦 Setup pnpm cache
-        uses: actions/cache@v4
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          node-version: 22
+          cache: pnpm
 
       - name: 📦 Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: 🏗️ Build VitePress
-        run: NODE_OPTIONS=--max-old-space-size=8192 pnpm docs:build
+        run: pnpm docs:build
 
       - name: 📤 Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -62,21 +51,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      - name: 🚀 Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-      - name: 📢 Deployment summary
-        run: |
-          echo "## 🚀 部署完成" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**部署地址**: [${{ steps.deployment.outputs.page_url }}](${{ steps.deployment.outputs.page_url }})" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**构建环境**: Node.js 20" >> $GITHUB_STEP_SUMMARY
-          echo "**部署分支**: main" >> $GITHUB_STEP_SUMMARY
