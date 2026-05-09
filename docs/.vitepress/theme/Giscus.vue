@@ -58,7 +58,7 @@ watch(
 );
 
 // 切换深色/浅色主题时同步通知 giscus iframe
-watch(isDark, (dark) => {
+watch(isDark, (dark: boolean) => {
   const iframe = container.value?.querySelector<HTMLIFrameElement>(
     "iframe.giscus-frame",
   );
