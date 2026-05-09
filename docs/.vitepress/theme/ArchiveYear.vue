@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { data as allPosts } from "../../posts.data";
+import { data as allPosts, type Post } from "../../posts.data";
 import { computed } from "vue";
 import { useRoute, withBase } from "vitepress";
 
@@ -19,7 +19,7 @@ const yearPosts = computed(() => {
 const postsGroupedByMonth = computed(() => {
   const groups: Record<string, typeof yearPosts.value> = {};
 
-  yearPosts.value.forEach((post) => {
+  yearPosts.value.forEach((post: Post) => {
     const date = new Date(post.date);
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const key = month;
