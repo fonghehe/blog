@@ -3,6 +3,8 @@ title: "Vue 3.4 Vapor Mode 预览"
 date: 2024-02-01 09:31:05
 tags:
   - Vue
+readingTime: 1
+description: "在日常开发中，Vue 3.4 Vapor Mode 预览的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Vue 3.4 Vapor Mode 预览的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

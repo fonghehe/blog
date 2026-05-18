@@ -3,6 +3,8 @@ title: "JavaScript Generator 与异步流程控制"
 date: 2019-01-01 16:47:52
 tags:
   - JavaScript
+readingTime: 1
+description: "JavaScript Generator 与异步流程控制是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。"
 ---
 
 JavaScript Generator 与异步流程控制是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。

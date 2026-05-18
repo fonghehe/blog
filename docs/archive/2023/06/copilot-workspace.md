@@ -3,6 +3,8 @@ title: "GitHub Copilot Workspace 新体验"
 date: 2023-06-12 16:06:08
 tags:
   - 前端
+readingTime: 2
+description: "GitHub Copilot Workspace 新体验这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 GitHub Copilot Workspace 新体验这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

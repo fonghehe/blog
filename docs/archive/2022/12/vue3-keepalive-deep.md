@@ -3,6 +3,8 @@ title: "Vue 3 keep-alive 深入"
 date: 2022-12-14 11:13:45
 tags:
   - Vue
+readingTime: 2
+description: "在日常开发中，Vue 3 keep-alive 深入的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Vue 3 keep-alive 深入的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

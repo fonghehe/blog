@@ -3,6 +3,8 @@ title: "AI 代码审查 2026 最佳实践"
 date: 2026-01-02 10:00:00
 tags:
   - 工程化
+readingTime: 3
+description: "AI 代码审查已经从\"nice to have\"变成了团队的标配。但很多人用错了方式——要么过度依赖 AI 导致自己不动脑，要么只用 AI 做 linting 的升级版。本文分享我在三个大型项目中总结的 AI Code Review 落地经验。"
 ---
 
 AI 代码审查已经从"nice to have"变成了团队的标配。但很多人用错了方式——要么过度依赖 AI 导致自己不动脑，要么只用 AI 做 linting 的升级版。本文分享我在三个大型项目中总结的 AI Code Review 落地经验。

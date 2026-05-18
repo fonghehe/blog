@@ -3,6 +3,8 @@ title: "Vite SSR 数据获取"
 date: 2022-07-07 15:28:44
 tags:
   - Vite
+readingTime: 2
+description: "Vite SSR 数据获取在近年来发展迅速，本文将深入分析其原理和实践方法。"
 ---
 
 Vite SSR 数据获取在近年来发展迅速，本文将深入分析其原理和实践方法。

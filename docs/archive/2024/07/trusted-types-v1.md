@@ -3,6 +3,8 @@ title: "Trusted Types v1 稳定版"
 date: 2024-07-30 10:00:00
 tags:
   - TypeScript
+readingTime: 2
+description: "Trusted Types v1 稳定版在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Trusted Types v1 稳定版在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

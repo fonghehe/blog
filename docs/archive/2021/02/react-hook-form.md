@@ -4,6 +4,9 @@ date: 2021-02-23 17:44:59
 tags:
   - React
   - JavaScript
+  - TypeScript
+readingTime: 2
+description: "React Hook Form 表单方案对比这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 React Hook Form 表单方案对比这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

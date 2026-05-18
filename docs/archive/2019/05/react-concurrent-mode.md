@@ -3,6 +3,8 @@ title: "React Concurrent Mode 初探"
 date: 2019-05-27 16:57:55
 tags:
   - React
+readingTime: 2
+description: "React 团队在 React Conf 2019 上展示了 Concurrent Mode 的更多细节。这是 React 16.8 Hooks 之后最重要的特性，但正式版可能要等到 2020 年。"
 ---
 
 React 团队在 React Conf 2019 上展示了 Concurrent Mode 的更多细节。这是 React 16.8 Hooks 之后最重要的特性，但正式版可能要等到 2020 年。

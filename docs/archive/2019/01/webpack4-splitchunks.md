@@ -4,6 +4,8 @@ date: 2019-01-23 10:11:08
 tags:
   - Webpack
   - 工程化
+readingTime: 1
+description: "在团队推广Webpack 4 SplitChunks 详解的过程中，踩了不少坑。整理出来希望对大家有所帮助。"
 ---
 
 在团队推广Webpack 4 SplitChunks 详解的过程中，踩了不少坑。整理出来希望对大家有所帮助。

@@ -3,6 +3,8 @@ title: "Vue 3 生命周期钩子 Composition API 版本"
 date: 2020-07-06 15:09:20
 tags:
   - Vue
+readingTime: 3
+description: "Vue 3 Composition API 对生命周期钩子做了重新设计。过去我们在 Options API 中使用 `mounted`、`created` 这些选项，现在在 `setup()` 函数中，需要改用对应的 `onXxx` 形式。这段时间在把内部组件库往 Composition API 迁移的过程中，踩了一些"
 ---
 
 Vue 3 Composition API 对生命周期钩子做了重新设计。过去我们在 Options API 中使用 `mounted`、`created` 这些选项，现在在 `setup()` 函数中，需要改用对应的 `onXxx` 形式。这段时间在把内部组件库往 Composition API 迁移的过程中，踩了一些坑，整理一下。
@@ -10,7 +12,8 @@ Vue 3 Composition API 对生命周期钩子做了重新设计。过去我们在 
 ## Options API vs Composition API 钩子对照
 
 | Options API | Composition API |
-|---|---|
+|
+---|---|
 | beforeCreate | (不需要，setup 本身就是) |
 | created | (不需要，setup 本身就是) |
 | beforeMount | onBeforeMount |

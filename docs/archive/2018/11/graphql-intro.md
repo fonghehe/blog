@@ -3,6 +3,8 @@ title: "GraphQL 初探：从 REST 到 GraphQL"
 date: 2018-11-13 17:09:11
 tags:
   - GraphQL
+readingTime: 2
+description: "最近在研究 GraphQL，看到很多人说它是 REST 的替代方案。试用了一下，谈谈我的理解。"
 ---
 
 最近在研究 GraphQL，看到很多人说它是 REST 的替代方案。试用了一下，谈谈我的理解。

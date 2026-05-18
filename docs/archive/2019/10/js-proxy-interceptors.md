@@ -3,6 +3,8 @@ title: "JavaScript Proxy 拦截器"
 date: 2019-10-16 17:17:13
 tags:
   - JavaScript
+readingTime: 2
+description: "JavaScript Proxy 拦截器是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。"
 ---
 
 JavaScript Proxy 拦截器是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。

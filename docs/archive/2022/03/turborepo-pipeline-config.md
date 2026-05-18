@@ -3,6 +3,8 @@ title: "Turborepo：Monorepo 构建编排的最佳拍档"
 date: 2022-03-08 10:39:07
 tags:
   - 前端
+readingTime: 3
+description: "上一篇写了 pnpm workspace 做依赖管理。这篇讲构建编排——当你的 monorepo 有十几个包需要构建和测试，怎么让它们按依赖顺序执行，并且尽可能并行？"
 ---
 
 上一篇写了 pnpm workspace 做依赖管理。这篇讲构建编排——当你的 monorepo 有十几个包需要构建和测试，怎么让它们按依赖顺序执行，并且尽可能并行？
@@ -213,7 +215,8 @@ jobs:
 ## pnpm + Turborepo 的分工
 
 | 能力 | pnpm workspace | Turborepo |
-|------|---------------|-----------|
+|
+------|---------------|-----------|
 | 依赖管理 | 负责 | 不管 |
 | workspace 协议 | 负责 | 不管 |
 | 构建编排 | 基础（-r） | 负责 |

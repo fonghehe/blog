@@ -4,6 +4,8 @@ date: 2019-07-29 14:58:32
 tags:
   - Webpack
   - 工程化
+readingTime: 5
+description: "Webpack 项目一大痛点就是构建速度慢。一个中型项目，`node_modules` 里几百个包，每次 `npm run build` 都要等好几分钟。`DllPlugin` 是 Webpack 官方提供的构建优化方案之一，核心思路是把不常变化的依赖（如 React、Vue、lodash 等）提前打包成一个独立的 D"
 ---
 
 Webpack 项目一大痛点就是构建速度慢。一个中型项目，`node_modules` 里几百个包，每次 `npm run build` 都要等好几分钟。`DllPlugin` 是 Webpack 官方提供的构建优化方案之一，核心思路是把不常变化的依赖（如 React、Vue、lodash 等）提前打包成一个独立的 DLL 文件，主构建时直接引用，不再重复编译。
@@ -196,7 +198,8 @@ plugins: [
 2019 年另一个流行的构建加速方案是 `HardSourceWebpackPlugin`，它通过缓存模块的编译结果来加速。
 
 | 特性 | DllPlugin | HardSourceWebpackPlugin |
-|------|-----------|------------------------|
+|
+------|-----------|------------------------|
 | 原理 | 预打包不变的依赖 | 缓存所有模块的编译结果 |
 | 首次构建 | 需要先构建 DLL | 没有加速效果 |
 | 后续构建 | DLL 中的模块跳过编译 | 所有模块从缓存恢复 |

@@ -3,6 +3,8 @@ title: "CSS View Transitions v2"
 date: 2024-03-19 16:44:55
 tags:
   - CSS
+readingTime: 1
+description: "在日常开发中，CSS View Transitions v2的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，CSS View Transitions v2的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

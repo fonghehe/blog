@@ -3,6 +3,8 @@ title: "React SuspenseList 加载顺序控制"
 date: 2020-03-24 16:02:13
 tags:
   - React
+readingTime: 2
+description: "最近在团队中落地React SuspenseList 加载顺序控制，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地React SuspenseList 加载顺序控制，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

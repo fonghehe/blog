@@ -3,6 +3,8 @@ title: "Nuxt.js 服务端渲染实战"
 date: 2019-08-29 09:40:58
 tags:
   - Vue
+readingTime: 2
+description: "做了一个电商官网，要求 SEO 和首屏速度。调研了 Nuxt.js，最终选它做 Vue SSR。"
 ---
 
 做了一个电商官网，要求 SEO 和首屏速度。调研了 Nuxt.js，最终选它做 Vue SSR。

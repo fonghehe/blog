@@ -3,6 +3,8 @@ title: "TypeScript 声明文件编写指南"
 date: 2019-10-28 16:19:50
 tags:
   - TypeScript
+readingTime: 4
+description: "在 TypeScript 项目中引入第三方 JavaScript 库时，声明文件（`.d.ts`）是连接类型系统和无类型代码的桥梁。即使库本身没有提供类型定义，我们也可以自己编写声明文件。本文系统地介绍声明文件的编写方法。"
 ---
 
 在 TypeScript 项目中引入第三方 JavaScript 库时，声明文件（`.d.ts`）是连接类型系统和无类型代码的桥梁。即使库本身没有提供类型定义，我们也可以自己编写声明文件。本文系统地介绍声明文件的编写方法。

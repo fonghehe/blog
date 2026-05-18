@@ -3,6 +3,8 @@ title: "Node.js Stream 实战指南"
 date: 2019-05-19 16:51:01
 tags:
   - Node.js
+readingTime: 6
+description: "Stream 是 Node.js 最核心的模块之一，但很多开发者日常只用 `fs.readFile` 处理文件。当你需要处理大文件、构建管道式数据处理、或者实现高效 I/O 时，Stream 是不可或缺的工具。"
 ---
 
 Stream 是 Node.js 最核心的模块之一，但很多开发者日常只用 `fs.readFile` 处理文件。当你需要处理大文件、构建管道式数据处理、或者实现高效 I/O 时，Stream 是不可或缺的工具。

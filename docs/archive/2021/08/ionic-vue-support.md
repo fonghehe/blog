@@ -3,6 +3,9 @@ title: "Ionic Vue 跨平台移动开发"
 date: 2021-08-24 14:31:51
 tags:
   - Vue
+  - JavaScript
+readingTime: 2
+description: "Ionic Vue 跨平台移动开发在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Ionic Vue 跨平台移动开发在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

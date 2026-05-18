@@ -3,6 +3,8 @@ title: "Vue Router 进阶：导航守卫与权限控制"
 date: 2019-01-20 16:47:45
 tags:
   - Vue
+readingTime: 2
+description: "Vue Router 的基础用法很简单，但权限控制、路由元信息、动态添加路由这些进阶用法，很多项目都没用好。"
 ---
 
 Vue Router 的基础用法很简单，但权限控制、路由元信息、动态添加路由这些进阶用法，很多项目都没用好。

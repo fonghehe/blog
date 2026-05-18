@@ -3,6 +3,8 @@ title: "Moon 构建系统 Monorepo 管理"
 date: 2022-07-21 09:48:26
 tags:
   - 前端
+readingTime: 2
+description: "Moon 构建系统 Monorepo 管理在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Moon 构建系统 Monorepo 管理在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

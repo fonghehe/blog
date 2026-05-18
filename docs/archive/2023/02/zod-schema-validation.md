@@ -3,6 +3,8 @@ title: "Zod：TypeScript 时代的 Schema 校验利器"
 date: 2023-02-08 15:28:32
 tags:
   - 前端
+readingTime: 2
+description: "在全栈 TypeScript 项目里，类型安全应该是从数据库到前端一致的。Zod 是实现这个目标最干净的方案。"
 ---
 
 在全栈 TypeScript 项目里，类型安全应该是从数据库到前端一致的。Zod 是实现这个目标最干净的方案。

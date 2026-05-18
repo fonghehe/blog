@@ -3,6 +3,8 @@ title: "GitHub Copilot Chat 新特性"
 date: 2024-06-04 10:00:00
 tags:
   - 工程化
+readingTime: 2
+description: "在日常开发中，GitHub Copilot Chat 新特性的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，GitHub Copilot Chat 新特性的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

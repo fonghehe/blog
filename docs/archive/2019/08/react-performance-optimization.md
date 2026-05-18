@@ -3,6 +3,8 @@ title: "React 性能优化：从 Profiler 到实战"
 date: 2019-08-15 16:25:16
 tags:
   - React
+readingTime: 2
+description: "用 React Profiler 分析了一个性能有问题的页面，整理出一套优化方法论。"
 ---
 
 用 React Profiler 分析了一个性能有问题的页面，整理出一套优化方法论。

@@ -3,6 +3,8 @@ title: "Agentic Coding：AI Agent 驱动的编码模式"
 date: 2025-05-03 10:00:00
 tags:
   - 工程化
+readingTime: 2
+description: "2025 年最大的变化之一是 Agentic Coding 的成熟。AI 不再只是补全代码的工具，而是能自主完成复杂任务的 Agent。来分享一些实战模式。"
 ---
 
 2025 年最大的变化之一是 Agentic Coding 的成熟。AI 不再只是补全代码的工具，而是能自主完成复杂任务的 Agent。来分享一些实战模式。

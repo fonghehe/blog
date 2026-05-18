@@ -3,6 +3,8 @@ title: "Vue 虚拟 DOM 和 diff 算法"
 date: 2018-12-01 10:43:17
 tags:
   - Vue
+readingTime: 1
+description: "面试常被问到\"Vue 的 diff 算法是怎么工作的\"，网上的文章大多说得很抽象。这里用实际例子说清楚。"
 ---
 
 面试常被问到"Vue 的 diff 算法是怎么工作的"，网上的文章大多说得很抽象。这里用实际例子说清楚。

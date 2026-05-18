@@ -3,6 +3,8 @@ title: "IndexedDB：前端本地存储进阶"
 date: 2018-12-19 16:54:08
 tags:
   - 前端
+readingTime: 2
+description: "localStorage 只能存字符串，容量 5MB，查询不方便。IndexedDB 是浏览器内置的 NoSQL 数据库，容量可达几百 MB，支持事务和索引查询，适合离线应用。"
 ---
 
 localStorage 只能存字符串，容量 5MB，查询不方便。IndexedDB 是浏览器内置的 NoSQL 数据库，容量可达几百 MB，支持事务和索引查询，适合离线应用。

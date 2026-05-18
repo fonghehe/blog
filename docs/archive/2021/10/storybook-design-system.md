@@ -3,6 +3,9 @@ title: "Storybook 驱动 Design System"
 date: 2021-10-15 11:13:40
 tags:
   - Storybook
+  - 工程化
+readingTime: 2
+description: "关于Storybook 驱动 Design System，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于Storybook 驱动 Design System，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

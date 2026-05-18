@@ -3,6 +3,8 @@ title: "实战：Vue 2 权限控制完整方案"
 date: 2018-04-14 10:47:04
 tags:
   - Vue
+readingTime: 2
+description: "中后台系统几乎必然要做权限控制。这篇文章整理一套完整方案：路由权限 + 菜单权限 + 按钮权限，基于 Vue 2 + Vue Router + Vuex。"
 ---
 
 中后台系统几乎必然要做权限控制。这篇文章整理一套完整方案：路由权限 + 菜单权限 + 按钮权限，基于 Vue 2 + Vue Router + Vuex。

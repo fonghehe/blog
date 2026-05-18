@@ -3,6 +3,9 @@ title: "Web Share API 原生分享功能"
 date: 2021-12-01 09:31:59
 tags:
   - 前端
+  - JavaScript
+readingTime: 2
+description: "关于Web Share API 原生分享功能，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于Web Share API 原生分享功能，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

@@ -3,6 +3,8 @@ title: "Next.js 14 新特性汇总"
 date: 2023-01-03 14:50:54
 tags:
   - Next.js
+readingTime: 1
+description: "Next.js 14 新特性汇总在近年来发展迅速，本文将深入分析其原理和实践方法。"
 ---
 
 Next.js 14 新特性汇总在近年来发展迅速，本文将深入分析其原理和实践方法。

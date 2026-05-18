@@ -3,6 +3,8 @@ title: "HTML Popover 稳定版全面应用"
 date: 2024-09-03 10:00:00
 tags:
   - JavaScript
+readingTime: 2
+description: "在日常开发中，HTML Popover 稳定版全面应用的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，HTML Popover 稳定版全面应用的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

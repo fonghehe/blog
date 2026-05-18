@@ -3,6 +3,8 @@ title: "React 18 正式版：并发渲染深度解析"
 date: 2022-04-01 09:31:34
 tags:
   - React
+readingTime: 2
+description: "React 18 正式发布了！等了 3 年的 Concurrent 特性终于稳定。和之前的预览版相比，正式版 API 基本没变，但文档和最佳实践更完善了。"
 ---
 
 React 18 正式发布了！等了 3 年的 Concurrent 特性终于稳定。和之前的预览版相比，正式版 API 基本没变，但文档和最佳实践更完善了。

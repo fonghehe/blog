@@ -3,6 +3,8 @@ title: "组件库版本管理：Monorepo 中的发布策略"
 date: 2022-08-23 14:31:47
 tags:
   - 前端
+readingTime: 2
+description: "在 pnpm + Turborepo 的 monorepo 中管理组件库版本是个实际问题。什么时候发 patch、什么时候发 minor、怎么生成 changelog、怎么处理 breaking change？这篇文章讲讲我们团队的实践。"
 ---
 
 在 pnpm + Turborepo 的 monorepo 中管理组件库版本是个实际问题。什么时候发 patch、什么时候发 minor、怎么生成 changelog、怎么处理 breaking change？这篇文章讲讲我们团队的实践。

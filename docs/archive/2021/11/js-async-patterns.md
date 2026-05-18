@@ -3,6 +3,9 @@ title: "JavaScript 异步模式汇总"
 date: 2021-11-30 15:09:28
 tags:
   - 前端
+  - JavaScript
+readingTime: 2
+description: "在日常工作中经常用到JavaScript 异步模式汇总，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。"
 ---
 
 在日常工作中经常用到JavaScript 异步模式汇总，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。

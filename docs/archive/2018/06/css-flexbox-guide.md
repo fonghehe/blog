@@ -3,6 +3,8 @@ title: "CSS Flexbox 布局完全指南"
 date: 2018-06-14 17:13:56
 tags:
   - CSS
+readingTime: 1
+description: "Flexbox 是现在最常用的布局方式，但有些属性老是记不住。整理一份速查手册。"
 ---
 
 Flexbox 是现在最常用的布局方式，但有些属性老是记不住。整理一份速查手册。

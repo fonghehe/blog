@@ -3,6 +3,8 @@ title: "Next.js 16 新特性预览"
 date: 2025-01-09 10:00:00
 tags:
   - React
+readingTime: 3
+description: "Next.js 16 在 Vercel Ship 2025 上正式发布，核心主题是「编译即架构」——把更多运行时逻辑推到编译期，减少服务端和客户端之间的边界开销。对 React 20 Compiler 的原生支持、Server Actions 的事务化、以及全新的路由中间件是最大的三个变化。"
 ---
 
 Next.js 16 在 Vercel Ship 2025 上正式发布，核心主题是「编译即架构」——把更多运行时逻辑推到编译期，减少服务端和客户端之间的边界开销。对 React 20 Compiler 的原生支持、Server Actions 的事务化、以及全新的路由中间件是最大的三个变化。

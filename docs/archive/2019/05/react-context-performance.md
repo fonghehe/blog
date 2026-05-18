@@ -3,6 +3,8 @@ title: "React Context 性能优化指南"
 date: 2019-05-13 10:48:53
 tags:
   - React
+readingTime: 5
+description: "React 16.3 引入了新的 Context API，16.8 的 Hooks 让它更好用了。但在实际项目中，很多人发现用了 Context 后组件频繁重渲染，性能下降。这篇文章深入分析 Context 的渲染机制和优化方案。"
 ---
 
 React 16.3 引入了新的 Context API，16.8 的 Hooks 让它更好用了。但在实际项目中，很多人发现用了 Context 后组件频繁重渲染，性能下降。这篇文章深入分析 Context 的渲染机制和优化方案。

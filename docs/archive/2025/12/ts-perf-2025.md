@@ -4,6 +4,8 @@ date: 2025-12-08 10:00:00
 tags:
   - TypeScript
   - 性能优化
+readingTime: 2
+description: "在日常开发中，TypeScript 性能优化 2025的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，TypeScript 性能优化 2025的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

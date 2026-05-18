@@ -3,6 +3,8 @@ title: "Playwright 组件测试指南"
 date: 2023-05-04 10:05:09
 tags:
   - Playwright
+readingTime: 2
+description: "Playwright 组件测试指南这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 Playwright 组件测试指南这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

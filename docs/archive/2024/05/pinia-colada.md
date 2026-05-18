@@ -3,6 +3,8 @@ title: "Pinia Colada 数据获取库"
 date: 2024-05-16 11:47:00
 tags:
   - Pinia
+readingTime: 1
+description: "最近在团队中落地Pinia Colada 数据获取库，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Pinia Colada 数据获取库，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

@@ -3,6 +3,8 @@ title: "前端 Code Review 要点"
 date: 2019-06-27 16:43:22
 tags:
   - 前端
+readingTime: 7
+description: "团队最近在推 Code Review，整理了一份前端 CR 的检查清单。实际执行下来，不只是发现 bug，更是一种知识传递的方式。"
 ---
 
 团队最近在推 Code Review，整理了一份前端 CR 的检查清单。实际执行下来，不只是发现 bug，更是一种知识传递的方式。

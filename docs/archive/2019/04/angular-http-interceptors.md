@@ -3,6 +3,8 @@ title: "Angular HTTP 拦截器：统一处理认证与错误"
 date: 2019-04-27 10:45:48
 tags:
   - Angular
+readingTime: 1
+description: "HttpInterceptor 是 Angular 中处理跨切关注点（Token 注入、错误处理、Loading）的最佳位置。"
 ---
 
 HttpInterceptor 是 Angular 中处理跨切关注点（Token 注入、错误处理、Loading）的最佳位置。

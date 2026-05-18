@@ -3,6 +3,8 @@ title: "Node.js Stream pipe 机制深入"
 date: 2019-10-15 10:46:45
 tags:
   - Node.js
+readingTime: 4
+description: "Node.js 的 Stream 是处理 I/O 数据流的核心抽象，而 `pipe` 方法是将多个流串联起来的关键 API。理解 pipe 的工作原理和背压（backpressure）机制，对于编写高性能的 Node.js 应用至关重要。"
 ---
 
 Node.js 的 Stream 是处理 I/O 数据流的核心抽象，而 `pipe` 方法是将多个流串联起来的关键 API。理解 pipe 的工作原理和背压（backpressure）机制，对于编写高性能的 Node.js 应用至关重要。
@@ -167,7 +169,8 @@ writeStream.on('error', (err) => {
 readStream.pipe(writeStream, { end: false });
 readStream.on('end', () => {
   // 手动追加尾部数据后再关闭
-  writeStream.write('\n--- 文件结束 ---\n');
+  writeStream.write('\n
+--- 文件结束 ---\n');
   writeStream.end();
 });
 ```

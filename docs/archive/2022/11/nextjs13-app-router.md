@@ -3,6 +3,8 @@ title: "Next.js 13 App Router：重新定义全栈开发"
 date: 2022-11-01 09:31:25
 tags:
   - Next.js
+readingTime: 2
+description: "Next.js 13 发布，最大变化是 App Router（`/app` 目录），和 Pages Router 思路完全不同。"
 ---
 
 Next.js 13 发布，最大变化是 App Router（`/app` 目录），和 Pages Router 思路完全不同。

@@ -3,6 +3,8 @@ title: "Rolldown Rust 实现的 Rollup"
 date: 2023-02-27 10:22:35
 tags:
   - 前端
+readingTime: 2
+description: "在日常开发中，Rolldown Rust 实现的 Rollup的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Rolldown Rust 实现的 Rollup的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

@@ -3,6 +3,8 @@ title: "Intersection Observer API 实战"
 date: 2019-07-16 17:28:35
 tags:
   - 前端
+readingTime: 4
+description: "以前做图片懒加载、无限滚动这些功能，基本都是靠 `scroll` 事件 + `getBoundingClientRect()` 来实现的。性能差不说，代码还丑。Intersection Observer API 的出现彻底改变了这个局面。"
 ---
 
 以前做图片懒加载、无限滚动这些功能，基本都是靠 `scroll` 事件 + `getBoundingClientRect()` 来实现的。性能差不说，代码还丑。Intersection Observer API 的出现彻底改变了这个局面。
@@ -382,7 +384,8 @@ document.querySelectorAll('.ad-slot').forEach(ad => {
 截至 2019 年中，Intersection Observer 的浏览器支持情况：
 
 | 浏览器 | 支持版本 |
-|--------|----------|
+|
+--------|----------|
 | Chrome | 51+ |
 | Firefox | 55+ |
 | Safari | 12.1+ |

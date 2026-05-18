@@ -3,6 +3,8 @@ title: "NgRx 15：Standalone API 支持与信号商店前瞻"
 date: 2023-01-20 17:22:49
 tags:
   - 前端
+readingTime: 2
+description: "NgRx 15 随 Angular 15 同步发布，带来了对 Standalone APIs 的全面支持。不再需要在 `NgModule` 里注册 `StoreModule`、`EffectsModule`——现在可以在 `bootstrapApplication` 中用函数式 API 配置整个 NgRx 栈。"
 ---
 
 NgRx 15 随 Angular 15 同步发布，带来了对 Standalone APIs 的全面支持。不再需要在 `NgModule` 里注册 `StoreModule`、`EffectsModule`——现在可以在 `bootstrapApplication` 中用函数式 API 配置整个 NgRx 栈。

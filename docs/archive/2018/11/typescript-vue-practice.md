@@ -3,6 +3,8 @@ title: "TypeScript 在 Vue 项目中的完整实践"
 date: 2018-11-21 11:03:49
 tags:
   - Vue
+readingTime: 3
+description: "在 Vue 项目里用 TypeScript 其实比想象中麻烦一些。折腾了两周，总结一下完整的配置流程。"
 ---
 
 在 Vue 项目里用 TypeScript 其实比想象中麻烦一些。折腾了两周，总结一下完整的配置流程。

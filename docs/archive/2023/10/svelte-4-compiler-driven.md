@@ -3,6 +3,8 @@ title: "Svelte 4：编译器驱动的前端框架哲学"
 date: 2023-10-22 09:48:15
 tags:
   - Svelte
+readingTime: 2
+description: "Svelte 4 发布了，同时 Svelte 5 Runes 提案也已公开。聊聊 Svelte 的设计哲学，以及它和 React/Vue 的根本区别。"
 ---
 
 Svelte 4 发布了，同时 Svelte 5 Runes 提案也已公开。聊聊 Svelte 的设计哲学，以及它和 React/Vue 的根本区别。

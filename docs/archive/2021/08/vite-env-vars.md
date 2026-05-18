@@ -3,6 +3,8 @@ title: "Vite 环境变量管理"
 date: 2021-08-13 11:13:14
 tags:
   - Vite
+readingTime: 1
+description: "Vite 环境变量管理在近年来发展迅速，本文将深入分析其原理和实践方法。"
 ---
 
 Vite 环境变量管理在近年来发展迅速，本文将深入分析其原理和实践方法。

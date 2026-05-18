@@ -3,6 +3,8 @@ title: "Vue 3 响应式系统源码分析"
 date: 2020-01-03 16:10:29
 tags:
   - Vue
+readingTime: 2
+description: "Vue 3 的响应式系统基于 ES6 Proxy 重写，彻底告别了 Vue 2 的 `Object.defineProperty` 方案。理解其源码实现，不仅能帮助我们写出更高效的代码，还能避免一些隐蔽的性能陷阱。"
 ---
 
 Vue 3 的响应式系统基于 ES6 Proxy 重写，彻底告别了 Vue 2 的 `Object.defineProperty` 方案。理解其源码实现，不仅能帮助我们写出更高效的代码，还能避免一些隐蔽的性能陷阱。

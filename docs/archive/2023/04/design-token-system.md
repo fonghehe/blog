@@ -3,6 +3,8 @@ title: "Design Token 系统：从 CSS 变量到多主题架构"
 date: 2023-04-28 14:31:48
 tags:
   - 前端
+readingTime: 2
+description: "作为组件系统负责人，设计 Token 是我们团队今年的重点建设之一。分享一下从 0 到 1 搭建 Token 系统的经验。"
 ---
 
 作为组件系统负责人，设计 Token 是我们团队今年的重点建设之一。分享一下从 0 到 1 搭建 Token 系统的经验。

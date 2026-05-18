@@ -4,6 +4,8 @@ date: 2019-05-22 10:35:50
 tags:
   - Webpack
   - 工程化
+readingTime: 6
+description: "Tree Shaking 是 Webpack 4 中非常重要的优化手段，它能在打包时自动剔除未使用的代码。但很多人配了 `mode: 'production'` 就以为完事了，实际上背后有很多值得深挖的原理。"
 ---
 
 Tree Shaking 是 Webpack 4 中非常重要的优化手段，它能在打包时自动剔除未使用的代码。但很多人配了 `mode: 'production'` 就以为完事了，实际上背后有很多值得深挖的原理。

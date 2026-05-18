@@ -3,6 +3,10 @@ title: "Netlify Edge Functions 边缘计算"
 date: 2021-08-10 10:39:48
 tags:
   - 前端
+  - JavaScript
+  - 工程化
+readingTime: 2
+description: "Netlify Edge Functions 边缘计算这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 Netlify Edge Functions 边缘计算这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

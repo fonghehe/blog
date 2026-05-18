@@ -3,6 +3,8 @@ title: "Node.js 脚本开发实践：自动化你的工作流"
 date: 2019-02-19 14:43:49
 tags:
   - TypeScript
+readingTime: 2
+description: "前端工程师写 Node.js 脚本，能解决很多重复劳动。整理一些实用的脚本开发技巧。"
 ---
 
 前端工程师写 Node.js 脚本，能解决很多重复劳动。整理一些实用的脚本开发技巧。

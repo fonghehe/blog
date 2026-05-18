@@ -4,6 +4,8 @@ date: 2022-02-22 09:48:37
 tags:
   - CSS
   - TailwindCSS
+readingTime: 2
+description: "Tailwind CSS 统治了原子化 CSS 领域好几年。但 Ant Fu 的 UnoCSS 出现后，格局变了。UnoCSS 不是一个 CSS 框架，而是一个原子化 CSS 引擎——这个定位差异带来了本质上的不同。"
 ---
 
 Tailwind CSS 统治了原子化 CSS 领域好几年。但 Ant Fu 的 UnoCSS 出现后，格局变了。UnoCSS 不是一个 CSS 框架，而是一个原子化 CSS 引擎——这个定位差异带来了本质上的不同。
@@ -163,7 +165,8 @@ export default defineConfig({
 我们一个中型项目的实测：
 
 | 指标 | Tailwind CSS 3 | UnoCSS |
-|------|----------------|--------|
+|
+------|----------------|--------|
 | HMR 样式更新 | 120ms | 5ms |
 | 生产 CSS 体积 | 48KB | 12KB |
 | 开发服务器启动 | +1.2s | +0.1s |

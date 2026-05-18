@@ -3,6 +3,8 @@ title: "CSS Modules 在 Vue 项目中的最佳实践"
 date: 2020-02-13 10:38:48
 tags:
   - CSS
+readingTime: 2
+description: "多人协作的大项目，CSS 全局污染是个老大难问题。对比了 Scoped CSS、CSS Modules 和 CSS-in-JS 后，最终在组件库项目中选择了 CSS Modules，记录一下实践方案。"
 ---
 
 多人协作的大项目，CSS 全局污染是个老大难问题。对比了 Scoped CSS、CSS Modules 和 CSS-in-JS 后，最终在组件库项目中选择了 CSS Modules，记录一下实践方案。

@@ -3,6 +3,8 @@ title: "AST 抽象语法树入门"
 date: 2018-12-04 15:57:42
 tags:
   - 前端
+readingTime: 1
+description: "Babel、ESLint、Prettier 都基于 AST 工作。了解 AST 原理，能帮助我们更好地使用这些工具，甚至写自己的插件。"
 ---
 
 Babel、ESLint、Prettier 都基于 AST 工作。了解 AST 原理，能帮助我们更好地使用这些工具，甚至写自己的插件。

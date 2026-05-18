@@ -3,6 +3,8 @@ title: "Vite Environment API 多环境"
 date: 2023-02-23 14:31:37
 tags:
   - Vite
+readingTime: 2
+description: "最近在团队中落地Vite Environment API 多环境，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Vite Environment API 多环境，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

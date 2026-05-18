@@ -3,6 +3,8 @@ title: "TypeScript 条件类型深入"
 date: 2019-09-23 11:02:29
 tags:
   - TypeScript
+readingTime: 4
+description: "TypeScript 的条件类型（Conditional Types）是类型系统中最强大的特性之一。它让我们可以根据类型的条件分支来动态生成新的类型，类似于 JavaScript 中的三元表达式。配合泛型和 `infer` 关键字，条件类型可以实现极其灵活的类型推导。本文将从基础语法到高级用法，深入讲解条件类型。"
 ---
 
 TypeScript 的条件类型（Conditional Types）是类型系统中最强大的特性之一。它让我们可以根据类型的条件分支来动态生成新的类型，类似于 JavaScript 中的三元表达式。配合泛型和 `infer` 关键字，条件类型可以实现极其灵活的类型推导。本文将从基础语法到高级用法，深入讲解条件类型。

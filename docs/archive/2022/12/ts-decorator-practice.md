@@ -3,6 +3,8 @@ title: "TypeScript 装饰器实战"
 date: 2022-12-01 09:31:00
 tags:
   - TypeScript
+readingTime: 2
+description: "最近在团队中落地TypeScript 装饰器实战，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地TypeScript 装饰器实战，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

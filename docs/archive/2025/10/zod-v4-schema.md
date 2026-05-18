@@ -3,6 +3,8 @@ title: "Zod v4 Schema 校验"
 date: 2025-10-30 10:00:00
 tags:
   - 前端
+readingTime: 2
+description: "Zod v4 Schema 校验在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Zod v4 Schema 校验在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

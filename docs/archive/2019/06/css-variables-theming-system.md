@@ -3,6 +3,8 @@ title: "CSS 自定义属性（变量）实战"
 date: 2019-06-21 10:26:38
 tags:
   - CSS
+readingTime: 1
+description: "CSS 自定义属性（又叫 CSS 变量）已经被主流浏览器支持了，比 Sass 变量更灵活，可以运行时修改。"
 ---
 
 CSS 自定义属性（又叫 CSS 变量）已经被主流浏览器支持了，比 Sass 变量更灵活，可以运行时修改。

@@ -3,6 +3,8 @@ title: "View Transitions API 页面转场"
 date: 2022-06-20 17:22:32
 tags:
   - 前端
+readingTime: 2
+description: "View Transitions API 页面转场在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 View Transitions API 页面转场在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

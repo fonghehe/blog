@@ -3,6 +3,8 @@ title: "Speculation Rules 预渲染优化"
 date: 2023-06-01 09:31:29
 tags:
   - 前端
+readingTime: 2
+description: "Speculation Rules 预渲染优化这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 Speculation Rules 预渲染优化这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

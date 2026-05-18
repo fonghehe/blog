@@ -3,6 +3,9 @@ title: "Playwright E2E 跨浏览器测试"
 date: 2021-07-01 09:31:07
 tags:
   - Playwright
+  - 工程化
+readingTime: 2
+description: "关于Playwright E2E 跨浏览器测试，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于Playwright E2E 跨浏览器测试，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

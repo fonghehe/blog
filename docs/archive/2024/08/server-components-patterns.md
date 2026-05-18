@@ -4,6 +4,8 @@ date: 2024-08-05 10:00:00
 tags:
   - JavaScript
   - React
+readingTime: 2
+description: "Server Components 进入稳定期，我们团队在一个中等复杂度的项目中落地了 RSC 架构。总结一下实际项目中验证过的模式和踩坑经验。"
 ---
 
 Server Components 进入稳定期，我们团队在一个中等复杂度的项目中落地了 RSC 架构。总结一下实际项目中验证过的模式和踩坑经验。

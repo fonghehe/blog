@@ -3,6 +3,8 @@ title: "Git rebase 与 merge：如何选择"
 date: 2018-06-26 16:19:41
 tags:
   - 工程化
+readingTime: 2
+description: "团队里经常讨论用 rebase 还是 merge，各有支持者。理清一下两者的区别和适用场景。"
 ---
 
 团队里经常讨论用 rebase 还是 merge，各有支持者。理清一下两者的区别和适用场景。
@@ -15,7 +17,8 @@ git merge main
 ```
 
 ```
-      A---B---C  feature
+      A
+---B---C  feature
      /         \
 D---E---F---G---H  (merge commit)
 ```

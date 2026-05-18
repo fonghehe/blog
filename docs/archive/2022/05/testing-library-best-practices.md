@@ -3,6 +3,8 @@ title: "Testing Library 最佳实践 2022"
 date: 2022-05-23 09:48:09
 tags:
   - 前端
+readingTime: 2
+description: "关于Testing Library 最佳实践 2022，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于Testing Library 最佳实践 2022，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

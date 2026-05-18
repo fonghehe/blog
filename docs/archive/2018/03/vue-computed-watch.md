@@ -3,6 +3,8 @@ title: "Vue computed 和 watch 的使用场景"
 date: 2018-03-04 09:32:17
 tags:
   - Vue
+readingTime: 1
+description: "`computed` 和 `watch` 都能响应数据变化，但适合的场景不一样。用错了不会报错，但代码会很别扭。"
 ---
 
 `computed` 和 `watch` 都能响应数据变化，但适合的场景不一样。用错了不会报错，但代码会很别扭。

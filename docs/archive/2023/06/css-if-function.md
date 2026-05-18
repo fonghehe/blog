@@ -3,6 +3,8 @@ title: "CSS if() 函数提案"
 date: 2023-06-13 11:13:59
 tags:
   - CSS
+readingTime: 1
+description: "CSS if() 函数提案在近年来发展迅速，本文将深入分析其原理和实践方法。"
 ---
 
 CSS if() 函数提案在近年来发展迅速，本文将深入分析其原理和实践方法。

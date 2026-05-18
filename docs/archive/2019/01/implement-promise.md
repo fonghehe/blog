@@ -3,6 +3,8 @@ title: "手写 Promise/A+ 规范"
 date: 2019-01-08 11:17:13
 tags:
   - JavaScript
+readingTime: 2
+description: "面试高频题，但自己手写一遍理解最深。"
 ---
 
 面试高频题，但自己手写一遍理解最深。

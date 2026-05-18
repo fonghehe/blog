@@ -3,6 +3,8 @@ title: "Next.js 8 深度上手：SSR 与静态导出"
 date: 2019-03-05 15:08:40
 tags:
   - 前端
+readingTime: 2
+description: "公司有个官网要做 SEO，调研了 Next.js，最终选了它。记录一下踩坑过程。"
 ---
 
 公司有个官网要做 SEO，调研了 Next.js，最终选了它。记录一下踩坑过程。

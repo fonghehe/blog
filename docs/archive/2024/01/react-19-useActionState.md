@@ -3,6 +3,8 @@ title: "React 19 useActionState 表单状态"
 date: 2024-01-22 09:48:18
 tags:
   - React
+readingTime: 2
+description: "React 19 useActionState 表单状态这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 React 19 useActionState 表单状态这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

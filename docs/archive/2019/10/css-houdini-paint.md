@@ -3,6 +3,8 @@ title: "CSS Houdini Paint API 探索"
 date: 2019-10-03 15:32:59
 tags:
   - CSS
+readingTime: 4
+description: "CSS Houdini 是 W3C 提出的一组底层 CSS API，它让开发者可以直接接入 CSS 渲染引擎的各个阶段。其中 Paint API 是目前浏览器支持度最好的一个，它允许我们用 JavaScript 绘制自定义的 CSS 图案，替代传统的背景图方案。"
 ---
 
 CSS Houdini 是 W3C 提出的一组底层 CSS API，它让开发者可以直接接入 CSS 渲染引擎的各个阶段。其中 Paint API 是目前浏览器支持度最好的一个，它允许我们用 JavaScript 绘制自定义的 CSS 图案，替代传统的背景图方案。
@@ -280,7 +282,8 @@ function startSkeletonAnimation() {
 ## 与 Canvas 的对比
 
 | 特性 | Paint API | Canvas |
-|------|-----------|--------|
+|
+------|-----------|--------|
 | 运行线程 | Worklet 线程 | 主线程 |
 | 与 CSS 集成 | 天然集成，可直接用作 background | 需要手动设置 |
 | 响应式 | 自动随元素尺寸变化 | 需要手动监听 resize |

@@ -3,6 +3,8 @@ title: "Hono v3 全栈 Web 框架"
 date: 2023-07-12 10:39:29
 tags:
   - 前端
+readingTime: 2
+description: "在日常开发中，Hono v3 全栈 Web 框架的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Hono v3 全栈 Web 框架的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

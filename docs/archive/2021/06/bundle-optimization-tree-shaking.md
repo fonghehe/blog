@@ -3,6 +3,9 @@ title: "Tree Shaking 深度优化指南"
 date: 2021-06-25 09:48:25
 tags:
   - 前端
+  - 工程化
+readingTime: 2
+description: "关于Tree Shaking 深度优化指南，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于Tree Shaking 深度优化指南，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

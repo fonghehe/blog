@@ -3,6 +3,8 @@ title: "Astro 1.0：内容优先的前端框架"
 date: 2022-06-07 15:28:54
 tags:
   - 前端
+readingTime: 2
+description: "Astro 1.0 正式发布了。它的核心理念很明确：默认输出零 JavaScript，只在需要交互的地方加载 JS。对于内容型网站（博客、文档、营销页），这个方案比 React/Vue 全家桶高效得多。"
 ---
 
 Astro 1.0 正式发布了。它的核心理念很明确：默认输出零 JavaScript，只在需要交互的地方加载 JS。对于内容型网站（博客、文档、营销页），这个方案比 React/Vue 全家桶高效得多。
@@ -37,7 +39,8 @@ pnpm dev
 
 ```astro
 ---
-// --- 之间是服务端代码（构建时执行）
+// 
+--- 之间是服务端代码（构建时执行）
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CommentWidget from '../components/CommentWidget';

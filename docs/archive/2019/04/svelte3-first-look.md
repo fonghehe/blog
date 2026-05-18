@@ -3,6 +3,8 @@ title: "Svelte 初体验：没有 Virtual DOM 的框架"
 date: 2019-04-07 10:35:05
 tags:
   - Svelte
+readingTime: 2
+description: "Svelte 3 上周发布了，和 Vue/React 思路完全不同——编译时框架，没有运行时，没有 Virtual DOM。用了一周，说说感受。"
 ---
 
 Svelte 3 上周发布了，和 Vue/React 思路完全不同——编译时框架，没有运行时，没有 Virtual DOM。用了一周，说说感受。
@@ -103,7 +105,8 @@ export const time = readable(new Date(), (set) => {
 ## 和 React/Vue 比较
 
 |            | Svelte                 | Vue 3    | React    |
-| ---------- | ---------------------- | -------- | -------- |
+| 
+---------- | ---------------------- | -------- | -------- |
 | 运行时体积 | ~1KB                   | ~22KB    | ~42KB    |
 | 学习成本   | 低（贴近原生 HTML/JS） | 中       | 中       |
 | 生态       | 弱（2019年还小众）     | 强       | 很强     |

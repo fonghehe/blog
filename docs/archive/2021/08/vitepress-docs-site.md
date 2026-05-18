@@ -3,6 +3,8 @@ title: "VitePress 搭建技术文档站"
 date: 2021-08-02 09:31:17
 tags:
   - Vite
+readingTime: 2
+description: "给团队的组件库搭建文档站，对比了 VuePress 和 VitePress 后选择了后者。VitePress 基于 Vite + Vue 3，构建速度快了一个量级，而且配置更简洁。记录一下搭建过程和定制化配置。"
 ---
 
 给团队的组件库搭建文档站，对比了 VuePress 和 VitePress 后选择了后者。VitePress 基于 Vite + Vue 3，构建速度快了一个量级，而且配置更简洁。记录一下搭建过程和定制化配置。
@@ -128,7 +130,8 @@ import '@company/components/dist/style.css'
 ## API
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|--------|
+|
+------|------|------|--------|
 | type | 按钮类型 | `'primary' \| 'default'` | `'default'` |
 | size | 按钮大小 | `'small' \| 'medium' \| 'large'` | `'medium'` |
 | disabled | 是否禁用 | `boolean` | `false` |

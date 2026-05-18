@@ -3,6 +3,8 @@ title: "TypeScript 5.0 装饰器：从 Stage 2 到 Stage 3 的蜕变"
 date: 2023-01-10 10:39:48
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 5.0 正式支持了 TC39 Stage 3 提案的装饰器语法。这是一个等了好几年的改动，终于可以告别 `experimentalDecorators` 了。"
 ---
 
 TypeScript 5.0 正式支持了 TC39 Stage 3 提案的装饰器语法。这是一个等了好几年的改动，终于可以告别 `experimentalDecorators` 了。

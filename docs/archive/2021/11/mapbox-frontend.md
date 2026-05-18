@@ -3,6 +3,9 @@ title: "Mapbox GL JS 前端地图开发"
 date: 2021-11-16 16:44:30
 tags:
   - 前端
+  - JavaScript
+readingTime: 2
+description: "在日常开发中，Mapbox GL JS 前端地图开发的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Mapbox GL JS 前端地图开发的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

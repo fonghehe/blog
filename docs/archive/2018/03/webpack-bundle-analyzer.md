@@ -4,6 +4,8 @@ date: 2018-03-10 16:56:12
 tags:
   - Webpack
   - 工程化
+readingTime: 2
+description: "项目打包完发现 vendor.js 有 3MB，加载慢，但不知道哪些库占了大头。`webpack-bundle-analyzer` 是这种问题的标准工具。"
 ---
 
 项目打包完发现 vendor.js 有 3MB，加载慢，但不知道哪些库占了大头。`webpack-bundle-analyzer` 是这种问题的标准工具。
@@ -171,7 +173,8 @@ module.exports = {
 ## 一次真实优化记录
 
 | 优化项               | 优化前    | 优化后    |
-| -------------------- | --------- | --------- |
+| 
+-------------------- | --------- | --------- |
 | 全量 lodash → 按需   | 71KB      | 3KB       |
 | 全量 moment → day.js | 230KB     | 2KB       |
 | Element UI 按需加载  | 500KB     | 200KB     |

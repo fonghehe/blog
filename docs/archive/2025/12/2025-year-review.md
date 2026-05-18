@@ -3,6 +3,8 @@ title: "2025 年前端技术回顾：Signal 时代正式开启"
 date: 2025-12-31 10:00:00
 tags:
   - 前端
+readingTime: 2
+description: "2025 年是前端技术\"从实验到成熟\"的一年。React 20 Compiler 稳定、Angular 21 完成 Signal 化转型、Vue Vapor Mode 落地、Rolldown 稳定进入生产、AI 编程工具从辅助变成协同开发的核心。站在 2025 年最后一天，来做一个全面的年度盘点。"
 ---
 
 2025 年是前端技术"从实验到成熟"的一年。React 20 Compiler 稳定、Angular 21 完成 Signal 化转型、Vue Vapor Mode 落地、Rolldown 稳定进入生产、AI 编程工具从辅助变成协同开发的核心。站在 2025 年最后一天，来做一个全面的年度盘点。

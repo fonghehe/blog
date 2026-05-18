@@ -3,6 +3,8 @@ title: "TypeScript 类型系统 2025 趋势"
 date: 2025-03-06 10:00:00
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 类型系统 2025 趋势这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 TypeScript 类型系统 2025 趋势这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

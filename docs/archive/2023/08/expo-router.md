@@ -3,6 +3,8 @@ title: "Expo Router 文件路由方案"
 date: 2023-08-22 17:22:32
 tags:
   - 前端
+readingTime: 2
+description: "最近在团队中落地Expo Router 文件路由方案，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Expo Router 文件路由方案，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

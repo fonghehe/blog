@@ -3,6 +3,8 @@ title: "Next.js 缓存与重新验证策略"
 date: 2023-01-13 11:13:16
 tags:
   - Next.js
+readingTime: 3
+description: "Next.js 13/14 的缓存策略是所有框架中默认行为最激进的。理解 `fetch` 缓存、`revalidate`、`revalidatePath`、`revalidateTag` 之间的区别和适用场景，是避免\"为什么页面数据不更新\"这类问题的关键。"
 ---
 
 Next.js 13/14 的缓存策略是所有框架中默认行为最激进的。理解 `fetch` 缓存、`revalidate`、`revalidatePath`、`revalidateTag` 之间的区别和适用场景，是避免"为什么页面数据不更新"这类问题的关键。

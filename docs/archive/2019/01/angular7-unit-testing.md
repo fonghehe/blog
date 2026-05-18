@@ -3,6 +3,8 @@ title: "Angular 7 单元测试实践：Jasmine + Karma 完整指南"
 date: 2019-01-26 11:18:43
 tags:
   - Angular
+readingTime: 2
+description: "Angular CLI 生成项目时默认配好了 Jasmine + Karma 测试环境。很多人跳过了测试，其实 Angular 的测试工具链与业务代码结合得非常居家。"
 ---
 
 Angular CLI 生成项目时默认配好了 Jasmine + Karma 测试环境。很多人跳过了测试，其实 Angular 的测试工具链与业务代码结合得非常居家。

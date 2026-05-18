@@ -3,6 +3,8 @@ title: "CSS Grid 进阶 - 从 grid-template-areas 到实际布局案例"
 date: 2019-07-08 11:22:58
 tags:
   - CSS
+readingTime: 5
+description: "CSS Grid 已经得到主流浏览器的支持有一段时间了。基础的 `grid-template-columns` 和 `grid-template-rows` 大家都会用，但 `grid-template-areas`、`auto-fill` vs `auto-fit`、`minmax()` 这些进阶特性才能真正发挥 G"
 ---
 
 CSS Grid 已经得到主流浏览器的支持有一段时间了。基础的 `grid-template-columns` 和 `grid-template-rows` 大家都会用，但 `grid-template-areas`、`auto-fill` vs `auto-fit`、`minmax()` 这些进阶特性才能真正发挥 Grid 的威力。这篇文章通过几个实际布局案例来讲解这些特性。
@@ -116,7 +118,8 @@ CSS Grid 已经得到主流浏览器的支持有一段时间了。基础的 `gri
 
 ```
 auto-fill（4列，2个空列保留）:
-+--------+--------+--------+--------+
++
+--------+--------+--------+--------+
 |  item1 |  item2 |   空   |   空   |
 +--------+--------+--------+--------+
 

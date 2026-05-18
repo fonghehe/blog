@@ -3,6 +3,8 @@ title: "Solid.js：细粒度响应式的另一种答案"
 date: 2023-06-22 09:48:23
 tags:
   - React
+readingTime: 3
+description: "React 有虚拟 DOM diff，Vue 有 Proxy 响应式，Solid 选择了第三条路：编译时 + 细粒度信号。这个框架值得前端架构师了解。"
 ---
 
 React 有虚拟 DOM diff，Vue 有 Proxy 响应式，Solid 选择了第三条路：编译时 + 细粒度信号。这个框架值得前端架构师了解。

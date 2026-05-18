@@ -3,6 +3,8 @@ title: "Server Components 一年：生产环境的教训"
 date: 2025-05-18 10:00:00
 tags:
   - 前端
+readingTime: 2
+description: "团队在 Next.js 15 上全面使用 Server Components 已经一年了。踩了不少坑，也学到了很多。来总结一下实战经验。"
 ---
 
 团队在 Next.js 15 上全面使用 Server Components 已经一年了。踩了不少坑，也学到了很多。来总结一下实战经验。

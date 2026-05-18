@@ -3,6 +3,8 @@ title: "TypeScript 高级类型：条件类型和映射类型"
 date: 2018-11-17 17:27:11
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 2.8 引入了条件类型，TypeScript 2.1 引入了映射类型。这两个特性可以构建出非常强大的类型工具。"
 ---
 
 TypeScript 2.8 引入了条件类型，TypeScript 2.1 引入了映射类型。这两个特性可以构建出非常强大的类型工具。

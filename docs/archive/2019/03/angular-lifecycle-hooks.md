@@ -3,6 +3,8 @@ title: "Angular 生命周期钩子详解"
 date: 2019-03-25 15:35:11
 tags:
   - Angular
+readingTime: 1
+description: "Angular 组件的生命周期钩子让你在关键时机执行初始化、清理等操作。"
 ---
 
 Angular 组件的生命周期钩子让你在关键时机执行初始化、清理等操作。

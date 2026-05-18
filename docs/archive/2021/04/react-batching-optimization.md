@@ -3,6 +3,9 @@ title: "React 18 自动批处理与 Transition"
 date: 2021-04-19 11:47:10
 tags:
   - React
+  - JavaScript
+readingTime: 3
+description: "React 18 Alpha 已经发布，带来了 Concurrent Mode 的实际落地——不再是实验性的概念，而是可以真正用起来的能力。两个最值得关注的特性是自动批处理（Automatic Batching）和 `useTransition`。"
 ---
 
 React 18 Alpha 已经发布，带来了 Concurrent Mode 的实际落地——不再是实验性的概念，而是可以真正用起来的能力。两个最值得关注的特性是自动批处理（Automatic Batching）和 `useTransition`。

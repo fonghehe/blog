@@ -3,6 +3,8 @@ title: "React 19 新特性：Actions 和 Server Components 成熟"
 date: 2024-05-01 09:31:07
 tags:
   - React
+readingTime: 2
+description: "React 19 Beta 发布，看来正式版很快了。整理一下主要新特性。"
 ---
 
 React 19 Beta 发布，看来正式版很快了。整理一下主要新特性。

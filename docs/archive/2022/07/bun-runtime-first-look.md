@@ -3,6 +3,8 @@ title: "Bun：JavaScript 运行时的新挑战者"
 date: 2022-07-26 10:22:05
 tags:
   - 前端
+readingTime: 2
+description: "2022 年 7 月，Jarred Sumner 发布了 Bun——一个用 Zig 编写的 JavaScript 运行时。它的目标很激进：替代 Node.js、npm、esbuild、Jest，成为 JavaScript 工具链的统一解决方案。"
 ---
 
 2022 年 7 月，Jarred Sumner 发布了 Bun——一个用 Zig 编写的 JavaScript 运行时。它的目标很激进：替代 Node.js、npm、esbuild、Jest，成为 JavaScript 工具链的统一解决方案。
@@ -193,7 +195,8 @@ bun test
 ## 与 Node.js 和 Deno 的定位
 
 | 特性 | Node.js | Deno | Bun |
-|------|---------|------|-----|
+|
+------|---------|------|-----|
 | 引擎 | V8 | V8 | JavaScriptCore |
 | 语言 | C++ | Rust | Zig |
 | TypeScript | 需要编译 | 原生支持 | 原生支持 |

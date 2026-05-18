@@ -3,6 +3,9 @@ title: "ES2021 新特性：实用主义的更新"
 date: 2021-07-28 15:09:57
 tags:
   - 前端
+  - JavaScript
+readingTime: 2
+description: "TC39 在 2021 年 6 月正式发布了 ES2021 标准。和 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 这种重磅特性相比，ES2021 的更新更偏向实用主义——每个特性都不大，但写代码时确实用得上。"
 ---
 
 TC39 在 2021 年 6 月正式发布了 ES2021 标准。和 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 这种重磅特性相比，ES2021 的更新更偏向实用主义——每个特性都不大，但写代码时确实用得上。

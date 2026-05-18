@@ -3,6 +3,8 @@ title: "MSW Mock Service Worker 接口模拟"
 date: 2020-07-22 09:33:52
 tags:
   - 测试
+readingTime: 2
+description: "在日常开发中，MSW Mock Service Worker 接口模拟的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，MSW Mock Service Worker 接口模拟的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

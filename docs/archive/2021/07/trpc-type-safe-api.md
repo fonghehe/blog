@@ -3,6 +3,10 @@ title: "tRPC 类型安全的 API 层"
 date: 2021-07-15 11:47:34
 tags:
   - 前端
+  - JavaScript
+  - TypeScript
+readingTime: 2
+description: "tRPC 类型安全的 API 层这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 tRPC 类型安全的 API 层这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

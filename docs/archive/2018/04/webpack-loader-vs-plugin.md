@@ -3,6 +3,8 @@ title: "Webpack loader 和 plugin 的区别"
 date: 2018-04-27 10:45:43
 tags:
   - Webpack
+readingTime: 1
+description: "Webpack 配置里 `module.rules`（loader）和 `plugins` 是两个最重要的配置项，但很多人搞不清楚它们的区别。"
 ---
 
 Webpack 配置里 `module.rules`（loader）和 `plugins` 是两个最重要的配置项，但很多人搞不清楚它们的区别。
@@ -128,7 +130,8 @@ module.exports = BuildTimePlugin;
 ## 小结
 
 |          | Loader           | Plugin                          |
-| -------- | ---------------- | ------------------------------- |
+| 
+-------- | ---------------- | ------------------------------- |
 | 作用范围 | 单个文件         | 整个构建流程                    |
 | 触发时机 | 文件被 import 时 | Webpack 生命周期钩子            |
 | 配置位置 | `module.rules`   | `plugins` 数组                  |

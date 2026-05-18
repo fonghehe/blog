@@ -3,6 +3,8 @@ title: "Pinia 持久化插件"
 date: 2022-09-02 14:50:29
 tags:
   - Pinia
+readingTime: 1
+description: "Pinia 持久化插件在近年来发展迅速，本文将深入分析其原理和实践方法。"
 ---
 
 Pinia 持久化插件在近年来发展迅速，本文将深入分析其原理和实践方法。

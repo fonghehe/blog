@@ -3,6 +3,8 @@ title: "Playwright 1.28 新功能总结"
 date: 2022-05-19 17:22:32
 tags:
   - Playwright
+readingTime: 2
+description: "Playwright 1.28 新功能总结在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Playwright 1.28 新功能总结在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

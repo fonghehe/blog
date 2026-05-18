@@ -3,6 +3,8 @@ title: "Next.js 15：Caching 默认关闭、PPR 与 Turbopack 稳定"
 date: 2024-11-25 10:00:00
 tags:
   - React
+readingTime: 2
+description: "Next.js 15 在 10 月底正式发布。最大的变化是缓存策略的调整——从\"默认缓存\"变为\"默认不缓存\"。这个改变影响深远。"
 ---
 
 Next.js 15 在 10 月底正式发布。最大的变化是缓存策略的调整——从"默认缓存"变为"默认不缓存"。这个改变影响深远。

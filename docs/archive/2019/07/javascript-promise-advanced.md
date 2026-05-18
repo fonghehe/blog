@@ -3,6 +3,8 @@ title: "JavaScript Promise 高级用法"
 date: 2019-07-22 16:18:40
 tags:
   - JavaScript
+readingTime: 4
+description: "日常开发中 `Promise` 的基础用法（`.then`、`.catch`、`.finally`）已经很熟了，但实际项目中经常遇到一些进阶场景：并发控制、超时处理、串行执行、全部完成（不管成功失败）等。这篇文章整理了我在项目中积累的 Promise 高级用法。"
 ---
 
 日常开发中 `Promise` 的基础用法（`.then`、`.catch`、`.finally`）已经很熟了，但实际项目中经常遇到一些进阶场景：并发控制、超时处理、串行执行、全部完成（不管成功失败）等。这篇文章整理了我在项目中积累的 Promise 高级用法。

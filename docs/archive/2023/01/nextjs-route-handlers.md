@@ -3,6 +3,8 @@ title: "Next.js Route Handlers API 路由"
 date: 2023-01-30 15:09:48
 tags:
   - Next.js
+readingTime: 3
+description: "Next.js 13 的 Route Handlers 取代了 Pages Router 中的 API Routes，基于 Web 标准的 Request/Response API。如果你之前用过 Express 或 Cloudflare Workers，会发现这套 API 非常熟悉。本文介绍 Route Handle"
 ---
 
 Next.js 13 的 Route Handlers 取代了 Pages Router 中的 API Routes，基于 Web 标准的 Request/Response API。如果你之前用过 Express 或 Cloudflare Workers，会发现这套 API 非常熟悉。本文介绍 Route Handlers 的实际用法和最佳实践。

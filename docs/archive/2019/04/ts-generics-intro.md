@@ -3,6 +3,8 @@ title: "TypeScript 泛型入门与实践"
 date: 2019-04-18 10:16:18
 tags:
   - TypeScript
+readingTime: 2
+description: "关于TypeScript 泛型入门与实践，网上有不少文章但大多缺乏实战经验。本文结合真实项目，探讨最佳实践。"
 ---
 
 关于TypeScript 泛型入门与实践，网上有不少文章但大多缺乏实战经验。本文结合真实项目，探讨最佳实践。

@@ -3,6 +3,8 @@ title: "React Native 新架构全面落地"
 date: 2023-08-18 11:47:09
 tags:
   - React
+readingTime: 2
+description: "最近在团队中落地React Native 新架构全面落地，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地React Native 新架构全面落地，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

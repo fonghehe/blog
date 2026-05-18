@@ -3,6 +3,8 @@ title: "tRPC：全栈 TypeScript 类型安全的终极方案"
 date: 2023-03-05 10:05:05
 tags:
   - 前端
+readingTime: 2
+description: "用了 tRPC 半年，说说它到底解决了什么问题。"
 ---
 
 用了 tRPC 半年，说说它到底解决了什么问题。

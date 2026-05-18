@@ -3,6 +3,8 @@ title: "Node.js 26 LTS 新特性"
 date: 2026-02-20 10:00:00
 tags:
   - Node.js
+readingTime: 2
+description: "Node.js 26 LTS 新特性在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Node.js 26 LTS 新特性在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

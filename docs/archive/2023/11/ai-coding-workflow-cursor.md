@@ -3,6 +3,8 @@ title: "AI 编码工作流升级：从 Copilot 到 Cursor"
 date: 2023-11-08 15:28:08
 tags:
   - 前端
+readingTime: 2
+description: "上半年写了 Copilot 半年使用报告。下半年的变化更大——Cursor 出现了，AI 编码从\"补全工具\"变成了\"编码伙伴\"。"
 ---
 
 上半年写了 Copilot 半年使用报告。下半年的变化更大——Cursor 出现了，AI 编码从"补全工具"变成了"编码伙伴"。

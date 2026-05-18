@@ -3,6 +3,8 @@ title: "Islands Architecture 岛屿架构"
 date: 2022-06-03 14:50:21
 tags:
   - 前端
+readingTime: 2
+description: "在日常开发中，Islands Architecture 岛屿架构的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Islands Architecture 岛屿架构的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

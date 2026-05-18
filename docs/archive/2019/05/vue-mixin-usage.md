@@ -3,6 +3,8 @@ title: "Vue 2 Mixin 使用与陷阱"
 date: 2019-05-07 17:00:41
 tags:
   - Vue
+readingTime: 1
+description: "很多同学在Vue 2 Mixin 使用与陷阱上存在理解偏差，本文系统地梳理核心要点和常见误区。"
 ---
 
 很多同学在Vue 2 Mixin 使用与陷阱上存在理解偏差，本文系统地梳理核心要点和常见误区。

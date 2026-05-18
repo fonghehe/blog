@@ -3,6 +3,8 @@ title: "View Transitions CSS 页面转场"
 date: 2023-03-24 10:22:43
 tags:
   - CSS
+readingTime: 1
+description: "View Transitions CSS 页面转场这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 View Transitions CSS 页面转场这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

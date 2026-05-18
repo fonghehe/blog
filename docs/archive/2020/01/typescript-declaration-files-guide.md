@@ -3,6 +3,8 @@ title: "TypeScript 4.0 新特性与声明文件最佳实践"
 date: 2020-01-13 16:15:38
 tags:
   - TypeScript
+readingTime: 3
+description: "TypeScript 4.0 在去年 8 月发布了，团队从 3.7 升级到 4.0 几乎没有 breaking changes。这周整理了升级过程中发现的实用特性，以及我们维护声明文件的经验。"
 ---
 
 TypeScript 4.0 在去年 8 月发布了，团队从 3.7 升级到 4.0 几乎没有 breaking changes。这周整理了升级过程中发现的实用特性，以及我们维护声明文件的经验。

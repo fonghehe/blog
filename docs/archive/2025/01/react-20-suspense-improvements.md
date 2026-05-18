@@ -3,6 +3,8 @@ title: "React 20 Suspense 改进"
 date: 2025-01-16 10:00:00
 tags:
   - React
+readingTime: 3
+description: "React 20 的 Suspense 经历了自 18 以来最大的一次迭代。新增的 SuspenseList 组件、流式 SSR 改进、以及与 Actions 的深度集成，让 Suspense 从「加载态占位」进化为「数据获取编排」。"
 ---
 
 React 20 的 Suspense 经历了自 18 以来最大的一次迭代。新增的 SuspenseList 组件、流式 SSR 改进、以及与 Actions 的深度集成，让 Suspense 从「加载态占位」进化为「数据获取编排」。

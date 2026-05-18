@@ -3,6 +3,8 @@ title: "Turborepo 初探：高性能 Monorepo 构建"
 date: 2021-11-08 15:28:08
 tags:
   - 前端工程化
+readingTime: 2
+description: "Vercel 收购了 Turborepo 并开源，这是一个用 Go 写的高性能 Monorepo 构建工具。试用了一周，和 Lerna / pnpm workspace 对比了一下。"
 ---
 
 Vercel 收购了 Turborepo 并开源，这是一个用 Go 写的高性能 Monorepo 构建工具。试用了一周，和 Lerna / pnpm workspace 对比了一下。
@@ -176,7 +178,8 @@ jobs:
 ## 和 Lerna 对比
 
 | 特性 | Lerna | Turborepo |
-|------|-------|-----------|
+|
+------|-------|-----------|
 | 构建编排 | 依赖 topo 排序 | 自动依赖图 + 并行 |
 | 缓存 | 无 | 本地 + 远程 |
 | 增量构建 | 无 | 自动 |

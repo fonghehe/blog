@@ -3,6 +3,8 @@ title: "Next.js 14 Partial Prerendering"
 date: 2023-10-03 14:50:22
 tags:
   - 前端
+readingTime: 2
+description: "最近在团队中落地Next.js 14 Partial Prerendering，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Next.js 14 Partial Prerendering，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

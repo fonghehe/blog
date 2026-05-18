@@ -3,6 +3,8 @@ title: "Biome v1 Rust 前端工具链"
 date: 2023-07-28 10:22:49
 tags:
   - 前端
+readingTime: 2
+description: "在日常开发中，Biome v1 Rust 前端工具链的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Biome v1 Rust 前端工具链的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

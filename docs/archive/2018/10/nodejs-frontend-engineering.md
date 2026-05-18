@@ -3,6 +3,8 @@ title: "Node.js 在前端工程化中的应用"
 date: 2018-10-13 15:20:33
 tags:
   - JavaScript
+readingTime: 1
+description: "前端项目里有很多可以用 Node.js 脚本自动化的事情：代码生成、文件处理、构建辅助等。"
 ---
 
 前端项目里有很多可以用 Node.js 脚本自动化的事情：代码生成、文件处理、构建辅助等。

@@ -3,6 +3,8 @@ title: "Vue 3 自定义指令开发"
 date: 2020-01-24 09:35:33
 tags:
   - Vue
+readingTime: 2
+description: "自定义指令在 Vue 3 中经过了重设计，生命周期钩子和 Composition API 保持了一致的命名风格。对于需要直接操作 DOM 的场景——拖拽、防抖点击、权限控制——自定义指令仍然是最干净的抽象方式。"
 ---
 
 自定义指令在 Vue 3 中经过了重设计，生命周期钩子和 Composition API 保持了一致的命名风格。对于需要直接操作 DOM 的场景——拖拽、防抖点击、权限控制——自定义指令仍然是最干净的抽象方式。
@@ -12,7 +14,8 @@ tags:
 Vue 3 将 Vue 2 的 `bind`、`inserted`、`update` 等统一为更语义化的命名：
 
 | Vue 2 | Vue 3 |
-|-------|-------|
+|
+-------|-------|
 | bind | beforeMount |
 | inserted | mounted |
 | update | updated |

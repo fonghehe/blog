@@ -3,6 +3,9 @@ title: "JavaScript 逻辑赋值运算符"
 date: 2021-09-08 15:28:23
 tags:
   - 前端
+  - JavaScript
+readingTime: 2
+description: "在日常开发中，JavaScript 逻辑赋值运算符的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，JavaScript 逻辑赋值运算符的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

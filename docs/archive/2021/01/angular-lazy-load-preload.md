@@ -5,6 +5,8 @@ tags:
   - Angular
   - Webpack
   - TypeScript
+readingTime: 2
+description: "Angular 的路由系统内置了强大的懒加载和预加载机制。合理配置可以让首屏体积减少 40-60%，同时通过预加载确保后续导航几乎无等待。"
 ---
 
 Angular 的路由系统内置了强大的懒加载和预加载机制。合理配置可以让首屏体积减少 40-60%，同时通过预加载确保后续导航几乎无等待。

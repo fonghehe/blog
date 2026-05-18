@@ -3,6 +3,9 @@ title: "Vue 3 + TypeScript 组件库重构实践"
 date: 2021-10-04 14:50:28
 tags:
   - Vue
+  - TypeScript
+readingTime: 2
+description: "年初决定把团队的 Vue 2 组件库迁移到 Vue 3 + TypeScript。这个库有 50+ 组件，200+ API，迁移过程花了近 3 个月。整理一下关键的重构策略和踩过的坑。"
 ---
 
 年初决定把团队的 Vue 2 组件库迁移到 Vue 3 + TypeScript。这个库有 50+ 组件，200+ API，迁移过程花了近 3 个月。整理一下关键的重构策略和踩过的坑。

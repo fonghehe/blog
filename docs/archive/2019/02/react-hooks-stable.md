@@ -3,6 +3,8 @@ title: "React 16.8 发布：Hooks 正式版来了"
 date: 2019-02-07 16:48:06
 tags:
   - React
+readingTime: 2
+description: "昨天 React 16.8 正式发布，Hooks 从提案变成正式 API！这是 React 近年来最重要的更新，认真写一篇。"
 ---
 
 昨天 React 16.8 正式发布，Hooks 从提案变成正式 API！这是 React 近年来最重要的更新，认真写一篇。

@@ -3,6 +3,8 @@ title: "Angular 懒加载：减少首屏包体积"
 date: 2019-04-01 10:45:14
 tags:
   - Angular
+readingTime: 1
+description: "Angular 内置的路由懒加载是优化大型应用首屏性能的关键手段。"
 ---
 
 Angular 内置的路由懒加载是优化大型应用首屏性能的关键手段。

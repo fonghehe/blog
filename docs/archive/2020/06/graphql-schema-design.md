@@ -3,6 +3,8 @@ title: "GraphQL Schema 设计最佳实践"
 date: 2020-06-16 16:36:01
 tags:
   - GraphQL
+readingTime: 2
+description: "在日常开发中，GraphQL Schema 设计最佳实践的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，GraphQL Schema 设计最佳实践的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

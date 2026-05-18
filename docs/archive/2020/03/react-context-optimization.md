@@ -3,6 +3,8 @@ title: "React Context 性能优化策略"
 date: 2020-03-20 14:47:24
 tags:
   - React
+readingTime: 2
+description: "在日常开发中，React Context 性能优化策略的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，React Context 性能优化策略的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

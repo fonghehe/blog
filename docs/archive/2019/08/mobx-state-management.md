@@ -3,6 +3,8 @@ title: "MobX 状态管理实践与 Redux 对比"
 date: 2019-08-16 14:59:05
 tags:
   - 前端
+readingTime: 4
+description: "Redux 在大型 React 项目中几乎是默认选择，但其 boilerplate 多、学习曲线陡峭的问题一直被开发者诟病。MobX 基于响应式编程范式，提供了更直观、更少样板代码的状态管理方案。本文将深入 MobX 的核心概念，并与 Redux 做详细对比，帮助你在技术选型时做出更好的决策。"
 ---
 
 Redux 在大型 React 项目中几乎是默认选择，但其 boilerplate 多、学习曲线陡峭的问题一直被开发者诟病。MobX 基于响应式编程范式，提供了更直观、更少样板代码的状态管理方案。本文将深入 MobX 的核心概念，并与 Redux 做详细对比，帮助你在技术选型时做出更好的决策。
@@ -351,7 +353,8 @@ MobX 代码量约为 Redux 的 1/3。
 ### 架构对比
 
 | 维度 | Redux | MobX |
-|------|-------|------|
+|
+------|-------|------|
 | 编程范式 | 函数式 | 面向对象/响应式 |
 | 状态结构 | 单一 Store，不可变数据 | 多个 Store，可变数据 |
 | 更新方式 | dispatch action → pure reducer | 直接修改 observable |

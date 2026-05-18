@@ -3,6 +3,8 @@ title: "TypeScript 模板字面量类型"
 date: 2021-03-25 14:31:30
 tags:
   - TypeScript
+readingTime: 2
+description: "在日常开发中，TypeScript 模板字面量类型的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，TypeScript 模板字面量类型的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

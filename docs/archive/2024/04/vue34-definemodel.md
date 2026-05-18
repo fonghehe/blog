@@ -3,6 +3,8 @@ title: "Vue 3.4：defineModel 和 v-bind 同名简写"
 date: 2024-04-12 16:06:12
 tags:
   - Vue
+readingTime: 2
+description: "Vue 3.4 发布了几个质量提升很高的特性，特别是 `defineModel` 成为正式 API（不再需要 `--defineModel` 编译标志）。"
 ---
 
 Vue 3.4 发布了几个质量提升很高的特性，特别是 `defineModel` 成为正式 API（不再需要 `--defineModel` 编译标志）。

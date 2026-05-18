@@ -3,6 +3,8 @@ title: "Nuxt.js 3 路由与数据获取新方案"
 date: 2020-02-14 10:26:37
 tags:
   - Vue
+readingTime: 2
+description: "Nuxt.js 作为 Vue 的元框架，在 SSR 生态中占据主导地位。Nuxt 3 基于 Vue 3 全面重构，引入了 Composition API 驱动的数据获取方案和新的目录约定。本文介绍 Nuxt 3 中路由系统和数据获取的核心变化。"
 ---
 
 Nuxt.js 作为 Vue 的元框架，在 SSR 生态中占据主导地位。Nuxt 3 基于 Vue 3 全面重构，引入了 Composition API 驱动的数据获取方案和新的目录约定。本文介绍 Nuxt 3 中路由系统和数据获取的核心变化。

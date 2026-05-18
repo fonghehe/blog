@@ -3,6 +3,8 @@ title: "Solid.js：React 思维，原生性能"
 date: 2022-07-12 16:06:23
 tags:
   - 前端
+readingTime: 3
+description: "Solid.js 1.0 已经发布一年了，是时候认真体验一下。它的 JSX 写法和 React 几乎一样，但没有虚拟 DOM、没有 Diff、没有 Fiber——响应式更新直接操作真实 DOM。"
 ---
 
 Solid.js 1.0 已经发布一年了，是时候认真体验一下。它的 JSX 写法和 React 几乎一样，但没有虚拟 DOM、没有 Diff、没有 Fiber——响应式更新直接操作真实 DOM。
@@ -170,7 +172,8 @@ function App() {
 ## 与 React 的对比
 
 | 特性 | React | Solid |
-|------|-------|-------|
+|
+------|-------|-------|
 | 更新粒度 | 组件 | 精确 DOM 节点 |
 | 虚拟 DOM | 有 | 没有 |
 | 组件执行 | 每次更新都重跑 | 只执行一次 |

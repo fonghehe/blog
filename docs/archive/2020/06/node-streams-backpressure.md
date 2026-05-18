@@ -3,6 +3,8 @@ title: "Node.js Streams 背压处理"
 date: 2020-06-18 14:38:01
 tags:
   - Node.js
+readingTime: 2
+description: "Node.js Streams 背压处理在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Node.js Streams 背压处理在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

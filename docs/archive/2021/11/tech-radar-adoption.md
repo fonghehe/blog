@@ -3,6 +3,9 @@ title: "技术雷达 Tech Radar 选型"
 date: 2021-11-04 10:05:27
 tags:
   - 前端
+  - 工程化
+readingTime: 2
+description: "在日常开发中，技术雷达 Tech Radar 选型的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，技术雷达 Tech Radar 选型的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

@@ -3,6 +3,8 @@ title: "Biome 前端 linter formatter"
 date: 2022-09-01 09:31:07
 tags:
   - 前端
+readingTime: 2
+description: "Biome 前端 linter formatter在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Biome 前端 linter formatter在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

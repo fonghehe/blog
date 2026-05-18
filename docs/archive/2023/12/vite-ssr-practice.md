@@ -3,6 +3,8 @@ title: "Vite SSR 实战方案"
 date: 2023-12-15 11:13:56
 tags:
   - Vite
+readingTime: 2
+description: "Vite SSR 实战方案在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Vite SSR 实战方案在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

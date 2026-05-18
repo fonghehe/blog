@@ -3,6 +3,8 @@ title: "Next.js 17 新特性展望"
 date: 2026-01-27 10:00:00
 tags:
   - React
+readingTime: 3
+description: "Next.js 17 在 2025 年底发布，带来了几个底层架构的重大变化。最核心的转变是 Turbopack 正式取代 Webpack 成为默认构建器、以及新的 PPR（Partial Prerendering）稳定版。对于大型项目来说，这些变化的影响是实质性的。"
 ---
 
 Next.js 17 在 2025 年底发布，带来了几个底层架构的重大变化。最核心的转变是 Turbopack 正式取代 Webpack 成为默认构建器、以及新的 PPR（Partial Prerendering）稳定版。对于大型项目来说，这些变化的影响是实质性的。

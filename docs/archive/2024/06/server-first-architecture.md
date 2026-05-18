@@ -3,6 +3,8 @@ title: "Server-first 前端架构演进"
 date: 2024-06-24 10:00:00
 tags:
   - 前端
+readingTime: 2
+description: "Server-first 前端架构演进在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Server-first 前端架构演进在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

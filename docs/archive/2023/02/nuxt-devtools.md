@@ -3,6 +3,8 @@ title: "Nuxt DevTools 开发调试利器"
 date: 2023-02-15 16:44:57
 tags:
   - Nuxt.js
+readingTime: 2
+description: "Nuxt DevTools 开发调试利器这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 Nuxt DevTools 开发调试利器这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

@@ -3,6 +3,8 @@ title: "React Refs 转发与使用场景"
 date: 2019-05-16 17:14:10
 tags:
   - React
+readingTime: 2
+description: "最近项目中用到了React Refs 转发与使用场景，发现比预想的要复杂。分享一下实践过程中总结的经验。"
 ---
 
 最近项目中用到了React Refs 转发与使用场景，发现比预想的要复杂。分享一下实践过程中总结的经验。

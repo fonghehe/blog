@@ -3,6 +3,8 @@ title: "Angular Material 入门：构建企业级 UI 组件库"
 date: 2018-09-01 17:34:02
 tags:
   - Angular
+readingTime: 2
+description: "Angular Material 是 Angular 官方出品的 Material Design UI 组件库，开箱即用、可访问性良好，适合快速构建企业管理系统。"
 ---
 
 Angular Material 是 Angular 官方出品的 Material Design UI 组件库，开箱即用、可访问性良好，适合快速构建企业管理系统。

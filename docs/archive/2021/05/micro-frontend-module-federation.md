@@ -3,6 +3,9 @@ title: "微前端 Module Federation 落地"
 date: 2021-05-14 16:06:34
 tags:
   - 微前端
+  - 工程化
+readingTime: 2
+description: "微前端 Module Federation 落地这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 微前端 Module Federation 落地这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

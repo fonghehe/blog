@@ -3,6 +3,8 @@ title: "TypeScript 5.2 Symbol.dispose"
 date: 2023-03-23 14:31:49
 tags:
   - TypeScript
+readingTime: 1
+description: "TypeScript 5.2 Symbol.dispose在近年来发展迅速，本文将深入分析其原理和实践方法。"
 ---
 
 TypeScript 5.2 Symbol.dispose在近年来发展迅速，本文将深入分析其原理和实践方法。

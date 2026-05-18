@@ -3,6 +3,8 @@ title: "Storybook 7.0 预览与迁移"
 date: 2022-05-30 15:09:42
 tags:
   - Storybook
+readingTime: 2
+description: "最近在团队中落地Storybook 7.0 预览与迁移，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Storybook 7.0 预览与迁移，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

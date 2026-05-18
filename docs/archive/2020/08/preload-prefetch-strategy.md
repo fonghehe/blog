@@ -3,6 +3,8 @@ title: "preload prefetch 资源加载策略"
 date: 2020-08-07 10:13:40
 tags:
   - 性能优化
+readingTime: 2
+description: "preload prefetch 资源加载策略这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 preload prefetch 资源加载策略这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

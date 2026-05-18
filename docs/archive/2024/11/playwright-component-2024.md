@@ -3,6 +3,8 @@ title: "Playwright 组件测试 2024"
 date: 2024-11-06 10:00:00
 tags:
   - 测试
+readingTime: 2
+description: "在日常开发中，Playwright 组件测试 2024的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Playwright 组件测试 2024的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

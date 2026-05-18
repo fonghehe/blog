@@ -3,6 +3,8 @@ title: "React Error Boundary 最佳实践"
 date: 2020-03-04 11:10:24
 tags:
   - React
+readingTime: 2
+description: "React Error Boundary 最佳实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 React Error Boundary 最佳实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

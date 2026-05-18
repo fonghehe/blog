@@ -3,6 +3,8 @@ title: "CSS BEM 命名规范实践"
 date: 2019-05-01 10:39:56
 tags:
   - CSS
+readingTime: 1
+description: "在团队推广CSS BEM 命名规范实践的过程中，踩了不少坑。整理出来希望对大家有所帮助。"
 ---
 
 在团队推广CSS BEM 命名规范实践的过程中，踩了不少坑。整理出来希望对大家有所帮助。

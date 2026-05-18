@@ -3,6 +3,8 @@ title: "TypeScript 装饰器元数据"
 date: 2023-03-13 11:13:48
 tags:
   - TypeScript
+readingTime: 2
+description: "最近在团队中落地TypeScript 装饰器元数据，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地TypeScript 装饰器元数据，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

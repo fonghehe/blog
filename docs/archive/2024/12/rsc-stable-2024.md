@@ -3,6 +3,8 @@ title: "React 19 Server Components 稳定"
 date: 2024-12-25 10:00:00
 tags:
   - React
+readingTime: 2
+description: "React 19 Server Components 稳定在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 React 19 Server Components 稳定在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

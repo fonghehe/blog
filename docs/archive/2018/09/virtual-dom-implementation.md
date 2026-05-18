@@ -3,6 +3,8 @@ title: "从零实现一个简单的 Virtual DOM"
 date: 2018-09-19 11:22:09
 tags:
   - 前端
+readingTime: 3
+description: "Virtual DOM 是 React 和 Vue 2 的核心概念。看了很多文章，感觉还是自己动手实现一遍才真正理解。这篇文章用几百行代码实现一个最简版本的 VDOM。"
 ---
 
 Virtual DOM 是 React 和 Vue 2 的核心概念。看了很多文章，感觉还是自己动手实现一遍才真正理解。这篇文章用几百行代码实现一个最简版本的 VDOM。

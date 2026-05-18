@@ -3,6 +3,8 @@ title: "Next.js 14 App Router：RSC 生产环境实践"
 date: 2023-10-05 10:05:03
 tags:
   - Next.js
+readingTime: 2
+description: "Next.js 14 发布了。App Router 从实验性功能变成了推荐方案。是时候认真聊聊生产环境的实践经验了。"
 ---
 
 Next.js 14 发布了。App Router 从实验性功能变成了推荐方案。是时候认真聊聊生产环境的实践经验了。

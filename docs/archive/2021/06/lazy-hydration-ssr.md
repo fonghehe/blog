@@ -3,6 +3,9 @@ title: "SSR 懒水合 Lazy Hydration 策略"
 date: 2021-06-18 16:44:42
 tags:
   - 前端
+  - 性能优化
+readingTime: 2
+description: "SSR 懒水合 Lazy Hydration 策略在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 SSR 懒水合 Lazy Hydration 策略在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

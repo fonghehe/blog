@@ -3,6 +3,9 @@ title: "Clipboard API 剪贴板高级用法"
 date: 2021-12-03 14:50:35
 tags:
   - 前端
+  - JavaScript
+readingTime: 2
+description: "Clipboard API 剪贴板高级用法这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 Clipboard API 剪贴板高级用法这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

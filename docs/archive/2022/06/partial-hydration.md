@@ -3,6 +3,8 @@ title: "Partial Hydration 部分水合策略"
 date: 2022-06-08 10:39:35
 tags:
   - 前端
+readingTime: 2
+description: "最近在团队中落地Partial Hydration 部分水合策略，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Partial Hydration 部分水合策略，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

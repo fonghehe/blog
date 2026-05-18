@@ -3,6 +3,8 @@ title: "Vue Router 4 迁移实战：从 v3 到 v4"
 date: 2021-05-03 09:31:43
 tags:
   - Vue
+readingTime: 2
+description: "Vue 3 生态在 2021 年逐步成熟，Vue Router 4 也随之进入稳定期。年初我主导了一个中型后台管理系统的 Vue Router 3 → 4 迁移，踩了不少坑，总结一下核心变化和迁移策略。"
 ---
 
 Vue 3 生态在 2021 年逐步成熟，Vue Router 4 也随之进入稳定期。年初我主导了一个中型后台管理系统的 Vue Router 3 → 4 迁移，踩了不少坑，总结一下核心变化和迁移策略。

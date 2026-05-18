@@ -3,6 +3,8 @@ title: "Biome：Rust 时代的 Linter 和 Formatter"
 date: 2023-08-08 10:39:00
 tags:
   - ESLint
+readingTime: 2
+description: "Biome（原 Rome 项目重生）发布了。用 Rust 重写的 Linter + Formatter，对标 ESLint + Prettier。实测后说说值不值得换。"
 ---
 
 Biome（原 Rome 项目重生）发布了。用 Rust 重写的 Linter + Formatter，对标 ESLint + Prettier。实测后说说值不值得换。

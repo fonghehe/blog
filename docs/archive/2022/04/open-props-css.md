@@ -3,6 +3,8 @@ title: "Open Props CSS 设计令牌"
 date: 2022-04-13 11:13:21
 tags:
   - CSS
+readingTime: 2
+description: "Open Props CSS 设计令牌这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 Open Props CSS 设计令牌这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

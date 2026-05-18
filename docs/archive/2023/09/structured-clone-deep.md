@@ -3,6 +3,8 @@ title: "structuredClone 深拷贝实践"
 date: 2023-09-27 14:31:43
 tags:
   - 前端
+readingTime: 2
+description: "在日常开发中，structuredClone 深拷贝实践的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，structuredClone 深拷贝实践的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

@@ -3,6 +3,8 @@ title: "TypeScript 6.0 新特性展望"
 date: 2025-03-03 10:00:00
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 6.0 新特性展望在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 TypeScript 6.0 新特性展望在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

@@ -4,6 +4,8 @@ date: 2019-11-15 16:18:45
 tags:
   - Webpack
   - 工程化
+readingTime: 2
+description: "Webpack 5 Beta 版已经可以试用，最受关注的是 Module Federation（模块联邦）。这个特性可能会改变微前端的做法。"
 ---
 
 Webpack 5 Beta 版已经可以试用，最受关注的是 Module Federation（模块联邦）。这个特性可能会改变微前端的做法。
@@ -105,7 +107,8 @@ function App() {
 ## Module Federation vs 传统微前端
 
 |            | single-spa           | Module Federation   |
-| ---------- | -------------------- | ------------------- |
+| 
+---------- | -------------------- | ------------------- |
 | 粒度       | 应用级别             | 组件/模块级别       |
 | 共享依赖   | 手动（systemjs map） | 自动（shared 配置） |
 | 运行时     | 需要主应用调度       | 按需加载            |

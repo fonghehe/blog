@@ -3,6 +3,8 @@ title: "Web Components 实践：自定义元素"
 date: 2019-04-20 10:14:16
 tags:
   - TypeScript
+readingTime: 2
+description: "Web Components 已经是 W3C 标准了，Chrome、Firefox 都支持。不依赖任何框架，原生浏览器实现组件化。"
 ---
 
 Web Components 已经是 W3C 标准了，Chrome、Firefox 都支持。不依赖任何框架，原生浏览器实现组件化。

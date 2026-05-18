@@ -3,6 +3,8 @@ title: "CSS Grid 布局实战"
 date: 2018-04-19 10:12:47
 tags:
   - CSS
+readingTime: 1
+description: "一月份写过 CSS Grid 的基础，这次结合实际项目场景，看看 Grid 怎么解决 Flex 不好解决的问题。"
 ---
 
 一月份写过 CSS Grid 的基础，这次结合实际项目场景，看看 Grid 怎么解决 Flex 不好解决的问题。

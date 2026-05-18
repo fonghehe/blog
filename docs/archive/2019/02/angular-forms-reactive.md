@@ -3,6 +3,8 @@ title: "Angular 响应式表单完全指南"
 date: 2019-02-24 10:12:24
 tags:
   - Angular
+readingTime: 1
+description: "Angular 提供模板驱动和响应式两种表单方案，响应式表单更适合复杂业务场景。"
 ---
 
 Angular 提供模板驱动和响应式两种表单方案，响应式表单更适合复杂业务场景。

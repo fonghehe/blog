@@ -3,6 +3,8 @@ title: "Angular 15 独立 API 迁移：从 NgModule 到 Standalone 完整指南"
 date: 2022-12-02 14:50:34
 tags:
   - Angular
+readingTime: 2
+description: "Angular 15 让 Standalone APIs 正式稳定后，很多团队开始考虑迁移现有项目。Angular 提供了自动化迁移工具，但了解迁移的每个步骤和潜在问题仍然必要。这篇文章梳理完整的迁移路径。"
 ---
 
 Angular 15 让 Standalone APIs 正式稳定后，很多团队开始考虑迁移现有项目。Angular 提供了自动化迁移工具，但了解迁移的每个步骤和潜在问题仍然必要。这篇文章梳理完整的迁移路径。

@@ -3,6 +3,8 @@ title: "Angular 13 动态组件 API 简化：告别 ComponentFactoryResolver"
 date: 2022-01-02 14:50:06
 tags:
   - Angular
+readingTime: 2
+description: "Angular 13 最低调但最实用的变化之一，是彻底简化了动态创建组件的 API。以前需要三个步骤才能动态渲染组件，现在一行代码就够了。这篇文章通过几个实际场景展示新 API 的用法。"
 ---
 
 Angular 13 最低调但最实用的变化之一，是彻底简化了动态创建组件的 API。以前需要三个步骤才能动态渲染组件，现在一行代码就够了。这篇文章通过几个实际场景展示新 API 的用法。

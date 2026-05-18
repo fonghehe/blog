@@ -3,6 +3,8 @@ title: "CSS Anchor Positioning 初探"
 date: 2022-10-17 16:44:19
 tags:
   - CSS
+readingTime: 2
+description: "关于CSS Anchor Positioning 初探，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于CSS Anchor Positioning 初探，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

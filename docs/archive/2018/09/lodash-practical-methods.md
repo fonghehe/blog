@@ -3,6 +3,8 @@ title: "Lodash 常用方法整理"
 date: 2018-09-28 15:30:34
 tags:
   - JavaScript
+readingTime: 1
+description: "Lodash 是前端项目里最常用的工具库之一，但很多人只用了一小部分。整理一下工作中最实用的方法。"
 ---
 
 Lodash 是前端项目里最常用的工具库之一，但很多人只用了一小部分。整理一下工作中最实用的方法。

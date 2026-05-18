@@ -3,6 +3,8 @@ title: "CSS aspect-ratio 兼容方案"
 date: 2020-12-22 10:21:47
 tags:
   - CSS
+readingTime: 2
+description: "关于CSS aspect-ratio 兼容方案，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于CSS aspect-ratio 兼容方案，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

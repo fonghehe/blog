@@ -3,6 +3,8 @@ title: "TypeScript 接口与类型别名"
 date: 2020-08-26 09:54:29
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 接口与类型别名是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。"
 ---
 
 TypeScript 接口与类型别名是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。

@@ -3,6 +3,8 @@ title: "Vite 5：迈向更纯粹的 ESM 未来"
 date: 2023-08-25 14:31:25
 tags:
   - Vite
+readingTime: 2
+description: "Vite 5 进入 beta 阶段了。这次更新的核心主题是\"清理技术债务\"和\"拥抱现代标准\"。"
 ---
 
 Vite 5 进入 beta 阶段了。这次更新的核心主题是"清理技术债务"和"拥抱现代标准"。

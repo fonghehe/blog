@@ -3,6 +3,8 @@ title: "JavaScript Proxy Reflect 元编程"
 date: 2020-10-27 15:50:08
 tags:
   - JavaScript
+readingTime: 2
+description: "JavaScript Proxy Reflect 元编程在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 JavaScript Proxy Reflect 元编程在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

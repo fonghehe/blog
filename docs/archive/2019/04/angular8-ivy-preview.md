@@ -3,6 +3,8 @@ title: "Angular 8 RC 预览：Ivy 编译器与惰性加载新语法"
 date: 2019-04-11 16:09:56
 tags:
   - Angular
+readingTime: 2
+description: "Angular 8 第一个 RC 版本已发布，带来了两个备受期待的特性：可选的 Ivy 编译器预览和 `import()` 想式加载语法。"
 ---
 
 Angular 8 第一个 RC 版本已发布，带来了两个备受期待的特性：可选的 Ivy 编译器预览和 `import()` 想式加载语法。

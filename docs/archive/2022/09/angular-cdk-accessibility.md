@@ -3,6 +3,8 @@ title: "Angular CDK A11y：打造无障碍可访问的组件"
 date: 2022-09-28 10:22:48
 tags:
   - Angular
+readingTime: 2
+description: "无障碍访问（Accessibility，a11y）是很多前端团队长期欠债的领域。Angular CDK 提供了一套完善的 A11y 工具，包括焦点管理、键盘导航、屏幕阅读器支持等。这篇文章介绍 CDK A11y 模块的核心 API。"
 ---
 
 无障碍访问（Accessibility，a11y）是很多前端团队长期欠债的领域。Angular CDK 提供了一套完善的 A11y 工具，包括焦点管理、键盘导航、屏幕阅读器支持等。这篇文章介绍 CDK A11y 模块的核心 API。

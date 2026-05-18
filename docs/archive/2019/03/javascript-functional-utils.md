@@ -3,6 +3,8 @@ title: "JavaScript 函数式工具函数：compose、curry 与 pipe"
 date: 2019-03-20 14:49:34
 tags:
   - JavaScript
+readingTime: 1
+description: "函数式编程的核心工具函数在实际项目中并不远。Redux middleware、Lodash/fp、RxJS 操作符背后都是这些思想。手写实现能帮你完全吹散它们。"
 ---
 
 函数式编程的核心工具函数在实际项目中并不远。Redux middleware、Lodash/fp、RxJS 操作符背后都是这些思想。手写实现能帮你完全吹散它们。

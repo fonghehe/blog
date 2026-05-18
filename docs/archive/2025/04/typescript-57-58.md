@@ -3,6 +3,8 @@ title: "TypeScript 5.7-5.8：类型系统的持续进化"
 date: 2025-04-20 10:00:00
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 5.7 和 5.8 相继发布，带来了一些实用的新特性。来整理一下对日常开发有影响的变化。"
 ---
 
 TypeScript 5.7 和 5.8 相继发布，带来了一些实用的新特性。来整理一下对日常开发有影响的变化。

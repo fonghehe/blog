@@ -3,6 +3,8 @@ title: "Angular 路由守卫：权限控制最佳实践"
 date: 2019-03-13 15:35:38
 tags:
   - Angular
+readingTime: 1
+description: "Angular Router 提供多种守卫接口，可以精细控制路由访问权限。"
 ---
 
 Angular Router 提供多种守卫接口，可以精细控制路由访问权限。

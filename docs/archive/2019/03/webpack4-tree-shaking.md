@@ -4,6 +4,8 @@ date: 2019-03-21 09:49:12
 tags:
   - Webpack
   - 工程化
+readingTime: 1
+description: "在团队推广Webpack 4 Tree Shaking 深入的过程中，踩了不少坑。整理出来希望对大家有所帮助。"
 ---
 
 在团队推广Webpack 4 Tree Shaking 深入的过程中，踩了不少坑。整理出来希望对大家有所帮助。

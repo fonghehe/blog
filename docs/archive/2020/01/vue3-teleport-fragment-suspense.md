@@ -3,6 +3,8 @@ title: "Vue 3 Teleport、Fragment、Suspense 新特性"
 date: 2020-01-10 15:48:35
 tags:
   - Vue
+readingTime: 2
+description: "Vue 3 引入了三个实用的内置组件：Teleport 将子节点渲染到 DOM 树的任意位置，Fragment 支持多根节点模板，Suspense 处理异步组件的加载态。这三个特性解决了 Vue 2 中长期存在的痛点。"
 ---
 
 Vue 3 引入了三个实用的内置组件：Teleport 将子节点渲染到 DOM 树的任意位置，Fragment 支持多根节点模板，Suspense 处理异步组件的加载态。这三个特性解决了 Vue 2 中长期存在的痛点。

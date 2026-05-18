@@ -3,6 +3,8 @@ title: "Document Picture-in-Picture API"
 date: 2023-07-04 14:50:46
 tags:
   - 前端
+readingTime: 2
+description: "Document Picture-in-Picture API在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Document Picture-in-Picture API在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

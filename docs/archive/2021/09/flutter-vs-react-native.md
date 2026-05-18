@@ -3,6 +3,9 @@ title: "Flutter vs React Native 2021 对比"
 date: 2021-09-01 09:31:27
 tags:
   - React
+  - JavaScript
+readingTime: 2
+description: "最近在团队中落地Flutter vs React Native 2021 对比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Flutter vs React Native 2021 对比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

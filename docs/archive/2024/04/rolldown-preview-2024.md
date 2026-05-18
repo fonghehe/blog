@@ -3,6 +3,8 @@ title: "Rolldown 稳定版 Rust 构建"
 date: 2024-04-10 10:39:55
 tags:
   - 前端
+readingTime: 2
+description: "关于Rolldown 稳定版 Rust 构建，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于Rolldown 稳定版 Rust 构建，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

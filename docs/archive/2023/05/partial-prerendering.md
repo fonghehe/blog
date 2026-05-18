@@ -3,6 +3,8 @@ title: "Partial Prerendering 部分预渲染"
 date: 2023-05-19 17:22:21
 tags:
   - 前端
+readingTime: 2
+description: "最近在团队中落地Partial Prerendering 部分预渲染，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Partial Prerendering 部分预渲染，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

@@ -3,6 +3,8 @@ title: "Angular Router 进阶：懒加载、路由守卫与模块化设计"
 date: 2022-03-02 14:50:11
 tags:
   - Angular
+readingTime: 2
+description: "Angular Router 是 Angular 生态中最成熟的路由方案之一。这篇文章深入讲解懒加载配置、路由守卫的各种形式以及大型应用的路由组织模式，适合已经熟悉基础 Angular 路由的开发者。"
 ---
 
 Angular Router 是 Angular 生态中最成熟的路由方案之一。这篇文章深入讲解懒加载配置、路由守卫的各种形式以及大型应用的路由组织模式，适合已经熟悉基础 Angular 路由的开发者。

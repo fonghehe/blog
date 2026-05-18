@@ -3,6 +3,8 @@ title: "ESLint + Prettier 统一团队代码规范"
 date: 2020-01-21 17:09:50
 tags:
   - 工程化
+readingTime: 2
+description: "新项目代码风格五花八门，PR review 光讨论格式就浪费大量时间。花了一天把 ESLint + Prettier + Git Hooks 全套配好，团队效率直接提升。"
 ---
 
 新项目代码风格五花八门，PR review 光讨论格式就浪费大量时间。花了一天把 ESLint + Prettier + Git Hooks 全套配好，团队效率直接提升。

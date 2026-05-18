@@ -3,6 +3,8 @@ title: "JavaScript 模块化演进史"
 date: 2019-12-24 14:43:16
 tags:
   - JavaScript
+readingTime: 1
+description: "JavaScript 模块化演进史是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。"
 ---
 
 JavaScript 模块化演进史是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。

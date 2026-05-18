@@ -3,6 +3,8 @@ title: "Redux Toolkit 2.0 迁移指南"
 date: 2022-04-28 15:09:24
 tags:
   - 前端
+readingTime: 2
+description: "Redux Toolkit 2.0 迁移指南在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Redux Toolkit 2.0 迁移指南在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

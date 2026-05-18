@@ -3,6 +3,9 @@ title: "Vite SSR 实践"
 date: 2021-08-09 15:28:34
 tags:
   - Vite
+  - Vue
+readingTime: 2
+description: "最近把一个内部运营平台从 CSR 迁移到了 Vite SSR，记录一下踩坑和经验。Vite 2.x 的 SSR 支持已经比较成熟了，但文档偏少，实际用起来还是有一些要注意的。"
 ---
 
 最近把一个内部运营平台从 CSR 迁移到了 Vite SSR，记录一下踩坑和经验。Vite 2.x 的 SSR 支持已经比较成熟了，但文档偏少，实际用起来还是有一些要注意的。
@@ -242,7 +245,8 @@ export function useAsyncData<T>(key: string, fetcher: () => Promise<T>) {
 ## 性能对比
 
 | 指标 | CSR | SSR |
-|------|-----|-----|
+|
+------|-----|-----|
 | 首字节时间 | ~200ms | ~50ms |
 | 首屏可见 | ~1.5s | ~0.3s |
 | 可交互时间 | ~2s | ~1s |

@@ -4,6 +4,8 @@ date: 2020-04-23 11:28:49
 tags:
   - Webpack
   - 工程化
+readingTime: 2
+description: "在日常开发中，Webpack 5 Module Federation 深入的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Webpack 5 Module Federation 深入的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

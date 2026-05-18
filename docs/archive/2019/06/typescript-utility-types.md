@@ -3,6 +3,8 @@ title: "TypeScript 实用工具类型深入"
 date: 2019-06-08 09:40:54
 tags:
   - TypeScript
+readingTime: 1
+description: "用 TypeScript 一年多，工具类型（Utility Types）是用得最多的高级特性。整理一下常用的和自定义工具类型。"
 ---
 
 用 TypeScript 一年多，工具类型（Utility Types）是用得最多的高级特性。整理一下常用的和自定义工具类型。

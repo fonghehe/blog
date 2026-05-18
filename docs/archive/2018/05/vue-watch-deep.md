@@ -3,6 +3,8 @@ title: "Vue 深度监听和监听数组"
 date: 2018-05-01 09:32:57
 tags:
   - Vue
+readingTime: 1
+description: "Vue 的响应式系统对对象属性和数组有一些特殊限制，搞清楚这些才能正确用 `watch`。"
 ---
 
 Vue 的响应式系统对对象属性和数组有一些特殊限制，搞清楚这些才能正确用 `watch`。

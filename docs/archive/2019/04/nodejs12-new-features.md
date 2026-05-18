@@ -3,6 +3,8 @@ title: "Node.js 12 新特性总结"
 date: 2019-04-25 10:54:22
 tags:
   - Node.js
+readingTime: 1
+description: "Node.js 12 上周发布（LTS 版本 10 月才锁定），带来了不少好东西。"
 ---
 
 Node.js 12 上周发布（LTS 版本 10 月才锁定），带来了不少好东西。

@@ -3,6 +3,8 @@ title: "Vue 3 Alpha 版本初探 Proxy 响应式"
 date: 2019-08-14 16:33:13
 tags:
   - Vue
+readingTime: 3
+description: "2019 年 Vue 团队发布了 Vue 3 的 Alpha 版本，其中最大的变化之一就是响应式系统从 `Object.defineProperty` 切换到了 ES6 的 `Proxy`。本文将从源码和实践两个角度，对比 Vue 2 和 Vue 3 在响应式实现上的差异，带你提前感受 Vue 3 的新特性。"
 ---
 
 2019 年 Vue 团队发布了 Vue 3 的 Alpha 版本，其中最大的变化之一就是响应式系统从 `Object.defineProperty` 切换到了 ES6 的 `Proxy`。本文将从源码和实践两个角度，对比 Vue 2 和 Vue 3 在响应式实现上的差异，带你提前感受 Vue 3 的新特性。
@@ -225,7 +227,8 @@ count.value++;  // ref 需要通过 .value 访问
 ## Proxy vs defineProperty 对比
 
 | 特性 | defineProperty | Proxy |
-|------|---------------|-------|
+|
+------|---------------|-------|
 | 属性添加/删除 | 无法检测 | 自动检测 |
 | 数组索引修改 | 无法检测 | 自动检测 |
 | 深层嵌套 | 初始化时全部递归 | 惰性代理，按需处理 |

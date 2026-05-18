@@ -3,6 +3,8 @@ title: "pnpm Workspace：告别 node_modules 地狱的 Monorepo 方案"
 date: 2022-01-10 11:13:23
 tags:
   - 前端工程化
+readingTime: 2
+description: "团队把多个前端项目迁移到 pnpm workspace 已经半年了。磁盘占用降了 60%，安装速度提升明显，幽灵依赖问题彻底解决。这篇文章记录我们的实践过程。"
 ---
 
 团队把多个前端项目迁移到 pnpm workspace 已经半年了。磁盘占用降了 60%，安装速度提升明显，幽灵依赖问题彻底解决。这篇文章记录我们的实践过程。

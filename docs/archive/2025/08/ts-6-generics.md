@@ -3,6 +3,8 @@ title: "TypeScript 6.0 泛型改进"
 date: 2025-08-04 10:00:00
 tags:
   - TypeScript
+readingTime: 2
+description: "最近在团队中落地TypeScript 6.0 泛型改进，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地TypeScript 6.0 泛型改进，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

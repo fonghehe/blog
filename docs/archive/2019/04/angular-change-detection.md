@@ -3,6 +3,8 @@ title: "Angular 变更检测：OnPush 策略优化性能"
 date: 2019-04-16 10:45:08
 tags:
   - Angular
+readingTime: 1
+description: "Angular 默认的变更检测会检查所有组件，OnPush 策略能大幅减少不必要的检查。"
 ---
 
 Angular 默认的变更检测会检查所有组件，OnPush 策略能大幅减少不必要的检查。

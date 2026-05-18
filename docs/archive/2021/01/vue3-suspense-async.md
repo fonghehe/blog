@@ -5,6 +5,8 @@ tags:
   - Vue
   - React
   - JavaScript
+readingTime: 1
+description: "最近在团队中落地Vue 3 Suspense 异步组件加载，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Vue 3 Suspense 异步组件加载，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

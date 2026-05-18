@@ -3,6 +3,8 @@ title: "Vuex 4 在 Vue 3 项目中的实践"
 date: 2021-04-26 14:31:03
 tags:
   - Vue
+readingTime: 2
+description: "Vue 3 正式发布后，Vuex 4 作为其配套状态管理方案也进入了稳定期。在将一个中型后台管理系统从 Vue 2 + Vuex 3 迁移到 Vue 3 + Vuex 4 的过程中，总结了一些实践经验和注意事项。"
 ---
 
 Vue 3 正式发布后，Vuex 4 作为其配套状态管理方案也进入了稳定期。在将一个中型后台管理系统从 Vue 2 + Vuex 3 迁移到 Vue 3 + Vuex 4 的过程中，总结了一些实践经验和注意事项。

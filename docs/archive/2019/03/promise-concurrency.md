@@ -3,6 +3,8 @@ title: "JavaScript Promise 并发控制"
 date: 2019-03-15 10:51:12
 tags:
   - JavaScript
+readingTime: 2
+description: "JavaScript Promise 并发控制是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。"
 ---
 
 JavaScript Promise 并发控制是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。

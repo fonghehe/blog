@@ -3,6 +3,8 @@ title: "CSS Scroll Snap 滚动吸附效果"
 date: 2019-08-19 10:44:46
 tags:
   - CSS
+readingTime: 4
+description: "图片轮播、全屏滚动页面、横向滚动卡片——这些常见的交互效果过去往往需要依赖 JavaScript 库实现。CSS Scroll Snap 属性让我们可以用纯 CSS 实现滚动吸附效果，性能更好、代码更简洁。2019 年，Scroll Snap 已经获得了主流浏览器的广泛支持。本文将系统讲解 Scroll Snap 的用"
 ---
 
 图片轮播、全屏滚动页面、横向滚动卡片——这些常见的交互效果过去往往需要依赖 JavaScript 库实现。CSS Scroll Snap 属性让我们可以用纯 CSS 实现滚动吸附效果，性能更好、代码更简洁。2019 年，Scroll Snap 已经获得了主流浏览器的广泛支持。本文将系统讲解 Scroll Snap 的用法和实战案例。

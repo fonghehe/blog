@@ -3,6 +3,8 @@ title: "JavaScript Symbol 使用场景"
 date: 2018-08-28 15:30:12
 tags:
   - JavaScript
+readingTime: 2
+description: "Symbol 是 ES6 新增的基本类型，但很多人不知道什么时候用。来看几个实际场景。"
 ---
 
 Symbol 是 ES6 新增的基本类型，但很多人不知道什么时候用。来看几个实际场景。

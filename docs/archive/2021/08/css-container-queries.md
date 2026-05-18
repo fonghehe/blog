@@ -3,6 +3,8 @@ title: "CSS Container Queries 浏览器支持在即"
 date: 2021-08-23 09:48:53
 tags:
   - CSS
+readingTime: 2
+description: "关注 CSS 规范的同学可能已经注意到了，Container Queries 已经进入 Chrome Canary 实验阶段。这个特性等了好几年，终于要来了。"
 ---
 
 关注 CSS 规范的同学可能已经注意到了，Container Queries 已经进入 Chrome Canary 实验阶段。这个特性等了好几年，终于要来了。

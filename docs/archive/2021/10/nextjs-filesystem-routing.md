@@ -3,6 +3,9 @@ title: "Next.js 12 新特性解析"
 date: 2021-10-18 16:44:59
 tags:
   - Next.js
+  - JavaScript
+readingTime: 2
+description: "Vercel 在 2021 年 10 月发布了 Next.js 12，这是近年来最大的一次版本更新。Rust 编译器、Middleware、React 18 支持，每个特性都很重磅。"
 ---
 
 Vercel 在 2021 年 10 月发布了 Next.js 12，这是近年来最大的一次版本更新。Rust 编译器、Middleware、React 18 支持，每个特性都很重磅。

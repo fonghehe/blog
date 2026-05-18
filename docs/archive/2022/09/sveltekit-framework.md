@@ -3,6 +3,8 @@ title: "SvelteKit：Svelte 的全栈框架"
 date: 2022-09-06 15:28:09
 tags:
   - Svelte
+readingTime: 2
+description: "Svelte 本身已经很出色了——编译时框架、零运行时开销、简洁的语法。SvelteKit 给了 Svelte 一个类似 Next.js 的全栈框架：文件路由、SSR/SSG、API routes。是时候体验一下了。"
 ---
 
 Svelte 本身已经很出色了——编译时框架、零运行时开销、简洁的语法。SvelteKit 给了 Svelte 一个类似 Next.js 的全栈框架：文件路由、SSR/SSG、API routes。是时候体验一下了。
@@ -217,7 +219,8 @@ Svelte 的响应式是编译时的：
 ## 编译产物对比
 
 | 框架 | Hello World 体积 | 运行时 |
-|------|------------------|--------|
+|
+------|------------------|--------|
 | React 18 | 42KB | 有虚拟 DOM |
 | Vue 3 | 33KB | 有响应式运行时 |
 | Svelte | 2KB | 零运行时 |

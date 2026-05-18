@@ -3,6 +3,9 @@ title: "Angular Universal 服务端渲染：SEO 与首屏优化完整指南"
 date: 2021-08-20 17:22:10
 tags:
   - Angular
+  - TypeScript
+readingTime: 2
+description: "Angular Universal 让 Angular 应用可以在服务端预渲染 HTML，解决两个核心问题：SEO（搜索引擎抓取 SPA 困难）和首屏性能（FCP 指标优化）。Angular 12 的 Universal 已经相当成熟，这篇文章覆盖从集成到优化的完整流程。"
 ---
 
 Angular Universal 让 Angular 应用可以在服务端预渲染 HTML，解决两个核心问题：SEO（搜索引擎抓取 SPA 困难）和首屏性能（FCP 指标优化）。Angular 12 的 Universal 已经相当成熟，这篇文章覆盖从集成到优化的完整流程。
