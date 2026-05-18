@@ -3,6 +3,8 @@ title: "Nuxt 3 正式版完整实践指南"
 date: 2023-02-01 09:31:40
 tags:
   - Nuxt.js
+readingTime: 3
+description: "Nuxt 3 基于 Vue 3 + Nitro 服务引擎 + Vite，提供了全栈 Vue 开发的最佳实践。相比 Nuxt 2，它在类型安全、性能、部署灵活性方面都有质的提升。本文从实际项目出发，介绍 Nuxt 3 的核心特性。"
 ---
 
 Nuxt 3 基于 Vue 3 + Nitro 服务引擎 + Vite，提供了全栈 Vue 开发的最佳实践。相比 Nuxt 2，它在类型安全、性能、部署灵活性方面都有质的提升。本文从实际项目出发，介绍 Nuxt 3 的核心特性。

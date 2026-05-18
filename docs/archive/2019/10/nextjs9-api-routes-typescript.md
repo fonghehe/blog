@@ -3,6 +3,8 @@ title: "Next.js 9 新特性：API Routes 和 TypeScript 支持"
 date: 2019-10-18 14:35:07
 tags:
   - TypeScript
+readingTime: 2
+description: "Next.js 9 在 9 月底发布，带来了两个重要特性：内置 TypeScript 支持和更完善的 API Routes。"
 ---
 
 Next.js 9 在 9 月底发布，带来了两个重要特性：内置 TypeScript 支持和更完善的 API Routes。
@@ -147,7 +149,8 @@ export default AboutPage
 ## 和 Nuxt.js 的对比
 
 | 特性       | Next.js 9 | Nuxt.js 2                   |
-| ---------- | --------- | --------------------------- |
+| 
+---------- | --------- | --------------------------- |
 | 框架       | React     | Vue                         |
 | TypeScript | 内置支持  | 需要配置                    |
 | API Routes | ✅ 内置   | ❌（需要 serverMiddleware） |

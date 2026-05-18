@@ -3,6 +3,8 @@ title: "CSS BEM 命名规范"
 date: 2018-09-14 14:48:41
 tags:
   - CSS
+readingTime: 1
+description: "项目做大了，CSS 命名开始混乱：`.title`、`.list-item`、`.active`……全局样式冲突越来越多。用 BEM 规范统一命名之后，问题少了很多。"
 ---
 
 项目做大了，CSS 命名开始混乱：`.title`、`.list-item`、`.active`……全局样式冲突越来越多。用 BEM 规范统一命名之后，问题少了很多。

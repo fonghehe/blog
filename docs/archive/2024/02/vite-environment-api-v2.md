@@ -3,6 +3,8 @@ title: "Vite Environment API 稳定版"
 date: 2024-02-26 14:31:29
 tags:
   - Vite
+readingTime: 2
+description: "最近在团队中落地Vite Environment API 稳定版，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Vite Environment API 稳定版，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

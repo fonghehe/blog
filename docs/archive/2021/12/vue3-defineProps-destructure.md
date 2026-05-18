@@ -3,6 +3,9 @@ title: "Vue 3.2 defineProps 解构"
 date: 2021-12-20 11:47:05
 tags:
   - Vue
+  - TypeScript
+readingTime: 2
+description: "Vue 3.2 defineProps 解构在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Vue 3.2 defineProps 解构在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

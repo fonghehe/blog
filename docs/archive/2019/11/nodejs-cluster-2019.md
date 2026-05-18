@@ -3,6 +3,8 @@ title: "Node.js Cluster 多进程"
 date: 2019-11-29 14:45:51
 tags:
   - JavaScript
+readingTime: 1
+description: "最近项目中用到了Node.js Cluster 多进程，发现比预想的要复杂。分享一下实践过程中总结的经验。"
 ---
 
 最近项目中用到了Node.js Cluster 多进程，发现比预想的要复杂。分享一下实践过程中总结的经验。

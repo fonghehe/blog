@@ -3,6 +3,8 @@ title: "JavaScript this 绑定机制"
 date: 2018-02-15 14:48:07
 tags:
   - JavaScript
+readingTime: 1
+description: "`this` 是 JS 里最容易出错的概念之一。写了一年多代码，终于搞清楚它的规则。"
 ---
 
 `this` 是 JS 里最容易出错的概念之一。写了一年多代码，终于搞清楚它的规则。

@@ -3,6 +3,8 @@ title: "Playwright 最佳实践 2023"
 date: 2023-10-26 15:09:19
 tags:
   - Playwright
+readingTime: 2
+description: "关于Playwright 最佳实践 2023，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于Playwright 最佳实践 2023，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

@@ -3,6 +3,8 @@ title: "PM2 Node.js 生产环境部署"
 date: 2020-06-22 15:28:23
 tags:
   - Node.js
+readingTime: 2
+description: "在日常开发中，PM2 Node.js 生产环境部署的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，PM2 Node.js 生产环境部署的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

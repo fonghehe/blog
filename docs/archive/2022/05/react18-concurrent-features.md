@@ -3,6 +3,8 @@ title: "React 18 并发特性实战：useTransition 与 useDeferredValue"
 date: 2022-05-10 10:39:10
 tags:
   - React
+readingTime: 3
+description: "React 18 正式版发布两个月了，并发特性不再是实验室里的概念。这篇深入两个核心 API——`useTransition` 和 `useDeferredValue`，用真实场景讲解怎么在项目中落地。"
 ---
 
 React 18 正式版发布两个月了，并发特性不再是实验室里的概念。这篇深入两个核心 API——`useTransition` 和 `useDeferredValue`，用真实场景讲解怎么在项目中落地。
@@ -171,7 +173,8 @@ function B({ data }) {
 ```
 
 | 特性 | useTransition | useDeferredValue |
-|------|--------------|-----------------|
+|
+------|--------------|-----------------|
 | 控制权 | 包裹更新逻辑 | 延迟某个值 |
 | 适用场景 | 事件处理中的状态更新 | props 或外部状态 |
 | 返回值 | [isPending, startTransition] | deferredValue |

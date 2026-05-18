@@ -3,6 +3,8 @@ title: "Edge 渲染模式：2025 年的实践总结"
 date: 2025-10-12 10:00:00
 tags:
   - 前端
+readingTime: 2
+description: "Edge 渲染已经从概念验证走向生产应用。来总结一下我们团队在 Edge 渲染方面的实践和踩坑经验。"
 ---
 
 Edge 渲染已经从概念验证走向生产应用。来总结一下我们团队在 Edge 渲染方面的实践和踩坑经验。
@@ -32,11 +34,14 @@ export function middleware(request: NextRequest) {
   const language = request.headers.get("accept-language") ?? "zh-CN";
 
   // Edge 层做 A/B 测试分流
-  const abGroup = request.cookies.get("ab-group")?.value ?? assignGroup(request);
+  const abGroup =
+    request.cookies.get("ab-group")?.value ?? assignGroup(request);
 
   // Edge 层做个性化重定向
   if (country === "JP" && !request.nextUrl.pathname.startsWith("/ja")) {
-    return NextResponse.redirect(new URL(`/ja${request.nextUrl.pathname}`, request.url));
+    return NextResponse.redirect(
+      new URL(`/ja${request.nextUrl.pathname}`, request.url),
+    );
   }
 
   // 注入请求头，传递给 Server Components
@@ -97,9 +102,12 @@ async function ProductList() {
 
 // 推荐数据：调用远程 API
 async function Recommendations() {
-  const recommendations = await fetch("https://api.example.com/recommendations", {
-    next: { revalidate: 3600 }, // 1 小时缓存
-  }).then((r) => r.json());
+  const recommendations = await fetch(
+    "https://api.example.com/recommendations",
+    {
+      next: { revalidate: 3600 }, // 1 小时缓存
+    },
+  ).then((r) => r.json());
 
   return (
     <section>
@@ -118,15 +126,15 @@ async function Recommendations() {
 
 interface CacheConfig {
   staleWhileRevalidate: number; // 后台刷新时间
-  maxAge: number;               // 缓存有效期
-  tags: string[];               // 缓存标签（用于按标签失效）
+  maxAge: number; // 缓存有效期
+  tags: string[]; // 缓存标签（用于按标签失效）
 }
 
 // 方案 1：Next.js fetch 缓存
 const products = await fetch("https://api.example.com/products", {
   next: {
-    revalidate: 60,          // 60 秒后重新验证
-    tags: ["products"],      // 可通过 revalidateTag("products") 失效
+    revalidate: 60, // 60 秒后重新验证
+    tags: ["products"], // 可通过 revalidateTag("products") 失效
   },
 });
 

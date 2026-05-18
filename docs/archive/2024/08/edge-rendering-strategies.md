@@ -3,6 +3,8 @@ title: "Edge 渲染策略选型：CDN Worker、ISR 还是 Streaming SSR"
 date: 2024-08-20 10:00:00
 tags:
   - 工程化
+readingTime: 2
+description: "Edge Computing 在前端领域越来越热。作为架构负责人，最近做了几个项目的渲染策略选型。整理一下不同场景下的决策逻辑。"
 ---
 
 Edge Computing 在前端领域越来越热。作为架构负责人，最近做了几个项目的渲染策略选型。整理一下不同场景下的决策逻辑。

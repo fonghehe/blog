@@ -3,6 +3,8 @@ title: "2022 年终盘点：前端工具链的格局之变"
 date: 2022-12-20 11:47:19
 tags:
   - 前端
+readingTime: 3
+description: "2022 年是前端工具链剧烈变化的一年。Vite 成为主流构建工具、pnnpm + Turborepo 定义了 monorepo 的标准方案、ESM 迁移进入实质阶段。这篇文章做个年终总结。"
 ---
 
 2022 年是前端工具链剧烈变化的一年。Vite 成为主流构建工具、pnnpm + Turborepo 定义了 monorepo 的标准方案、ESM 迁移进入实质阶段。这篇文章做个年终总结。
@@ -39,7 +41,8 @@ Vite 3 的发布巩固了它的地位。esbuild 做依赖预构建、原生 ESM 
 2022 年我们完成了 monorepo 的标准化：
 
 | 工具 | 职责 |
-|------|------|
+|
+------|------|
 | pnpm | 依赖管理、workspace 管理 |
 | Turborepo | 构建编排、缓存 |
 | Changesets | 版本管理、发布 |

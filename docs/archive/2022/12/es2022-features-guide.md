@@ -3,6 +3,8 @@ title: "ES2022 特性全指南：这些 API 你该用起来了"
 date: 2022-12-06 15:28:52
 tags:
   - 前端
+readingTime: 2
+description: "ES2022（ES13）已经全面落地了。TypeScript 4.7+、Node.js 18、主流浏览器全部支持。这篇文章整理了 ES2022 的核心特性，每个都附上实际应用场景。"
 ---
 
 ES2022（ES13）已经全面落地了。TypeScript 4.7+、Node.js 18、主流浏览器全部支持。这篇文章整理了 ES2022 的核心特性，每个都附上实际应用场景。

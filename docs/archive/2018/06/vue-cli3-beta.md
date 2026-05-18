@@ -3,6 +3,8 @@ title: "Vue CLI 3 Beta 初体验"
 date: 2018-06-07 10:24:17
 tags:
   - Vue
+readingTime: 2
+description: "Vue CLI 3 刚出 Beta，和之前的 CLI 2 差别很大，试用了一下记录一下感受。"
 ---
 
 Vue CLI 3 刚出 Beta，和之前的 CLI 2 差别很大，试用了一下记录一下感受。

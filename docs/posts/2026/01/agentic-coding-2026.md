@@ -3,6 +3,8 @@ title: "Agentic Coding 2026 实践"
 date: 2026-01-12 10:00:00
 tags:
   - 前端
+readingTime: 3
+description: "Agentic Coding 已经不是概念验证了。2026 年，Claude Code、Cursor Agent、GitHub Copilot Workspace 都已经是成熟产品。但真正用好 Agentic Coding 的团队不多，大多数还停留在\"用 Agent 写单个函数\"的阶段。"
 ---
 
 Agentic Coding 已经不是概念验证了。2026 年，Claude Code、Cursor Agent、GitHub Copilot Workspace 都已经是成熟产品。但真正用好 Agentic Coding 的团队不多，大多数还停留在"用 Agent 写单个函数"的阶段。

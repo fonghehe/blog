@@ -3,6 +3,8 @@ title: "Node.js 24 LTS 新特性"
 date: 2025-04-02 10:00:00
 tags:
   - Node.js
+readingTime: 2
+description: "最近在团队中落地Node.js 24 LTS 新特性，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Node.js 24 LTS 新特性，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

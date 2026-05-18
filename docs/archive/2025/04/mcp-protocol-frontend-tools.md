@@ -3,6 +3,8 @@ title: "MCP 协议：连接前端工具链的桥梁"
 date: 2025-04-05 10:00:00
 tags:
   - 前端
+readingTime: 2
+description: "MCP（Model Context Protocol）正在成为 AI 与工具之间的标准协议。来聊聊前端工程师如何利用 MCP 提升开发效率。"
 ---
 
 MCP（Model Context Protocol）正在成为 AI 与工具之间的标准协议。来聊聊前端工程师如何利用 MCP 提升开发效率。

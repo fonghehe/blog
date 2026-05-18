@@ -3,6 +3,8 @@ title: "ESLint Flat Config 新配置格式"
 date: 2022-08-29 15:09:59
 tags:
   - ESLint
+readingTime: 2
+description: "ESLint Flat Config 新配置格式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 ESLint Flat Config 新配置格式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

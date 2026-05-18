@@ -3,6 +3,8 @@ title: "Vue 3.0 正式发布：Composition API 完全上手"
 date: 2020-09-28 10:39:27
 tags:
   - Vue
+readingTime: 2
+description: "一等再等，Vue 3.0 \"One Piece\" 上周正式发布了！跟踪了将近一年的 alpha/beta，终于来了。这篇文章是系统性的上手指南。"
 ---
 
 一等再等，Vue 3.0 "One Piece" 上周正式发布了！跟踪了将近一年的 alpha/beta，终于来了。这篇文章是系统性的上手指南。

@@ -3,6 +3,8 @@ title: "Zod Schema 校验进阶"
 date: 2023-12-04 14:50:02
 tags:
   - 前端
+readingTime: 2
+description: "Zod Schema 校验进阶在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Zod Schema 校验进阶在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

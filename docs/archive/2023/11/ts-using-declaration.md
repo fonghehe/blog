@@ -3,6 +3,8 @@ title: "TypeScript 5.2 using 声明"
 date: 2023-11-02 14:50:24
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 5.2 using 声明在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 TypeScript 5.2 using 声明在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

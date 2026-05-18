@@ -3,6 +3,8 @@ title: "React Concurrent Mode 深入理解"
 date: 2019-10-21 10:55:32
 tags:
   - React
+readingTime: 4
+description: "React 在 16.3 版本引入了 Fiber 架构，为并发渲染打下了基础。Concurrent Mode 是 React 团队正在开发的一项实验性功能，它让 React 可以同时准备多个版本的 UI，从根本上改善用户体验。本文将深入探讨 Concurrent Mode 的工作原理和使用方式。"
 ---
 
 React 在 16.3 版本引入了 Fiber 架构，为并发渲染打下了基础。Concurrent Mode 是 React 团队正在开发的一项实验性功能，它让 React 可以同时准备多个版本的 UI，从根本上改善用户体验。本文将深入探讨 Concurrent Mode 的工作原理和使用方式。
@@ -276,7 +278,8 @@ function UserCard({ userId }) {
 ## 与传统模式的对比
 
 | 特性 | 传统模式 | Concurrent Mode |
-|------|---------|----------------|
+|
+------|---------|----------------|
 | 渲染方式 | 同步、不可中断 | 异步、可中断 |
 | 用户交互 | 渲染期间阻塞 | 优先响应交互 |
 | 加载状态 | 各组件自行管理 | Suspense 统一管理 |

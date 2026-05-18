@@ -3,6 +3,8 @@ title: "Vuex 模块化实践：大型项目状态管理"
 date: 2018-06-19 14:45:49
 tags:
   - Vue
+readingTime: 2
+description: "Vuex 入门容易，但项目规模大了之后，如何组织 store 是个挑战。这篇文章分享大型项目的 Vuex 模块化方案。"
 ---
 
 Vuex 入门容易，但项目规模大了之后，如何组织 store 是个挑战。这篇文章分享大型项目的 Vuex 模块化方案。

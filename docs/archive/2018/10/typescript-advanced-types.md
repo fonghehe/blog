@@ -3,6 +3,8 @@ title: "TypeScript 高级类型：条件类型与映射类型"
 date: 2018-10-16 09:34:02
 tags:
   - TypeScript
+readingTime: 2
+description: "学完基础泛型后，深入研究了一下条件类型和映射类型，发现 TypeScript 的类型系统比想象中强大得多。"
 ---
 
 学完基础泛型后，深入研究了一下条件类型和映射类型，发现 TypeScript 的类型系统比想象中强大得多。

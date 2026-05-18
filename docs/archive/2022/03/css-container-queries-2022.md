@@ -3,6 +3,8 @@ title: "CSS Container Queries 浏览器支持"
 date: 2022-03-25 10:22:32
 tags:
   - CSS
+readingTime: 1
+description: "CSS Container Queries 浏览器支持这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 CSS Container Queries 浏览器支持这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

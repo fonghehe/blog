@@ -3,6 +3,8 @@ title: "Vue 3.4 defineModel"
 date: 2023-10-12 16:06:21
 tags:
   - Vue
+readingTime: 2
+description: "关于Vue 3.4 defineModel，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于Vue 3.4 defineModel，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

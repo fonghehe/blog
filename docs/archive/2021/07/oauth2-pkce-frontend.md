@@ -3,6 +3,9 @@ title: "OAuth 2.0 PKCE 前端认证流程"
 date: 2021-07-23 14:31:30
 tags:
   - 前端
+  - JavaScript
+readingTime: 2
+description: "在日常开发中，OAuth 2.0 PKCE 前端认证流程的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，OAuth 2.0 PKCE 前端认证流程的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

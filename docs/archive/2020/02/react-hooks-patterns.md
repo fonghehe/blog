@@ -3,6 +3,8 @@ title: "React Hooks 在实际项目中的模式总结"
 date: 2020-02-27 15:48:54
 tags:
   - React
+readingTime: 2
+description: "React Hooks 发布一年多了，从最初的不适应到现在的离不开，总结一些项目中高频使用的自定义 Hook 模式。"
 ---
 
 React Hooks 发布一年多了，从最初的不适应到现在的离不开，总结一些项目中高频使用的自定义 Hook 模式。

@@ -3,6 +3,8 @@ title: "Astro 5：Content Layer 重新定义内容管理"
 date: 2025-10-28 10:00:00
 tags:
   - React
+readingTime: 2
+description: "Astro 5 发布了，最大的变化是 Content Layer API。对于内容驱动的网站来说，这是一个很有意义的升级。"
 ---
 
 Astro 5 发布了，最大的变化是 Content Layer API。对于内容驱动的网站来说，这是一个很有意义的升级。

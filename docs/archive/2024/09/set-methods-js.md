@@ -3,6 +3,8 @@ title: "JavaScript Set 新方法"
 date: 2024-09-10 10:00:00
 tags:
   - JavaScript
+readingTime: 2
+description: "JavaScript Set 新方法这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 JavaScript Set 新方法这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

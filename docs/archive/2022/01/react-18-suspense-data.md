@@ -3,6 +3,8 @@ title: "React 18 Suspense 数据获取"
 date: 2022-01-06 16:06:50
 tags:
   - React
+readingTime: 2
+description: "React 18 Suspense 数据获取这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 React 18 Suspense 数据获取这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

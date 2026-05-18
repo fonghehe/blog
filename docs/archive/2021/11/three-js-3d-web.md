@@ -3,6 +3,9 @@ title: "Three.js 3D Web 可视化入门"
 date: 2021-11-11 16:06:53
 tags:
   - 前端
+  - JavaScript
+readingTime: 2
+description: "Three.js 3D Web 可视化入门这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 Three.js 3D Web 可视化入门这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

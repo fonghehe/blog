@@ -3,6 +3,8 @@ title: "Vuex 状态管理模式实践：何时用，如何组织"
 date: 2018-01-18 16:46:58
 tags:
   - Vue
+readingTime: 3
+description: "Vuex 是 Vue 生态里的状态管理方案，类似 Redux 之于 React。但 Vuex 的学习曲线比 Redux 平缓，因为它没有那么多样板代码。这篇文章结合实际项目，讲如何合理使用 Vuex。"
 ---
 
 Vuex 是 Vue 生态里的状态管理方案，类似 Redux 之于 React。但 Vuex 的学习曲线比 Redux 平缓，因为它没有那么多样板代码。这篇文章结合实际项目，讲如何合理使用 Vuex。

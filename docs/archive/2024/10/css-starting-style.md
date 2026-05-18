@@ -3,6 +3,8 @@ title: "CSS @starting-style"
 date: 2024-10-31 10:00:00
 tags:
   - CSS
+readingTime: 1
+description: "CSS @starting-style是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。"
 ---
 
 CSS @starting-style是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。

@@ -3,6 +3,8 @@ title: "前端工程化：多环境配置管理"
 date: 2018-07-17 15:05:37
 tags:
   - 前端
+readingTime: 2
+description: "项目通常有 development、staging、production 三个环境，各有不同的 API 地址、Feature Flag 等配置。这篇文章整理多环境配置的最佳实践。"
 ---
 
 项目通常有 development、staging、production 三个环境，各有不同的 API 地址、Feature Flag 等配置。这篇文章整理多环境配置的最佳实践。

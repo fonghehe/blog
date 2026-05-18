@@ -3,6 +3,8 @@ title: "JavaScript 正则表达式实践"
 date: 2018-06-16 10:11:40
 tags:
   - JavaScript
+readingTime: 1
+description: "正则表达式一直是个\"会忘记\"的知识点，整理常用模式和实际场景。"
 ---
 
 正则表达式一直是个"会忘记"的知识点，整理常用模式和实际场景。

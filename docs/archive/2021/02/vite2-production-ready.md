@@ -8,6 +8,8 @@ tags:
   - Vite
   - TypeScript
   - JavaScript
+readingTime: 1
+description: "Vite 2.0 正式发布！和 1.0 相比几乎是重写，最重要的变化是框架无关（不再绑定 Vue）。"
 ---
 
 Vite 2.0 正式发布！和 1.0 相比几乎是重写，最重要的变化是框架无关（不再绑定 Vue）。
@@ -120,7 +122,8 @@ const img = new URL("./image.png", import.meta.url).href;
 ## 开发体验对比
 
 |            | Vue CLI (Webpack 4) | Vite 2         |
-| ---------- | ------------------- | -------------- |
+| 
+---------- | ------------------- | -------------- |
 | 冷启动     | ~60s                | ~1s            |
 | HMR        | ~2s                 | ~50ms          |
 | 生产构建   | ~80s                | ~30s（Rollup） |

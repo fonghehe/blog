@@ -3,6 +3,8 @@ title: "Vue Vapor 稳定版详解"
 date: 2025-12-04 10:00:00
 tags:
   - Vue
+readingTime: 2
+description: "Vue Vapor 稳定版详解在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Vue Vapor 稳定版详解在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

@@ -3,6 +3,9 @@ title: "CSS 架构演进：从 BEM 到 Utility-First"
 date: 2021-09-27 14:31:11
 tags:
   - 前端
+  - CSS
+readingTime: 2
+description: "今年在团队内推动了一次 CSS 架构的升级——从 BEM 命名规范逐步迁移到 Utility-First 方案。过程中有争论、有妥协，最终找到了一个平衡点。"
 ---
 
 今年在团队内推动了一次 CSS 架构的升级——从 BEM 命名规范逐步迁移到 Utility-First 方案。过程中有争论、有妥协，最终找到了一个平衡点。

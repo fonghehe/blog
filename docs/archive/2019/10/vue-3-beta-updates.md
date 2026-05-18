@@ -3,6 +3,8 @@ title: "Vue 3 Beta 更新内容跟踪"
 date: 2019-10-10 16:50:19
 tags:
   - Vue
+readingTime: 4
+description: "Vue 3 自 2018 年 VueConf 上宣布重写以来，一直在稳步推进。截至目前，Vue 3 已经进入 Beta 阶段，核心 API 趋于稳定。本文整理 Vue 3 的主要变化，帮助 Vue 2 开发者提前了解即将到来的变化。"
 ---
 
 Vue 3 自 2018 年 VueConf 上宣布重写以来，一直在稳步推进。截至目前，Vue 3 已经进入 Beta 阶段，核心 API 趋于稳定。本文整理 Vue 3 的主要变化，帮助 Vue 2 开发者提前了解即将到来的变化。

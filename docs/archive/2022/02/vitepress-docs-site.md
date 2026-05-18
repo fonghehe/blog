@@ -3,6 +3,8 @@ title: "VitePress 文档站搭建实践"
 date: 2022-02-11 11:13:59
 tags:
   - Vite
+readingTime: 2
+description: "关于VitePress 文档站搭建实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于VitePress 文档站搭建实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

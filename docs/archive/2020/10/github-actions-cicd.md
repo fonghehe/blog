@@ -3,6 +3,8 @@ title: "GitHub Actions CI/CD 前端流水线"
 date: 2020-06-09 10:54:08
 tags:
   - 工程化
+readingTime: 2
+description: "最近在团队中落地GitHub Actions CI/CD 前端流水线，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地GitHub Actions CI/CD 前端流水线，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

@@ -4,6 +4,8 @@ date: 2021-07-14 16:44:41
 tags:
   - CSS
   - TailwindCSS
+readingTime: 2
+description: "Tailwind CSS 2.x 开始流行，3.0 的 JIT（Just-in-Time）模式彻底改变了使用体验。"
 ---
 
 Tailwind CSS 2.x 开始流行，3.0 的 JIT（Just-in-Time）模式彻底改变了使用体验。

@@ -3,6 +3,8 @@ title: "Angular 8 CLI Builders：自定义构建流程与 ng-add 方案"
 date: 2019-05-04 10:06:41
 tags:
   - Angular
+readingTime: 1
+description: "Angular 8 正式开放了 **Builders API**，让社区可以为 `ng build`、`ng test`、`ng serve` 等命令提供自定义实现。这也是 `@angular-builders/custom-webpack` 、`@nrwl/workspace` 等不少优秀工具的基础。"
 ---
 
 Angular 8 正式开放了 **Builders API**，让社区可以为 `ng build`、`ng test`、`ng serve` 等命令提供自定义实现。这也是 `@angular-builders/custom-webpack` 、`@nrwl/workspace` 等不少优秀工具的基础。

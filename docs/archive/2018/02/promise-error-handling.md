@@ -3,6 +3,8 @@ title: "Promise 链与错误处理的正确姿势"
 date: 2018-02-24 10:00:11
 tags:
   - JavaScript
+readingTime: 2
+description: "Promise 大家都在用，但错误处理经常出问题。整理几个常见的坑和正确做法。"
 ---
 
 Promise 大家都在用，但错误处理经常出问题。整理几个常见的坑和正确做法。

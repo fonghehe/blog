@@ -3,6 +3,8 @@ title: "Angular 8 Ivy 渲染引擎：差异化加载与 Web Worker 支持"
 date: 2019-07-31 15:52:46
 tags:
   - Angular
+readingTime: 1
+description: "Angular 8 于 2019 年 5 月 28 日正式发布。Ivy 以 opt-in 方式进入预览，差异化加载默认开启。实际体验了一个月，来讲讲升级经验和各项功能的实际效果。"
 ---
 
 Angular 8 于 2019 年 5 月 28 日正式发布。Ivy 以 opt-in 方式进入预览，差异化加载默认开启。实际体验了一个月，来讲讲升级经验和各项功能的实际效果。

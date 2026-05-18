@@ -3,6 +3,8 @@ title: "Vue CLI 3 插件开发"
 date: 2018-12-17 16:18:19
 tags:
   - Vue
+readingTime: 1
+description: "Vue CLI 3 发布后，项目脚手架的灵活性大大提高。CLI 插件可以给项目添加功能、修改 webpack 配置。最近给团队内部工具写了一个 CLI 插件，记录一下过程。"
 ---
 
 Vue CLI 3 发布后，项目脚手架的灵活性大大提高。CLI 插件可以给项目添加功能、修改 webpack 配置。最近给团队内部工具写了一个 CLI 插件，记录一下过程。

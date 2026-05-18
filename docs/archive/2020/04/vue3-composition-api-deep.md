@@ -3,6 +3,8 @@ title: "Vue 3 Composition API 深度解析"
 date: 2019-05-08 09:40:28
 tags:
   - Vue
+readingTime: 2
+description: "Vue 3 的 Composition API 已经在 RFC 中敲定，虽然正式版还要几个月，但提前深入理解很有必要。这不是 Vue 2 的简单升级，而是组件逻辑组织方式的根本变化。"
 ---
 
 Vue 3 的 Composition API 已经在 RFC 中敲定，虽然正式版还要几个月，但提前深入理解很有必要。这不是 Vue 2 的简单升级，而是组件逻辑组织方式的根本变化。
@@ -47,7 +49,8 @@ import { ref, reactive, computed, watch, onMounted } from 'vue';
 
 export default {
   setup() {
-    // ---- 用户逻辑（集中在一起）----
+    // 
+---- 用户逻辑（集中在一起）----
     const user = ref(null);
     const userLoading = ref(false);
 

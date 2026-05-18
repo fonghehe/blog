@@ -3,6 +3,9 @@ title: "GraphQL 实时数据方案"
 date: 2021-10-26 14:31:17
 tags:
   - GraphQL
+  - TypeScript
+readingTime: 1
+description: "GraphQL 实时数据方案在近年来发展迅速，本文将深入分析其原理和实践方法。"
 ---
 
 GraphQL 实时数据方案在近年来发展迅速，本文将深入分析其原理和实践方法。

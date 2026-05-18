@@ -3,6 +3,8 @@ title: "TypeScript 4.2 新特性"
 date: 2021-03-22 17:22:02
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 4.2 在 2 月底发布，带来了一些实用的类型系统改进。挑几个对日常开发影响最大的特性说说。"
 ---
 
 TypeScript 4.2 在 2 月底发布，带来了一些实用的类型系统改进。挑几个对日常开发影响最大的特性说说。

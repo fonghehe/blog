@@ -3,6 +3,9 @@ title: "Node.js 16 LTS 开发指南"
 date: 2021-08-30 15:09:25
 tags:
   - Node.js
+  - JavaScript
+readingTime: 2
+description: "Node.js 16 在 2021 年 4 月发布，10 月进入 LTS 阶段。作为前端工具链的运行时基础，Node.js 版本直接影响 Vite、Webpack 5、esbuild 等构建工具的表现。整理一下 v16 中值得关注的特性。"
 ---
 
 Node.js 16 在 2021 年 4 月发布，10 月进入 LTS 阶段。作为前端工具链的运行时基础，Node.js 版本直接影响 Vite、Webpack 5、esbuild 等构建工具的表现。整理一下 v16 中值得关注的特性。

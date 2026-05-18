@@ -3,6 +3,8 @@ title: "CSS Flexbox 复杂布局案例"
 date: 2019-06-18 11:05:37
 tags:
   - CSS
+readingTime: 1
+description: "关于CSS Flexbox 复杂布局案例，网上有不少文章但大多缺乏实战经验。本文结合真实项目，探讨最佳实践。"
 ---
 
 关于CSS Flexbox 复杂布局案例，网上有不少文章但大多缺乏实战经验。本文结合真实项目，探讨最佳实践。

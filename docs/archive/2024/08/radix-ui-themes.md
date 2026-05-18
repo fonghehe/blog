@@ -3,6 +3,8 @@ title: "Radix UI Themes 设计系统"
 date: 2024-08-21 10:00:00
 tags:
   - 前端
+readingTime: 2
+description: "最近在团队中落地Radix UI Themes 设计系统，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Radix UI Themes 设计系统，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

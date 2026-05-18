@@ -3,6 +3,9 @@ title: "React 18 新特性预览：并发特性正式来了"
 date: 2021-11-20 17:22:18
 tags:
   - React
+  - JavaScript
+readingTime: 2
+description: "React 18 Alpha 已经发布，可以试用了。等了两年的 Concurrent 特性终于要正式了。"
 ---
 
 React 18 Alpha 已经发布，可以试用了。等了两年的 Concurrent 特性终于要正式了。

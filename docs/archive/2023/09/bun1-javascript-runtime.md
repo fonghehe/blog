@@ -3,6 +3,8 @@ title: "Bun 1.0：JavaScript 运行时的新选择"
 date: 2023-09-14 16:06:05
 tags:
   - JavaScript
+readingTime: 2
+description: "Bun 1.0 正式发布！这是用 Zig 写的 JavaScript 运行时，声称比 Node.js 快很多。来看看是否值得切换。"
 ---
 
 Bun 1.0 正式发布！这是用 Zig 写的 JavaScript 运行时，声称比 Node.js 快很多。来看看是否值得切换。

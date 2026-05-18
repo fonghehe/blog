@@ -3,6 +3,8 @@ title: "Node.js Stream 流式处理"
 date: 2019-02-01 10:08:36
 tags:
   - Node.js
+readingTime: 2
+description: "Node.js Stream 流式处理是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。"
 ---
 
 Node.js Stream 流式处理是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。

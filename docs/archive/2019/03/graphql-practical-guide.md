@@ -3,6 +3,8 @@ title: "GraphQL 实战：从 REST 迁移的真实体验"
 date: 2019-03-16 09:35:25
 tags:
   - GraphQL
+readingTime: 2
+description: "团队做了一个新项目，试了 GraphQL。用了两个月，说说真实感受——不是都好，也不是都不好。"
 ---
 
 团队做了一个新项目，试了 GraphQL。用了两个月，说说真实感受——不是都好，也不是都不好。

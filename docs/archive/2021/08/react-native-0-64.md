@@ -3,6 +3,9 @@ title: "React Native 0.64 Hermes 引擎"
 date: 2021-08-19 11:47:48
 tags:
   - React
+  - JavaScript
+readingTime: 2
+description: "React Native 0.64 Hermes 引擎在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 React Native 0.64 Hermes 引擎在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

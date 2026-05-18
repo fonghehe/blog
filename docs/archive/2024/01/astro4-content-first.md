@@ -3,6 +3,8 @@ title: "Astro 4：内容优先架构的成熟"
 date: 2024-01-15 16:44:54
 tags:
   - 前端
+readingTime: 2
+description: "Astro 4 发布了，用了一年多 Astro 做内容站，说说它为什么适合某类项目，以及真实的工程化体验。"
 ---
 
 Astro 4 发布了，用了一年多 Astro 做内容站，说说它为什么适合某类项目，以及真实的工程化体验。

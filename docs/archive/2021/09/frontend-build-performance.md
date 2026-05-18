@@ -3,6 +3,9 @@ title: "前端构建性能优化：从 Webpack 到 Vite"
 date: 2021-09-20 11:47:17
 tags:
   - 性能优化
+  - 工程化
+readingTime: 3
+description: "最近几个项目陆续从 Webpack 迁移到了 Vite，构建速度的差距比想象中大。这篇整理一下构建性能优化的思路，从 Webpack 调优到直接换 Vite 的决策过程。"
 ---
 
 最近几个项目陆续从 Webpack 迁移到了 Vite，构建速度的差距比想象中大。这篇整理一下构建性能优化的思路，从 Webpack 调优到直接换 Vite 的决策过程。

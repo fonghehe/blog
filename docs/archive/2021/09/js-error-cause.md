@@ -3,6 +3,9 @@ title: "JavaScript Error cause 错误链"
 date: 2021-09-21 17:22:04
 tags:
   - 前端
+  - JavaScript
+readingTime: 2
+description: "关于JavaScript Error cause 错误链，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于JavaScript Error cause 错误链，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

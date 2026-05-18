@@ -3,6 +3,8 @@ title: "Webpack DllPlugin 加速开发构建"
 date: 2018-02-21 15:30:47
 tags:
   - Webpack
+readingTime: 1
+description: "项目越来越大，Webpack 冷启动越来越慢。DllPlugin 的思路是：把不经常变动的第三方库单独打包，之后每次构建就不用重新处理它们了。"
 ---
 
 项目越来越大，Webpack 冷启动越来越慢。DllPlugin 的思路是：把不经常变动的第三方库单独打包，之后每次构建就不用重新处理它们了。

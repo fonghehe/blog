@@ -3,6 +3,8 @@ title: "TypeScript 4.1 4.2 新特性汇总"
 date: 2021-03-23 09:48:28
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 4.1 4.2 新特性汇总在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 TypeScript 4.1 4.2 新特性汇总在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

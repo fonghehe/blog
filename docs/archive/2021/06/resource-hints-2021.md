@@ -3,6 +3,9 @@ title: "Resource Hints 资源提示优化"
 date: 2021-06-23 17:22:51
 tags:
   - TypeScript
+  - 性能优化
+readingTime: 2
+description: "最近在团队中落地Resource Hints 资源提示优化，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Resource Hints 资源提示优化，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

@@ -4,6 +4,8 @@ date: 2021-03-15 11:13:15
 tags:
   - Vite
   - Vitest
+readingTime: 4
+description: "最近社区在讨论一个话题：既然 Vite 已经解决了开发和构建的问题，为什么测试环节还是需要一套独立的、和 Vite 完全无关的工具链？测试跑在 Node 上，用 Jest 的 transform 配置，又回到了 Babel/TypeScript 编译那一套。如果测试也能复用 Vite 的模块解析和转换能力呢？"
 ---
 
 最近社区在讨论一个话题：既然 Vite 已经解决了开发和构建的问题，为什么测试环节还是需要一套独立的、和 Vite 完全无关的工具链？测试跑在 Node 上，用 Jest 的 transform 配置，又回到了 Babel/TypeScript 编译那一套。如果测试也能复用 Vite 的模块解析和转换能力呢？
@@ -172,7 +174,8 @@ describe('Button', () => {
 ## 和现有方案的对比
 
 | 维度 | Jest | 未来方案（Vite 原生） |
-|------|------|---------------------|
+|
+------|------|---------------------|
 | 配置 | 独立配置，和 Vite 重复 | 继承 vite.config.ts |
 | 转换 | Babel/ts-jest | Vite transform（esbuild） |
 | 速度 | 中等 | 预期更快（esbuild 编译） |

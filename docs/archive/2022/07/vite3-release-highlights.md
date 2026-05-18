@@ -3,6 +3,8 @@ title: "Vite 3.0 发布：ESM 原生、全新 CLI 与更好的 SSR"
 date: 2022-07-20 17:22:12
 tags:
   - Vite
+readingTime: 2
+description: "Vite 3.0 于 2022 年 7 月 13 日正式发布。距离 Vite 2.0 发布已经过去了 16 个月，这次版本号升级带来了一系列重要改进：基于 Rollup 3 的构建、统一的 dev/build 行为、改善的 SSR 支持，以及更清晰的 CLI 输出。"
 ---
 
 Vite 3.0 于 2022 年 7 月 13 日正式发布。距离 Vite 2.0 发布已经过去了 16 个月，这次版本号升级带来了一系列重要改进：基于 Rollup 3 的构建、统一的 dev/build 行为、改善的 SSR 支持，以及更清晰的 CLI 输出。

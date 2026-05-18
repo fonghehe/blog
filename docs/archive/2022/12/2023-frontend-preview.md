@@ -3,6 +3,8 @@ title: "2023 前端技术展望：Signals、RSC 与 AI 编程助手元年"
 date: 2022-12-30 15:09:14
 tags:
   - 前端
+readingTime: 3
+description: "2022 年是前端格局重塑的一年：Next.js 13 带来 App Router，Angular 完成从 NgModule 到 Standalone 的转型，SvelteKit 1.0 正式发布，Vite 成为无可争议的构建工具标准。站在年末，我们来看 2023 年前端的关键走向。"
 ---
 
 2022 年是前端格局重塑的一年：Next.js 13 带来 App Router，Angular 完成从 NgModule 到 Standalone 的转型，SvelteKit 1.0 正式发布，Vite 成为无可争议的构建工具标准。站在年末，我们来看 2023 年前端的关键走向。

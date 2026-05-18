@@ -4,6 +4,8 @@ date: 2025-05-30 10:00:00
 tags:
   - Angular
   - CSS
+readingTime: 2
+description: "Angular 20 让 Zoneless 正式稳定，但实际迁移并不是改一行配置就完事。本文记录了将一个中型 Angular 项目（约 80 个组件）从 zone.js 迁移到 Zoneless 的完整过程，分享遇到的坑和解决方案。"
 ---
 
 Angular 20 让 Zoneless 正式稳定，但实际迁移并不是改一行配置就完事。本文记录了将一个中型 Angular 项目（约 80 个组件）从 zone.js 迁移到 Zoneless 的完整过程，分享遇到的坑和解决方案。

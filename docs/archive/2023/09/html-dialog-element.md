@@ -3,6 +3,8 @@ title: "HTML dialog 元素原生弹窗"
 date: 2023-09-21 11:47:37
 tags:
   - 前端
+readingTime: 2
+description: "在日常开发中，HTML dialog 元素原生弹窗的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，HTML dialog 元素原生弹窗的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

@@ -3,6 +3,9 @@ title: "JavaScript 顶层 await 使用场景"
 date: 2021-09-03 14:50:37
 tags:
   - 前端
+  - JavaScript
+readingTime: 2
+description: "在日常开发中，JavaScript 顶层 await 使用场景的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，JavaScript 顶层 await 使用场景的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

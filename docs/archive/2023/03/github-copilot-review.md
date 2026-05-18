@@ -3,6 +3,8 @@ title: "GitHub Copilot 半年使用报告：AI 编程的真实体验"
 date: 2023-03-15 16:44:36
 tags:
   - Git
+readingTime: 2
+description: "用 GitHub Copilot 已经半年了，说说真实感受。不是广告，也不是恐慌文，就是真实体验。"
 ---
 
 用 GitHub Copilot 已经半年了，说说真实感受。不是广告，也不是恐慌文，就是真实体验。

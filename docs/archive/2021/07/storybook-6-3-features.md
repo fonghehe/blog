@@ -3,6 +3,10 @@ title: "Storybook 6.3 新特性交互测试"
 date: 2021-07-06 15:28:29
 tags:
   - Storybook
+  - 工程化
+  - 测试
+readingTime: 2
+description: "在日常开发中，Storybook 6.3 新特性交互测试的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Storybook 6.3 新特性交互测试的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

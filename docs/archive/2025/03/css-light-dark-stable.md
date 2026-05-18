@@ -3,6 +3,8 @@ title: "CSS light-dark() 稳定版应用"
 date: 2025-03-26 10:00:00
 tags:
   - CSS
+readingTime: 2
+description: "CSS light-dark() 稳定版应用在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 CSS light-dark() 稳定版应用在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

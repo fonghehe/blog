@@ -3,6 +3,9 @@ title: "SolidJS 初探：颠覆虚拟 DOM 的细粒度响应式框架"
 date: 2021-07-02 14:50:14
 tags:
   - 前端
+  - JavaScript
+readingTime: 2
+description: "SolidJS 是 2021 年最值得关注的前端框架之一。它的核心主张听起来和 Svelte 相似——\"不用虚拟 DOM\"——但实现原理完全不同。Svelte 是编译时框架，SolidJS 是运行时细粒度响应式。这篇文章带你了解它为什么能在性能测试中长期排名第一。"
 ---
 
 SolidJS 是 2021 年最值得关注的前端框架之一。它的核心主张听起来和 Svelte 相似——"不用虚拟 DOM"——但实现原理完全不同。Svelte 是编译时框架，SolidJS 是运行时细粒度响应式。这篇文章带你了解它为什么能在性能测试中长期排名第一。

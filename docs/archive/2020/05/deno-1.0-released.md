@@ -3,6 +3,8 @@ title: "Deno 1.0 正式发布，现在能用了吗？"
 date: 2020-05-12 16:31:31
 tags:
   - Node.js
+readingTime: 2
+description: "Deno 1.0 终于发布了。作为 Node.js 之父 Ryan Dahl 的\"第二次尝试\"，它修正了 Node.js 的十大设计遗憾。在 1.0 之际，认真评估一下它到底适不适合在项目中使用。"
 ---
 
 Deno 1.0 终于发布了。作为 Node.js 之父 Ryan Dahl 的"第二次尝试"，它修正了 Node.js 的十大设计遗憾。在 1.0 之际，认真评估一下它到底适不适合在项目中使用。
@@ -41,7 +43,8 @@ import { readJson } from 'https://deno.land/std@0.50.0/fs/read_json.ts';
 
 ```markdown
 | 特性         | Node.js              | Deno                 |
-|-------------|----------------------|----------------------|
+|
+-------------|----------------------|----------------------|
 | 语言         | JavaScript           | TypeScript 原生      |
 | 模块系统     | CommonJS + node_modules | ES Modules + URL  |
 | 包管理       | npm / yarn           | URL 直接导入         |

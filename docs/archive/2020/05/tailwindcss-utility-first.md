@@ -3,6 +3,8 @@ title: "Tailwind CSS 实用优先的 CSS 框架"
 date: 2020-05-27 10:45:06
 tags:
   - CSS
+readingTime: 2
+description: "Tailwind CSS 实用优先的 CSS 框架这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 Tailwind CSS 实用优先的 CSS 框架这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

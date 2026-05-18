@@ -3,6 +3,8 @@ title: "JavaScript Proxy 和 Reflect 元编程"
 date: 2018-12-13 16:17:56
 tags:
   - JavaScript
+readingTime: 2
+description: "Proxy 是 ES2015 加入的，但一直用得不多。Vue 3 的响应式系统基于 Proxy，是时候好好了解一下了。"
 ---
 
 Proxy 是 ES2015 加入的，但一直用得不多。Vue 3 的响应式系统基于 Proxy，是时候好好了解一下了。

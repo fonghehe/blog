@@ -3,6 +3,8 @@ title: "TypeScript 5.0 const 类型参数"
 date: 2023-03-09 16:06:17
 tags:
   - TypeScript
+readingTime: 2
+description: "关于TypeScript 5.0 const 类型参数，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于TypeScript 5.0 const 类型参数，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

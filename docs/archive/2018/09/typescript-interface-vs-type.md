@@ -3,6 +3,8 @@ title: "TypeScript interface 与 type 的区别"
 date: 2018-09-08 10:55:44
 tags:
   - TypeScript
+readingTime: 1
+description: "刚学 TypeScript 时经常困惑：`interface` 和 `type` 都能定义类型，什么时候用哪个？"
 ---
 
 刚学 TypeScript 时经常困惑：`interface` 和 `type` 都能定义类型，什么时候用哪个？

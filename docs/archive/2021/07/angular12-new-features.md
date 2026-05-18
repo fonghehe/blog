@@ -3,6 +3,10 @@ title: "Angular 12 新特性：Ivy 独占、Webpack 5 默认与 Sass 升级"
 date: 2021-07-30 10:56:08
 tags:
   - Angular
+  - TypeScript
+  - 工程化
+readingTime: 2
+description: "Angular 12 于 2021 年 5 月 26 日正式发布。这是一个里程碑版本：View Engine 正式退场，Ivy 成为唯一渲染引擎；Webpack 5 从实验性升级为默认构建工具。升级之后我们整理了一份完整的变化记录。"
 ---
 
 Angular 12 于 2021 年 5 月 26 日正式发布。这是一个里程碑版本：View Engine 正式退场，Ivy 成为唯一渲染引擎；Webpack 5 从实验性升级为默认构建工具。升级之后我们整理了一份完整的变化记录。

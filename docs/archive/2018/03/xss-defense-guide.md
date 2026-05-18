@@ -3,6 +3,8 @@ title: "前端安全：XSS 防御手册"
 date: 2018-03-08 10:50:19
 tags:
   - 安全
+readingTime: 2
+description: "XSS（Cross-Site Scripting）是最常见的前端安全漏洞之一。这篇文章从攻击原理到防御方案，系统整理一遍。"
 ---
 
 XSS（Cross-Site Scripting）是最常见的前端安全漏洞之一。这篇文章从攻击原理到防御方案，系统整理一遍。

@@ -3,6 +3,8 @@ title: "Vue 3 响应式系统深入：Proxy 替代 defineProperty 的原理"
 date: 2019-10-23 17:10:53
 tags:
   - Vue
+readingTime: 1
+description: "Vue 3 将响应式系统从 `Object.defineProperty` 完全重写为 `Proxy`。这不是为了追时髦，而是为了彻底解决 Vue 2 中一些根本性缺陷。"
 ---
 
 Vue 3 将响应式系统从 `Object.defineProperty` 完全重写为 `Proxy`。这不是为了追时髦，而是为了彻底解决 Vue 2 中一些根本性缺陷。

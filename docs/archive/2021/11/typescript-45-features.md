@@ -3,6 +3,8 @@ title: "TypeScript 4.5 新特性：实用主义的改进"
 date: 2021-11-01 09:31:11
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 从 4.1 到 4.5 每个版本都有实用的改进。整理一下这几个版本中最值得学习的特性，都是日常开发中能用到的。"
 ---
 
 TypeScript 从 4.1 到 4.5 每个版本都有实用的改进。整理一下这几个版本中最值得学习的特性，都是日常开发中能用到的。

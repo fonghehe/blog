@@ -3,6 +3,8 @@ title: "JavaScript 函数式编程实践"
 date: 2019-04-13 11:22:26
 tags:
   - 前端
+readingTime: 1
+description: "函数式编程在前端圈一直有热度，Redux、RxJS 都有它的影子。整理一些实际能用上的概念。"
 ---
 
 函数式编程在前端圈一直有热度，Redux、RxJS 都有它的影子。整理一些实际能用上的概念。

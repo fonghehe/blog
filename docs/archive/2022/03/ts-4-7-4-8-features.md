@@ -3,6 +3,8 @@ title: "TypeScript 4.7 4.8 新特性"
 date: 2022-03-07 15:28:59
 tags:
   - TypeScript
+readingTime: 2
+description: "在日常开发中，TypeScript 4.7 4.8 新特性的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，TypeScript 4.7 4.8 新特性的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

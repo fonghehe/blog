@@ -3,6 +3,8 @@ title: "CSS clip-path 实现不规则形状"
 date: 2019-07-18 11:17:09
 tags:
   - CSS
+readingTime: 3
+description: "传统的 CSS 裁切方式有限——`overflow: hidden` 只能做矩形裁切，`border-radius` 只能做圆角。如果你需要做斜边卡片、圆形头像裁切、波浪背景等不规则形状，`clip-path` 是目前最强大的方案。"
 ---
 
 传统的 CSS 裁切方式有限——`overflow: hidden` 只能做矩形裁切，`border-radius` 只能做圆角。如果你需要做斜边卡片、圆形头像裁切、波浪背景等不规则形状，`clip-path` 是目前最强大的方案。
@@ -342,7 +344,8 @@ clip-path: circle(10%) → clip-path: circle(75%)
 截至 2019 年中：
 
 | 浏览器 | 支持情况 |
-|--------|----------|
+|
+--------|----------|
 | Chrome | 55+ (完整支持) |
 | Firefox | 54+ (完整支持) |
 | Safari | 9.1+ (需要 -webkit- 前缀) |

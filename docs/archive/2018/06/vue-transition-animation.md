@@ -3,6 +3,8 @@ title: "Vue 过渡与动画实战"
 date: 2018-06-21 10:55:46
 tags:
   - Vue
+readingTime: 1
+description: "Vue 的 `<transition>` 组件让添加动画变得很简单。记录几个常用场景。"
 ---
 
 Vue 的 `<transition>` 组件让添加动画变得很简单。记录几个常用场景。

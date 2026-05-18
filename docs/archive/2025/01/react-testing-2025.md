@@ -3,6 +3,8 @@ title: "React 测试 2025 最佳实践"
 date: 2025-01-28 10:00:00
 tags:
   - React
+readingTime: 3
+description: "React 20 的 Compiler 和并发特性改变了组件的行为模式，测试策略也需要相应调整。2025 年的 React 测试已经形成了一套成熟的范式：Vitest 作为测试运行器，Testing Library 做组件测试，Playwright 负责 E2E，MSW 拦截网络请求。"
 ---
 
 React 20 的 Compiler 和并发特性改变了组件的行为模式，测试策略也需要相应调整。2025 年的 React 测试已经形成了一套成熟的范式：Vitest 作为测试运行器，Testing Library 做组件测试，Playwright 负责 E2E，MSW 拦截网络请求。

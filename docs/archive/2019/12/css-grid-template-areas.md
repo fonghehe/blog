@@ -3,6 +3,8 @@ title: "CSS Grid template-areas 布局实战"
 date: 2019-12-05 10:47:52
 tags:
   - CSS
+readingTime: 3
+description: "CSS Grid 布局规范已经出来几年了，浏览器支持也相当完善（IE11 部分支持带前缀）。但实际项目中，很多同学还是习惯用 Flexbox 解决所有布局问题。最近在重构后台管理系统的页面布局时，我全面采用了 Grid 的 `template-areas` 方案，效果出乎意料的好。这篇文章分享一些实战经验。"
 ---
 
 CSS Grid 布局规范已经出来几年了，浏览器支持也相当完善（IE11 部分支持带前缀）。但实际项目中，很多同学还是习惯用 Flexbox 解决所有布局问题。最近在重构后台管理系统的页面布局时，我全面采用了 Grid 的 `template-areas` 方案，效果出乎意料的好。这篇文章分享一些实战经验。

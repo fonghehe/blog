@@ -3,6 +3,8 @@ title: "AI 辅助开发工作流：从 Copilot 到 Claude Code 的实践"
 date: 2025-01-25 10:00:00
 tags:
   - 工程化
+readingTime: 2
+description: "2025 年初，团队已经全面接入 AI 辅助开发。从 GitHub Copilot 到 Claude Code，从 Cursor 到各种 AI 插件，变化比想象中快。来分享一下实际落地的工作流。"
 ---
 
 2025 年初，团队已经全面接入 AI 辅助开发。从 GitHub Copilot 到 Claude Code，从 Cursor 到各种 AI 插件，变化比想象中快。来分享一下实际落地的工作流。

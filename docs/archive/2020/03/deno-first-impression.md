@@ -3,6 +3,8 @@ title: "Deno 初体验：下一代 Node.js？"
 date: 2020-03-10 17:20:21
 tags:
   - Node.js
+readingTime: 2
+description: "Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上批评了 Node.js 的十大设计遗憾，随后宣布了 Deno 项目。现在 Deno 已经进入候选版本阶段，是时候体验一下了。"
 ---
 
 Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上批评了 Node.js 的十大设计遗憾，随后宣布了 Deno 项目。现在 Deno 已经进入候选版本阶段，是时候体验一下了。

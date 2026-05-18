@@ -3,6 +3,8 @@ title: "structuredClone 浏览器全覆盖"
 date: 2024-07-22 10:00:00
 tags:
   - 前端
+readingTime: 2
+description: "在日常开发中，structuredClone 浏览器全覆盖的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，structuredClone 浏览器全覆盖的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

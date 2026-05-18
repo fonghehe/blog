@@ -3,6 +3,8 @@ title: "Angular 17.2：Signal-based Queries 开发者预览"
 date: 2024-02-14 11:13:38
 tags:
   - Angular
+readingTime: 2
+description: "Angular 17.2 于 2024 年 2 月 14 日发布，带来了 Signal-based Queries 的开发者预览。继 Angular 17.1 引入 Signal Inputs（`input()` 函数）之后，17.2 将 Signal 化范围扩展到了模板查询：`viewChild()`、`viewCh"
 ---
 
 Angular 17.2 于 2024 年 2 月 14 日发布，带来了 Signal-based Queries 的开发者预览。继 Angular 17.1 引入 Signal Inputs（`input()` 函数）之后，17.2 将 Signal 化范围扩展到了模板查询：`viewChild()`、`viewChildren()`、`contentChild()`、`contentChildren()`。

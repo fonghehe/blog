@@ -3,6 +3,8 @@ title: "useReducer + useContext 实现轻量状态管理"
 date: 2019-02-14 15:47:39
 tags:
   - 前端
+readingTime: 2
+description: "有了 Hooks，小项目不一定需要 Redux 了。`useReducer` + `useContext` 组合可以实现类似 Redux 的状态管理，适合中小型应用。"
 ---
 
 有了 Hooks，小项目不一定需要 Redux 了。`useReducer` + `useContext` 组合可以实现类似 Redux 的状态管理，适合中小型应用。
@@ -171,7 +173,8 @@ function useUserActions() {
 ## 和 Redux 比较
 
 |            | useReducer + useContext    | Redux                     |
-| ---------- | -------------------------- | ------------------------- |
+| 
+---------- | -------------------------- | ------------------------- |
 | 学习成本   | 低（React 内置）           | 中（需要理解 middleware） |
 | 样板代码   | 少                         | 多                        |
 | 适合规模   | 中小型                     | 中大型                    |

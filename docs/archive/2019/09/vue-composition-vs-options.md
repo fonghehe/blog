@@ -3,6 +3,8 @@ title: "Vue Composition API vs Options API 对比"
 date: 2019-09-04 15:43:47
 tags:
   - Vue
+readingTime: 4
+description: "Vue 3 引入的 Composition API 是继 React Hooks 之后又一个重要的函数式编程范式在前端框架中的实践。它允许开发者以函数为单位组织组件逻辑，解决了 Options API 在复杂组件中逻辑分散的问题。本文将从多个维度对比两种 API 风格，并给出迁移建议。"
 ---
 
 Vue 3 引入的 Composition API 是继 React Hooks 之后又一个重要的函数式编程范式在前端框架中的实践。它允许开发者以函数为单位组织组件逻辑，解决了 Options API 在复杂组件中逻辑分散的问题。本文将从多个维度对比两种 API 风格，并给出迁移建议。

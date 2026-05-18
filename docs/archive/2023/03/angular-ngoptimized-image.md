@@ -3,6 +3,8 @@ title: "Angular NgOptimizedImage 深度实践：LCP 优化从理论到落地"
 date: 2023-03-08 10:39:08
 tags:
   - Angular
+readingTime: 2
+description: "Angular 15 内置的 `NgOptimizedImage` 指令是 Angular 官方对 Core Web Vitals 的正式回应。它不只是给 `<img>` 加 `loading=\"lazy\"` 那么简单——这篇文章深入探讨它在真实项目中的使用方式和背后的优化逻辑。"
 ---
 
 Angular 15 内置的 `NgOptimizedImage` 指令是 Angular 官方对 Core Web Vitals 的正式回应。它不只是给 `<img>` 加 `loading="lazy"` 那么简单——这篇文章深入探讨它在真实项目中的使用方式和背后的优化逻辑。
@@ -155,7 +157,8 @@ export class ArticleCardComponent {
 在一个典型的商品列表页（桌面端，首屏 9 张商品图）：
 
 | 指标       | 优化前 | 优化后（NgOptimizedImage + Imgix） |
-| ---------- | ------ | ---------------------------------- |
+| 
+---------- | ------ | ---------------------------------- |
 | LCP        | 3.8s   | 1.6s                               |
 | CLS        | 0.12   | 0.01                               |
 | 图片总字节 | 1.8MB  | 420KB                              |

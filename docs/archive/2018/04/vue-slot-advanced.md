@@ -3,6 +3,8 @@ title: "Vue slot 高级用法"
 date: 2018-04-11 14:48:08
 tags:
   - Vue
+readingTime: 1
+description: "slot 是 Vue 组件复用里最强大的机制之一，但很多人只用到了最基础的默认 slot。整理一下实际项目中的用法。"
 ---
 
 slot 是 Vue 组件复用里最强大的机制之一，但很多人只用到了最基础的默认 slot。整理一下实际项目中的用法。
