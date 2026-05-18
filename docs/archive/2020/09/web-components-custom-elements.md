@@ -3,6 +3,8 @@ title: "Web Components：Custom Elements 与 Shadow DOM 实战"
 date: 2020-09-30 14:45:02
 tags:
   - TypeScript
+readingTime: 2
+description: "Web Components 是浏览器原生的组件化方案，无需任何框架即可创建可复用的自定义 HTML 元素。2020 年所有主流浏览器均已支持，现在是深入了解它的好时机。"
 ---
 
 Web Components 是浏览器原生的组件化方案，无需任何框架即可创建可复用的自定义 HTML 元素。2020 年所有主流浏览器均已支持，现在是深入了解它的好时机。

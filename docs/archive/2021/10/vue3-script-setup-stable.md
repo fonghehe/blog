@@ -3,6 +3,9 @@ title: "Vue 3 `<script setup>` 正式发布"
 date: 2021-10-11 10:39:37
 tags:
   - Vue
+  - TypeScript
+readingTime: 2
+description: "Vue 3.2 正式将 `<script setup>` 标记为稳定特性。用了半年实验性支持，现在可以放心在生产环境用了。"
 ---
 
 Vue 3.2 正式将 `<script setup>` 标记为稳定特性。用了半年实验性支持，现在可以放心在生产环境用了。

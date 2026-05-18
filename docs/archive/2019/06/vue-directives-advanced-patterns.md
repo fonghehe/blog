@@ -3,6 +3,8 @@ title: "Vue 自定义指令实践 - 从 v-focus 到 v-permission"
 date: 2019-06-24 16:31:12
 tags:
   - Vue
+readingTime: 5
+description: "Vue 内置指令（v-if、v-for、v-model）大家都很熟悉，但实际项目中我们经常需要直接操作 DOM 的场景——自动聚焦、按钮权限控制、防抖、图片懒加载等。这时候自定义指令就派上用场了。"
 ---
 
 Vue 内置指令（v-if、v-for、v-model）大家都很熟悉，但实际项目中我们经常需要直接操作 DOM 的场景——自动聚焦、按钮权限控制、防抖、图片懒加载等。这时候自定义指令就派上用场了。

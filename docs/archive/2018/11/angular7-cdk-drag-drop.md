@@ -3,6 +3,8 @@ title: "Angular CDK 拖拽排序与虚拟滚动实战"
 date: 2018-11-30 16:45:11
 tags:
   - Angular
+readingTime: 2
+description: "Angular 7 正式发布后，CDK 中的 Drag and Drop 和 Virtual Scrolling 迅速成为最受欢迎的特性。本文用实际项目案例深入讲解这两个功能。"
 ---
 
 Angular 7 正式发布后，CDK 中的 Drag and Drop 和 Virtual Scrolling 迅速成为最受欢迎的特性。本文用实际项目案例深入讲解这两个功能。

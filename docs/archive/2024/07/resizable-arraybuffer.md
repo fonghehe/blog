@@ -3,6 +3,8 @@ title: "Resizable ArrayBuffer 性能优化"
 date: 2024-07-10 10:00:00
 tags:
   - 性能优化
+readingTime: 1
+description: "Resizable ArrayBuffer 性能优化这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 Resizable ArrayBuffer 性能优化这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

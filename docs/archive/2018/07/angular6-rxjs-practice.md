@@ -3,6 +3,8 @@ title: "Angular 与 RxJS：响应式编程在组件通信中的实践"
 date: 2018-07-26 17:32:04
 tags:
   - Angular
+readingTime: 2
+description: "Angular 从诞生起就深度集成 RxJS，HttpClient、EventEmitter、Router 全都基于 Observable。掌握 RxJS 操作符，能让你的 Angular 代码更优雅地处理异步和组件通信。"
 ---
 
 Angular 从诞生起就深度集成 RxJS，HttpClient、EventEmitter、Router 全都基于 Observable。掌握 RxJS 操作符，能让你的 Angular 代码更优雅地处理异步和组件通信。

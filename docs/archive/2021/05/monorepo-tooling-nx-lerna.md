@@ -3,6 +3,8 @@ title: "Turborepo 高性能 Monorepo"
 date: 2021-05-21 11:47:29
 tags:
   - 前端工程化
+readingTime: 2
+description: "Turborepo 高性能 Monorepo这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 Turborepo 高性能 Monorepo这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

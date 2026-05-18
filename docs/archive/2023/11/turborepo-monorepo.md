@@ -3,6 +3,8 @@ title: "Turborepo：前端 Monorepo 的任务编排引擎"
 date: 2023-11-25 14:31:00
 tags:
   - 前端工程化
+readingTime: 2
+description: "Turborepo 成熟了。在我们的 15 个包的 monorepo 中使用了大半年，分享一下实践经验。"
 ---
 
 Turborepo 成熟了。在我们的 15 个包的 monorepo 中使用了大半年，分享一下实践经验。

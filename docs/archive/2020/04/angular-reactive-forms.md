@@ -3,6 +3,8 @@ title: "Angular Reactive Forms：动态表单与复杂验证实战"
 date: 2020-04-05 10:14:23
 tags:
   - React
+readingTime: 2
+description: "Angular 提供了两种表单方案：Template-driven 和 Reactive Forms。对于需要动态字段、跨字段验证、程序化控制的复杂场景，Reactive Forms 是唯一合适的选择。"
 ---
 
 Angular 提供了两种表单方案：Template-driven 和 Reactive Forms。对于需要动态字段、跨字段验证、程序化控制的复杂场景，Reactive Forms 是唯一合适的选择。

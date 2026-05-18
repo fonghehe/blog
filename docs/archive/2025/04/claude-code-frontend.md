@@ -3,6 +3,8 @@ title: "Claude Code 前端开发工作流"
 date: 2025-04-17 10:00:00
 tags:
   - 工程化
+readingTime: 2
+description: "在日常开发中，Claude Code 前端开发工作流的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Claude Code 前端开发工作流的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

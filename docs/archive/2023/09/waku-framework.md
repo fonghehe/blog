@@ -3,6 +3,8 @@ title: "Waku 轻量级 React RSC 框架"
 date: 2023-09-04 14:50:41
 tags:
   - 前端
+readingTime: 2
+description: "最近在团队中落地Waku 轻量级 React RSC 框架，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地Waku 轻量级 React RSC 框架，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

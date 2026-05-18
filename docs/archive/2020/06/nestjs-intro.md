@@ -3,6 +3,8 @@ title: "NestJS 企业级 Node.js 框架入门"
 date: 2020-06-12 09:55:30
 tags:
   - JavaScript
+readingTime: 2
+description: "关于NestJS 企业级 Node.js 框架入门，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于NestJS 企业级 Node.js 框架入门，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

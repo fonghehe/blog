@@ -3,6 +3,8 @@ title: "CSS Container Queries 容器查询"
 date: 2020-05-18 17:12:15
 tags:
   - CSS
+readingTime: 2
+description: "CSS Container Queries 容器查询这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 CSS Container Queries 容器查询这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

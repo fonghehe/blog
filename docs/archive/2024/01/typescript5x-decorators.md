@@ -3,6 +3,8 @@ title: "TypeScript 5.x 装饰器正式版"
 date: 2024-01-28 15:09:50
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 5.0 发布了正式的装饰器标准（TC39 Stage 3），和之前实验性装饰器（`experimentalDecorators`）有几处重要区别。"
 ---
 
 TypeScript 5.0 发布了正式的装饰器标准（TC39 Stage 3），和之前实验性装饰器（`experimentalDecorators`）有几处重要区别。

@@ -3,6 +3,8 @@ title: "Content Security Policy：防御 XSS 的强力武器"
 date: 2018-11-27 10:19:48
 tags:
   - 安全
+readingTime: 1
+description: "配置了 CSP 之后，即使 XSS 注入成功，攻击者也无法外链或执行恶意脚本。"
 ---
 
 配置了 CSP 之后，即使 XSS 注入成功，攻击者也无法外链或执行恶意脚本。

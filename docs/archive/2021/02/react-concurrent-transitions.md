@@ -4,6 +4,8 @@ date: 2021-02-09 17:04:01
 tags:
   - React
   - JavaScript
+readingTime: 2
+description: "React 18 useTransition 非阻塞更新这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 React 18 useTransition 非阻塞更新这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

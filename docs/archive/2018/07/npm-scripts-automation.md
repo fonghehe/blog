@@ -3,6 +3,8 @@ title: "npm scripts 自动化工作流"
 date: 2018-07-12 17:30:27
 tags:
   - TypeScript
+readingTime: 1
+description: "很多人只用 npm scripts 跑 `npm start` 和 `npm run build`，其实它能做很多自动化的事情。"
 ---
 
 很多人只用 npm scripts 跑 `npm start` 和 `npm run build`，其实它能做很多自动化的事情。

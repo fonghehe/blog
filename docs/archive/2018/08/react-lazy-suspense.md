@@ -3,6 +3,8 @@ title: "React 16.6：lazy/Suspense 初体验"
 date: 2018-08-16 09:53:24
 tags:
   - React
+readingTime: 2
+description: "React 16.6 发布，带来了 `React.lazy` 和 `Suspense`，让组件懒加载变得非常简单。"
 ---
 
 React 16.6 发布，带来了 `React.lazy` 和 `Suspense`，让组件懒加载变得非常简单。

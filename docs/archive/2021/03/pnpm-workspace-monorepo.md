@@ -3,6 +3,8 @@ title: "pnpm workspace 搭建 Monorepo"
 date: 2021-03-08 15:28:40
 tags:
   - 前端工程化
+readingTime: 3
+description: "用了两年 Lerna + Yarn workspace 的组合后，今年开始尝试 pnpm workspace。pNpm 的硬链接机制天然适合 Monorepo——依赖不会重复安装，磁盘占用大幅减少。对比下来，pnpm workspace 可能是目前最优雅的 Monorepo 方案。"
 ---
 
 用了两年 Lerna + Yarn workspace 的组合后，今年开始尝试 pnpm workspace。pNpm 的硬链接机制天然适合 Monorepo——依赖不会重复安装，磁盘占用大幅减少。对比下来，pnpm workspace 可能是目前最优雅的 Monorepo 方案。
@@ -235,7 +237,8 @@ public-hoist-pattern[]=*eslint*
 ## 和 Lerna 的对比
 
 | 维度 | Lerna + Yarn v1 | pnpm workspace |
-|------|----------------|----------------|
+|
+------|----------------|----------------|
 | 依赖管理 | 扁平化，有幽灵依赖 | 严格隔离 |
 | 磁盘占用 | 高（重复安装） | 低（硬链接） |
 | 安装速度 | 慢 | 快 |

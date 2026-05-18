@@ -3,6 +3,8 @@ title: "JavaScript 内存管理和垃圾回收"
 date: 2018-11-10 14:30:38
 tags:
   - JavaScript
+readingTime: 2
+description: "前端页面用久了会越来越卡，通常是内存泄漏。了解 JavaScript 的内存管理机制，能帮助写出不泄漏的代码。"
 ---
 
 前端页面用久了会越来越卡，通常是内存泄漏。了解 JavaScript 的内存管理机制，能帮助写出不泄漏的代码。

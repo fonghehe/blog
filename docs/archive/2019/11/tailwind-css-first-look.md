@@ -3,6 +3,8 @@ title: "Tailwind CSS 初体验原子化 CSS"
 date: 2019-11-13 11:08:11
 tags:
   - CSS
+readingTime: 4
+description: "Tailwind CSS 是一个实用优先（Utility-First）的 CSS 框架，它提供了大量原子化的 CSS 类名，让开发者可以直接在 HTML 中组合样式，而不需要编写自定义 CSS。本文将从零开始体验 Tailwind CSS，探索原子化 CSS 的开发模式。"
 ---
 
 Tailwind CSS 是一个实用优先（Utility-First）的 CSS 框架，它提供了大量原子化的 CSS 类名，让开发者可以直接在 HTML 中组合样式，而不需要编写自定义 CSS。本文将从零开始体验 Tailwind CSS，探索原子化 CSS 的开发模式。

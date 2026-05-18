@@ -3,6 +3,10 @@ title: "Web Animations API 原生动画"
 date: 2021-11-26 10:22:00
 tags:
   - 前端
+  - JavaScript
+  - CSS
+readingTime: 2
+description: "Web Animations API 原生动画在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Web Animations API 原生动画在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

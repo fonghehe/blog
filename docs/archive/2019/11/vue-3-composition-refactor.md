@@ -3,6 +3,8 @@ title: "Vue 3 Composition API 重构实践"
 date: 2019-11-25 10:30:46
 tags:
   - Vue
+readingTime: 5
+description: "Vue 3 的 Composition API 引入了一种全新的组件逻辑组织方式。本文通过一个真实的用户管理页面，演示如何用 Composition API 重构 Vue 2 的 Options API 代码，展示 Composable 函数的抽取和复用。"
 ---
 
 Vue 3 的 Composition API 引入了一种全新的组件逻辑组织方式。本文通过一个真实的用户管理页面，演示如何用 Composition API 重构 Vue 2 的 Options API 代码，展示 Composable 函数的抽取和复用。
@@ -471,7 +473,8 @@ composables/
 ## 与 React Hooks 的对比
 
 | 特性 | Vue 3 Composable | React Hook |
-|------|-----------------|------------|
+|
+------|-----------------|------------|
 | 响应性 | 自动追踪依赖 | 需要手动指定依赖数组 |
 | 调用顺序 | 无限制 | 必须在顶层调用 |
 | 副作用清理 | onUnmounted | useEffect 返回清理函数 |

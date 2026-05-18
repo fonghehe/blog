@@ -3,6 +3,8 @@ title: "Monorepo 管理 Lerna 与 Yarn Workspaces"
 date: 2020-08-25 15:12:48
 tags:
   - Node.js
+readingTime: 2
+description: "Monorepo 管理 Lerna 与 Yarn Workspaces在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Monorepo 管理 Lerna 与 Yarn Workspaces在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

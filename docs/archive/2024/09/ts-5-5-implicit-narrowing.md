@@ -3,6 +3,8 @@ title: "TypeScript 5.5 隐式类型收窄"
 date: 2024-09-17 10:00:00
 tags:
   - TypeScript
+readingTime: 2
+description: "在日常开发中，TypeScript 5.5 隐式类型收窄的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，TypeScript 5.5 隐式类型收窄的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

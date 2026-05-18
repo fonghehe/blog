@@ -3,6 +3,8 @@ title: "Vue render 函数与 JSX"
 date: 2018-11-20 11:14:48
 tags:
   - Vue
+readingTime: 2
+description: "大多数时候模板够用，但有些场景 render 函数更灵活。"
 ---
 
 大多数时候模板够用，但有些场景 render 函数更灵活。

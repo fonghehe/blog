@@ -3,6 +3,8 @@ title: "Vite 6.0 发布 Environment API"
 date: 2024-02-22 09:48:02
 tags:
   - Vite
+readingTime: 2
+description: "Vite 6.0 发布 Environment API这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 Vite 6.0 发布 Environment API这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

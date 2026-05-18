@@ -4,6 +4,8 @@ date: 2024-12-31 10:00:00
 tags:
   - React
   - 工程化
+readingTime: 2
+description: "2024 年是前端技术栈大幅成熟的一年：React 19 正式发布、Angular 完成 Signal 化转型、Vue 3.5 响应式重写、Svelte 5 全新 Runes 系统上线，AI 辅助编程也从工具变成了工作流核心。站在 2024 年最后一天，来预判 2025 年的关键走向。"
 ---
 
 2024 年是前端技术栈大幅成熟的一年：React 19 正式发布、Angular 完成 Signal 化转型、Vue 3.5 响应式重写、Svelte 5 全新 Runes 系统上线，AI 辅助编程也从工具变成了工作流核心。站在 2024 年最后一天，来预判 2025 年的关键走向。

@@ -3,6 +3,8 @@ title: "JavaScript 模块化演进史：从 IIFE 到 ES Modules"
 date: 2019-06-10 10:39:59
 tags:
   - JavaScript
+readingTime: 7
+description: "JavaScript 在诞生之初并没有模块系统，所有代码共享同一个全局作用域。随着前端项目规模的增长，模块化方案经历了 IIFE、CommonJS、AMD、UMD、ES Modules 的演变。理解这段历史，能帮助我们在实际项目中做出更好的选择。"
 ---
 
 JavaScript 在诞生之初并没有模块系统，所有代码共享同一个全局作用域。随着前端项目规模的增长，模块化方案经历了 IIFE、CommonJS、AMD、UMD、ES Modules 的演变。理解这段历史，能帮助我们在实际项目中做出更好的选择。

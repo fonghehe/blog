@@ -3,6 +3,8 @@ title: "React Native 1.0 稳定版"
 date: 2026-01-29 10:00:00
 tags:
   - React
+readingTime: 3
+description: "React Native 终于发布了 1.0 正式版。从 2015 年的 0.x 到 2026 年的 1.0，这条路走了 11 年。新架构（New Architecture）完全默认启用、Hermes 引擎成为唯一的 JS 引擎、以及 Fabric 渲染器的全面铺开，标志着 React Native 从\"能用\"走向了\""
 ---
 
 React Native 终于发布了 1.0 正式版。从 2015 年的 0.x 到 2026 年的 1.0，这条路走了 11 年。新架构（New Architecture）完全默认启用、Hermes 引擎成为唯一的 JS 引擎、以及 Fabric 渲染器的全面铺开，标志着 React Native 从"能用"走向了"好用"。

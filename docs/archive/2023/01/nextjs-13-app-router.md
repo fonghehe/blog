@@ -3,6 +3,8 @@ title: "Next.js 13 App Router 完整指南"
 date: 2023-01-02 09:31:03
 tags:
   - Next.js
+readingTime: 3
+description: "Next.js 13 引入的 App Router 是自框架诞生以来最大的架构变革。它基于 React Server Components，重新定义了前后端代码的组织方式。对于已经在 Pages Router 上积累了大量项目的团队来说，理解 App Router 的核心概念是迁移的第一步。"
 ---
 
 Next.js 13 引入的 App Router 是自框架诞生以来最大的架构变革。它基于 React Server Components，重新定义了前后端代码的组织方式。对于已经在 Pages Router 上积累了大量项目的团队来说，理解 App Router 的核心概念是迁移的第一步。

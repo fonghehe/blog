@@ -3,6 +3,8 @@ title: "JavaScript WeakMap WeakSet 使用场景"
 date: 2020-10-23 15:42:52
 tags:
   - JavaScript
+readingTime: 2
+description: "JavaScript WeakMap WeakSet 使用场景在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 JavaScript WeakMap WeakSet 使用场景在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

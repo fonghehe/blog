@@ -4,6 +4,8 @@ date: 2022-04-11 16:06:17
 tags:
   - CSS
   - TailwindCSS
+readingTime: 2
+description: "在日常开发中，Tailwind CSS v3.1 新特性的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Tailwind CSS v3.1 新特性的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

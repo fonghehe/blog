@@ -3,6 +3,8 @@ title: "Vue 3 KeepAlive 路由缓存方案"
 date: 2022-02-15 16:44:46
 tags:
   - Vue
+readingTime: 2
+description: "Vue 3 KeepAlive 路由缓存方案在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Vue 3 KeepAlive 路由缓存方案在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

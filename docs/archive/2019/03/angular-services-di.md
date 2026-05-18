@@ -3,6 +3,8 @@ title: "Angular 依赖注入与服务设计"
 date: 2019-03-03 15:35:12
 tags:
   - Angular
+readingTime: 1
+description: "Angular 的依赖注入系统是框架的核心，理解它能让你写出更模块化、可测试的代码。"
 ---
 
 Angular 的依赖注入系统是框架的核心，理解它能让你写出更模块化、可测试的代码。

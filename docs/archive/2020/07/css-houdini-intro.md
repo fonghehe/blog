@@ -3,6 +3,8 @@ title: "CSS Houdini 入门：Paint Worklet 与自定义属性渲染"
 date: 2020-07-31 17:45:52
 tags:
   - CSS
+readingTime: 2
+description: "CSS Houdini 是一组底层 CSS API，让开发者可以介入浏览器的 CSS 渲染流程。其中 **Paint Worklet** 是目前兼容性最好、最实用的部分，Chrome 65+ 已经支持。"
 ---
 
 CSS Houdini 是一组底层 CSS API，让开发者可以介入浏览器的 CSS 渲染流程。其中 **Paint Worklet** 是目前兼容性最好、最实用的部分，Chrome 65+ 已经支持。

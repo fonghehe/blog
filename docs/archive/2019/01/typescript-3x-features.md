@@ -3,6 +3,8 @@ title: "TypeScript 3.x 新特性全览"
 date: 2019-01-12 16:10:42
 tags:
   - TypeScript
+readingTime: 1
+description: "TypeScript 3.0 到 3.3 陆续发布，加了不少实用特性。整理一下。"
 ---
 
 TypeScript 3.0 到 3.3 陆续发布，加了不少实用特性。整理一下。

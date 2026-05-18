@@ -3,6 +3,8 @@ title: "Rolldown 稳定版实战"
 date: 2025-11-25 10:00:00
 tags:
   - 前端
+readingTime: 2
+description: "在日常开发中，Rolldown 稳定版实战的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Rolldown 稳定版实战的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

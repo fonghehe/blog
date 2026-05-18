@@ -3,6 +3,8 @@ title: "Vuex 4 模块化最佳实践"
 date: 2020-01-17 17:32:42
 tags:
   - Vue
+readingTime: 2
+description: "项目一旦超过中等规模，Vuex 的 `store` 就会变得臃肿。Vuex 4 延续了模块化方案，但对 Composition API 做了适配。本文整理了我在多个中大型 Vue 项目中验证过的模块化实践。"
 ---
 
 项目一旦超过中等规模，Vuex 的 `store` 就会变得臃肿。Vuex 4 延续了模块化方案，但对 Composition API 做了适配。本文整理了我在多个中大型 Vue 项目中验证过的模块化实践。

@@ -4,6 +4,8 @@ date: 2025-07-02 10:00:00
 tags:
   - Angular
   - JavaScript
+readingTime: 2
+description: "Angular 20.1 于 2025 年 6 月底发布，延续 Angular 20 的特性路线。本版本的重点是完善 `resource()` API（从实验性升级为开发者预览），并推进 Signal Forms 的稳定化进程。"
 ---
 
 Angular 20.1 于 2025 年 6 月底发布，延续 Angular 20 的特性路线。本版本的重点是完善 `resource()` API（从实验性升级为开发者预览），并推进 Signal Forms 的稳定化进程。

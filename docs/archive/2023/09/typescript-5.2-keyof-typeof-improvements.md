@@ -3,6 +3,8 @@ title: "TypeScript 5.2：using 声明与类型系统演进"
 date: 2023-09-28 10:22:50
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 5.2 带来了几个值得关注的特性，其中 `using` 声明是最具实用价值的。"
 ---
 
 TypeScript 5.2 带来了几个值得关注的特性，其中 `using` 声明是最具实用价值的。

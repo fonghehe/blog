@@ -3,6 +3,8 @@ title: "深入理解 JavaScript 闭包"
 date: 2018-05-10 10:41:26
 tags:
   - JavaScript
+readingTime: 2
+description: "闭包是 JavaScript 面试必问，但真正理解的人不多。这篇从词法作用域出发，讲清楚什么是闭包，以及实际工程中的应用。"
 ---
 
 闭包是 JavaScript 面试必问，但真正理解的人不多。这篇从词法作用域出发，讲清楚什么是闭包，以及实际工程中的应用。

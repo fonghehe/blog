@@ -4,6 +4,8 @@ date: 2020-07-13 10:23:25
 tags:
   - Webpack
   - 工程化
+readingTime: 4
+description: "Webpack 5 还在 beta 阶段，但 Module Federation 这个特性已经让团队非常兴奋了。简单说，它允许独立构建的应用之间在运行时共享模块——这解决的是微前端场景中最头疼的问题：跨应用共享组件和依赖。"
 ---
 
 Webpack 5 还在 beta 阶段，但 Module Federation 这个特性已经让团队非常兴奋了。简单说，它允许独立构建的应用之间在运行时共享模块——这解决的是微前端场景中最头疼的问题：跨应用共享组件和依赖。

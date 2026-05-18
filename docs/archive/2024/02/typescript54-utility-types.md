@@ -3,6 +3,8 @@ title: "TypeScript 5.4：NoIntrinsic、Object.groupBy 与类型推断增强"
 date: 2024-02-06 10:05:36
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 5.4 正式发布，带来了一些实用的类型系统改进和对 TC39 新提案的支持。从架构视角看，有几个特性对团队代码质量提升明显。"
 ---
 
 TypeScript 5.4 正式发布，带来了一些实用的类型系统改进和对 TC39 新提案的支持。从架构视角看，有几个特性对团队代码质量提升明显。

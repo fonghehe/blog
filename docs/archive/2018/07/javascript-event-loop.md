@@ -3,6 +3,8 @@ title: "JavaScript 事件循环深入理解"
 date: 2018-07-07 10:43:20
 tags:
   - JavaScript
+readingTime: 2
+description: "事件循环（Event Loop）是 JavaScript 并发模型的核心，也是面试高频题。"
 ---
 
 事件循环（Event Loop）是 JavaScript 并发模型的核心，也是面试高频题。

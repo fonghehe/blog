@@ -3,6 +3,8 @@ title: "CSS color-mix() 色彩混合函数"
 date: 2022-03-29 15:09:30
 tags:
   - CSS
+readingTime: 1
+description: "CSS color-mix() 色彩混合函数在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 CSS color-mix() 色彩混合函数在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

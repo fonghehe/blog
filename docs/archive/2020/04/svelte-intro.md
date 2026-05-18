@@ -3,6 +3,8 @@ title: "Svelte 入门：编译时框架与响应式原理"
 date: 2020-04-25 09:58:21
 tags:
   - Svelte
+readingTime: 2
+description: "Svelte 3 在 2019 年发布后引发了不小的关注。它的核心主张是：**框架应该在编译时完成工作，而不是在运行时**。这意味着 Svelte 没有虚拟 DOM，没有运行时框架代码，生成的产物是原生 DOM 操作的 JavaScript。"
 ---
 
 Svelte 3 在 2019 年发布后引发了不小的关注。它的核心主张是：**框架应该在编译时完成工作，而不是在运行时**。这意味着 Svelte 没有虚拟 DOM，没有运行时框架代码，生成的产物是原生 DOM 操作的 JavaScript。

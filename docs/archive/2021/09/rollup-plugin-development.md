@@ -3,6 +3,8 @@ title: "Rollup 插件开发指南"
 date: 2021-09-13 16:06:52
 tags:
   - Rollup
+readingTime: 2
+description: "Vite 底层用 Rollup 做生产构建，理解 Rollup 插件机制对深度使用 Vite 非常重要。今年我们在组件库构建中开发了几个自定义 Rollup 插件，总结一下开发经验。"
 ---
 
 Vite 底层用 Rollup 做生产构建，理解 Rollup 插件机制对深度使用 Vite 非常重要。今年我们在组件库构建中开发了几个自定义 Rollup 插件，总结一下开发经验。

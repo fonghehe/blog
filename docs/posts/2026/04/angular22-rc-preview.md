@@ -4,6 +4,8 @@ date: 2026-04-24 10:00:00
 tags:
   - Angular
   - CSS
+readingTime: 3
+description: "Angular 22 Release Candidate 于 2026 年 4 月底发布，按惯例正式版将在约三周后的 5 月中旬到来。这是继 Angular 17 引入新模板语法以来最具影响力的版本——全新的 Ivy 第二代编译器（内部代号 \"Evergreen\"）将大幅缩短构建时间，并为 Signal 模型提供更深层"
 ---
 
 Angular 22 Release Candidate 于 2026 年 4 月底发布，按惯例正式版将在约三周后的 5 月中旬到来。这是继 Angular 17 引入新模板语法以来最具影响力的版本——全新的 Ivy 第二代编译器（内部代号 "Evergreen"）将大幅缩短构建时间，并为 Signal 模型提供更深层的编译期优化。

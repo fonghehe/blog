@@ -3,6 +3,8 @@ title: "前端性能优化：Tree Shaking 深度实践"
 date: 2018-05-29 15:51:05
 tags:
   - 前端
+readingTime: 2
+description: "Tree Shaking 是现代前端工程的重要优化手段，但实际效果经常不如预期，背后原因值得深究。"
 ---
 
 Tree Shaking 是现代前端工程的重要优化手段，但实际效果经常不如预期，背后原因值得深究。
@@ -127,7 +129,8 @@ grep -r "subtract" dist/
 只有提供 ES Module 的库才支持 Tree Shaking：
 
 | 库           | Tree Shaking 支持           |
-| ------------ | --------------------------- |
+| 
+------------ | --------------------------- |
 | `lodash`     | ❌ CommonJS                 |
 | `lodash-es`  | ✅ ES Module                |
 | `vue`        | ✅（2.6+）                  |

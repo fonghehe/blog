@@ -4,6 +4,8 @@ date: 2022-05-18 11:47:31
 tags:
   - React
   - Angular
+readingTime: 2
+description: "Angular 的响应式表单（Reactive Forms）在复杂表单场景下远比模板驱动表单更可控。这篇文章聚焦三个进阶场景：动态添加/删除表单项（FormArray）、跨字段联合验证器、以及实现自定义可重用的表单控件（ControlValueAccessor）。"
 ---
 
 Angular 的响应式表单（Reactive Forms）在复杂表单场景下远比模板驱动表单更可控。这篇文章聚焦三个进阶场景：动态添加/删除表单项（FormArray）、跨字段联合验证器、以及实现自定义可重用的表单控件（ControlValueAccessor）。

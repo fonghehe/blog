@@ -3,6 +3,8 @@ title: "Vue CLI 3 正式版：深度使用指南"
 date: 2018-08-11 10:57:54
 tags:
   - Vue
+readingTime: 1
+description: "Vue CLI 3.0 正式版（GA）发布了，正式从 Beta 阶段毕业。比 Beta 版稳定了很多，可以在生产项目使用了。"
 ---
 
 Vue CLI 3.0 正式版（GA）发布了，正式从 Beta 阶段毕业。比 Beta 版稳定了很多，可以在生产项目使用了。

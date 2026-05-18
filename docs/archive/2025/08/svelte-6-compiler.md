@@ -3,6 +3,8 @@ title: "Svelte 6 编译器改进"
 date: 2025-08-28 10:00:00
 tags:
   - Svelte
+readingTime: 2
+description: "在日常开发中，Svelte 6 编译器改进的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，Svelte 6 编译器改进的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

@@ -3,6 +3,8 @@ title: "Popover API 实战应用"
 date: 2023-09-25 09:48:56
 tags:
   - 前端
+readingTime: 2
+description: "Popover API 实战应用在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Popover API 实战应用在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

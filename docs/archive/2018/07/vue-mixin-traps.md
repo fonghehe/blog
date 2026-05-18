@@ -3,6 +3,8 @@ title: "Vue mixin 的使用与陷阱"
 date: 2018-07-19 14:39:52
 tags:
   - Vue
+readingTime: 2
+description: "mixin 是 Vue 2 复用逻辑的主要方式，用好了很方便，但也有不少坑。"
 ---
 
 mixin 是 Vue 2 复用逻辑的主要方式，用好了很方便，但也有不少坑。

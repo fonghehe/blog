@@ -3,6 +3,8 @@ title: "Immer.js：用 Proxy 简化 React 不可变状态更新"
 date: 2020-09-05 10:00:18
 tags:
   - 前端
+readingTime: 2
+description: "React 的状态更新要求不可变（immutable）——不能直接修改 state，而是要返回新对象。对于嵌套较深的数据结构，这会带来大量样板代码。Immer 通过 Proxy 魔法让你\"直接修改\"数据，背后帮你生成不可变的新对象。"
 ---
 
 React 的状态更新要求不可变（immutable）——不能直接修改 state，而是要返回新对象。对于嵌套较深的数据结构，这会带来大量样板代码。Immer 通过 Proxy 魔法让你"直接修改"数据，背后帮你生成不可变的新对象。

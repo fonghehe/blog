@@ -3,6 +3,8 @@ title: "TypeScript 5.6：Iterator Helper、正则类型与严格的内置检查"
 date: 2024-09-22 10:00:00
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 5.6 正式发布，带来了一些实用的语言特性和类型检查增强。挑几个对日常开发影响最大的变化。"
 ---
 
 TypeScript 5.6 正式发布，带来了一些实用的语言特性和类型检查增强。挑几个对日常开发影响最大的变化。

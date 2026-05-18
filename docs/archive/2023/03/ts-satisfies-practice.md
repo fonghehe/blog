@@ -3,6 +3,8 @@ title: "TypeScript satisfies 实战应用"
 date: 2023-03-07 15:28:40
 tags:
   - TypeScript
+readingTime: 2
+description: "在日常开发中，TypeScript satisfies 实战应用的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 ---
 
 在日常开发中，TypeScript satisfies 实战应用的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

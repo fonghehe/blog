@@ -3,6 +3,8 @@ title: "RESTful API 设计规范"
 date: 2018-09-10 09:32:45
 tags:
   - 后端
+readingTime: 1
+description: "前后端对接时，API 设计标准不统一容易产生很多摩擦。整理一下 RESTful 的核心规范，方便和后端对齐。"
 ---
 
 前后端对接时，API 设计标准不统一容易产生很多摩擦。整理一下 RESTful 的核心规范，方便和后端对齐。

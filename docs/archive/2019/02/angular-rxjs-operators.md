@@ -3,6 +3,8 @@ title: "RxJS 操作符实战：前端异步流的正确姿势"
 date: 2019-02-10 10:12:25
 tags:
   - Angular
+readingTime: 1
+description: "RxJS 6 与 Angular 深度集成，掌握核心操作符是写出健壮响应式代码的基础。"
 ---
 
 RxJS 6 与 Angular 深度集成，掌握核心操作符是写出健壮响应式代码的基础。

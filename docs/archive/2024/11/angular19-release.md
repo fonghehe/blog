@@ -4,6 +4,8 @@ date: 2024-11-20 10:00:00
 tags:
   - Angular
   - CSS
+readingTime: 2
+description: "Angular 19 于 2024 年 11 月 19 日正式发布。这是 Angular 近年来在 SSR 能力和响应式模型上变化最大的版本之一。主要亮点：增量水合（Incremental Hydration）正式可用、路由级渲染模式稳定、Zoneless 提升为开发者预览、模板 HMR 正式支持。"
 ---
 
 Angular 19 于 2024 年 11 月 19 日正式发布。这是 Angular 近年来在 SSR 能力和响应式模型上变化最大的版本之一。主要亮点：增量水合（Incremental Hydration）正式可用、路由级渲染模式稳定、Zoneless 提升为开发者预览、模板 HMR 正式支持。

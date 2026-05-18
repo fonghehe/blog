@@ -3,6 +3,8 @@ title: "vite-plugin-ssr SSR 方案"
 date: 2022-03-01 09:31:26
 tags:
   - Vite
+readingTime: 2
+description: "vite-plugin-ssr SSR 方案这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 vite-plugin-ssr SSR 方案这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

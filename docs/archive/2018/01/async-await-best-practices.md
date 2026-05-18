@@ -3,6 +3,8 @@ title: "ES2017 async/await 最佳实践"
 date: 2018-01-13 09:34:55
 tags:
   - JavaScript
+readingTime: 2
+description: "async/await 在 ES2017 正式成为标准，Node.js 7.6+ 原生支持，配合 Babel 可以在前端项目里使用。用了半年多，记录一些实际项目中积累的经验。"
 ---
 
 async/await 在 ES2017 正式成为标准，Node.js 7.6+ 原生支持，配合 Babel 可以在前端项目里使用。用了半年多，记录一些实际项目中积累的经验。

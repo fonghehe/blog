@@ -3,6 +3,8 @@ title: "Vue Vapor Mode 稳定版"
 date: 2025-02-03 10:00:00
 tags:
   - Vue
+readingTime: 3
+description: "Vue Vapor Mode 在 Vue 3.6 中正式进入稳定版。这是 Vue 历史上最大的运行时架构变革——它完全绕过虚拟 DOM，直接编译为原生 DOM 操作，性能接近手写 JavaScript。对于性能敏感的场景，Vapor Mode 是一个真正的游戏规则改变者。"
 ---
 
 Vue Vapor Mode 在 Vue 3.6 中正式进入稳定版。这是 Vue 历史上最大的运行时架构变革——它完全绕过虚拟 DOM，直接编译为原生 DOM 操作，性能接近手写 JavaScript。对于性能敏感的场景，Vapor Mode 是一个真正的游戏规则改变者。

@@ -4,6 +4,8 @@ date: 2019-11-06 11:20:08
 tags:
   - Webpack
   - 工程化
+readingTime: 5
+description: "在上一篇文章中我们预览了 Webpack 5 的新特性，其中 Module Federation 是最具革命性的功能。本文将深入探讨 Module Federation 的架构设计、配置细节和在微前端场景中的实战应用。"
 ---
 
 在上一篇文章中我们预览了 Webpack 5 的新特性，其中 Module Federation 是最具革命性的功能。本文将深入探讨 Module Federation 的架构设计、配置细节和在微前端场景中的实战应用。
@@ -362,7 +364,8 @@ function App() {
 ## 与其他微前端方案对比
 
 | 特性 | Module Federation | qiankun | single-spa |
-|------|------------------|---------|------------|
+|
+------|------------------|---------|------------|
 | 隔离级别 | CSS 共享作用域 | JS/CSS 沙箱 | JS 沙箱 |
 | 通信方式 | 直接 import | 全局状态 | 自定义 |
 | 依赖共享 | 内置版本协商 | 需要配置 | 需要 import maps |

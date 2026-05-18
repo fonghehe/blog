@@ -3,6 +3,8 @@ title: "TypeScript 可变元组类型"
 date: 2022-03-14 16:44:26
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 可变元组类型在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 TypeScript 可变元组类型在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

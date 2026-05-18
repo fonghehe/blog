@@ -4,6 +4,8 @@ date: 2019-10-14 16:20:40
 tags:
   - Webpack
   - 工程化
+readingTime: 4
+description: "Webpack 5 目前仍处于 Beta 阶段，但它带来了许多令人兴奋的改进。其中最值得关注的是 Module Federation——它彻底改变了前端微服务的实现方式。本文将介绍 Webpack 5 的核心新特性，并重点探讨 Module Federation 的工作原理。"
 ---
 
 Webpack 5 目前仍处于 Beta 阶段，但它带来了许多令人兴奋的改进。其中最值得关注的是 Module Federation——它彻底改变了前端微服务的实现方式。本文将介绍 Webpack 5 的核心新特性，并重点探讨 Module Federation 的工作原理。
@@ -209,7 +211,8 @@ new ModuleFederationPlugin({
 配置选项说明：
 
 | 选项 | 说明 | 默认值 |
-|------|------|--------|
+|
+------|------|--------|
 | `singleton` | 只加载一个实例 | false |
 | `requiredVersion` | 版本要求 | package.json 中的版本 |
 | `eager` | 是否打包到入口 chunk | false |

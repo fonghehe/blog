@@ -3,6 +3,8 @@ title: "React Hooks 来了：useState 和 useEffect 初体验"
 date: 2018-09-12 17:05:13
 tags:
   - React
+readingTime: 3
+description: "上个月 React 团队提出了 Hooks 的 RFC，昨天试了一下，感觉这是 React 生态最大的改变之一。"
 ---
 
 上个月 React 团队提出了 Hooks 的 RFC，昨天试了一下，感觉这是 React 生态最大的改变之一。

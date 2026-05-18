@@ -3,6 +3,8 @@ title: "JavaScript 可选链 Optional Chaining"
 date: 2019-10-17 11:29:40
 tags:
   - JavaScript
+readingTime: 3
+description: "可选链操作符（Optional Chaining）`?.` 是 TC39 Stage 3 提案，预计将成为 ES2020 标准的一部分。它允许安全地访问深层嵌套的对象属性，而不需要在每一层都做空值检查。"
 ---
 
 可选链操作符（Optional Chaining）`?.` 是 TC39 Stage 3 提案，预计将成为 ES2020 标准的一部分。它允许安全地访问深层嵌套的对象属性，而不需要在每一层都做空值检查。

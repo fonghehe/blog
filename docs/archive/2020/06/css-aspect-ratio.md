@@ -3,6 +3,8 @@ title: "CSS aspect-ratio 原生宽高比"
 date: 2019-11-11 10:30:38
 tags:
   - CSS
+readingTime: 2
+description: "最近在团队中落地CSS aspect-ratio 原生宽高比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 ---
 
 最近在团队中落地CSS aspect-ratio 原生宽高比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

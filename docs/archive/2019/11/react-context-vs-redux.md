@@ -3,6 +3,8 @@ title: "React Context vs Redux 选择指南"
 date: 2019-11-04 15:36:26
 tags:
   - React
+readingTime: 4
+description: "React 16.3 引入了全新的 Context API，让很多开发者开始思考：有了 Context，还需要 Redux 吗？本文将深入对比两者的适用场景，帮助你在实际项目中做出正确的技术选型。"
 ---
 
 React 16.3 引入了全新的 Context API，让很多开发者开始思考：有了 Context，还需要 Redux 吗？本文将深入对比两者的适用场景，帮助你在实际项目中做出正确的技术选型。

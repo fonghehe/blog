@@ -3,6 +3,8 @@ title: "TypeScript 4.7-4.8：ESM 支持与类型收窄的进化"
 date: 2022-08-09 10:39:03
 tags:
   - TypeScript
+readingTime: 2
+description: "TypeScript 4.7 和 4.8 相继发布，带来了一系列实用改进。4.7 解决了 ESM 模块支持的老大难问题，4.8 进一步增强了类型收窄。"
 ---
 
 TypeScript 4.7 和 4.8 相继发布，带来了一系列实用改进。4.7 解决了 ESM 模块支持的老大难问题，4.8 进一步增强了类型收窄。

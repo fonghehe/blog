@@ -3,6 +3,8 @@ title: "Vue 3 全局 API 变更与迁移"
 date: 2020-01-29 15:44:45
 tags:
   - Vue
+readingTime: 2
+description: "Vue 3 将全局 API 从构造函数模式改为工厂函数模式，所有操作都通过 `createApp` 返回的应用实例进行。这意味着 Vue 2 中常见的 `Vue.use`、`Vue.component`、`Vue.directive` 全部需要调整。本文梳理这些变更并给出迁移方案。"
 ---
 
 Vue 3 将全局 API 从构造函数模式改为工厂函数模式，所有操作都通过 `createApp` 返回的应用实例进行。这意味着 Vue 2 中常见的 `Vue.use`、`Vue.component`、`Vue.directive` 全部需要调整。本文梳理这些变更并给出迁移方案。

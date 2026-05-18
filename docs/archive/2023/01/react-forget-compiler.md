@@ -3,6 +3,8 @@ title: "React Forget 编译器自动优化"
 date: 2023-01-26 10:22:01
 tags:
   - React
+readingTime: 3
+description: "React Forget 是 React Compiler 的早期名称，它代表了 React 团队对\"让开发者忘记 memoization\"这一愿景的尝试。本文从编译器原理层面分析 Forget 是如何工作的，以及它对日常开发模式的改变。"
 ---
 
 React Forget 是 React Compiler 的早期名称，它代表了 React 团队对"让开发者忘记 memoization"这一愿景的尝试。本文从编译器原理层面分析 Forget 是如何工作的，以及它对日常开发模式的改变。

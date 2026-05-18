@@ -3,6 +3,8 @@ title: "CSS Container Queries 提案解读"
 date: 2019-10-08 17:48:44
 tags:
   - CSS
+readingTime: 3
+description: "在响应式设计中，我们一直依赖 `@media` 查询根据视口（viewport）大小来调整布局。但这种方式有一个根本性的缺陷：组件的行为取决于视口，而不是组件自身的尺寸。Container Queries 提案试图解决这个问题，让组件可以根据其父容器的尺寸来调整自身样式。"
 ---
 
 在响应式设计中，我们一直依赖 `@media` 查询根据视口（viewport）大小来调整布局。但这种方式有一个根本性的缺陷：组件的行为取决于视口，而不是组件自身的尺寸。Container Queries 提案试图解决这个问题，让组件可以根据其父容器的尺寸来调整自身样式。

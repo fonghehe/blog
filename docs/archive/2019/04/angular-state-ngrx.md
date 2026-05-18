@@ -3,6 +3,8 @@ title: "NgRx 状态管理：Angular 的 Redux 最佳实践"
 date: 2019-04-05 10:45:15
 tags:
   - Angular
+readingTime: 1
+description: "NgRx 是 Angular 生态中最流行的状态管理方案，基于 Redux 模式与 RxJS。"
 ---
 
 NgRx 是 Angular 生态中最流行的状态管理方案，基于 Redux 模式与 RxJS。

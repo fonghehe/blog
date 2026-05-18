@@ -3,6 +3,8 @@ title: "Pinia：Vue 3 的新状态管理方案"
 date: 2020-11-15 17:14:15
 tags:
   - Vue
+readingTime: 2
+description: "发布于 2020-11-15"
 ---
 
 发布于 2020-11-15

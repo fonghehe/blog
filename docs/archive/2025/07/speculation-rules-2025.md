@@ -3,6 +3,8 @@ title: "Speculation Rules 2025 实践"
 date: 2025-07-16 10:00:00
 tags:
   - 前端
+readingTime: 2
+description: "Speculation Rules 2025 实践在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Speculation Rules 2025 实践在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

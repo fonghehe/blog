@@ -4,6 +4,8 @@ date: 2023-04-10 15:28:50
 tags:
   - React
   - TypeScript
+readingTime: 2
+description: "React Server Components（RSC）不是又一个 SSR 方案。它是 React 团队对\"组件应该在哪里运行\"这个问题的全新回答。"
 ---
 
 React Server Components（RSC）不是又一个 SSR 方案。它是 React 团队对"组件应该在哪里运行"这个问题的全新回答。

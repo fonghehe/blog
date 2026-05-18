@@ -3,6 +3,8 @@ title: "IndexedDB 离线数据存储方案"
 date: 2020-09-21 10:54:20
 tags:
   - PWA
+readingTime: 2
+description: "关于IndexedDB 离线数据存储方案，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
 ---
 
 关于IndexedDB 离线数据存储方案，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

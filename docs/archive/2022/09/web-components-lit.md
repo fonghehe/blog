@@ -4,6 +4,8 @@ date: 2022-09-23 09:48:47
 tags:
   - Web Components
   - TypeScript
+readingTime: 2
+description: "Lit Web Components 开发实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
 ---
 
 Lit Web Components 开发实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

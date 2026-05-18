@@ -3,6 +3,8 @@ title: "React 最新特性全景回顾"
 date: 2023-01-17 16:44:24
 tags:
   - React
+readingTime: 3
+description: "React 18 发布以来，官方团队密集推进了一系列特性：Server Components、Suspense、Transitions、use 钩子等。这些特性不是孤立的，它们共同构成了 React 的新架构蓝图。本文从实际开发角度梳理这些特性的现状和最佳实践。"
 ---
 
 React 18 发布以来，官方团队密集推进了一系列特性：Server Components、Suspense、Transitions、use 钩子等。这些特性不是孤立的，它们共同构成了 React 的新架构蓝图。本文从实际开发角度梳理这些特性的现状和最佳实践。

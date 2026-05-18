@@ -3,6 +3,8 @@ title: "React 20 并发特性成熟"
 date: 2025-01-20 10:00:00
 tags:
   - React
+readingTime: 3
+description: "React 20 的并发特性不再是实验性功能。`useTransition`、`useDeferredValue` 和新的调度 API 全部进入稳定版，并且在底层做了大量性能优化。对于需要处理大量用户交互的复杂应用，这些特性终于可以放心用了。"
 ---
 
 React 20 的并发特性不再是实验性功能。`useTransition`、`useDeferredValue` 和新的调度 API 全部进入稳定版，并且在底层做了大量性能优化。对于需要处理大量用户交互的复杂应用，这些特性终于可以放心用了。

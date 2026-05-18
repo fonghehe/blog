@@ -4,6 +4,8 @@ date: 2021-04-23 09:48:53
 tags:
   - CSS
   - TailwindCSS
+readingTime: 2
+description: "Tailwind CSS JIT 编译模式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Tailwind CSS JIT 编译模式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

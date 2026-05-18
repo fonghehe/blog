@@ -3,6 +3,8 @@ title: "Declarative Shadow DOM 声明式"
 date: 2022-09-08 10:39:17
 tags:
   - 前端
+readingTime: 2
+description: "Declarative Shadow DOM 声明式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 ---
 
 Declarative Shadow DOM 声明式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
