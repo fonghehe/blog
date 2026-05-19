@@ -6,10 +6,16 @@
     "strict": true,
     "jsx": "preserve",
     "lib": ["ESNext", "DOM"],
-    "types": ["vitepress/client"],
-    "paths": {
-      "vitepress": ["./node_modules/vitepress/types/index.d.ts"]
-    }
+    "types": ["node"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "isolatedModules": true
   },
-  "include": ["docs/**/*.ts", "docs/**/*.vue", "docs/.vitepress/**/*.ts"]
+  "include": ["docs/**/*.ts", "docs/**/*.vue", "docs/.vitepress/**/*.ts"],
+  "exclude": [
+    "node_modules",
+    "docs/.vitepress/dist",
+    "docs/.vitepress/dist-*",
+    "docs/.vitepress/cache"
+  ]
 }

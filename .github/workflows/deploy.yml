@@ -18,6 +18,13 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - batch: main
+            env_mode: main
+          - batch: zh-variants
+            env_mode: zh-variants
 
     steps:
       - name: 📥 Checkout code
@@ -40,16 +47,59 @@ jobs:
       - name: 📦 Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: 🏗️ Build VitePress
-        run: pnpm docs:build
+      - name: 💾 Cache VitePress build
+        uses: actions/cache@v4
+        with:
+          path: docs/.vitepress/cache
+          key: vitepress-${{ matrix.batch }}-${{ hashFiles('docs/**/*.md') }}
+          restore-keys: |
+            vitepress-${{ matrix.batch }}-
 
-      - name: 📤 Upload artifact
+      - name: Pre-compute article metadata
+        run: node scripts/precompute-meta.js
+
+      - name: "🔨 Build (${{ matrix.batch }})"
+        run: pnpm exec vitepress build docs
+        env:
+          BUILD_MODE: ${{ matrix.env_mode }}
+          NODE_OPTIONS: --max-old-space-size=4096
+
+      - name: 📤 Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ matrix.batch }}
+          path: docs/.vitepress/dist${{ matrix.batch == 'zh-variants' && '-zh-variants' || '' }}
+
+  merge-and-deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 📥 Download main dist
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-main
+          path: docs/.vitepress/dist
+
+      - name: 📥 Download zh-variants dist
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-zh-variants
+          path: docs/.vitepress/dist-zh-variants
+
+      - name: 🔀 Merge builds
+        run: node docs/.vitepress/merge-builds.js
+
+      - name: 📤 Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/.vitepress/dist
 
   deploy:
-    needs: build
+    needs: merge-and-deploy
     runs-on: ubuntu-latest
     environment:
       name: github-pages

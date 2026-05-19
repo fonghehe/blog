@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { data as allPosts } from "../../posts.data";
+import { data as allPosts } from "../../posts/meta.data";
 import { ref, computed, watch } from "vue";
-import { withBase } from "vitepress";
+import { withBase, useData } from "vitepress";
+
+const { lang } = useData();
 
 interface Category {
   id: string;
@@ -37,28 +39,33 @@ const CATEGORIES: Category[] = [
     id: "JavaScript",
     label: "JavaScript",
     icon: "💛",
-    desc: "ES6+ / 设计模式 / 异步",
-    matchTags: ["JavaScript", "ES6", "设计模式"],
+    desc: "ES6+ / Patterns",
+    matchTags: ["JavaScript", "ES6", "设计模式", "設計模式"],
   },
   {
     id: "TypeScript",
     label: "TypeScript",
     icon: "🔷",
-    desc: "类型系统 / 泛型 / 实战",
+    desc: "Types / Generics",
     matchTags: ["TypeScript"],
   },
   {
     id: "工程化",
-    label: "工程化",
+    label: "Engineering",
     icon: "📦",
     desc: "Webpack / Vite / Rollup",
     matchTags: [
       "工程化",
       "前端工程化",
+      "Engineering",
+      "Frontend Engineering",
+      "Build Tools",
+      "エンジニアリング",
+      "フロントエンドエンジニアリング",
       "Vite",
       "Webpack",
       "Rollup",
-      "Esbuild",
+      "ESBuild",
       "Babel",
     ],
   },
@@ -66,43 +73,145 @@ const CATEGORIES: Category[] = [
     id: "CSS",
     label: "CSS",
     icon: "🎨",
-    desc: "Grid / Flex / 动画",
+    desc: "Grid / Flex / Anim",
     matchTags: ["CSS", "TailwindCSS", "Sass", "Less"],
   },
   {
     id: "性能优化",
-    label: "性能优化",
+    label: "Performance",
     icon: "⚡",
-    desc: "Web Vitals / 渲染 / 缓存",
-    matchTags: ["性能优化", "性能"],
+    desc: "Web Vitals / Render",
+    matchTags: [
+      "性能优化",
+      "性能",
+      "性能優化",
+      "效能最佳化",
+      "效能",
+      "Performance",
+      "Performance Optimization",
+      "パフォーマンス最適化",
+      "パフォーマンス",
+    ],
   },
   {
     id: "Node.js",
     label: "Node.js",
     icon: "🟩",
-    desc: "Stream / 中间件 / 部署",
-    matchTags: ["Node.js", "Node", "Express", "Koa"],
+    desc: "Stream / Deploy",
+    matchTags: ["Node.js", "Express", "Koa"],
   },
   {
     id: "测试",
-    label: "测试",
+    label: "Testing",
     icon: "🧪",
-    desc: "Jest / Vitest / Playwright",
-    matchTags: ["测试", "Vitest", "Playwright", "Jest"],
+    desc: "Jest / Vitest",
+    matchTags: [
+      "测试",
+      "測試",
+      "テスト",
+      "Testing",
+      "Vitest",
+      "Playwright",
+      "Jest",
+    ],
   },
   {
     id: "安全",
-    label: "安全",
+    label: "Security",
     icon: "🔐",
     desc: "XSS / CSP / CSRF",
-    matchTags: ["安全", "XSS", "CSP", "CSRF"],
+    matchTags: ["安全", "Security", "セキュリティ", "XSS", "CSP", "CSRF"],
   },
 ];
+
+// ── i18n strings ──────────────────────────────────────────────────────────────
+const i18n = computed(() => {
+  const l = lang.value;
+  if (l.startsWith("en")) {
+    return {
+      searchPlaceholder: "Search articles...",
+      results: "results",
+      prevPage: "← Prev",
+      nextPage: "Next →",
+      noResults: "No matching articles found",
+      archiveDivider: "Archive (2018 — Dec 2025)",
+      monthLabel: (m: number) =>
+        [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ][m - 1],
+    };
+  }
+  if (l.startsWith("ja")) {
+    return {
+      searchPlaceholder: "記事を検索...",
+      results: "件",
+      prevPage: "← 前へ",
+      nextPage: "次へ →",
+      noResults: "該当する記事が見つかりません",
+      archiveDivider: "アーカイブ (2018 — 2025年12月)",
+      monthLabel: (m: number) => `${m}月`,
+    };
+  }
+  if (l === "zh-TW") {
+    return {
+      searchPlaceholder: "搜尋文章...",
+      results: "篇",
+      prevPage: "← 上一頁",
+      nextPage: "下一頁 →",
+      noResults: "找不到符合的文章",
+      archiveDivider: "往年歸檔 (2018 — 2025年12月)",
+      monthLabel: (m: number) => `${m}月`,
+    };
+  }
+  if (l === "zh-HK") {
+    return {
+      searchPlaceholder: "搜尋文章...",
+      results: "篇",
+      prevPage: "← 上一頁",
+      nextPage: "下一頁 →",
+      noResults: "搵唔到符合嘅文章",
+      archiveDivider: "往年歸檔 (2018 — 2025年12月)",
+      monthLabel: (m: number) => `${m}月`,
+    };
+  }
+  // zh (default) and zh-TW / zh-HK
+  return {
+    searchPlaceholder: "搜索文章...",
+    results: "篇",
+    prevPage: "← 上一页",
+    nextPage: "下一页 →",
+    noResults: "没有找到匹配的文章",
+    archiveDivider: "往年归档 (2018 — 2025年12月)",
+    monthLabel: (m: number) => `${m}月`,
+  };
+});
 
 const PER_PAGE = 20;
 const page = ref(1);
 const selectedCategory = ref<string | null>(null);
 const searchQuery = ref("");
+
+/** Get the URL prefix for current locale. Root (zh) has no prefix. */
+function getLocalePrefix(): string {
+  const l = lang.value;
+  if (l === "zh-CN" || l === "zh") return "";
+  if (l.startsWith("en")) return "/en";
+  if (l.startsWith("ja")) return "/ja";
+  if (l === "zh-TW") return "/zh-tw";
+  if (l === "zh-HK") return "/zh-hk";
+  return "";
+}
 
 function postMatchesCategory(post: { tags: string[] }, cat: Category): boolean {
   return post.tags.some((t) =>
@@ -110,13 +219,28 @@ function postMatchesCategory(post: { tags: string[] }, cat: Category): boolean {
   );
 }
 
+/** Filter posts belonging to current locale by URL prefix */
+const localePosts = computed(() => {
+  const prefix = getLocalePrefix();
+  if (!prefix) {
+    // Root locale (zh): exclude all other locale paths
+    return allPosts.filter(
+      (p) =>
+        !p.url.startsWith("/en/") &&
+        !p.url.startsWith("/ja/") &&
+        !p.url.startsWith("/zh-tw/") &&
+        !p.url.startsWith("/zh-hk/"),
+    );
+  }
+  return allPosts.filter((p) => p.url.startsWith(prefix + "/"));
+});
+
 const isFiltering = computed(
   () => selectedCategory.value !== null || searchQuery.value.trim() !== "",
 );
 
-// 全量文章（已按日期降序排列）
 const displayPosts = computed(() => {
-  let posts = allPosts as typeof allPosts;
+  let posts = localePosts.value;
 
   if (selectedCategory.value) {
     const cat = CATEGORIES.find((c) => c.id === selectedCategory.value);
@@ -147,7 +271,7 @@ watch([selectedCategory, searchQuery], () => {
 });
 
 function getCategoryCount(cat: Category): number {
-  return allPosts.filter((p) => postMatchesCategory(p, cat)).length;
+  return localePosts.value.filter((p) => postMatchesCategory(p, cat)).length;
 }
 
 function selectCategory(id: string) {
@@ -188,20 +312,21 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// 历史归档：2018-01 ~ 2025-12
-const archiveLinks = (() => {
+const archiveLinks = computed(() => {
+  const prefix = getLocalePrefix();
   const result: { year: string; months: { label: string; path: string }[] }[] =
     [];
   for (let y = 2018; y <= 2025; y++) {
-    const maxMonth = y === 2025 ? 12 : 12;
-    const months = Array.from({ length: maxMonth }, (_, i) => ({
-      label: `${i + 1}月`,
-      path: withBase(`/archive/${y}/${String(i + 1).padStart(2, "0")}/`),
+    const months = Array.from({ length: 12 }, (_, i) => ({
+      label: i18n.value.monthLabel(i + 1),
+      path: withBase(
+        `${prefix}/archive/${y}/${String(i + 1).padStart(2, "0")}/`,
+      ),
     }));
     result.push({ year: String(y), months });
   }
   return result;
-})();
+});
 </script>
 
 <template>
@@ -218,7 +343,7 @@ const archiveLinks = (() => {
         <span class="cat-icon">{{ cat.icon }}</span>
         <div class="cat-name">{{ cat.label }}</div>
         <div class="cat-desc">{{ cat.desc }}</div>
-        <div class="cat-count">{{ getCategoryCount(cat) }} 篇</div>
+        <div class="cat-count">{{ getCategoryCount(cat) }}</div>
       </button>
     </div>
 
@@ -242,7 +367,7 @@ const archiveLinks = (() => {
       <input
         v-model="searchQuery"
         type="text"
-        placeholder="搜索文章标题..."
+        :placeholder="i18n.searchPlaceholder"
         class="search-input"
         @keyup.escape="clearFilters"
       />
@@ -259,39 +384,51 @@ const archiveLinks = (() => {
       <span v-if="searchQuery.trim()" class="filter-tag"
         >🔍 {{ searchQuery.trim() }}</span
       >
-      <span class="result-count">共 {{ displayPosts.length }} 篇</span>
+      <span class="result-count"
+        >{{ displayPosts.length }} {{ i18n.results }}</span
+      >
     </div>
 
     <!-- 文章列表 -->
     <ul class="article-list">
       <li v-for="post in pagedPosts" :key="post.url" class="article-item">
-        <time class="article-date">{{ formatDate(post.date) }}</time>
-        <a :href="withBase(post.url)" class="article-title">{{ post.title }}</a>
+        <div class="article-meta">
+          <time class="article-date">{{ formatDate(post.date) }}</time>
+          <span class="article-reading-time">{{ post.readingTime }} min</span>
+        </div>
+        <div class="article-content">
+          <a :href="withBase(post.url)" class="article-title">{{
+            post.title
+          }}</a>
+          <p v-if="post.description" class="article-desc">
+            {{ post.description }}
+          </p>
+        </div>
       </li>
       <li v-if="pagedPosts.length === 0" class="no-results">
-        没有找到匹配的文章
+        {{ i18n.noResults }}
       </li>
     </ul>
 
     <!-- 分页 -->
     <div class="pagination" v-if="totalPages > 1">
       <button class="page-btn" @click="prevPage" :disabled="page === 1">
-        ← 上一页
+        {{ i18n.prevPage }}
       </button>
-      <span class="page-info">第 {{ page }} / {{ totalPages }} 页</span>
+      <span class="page-info">{{ page }} / {{ totalPages }}</span>
       <button
         class="page-btn"
         @click="nextPage"
         :disabled="page === totalPages"
       >
-        下一页 →
+        {{ i18n.nextPage }}
       </button>
     </div>
 
     <!-- 历史归档 -->
     <div class="archive-section" v-if="!isFiltering">
       <div class="archive-divider">
-        <span>历史归档（2018 — 2025年12月）</span>
+        <span>{{ i18n.archiveDivider }}</span>
       </div>
       <div class="archive-links">
         <div class="archive-row" v-for="item in archiveLinks" :key="item.year">
@@ -463,9 +600,8 @@ const archiveLinks = (() => {
 
 .article-item {
   display: flex;
-  align-items: baseline;
   gap: 1rem;
-  padding: 0.55rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px solid var(--vp-c-divider);
 }
 
@@ -473,12 +609,29 @@ const archiveLinks = (() => {
   border-bottom: none;
 }
 
-.article-date {
+.article-meta {
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
   width: 6.2rem;
+  padding-top: 0.15rem;
+}
+
+.article-date {
   font-size: 0.8rem;
   color: var(--vp-c-text-3);
   font-family: "SFMono-Regular", Consolas, monospace;
+}
+
+.article-reading-time {
+  font-size: 0.7rem;
+  color: var(--vp-c-text-3);
+}
+
+.article-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .article-title {
@@ -491,6 +644,18 @@ const archiveLinks = (() => {
 
 .article-title:hover {
   color: var(--vp-c-brand-1);
+}
+
+.article-desc {
+  margin: 0.25rem 0 0;
+  font-size: 0.82rem;
+  color: var(--vp-c-text-3);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .no-results {
