@@ -34,11 +34,14 @@ export function middleware(request: NextRequest) {
   const language = request.headers.get("accept-language") ?? "zh-CN";
 
   // Edge 层做 A/B 测试分流
-  const abGroup = request.cookies.get("ab-group")?.value ?? assignGroup(request);
+  const abGroup =
+    request.cookies.get("ab-group")?.value ?? assignGroup(request);
 
   // Edge 层做个性化重定向
   if (country === "JP" && !request.nextUrl.pathname.startsWith("/ja")) {
-    return NextResponse.redirect(new URL(`/ja${request.nextUrl.pathname}`, request.url));
+    return NextResponse.redirect(
+      new URL(`/ja${request.nextUrl.pathname}`, request.url),
+    );
   }
 
   // 注入请求头，传递给 Server Components
@@ -99,9 +102,12 @@ async function ProductList() {
 
 // 推荐数据：调用远程 API
 async function Recommendations() {
-  const recommendations = await fetch("https://api.example.com/recommendations", {
-    next: { revalidate: 3600 }, // 1 小时缓存
-  }).then((r) => r.json());
+  const recommendations = await fetch(
+    "https://api.example.com/recommendations",
+    {
+      next: { revalidate: 3600 }, // 1 小时缓存
+    },
+  ).then((r) => r.json());
 
   return (
     <section>
@@ -120,15 +126,15 @@ async function Recommendations() {
 
 interface CacheConfig {
   staleWhileRevalidate: number; // 后台刷新时间
-  maxAge: number;               // 缓存有效期
-  tags: string[];               // 缓存标签（用于按标签失效）
+  maxAge: number; // 缓存有效期
+  tags: string[]; // 缓存标签（用于按标签失效）
 }
 
 // 方案 1：Next.js fetch 缓存
 const products = await fetch("https://api.example.com/products", {
   next: {
-    revalidate: 60,          // 60 秒后重新验证
-    tags: ["products"],      // 可通过 revalidateTag("products") 失效
+    revalidate: 60, // 60 秒后重新验证
+    tags: ["products"], // 可通过 revalidateTag("products") 失效
   },
 });
 
