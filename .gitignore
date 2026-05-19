@@ -1,6 +1,8 @@
 .DS_Store
 Thumbs.db
 node_modules/
+docs/.vitepress/dist-*/
 docs/.vitepress/dist/
-docs/.vitepress/cache/
+docs/.vitepress/cache*/
+docs/.vitepress/.temp*/
 *.log

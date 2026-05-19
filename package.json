@@ -5,10 +5,15 @@
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
-    "docs:build": "NODE_OPTIONS=--max-old-space-size=8192 vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:build": "node scripts/precompute-meta.js && pnpm docs:build:main && pnpm docs:build:zh-variants && node docs/.vitepress/merge-builds.js",
+    "docs:build:main": "BUILD_MODE=main NODE_OPTIONS=--max-old-space-size=8192 vitepress build docs",
+    "docs:build:zh-variants": "BUILD_MODE=zh-variants NODE_OPTIONS=--max-old-space-size=8192 vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "precompute": "node scripts/precompute-meta.js"
   },
   "devDependencies": {
+    "@types/node": "^25.7.0",
+    "feed": "^5.2.1",
     "vitepress": "^1.6.2",
     "vue": "^3.5.34"
   }

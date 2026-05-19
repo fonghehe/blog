@@ -1,17 +1,34 @@
 <script setup lang="ts">
-import { onMounted, watch, ref, computed } from "vue";
-import { useData, useRoute } from "vitepress";
+import { onMounted, watch, ref, computed, nextTick } from "vue";
+import { useData, useRoute, withBase } from "vitepress";
 
-const { isDark, frontmatter } = useData();
+const { isDark, frontmatter, lang } = useData();
 const route = useRoute();
 const container = ref<HTMLElement>();
 
 // 首页、文章列表页、归档索引页不显示评论框
-const HIDE_COMMENT_PATHS = ["/blog/", "/blog/posts/", "/blog/archive/"];
+const HIDE_PATHS = [
+  "/",
+  "/posts/",
+  "/archive/",
+  "/en/",
+  "/en/posts/",
+  "/en/archive/",
+  "/ja/",
+  "/ja/posts/",
+  "/ja/archive/",
+  "/zh-tw/",
+  "/zh-tw/posts/",
+  "/zh-tw/archive/",
+  "/zh-hk/",
+  "/zh-hk/posts/",
+  "/zh-hk/archive/",
+];
 const shouldShow = computed(() => {
   if (frontmatter.value.layout === "home") return false;
   if (frontmatter.value.comment === false) return false;
-  if (HIDE_COMMENT_PATHS.includes(route.path)) return false;
+  const currentPath = route.path;
+  if (HIDE_PATHS.some((p) => currentPath === withBase(p))) return false;
   return true;
 });
 
@@ -36,7 +53,14 @@ function loadGiscus() {
   script.setAttribute("data-emit-metadata", "0");
   script.setAttribute("data-input-position", "top");
   script.setAttribute("data-theme", isDark.value ? "dark" : "light");
-  script.setAttribute("data-lang", "zh-CN");
+  script.setAttribute(
+    "data-lang",
+    lang.value.startsWith("en")
+      ? "en"
+      : lang.value.startsWith("ja")
+        ? "ja"
+        : "zh-CN",
+  );
   script.setAttribute("data-loading", "lazy");
   script.crossOrigin = "anonymous";
   script.async = true;
@@ -47,12 +71,14 @@ onMounted(() => {
   if (shouldShow.value) loadGiscus();
 });
 
-// 路由切换后（DOM 更新完成后）重新加载
+// 路由切换后重新加载
 watch(
   () => route.path,
   () => {
-    if (shouldShow.value) loadGiscus();
-    else if (container.value) container.value.innerHTML = "";
+    if (container.value) container.value.innerHTML = "";
+    nextTick(() => {
+      if (shouldShow.value) loadGiscus();
+    });
   },
   { flush: "post" },
 );

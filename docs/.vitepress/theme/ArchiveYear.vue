@@ -1,19 +1,41 @@
 <script setup lang="ts">
-import { data as allPosts, type Post } from "../../posts.data";
+import { data as allPosts, type Post } from "../../posts/meta.data";
 import { computed } from "vue";
-import { useRoute, withBase } from "vitepress";
+import { useRoute, withBase, useData } from "vitepress";
 
 const route = useRoute();
+const { lang, localeIndex } = useData();
 
-// 从路由中提取年份，兼容 /archive/2018/ 和 /blog/archive/2018/
+// 从路由中提取年份，兴 /blog/ja/archive/2025/ 中的 /archive/2025/ 匹配即可
 const yearMatch = route.path.match(/\/archive\/(\d{4})\//);
 const year = yearMatch ? parseInt(yearMatch[1]) : null;
 
+// 使用 VitePress localeIndex 检测当前语言（route.path 含 base，不可直接 startsWith 判断）
+const localePrefix = computed(() => {
+  const idx = localeIndex.value; // "root" | "en" | "ja" | "zh-tw" | "zh-hk"
+  if (idx === "root") return "";
+  return `/${idx}`; // "/en", "/ja", "/zh-tw", "/zh-hk"
+});
+
+// All locales (including zh-tw/zh-hk) now have their own URL prefixes,
+// so no prefix prepending is needed.
+const articleLinkPrefix = computed(() => "");
+
 const yearPosts = computed(() => {
   if (!year) return [];
-  return (allPosts as typeof allPosts).filter(
-    (p) => new Date(p.date).getFullYear() === year,
-  );
+  const prefix = localePrefix.value;
+  return allPosts.filter((p) => {
+    const matchYear = new Date(p.date).getFullYear() === year;
+    if (prefix) return p.url.startsWith(prefix + "/") && matchYear;
+    // zh root: exclude all locale-prefixed variants
+    return (
+      !p.url.startsWith("/en/") &&
+      !p.url.startsWith("/ja/") &&
+      !p.url.startsWith("/zh-tw/") &&
+      !p.url.startsWith("/zh-hk/") &&
+      matchYear
+    );
+  });
 });
 
 const postsGroupedByMonth = computed(() => {
@@ -22,17 +44,90 @@ const postsGroupedByMonth = computed(() => {
   yearPosts.value.forEach((post: Post) => {
     const date = new Date(post.date);
     const month = String(date.getMonth() + 1).padStart(2, "0");
-    const key = month;
-
-    if (!groups[key]) {
-      groups[key] = [];
-    }
-    groups[key].push(post);
+    if (!groups[month]) groups[month] = [];
+    groups[month].push(post);
   });
 
   return Object.entries(groups)
     .sort(([a], [b]) => b.localeCompare(a))
-    .map(([month, posts]) => ({ month, posts }));
+    .map(([month, posts]) => ({ month: parseInt(month), posts }));
+});
+
+// i18n helpers
+const t = computed(() => {
+  const l = lang.value;
+  if (l.startsWith("en")) {
+    const monthNames = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    return {
+      summary: (n: number) => `${year} — ${n} article${n !== 1 ? "s" : ""}`,
+      monthTitle: (m: number, n: number) => `${monthNames[m - 1]} (${n})`,
+      backToArchive: "← Back to Archive",
+      allPosts: "All Posts →",
+      noArticles: `No articles in ${year}`,
+      fetchFailed: "Failed to get year",
+      archivePath: "/en/archive/",
+      postsPath: "/en/posts/",
+    };
+  }
+  if (l.startsWith("ja")) {
+    return {
+      summary: (n: number) => `${year}年 全${n}本`,
+      monthTitle: (m: number, n: number) => `${m}月 (${n}本)`,
+      backToArchive: "← アーカイブへ戻る",
+      allPosts: "すべての記事 →",
+      noArticles: `${year}年の記事はありません`,
+      fetchFailed: "年の取得に失敗しました",
+      archivePath: "/ja/archive/",
+      postsPath: "/ja/posts/",
+    };
+  }
+  if (l === "zh-TW") {
+    return {
+      summary: (n: number) => `${year} 年共 ${n} 篇文章`,
+      monthTitle: (m: number, n: number) => `${m} 月 (${n} 篇)`,
+      backToArchive: "← 返回歸檔",
+      allPosts: "查看所有文章 →",
+      noArticles: `${year} 年沒有文章`,
+      fetchFailed: "獲取年份失敗",
+      archivePath: "/zh-tw/archive/",
+      postsPath: "/zh-tw/posts/",
+    };
+  }
+  if (l === "zh-HK") {
+    return {
+      summary: (n: number) => `${year} 年共 ${n} 篇文章`,
+      monthTitle: (m: number, n: number) => `${m} 月 (${n} 篇)`,
+      backToArchive: "← 返回歸檔",
+      allPosts: "睇晒所有文章 →",
+      noArticles: `${year} 年冇文章`,
+      fetchFailed: "攞唔到年份",
+      archivePath: "/zh-hk/archive/",
+      postsPath: "/zh-hk/posts/",
+    };
+  }
+  return {
+    summary: (n: number) => `${year} 年共 ${n} 篇文章`,
+    monthTitle: (m: number, n: number) => `${m} 月 (${n} 篇)`,
+    backToArchive: "← 返回归档",
+    allPosts: "查看所有文章 →",
+    noArticles: `${year} 年没有文章`,
+    fetchFailed: "获取年份失败",
+    archivePath: "/archive/",
+    postsPath: "/posts/",
+  };
 });
 
 function formatDate(d: string) {
@@ -45,7 +140,7 @@ function formatDate(d: string) {
 
 <template>
   <div class="archive-year-wrap" v-if="year && yearPosts.length > 0">
-    <p class="year-summary">{{ year }} 年共 {{ yearPosts.length }} 篇文章</p>
+    <p class="year-summary">{{ t.summary(yearPosts.length) }}</p>
 
     <div class="months-list">
       <div
@@ -55,27 +150,31 @@ function formatDate(d: string) {
         :id="index === postsGroupedByMonth.length - 1 ? 'latest' : undefined"
       >
         <h3 class="month-title">
-          {{ group.month }} 月 ({{ group.posts.length }} 篇)
+          {{ t.monthTitle(group.month, group.posts.length) }}
         </h3>
         <ul class="posts-in-month">
           <li v-for="post in group.posts" :key="post.url" class="post-item">
             <time class="post-date">{{ formatDate(post.date) }}</time>
-            <a :href="withBase(post.url)" class="post-title">{{
-              post.title
-            }}</a>
+            <a
+              :href="withBase(articleLinkPrefix + post.url)"
+              class="post-title"
+              >{{ post.title }}</a
+            >
           </li>
         </ul>
       </div>
     </div>
 
     <div class="archive-nav">
-      <a :href="withBase('/archive/')" class="nav-link">← 返回归档</a>
-      <a :href="withBase('/posts/')" class="nav-link">查看所有文章 →</a>
+      <a :href="withBase(t.archivePath)" class="nav-link">{{
+        t.backToArchive
+      }}</a>
+      <a :href="withBase(t.postsPath)" class="nav-link">{{ t.allPosts }}</a>
     </div>
   </div>
   <div v-else class="no-posts">
-    <p>{{ year ? `${year} 年没有文章` : "获取年份失败" }}</p>
-    <a :href="withBase('/archive/')">返回归档 →</a>
+    <p>{{ year ? t.noArticles : t.fetchFailed }}</p>
+    <a :href="withBase(t.archivePath)">{{ t.backToArchive }}</a>
   </div>
 </template>
 
