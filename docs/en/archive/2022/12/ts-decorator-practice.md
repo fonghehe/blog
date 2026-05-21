@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近在团队中落地TypeScript 装饰器实战， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 246
 ---
 
 最近在团队中落地TypeScript 装饰器实战， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

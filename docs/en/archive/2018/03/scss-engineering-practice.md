@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "SCSS is now standard in most medium-to-large projects, but many teams only use it as \"CSS with variables,\" without leveraging its full engineering capabilities."
+wordCount: 134
 ---
 
 SCSS is now standard in most medium-to-large projects, but many teams only use it as "CSS with variables," without leveraging its full engineering capabilities.

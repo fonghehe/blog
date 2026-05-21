@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "最近在团队中落地Vue 3.2 defineOptions， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 211
 ---
 
 最近在团队中落地Vue 3.2 defineOptions， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

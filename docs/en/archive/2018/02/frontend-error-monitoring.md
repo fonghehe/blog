@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "Production bugs are silent without monitoring — users just leave. Setting up error monitoring is one of the highest ROI investments for frontend projects."
+wordCount: 202
 ---
 
 Production bugs are silent without monitoring — users just leave. Setting up error monitoring is one of the highest ROI investments for frontend projects.

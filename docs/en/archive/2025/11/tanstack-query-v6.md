@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "TanStack Query v6 is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real pro"
+wordCount: 168
 ---
 
 TanStack Query v6 is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

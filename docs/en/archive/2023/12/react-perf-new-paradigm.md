@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 性能优化新范式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 170
 ---
 
 React 性能优化新范式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

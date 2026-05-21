@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "In 2018 we have multiple module systems coexisting: CommonJS, AMD, and ES Module. Understanding their differences helps you understand why tools like webpack an"
+wordCount: 211
 ---
 
 In 2018 we have multiple module systems coexisting: CommonJS, AMD, and ES Module. Understanding their differences helps you understand why tools like webpack and Babel exist.

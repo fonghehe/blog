@@ -5,6 +5,7 @@ tags:
   - ESLint
 readingTime: 2
 description: "ESLint Flat Config 新配置格式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real p"
+wordCount: 176
 ---
 
 ESLint Flat Config 新配置格式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

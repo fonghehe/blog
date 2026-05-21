@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3 的響應式系統基於 ES6 Proxy 重寫，徹底告別了 Vue 2 的 `Object.defineProperty` 方案。理解其原始碼實現，不僅能幫助我們寫出更高效的程式碼，還能避免一些隱蔽的效能陷阱。"
+wordCount: 339
 ---
 
 Vue 3 的響應式系統基於 ES6 Proxy 重寫，徹底告別了 Vue 2 的 `Object.defineProperty` 方案。理解其原始碼實現，不僅能幫助我們寫出更高效的程式碼，還能避免一些隱蔽的效能陷阱。

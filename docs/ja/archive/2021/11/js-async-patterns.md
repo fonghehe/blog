@@ -6,6 +6,7 @@ tags:
 
 readingTime: 2
 description: "在日常工作中经常用到JavaScript 异步模式汇总，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。"
+wordCount: 374
 ---
 
 在日常工作中经常用到JavaScript 异步模式汇总，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。

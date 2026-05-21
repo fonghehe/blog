@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 11 于 2020 年 11 月 11 日正式发布。相比 Angular 10 的\"质量版本\"，Angular 11 带来了更多开发体验方面的实质改进，其中 HMR 支持和字体内联是最值得关注的两个特性。"
+wordCount: 307
 ---
 
 Angular 11 于 2020 年 11 月 11 日正式发布。相比 Angular 10 的"质量版本"，Angular 11 带来了更多开发体验方面的实质改进，其中 HMR 支持和字体内联是最值得关注的两个特性。

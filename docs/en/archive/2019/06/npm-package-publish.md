@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 1
 description: "Writing a utility and copy-pasting it into every project is inefficient. Once it's stable enough, publish it to npm and install it like any other package. This "
+wordCount: 115
 ---
 
 Writing a utility and copy-pasting it into every project is inefficient. Once it's stable enough, publish it to npm and install it like any other package. This article covers the complete workflow from project initialization to publishing.

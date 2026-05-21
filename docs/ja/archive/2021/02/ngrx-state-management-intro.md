@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "NgRx 是 Angular 生态最主流的状态管理库，基于 Redux 模式 + RxJS。对于中大型 Angular 应用，NgRx 能让状态流转变得可预测、可调试、可测试。这篇文章带你完整走一遍 NgRx 的核心概念和实际用法。"
+wordCount: 258
 ---
 
 NgRx 是 Angular 生态最主流的状态管理库，基于 Redux 模式 + RxJS。对于中大型 Angular 应用，NgRx 能让状态流转变得可预测、可调试、可测试。这篇文章带你完整走一遍 NgRx 的核心概念和实际用法。

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 5
 description: "在生產環境中，一個元件的 JavaScript 錯誤不應該導致整個應用崩潰。React 16 引入的 Error Boundary 機制讓我們可以優雅地捕獲和處理元件樹中的錯誤，展示降級 UI 而非白屏。本文將深入講解 Error Boundary 的原理、用法和最佳實踐。"
+wordCount: 544
 ---
 
 在生產環境中，一個元件的 JavaScript 錯誤不應該導致整個應用崩潰。React 16 引入的 Error Boundary 機制讓我們可以優雅地捕獲和處理元件樹中的錯誤，展示降級 UI 而非白屏。本文將深入講解 Error Boundary 的原理、用法和最佳實踐。

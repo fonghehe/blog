@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "前端特性開關 Feature Flags這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
+wordCount: 319
 ---
 
 前端特性開關 Feature Flags這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。

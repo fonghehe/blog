@@ -6,6 +6,7 @@ tags:
   - Frontend Engineering
 readingTime: 2
 description: "Nx 是专为 Monorepo 设计的构建系统，对 Angular 有一流支持。它解决了大型前端项目的两个核心问题：**代码共享**（多个应用共用同一套组件/工具库）和**构建速度**（只重新构建受影响的部分）。这篇文章介绍 Nx + Angular 的实践方案。"
+wordCount: 339
 ---
 
 Nx 是专为 Monorepo 设计的构建系统，对 Angular 有一流支持。它解决了大型前端项目的两个核心问题：**代码共享**（多个应用共用同一套组件/工具库）和**构建速度**（只重新构建受影响的部分）。这篇文章介绍 Nx + Angular 的实践方案。

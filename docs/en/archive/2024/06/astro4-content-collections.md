@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "I recently rebuilt an internal documentation site with Astro 4. Content Collections is one of Astro's most distinctive features and is well-suited for content-d"
+wordCount: 154
 ---
 
 I recently rebuilt an internal documentation site with Astro 4. Content Collections is one of Astro's most distinctive features and is well-suited for content-driven projects. Here I share the architectural design and practical experience.

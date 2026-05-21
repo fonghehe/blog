@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Zig WebAssembly is seeing increasingly broad adoption in frontend development. This article takes a hands-on project perspective to analyze its core principles "
+wordCount: 206
 ---
 
 Zig WebAssembly is seeing increasingly broad adoption in frontend development. This article takes a hands-on project perspective to analyze its core principles and best practices in depth.

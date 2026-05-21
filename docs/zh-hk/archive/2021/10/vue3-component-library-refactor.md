@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "年初決定把團隊的 Vue 2 組件庫遷移到 Vue 3 + TypeScript。這個庫有 50+ 組件，200+ API，遷移過程花了近 3 個月。整理一下關鍵的重構策略和踩過的坑。"
+wordCount: 347
 ---
 
 年初決定把團隊的 Vue 2 組件庫遷移到 Vue 3 + TypeScript。這個庫有 50+ 組件，200+ API，遷移過程花了近 3 個月。整理一下關鍵的重構策略和踩過的坑。

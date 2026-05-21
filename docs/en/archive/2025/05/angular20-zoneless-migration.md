@@ -6,6 +6,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Angular 20 makes Zoneless officially stable, but a real migration isn't as simple as changing one line of config. This article documents the complete process of"
+wordCount: 160
 ---
 
 Angular 20 makes Zoneless officially stable, but a real migration isn't as simple as changing one line of config. This article documents the complete process of migrating a medium-sized Angular project (~80 components) from zone.js to Zoneless, sharing the pitfalls we encountered and their solutions.

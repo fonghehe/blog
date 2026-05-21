@@ -7,6 +7,7 @@ tags:
 
 readingTime: 4
 description: "最近社区在讨论一个话题：既然 Vite 已经解决了开发和构建的问题，为什么测试环节还是需要一套独立的、和 Vite 完全无关的工具链？测试跑在 Node 上，用 Jest 的 transform 配置，又回到了 Babel/TypeScript 编译那一套。如果测试也能复用 Vite 的模块解析和转换能力呢？"
+wordCount: 710
 ---
 
 最近社区在讨论一个话题：既然 Vite 已经解决了开发和构建的问题，为什么测试环节还是需要一套独立的、和 Vite 完全无关的工具链？测试跑在 Node 上，用 Jest 的 transform 配置，又回到了 Babel/TypeScript 编译那一套。如果测试也能复用 Vite 的模块解析和转换能力呢？

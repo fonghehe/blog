@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3 alpha 代码公开了！第一时间去看了响应式系统（packages/reactivity），相比 Vue 2 改变很大。"
+wordCount: 228
 ---
 
 Vue 3 alpha 代码公开了！第一时间去看了响应式系统（packages/reactivity），相比 Vue 2 改变很大。

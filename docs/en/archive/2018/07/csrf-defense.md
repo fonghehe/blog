@@ -5,6 +5,7 @@ tags:
   - Security
 readingTime: 2
 description: "I wrote about XSS defense before; this time let's talk about CSRF. They are often mentioned together, but the underlying principles are completely different."
+wordCount: 250
 ---
 
 I wrote about XSS defense before; this time let's talk about CSRF. They are often mentioned together, but the underlying principles are completely different.

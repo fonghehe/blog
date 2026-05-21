@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "pnpm 8 發佈了，作為我們團隊的默認包管理器，升級後做了全面的性能對比測試。"
+wordCount: 352
 ---
 
 pnpm 8 發佈了，作為我們團隊的默認包管理器，升級後做了全面的性能對比測試。

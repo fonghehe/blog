@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue Vapor Stable Version Deep Dive is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practi"
+wordCount: 201
 ---
 
 Vue Vapor Stable Version Deep Dive is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - 前端工程化
 readingTime: 2
 description: "Turborepo 成熟了。在我們的 15 個包的 monorepo 中使用了大半年，分享一下實踐經驗。"
+wordCount: 393
 ---
 
 Turborepo 成熟了。在我們的 15 個包的 monorepo 中使用了大半年，分享一下實踐經驗。

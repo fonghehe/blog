@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Capacitor 4 跨平台更新在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
+wordCount: 303
 ---
 
 Capacitor 4 跨平台更新在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。

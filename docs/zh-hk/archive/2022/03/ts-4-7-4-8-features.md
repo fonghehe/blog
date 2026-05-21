@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "在日常開發中，TypeScript 4.7 4.8 新特性的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+wordCount: 288
 ---
 
 在日常開發中，TypeScript 4.7 4.8 新特性的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。

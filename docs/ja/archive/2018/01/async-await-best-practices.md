@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "async/await は ES2017 で正式に標準化されました。Node.js 7.6+ はネイティブでサポートしており、Babel を使えばフロントエンドプロジェクトでも利用できます。半年以上の実際の使用経験をまとめました。"
+wordCount: 404
 ---
 
 async/await は ES2017 で正式に標準化されました。Node.js 7.6+ はネイティブでサポートしており、Babel を使えばフロントエンドプロジェクトでも利用できます。半年以上の実際の使用経験をまとめました。

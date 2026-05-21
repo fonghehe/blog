@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Next.js 15 officially launched at the end of October. The biggest change is the adjustment to caching strategy — from \"cache by default\" to \"no cache by default"
+wordCount: 366
 ---
 
 Next.js 15 officially launched at the end of October. The biggest change is the adjustment to caching strategy — from "cache by default" to "no cache by default". This change has far-reaching implications.

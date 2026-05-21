@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "Vite SSR 實戰方案在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
+wordCount: 324
 ---
 
 Vite SSR 實戰方案在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。

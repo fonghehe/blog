@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 1
 description: "Hooksを使えば、小規模プロジェクトはReduxが不要になるかもしれない。`useReducer` + `useContext`の組み合わせでReduxライクな状態管理が実現でき、中小規模のアプリケーションに適している。"
+wordCount: 90
 ---
 
 Hooksを使えば、小規模プロジェクトはReduxが不要になるかもしれない。`useReducer` + `useContext`の組み合わせでReduxライクな状態管理が実現でき、中小規模のアプリケーションに適している。

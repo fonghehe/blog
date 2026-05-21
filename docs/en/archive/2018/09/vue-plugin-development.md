@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue's plugin mechanism allows features to be registered globally with a single `Vue.use()` call. I built an internal toast notification plugin — here's how I di"
+wordCount: 93
 ---
 
 Vue's plugin mechanism allows features to be registered globally with a single `Vue.use()` call. I built an internal toast notification plugin — here's how I did it.

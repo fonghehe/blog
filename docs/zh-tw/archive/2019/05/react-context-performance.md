@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 5
 description: "React 16.3 引入了新的 Context API，16.8 的 Hooks 讓它更好用了。但在實際專案中，很多人發現用了 Context 後元件頻繁重渲染，效能下降。這篇文章深入分析 Context 的渲染機制和最佳化方案。"
+wordCount: 644
 ---
 
 React 16.3 引入了新的 Context API，16.8 的 Hooks 讓它更好用了。但在實際專案中，很多人發現用了 Context 後元件頻繁重渲染，效能下降。這篇文章深入分析 Context 的渲染機制和最佳化方案。

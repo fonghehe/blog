@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，Node.js 16 新特性与变更 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 206
 ---
 
 在日常开发中，Node.js 16 新特性与变更 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

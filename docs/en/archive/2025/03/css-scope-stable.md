@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS @scope Stable in Practice is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices f"
+wordCount: 135
 ---
 
 CSS @scope Stable in Practice is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real project experience.

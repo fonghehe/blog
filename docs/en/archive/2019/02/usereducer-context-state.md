@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "With Hooks, small projects may not need Redux at all. The `useReducer` + `useContext` combination can implement Redux-like state management, suitable for small-"
+wordCount: 32
 ---
 
 With Hooks, small projects may not need Redux at all. The `useReducer` + `useContext` combination can implement Redux-like state management, suitable for small-to-medium applications.

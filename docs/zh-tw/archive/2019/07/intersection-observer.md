@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 4
 description: "以前做圖片懶載入、無限滾動這些功能，基本都是靠 `scroll` 事件 + `getBoundingClientRect()` 來實現的。效能差不說，程式碼還醜。Intersection Observer API 的出現徹底改變了這個局面。"
+wordCount: 415
 ---
 
 以前做圖片懶載入、無限滾動這些功能，基本都是靠 `scroll` 事件 + `getBoundingClientRect()` 來實現的。效能差不說，程式碼還醜。Intersection Observer API 的出現徹底改變了這個局面。

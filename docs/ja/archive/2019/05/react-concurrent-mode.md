@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "ReactチームはReact Conf 2019でConcurrent Modeの詳細を公開しました。React 16.8 Hooks以降で最も重要な機能ですが、安定版リリースは2020年になる可能性があります。"
+wordCount: 233
 ---
 
 ReactチームはReact Conf 2019でConcurrent Modeの詳細を公開しました。React 16.8 Hooks以降で最も重要な機能ですが、安定版リリースは2020年になる可能性があります。

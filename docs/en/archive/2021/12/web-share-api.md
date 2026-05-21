@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "关于Web Share API 原生分享功能，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective"
+wordCount: 186
 ---
 
 关于Web Share API 原生分享功能，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

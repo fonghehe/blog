@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 7 was officially released in October 2018, bringing important improvements including virtual scrolling, a drag-and-drop CDK, and performance optimizatio"
+wordCount: 99
 ---
 
 Angular 7 was officially released in October 2018, bringing important improvements including virtual scrolling, a drag-and-drop CDK, and performance optimizations. Here is a summary of the most noteworthy new features.

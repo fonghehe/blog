@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "async/await became part of the ES2017 standard. Node.js 7.6+ supports it natively, and with Babel it works in frontend projects too. After half a year of real u"
+wordCount: 143
 ---
 
 async/await became part of the ES2017 standard. Node.js 7.6+ supports it natively, and with Babel it works in frontend projects too. After half a year of real usage, here are the lessons learned.

@@ -6,6 +6,7 @@ tags:
   - Design Patterns
 readingTime: 2
 description: "Design patterns are reusable solutions to commonly occurring problems. This post covers three patterns I use frequently in frontend projects."
+wordCount: 139
 ---
 
 Design patterns are reusable solutions to commonly occurring problems. This post covers three patterns I use frequently in frontend projects.

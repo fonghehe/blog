@@ -5,6 +5,7 @@ tags:
   - Git
 readingTime: 2
 description: "Manually running lint and tests before every commit is easy to forget. Use Git Hooks to automate these checks so they run automatically on commit."
+wordCount: 190
 ---
 
 Manually running lint and tests before every commit is easy to forget. Use Git Hooks to automate these checks so they run automatically on commit.

@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 7
 description: "團隊最近在推 Code Review，整理了一份前端 CR 的檢查清單。實際執行下來，不只是發現 bug，更是一種知識傳遞的方式。"
+wordCount: 1068
 ---
 
 團隊最近在推 Code Review，整理了一份前端 CR 的檢查清單。實際執行下來，不只是發現 bug，更是一種知識傳遞的方式。

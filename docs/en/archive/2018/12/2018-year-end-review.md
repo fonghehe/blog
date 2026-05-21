@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 6
 description: "Looking back at 2018, if I had to sum it up in one word, I'd choose \"systematization.\" At the start of the year I was still reinventing the wheel across project"
+wordCount: 1160
 ---
 
 Looking back at 2018, if I had to sum it up in one word, I'd choose "systematization." At the start of the year I was still reinventing the wheel across projects. By year-end I had a reusable engineering system: a unified build pipeline, a cross-project component library, and team-level code quality standards. A good chunk of technical debt has been paid off, and the groundwork is mostly laid. Time for a retrospective.

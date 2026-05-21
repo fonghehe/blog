@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 5
 description: "做后台管理系统绕不开的话题就是路由权限控制。Vue Router 提供了完善的导航守卫机制，但 `beforeEach`、`beforeResolve`、`afterEach` 三个全局守卫加上路由独享守卫和组件内守卫，执行顺序和适用场景很多人搞不清楚。这篇文章把导航守卫彻底讲透。"
+wordCount: 777
 ---
 
 做后台管理系统绕不开的话题就是路由权限控制。Vue Router 提供了完善的导航守卫机制，但 `beforeEach`、`beforeResolve`、`afterEach` 三个全局守卫加上路由独享守卫和组件内守卫，执行顺序和适用场景很多人搞不清楚。这篇文章把导航守卫彻底讲透。

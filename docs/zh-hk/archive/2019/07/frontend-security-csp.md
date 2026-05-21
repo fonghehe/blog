@@ -5,6 +5,7 @@ tags:
   - 安全
 readingTime: 4
 description: "前端安全是每個開發者都應該重視的話題。XSS 攻擊防不勝防，單純靠過濾用户輸入很難做到萬無一失。CSP（Content Security Policy）提供了一種從瀏覽器層面限制資源加載和腳本執行的機制，是 XSS 防禦的重要補充。"
+wordCount: 865
 ---
 
 前端安全是每個開發者都應該重視的話題。XSS 攻擊防不勝防，單純靠過濾用户輸入很難做到萬無一失。CSP（Content Security Policy）提供了一種從瀏覽器層面限制資源加載和腳本執行的機制，是 XSS 防禦的重要補充。

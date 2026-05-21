@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Node.js 事件迴圈分析在近年來發展迅速，本文將深入分析其原理和實踐方法。"
+wordCount: 284
 ---
 
 Node.js 事件迴圈分析在近年來發展迅速，本文將深入分析其原理和實踐方法。

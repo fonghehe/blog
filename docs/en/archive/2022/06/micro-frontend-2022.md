@@ -5,6 +5,7 @@ tags:
   - Micro Frontend
 readingTime: 2
 description: "We recently implemented 微前端 2022 最佳实践汇总， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 190
 ---
 
 We recently implemented 微前端 2022 最佳实践汇总， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

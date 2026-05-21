@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 4
 description: "日常開發中 `Promise` 的基礎用法（`.then`、`.catch`、`.finally`）已經很熟了，但實際項目中經常遇到一些進階場景：併發控制、超時處理、串行執行、全部完成（不管成功失敗）等。這篇文章整理了我在項目中積累的 Promise 高級用法。"
+wordCount: 557
 ---
 
 日常開發中 `Promise` 的基礎用法（`.then`、`.catch`、`.finally`）已經很熟了，但實際項目中經常遇到一些進階場景：併發控制、超時處理、串行執行、全部完成（不管成功失敗）等。這篇文章整理了我在項目中積累的 Promise 高級用法。

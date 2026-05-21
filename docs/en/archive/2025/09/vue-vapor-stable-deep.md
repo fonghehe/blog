@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Recently implemented Vue Vapor Stable Version Deep Dive in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps t"
+wordCount: 196
 ---
 
 Recently implemented Vue Vapor Stable Version Deep Dive in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

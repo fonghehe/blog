@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Symbol 是 ES6 新增的基本类型，但很多人不知道什么时候用。来看几个实际场景。"
+wordCount: 228
 ---
 
 Symbol 是 ES6 新增的基本类型，但很多人不知道什么时候用。来看几个实际场景。

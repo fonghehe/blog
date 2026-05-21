@@ -5,6 +5,7 @@ tags:
   - ES6
 readingTime: 1
 description: "ES6 introduced two new data structures — `Map` and `Set` — but many developers still default to plain objects and arrays. Let's look at which scenarios they're "
+wordCount: 115
 ---
 
 ES6 introduced two new data structures — `Map` and `Set` — but many developers still default to plain objects and arrays. Let's look at which scenarios they're better suited for.

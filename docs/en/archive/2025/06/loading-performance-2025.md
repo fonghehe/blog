@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "When it comes to loading performance optimization strategies in 2025, many developers only scratch the surface at the API call level. This article takes a produ"
+wordCount: 164
 ---
 
 When it comes to loading performance optimization strategies in 2025, many developers only scratch the surface at the API call level. This article takes a production-environment perspective to discuss the problems you actually encounter and their solutions.

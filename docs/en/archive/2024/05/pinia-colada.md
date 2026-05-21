@@ -5,6 +5,7 @@ tags:
   - Pinia
 readingTime: 1
 description: "I recently implemented Pinia Colada 数据获取库 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help thos"
+wordCount: 175
 ---
 
 I recently implemented Pinia Colada 数据获取库 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those doing similar work.

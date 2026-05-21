@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "A classic interview topic, but understanding it thoroughly also has real practical value. JS has many inheritance patterns, each suited to different situations."
+wordCount: 134
 ---
 
 A classic interview topic, but understanding it thoroughly also has real practical value. JS has many inheritance patterns, each suited to different situations.

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript isn't new (Microsoft released it in 2012), but it only became truly popular in the Chinese frontend community in 2017–2018. Angular 2+ mandates it, a"
+wordCount: 195
 ---
 
 TypeScript isn't new (Microsoft released it in 2012), but it only became truly popular in the Chinese frontend community in 2017–2018. Angular 2+ mandates it, and Vue 2.5 improved TS support significantly — it's time to take it seriously.

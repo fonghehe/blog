@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "2022 年 7 月，Jarred Sumner 釋出了 Bun——一個用 Zig 編寫的 JavaScript 執行時。它的目標很激進：替代 Node.js、npm、esbuild、Jest，成為 JavaScript 工具鏈的統一解決方案。"
+wordCount: 381
 ---
 
 2022 年 7 月，Jarred Sumner 釋出了 Bun——一個用 Zig 編寫的 JavaScript 執行時。它的目標很激進：替代 Node.js、npm、esbuild、Jest，成為 JavaScript 工具鏈的統一解決方案。

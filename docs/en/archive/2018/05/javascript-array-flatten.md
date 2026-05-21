@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "Turning a multi-level nested array into a flat one is a common requirement. Here are several implementation approaches with a comparison of when to use each."
+wordCount: 148
 ---
 
 Turning a multi-level nested array into a flat one is a common requirement. Here are several implementation approaches with a comparison of when to use each.

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 3
 description: "CSS Grid は主要ブラウザでサポートされてからしばらく経ちます。`grid-template-columns` と `grid-template-rows` の基本的な使い方は多くの人が知っていますが、`grid-template-areas`、`auto-fill` vs `auto-fit`、`minmax("
+wordCount: 738
 ---
 
 CSS Grid は主要ブラウザでサポートされてからしばらく経ちます。`grid-template-columns` と `grid-template-rows` の基本的な使い方は多くの人が知っていますが、`grid-template-areas`、`auto-fill` vs `auto-fit`、`minmax()` などの上級機能こそ Grid の真の力を発揮するものです。この記事では実際のレイアウト例を通じてこれらの機能を解説します。

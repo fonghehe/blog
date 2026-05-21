@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "Flexbox is one-dimensional; Grid is two-dimensional. After learning Grid, many layouts that were awkward to achieve with Flexbox become straightforward."
+wordCount: 56
 ---
 
 Flexbox is one-dimensional; Grid is two-dimensional. After learning Grid, many layouts that were awkward to achieve with Flexbox become straightforward.

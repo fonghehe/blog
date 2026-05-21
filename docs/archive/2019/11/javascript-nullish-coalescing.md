@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 3
 description: "空值合并运算符（Nullish Coalescing）`??` 是 TC39 提案，与可选链 `?.` 搭配使用，为 JavaScript 提供了更精确的默认值处理方式。本文详细介绍 `??` 的用法和它与 `||` 的关键区别。"
+wordCount: 344
 ---
 
 空值合并运算符（Nullish Coalescing）`??` 是 TC39 提案，与可选链 `?.` 搭配使用，为 JavaScript 提供了更精确的默认值处理方式。本文详细介绍 `??` 的用法和它与 `||` 的关键区别。

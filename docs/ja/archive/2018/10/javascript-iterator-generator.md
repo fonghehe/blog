@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "ES6 のイテレーター（Iterator）とジェネレーター（Generator）はカスタムイテレーションを実装するためのツールで、Vuex や Redux-Saga でもジェネレーターが使われています。"
+wordCount: 449
 ---
 
 ES6 のイテレーター（Iterator）とジェネレーター（Generator）はカスタムイテレーションを実装するためのツールで、Vuex や Redux-Saga でもジェネレーターが使われています。

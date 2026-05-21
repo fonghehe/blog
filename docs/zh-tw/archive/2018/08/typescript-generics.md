@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 的泛型一直讓人覺得難，但掌握了之後會發現它非常實用。這篇文章從基礎開始講泛型。"
+wordCount: 213
 ---
 
 TypeScript 的泛型一直讓人覺得難，但掌握了之後會發現它非常實用。這篇文章從基礎開始講泛型。

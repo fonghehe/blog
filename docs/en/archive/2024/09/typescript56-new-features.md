@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 5.6 正式发布，带来了一些实用的语言特性和类型检查增强。挑几个对日常开发影响最大的变化。"
+wordCount: 280
 ---
 
 TypeScript 5.6 正式发布，带来了一些实用的语言特性和类型检查增强。挑几个对日常开发影响最大的变化。

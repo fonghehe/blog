@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "JavaScript 閉包與記憶體管理是日常開發中經常遇到的問題。本文從實際專案出發，分享具體的實現方法和經驗總結。"
+wordCount: 211
 ---
 
 JavaScript 閉包與記憶體管理是日常開發中經常遇到的問題。本文從實際專案出發，分享具體的實現方法和經驗總結。

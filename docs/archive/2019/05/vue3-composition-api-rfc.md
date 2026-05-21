@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 团队发布了 Composition API RFC，社区炸了——支持的说好，反对的说像 React Hooks。我仔细读了 RFC，说说我的理解。"
+wordCount: 259
 ---
 
 Vue 团队发布了 Composition API RFC，社区炸了——支持的说好，反对的说像 React Hooks。我仔细读了 RFC，说说我的理解。

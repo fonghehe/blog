@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "最近在团队中落地Valtio v2 Proxy 状态管理，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
+wordCount: 298
 ---
 
 最近在团队中落地Valtio v2 Proxy 状态管理，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue has two main component communication solutions — parent-child (props/emit) and Vuex (global state) — plus a lightweight option: the Event Bus. It's suitable"
+wordCount: 116
 ---
 
 Vue has two main component communication solutions — parent-child (props/emit) and Vuex (global state) — plus a lightweight option: the Event Bus. It's suitable for simple communication between sibling or cross-level components.

@@ -8,6 +8,7 @@ tags:
 
 readingTime: 2
 description: "React Hook Form 表单方案对比 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic "
+wordCount: 223
 ---
 
 React Hook Form 表单方案对比 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

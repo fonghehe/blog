@@ -5,6 +5,7 @@ tags:
   - 移動端
 readingTime: 1
 description: "移動端 1px 問題是做手機頁面必須解決的經典問題。根本原因是裝置畫素比（DPR）。"
+wordCount: 168
 ---
 
 移動端 1px 問題是做手機頁面必須解決的經典問題。根本原因是裝置畫素比（DPR）。

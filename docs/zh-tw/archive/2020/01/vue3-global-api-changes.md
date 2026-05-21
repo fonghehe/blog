@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3 將全域性 API 從建構函式模式改為工廠函式模式，所有操作都通過 `createApp` 返回的應用例項進行。這意味著 Vue 2 中常見的 `Vue.use`、`Vue.component`、`Vue.directive` 全部需要調整。本文梳理這些變更並給出遷移方案。"
+wordCount: 337
 ---
 
 Vue 3 將全域性 API 從建構函式模式改為工廠函式模式，所有操作都通過 `createApp` 返回的應用例項進行。這意味著 Vue 2 中常見的 `Vue.use`、`Vue.component`、`Vue.directive` 全部需要調整。本文梳理這些變更並給出遷移方案。

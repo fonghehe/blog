@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "React 18 在 2021 年進入 Beta 階段，Concurrent 模式的核心 API 逐步穩定。`useTransition` 是其中最值得提前瞭解的 Hook——它解決了一個長期困擾 React 開發者的問題：大列表渲染導致的介面卡頓。"
+wordCount: 451
 ---
 
 React 18 在 2021 年進入 Beta 階段，Concurrent 模式的核心 API 逐步穩定。`useTransition` 是其中最值得提前瞭解的 Hook——它解決了一個長期困擾 React 開發者的問題：大列表渲染導致的介面卡頓。

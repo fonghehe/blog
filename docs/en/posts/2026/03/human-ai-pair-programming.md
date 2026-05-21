@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 3
 description: "Late last year I ran an experiment: for two consecutive weeks, every new feature was developed in \"human-AI pair\" mode. Not Copilot-style code completion, but g"
+wordCount: 417
 ---
 
 Late last year I ran an experiment: for two consecutive weeks, every new feature was developed in "human-AI pair" mode. Not Copilot-style code completion, but genuine collaboration. The results exceeded expectations — but the real takeaway was the mindset shift that happened along the way.

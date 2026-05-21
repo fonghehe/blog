@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "Document Picture-in-Picture APIのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
+wordCount: 502
 ---
 
 Document Picture-in-Picture APIのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。

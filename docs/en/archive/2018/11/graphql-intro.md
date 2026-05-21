@@ -5,6 +5,7 @@ tags:
   - GraphQL
 readingTime: 2
 description: "I've been studying GraphQL lately. Many people say it's a replacement for REST. After giving it a try, here's my understanding."
+wordCount: 157
 ---
 
 I've been studying GraphQL lately. Many people say it's a replacement for REST. After giving it a try, here's my understanding.

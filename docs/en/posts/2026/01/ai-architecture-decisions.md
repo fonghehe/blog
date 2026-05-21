@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 3
 description: "Technology selection and architecture decisions are the core work of senior engineers — and the hardest part for AI to replace. But AI can be an incredibly powe"
+wordCount: 246
 ---
 
 Technology selection and architecture decisions are the core work of senior engineers — and the hardest part for AI to replace. But AI can be an incredibly powerful decision-support tool: helping you analyze trade-offs, simulate performance characteristics of different approaches, and even surface constraints you missed.

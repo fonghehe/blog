@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript generics always seem intimidating at first, but once you get them, you'll find them incredibly useful. This post covers generics from the ground up."
+wordCount: 130
 ---
 
 TypeScript generics always seem intimidating at first, but once you get them, you'll find them incredibly useful. This post covers generics from the ground up.

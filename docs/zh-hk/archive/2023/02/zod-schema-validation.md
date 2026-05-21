@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在全棧 TypeScript 項目裏，類型安全應該是從數據庫到前端一致的。Zod 是實現這個目標最乾淨的方案。"
+wordCount: 282
 ---
 
 在全棧 TypeScript 項目裏，類型安全應該是從數據庫到前端一致的。Zod 是實現這個目標最乾淨的方案。

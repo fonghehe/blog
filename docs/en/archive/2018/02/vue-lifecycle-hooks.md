@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue's lifecycle is a common interview topic and the key to truly understanding how Vue components work. Here's a clear breakdown of when to use each hook, groun"
+wordCount: 129
 ---
 
 Vue's lifecycle is a common interview topic and the key to truly understanding how Vue components work. Here's a clear breakdown of when to use each hook, grounded in real project scenarios.

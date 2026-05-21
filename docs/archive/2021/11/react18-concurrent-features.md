@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "React 18 Alpha 已经发布，可以试用了。等了两年的 Concurrent 特性终于要正式了。"
+wordCount: 198
 ---
 
 React 18 Alpha 已经发布，可以试用了。等了两年的 Concurrent 特性终于要正式了。

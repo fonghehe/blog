@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "最近在团队中落地Svelte 5 发布详解， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 207
 ---
 
 最近在团队中落地Svelte 5 发布详解， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

@@ -5,6 +5,7 @@ tags:
   - Storybook
 readingTime: 2
 description: "关于Storybook 8 正式发布改进，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspect"
+wordCount: 201
 ---
 
 关于Storybook 8 正式发布改进，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

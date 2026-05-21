@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "The topic of TypeScript Type System 2025 Trends has been discussed many times in the community, but as versions evolve, many conclusions need to be updated. Thi"
+wordCount: 114
 ---
 
 The topic of TypeScript Type System 2025 Trends has been discussed many times in the community, but as versions evolve, many conclusions need to be updated. This article re-examines based on the latest version.

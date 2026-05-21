@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Popover API 实战应用 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 178
 ---
 
 Popover API 实战应用 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

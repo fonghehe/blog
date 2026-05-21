@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "A classic Node.js interview topic — but many people only memorize the conclusions without understanding the underlying mechanism. This article explains the even"
+wordCount: 311
 ---
 
 A classic Node.js interview topic — but many people only memorize the conclusions without understanding the underlying mechanism. This article explains the event loop through the actual execution order of real code.

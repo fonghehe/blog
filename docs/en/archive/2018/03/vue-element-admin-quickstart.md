@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "Admin dashboards are the everyday work environment for most frontend engineers. This article outlines a base architecture for Vue 2 + Element UI admin systems, "
+wordCount: 83
 ---
 
 Admin dashboards are the everyday work environment for most frontend engineers. This article outlines a base architecture for Vue 2 + Element UI admin systems, suitable for quickly bootstrapping new projects.

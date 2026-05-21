@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.6 was released in February 2022, with the biggest highlight being enhanced control flow analysis——现在可以在构造函数的 super() 调用之前引用 this。这个看似小的改进，解决了很多实际编码"
+wordCount: 274
 ---
 
 TypeScript 4.6 was released in February 2022, with the biggest highlight being enhanced control flow analysis——现在可以在构造函数的 super() 调用之前引用 this。这个看似小的改进，解决了很多实际编码中的烦人问题。

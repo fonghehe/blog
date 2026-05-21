@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 16 在 2017 年 9 月发布，底层做了彻底重写，核心就是 Fiber 架构。这次重写不是为了性能数字好看，而是为了解决 React 15 在复杂应用里的根本性架构问题。"
+wordCount: 895
 ---
 
 React 16 在 2017 年 9 月发布，底层做了彻底重写，核心就是 Fiber 架构。这次重写不是为了性能数字好看，而是为了解决 React 15 在复杂应用里的根本性架构问题。

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "项目上线后出 bug，最痛苦的不是有 bug，而是不知道 bug 在哪。良好的错误处理让问题更容易定位。"
+wordCount: 155
 ---
 
 项目上线后出 bug，最痛苦的不是有 bug，而是不知道 bug 在哪。良好的错误处理让问题更容易定位。

@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 3
 description: "关于Node.js 18 fetch API，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
+wordCount: 496
 ---
 
 关于Node.js 18 fetch API，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。

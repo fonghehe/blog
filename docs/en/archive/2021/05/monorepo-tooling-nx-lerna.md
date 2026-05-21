@@ -6,6 +6,7 @@ tags:
 
 readingTime: 1
 description: "Turborepo 高性能 Monorepo has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic "
+wordCount: 199
 ---
 
 Turborepo 高性能 Monorepo has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

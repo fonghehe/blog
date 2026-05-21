@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近项目中用到了TypeScript 类型守卫入门，发现比预想的要复杂。分享一下实践过程中总结的经验。"
+wordCount: 244
 ---
 
 最近项目中用到了TypeScript 类型守卫入门，发现比预想的要复杂。分享一下实践过程中总结的经验。

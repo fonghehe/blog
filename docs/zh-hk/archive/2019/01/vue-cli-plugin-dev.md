@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "團隊項目多了，每次初始化都要手動配置 ESLint、Prettier、Git Hooks、CI 配置……做個 Vue CLI Plugin 一鍵搞定。"
+wordCount: 137
 ---
 
 團隊項目多了，每次初始化都要手動配置 ESLint、Prettier、Git Hooks、CI 配置……做個 Vue CLI Plugin 一鍵搞定。

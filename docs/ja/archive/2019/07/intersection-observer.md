@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "以前は画像の遅延読み込みや無限スクロールの実装には `scroll` イベントと `getBoundingClientRect()` を組み合わせるのが一般的でした。パフォーマンスが悪いだけでなく、コードも煩雑になります。Intersection Observer API の登場でこの状況は一変しました。"
+wordCount: 277
 ---
 
 以前は画像の遅延読み込みや無限スクロールの実装には `scroll` イベントと `getBoundingClientRect()` を組み合わせるのが一般的でした。パフォーマンスが悪いだけでなく、コードも煩雑になります。Intersection Observer API の登場でこの状況は一変しました。

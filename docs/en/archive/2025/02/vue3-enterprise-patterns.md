@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "In daily development, Vue 3 Enterprise Development Patterns are being used more and more frequently. This article systematically explains its usage, principles,"
+wordCount: 113
 ---
 
 In daily development, Vue 3 Enterprise Development Patterns are being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

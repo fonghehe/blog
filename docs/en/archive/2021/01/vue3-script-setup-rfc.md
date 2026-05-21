@@ -7,6 +7,7 @@ tags:
 
 readingTime: 3
 description: "Vue 3.2 即将带来 `<script setup>` 语法糖，目前 RFC 已经进入最终阶段。这是 Vue 3 Composition API 体验提升最大的一个特性，值得提前了解。"
+wordCount: 396
 ---
 
 Vue 3.2 即将带来 `<script setup>` 语法糖，目前 RFC 已经进入最终阶段。这是 Vue 3 Composition API 体验提升最大的一个特性，值得提前了解。

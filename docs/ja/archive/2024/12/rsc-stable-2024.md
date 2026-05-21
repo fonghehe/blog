@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 19 Server Components 稳定のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
+wordCount: 456
 ---
 
 React 19 Server Components 稳定のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。

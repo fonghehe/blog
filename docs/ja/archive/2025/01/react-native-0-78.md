@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React Native 0.78は2025年1月にリリースされ、New Architecture（Fabric + TurboModules）が正式に安定版（General Availability）に達しました。また、Hermes 0.15エンジンの統合、StyleSheetの静的抽出最適化など、パフォーマンスと互"
+wordCount: 344
 ---
 
 React Native 0.78は2025年1月にリリースされ、New Architecture（Fabric + TurboModules）が正式に安定版（General Availability）に達しました。また、Hermes 0.15エンジンの統合、StyleSheetの静的抽出最適化など、パフォーマンスと互換性の両面で大きな改善が含まれています。

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS if() 函数提案在近年来发展迅速，本文将深入分析其原理和实践方法。"
+wordCount: 176
 ---
 
 CSS if() 函数提案在近年来发展迅速，本文将深入分析其原理和实践方法。

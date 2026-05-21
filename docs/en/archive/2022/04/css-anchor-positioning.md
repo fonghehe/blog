@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "We recently implemented CSS Anchor Positioning 锚点定位， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing simi"
+wordCount: 179
 ---
 
 We recently implemented CSS Anchor Positioning 锚点定位， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

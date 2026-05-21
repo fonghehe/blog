@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "2020 年是前端历史上变化最密集的年份之一：Vue 3 正式发布、React 17 升级铺路、Angular 保持季度发版节奏、Vite 颠覆开发体验、webpack 5 发布 Module Federation。站在 2020 年末，来聊聊 2021 年值得关注的方向。"
+wordCount: 665
 ---
 
 2020 年是前端历史上变化最密集的年份之一：Vue 3 正式发布、React 17 升级铺路、Angular 保持季度发版节奏、Vite 颠覆开发体验、webpack 5 发布 Module Federation。站在 2020 年末，来聊聊 2021 年值得关注的方向。

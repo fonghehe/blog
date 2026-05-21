@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "RxJS 6 與 Angular 深度整合，掌握核心運算子是寫出健壯響應式程式碼的基礎。"
+wordCount: 89
 ---
 
 RxJS 6 與 Angular 深度整合，掌握核心運算子是寫出健壯響應式程式碼的基礎。

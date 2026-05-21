@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "`position` 是前端必知必会的属性，但 `z-index` 失效的问题坑了不少人。"
+wordCount: 223
 ---
 
 `position` 是前端必知必会的属性，但 `z-index` 失效的问题坑了不少人。

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "面试常被问到\"Vue 的 diff 算法是怎么工作的\"，网上的文章大多说得很抽象。这里用实际例子说清楚。"
+wordCount: 264
 ---
 
 面试常被问到"Vue 的 diff 算法是怎么工作的"，网上的文章大多说得很抽象。这里用实际例子说清楚。

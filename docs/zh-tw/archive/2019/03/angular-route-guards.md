@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular Router 提供多種守衛介面，可以精細控制路由訪問許可權。"
+wordCount: 81
 ---
 
 Angular Router 提供多種守衛介面，可以精細控制路由訪問許可權。

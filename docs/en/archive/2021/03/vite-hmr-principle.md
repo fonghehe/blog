@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "在日常开发中，Vite HMR 热更新原理分析 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 162
 ---
 
 在日常开发中，Vite HMR 热更新原理分析 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 18 正式釋出了！等了 3 年的 Concurrent 特性終於穩定。和之前的預覽版相比，正式版 API 基本沒變，但文件和最佳實踐更完善了。"
+wordCount: 235
 ---
 
 React 18 正式釋出了！等了 3 年的 Concurrent 特性終於穩定。和之前的預覽版相比，正式版 API 基本沒變，但文件和最佳實踐更完善了。

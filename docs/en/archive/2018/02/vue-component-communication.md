@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Component communication in Vue is an unavoidable topic. Different scenarios suit different approaches. Here's a summary of all six methods for quick reference."
+wordCount: 275
 ---
 
 Component communication in Vue is an unavoidable topic. Different scenarios suit different approaches. Here's a summary of all six methods for quick reference.

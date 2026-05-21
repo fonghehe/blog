@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 2.8 引入了條件類型，TypeScript 2.1 引入了映射類型。這兩個特性可以構建出非常強大的類型工具。"
+wordCount: 188
 ---
 
 TypeScript 2.8 引入了條件類型，TypeScript 2.1 引入了映射類型。這兩個特性可以構建出非常強大的類型工具。

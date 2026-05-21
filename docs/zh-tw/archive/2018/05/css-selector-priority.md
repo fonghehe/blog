@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS 樣式不生效，大機率是優先順序問題。這篇文章把優先順序規則說清楚。"
+wordCount: 235
 ---
 
 CSS 樣式不生效，大機率是優先順序問題。這篇文章把優先順序規則說清楚。

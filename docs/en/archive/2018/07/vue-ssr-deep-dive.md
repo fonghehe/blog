@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "I built an SSR project with Nuxt.js in the first half of the year. Using it was smooth, but when problems arose I didn't know where to start. After digging into"
+wordCount: 227
 ---
 
 I built an SSR project with Nuxt.js in the first half of the year. Using it was smooth, but when problems arose I didn't know where to start. After digging into Vue SSR's internals, here's a summary of the core mechanisms.

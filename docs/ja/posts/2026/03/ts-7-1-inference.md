@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 7.1の型推論は日常業務でよく使う機能だ。体系的なまとめを一本書いたので、理解と活用の助けになれば幸いだ。"
+wordCount: 456
 ---
 
 TypeScript 7.1の型推論は日常業務でよく使う機能だ。体系的なまとめを一本書いたので、理解と活用の助けになれば幸いだ。

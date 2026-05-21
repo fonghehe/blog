@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 3
 description: "日々の開発において、HTML Popover：安定版の本格活用の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
+wordCount: 553
 ---
 
 日々の開発において、HTML Popover：安定版の本格活用の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。

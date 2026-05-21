@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "When it comes to Agentic AI coding agents, many developers only scratch the surface at the API call level. This article takes a production-environment perspecti"
+wordCount: 162
 ---
 
 When it comes to Agentic AI coding agents, many developers only scratch the surface at the API call level. This article takes a production-environment perspective to discuss the problems you actually encounter and their solutions.

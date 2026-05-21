@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "JavaScript Array.flatMap 实用技巧这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
+wordCount: 292
 ---
 
 JavaScript Array.flatMap 实用技巧这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

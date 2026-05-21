@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "关于Storybook 驱动 Design System，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
+wordCount: 480
 ---
 
 关于Storybook 驱动 Design System，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。

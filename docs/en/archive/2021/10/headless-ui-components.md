@@ -8,6 +8,7 @@ tags:
 
 readingTime: 2
 description: "Headless UI 无头组件库 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based"
+wordCount: 226
 ---
 
 Headless UI 无头组件库 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

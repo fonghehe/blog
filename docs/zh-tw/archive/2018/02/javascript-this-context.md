@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "`this` 是 JS 裡最容易出錯的概念之一。寫了一年多程式碼，終於搞清楚它的規則。"
+wordCount: 151
 ---
 
 `this` 是 JS 裡最容易出錯的概念之一。寫了一年多程式碼，終於搞清楚它的規則。

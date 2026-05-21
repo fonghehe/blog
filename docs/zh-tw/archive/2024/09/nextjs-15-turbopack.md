@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "關於Next.js 15 Turbopack 預設，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+wordCount: 357
 ---
 
 關於Next.js 15 Turbopack 預設，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。

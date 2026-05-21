@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "React 18 即将发布，Suspense 的数据获取模式终于有了官方推荐方案。之前 Suspense 只能做代码分割的 loading 状态，现在可以用于数据获取了。"
+wordCount: 292
 ---
 
 React 18 即将发布，Suspense 的数据获取模式终于有了官方推荐方案。之前 Suspense 只能做代码分割的 loading 状态，现在可以用于数据获取了。

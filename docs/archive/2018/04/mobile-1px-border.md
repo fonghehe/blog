@@ -5,6 +5,7 @@ tags:
   - 移动端
 readingTime: 1
 description: "移动端 1px 问题是做手机页面必须解决的经典问题。根本原因是设备像素比（DPR）。"
+wordCount: 168
 ---
 
 移动端 1px 问题是做手机页面必须解决的经典问题。根本原因是设备像素比（DPR）。

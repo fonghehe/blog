@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.6 在 2022 年 2 月釋出，最大的亮點是控制流分析的增強——現在可以在建構函式的 super() 呼叫之前引用 this。這個看似小的改進，解決了很多實際編碼中的煩人問題。"
+wordCount: 303
 ---
 
 TypeScript 4.6 在 2022 年 2 月釋出，最大的亮點是控制流分析的增強——現在可以在建構函式的 super() 呼叫之前引用 this。這個看似小的改進，解決了很多實際編碼中的煩人問題。

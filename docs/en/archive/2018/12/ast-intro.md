@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Babel, ESLint, and Prettier all work on ASTs. Understanding the AST principle helps you use these tools better and even write your own plugins."
+wordCount: 140
 ---
 
 Babel, ESLint, and Prettier all work on ASTs. Understanding the AST principle helps you use these tools better and even write your own plugins.

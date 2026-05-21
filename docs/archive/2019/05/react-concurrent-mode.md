@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 团队在 React Conf 2019 上展示了 Concurrent Mode 的更多细节。这是 React 16.8 Hooks 之后最重要的特性，但正式版可能要等到 2020 年。"
+wordCount: 276
 ---
 
 React 团队在 React Conf 2019 上展示了 Concurrent Mode 的更多细节。这是 React 16.8 Hooks 之后最重要的特性，但正式版可能要等到 2020 年。

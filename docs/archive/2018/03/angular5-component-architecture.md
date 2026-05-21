@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "随着 Angular 应用复杂度提升，如何合理划分组件职责变得越来越重要。Smart/Dumb（也叫 Container/Presentational）组件模式是目前最主流的 Angular 组件设计思路。"
+wordCount: 332
 ---
 
 随着 Angular 应用复杂度提升，如何合理划分组件职责变得越来越重要。Smart/Dumb（也叫 Container/Presentational）组件模式是目前最主流的 Angular 组件设计思路。

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 18 正式版发布两个月了，并发特性不再是实验室里的概念。这篇深入两个核心 API——`useTransition` 和 `useDeferredValue`，用真实场景讲解怎么在项目中落地。"
+wordCount: 467
 ---
 
 React 18 正式版发布两个月了，并发特性不再是实验室里的概念。这篇深入两个核心 API——`useTransition` 和 `useDeferredValue`，用真实场景讲解怎么在项目中落地。

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "最近在团队中落地Vue 3.3 新特性详解， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 199
 ---
 
 最近在团队中落地Vue 3.3 新特性详解， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

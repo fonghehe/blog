@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Flexbox 一維，Grid 二維。學了 Grid 之後，很多以前用 Flexbox 勉強實現的佈局變得簡單多了。"
+wordCount: 275
 ---
 
 Flexbox 一維，Grid 二維。學了 Grid 之後，很多以前用 Flexbox 勉強實現的佈局變得簡單多了。

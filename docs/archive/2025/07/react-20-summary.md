@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "在日常开发中，React 20 新特性汇总的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
+wordCount: 288
 ---
 
 在日常开发中，React 20 新特性汇总的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Our team has been using Server Components on Next.js 15 for a full year. We've hit plenty of pitfalls and learned a lot. Here's a summary of our hard-won experi"
+wordCount: 113
 ---
 
 Our team has been using Server Components on Next.js 15 for a full year. We've hit plenty of pitfalls and learned a lot. Here's a summary of our hard-won experience.

@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "以前、Biome が ESLint + Prettier を置き換えられるかどうかの分析を書きました。数ヶ月間チームに全面展開した後、完全なワークフロー経験をまとめます。"
+wordCount: 622
 ---
 
 以前、Biome が ESLint + Prettier を置き換えられるかどうかの分析を書きました。数ヶ月間チームに全面展開した後、完全なワークフロー経験をまとめます。

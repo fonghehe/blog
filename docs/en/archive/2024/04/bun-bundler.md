@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Bun 打包器性能实测This topic has been discussed many times in the community, but with each version update, many conclusions need revising. This article revisits the to"
+wordCount: 214
 ---
 
 Bun 打包器性能实测This topic has been discussed many times in the community, but with each version update, many conclusions need revising. This article revisits the topic based on the latest version.

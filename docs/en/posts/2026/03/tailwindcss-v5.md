@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "The topic of Tailwind CSS v5's new features has been discussed many times in the community, but with each new iteration, many prior conclusions need updating. T"
+wordCount: 193
 ---
 
 The topic of Tailwind CSS v5's new features has been discussed many times in the community, but with each new iteration, many prior conclusions need updating. This article provides a fresh take based on the latest version.

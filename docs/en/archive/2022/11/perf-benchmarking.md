@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "前端性能基准测试 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 214
 ---
 
 前端性能基准测试 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

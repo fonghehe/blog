@@ -5,6 +5,7 @@ tags:
   - 后端
 readingTime: 1
 description: "前后端对接时，API 设计标准不统一容易产生很多摩擦。整理一下 RESTful 的核心规范，方便和后端对齐。"
+wordCount: 150
 ---
 
 前后端对接时，API 设计标准不统一容易产生很多摩擦。整理一下 RESTful 的核心规范，方便和后端对齐。

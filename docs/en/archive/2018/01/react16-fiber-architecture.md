@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 16 shipped a complete rewrite of the rendering engine called **Fiber**. The public API is mostly unchanged, but the internal scheduling model is fundament"
+wordCount: 347
 ---
 
 React 16 shipped a complete rewrite of the rendering engine called **Fiber**. The public API is mostly unchanged, but the internal scheduling model is fundamentally different.

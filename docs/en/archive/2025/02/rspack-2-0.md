@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "When it comes to Rspack 2.0 New Features and Ecosystem, many developers only scratch the surface at the API call level. This article attempts to discuss the rea"
+wordCount: 111
 ---
 
 When it comes to Rspack 2.0 New Features and Ecosystem, many developers only scratch the surface at the API call level. This article attempts to discuss the real-world problems and solutions you'll encounter from a production environment perspective.

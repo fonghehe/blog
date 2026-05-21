@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS interpolate-size 插值这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
+wordCount: 456
 ---
 
 CSS interpolate-size 插值这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

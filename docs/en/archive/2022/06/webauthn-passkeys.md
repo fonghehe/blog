@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "We recently implemented WebAuthn Passkeys 无密码认证， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar "
+wordCount: 189
 ---
 
 We recently implemented WebAuthn Passkeys 无密码认证， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，Vue 3 Teleport 实现全局 Modal is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies"
+wordCount: 201
 ---
 
 在日常开发中，Vue 3 Teleport 实现全局 Modal is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

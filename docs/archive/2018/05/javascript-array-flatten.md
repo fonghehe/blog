@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "把多层嵌套数组变成一维数组是常见需求。记录几种实现方式，并对比适用场景。"
+wordCount: 211
 ---
 
 把多层嵌套数组变成一维数组是常见需求。记录几种实现方式，并对比适用场景。

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "日常業務でよく使うTypeScript 声明合并，体系的なまとめを整理しました。皆さんがより良く理解し活用するための助けになれば幸いです。"
+wordCount: 425
 ---
 
 日常業務でよく使うTypeScript 声明合并，体系的なまとめを整理しました。皆さんがより良く理解し活用するための助けになれば幸いです。

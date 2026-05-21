@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "There is no shortage of articles about Vue 2 component communication patterns online, but most lack real-world experience. This article explores best practices "
+wordCount: 135
 ---
 
 There is no shortage of articles about Vue 2 component communication patterns online, but most lack real-world experience. This article explores best practices from actual projects.

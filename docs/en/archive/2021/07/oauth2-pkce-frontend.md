@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，OAuth 2.0 PKCE 前端认证流程 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 203
 ---
 
 在日常开发中，OAuth 2.0 PKCE 前端认证流程 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

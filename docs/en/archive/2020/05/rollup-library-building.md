@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "在日常开发中，Rollup 库打包最佳实践的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
+wordCount: 310
 ---
 
 在日常开发中，Rollup 库打包最佳实践的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

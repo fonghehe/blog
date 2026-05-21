@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Regarding CSS timeline-scope: Scroll Timelines, many developers only stay at the API call level. This article discusses real-world problems and solutions from a"
+wordCount: 208
 ---
 
 Regarding CSS timeline-scope: Scroll Timelines, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

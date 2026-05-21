@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "最近在团队中落地前端错误日志采集与分析， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 217
 ---
 
 最近在团队中落地前端错误日志采集与分析， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

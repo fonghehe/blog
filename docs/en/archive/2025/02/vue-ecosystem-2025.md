@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "The Vue Ecosystem 2025 Complete Overview is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best "
+wordCount: 103
 ---
 
 The Vue Ecosystem 2025 Complete Overview is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real project experience.

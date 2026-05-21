@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React Hooks 釋出一年多了，從最初的不適應到現在的離不開，總結一些專案中高頻使用的自定義 Hook 模式。"
+wordCount: 160
 ---
 
 React Hooks 釋出一年多了，從最初的不適應到現在的離不開，總結一些專案中高頻使用的自定義 Hook 模式。

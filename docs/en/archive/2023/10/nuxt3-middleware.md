@@ -5,6 +5,7 @@ tags:
   - Nuxt.js
 readingTime: 1
 description: "Nuxt 3 中间件系统 is a topic worth paying attention to in frontend development. This article explores its core concepts and best practices from real project experien"
+wordCount: 227
 ---
 
 Nuxt 3 中间件系统 is a topic worth paying attention to in frontend development. This article explores its core concepts and best practices from real project experience.

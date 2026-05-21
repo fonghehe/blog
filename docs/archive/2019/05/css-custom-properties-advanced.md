@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 4
 description: "CSS Custom Properties（也叫 CSS Variables）已经得到现代浏览器的全面支持。很多人只知道它能定义颜色变量，但它的能力远不止于此。这篇文章介绍 CSS Custom Properties 的高级用法和实战技巧。"
+wordCount: 378
 ---
 
 CSS Custom Properties（也叫 CSS Variables）已经得到现代浏览器的全面支持。很多人只知道它能定义颜色变量，但它的能力远不止于此。这篇文章介绍 CSS Custom Properties 的高级用法和实战技巧。

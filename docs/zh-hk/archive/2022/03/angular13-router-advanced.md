@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular Router 是 Angular 生態中最成熟的路由方案之一。這篇文章深入講解懶加載配置、路由守衞的各種形式以及大型應用的路由組織模式，適合已經熟悉基礎 Angular 路由的開發者。"
+wordCount: 239
 ---
 
 Angular Router 是 Angular 生態中最成熟的路由方案之一。這篇文章深入講解懶加載配置、路由守衞的各種形式以及大型應用的路由組織模式，適合已經熟悉基礎 Angular 路由的開發者。

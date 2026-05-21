@@ -8,6 +8,7 @@ tags:
 
 readingTime: 2
 description: "Vue 3 + TypeScript 完整开发指南 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
+wordCount: 197
 ---
 
 Vue 3 + TypeScript 完整开发指南 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "無障礙訪問（Accessibility，a11y）是很多前端團隊長期欠債的領域。Angular CDK 提供了一套完善的 A11y 工具，包括焦點管理、鍵盤導航、屏幕閲讀器支持等。這篇文章介紹 CDK A11y 模塊的核心 API。"
+wordCount: 297
 ---
 
 無障礙訪問（Accessibility，a11y）是很多前端團隊長期欠債的領域。Angular CDK 提供了一套完善的 A11y 工具，包括焦點管理、鍵盤導航、屏幕閲讀器支持等。這篇文章介紹 CDK A11y 模塊的核心 API。

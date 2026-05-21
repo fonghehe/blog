@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "上半年用 Nuxt.js 做了 SSR 項目，用的時候很順，但遇到問題不知道從哪下手。這次深入看了 Vue SSR 的原理，整理一下核心機制。"
+wordCount: 427
 ---
 
 上半年用 Nuxt.js 做了 SSR 項目，用的時候很順，但遇到問題不知道從哪下手。這次深入看了 Vue SSR 的原理，整理一下核心機制。

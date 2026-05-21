@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "Vue Vapor Mode officially reached stable status in Vue 3.6. This is the most significant runtime architecture change in Vue's history — it completely bypasses t"
+wordCount: 253
 ---
 
 Vue Vapor Mode officially reached stable status in Vue 3.6. This is the most significant runtime architecture change in Vue's history — it completely bypasses the virtual DOM and compiles directly to native DOM operations, achieving performance close to hand-written JavaScript. For performance-sensitive scenarios, Vapor Mode is a true game changer.

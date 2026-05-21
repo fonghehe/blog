@@ -33,16 +33,20 @@ const SCAN_DIRS = [
   "zh-hk/archive",
 ];
 
+function stripContent(content) {
+  return content
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/^---[\s\S]*?---/m, "")
+    .replace(/[#*`>\-|[\]()!]/g, "")
+    .trim();
+}
+
 function estimateReadingTime(content) {
   // Extract code block content (strip language tag and fences)
   const codeBlocks = content.match(/```[\s\S]*?```/g) || [];
   const codeChars = codeBlocks.join("").replace(/```\w*\n?/g, "").length;
 
-  const stripped = content
-    .replace(/```[\s\S]*?```/g, "")
-    .replace(/^---[\s\S]*?---/m, "")
-    .replace(/[#*`>\-|[\]()!]/g, "")
-    .trim();
+  const stripped = stripContent(content);
   const cjk = (
     stripped.match(/[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff]/g) || []
   ).length;
@@ -54,9 +58,23 @@ function estimateReadingTime(content) {
   return Math.max(1, Math.round(cjk / 300 + words / 200 + codeChars / 3000));
 }
 
+function computeWordCount(content) {
+  const stripped = stripContent(content);
+  const cjk = (
+    stripped.match(/[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff]/g) || []
+  ).length;
+  const words = stripped
+    .replace(/[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff]/g, "")
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return cjk + words;
+}
+
 function extractDescription(content) {
   const withoutFrontmatter = content.replace(/^---[\s\S]*?---/m, "");
-  const lines = withoutFrontmatter
+  // Remove code blocks first to avoid their content leaking into description
+  const withoutCode = withoutFrontmatter.replace(/```[\s\S]*?```/g, "");
+  const lines = withoutCode
     .split("\n")
     .map((l) => l.trim())
     .filter(
@@ -68,9 +86,17 @@ function extractDescription(content) {
         !l.startsWith("-") &&
         !l.startsWith("!") &&
         !l.startsWith("[") &&
-        !l.startsWith("<!--"),
+        !l.startsWith("<!--") &&
+        !l.startsWith("<"),
     );
-  return (lines[0] || "").slice(0, 160);
+  const line = lines[0] || "";
+  // Strip inline HTML tags, Markdown links, and emphasis markers
+  const plain = line
+    .replace(/<[^>]+>/g, "")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_`~]/g, "")
+    .trim();
+  return plain.slice(0, 160);
 }
 
 function parseFrontmatter(content) {
@@ -123,7 +149,12 @@ for (const dir of SCAN_DIRS) {
 
     const descMissing = !hasFrontmatterField(fm.body, "description");
 
-    if (!rtNeedsUpdate && !descMissing) {
+    const newWordCount = computeWordCount(content);
+    const wcMatch = fm.body.match(/^wordCount:\s*(\d+)/m);
+    const currentWC = wcMatch ? parseInt(wcMatch[1], 10) : null;
+    const wcNeedsUpdate = currentWC !== newWordCount;
+
+    if (!rtNeedsUpdate && !descMissing && !wcNeedsUpdate) {
       skippedFiles++;
       continue;
     }
@@ -144,6 +175,17 @@ for (const dir of SCAN_DIRS) {
       }
     }
 
+    if (wcNeedsUpdate) {
+      if (currentWC !== null) {
+        newFmBody = newFmBody.replace(
+          /^(wordCount:\s*)\d+/m,
+          `$1${newWordCount}`,
+        );
+      } else {
+        newFmBody += `\nwordCount: ${newWordCount}`;
+      }
+    }
+
     if (descMissing) {
       const desc = extractDescription(content);
       if (desc) {
@@ -161,8 +203,11 @@ for (const dir of SCAN_DIRS) {
         const rtInfo = rtNeedsUpdate
           ? ` readingTime: ${currentRT ?? "?"} → ${newReadingTime}`
           : "";
+        const wcInfo = wcNeedsUpdate
+          ? ` wordCount: ${currentWC ?? "?"} → ${newWordCount}`
+          : "";
         const descInfo = descMissing ? " +description" : "";
-        console.log(`  ${rel}:${rtInfo}${descInfo}`);
+        console.log(`  ${rel}:${rtInfo}${wcInfo}${descInfo}`);
       }
       continue;
     }

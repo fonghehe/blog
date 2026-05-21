@@ -5,6 +5,7 @@ tags:
   - PWA
 readingTime: 3
 description: "PWA（Progressive Web App）這個概念 Google 在 2015 年提出，到 2018 年技術已經相當成熟，iOS 11.3 也終於加入了基礎的 Service Worker 支援。這篇文章從實際角度講 PWA 的核心機制。"
+wordCount: 450
 ---
 
 PWA（Progressive Web App）這個概念 Google 在 2015 年提出，到 2018 年技術已經相當成熟，iOS 11.3 也終於加入了基礎的 Service Worker 支援。這篇文章從實際角度講 PWA 的核心機制。

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript 7.1 type inference comes up constantly in day-to-day work. Here's a systematic summary I've compiled, hoping it helps everyone understand and apply i"
+wordCount: 167
 ---
 
 TypeScript 7.1 type inference comes up constantly in day-to-day work. Here's a systematic summary I've compiled, hoping it helps everyone understand and apply it more effectively.

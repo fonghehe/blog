@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Slots are one of the most powerful component reuse mechanisms in Vue, but many developers only use the basic default slot. Here's a summary of practical usage p"
+wordCount: 134
 ---
 
 Slots are one of the most powerful component reuse mechanisms in Vue, but many developers only use the basic default slot. Here's a summary of practical usage patterns from real projects.

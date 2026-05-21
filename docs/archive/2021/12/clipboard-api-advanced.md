@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Clipboard API 剪贴板高级用法这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
+wordCount: 284
 ---
 
 Clipboard API 剪贴板高级用法这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

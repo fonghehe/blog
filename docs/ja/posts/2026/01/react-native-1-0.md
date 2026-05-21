@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 4
 description: "React Nativeがついに1.0正式版をリリースしました。2015年の0.xから2026年の1.0まで、この道のりは11年かかりました。新アーキテクチャ（New Architecture）が完全にデフォルト有効化され、HermesエンジンがサポートされるJS唯一のエンジンとなり、Fabricレンダラーが全面展開さ"
+wordCount: 642
 ---
 
 React Nativeがついに1.0正式版をリリースしました。2015年の0.xから2026年の1.0まで、この道のりは11年かかりました。新アーキテクチャ（New Architecture）が完全にデフォルト有効化され、HermesエンジンがサポートされるJS唯一のエンジンとなり、Fabricレンダラーが全面展開されたことは、React Nativeが「使えるもの」から「本当に良いもの」へと進化したことを示しています。

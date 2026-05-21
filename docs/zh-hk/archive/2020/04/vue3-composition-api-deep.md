@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3 的 Composition API 已經在 RFC 中敲定，雖然正式版還要幾個月，但提前深入理解很有必要。這不是 Vue 2 的簡單升級，而是組件邏輯組織方式的根本變化。"
+wordCount: 225
 ---
 
 Vue 3 的 Composition API 已經在 RFC 中敲定，雖然正式版還要幾個月，但提前深入理解很有必要。這不是 Vue 2 的簡單升級，而是組件邏輯組織方式的根本變化。

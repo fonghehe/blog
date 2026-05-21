@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 5
 description: "Vue 3 的 Composition API 引入了一種全新的組件邏輯組織方式。本文通過一個真實的用户管理頁面，演示如何用 Composition API 重構 Vue 2 的 Options API 代碼，展示 Composable 函數的抽取和複用。"
+wordCount: 418
 ---
 
 Vue 3 的 Composition API 引入了一種全新的組件邏輯組織方式。本文通過一個真實的用户管理頁面，演示如何用 Composition API 重構 Vue 2 的 Options API 代碼，展示 Composable 函數的抽取和複用。

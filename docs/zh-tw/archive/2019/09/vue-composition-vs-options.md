@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 4
 description: "Vue 3 引入的 Composition API 是繼 React Hooks 之後又一個重要的函數語言程式設計範式在前端框架中的實踐。它允許開發者以函式為單位組織元件邏輯，解決了 Options API 在複雜元件中邏輯分散的問題。本文將從多個維度對比兩種 API 風格，並給出遷移建議。"
+wordCount: 557
 ---
 
 Vue 3 引入的 Composition API 是繼 React Hooks 之後又一個重要的函數語言程式設計範式在前端框架中的實踐。它允許開發者以函式為單位組織元件邏輯，解決了 Options API 在複雜元件中邏輯分散的問題。本文將從多個維度對比兩種 API 風格，並給出遷移建議。

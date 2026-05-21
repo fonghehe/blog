@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 枚舉使用建議在近年來發展迅速，本文將深入分析其原理和實踐方法。"
+wordCount: 275
 ---
 
 TypeScript 枚舉使用建議在近年來發展迅速，本文將深入分析其原理和實踐方法。

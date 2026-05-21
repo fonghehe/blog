@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "In day-to-day development, Astro 5 View Transitions is being used more and more frequently. This article systematically explains its usage, principles, and opti"
+wordCount: 202
 ---
 
 In day-to-day development, Astro 5 View Transitions is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

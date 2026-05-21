@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "關於TypeScript 泛型入門與實踐，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。"
+wordCount: 259
 ---
 
 關於TypeScript 泛型入門與實踐，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。

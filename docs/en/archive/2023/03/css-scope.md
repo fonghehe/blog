@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "最近在团队中落地CSS @scope 作用域样式， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 191
 ---
 
 最近在团队中落地CSS @scope 作用域样式， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

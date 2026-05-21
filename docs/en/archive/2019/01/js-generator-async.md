@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "JavaScript generators and async flow control are topics encountered frequently in day-to-day development. This article draws from real projects to share practic"
+wordCount: 127
 ---
 
 JavaScript generators and async flow control are topics encountered frequently in day-to-day development. This article draws from real projects to share practical implementation approaches and lessons learned.

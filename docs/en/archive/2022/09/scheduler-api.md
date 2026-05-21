@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "最近在团队中落地Scheduler API 调度优先级， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 198
 ---
 
 最近在团队中落地Scheduler API 调度优先级， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

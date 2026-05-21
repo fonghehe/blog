@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Regarding Storybook 9 Component Development, many developers only stay at the API call level. This article discusses real-world problems and solutions from a pr"
+wordCount: 154
 ---
 
 Regarding Storybook 9 Component Development, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

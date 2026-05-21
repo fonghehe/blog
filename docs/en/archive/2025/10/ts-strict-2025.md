@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "In day-to-day development, TypeScript Strict Mode 2025 is being used more and more frequently. This article systematically explains its usage, principles, and o"
+wordCount: 181
 ---
 
 In day-to-day development, TypeScript Strict Mode 2025 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

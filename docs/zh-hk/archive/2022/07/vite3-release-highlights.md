@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "Vite 3.0 於 2022 年 7 月 13 日正式發佈。距離 Vite 2.0 發佈已經過去了 16 個月，這次版本號升級帶來了一系列重要改進：基於 Rollup 3 的構建、統一的 dev/build 行為、改善的 SSR 支持，以及更清晰的 CLI 輸出。"
+wordCount: 316
 ---
 
 Vite 3.0 於 2022 年 7 月 13 日正式發佈。距離 Vite 2.0 發佈已經過去了 16 個月，這次版本號升級帶來了一系列重要改進：基於 Rollup 3 的構建、統一的 dev/build 行為、改善的 SSR 支持，以及更清晰的 CLI 輸出。

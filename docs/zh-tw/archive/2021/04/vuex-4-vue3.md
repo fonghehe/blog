@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3 正式釋出後，Vuex 4 作為其配套狀態管理方案也進入了穩定期。在將一箇中型後臺管理系統從 Vue 2 + Vuex 3 遷移到 Vue 3 + Vuex 4 的過程中，總結了一些實踐經驗和注意事項。"
+wordCount: 305
 ---
 
 Vue 3 正式釋出後，Vuex 4 作為其配套狀態管理方案也進入了穩定期。在將一箇中型後臺管理系統從 Vue 2 + Vuex 3 遷移到 Vue 3 + Vuex 4 的過程中，總結了一些實踐經驗和注意事項。

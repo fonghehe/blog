@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "At the start of 2025, our team has fully integrated AI-assisted development. From GitHub Copilot to Claude Code, from Cursor to all kinds of AI plugins, the cha"
+wordCount: 151
 ---
 
 At the start of 2025, our team has fully integrated AI-assisted development. From GitHub Copilot to Claude Code, from Cursor to all kinds of AI plugins, the changes have come faster than expected. Let me share the workflows we've actually put into practice.

@@ -5,6 +5,7 @@ tags:
   - Frontend Engineering
 readingTime: 2
 description: "We recently implemented Monorepo 工具链 2023 总结， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar wor"
+wordCount: 221
 ---
 
 We recently implemented Monorepo 工具链 2023 总结， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

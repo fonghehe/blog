@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Node.js 诊断报告 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 174
 ---
 
 Node.js 诊断报告 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

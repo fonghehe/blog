@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Node.js Stream 流式处理是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。"
+wordCount: 287
 ---
 
 Node.js Stream 流式处理是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。

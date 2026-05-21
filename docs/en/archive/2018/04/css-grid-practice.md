@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "I covered CSS Grid basics back in January. This time, let's look at real project scenarios and see how Grid solves problems that Flexbox struggles with."
+wordCount: 128
 ---
 
 I covered CSS Grid basics back in January. This time, let's look at real project scenarios and see how Grid solves problems that Flexbox struggles with.

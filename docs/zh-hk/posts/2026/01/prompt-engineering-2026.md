@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 3
 description: "Prompt Engineering 在 2026 年仍然是前端工程師需要掌握的核心技能。雖然模型越來越強，但\"會提問\"和\"不會提問\"之間的差距反而更大了。好的 prompt 能讓 AI 一次產出可用代碼，差的 prompt 讓你在對話中浪費半小時。"
+wordCount: 412
 ---
 
 Prompt Engineering 在 2026 年仍然是前端工程師需要掌握的核心技能。雖然模型越來越強，但"會提問"和"不會提問"之間的差距反而更大了。好的 prompt 能讓 AI 一次產出可用代碼，差的 prompt 讓你在對話中浪費半小時。

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 8 has officially opened the **Builders API**, allowing the community to provide custom implementations for commands like `ng build`, `ng test`, and `ng "
+wordCount: 72
 ---
 
 Angular 8 has officially opened the **Builders API**, allowing the community to provide custom implementations for commands like `ng build`, `ng test`, and `ng serve`. This is also the foundation for many excellent tools such as `@angular-builders/custom-webpack` and `@nrwl/workspace`.

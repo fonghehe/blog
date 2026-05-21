@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "关于JavaScript 深拷贝方案对比，网上有不少文章但大多缺乏实战经验。本文结合真实项目，探讨最佳实践。"
+wordCount: 253
 ---
 
 关于JavaScript 深拷贝方案对比，网上有不少文章但大多缺乏实战经验。本文结合真实项目，探讨最佳实践。

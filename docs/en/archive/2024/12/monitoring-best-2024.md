@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "前端监控最佳实践 2024 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 197
 ---
 
 前端监控最佳实践 2024 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

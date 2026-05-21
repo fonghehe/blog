@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "The topic of JavaScript Set New Methods has been discussed many times in the community, but with each new version, many conclusions need updating. This article "
+wordCount: 202
 ---
 
 The topic of JavaScript Set New Methods has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.

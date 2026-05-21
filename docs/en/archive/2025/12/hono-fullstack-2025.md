@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Recently implemented Hono Full-Stack Development 2025 in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps tho"
+wordCount: 193
 ---
 
 Recently implemented Hono Full-Stack Development 2025 in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

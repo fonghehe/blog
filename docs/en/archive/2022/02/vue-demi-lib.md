@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "We recently implemented VueDemi Vue 2/3 通用库开发， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar wo"
+wordCount: 172
 ---
 
 We recently implemented VueDemi Vue 2/3 通用库开发， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

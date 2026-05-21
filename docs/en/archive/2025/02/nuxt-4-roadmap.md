@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "In daily development, the Nuxt 4 Roadmap and New Architecture is being used more and more frequently. This article systematically explains its usage, principles"
+wordCount: 102
 ---
 
 In daily development, the Nuxt 4 Roadmap and New Architecture is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

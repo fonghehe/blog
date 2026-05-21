@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近在團隊中落地TypeScript infer 窄化與模式匹配，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+wordCount: 353
 ---
 
 最近在團隊中落地TypeScript infer 窄化與模式匹配，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。

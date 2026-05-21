@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "We've recently rolled out Node.js 24 LTS in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling "
+wordCount: 149
 ---
 
 We've recently rolled out Node.js 24 LTS in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling similar challenges.

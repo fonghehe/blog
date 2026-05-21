@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "As applications grow, shipping all components in a single bundle becomes a performance bottleneck. Vue 2's async component feature lets you split component defi"
+wordCount: 160
 ---
 
 As applications grow, shipping all components in a single bundle becomes a performance bottleneck. Vue 2's async component feature lets you split component definitions into separate chunks and load them only when needed.

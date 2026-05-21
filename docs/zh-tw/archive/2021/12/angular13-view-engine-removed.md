@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Angular 13 於 2021 年 11 月 3 日正式釋出。這個版本最大的意義是**徹底清理歷史包袱**：完全移除 View Engine 相關程式碼、廢棄 IE 11 支援、重新設計 Angular Package Format（APF）。對於已經在 Ivy 上穩定執行的專案，這次升級帶來了更小的依賴體積和更快"
+wordCount: 464
 ---
 
 Angular 13 於 2021 年 11 月 3 日正式釋出。這個版本最大的意義是**徹底清理歷史包袱**：完全移除 View Engine 相關程式碼、廢棄 IE 11 支援、重新設計 Angular Package Format（APF）。對於已經在 Ivy 上穩定執行的專案，這次升級帶來了更小的依賴體積和更快的編譯速度。

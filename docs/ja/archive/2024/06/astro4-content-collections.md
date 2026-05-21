@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "最近、Astro 4 で社内ドキュメントサイトをリファクタリングしました。Content Collections は Astro の最も特徴的な機能の一つで、コンテンツ駆動型プロジェクトに適しています。アーキテクチャの設計と実践経験を共有します。"
+wordCount: 433
 ---
 
 最近、Astro 4 で社内ドキュメントサイトをリファクタリングしました。Content Collections は Astro の最も特徴的な機能の一つで、コンテンツ駆動型プロジェクトに適しています。アーキテクチャの設計と実践経験を共有します。

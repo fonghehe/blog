@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "React 的狀態更新要求不可變（immutable）——不能直接修改 state，而是要返回新對象。對於嵌套較深的數據結構，這會帶來大量樣板代碼。Immer 通過 Proxy 魔法讓你\"直接修改\"數據，背後幫你生成不可變的新對象。"
+wordCount: 277
 ---
 
 React 的狀態更新要求不可變（immutable）——不能直接修改 state，而是要返回新對象。對於嵌套較深的數據結構，這會帶來大量樣板代碼。Immer 通過 Proxy 魔法讓你"直接修改"數據，背後幫你生成不可變的新對象。

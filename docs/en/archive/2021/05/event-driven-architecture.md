@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "最近在团队中落地前端事件驱动架构设计， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 201
 ---
 
 最近在团队中落地前端事件驱动架构设计， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "前端工程師寫 Node.js 腳本，能解決很多重複勞動。整理一些實用的腳本開發技巧。"
+wordCount: 123
 ---
 
 前端工程師寫 Node.js 腳本，能解決很多重複勞動。整理一些實用的腳本開發技巧。

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "隨著 Angular 應用複雜度提升，如何合理劃分元件職責變得越來越重要。Smart/Dumb（也叫 Container/Presentational）元件模式是目前最主流的 Angular 元件設計思路。"
+wordCount: 333
 ---
 
 隨著 Angular 應用複雜度提升，如何合理劃分元件職責變得越來越重要。Smart/Dumb（也叫 Container/Presentational）元件模式是目前最主流的 Angular 元件設計思路。

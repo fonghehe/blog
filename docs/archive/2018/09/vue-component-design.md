@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "写了两年 Vue，最近开始反思组件该怎么设计。总结几个让组件更可维护的原则。"
+wordCount: 220
 ---
 
 写了两年 Vue，最近开始反思组件该怎么设计。总结几个让组件更可维护的原则。

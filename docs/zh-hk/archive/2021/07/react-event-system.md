@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "React 事件系統深入是前端開發中一個值得關注的話題。本文從實際項目經驗出發，探討其核心概念和最佳實踐。"
+wordCount: 294
 ---
 
 React 事件系統深入是前端開發中一個值得關注的話題。本文從實際項目經驗出發，探討其核心概念和最佳實踐。

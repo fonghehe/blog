@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "最近在團隊中落地Farcaster Frames 去中心化社交，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+wordCount: 305
 ---
 
 最近在團隊中落地Farcaster Frames 去中心化社交，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。

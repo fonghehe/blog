@@ -12,6 +12,7 @@ tags:
 
 readingTime: 3
 description: "新年第一周，适合做一次技术规划。2020 年变化太多：Vue 3、Angular 11、webpack 5、Vite……与其追赶每一个新玩意儿，不如想清楚哪些值得深耕。"
+wordCount: 733
 ---
 
 新年第一周，适合做一次技术规划。2020 年变化太多：Vue 3、Angular 11、webpack 5、Vite……与其追赶每一个新玩意儿，不如想清楚哪些值得深耕。

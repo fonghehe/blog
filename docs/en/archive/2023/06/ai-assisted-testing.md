@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "AI 辅助测试用例生成 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 203
 ---
 
 AI 辅助测试用例生成 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

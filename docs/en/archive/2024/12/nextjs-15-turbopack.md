@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Next.js 15 Turbopack 默认 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pr"
+wordCount: 224
 ---
 
 Next.js 15 Turbopack 默认 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

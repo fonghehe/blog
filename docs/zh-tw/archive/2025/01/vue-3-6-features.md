@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3.6 是 Evan You 在 2025 VueConf 上預覽的下一個大版本，核心主題是「編譯時最佳化 + Vapor Mode 正式穩定」。本文基於 RFC 和早期 alpha 版本，分析 3.6 中最值得關注的變化。"
+wordCount: 374
 ---
 
 Vue 3.6 是 Evan You 在 2025 VueConf 上預覽的下一個大版本，核心主題是「編譯時最佳化 + Vapor Mode 正式穩定」。本文基於 RFC 和早期 alpha 版本，分析 3.6 中最值得關注的變化。

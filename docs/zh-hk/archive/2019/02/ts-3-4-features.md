@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 3.4 新特性速覽是日常開發中經常遇到的問題。本文從實際項目出發，分享具體的實現方法和經驗總結。"
+wordCount: 259
 ---
 
 TypeScript 3.4 新特性速覽是日常開發中經常遇到的問題。本文從實際項目出發，分享具體的實現方法和經驗總結。

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScriptにはユーティリティ型のコレクションが付属しています。多くの開発者は`Partial`や`Pick`を知っていますが、全体のライブラリははるかに豊富で強力です。"
+wordCount: 205
 ---
 
 TypeScriptにはユーティリティ型のコレクションが付属しています。多くの開発者は`Partial`や`Pick`を知っていますが、全体のライブラリははるかに豊富で強力です。

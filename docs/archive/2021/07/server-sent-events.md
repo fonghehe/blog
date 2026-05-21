@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "关于Server-Sent Events 单向实时通信，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
+wordCount: 286
 ---
 
 关于Server-Sent Events 单向实时通信，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

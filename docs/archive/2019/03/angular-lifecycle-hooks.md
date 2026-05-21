@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 组件的生命周期钩子让你在关键时机执行初始化、清理等操作。"
+wordCount: 69
 ---
 
 Angular 组件的生命周期钩子让你在关键时机执行初始化、清理等操作。

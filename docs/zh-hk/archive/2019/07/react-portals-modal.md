@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "在團隊推廣React Portals 實現全局彈窗的過程中，踩了不少坑。整理出來希望對大家有所幫助。"
+wordCount: 207
 ---
 
 在團隊推廣React Portals 實現全局彈窗的過程中，踩了不少坑。整理出來希望對大家有所幫助。

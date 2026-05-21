@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In the first half of the year I wrote a six-month Copilot report. The second half brought even bigger changes — Cursor emerged, and AI coding evolved from a \"co"
+wordCount: 373
 ---
 
 In the first half of the year I wrote a six-month Copilot report. The second half brought even bigger changes — Cursor emerged, and AI coding evolved from a "completion tool" to a "coding partner".

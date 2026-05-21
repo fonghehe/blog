@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "Vuex 係 Vue 生態裡面嘅狀態管理方案，類似 Redux 之於 React。但 Vuex 嘅學習曲線比 Redux 平緩，因為佢冇咁多樣板代碼。呢篇文章結合實際項目，講點樣合理使用 Vuex。"
+wordCount: 451
 ---
 
 Vuex 係 Vue 生態裡面嘅狀態管理方案，類似 Redux 之於 React。但 Vuex 嘅學習曲線比 Redux 平緩，因為佢冇咁多樣板代碼。呢篇文章結合實際項目，講點樣合理使用 Vuex。

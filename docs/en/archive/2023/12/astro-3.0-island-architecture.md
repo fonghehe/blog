@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Astro 3.0 is out. From 2.0's \"interesting concept\" to 3.0's \"ready for serious production use\", this framework has matured faster than expected."
+wordCount: 301
 ---
 
 Astro 3.0 is out. From 2.0's "interesting concept" to 3.0's "ready for serious production use", this framework has matured faster than expected.

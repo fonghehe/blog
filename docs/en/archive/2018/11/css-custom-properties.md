@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS custom properties (also called CSS variables) are now supported in all major browsers, except IE. They're fundamentally different from Sass variables and ha"
+wordCount: 266
 ---
 
 CSS custom properties (also called CSS variables) are now supported in all major browsers, except IE. They're fundamentally different from Sass variables and have their own unique advantages worth understanding properly.

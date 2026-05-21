@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "关于前端测试策略金字塔，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 162
 ---
 
 关于前端测试策略金字塔，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

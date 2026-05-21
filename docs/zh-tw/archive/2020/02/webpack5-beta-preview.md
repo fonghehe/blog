@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "Webpack 5 已經進入 Beta 階段，雖然還沒正式釋出，但新特性值得關注。梳理一下對我們日常開發影響最大的幾個變化。"
+wordCount: 267
 ---
 
 Webpack 5 已經進入 Beta 階段，雖然還沒正式釋出，但新特性值得關注。梳理一下對我們日常開發影響最大的幾個變化。

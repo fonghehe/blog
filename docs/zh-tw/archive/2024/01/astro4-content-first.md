@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Astro 4 釋出了，用了一年多 Astro 做內容站，說說它為什麼適合某類專案，以及真實的工程化體驗。"
+wordCount: 292
 ---
 
 Astro 4 釋出了，用了一年多 Astro 做內容站，說說它為什麼適合某類專案，以及真實的工程化體驗。

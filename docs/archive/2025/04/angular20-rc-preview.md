@@ -7,6 +7,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Angular 20 Release Candidate 于 2025 年 4 月初发布，正式版预计 5 月发布。Angular 20 是 Angular 19（2024 年 11 月）之后的下一个主版本，核心目标是将过去两年积累的 Signal 化特性全面稳定化，并为\"Zone-free Angular\"打开大门。"
+wordCount: 381
 ---
 
 Angular 20 Release Candidate 于 2025 年 4 月初发布，正式版预计 5 月发布。Angular 20 是 Angular 19（2024 年 11 月）之后的下一个主版本，核心目标是将过去两年积累的 Signal 化特性全面稳定化，并为"Zone-free Angular"打开大门。

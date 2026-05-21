@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "The State of CSS 2023 survey results were published in 2023, with data from 9,000+ developers worldwide. This year's main theme is \"long-awaited features are fi"
+wordCount: 233
 ---
 
 The State of CSS 2023 survey results were published in 2023, with data from 9,000+ developers worldwide. This year's main theme is "long-awaited features are finally usable": Container Queries, native CSS nesting, `:has()` selector, `color-mix()`, and others have all surpassed 85% browser support, entering the practically usable range.

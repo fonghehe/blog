@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React Native has finally released its official 1.0. From 0.x in 2015 to 1.0 in 2026, this journey took 11 years. The New Architecture is now fully enabled by de"
+wordCount: 244
 ---
 
 React Native has finally released its official 1.0. From 0.x in 2015 to 1.0 in 2026, this journey took 11 years. The New Architecture is now fully enabled by default, Hermes has become the only supported JS engine, and the Fabric renderer has been fully rolled out — marking React Native's transition from "workable" to "genuinely good."

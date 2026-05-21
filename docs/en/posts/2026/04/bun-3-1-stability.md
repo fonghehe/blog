@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Bun 3.1 stability is a topic worth paying attention to in frontend development. This article draws from real project experience to explore its core concepts and"
+wordCount: 148
 ---
 
 Bun 3.1 stability is a topic worth paying attention to in frontend development. This article draws from real project experience to explore its core concepts and best practices.

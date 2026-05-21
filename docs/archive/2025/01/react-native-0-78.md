@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React Native 0.78 是近年来性能提升最大的一个版本。新架构（New Architecture）成为唯一支持的架构，Hermes 引擎升级到 0.15，启动时间减少了约 35%。对长期维护 RN 项目的人来说，这个版本值得认真对待。"
+wordCount: 488
 ---
 
 React Native 0.78 是近年来性能提升最大的一个版本。新架构（New Architecture）成为唯一支持的架构，Hermes 引擎升级到 0.15，启动时间减少了约 35%。对长期维护 RN 项目的人来说，这个版本值得认真对待。

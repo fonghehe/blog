@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular Material 是 Angular 官方出品的 Material Design UI 组件库，开箱即用、可访问性良好，适合快速构建企业管理系统。"
+wordCount: 170
 ---
 
 Angular Material 是 Angular 官方出品的 Material Design UI 组件库，开箱即用、可访问性良好，适合快速构建企业管理系统。

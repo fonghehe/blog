@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "TC39 在 2021 年 6 月正式發佈了 ES2021 標準。和 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 這種重磅特性相比，ES2021 的更新更偏向實用主義——每個特性都不大，但寫代碼時確實用得上。"
+wordCount: 348
 ---
 
 TC39 在 2021 年 6 月正式發佈了 ES2021 標準。和 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 這種重磅特性相比，ES2021 的更新更偏向實用主義——每個特性都不大，但寫代碼時確實用得上。

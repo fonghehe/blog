@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 17.3 于 2024 年 3 月 13 日发布，带来了 Output API 的开发者预览——`output()` 函数，与之前的 `input()`、`viewChild()` 等 Signal API 一起，构成了新一代 Angular 组件 API 的完整图谱。"
+wordCount: 284
 ---
 
 Angular 17.3 于 2024 年 3 月 13 日发布，带来了 Output API 的开发者预览——`output()` 函数，与之前的 `input()`、`viewChild()` 等 Signal API 一起，构成了新一代 Angular 组件 API 的完整图谱。

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "Lodash is one of the most-used utility libraries in frontend projects, but many developers only use a fraction of it. Here are the most practical methods for ev"
+wordCount: 41
 ---
 
 Lodash is one of the most-used utility libraries in frontend projects, but many developers only use a fraction of it. Here are the most practical methods for everyday work.

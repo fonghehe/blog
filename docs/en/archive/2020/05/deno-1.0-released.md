@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Deno 1.0 终于发布了。作为 Node.js 之父 Ryan Dahl 的\"第二次尝试\"，它修正了 Node.js 的十大设计遗憾。在 1.0 之际，认真评估一下它到底适不适合在项目中使用。"
+wordCount: 189
 ---
 
 Deno 1.0 终于发布了。作为 Node.js 之父 Ryan Dahl 的"第二次尝试"，它修正了 Node.js 的十大设计遗憾。在 1.0 之际，认真评估一下它到底适不适合在项目中使用。

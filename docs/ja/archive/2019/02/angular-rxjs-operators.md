@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "RxJS 6はAngularと深く統合されている。コアオペレーターをマスターすることが、堅牢なリアクティブコードを書く基礎となる。"
+wordCount: 149
 ---
 
 RxJS 6はAngularと深く統合されている。コアオペレーターをマスターすることが、堅牢なリアクティブコードを書く基礎となる。

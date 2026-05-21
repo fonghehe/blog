@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS Custom Properties (also called CSS Variables) now have full support across modern browsers. Many people only know they can be used to define color variables"
+wordCount: 98
 ---
 
 CSS Custom Properties (also called CSS Variables) now have full support across modern browsers. Many people only know they can be used to define color variables, but their capabilities go far beyond that. This article covers advanced usage and practical tips for CSS Custom Properties.

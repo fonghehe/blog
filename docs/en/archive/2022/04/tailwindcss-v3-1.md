@@ -6,6 +6,7 @@ tags:
   - TailwindCSS
 readingTime: 1
 description: "In daily development, Tailwind CSS v3.1 新特性 is being used more and more frequently. This article systematically explains its usage, principles, and optimization"
+wordCount: 180
 ---
 
 In daily development, Tailwind CSS v3.1 新特性 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

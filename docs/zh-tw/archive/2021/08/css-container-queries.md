@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "關注 CSS 規範的同學可能已經注意到了，Container Queries 已經進入 Chrome Canary 實驗階段。這個特性等了好幾年，終於要來了。"
+wordCount: 309
 ---
 
 關注 CSS 規範的同學可能已經注意到了，Container Queries 已經進入 Chrome Canary 實驗階段。這個特性等了好幾年，終於要來了。

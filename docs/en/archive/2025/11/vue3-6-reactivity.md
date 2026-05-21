@@ -6,6 +6,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "Vue 3.6 Reactivity Optimization is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices"
+wordCount: 164
 ---
 
 Vue 3.6 Reactivity Optimization is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

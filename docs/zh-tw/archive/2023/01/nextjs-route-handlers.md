@@ -5,6 +5,7 @@ tags:
   - Next.js
 readingTime: 3
 description: "Next.js 13 的 Route Handlers 取代了 Pages Router 中的 API Routes，基於 Web 標準的 Request/Response API。如果你之前用過 Express 或 Cloudflare Workers，會發現這套 API 非常熟悉。本文介紹 Route Handle"
+wordCount: 331
 ---
 
 Next.js 13 的 Route Handlers 取代了 Pages Router 中的 API Routes，基於 Web 標準的 Request/Response API。如果你之前用過 Express 或 Cloudflare Workers，會發現這套 API 非常熟悉。本文介紹 Route Handlers 的實際用法和最佳實踐。

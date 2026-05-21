@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 4
 description: "瀏覽器對 ES Modules 的支援已經相當成熟了。現在 Chrome、Firefox、Safari、Edge 都支援 `<script type=\"module\">`，這意味著在開發階段甚至某些簡單專案中，我們可能不再需要打包工具。這篇文章整理一下瀏覽器原生 ESM 的實踐方式和注意點。"
+wordCount: 585
 ---
 
 瀏覽器對 ES Modules 的支援已經相當成熟了。現在 Chrome、Firefox、Safari、Edge 都支援 `<script type="module">`，這意味著在開發階段甚至某些簡單專案中，我們可能不再需要打包工具。這篇文章整理一下瀏覽器原生 ESM 的實踐方式和注意點。

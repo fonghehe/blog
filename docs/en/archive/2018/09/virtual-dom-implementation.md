@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Virtual DOM is a core concept in React and Vue 2. After reading many articles, I felt I only truly understood it by implementing it myself. This post implements"
+wordCount: 153
 ---
 
 Virtual DOM is a core concept in React and Vue 2. After reading many articles, I felt I only truly understood it by implementing it myself. This post implements a minimal VDOM in a few hundred lines of code.

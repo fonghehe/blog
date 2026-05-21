@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue CLI 3 剛出 Beta，和之前的 CLI 2 差別很大，試用了一下記錄一下感受。"
+wordCount: 348
 ---
 
 Vue CLI 3 剛出 Beta，和之前的 CLI 2 差別很大，試用了一下記錄一下感受。

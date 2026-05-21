@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 2.6 正式發佈了，主要改進是插槽語法統一、錯誤處理改進，以及對 Vue 3 的一些前瞻性改動。"
+wordCount: 391
 ---
 
 Vue 2.6 正式發佈了，主要改進是插槽語法統一、錯誤處理改進，以及對 Vue 3 的一些前瞻性改動。

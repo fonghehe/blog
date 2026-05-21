@@ -5,6 +5,7 @@ tags:
   - Deno
 readingTime: 2
 description: "Deno 從 1.0 釋出到現在已經兩年了。1.2x 版本的生態逐漸成熟，Deno Deploy 讓它有了實際的部署場景。這篇文章講講 Deno 的核心理念和實際使用體驗。"
+wordCount: 330
 ---
 
 Deno 從 1.0 釋出到現在已經兩年了。1.2x 版本的生態逐漸成熟，Deno Deploy 讓它有了實際的部署場景。這篇文章講講 Deno 的核心理念和實際使用體驗。

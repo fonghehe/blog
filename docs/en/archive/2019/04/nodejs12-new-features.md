@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 1
 description: "Node.js 12 was released last week (the LTS version won't be locked until October), and it comes with a lot of good stuff."
+wordCount: 91
 ---
 
 Node.js 12 was released last week (the LTS version won't be locked until October), and it comes with a lot of good stuff.

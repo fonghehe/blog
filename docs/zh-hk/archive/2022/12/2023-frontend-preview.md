@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 3
 description: "2022 年是前端格局重塑的一年：Next.js 13 帶來 App Router，Angular 完成從 NgModule 到 Standalone 的轉型，SvelteKit 1.0 正式發佈，Vite 成為無可爭議的構建工具標準。站在年末，我們來看 2023 年前端的關鍵走向。"
+wordCount: 518
 ---
 
 2022 年是前端格局重塑的一年：Next.js 13 帶來 App Router，Angular 完成從 NgModule 到 Standalone 的轉型，SvelteKit 1.0 正式發佈，Vite 成為無可爭議的構建工具標準。站在年末，我們來看 2023 年前端的關鍵走向。

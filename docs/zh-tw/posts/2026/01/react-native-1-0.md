@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React Native 終於釋出了 1.0 正式版。從 2015 年的 0.x 到 2026 年的 1.0，這條路走了 11 年。新架構（New Architecture）完全預設啟用、Hermes 引擎成為唯一的 JS 引擎、以及 Fabric 渲染器的全面鋪開，標誌著 React Native 從\"能用\"走向了\""
+wordCount: 375
 ---
 
 React Native 終於釋出了 1.0 正式版。從 2015 年的 0.x 到 2026 年的 1.0，這條路走了 11 年。新架構（New Architecture）完全預設啟用、Hermes 引擎成為唯一的 JS 引擎、以及 Fabric 渲染器的全面鋪開，標誌著 React Native 從"能用"走向了"好用"。

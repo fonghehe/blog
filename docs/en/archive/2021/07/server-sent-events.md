@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "关于Server-Sent Events 单向实时通信，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspe"
+wordCount: 184
 ---
 
 关于Server-Sent Events 单向实时通信，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "Node.js 快取策略是前端開發中一個值得關注的話題。本文從實際專案經驗出發，探討其核心概念和最佳實踐。"
+wordCount: 243
 ---
 
 Node.js 快取策略是前端開發中一個值得關注的話題。本文從實際專案經驗出發，探討其核心概念和最佳實踐。

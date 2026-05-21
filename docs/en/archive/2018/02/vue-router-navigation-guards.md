@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "Vue Router's navigation guards are the core of permission control in projects, but the documentation is spread out and easy to get confused. This article walks "
+wordCount: 338
 ---
 
 Vue Router's navigation guards are the core of permission control in projects, but the documentation is spread out and easy to get confused. This article walks through all the guards with practical usage examples.

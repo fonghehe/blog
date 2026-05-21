@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue CLI 3 just released its Beta, and it's very different from the previous CLI 2. Here are my impressions after trying it out."
+wordCount: 248
 ---
 
 Vue CLI 3 just released its Beta, and it's very different from the previous CLI 2. Here are my impressions after trying it out.

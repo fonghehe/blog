@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Bun 1.0 が正式リリースされました！Zig で書かれた JavaScript ランタイムで、Node.js より大幅に速いと主張しています。切り替える価値があるか見てみましょう。"
+wordCount: 341
 ---
 
 Bun 1.0 が正式リリースされました！Zig で書かれた JavaScript ランタイムで、Node.js より大幅に速いと主張しています。切り替える価値があるか見てみましょう。

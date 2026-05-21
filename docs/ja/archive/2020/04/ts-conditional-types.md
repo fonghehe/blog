@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "关于TypeScript 条件类型深度解析，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
+wordCount: 310
 ---
 
 关于TypeScript 条件类型深度解析，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

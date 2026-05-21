@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3 对 `v-model` 做了重大简化：移除了 `.sync` 修饰符，统一为 `modelValue` + `update:modelValue` 的标准模式。同时支持多个 `v-model` 绑定，解决了 Vue 2 中组件双向绑定的诸多痛点。"
+wordCount: 277
 ---
 
 Vue 3 对 `v-model` 做了重大简化：移除了 `.sync` 修饰符，统一为 `modelValue` + `update:modelValue` 的标准模式。同时支持多个 `v-model` 绑定，解决了 Vue 2 中组件双向绑定的诸多痛点。

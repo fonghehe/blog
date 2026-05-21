@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 8 於 2019 年 5 月 28 日正式釋出。Ivy 以 opt-in 方式進入預覽，差異化載入預設開啟。實際體驗了一個月，來講講升級經驗和各項功能的實際效果。"
+wordCount: 299
 ---
 
 Angular 8 於 2019 年 5 月 28 日正式釋出。Ivy 以 opt-in 方式進入預覽，差異化載入預設開啟。實際體驗了一個月，來講講升級經驗和各項功能的實際效果。

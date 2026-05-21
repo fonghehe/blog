@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript 的类型系统非常强大，映射类型（Mapped Types）是其中最实用的特性之一。它允许你基于已有类型创建新类型，批量修改属性的修饰符。这篇文章从基础到实战，把映射类型讲清楚。"
+wordCount: 479
 ---
 
 TypeScript 的类型系统非常强大，映射类型（Mapped Types）是其中最实用的特性之一。它允许你基于已有类型创建新类型，批量修改属性的修饰符。这篇文章从基础到实战，把映射类型讲清楚。

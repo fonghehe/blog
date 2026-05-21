@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "最近用 Astro 4 重構了一個內部文件站點。Content Collections 是 Astro 最有特色的功能之一，適合內容驅動型專案。分享一下架構設計和實踐經驗。"
+wordCount: 256
 ---
 
 最近用 Astro 4 重構了一個內部文件站點。Content Collections 是 Astro 最有特色的功能之一，適合內容驅動型專案。分享一下架構設計和實踐經驗。

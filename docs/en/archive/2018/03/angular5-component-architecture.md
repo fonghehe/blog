@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "As Angular applications grow in complexity, properly dividing component responsibilities becomes increasingly important. The Smart/Dumb (also called Container/P"
+wordCount: 209
 ---
 
 As Angular applications grow in complexity, properly dividing component responsibilities becomes increasingly important. The Smart/Dumb (also called Container/Presentational) component pattern is the most mainstream Angular component design philosophy today.

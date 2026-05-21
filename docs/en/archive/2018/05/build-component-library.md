@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "With more and more company projects, we kept copying the same UI components everywhere. We finally decided to extract the common components into an internal lib"
+wordCount: 112
 ---
 
 With more and more company projects, we kept copying the same UI components everywhere. We finally decided to extract the common components into an internal library. Here's a record of the first steps.

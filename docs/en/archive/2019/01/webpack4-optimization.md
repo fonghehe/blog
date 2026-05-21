@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "When a project grows large, slow build times become maddening. This is our team's real-world record of Webpack 4 optimization — build time went from 3 minutes d"
+wordCount: 71
 ---
 
 When a project grows large, slow build times become maddening. This is our team's real-world record of Webpack 4 optimization — build time went from 3 minutes down to 90 seconds.

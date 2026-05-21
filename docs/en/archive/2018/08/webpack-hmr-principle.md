@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "When you modify code during development and the page updates automatically — that's HMR (Hot Module Replacement). We take it for granted every day, but today I "
+wordCount: 147
 ---
 
 When you modify code during development and the page updates automatically — that's HMR (Hot Module Replacement). We take it for granted every day, but today I dug into how it actually works.

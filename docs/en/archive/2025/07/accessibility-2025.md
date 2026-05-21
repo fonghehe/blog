@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In daily development, frontend accessibility best practices for 2025 are being used more and more frequently. This article systematically explains their usage, "
+wordCount: 194
 ---
 
 In daily development, frontend accessibility best practices for 2025 are being used more and more frequently. This article systematically explains their usage, principles, and optimization strategies.

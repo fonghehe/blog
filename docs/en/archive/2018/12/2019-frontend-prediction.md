@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "2018 is wrapping up. Here are my predictions for where frontend development is headed in 2019."
+wordCount: 434
 ---
 
 2018 is wrapping up. Here are my predictions for where frontend development is headed in 2019.

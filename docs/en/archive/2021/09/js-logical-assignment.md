@@ -6,6 +6,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，JavaScript 逻辑赋值运算符 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 202
 ---
 
 在日常开发中，JavaScript 逻辑赋值运算符 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

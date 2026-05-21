@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Resumability as a new direction in 2025 is seeing increasingly widespread adoption in frontend development. This article digs into its core principles and best "
+wordCount: 166
 ---
 
 Resumability as a new direction in 2025 is seeing increasingly widespread adoption in frontend development. This article digs into its core principles and best practices from a real-project perspective.

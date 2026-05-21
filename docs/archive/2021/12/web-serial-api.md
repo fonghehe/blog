@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "最近在团队中落地Web Serial API 硬件通信，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
+wordCount: 289
 ---
 
 最近在团队中落地Web Serial API 硬件通信，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

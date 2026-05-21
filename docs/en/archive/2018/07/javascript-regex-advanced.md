@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "I know basic regex, but complex requirements at work still trip me up. Here are some advanced techniques."
+wordCount: 74
 ---
 
 I know basic regex, but complex requirements at work still trip me up. Here are some advanced techniques.

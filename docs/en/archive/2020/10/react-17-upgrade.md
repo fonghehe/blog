@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 17 刚发布，官方称之为\"没有新特性\"的版本。听起来无聊，但实际上它为 React 的未来打下了重要基础。梳理一下升级要点。"
+wordCount: 239
 ---
 
 React 17 刚发布，官方称之为"没有新特性"的版本。听起来无聊，但实际上它为 React 的未来打下了重要基础。梳理一下升级要点。

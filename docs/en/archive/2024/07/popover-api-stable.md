@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "In day-to-day development, Popover API Stable: In Practice is being used more and more frequently. This article systematically explains its usage, principles, a"
+wordCount: 190
 ---
 
 In day-to-day development, Popover API Stable: In Practice is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

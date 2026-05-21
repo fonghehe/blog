@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "用 TypeScript 一年多，工具型別（Utility Types）是用得最多的高階特性。整理一下常用的和自定義工具型別。"
+wordCount: 129
 ---
 
 用 TypeScript 一年多，工具型別（Utility Types）是用得最多的高階特性。整理一下常用的和自定義工具型別。

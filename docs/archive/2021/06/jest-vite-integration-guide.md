@@ -6,6 +6,7 @@ tags:
   - Jest
 readingTime: 2
 description: "Vitest Vite 原生单元测试框架这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
+wordCount: 274
 ---
 
 Vitest Vite 原生单元测试框架这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

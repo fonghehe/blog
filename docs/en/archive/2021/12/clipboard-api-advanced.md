@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "Clipboard API 剪贴板高级用法 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic b"
+wordCount: 190
 ---
 
 Clipboard API 剪贴板高级用法 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

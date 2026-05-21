@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Every project uses axios, yet many developers still scatter requests across individual components. Centralizing interceptors means authentication, error handlin"
+wordCount: 93
 ---
 
 Every project uses axios, yet many developers still scatter requests across individual components. Centralizing interceptors means authentication, error handling, and loading-state management are written only once.

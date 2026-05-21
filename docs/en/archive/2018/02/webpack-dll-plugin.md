@@ -5,6 +5,7 @@ tags:
   - Webpack
 readingTime: 2
 description: "As projects grow larger, Webpack cold starts get slower. The idea behind DllPlugin is to build rarely-changing third-party libraries separately, so they don't n"
+wordCount: 172
 ---
 
 As projects grow larger, Webpack cold starts get slower. The idea behind DllPlugin is to build rarely-changing third-party libraries separately, so they don't need to be reprocessed on every build.

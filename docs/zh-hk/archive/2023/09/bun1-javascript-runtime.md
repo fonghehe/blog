@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Bun 1.0 正式發佈！這是用 Zig 寫的 JavaScript 運行時，聲稱比 Node.js 快很多。來看看是否值得切換。"
+wordCount: 310
 ---
 
 Bun 1.0 正式發佈！這是用 Zig 寫的 JavaScript 運行時，聲稱比 Node.js 快很多。來看看是否值得切換。

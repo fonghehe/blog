@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue custom directives let you directly manipulate the DOM, making them ideal for encapsulating logic that needs direct DOM element access — such as auto-focus, "
+wordCount: 171
 ---
 
 Vue custom directives let you directly manipulate the DOM, making them ideal for encapsulating logic that needs direct DOM element access — such as auto-focus, permission control, and image lazy loading.

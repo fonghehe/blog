@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Ionic Vue 跨平台移動開發在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
+wordCount: 342
 ---
 
 Ionic Vue 跨平台移動開發在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。

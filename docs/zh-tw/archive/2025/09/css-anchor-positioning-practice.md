@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS Anchor Positioning（CSS 錨點定位）在 2024 年進入 Chrome 125+ 後，2025 年隨著 Firefox 和 Safari 的跟進，終於達到了可以實際使用的支援度（全球 ~78%）。它解決了前端長期依賴 JavaScript 計算位置的\"懸浮 UI\"問題：Tooltip、Pop"
+wordCount: 292
 ---
 
 CSS Anchor Positioning（CSS 錨點定位）在 2024 年進入 Chrome 125+ 後，2025 年隨著 Firefox 和 Safari 的跟進，終於達到了可以實際使用的支援度（全球 ~78%）。它解決了前端長期依賴 JavaScript 計算位置的"懸浮 UI"問題：Tooltip、Popover、下拉選單、浮動面板——這些全靠錨點定位就能實現，無需 Popper.js、Floating UI 等庫。

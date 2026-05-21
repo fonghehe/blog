@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "項目里加了實時消息通知功能，研究了一下 WebSocket，記錄一下。"
+wordCount: 203
 ---
 
 項目里加了實時消息通知功能，研究了一下 WebSocket，記錄一下。

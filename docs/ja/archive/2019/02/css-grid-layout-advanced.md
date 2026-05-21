@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "仕事でCSS Gridをしばらく使っていると、ほとんどの開発者が基本的な`grid-template-columns: repeat(3, 1fr)`で止まっていることに気づく。名前付きグリッドラインとテンプレートエリアこそ、Gridを複雑なレイアウトの切り札にする機能だ。"
+wordCount: 252
 ---
 
 仕事でCSS Gridをしばらく使っていると、ほとんどの開発者が基本的な`grid-template-columns: repeat(3, 1fr)`で止まっていることに気づく。名前付きグリッドラインとテンプレートエリアこそ、Gridを複雑なレイアウトの切り札にする機能だ。

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "The Vue ecosystem's presence in frontend development continues to grow. This article takes a deep dive from real project experience into the core principles and"
+wordCount: 183
 ---
 
 The Vue ecosystem's presence in frontend development continues to grow. This article takes a deep dive from real project experience into the core principles and best practices of the ecosystem as it stands in 2026.

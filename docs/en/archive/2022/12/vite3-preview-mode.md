@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "Vite 3 预览模式详解 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 239
 ---
 
 Vite 3 预览模式详解 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

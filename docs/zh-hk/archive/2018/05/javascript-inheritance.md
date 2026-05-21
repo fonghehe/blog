@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "面試必考題，但理解透了也有實際價值。JS 的繼承方式很多，各有適用場景。"
+wordCount: 226
 ---
 
 面試必考題，但理解透了也有實際價值。JS 的繼承方式很多，各有適用場景。

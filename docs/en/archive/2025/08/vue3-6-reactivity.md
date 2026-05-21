@@ -6,6 +6,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "Recently implemented Vue 3.6 Reactivity Optimization in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps thos"
+wordCount: 200
 ---
 
 Recently implemented Vue 3.6 Reactivity Optimization in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

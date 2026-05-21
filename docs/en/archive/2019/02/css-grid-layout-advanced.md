@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "After using CSS Grid at work for a while, I've noticed that most developers stop at basic `grid-template-columns: repeat(3, 1fr)` and go no further. Named grid "
+wordCount: 103
 ---
 
 After using CSS Grid at work for a while, I've noticed that most developers stop at basic `grid-template-columns: repeat(3, 1fr)` and go no further. Named grid lines and template areas are what truly make Grid a killer for complex layouts.

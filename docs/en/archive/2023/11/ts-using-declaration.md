@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 5.2 using 声明 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pr"
+wordCount: 176
 ---
 
 TypeScript 5.2 using 声明 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

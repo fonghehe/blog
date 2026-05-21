@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 16 對 `@Input()` 裝飾器進行了兩項重要增強：**Required Inputs**（必填輸入）和 **Input Transforms**（輸入轉換）。這兩個特性讓元件的輸入介面更接近 TypeScript 的原生型別安全，減少了執行時錯誤。"
+wordCount: 372
 ---
 
 Angular 16 對 `@Input()` 裝飾器進行了兩項重要增強：**Required Inputs**（必填輸入）和 **Input Transforms**（輸入轉換）。這兩個特性讓元件的輸入介面更接近 TypeScript 的原生型別安全，減少了執行時錯誤。

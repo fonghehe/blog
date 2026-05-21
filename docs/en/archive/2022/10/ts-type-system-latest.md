@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.9 satisfies 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from rea"
+wordCount: 188
 ---
 
 TypeScript 4.9 satisfies 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Recently, our team has rolled out Rolldown Stable widely and accumulated a lot of experience. I've compiled it here for reference, hoping it helps others doing "
+wordCount: 103
 ---
 
 Recently, our team has rolled out Rolldown Stable widely and accumulated a lot of experience. I've compiled it here for reference, hoping it helps others doing similar work.

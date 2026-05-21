@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "Node.js 缓存策略是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。"
+wordCount: 240
 ---
 
 Node.js 缓存策略是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。

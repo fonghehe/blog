@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue's direction in 2026 has been debated many times in the community, but with each new version many of the conclusions need updating. This article provides a f"
+wordCount: 193
 ---
 
 Vue's direction in 2026 has been debated many times in the community, but with each new version many of the conclusions need updating. This article provides a fresh look based on the latest releases.

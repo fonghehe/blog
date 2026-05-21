@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 2 slots are an issue frequently encountered in day-to-day development. This article draws from real-world projects to share concrete implementation approach"
+wordCount: 111
 ---
 
 Vue 2 slots are an issue frequently encountered in day-to-day development. This article draws from real-world projects to share concrete implementation approaches and practical takeaways.

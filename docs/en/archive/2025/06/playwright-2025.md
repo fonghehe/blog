@@ -5,6 +5,7 @@ tags:
   - Testing
 readingTime: 1
 description: "We've recently rolled out Playwright 2025 features in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others"
+wordCount: 130
 ---
 
 We've recently rolled out Playwright 2025 features in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling similar challenges.

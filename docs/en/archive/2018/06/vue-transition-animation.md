@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue's `<transition>` component makes adding animations straightforward. Here are some commonly used scenarios."
+wordCount: 135
 ---
 
 Vue's `<transition>` component makes adding animations straightforward. Here are some commonly used scenarios.

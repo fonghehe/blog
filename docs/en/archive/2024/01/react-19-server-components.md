@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "In day-to-day development, React 19 Server Components: Stable Release is being used more and more frequently. This article systematically explains its usage, pr"
+wordCount: 185
 ---
 
 In day-to-day development, React 19 Server Components: Stable Release is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

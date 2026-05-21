@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 16 在 2017 年 9 月发布，带来了 Fiber 架构重写，但对日常开发影响最直接的特性之一是错误边界（Error Boundaries）。这个特性解决了 React 应用长期以来的一个痛点：一个组件抛出未捕获的异常，整个应用树就白屏了。"
+wordCount: 570
 ---
 
 React 16 在 2017 年 9 月发布，带来了 Fiber 架构重写，但对日常开发影响最直接的特性之一是错误边界（Error Boundaries）。这个特性解决了 React 应用长期以来的一个痛点：一个组件抛出未捕获的异常，整个应用树就白屏了。

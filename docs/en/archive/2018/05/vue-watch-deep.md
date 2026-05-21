@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue's reactivity system has some special limitations for object properties and arrays. Understanding them is essential for using `watch` correctly."
+wordCount: 141
 ---
 
 Vue's reactivity system has some special limitations for object properties and arrays. Understanding them is essential for using `watch` correctly.

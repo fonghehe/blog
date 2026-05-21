@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "JavaScript had no native module system for a long time. The community explored many solutions across its history. Understanding this evolution helps you know wh"
+wordCount: 121
 ---
 
 JavaScript had no native module system for a long time. The community explored many solutions across its history. Understanding this evolution helps you know why modern toolchains are built the way they are.

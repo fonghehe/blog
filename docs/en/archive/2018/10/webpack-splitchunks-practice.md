@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "As a project grows with more pages, code shared across multiple pages gets bundled redundantly. `SplitChunks` extracts shared code so the browser can cache and "
+wordCount: 119
 ---
 
 As a project grows with more pages, code shared across multiple pages gets bundled redundantly. `SplitChunks` extracts shared code so the browser can cache and reuse it.

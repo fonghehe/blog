@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "等了好几年，CSS Container Queries 终于在主流浏览器落地了。传统媒体查询基于视口宽度，但组件化开发需要的是基于容器宽度的响应式。这才是组件真正需要的能力。"
+wordCount: 318
 ---
 
 等了好几年，CSS Container Queries 终于在主流浏览器落地了。传统媒体查询基于视口宽度，但组件化开发需要的是基于容器宽度的响应式。这才是组件真正需要的能力。

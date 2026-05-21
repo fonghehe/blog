@@ -4,25 +4,54 @@ import { writeFileSync, mkdirSync } from "fs";
 import path from "path";
 
 const SITE_URL = "https://fonghehe.github.io/blog";
-const FEED_TITLE = "前端成长记录";
-const FEED_DESCRIPTION =
-  "一个前端工程师从 2018 年开始的学习与成长记录。1200+ 篇深度文章，涵盖框架原理、工程化实践与前沿探索。";
 
-export async function buildRSS(config: SiteConfig) {
+interface FeedConfig {
+  globs: string[];
+  title: string;
+  description: string;
+  language: string;
+  outFile: string;
+}
+
+const FEEDS: FeedConfig[] = [
+  {
+    globs: ["posts/**/*.md", "archive/**/*.md"],
+    title: "前端成长记录",
+    description:
+      "一个前端工程师从 2018 年开始的学习与成长记录。1200+ 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
+    language: "zh-CN",
+    outFile: "rss.xml",
+  },
+  {
+    globs: ["en/posts/**/*.md", "en/archive/**/*.md"],
+    title: "Frontend Growth Blog",
+    description:
+      "A frontend engineer's learning journey since 2018. 1200+ in-depth articles on framework internals, engineering practices and cutting-edge exploration.",
+    language: "en",
+    outFile: "en/rss.xml",
+  },
+  {
+    globs: ["ja/posts/**/*.md", "ja/archive/**/*.md"],
+    title: "フロントエンド成長記録",
+    description:
+      "2018年から始まるフロントエンドエンジニアの学習・成長記録。フレームワーク原理、エンジニアリング実践、最新技術探索などの1200+記事。",
+    language: "ja",
+    outFile: "ja/rss.xml",
+  },
+];
+
+async function buildFeed(cfg: FeedConfig, siteConfig: SiteConfig) {
   const feed = new Feed({
-    title: FEED_TITLE,
-    description: FEED_DESCRIPTION,
+    title: cfg.title,
+    description: cfg.description,
     id: SITE_URL,
     link: SITE_URL,
-    language: "zh-CN",
-    copyright: `MIT Licensed - ${FEED_TITLE} 2018-2026`,
+    language: cfg.language,
+    copyright: `MIT Licensed - 前端成长记录 2018-2026`,
     updated: new Date(),
   });
 
-  const posts = await createContentLoader(
-    ["posts/**/*.md", "archive/**/*.md"],
-    { render: false },
-  ).load();
+  const posts = await createContentLoader(cfg.globs, { render: false }).load();
 
   const sorted = posts
     .filter((p) => p.frontmatter?.date && !p.url.endsWith("/"))
@@ -53,7 +82,11 @@ export async function buildRSS(config: SiteConfig) {
     });
   }
 
-  const outDir = config.outDir;
-  mkdirSync(outDir, { recursive: true });
-  writeFileSync(path.join(outDir, "rss.xml"), feed.rss2());
+  const outPath = path.join(siteConfig.outDir, cfg.outFile);
+  mkdirSync(path.dirname(outPath), { recursive: true });
+  writeFileSync(outPath, feed.rss2());
+}
+
+export async function buildRSS(config: SiteConfig) {
+  await Promise.all(FEEDS.map((cfg) => buildFeed(cfg, config)));
 }

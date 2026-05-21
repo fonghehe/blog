@@ -5,6 +5,7 @@ tags:
   - Web Components
 readingTime: 3
 description: "最近チームに Web Components 2025 エコシステムを導入し、多くの経験を積みました。参考のためにまとめました。同様の取り組みをしている方に役立てば幸いです。"
+wordCount: 519
 ---
 
 最近チームに Web Components 2025 エコシステムを導入し、多くの経験を積みました。参考のためにまとめました。同様の取り組みをしている方に役立てば幸いです。

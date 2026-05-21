@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "WebAssembly Component Modelは2026年、フロントエンドチームにとって実用的なツールになった。本稿ではコアコンセプト、実践的なパターン、統合戦略を解説する。"
+wordCount: 594
 ---
 
 WebAssembly Component Modelは2026年、フロントエンドチームにとって実用的なツールになった。本稿ではコアコンセプト、実践的なパターン、統合戦略を解説する。

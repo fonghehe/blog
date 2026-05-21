@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "The topic of Vue 3.5: Reactivity Performance Improvements has been discussed many times in the community, but with each new version, many conclusions need updat"
+wordCount: 221
 ---
 
 The topic of Vue 3.5: Reactivity Performance Improvements has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Promise 大家都在用，但錯誤處理經常出問題。整理幾個常見的坑和正確做法。"
+wordCount: 256
 ---
 
 Promise 大家都在用，但錯誤處理經常出問題。整理幾個常見的坑和正確做法。

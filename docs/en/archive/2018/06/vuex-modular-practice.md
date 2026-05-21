@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vuex is easy to get started with, but organizing the store as the project scales becomes a real challenge. This article shares a modular Vuex approach for large"
+wordCount: 131
 ---
 
 Vuex is easy to get started with, but organizing the store as the project scales becomes a real challenge. This article shares a modular Vuex approach for large projects.

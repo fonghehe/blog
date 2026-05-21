@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "面试必考题，但理解透了也有实际价值。JS 的继承方式很多，各有适用场景。"
+wordCount: 226
 ---
 
 面试必考题，但理解透了也有实际价值。JS 的继承方式很多，各有适用场景。

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 4
 description: "TypeScript 的條件型別（Conditional Types）是型別系統中最強大的特性之一。它讓我們可以根據型別的條件分支來動態生成新的型別，類似於 JavaScript 中的三元表示式。配合泛型和 `infer` 關鍵字，條件型別可以實現極其靈活的型別推導。本文將從基礎語法到高階用法，深入講解條件型別。"
+wordCount: 418
 ---
 
 TypeScript 的條件型別（Conditional Types）是型別系統中最強大的特性之一。它讓我們可以根據型別的條件分支來動態生成新的型別，類似於 JavaScript 中的三元表示式。配合泛型和 `infer` 關鍵字，條件型別可以實現極其靈活的型別推導。本文將從基礎語法到高階用法，深入講解條件型別。

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 類型守衞進階在近年來發展迅速，本文將深入分析其原理和實踐方法。"
+wordCount: 279
 ---
 
 TypeScript 類型守衞進階在近年來發展迅速，本文將深入分析其原理和實踐方法。

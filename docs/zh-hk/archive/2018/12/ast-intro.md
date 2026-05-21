@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 1
 description: "Babel、ESLint、Prettier 都基於 AST 工作。瞭解 AST 原理，能幫助我們更好地使用這些工具，甚至寫自己的插件。"
+wordCount: 184
 ---
 
 Babel、ESLint、Prettier 都基於 AST 工作。瞭解 AST 原理，能幫助我們更好地使用這些工具，甚至寫自己的插件。

@@ -5,6 +5,7 @@ tags:
   - Git
 readingTime: 2
 description: "用 GitHub Copilot 已经半年了，说说真实感受。不是广告，也不是恐慌文，就是真实体验。"
+wordCount: 554
 ---
 
 用 GitHub Copilot 已经半年了，说说真实感受。不是广告，也不是恐慌文，就是真实体验。

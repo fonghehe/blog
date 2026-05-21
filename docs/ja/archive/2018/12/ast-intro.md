@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "Babel、ESLint、Prettier はすべて AST に基づいて動いています。AST の原理を理解することで、これらのツールをより上手く使えるようになり、独自のプラグインを書くことさえできます。"
+wordCount: 314
 ---
 
 Babel、ESLint、Prettier はすべて AST に基づいて動いています。AST の原理を理解することで、これらのツールをより上手く使えるようになり、独自のプラグインを書くことさえできます。

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "关于React Native 0.70 新架构，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspectiv"
+wordCount: 245
 ---
 
 关于React Native 0.70 新架构，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

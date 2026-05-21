@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 16.6がリリースされ、`React.lazy`と`Suspense`が追加されました。コンポーネントの遅延ロードが非常にシンプルになりました。"
+wordCount: 335
 ---
 
 React 16.6がリリースされ、`React.lazy`と`Suspense`が追加されました。コンポーネントの遅延ロードが非常にシンプルになりました。

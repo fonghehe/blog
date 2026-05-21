@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "团队在 Next.js 15 上全面使用 Server Components 已经一年了。踩了不少坑，也学到了很多。来总结一下实战经验。"
+wordCount: 206
 ---
 
 团队在 Next.js 15 上全面使用 Server Components 已经一年了。踩了不少坑，也学到了很多。来总结一下实战经验。

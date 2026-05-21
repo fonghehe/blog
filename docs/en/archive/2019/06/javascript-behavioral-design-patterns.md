@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "Design patterns are not exclusive to backend development — they are used extensively in frontend code too. Mastering these patterns makes code more elegant and "
+wordCount: 81
 ---
 
 Design patterns are not exclusive to backend development — they are used extensively in frontend code too. Mastering these patterns makes code more elegant and maintainable.

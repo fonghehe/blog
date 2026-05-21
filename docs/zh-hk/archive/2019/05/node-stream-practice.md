@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 6
 description: "Stream 是 Node.js 最核心的模塊之一，但很多開發者日常只用 `fs.readFile` 處理文件。當你需要處理大文件、構建管道式數據處理、或者實現高效 I/O 時，Stream 是不可或缺的工具。"
+wordCount: 441
 ---
 
 Stream 是 Node.js 最核心的模塊之一，但很多開發者日常只用 `fs.readFile` 處理文件。當你需要處理大文件、構建管道式數據處理、或者實現高效 I/O 時，Stream 是不可或缺的工具。

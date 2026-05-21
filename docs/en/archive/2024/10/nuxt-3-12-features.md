@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Nuxt 3.12 新特性 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 189
 ---
 
 Nuxt 3.12 新特性 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

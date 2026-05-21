@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "The topic of ESLint v9 Stable: Migration Guide has been discussed many times in the community, but with each new version, many conclusions need updating. This a"
+wordCount: 192
 ---
 
 The topic of ESLint v9 Stable: Migration Guide has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.

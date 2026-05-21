@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript は新しい技術ではありません（Microsoft が 2012 年にリリース）が、2017〜2018 年になってようやく国内フロントエンド界で本格的に普及し始めました。Angular 2+ は使用を強制し、Vue 2.5 も TS サポートを改善しました。そろそろ真剣に学ぶ時期です。"
+wordCount: 500
 ---
 
 TypeScript は新しい技術ではありません（Microsoft が 2012 年にリリース）が、2017〜2018 年になってようやく国内フロントエンド界で本格的に普及し始めました。Angular 2+ は使用を強制し、Vue 2.5 も TS サポートを改善しました。そろそろ真剣に学ぶ時期です。

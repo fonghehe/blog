@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 18 於 2024 年 5 月 22 日正式釋出，最受期待的特性是 **Zoneless 變更檢測**（實驗性）。這意味著 Angular 應用可以完全不依賴 `zone.js` 執行，從而減小包體積、提升效能，並解決多年來 zone.js 帶來的各種相容性問題。"
+wordCount: 394
 ---
 
 Angular 18 於 2024 年 5 月 22 日正式釋出，最受期待的特性是 **Zoneless 變更檢測**（實驗性）。這意味著 Angular 應用可以完全不依賴 `zone.js` 執行，從而減小包體積、提升效能，並解決多年來 zone.js 帶來的各種相容性問題。

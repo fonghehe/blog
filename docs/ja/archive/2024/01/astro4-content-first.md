@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "Astro 4 发布了，用了一年多 Astro 做内容站，说说它为什么适合某类项目，以及真实的工程化体验。"
+wordCount: 328
 ---
 
 Astro 4 发布了，用了一年多 Astro 做内容站，说说它为什么适合某类项目，以及真实的工程化体验。

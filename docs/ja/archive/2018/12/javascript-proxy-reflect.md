@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Proxy は ES2015 で追加されましたが、あまり使われていませんでした。Vue 3 のリアクティブシステムが Proxy に基づいているため、しっかり理解する時が来ました。"
+wordCount: 391
 ---
 
 Proxy は ES2015 で追加されましたが、あまり使われていませんでした。Vue 3 のリアクティブシステムが Proxy に基づいているため、しっかり理解する時が来ました。

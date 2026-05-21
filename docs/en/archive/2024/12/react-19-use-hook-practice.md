@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 19 use() Hook 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pro"
+wordCount: 213
 ---
 
 React 19 use() Hook 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

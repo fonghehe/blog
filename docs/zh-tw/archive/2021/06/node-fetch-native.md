@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Node.js 內建 fetch API 預覽這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
+wordCount: 278
 ---
 
 Node.js 內建 fetch API 預覽這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。

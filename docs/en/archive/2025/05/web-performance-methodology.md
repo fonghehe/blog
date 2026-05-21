@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "After working through several performance optimization projects, I want to summarize the methodology rather than just scattered tips."
+wordCount: 127
 ---
 
 After working through several performance optimization projects, I want to summarize the methodology rather than just scattered tips.

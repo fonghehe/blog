@@ -5,6 +5,7 @@ tags:
   - Webpack
 readingTime: 1
 description: "Webpack 配置裡 `module.rules`（loader）和 `plugins` 是兩個最重要的配置項，但很多人搞不清楚它們的區別。"
+wordCount: 143
 ---
 
 Webpack 配置裡 `module.rules`（loader）和 `plugins` 是兩個最重要的配置項，但很多人搞不清楚它們的區別。

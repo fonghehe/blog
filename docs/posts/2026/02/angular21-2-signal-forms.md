@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 21.2 于 2026 年 2 月末发布，这个版本将 Signal Forms 的多项细节打磨至生产级别。自 Angular 20 引入 Signal Forms 草案、20.2 完成稳定化以来，实际项目中积累了大量反馈。21.2 集中回应了这些反馈，带来了更完善的表单验证体验、与后端 API 的集成模"
+wordCount: 449
 ---
 
 Angular 21.2 于 2026 年 2 月末发布，这个版本将 Signal Forms 的多项细节打磨至生产级别。自 Angular 20 引入 Signal Forms 草案、20.2 完成稳定化以来，实际项目中积累了大量反馈。21.2 集中回应了这些反馈，带来了更完善的表单验证体验、与后端 API 的集成模式，以及大型表单的性能优化。

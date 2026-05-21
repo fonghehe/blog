@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "View Transitions API 页面转场 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
+wordCount: 194
 ---
 
 View Transitions API 页面转场 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

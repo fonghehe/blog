@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "In day-to-day development, HTML Popover: Stable Release in Full Production is being used more and more frequently. This article systematically explains its usag"
+wordCount: 204
 ---
 
 In day-to-day development, HTML Popover: Stable Release in Full Production is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

@@ -6,6 +6,7 @@ tags:
   - TailwindCSS
 readingTime: 2
 description: "日々の開発において、Tailwind CSS v4：Oxide エンジンの使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
+wordCount: 533
 ---
 
 日々の開発において、Tailwind CSS v4：Oxide エンジンの使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。

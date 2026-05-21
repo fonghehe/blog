@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Permission control is almost a necessity in admin systems. This article outlines a complete solution: route permissions + menu permissions + button permissions,"
+wordCount: 144
 ---
 
 Permission control is almost a necessity in admin systems. This article outlines a complete solution: route permissions + menu permissions + button permissions, built on Vue 2 + Vue Router + Vuex.

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "基础正则表达式会写了，但工作中遇到复杂需求还是懵。整理一些进阶用法。"
+wordCount: 124
 ---
 
 基础正则表达式会写了，但工作中遇到复杂需求还是懵。整理一些进阶用法。

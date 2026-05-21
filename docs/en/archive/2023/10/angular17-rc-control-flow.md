@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 17 Release Candidate was published on October 4, 2023, with the official release expected on November 8. The RC-stage API is already stable and can be e"
+wordCount: 278
 ---
 
 Angular 17 Release Candidate was published on October 4, 2023, with the official release expected on November 8. The RC-stage API is already stable and can be experienced in non-production environments. The two most significant features — **built-in control flow** and **Deferrable Views** — completely transform how Angular templates are written.

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "The prototype chain is a core JavaScript concept that trips up many people. This post uses diagrams and simple examples to explain it clearly."
+wordCount: 141
 ---
 
 The prototype chain is a core JavaScript concept that trips up many people. This post uses diagrams and simple examples to explain it clearly.

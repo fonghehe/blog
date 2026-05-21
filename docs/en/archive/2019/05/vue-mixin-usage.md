@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Many developers have misconceptions about Vue 2 Mixins. This article systematically covers the key points and common pitfalls."
+wordCount: 144
 ---
 
 Many developers have misconceptions about Vue 2 Mixins. This article systematically covers the key points and common pitfalls.

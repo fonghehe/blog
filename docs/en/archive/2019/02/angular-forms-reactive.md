@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular provides two form approaches: template-driven and reactive. Reactive forms are better suited for complex business scenarios."
+wordCount: 40
 ---
 
 Angular provides two form approaches: template-driven and reactive. Reactive forms are better suited for complex business scenarios.

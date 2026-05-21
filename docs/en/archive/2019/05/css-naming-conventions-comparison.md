@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "In the process of promoting CSS BEM naming conventions within the team, we ran into quite a few pitfalls. Here are some lessons learned that I hope will be usef"
+wordCount: 105
 ---
 
 In the process of promoting CSS BEM naming conventions within the team, we ran into quite a few pitfalls. Here are some lessons learned that I hope will be useful.

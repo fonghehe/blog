@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "之前写过 Biome 能否替代 ESLint + Prettier 的分析。经过几个月在团队中全面推广，整理一下完整的工作流经验。"
+wordCount: 464
 ---
 
 之前写过 Biome 能否替代 ESLint + Prettier 的分析。经过几个月在团队中全面推广，整理一下完整的工作流经验。

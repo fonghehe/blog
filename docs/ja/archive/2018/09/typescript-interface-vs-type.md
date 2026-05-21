@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript を学び始めた頃、よく迷っていました：`interface` と `type` はどちらも型を定義できますが、どちらをいつ使えばよいのでしょうか？"
+wordCount: 353
 ---
 
 TypeScript を学び始めた頃、よく迷っていました：`interface` と `type` はどちらも型を定義できますが、どちらをいつ使えばよいのでしょうか？

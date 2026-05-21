@@ -5,6 +5,7 @@ tags:
   - Pinia
 readingTime: 2
 description: "关于Pinia 源码分析，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 205
 ---
 
 关于Pinia 源码分析，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

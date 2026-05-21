@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 21は2025年11月にSignal化移行のマイルストーンを達成し、最初のマイナーバージョンである21.1は2026年1月に大量のエコシステム安定化作業をもたらしました。最も注目されるのは`httpResource`が安定版APIに正式昇格したことと、`linkedSignal`が複雑な状態管理に深く統"
+wordCount: 760
 ---
 
 Angular 21は2025年11月にSignal化移行のマイルストーンを達成し、最初のマイナーバージョンである21.1は2026年1月に大量のエコシステム安定化作業をもたらしました。最も注目されるのは`httpResource`が安定版APIに正式昇格したことと、`linkedSignal`が複雑な状態管理に深く統合されたことです。

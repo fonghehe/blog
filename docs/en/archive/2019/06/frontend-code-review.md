@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "The team has recently been rolling out Code Review. I've compiled a frontend CR checklist. In practice, it's not just about finding bugs — it's a way to share k"
+wordCount: 146
 ---
 
 The team has recently been rolling out Code Review. I've compiled a frontend CR checklist. In practice, it's not just about finding bugs — it's a way to share knowledge.

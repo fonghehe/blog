@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 18 釋出以來，官方團隊密集推進了一系列特性：Server Components、Suspense、Transitions、use 鉤子等。這些特性不是孤立的，它們共同構成了 React 的新架構藍圖。本文從實際開發角度梳理這些特性的現狀和最佳實踐。"
+wordCount: 440
 ---
 
 React 18 釋出以來，官方團隊密集推進了一系列特性：Server Components、Suspense、Transitions、use 鉤子等。這些特性不是孤立的，它們共同構成了 React 的新架構藍圖。本文從實際開發角度梳理這些特性的現狀和最佳實踐。

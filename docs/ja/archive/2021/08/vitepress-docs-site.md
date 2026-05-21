@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "给团队的组件库搭建文档站，对比了 VuePress 和 VitePress 后选择了后者。VitePress 基于 Vite + Vue 3，构建速度快了一个量级，而且配置更简洁。记录一下搭建过程和定制化配置。"
+wordCount: 280
 ---
 
 给团队的组件库搭建文档站，对比了 VuePress 和 VitePress 后选择了后者。VitePress 基于 Vite + Vue 3，构建速度快了一个量级，而且配置更简洁。记录一下搭建过程和定制化配置。

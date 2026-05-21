@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Babel 7 officially launched in August (after an extraordinarily long beta period). After upgrading several projects, here's a summary of the major changes and t"
+wordCount: 196
 ---
 
 Babel 7 officially launched in August (after an extraordinarily long beta period). After upgrading several projects, here's a summary of the major changes and the pitfalls I encountered.

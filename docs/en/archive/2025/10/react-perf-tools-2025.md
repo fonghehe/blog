@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "New React Performance Analysis Tools is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best prac"
+wordCount: 199
 ---
 
 New React Performance Analysis Tools is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

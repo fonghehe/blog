@@ -5,6 +5,7 @@ tags:
   - Web Components
 readingTime: 2
 description: "最近在团队中落地Web Components 2025 生态，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
+wordCount: 324
 ---
 
 最近在团队中落地Web Components 2025 生态，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

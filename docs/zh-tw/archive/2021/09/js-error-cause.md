@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "關於JavaScript Error cause 錯誤鏈，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+wordCount: 328
 ---
 
 關於JavaScript Error cause 錯誤鏈，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。

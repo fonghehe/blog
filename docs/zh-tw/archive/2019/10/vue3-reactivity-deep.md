@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 3 將響應式系統從 `Object.defineProperty` 完全重寫為 `Proxy`。這不是為了追時髦，而是為了徹底解決 Vue 2 中一些根本性缺陷。"
+wordCount: 193
 ---
 
 Vue 3 將響應式系統從 `Object.defineProperty` 完全重寫為 `Proxy`。這不是為了追時髦，而是為了徹底解決 Vue 2 中一些根本性缺陷。

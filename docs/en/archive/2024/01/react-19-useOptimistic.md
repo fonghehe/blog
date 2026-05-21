@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 19: useOptimistic for Optimistic Updates is becoming increasingly widespread in frontend development. This article dives deep into its core principles and"
+wordCount: 158
 ---
 
 React 19: useOptimistic for Optimistic Updates is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

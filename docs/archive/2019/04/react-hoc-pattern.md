@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "关于React 高阶组件 HOC 模式，网上有不少文章但大多缺乏实战经验。本文结合真实项目，探讨最佳实践。"
+wordCount: 195
 ---
 
 关于React 高阶组件 HOC 模式，网上有不少文章但大多缺乏实战经验。本文结合真实项目，探讨最佳实践。

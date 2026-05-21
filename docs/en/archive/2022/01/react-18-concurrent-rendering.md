@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 18 并发渲染原理This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh ove"
+wordCount: 229
 ---
 
 React 18 并发渲染原理This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.

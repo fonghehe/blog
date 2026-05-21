@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "在日常開發中，Vue Macros 語法增強工具集的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
+wordCount: 313
 ---
 
 在日常開發中，Vue Macros 語法增強工具集的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。

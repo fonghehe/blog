@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "最近チームでVite Environment API：安定版を導入し、多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
+wordCount: 414
 ---
 
 最近チームでVite Environment API：安定版を導入し、多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。

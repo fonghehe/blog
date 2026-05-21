@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React Conf 2018 was held in Henderson, Nevada on October 25–26. Dan Abramov and Ryan Florence gave live demos of Hooks, and the community exploded."
+wordCount: 339
 ---
 
 React Conf 2018 was held in Henderson, Nevada on October 25–26. Dan Abramov and Ryan Florence gave live demos of Hooks, and the community exploded.

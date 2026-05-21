@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Webpack 4 replaced the old `CommonsChunkPlugin` with `splitChunks`, making configuration simpler. Here's the setup from a real project."
+wordCount: 178
 ---
 
 Webpack 4 replaced the old `CommonsChunkPlugin` with `splitChunks`, making configuration simpler. Here's the setup from a real project.

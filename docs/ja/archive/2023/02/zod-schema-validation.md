@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "在全栈 TypeScript 项目里，类型安全应该是从数据库到前端一致的。Zod 是实现这个目标最干净的方案。"
+wordCount: 305
 ---
 
 在全栈 TypeScript 项目里，类型安全应该是从数据库到前端一致的。Zod 是实现这个目标最干净的方案。

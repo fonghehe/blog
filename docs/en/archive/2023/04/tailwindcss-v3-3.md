@@ -6,6 +6,7 @@ tags:
   - TailwindCSS
 readingTime: 2
 description: "最近在团队中落地Tailwind CSS v3.3 新特性， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 208
 ---
 
 最近在团队中落地Tailwind CSS v3.3 新特性， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

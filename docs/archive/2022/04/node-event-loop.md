@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Node.js 事件循环分析在近年来发展迅速，本文将深入分析其原理和实践方法。"
+wordCount: 280
 ---
 
 Node.js 事件循环分析在近年来发展迅速，本文将深入分析其原理和实践方法。

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 不是新技術了（2012 年微軟釋出），但 2017-2018 年才真正在國內前端圈流行起來。Angular 2+ 強制使用，Vue 2.5 也改善了 TS 支援，是時候認真學一下了。"
+wordCount: 306
 ---
 
 TypeScript 不是新技術了（2012 年微軟釋出），但 2017-2018 年才真正在國內前端圈流行起來。Angular 2+ 強制使用，Vue 2.5 也改善了 TS 支援，是時候認真學一下了。

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "NgRx 是 Angular 生態中最流行的狀態管理方案，基於 Redux 模式與 RxJS。"
+wordCount: 64
 ---
 
 NgRx 是 Angular 生態中最流行的狀態管理方案，基於 Redux 模式與 RxJS。

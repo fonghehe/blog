@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Frontend performance optimization often starts with compression and code splitting, but browser caching is another high-leverage area. A proper Nginx caching co"
+wordCount: 69
 ---
 
 Frontend performance optimization often starts with compression and code splitting, but browser caching is another high-leverage area. A proper Nginx caching configuration can dramatically reduce server pressure and significantly improve repeat-visit load times.

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 9 目前處於 Beta 階段，預計 2020 年初正式發佈。最大的變化是 Ivy 渲染引擎將成為默認，連帶着 AOT 也將默認開啓。這兩個變化對包體積和模板類型安全都有顯著影響。"
+wordCount: 367
 ---
 
 Angular 9 目前處於 Beta 階段，預計 2020 年初正式發佈。最大的變化是 Ivy 渲染引擎將成為默認，連帶着 AOT 也將默認開啓。這兩個變化對包體積和模板類型安全都有顯著影響。

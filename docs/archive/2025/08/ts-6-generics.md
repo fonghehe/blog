@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近在团队中落地TypeScript 6.0 泛型改进，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
+wordCount: 315
 ---
 
 最近在团队中落地TypeScript 6.0 泛型改进，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

@@ -5,6 +5,7 @@ tags:
   - Micro Frontend
 readingTime: 2
 description: "关于微前端 2023 架构演进总结，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 163
 ---
 
 关于微前端 2023 架构演进总结，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

@@ -6,6 +6,7 @@ tags:
 
 readingTime: 2
 description: "TypeScript 4.1 4.2 新特性汇总 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real p"
+wordCount: 213
 ---
 
 TypeScript 4.1 4.2 新特性汇总 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

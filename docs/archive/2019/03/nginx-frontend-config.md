@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 1
 description: "前端工程师不懂 Nginx 配置，很多部署问题没法自己解决。整理一份常用配置手册。"
+wordCount: 171
 ---
 
 前端工程师不懂 Nginx 配置，很多部署问题没法自己解决。整理一份常用配置手册。

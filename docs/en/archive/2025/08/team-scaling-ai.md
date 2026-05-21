@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "As a team scales from 5 to 20 people, AI tools play a significant role in knowledge transfer, code consistency, and new-hire onboarding. Here's a look at the pr"
+wordCount: 121
 ---
 
 As a team scales from 5 to 20 people, AI tools play a significant role in knowledge transfer, code consistency, and new-hire onboarding. Here's a look at the practical strategies we've used.

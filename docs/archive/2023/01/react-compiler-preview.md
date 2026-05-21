@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React Compiler（原 React Forget）是 React 团队正在开发的编译时优化工具。它的目标是自动处理 `useMemo`、`useCallback`、`React.memo` 的插入，让开发者不再需要手动管理这些性能优化。本文基于公开信息分析其工作原理和对现有代码的影响。"
+wordCount: 615
 ---
 
 React Compiler（原 React Forget）是 React 团队正在开发的编译时优化工具。它的目标是自动处理 `useMemo`、`useCallback`、`React.memo` 的插入，让开发者不再需要手动管理这些性能优化。本文基于公开信息分析其工作原理和对现有代码的影响。

@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Node.js 16 在 2021 年 4 月發佈，10 月進入 LTS 階段。作為前端工具鏈的運行時基礎，Node.js 版本直接影響 Vite、Webpack 5、esbuild 等構建工具的表現。整理一下 v16 中值得關注的特性。"
+wordCount: 265
 ---
 
 Node.js 16 在 2021 年 4 月發佈，10 月進入 LTS 階段。作為前端工具鏈的運行時基礎，Node.js 版本直接影響 Vite、Webpack 5、esbuild 等構建工具的表現。整理一下 v16 中值得關注的特性。

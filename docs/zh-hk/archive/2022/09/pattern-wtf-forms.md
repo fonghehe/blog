@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 1
 description: "關於Pattern Flyweight 表單優化，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+wordCount: 273
 ---
 
 關於Pattern Flyweight 表單優化，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。

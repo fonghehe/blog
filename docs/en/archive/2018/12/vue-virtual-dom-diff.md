@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Interviewers frequently ask \"How does Vue's diff algorithm work?\" and most articles on the subject are frustratingly abstract. Here's an explanation with concre"
+wordCount: 155
 ---
 
 Interviewers frequently ask "How does Vue's diff algorithm work?" and most articles on the subject are frustratingly abstract. Here's an explanation with concrete examples.

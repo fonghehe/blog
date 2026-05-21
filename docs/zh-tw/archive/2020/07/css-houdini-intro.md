@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS Houdini 是一組底層 CSS API，讓開發者可以介入瀏覽器的 CSS 渲染流程。其中 **Paint Worklet** 是目前相容性最好、最實用的部分，Chrome 65+ 已經支援。"
+wordCount: 291
 ---
 
 CSS Houdini 是一組底層 CSS API，讓開發者可以介入瀏覽器的 CSS 渲染流程。其中 **Paint Worklet** 是目前相容性最好、最實用的部分，Chrome 65+ 已經支援。

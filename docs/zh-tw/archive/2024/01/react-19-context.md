@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "在日常工作中經常用到React 19 新 Context API，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。"
+wordCount: 235
 ---
 
 在日常工作中經常用到React 19 新 Context API，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。

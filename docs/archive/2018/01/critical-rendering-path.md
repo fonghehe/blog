@@ -5,6 +5,7 @@ tags:
   - 性能优化
 readingTime: 3
 description: "做性能优化之前，得先搞清楚浏览器从收到 HTML 到用户看到页面，中间经历了什么。这些步骤合在一起叫做**关键渲染路径**（Critical Rendering Path）。不理解这个，很多优化手段只能照猫画虎。"
+wordCount: 626
 ---
 
 做性能优化之前，得先搞清楚浏览器从收到 HTML 到用户看到页面，中间经历了什么。这些步骤合在一起叫做**关键渲染路径**（Critical Rendering Path）。不理解这个，很多优化手段只能照猫画虎。

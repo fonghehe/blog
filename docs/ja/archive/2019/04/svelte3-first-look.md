@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 1
 description: "Svelte 3が先週リリースされました。Vue/Reactとは全く異なるアプローチを取っています——コンパイル時フレームワークで、ランタイムもVirtual DOMもありません。1週間使ってみた感想をお伝えします。"
+wordCount: 280
 ---
 
 Svelte 3が先週リリースされました。Vue/Reactとは全く異なるアプローチを取っています——コンパイル時フレームワークで、ランタイムもVirtual DOMもありません。1週間使ってみた感想をお伝えします。

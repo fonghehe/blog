@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 1
 description: "`tree-shaking` 這個詞來自 Rollup，意思是把沒用到的程式碼像樹葉一樣\"抖掉\"。Webpack 2 開始支援，但要正確配置才生效。"
+wordCount: 226
 ---
 
 `tree-shaking` 這個詞來自 Rollup，意思是把沒用到的程式碼像樹葉一樣"抖掉"。Webpack 2 開始支援，但要正確配置才生效。

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 6.0 Generics Improvements is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best prac"
+wordCount: 210
 ---
 
 TypeScript 6.0 Generics Improvements is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

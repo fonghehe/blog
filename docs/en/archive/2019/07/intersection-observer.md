@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Previously, implementing lazy image loading or infinite scroll typically relied on `scroll` events combined with `getBoundingClientRect()`. Not only was perform"
+wordCount: 125
 ---
 
 Previously, implementing lazy image loading or infinite scroll typically relied on `scroll` events combined with `getBoundingClientRect()`. Not only was performance poor, the code was messy too. The Intersection Observer API has completely changed this situation.

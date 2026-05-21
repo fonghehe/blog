@@ -6,6 +6,7 @@ tags:
   - React
 readingTime: 1
 description: "Frequently used in daily work, Vue 3.2 浅层响应式，Here is a systematic summary to help everyone better understand and apply it."
+wordCount: 153
 ---
 
 Frequently used in daily work, Vue 3.2 浅层响应式，Here is a systematic summary to help everyone better understand and apply it.

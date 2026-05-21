@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "The React 20 Compiler (formerly React Forget) has finally moved from RC to stable. This compiler fundamentally changes how React performance optimization works "
+wordCount: 387
 ---
 
 The React 20 Compiler (formerly React Forget) has finally moved from RC to stable. This compiler fundamentally changes how React performance optimization works — you no longer need to manually write `useMemo`, `useCallback`, or `React.memo`; the compiler handles it automatically.

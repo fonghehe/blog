@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Regarding CSS 2025 New Features in Practice, many developers only stay at the API call level. This article discusses real-world problems and solutions from a pr"
+wordCount: 219
 ---
 
 Regarding CSS 2025 New Features in Practice, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "关于技术债务管理与偿还策略，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 202
 ---
 
 关于技术债务管理与偿还策略，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

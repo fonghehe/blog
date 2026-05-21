@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I frequently use Deno 2 FFI Interface in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it better."
+wordCount: 211
 ---
 
 I frequently use Deno 2 FFI Interface in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it better.

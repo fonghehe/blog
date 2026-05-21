@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Frontend Build Tool Selection 2025 is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practi"
+wordCount: 193
 ---
 
 Frontend Build Tool Selection 2025 is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

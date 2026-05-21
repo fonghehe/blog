@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 3
 description: "Writing test cases is one of the most tedious yet most important parts of frontend development. In 2026, AI can automatically generate unit tests, integration t"
+wordCount: 164
 ---
 
 Writing test cases is one of the most tedious yet most important parts of frontend development. In 2026, AI can automatically generate unit tests, integration tests, and even end-to-end tests. But "auto-generated" doesn't mean "auto-generated well" — bad tests are more dangerous than no tests, because they give you a false sense of security.

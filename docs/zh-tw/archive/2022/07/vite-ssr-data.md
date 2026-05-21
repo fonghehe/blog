@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "Vite SSR 資料獲取在近年來發展迅速，本文將深入分析其原理和實踐方法。"
+wordCount: 282
 ---
 
 Vite SSR 資料獲取在近年來發展迅速，本文將深入分析其原理和實踐方法。

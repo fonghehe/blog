@@ -5,6 +5,7 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "Vite 1.0 在 2020 年发布后，\"秒级启动\"让很多人惊叹。本文深入分析 Vite 能做到这一点的底层原理，以及它和 webpack dev server 的根本区别。"
+wordCount: 436
 ---
 
 Vite 1.0 在 2020 年发布后，"秒级启动"让很多人惊叹。本文深入分析 Vite 能做到这一点的底层原理，以及它和 webpack dev server 的根本区别。

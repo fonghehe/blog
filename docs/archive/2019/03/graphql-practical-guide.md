@@ -5,6 +5,7 @@ tags:
   - GraphQL
 readingTime: 2
 description: "团队做了一个新项目，试了 GraphQL。用了两个月，说说真实感受——不是都好，也不是都不好。"
+wordCount: 394
 ---
 
 团队做了一个新项目，试了 GraphQL。用了两个月，说说真实感受——不是都好，也不是都不好。

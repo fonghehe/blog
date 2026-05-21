@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript 4.0 在去年 8 月釋出了，團隊從 3.7 升級到 4.0 幾乎沒有 breaking changes。這周整理了升級過程中發現的實用特性，以及我們維護宣告檔案的經驗。"
+wordCount: 322
 ---
 
 TypeScript 4.0 在去年 8 月釋出了，團隊從 3.7 升級到 4.0 幾乎沒有 breaking changes。這周整理了升級過程中發現的實用特性，以及我們維護宣告檔案的經驗。

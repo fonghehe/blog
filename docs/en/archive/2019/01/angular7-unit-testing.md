@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "When you generate a project with the Angular CLI, it sets up a Jasmine + Karma testing environment by default. Many developers skip testing, but Angular's testi"
+wordCount: 46
 ---
 
 When you generate a project with the Angular CLI, it sets up a Jasmine + Karma testing environment by default. Many developers skip testing, but Angular's testing toolchain integrates naturally with application code.

@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "最近在团队中落地Vue 3 Suspense 异步组件加载， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 178
 ---
 
 最近在团队中落地Vue 3 Suspense 异步组件加载， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

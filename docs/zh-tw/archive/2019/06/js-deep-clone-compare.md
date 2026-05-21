@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "關於JavaScript 深複製方案對比，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。"
+wordCount: 256
 ---
 
 關於JavaScript 深複製方案對比，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。

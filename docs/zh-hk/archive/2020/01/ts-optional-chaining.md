@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript 3.7 引入了可選鏈（Optional Chaining）和空值合併（Nullish Coalescing）這兩個語法，終於不用再寫一長串的 `&&` 判斷了。在實際項目中用了一段時間，總結一下使用場景和注意事項。"
+wordCount: 235
 ---
 
 TypeScript 3.7 引入了可選鏈（Optional Chaining）和空值合併（Nullish Coalescing）這兩個語法，終於不用再寫一長串的 `&&` 判斷了。在實際項目中用了一段時間，總結一下使用場景和注意事項。

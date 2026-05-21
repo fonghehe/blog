@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Tree Shaking is an important optimization technique in modern frontend engineering, but the actual results often fall short of expectations. The underlying reas"
+wordCount: 235
 ---
 
 Tree Shaking is an important optimization technique in modern frontend engineering, but the actual results often fall short of expectations. The underlying reasons are worth understanding.

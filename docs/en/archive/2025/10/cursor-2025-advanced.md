@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Cursor IDE Advanced Tips 2025 is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices f"
+wordCount: 198
 ---
 
 Cursor IDE Advanced Tips 2025 is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

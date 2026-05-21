@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "公司有个官网要做 SEO，调研了 Next.js，最终选了它。记录一下踩坑过程。"
+wordCount: 252
 ---
 
 公司有个官网要做 SEO，调研了 Next.js，最终选了它。记录一下踩坑过程。

@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "项目通常有 development、staging、production 三个环境，各有不同的 API 地址、Feature Flag 等配置。这篇文章整理多环境配置的最佳实践。"
+wordCount: 291
 ---
 
 项目通常有 development、staging、production 三个环境，各有不同的 API 地址、Feature Flag 等配置。这篇文章整理多环境配置的最佳实践。

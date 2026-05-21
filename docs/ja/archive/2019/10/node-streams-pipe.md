@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 4
 description: "Node.js 的 Stream 是处理 I/O 数据流的核心抽象，而 `pipe` 方法是将多个流串联起来的关键 API。理解 pipe 的工作原理和背压（backpressure）机制，对于编写高性能的 Node.js 应用至关重要。"
+wordCount: 632
 ---
 
 Node.js 的 Stream 是处理 I/O 数据流的核心抽象，而 `pipe` 方法是将多个流串联起来的关键 API。理解 pipe 的工作原理和背压（backpressure）机制，对于编写高性能的 Node.js 应用至关重要。

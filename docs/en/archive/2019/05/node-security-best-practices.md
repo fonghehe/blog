@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 1
 description: "Node.js engineers can easily fall into security traps — not from lack of skill, but from lack of attention. This article covers commonly overlooked security pra"
+wordCount: 69
 ---
 
 Node.js engineers can easily fall into security traps — not from lack of skill, but from lack of attention. This article covers commonly overlooked security practices in everyday development.

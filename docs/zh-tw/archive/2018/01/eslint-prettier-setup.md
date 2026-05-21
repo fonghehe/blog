@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "程式碼規範是團隊協作的基礎設施。每次 Code Review 花時間討論縮排和引號風格是在浪費所有人的時間。ESLint + Prettier 的組合可以把這類問題自動化掉。"
+wordCount: 467
 ---
 
 程式碼規範是團隊協作的基礎設施。每次 Code Review 花時間討論縮排和引號風格是在浪費所有人的時間。ESLint + Prettier 的組合可以把這類問題自動化掉。

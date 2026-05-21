@@ -6,6 +6,7 @@ tags:
   - Vitest
 readingTime: 2
 description: "In daily development, Vitest 2.0 发布新特性 is used more and more frequently. This article systematically explains its usage, principles, and optimization strategies"
+wordCount: 203
 ---
 
 In daily development, Vitest 2.0 发布新特性 is used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

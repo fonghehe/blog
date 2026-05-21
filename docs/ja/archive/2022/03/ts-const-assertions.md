@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "日常開発において、TypeScript const 断言最佳实践の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
+wordCount: 501
 ---
 
 日常開発において、TypeScript const 断言最佳实践の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。

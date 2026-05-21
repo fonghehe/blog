@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "Webpack 4 在 2 月底正式发布，最大的亮点是 **zero configuration**——不写配置文件也能跑起来。升级了几个项目，记录一下实际体验。"
+wordCount: 393
 ---
 
 Webpack 4 在 2 月底正式发布，最大的亮点是 **zero configuration**——不写配置文件也能跑起来。升级了几个项目，记录一下实际体验。

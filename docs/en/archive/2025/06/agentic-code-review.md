@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Our team has been using AI agents for code review for six months. Not simple lint rules, but deep reviews that understand business logic. Here's the experience "
+wordCount: 100
 ---
 
 Our team has been using AI agents for code review for six months. Not simple lint rules, but deep reviews that understand business logic. Here's the experience we've gathered.

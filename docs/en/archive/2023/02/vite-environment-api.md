@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 1
 description: "最近在团队中落地Vite Environment API 多环境， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 169
 ---
 
 最近在团队中落地Vite Environment API 多环境， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

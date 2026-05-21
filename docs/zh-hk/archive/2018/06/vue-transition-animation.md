@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 的 `<transition>` 組件讓添加動畫變得很簡單。記錄幾個常用場景。"
+wordCount: 201
 ---
 
 Vue 的 `<transition>` 組件讓添加動畫變得很簡單。記錄幾個常用場景。

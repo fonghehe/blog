@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Code Review is one of the most effective ways to raise a team's code quality. But many teams either skip it entirely or go through the motions. This article sha"
+wordCount: 360
 ---
 
 Code Review is one of the most effective ways to raise a team's code quality. But many teams either skip it entirely or go through the motions. This article shares our team's hands-on experience.

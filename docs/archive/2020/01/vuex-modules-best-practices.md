@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "项目一旦超过中等规模，Vuex 的 `store` 就会变得臃肿。Vuex 4 延续了模块化方案，但对 Composition API 做了适配。本文整理了我在多个中大型 Vue 项目中验证过的模块化实践。"
+wordCount: 312
 ---
 
 项目一旦超过中等规模，Vuex 的 `store` 就会变得臃肿。Vuex 4 延续了模块化方案，但对 Composition API 做了适配。本文整理了我在多个中大型 Vue 项目中验证过的模块化实践。

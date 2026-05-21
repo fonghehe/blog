@@ -5,6 +5,7 @@ tags:
   - Esbuild
 readingTime: 2
 description: "Rspack Rust 前端构建工具这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
+wordCount: 271
 ---
 
 Rspack Rust 前端构建工具这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

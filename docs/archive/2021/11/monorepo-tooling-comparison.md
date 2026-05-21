@@ -5,6 +5,7 @@ tags:
   - 前端工程化
 readingTime: 2
 description: "Vercel 收购了 Turborepo 并开源，这是一个用 Go 写的高性能 Monorepo 构建工具。试用了一周，和 Lerna / pnpm workspace 对比了一下。"
+wordCount: 367
 ---
 
 Vercel 收购了 Turborepo 并开源，这是一个用 Go 写的高性能 Monorepo 构建工具。试用了一周，和 Lerna / pnpm workspace 对比了一下。

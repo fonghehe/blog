@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.1 釋出了，帶來了幾個非常實用的型別系統增強。特別是模板字面量型別和遞迴條件型別，讓型別程式設計能力又上了一個臺階。"
+wordCount: 209
 ---
 
 TypeScript 4.1 釋出了，帶來了幾個非常實用的型別系統增強。特別是模板字面量型別和遞迴條件型別，讓型別程式設計能力又上了一個臺階。

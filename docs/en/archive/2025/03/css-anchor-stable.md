@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "When it comes to CSS Anchor Positioning Stable, many developers only scratch the surface at the API call level. This article attempts to discuss the real-world "
+wordCount: 144
 ---
 
 When it comes to CSS Anchor Positioning Stable, many developers only scratch the surface at the API call level. This article attempts to discuss the real-world problems and solutions you'll encounter from a production environment perspective.

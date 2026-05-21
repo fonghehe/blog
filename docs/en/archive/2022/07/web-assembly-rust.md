@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "关于WebAssembly Rust 前端应用，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspectiv"
+wordCount: 180
 ---
 
 关于WebAssembly Rust 前端应用，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

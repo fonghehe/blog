@@ -5,6 +5,7 @@ tags:
   - Storybook
 readingTime: 2
 description: "在日常开发中，Storybook 7 迁移完整指南 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 207
 ---
 
 在日常开发中，Storybook 7 迁移完整指南 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

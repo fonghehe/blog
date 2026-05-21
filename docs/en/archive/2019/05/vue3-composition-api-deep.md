@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 3's Composition API has been finalized in its RFC. Although the official release is still months away, understanding it deeply in advance is very worthwhile"
+wordCount: 98
 ---
 
 Vue 3's Composition API has been finalized in its RFC. Although the official release is still months away, understanding it deeply in advance is very worthwhile. This is not a simple upgrade to Vue 2 — it's a fundamental change in how component logic is organized.

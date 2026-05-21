@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "關於Node.js 錯誤處理最佳實踐，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。"
+wordCount: 260
 ---
 
 關於Node.js 錯誤處理最佳實踐，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。

@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 1
 description: "Node.js stream processing is a topic encountered frequently in day-to-day development. This article draws from real projects to share practical implementation a"
+wordCount: 85
 ---
 
 Node.js stream processing is a topic encountered frequently in day-to-day development. This article draws from real projects to share practical implementation approaches and lessons learned.

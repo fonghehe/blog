@@ -5,6 +5,7 @@ tags:
   - セキュリティ
 readingTime: 4
 description: "XSS（Cross-Site Scripting）は最も一般的なフロントエンドセキュリティ脆弱性の一つです。この記事では攻撃の仕組みから防御策まで体系的に整理します。"
+wordCount: 830
 ---
 
 XSS（Cross-Site Scripting）は最も一般的なフロントエンドセキュリティ脆弱性の一つです。この記事では攻撃の仕組みから防御策まで体系的に整理します。

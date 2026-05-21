@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 5 compiler architecture is a topic worth paying attention to in frontend development. This article explores core concepts and best practices from real proje"
+wordCount: 88
 ---
 
 Vue 5 compiler architecture is a topic worth paying attention to in frontend development. This article explores core concepts and best practices from real project experience.

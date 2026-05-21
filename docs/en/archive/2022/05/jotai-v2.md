@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "In daily development, Jotai v2 原子化状态改进 is being used more and more frequently. This article systematically explains its usage, principles, and optimization stra"
+wordCount: 171
 ---
 
 In daily development, Jotai v2 原子化状态改进 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Tauri 2.0 移动端支持预览 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
+wordCount: 189
 ---
 
 Tauri 2.0 移动端支持预览 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

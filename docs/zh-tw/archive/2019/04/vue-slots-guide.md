@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 2 插槽 slot 完全指南是日常開發中經常遇到的問題。本文從實際專案出發，分享具體的實現方法和經驗總結。"
+wordCount: 250
 ---
 
 Vue 2 插槽 slot 完全指南是日常開發中經常遇到的問題。本文從實際專案出發，分享具體的實現方法和經驗總結。

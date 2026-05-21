@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Claude Artifacts 开发工作流 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on r"
+wordCount: 231
 ---
 
 Claude Artifacts 开发工作流 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real project experience.

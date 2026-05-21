@@ -5,6 +5,7 @@ tags:
   - Playwright
 readingTime: 2
 description: "关于Playwright 1.40 新功能总结，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment persp"
+wordCount: 210
 ---
 
 关于Playwright 1.40 新功能总结，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

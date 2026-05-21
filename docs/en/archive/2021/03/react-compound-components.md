@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "React 复合组件模式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 197
 ---
 
 React 复合组件模式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

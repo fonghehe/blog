@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "代码规范是团队协作的基础设施。每次 Code Review 花时间讨论缩进和引号风格是在浪费所有人的时间。ESLint + Prettier 的组合可以把这类问题自动化掉。"
+wordCount: 462
 ---
 
 代码规范是团队协作的基础设施。每次 Code Review 花时间讨论缩进和引号风格是在浪费所有人的时间。ESLint + Prettier 的组合可以把这类问题自动化掉。

@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Tailwind CSS 4.0 has officially launched — a complete rewrite from the ground up. Let's talk about the architectural changes and migration considerations."
+wordCount: 139
 ---
 
 Tailwind CSS 4.0 has officially launched — a complete rewrite from the ground up. Let's talk about the architectural changes and migration considerations.

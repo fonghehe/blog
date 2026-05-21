@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS 樣式不生效，大概率是優先級問題。這篇文章把優先級規則説清楚。"
+wordCount: 229
 ---
 
 CSS 樣式不生效，大概率是優先級問題。這篇文章把優先級規則説清楚。

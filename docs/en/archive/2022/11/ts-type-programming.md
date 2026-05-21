@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 类型编程 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 197
 ---
 
 TypeScript 类型编程 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "After the official release of Angular 7, the CDK's Drag and Drop and Virtual Scrolling features quickly became the most popular additions. This article provides"
+wordCount: 165
 ---
 
 After the official release of Angular 7, the CDK's Drag and Drop and Virtual Scrolling features quickly became the most popular additions. This article provides an in-depth walkthrough with real project examples.

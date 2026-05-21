@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 20 中的 Actions 機制迎來重大升級。v1 版本的 Actions 主要解決了表單提交場景，v2 則將其擴展為通用的異步操作原語，覆蓋了樂觀更新、錯誤邊界集成和事務性狀態管理。"
+wordCount: 385
 ---
 
 React 20 中的 Actions 機制迎來重大升級。v1 版本的 Actions 主要解決了表單提交場景，v2 則將其擴展為通用的異步操作原語，覆蓋了樂觀更新、錯誤邊界集成和事務性狀態管理。

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 14 引入的 `inject()` 函式是一個小改動但影響深遠的 API。它允許在 injection context（元件初始化期間、工廠函式、路由守衛等）中直接獲取服務，不再強制通過建構函式注入。這開啟了一種 React Hooks 風格的\"可組合\"Angular 開發模式。"
+wordCount: 280
 ---
 
 Angular 14 引入的 `inject()` 函式是一個小改動但影響深遠的 API。它允許在 injection context（元件初始化期間、工廠函式、路由守衛等）中直接獲取服務，不再強制通過建構函式注入。這開啟了一種 React Hooks 風格的"可組合"Angular 開發模式。

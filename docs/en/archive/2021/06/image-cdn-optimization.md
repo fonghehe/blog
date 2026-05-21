@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "图片 CDN 自动优化方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 233
 ---
 
 图片 CDN 自动优化方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近在团队中落地TypeScript 工具类型详解，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
+wordCount: 313
 ---
 
 最近在团队中落地TypeScript 工具类型详解，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

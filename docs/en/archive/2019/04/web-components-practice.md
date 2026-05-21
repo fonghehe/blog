@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "Web Components are now a W3C standard, supported natively in Chrome and Firefox. They enable component-based development without relying on any framework."
+wordCount: 76
 ---
 
 Web Components are now a W3C standard, supported natively in Chrome and Firefox. They enable component-based development without relying on any framework.

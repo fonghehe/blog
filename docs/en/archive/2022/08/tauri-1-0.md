@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "最近在团队中落地Tauri 1.0 正式版桌面应用， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 213
 ---
 
 最近在团队中落地Tauri 1.0 正式版桌面应用， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

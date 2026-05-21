@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 4
 description: "Next.js 17は2025年末にリリースされ、基盤アーキテクチャにいくつかの重大な変化をもたらしました。最もコアな転換はTurbopackが正式にWebpackに代わってデフォルトのバンドラーになったことと、PPR（Partial Prerendering）の安定版リリースです。大規模プロジェクトにとって、これらの"
+wordCount: 664
 ---
 
 Next.js 17は2025年末にリリースされ、基盤アーキテクチャにいくつかの重大な変化をもたらしました。最もコアな転換はTurbopackが正式にWebpackに代わってデフォルトのバンドラーになったことと、PPR（Partial Prerendering）の安定版リリースです。大規模プロジェクトにとって、これらの変化は実質的な影響をもたらします。

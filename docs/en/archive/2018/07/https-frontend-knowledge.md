@@ -5,6 +5,7 @@ tags:
   - HTTP
 readingTime: 1
 description: "HTTPS is standard in modern web development, but how does it actually work? And what does it mean for frontend developers? Let me summarize."
+wordCount: 130
 ---
 
 HTTPS is standard in modern web development, but how does it actually work? And what does it mean for frontend developers? Let me summarize.

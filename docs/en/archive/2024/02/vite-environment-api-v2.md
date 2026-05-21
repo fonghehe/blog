@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 1
 description: "Recently implemented Vite Environment API: Stable Release in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps"
+wordCount: 153
 ---
 
 Recently implemented Vite Environment API: Stable Release in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

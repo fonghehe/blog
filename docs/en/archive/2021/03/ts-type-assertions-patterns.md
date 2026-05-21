@@ -6,6 +6,7 @@ tags:
 
 readingTime: 2
 description: "关于TypeScript satisfies 操作符预览，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production persp"
+wordCount: 211
 ---
 
 关于TypeScript satisfies 操作符预览，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

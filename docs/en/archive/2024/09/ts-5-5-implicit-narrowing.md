@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "In day-to-day development, TypeScript 5.5: Implicit Type Narrowing is being used more and more frequently. This article systematically explains its usage, princ"
+wordCount: 153
 ---
 
 In day-to-day development, TypeScript 5.5: Implicit Type Narrowing is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

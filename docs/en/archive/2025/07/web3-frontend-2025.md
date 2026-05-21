@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "The Web3 frontend 2025 state and trends topic has been discussed extensively in the community, but with each version update, many conclusions need to be revisit"
+wordCount: 215
 ---
 
 The Web3 frontend 2025 state and trends topic has been discussed extensively in the community, but with each version update, many conclusions need to be revisited. This article provides a fresh overview based on the latest versions.

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS Anchor Positioning（CSSアンカーポジショニング）は2024年にChrome 125+で導入された後、2025年にFirefoxとSafariも対応し、実際に使えるサポート率（グローバル約78%）に達しました。これはフロントエンドが長年JavaScriptに頼ってきた「フローティングUI」のポ"
+wordCount: 456
 ---
 
 CSS Anchor Positioning（CSSアンカーポジショニング）は2024年にChrome 125+で導入された後、2025年にFirefoxとSafariも対応し、実際に使えるサポート率（グローバル約78%）に達しました。これはフロントエンドが長年JavaScriptに頼ってきた「フローティングUI」のポジション計算問題を解決します：Tooltip、Popover、ドロップダウンメニュー、フローティングパネル——これらすべてがアンカーポジショニングで実現でき、Popper.jsやFloating UIは不要になります。

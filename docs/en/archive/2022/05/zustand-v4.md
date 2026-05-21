@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Zustand v4 新版本特性 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 193
 ---
 
 Zustand v4 新版本特性 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

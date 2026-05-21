@@ -5,6 +5,7 @@ tags:
   - Next.js
 readingTime: 2
 description: "最近在团队中落地Next.js 13 App Router 预览，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
+wordCount: 269
 ---
 
 最近在团队中落地Next.js 13 App Router 预览，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

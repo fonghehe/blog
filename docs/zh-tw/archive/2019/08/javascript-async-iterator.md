@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 4
 description: "ES2018 引入了非同步迭代器（Async Iterator）和 `for-await-of` 語法，讓我們可以用同步的方式處理非同步資料流。這個特性在處理分頁 API、WebSocket 訊息、檔案流等場景下非常有用。本文將從迭代器協議講起，深入理解非同步迭代器的原理和實戰應用。"
+wordCount: 603
 ---
 
 ES2018 引入了非同步迭代器（Async Iterator）和 `for-await-of` 語法，讓我們可以用同步的方式處理非同步資料流。這個特性在處理分頁 API、WebSocket 訊息、檔案流等場景下非常有用。本文將從迭代器協議講起，深入理解非同步迭代器的原理和實戰應用。

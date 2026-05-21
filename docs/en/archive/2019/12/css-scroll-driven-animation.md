@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 5
 description: "滚动驱动动画是近年来 Web 动画领域的一个重要方向。CSS Scroll-linked Animations 规范虽然还在草案阶段，但它的理念已经可以通过 Intersection Observer API 和 scroll 事件在生产环境中实现。这篇文章从规范草案出发，结合实际案例，探讨如何实现滚动驱动的动画效果。"
+wordCount: 390
 ---
 
 滚动驱动动画是近年来 Web 动画领域的一个重要方向。CSS Scroll-linked Animations 规范虽然还在草案阶段，但它的理念已经可以通过 Intersection Observer API 和 scroll 事件在生产环境中实现。这篇文章从规范草案出发，结合实际案例，探讨如何实现滚动驱动的动画效果。

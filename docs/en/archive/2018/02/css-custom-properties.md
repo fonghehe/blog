@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS custom properties (also called CSS variables) are different from Sass/Less variables in a fundamental way: they're resolved at **runtime** in the browser, n"
+wordCount: 88
 ---
 
 CSS custom properties (also called CSS variables) are different from Sass/Less variables in a fundamental way: they're resolved at **runtime** in the browser, not at compile time. This enables things that preprocessors simply cannot do.

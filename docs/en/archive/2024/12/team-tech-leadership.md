@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 3
 description: "As the frontend platform lead and technical leader for an 8-person team, 2024 was the year with the highest density of technical decisions. Rather than discussi"
+wordCount: 626
 ---
 
 As the frontend platform lead and technical leader for an 8-person team, 2024 was the year with the highest density of technical decisions. Rather than discussing specific technical details, let's talk about thinking and practice at the technical management level.

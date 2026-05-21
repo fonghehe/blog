@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 19 is officially released. Here's a roundup of practical notes for migrating from 18 to 19, including pitfalls our team encountered."
+wordCount: 171
 ---
 
 React 19 is officially released. Here's a roundup of practical notes for migrating from 18 to 19, including pitfalls our team encountered.

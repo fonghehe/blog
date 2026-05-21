@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "2018 年过得充实。React Hooks 在 React Conf 了亮相，Vue 3 RFC 开始公开审阅，TypeScript 在大型项目中的渗透率持续上升。展望 2019，我认为有几个方向尤其就展望。"
+wordCount: 511
 ---
 
 2018 年过得充实。React Hooks 在 React Conf 了亮相，Vue 3 RFC 开始公开审阅，TypeScript 在大型项目中的渗透率持续上升。展望 2019，我认为有几个方向尤其就展望。

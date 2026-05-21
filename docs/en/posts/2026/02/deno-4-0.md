@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "When it comes to Deno 4.0, many developers stop at the API surface level. This article takes a production perspective and examines the real challenges you'll en"
+wordCount: 201
 ---
 
 When it comes to Deno 4.0, many developers stop at the API surface level. This article takes a production perspective and examines the real challenges you'll encounter along with practical solutions.

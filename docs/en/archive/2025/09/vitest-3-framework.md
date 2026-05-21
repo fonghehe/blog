@@ -6,6 +6,7 @@ tags:
   - Testing
 readingTime: 2
 description: "Regarding Vitest 3.0 Testing Framework, many developers only stay at the API call level. This article discusses real-world problems and solutions from a product"
+wordCount: 184
 ---
 
 Regarding Vitest 3.0 Testing Framework, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

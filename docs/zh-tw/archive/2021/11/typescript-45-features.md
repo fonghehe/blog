@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 從 4.1 到 4.5 每個版本都有實用的改進。整理一下這幾個版本中最值得學習的特性，都是日常開發中能用到的。"
+wordCount: 248
 ---
 
 TypeScript 從 4.1 到 4.5 每個版本都有實用的改進。整理一下這幾個版本中最值得學習的特性，都是日常開發中能用到的。

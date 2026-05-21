@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "團隊從 5 人擴充套件到 20 人，AI 工具在知識傳遞、程式碼一致性、新人 onboarding 方面起了很大作用。來分享實際策略。"
+wordCount: 184
 ---
 
 團隊從 5 人擴充套件到 20 人，AI 工具在知識傳遞、程式碼一致性、新人 onboarding 方面起了很大作用。來分享實際策略。

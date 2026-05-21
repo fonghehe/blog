@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Node.js 18 在 2022 年 4 月进入 LTS。这是个重要版本——内置了 fetch API、新增了测试运行器，还默认启用了 OpenSSL 3.0。作为前端基础设施的搭建者，这些变化直接影响我们的工具链。"
+wordCount: 212
 ---
 
 Node.js 18 在 2022 年 4 月进入 LTS。这是个重要版本——内置了 fetch API、新增了测试运行器，还默认启用了 OpenSSL 3.0。作为前端基础设施的搭建者，这些变化直接影响我们的工具链。

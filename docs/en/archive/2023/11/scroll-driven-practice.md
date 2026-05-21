@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "关于CSS scroll-driven 动画实战，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspecti"
+wordCount: 219
 ---
 
 关于CSS scroll-driven 动画实战，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

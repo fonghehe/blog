@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Correctly configuring HTTP caching can significantly improve page load performance, but misconfiguration can prevent users from seeing the latest content. You n"
+wordCount: 333
 ---
 
 Correctly configuring HTTP caching can significantly improve page load performance, but misconfiguration can prevent users from seeing the latest content. You need to understand the mechanics to make good decisions.

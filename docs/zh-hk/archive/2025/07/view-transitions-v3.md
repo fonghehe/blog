@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在日常開發中，View Transitions v3 跨文檔的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+wordCount: 348
 ---
 
 在日常開發中，View Transitions v3 跨文檔的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。

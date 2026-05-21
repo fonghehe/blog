@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "最近在團隊中落地React Portal 實現 Modal 元件，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+wordCount: 308
 ---
 
 最近在團隊中落地React Portal 實現 Modal 元件，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。

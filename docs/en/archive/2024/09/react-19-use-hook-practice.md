@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Recently implemented React 19 use() Hook in Practice in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps thos"
+wordCount: 181
 ---
 
 Recently implemented React 19 use() Hook in Practice in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

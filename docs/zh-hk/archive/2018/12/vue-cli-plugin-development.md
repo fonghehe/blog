@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue CLI 3 發佈後，項目腳手架的靈活性大大提高。CLI 插件可以給項目添加功能、修改 webpack 配置。最近給團隊內部工具寫了一個 CLI 插件，記錄一下過程。"
+wordCount: 173
 ---
 
 Vue CLI 3 發佈後，項目腳手架的靈活性大大提高。CLI 插件可以給項目添加功能、修改 webpack 配置。最近給團隊內部工具寫了一個 CLI 插件，記錄一下過程。

@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "作為元件系統負責人，設計 Token 是我們團隊今年的重點建設之一。分享一下從 0 到 1 搭建 Token 系統的經驗。"
+wordCount: 296
 ---
 
 作為元件系統負責人，設計 Token 是我們團隊今年的重點建設之一。分享一下從 0 到 1 搭建 Token 系統的經驗。

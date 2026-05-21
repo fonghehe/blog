@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 18 was officially released on May 22, 2024. The most anticipated feature is **Zoneless change detection** (experimental). This means Angular application"
+wordCount: 272
 ---
 
 Angular 18 was officially released on May 22, 2024. The most anticipated feature is **Zoneless change detection** (experimental). This means Angular applications can run entirely without relying on `zone.js`, reducing bundle size, improving performance, and solving various compatibility issues that zone.js has caused over the years.

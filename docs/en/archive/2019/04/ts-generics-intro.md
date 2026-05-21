@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "There are plenty of articles on TypeScript generics online, but most lack real-world experience. This article explores best practices based on actual projects."
+wordCount: 84
 ---
 
 There are plenty of articles on TypeScript generics online, but most lack real-world experience. This article explores best practices based on actual projects.

@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Git workflow is an often-overlooked piece of infrastructure in team collaboration, but when it breaks down the pain is real. Here's a standards guide suited for"
+wordCount: 215
 ---
 
 Git workflow is an often-overlooked piece of infrastructure in team collaboration, but when it breaks down the pain is real. Here's a standards guide suited for frontend teams.

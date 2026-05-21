@@ -5,6 +5,7 @@ tags:
   - 性能優化
 readingTime: 3
 description: "做性能優化之前，要先搞清楚瀏覽器從收到 HTML 到用戶睇到頁面，中間經歷咗咩。呢啲步驟合埋一齊叫做**關鍵渲染路徑**（Critical Rendering Path）。唔理解呢個，好多優化手段只能照貓畫虎。"
+wordCount: 630
 ---
 
 做性能優化之前，要先搞清楚瀏覽器從收到 HTML 到用戶睇到頁面，中間經歷咗咩。呢啲步驟合埋一齊叫做**關鍵渲染路徑**（Critical Rendering Path）。唔理解呢個，好多優化手段只能照貓畫虎。

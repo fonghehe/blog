@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "發佈於 2020-11-15"
+wordCount: 245
 ---
 
 發佈於 2020-11-15

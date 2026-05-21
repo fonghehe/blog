@@ -5,6 +5,7 @@ tags:
   - ESLint
 readingTime: 2
 description: "关于ESLint v9 Flat Config 默认，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspec"
+wordCount: 199
 ---
 
 关于ESLint v9 Flat Config 默认，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

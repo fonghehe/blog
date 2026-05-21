@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 5.0 发布了正式的装饰器标准（TC39 Stage 3），和之前实验性装饰器（`experimentalDecorators`）有几处重要区别。"
+wordCount: 211
 ---
 
 TypeScript 5.0 发布了正式的装饰器标准（TC39 Stage 3），和之前实验性装饰器（`experimentalDecorators`）有几处重要区别。

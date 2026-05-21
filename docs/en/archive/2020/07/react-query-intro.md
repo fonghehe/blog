@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React Query（现已更名为 TanStack Query）解决的核心问题是：**服务端状态的管理**。Redux、MobX 擅长管理客户端状态，但对于\"从服务器获取数据、缓存、同步\"这类需求，它们提供的工具过于底层。React Query 把这个痛点做成了开箱即用的解决方案。"
+wordCount: 285
 ---
 
 React Query（现已更名为 TanStack Query）解决的核心问题是：**服务端状态的管理**。Redux、MobX 擅长管理客户端状态，但对于"从服务器获取数据、缓存、同步"这类需求，它们提供的工具过于底层。React Query 把这个痛点做成了开箱即用的解决方案。

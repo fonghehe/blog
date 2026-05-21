@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Functional programming has always been a hot topic in the frontend community — Redux and RxJS both borrow heavily from it. Here are some concepts that are actua"
+wordCount: 57
 ---
 
 Functional programming has always been a hot topic in the frontend community — Redux and RxJS both borrow heavily from it. Here are some concepts that are actually useful in practice.

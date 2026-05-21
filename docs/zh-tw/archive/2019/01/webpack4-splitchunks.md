@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 1
 description: "在團隊推廣Webpack 4 SplitChunks 詳解的過程中，踩了不少坑。整理出來希望對大家有所幫助。"
+wordCount: 208
 ---
 
 在團隊推廣Webpack 4 SplitChunks 詳解的過程中，踩了不少坑。整理出來希望對大家有所幫助。

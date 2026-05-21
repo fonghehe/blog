@@ -6,6 +6,7 @@ tags:
   - 安全
 readingTime: 2
 description: "Regarding Node.js Security 2025, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production env"
+wordCount: 180
 ---
 
 Regarding Node.js Security 2025, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

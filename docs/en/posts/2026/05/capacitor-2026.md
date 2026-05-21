@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Capacitor has become an increasingly common choice for cross-platform development in 2026. This article covers its usage, underlying model, and optimization str"
+wordCount: 190
 ---
 
 Capacitor has become an increasingly common choice for cross-platform development in 2026. This article covers its usage, underlying model, and optimization strategies.

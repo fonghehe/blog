@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular CLI 生成项目时默认配好了 Jasmine + Karma 测试环境。很多人跳过了测试，其实 Angular 的测试工具链与业务代码结合得非常居家。"
+wordCount: 138
 ---
 
 Angular CLI 生成项目时默认配好了 Jasmine + Karma 测试环境。很多人跳过了测试，其实 Angular 的测试工具链与业务代码结合得非常居家。

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Farm 前端构建工具正式发布This topic has been discussed many times in the community, but with each version update, many conclusions need revising. This article revisits th"
+wordCount: 224
 ---
 
 Farm 前端构建工具正式发布This topic has been discussed many times in the community, but with each version update, many conclusions need revising. This article revisits the topic based on the latest version.

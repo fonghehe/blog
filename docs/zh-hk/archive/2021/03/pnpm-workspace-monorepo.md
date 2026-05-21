@@ -5,6 +5,7 @@ tags:
   - 前端工程化
 readingTime: 3
 description: "用了兩年 Lerna + Yarn workspace 的組合後，今年開始嘗試 pnpm workspace。pNpm 的硬鏈接機制天然適合 Monorepo——依賴不會重複安裝，磁盤佔用大幅減少。對比下來，pnpm workspace 可能是目前最優雅的 Monorepo 方案。"
+wordCount: 505
 ---
 
 用了兩年 Lerna + Yarn workspace 的組合後，今年開始嘗試 pnpm workspace。pNpm 的硬鏈接機制天然適合 Monorepo——依賴不會重複安裝，磁盤佔用大幅減少。對比下來，pnpm workspace 可能是目前最優雅的 Monorepo 方案。

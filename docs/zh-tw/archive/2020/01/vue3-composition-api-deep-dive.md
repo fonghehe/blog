@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3 的 Composition API 是自 Vue 誕生以來最重大的範式轉變。對於習慣了 Options API 的開發者來說，這套 API 的學習曲線並不陡峭，但要真正用好它，需要理解其設計哲學和底層機制。本文從實際工程角度出發，剖析 Composition API 的核心用法。"
+wordCount: 449
 ---
 
 Vue 3 的 Composition API 是自 Vue 誕生以來最重大的範式轉變。對於習慣了 Options API 的開發者來說，這套 API 的學習曲線並不陡峭，但要真正用好它，需要理解其設計哲學和底層機制。本文從實際工程角度出發，剖析 Composition API 的核心用法。

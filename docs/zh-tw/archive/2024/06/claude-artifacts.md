@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "Claude Artifacts 開發工作流在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
+wordCount: 346
 ---
 
 Claude Artifacts 開發工作流在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。

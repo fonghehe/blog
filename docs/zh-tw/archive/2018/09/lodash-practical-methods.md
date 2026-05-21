@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "Lodash 是前端專案裡最常用的工具庫之一，但很多人只用了一小部分。整理一下工作中最實用的方法。"
+wordCount: 129
 ---
 
 Lodash 是前端專案裡最常用的工具庫之一，但很多人只用了一小部分。整理一下工作中最實用的方法。

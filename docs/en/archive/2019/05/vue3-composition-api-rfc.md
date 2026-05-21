@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "The Vue team has published the Composition API RFC, and the community erupted — supporters say it's great, opponents say it looks like React Hooks. I carefully "
+wordCount: 107
 ---
 
 The Vue team has published the Composition API RFC, and the community erupted — supporters say it's great, opponents say it looks like React Hooks. I carefully read the RFC and here is my understanding.

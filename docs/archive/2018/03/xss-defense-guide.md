@@ -5,6 +5,7 @@ tags:
   - 安全
 readingTime: 2
 description: "XSS（Cross-Site Scripting）是最常见的前端安全漏洞之一。这篇文章从攻击原理到防御方案，系统整理一遍。"
+wordCount: 461
 ---
 
 XSS（Cross-Site Scripting）是最常见的前端安全漏洞之一。这篇文章从攻击原理到防御方案，系统整理一遍。

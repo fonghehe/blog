@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 3
 description: "When a frontend application exceeds one million lines of code and involves more than five development teams, a monolithic architecture collapses on multiple fro"
+wordCount: 414
 ---
 
 When a frontend application exceeds one million lines of code and involves more than five development teams, a monolithic architecture collapses on multiple fronts simultaneously: build times grow exponentially, code conflicts between teams are constant, and releases block each other. This article discusses the real evolutionary path for large-scale frontend systems at the architectural level — the trade-off decisions around micro-frontends, the engineering constraints for cross-team collaboration, and the toolchain selection logic for 2026.

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 9 的 RC 階段已進入最後衝刺，正式版預計 2020 年 2 月發佈。相比 Angular 8 中 Ivy 只能 opt-in，Angular 9 將 Ivy 作為默認渲染引擎，同時 AOT 編譯也將成為默認模式。在 RC 期間我們提前摸清這些變化非常有價值。"
+wordCount: 428
 ---
 
 Angular 9 的 RC 階段已進入最後衝刺，正式版預計 2020 年 2 月發佈。相比 Angular 8 中 Ivy 只能 opt-in，Angular 9 將 Ivy 作為默認渲染引擎，同時 AOT 編譯也將成為默認模式。在 RC 期間我們提前摸清這些變化非常有價值。

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS light-dark() Stable in Practice is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best pract"
+wordCount: 135
 ---
 
 CSS light-dark() Stable in Practice is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real project experience.

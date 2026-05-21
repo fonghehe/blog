@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "面試高頻題，但自己手寫一遍理解最深。"
+wordCount: 108
 ---
 
 面試高頻題，但自己手寫一遍理解最深。

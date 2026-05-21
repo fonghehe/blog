@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Regarding Next.js 15: Turbopack as Default, many developers only stay at the API call level. This article discusses real-world problems and solutions from a pro"
+wordCount: 205
 ---
 
 Regarding Next.js 15: Turbopack as Default, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

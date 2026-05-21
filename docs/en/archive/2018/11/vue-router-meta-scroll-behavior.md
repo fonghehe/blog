@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "As projects grow, route permission control becomes complex: some pages require login, some are admin-only, some need a \"confirm before leaving\" prompt when ther"
+wordCount: 111
 ---
 
 As projects grow, route permission control becomes complex: some pages require login, some are admin-only, some need a "confirm before leaving" prompt when there are unsaved changes. Navigation guards handle all of this in one place.

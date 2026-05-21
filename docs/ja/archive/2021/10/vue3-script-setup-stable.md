@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "Vue 3.2 正式将 `<script setup>` 标记为稳定特性。用了半年实验性支持，现在可以放心在生产环境用了。"
+wordCount: 207
 ---
 
 Vue 3.2 正式将 `<script setup>` 标记为稳定特性。用了半年实验性支持，现在可以放心在生产环境用了。

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "关于Happy DOM 轻量级测试环境，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 226
 ---
 
 关于Happy DOM 轻量级测试环境，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

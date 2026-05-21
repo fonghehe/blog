@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 的依赖注入系统是框架的核心，理解它能让你写出更模块化、可测试的代码。"
+wordCount: 79
 ---
 
 Angular 的依赖注入系统是框架的核心，理解它能让你写出更模块化、可测试的代码。

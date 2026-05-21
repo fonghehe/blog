@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "ES6 的 `class` 语法让 JavaScript 的面向对象写起来更直观，但底层依然是原型链。理解这两层抽象，能让你在选择继承方式和调试问题时更有把握。"
+wordCount: 223
 ---
 
 ES6 的 `class` 语法让 JavaScript 的面向对象写起来更直观，但底层依然是原型链。理解这两层抽象，能让你在选择继承方式和调试问题时更有把握。

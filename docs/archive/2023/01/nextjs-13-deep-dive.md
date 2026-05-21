@@ -5,6 +5,7 @@ tags:
   - Next.js
 readingTime: 1
 description: "Next.js 14 新特性汇总在近年来发展迅速，本文将深入分析其原理和实践方法。"
+wordCount: 229
 ---
 
 Next.js 14 新特性汇总在近年来发展迅速，本文将深入分析其原理和实践方法。

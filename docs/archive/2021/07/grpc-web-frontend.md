@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近在团队中落地gRPC Web 前端通信实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
+wordCount: 297
 ---
 
 最近在团队中落地gRPC Web 前端通信实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

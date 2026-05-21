@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 4
 description: "Webpack 5 目前仍处于 Beta 阶段，但它带来了许多令人兴奋的改进。其中最值得关注的是 Module Federation——它彻底改变了前端微服务的实现方式。本文将介绍 Webpack 5 的核心新特性，并重点探讨 Module Federation 的工作原理。"
+wordCount: 715
 ---
 
 Webpack 5 目前仍处于 Beta 阶段，但它带来了许多令人兴奋的改进。其中最值得关注的是 Module Federation——它彻底改变了前端微服务的实现方式。本文将介绍 Webpack 5 的核心新特性，并重点探讨 Module Federation 的工作原理。

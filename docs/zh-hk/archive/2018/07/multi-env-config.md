@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "項目通常有 development、staging、production 三個環境，各有不同的 API 地址、Feature Flag 等配置。這篇文章整理多環境配置的最佳實踐。"
+wordCount: 291
 ---
 
 項目通常有 development、staging、production 三個環境，各有不同的 API 地址、Feature Flag 等配置。這篇文章整理多環境配置的最佳實踐。

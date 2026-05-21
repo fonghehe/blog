@@ -6,6 +6,7 @@ tags:
   - 性能優化
 readingTime: 2
 description: "最近在團隊中落地Resource Hints 資源提示優化，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+wordCount: 299
 ---
 
 最近在團隊中落地Resource Hints 資源提示優化，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。

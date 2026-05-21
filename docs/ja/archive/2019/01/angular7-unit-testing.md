@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular CLIでプロジェクトを生成すると、デフォルトでJasmine + Karmaのテスト環境が設定される。テストをスキップする開発者が多いが、Angularのテストツールチェーンはアプリケーションコードとよく統合されている。"
+wordCount: 134
 ---
 
 Angular CLIでプロジェクトを生成すると、デフォルトでJasmine + Karmaのテスト環境が設定される。テストをスキップする開発者が多いが、Angularのテストツールチェーンはアプリケーションコードとよく統合されている。

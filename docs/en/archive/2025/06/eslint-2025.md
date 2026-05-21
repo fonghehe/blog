@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "We've recently rolled out ESLint 2025 features in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tac"
+wordCount: 149
 ---
 
 We've recently rolled out ESLint 2025 features in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling similar challenges.

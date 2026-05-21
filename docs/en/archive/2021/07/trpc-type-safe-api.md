@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "tRPC 类型安全的 API 层 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based "
+wordCount: 217
 ---
 
 tRPC 类型安全的 API 层 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

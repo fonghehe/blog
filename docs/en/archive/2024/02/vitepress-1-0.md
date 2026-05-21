@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "The topic of VitePress 1.0 Official Release has been discussed many times in the community, but with each new version, many conclusions need updating. This arti"
+wordCount: 216
 ---
 
 The topic of VitePress 1.0 Official Release has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Nuxt.js 作為 Vue 的元框架，在 SSR 生態中佔據主導地位。Nuxt 3 基於 Vue 3 全面重構，引入了 Composition API 驅動的資料獲取方案和新的目錄約定。本文介紹 Nuxt 3 中路由系統和資料獲取的核心變化。"
+wordCount: 397
 ---
 
 Nuxt.js 作為 Vue 的元框架，在 SSR 生態中佔據主導地位。Nuxt 3 基於 Vue 3 全面重構，引入了 Composition API 驅動的資料獲取方案和新的目錄約定。本文介紹 Nuxt 3 中路由系統和資料獲取的核心變化。

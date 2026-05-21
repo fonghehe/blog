@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React Native 0.78 is the version with the largest performance improvements in recent years. The New Architecture has become the only supported architecture, the"
+wordCount: 326
 ---
 
 React Native 0.78 is the version with the largest performance improvements in recent years. The New Architecture has become the only supported architecture, the Hermes engine has been upgraded to 0.15, and startup time has been reduced by approximately 35%. For those maintaining long-running RN projects, this version deserves serious attention.

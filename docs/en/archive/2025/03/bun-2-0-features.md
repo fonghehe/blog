@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Recently, our team has rolled out Bun 2.0 New Features and Improvements and accumulated a lot of experience. I've compiled it here for reference, hoping it help"
+wordCount: 120
 ---
 
 Recently, our team has rolled out Bun 2.0 New Features and Improvements and accumulated a lot of experience. I've compiled it here for reference, hoping it helps others doing similar work.

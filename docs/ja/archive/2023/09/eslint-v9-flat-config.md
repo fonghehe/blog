@@ -5,6 +5,7 @@ tags:
   - ESLint
 readingTime: 3
 description: "关于ESLint v9 Flat Config 默认，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
+wordCount: 542
 ---
 
 关于ESLint v9 Flat Config 默认，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。

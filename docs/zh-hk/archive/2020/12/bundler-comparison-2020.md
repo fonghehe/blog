@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 3
 description: "2020 年前端構建工具領域發生了不小的變化：webpack 5 正式發佈，esbuild 憑藉 Go 語言實現的極速打包引發關注，Vite 帶來了全新的 No-bundle 開發服務器方案。是時候系統地梳理這四個工具的定位和適用場景了。"
+wordCount: 537
 ---
 
 2020 年前端構建工具領域發生了不小的變化：webpack 5 正式發佈，esbuild 憑藉 Go 語言實現的極速打包引發關注，Vite 帶來了全新的 No-bundle 開發服務器方案。是時候系統地梳理這四個工具的定位和適用場景了。

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "I added a slide-in animation that was noticeably choppy on mobile. After investigating I found it was using `margin`/`top` for the animation. Switching to `tran"
+wordCount: 159
 ---
 
 I added a slide-in animation that was noticeably choppy on mobile. After investigating I found it was using `margin`/`top` for the animation. Switching to `transform` made it smooth.

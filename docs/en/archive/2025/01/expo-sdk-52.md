@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 3
 description: "Expo SDK 52 is built on React Native 0.78, with the theme of \"democratizing native capabilities\" — turning features that previously required ejecting into zero-"
+wordCount: 294
 ---
 
 Expo SDK 52 is built on React Native 0.78, with the theme of "democratizing native capabilities" — turning features that previously required ejecting into zero-configuration options. The three pillars of this release are the new Expo Modules API v3, Router v4, and New Architecture enabled by default.

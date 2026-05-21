@@ -7,7 +7,8 @@
 
 import { spawn } from "node:child_process";
 
-const MAX_MEM = "24576";
+// Match the per-process memory used by docs:build:main / docs:build:zh-variants
+const MAX_MEM = process.env.MAX_OLD_SPACE_SIZE || "8192";
 
 function runBuild(mode) {
   return new Promise((resolve, reject) => {

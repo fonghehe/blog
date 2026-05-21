@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "公司的老後台系統是 2016 年的 jQuery 項目，新功能想用 Vue，但不能全量重寫。微前端解決了這個問題。"
+wordCount: 421
 ---
 
 公司的老後台系統是 2016 年的 jQuery 項目，新功能想用 Vue，但不能全量重寫。微前端解決了這個問題。

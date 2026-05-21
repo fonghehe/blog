@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "用 Webpack 打包應用，但打包庫的時候 Rollup 更合適。為什麼？因為 Rollup 產物更乾淨、更小。記錄一下用 Rollup 打包一個 Vue 組件庫的全過程。"
+wordCount: 187
 ---
 
 用 Webpack 打包應用，但打包庫的時候 Rollup 更合適。為什麼？因為 Rollup 產物更乾淨、更小。記錄一下用 Rollup 打包一個 Vue 組件庫的全過程。

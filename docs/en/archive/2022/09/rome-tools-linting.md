@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Biome 前端 linter formatter is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
+wordCount: 199
 ---
 
 Biome 前端 linter formatter is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

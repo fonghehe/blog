@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "Deep cloning is a topic that comes up constantly in JavaScript interviews and projects. There are many ways to do it — each with its own trade-offs."
+wordCount: 93
 ---
 
 Deep cloning is a topic that comes up constantly in JavaScript interviews and projects. There are many ways to do it — each with its own trade-offs.

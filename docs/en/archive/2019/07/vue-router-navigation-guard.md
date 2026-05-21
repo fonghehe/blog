@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Navigation guards are Vue Router's mechanism for controlling access to routes. They can be used for authentication checks, permission verification, data pre-fet"
+wordCount: 185
 ---
 
 Navigation guards are Vue Router's mechanism for controlling access to routes. They can be used for authentication checks, permission verification, data pre-fetching, and more. This article covers all navigation guard types and their execution order.

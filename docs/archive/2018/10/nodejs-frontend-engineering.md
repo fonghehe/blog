@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "前端项目里有很多可以用 Node.js 脚本自动化的事情：代码生成、文件处理、构建辅助等。"
+wordCount: 158
 ---
 
 前端项目里有很多可以用 Node.js 脚本自动化的事情：代码生成、文件处理、构建辅助等。

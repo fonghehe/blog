@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "最近チームでDrizzle ORM v1 TypeScript ORM，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
+wordCount: 423
 ---
 
 最近チームでDrizzle ORM v1 TypeScript ORM，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。

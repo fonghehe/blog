@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Tree Shaking 是現代前端工程的重要優化手段，但實際效果經常不如預期，背後原因值得深究。"
+wordCount: 348
 ---
 
 Tree Shaking 是現代前端工程的重要優化手段，但實際效果經常不如預期，背後原因值得深究。

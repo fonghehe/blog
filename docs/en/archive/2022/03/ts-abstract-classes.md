@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "In daily development, TypeScript 抽象类与接口对比 is being used more and more frequently. This article systematically explains its usage, principles, and optimization s"
+wordCount: 190
 ---
 
 In daily development, TypeScript 抽象类与接口对比 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

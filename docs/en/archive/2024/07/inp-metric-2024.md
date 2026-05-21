@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "Recently implemented INP Core Metric Optimization Guide in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps t"
+wordCount: 198
 ---
 
 Recently implemented INP Core Metric Optimization Guide in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

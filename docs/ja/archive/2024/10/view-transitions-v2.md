@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 3
 description: "CSS View Transitions v2のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
+wordCount: 492
 ---
 
 CSS View Transitions v2のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。

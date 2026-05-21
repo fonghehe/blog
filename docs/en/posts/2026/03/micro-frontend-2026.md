@@ -5,6 +5,7 @@ tags:
   - Micro Frontend
 readingTime: 2
 description: "The topic of micro-frontend architecture has been discussed many times in the community, but with each new iteration, many prior conclusions need updating. This"
+wordCount: 218
 ---
 
 The topic of micro-frontend architecture has been discussed many times in the community, but with each new iteration, many prior conclusions need updating. This article provides a fresh take based on the latest developments.

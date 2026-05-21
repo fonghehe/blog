@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "Flexboxは一次元、Gridは二次元だ。Gridを学んだ後、以前Flexboxで無理やり実現していたレイアウトの多くがシンプルになった。"
+wordCount: 137
 ---
 
 Flexboxは一次元、Gridは二次元だ。Gridを学んだ後、以前Flexboxで無理やり実現していたレイアウトの多くがシンプルになった。

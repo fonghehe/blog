@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Recently implemented Rspack 2.0 Complete Guide in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doin"
+wordCount: 153
 ---
 
 Recently implemented Rspack 2.0 Complete Guide in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "Node.js 中介軟體模式詳解是日常開發中經常遇到的問題。本文從實際專案出發，分享具體的實現方法和經驗總結。"
+wordCount: 265
 ---
 
 Node.js 中介軟體模式詳解是日常開發中經常遇到的問題。本文從實際專案出發，分享具體的實現方法和經驗總結。

@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Regarding Tailwind CSS v4 Stable Release, many developers only stay at the API call level. This article discusses real-world problems and solutions from a produ"
+wordCount: 210
 ---
 
 Regarding Tailwind CSS v4 Stable Release, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

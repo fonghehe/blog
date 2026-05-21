@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Svelte 5 officially launched in October 2024, with the most fundamental change being the introduction of the Runes system — a complete rethinking of the reactiv"
+wordCount: 284
 ---
 
 Svelte 5 officially launched in October 2024, with the most fundamental change being the introduction of the Runes system — a complete rethinking of the reactive programming model. Here's an architect's perspective on what this shift means.

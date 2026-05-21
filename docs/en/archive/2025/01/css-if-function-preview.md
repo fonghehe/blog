@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "After winning the top spot in the State of CSS 2023 survey as the \"most anticipated new feature,\" the CSS `if()` function has finally received experimental brow"
+wordCount: 198
 ---
 
 After winning the top spot in the State of CSS 2023 survey as the "most anticipated new feature," the CSS `if()` function has finally received experimental browser implementations in 2025. It will allow conditional logic to be written inline within CSS property values, fundamentally changing the current approach of patching together conditional styles with CSS variables, media queries, and selectors.

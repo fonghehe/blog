@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Zod v4 Schema Validation is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from r"
+wordCount: 183
 ---
 
 Zod v4 Schema Validation is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 的響應式系統對對象屬性和數組有一些特殊限制，搞清楚這些才能正確用 `watch`。"
+wordCount: 226
 ---
 
 Vue 的響應式系統對對象屬性和數組有一些特殊限制，搞清楚這些才能正確用 `watch`。

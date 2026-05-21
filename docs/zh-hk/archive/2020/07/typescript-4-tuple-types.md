@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript 4.0 beta 剛發佈，這次最讓我興奮的是元組類型（Tuple Types）的大幅增強，特別是可變參數元組（Variadic Tuple Types）。以前處理函數參數組合、rest 參數拼接時，類型系統完全幫不上忙，現在終於可以優雅地表達了。"
+wordCount: 389
 ---
 
 TypeScript 4.0 beta 剛發佈，這次最讓我興奮的是元組類型（Tuple Types）的大幅增強，特別是可變參數元組（Variadic Tuple Types）。以前處理函數參數組合、rest 參數拼接時，類型系統完全幫不上忙，現在終於可以優雅地表達了。

@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "新項目代碼風格五花八門，PR review 光討論格式就浪費大量時間。花了一天把 ESLint + Prettier + Git Hooks 全套配好，團隊效率直接提升。"
+wordCount: 244
 ---
 
 新項目代碼風格五花八門，PR review 光討論格式就浪費大量時間。花了一天把 ESLint + Prettier + Git Hooks 全套配好，團隊效率直接提升。

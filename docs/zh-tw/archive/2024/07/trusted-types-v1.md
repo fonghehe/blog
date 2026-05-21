@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Trusted Types v1 穩定版在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
+wordCount: 308
 ---
 
 Trusted Types v1 穩定版在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。

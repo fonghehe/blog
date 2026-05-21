@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近專案中用到了TypeScript 型別守衛入門，發現比預想的要複雜。分享一下實踐過程中總結的經驗。"
+wordCount: 248
 ---
 
 最近專案中用到了TypeScript 型別守衛入門，發現比預想的要複雜。分享一下實踐過程中總結的經驗。

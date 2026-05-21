@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "組件懶加載是減小首屏 bundle 體積的重要手段。Vue 提供了異步組件和動態組件兩種機制，理清它們的區別和用法。"
+wordCount: 296
 ---
 
 組件懶加載是減小首屏 bundle 體積的重要手段。Vue 提供了異步組件和動態組件兩種機制，理清它們的區別和用法。

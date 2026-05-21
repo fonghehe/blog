@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "Next.js 17, released at the end of 2025, brings several major changes to the underlying architecture. The most significant shifts are Turbopack officially repla"
+wordCount: 274
 ---
 
 Next.js 17, released at the end of 2025, brings several major changes to the underlying architecture. The most significant shifts are Turbopack officially replacing Webpack as the default bundler, and the stable release of PPR (Partial Prerendering). For large-scale projects, these changes have a substantial impact.

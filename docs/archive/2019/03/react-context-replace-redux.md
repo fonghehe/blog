@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "在团队推广React Context 替代 Redux的过程中，踩了不少坑。整理出来希望对大家有所帮助。"
+wordCount: 262
 ---
 
 在团队推广React Context 替代 Redux的过程中，踩了不少坑。整理出来希望对大家有所帮助。

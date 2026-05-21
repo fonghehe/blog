@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Recently implemented Rolldown Stable Release in Practice in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps "
+wordCount: 180
 ---
 
 Recently implemented Rolldown Stable Release in Practice in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

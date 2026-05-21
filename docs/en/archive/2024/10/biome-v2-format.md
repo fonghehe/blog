@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Biome v2 快速格式化 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 200
 ---
 
 Biome v2 快速格式化 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

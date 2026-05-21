@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "The topic of Monorepo 2024 Toolchain Summary has been discussed many times in the community, but with each new version, many conclusions need updating. This art"
+wordCount: 189
 ---
 
 The topic of Monorepo 2024 Toolchain Summary has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "事件循環（Event Loop）是 JavaScript 併發模型的核心，也是面試高頻題。"
+wordCount: 287
 ---
 
 事件循環（Event Loop）是 JavaScript 併發模型的核心，也是面試高頻題。

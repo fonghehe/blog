@@ -6,6 +6,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "Regarding React Performance Optimization 2024 Guide, many developers only stay at the API call level. This article discusses real-world problems and solutions f"
+wordCount: 199
 ---
 
 Regarding React Performance Optimization 2024 Guide, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "Vue Vapor Mode 在 Vue 3.6 中正式進入穩定版。這是 Vue 歷史上最大的執行時架構變革——它完全繞過虛擬 DOM，直接編譯為原生 DOM 操作，效能接近手寫 JavaScript。對於效能敏感的場景，Vapor Mode 是一個真正的遊戲規則改變者。"
+wordCount: 528
 ---
 
 Vue Vapor Mode 在 Vue 3.6 中正式進入穩定版。這是 Vue 歷史上最大的執行時架構變革——它完全繞過虛擬 DOM，直接編譯為原生 DOM 操作，效能接近手寫 JavaScript。對於效能敏感的場景，Vapor Mode 是一個真正的遊戲規則改變者。

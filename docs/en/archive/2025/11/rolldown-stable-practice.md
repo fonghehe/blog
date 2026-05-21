@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In day-to-day development, Rolldown Stable Release in Practice is being used more and more frequently. This article systematically explains its usage, principle"
+wordCount: 156
 ---
 
 In day-to-day development, Rolldown Stable Release in Practice is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

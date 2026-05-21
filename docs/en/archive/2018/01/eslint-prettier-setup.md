@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "ESLint and Prettier are often seen together, but they do different things. Many tutorials mix them up. Let's separate their concerns."
+wordCount: 139
 ---
 
 ESLint and Prettier are often seen together, but they do different things. Many tutorials mix them up. Let's separate their concerns.

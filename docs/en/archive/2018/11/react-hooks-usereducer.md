@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "The use of React useReducer for state management is becoming increasingly common in everyday development. This article systematically covers its usage, internal"
+wordCount: 129
 ---
 
 The use of React useReducer for state management is becoming increasingly common in everyday development. This article systematically covers its usage, internals, and optimization strategies.

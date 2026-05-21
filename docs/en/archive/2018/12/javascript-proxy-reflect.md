@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "`Proxy` was added in ES2015 but has seen limited use. Vue 3's reactivity system is based on Proxy — time to understand it properly."
+wordCount: 127
 ---
 
 `Proxy` was added in ES2015 but has seen limited use. Vue 3's reactivity system is based on Proxy — time to understand it properly.

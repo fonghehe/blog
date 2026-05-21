@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "Edge Computing 在前端領域越來越熱。作為架構負責人，最近做了幾個項目的渲染策略選型。整理一下不同場景下的決策邏輯。"
+wordCount: 283
 ---
 
 Edge Computing 在前端領域越來越熱。作為架構負責人，最近做了幾個項目的渲染策略選型。整理一下不同場景下的決策邏輯。

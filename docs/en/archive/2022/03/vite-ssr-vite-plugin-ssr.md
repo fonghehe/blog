@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "vite-plugin-ssr SSR 方案This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fr"
+wordCount: 189
 ---
 
 vite-plugin-ssr SSR 方案This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.

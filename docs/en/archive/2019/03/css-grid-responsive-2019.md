@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "There are many articles online about CSS Grid responsive layout, but most lack real-world experience. This article explores best practices from actual projects."
+wordCount: 95
 ---
 
 There are many articles online about CSS Grid responsive layout, but most lack real-world experience. This article explores best practices from actual projects.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "关于Bun 1.1 新特性与改进，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective."
+wordCount: 169
 ---
 
 关于Bun 1.1 新特性与改进，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

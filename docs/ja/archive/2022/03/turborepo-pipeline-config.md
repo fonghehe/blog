@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "上一篇写了 pnpm workspace 做依赖管理。这篇讲构建编排——当你的 monorepo 有十几个包需要构建和测试，怎么让它们按依赖顺序执行，并且尽可能并行？"
+wordCount: 444
 ---
 
 上一篇写了 pnpm workspace 做依赖管理。这篇讲构建编排——当你的 monorepo 有十几个包需要构建和测试，怎么让它们按依赖顺序执行，并且尽可能并行？

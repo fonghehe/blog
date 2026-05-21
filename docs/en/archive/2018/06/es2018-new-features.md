@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "ES2018 is now finalized. Here's a summary of the most useful new features."
+wordCount: 87
 ---
 
 ES2018 is now finalized. Here's a summary of the most useful new features.

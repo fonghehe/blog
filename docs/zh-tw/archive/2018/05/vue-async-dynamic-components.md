@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "元件懶載入是減小首屏 bundle 體積的重要手段。Vue 提供了非同步元件和動態元件兩種機制，理清它們的區別和用法。"
+wordCount: 304
 ---
 
 元件懶載入是減小首屏 bundle 體積的重要手段。Vue 提供了非同步元件和動態元件兩種機制，理清它們的區別和用法。

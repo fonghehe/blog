@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "做了好几个移动端项目，总结一下响应式设计的实践经验。"
+wordCount: 147
 ---
 
 做了好几个移动端项目，总结一下响应式设计的实践经验。

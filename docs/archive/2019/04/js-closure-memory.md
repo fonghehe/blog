@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "JavaScript 闭包与内存管理是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。"
+wordCount: 208
 ---
 
 JavaScript 闭包与内存管理是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。

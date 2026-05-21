@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 1
 description: "在日常工作中經常用到Svelte 5 元件模型，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。"
+wordCount: 243
 ---
 
 在日常工作中經常用到Svelte 5 元件模型，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。

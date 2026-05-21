@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 20's concurrent features are no longer experimental. `useTransition`, `useDeferredValue`, and the new Scheduling API have all reached stable status, with "
+wordCount: 319
 ---
 
 React 20's concurrent features are no longer experimental. `useTransition`, `useDeferredValue`, and the new Scheduling API have all reached stable status, with significant performance optimizations at the underlying level. For complex applications that need to handle large volumes of user interactions, these features can finally be used with confidence.

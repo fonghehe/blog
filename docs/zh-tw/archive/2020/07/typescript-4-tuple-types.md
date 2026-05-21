@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript 4.0 beta 剛釋出，這次最讓我興奮的是元組型別（Tuple Types）的大幅增強，特別是可變引數元組（Variadic Tuple Types）。以前處理函式引數組合、rest 引數拼接時，型別系統完全幫不上忙，現在終於可以優雅地表達了。"
+wordCount: 394
 ---
 
 TypeScript 4.0 beta 剛釋出，這次最讓我興奮的是元組型別（Tuple Types）的大幅增強，特別是可變引數元組（Variadic Tuple Types）。以前處理函式引數組合、rest 引數拼接時，型別系統完全幫不上忙，現在終於可以優雅地表達了。

@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Three.js 3D Web 可视化入门这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
+wordCount: 324
 ---
 
 Three.js 3D Web 可视化入门这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

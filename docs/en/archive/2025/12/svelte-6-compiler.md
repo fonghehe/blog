@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Svelte 6 Compiler Improvements is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices "
+wordCount: 181
 ---
 
 Svelte 6 Compiler Improvements is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "There's a common requirement in admin dashboards: when navigating from a list page to a detail page and back, the list page should preserve its scroll position "
+wordCount: 157
 ---
 
 There's a common requirement in admin dashboards: when navigating from a list page to a detail page and back, the list page should preserve its scroll position and filter state. `keep-alive` solves exactly this.

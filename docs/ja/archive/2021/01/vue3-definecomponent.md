@@ -8,6 +8,7 @@ tags:
 
 readingTime: 3
 description: "Vue 3 defineComponent 与 TypeScriptのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
+wordCount: 516
 ---
 
 Vue 3 defineComponent 与 TypeScriptのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。

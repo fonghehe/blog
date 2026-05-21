@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "2025 年最大的變化之一是 Agentic Coding 的成熟。AI 不再只是補全代碼的工具，而是能自主完成複雜任務的 Agent。來分享一些實戰模式。"
+wordCount: 171
 ---
 
 2025 年最大的變化之一是 Agentic Coding 的成熟。AI 不再只是補全代碼的工具，而是能自主完成複雜任務的 Agent。來分享一些實戰模式。

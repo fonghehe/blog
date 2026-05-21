@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "2023 was the year of \"technology landing\" in the frontend ecosystem: Next.js 13 App Router entered production, Angular 17 brought revolutionary template syntax,"
+wordCount: 247
 ---
 
 2023 was the year of "technology landing" in the frontend ecosystem: Next.js 13 App Router entered production, Angular 17 brought revolutionary template syntax, Bun 1.0 officially launched, and AI-assisted programming transformed from novelty to daily tool. Standing at year-end, let's forecast the key directions for 2024.

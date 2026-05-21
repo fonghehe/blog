@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "2025 年是前端技術\"從實驗到成熟\"的一年。React 20 Compiler 穩定、Angular 21 完成 Signal 化轉型、Vue Vapor Mode 落地、Rolldown 穩定進入生產、AI 程式設計工具從輔助變成協同開發的核心。站在 2025 年最後一天，來做一個全面的年度盤點。"
+wordCount: 288
 ---
 
 2025 年是前端技術"從實驗到成熟"的一年。React 20 Compiler 穩定、Angular 21 完成 Signal 化轉型、Vue Vapor Mode 落地、Rolldown 穩定進入生產、AI 程式設計工具從輔助變成協同開發的核心。站在 2025 年最後一天，來做一個全面的年度盤點。

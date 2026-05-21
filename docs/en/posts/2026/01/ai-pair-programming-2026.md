@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 4
 description: "AI pair programming has moved well beyond the simple \"AI writes code, human reviews code\" model. The mature 2026 workflow is a clearly divided collaboration: hu"
+wordCount: 320
 ---
 
 AI pair programming has moved well beyond the simple "AI writes code, human reviews code" model. The mature 2026 workflow is a clearly divided collaboration: humans handle architecture thinking and business logic, while AI takes care of implementation details and repetitive boilerplate. This article shares the AI pair programming workflow I use day to day.

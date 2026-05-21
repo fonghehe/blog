@@ -6,6 +6,7 @@ tags:
   - Pinia
 readingTime: 1
 description: "在日常開發中，Pinia 插件系統與持久化的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+wordCount: 264
 ---
 
 在日常開發中，Pinia 插件系統與持久化的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。

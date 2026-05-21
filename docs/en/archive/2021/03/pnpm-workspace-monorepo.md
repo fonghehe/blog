@@ -6,6 +6,7 @@ tags:
 
 readingTime: 3
 description: "用了两年 Lerna + Yarn workspace 的组合后，今年开始尝试 pnpm workspace。pNpm 的硬链接机制天然适合 Monorepo——依赖不会重复安装，磁盘占用大幅减少。对比下来，pnpm workspace 可能是目前最优雅的 Monorepo 方案。"
+wordCount: 487
 ---
 
 用了两年 Lerna + Yarn workspace 的组合后，今年开始尝试 pnpm workspace。pNpm 的硬链接机制天然适合 Monorepo——依赖不会重复安装，磁盘占用大幅减少。对比下来，pnpm workspace 可能是目前最优雅的 Monorepo 方案。

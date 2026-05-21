@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 3
 description: "Prompt Engineering remains a core skill for frontend engineers in 2026. While models keep getting stronger, the gap between \"knowing how to ask\" and \"not knowin"
+wordCount: 256
 ---
 
 Prompt Engineering remains a core skill for frontend engineers in 2026. While models keep getting stronger, the gap between "knowing how to ask" and "not knowing how to ask" has actually grown wider. A good prompt gets you usable code on the first try; a bad one wastes half an hour in back-and-forth conversation.

@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 3
 description: "AI 程式碼審查已經從\"nice to have\"變成了團隊的標配。但很多人用錯了方式——要麼過度依賴 AI 導致自己不動腦，要麼只用 AI 做 linting 的升級版。本文分享我在三個大型專案中總結的 AI Code Review 落地經驗。"
+wordCount: 475
 ---
 
 AI 程式碼審查已經從"nice to have"變成了團隊的標配。但很多人用錯了方式——要麼過度依賴 AI 導致自己不動腦，要麼只用 AI 做 linting 的升級版。本文分享我在三個大型專案中總結的 AI Code Review 落地經驗。

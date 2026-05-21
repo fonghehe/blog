@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "In daily development, TypeScript 4.7 4.8 新特性 is being used more and more frequently. This article systematically explains its usage, principles, and optimizatio"
+wordCount: 183
 ---
 
 In daily development, TypeScript 4.7 4.8 新特性 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

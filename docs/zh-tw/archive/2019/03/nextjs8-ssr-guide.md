@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "公司有個官網要做 SEO，調研了 Next.js，最終選了它。記錄一下踩坑過程。"
+wordCount: 255
 ---
 
 公司有個官網要做 SEO，調研了 Next.js，最終選了它。記錄一下踩坑過程。

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 19.1 was released in January 2025, the first minor version in the Angular 19 series. The focus is on advancing the experimental features introduced in A"
+wordCount: 213
 ---
 
 Angular 19.1 was released in January 2025, the first minor version in the Angular 19 series. The focus is on advancing the experimental features introduced in Angular 19 toward stability: Incremental Hydration has moved to a stable Developer Preview, the `linkedSignal()` API has been revised based on feedback, and Zoneless mode continues to be refined.

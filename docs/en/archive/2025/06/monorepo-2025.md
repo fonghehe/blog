@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Monorepo toolchain comparisons for 2025 are seeing increasingly widespread discussion in frontend development. This article digs into the core principles and be"
+wordCount: 148
 ---
 
 Monorepo toolchain comparisons for 2025 are seeing increasingly widespread discussion in frontend development. This article digs into the core principles and best practices from a real-project perspective.

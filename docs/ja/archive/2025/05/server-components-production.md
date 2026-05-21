@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "チームがNext.js 15でServer Componentsを本格的に使い始めて1年が経ちました。多くの落とし穴を踏み、多くのことを学びました。実践で得た知見をまとめます。"
+wordCount: 292
 ---
 
 チームがNext.js 15でServer Componentsを本格的に使い始めて1年が経ちました。多くの落とし穴を踏み、多くのことを学びました。実践で得た知見をまとめます。

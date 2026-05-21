@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Radix UI 無樣式元件原語這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
+wordCount: 310
 ---
 
 Radix UI 無樣式元件原語這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。

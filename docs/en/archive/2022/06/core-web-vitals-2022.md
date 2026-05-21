@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "We recently implemented Core Web Vitals 2022 优化策略， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing simila"
+wordCount: 191
 ---
 
 We recently implemented Core Web Vitals 2022 优化策略， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

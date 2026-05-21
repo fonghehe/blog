@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "As projects grow larger, Webpack build times get longer and every wait is lost productivity. This article covers proven build-speed optimizations."
+wordCount: 233
 ---
 
 As projects grow larger, Webpack build times get longer and every wait is lost productivity. This article covers proven build-speed optimizations.

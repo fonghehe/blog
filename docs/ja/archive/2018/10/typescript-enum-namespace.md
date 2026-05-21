@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript の列挙型（enum）は Java や C# から来た開発者がよく使う機能ですが、TS では注意すべき点があります。名前空間（namespace）は使用頻度が低いですが、適切なユースケースもあります。"
+wordCount: 431
 ---
 
 TypeScript の列挙型（enum）は Java や C# から来た開発者がよく使う機能ですが、TS では注意すべき点があります。名前空間（namespace）は使用頻度が低いですが、適切なユースケースもあります。

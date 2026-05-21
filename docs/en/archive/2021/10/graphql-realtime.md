@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "GraphQL 实时数据方案在近年来发展迅速，本文将深入分析其原理和实践方法。"
+wordCount: 183
 ---
 
 GraphQL 实时数据方案在近年来发展迅速，本文将深入分析其原理和实践方法。

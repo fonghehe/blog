@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 14 於 2022 年 6 月 2 日正式發佈，這是 Angular 近年來最重要的版本之一。Standalone Components（獨立組件）從根本上改變了 Angular 的模塊化方式——組件不再強制依附於 `NgModule`，可以直接聲明自己的依賴。"
+wordCount: 256
 ---
 
 Angular 14 於 2022 年 6 月 2 日正式發佈，這是 Angular 近年來最重要的版本之一。Standalone Components（獨立組件）從根本上改變了 Angular 的模塊化方式——組件不再強制依附於 `NgModule`，可以直接聲明自己的依賴。

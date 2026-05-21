@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 4
 description: "在 TypeScript 專案中引入第三方 JavaScript 庫時，宣告檔案（`.d.ts`）是連線型別系統和無型別程式碼的橋樑。即使庫本身沒有提供型別定義，我們也可以自己編寫宣告檔案。本文系統地介紹宣告檔案的編寫方法。"
+wordCount: 470
 ---
 
 在 TypeScript 專案中引入第三方 JavaScript 庫時，宣告檔案（`.d.ts`）是連線型別系統和無型別程式碼的橋樑。即使庫本身沒有提供型別定義，我們也可以自己編寫宣告檔案。本文系統地介紹宣告檔案的編寫方法。

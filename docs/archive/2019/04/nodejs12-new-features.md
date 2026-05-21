@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 1
 description: "Node.js 12 上周发布（LTS 版本 10 月才锁定），带来了不少好东西。"
+wordCount: 217
 ---
 
 Node.js 12 上周发布（LTS 版本 10 月才锁定），带来了不少好东西。

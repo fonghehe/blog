@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "The topic of React 19: The use() Hook for Async Reading has been discussed many times in the community, but with each new version, many conclusions need updatin"
+wordCount: 181
 ---
 
 The topic of React 19: The use() Hook for Async Reading has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.

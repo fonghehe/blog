@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "Babel 7 在 8 月正式发布（经历了超长的 beta 阶段）。升级了几个项目，整理一下主要变化和踩到的坑。"
+wordCount: 309
 ---
 
 Babel 7 在 8 月正式发布（经历了超长的 beta 阶段）。升级了几个项目，整理一下主要变化和踩到的坑。

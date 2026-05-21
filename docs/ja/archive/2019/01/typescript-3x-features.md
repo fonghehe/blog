@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript 3.0から3.3まで次々とリリースされ、多くの実用的な機能が追加された。まとめておこう。"
+wordCount: 104
 ---
 
 TypeScript 3.0から3.3まで次々とリリースされ、多くの実用的な機能が追加された。まとめておこう。

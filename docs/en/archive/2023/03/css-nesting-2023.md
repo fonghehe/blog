@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "在日常开发中，CSS 原生嵌套浏览器支持 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 200
 ---
 
 在日常开发中，CSS 原生嵌套浏览器支持 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

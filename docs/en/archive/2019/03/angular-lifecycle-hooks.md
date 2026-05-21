@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular component lifecycle hooks let you execute initialization, cleanup, and other operations at key moments."
+wordCount: 38
 ---
 
 Angular component lifecycle hooks let you execute initialization, cleanup, and other operations at key moments.

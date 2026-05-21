@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "中後台系統幾乎必然要做權限控制。這篇文章整理一套完整方案：路由權限 + 菜單權限 + 按鈕權限，基於 Vue 2 + Vue Router + Vuex。"
+wordCount: 247
 ---
 
 中後台系統幾乎必然要做權限控制。這篇文章整理一套完整方案：路由權限 + 菜單權限 + 按鈕權限，基於 Vue 2 + Vue Router + Vuex。

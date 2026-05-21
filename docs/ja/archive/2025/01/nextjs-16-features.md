@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "Next.js 16は2025年初頭にリリースされ、今回のアップデートで最も注目すべきは**React 20コンパイラーのデフォルト有効化**、**Route Middlewareの刷新**、そして**Transactional Server Actions**です。"
+wordCount: 397
 ---
 
 Next.js 16は2025年初頭にリリースされ、今回のアップデートで最も注目すべきは**React 20コンパイラーのデフォルト有効化**、**Route Middlewareの刷新**、そして**Transactional Server Actions**です。

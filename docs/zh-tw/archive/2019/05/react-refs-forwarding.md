@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "最近專案中用到了React Refs 轉發與使用場景，發現比預想的要複雜。分享一下實踐過程中總結的經驗。"
+wordCount: 291
 ---
 
 最近專案中用到了React Refs 轉發與使用場景，發現比預想的要複雜。分享一下實踐過程中總結的經驗。

@@ -7,6 +7,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "tRPC 类型安全的 API 层这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
+wordCount: 334
 ---
 
 tRPC 类型安全的 API 层这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

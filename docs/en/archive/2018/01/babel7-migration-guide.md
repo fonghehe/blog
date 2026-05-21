@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Babel 7 beta has been out for a while. Upgrading from version 6 to 7 involves some breaking changes, but also brings useful new features. This article documents"
+wordCount: 149
 ---
 
 Babel 7 beta has been out for a while. Upgrading from version 6 to 7 involves some breaking changes, but also brings useful new features. This article documents the actual upgrade process and the pitfalls encountered.

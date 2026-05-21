@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "The topic of React 19: useActionState for Form State has been discussed many times in the community, but with each new version, many conclusions need updating. "
+wordCount: 176
 ---
 
 The topic of React 19: useActionState for Form State has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.

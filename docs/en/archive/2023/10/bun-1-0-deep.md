@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "在日常开发中，Bun 1.0 运行时深入 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 153
 ---
 
 在日常开发中，Bun 1.0 运行时深入 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

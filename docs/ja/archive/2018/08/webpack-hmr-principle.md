@@ -6,6 +6,7 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "開発中にコードを変更するとページが自動更新される、これがHMR（Hot Module Replacement）です。当たり前のように使っていますが、今日その原理を調べてみました。"
+wordCount: 319
 ---
 
 開発中にコードを変更するとページが自動更新される、これがHMR（Hot Module Replacement）です。当たり前のように使っていますが、今日その原理を調べてみました。

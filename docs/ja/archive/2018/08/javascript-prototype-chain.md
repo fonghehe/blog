@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "プロトタイプチェーンはJavaScriptのコアな概念で、多くの人がつまずきます。図とシンプルな例でわかりやすく説明します。"
+wordCount: 340
 ---
 
 プロトタイプチェーンはJavaScriptのコアな概念で、多くの人がつまずきます。図とシンプルな例でわかりやすく説明します。

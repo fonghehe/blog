@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "專案里加了即時訊息通知功能，研究了一下 WebSocket，記錄一下。"
+wordCount: 204
 ---
 
 專案里加了即時訊息通知功能，研究了一下 WebSocket，記錄一下。

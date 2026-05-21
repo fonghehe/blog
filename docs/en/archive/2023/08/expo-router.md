@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "We recently implemented Expo Router 文件路由方案， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 188
 ---
 
 We recently implemented Expo Router 文件路由方案， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

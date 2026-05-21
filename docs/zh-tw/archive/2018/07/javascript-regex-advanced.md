@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "基礎正規表示式會寫了，但工作中遇到複雜需求還是懵。整理一些進階用法。"
+wordCount: 126
 ---
 
 基礎正規表示式會寫了，但工作中遇到複雜需求還是懵。整理一些進階用法。

@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 3
 description: "React 18 Alpha 已經發布，帶來了 Concurrent Mode 的實際落地——不再是實驗性的概念，而是可以真正用起來的能力。兩個最值得關注的特性是自動批處理（Automatic Batching）和 `useTransition`。"
+wordCount: 426
 ---
 
 React 18 Alpha 已經發布，帶來了 Concurrent Mode 的實際落地——不再是實驗性的概念，而是可以真正用起來的能力。兩個最值得關注的特性是自動批處理（Automatic Batching）和 `useTransition`。

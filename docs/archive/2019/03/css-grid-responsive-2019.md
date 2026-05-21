@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "关于CSS Grid 响应式布局实战，网上有不少文章但大多缺乏实战经验。本文结合真实项目，探讨最佳实践。"
+wordCount: 255
 ---
 
 关于CSS Grid 响应式布局实战，网上有不少文章但大多缺乏实战经验。本文结合真实项目，探讨最佳实践。

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 10 於 2020 年 6 月 24 日正式發佈，距離 Angular 9 僅約 4 個月。這次版本主要聚焦於**質量和生態健康**：更嚴格的 TypeScript 配置、廢棄舊版依賴、修復大量 bug。"
+wordCount: 322
 ---
 
 Angular 10 於 2020 年 6 月 24 日正式發佈，距離 Angular 9 僅約 4 個月。這次版本主要聚焦於**質量和生態健康**：更嚴格的 TypeScript 配置、廢棄舊版依賴、修復大量 bug。

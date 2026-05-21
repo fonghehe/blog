@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3.5 has been released — another important version following 3.4. The most significant change is a complete rewrite of the reactivity system, bringing notabl"
+wordCount: 233
 ---
 
 Vue 3.5 has been released — another important version following 3.4. The most significant change is a complete rewrite of the reactivity system, bringing notable memory and performance improvements.

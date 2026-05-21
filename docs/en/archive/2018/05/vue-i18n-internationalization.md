@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Internationalization (i18n) is more than just translating text. Date formats, number formats, pluralization rules, text direction (RTL) — all of these require a"
+wordCount: 135
 ---
 
 Internationalization (i18n) is more than just translating text. Date formats, number formats, pluralization rules, text direction (RTL) — all of these require a complete solution. vue-i18n is the most mature i18n library in the Vue ecosystem.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 3
 description: "In the second half of 2025, I led my team in upgrading an internal low-code platform's code generation module from \"manually written + AI completion\" to \"Agent "
+wordCount: 238
 ---
 
 In the second half of 2025, I led my team in upgrading an internal low-code platform's code generation module from "manually written + AI completion" to "Agent autonomous planning + toolchain execution." The process involved plenty of pitfalls, but also produced some reusable patterns.

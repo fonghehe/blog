@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "v0 Vercel AI UI 生成工具 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on rea"
+wordCount: 218
 ---
 
 v0 Vercel AI UI 生成工具 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real project experience.

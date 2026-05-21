@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 20 的併發特性不再是實驗性功能。`useTransition`、`useDeferredValue` 和新的調度 API 全部進入穩定版，並且在底層做了大量性能優化。對於需要處理大量用户交互的複雜應用，這些特性終於可以放心用了。"
+wordCount: 521
 ---
 
 React 20 的併發特性不再是實驗性功能。`useTransition`、`useDeferredValue` 和新的調度 API 全部進入穩定版，並且在底層做了大量性能優化。對於需要處理大量用户交互的複雜應用，這些特性終於可以放心用了。

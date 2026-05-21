@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "Vite 环境变量管理在近年来发展迅速，本文将深入分析其原理和实践方法。"
+wordCount: 306
 ---
 
 Vite 环境变量管理在近年来发展迅速，本文将深入分析其原理和实践方法。

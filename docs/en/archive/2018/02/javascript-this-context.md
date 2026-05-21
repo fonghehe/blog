@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "`this` is one of the most error-prone concepts in JS. After more than a year of coding, I finally got the rules straight."
+wordCount: 98
 ---
 
 `this` is one of the most error-prone concepts in JS. After more than a year of coding, I finally got the rules straight.

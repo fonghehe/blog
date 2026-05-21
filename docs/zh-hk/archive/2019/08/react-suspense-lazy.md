@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 5
 description: "隨着單頁應用規模不斷膨脹，首屏加載的 JS bundle 體積越來越大。React 16.6 引入了 `React.lazy` 和 `Suspense`，讓我們可以在不引入額外第三方庫（如 react-loadable）的情況下實現代碼分割。本文從實戰角度出發，詳細講解如何在項目中落地這兩個 API。"
+wordCount: 977
 ---
 
 隨着單頁應用規模不斷膨脹，首屏加載的 JS bundle 體積越來越大。React 16.6 引入了 `React.lazy` 和 `Suspense`，讓我們可以在不引入額外第三方庫（如 react-loadable）的情況下實現代碼分割。本文從實戰角度出發，詳細講解如何在項目中落地這兩個 API。

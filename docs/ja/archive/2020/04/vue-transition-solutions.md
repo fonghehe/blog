@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 动画过渡方案在近年来发展迅速，本文将深入分析其原理和实践方法。"
+wordCount: 288
 ---
 
 Vue 动画过渡方案在近年来发展迅速，本文将深入分析其原理和实践方法。

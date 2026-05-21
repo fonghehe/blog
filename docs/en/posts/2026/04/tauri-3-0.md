@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Tauri 3.0's new cross-platform release is seeing increasingly widespread use in frontend development. This article dives deep into its core principles and best "
+wordCount: 177
 ---
 
 Tauri 3.0's new cross-platform release is seeing increasingly widespread use in frontend development. This article dives deep into its core principles and best practices from a real-project perspective.

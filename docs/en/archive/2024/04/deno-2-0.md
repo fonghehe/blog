@@ -5,6 +5,7 @@ tags:
   - Deno
 readingTime: 1
 description: "关于Deno 2.0 Node 兼容与 npm，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment persp"
+wordCount: 171
 ---
 
 关于Deno 2.0 Node 兼容与 npm，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

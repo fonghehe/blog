@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 2.8 引入了條件型別，TypeScript 2.1 引入了對映型別。這兩個特性可以構建出非常強大的型別工具。"
+wordCount: 188
 ---
 
 TypeScript 2.8 引入了條件型別，TypeScript 2.1 引入了對映型別。這兩個特性可以構建出非常強大的型別工具。

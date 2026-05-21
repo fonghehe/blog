@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 1
 description: "最近在團隊中落地CSS Scroll-driven Animations，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+wordCount: 283
 ---
 
 最近在團隊中落地CSS Scroll-driven Animations，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。

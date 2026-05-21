@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "I've written a lot of frontend code, but the deployment part has always depended on ops colleagues. This time I configured nginx myself and compiled the common "
+wordCount: 156
 ---
 
 I've written a lot of frontend code, but the deployment part has always depended on ops colleagues. This time I configured nginx myself and compiled the common scenarios here.

@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "I recently containerized several frontend projects and found it simpler than expected. Here's a guide to the basic setup."
+wordCount: 97
 ---
 
 I recently containerized several frontend projects and found it simpler than expected. Here's a guide to the basic setup.

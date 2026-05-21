@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "We recently implemented Partial Hydration 部分水合策略， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar"
+wordCount: 219
 ---
 
 We recently implemented Partial Hydration 部分水合策略， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

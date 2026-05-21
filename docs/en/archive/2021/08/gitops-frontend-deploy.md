@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "GitOps 前端部署工作流 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 199
 ---
 
 GitOps 前端部署工作流 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

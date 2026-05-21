@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 預設的變更檢測會檢查所有元件，OnPush 策略能大幅減少不必要的檢查。"
+wordCount: 81
 ---
 
 Angular 預設的變更檢測會檢查所有元件，OnPush 策略能大幅減少不必要的檢查。

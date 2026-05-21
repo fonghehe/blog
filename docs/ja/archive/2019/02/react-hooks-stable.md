@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "昨日React 16.8が正式リリースされ、HooksがプロポーザルからStable APIになった！これはReact近年最も重要なアップデートだ。しっかりと記事を書こうと思う。"
+wordCount: 279
 ---
 
 昨日React 16.8が正式リリースされ、HooksがプロポーザルからStable APIになった！これはReact近年最も重要なアップデートだ。しっかりと記事を書こうと思う。

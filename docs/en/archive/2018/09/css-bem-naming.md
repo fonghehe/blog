@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "As projects grow, CSS naming gets chaotic: `.title`, `.list-item`, `.active`... global style conflicts pile up. Adopting the BEM convention solved many of these"
+wordCount: 52
 ---
 
 As projects grow, CSS naming gets chaotic: `.title`, `.list-item`, `.active`... global style conflicts pile up. Adopting the BEM convention solved many of these issues.

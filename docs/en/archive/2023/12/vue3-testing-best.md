@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3 测试最佳实践 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 213
 ---
 
 Vue 3 测试最佳实践 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

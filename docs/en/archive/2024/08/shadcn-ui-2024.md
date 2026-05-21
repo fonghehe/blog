@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "The topic of shadcn/ui 2024 Ecosystem Development has been discussed many times in the community, but with each new version, many conclusions need updating. Thi"
+wordCount: 213
 ---
 
 The topic of shadcn/ui 2024 Ecosystem Development has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.

@@ -5,6 +5,7 @@ tags:
   - PWA
 readingTime: 2
 description: "PWA（Progressive Web App）は、Web アプリをネイティブアプリのように感じさせる技術セットです：オフラインサポート、プッシュ通知、ホーム画面へのインストール。コアとなる技術は Service Worker です。"
+wordCount: 464
 ---
 
 PWA（Progressive Web App）は、Web アプリをネイティブアプリのように感じさせる技術セットです：オフラインサポート、プッシュ通知、ホーム画面へのインストール。コアとなる技術は Service Worker です。

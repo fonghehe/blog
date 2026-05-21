@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "用了 tRPC 半年，說說它到底解決了什麼問題。"
+wordCount: 418
 ---
 
 用了 tRPC 半年，說說它到底解決了什麼問題。

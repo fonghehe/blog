@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "There are plenty of articles on Webpack 4 code minification and optimization online, but most lack real-world experience. This article explores best practices b"
+wordCount: 66
 ---
 
 There are plenty of articles on Webpack 4 code minification and optimization online, but most lack real-world experience. This article explores best practices based on actual projects.

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "面接の定番問題だが、自分で実装してみると最も深く理解できる。"
+wordCount: 94
 ---
 
 面接の定番問題だが、自分で実装してみると最も深く理解できる。

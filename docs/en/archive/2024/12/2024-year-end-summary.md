@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Seven years. I started this blog in 2018, and today I'm writing my seventh year-end summary."
+wordCount: 514
 ---
 
 Seven years. I started this blog in 2018, and today I'm writing my seventh year-end summary.

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 5.5 隐式类型收窄在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
+wordCount: 351
 ---
 
 TypeScript 5.5 隐式类型收窄在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

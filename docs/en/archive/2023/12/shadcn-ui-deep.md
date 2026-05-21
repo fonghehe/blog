@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Shadcn UI 深入使用 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 212
 ---
 
 Shadcn UI 深入使用 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

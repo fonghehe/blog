@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "ES6's iterators and generators are tools for implementing custom iteration. Generators are used internally in both Vuex and Redux-Saga."
+wordCount: 162
 ---
 
 ES6's iterators and generators are tools for implementing custom iteration. Generators are used internally in both Vuex and Redux-Saga.

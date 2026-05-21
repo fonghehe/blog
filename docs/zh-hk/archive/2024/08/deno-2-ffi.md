@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在日常工作中經常用到Deno 2 FFI 接口，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。"
+wordCount: 283
 ---
 
 在日常工作中經常用到Deno 2 FFI 接口，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。

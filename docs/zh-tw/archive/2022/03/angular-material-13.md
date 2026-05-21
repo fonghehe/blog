@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular Material 13 隨 Angular 13 一起釋出，帶來了基於 Material Design Components for Web（MDC）重新實現的元件。這次重構不只是樣式調整——元件的 DOM 結構和 CSS 類名都發生了變化，因此遷移需要一定的關注。"
+wordCount: 447
 ---
 
 Angular Material 13 隨 Angular 13 一起釋出，帶來了基於 Material Design Components for Web（MDC）重新實現的元件。這次重構不只是樣式調整——元件的 DOM 結構和 CSS 類名都發生了變化，因此遷移需要一定的關注。

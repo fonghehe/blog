@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "Frontend engineers writing Node.js scripts can eliminate a lot of repetitive work. Here are some practical scripting tips."
+wordCount: 26
 ---
 
 Frontend engineers writing Node.js scripts can eliminate a lot of repetitive work. Here are some practical scripting tips.

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 枚举 vs 联合类型 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real proj"
+wordCount: 242
 ---
 
 TypeScript 枚举 vs 联合类型 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

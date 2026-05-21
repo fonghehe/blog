@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "在 Vue 项目里用 TypeScript 其实比想象中麻烦一些。折腾了两周，总结一下完整的配置流程。"
+wordCount: 412
 ---
 
 在 Vue 项目里用 TypeScript 其实比想象中麻烦一些。折腾了两周，总结一下完整的配置流程。

@@ -5,6 +5,7 @@ tags:
   - Testing
 readingTime: 2
 description: "Frontend testing has long been a neglected area, but as projects grow, untested code becomes increasingly hard to maintain. Jest is the most popular JavaScript "
+wordCount: 135
 ---
 
 Frontend testing has long been a neglected area, but as projects grow, untested code becomes increasingly hard to maintain. Jest is the most popular JavaScript testing framework today — easy to configure and feature-complete.

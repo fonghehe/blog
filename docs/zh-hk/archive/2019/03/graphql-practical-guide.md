@@ -5,6 +5,7 @@ tags:
   - GraphQL
 readingTime: 2
 description: "團隊做了一個新項目，試了 GraphQL。用了兩個月，説説真實感受——不是都好，也不是都不好。"
+wordCount: 394
 ---
 
 團隊做了一個新項目，試了 GraphQL。用了兩個月，説説真實感受——不是都好，也不是都不好。

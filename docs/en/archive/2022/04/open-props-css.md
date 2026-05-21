@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Open Props CSS 设计令牌This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh"
+wordCount: 203
 ---
 
 Open Props CSS 设计令牌This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.

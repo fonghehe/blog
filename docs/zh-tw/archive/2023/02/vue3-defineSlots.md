@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "在日常工作中經常用到Vue 3.3 defineSlots，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。"
+wordCount: 286
 ---
 
 在日常工作中經常用到Vue 3.3 defineSlots，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。

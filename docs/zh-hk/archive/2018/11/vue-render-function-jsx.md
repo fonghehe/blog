@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "大多數時候模板夠用，但有些場景 render 函數更靈活。"
+wordCount: 227
 ---
 
 大多數時候模板夠用，但有些場景 render 函數更靈活。

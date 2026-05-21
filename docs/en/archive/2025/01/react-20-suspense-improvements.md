@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 20's Suspense has undergone its biggest iteration since version 18. The new SuspenseList component, streaming SSR improvements, and deep integration with "
+wordCount: 357
 ---
 
 React 20's Suspense has undergone its biggest iteration since version 18. The new SuspenseList component, streaming SSR improvements, and deep integration with Actions have evolved Suspense from "loading placeholder" to "data fetching orchestration."

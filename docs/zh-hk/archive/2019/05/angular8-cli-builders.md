@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 8 正式開放了 **Builders API**，讓社區可以為 `ng build`、`ng test`、`ng serve` 等命令提供自定義實現。這也是 `@angular-builders/custom-webpack` 、`@nrwl/workspace` 等不少優秀工具的基礎。"
+wordCount: 147
 ---
 
 Angular 8 正式開放了 **Builders API**，讓社區可以為 `ng build`、`ng test`、`ng serve` 等命令提供自定義實現。這也是 `@angular-builders/custom-webpack` 、`@nrwl/workspace` 等不少優秀工具的基礎。

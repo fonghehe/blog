@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "前端專案裡有很多可以用 Node.js 指令碼自動化的事情：程式碼生成、檔案處理、構建輔助等。"
+wordCount: 167
 ---
 
 前端專案裡有很多可以用 Node.js 指令碼自動化的事情：程式碼生成、檔案處理、構建輔助等。

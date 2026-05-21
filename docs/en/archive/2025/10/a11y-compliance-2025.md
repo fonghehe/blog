@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In day-to-day development, Frontend Accessibility 2025 Compliance is being used more and more frequently. This article systematically explains its usage, princi"
+wordCount: 208
 ---
 
 In day-to-day development, Frontend Accessibility 2025 Compliance is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

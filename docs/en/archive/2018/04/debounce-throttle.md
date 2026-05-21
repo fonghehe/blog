@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 3
 description: "Debounce and throttle are fundamental frontend optimization tools used in almost every project — and a must-know for interviews. This article explains the diffe"
+wordCount: 373
 ---
 
 Debounce and throttle are fundamental frontend optimization tools used in almost every project — and a must-know for interviews. This article explains the differences and when to use each.

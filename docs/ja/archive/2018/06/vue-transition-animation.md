@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vueの`<transition>`コンポーネントはアニメーションの追加をシンプルにしてくれます。よく使うシナリオを記録します。"
+wordCount: 365
 ---
 
 Vueの`<transition>`コンポーネントはアニメーションの追加をシンプルにしてくれます。よく使うシナリオを記録します。

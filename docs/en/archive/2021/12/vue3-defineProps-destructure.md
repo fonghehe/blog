@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "Vue 3.2 defineProps 解构 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pro"
+wordCount: 207
 ---
 
 Vue 3.2 defineProps 解构 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Both `computed` and `watch` respond to data changes, but they suit different scenarios. Using the wrong one won't throw an error, but your code will feel awkwar"
+wordCount: 139
 ---
 
 Both `computed` and `watch` respond to data changes, but they suit different scenarios. Using the wrong one won't throw an error, but your code will feel awkward.

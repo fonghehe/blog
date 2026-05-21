@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "10月25-26日，React Conf 2018 在美國內華達州舉行。Dan Abramov 和 Ryan Florence 現場演示了 Hooks，整個社區都炸了。"
+wordCount: 507
 ---
 
 10月25-26日，React Conf 2018 在美國內華達州舉行。Dan Abramov 和 Ryan Florence 現場演示了 Hooks，整個社區都炸了。

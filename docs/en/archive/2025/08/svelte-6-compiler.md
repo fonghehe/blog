@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "In daily development, Svelte 6 compiler improvements are being used more and more frequently. This article systematically explains their usage, principles, and "
+wordCount: 153
 ---
 
 In daily development, Svelte 6 compiler improvements are being used more and more frequently. This article systematically explains their usage, principles, and optimization strategies.

@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "AI design-to-code tools are seeing increasingly widespread adoption in frontend development. This article digs into their core principles and best practices fro"
+wordCount: 162
 ---
 
 AI design-to-code tools are seeing increasingly widespread adoption in frontend development. This article digs into their core principles and best practices from a real-project perspective.

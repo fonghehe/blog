@@ -5,6 +5,7 @@ tags:
   - 前端工程化
 readingTime: 2
 description: "Turborepo 高性能 Monorepo这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
+wordCount: 300
 ---
 
 Turborepo 高性能 Monorepo这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

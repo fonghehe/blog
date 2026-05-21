@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "In 2024, AI tools have gone from \"optional\" to \"essential\". Here's a summary of my current AI-assisted development workflow."
+wordCount: 508
 ---
 
 In 2024, AI tools have gone from "optional" to "essential". Here's a summary of my current AI-assisted development workflow.

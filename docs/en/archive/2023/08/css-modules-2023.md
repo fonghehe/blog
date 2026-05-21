@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS Modules 2023 最佳实践 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real proj"
+wordCount: 214
 ---
 
 CSS Modules 2023 最佳实践 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Biome v2: New Frontend Toolchain Version is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best "
+wordCount: 169
 ---
 
 Biome v2: New Frontend Toolchain Version is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

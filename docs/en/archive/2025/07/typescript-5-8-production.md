@@ -6,6 +6,7 @@ tags:
   - Security
 readingTime: 2
 description: "TypeScript 5.8 was released in February 2025 (referring to the version adopted in actual projects here). After several months of production use, here are some r"
+wordCount: 220
 ---
 
 TypeScript 5.8 was released in February 2025 (referring to the version adopted in actual projects here). After several months of production use, here are some real-world experiences with TypeScript's strict type system—which new features are genuinely useful, and which ones cause unexpected headaches in large projects.

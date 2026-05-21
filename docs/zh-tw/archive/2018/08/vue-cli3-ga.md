@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue CLI 3.0 正式版（GA）釋出了，正式從 Beta 階段畢業。比 Beta 版穩定了很多，可以在生產專案使用了。"
+wordCount: 172
 ---
 
 Vue CLI 3.0 正式版（GA）釋出了，正式從 Beta 階段畢業。比 Beta 版穩定了很多，可以在生產專案使用了。

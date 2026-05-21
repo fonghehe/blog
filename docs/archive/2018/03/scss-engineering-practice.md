@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "SCSS 现在几乎是中大型项目的标配，但很多项目只是把 SCSS 当作有变量的 CSS 来用，没有充分利用它的工程化能力。"
+wordCount: 229
 ---
 
 SCSS 现在几乎是中大型项目的标配，但很多项目只是把 SCSS 当作有变量的 CSS 来用，没有充分利用它的工程化能力。

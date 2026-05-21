@@ -6,6 +6,7 @@ tags:
   - 效能最佳化
 readingTime: 2
 description: "Angular 18.1 於 2024 年 7 月 10 日釋出，最重要的變化是將此前處於開發者預覽階段的 **Signal-based Inputs、Outputs 和 Queries 全部提升為穩定 API**。這意味著從 18.1 起，可以在生產環境中放心使用這套全新的元件 API，無需擔心 breaking c"
+wordCount: 276
 ---
 
 Angular 18.1 於 2024 年 7 月 10 日釋出，最重要的變化是將此前處於開發者預覽階段的 **Signal-based Inputs、Outputs 和 Queries 全部提升為穩定 API**。這意味著從 18.1 起，可以在生產環境中放心使用這套全新的元件 API，無需擔心 breaking change。

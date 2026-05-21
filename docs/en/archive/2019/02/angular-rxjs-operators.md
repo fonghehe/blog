@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "RxJS 6 is deeply integrated with Angular. Mastering the core operators is the foundation for writing robust reactive code."
+wordCount: 54
 ---
 
 RxJS 6 is deeply integrated with Angular. Mastering the core operators is the foundation for writing robust reactive code.

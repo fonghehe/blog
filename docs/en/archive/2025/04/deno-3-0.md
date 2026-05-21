@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Deno 3.0 as a full-stack runtime has been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fres"
+wordCount: 167
 ---
 
 Deno 3.0 as a full-stack runtime has been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on the latest release.

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "閉包是 JavaScript 面試必問，但真正理解的人不多。這篇從詞法作用域出發，講清楚什麼是閉包，以及實際工程中的應用。"
+wordCount: 326
 ---
 
 閉包是 JavaScript 面試必問，但真正理解的人不多。這篇從詞法作用域出發，講清楚什麼是閉包，以及實際工程中的應用。

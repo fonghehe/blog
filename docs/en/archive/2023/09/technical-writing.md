@@ -5,6 +5,7 @@ tags:
   - Frontend Engineering
 readingTime: 2
 description: "技术写作工程师的表达力This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overvie"
+wordCount: 202
 ---
 
 技术写作工程师的表达力This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.

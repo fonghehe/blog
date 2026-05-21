@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS 自定義屬性（也叫 CSS 變量）現在主流瀏覽器都支持了，IE 除外。它和 Sass 變量不一樣，有自己獨特的優勢，值得認真瞭解。"
+wordCount: 429
 ---
 
 CSS 自定義屬性（也叫 CSS 變量）現在主流瀏覽器都支持了，IE 除外。它和 Sass 變量不一樣，有自己獨特的優勢，值得認真瞭解。

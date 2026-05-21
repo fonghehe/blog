@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 15 让 Standalone APIs 正式稳定后，很多团队开始考虑迁移现有项目。Angular 提供了自动化迁移工具，但了解迁移的每个步骤和潜在问题仍然必要。这篇文章梳理完整的迁移路径。"
+wordCount: 238
 ---
 
 Angular 15 让 Standalone APIs 正式稳定后，很多团队开始考虑迁移现有项目。Angular 提供了自动化迁移工具，但了解迁移的每个步骤和潜在问题仍然必要。这篇文章梳理完整的迁移路径。

@@ -5,6 +5,7 @@ tags:
   - 性能优化
 readingTime: 4
 description: "Node.js 作为服务端运行时，性能调优是上线前必不可少的环节。从内存泄漏排查到事件循环监控，从 CPU profiling 到 GC 调参，Node.js 提供了丰富的工具链帮助我们定位性能瓶颈。本文将结合实际案例，系统讲解 Node.js 性能调优的方法论和实践技巧。"
+wordCount: 561
 ---
 
 Node.js 作为服务端运行时，性能调优是上线前必不可少的环节。从内存泄漏排查到事件循环监控，从 CPU profiling 到 GC 调参，Node.js 提供了丰富的工具链帮助我们定位性能瓶颈。本文将结合实际案例，系统讲解 Node.js 性能调优的方法论和实践技巧。

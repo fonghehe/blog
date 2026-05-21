@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Bun 2.0 New Features Deep Dive is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices "
+wordCount: 206
 ---
 
 Bun 2.0 New Features Deep Dive is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

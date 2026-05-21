@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Edge 渲染已經從概念驗證走向生產應用。來總結一下我們團隊在 Edge 渲染方面的實踐和踩坑經驗。"
+wordCount: 173
 ---
 
 Edge 渲染已經從概念驗證走向生產應用。來總結一下我們團隊在 Edge 渲染方面的實踐和踩坑經驗。

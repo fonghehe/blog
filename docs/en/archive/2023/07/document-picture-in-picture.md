@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Document Picture-in-Picture API is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from"
+wordCount: 176
 ---
 
 Document Picture-in-Picture API is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 可变元组类型 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
+wordCount: 218
 ---
 
 TypeScript 可变元组类型 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

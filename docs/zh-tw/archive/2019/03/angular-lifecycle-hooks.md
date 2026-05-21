@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 元件的生命週期鉤子讓你在關鍵時機執行初始化、清理等操作。"
+wordCount: 70
 ---
 
 Angular 元件的生命週期鉤子讓你在關鍵時機執行初始化、清理等操作。

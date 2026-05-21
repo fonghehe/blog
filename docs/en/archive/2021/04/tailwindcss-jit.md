@@ -6,6 +6,7 @@ tags:
 
 readingTime: 2
 description: "Tailwind CSS JIT 编译模式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real proj"
+wordCount: 225
 ---
 
 Tailwind CSS JIT 编译模式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

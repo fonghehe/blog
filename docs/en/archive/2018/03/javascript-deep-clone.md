@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Deep cloning is a common frontend need, but there are many pitfalls in implementation. Here's a review of the approaches, their use cases, and limitations."
+wordCount: 199
 ---
 
 Deep cloning is a common frontend need, but there are many pitfalls in implementation. Here's a review of the approaches, their use cases, and limitations.

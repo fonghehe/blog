@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vuex is Vue's official state management library, but many beginners use it everywhere or nowhere. The key is knowing when Vuex is the right tool."
+wordCount: 135
 ---
 
 Vuex is Vue's official state management library, but many beginners use it everywhere or nowhere. The key is knowing when Vuex is the right tool.

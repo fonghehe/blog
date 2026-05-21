@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "Last month I investigated a page jank issue and traced it to long JS execution times causing frame drops. This is a good opportunity to document common JS perfo"
+wordCount: 119
 ---
 
 Last month I investigated a page jank issue and traced it to long JS execution times causing frame drops. This is a good opportunity to document common JS performance optimization techniques.

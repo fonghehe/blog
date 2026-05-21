@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "Many people only use npm scripts for `npm start` and `npm run build`, but they can do a lot more for automation."
+wordCount: 88
 ---
 
 Many people only use npm scripts for `npm start` and `npm run build`, but they can do a lot more for automation.

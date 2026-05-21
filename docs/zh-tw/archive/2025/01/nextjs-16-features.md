@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "Next.js 16 在 Vercel Ship 2025 上正式釋出，核心主題是「編譯即架構」——把更多執行時邏輯推到編譯期，減少服務端和客戶端之間的邊界開銷。對 React 20 Compiler 的原生支援、Server Actions 的事務化、以及全新的路由中介軟體是最大的三個變化。"
+wordCount: 492
 ---
 
 Next.js 16 在 Vercel Ship 2025 上正式釋出，核心主題是「編譯即架構」——把更多執行時邏輯推到編譯期，減少服務端和客戶端之間的邊界開銷。對 React 20 Compiler 的原生支援、Server Actions 的事務化、以及全新的路由中介軟體是最大的三個變化。

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "`computed` 和 `watch` 都能響應數據變化，但適合的場景不一樣。用錯了不會報錯，但代碼會很彆扭。"
+wordCount: 188
 ---
 
 `computed` 和 `watch` 都能響應數據變化，但適合的場景不一樣。用錯了不會報錯，但代碼會很彆扭。

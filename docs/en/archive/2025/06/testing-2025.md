@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "This topic has been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on the la"
+wordCount: 162
 ---
 
 This topic has been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on the latest releases.

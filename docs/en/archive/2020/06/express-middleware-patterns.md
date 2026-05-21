@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Express 中间件设计模式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
+wordCount: 310
 ---
 
 Express 中间件设计模式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

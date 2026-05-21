@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "項目做大了，CSS 命名開始混亂：`.title`、`.list-item`、`.active`……全局樣式衝突越來越多。用 BEM 規範統一命名之後，問題少了很多。"
+wordCount: 122
 ---
 
 項目做大了，CSS 命名開始混亂：`.title`、`.list-item`、`.active`……全局樣式衝突越來越多。用 BEM 規範統一命名之後，問題少了很多。

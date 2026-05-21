@@ -5,6 +5,7 @@ tags:
   - Playwright
 readingTime: 2
 description: "Playwright 1.28 新功能总结 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real proj"
+wordCount: 167
 ---
 
 Playwright 1.28 新功能总结 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

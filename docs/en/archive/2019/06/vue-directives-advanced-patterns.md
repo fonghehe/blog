@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue's built-in directives (`v-model`, `v-if`, `v-for`) cover most use cases, but there are scenarios where you need to directly manipulate DOM behavior — that's"
+wordCount: 134
 ---
 
 Vue's built-in directives (`v-model`, `v-if`, `v-for`) cover most use cases, but there are scenarios where you need to directly manipulate DOM behavior — that's when custom directives shine. This article covers directive lifecycle hooks and two real-world examples.

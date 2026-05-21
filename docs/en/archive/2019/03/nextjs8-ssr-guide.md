@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Our company needed an SEO-friendly website, so I evaluated Next.js and ultimately chose it. Here's a record of the challenges encountered along the way."
+wordCount: 105
 ---
 
 Our company needed an SEO-friendly website, so I evaluated Next.js and ultimately chose it. Here's a record of the challenges encountered along the way.

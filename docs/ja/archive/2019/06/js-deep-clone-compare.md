@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "深いコピーはJavaScriptの面接やプロジェクトで常に話題になるトピックです。多くの方法があり、それぞれトレードオフがあります。"
+wordCount: 200
 ---
 
 深いコピーはJavaScriptの面接やプロジェクトで常に話題になるトピックです。多くの方法があり、それぞれトレードオフがあります。

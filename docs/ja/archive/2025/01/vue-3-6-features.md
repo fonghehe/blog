@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "Vue 3.6は2025年1月にリリースされ、長期間開発者プレビュー段階にあった**Ref Sugar**（`$ref`構文）の正式安定化、`defineProps`の分割代入サポート、そして`hydrateOnVisible`ディレクティブなど、SSRのハイドレーション制御機能が追加されました。"
+wordCount: 454
 ---
 
 Vue 3.6は2025年1月にリリースされ、長期間開発者プレビュー段階にあった**Ref Sugar**（`$ref`構文）の正式安定化、`defineProps`の分割代入サポート、そして`hydrateOnVisible`ディレクティブなど、SSRのハイドレーション制御機能が追加されました。

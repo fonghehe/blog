@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "Recently, our team has rolled out the CSS 2025 New Features Panorama and accumulated a lot of experience. I've compiled it here for reference, hoping it helps o"
+wordCount: 138
 ---
 
 Recently, our team has rolled out the CSS 2025 New Features Panorama and accumulated a lot of experience. I've compiled it here for reference, hoping it helps others doing similar work.

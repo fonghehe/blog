@@ -5,6 +5,7 @@ tags:
   - Frontend Engineering
 readingTime: 2
 description: "The team has been migrating multiple frontend projects to pnpm workspace for half a year. Disk usage dropped by 60%, installation speed improved noticeably, and"
+wordCount: 368
 ---
 
 The team has been migrating multiple frontend projects to pnpm workspace for half a year. Disk usage dropped by 60%, installation speed improved noticeably, and the phantom dependency problem was completely resolved. This article documents our migration process.

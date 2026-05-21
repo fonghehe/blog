@@ -10,6 +10,7 @@ tags:
 
 readingTime: 1
 description: "Vite + Vue 3 开发环境极速体验 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic b"
+wordCount: 186
 ---
 
 Vite + Vue 3 开发环境极速体验 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

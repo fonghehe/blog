@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "2025 年初，團隊已經全面接入 AI 輔助開發。從 GitHub Copilot 到 Claude Code，從 Cursor 到各種 AI 插件，變化比想象中快。來分享一下實際落地的工作流。"
+wordCount: 232
 ---
 
 2025 年初，團隊已經全面接入 AI 輔助開發。從 GitHub Copilot 到 Claude Code，從 Cursor 到各種 AI 插件，變化比想象中快。來分享一下實際落地的工作流。

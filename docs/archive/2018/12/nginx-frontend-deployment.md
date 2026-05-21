@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 1
 description: "前端项目部署到 Nginx 上，每次都要找配置，干脆整理一份常用配置备查。"
+wordCount: 124
 ---
 
 前端项目部署到 Nginx 上，每次都要找配置，干脆整理一份常用配置备查。

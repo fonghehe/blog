@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "最近チームでReact 18 useDeferredValue 延迟更新，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
+wordCount: 484
 ---
 
 最近チームでReact 18 useDeferredValue 延迟更新，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。

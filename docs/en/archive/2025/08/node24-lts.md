@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Regarding Node.js 24 LTS new features, many developers only scratch the surface at the API level. This article attempts to discuss the problems encountered in p"
+wordCount: 185
 ---
 
 Regarding Node.js 24 LTS new features, many developers only scratch the surface at the API level. This article attempts to discuss the problems encountered in practice and their solutions from a production perspective.

@@ -7,6 +7,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "Angular 12 於 2021 年 5 月 26 日正式釋出。這是一個里程碑版本：View Engine 正式退場，Ivy 成為唯一渲染引擎；Webpack 5 從實驗性升級為預設構建工具。升級之後我們整理了一份完整的變化記錄。"
+wordCount: 489
 ---
 
 Angular 12 於 2021 年 5 月 26 日正式釋出。這是一個里程碑版本：View Engine 正式退場，Ivy 成為唯一渲染引擎；Webpack 5 從實驗性升級為預設構建工具。升級之後我們整理了一份完整的變化記錄。

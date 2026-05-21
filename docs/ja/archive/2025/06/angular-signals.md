@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular Signalsリアクティビティについて、多くの開発者はAPI呼び出しのレベルにとどまっています。本記事は本番環境の視点から、実際に遭遇する問題とその解決策を論じます。"
+wordCount: 502
 ---
 
 Angular Signalsリアクティビティについて、多くの開発者はAPI呼び出しのレベルにとどまっています。本記事は本番環境の視点から、実際に遭遇する問題とその解決策を論じます。

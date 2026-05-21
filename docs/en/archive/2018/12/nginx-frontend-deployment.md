@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "When deploying frontend projects on Nginx, I always had to hunt for the right configs. Here's a reference collection of the ones I use most."
+wordCount: 95
 ---
 
 When deploying frontend projects on Nginx, I always had to hunt for the right configs. Here's a reference collection of the ones I use most.

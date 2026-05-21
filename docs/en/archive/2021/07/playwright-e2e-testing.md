@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "关于Playwright E2E 跨浏览器测试，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspectiv"
+wordCount: 202
 ---
 
 关于Playwright E2E 跨浏览器测试，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

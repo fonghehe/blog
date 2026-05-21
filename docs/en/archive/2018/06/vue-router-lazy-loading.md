@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Our back-office admin app kept growing and the homepage load time kept increasing. Using Vue Router's lazy loading to split the initial bundle made a noticeable"
+wordCount: 143
 ---
 
 Our back-office admin app kept growing and the homepage load time kept increasing. Using Vue Router's lazy loading to split the initial bundle made a noticeable difference in speed.

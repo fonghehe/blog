@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "2023 年是前端生態\"技術落地\"的一年：Next.js 13 App Router 進入生產，Angular 17 帶來了革命性的模板語法，Bun 1.0 正式發佈，AI 輔助編程從新奇變成日常工具。站在年末，我們預判 2024 年的關鍵走向。"
+wordCount: 355
 ---
 
 2023 年是前端生態"技術落地"的一年：Next.js 13 App Router 進入生產，Angular 17 帶來了革命性的模板語法，Bun 1.0 正式發佈，AI 輔助編程從新奇變成日常工具。站在年末，我們預判 2024 年的關鍵走向。

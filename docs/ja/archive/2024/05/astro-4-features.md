@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "关于Astro 4.0 View Transitions，API 呼び出しのレベルで止まっている開発者が多いです。本記事では、プロダクション環境の観点から実際に遭遇する問題と解決策を説明します。"
+wordCount: 428
 ---
 
 关于Astro 4.0 View Transitions，API 呼び出しのレベルで止まっている開発者が多いです。本記事では、プロダクション環境の観点から実際に遭遇する問題と解決策を説明します。

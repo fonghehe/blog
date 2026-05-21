@@ -6,6 +6,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 的響應式表單（Reactive Forms）在複雜表單場景下遠比模板驅動表單更可控。這篇文章聚焦三個進階場景：動態新增/刪除表單項（FormArray）、跨欄位聯合驗證器、以及實現自定義可重用的表單控制元件（ControlValueAccessor）。"
+wordCount: 238
 ---
 
 Angular 的響應式表單（Reactive Forms）在複雜表單場景下遠比模板驅動表單更可控。這篇文章聚焦三個進階場景：動態新增/刪除表單項（FormArray）、跨欄位聯合驗證器、以及實現自定義可重用的表單控制元件（ControlValueAccessor）。

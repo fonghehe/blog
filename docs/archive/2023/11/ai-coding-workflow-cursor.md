@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "上半年写了 Copilot 半年使用报告。下半年的变化更大——Cursor 出现了，AI 编码从\"补全工具\"变成了\"编码伙伴\"。"
+wordCount: 588
 ---
 
 上半年写了 Copilot 半年使用报告。下半年的变化更大——Cursor 出现了，AI 编码从"补全工具"变成了"编码伙伴"。

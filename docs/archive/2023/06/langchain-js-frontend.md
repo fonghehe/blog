@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "最近在团队中落地LangChain.js 前端 AI 应用，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
+wordCount: 326
 ---
 
 最近在团队中落地LangChain.js 前端 AI 应用，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

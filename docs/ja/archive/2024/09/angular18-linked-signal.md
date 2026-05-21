@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 18.2 于 2024 年 8 月 14 日发布，引入了 `linkedSignal()`——一个实验性的新 Signal 原语。它解决了 `computed()` 和可写 `signal()` 之间长期存在的一个痛点：**如何创建一个既能从外部源派生初始值，又允许本地修改的 Signal**。"
+wordCount: 308
 ---
 
 Angular 18.2 于 2024 年 8 月 14 日发布，引入了 `linkedSignal()`——一个实验性的新 Signal 原语。它解决了 `computed()` 和可写 `signal()` 之间长期存在的一个痛点：**如何创建一个既能从外部源派生初始值，又允许本地修改的 Signal**。

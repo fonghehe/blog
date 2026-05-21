@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Svelte 5 稳定版已经发布一段时间了，Runes 系统是最大的变化。来对比一下 Svelte 4 和 Svelte 5 的写法差异。"
+wordCount: 170
 ---
 
 Svelte 5 稳定版已经发布一段时间了，Runes 系统是最大的变化。来对比一下 Svelte 4 和 Svelte 5 的写法差异。

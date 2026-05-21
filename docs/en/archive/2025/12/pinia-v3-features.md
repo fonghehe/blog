@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "In day-to-day development, Pinia v3 New Features is being used more and more frequently. This article systematically explains its usage, principles, and optimiz"
+wordCount: 162
 ---
 
 In day-to-day development, Pinia v3 New Features is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

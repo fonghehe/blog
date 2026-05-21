@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Trusted Types 防 XSS 攻击This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fr"
+wordCount: 186
 ---
 
 Trusted Types 防 XSS 攻击This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.

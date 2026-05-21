@@ -5,6 +5,7 @@ tags:
   - フロントエンドエンジニアリング
 readingTime: 3
 description: "Turborepo が成熟しました。15パッケージの monorepo で半年以上使用した実践経験を共有します。"
+wordCount: 701
 ---
 
 Turborepo が成熟しました。15パッケージの monorepo で半年以上使用した実践経験を共有します。

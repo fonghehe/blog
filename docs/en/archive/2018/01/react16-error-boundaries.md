@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "In React 15, an unhandled JavaScript error in a component would corrupt the entire application state and lead to cryptic errors or a completely white screen. Re"
+wordCount: 193
 ---
 
 In React 15, an unhandled JavaScript error in a component would corrupt the entire application state and lead to cryptic errors or a completely white screen. React 16 introduced **Error Boundaries** to contain errors to a component subtree.

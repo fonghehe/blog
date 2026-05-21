@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "JavaScript Generator 與異步流程控制是日常開發中經常遇到的問題。本文從實際項目出發，分享具體的實現方法和經驗總結。"
+wordCount: 210
 ---
 
 JavaScript Generator 與異步流程控制是日常開發中經常遇到的問題。本文從實際項目出發，分享具體的實現方法和經驗總結。

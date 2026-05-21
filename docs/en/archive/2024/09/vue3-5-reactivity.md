@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3.5 Reactivity Refactor is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices fro"
+wordCount: 177
 ---
 
 Vue 3.5 Reactivity Refactor is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 20.2 が 2025 年 8 月にリリースされました。このバージョンの核心は Signal Forms の安定化推進です——20.0 と 20.1 の 2 バージョンにわたる開発者プレビュー期間を経て、Signal Forms のコア API が安定し、API サーフェスが大幅に削減されました。同時に"
+wordCount: 405
 ---
 
 Angular 20.2 が 2025 年 8 月にリリースされました。このバージョンの核心は Signal Forms の安定化推進です——20.0 と 20.1 の 2 バージョンにわたる開発者プレビュー期間を経て、Signal Forms のコア API が安定し、API サーフェスが大幅に削減されました。同時に、`httpResource()` がより充実したキャッシュ戦略サポートを獲得しました。

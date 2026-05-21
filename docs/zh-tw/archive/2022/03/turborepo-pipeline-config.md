@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 3
 description: "上一篇寫了 pnpm workspace 做依賴管理。這篇講構建編排——當你的 monorepo 有十幾個包需要構建和測試，怎麼讓它們按依賴順序執行，並且儘可能並行？"
+wordCount: 444
 ---
 
 上一篇寫了 pnpm workspace 做依賴管理。這篇講構建編排——當你的 monorepo 有十幾個包需要構建和測試，怎麼讓它們按依賴順序執行，並且儘可能並行？

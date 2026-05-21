@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 3
 description: "HTTP/2 has been around for a few years, but many frontend developers still aren't sure what it actually changed or how it affects frontend optimization strategi"
+wordCount: 411
 ---
 
 HTTP/2 has been around for a few years, but many frontend developers still aren't sure what it actually changed or how it affects frontend optimization strategies. This article covers the practical differences.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "The shadcn/ui 2025 ecosystem development is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best "
+wordCount: 176
 ---
 
 The shadcn/ui 2025 ecosystem development is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

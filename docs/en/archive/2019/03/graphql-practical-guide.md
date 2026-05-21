@@ -5,6 +5,7 @@ tags:
   - GraphQL
 readingTime: 1
 description: "My team tried GraphQL on a new project. After two months, here are my honest thoughts — not all good, not all bad."
+wordCount: 87
 ---
 
 My team tried GraphQL on a new project. After two months, here are my honest thoughts — not all good, not all bad.

@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "React Native 0.64 Hermes 引擎 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from rea"
+wordCount: 188
 ---
 
 React Native 0.64 Hermes 引擎 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

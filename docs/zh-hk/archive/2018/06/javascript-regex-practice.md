@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "正則表達式一直是個\"會忘記\"的知識點，整理常用模式和實際場景。"
+wordCount: 101
 ---
 
 正則表達式一直是個"會忘記"的知識點，整理常用模式和實際場景。

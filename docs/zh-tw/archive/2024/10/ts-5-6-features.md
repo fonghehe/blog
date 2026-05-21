@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "在日常開發中，TypeScript 5.6 新特性的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
+wordCount: 265
 ---
 
 在日常開發中，TypeScript 5.6 新特性的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "My team recently rolled out Vue Vapor in its 2026 stable form, and we've accumulated quite a bit of hands-on experience. Here's a writeup for anyone doing simil"
+wordCount: 182
 ---
 
 My team recently rolled out Vue Vapor in its 2026 stable form, and we've accumulated quite a bit of hands-on experience. Here's a writeup for anyone doing similar work.

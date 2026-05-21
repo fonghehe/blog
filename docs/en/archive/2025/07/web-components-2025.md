@@ -5,6 +5,7 @@ tags:
   - Web Components
 readingTime: 2
 description: "Recently, while rolling out the Web Components 2025 ecosystem within our team, I've accumulated quite a bit of experience. Sharing it here for reference, hoping"
+wordCount: 198
 ---
 
 Recently, while rolling out the Web Components 2025 ecosystem within our team, I've accumulated quite a bit of experience. Sharing it here for reference, hoping it helps others doing similar work.

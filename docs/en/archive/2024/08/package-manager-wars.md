@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Package Manager Wars 2024 Summary is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practic"
+wordCount: 151
 ---
 
 Package Manager Wars 2024 Summary is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

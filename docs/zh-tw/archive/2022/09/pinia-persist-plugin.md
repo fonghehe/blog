@@ -5,6 +5,7 @@ tags:
   - Pinia
 readingTime: 1
 description: "Pinia 持久化外掛在近年來發展迅速，本文將深入分析其原理和實踐方法。"
+wordCount: 225
 ---
 
 Pinia 持久化外掛在近年來發展迅速，本文將深入分析其原理和實踐方法。

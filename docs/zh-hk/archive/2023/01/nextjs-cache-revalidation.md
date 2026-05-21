@@ -5,6 +5,7 @@ tags:
   - Next.js
 readingTime: 3
 description: "Next.js 13/14 的緩存策略是所有框架中默認行為最激進的。理解 `fetch` 緩存、`revalidate`、`revalidatePath`、`revalidateTag` 之間的區別和適用場景，是避免\"為什麼頁面數據不更新\"這類問題的關鍵。"
+wordCount: 531
 ---
 
 Next.js 13/14 的緩存策略是所有框架中默認行為最激進的。理解 `fetch` 緩存、`revalidate`、`revalidatePath`、`revalidateTag` 之間的區別和適用場景，是避免"為什麼頁面數據不更新"這類問題的關鍵。

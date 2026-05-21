@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue Router 的基礎用法很簡單，但權限控制、路由元信息、動態添加路由這些進階用法，很多項目都沒用好。"
+wordCount: 189
 ---
 
 Vue Router 的基礎用法很簡單，但權限控制、路由元信息、動態添加路由這些進階用法，很多項目都沒用好。

@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 3
 description: "Building a design system has always been heavy lifting for frontend teams. In 2025, AI tools have fundamentally improved efficiency in this process. Here's what"
+wordCount: 127
 ---
 
 Building a design system has always been heavy lifting for frontend teams. In 2025, AI tools have fundamentally improved efficiency in this process. Here's what our team has learned in practice.

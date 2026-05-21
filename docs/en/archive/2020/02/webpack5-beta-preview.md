@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Webpack 5 已经进入 Beta 阶段，虽然还没正式发布，但新特性值得关注。梳理一下对我们日常开发影响最大的几个变化。"
+wordCount: 266
 ---
 
 Webpack 5 已经进入 Beta 阶段，虽然还没正式发布，但新特性值得关注。梳理一下对我们日常开发影响最大的几个变化。

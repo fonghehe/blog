@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "最近在团队中落地GraphQL Code Generator 代码生成，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
+wordCount: 406
 ---
 
 最近在团队中落地GraphQL Code Generator 代码生成，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。

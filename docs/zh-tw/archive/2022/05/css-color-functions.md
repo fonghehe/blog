@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS 色彩函式對比在近年來發展迅速，本文將深入分析其原理和實踐方法。"
+wordCount: 284
 ---
 
 CSS 色彩函式對比在近年來發展迅速，本文將深入分析其原理和實踐方法。

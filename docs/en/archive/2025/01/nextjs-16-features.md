@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "Next.js 16 was officially released at Vercel Ship 2025, with the core theme of \"compilation as architecture\" — pushing more runtime logic to compile time to red"
+wordCount: 299
 ---
 
 Next.js 16 was officially released at Vercel Ship 2025, with the core theme of "compilation as architecture" — pushing more runtime logic to compile time to reduce the overhead between server and client boundaries. Native support for the React 20 Compiler, transactional Server Actions, and a brand-new Route Middleware system are the three biggest changes.

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "很多人只用 npm scripts 跑 `npm start` 和 `npm run build`，其實它能做很多自動化的事情。"
+wordCount: 142
 ---
 
 很多人只用 npm scripts 跑 `npm start` 和 `npm run build`，其實它能做很多自動化的事情。

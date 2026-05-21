@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "In daily development, Native CSS Scoping 2025 in Practice is being used more and more frequently. This article systematically explains its usage, principles, an"
+wordCount: 124
 ---
 
 In daily development, Native CSS Scoping 2025 in Practice is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

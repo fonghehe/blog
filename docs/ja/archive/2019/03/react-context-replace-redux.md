@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "チームにReact ContextによるReduxの代替を普及させる過程で、多くの落とし穴を経験した。同じ苦労をする人が減るよう、ここに記録しておく。"
+wordCount: 187
 ---
 
 チームにReact ContextによるReduxの代替を普及させる過程で、多くの落とし穴を経験した。同じ苦労をする人が減るよう、ここに記録しておく。

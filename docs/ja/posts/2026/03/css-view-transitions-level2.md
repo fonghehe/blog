@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 4
 description: "CSS View Transitions Level 1 は、シングルページアプリケーション（SPA）のページ切り替えアニメーションをエレガントなものにしました。そして 2026 年に各主要ブラウザの安定チャンネルに正式搭載された **View Transitions Level 2** は、この機能をマルチページアプ"
+wordCount: 800
 ---
 
 CSS View Transitions Level 1 は、シングルページアプリケーション（SPA）のページ切り替えアニメーションをエレガントなものにしました。そして 2026 年に各主要ブラウザの安定チャンネルに正式搭載された **View Transitions Level 2** は、この機能をマルチページアプリケーション（MPA）にまで拡張しました。JavaScript フレームワーク不要、純粋な CSS + HTML だけで滑らかなクロスドキュメント遷移アニメーションを実現できます。

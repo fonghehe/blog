@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，File System Access API 文件操作 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategi"
+wordCount: 216
 ---
 
 在日常开发中，File System Access API 文件操作 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

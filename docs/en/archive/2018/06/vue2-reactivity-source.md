@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue's reactivity system is its most central feature, and many interview questions revolve around it. This article traces through Vue 2.x source code to clarify "
+wordCount: 190
 ---
 
 Vue's reactivity system is its most central feature, and many interview questions revolve around it. This article traces through Vue 2.x source code to clarify how it works.

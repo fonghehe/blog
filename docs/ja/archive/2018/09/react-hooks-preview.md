@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 4
 description: "先月 React チームが Hooks の RFC を提案し、昨日試してみました。これは React エコシステムで最大の変化の一つだと感じています。"
+wordCount: 774
 ---
 
 先月 React チームが Hooks の RFC を提案し、昨日試してみました。これは React エコシステムで最大の変化の一つだと感じています。

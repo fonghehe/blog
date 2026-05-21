@@ -5,6 +5,7 @@ tags:
   - Git
 readingTime: 2
 description: "每次提交代碼前手動跑 lint 和測試太容易忘了。用 Git Hooks 把這些檢查自動化，在提交時自動執行。"
+wordCount: 297
 ---
 
 每次提交代碼前手動跑 lint 和測試太容易忘了。用 Git Hooks 把這些檢查自動化，在提交時自動執行。

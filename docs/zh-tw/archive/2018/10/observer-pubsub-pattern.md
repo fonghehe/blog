@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 1
 description: "這兩個模式經常被混為一談，但有本質區別。"
+wordCount: 231
 ---
 
 這兩個模式經常被混為一談，但有本質區別。

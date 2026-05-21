@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "The React team revealed more details about Concurrent Mode at React Conf 2019. This is the most important feature since React 16.8 Hooks, but the stable release"
+wordCount: 95
 ---
 
 The React team revealed more details about Concurrent Mode at React Conf 2019. This is the most important feature since React 16.8 Hooks, but the stable release may not arrive until 2020.

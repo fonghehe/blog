@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "The Design System 2025 trends topic has been discussed extensively in the community, but with each version update, many conclusions need to be revisited. This a"
+wordCount: 187
 ---
 
 The Design System 2025 trends topic has been discussed extensively in the community, but with each version update, many conclusions need to be revisited. This article provides a fresh overview based on the latest versions.

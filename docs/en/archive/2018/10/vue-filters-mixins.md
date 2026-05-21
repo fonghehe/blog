@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Many projects share cross-component concerns: date formatting, currency display, permission checks… Vue global filters and mixins let you centralize this logic."
+wordCount: 134
 ---
 
 Many projects share cross-component concerns: date formatting, currency display, permission checks… Vue global filters and mixins let you centralize this logic.

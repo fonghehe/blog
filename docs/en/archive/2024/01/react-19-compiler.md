@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Regarding React 19 Compiler: Automatic Memoization, many developers only stay at the API call level. This article discusses real-world problems and solutions fr"
+wordCount: 158
 ---
 
 Regarding React 19 Compiler: Automatic Memoization, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

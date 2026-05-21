@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Frontend engineers who don't understand Nginx configuration can't resolve many deployment issues on their own. Here's a practical configuration reference."
+wordCount: 60
 ---
 
 Frontend engineers who don't understand Nginx configuration can't resolve many deployment issues on their own. Here's a practical configuration reference.

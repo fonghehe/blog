@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "面试高频题，但自己手写一遍理解最深。"
+wordCount: 108
 ---
 
 面试高频题，但自己手写一遍理解最深。

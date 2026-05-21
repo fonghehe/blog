@@ -5,6 +5,7 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "2018年現在、CommonJS、AMD、ES Module という複数のモジュールシステムが共存しています。それぞれの違いを理解することで、webpack や Babel といったツールが存在する理由が分かります。"
+wordCount: 484
 ---
 
 2018年現在、CommonJS、AMD、ES Module という複数のモジュールシステムが共存しています。それぞれの違いを理解することで、webpack や Babel といったツールが存在する理由が分かります。

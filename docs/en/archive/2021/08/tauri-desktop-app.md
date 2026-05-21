@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "Tauri 桌面应用开发新选择 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 231
 ---
 
 Tauri 桌面应用开发新选择 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

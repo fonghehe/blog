@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 3
 description: "2018 is coming to an end. When I started writing this, I scrolled back through the blog posts from this year and was surprised to find nearly 50 of them. From t"
+wordCount: 576
 ---
 
 2018 is coming to an end. When I started writing this, I scrolled back through the blog posts from this year and was surprised to find nearly 50 of them. From the Vue features notes in January to the in-depth articles in December, I can genuinely feel myself growing.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Zustand v5 新特性总结 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 197
 ---
 
 Zustand v5 新特性总结 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

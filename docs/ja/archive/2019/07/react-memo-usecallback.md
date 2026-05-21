@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 16.6 で `React.memo` が導入され、Hooks の `useCallback` と `useMemo` と合わせて、開発者はより多くのパフォーマンス最適化手段を持つようになりました。しかし実際のプロジェクトでは、多くの人が「memo を至る所に追加する」という誤りに陥っています。この記事では"
+wordCount: 536
 ---
 
 React 16.6 で `React.memo` が導入され、Hooks の `useCallback` と `useMemo` と合わせて、開発者はより多くのパフォーマンス最適化手段を持つようになりました。しかし実際のプロジェクトでは、多くの人が「memo を至る所に追加する」という誤りに陥っています。この記事ではこれらの API の正しい使い方を解説します。

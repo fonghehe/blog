@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "The most painful part of a production bug isn't the bug itself — it's not knowing where it is. Good error handling makes problems far easier to locate."
+wordCount: 95
 ---
 
 The most painful part of a production bug isn't the bug itself — it's not knowing where it is. Good error handling makes problems far easier to locate.

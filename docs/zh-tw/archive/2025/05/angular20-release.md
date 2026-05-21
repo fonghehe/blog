@@ -7,6 +7,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Angular 20 於 2025 年 5 月正式釋出。這是 Angular 自 2022 年開始\"Signal 化轉型\"以來最重要的里程碑——Zoneless 變更檢測正式穩定，可用於生產；Signal Forms 進入開發者預覽；新的 `resource()` API 為宣告式非同步資料管理提供了原生支援。"
+wordCount: 333
 ---
 
 Angular 20 於 2025 年 5 月正式釋出。這是 Angular 自 2022 年開始"Signal 化轉型"以來最重要的里程碑——Zoneless 變更檢測正式穩定，可用於生產；Signal Forms 進入開發者預覽；新的 `resource()` API 為宣告式非同步資料管理提供了原生支援。
