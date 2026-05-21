@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Mixin is the primary way to share logic in Vue 2. Used well it's very convenient, but it has several traps."
+wordCount: 72
 ---
 
 Mixin is the primary way to share logic in Vue 2. Used well it's very convenient, but it has several traps.

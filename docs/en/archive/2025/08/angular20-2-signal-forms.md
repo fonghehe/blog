@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 20.2 was released in August 2025. The core focus of this release is advancing Signal Forms toward stability — after developer preview periods in version"
+wordCount: 181
 ---
 
 Angular 20.2 was released in August 2025. The core focus of this release is advancing Signal Forms toward stability — after developer preview periods in versions 20.0 and 20.1, the core Signal Forms APIs have stabilized with a significantly reduced API surface. At the same time, `httpResource()` gained more comprehensive cache strategy support.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vuex 入門容易，但項目規模大了之後，如何組織 store 是個挑戰。這篇文章分享大型項目的 Vuex 模塊化方案。"
+wordCount: 222
 ---
 
 Vuex 入門容易，但項目規模大了之後，如何組織 store 是個挑戰。這篇文章分享大型項目的 Vuex 模塊化方案。

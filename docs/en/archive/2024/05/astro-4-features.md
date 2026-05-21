@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "关于Astro 4.0 View Transitions，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment "
+wordCount: 192
 ---
 
 关于Astro 4.0 View Transitions，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

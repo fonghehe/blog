@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 1
 description: "React Hooksを1ヶ月使って気づいたのは、`useEffect`が最も落とし穴にはまりやすい場所だということだ。特に依存配列は、原理を理解していないとバグを生む。"
+wordCount: 176
 ---
 
 React Hooksを1ヶ月使って気づいたのは、`useEffect`が最も落とし穴にはまりやすい場所だということだ。特に依存配列は、原理を理解していないとバグを生む。

@@ -7,6 +7,7 @@ tags:
 
 readingTime: 3
 description: "Next.js 11 新特性 Image Optimizationのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
+wordCount: 506
 ---
 
 Next.js 11 新特性 Image Optimizationのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。

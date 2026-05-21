@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "在日常開發中，CSS light-dark() 明暗模式的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+wordCount: 283
 ---
 
 在日常開發中，CSS light-dark() 明暗模式的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。

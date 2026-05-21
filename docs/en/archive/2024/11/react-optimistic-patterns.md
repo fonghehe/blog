@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "在日常开发中，React 乐观更新模式 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 242
 ---
 
 在日常开发中，React 乐观更新模式 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

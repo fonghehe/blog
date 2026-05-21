@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "隨着 Vue 3 進入 alpha/beta 階段，Vue Router 4 也在同步開發中。Vue Router 4 不僅僅是 Vue 3 的適配版本，它用 TypeScript 完全重寫，API 做了大量簡化，並且原生支持 Composition API。這篇文章基於 Vue Router 4 的 RFC 和早期代"
+wordCount: 385
 ---
 
 隨着 Vue 3 進入 alpha/beta 階段，Vue Router 4 也在同步開發中。Vue Router 4 不僅僅是 Vue 3 的適配版本，它用 TypeScript 完全重寫，API 做了大量簡化，並且原生支持 Composition API。這篇文章基於 Vue Router 4 的 RFC 和早期代碼，梳理主要變化。

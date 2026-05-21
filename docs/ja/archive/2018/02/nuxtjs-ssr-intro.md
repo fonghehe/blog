@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 4
 description: "最近、SEO が必要なプロジェクトで Nuxt.js を使いました。SSR の基本的な概念と Nuxt のコア使用法をまとめます。"
+wordCount: 781
 ---
 
 最近、SEO が必要なプロジェクトで Nuxt.js を使いました。SSR の基本的な概念と Nuxt のコア使用法をまとめます。

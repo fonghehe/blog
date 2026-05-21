@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 的响应式系统对对象属性和数组有一些特殊限制，搞清楚这些才能正确用 `watch`。"
+wordCount: 226
 ---
 
 Vue 的响应式系统对对象属性和数组有一些特殊限制，搞清楚这些才能正确用 `watch`。

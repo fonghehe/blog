@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "SCSS 現在幾乎是中大型項目的標配，但很多項目只是把 SCSS 當作有變量的 CSS 來用，沒有充分利用它的工程化能力。"
+wordCount: 229
 ---
 
 SCSS 現在幾乎是中大型項目的標配，但很多項目只是把 SCSS 當作有變量的 CSS 來用，沒有充分利用它的工程化能力。

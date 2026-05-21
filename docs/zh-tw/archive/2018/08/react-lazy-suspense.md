@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 16.6 釋出，帶來了 `React.lazy` 和 `Suspense`，讓元件懶載入變得非常簡單。"
+wordCount: 279
 ---
 
 React 16.6 釋出，帶來了 `React.lazy` 和 `Suspense`，讓元件懶載入變得非常簡單。

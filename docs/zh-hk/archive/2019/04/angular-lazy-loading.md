@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 內置的路由懶加載是優化大型應用首屏性能的關鍵手段。"
+wordCount: 85
 ---
 
 Angular 內置的路由懶加載是優化大型應用首屏性能的關鍵手段。

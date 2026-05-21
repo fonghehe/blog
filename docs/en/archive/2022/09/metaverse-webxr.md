@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "最近在团队中落地WebXR 元宇宙前端技术， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 215
 ---
 
 最近在团队中落地WebXR 元宇宙前端技术， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

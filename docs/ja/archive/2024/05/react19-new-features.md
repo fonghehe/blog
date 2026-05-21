@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 19 Beta がリリースされました。正式版も間もなくのようです。主要な新機能をまとめます。"
+wordCount: 245
 ---
 
 React 19 Beta がリリースされました。正式版も間もなくのようです。主要な新機能をまとめます。

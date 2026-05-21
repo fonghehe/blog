@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Svelte 本身已經很出色了——編譯時框架、零運行時開銷、簡潔的語法。SvelteKit 給了 Svelte 一個類似 Next.js 的全棧框架：文件路由、SSR/SSG、API routes。是時候體驗一下了。"
+wordCount: 202
 ---
 
 Svelte 本身已經很出色了——編譯時框架、零運行時開銷、簡潔的語法。SvelteKit 給了 Svelte 一個類似 Next.js 的全棧框架：文件路由、SSR/SSG、API routes。是時候體驗一下了。

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 19 Beta has been released — the stable version appears to be just around the corner. Here is a summary of the main new features."
+wordCount: 118
 ---
 
 React 19 Beta has been released — the stable version appears to be just around the corner. Here is a summary of the main new features.

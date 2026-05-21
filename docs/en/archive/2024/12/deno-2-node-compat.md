@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "在日常开发中，Deno 2.0 Node 兼容 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 179
 ---
 
 在日常开发中，Deno 2.0 Node 兼容 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

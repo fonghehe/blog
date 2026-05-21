@@ -5,6 +5,7 @@ tags:
   - GraphQL
 readingTime: 5
 description: "REST API 在複雜業務場景下經常遇到 over-fetching 和 under-fetching 的問題。GraphQL 讓前端精確宣告需要的資料結構，後端按需返回。Apollo Client 是目前最成熟的 GraphQL 客戶端，提供了快取、狀態管理、樂觀更新等開箱即用的能力。本文將以一個真實的部落格管理專"
+wordCount: 393
 ---
 
 REST API 在複雜業務場景下經常遇到 over-fetching 和 under-fetching 的問題。GraphQL 讓前端精確宣告需要的資料結構，後端按需返回。Apollo Client 是目前最成熟的 GraphQL 客戶端，提供了快取、狀態管理、樂觀更新等開箱即用的能力。本文將以一個真實的部落格管理專案為例，講解 Apollo Client 的完整使用流程。

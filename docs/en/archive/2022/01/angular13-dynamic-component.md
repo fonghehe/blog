@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "One of the most understated but practical changes in Angular 13 is the complete simplification of the dynamic component creation API. Previously it took three s"
+wordCount: 171
 ---
 
 One of the most understated but practical changes in Angular 13 is the complete simplification of the dynamic component creation API. Previously it took three steps to dynamically render a component; now one line of code is enough. This article demonstrates the new API through several real-world scenarios.

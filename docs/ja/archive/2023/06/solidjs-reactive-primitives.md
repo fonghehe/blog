@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 有虚拟 DOM diff，Vue 有 Proxy 响应式，Solid 选择了第三条路：编译时 + 细粒度信号。这个框架值得前端架构师了解。"
+wordCount: 517
 ---
 
 React 有虚拟 DOM diff，Vue 有 Proxy 响应式，Solid 选择了第三条路：编译时 + 细粒度信号。这个框架值得前端架构师了解。

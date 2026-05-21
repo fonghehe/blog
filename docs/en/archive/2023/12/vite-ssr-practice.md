@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "Vite SSR 实战方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 193
 ---
 
 Vite SSR 实战方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

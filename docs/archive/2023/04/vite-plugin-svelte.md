@@ -6,6 +6,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "最近在团队中落地Vite Svelte 插件生态，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
+wordCount: 269
 ---
 
 最近在团队中落地Vite Svelte 插件生态，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

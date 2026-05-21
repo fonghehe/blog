@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "公司有幾個相互依賴的項目，一直用多倉庫管理，聯調和版本同步很麻煩。研究了一下 Monorepo，發現 Lerna 是當前最主流的方案。"
+wordCount: 331
 ---
 
 公司有幾個相互依賴的項目，一直用多倉庫管理，聯調和版本同步很麻煩。研究了一下 Monorepo，發現 Lerna 是當前最主流的方案。

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Zod TypeScript Schema 校验 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real p"
+wordCount: 190
 ---
 
 Zod TypeScript Schema 校验 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "關於CSS Flexbox 複雜佈局案例，網上有不少文章但大多缺乏實戰經驗。本文結合真實項目，探討最佳實踐。"
+wordCount: 224
 ---
 
 關於CSS Flexbox 複雜佈局案例，網上有不少文章但大多缺乏實戰經驗。本文結合真實項目，探討最佳實踐。

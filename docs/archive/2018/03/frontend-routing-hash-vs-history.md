@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Vue Router 的两种模式几乎每个项目都要选，但很多人不理解为什么有这两种，区别是什么。这篇文章从原理讲起。"
+wordCount: 509
 ---
 
 Vue Router 的两种模式几乎每个项目都要选，但很多人不理解为什么有这两种，区别是什么。这篇文章从原理讲起。

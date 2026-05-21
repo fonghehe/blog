@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 3
 description: "Mobile adaptation is an unavoidable topic in frontend development. From early percentage layouts to rem, and now to vw/vh — each approach has its trade-offs. He"
+wordCount: 385
 ---
 
 Mobile adaptation is an unavoidable topic in frontend development. From early percentage layouts to rem, and now to vw/vh — each approach has its trade-offs. Here's a breakdown of the principles and how to choose.

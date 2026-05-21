@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "localStorage 只能存字符串，容量 5MB，查詢不方便。IndexedDB 是瀏覽器內置的 NoSQL 數據庫，容量可達幾百 MB，支持事務和索引查詢，適合離線應用。"
+wordCount: 171
 ---
 
 localStorage 只能存字符串，容量 5MB，查詢不方便。IndexedDB 是瀏覽器內置的 NoSQL 數據庫，容量可達幾百 MB，支持事務和索引查詢，適合離線應用。

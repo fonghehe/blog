@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "In daily development, the Frontend Build Tools 2025 Landscape is being used more and more frequently. This article systematically explains its usage, principles"
+wordCount: 104
 ---
 
 In daily development, the Frontend Build Tools 2025 Landscape is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

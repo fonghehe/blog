@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "`HttpInterceptor`は、トークン注入・エラー処理・ローディング状態などの横断的関心事を処理するAngularの最適な場所です。"
+wordCount: 135
 ---
 
 `HttpInterceptor`は、トークン注入・エラー処理・ローディング状態などの横断的関心事を処理するAngularの最適な場所です。

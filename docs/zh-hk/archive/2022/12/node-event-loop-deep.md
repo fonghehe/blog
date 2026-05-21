@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Node.js 事件循環深入在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
+wordCount: 319
 ---
 
 Node.js 事件循環深入在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。

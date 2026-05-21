@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "React 16.8 was officially released yesterday, and Hooks have moved from proposal to stable API! This is the most significant React update in years. Let me write"
+wordCount: 116
 ---
 
 React 16.8 was officially released yesterday, and Hooks have moved from proposal to stable API! This is the most significant React update in years. Let me write a thorough post about it.

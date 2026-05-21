@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Svelte 3 上周发布了，和 Vue/React 思路完全不同——编译时框架，没有运行时，没有 Virtual DOM。用了一周，说说感受。"
+wordCount: 321
 ---
 
 Svelte 3 上周发布了，和 Vue/React 思路完全不同——编译时框架，没有运行时，没有 Virtual DOM。用了一周，说说感受。

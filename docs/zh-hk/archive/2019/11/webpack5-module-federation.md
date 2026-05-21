@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "Webpack 5 Beta 版已經可以試用，最受關注的是 Module Federation（模塊聯邦）。這個特性可能會改變微前端的做法。"
+wordCount: 256
 ---
 
 Webpack 5 Beta 版已經可以試用，最受關注的是 Module Federation（模塊聯邦）。這個特性可能會改變微前端的做法。

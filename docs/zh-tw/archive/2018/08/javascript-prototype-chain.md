@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "原型鏈是 JavaScript 面向物件的基礎，但很多人學完後還是一團霧水。這篇文章用圖解+程式碼，徹底搞清楚原型鏈。"
+wordCount: 224
 ---
 
 原型鏈是 JavaScript 面向物件的基礎，但很多人學完後還是一團霧水。這篇文章用圖解+程式碼，徹底搞清楚原型鏈。

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Regarding Deno compile: Single-File Executables, many developers only stay at the API call level. This article discusses real-world problems and solutions from "
+wordCount: 211
 ---
 
 Regarding Deno compile: Single-File Executables, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

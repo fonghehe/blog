@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "最近在团队中落地React 19 use() Hook 实战，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
+wordCount: 310
 ---
 
 最近在团队中落地React 19 use() Hook 实战，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "GitHub Copilot's next-generation features have been widely discussed in the community, but many conclusions need updating as versions evolve. This article provi"
+wordCount: 152
 ---
 
 GitHub Copilot's next-generation features have been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on the latest releases.

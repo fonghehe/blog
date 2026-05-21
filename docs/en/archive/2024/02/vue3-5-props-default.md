@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "I frequently use Vue 3.5: Props Destructure Defaults in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it be"
+wordCount: 220
 ---
 
 I frequently use Vue 3.5: Props Destructure Defaults in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it better.

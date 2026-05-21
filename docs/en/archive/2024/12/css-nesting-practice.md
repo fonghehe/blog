@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS 原生嵌套实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 240
 ---
 
 CSS 原生嵌套实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

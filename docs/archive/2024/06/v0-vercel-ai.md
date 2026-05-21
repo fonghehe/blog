@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "v0 Vercel AI UI 生成工具在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
+wordCount: 322
 ---
 
 v0 Vercel AI UI 生成工具在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

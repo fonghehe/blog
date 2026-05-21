@@ -5,6 +5,7 @@ tags:
   - Esbuild
 readingTime: 2
 description: "esbuild 插件開發實踐這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
+wordCount: 295
 ---
 
 esbuild 插件開發實踐這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。

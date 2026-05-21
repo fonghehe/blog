@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "Changesets 版本管理与发布这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
+wordCount: 455
 ---
 
 Changesets 版本管理与发布这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "Web ComponentsはすでにW3C標準となっており、ChromeとFirefoxでネイティブサポートされています。フレームワークに依存せず、ネイティブブラウザでコンポーネント化を実現できます。"
+wordCount: 187
 ---
 
 Web ComponentsはすでにW3C標準となっており、ChromeとFirefoxでネイティブサポートされています。フレームワークに依存せず、ネイティブブラウザでコンポーネント化を実現できます。

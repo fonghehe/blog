@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "React 18 useTransition 非阻塞更新 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the "
+wordCount: 178
 ---
 
 React 18 useTransition 非阻塞更新 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

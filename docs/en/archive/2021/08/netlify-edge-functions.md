@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "Netlify Edge Functions 边缘计算 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the t"
+wordCount: 198
 ---
 
 Netlify Edge Functions 边缘计算 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

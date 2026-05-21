@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 1
 description: "今年主導了三個大的技術棧升級：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每個都踩過坑，總結出一套方法論。技術升級不只是技術決策，更是一次團隊管理實踐。"
+wordCount: 276
 ---
 
 今年主導了三個大的技術棧升級：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每個都踩過坑，總結出一套方法論。技術升級不只是技術決策，更是一次團隊管理實踐。

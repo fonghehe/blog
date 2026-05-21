@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "中後臺系統是大多數前端工程師的日常工作場景。這篇文章整理一套 Vue 2 + Element UI 的中後臺基礎架構，適合快速搭建新專案。"
+wordCount: 143
 ---
 
 中後臺系統是大多數前端工程師的日常工作場景。這篇文章整理一套 Vue 2 + Element UI 的中後臺基礎架構，適合快速搭建新專案。

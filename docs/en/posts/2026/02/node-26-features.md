@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Node.js 26 LTS new features are becoming increasingly relevant in frontend development. This article dives into the core principles and best practices from a re"
+wordCount: 174
 ---
 
 Node.js 26 LTS new features are becoming increasingly relevant in frontend development. This article dives into the core principles and best practices from a real-project perspective.

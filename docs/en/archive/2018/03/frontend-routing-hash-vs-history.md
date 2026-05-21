@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Every project using Vue Router has to choose between two modes, but many people don't understand why both exist or what the difference is. This article starts f"
+wordCount: 338
 ---
 
 Every project using Vue Router has to choose between two modes, but many people don't understand why both exist or what the difference is. This article starts from the principles.

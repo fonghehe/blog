@@ -6,6 +6,7 @@ tags:
   - Vitest
 readingTime: 2
 description: "Vitest 1.0 正式发布稳定版This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh "
+wordCount: 193
 ---
 
 Vitest 1.0 正式发布稳定版This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.

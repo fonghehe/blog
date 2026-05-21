@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular Materialは、AngularオフィシャルのMaterial Design UIコンポーネントライブラリです。すぐに使えてアクセシビリティも良好で、企業の管理システムを素早く構築するのに適しています。"
+wordCount: 299
 ---
 
 Angular Materialは、AngularオフィシャルのMaterial Design UIコンポーネントライブラリです。すぐに使えてアクセシビリティも良好で、企業の管理システムを素早く構築するのに適しています。

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Declarative Shadow DOM 声明式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real"
+wordCount: 212
 ---
 
 Declarative Shadow DOM 声明式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "After two years writing Vue, I've started reflecting on how components should be designed. Here are several principles for making components more maintainable."
+wordCount: 86
 ---
 
 After two years writing Vue, I've started reflecting on how components should be designed. Here are several principles for making components more maintainable.

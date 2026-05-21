@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "在團隊推廣CSS BEM 命名規範實踐的過程中，踩了不少坑。整理出來希望對大家有所幫助。"
+wordCount: 207
 ---
 
 在團隊推廣CSS BEM 命名規範實踐的過程中，踩了不少坑。整理出來希望對大家有所幫助。

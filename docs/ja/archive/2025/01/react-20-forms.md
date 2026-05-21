@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 20はフォーム処理にネイティブのサポートを追加しました。`<Form>`コンポーネント、`useField`、`useFieldArray`の3つの新APIによって、フォームライブラリなしでも複雑なフォームを宣言的に構築できるようになりました。"
+wordCount: 420
 ---
 
 React 20はフォーム処理にネイティブのサポートを追加しました。`<Form>`コンポーネント、`useField`、`useFieldArray`の3つの新APIによって、フォームライブラリなしでも複雑なフォームを宣言的に構築できるようになりました。

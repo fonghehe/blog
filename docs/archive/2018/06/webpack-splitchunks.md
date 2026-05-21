@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "Webpack 4 用 `splitChunks` 替代了之前的 `CommonsChunkPlugin`，配置更简单。记录一下实际项目里的配置。"
+wordCount: 269
 ---
 
 Webpack 4 用 `splitChunks` 替代了之前的 `CommonsChunkPlugin`，配置更简单。记录一下实际项目里的配置。

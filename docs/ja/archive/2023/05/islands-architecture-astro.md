@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "最近在团队中落地Islands Architecture Astro 实践，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
+wordCount: 477
 ---
 
 最近在团队中落地Islands Architecture Astro 实践，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。

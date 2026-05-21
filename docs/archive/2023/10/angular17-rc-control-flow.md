@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 17 Release Candidate 于 2023 年 10 月 4 日发布，正式版预计 11 月 8 日发布。RC 阶段的 API 已经稳定，可以在非生产环境中提前体验。两个最重磅的特性——**内置控制流**和 **Deferrable Views**——彻底改变了 Angular 模板的写法。"
+wordCount: 380
 ---
 
 Angular 17 Release Candidate 于 2023 年 10 月 4 日发布，正式版预计 11 月 8 日发布。RC 阶段的 API 已经稳定，可以在非生产环境中提前体验。两个最重磅的特性——**内置控制流**和 **Deferrable Views**——彻底改变了 Angular 模板的写法。

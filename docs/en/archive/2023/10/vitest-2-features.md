@@ -6,6 +6,7 @@ tags:
   - Vitest
 readingTime: 2
 description: "We recently implemented Vitest 2.0 新特性， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 210
 ---
 
 We recently implemented Vitest 2.0 新特性， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

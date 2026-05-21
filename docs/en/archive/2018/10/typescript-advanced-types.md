@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "After learning basic generics, I dug into conditional types and mapped types and found that TypeScript's type system is far more powerful than I had imagined."
+wordCount: 116
 ---
 
 After learning basic generics, I dug into conditional types and mapped types and found that TypeScript's type system is far more powerful than I had imagined.

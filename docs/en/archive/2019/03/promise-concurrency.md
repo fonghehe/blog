@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "Controlling JavaScript Promise concurrency is a problem developers encounter frequently in day-to-day work. Drawing from real projects, this article shares conc"
+wordCount: 53
 ---
 
 Controlling JavaScript Promise concurrency is a problem developers encounter frequently in day-to-day work. Drawing from real projects, this article shares concrete implementation approaches and lessons learned.

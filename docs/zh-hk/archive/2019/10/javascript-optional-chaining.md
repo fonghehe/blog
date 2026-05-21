@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 3
 description: "可選鏈操作符（Optional Chaining）`?.` 是 TC39 Stage 3 提案，預計將成為 ES2020 標準的一部分。它允許安全地訪問深層嵌套的對象屬性，而不需要在每一層都做空值檢查。"
+wordCount: 423
 ---
 
 可選鏈操作符（Optional Chaining）`?.` 是 TC39 Stage 3 提案，預計將成為 ES2020 標準的一部分。它允許安全地訪問深層嵌套的對象屬性，而不需要在每一層都做空值檢查。

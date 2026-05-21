@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "When it comes to Turbopack 2025 Production Ready, many developers only scratch the surface at the API call level. This article attempts to discuss the real-worl"
+wordCount: 125
 ---
 
 When it comes to Turbopack 2025 Production Ready, many developers only scratch the surface at the API call level. This article attempts to discuss the real-world problems and solutions you'll encounter from a production environment perspective.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "slot 是 Vue 組件複用裏最強大的機制之一，但很多人只用到了最基礎的默認 slot。整理一下實際項目中的用法。"
+wordCount: 209
 ---
 
 slot 是 Vue 組件複用裏最強大的機制之一，但很多人只用到了最基礎的默認 slot。整理一下實際項目中的用法。

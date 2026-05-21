@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript 的型別系統非常強大，對映型別（Mapped Types）是其中最實用的特性之一。它允許你基於已有型別建立新型別，批次修改屬性的修飾符。這篇文章從基礎到實戰，把對映型別講清楚。"
+wordCount: 479
 ---
 
 TypeScript 的型別系統非常強大，對映型別（Mapped Types）是其中最實用的特性之一。它允許你基於已有型別建立新型別，批次修改屬性的修飾符。這篇文章從基礎到實戰，把對映型別講清楚。

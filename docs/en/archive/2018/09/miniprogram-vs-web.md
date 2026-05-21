@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently picked up a WeChat Mini Program project. Having a web background made the learning curve manageable, but there are plenty of things to adapt to."
+wordCount: 163
 ---
 
 I recently picked up a WeChat Mini Program project. Having a web background made the learning curve manageable, but there are plenty of things to adapt to.

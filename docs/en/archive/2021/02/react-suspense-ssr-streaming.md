@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，React 18 Suspense SSR 流式渲染 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategie"
+wordCount: 223
 ---
 
 在日常开发中，React 18 Suspense SSR 流式渲染 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Bundle size is a key frontend performance indicator. Projects without constraints tend to quietly balloon — add a library here, add a library there, and suddenl"
+wordCount: 229
 ---
 
 Bundle size is a key frontend performance indicator. Projects without constraints tend to quietly balloon — add a library here, add a library there, and suddenly you're 100KB over. The idea of a performance budget is like a financial budget: treat the bundle size as a budget, and going over it means overspending.

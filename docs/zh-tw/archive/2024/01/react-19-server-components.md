@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "在日常開發中，React 19 Server Components 穩定版的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
+wordCount: 300
 ---
 
 在日常開發中，React 19 Server Components 穩定版的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。

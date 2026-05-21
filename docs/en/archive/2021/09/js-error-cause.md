@@ -6,6 +6,7 @@ tags:
 
 readingTime: 2
 description: "关于JavaScript Error cause 错误链，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production persp"
+wordCount: 199
 ---
 
 关于JavaScript Error cause 错误链，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

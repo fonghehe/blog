@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 2.5 では TypeScript サポートの大幅な改善と新しいエラーハンドリングフックが追加されました。"
+wordCount: 284
 ---
 
 Vue 2.5 では TypeScript サポートの大幅な改善と新しいエラーハンドリングフックが追加されました。

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "React 22 preview features are a topic worth paying attention to in frontend development. This article explores core concepts and best practices from real projec"
+wordCount: 86
 ---
 
 React 22 preview features are a topic worth paying attention to in frontend development. This article explores core concepts and best practices from real project experience.

@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "After a project goes live, problems are usually discovered by users first, then reported to operations, and finally reach development. Building a monitoring sys"
+wordCount: 68
 ---
 
 After a project goes live, problems are usually discovered by users first, then reported to operations, and finally reach development. Building a monitoring system lets us find problems before users do.

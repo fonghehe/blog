@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 15 于 2022 年 11 月 16 日正式发布。这个版本让 Standalone APIs 进入稳定状态（不再是 developer preview），同时带来了两个重量级新特性：Directive Composition API 和 NgOptimizedImage。"
+wordCount: 291
 ---
 
 Angular 15 于 2022 年 11 月 16 日正式发布。这个版本让 Standalone APIs 进入稳定状态（不再是 developer preview），同时带来了两个重量级新特性：Directive Composition API 和 NgOptimizedImage。

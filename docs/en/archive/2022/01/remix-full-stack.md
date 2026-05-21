@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In daily development, Remix 全栈框架实战 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategi"
+wordCount: 213
 ---
 
 In daily development, Remix 全栈框架实战 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

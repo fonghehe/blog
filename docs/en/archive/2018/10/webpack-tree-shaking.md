@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "\"Tree shaking\" comes from Rollup — the idea of shaking unused code off like dead leaves. Webpack has supported it since version 2, but it requires correct confi"
+wordCount: 163
 ---
 
 "Tree shaking" comes from Rollup — the idea of shaking unused code off like dead leaves. Webpack has supported it since version 2, but it requires correct configuration to actually work.

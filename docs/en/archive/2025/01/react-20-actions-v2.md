@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "The Actions mechanism in React 20 receives a major upgrade. v1 Actions mainly addressed form submission scenarios; v2 extends them into a general-purpose async "
+wordCount: 241
 ---
 
 The Actions mechanism in React 20 receives a major upgrade. v1 Actions mainly addressed form submission scenarios; v2 extends them into a general-purpose async operation primitive covering optimistic updates, error boundary integration, and transactional state management.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Regarding Pinia v3 New Features, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production env"
+wordCount: 176
 ---
 
 Regarding Pinia v3 New Features, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

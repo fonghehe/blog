@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Astro 5 釋出了，最大的變化是 Content Layer API。對於內容驅動的網站來說，這是一個很有意義的升級。"
+wordCount: 169
 ---
 
 Astro 5 釋出了，最大的變化是 Content Layer API。對於內容驅動的網站來說，這是一個很有意義的升級。

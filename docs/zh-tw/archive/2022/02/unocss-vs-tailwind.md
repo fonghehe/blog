@@ -6,6 +6,7 @@ tags:
   - TailwindCSS
 readingTime: 2
 description: "Tailwind CSS 統治了原子化 CSS 領域好幾年。但 Ant Fu 的 UnoCSS 出現後，格局變了。UnoCSS 不是一個 CSS 框架，而是一個原子化 CSS 引擎——這個定位差異帶來了本質上的不同。"
+wordCount: 390
 ---
 
 Tailwind CSS 統治了原子化 CSS 領域好幾年。但 Ant Fu 的 UnoCSS 出現後，格局變了。UnoCSS 不是一個 CSS 框架，而是一個原子化 CSS 引擎——這個定位差異帶來了本質上的不同。

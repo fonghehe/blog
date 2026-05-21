@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Cross-origin issues are unavoidable in frontend development. Here's an overview of common solutions and when to use each one."
+wordCount: 157
 ---
 
 Cross-origin issues are unavoidable in frontend development. Here's an overview of common solutions and when to use each one.

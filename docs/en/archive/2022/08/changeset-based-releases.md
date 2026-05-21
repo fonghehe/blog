@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "基于 Changeset 的版本发布 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real project"
+wordCount: 173
 ---
 
 基于 Changeset 的版本发布 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

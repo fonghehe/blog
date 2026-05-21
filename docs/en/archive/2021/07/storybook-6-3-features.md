@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，Storybook 6.3 新特性交互测试 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 187
 ---
 
 在日常开发中，Storybook 6.3 新特性交互测试 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

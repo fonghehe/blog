@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "The middleware pattern is a fundamental design pattern in Node.js, best exemplified by Express.js. It allows you to compose request/response processing through "
+wordCount: 149
 ---
 
 The middleware pattern is a fundamental design pattern in Node.js, best exemplified by Express.js. It allows you to compose request/response processing through a chain of functions. This article explores its core principles and practical applications.

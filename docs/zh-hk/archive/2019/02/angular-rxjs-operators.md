@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "RxJS 6 與 Angular 深度集成，掌握核心操作符是寫出健壯響應式代碼的基礎。"
+wordCount: 86
 ---
 
 RxJS 6 與 Angular 深度集成，掌握核心操作符是寫出健壯響應式代碼的基礎。

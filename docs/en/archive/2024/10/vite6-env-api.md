@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Vite 6 Environment API 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
+wordCount: 238
 ---
 
 Vite 6 Environment API 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

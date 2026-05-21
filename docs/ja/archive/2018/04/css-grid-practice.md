@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "1 月に CSS Grid の基礎を書きました。今回は実際のプロジェクトシナリオを取り上げ、Grid が Flexbox では難しい問題をどう解決するかを見ていきます。"
+wordCount: 289
 ---
 
 1 月に CSS Grid の基礎を書きました。今回は実際のプロジェクトシナリオを取り上げ、Grid が Flexbox では難しい問題をどう解決するかを見ていきます。

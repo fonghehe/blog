@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript ships with a collection of utility types. Most developers know `Partial` and `Pick`, but the full library is much richer and more powerful than that."
+wordCount: 79
 ---
 
 TypeScript ships with a collection of utility types. Most developers know `Partial` and `Pick`, but the full library is much richer and more powerful than that.

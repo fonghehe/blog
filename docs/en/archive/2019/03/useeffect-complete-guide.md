@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "After using React Hooks for a month, I found that `useEffect` is the easiest place to get burned. The dependency array especially will lead to bugs if you don't"
+wordCount: 85
 ---
 
 After using React Hooks for a month, I found that `useEffect` is the easiest place to get burned. The dependency array especially will lead to bugs if you don't understand the underlying principles.

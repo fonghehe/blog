@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "We recently implemented CSS Subgrid 浏览器实现， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 179
 ---
 
 We recently implemented CSS Subgrid 浏览器实现， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

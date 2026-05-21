@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "`localStorage` can only store strings, has a 5 MB limit, and is awkward to query. IndexedDB is the browser's built-in NoSQL database — it can store hundreds of "
+wordCount: 161
 ---
 
 `localStorage` can only store strings, has a 5 MB limit, and is awkward to query. IndexedDB is the browser's built-in NoSQL database — it can store hundreds of megabytes, supports transactions and index queries, and is well-suited for offline applications.

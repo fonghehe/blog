@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "There are many things in a frontend project that can be automated with Node.js scripts: code generation, file processing, build utilities, and more."
+wordCount: 88
 ---
 
 There are many things in a frontend project that can be automated with Node.js scripts: code generation, file processing, build utilities, and more.

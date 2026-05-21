@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "My team recently rolled out Bun 3.0 as our full-stack runtime, and we've accumulated quite a bit of hands-on experience. Here's a writeup for anyone doing simil"
+wordCount: 182
 ---
 
 My team recently rolled out Bun 3.0 as our full-stack runtime, and we've accumulated quite a bit of hands-on experience. Here's a writeup for anyone doing similar work.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "最近在团队中落地Partial Prerendering 部分预渲染， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 210
 ---
 
 最近在团队中落地Partial Prerendering 部分预渲染， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Angular Universal 讓 Angular 應用可以在服務端預渲染 HTML，解決兩個核心問題：SEO（搜索引擎抓取 SPA 困難）和首屏性能（FCP 指標優化）。Angular 12 的 Universal 已經相當成熟，這篇文章覆蓋從集成到優化的完整流程。"
+wordCount: 327
 ---
 
 Angular Universal 讓 Angular 應用可以在服務端預渲染 HTML，解決兩個核心問題：SEO（搜索引擎抓取 SPA 困難）和首屏性能（FCP 指標優化）。Angular 12 的 Universal 已經相當成熟，這篇文章覆蓋從集成到優化的完整流程。

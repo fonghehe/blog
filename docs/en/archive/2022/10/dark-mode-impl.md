@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "最近在团队中落地前端暗色模式实现， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 247
 ---
 
 最近在团队中落地前端暗色模式实现， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

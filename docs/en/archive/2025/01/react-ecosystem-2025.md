@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "After the release of React 20, the entire ecosystem has undergone a dramatic reshuffling. Many once-indispensable libraries have been replaced by native APIs, a"
+wordCount: 244
 ---
 
 After the release of React 20, the entire ecosystem has undergone a dramatic reshuffling. Many once-indispensable libraries have been replaced by native APIs, and new tooling is redefining the development experience. This article maps the state of the React ecosystem in early 2025 to help you make informed technology decisions.

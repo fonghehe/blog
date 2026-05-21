@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS 自定義屬性（又叫 CSS 變數）已經被主流瀏覽器支援了，比 Sass 變數更靈活，可以執行時修改。"
+wordCount: 174
 ---
 
 CSS 自定義屬性（又叫 CSS 變數）已經被主流瀏覽器支援了，比 Sass 變數更靈活，可以執行時修改。

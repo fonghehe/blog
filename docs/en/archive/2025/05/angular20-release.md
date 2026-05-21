@@ -7,6 +7,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Angular 20 was officially released in May 2025. This is the most important milestone since Angular's \"Signal transformation\" began in 2022—Zoneless change detec"
+wordCount: 217
 ---
 
 Angular 20 was officially released in May 2025. This is the most important milestone since Angular's "Signal transformation" began in 2022—Zoneless change detection is now officially stable and production-ready; Signal Forms enters developer preview; and the new `resource()` API provides native support for declarative async data management.

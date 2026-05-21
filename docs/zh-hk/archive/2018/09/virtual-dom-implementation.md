@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 3
 description: "Virtual DOM 是 React 和 Vue 2 的核心概念。看了很多文章，感覺還是自己動手實現一遍才真正理解。這篇文章用幾百行代碼實現一個最簡版本的 VDOM。"
+wordCount: 409
 ---
 
 Virtual DOM 是 React 和 Vue 2 的核心概念。看了很多文章，感覺還是自己動手實現一遍才真正理解。這篇文章用幾百行代碼實現一個最簡版本的 VDOM。

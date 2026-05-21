@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular has deeply integrated RxJS since its inception — HttpClient, EventEmitter, and Router are all based on Observables. Mastering RxJS operators lets you ha"
+wordCount: 161
 ---
 
 Angular has deeply integrated RxJS since its inception — HttpClient, EventEmitter, and Router are all based on Observables. Mastering RxJS operators lets you handle async operations and component communication more elegantly.

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "Using CSS Grid and Flexbox in a complementary manner is a common challenge in day-to-day development. This article draws from real project experience to share p"
+wordCount: 100
 ---
 
 Using CSS Grid and Flexbox in a complementary manner is a common challenge in day-to-day development. This article draws from real project experience to share practical implementation approaches and lessons learned.

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "在日常开发中，TypeScript 5.6 新特性 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 172
 ---
 
 在日常开发中，TypeScript 5.6 新特性 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

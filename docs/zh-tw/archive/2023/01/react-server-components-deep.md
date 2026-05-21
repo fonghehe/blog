@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "React Server Components (RSC) 不是 SSR 的升級版，而是一個全新的渲染範式。SSR 生成 HTML 字串，RSC 在服務端執行元件並將 React 樹序列化到客戶端。理解兩者的區別，才能正確使用 Next.js 13/14 的 App Router。"
+wordCount: 562
 ---
 
 React Server Components (RSC) 不是 SSR 的升級版，而是一個全新的渲染範式。SSR 生成 HTML 字串，RSC 在服務端執行元件並將 React 樹序列化到客戶端。理解兩者的區別，才能正確使用 Next.js 13/14 的 App Router。

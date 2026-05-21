@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Promoting Webpack 4 Tree Shaking within the team came with plenty of pitfalls. Documenting them here in the hope it helps others."
+wordCount: 117
 ---
 
 Promoting Webpack 4 Tree Shaking within the team came with plenty of pitfalls. Documenting them here in the hope it helps others.

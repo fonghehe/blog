@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "When CSS styles don't apply, specificity is almost always the reason. This article explains the specificity rules clearly."
+wordCount: 131
 ---
 
 When CSS styles don't apply, specificity is almost always the reason. This article explains the specificity rules clearly.

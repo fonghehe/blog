@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "一月份寫過 CSS Grid 的基礎，這次結合實際項目場景，看看 Grid 怎麼解決 Flex 不好解決的問題。"
+wordCount: 186
 ---
 
 一月份寫過 CSS Grid 的基礎，這次結合實際項目場景，看看 Grid 怎麼解決 Flex 不好解決的問題。

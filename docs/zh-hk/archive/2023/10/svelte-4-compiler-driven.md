@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Svelte 4 發佈了，同時 Svelte 5 Runes 提案也已公開。聊聊 Svelte 的設計哲學，以及它和 React/Vue 的根本區別。"
+wordCount: 496
 ---
 
 Svelte 4 發佈了，同時 Svelte 5 Runes 提案也已公開。聊聊 Svelte 的設計哲學，以及它和 React/Vue 的根本區別。

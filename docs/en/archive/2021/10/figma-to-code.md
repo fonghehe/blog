@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "最近在团队中落地Figma to Code 设计稿转代码， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 191
 ---
 
 最近在团队中落地Figma to Code 设计稿转代码， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

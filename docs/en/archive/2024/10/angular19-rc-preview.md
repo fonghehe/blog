@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 19 RC is now available for preview, with the official release scheduled for November 19, 2024. This article covers the most important new features based"
+wordCount: 440
 ---
 
 Angular 19 RC is now available for preview, with the official release scheduled for November 19, 2024. This article covers the most important new features based on the RC version — **Incremental Hydration** and **Template HMR** — as well as further refinements to route-level rendering modes.

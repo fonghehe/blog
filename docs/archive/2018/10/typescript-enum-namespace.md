@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript 的枚举（enum）是很多人从 Java/C# 来的必用特性，但在 TS 里有一些值得注意的地方。命名空间（namespace）用的少，但也有合适的场景。"
+wordCount: 274
 ---
 
 TypeScript 的枚举（enum）是很多人从 Java/C# 来的必用特性，但在 TS 里有一些值得注意的地方。命名空间（namespace）用的少，但也有合适的场景。

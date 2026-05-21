@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Vite 6 has been released. As the de facto standard for frontend build tools today, this update brings a number of substantial improvements."
+wordCount: 134
 ---
 
 Vite 6 has been released. As the de facto standard for frontend build tools today, this update brings a number of substantial improvements.

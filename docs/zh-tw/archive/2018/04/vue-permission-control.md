@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "中後臺系統幾乎必然要做許可權控制。這篇文章整理一套完整方案：路由許可權 + 選單許可權 + 按鈕許可權，基於 Vue 2 + Vue Router + Vuex。"
+wordCount: 267
 ---
 
 中後臺系統幾乎必然要做許可權控制。這篇文章整理一套完整方案：路由許可權 + 選單許可權 + 按鈕許可權，基於 Vue 2 + Vue Router + Vuex。

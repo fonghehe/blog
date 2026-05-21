@@ -5,6 +5,7 @@ tags:
   - HTTP
 readingTime: 1
 description: "HTTPS 已经是现代 Web 的标配，但具体是怎么工作的？和前端开发有什么关联？整理一下。"
+wordCount: 201
 ---
 
 HTTPS 已经是现代 Web 的标配，但具体是怎么工作的？和前端开发有什么关联？整理一下。

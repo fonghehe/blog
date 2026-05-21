@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS 色彩函数对比在近年来发展迅速，本文将深入分析其原理和实践方法。"
+wordCount: 280
 ---
 
 CSS 色彩函数对比在近年来发展迅速，本文将深入分析其原理和实践方法。

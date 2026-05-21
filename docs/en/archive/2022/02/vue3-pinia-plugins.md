@@ -6,6 +6,7 @@ tags:
   - Pinia
 readingTime: 1
 description: "In daily development, Pinia 插件系统与持久化 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strate"
+wordCount: 156
 ---
 
 In daily development, Pinia 插件系统与持久化 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

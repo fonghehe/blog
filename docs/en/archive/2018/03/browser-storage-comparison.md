@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Frontend has several storage options, but many people haven't systematically thought about which to use for which scenario."
+wordCount: 247
 ---
 
 Frontend has several storage options, but many people haven't systematically thought about which to use for which scenario.

@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "Node.js 内置 fetch API 预览 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic"
+wordCount: 167
 ---
 
 Node.js 内置 fetch API 预览 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

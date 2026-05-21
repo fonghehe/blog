@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "学完基础泛型后，深入研究了一下条件类型和映射类型，发现 TypeScript 的类型系统比想象中强大得多。"
+wordCount: 186
 ---
 
 学完基础泛型后，深入研究了一下条件类型和映射类型，发现 TypeScript 的类型系统比想象中强大得多。

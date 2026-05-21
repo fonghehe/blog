@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "Frequently used in daily work, React 18 严格模式，Here is a systematic summary to help everyone better understand and apply it."
+wordCount: 144
 ---
 
 Frequently used in daily work, React 18 严格模式，Here is a systematic summary to help everyone better understand and apply it.

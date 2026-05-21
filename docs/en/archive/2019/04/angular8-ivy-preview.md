@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "The first Angular 8 RC has been released, bringing two highly anticipated features: an opt-in Ivy compiler preview and `import()` lazy loading syntax."
+wordCount: 275
 ---
 
 The first Angular 8 RC has been released, bringing two highly anticipated features: an opt-in Ivy compiler preview and `import()` lazy loading syntax.

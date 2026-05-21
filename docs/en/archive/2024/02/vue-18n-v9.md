@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "The topic of vue-i18n v9 Internationalization in Practice has been discussed many times in the community, but with each new version, many conclusions need updat"
+wordCount: 185
 ---
 
 The topic of vue-i18n v9 Internationalization in Practice has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.

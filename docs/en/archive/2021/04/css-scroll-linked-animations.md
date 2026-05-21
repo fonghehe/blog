@@ -6,6 +6,7 @@ tags:
 
 readingTime: 1
 description: "最近在团队中落地CSS 滚动驱动动画 Scroll Animations， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 200
 ---
 
 最近在团队中落地CSS 滚动驱动动画 Scroll Animations， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

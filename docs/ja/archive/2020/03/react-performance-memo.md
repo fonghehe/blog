@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 性能优化 memo useMemo这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
+wordCount: 316
 ---
 
 React 性能优化 memo useMemo这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

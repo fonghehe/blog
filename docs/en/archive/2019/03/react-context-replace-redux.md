@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "Promoting React Context as a Redux replacement within the team came with plenty of pitfalls. Documenting them here in the hope it helps others."
+wordCount: 78
 ---
 
 Promoting React Context as a Redux replacement within the team came with plenty of pitfalls. Documenting them here in the hope it helps others.

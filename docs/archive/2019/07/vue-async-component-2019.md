@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "很多同学在Vue 2 异步组件加载上存在理解偏差，本文系统地梳理核心要点和常见误区。"
+wordCount: 224
 ---
 
 很多同学在Vue 2 异步组件加载上存在理解偏差，本文系统地梳理核心要点和常见误区。

@@ -5,6 +5,7 @@ tags:
   - Frontend Engineering
 readingTime: 2
 description: "关于Monorepo 2022 工具链对比，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 237
 ---
 
 关于Monorepo 2022 工具链对比，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

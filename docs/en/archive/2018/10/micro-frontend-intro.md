@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 6
 description: "Our back-office management system was built with Vue 2 three years ago. It started with just a handful of pages and was a joy to work with. Three years later, i"
+wordCount: 938
 ---
 
 ## Background

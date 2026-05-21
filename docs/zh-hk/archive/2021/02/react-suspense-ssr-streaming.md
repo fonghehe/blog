@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常開發中，React 18 Suspense SSR 流式渲染的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+wordCount: 350
 ---
 
 在日常開發中，React 18 Suspense SSR 流式渲染的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。

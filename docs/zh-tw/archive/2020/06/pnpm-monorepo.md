@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "團隊有 5 個前端專案，共用一套元件庫和工具函式。之前元件庫改動需要手動釋出、各專案手動升級，效率太低。用 pnpm workspace 搭建 Monorepo 後，一切都變簡單了。"
+wordCount: 177
 ---
 
 團隊有 5 個前端專案，共用一套元件庫和工具函式。之前元件庫改動需要手動釋出、各專案手動升級，效率太低。用 pnpm workspace 搭建 Monorepo 後，一切都變簡單了。

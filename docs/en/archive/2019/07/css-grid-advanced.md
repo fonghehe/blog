@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 3
 description: "CSS Grid has been supported by mainstream browsers for quite some time. Most developers know the basics of `grid-template-columns` and `grid-template-rows`, but"
+wordCount: 337
 ---
 
 CSS Grid has been supported by mainstream browsers for quite some time. Most developers know the basics of `grid-template-columns` and `grid-template-rows`, but advanced features like `grid-template-areas`, `auto-fill` vs `auto-fit`, and `minmax()` are what really unlock Grid's power. This article walks through these features with practical layout examples.

@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "プロジェクトは通常、development、staging、productionの3つの環境があり、それぞれAPIアドレスやフィーチャーフラグなどの設定が異なります。この記事ではマルチ環境設定のベストプラクティスをまとめます。"
+wordCount: 369
 ---
 
 プロジェクトは通常、development、staging、productionの3つの環境があり、それぞれAPIアドレスやフィーチャーフラグなどの設定が異なります。この記事ではマルチ環境設定のベストプラクティスをまとめます。

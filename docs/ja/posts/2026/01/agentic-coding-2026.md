@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 4
 description: "Agentic Codingはもはや概念実証の段階ではありません。2026年、Claude Code、Cursor Agent、GitHub Copilot Workspaceはすべて成熟した製品になりました。しかしAgentic Codingを真に使いこなしているチームはまだ少なく、ほとんどは「Agentを使って単一"
+wordCount: 689
 ---
 
 Agentic Codingはもはや概念実証の段階ではありません。2026年、Claude Code、Cursor Agent、GitHub Copilot Workspaceはすべて成熟した製品になりました。しかしAgentic Codingを真に使いこなしているチームはまだ少なく、ほとんどは「Agentを使って単一の関数を書く」段階にとどまっています。

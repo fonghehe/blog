@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "One of the biggest shifts in 2025 is the maturation of Agentic Coding. AI is no longer just a tab-completion tool—it's an agent capable of autonomously completi"
+wordCount: 121
 ---
 
 One of the biggest shifts in 2025 is the maturation of Agentic Coding. AI is no longer just a tab-completion tool—it's an agent capable of autonomously completing complex tasks. Here are some battle-tested patterns.

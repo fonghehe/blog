@@ -5,6 +5,7 @@ tags:
   - 測試
 readingTime: 2
 description: "在日常開發中，Playwright 2025 新功能的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
+wordCount: 296
 ---
 
 在日常開發中，Playwright 2025 新功能的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。

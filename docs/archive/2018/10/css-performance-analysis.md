@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "做了一个滑入动画，手机上卡顿明显。排查后发现是用了 `margin`/`top` 做动画，改成 `transform` 之后流畅了很多。"
+wordCount: 221
 ---
 
 做了一个滑入动画，手机上卡顿明显。排查后发现是用了 `margin`/`top` 做动画，改成 `transform` 之后流畅了很多。

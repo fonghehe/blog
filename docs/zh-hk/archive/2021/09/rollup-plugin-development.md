@@ -5,6 +5,7 @@ tags:
   - Rollup
 readingTime: 2
 description: "Vite 底層用 Rollup 做生產構建，理解 Rollup 插件機制對深度使用 Vite 非常重要。今年我們在組件庫構建中開發了幾個自定義 Rollup 插件，總結一下開發經驗。"
+wordCount: 229
 ---
 
 Vite 底層用 Rollup 做生產構建，理解 Rollup 插件機制對深度使用 Vite 非常重要。今年我們在組件庫構建中開發了幾個自定義 Rollup 插件，總結一下開發經驗。

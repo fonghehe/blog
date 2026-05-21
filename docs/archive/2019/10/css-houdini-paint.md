@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 4
 description: "CSS Houdini 是 W3C 提出的一组底层 CSS API，它让开发者可以直接接入 CSS 渲染引擎的各个阶段。其中 Paint API 是目前浏览器支持度最好的一个，它允许我们用 JavaScript 绘制自定义的 CSS 图案，替代传统的背景图方案。"
+wordCount: 685
 ---
 
 CSS Houdini 是 W3C 提出的一组底层 CSS API，它让开发者可以直接接入 CSS 渲染引擎的各个阶段。其中 Paint API 是目前浏览器支持度最好的一个，它允许我们用 JavaScript 绘制自定义的 CSS 图案，替代传统的背景图方案。

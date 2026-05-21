@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "最近用 Nuxt.js 做了一個需要 SEO 的項目，整理一下 SSR 的基本概念和 Nuxt 的核心用法。"
+wordCount: 462
 ---
 
 最近用 Nuxt.js 做了一個需要 SEO 的項目，整理一下 SSR 的基本概念和 Nuxt 的核心用法。

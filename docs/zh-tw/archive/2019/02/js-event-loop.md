@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "關於JavaScript Event Loop 機制詳解，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。"
+wordCount: 258
 ---
 
 關於JavaScript Event Loop 機制詳解，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。

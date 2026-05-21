@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 8は**Builders API**を正式に公開し、コミュニティが`ng build`、`ng test`、`ng serve`などのコマンドに対してカスタム実装を提供できるようになりました。これは`@angular-builders/custom-webpack`や`@nrwl/workspace`な"
+wordCount: 164
 ---
 
 Angular 8は**Builders API**を正式に公開し、コミュニティが`ng build`、`ng test`、`ng serve`などのコマンドに対してカスタム実装を提供できるようになりました。これは`@angular-builders/custom-webpack`や`@nrwl/workspace`などの多くの優れたツールの基盤にもなっています。

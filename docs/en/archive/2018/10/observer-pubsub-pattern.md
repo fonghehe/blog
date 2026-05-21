@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "These two patterns are often confused, but there is a fundamental difference between them."
+wordCount: 129
 ---
 
 These two patterns are often confused, but there is a fundamental difference between them.

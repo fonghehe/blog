@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Our company's legacy backend system was a jQuery project from 2016. New features needed to be built with Vue, but a full rewrite wasn't feasible. Micro-frontend"
+wordCount: 257
 ---
 
 Our company's legacy backend system was a jQuery project from 2016. New features needed to be built with Vue, but a full rewrite wasn't feasible. Micro-frontends solved this problem.

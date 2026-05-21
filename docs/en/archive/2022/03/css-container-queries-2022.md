@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS Container Queries 浏览器支持This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides"
+wordCount: 164
 ---
 
 CSS Container Queries 浏览器支持This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.

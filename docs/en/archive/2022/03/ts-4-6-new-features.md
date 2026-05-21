@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "In daily development, TypeScript 4.9 satisfies 操作符 is being used more and more frequently. This article systematically explains its usage, principles, and optim"
+wordCount: 175
 ---
 
 In daily development, TypeScript 4.9 satisfies 操作符 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

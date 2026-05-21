@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Nuxt 5 has become a go-to topic in daily development. This article systematically covers its usage, underlying principles, and optimization strategies."
+wordCount: 144
 ---
 
 Nuxt 5 has become a go-to topic in daily development. This article systematically covers its usage, underlying principles, and optimization strategies.

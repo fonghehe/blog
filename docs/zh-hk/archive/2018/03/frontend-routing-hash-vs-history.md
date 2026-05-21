@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Vue Router 的兩種模式幾乎每個項目都要選，但很多人不理解為什麼有這兩種，區別是什麼。這篇文章從原理講起。"
+wordCount: 509
 ---
 
 Vue Router 的兩種模式幾乎每個項目都要選，但很多人不理解為什麼有這兩種，區別是什麼。這篇文章從原理講起。

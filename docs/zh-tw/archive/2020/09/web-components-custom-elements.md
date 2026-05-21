@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Web Components 是瀏覽器原生的元件化方案，無需任何框架即可建立可複用的自定義 HTML 元素。2020 年所有主流瀏覽器均已支援，現在是深入瞭解它的好時機。"
+wordCount: 313
 ---
 
 Web Components 是瀏覽器原生的元件化方案，無需任何框架即可建立可複用的自定義 HTML 元素。2020 年所有主流瀏覽器均已支援，現在是深入瞭解它的好時機。

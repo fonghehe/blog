@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In day-to-day development, Storybook 9 Component Development is being used more and more frequently. This article systematically explains its usage, principles,"
+wordCount: 194
 ---
 
 In day-to-day development, Storybook 9 Component Development is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

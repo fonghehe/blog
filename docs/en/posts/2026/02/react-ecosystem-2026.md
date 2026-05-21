@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 4
 description: "The React ecosystem underwent a major shakeup in 2026. Many once-essential libraries have been phased out, and new tools have stepped in to fill the gaps. This "
+wordCount: 235
 ---
 
 The React ecosystem underwent a major shakeup in 2026. Many once-essential libraries have been phased out, and new tools have stepped in to fill the gaps. This article takes a comprehensive look: which libraries to use, which to drop, and which newcomers are worth watching.

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 20 的 Suspense 經歷了自 18 以來最大的一次迭代。新增的 SuspenseList 組件、流式 SSR 改進、以及與 Actions 的深度集成，讓 Suspense 從「加載態佔位」進化為「數據獲取編排」。"
+wordCount: 557
 ---
 
 React 20 的 Suspense 經歷了自 18 以來最大的一次迭代。新增的 SuspenseList 組件、流式 SSR 改進、以及與 Actions 的深度集成，讓 Suspense 從「加載態佔位」進化為「數據獲取編排」。

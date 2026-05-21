@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "关于Scheduler API 任务调度实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective"
+wordCount: 189
 ---
 
 关于Scheduler API 任务调度实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "The core utility functions of functional programming are not as remote as they seem. Redux middleware, Lodash/fp, and RxJS operators are all built on these idea"
+wordCount: 59
 ---
 
 The core utility functions of functional programming are not as remote as they seem. Redux middleware, Lodash/fp, and RxJS operators are all built on these ideas. Implementing them by hand gives you a complete understanding.

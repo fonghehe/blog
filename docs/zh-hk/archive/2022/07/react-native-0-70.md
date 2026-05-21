@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "關於React Native 0.70 新架構，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+wordCount: 361
 ---
 
 關於React Native 0.70 新架構，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。

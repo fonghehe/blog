@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "Rspack Rust 前端构建工具 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic base"
+wordCount: 164
 ---
 
 Rspack Rust 前端构建工具 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

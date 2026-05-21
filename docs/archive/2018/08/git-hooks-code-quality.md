@@ -5,6 +5,7 @@ tags:
   - Git
 readingTime: 2
 description: "每次提交代码前手动跑 lint 和测试太容易忘了。用 Git Hooks 把这些检查自动化，在提交时自动执行。"
+wordCount: 297
 ---
 
 每次提交代码前手动跑 lint 和测试太容易忘了。用 Git Hooks 把这些检查自动化，在提交时自动执行。

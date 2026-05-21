@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript 5.7 新特性在近年來發展迅速，本文將深入分析其原理和實踐方法。"
+wordCount: 228
 ---
 
 TypeScript 5.7 新特性在近年來發展迅速，本文將深入分析其原理和實踐方法。

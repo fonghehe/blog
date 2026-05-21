@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Code that you can understand after writing it, that your teammates can understand, and that you can still understand three months later — that's real readabilit"
+wordCount: 96
 ---
 
 Code that you can understand after writing it, that your teammates can understand, and that you can still understand three months later — that's real readability. Here are some practices for improving code readability.

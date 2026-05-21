@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，Mapbox GL JS 前端地图开发 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 205
 ---
 
 在日常开发中，Mapbox GL JS 前端地图开发 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

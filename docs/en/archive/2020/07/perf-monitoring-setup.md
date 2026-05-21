@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "上线后用户反馈\"页面很慢\"，但我们没有任何数据佐证。搭建了一套前端性能监控体系，终于能用数据说话了。"
+wordCount: 144
 ---
 
 上线后用户反馈"页面很慢"，但我们没有任何数据佐证。搭建了一套前端性能监控体系，终于能用数据说话了。

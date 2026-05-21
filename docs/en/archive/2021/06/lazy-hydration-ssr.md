@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "SSR 懒水合 Lazy Hydration 策略 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
+wordCount: 157
 ---
 
 SSR 懒水合 Lazy Hydration 策略 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

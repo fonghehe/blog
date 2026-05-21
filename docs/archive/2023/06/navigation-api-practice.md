@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "最近在团队中落地Navigation API 实践指南，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
+wordCount: 293
 ---
 
 最近在团队中落地Navigation API 实践指南，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

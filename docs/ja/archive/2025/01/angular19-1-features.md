@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 19.1は2025年1月にリリースされたAngular 19シリーズの最初のマイナーバージョンです。重点は、Angular 19で導入された実験的な機能を安定化へと推進することにあります。インクリメンタルハイドレーション（Incremental Hydration）が開発者プレビューの安定版に昇格し、`"
+wordCount: 575
 ---
 
 Angular 19.1は2025年1月にリリースされたAngular 19シリーズの最初のマイナーバージョンです。重点は、Angular 19で導入された実験的な機能を安定化へと推進することにあります。インクリメンタルハイドレーション（Incremental Hydration）が開発者プレビューの安定版に昇格し、`linkedSignal()`のAPIがフィードバックをもとに修正され、Zonelessモードも引き続き磨き上げられています。

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "RxJS 是 JavaScript 的响应式编程库，它基于 Observable 模式，提供了一套强大的异步数据流处理工具。Angular 生态深度依赖 RxJS，即使在 React 项目中，RxJS 也能优雅地处理复杂的异步场景。本文从 Observable 的基本概念入手，系统介绍 RxJS 的核心用法。"
+wordCount: 332
 ---
 
 RxJS 是 JavaScript 的响应式编程库，它基于 Observable 模式，提供了一套强大的异步数据流处理工具。Angular 生态深度依赖 RxJS，即使在 React 项目中，RxJS 也能优雅地处理复杂的异步场景。本文从 Observable 的基本概念入手，系统介绍 RxJS 的核心用法。

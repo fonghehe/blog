@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "关于Node.js 22 LTS 新特性，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspect"
+wordCount: 209
 ---
 
 关于Node.js 22 LTS 新特性，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

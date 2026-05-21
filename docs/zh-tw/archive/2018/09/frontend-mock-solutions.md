@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "前後端並行開發時，前端需要 Mock 資料。用過好幾種方案，整理一下各自的優缺點。"
+wordCount: 364
 ---
 
 前後端並行開發時，前端需要 Mock 資料。用過好幾種方案，整理一下各自的優缺點。

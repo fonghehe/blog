@@ -6,6 +6,7 @@ tags:
   - Rollup
 readingTime: 2
 description: "在日常開發中，Vite 生產構建 Rollup 深度定製的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
+wordCount: 321
 ---
 
 在日常開發中，Vite 生產構建 Rollup 深度定製的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。

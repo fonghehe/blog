@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，React Query 服务端状态管理 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 205
 ---
 
 在日常开发中，React Query 服务端状态管理 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

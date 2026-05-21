@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React Forget 是 React Compiler 的早期名稱，它代表了 React 團隊對\"讓開發者忘記 memoization\"這一願景的嘗試。本文從編譯器原理層面分析 Forget 是如何工作的，以及它對日常開發模式的改變。"
+wordCount: 566
 ---
 
 React Forget 是 React Compiler 的早期名稱，它代表了 React 團隊對"讓開發者忘記 memoization"這一願景的嘗試。本文從編譯器原理層面分析 Forget 是如何工作的，以及它對日常開發模式的改變。

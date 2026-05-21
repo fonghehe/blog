@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 4
 description: "2018年10月25〜26日、React Conf 2018 がネバダ州ヘンダーソンで開催されました。Dan Abramov と Ryan Florence が Hooks のライブデモを行い、コミュニティ全体が沸きました。"
+wordCount: 850
 ---
 
 2018年10月25〜26日、React Conf 2018 がネバダ州ヘンダーソンで開催されました。Dan Abramov と Ryan Florence が Hooks のライブデモを行い、コミュニティ全体が沸きました。

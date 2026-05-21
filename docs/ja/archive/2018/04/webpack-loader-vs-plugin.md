@@ -5,6 +5,7 @@ tags:
   - Webpack
 readingTime: 1
 description: "Webpackの設定で`module.rules`（loader）と`plugins`は最も重要な2つの設定項目ですが、違いを混同している人が多いです。"
+wordCount: 176
 ---
 
 Webpackの設定で`module.rules`（loader）と`plugins`は最も重要な2つの設定項目ですが、違いを混同している人が多いです。

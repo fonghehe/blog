@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "做了好幾個移動端專案，總結一下響應式設計的實踐經驗。"
+wordCount: 151
 ---
 
 做了好幾個移動端專案，總結一下響應式設計的實踐經驗。

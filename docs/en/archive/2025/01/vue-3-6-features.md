@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3.6 is the next major version previewed by Evan You at VueConf 2025, with the core theme of \"compile-time optimization + Vapor Mode going officially stable."
+wordCount: 241
 ---
 
 Vue 3.6 is the next major version previewed by Evan You at VueConf 2025, with the core theme of "compile-time optimization + Vapor Mode going officially stable." This article analyzes the most noteworthy changes in 3.6, based on RFCs and early alpha builds.

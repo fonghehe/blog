@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Moon 构建系统 Monorepo 管理 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real proj"
+wordCount: 203
 ---
 
 Moon 构建系统 Monorepo 管理 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

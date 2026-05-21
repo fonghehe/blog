@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常工作中經常用到JavaScript 異步模式彙總，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。"
+wordCount: 291
 ---
 
 在日常工作中經常用到JavaScript 異步模式彙總，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。

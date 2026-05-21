@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "The basics of Vue Router are simple enough, but advanced features like permission control, route meta information, and dynamically adding routes are often under"
+wordCount: 69
 ---
 
 The basics of Vue Router are simple enough, but advanced features like permission control, route meta information, and dynamically adding routes are often underutilized in real projects.

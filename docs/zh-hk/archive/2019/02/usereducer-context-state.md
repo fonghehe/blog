@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "有了 Hooks，小項目不一定需要 Redux 了。`useReducer` + `useContext` 組合可以實現類似 Redux 的狀態管理，適合中小型應用。"
+wordCount: 232
 ---
 
 有了 Hooks，小項目不一定需要 Redux 了。`useReducer` + `useContext` 組合可以實現類似 Redux 的狀態管理，適合中小型應用。

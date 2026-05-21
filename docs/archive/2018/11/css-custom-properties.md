@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS 自定义属性（也叫 CSS 变量）现在主流浏览器都支持了，IE 除外。它和 Sass 变量不一样，有自己独特的优势，值得认真了解。"
+wordCount: 429
 ---
 
 CSS 自定义属性（也叫 CSS 变量）现在主流浏览器都支持了，IE 除外。它和 Sass 变量不一样，有自己独特的优势，值得认真了解。

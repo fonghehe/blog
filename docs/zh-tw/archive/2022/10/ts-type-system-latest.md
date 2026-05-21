@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.9 satisfies 實戰在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
+wordCount: 306
 ---
 
 TypeScript 4.9 satisfies 實戰在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。

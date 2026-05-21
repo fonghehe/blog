@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I've been reading about functional programming lately and realized many of these ideas have already been in use in frontend development — we just never explicit"
+wordCount: 220
 ---
 
 I've been reading about functional programming lately and realized many of these ideas have already been in use in frontend development — we just never explicitly recognized them. Here are the parts that have real practical value.

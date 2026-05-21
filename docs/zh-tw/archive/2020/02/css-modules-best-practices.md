@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "多人協作的大專案，CSS 全域性汙染是個老大難問題。對比了 Scoped CSS、CSS Modules 和 CSS-in-JS 後，最終在元件庫專案中選擇了 CSS Modules，記錄一下實踐方案。"
+wordCount: 237
 ---
 
 多人協作的大專案，CSS 全域性汙染是個老大難問題。對比了 Scoped CSS、CSS Modules 和 CSS-in-JS 後，最終在元件庫專案中選擇了 CSS Modules，記錄一下實踐方案。

@@ -6,6 +6,7 @@ tags:
   - Rollup
 readingTime: 2
 description: "Vite 5 Rollup 4 迁移 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real project"
+wordCount: 184
 ---
 
 Vite 5 Rollup 4 迁移 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

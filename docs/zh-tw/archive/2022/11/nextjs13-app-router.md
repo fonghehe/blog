@@ -5,6 +5,7 @@ tags:
   - Next.js
 readingTime: 2
 description: "Next.js 13 釋出，最大變化是 App Router（`/app` 目錄），和 Pages Router 思路完全不同。"
+wordCount: 237
 ---
 
 Next.js 13 釋出，最大變化是 App Router（`/app` 目錄），和 Pages Router 思路完全不同。

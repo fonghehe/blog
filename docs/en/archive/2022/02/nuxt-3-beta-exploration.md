@@ -5,6 +5,7 @@ tags:
   - Nuxt.js
 readingTime: 1
 description: "Nuxt 3 RC 发布新架构解析 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
+wordCount: 179
 ---
 
 Nuxt 3 RC 发布新架构解析 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

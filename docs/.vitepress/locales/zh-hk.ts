@@ -6,7 +6,7 @@ type LocaleConfig = LocaleSpecificConfig<DefaultTheme.Config> & {
 };
 
 export const zhHk: LocaleConfig = {
-  label: "繁體中文（香港）",
+  label: "繁體中文（港）",
   lang: "zh-HK",
   themeConfig: {
     nav: [

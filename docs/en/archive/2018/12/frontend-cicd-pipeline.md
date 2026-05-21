@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "This year I gave our company's deployment process a major upgrade — from manual FTP uploads to fully automated CI/CD. Here's the complete story."
+wordCount: 210
 ---
 
 This year I gave our company's deployment process a major upgrade — from manual FTP uploads to fully automated CI/CD. Here's the complete story.

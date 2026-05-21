@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 1
 description: "这两个模式经常被混为一谈，但有本质区别。"
+wordCount: 226
 ---
 
 这两个模式经常被混为一谈，但有本质区别。

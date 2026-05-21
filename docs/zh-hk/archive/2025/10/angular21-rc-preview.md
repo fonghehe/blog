@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Angular 21 RC.0 於 2025 年 10 月初發布，正式版預計 11 月 19 日。Angular 21 是繼 Angular 20 之後的下一個主版本，核心目標是將 Signal Forms 從開發者預覽提升為穩定 API，並帶來全新的路由 API 改進。"
+wordCount: 329
 ---
 
 Angular 21 RC.0 於 2025 年 10 月初發布，正式版預計 11 月 19 日。Angular 21 是繼 Angular 20 之後的下一個主版本，核心目標是將 Signal Forms 從開發者預覽提升為穩定 API，並帶來全新的路由 API 改進。

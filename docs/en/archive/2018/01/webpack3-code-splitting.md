@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "After the project grew, `vendor.js` ballooned to 1.8MB and initial load time hit 8 seconds. This article covers the diagnostic and optimization process that bro"
+wordCount: 195
 ---
 
 After the project grew, `vendor.js` ballooned to 1.8MB and initial load time hit 8 seconds. This article covers the diagnostic and optimization process that brought it down to 680KB.

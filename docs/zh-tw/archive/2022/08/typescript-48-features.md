@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.7 和 4.8 相繼釋出，帶來了一系列實用改進。4.7 解決了 ESM 模組支援的老大難問題，4.8 進一步增強了型別收窄。"
+wordCount: 239
 ---
 
 TypeScript 4.7 和 4.8 相繼釋出，帶來了一系列實用改進。4.7 解決了 ESM 模組支援的老大難問題，4.8 進一步增強了型別收窄。

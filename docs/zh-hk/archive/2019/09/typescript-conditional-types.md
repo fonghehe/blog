@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 4
 description: "TypeScript 的條件類型（Conditional Types）是類型系統中最強大的特性之一。它讓我們可以根據類型的條件分支來動態生成新的類型，類似於 JavaScript 中的三元表達式。配合泛型和 `infer` 關鍵字，條件類型可以實現極其靈活的類型推導。本文將從基礎語法到高級用法，深入講解條件類型。"
+wordCount: 418
 ---
 
 TypeScript 的條件類型（Conditional Types）是類型系統中最強大的特性之一。它讓我們可以根據類型的條件分支來動態生成新的類型，類似於 JavaScript 中的三元表達式。配合泛型和 `infer` 關鍵字，條件類型可以實現極其靈活的類型推導。本文將從基礎語法到高級用法，深入講解條件類型。

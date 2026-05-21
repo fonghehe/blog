@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "The team frequently debates rebase vs merge, with supporters on both sides. Let me clarify the differences and when to use each."
+wordCount: 234
 ---
 
 The team frequently debates rebase vs merge, with supporters on both sides. Let me clarify the differences and when to use each.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 2.5 shipped significant TypeScript improvements and a new error handling hook. Here's what changed."
+wordCount: 99
 ---
 
 Vue 2.5 shipped significant TypeScript improvements and a new error handling hook. Here's what changed.

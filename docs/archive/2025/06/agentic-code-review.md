@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "团队引入 AI agent 做代码审查已经半年了。不是简单的 lint 规则，而是能理解业务逻辑的深度 review。来分享实战经验。"
+wordCount: 159
 ---
 
 团队引入 AI agent 做代码审查已经半年了。不是简单的 lint 规则，而是能理解业务逻辑的深度 review。来分享实战经验。

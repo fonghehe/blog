@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Coding solo, you can use Git however you like. Team collaboration is different — branch management, commit messages, and code review each need standards or thin"
+wordCount: 130
 ---
 
 Coding solo, you can use Git however you like. Team collaboration is different — branch management, commit messages, and code review each need standards or things get messy. This article covers workflow practices I've validated in real teams.

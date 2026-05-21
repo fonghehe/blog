@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "`position` 是前端必知必會的屬性，但 `z-index` 失效的問題坑了不少人。"
+wordCount: 223
 ---
 
 `position` 是前端必知必會的屬性，但 `z-index` 失效的問題坑了不少人。

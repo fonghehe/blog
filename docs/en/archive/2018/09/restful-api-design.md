@@ -5,6 +5,7 @@ tags:
   - Backend
 readingTime: 1
 description: "Inconsistent API design standards between frontend and backend create a lot of friction. Here's a summary of core RESTful conventions for aligning with your bac"
+wordCount: 95
 ---
 
 Inconsistent API design standards between frontend and backend create a lot of friction. Here's a summary of core RESTful conventions for aligning with your backend team.

@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "在日常開發中，Claude Code 前端開發工作流的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
+wordCount: 304
 ---
 
 在日常開發中，Claude Code 前端開發工作流的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。

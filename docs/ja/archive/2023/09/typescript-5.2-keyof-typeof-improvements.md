@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 5.2 带来了几个值得关注的特性，其中 `using` 声明是最具实用价值的。"
+wordCount: 265
 ---
 
 TypeScript 5.2 带来了几个值得关注的特性，其中 `using` 声明是最具实用价值的。

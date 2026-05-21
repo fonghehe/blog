@@ -6,6 +6,7 @@ tags:
 
 readingTime: 2
 description: "最近在团队中落地Windi CSS 与 Tailwind 对比， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 235
 ---
 
 最近在团队中落地Windi CSS 与 Tailwind 对比， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

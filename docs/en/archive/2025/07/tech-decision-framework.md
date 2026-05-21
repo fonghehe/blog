@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "After years as a tech lead, what bothers me most isn't writing code — it's technology selection. Here's my decision-making framework."
+wordCount: 347
 ---
 
 After years as a tech lead, what bothers me most isn't writing code — it's technology selection. Here's my decision-making framework.

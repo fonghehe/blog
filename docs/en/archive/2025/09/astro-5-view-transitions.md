@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Astro 5 View Transitions is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from r"
+wordCount: 210
 ---
 
 Astro 5 View Transitions is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

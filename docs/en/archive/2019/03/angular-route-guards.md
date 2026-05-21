@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular Router provides multiple guard interfaces for fine-grained control over route access permissions."
+wordCount: 44
 ---
 
 Angular Router provides multiple guard interfaces for fine-grained control over route access permissions.

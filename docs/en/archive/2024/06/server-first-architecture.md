@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Server-first 前端架构演进 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real"
+wordCount: 181
 ---
 
 Server-first 前端架构演进 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real project experience.

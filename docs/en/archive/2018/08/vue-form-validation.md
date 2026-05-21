@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Form validation is one of the most frequent requirements in admin systems. After extensive use with Element UI, here's a summary of best practices."
+wordCount: 88
 ---
 
 Form validation is one of the most frequent requirements in admin systems. After extensive use with Element UI, here's a summary of best practices.

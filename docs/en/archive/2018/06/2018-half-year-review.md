@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 5
 description: "The core work in the first half of 2018 revolved around three things: upgrading the architecture of back-office systems, building an internal component library "
+wordCount: 890
 ---
 
 The core work in the first half of 2018 revolved around three things: upgrading the architecture of back-office systems, building an internal component library from scratch, and improving the engineering pipeline. Here is a systematic retrospective recording the thinking behind technology choices and the real pitfalls we encountered.

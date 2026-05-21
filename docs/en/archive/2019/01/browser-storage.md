@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "After years of frontend development, unclear storage choices have led to many pitfalls. Here's a systematic overview."
+wordCount: 101
 ---
 
 After years of frontend development, unclear storage choices have led to many pitfalls. Here's a systematic overview.

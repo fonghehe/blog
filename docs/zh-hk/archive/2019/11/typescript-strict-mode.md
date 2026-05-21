@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript 的 `strict` 模式啓用了一系列嚴格的類型檢查選項，能在編譯期捕獲大量潛在錯誤。對於已有項目來説，啓用 strict 模式可能會帶來大量報錯。本文將詳細介紹 strict 模式的各個選項，以及如何漸進式地在項目中啓用嚴格類型檢查。"
+wordCount: 472
 ---
 
 TypeScript 的 `strict` 模式啓用了一系列嚴格的類型檢查選項，能在編譯期捕獲大量潛在錯誤。對於已有項目來説，啓用 strict 模式可能會帶來大量報錯。本文將詳細介紹 strict 模式的各個選項，以及如何漸進式地在項目中啓用嚴格類型檢查。

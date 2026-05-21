@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "在日常工作中经常用到JavaScript 代理模式实践，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。"
+wordCount: 233
 ---
 
 在日常工作中经常用到JavaScript 代理模式实践，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。

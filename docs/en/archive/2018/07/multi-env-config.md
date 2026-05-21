@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Projects typically have development, staging, and production environments with different API endpoints, feature flags, and other configurations. This post cover"
+wordCount: 128
 ---
 
 Projects typically have development, staging, and production environments with different API endpoints, feature flags, and other configurations. This post covers best practices for multi-environment config management.

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "When learning TypeScript, it's easy to wonder: both `interface` and `type` can define types — which one should you use?"
+wordCount: 89
 ---
 
 When learning TypeScript, it's easy to wonder: both `interface` and `type` can define types — which one should you use?

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Bun 1.0 is officially released! It's a JavaScript runtime written in Zig, claiming to be much faster than Node.js. Let's see if it's worth switching."
+wordCount: 286
 ---
 
 Bun 1.0 is officially released! It's a JavaScript runtime written in Zig, claiming to be much faster than Node.js. Let's see if it's worth switching.

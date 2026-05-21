@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Trusted Types v1 Stable Release is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices"
+wordCount: 188
 ---
 
 Trusted Types v1 Stable Release is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

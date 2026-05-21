@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular's default change detection checks all components. The OnPush strategy can significantly reduce unnecessary checks."
+wordCount: 52
 ---
 
 Angular's default change detection checks all components. The OnPush strategy can significantly reduce unnecessary checks.

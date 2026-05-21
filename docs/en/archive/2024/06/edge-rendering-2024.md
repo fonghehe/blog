@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently implemented Edge Rendering 2024 最佳实践 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will hel"
+wordCount: 175
 ---
 
 I recently implemented Edge Rendering 2024 最佳实践 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those doing similar work.

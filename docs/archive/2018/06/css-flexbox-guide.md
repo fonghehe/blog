@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "Flexbox 是现在最常用的布局方式，但有些属性老是记不住。整理一份速查手册。"
+wordCount: 97
 ---
 
 Flexbox 是现在最常用的布局方式，但有些属性老是记不住。整理一份速查手册。

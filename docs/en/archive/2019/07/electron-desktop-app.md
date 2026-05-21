@@ -5,6 +5,7 @@ tags:
   - Cross-platform
 readingTime: 2
 description: "Recently our team needed to build an internal tool — a JSON formatting/conversion desktop utility. A web version was certainly possible, but it required local f"
+wordCount: 153
 ---
 
 Recently our team needed to build an internal tool — a JSON formatting/conversion desktop utility. A web version was certainly possible, but it required local file read/write, system clipboard access, and hotkey registration, so we ended up choosing Electron. This article documents the complete journey from zero to packaged distribution.

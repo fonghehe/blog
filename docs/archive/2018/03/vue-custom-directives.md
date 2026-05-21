@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 自定义指令可以直接操作 DOM，适合封装那些需要直接访问 DOM 元素的逻辑。比如自动聚焦、权限控制、图片懒加载等。"
+wordCount: 269
 ---
 
 Vue 自定义指令可以直接操作 DOM，适合封装那些需要直接访问 DOM 元素的逻辑。比如自动聚焦、权限控制、图片懒加载等。

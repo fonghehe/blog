@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Over the past year, our team built a design system from scratch — not just buying a UI component library and calling it done. Here's a summary of the process."
+wordCount: 144
 ---
 
 Over the past year, our team built a design system from scratch — not just buying a UI component library and calling it done. Here's a summary of the process.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3 引入了三個實用的內建元件：Teleport 將子節點渲染到 DOM 樹的任意位置，Fragment 支援多根節點模板，Suspense 處理非同步元件的載入態。這三個特性解決了 Vue 2 中長期存在的痛點。"
+wordCount: 451
 ---
 
 Vue 3 引入了三個實用的內建元件：Teleport 將子節點渲染到 DOM 樹的任意位置，Fragment 支援多根節點模板，Suspense 處理非同步元件的載入態。這三個特性解決了 Vue 2 中長期存在的痛點。

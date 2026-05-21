@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "I recently used React ref forwarding in a project and found it more complex than expected. Here is a summary of the experience gained in practice."
+wordCount: 114
 ---
 
 I recently used React ref forwarding in a project and found it more complex than expected. Here is a summary of the experience gained in practice.

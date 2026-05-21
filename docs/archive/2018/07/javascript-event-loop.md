@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "事件循环（Event Loop）是 JavaScript 并发模型的核心，也是面试高频题。"
+wordCount: 287
 ---
 
 事件循环（Event Loop）是 JavaScript 并发模型的核心，也是面试高频题。

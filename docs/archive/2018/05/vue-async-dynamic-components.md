@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "组件懒加载是减小首屏 bundle 体积的重要手段。Vue 提供了异步组件和动态组件两种机制，理清它们的区别和用法。"
+wordCount: 296
 ---
 
 组件懒加载是减小首屏 bundle 体积的重要手段。Vue 提供了异步组件和动态组件两种机制，理清它们的区别和用法。

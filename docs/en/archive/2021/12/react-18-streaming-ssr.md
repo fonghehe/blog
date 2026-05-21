@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "React 18 SSR 流式渲染 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
+wordCount: 185
 ---
 
 React 18 SSR 流式渲染 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

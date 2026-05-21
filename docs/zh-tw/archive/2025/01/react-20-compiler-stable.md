@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 20 Compiler（原 React Forget）終於從 RC 進入穩定版。這個編譯器徹底改變了 React 效能最佳化的方式——你不再需要手動寫 `useMemo`、`useCallback`、`React.memo`，編譯器會自動幫你搞定。"
+wordCount: 645
 ---
 
 React 20 Compiler（原 React Forget）終於從 RC 進入穩定版。這個編譯器徹底改變了 React 效能最佳化的方式——你不再需要手動寫 `useMemo`、`useCallback`、`React.memo`，編譯器會自動幫你搞定。

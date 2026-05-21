@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
-    "docs:build": "node scripts/precompute-meta.js && pnpm docs:build:main && pnpm docs:build:zh-variants && node docs/.vitepress/merge-builds.js",
+    "docs:build": "node scripts/precompute-meta.js && node scripts/parallel-build.js && node docs/.vitepress/merge-builds.js",
     "docs:build:main": "BUILD_MODE=main NODE_OPTIONS=--max-old-space-size=8192 vitepress build docs",
     "docs:build:zh-variants": "BUILD_MODE=zh-variants NODE_OPTIONS=--max-old-space-size=8192 vitepress build docs",
     "docs:preview": "vitepress preview docs",
@@ -14,7 +14,12 @@
   "devDependencies": {
     "@types/node": "^25.7.0",
     "feed": "^5.2.1",
+    "vite-plugin-pwa": "^1.3.0",
     "vitepress": "^1.6.2",
-    "vue": "^3.5.34"
+    "vue": "^3.5.34",
+    "workbox-build": "^7.4.1"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1"
   }
 }

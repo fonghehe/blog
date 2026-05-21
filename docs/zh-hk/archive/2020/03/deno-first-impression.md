@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上批評了 Node.js 的十大設計遺憾，隨後宣佈了 Deno 項目。現在 Deno 已經進入候選版本階段，是時候體驗一下了。"
+wordCount: 292
 ---
 
 Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上批評了 Node.js 的十大設計遺憾，隨後宣佈了 Deno 項目。現在 Deno 已經進入候選版本階段，是時候體驗一下了。

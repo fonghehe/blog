@@ -5,6 +5,7 @@ tags:
   - Testing
 readingTime: 2
 description: "Playwright 2026 new features are seeing increasingly widespread use in frontend development. This article dives deep into their core principles and best practic"
+wordCount: 168
 ---
 
 Playwright 2026 new features are seeing increasingly widespread use in frontend development. This article dives deep into their core principles and best practices from a real-project perspective.

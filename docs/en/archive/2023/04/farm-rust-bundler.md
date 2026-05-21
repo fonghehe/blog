@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Farm Rust 前端构建工具 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 191
 ---
 
 Farm Rust 前端构建工具 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

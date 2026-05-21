@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "Ionic Vue 跨平台移动开发 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
+wordCount: 205
 ---
 
 Ionic Vue 跨平台移动开发 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

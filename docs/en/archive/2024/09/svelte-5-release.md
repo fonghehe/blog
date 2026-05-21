@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Recently implemented Svelte 5 Release Deep Dive in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doi"
+wordCount: 194
 ---
 
 Recently implemented Svelte 5 Release Deep Dive in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

@@ -5,6 +5,7 @@ tags:
   - 後端
 readingTime: 1
 description: "前後端對接時，API 設計標準不統一容易產生很多摩擦。整理一下 RESTful 的核心規範，方便和後端對齊。"
+wordCount: 150
 ---
 
 前後端對接時，API 設計標準不統一容易產生很多摩擦。整理一下 RESTful 的核心規範，方便和後端對齊。

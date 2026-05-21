@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "今年主导了三个大的技术栈升级：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每个都踩过坑，总结出一套方法论。技术升级不只是技术决策，更是一次团队管理实践。"
+wordCount: 260
 ---
 
 今年主导了三个大的技术栈升级：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每个都踩过坑，总结出一套方法论。技术升级不只是技术决策，更是一次团队管理实践。

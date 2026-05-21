@@ -5,6 +5,7 @@ tags:
   - Next.js
 readingTime: 3
 description: "Partial Prerendering (PPR) 是 Vercel 在 Next.js 14 中預覽的實驗性特性。它試圖解決一個長期矛盾：靜態頁面加載快但缺乏個性化，動態頁面個性化但首屏慢。PPR 的方案是在構建時生成靜態 shell，運行時動態填充內容。"
+wordCount: 478
 ---
 
 Partial Prerendering (PPR) 是 Vercel 在 Next.js 14 中預覽的實驗性特性。它試圖解決一個長期矛盾：靜態頁面加載快但缺乏個性化，動態頁面個性化但首屏慢。PPR 的方案是在構建時生成靜態 shell，運行時動態填充內容。

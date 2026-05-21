@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript 3.0 through 3.3 released one after another, adding many practical features. Here's a summary."
+wordCount: 43
 ---
 
 TypeScript 3.0 through 3.3 released one after another, adding many practical features. Here's a summary.

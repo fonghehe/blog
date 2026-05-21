@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Vercel 在 2021 年 10 月发布了 Next.js 12，这是近年来最大的一次版本更新。Rust 编译器、Middleware、React 18 支持，每个特性都很重磅。"
+wordCount: 334
 ---
 
 Vercel 在 2021 年 10 月发布了 Next.js 12，这是近年来最大的一次版本更新。Rust 编译器、Middleware、React 18 支持，每个特性都很重磅。

@@ -5,6 +5,7 @@ tags:
   - Nuxt.js
 readingTime: 3
 description: "Nuxt 3 基於 Vue 3 + Nitro 服務引擎 + Vite，提供了全棧 Vue 開發的最佳實踐。相比 Nuxt 2，它在型別安全、效能、部署靈活性方面都有質的提升。本文從實際專案出發，介紹 Nuxt 3 的核心特性。"
+wordCount: 465
 ---
 
 Nuxt 3 基於 Vue 3 + Nitro 服務引擎 + Vite，提供了全棧 Vue 開發的最佳實踐。相比 Nuxt 2，它在型別安全、效能、部署靈活性方面都有質的提升。本文從實際專案出發，介紹 Nuxt 3 的核心特性。

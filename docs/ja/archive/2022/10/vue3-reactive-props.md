@@ -6,6 +6,7 @@ tags:
   - React
 readingTime: 2
 description: "在日常开发中，Vue 3.3 reactive props 解构の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
+wordCount: 379
 ---
 
 在日常开发中，Vue 3.3 reactive props 解构の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。

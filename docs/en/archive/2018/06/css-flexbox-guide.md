@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "Flexbox is the most commonly used layout method today, but some properties are always hard to remember. Here's a quick-reference cheatsheet."
+wordCount: 67
 ---
 
 Flexbox is the most commonly used layout method today, but some properties are always hard to remember. Here's a quick-reference cheatsheet.

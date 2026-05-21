@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "View Transitions API 是 Chrome 111 開始支持的新特性，不需要任何 JS 框架就能實現流暢的頁面過渡動畫。"
+wordCount: 231
 ---
 
 View Transitions API 是 Chrome 111 開始支持的新特性，不需要任何 JS 框架就能實現流暢的頁面過渡動畫。

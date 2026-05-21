@@ -5,6 +5,7 @@ tags:
   - Storybook
 readingTime: 2
 description: "We recently implemented Storybook 7.0 预览与迁移， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work"
+wordCount: 188
 ---
 
 We recently implemented Storybook 7.0 预览与迁移， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

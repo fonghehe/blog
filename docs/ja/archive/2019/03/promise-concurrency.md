@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "JavaScriptのPromise並行制御は、日常の開発でよく遭遇する問題だ。実際のプロジェクトから出発して、具体的な実装方法と経験をまとめる。"
+wordCount: 118
 ---
 
 JavaScriptのPromise並行制御は、日常の開発でよく遭遇する問題だ。実際のプロジェクトから出発して、具体的な実装方法と経験をまとめる。

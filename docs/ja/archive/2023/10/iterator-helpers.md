@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "最近チームでJavaScript Iterator Helpers 提案，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
+wordCount: 481
 ---
 
 最近チームでJavaScript Iterator Helpers 提案，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。

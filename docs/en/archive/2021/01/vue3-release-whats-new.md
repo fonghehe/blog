@@ -8,6 +8,7 @@ tags:
 
 readingTime: 2
 description: "Vue 3.0 正式版发布全面解析 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
+wordCount: 230
 ---
 
 Vue 3.0 正式版发布全面解析 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

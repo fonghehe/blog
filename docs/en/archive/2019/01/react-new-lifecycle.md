@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "There is no shortage of articles about React 16's new lifecycle methods online, but most lack real-world insight. This article explores best practices from actu"
+wordCount: 91
 ---
 
 There is no shortage of articles about React 16's new lifecycle methods online, but most lack real-world insight. This article explores best practices from actual projects.

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS Grid solves layout problems that Flexbox can't handle cleanly. Flexbox is one-dimensional (either rows or columns); Grid is two-dimensional (rows AND column"
+wordCount: 121
 ---
 
 CSS Grid solves layout problems that Flexbox can't handle cleanly. Flexbox is one-dimensional (either rows or columns); Grid is two-dimensional (rows AND columns simultaneously).

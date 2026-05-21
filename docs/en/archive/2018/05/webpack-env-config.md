@@ -5,6 +5,7 @@ tags:
   - Webpack
 readingTime: 1
 description: "Most projects have at least three environments — development, test, and production — each with different API URLs, log levels, and feature flags. Here's how to "
+wordCount: 121
 ---
 
 Most projects have at least three environments — development, test, and production — each with different API URLs, log levels, and feature flags. Here's how to manage them cleanly.

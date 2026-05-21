@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "Solid.js 1.0 がリリースされて1年が経ちました。真剣に体験してみる時です。JSXの書き方はReactとほぼ同じですが、仮想DOM、Diff、Fiberがなく——リアクティブな更新が直接実際のDOMを操作します。"
+wordCount: 727
 ---
 
 Solid.js 1.0 がリリースされて1年が経ちました。真剣に体験してみる時です。JSXの書き方はReactとほぼ同じですが、仮想DOM、Diff、Fiberがなく——リアクティブな更新が直接実際のDOMを操作します。

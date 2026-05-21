@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "In day-to-day development, React 2024 Recommended Libraries is being used more and more frequently. This article systematically explains its usage, principles, "
+wordCount: 149
 ---
 
 In day-to-day development, React 2024 Recommended Libraries is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

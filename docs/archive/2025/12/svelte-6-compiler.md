@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Svelte 6 编译器改进在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
+wordCount: 299
 ---
 
 Svelte 6 编译器改进在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

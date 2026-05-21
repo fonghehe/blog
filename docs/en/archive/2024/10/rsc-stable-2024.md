@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "关于React 19 Server Components 稳定，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production pe"
+wordCount: 245
 ---
 
 关于React 19 Server Components 稳定，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

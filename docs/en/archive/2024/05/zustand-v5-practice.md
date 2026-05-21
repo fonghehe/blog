@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently implemented Zustand v5 实战应用 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those d"
+wordCount: 215
 ---
 
 I recently implemented Zustand v5 实战应用 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those doing similar work.

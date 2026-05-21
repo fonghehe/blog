@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "The topic of Native CSS Scoping: Style Encapsulation Without JS has been discussed many times in the community, but with each new version, many conclusions need"
+wordCount: 225
 ---
 
 The topic of Native CSS Scoping: Style Encapsulation Without JS has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.

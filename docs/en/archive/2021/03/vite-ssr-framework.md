@@ -8,6 +8,7 @@ tags:
 
 readingTime: 2
 description: "Vite SSR 服务端渲染方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 209
 ---
 
 Vite SSR 服务端渲染方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "Frequently used in daily work, TypeScript 声明合并，Here is a systematic summary to help everyone better understand and apply it."
+wordCount: 191
 ---
 
 Frequently used in daily work, TypeScript 声明合并，Here is a systematic summary to help everyone better understand and apply it.

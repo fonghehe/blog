@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "shadcn/ui is one of the hottest UI solutions in the frontend world in 2023, but it's not a traditional \"component library\"."
+wordCount: 278
 ---
 
 shadcn/ui is one of the hottest UI solutions in the frontend world in 2023, but it's not a traditional "component library".

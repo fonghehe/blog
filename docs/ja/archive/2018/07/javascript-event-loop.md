@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "イベントループ（Event Loop）はJavaScriptの並行処理モデルの核心であり、面接でも頻繁に出る話題です。"
+wordCount: 450
 ---
 
 イベントループ（Event Loop）はJavaScriptの並行処理モデルの核心であり、面接でも頻繁に出る話題です。

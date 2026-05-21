@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "We recently implemented Farcaster Frames 去中心化社交， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar "
+wordCount: 187
 ---
 
 We recently implemented Farcaster Frames 去中心化社交， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

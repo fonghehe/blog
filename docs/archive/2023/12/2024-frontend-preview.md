@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "2023 年是前端生态\"技术落地\"的一年：Next.js 13 App Router 进入生产，Angular 17 带来了革命性的模板语法，Bun 1.0 正式发布，AI 辅助编程从新奇变成日常工具。站在年末，我们预判 2024 年的关键走向。"
+wordCount: 355
 ---
 
 2023 年是前端生态"技术落地"的一年：Next.js 13 App Router 进入生产，Angular 17 带来了革命性的模板语法，Bun 1.0 正式发布，AI 辅助编程从新奇变成日常工具。站在年末，我们预判 2024 年的关键走向。

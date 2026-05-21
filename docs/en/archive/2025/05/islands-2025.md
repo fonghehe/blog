@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Islands Architecture 2025 is becoming increasingly common in day-to-day development. This article offers a systematic look at its usage, inner workings, and opt"
+wordCount: 150
 ---
 
 Islands Architecture 2025 is becoming increasingly common in day-to-day development. This article offers a systematic look at its usage, inner workings, and optimization strategies.

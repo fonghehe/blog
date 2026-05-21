@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 5
 description: "CSS Grid 已經得到主流瀏覽器的支援有一段時間了。基礎的 `grid-template-columns` 和 `grid-template-rows` 大家都會用，但 `grid-template-areas`、`auto-fill` vs `auto-fit`、`minmax()` 這些進階特性才能真正發揮 G"
+wordCount: 907
 ---
 
 CSS Grid 已經得到主流瀏覽器的支援有一段時間了。基礎的 `grid-template-columns` 和 `grid-template-rows` 大家都會用，但 `grid-template-areas`、`auto-fill` vs `auto-fit`、`minmax()` 這些進階特性才能真正發揮 Grid 的威力。這篇文章通過幾個實際佈局案例來講解這些特性。

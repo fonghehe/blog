@@ -5,6 +5,7 @@ tags:
   - Performance
 readingTime: 5
 description: 'By 2026, performance optimization is no longer an operational concern like "compress images, enable CDN." When application complexity reaches a certain scale, p'
+wordCount: 486
 ---
 
 By 2026, performance optimization is no longer an operational concern like "compress images, enable CDN." When application complexity reaches a certain scale, performance problems root in **systemic architectural missteps**, not a single uncached resource. This article starts from the browser rendering pipeline, discusses systematic component-level optimization, tiered resource loading strategies, and how to build a measurable, traceable, regression-detectable performance governance system with Web Vitals.

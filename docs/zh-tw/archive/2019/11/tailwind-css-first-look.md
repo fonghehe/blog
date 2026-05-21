@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 4
 description: "Tailwind CSS 是一個實用優先（Utility-First）的 CSS 框架，它提供了大量原子化的 CSS 類名，讓開發者可以直接在 HTML 中組合樣式，而不需要編寫自定義 CSS。本文將從零開始體驗 Tailwind CSS，探索原子化 CSS 的開發模式。"
+wordCount: 562
 ---
 
 Tailwind CSS 是一個實用優先（Utility-First）的 CSS 框架，它提供了大量原子化的 CSS 類名，讓開發者可以直接在 HTML 中組合樣式，而不需要編寫自定義 CSS。本文將從零開始體驗 Tailwind CSS，探索原子化 CSS 的開發模式。

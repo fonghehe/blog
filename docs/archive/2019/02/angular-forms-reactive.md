@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 提供模板驱动和响应式两种表单方案，响应式表单更适合复杂业务场景。"
+wordCount: 74
 ---
 
 Angular 提供模板驱动和响应式两种表单方案，响应式表单更适合复杂业务场景。

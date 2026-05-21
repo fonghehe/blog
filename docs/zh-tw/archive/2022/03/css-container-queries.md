@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "等了好幾年，CSS Container Queries 終於在主流瀏覽器落地了。傳統媒體查詢基於視口寬度，但元件化開發需要的是基於容器寬度的響應式。這才是元件真正需要的能力。"
+wordCount: 320
 ---
 
 等了好幾年，CSS Container Queries 終於在主流瀏覽器落地了。傳統媒體查詢基於視口寬度，但元件化開發需要的是基於容器寬度的響應式。這才是元件真正需要的能力。

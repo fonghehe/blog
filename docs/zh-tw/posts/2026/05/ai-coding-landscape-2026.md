@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 4
 description: "2026 年 5 月，AI 程式設計已經從\"Tab 補全\"進化到了能夠獨立完成複雜工程任務的階段。GitHub Copilot Agent Mode、Cursor Composer、Claude Code、Windsurf 等工具正在重塑每一個開發者的日常工作流。本文梳理當前 AI 程式設計的技術格局、實踐方法和需要警"
+wordCount: 1100
 ---
 
 2026 年 5 月，AI 程式設計已經從"Tab 補全"進化到了能夠獨立完成複雜工程任務的階段。GitHub Copilot Agent Mode、Cursor Composer、Claude Code、Windsurf 等工具正在重塑每一個開發者的日常工作流。本文梳理當前 AI 程式設計的技術格局、實踐方法和需要警惕的陷阱。

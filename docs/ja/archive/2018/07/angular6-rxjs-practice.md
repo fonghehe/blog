@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "AngularはRxJSを生まれながらに深く統合しています。HttpClient、EventEmitter、RouterはすべてObservableに基づいています。RxJSオペレーターをマスターすることで、非同期処理とコンポーネント通信をよりエレガントに実装できます。"
+wordCount: 419
 ---
 
 AngularはRxJSを生まれながらに深く統合しています。HttpClient、EventEmitter、RouterはすべてObservableに基づいています。RxJSオペレーターをマスターすることで、非同期処理とコンポーネント通信をよりエレガントに実装できます。

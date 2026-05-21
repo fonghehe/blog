@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "In day-to-day development, CSS light-dark() for Light/Dark Mode is being used more and more frequently. This article systematically explains its usage, principl"
+wordCount: 167
 ---
 
 In day-to-day development, CSS light-dark() for Light/Dark Mode is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

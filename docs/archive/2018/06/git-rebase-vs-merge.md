@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "团队里经常讨论用 rebase 还是 merge，各有支持者。理清一下两者的区别和适用场景。"
+wordCount: 345
 ---
 
 团队里经常讨论用 rebase 还是 merge，各有支持者。理清一下两者的区别和适用场景。

@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在日常開發中，Module Federation 2022 最佳實踐的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
+wordCount: 308
 ---
 
 在日常開發中，Module Federation 2022 最佳實踐的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。

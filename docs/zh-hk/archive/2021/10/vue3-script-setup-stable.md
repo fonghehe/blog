@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Vue 3.2 正式將 `<script setup>` 標記為穩定特性。用了半年實驗性支持，現在可以放心在生產環境用了。"
+wordCount: 196
 ---
 
 Vue 3.2 正式將 `<script setup>` 標記為穩定特性。用了半年實驗性支持，現在可以放心在生產環境用了。

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "关于CSP v3 内容安全策略新指令，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 190
 ---
 
 关于CSP v3 内容安全策略新指令，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

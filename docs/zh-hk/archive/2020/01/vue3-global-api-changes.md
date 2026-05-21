@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3 將全局 API 從構造函數模式改為工廠函數模式，所有操作都通過 `createApp` 返回的應用實例進行。這意味着 Vue 2 中常見的 `Vue.use`、`Vue.component`、`Vue.directive` 全部需要調整。本文梳理這些變更並給出遷移方案。"
+wordCount: 329
 ---
 
 Vue 3 將全局 API 從構造函數模式改為工廠函數模式，所有操作都通過 `createApp` 返回的應用實例進行。這意味着 Vue 2 中常見的 `Vue.use`、`Vue.component`、`Vue.directive` 全部需要調整。本文梳理這些變更並給出遷移方案。

@@ -6,6 +6,7 @@ tags:
   - Rollup
 readingTime: 2
 description: "Vite 5 Rollup 4 遷移在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
+wordCount: 328
 ---
 
 Vite 5 Rollup 4 遷移在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "`useRef` is one of those Hooks that many developers know by name but only partially understand. Beyond the common use of \"getting a DOM reference,\" it has anoth"
+wordCount: 167
 ---
 
 `useRef` is one of those Hooks that many developers know by name but only partially understand. Beyond the common use of "getting a DOM reference," it has another crucial role: acting as an instance variable that persists across renders without causing re-renders.

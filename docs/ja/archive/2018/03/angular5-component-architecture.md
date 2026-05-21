@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular アプリの複雑さが増すにつれて、コンポーネントの責務を適切に分割することがますます重要になります。Smart/Dumb（Container/Presentational とも呼ばれる）コンポーネントパターンは、現在最も主流な Angular コンポーネント設計の考え方です。"
+wordCount: 624
 ---
 
 Angular アプリの複雑さが増すにつれて、コンポーネントの責務を適切に分割することがますます重要になります。Smart/Dumb（Container/Presentational とも呼ばれる）コンポーネントパターンは、現在最も主流な Angular コンポーネント設計の考え方です。

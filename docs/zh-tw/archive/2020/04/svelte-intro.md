@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Svelte 3 在 2019 年釋出後引發了不小的關注。它的核心主張是：**框架應該在編譯時完成工作，而不是在執行時**。這意味著 Svelte 沒有虛擬 DOM，沒有執行時框架程式碼，生成的產物是原生 DOM 操作的 JavaScript。"
+wordCount: 366
 ---
 
 Svelte 3 在 2019 年釋出後引發了不小的關注。它的核心主張是：**框架應該在編譯時完成工作，而不是在執行時**。這意味著 Svelte 沒有虛擬 DOM，沒有執行時框架程式碼，生成的產物是原生 DOM 操作的 JavaScript。

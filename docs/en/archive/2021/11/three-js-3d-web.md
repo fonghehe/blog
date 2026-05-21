@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "Three.js 3D Web 可视化入门 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic b"
+wordCount: 197
 ---
 
 Three.js 3D Web 可视化入门 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

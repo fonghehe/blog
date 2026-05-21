@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Symbol is a primitive type added in ES6, but many developers are unsure when to use it. Here are a few practical scenarios."
+wordCount: 138
 ---
 
 Symbol is a primitive type added in ES6, but many developers are unsure when to use it. Here are a few practical scenarios.

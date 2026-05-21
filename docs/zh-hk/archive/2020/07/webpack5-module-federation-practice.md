@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 4
 description: "Webpack 5 還在 beta 階段，但 Module Federation 這個特性已經讓團隊非常興奮了。簡單説，它允許獨立構建的應用之間在運行時共享模塊——這解決的是微前端場景中最頭疼的問題：跨應用共享組件和依賴。"
+wordCount: 543
 ---
 
 Webpack 5 還在 beta 階段，但 Module Federation 這個特性已經讓團隊非常興奮了。簡單説，它允許獨立構建的應用之間在運行時共享模塊——這解決的是微前端場景中最頭疼的問題：跨應用共享組件和依賴。

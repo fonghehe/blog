@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "React Hooks 用了一个月，发现 `useEffect` 是最容易踩坑的地方。尤其是依赖数组，不理解原理就会写出 bug。"
+wordCount: 196
 ---
 
 React Hooks 用了一个月，发现 `useEffect` 是最容易踩坑的地方。尤其是依赖数组，不理解原理就会写出 bug。

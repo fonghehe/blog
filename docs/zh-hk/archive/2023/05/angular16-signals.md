@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 16 於 2023 年 5 月 3 日發佈，其中最令人興奮的特性是 **Signals**——以開發者預覽（Developer Preview）形式引入。Signals 不是對現有響應式系統（Zone.js + ChangeDetection）的修補，而是為 Angular 引入一套全新的細粒度響應式原"
+wordCount: 295
 ---
 
 Angular 16 於 2023 年 5 月 3 日發佈，其中最令人興奮的特性是 **Signals**——以開發者預覽（Developer Preview）形式引入。Signals 不是對現有響應式系統（Zone.js + ChangeDetection）的修補，而是為 Angular 引入一套全新的細粒度響應式原語。

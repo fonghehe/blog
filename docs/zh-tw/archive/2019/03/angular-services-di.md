@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 的依賴注入系統是框架的核心，理解它能讓你寫出更模組化、可測試的程式碼。"
+wordCount: 80
 ---
 
 Angular 的依賴注入系統是框架的核心，理解它能讓你寫出更模組化、可測試的程式碼。

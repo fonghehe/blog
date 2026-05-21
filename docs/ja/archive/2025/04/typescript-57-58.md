@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 5.7と5.8が相次いでリリースされ、実用的な新機能が多数追加されました。日々の開発に影響する変更点を見ていきましょう。"
+wordCount: 246
 ---
 
 TypeScript 5.7と5.8が相次いでリリースされ、実用的な新機能が多数追加されました。日々の開発に影響する変更点を見ていきましょう。

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "We've recently rolled out Cursor 2.0 IDE in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling "
+wordCount: 155
 ---
 
 We've recently rolled out Cursor 2.0 IDE in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling similar challenges.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Promoting frontend performance optimization techniques within the team came with plenty of pitfalls. Documenting them here in the hope it helps others."
+wordCount: 89
 ---
 
 Promoting frontend performance optimization techniques within the team came with plenty of pitfalls. Documenting them here in the hope it helps others.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Shadcn UI 2025 Ecosystem is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from r"
+wordCount: 184
 ---
 
 Shadcn UI 2025 Ecosystem is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

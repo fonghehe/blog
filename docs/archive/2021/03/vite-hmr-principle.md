@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "在日常开发中，Vite HMR 热更新原理分析的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
+wordCount: 267
 ---
 
 在日常开发中，Vite HMR 热更新原理分析的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

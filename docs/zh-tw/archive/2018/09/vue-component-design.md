@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "寫了兩年 Vue，最近開始反思元件該怎麼設計。總結幾個讓元件更可維護的原則。"
+wordCount: 220
 ---
 
 寫了兩年 Vue，最近開始反思元件該怎麼設計。總結幾個讓元件更可維護的原則。

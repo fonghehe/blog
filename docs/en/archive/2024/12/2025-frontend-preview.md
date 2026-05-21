@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "2024 was a year of significant maturation for the frontend tech stack: React 19 officially launched, Angular completed its Signal migration, Vue 3.5 rewrote its"
+wordCount: 410
 ---
 
 2024 was a year of significant maturation for the frontend tech stack: React 19 officially launched, Angular completed its Signal migration, Vue 3.5 rewrote its reactivity, Svelte 5's new Runes system went live, and AI-assisted programming evolved from a tool to the core of the workflow. Standing on the last day of 2024, let's forecast the key directions for 2025.

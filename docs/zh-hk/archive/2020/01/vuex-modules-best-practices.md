@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "項目一旦超過中等規模，Vuex 的 `store` 就會變得臃腫。Vuex 4 延續了模塊化方案，但對 Composition API 做了適配。本文整理了我在多箇中大型 Vue 項目中驗證過的模塊化實踐。"
+wordCount: 312
 ---
 
 項目一旦超過中等規模，Vuex 的 `store` 就會變得臃腫。Vuex 4 延續了模塊化方案，但對 Composition API 做了適配。本文整理了我在多箇中大型 Vue 項目中驗證過的模塊化實踐。

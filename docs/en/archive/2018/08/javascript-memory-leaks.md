@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "After a page ran for a while, memory kept climbing and the browser eventually became slow and unresponsive. Here's a summary of common memory leak causes and de"
+wordCount: 197
 ---
 
 After a page ran for a while, memory kept climbing and the browser eventually became slow and unresponsive. Here's a summary of common memory leak causes and debugging approaches.

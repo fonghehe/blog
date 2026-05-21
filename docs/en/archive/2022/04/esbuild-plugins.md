@@ -5,6 +5,7 @@ tags:
   - Esbuild
 readingTime: 2
 description: "esbuild 插件开发实践This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh over"
+wordCount: 187
 ---
 
 esbuild 插件开发实践This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.

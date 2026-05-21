@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "チームのプロジェクトが増えると、毎回ESLint、Prettier、Git Hooks、CI設定を手動で行うのが煩わしい。Vue CLI Pluginを作れば、ワンクリックで全て完了できる。"
+wordCount: 93
 ---
 
 チームのプロジェクトが増えると、毎回ESLint、Prettier、Git Hooks、CI設定を手動で行うのが煩わしい。Vue CLI Pluginを作れば、ワンクリックで全て完了できる。

@@ -5,6 +5,7 @@ tags:
   - Security
 readingTime: 2
 description: "前端供应链安全 2024 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 199
 ---
 
 前端供应链安全 2024 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

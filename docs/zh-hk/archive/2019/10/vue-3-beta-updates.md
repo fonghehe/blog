@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 4
 description: "Vue 3 自 2018 年 VueConf 上宣佈重寫以來，一直在穩步推進。截至目前，Vue 3 已經進入 Beta 階段，核心 API 趨於穩定。本文整理 Vue 3 的主要變化，幫助 Vue 2 開發者提前瞭解即將到來的變化。"
+wordCount: 576
 ---
 
 Vue 3 自 2018 年 VueConf 上宣佈重寫以來，一直在穩步推進。截至目前，Vue 3 已經進入 Beta 階段，核心 API 趨於穩定。本文整理 Vue 3 的主要變化，幫助 Vue 2 開發者提前瞭解即將到來的變化。

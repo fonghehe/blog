@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 5
 description: "在生产环境中，一个组件的 JavaScript 错误不应该导致整个应用崩溃。React 16 引入的 Error Boundary 机制让我们可以优雅地捕获和处理组件树中的错误，展示降级 UI 而非白屏。本文将深入讲解 Error Boundary 的原理、用法和最佳实践。"
+wordCount: 516
 ---
 
 在生产环境中，一个组件的 JavaScript 错误不应该导致整个应用崩溃。React 16 引入的 Error Boundary 机制让我们可以优雅地捕获和处理组件树中的错误，展示降级 UI 而非白屏。本文将深入讲解 Error Boundary 的原理、用法和最佳实践。

@@ -5,6 +5,7 @@ tags:
   - Micro Frontend
 readingTime: 2
 description: "In daily development, 微前端 2024 架构趋势总结 is used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 221
 ---
 
 In daily development, 微前端 2024 架构趋势总结 is used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "The topic of Scheduler API Stable: In Practice has been discussed many times in the community, but with each new version, many conclusions need updating. This a"
+wordCount: 192
 ---
 
 The topic of Scheduler API Stable: In Practice has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.

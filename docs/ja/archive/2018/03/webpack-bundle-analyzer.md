@@ -6,6 +6,7 @@ tags:
   - エンジニアリング
 readingTime: 3
 description: "ビルドが完成して `vendor.js` が 3MB あることに気づいたが、どのライブラリが大きいのかわからない。そんなときの標準ツールが `webpack-bundle-analyzer` です。"
+wordCount: 607
 ---
 
 ビルドが完成して `vendor.js` が 3MB あることに気づいたが、どのライブラリが大きいのかわからない。そんなときの標準ツールが `webpack-bundle-analyzer` です。

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS animations are common, but poorly written animations can stutter and drain battery. Understanding the browser rendering pipeline is essential before doing a"
+wordCount: 291
 ---
 
 CSS animations are common, but poorly written animations can stutter and drain battery. Understanding the browser rendering pipeline is essential before doing any animation optimization.

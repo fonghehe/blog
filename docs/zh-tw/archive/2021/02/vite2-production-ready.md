@@ -10,6 +10,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "Vite 2.0 正式釋出！和 1.0 相比幾乎是重寫，最重要的變化是框架無關（不再繫結 Vue）。"
+wordCount: 218
 ---
 
 Vite 2.0 正式釋出！和 1.0 相比幾乎是重寫，最重要的變化是框架無關（不再繫結 Vue）。

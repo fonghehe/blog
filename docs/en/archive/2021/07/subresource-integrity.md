@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "SRI 子资源完整性校验 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on t"
+wordCount: 184
 ---
 
 SRI 子资源完整性校验 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular's dependency injection system is at the core of the framework. Understanding it enables you to write more modular, testable code."
+wordCount: 48
 ---
 
 Angular's dependency injection system is at the core of the framework. Understanding it enables you to write more modular, testable code.

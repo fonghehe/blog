@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "Flexbox 是現在最常用的佈局方式，但有些屬性老是記不住。整理一份速查手冊。"
+wordCount: 97
 ---
 
 Flexbox 是現在最常用的佈局方式，但有些屬性老是記不住。整理一份速查手冊。

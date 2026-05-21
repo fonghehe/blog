@@ -5,6 +5,7 @@ tags:
   - Security
 readingTime: 2
 description: "XSS (Cross-Site Scripting) is one of the most common frontend security vulnerabilities. This article systematically covers everything from attack mechanisms to "
+wordCount: 309
 ---
 
 XSS (Cross-Site Scripting) is one of the most common frontend security vulnerabilities. This article systematically covers everything from attack mechanisms to defense strategies.

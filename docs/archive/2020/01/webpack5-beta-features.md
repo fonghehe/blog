@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 3
 description: "Webpack 5 还在 Beta 阶段，但社区讨论已经很热了。花了一周时间试了两个最重要的新特性：Module Federation 和持久缓存。记录一下心得。"
+wordCount: 375
 ---
 
 Webpack 5 还在 Beta 阶段，但社区讨论已经很热了。花了一周时间试了两个最重要的新特性：Module Federation 和持久缓存。记录一下心得。

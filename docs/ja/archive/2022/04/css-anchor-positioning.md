@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "最近チームでCSS Anchor Positioning 锚点定位，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
+wordCount: 486
 ---
 
 最近チームでCSS Anchor Positioning 锚点定位，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。

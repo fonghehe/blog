@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "关于Bun 1.0 运行时发布完整体验，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 196
 ---
 
 关于Bun 1.0 运行时发布完整体验，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

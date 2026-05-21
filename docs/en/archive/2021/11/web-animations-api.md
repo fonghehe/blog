@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "Web Animations API 原生动画 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pr"
+wordCount: 194
 ---
 
 Web Animations API 原生动画 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "The topic of loading performance optimization has been discussed extensively in the community, but with each new version release, many conclusions need revisiti"
+wordCount: 188
 ---
 
 The topic of loading performance optimization has been discussed extensively in the community, but with each new version release, many conclusions need revisiting. This article provides a fresh look based on the latest state of the ecosystem.

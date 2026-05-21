@@ -5,6 +5,7 @@ tags:
   - ES6
 readingTime: 1
 description: "Destructuring assignment is one of the ES6 features I use most frequently — it dramatically reduces repetitive code. Here's a summary of the various usages."
+wordCount: 68
 ---
 
 Destructuring assignment is one of the ES6 features I use most frequently — it dramatically reduces repetitive code. Here's a summary of the various usages.

@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "Images are among the largest resources on a webpage, often accounting for over 60% of total payload. This post collects image optimization techniques I've used "
+wordCount: 139
 ---
 
 Images are among the largest resources on a webpage, often accounting for over 60% of total payload. This post collects image optimization techniques I've used in real projects.

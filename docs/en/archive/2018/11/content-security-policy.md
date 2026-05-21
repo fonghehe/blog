@@ -5,6 +5,7 @@ tags:
   - Security
 readingTime: 2
 description: "Once CSP is configured, even if an XSS injection succeeds, the attacker cannot load or execute malicious external scripts."
+wordCount: 187
 ---
 
 Once CSP is configured, even if an XSS injection succeeds, the attacker cannot load or execute malicious external scripts.

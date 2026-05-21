@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "很多同學在Vue 2 Mixin 使用與陷阱上存在理解偏差，本文系統地梳理核心要點和常見誤區。"
+wordCount: 193
 ---
 
 很多同學在Vue 2 Mixin 使用與陷阱上存在理解偏差，本文系統地梳理核心要點和常見誤區。

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "關於CSS Grid 響應式佈局實戰，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。"
+wordCount: 259
 ---
 
 關於CSS Grid 響應式佈局實戰，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。

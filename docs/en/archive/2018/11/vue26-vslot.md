@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 2.6 has been officially released. The main improvements are a unified slot syntax, better error handling, and some forward-looking changes that preview Vue "
+wordCount: 243
 ---
 
 Vue 2.6 has been officially released. The main improvements are a unified slot syntax, better error handling, and some forward-looking changes that preview Vue 3.

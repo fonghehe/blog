@@ -6,6 +6,7 @@ tags:
   - Vitest
 readingTime: 2
 description: "Vitest 在 2021 年底作為 Vite 生態的測試框架正式亮相。作為一個從 Jest 遷移過來的專案，Vitest 最大的賣點是和 Vite 共享配置和轉換管線——不需要額外的打包配置，HMR 支援，以及原生 ESM。"
+wordCount: 310
 ---
 
 Vitest 在 2021 年底作為 Vite 生態的測試框架正式亮相。作為一個從 Jest 遷移過來的專案，Vitest 最大的賣點是和 Vite 共享配置和轉換管線——不需要額外的打包配置，HMR 支援，以及原生 ESM。

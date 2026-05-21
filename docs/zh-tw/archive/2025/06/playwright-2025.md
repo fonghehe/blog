@@ -5,6 +5,7 @@ tags:
   - 測試
 readingTime: 2
 description: "Playwright 2025 新特性在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
+wordCount: 353
 ---
 
 Playwright 2025 新特性在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。

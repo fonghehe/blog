@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "Recently, our team has rolled out the CSS if() Function Proposal and accumulated a lot of experience. I've compiled it here for reference, hoping it helps other"
+wordCount: 137
 ---
 
 Recently, our team has rolled out the CSS if() Function Proposal and accumulated a lot of experience. I've compiled it here for reference, hoping it helps others doing similar work.

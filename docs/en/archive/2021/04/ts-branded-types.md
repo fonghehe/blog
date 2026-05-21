@@ -6,6 +6,7 @@ tags:
 
 readingTime: 2
 description: "关于TypeScript 品牌类型 Nominal Typing，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production p"
+wordCount: 159
 ---
 
 关于TypeScript 品牌类型 Nominal Typing，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

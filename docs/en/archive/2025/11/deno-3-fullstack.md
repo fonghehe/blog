@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Deno 3.0 Full-Stack Solution is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices fr"
+wordCount: 207
 ---
 
 Deno 3.0 Full-Stack Solution is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

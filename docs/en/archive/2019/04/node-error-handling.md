@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 1
 description: "There are plenty of articles on Node.js error handling best practices online, but most lack real-world experience. This article explores best practices based on"
+wordCount: 116
 ---
 
 There are plenty of articles on Node.js error handling best practices online, but most lack real-world experience. This article explores best practices based on actual projects.

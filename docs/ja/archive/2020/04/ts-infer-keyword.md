@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近在团队中落地TypeScript infer 关键字妙用，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
+wordCount: 316
 ---
 
 最近在团队中落地TypeScript infer 关键字妙用，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。

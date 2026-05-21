@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "項目上線後出 bug，最痛苦的不是有 bug，而是不知道 bug 在哪。良好的錯誤處理讓問題更容易定位。"
+wordCount: 155
 ---
 
 項目上線後出 bug，最痛苦的不是有 bug，而是不知道 bug 在哪。良好的錯誤處理讓問題更容易定位。

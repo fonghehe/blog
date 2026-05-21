@@ -6,6 +6,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "CSS engine optimizations are becoming an increasingly important part of everyday frontend work in 2026. This article systematically covers usage patterns, under"
+wordCount: 196
 ---
 
 CSS engine optimizations are becoming an increasingly important part of everyday frontend work in 2026. This article systematically covers usage patterns, underlying principles, and optimization strategies.

@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 3
 description: "最近團隊在內部知識庫項目中落地了 RAG（Retrieval-Augmented Generation）架構。作為前端平台負責人，整理一下前端側的技術方案。"
+wordCount: 294
 ---
 
 最近團隊在內部知識庫項目中落地了 RAG（Retrieval-Augmented Generation）架構。作為前端平台負責人，整理一下前端側的技術方案。

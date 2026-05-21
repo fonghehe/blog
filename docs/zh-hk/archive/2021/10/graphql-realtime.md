@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "GraphQL 實時數據方案在近年來發展迅速，本文將深入分析其原理和實踐方法。"
+wordCount: 229
 ---
 
 GraphQL 實時數據方案在近年來發展迅速，本文將深入分析其原理和實踐方法。

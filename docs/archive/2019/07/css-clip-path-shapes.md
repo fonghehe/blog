@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 3
 description: "传统的 CSS 裁切方式有限——`overflow: hidden` 只能做矩形裁切，`border-radius` 只能做圆角。如果你需要做斜边卡片、圆形头像裁切、波浪背景等不规则形状，`clip-path` 是目前最强大的方案。"
+wordCount: 530
 ---
 
 传统的 CSS 裁切方式有限——`overflow: hidden` 只能做矩形裁切，`border-radius` 只能做圆角。如果你需要做斜边卡片、圆形头像裁切、波浪背景等不规则形状，`clip-path` 是目前最强大的方案。

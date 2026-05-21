@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Webpack 5 Beta 版已经可以试用，最受关注的是 Module Federation（模块联邦）。这个特性可能会改变微前端的做法。"
+wordCount: 245
 ---
 
 Webpack 5 Beta 版已经可以试用，最受关注的是 Module Federation（模块联邦）。这个特性可能会改变微前端的做法。

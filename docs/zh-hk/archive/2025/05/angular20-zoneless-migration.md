@@ -6,6 +6,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Angular 20 讓 Zoneless 正式穩定，但實際遷移並不是改一行配置就完事。本文記錄了將一箇中型 Angular 項目（約 80 個組件）從 zone.js 遷移到 Zoneless 的完整過程，分享遇到的坑和解決方案。"
+wordCount: 270
 ---
 
 Angular 20 讓 Zoneless 正式穩定，但實際遷移並不是改一行配置就完事。本文記錄了將一箇中型 Angular 項目（約 80 個組件）從 zone.js 遷移到 Zoneless 的完整過程，分享遇到的坑和解決方案。

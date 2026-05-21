@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "I've been doing performance optimization for a while but never systematically monitored production performance. Here's how to collect performance data."
+wordCount: 100
 ---
 
 I've been doing performance optimization for a while but never systematically monitored production performance. Here's how to collect performance data.

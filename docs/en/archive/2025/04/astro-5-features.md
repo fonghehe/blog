@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Astro 5.0's new features have been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look "
+wordCount: 150
 ---
 
 Astro 5.0's new features have been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on the latest release.

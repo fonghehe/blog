@@ -6,6 +6,7 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "Tailwind CSS 4.0 Beta 开放测试了，最大变化是用 Rust 重写了底层引擎（Oxide），以及把配置从 JS 文件迁移到 CSS 文件。"
+wordCount: 340
 ---
 
 Tailwind CSS 4.0 Beta 开放测试了，最大变化是用 Rust 重写了底层引擎（Oxide），以及把配置从 JS 文件迁移到 CSS 文件。

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 20 釋出後，框架層面的變化趨於穩定，但生態和底層架構仍在快速演進。React Compiler 已經成熟、Server Components 成為預設、新的併發原語正在重新定義前端的資料獲取模式。本文梳理 React 在 2026 年的核心變化和實際影響。"
+wordCount: 463
 ---
 
 React 20 釋出後，框架層面的變化趨於穩定，但生態和底層架構仍在快速演進。React Compiler 已經成熟、Server Components 成為預設、新的併發原語正在重新定義前端的資料獲取模式。本文梳理 React 在 2026 年的核心變化和實際影響。

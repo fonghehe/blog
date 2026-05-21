@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "國際化（i18n）不只是翻譯文本那麼簡單。日期格式、數字格式、複數規則、文本方向（RTL），這些都需要一套完整的解決方案。vue-i18n 是 Vue 生態中最成熟的國際化庫，配合 Composition API 可以做到優雅且型別安全的多語言支援。"
+wordCount: 280
 ---
 
 國際化（i18n）不只是翻譯文本那麼簡單。日期格式、數字格式、複數規則、文本方向（RTL），這些都需要一套完整的解決方案。vue-i18n 是 Vue 生態中最成熟的國際化庫，配合 Composition API 可以做到優雅且型別安全的多語言支援。

@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angularのデフォルト変更検知はすべてのコンポーネントをチェックします。OnPush戦略を使うと、不要なチェックを大幅に削減できます。"
+wordCount: 152
 ---
 
 Angularのデフォルト変更検知はすべてのコンポーネントをチェックします。OnPush戦略を使うと、不要なチェックを大幅に削減できます。

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 18 Suspense 数据获取这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
+wordCount: 344
 ---
 
 React 18 Suspense 数据获取这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。

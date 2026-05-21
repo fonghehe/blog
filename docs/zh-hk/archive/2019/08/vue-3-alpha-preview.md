@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "2019 年 Vue 團隊發佈了 Vue 3 的 Alpha 版本，其中最大的變化之一就是響應式系統從 `Object.defineProperty` 切換到了 ES6 的 `Proxy`。本文將從源碼和實踐兩個角度，對比 Vue 2 和 Vue 3 在響應式實現上的差異，帶你提前感受 Vue 3 的新特性。"
+wordCount: 534
 ---
 
 2019 年 Vue 團隊發佈了 Vue 3 的 Alpha 版本，其中最大的變化之一就是響應式系統從 `Object.defineProperty` 切換到了 ES6 的 `Proxy`。本文將從源碼和實踐兩個角度，對比 Vue 2 和 Vue 3 在響應式實現上的差異，帶你提前感受 Vue 3 的新特性。

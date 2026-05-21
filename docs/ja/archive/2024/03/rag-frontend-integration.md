@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "最近团队在内部知识库项目中落地了 RAG（Retrieval-Augmented Generation）架构。作为前端平台负责人，整理一下前端侧的技术方案。"
+wordCount: 326
 ---
 
 最近团队在内部知识库项目中落地了 RAG（Retrieval-Augmented Generation）架构。作为前端平台负责人，整理一下前端侧的技术方案。

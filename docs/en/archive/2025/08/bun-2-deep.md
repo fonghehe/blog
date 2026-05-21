@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Bun 2.0 new features are becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real"
+wordCount: 177
 ---
 
 Bun 2.0 new features are becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

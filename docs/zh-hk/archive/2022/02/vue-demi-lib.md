@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "最近在團隊中落地VueDemi Vue 2/3 通用庫開發，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+wordCount: 278
 ---
 
 最近在團隊中落地VueDemi Vue 2/3 通用庫開發，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。

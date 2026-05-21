@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 16.6 introduced `React.memo`, and together with `useCallback` and `useMemo` from Hooks, developers have more performance optimization tools. However, in r"
+wordCount: 223
 ---
 
 React 16.6 introduced `React.memo`, and together with `useCallback` and `useMemo` from Hooks, developers have more performance optimization tools. However, in real projects I've found that many people (including my past self) fall into the trap of "wrapping everything in memo." This article covers the correct usage of these APIs.

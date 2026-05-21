@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 3 KeepAlive 路由缓存方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pro"
+wordCount: 185
 ---
 
 Vue 3 KeepAlive 路由缓存方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Turbopack 稳定版性能对比 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real p"
+wordCount: 176
 ---
 
 Turbopack 稳定版性能对比 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real project experience.

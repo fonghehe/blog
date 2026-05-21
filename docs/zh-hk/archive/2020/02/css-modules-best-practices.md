@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "多人協作的大項目，CSS 全局污染是個老大難問題。對比了 Scoped CSS、CSS Modules 和 CSS-in-JS 後，最終在組件庫項目中選擇了 CSS Modules，記錄一下實踐方案。"
+wordCount: 234
 ---
 
 多人協作的大項目，CSS 全局污染是個老大難問題。對比了 Scoped CSS、CSS Modules 和 CSS-in-JS 後，最終在組件庫項目中選擇了 CSS Modules，記錄一下實踐方案。

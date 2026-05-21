@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "之前寫了 Promise 基礎，這次專門説鏈式調用和錯誤處理，這塊容易出細節問題。"
+wordCount: 160
 ---
 
 之前寫了 Promise 基礎，這次專門説鏈式調用和錯誤處理，這塊容易出細節問題。

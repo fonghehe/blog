@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Browser events are fundamental to frontend development, but many developers lack a deep understanding of event capturing, bubbling, and delegation. Here's a sys"
+wordCount: 108
 ---
 
 Browser events are fundamental to frontend development, but many developers lack a deep understanding of event capturing, bubbling, and delegation. Here's a systematic overview.

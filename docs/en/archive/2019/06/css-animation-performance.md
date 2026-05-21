@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "After working with frontend animations for a while, you realize the challenge isn't writing animations — it's that too many animations cause jank. Especially on"
+wordCount: 177
 ---
 
 After working with frontend animations for a while, you realize the challenge isn't writing animations — it's that too many animations cause jank. Especially on mobile, 60 fps smooth animation is the baseline for user experience. This article starts from browser rendering principles to understand where CSS animations get slow and how to optimize them.

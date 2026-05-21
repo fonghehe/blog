@@ -6,6 +6,7 @@ tags:
   - Vitest
 readingTime: 1
 description: "在日常工作中经常用到Vitest UI 模式，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。"
+wordCount: 236
 ---
 
 在日常工作中经常用到Vitest UI 模式，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。

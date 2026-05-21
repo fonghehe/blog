@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "在日常開發中，React 18 flushSync 同步更新的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+wordCount: 262
 ---
 
 在日常開發中，React 18 flushSync 同步更新的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。

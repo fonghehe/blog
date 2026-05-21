@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 1
 description: "隨着項目頁面增多，多個頁面都用到的代碼會被重複打包。`SplitChunks` 可以把公共代碼提取出來，讓瀏覽器緩存複用。"
+wordCount: 196
 ---
 
 隨着項目頁面增多，多個頁面都用到的代碼會被重複打包。`SplitChunks` 可以把公共代碼提取出來，讓瀏覽器緩存複用。

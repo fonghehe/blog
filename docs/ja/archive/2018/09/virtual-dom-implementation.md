@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "Virtual DOM は React と Vue 2 の中核概念です。多くの記事を読みましたが、自分で実装して初めて本当に理解できます。この記事では数百行のコードで最小限の VDOM を実装します。"
+wordCount: 596
 ---
 
 Virtual DOM は React と Vue 2 の中核概念です。多くの記事を読みましたが、自分で実装して初めて本当に理解できます。この記事では数百行のコードで最小限の VDOM を実装します。

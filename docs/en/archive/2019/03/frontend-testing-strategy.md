@@ -5,6 +5,7 @@ tags:
   - Testing
 readingTime: 1
 description: "I've always known testing matters, but few projects actually write tests. After thoroughly researching the topic, I've put together a practical frontend testing"
+wordCount: 49
 ---
 
 I've always known testing matters, but few projects actually write tests. After thoroughly researching the topic, I've put together a practical frontend testing strategy.

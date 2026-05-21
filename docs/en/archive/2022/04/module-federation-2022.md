@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In daily development, Module Federation 2022 最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimi"
+wordCount: 179
 ---
 
 In daily development, Module Federation 2022 最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

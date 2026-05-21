@@ -6,6 +6,7 @@ tags:
   - TailwindCSS
 readingTime: 2
 description: "Tailwind CSS JIT 編譯模式在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
+wordCount: 350
 ---
 
 Tailwind CSS JIT 編譯模式在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。

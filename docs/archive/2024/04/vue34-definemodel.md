@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3.4 发布了几个质量提升很高的特性，特别是 `defineModel` 成为正式 API（不再需要 `--defineModel` 编译标志）。"
+wordCount: 212
 ---
 
 Vue 3.4 发布了几个质量提升很高的特性，特别是 `defineModel` 成为正式 API（不再需要 `--defineModel` 编译标志）。

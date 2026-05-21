@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 20 的 Compiler 和併發特性改變了組件的行為模式，測試策略也需要相應調整。2025 年的 React 測試已經形成了一套成熟的範式：Vitest 作為測試運行器，Testing Library 做組件測試，Playwright 負責 E2E，MSW 攔截網絡請求。"
+wordCount: 283
 ---
 
 React 20 的 Compiler 和併發特性改變了組件的行為模式，測試策略也需要相應調整。2025 年的 React 測試已經形成了一套成熟的範式：Vitest 作為測試運行器，Testing Library 做組件測試，Playwright 負責 E2E，MSW 攔截網絡請求。

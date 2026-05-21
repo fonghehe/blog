@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "最近在团队中落地CI/CD 缓存策略优化， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 179
 ---
 
 最近在团队中落地CI/CD 缓存策略优化， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

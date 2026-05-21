@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "Server Actions 是 Next.js 14 最核心的特性。它允許你在元件內部定義服務端函式，表單提交、按鈕點選直接觸發服務端邏輯，不再需要手動寫 API 路由。這套機制從根本上改變了前後端資料互動的模式。"
+wordCount: 481
 ---
 
 Server Actions 是 Next.js 14 最核心的特性。它允許你在元件內部定義服務端函式，表單提交、按鈕點選直接觸發服務端邏輯，不再需要手動寫 API 路由。這套機制從根本上改變了前後端資料互動的模式。

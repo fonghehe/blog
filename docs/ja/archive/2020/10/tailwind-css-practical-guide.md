@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Tailwind CSS 这两年越来越火，最近在一个内部工具项目中试用了一下。从\"这写法太奇怪了\"到\"真香\"，记录一下实际体验。"
+wordCount: 209
 ---
 
 Tailwind CSS 这两年越来越火，最近在一个内部工具项目中试用了一下。从"这写法太奇怪了"到"真香"，记录一下实际体验。

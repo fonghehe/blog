@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Zod Schema 校验进阶 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 184
 ---
 
 Zod Schema 校验进阶 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

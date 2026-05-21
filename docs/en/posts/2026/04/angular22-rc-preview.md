@@ -6,6 +6,7 @@ tags:
   - CSS
 readingTime: 3
 description: "Angular 22 Release Candidate dropped in late April 2026, and as usual, the stable release is expected roughly three weeks later in mid-May. This is the most imp"
+wordCount: 405
 ---
 
 Angular 22 Release Candidate dropped in late April 2026, and as usual, the stable release is expected roughly three weeks later in mid-May. This is the most impactful version since Angular 17 introduced the new template syntax — the next-generation Ivy compiler (internally codenamed "Evergreen") will dramatically cut build times and unlock deeper compile-time optimizations for the Signal model.

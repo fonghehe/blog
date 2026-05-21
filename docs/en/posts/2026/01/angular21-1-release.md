@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 21 reached the milestone of its Signal migration in November 2025, and 21.1, as the first minor release, brought a large amount of ecosystem stabilizati"
+wordCount: 290
 ---
 
 Angular 21 reached the milestone of its Signal migration in November 2025, and 21.1, as the first minor release, brought a large amount of ecosystem stabilization work in January 2026. The most notable highlights are `httpResource` graduating to a stable API, and `linkedSignal` being deeply integrated into complex state management.

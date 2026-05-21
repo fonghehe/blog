@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Server-first frontend architecture in 2025 has been widely discussed in the community, but many conclusions need updating as versions evolve. This article provi"
+wordCount: 169
 ---
 
 Server-first frontend architecture in 2025 has been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on the latest state of the art.

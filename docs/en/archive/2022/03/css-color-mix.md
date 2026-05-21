@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS color-mix() 色彩混合函数 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pro"
+wordCount: 170
 ---
 
 CSS color-mix() 色彩混合函数 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

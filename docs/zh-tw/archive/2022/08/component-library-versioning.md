@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在 pnpm + Turborepo 的 monorepo 中管理元件庫版本是個實際問題。什麼時候發 patch、什麼時候發 minor、怎麼生成 changelog、怎麼處理 breaking change？這篇文章講講我們團隊的實踐。"
+wordCount: 321
 ---
 
 在 pnpm + Turborepo 的 monorepo 中管理元件庫版本是個實際問題。什麼時候發 patch、什麼時候發 minor、怎麼生成 changelog、怎麼處理 breaking change？這篇文章講講我們團隊的實踐。

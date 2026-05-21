@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Year-end is a good time to round up the frontend tools I used this year, along with their positioning and selection rationale."
+wordCount: 356
 ---
 
 Year-end is a good time to round up the frontend tools I used this year, along with their positioning and selection rationale.

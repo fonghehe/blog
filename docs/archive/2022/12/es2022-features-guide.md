@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "ES2022（ES13）已经全面落地了。TypeScript 4.7+、Node.js 18、主流浏览器全部支持。这篇文章整理了 ES2022 的核心特性，每个都附上实际应用场景。"
+wordCount: 210
 ---
 
 ES2022（ES13）已经全面落地了。TypeScript 4.7+、Node.js 18、主流浏览器全部支持。这篇文章整理了 ES2022 的核心特性，每个都附上实际应用场景。

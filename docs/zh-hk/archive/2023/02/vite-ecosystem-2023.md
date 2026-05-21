@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "最近在團隊中落地Vite 5.0 發佈 Rollup 4 構建，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+wordCount: 300
 ---
 
 最近在團隊中落地Vite 5.0 發佈 Rollup 4 構建，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。

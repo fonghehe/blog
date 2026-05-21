@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Angular 20.1 was released at the end of June 2025, continuing the feature roadmap of Angular 20. This version focuses on improving the `resource()` API (promote"
+wordCount: 154
 ---
 
 Angular 20.1 was released at the end of June 2025, continuing the feature roadmap of Angular 20. This version focuses on improving the `resource()` API (promoted from experimental to developer preview) and advancing the stabilization of Signal Forms.

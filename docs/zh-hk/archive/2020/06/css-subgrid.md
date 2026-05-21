@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "關於CSS Subgrid 子網格佈局，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+wordCount: 306
 ---
 
 關於CSS Subgrid 子網格佈局，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。

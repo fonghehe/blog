@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Web Components 已經是 W3C 標準了，Chrome、Firefox 都支援。不依賴任何框架，原生瀏覽器實現元件化。"
+wordCount: 236
 ---
 
 Web Components 已經是 W3C 標準了，Chrome、Firefox 都支援。不依賴任何框架，原生瀏覽器實現元件化。

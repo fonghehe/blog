@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "There are many articles online about CSS variable theming, but most lack real-world experience. This article explores best practices from actual projects."
+wordCount: 86
 ---
 
 There are many articles online about CSS variable theming, but most lack real-world experience. This article explores best practices from actual projects.

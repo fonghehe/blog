@@ -7,6 +7,7 @@ tags:
 
 readingTime: 3
 description: "最近在团队中落地Flutter vs React Native 2021 对比，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
+wordCount: 503
 ---
 
 最近在团队中落地Flutter vs React Native 2021 对比，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。

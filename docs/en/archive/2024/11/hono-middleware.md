@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Hono 中间件系统 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 210
 ---
 
 Hono 中间件系统 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

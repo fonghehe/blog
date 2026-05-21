@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 5.4 正式釋出，帶來了一些實用的型別系統改進和對 TC39 新提案的支援。從架構視角看，有幾個特性對團隊程式碼質量提升明顯。"
+wordCount: 400
 ---
 
 TypeScript 5.4 正式釋出，帶來了一些實用的型別系統改進和對 TC39 新提案的支援。從架構視角看，有幾個特性對團隊程式碼質量提升明顯。

@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "Vite + SWC 编译加速 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based o"
+wordCount: 185
 ---
 
 Vite + SWC 编译加速 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

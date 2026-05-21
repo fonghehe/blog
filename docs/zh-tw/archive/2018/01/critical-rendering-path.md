@@ -5,6 +5,7 @@ tags:
   - 性能優化
 readingTime: 3
 description: "做效能優化之前，得先搞清楚瀏覽器從收到 HTML 到使用者看到頁面，中間經歷了什麼。這些步驟合在一起叫做**關鍵渲染路徑**（Critical Rendering Path）。不理解這個，很多優化手段只能照葫蘆畫瓢。"
+wordCount: 634
 ---
 
 做效能優化之前，得先搞清楚瀏覽器從收到 HTML 到使用者看到頁面，中間經歷了什麼。這些步驟合在一起叫做**關鍵渲染路徑**（Critical Rendering Path）。不理解這個，很多優化手段只能照葫蘆畫瓢。

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Node.js 14 進入 LTS 階段，升級了 V8 引擎到 8.1，帶來了一些實用的新特性。作為前端工程師，這些變化直接影響我們的構建工具和指令碼。"
+wordCount: 194
 ---
 
 Node.js 14 進入 LTS 階段，升級了 V8 引擎到 8.1，帶來了一些實用的新特性。作為前端工程師，這些變化直接影響我們的構建工具和指令碼。

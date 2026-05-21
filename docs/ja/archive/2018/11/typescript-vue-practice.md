@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue プロジェクトで TypeScript を使うのは想像より面倒です。2 週間格闘して、完全な設定フローをまとめます。"
+wordCount: 341
 ---
 
 Vue プロジェクトで TypeScript を使うのは想像より面倒です。2 週間格闘して、完全な設定フローをまとめます。

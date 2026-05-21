@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 4
 description: "Vue 3 新增了兩個內建元件：Teleport 和 Suspense。一個解決 DOM 結構巢狀問題，一個解決非同步元件載入狀態問題。這兩個在實際專案中用得非常頻繁，特別是 Teleport，幾乎是模態框元件的標配了。"
+wordCount: 651
 ---
 
 Vue 3 新增了兩個內建元件：Teleport 和 Suspense。一個解決 DOM 結構巢狀問題，一個解決非同步元件載入狀態問題。這兩個在實際專案中用得非常頻繁，特別是 Teleport，幾乎是模態框元件的標配了。

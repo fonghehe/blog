@@ -6,6 +6,7 @@ tags:
   - RxJS
 readingTime: 2
 description: "Angular 16 的 `@angular/core/rxjs-interop` 包提供了 `toSignal` 和 `toObservable` 两个工具函数，让 Signal 和 RxJS Observable 能无缝互操作。这解决了 Angular 生态中长期存在的\"两套响应式系统\"问题——现有的 RxJS 代"
+wordCount: 260
 ---
 
 Angular 16 的 `@angular/core/rxjs-interop` 包提供了 `toSignal` 和 `toObservable` 两个工具函数，让 Signal 和 RxJS Observable 能无缝互操作。这解决了 Angular 生态中长期存在的"两套响应式系统"问题——现有的 RxJS 代码不需要重写，可以逐步向 Signals 迁移。

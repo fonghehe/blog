@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 7 于 2018 年 10 月正式发布，带来了虚拟滚动、拖拽 CDK、性能优化等重要改进。本文梳理最值得关注的新特性。"
+wordCount: 151
 ---
 
 Angular 7 于 2018 年 10 月正式发布，带来了虚拟滚动、拖拽 CDK、性能优化等重要改进。本文梳理最值得关注的新特性。

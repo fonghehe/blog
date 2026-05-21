@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "We recently implemented Drizzle ORM v1 TypeScript ORM， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing si"
+wordCount: 157
 ---
 
 We recently implemented Drizzle ORM v1 TypeScript ORM， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

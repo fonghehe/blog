@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "前端項目裏有很多可以用 Node.js 腳本自動化的事情：代碼生成、文件處理、構建輔助等。"
+wordCount: 158
 ---
 
 前端項目裏有很多可以用 Node.js 腳本自動化的事情：代碼生成、文件處理、構建輔助等。

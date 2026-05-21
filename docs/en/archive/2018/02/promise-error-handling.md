@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Everyone uses Promises, but error handling is frequently wrong. Here are the common pitfalls and correct patterns."
+wordCount: 169
 ---
 
 Everyone uses Promises, but error handling is frequently wrong. Here are the common pitfalls and correct patterns.

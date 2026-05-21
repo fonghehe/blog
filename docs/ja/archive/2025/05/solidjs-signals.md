@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "最近チームでSolidJS Signalsのクロスフレームワーク活用を実践し、多くの知見を積みました。参考になれば幸いです。"
+wordCount: 505
 ---
 
 最近チームでSolidJS Signalsのクロスフレームワーク活用を実践し、多くの知見を積みました。参考になれば幸いです。

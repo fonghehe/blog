@@ -6,6 +6,7 @@ tags:
   - Testing
 readingTime: 1
 description: "We've recently rolled out Vitest 3.0 in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling simi"
+wordCount: 131
 ---
 
 We've recently rolled out Vitest 3.0 in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling similar challenges.

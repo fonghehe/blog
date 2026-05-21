@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "MCP（Model Context Protocol）正在成为 AI 与工具之间的标准协议。来聊聊前端工程师如何利用 MCP 提升开发效率。"
+wordCount: 208
 ---
 
 MCP（Model Context Protocol）正在成为 AI 与工具之间的标准协议。来聊聊前端工程师如何利用 MCP 提升开发效率。

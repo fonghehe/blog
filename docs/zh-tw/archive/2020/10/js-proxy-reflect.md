@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "JavaScript Proxy Reflect 超程式設計在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
+wordCount: 303
 ---
 
 JavaScript Proxy Reflect 超程式設計在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。

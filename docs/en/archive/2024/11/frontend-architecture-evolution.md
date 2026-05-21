@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Seven years in frontend development. I want to trace how our code organization has evolved over the years from an architecture perspective."
+wordCount: 297
 ---
 
 Seven years in frontend development. I want to trace how our code organization has evolved over the years from an architecture perspective.

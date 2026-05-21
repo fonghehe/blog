@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "We recently implemented Vue 3.2 script-setup 实践， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar "
+wordCount: 217
 ---
 
 We recently implemented Vue 3.2 script-setup 实践， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

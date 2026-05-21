@@ -5,6 +5,7 @@ tags:
   - Micro Frontend
 readingTime: 1
 description: "When it comes to micro-frontend 2025 architecture trends, many developers only scratch the surface at the API call level. This article takes a production-enviro"
+wordCount: 156
 ---
 
 When it comes to micro-frontend 2025 architecture trends, many developers only scratch the surface at the API call level. This article takes a production-environment perspective to discuss the problems you actually encounter and their solutions.

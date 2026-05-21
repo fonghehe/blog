@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "作为组件系统负责人，设计 Token 是我们团队今年的重点建设之一。分享一下从 0 到 1 搭建 Token 系统的经验。"
+wordCount: 285
 ---
 
 作为组件系统负责人，设计 Token 是我们团队今年的重点建设之一。分享一下从 0 到 1 搭建 Token 系统的经验。

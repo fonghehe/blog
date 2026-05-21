@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I previously wrote an analysis on whether Biome can replace ESLint + Prettier. After several months of full rollout across the team, here is a summary of the co"
+wordCount: 396
 ---
 
 I previously wrote an analysis on whether Biome can replace ESLint + Prettier. After several months of full rollout across the team, here is a summary of the complete workflow experience.

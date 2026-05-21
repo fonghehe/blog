@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3.3 釋出了。沒有顛覆性新特性，但型別系統和 DX（開發體驗）的改進非常實在。"
+wordCount: 344
 ---
 
 Vue 3.3 釋出了。沒有顛覆性新特性，但型別系統和 DX（開發體驗）的改進非常實在。

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "前端测试 2024 最佳实践 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real proj"
+wordCount: 228
 ---
 
 前端测试 2024 最佳实践 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real project experience.

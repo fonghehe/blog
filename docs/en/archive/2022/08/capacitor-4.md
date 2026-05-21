@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Capacitor 4 跨平台更新 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
+wordCount: 201
 ---
 
 Capacitor 4 跨平台更新 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

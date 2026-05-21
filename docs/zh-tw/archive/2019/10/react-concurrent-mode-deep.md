@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 4
 description: "React 在 16.3 版本引入了 Fiber 架構，為併發渲染打下了基礎。Concurrent Mode 是 React 團隊正在開發的一項實驗性功能，它讓 React 可以同時準備多個版本的 UI，從根本上改善使用者體驗。本文將深入探討 Concurrent Mode 的工作原理和使用方式。"
+wordCount: 624
 ---
 
 React 在 16.3 版本引入了 Fiber 架構，為併發渲染打下了基礎。Concurrent Mode 是 React 團隊正在開發的一項實驗性功能，它讓 React 可以同時準備多個版本的 UI，從根本上改善使用者體驗。本文將深入探討 Concurrent Mode 的工作原理和使用方式。

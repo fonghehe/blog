@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "Module Federation 性能优化策略 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real p"
+wordCount: 169
 ---
 
 Module Federation 性能优化策略 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

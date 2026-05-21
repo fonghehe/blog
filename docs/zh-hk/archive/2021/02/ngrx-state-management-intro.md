@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "NgRx 是 Angular 生態最主流的狀態管理庫，基於 Redux 模式 + RxJS。對於中大型 Angular 應用，NgRx 能讓狀態流轉變得可預測、可調試、可測試。這篇文章帶你完整走一遍 NgRx 的核心概念和實際用法。"
+wordCount: 241
 ---
 
 NgRx 是 Angular 生態最主流的狀態管理庫，基於 Redux 模式 + RxJS。對於中大型 Angular 應用，NgRx 能讓狀態流轉變得可預測、可調試、可測試。這篇文章帶你完整走一遍 NgRx 的核心概念和實際用法。

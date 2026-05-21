@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS Custom Properties (also called CSS Variables) are now supported across major browsers. They are more flexible than Sass variables because they can be update"
+wordCount: 67
 ---
 
 CSS Custom Properties (also called CSS Variables) are now supported across major browsers. They are more flexible than Sass variables because they can be updated at runtime.

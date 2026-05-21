@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "shadcn/ui 是 2023 年前端圈最火的 UI 解決方案之一，但它不是傳統意義上的\"組件庫\"。"
+wordCount: 329
 ---
 
 shadcn/ui 是 2023 年前端圈最火的 UI 解決方案之一，但它不是傳統意義上的"組件庫"。

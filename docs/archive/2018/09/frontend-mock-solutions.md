@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "前后端并行开发时，前端需要 Mock 数据。用过好几种方案，整理一下各自的优缺点。"
+wordCount: 360
 ---
 
 前后端并行开发时，前端需要 Mock 数据。用过好几种方案，整理一下各自的优缺点。

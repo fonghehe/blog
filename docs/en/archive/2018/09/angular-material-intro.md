@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular Material is Angular's official Material Design UI component library — ready to use out of the box with good accessibility, ideal for rapidly building en"
+wordCount: 111
 ---
 
 Angular Material is Angular's official Material Design UI component library — ready to use out of the box with good accessibility, ideal for rapidly building enterprise admin systems.

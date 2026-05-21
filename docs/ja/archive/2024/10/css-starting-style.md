@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS @starting-style是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。"
+wordCount: 288
 ---
 
 CSS @starting-style是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。

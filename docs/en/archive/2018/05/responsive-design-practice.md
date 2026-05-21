@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "After working on several mobile projects, here's a summary of responsive design best practices."
+wordCount: 87
 ---
 
 After working on several mobile projects, here's a summary of responsive design best practices.

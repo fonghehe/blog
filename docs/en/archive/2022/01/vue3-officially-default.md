@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "As the new year begins, the frontend ecosystem is completing a quiet but important switch. Vue 3 is expected to become the default version of `npm install vue` "
+wordCount: 416
 ---
 
 As the new year begins, the frontend ecosystem is completing a quiet but important switch. Vue 3 is expected to become the default version of `npm install vue` in Q1 2022, Vite 2 is already the preferred build tool for most new projects, and React 18 official release is imminent. This article reviews the frontend landscape at the end of 2021 and looks ahead to key milestones in 2022.

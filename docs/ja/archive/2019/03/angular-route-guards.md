@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular Routerは複数のガードインターフェースを提供し、ルートアクセス権限をきめ細かく制御できる。"
+wordCount: 128
 ---
 
 Angular Routerは複数のガードインターフェースを提供し、ルートアクセス権限をきめ細かく制御できる。

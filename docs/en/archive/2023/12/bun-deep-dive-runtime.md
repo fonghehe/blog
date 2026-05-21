@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Bun 1.0 发布三个月了。在测试环境和几个小项目中深度使用后，写一份全面的评测。"
+wordCount: 419
 ---
 
 Bun 1.0 发布三个月了。在测试环境和几个小项目中深度使用后，写一份全面的评测。

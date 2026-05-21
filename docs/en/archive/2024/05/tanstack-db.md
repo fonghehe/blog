@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently implemented TanStack DB 客户端数据库 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help thos"
+wordCount: 213
 ---
 
 I recently implemented TanStack DB 客户端数据库 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those doing similar work.

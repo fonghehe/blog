@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "闭包是 JavaScript 面试必问，但真正理解的人不多。这篇从词法作用域出发，讲清楚什么是闭包，以及实际工程中的应用。"
+wordCount: 323
 ---
 
 闭包是 JavaScript 面试必问，但真正理解的人不多。这篇从词法作用域出发，讲清楚什么是闭包，以及实际工程中的应用。

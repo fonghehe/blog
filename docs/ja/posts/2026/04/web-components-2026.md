@@ -5,6 +5,7 @@ tags:
   - Web Components
 readingTime: 3
 description: "Web Components 2026 の成熟度については、多くの開発者が API 呼び出しの表面的な部分にとどまっています。本記事では本番環境の視点から、実際に直面する問題とその解決策を議論します。"
+wordCount: 486
 ---
 
 Web Components 2026 の成熟度については、多くの開発者が API 呼び出しの表面的な部分にとどまっています。本記事では本番環境の視点から、実際に直面する問題とその解決策を議論します。

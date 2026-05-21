@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "We've recently rolled out Svelte 6 in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling simila"
+wordCount: 149
 ---
 
 We've recently rolled out Svelte 6 in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling similar challenges.

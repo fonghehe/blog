@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "Generics are one of the most powerful features in TypeScript's type system. Many people only know the basic `Array<T>` usage, but generics combined with conditi"
+wordCount: 101
 ---
 
 Generics are one of the most powerful features in TypeScript's type system. Many people only know the basic `Array<T>` usage, but generics combined with conditional types, mapped types, and the `infer` keyword can achieve very flexible type inference. This article systematically covers generic programming patterns from basics to real-world usage.

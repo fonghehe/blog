@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "上一篇聊了微前端架構設計，這篇寫具體的技術接入。我們用 qiankun 接入了 6 個子應用，包含 Vue 2、Vue 3 和 React 三種技術棧。記錄主應用配置、子應用改造和常見問題。"
+wordCount: 404
 ---
 
 上一篇聊了微前端架構設計，這篇寫具體的技術接入。我們用 qiankun 接入了 6 個子應用，包含 Vue 2、Vue 3 和 React 三種技術棧。記錄主應用配置、子應用改造和常見問題。

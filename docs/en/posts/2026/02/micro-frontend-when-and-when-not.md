@@ -5,6 +5,7 @@ tags:
   - Micro-frontend
 readingTime: 2
 description: "Over the past two years I've helped several teams evaluate micro-frontends — some moved forward, others pulled the plug. I want to write a clear-eyed article ab"
+wordCount: 253
 ---
 
 Over the past two years I've helped several teams evaluate micro-frontends — some moved forward, others pulled the plug. I want to write a clear-eyed article about it.

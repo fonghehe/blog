@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "LLM 前端集成方案This topic has been discussed many times in the community, but with each version update, many conclusions need revising. This article revisits the top"
+wordCount: 206
 ---
 
 LLM 前端集成方案This topic has been discussed many times in the community, but with each version update, many conclusions need revising. This article revisits the topic based on the latest version.

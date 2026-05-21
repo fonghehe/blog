@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS 自定义属性（又叫 CSS 变量）已经被主流浏览器支持了，比 Sass 变量更灵活，可以运行时修改。"
+wordCount: 171
 ---
 
 CSS 自定义属性（又叫 CSS 变量）已经被主流浏览器支持了，比 Sass 变量更灵活，可以运行时修改。

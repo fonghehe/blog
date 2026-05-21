@@ -6,6 +6,7 @@ tags:
   - Vitest
 readingTime: 4
 description: "最近社區在討論一個話題：既然 Vite 已經解決了開發和構建的問題，為什麼測試環節還是需要一套獨立的、和 Vite 完全無關的工具鏈？測試跑在 Node 上，用 Jest 的 transform 配置，又回到了 Babel/TypeScript 編譯那一套。如果測試也能複用 Vite 的模塊解析和轉換能力呢？"
+wordCount: 696
 ---
 
 最近社區在討論一個話題：既然 Vite 已經解決了開發和構建的問題，為什麼測試環節還是需要一套獨立的、和 Vite 完全無關的工具鏈？測試跑在 Node 上，用 Jest 的 transform 配置，又回到了 Babel/TypeScript 編譯那一套。如果測試也能複用 Vite 的模塊解析和轉換能力呢？

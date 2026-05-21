@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Testing is something everyone knows is important, but most teams actually do poorly. Let me share how my thinking about frontend testing strategy has evolved ov"
+wordCount: 196
 ---
 
 Testing is something everyone knows is important, but most teams actually do poorly. Let me share how my thinking about frontend testing strategy has evolved over the past few years.

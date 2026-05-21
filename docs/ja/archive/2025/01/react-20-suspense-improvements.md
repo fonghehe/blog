@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 20はSuspenseの関連APIを強化しました。`SuspenseList`の安定版リリース、`useSuspenseQuery`フックの追加、そしてSelective Hydrationのパフォーマンス改善が含まれます。本記事では実践的な使用パターンを中心に紹介します。"
+wordCount: 388
 ---
 
 React 20はSuspenseの関連APIを強化しました。`SuspenseList`の安定版リリース、`useSuspenseQuery`フックの追加、そしてSelective Hydrationのパフォーマンス改善が含まれます。本記事では実践的な使用パターンを中心に紹介します。

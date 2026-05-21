@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Recently implemented Radix UI Themes Design System in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those "
+wordCount: 195
 ---
 
 Recently implemented Radix UI Themes Design System in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

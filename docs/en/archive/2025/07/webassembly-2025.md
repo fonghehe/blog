@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Regarding WebAssembly 2025 frontend applications, many developers only scratch the surface at the API level. This article attempts to discuss the problems encou"
+wordCount: 189
 ---
 
 Regarding WebAssembly 2025 frontend applications, many developers only scratch the surface at the API level. This article attempts to discuss the problems encountered in practice and their solutions from a production perspective.

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS Grid は Flexbox では綺麗に解決できないレイアウト問題を解決します。Flexbox は一次元（行または列のどちらか）ですが、Grid は二次元（行と列を同時に）です。"
+wordCount: 326
 ---
 
 CSS Grid は Flexbox では綺麗に解決できないレイアウト問題を解決します。Flexbox は一次元（行または列のどちらか）ですが、Grid は二次元（行と列を同時に）です。

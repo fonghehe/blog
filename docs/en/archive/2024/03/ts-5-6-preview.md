@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Regarding TypeScript 5.6 Preview Features, many developers only stay at the API call level. This article discusses real-world problems and solutions from a prod"
+wordCount: 155
 ---
 
 Regarding TypeScript 5.6 Preview Features, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

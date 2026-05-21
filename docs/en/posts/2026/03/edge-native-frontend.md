@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Edge-native frontend architecture is seeing growing adoption in frontend development. This article starts from real-world projects and dives deep into its core "
+wordCount: 202
 ---
 
 Edge-native frontend architecture is seeing growing adoption in frontend development. This article starts from real-world projects and dives deep into its core principles and best practices.

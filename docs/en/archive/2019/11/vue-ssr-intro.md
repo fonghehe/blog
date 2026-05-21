@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "最近项目中用到了Vue 2 SSR 服务端渲染入门，发现比预想的要复杂。分享一下实践过程中总结的经验。"
+wordCount: 204
 ---
 
 最近项目中用到了Vue 2 SSR 服务端渲染入门，发现比预想的要复杂。分享一下实践过程中总结的经验。

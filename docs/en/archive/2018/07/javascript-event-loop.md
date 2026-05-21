@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "The Event Loop is the core of JavaScript's concurrency model and a frequent interview topic."
+wordCount: 178
 ---
 
 The Event Loop is the core of JavaScript's concurrency model and a frequent interview topic.

@@ -6,6 +6,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Angular 20でZonelessが正式に安定化しましたが、実際の移行は設定を1行変えるだけでは済みません。本記事では、中規模のAngularプロジェクト（約80コンポーネント）をzone.jsからZonelessに移行した完全なプロセスを記録し、遭遇したハマりどころと解決策を共有します。"
+wordCount: 379
 ---
 
 Angular 20でZonelessが正式に安定化しましたが、実際の移行は設定を1行変えるだけでは済みません。本記事では、中規模のAngularプロジェクト（約80コンポーネント）をzone.jsからZonelessに移行した完全なプロセスを記録し、遭遇したハマりどころと解決策を共有します。

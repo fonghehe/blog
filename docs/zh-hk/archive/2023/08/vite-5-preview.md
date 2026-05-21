@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "Vite 5 進入 beta 階段了。這次更新的核心主題是\"清理技術債務\"和\"擁抱現代標準\"。"
+wordCount: 349
 ---
 
 Vite 5 進入 beta 階段了。這次更新的核心主題是"清理技術債務"和"擁抱現代標準"。

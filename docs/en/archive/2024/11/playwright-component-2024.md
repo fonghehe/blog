@@ -5,6 +5,7 @@ tags:
   - Testing
 readingTime: 2
 description: "在日常开发中，Playwright 组件测试 2024 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 191
 ---
 
 在日常开发中，Playwright 组件测试 2024 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

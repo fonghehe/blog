@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "We recently implemented CSS :has() 选择器正式落地， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 182
 ---
 
 We recently implemented CSS :has() 选择器正式落地， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

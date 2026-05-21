@@ -5,6 +5,7 @@ tags:
   - PWA
 readingTime: 2
 description: "PWA (Progressive Web App) is a set of techniques that make web apps feel more like native apps: offline support, push notifications, home screen installation. T"
+wordCount: 192
 ---
 
 PWA (Progressive Web App) is a set of techniques that make web apps feel more like native apps: offline support, push notifications, home screen installation. The core technology is the Service Worker.

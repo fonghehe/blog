@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 9 于 2020 年 2 月 6 日正式发布，Ivy 渲染引擎成为默认选项。升级了一批内部项目后，来分享真实的体积变化数据和踩坑经验。"
+wordCount: 361
 ---
 
 Angular 9 于 2020 年 2 月 6 日正式发布，Ivy 渲染引擎成为默认选项。升级了一批内部项目后，来分享真实的体积变化数据和踩坑经验。

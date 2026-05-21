@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 22が2026年5月7日に正式リリースされた。先月のRCプレビューに続き、正式版はいくつかの最終仕上げを加えた。Evergreenコンパイラが本番利用可能になり、Zonelessが新規プロジェクトのデフォルトモードになり、Server-Side Renderingが全面的に再設計された。フロントエンド三"
+wordCount: 757
 ---
 
 Angular 22が2026年5月7日に正式リリースされた。先月のRCプレビューに続き、正式版はいくつかの最終仕上げを加えた。Evergreenコンパイラが本番利用可能になり、Zonelessが新規プロジェクトのデフォルトモードになり、Server-Side Renderingが全面的に再設計された。フロントエンド三大フレームワークがそれぞれ成熟段階に入った2026年、Angular 22は完成した答えを示した。

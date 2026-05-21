@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Open Props CSS 設計令牌這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
+wordCount: 321
 ---
 
 Open Props CSS 設計令牌這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。

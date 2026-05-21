@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "ほとんどの場合テンプレートで十分ですが、render 関数がより柔軟な場面があります。"
+wordCount: 374
 ---
 
 ほとんどの場合テンプレートで十分ですが、render 関数がより柔軟な場面があります。

@@ -6,6 +6,7 @@ tags:
   - Vue
 readingTime: 2
 description: "最近把一個內部運營平臺從 CSR 遷移到了 Vite SSR，記錄一下踩坑和經驗。Vite 2.x 的 SSR 支援已經比較成熟了，但文件偏少，實際用起來還是有一些要注意的。"
+wordCount: 284
 ---
 
 最近把一個內部運營平臺從 CSR 遷移到了 Vite SSR，記錄一下踩坑和經驗。Vite 2.x 的 SSR 支援已經比較成熟了，但文件偏少，實際用起來還是有一些要注意的。

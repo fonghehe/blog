@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "JavaScript globalThis 跨环境统一在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
+wordCount: 307
 ---
 
 JavaScript globalThis 跨环境统一在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

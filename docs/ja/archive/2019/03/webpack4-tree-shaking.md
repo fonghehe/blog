@@ -6,6 +6,7 @@ tags:
   - エンジニアリング
 readingTime: 1
 description: "チームにWebpack 4 Tree Shakingを普及させる過程で、多くの落とし穴を経験した。同じ苦労をする人が減るよう、ここに記録しておく。"
+wordCount: 292
 ---
 
 チームにWebpack 4 Tree Shakingを普及させる過程で、多くの落とし穴を経験した。同じ苦労をする人が減るよう、ここに記録しておく。

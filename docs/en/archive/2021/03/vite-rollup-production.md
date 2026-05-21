@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，Vite 生产构建 Rollup 深度定制 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 197
 ---
 
 在日常开发中，Vite 生产构建 Rollup 深度定制 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

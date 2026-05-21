@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "We've recently rolled out Devin vs Copilot AI development tools in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it"
+wordCount: 152
 ---
 
 We've recently rolled out Devin vs Copilot AI development tools in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling similar challenges.

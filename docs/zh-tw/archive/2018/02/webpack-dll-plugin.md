@@ -5,6 +5,7 @@ tags:
   - Webpack
 readingTime: 1
 description: "專案越來越大，Webpack 冷啟動越來越慢。DllPlugin 的思路是：把不經常變動的第三方庫單獨打包，之後每次構建就不用重新處理它們了。"
+wordCount: 255
 ---
 
 專案越來越大，Webpack 冷啟動越來越慢。DllPlugin 的思路是：把不經常變動的第三方庫單獨打包，之後每次構建就不用重新處理它們了。

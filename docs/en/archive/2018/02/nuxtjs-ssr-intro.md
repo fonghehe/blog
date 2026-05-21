@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "I recently used Nuxt.js for a project that needed SEO. Here's a summary of the basic SSR concepts and Nuxt's core usage."
+wordCount: 314
 ---
 
 I recently used Nuxt.js for a project that needed SEO. Here's a summary of the basic SSR concepts and Nuxt's core usage.

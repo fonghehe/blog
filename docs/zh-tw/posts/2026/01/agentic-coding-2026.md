@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 3
 description: "Agentic Coding 已經不是概念驗證了。2026 年，Claude Code、Cursor Agent、GitHub Copilot Workspace 都已經是成熟產品。但真正用好 Agentic Coding 的團隊不多，大多數還停留在\"用 Agent 寫單個函式\"的階段。"
+wordCount: 431
 ---
 
 Agentic Coding 已經不是概念驗證了。2026 年，Claude Code、Cursor Agent、GitHub Copilot Workspace 都已經是成熟產品。但真正用好 Agentic Coding 的團隊不多，大多數還停留在"用 Agent 寫單個函式"的階段。

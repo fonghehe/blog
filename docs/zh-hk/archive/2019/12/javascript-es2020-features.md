@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 4
 description: "TC-39 委員會每年都會給 JavaScript 帶來新特性。ES2020（ES11）已經走完了提案流程，預計 2020 年 6 月正式發佈。這次更新中有幾個非常實用的特性，特別是 Optional Chaining 和 Nullish Coalescing，能顯著減少我們日常代碼中的防禦性判斷。下面逐一介紹。"
+wordCount: 489
 ---
 
 TC-39 委員會每年都會給 JavaScript 帶來新特性。ES2020（ES11）已經走完了提案流程，預計 2020 年 6 月正式發佈。這次更新中有幾個非常實用的特性，特別是 Optional Chaining 和 Nullish Coalescing，能顯著減少我們日常代碼中的防禦性判斷。下面逐一介紹。

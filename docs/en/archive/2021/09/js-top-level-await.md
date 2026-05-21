@@ -6,6 +6,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，JavaScript 顶层 await 使用场景 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 179
 ---
 
 在日常开发中，JavaScript 顶层 await 使用场景 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

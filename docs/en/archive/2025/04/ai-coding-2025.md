@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "AI coding tools have been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on "
+wordCount: 155
 ---
 
 AI coding tools have been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on the latest releases.

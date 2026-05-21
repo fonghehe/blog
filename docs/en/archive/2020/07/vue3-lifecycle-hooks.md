@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "Vue 3 Composition API 对生命周期钩子做了重新设计。过去我们在 Options API 中使用 `mounted`、`created` 这些选项，现在在 `setup()` 函数中，需要改用对应的 `onXxx` 形式。这段时间在把内部组件库往 Composition API 迁移的过程中，踩了一些"
+wordCount: 473
 ---
 
 Vue 3 Composition API 对生命周期钩子做了重新设计。过去我们在 Options API 中使用 `mounted`、`created` 这些选项，现在在 `setup()` 函数中，需要改用对应的 `onXxx` 形式。这段时间在把内部组件库往 Composition API 迁移的过程中，踩了一些坑，整理一下。

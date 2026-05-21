@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 1
 description: "ES2018 已经定稿，整理一下几个最实用的新特性。"
+wordCount: 134
 ---
 
 ES2018 已经定稿，整理一下几个最实用的新特性。

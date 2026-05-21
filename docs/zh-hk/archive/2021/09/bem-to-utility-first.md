@@ -6,6 +6,7 @@ tags:
   - CSS
 readingTime: 2
 description: "今年在團隊內推動了一次 CSS 架構的升級——從 BEM 命名規範逐步遷移到 Utility-First 方案。過程中有爭論、有妥協，最終找到了一個平衡點。"
+wordCount: 421
 ---
 
 今年在團隊內推動了一次 CSS 架構的升級——從 BEM 命名規範逐步遷移到 Utility-First 方案。過程中有爭論、有妥協，最終找到了一個平衡點。

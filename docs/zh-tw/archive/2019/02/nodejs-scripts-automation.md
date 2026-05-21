@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "前端工程師寫 Node.js 指令碼，能解決很多重複勞動。整理一些實用的指令碼開發技巧。"
+wordCount: 128
 ---
 
 前端工程師寫 Node.js 指令碼，能解決很多重複勞動。整理一些實用的指令碼開發技巧。

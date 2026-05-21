@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "ES6 的迭代器（Iterator）和生成器（Generator）是实现自定义迭代的工具，在 Vuex、Redux-Saga 里都用到了生成器。"
+wordCount: 245
 ---
 
 ES6 的迭代器（Iterator）和生成器（Generator）是实现自定义迭代的工具，在 Vuex、Redux-Saga 里都用到了生成器。

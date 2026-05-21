@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 3
 description: "This is my eighth year as a frontend developer. It's not a year-end review, but I wanted to use this milestone to reflect: what does a frontend engineer's growt"
+wordCount: 466
 ---
 
 This is my eighth year as a frontend developer. It's not a year-end review, but I wanted to use this milestone to reflect: what does a frontend engineer's growth path actually look like, and what things truly matter?

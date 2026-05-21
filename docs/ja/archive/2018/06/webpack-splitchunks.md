@@ -6,6 +6,7 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "Webpack 4では以前の`CommonsChunkPlugin`が`splitChunks`に置き換えられ、設定がよりシンプルになりました。実際のプロジェクトでの設定を記録します。"
+wordCount: 450
 ---
 
 Webpack 4では以前の`CommonsChunkPlugin`が`splitChunks`に置き換えられ、設定がよりシンプルになりました。実際のプロジェクトでの設定を記録します。

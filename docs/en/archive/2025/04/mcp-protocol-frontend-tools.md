@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "MCP (Model Context Protocol) is becoming the standard protocol between AI and tools. Let's talk about how frontend engineers can leverage MCP to boost developme"
+wordCount: 143
 ---
 
 MCP (Model Context Protocol) is becoming the standard protocol between AI and tools. Let's talk about how frontend engineers can leverage MCP to boost development efficiency.

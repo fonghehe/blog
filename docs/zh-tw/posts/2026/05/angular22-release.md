@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 22 於 2026 年 5 月 7 日正式釋出。繼上月 RC 預覽之後，正式版帶來了幾項最終打磨：Evergreen 編譯器生產可用，Zoneless 成為新專案預設模式，以及對 Server-Side Rendering 的全面重構。在前端三大框架各自走向成熟的 2026 年，Angular 22 交"
+wordCount: 530
 ---
 
 Angular 22 於 2026 年 5 月 7 日正式釋出。繼上月 RC 預覽之後，正式版帶來了幾項最終打磨：Evergreen 編譯器生產可用，Zoneless 成為新專案預設模式，以及對 Server-Side Rendering 的全面重構。在前端三大框架各自走向成熟的 2026 年，Angular 22 交出了一份完整的答卷。

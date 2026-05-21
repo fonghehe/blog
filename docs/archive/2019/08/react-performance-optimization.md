@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "用 React Profiler 分析了一个性能有问题的页面，整理出一套优化方法论。"
+wordCount: 188
 ---
 
 用 React Profiler 分析了一个性能有问题的页面，整理出一套优化方法论。

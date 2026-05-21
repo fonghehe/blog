@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 3
 description: "Going from a Figma design to working code used to be one of the most time-consuming stages of frontend development. In 2026, LLM-driven UI generation tools have"
+wordCount: 319
 ---
 
 Going from a Figma design to working code used to be one of the most time-consuming stages of frontend development. In 2026, LLM-driven UI generation tools have matured to the point where they can understand design intent, component hierarchy, and even interaction states. But there's still a massive gap between "it works" and "it's production-ready."

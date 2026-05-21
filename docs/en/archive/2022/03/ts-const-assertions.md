@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "In daily development, TypeScript const 断言最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimizati"
+wordCount: 188
 ---
 
 In daily development, TypeScript const 断言最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

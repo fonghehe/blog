@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "2025年のReactテストエコシステムは、Vitestの台頭によってJestからの移行が加速しています。本記事では**Vitest**（ユニット/コンポーネントテスト）、**Testing Library**（DOMインタラクション）、**Playwright**（E2E）、**MSW**（APIモック）の4ツールを"
+wordCount: 251
 ---
 
 2025年のReactテストエコシステムは、Vitestの台頭によってJestからの移行が加速しています。本記事では**Vitest**（ユニット/コンポーネントテスト）、**Testing Library**（DOMインタラクション）、**Playwright**（E2E）、**MSW**（APIモック）の4ツールを組み合わせた実践的なテスト戦略を紹介します。

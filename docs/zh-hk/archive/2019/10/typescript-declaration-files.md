@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 4
 description: "在 TypeScript 項目中引入第三方 JavaScript 庫時，聲明文件（`.d.ts`）是連接類型系統和無類型代碼的橋樑。即使庫本身沒有提供類型定義，我們也可以自己編寫聲明文件。本文系統地介紹聲明文件的編寫方法。"
+wordCount: 463
 ---
 
 在 TypeScript 項目中引入第三方 JavaScript 庫時，聲明文件（`.d.ts`）是連接類型系統和無類型代碼的橋樑。即使庫本身沒有提供類型定義，我們也可以自己編寫聲明文件。本文系統地介紹聲明文件的編寫方法。

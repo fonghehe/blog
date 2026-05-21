@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "把多層巢狀陣列變成一維陣列是常見需求。記錄幾種實現方式，並對比適用場景。"
+wordCount: 211
 ---
 
 把多層巢狀陣列變成一維陣列是常見需求。記錄幾種實現方式，並對比適用場景。

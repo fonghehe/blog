@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "A classic interview question, but implementing it yourself gives you the deepest understanding."
+wordCount: 48
 ---
 
 A classic interview question, but implementing it yourself gives you the deepest understanding.

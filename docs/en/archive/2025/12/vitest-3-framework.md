@@ -6,6 +6,7 @@ tags:
   - Testing
 readingTime: 2
 description: "Vitest 3.0 Testing Framework is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices fr"
+wordCount: 205
 ---
 
 Vitest 3.0 Testing Framework is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

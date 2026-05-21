@@ -5,6 +5,7 @@ tags:
   - Testing
 readingTime: 2
 description: "In day-to-day development, Playwright 2025 New Features is being used more and more frequently. This article systematically explains its usage, principles, and "
+wordCount: 180
 ---
 
 In day-to-day development, Playwright 2025 New Features is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "在日常开发中，Vue 3 keep-alive 深入の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
+wordCount: 503
 ---
 
 在日常开发中，Vue 3 keep-alive 深入の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。

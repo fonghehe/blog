@@ -5,6 +5,7 @@ tags:
   - HTTP
 readingTime: 1
 description: "HTTPS 已經是現代 Web 的標配，但具體是怎麼工作的？和前端開發有什麼關聯？整理一下。"
+wordCount: 201
 ---
 
 HTTPS 已經是現代 Web 的標配，但具體是怎麼工作的？和前端開發有什麼關聯？整理一下。

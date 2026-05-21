@@ -6,6 +6,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "When it comes to New Directions in Vue Compiler Optimization, many developers only scratch the surface at the API call level. This article attempts to discuss t"
+wordCount: 118
 ---
 
 When it comes to New Directions in Vue Compiler Optimization, many developers only scratch the surface at the API call level. This article attempts to discuss the real-world problems and solutions you'll encounter from a production environment perspective.

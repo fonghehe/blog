@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Frequently used in daily work, 前端路由方案选型，Here is a systematic summary to help everyone better understand and apply it."
+wordCount: 206
 ---
 
 Frequently used in daily work, 前端路由方案选型，Here is a systematic summary to help everyone better understand and apply it.

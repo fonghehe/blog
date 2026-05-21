@@ -6,6 +6,7 @@ tags:
   - Vue
 readingTime: 2
 description: "最近把一个内部运营平台从 CSR 迁移到了 Vite SSR，记录一下踩坑和经验。Vite 2.x 的 SSR 支持已经比较成熟了，但文档偏少，实际用起来还是有一些要注意的。"
+wordCount: 283
 ---
 
 最近把一个内部运营平台从 CSR 迁移到了 Vite SSR，记录一下踩坑和经验。Vite 2.x 的 SSR 支持已经比较成熟了，但文档偏少，实际用起来还是有一些要注意的。

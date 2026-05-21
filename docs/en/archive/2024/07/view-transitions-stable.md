@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Recently implemented View Transitions Stable: Practical Applications in our team and accumulated quite a bit of experience. Here's a summary for reference, hopi"
+wordCount: 187
 ---
 
 Recently implemented View Transitions Stable: Practical Applications in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

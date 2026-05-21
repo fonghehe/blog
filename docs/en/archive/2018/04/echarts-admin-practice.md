@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Data visualization is a common requirement in admin systems. ECharts is the most widely used charting library in the Chinese ecosystem. Here are some practical "
+wordCount: 138
 ---
 
 Data visualization is a common requirement in admin systems. ECharts is the most widely used charting library in the Chinese ecosystem. Here are some practical tips from real-world experience.

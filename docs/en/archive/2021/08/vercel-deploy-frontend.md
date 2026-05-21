@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "关于Vercel 前端部署与预览环境，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 188
 ---
 
 关于Vercel 前端部署与预览环境，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

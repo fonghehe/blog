@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "函數語言程式設計的核心工具函式在實際專案中並不遠。Redux middleware、Lodash/fp、RxJS 運算子背後都是這些思想。手寫實現能幫你完全吹散它們。"
+wordCount: 144
 ---
 
 函數語言程式設計的核心工具函式在實際專案中並不遠。Redux middleware、Lodash/fp、RxJS 運算子背後都是這些思想。手寫實現能幫你完全吹散它們。

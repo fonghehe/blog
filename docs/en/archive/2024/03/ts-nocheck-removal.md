@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Recently implemented TypeScript 渐进式迁移策略 in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing simil"
+wordCount: 186
 ---
 
 Recently implemented TypeScript 渐进式迁移策略 in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "Before doing performance optimization, you need to understand what happens between the browser receiving HTML and the user seeing the page. These steps together"
+wordCount: 358
 ---
 
 Before doing performance optimization, you need to understand what happens between the browser receiving HTML and the user seeing the page. These steps together are called the **Critical Rendering Path**. Without understanding this, most optimization techniques are just cargo-culting.

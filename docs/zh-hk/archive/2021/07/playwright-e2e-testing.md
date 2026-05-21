@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "關於Playwright E2E 跨瀏覽器測試，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+wordCount: 312
 ---
 
 關於Playwright E2E 跨瀏覽器測試，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。

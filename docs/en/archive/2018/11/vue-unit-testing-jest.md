@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "I always thought writing tests was something I'd do \"when I have time,\" but as the number of components grew, every code change felt nerve-wracking. I finally t"
+wordCount: 104
 ---
 
 I always thought writing tests was something I'd do "when I have time," but as the number of components grew, every code change felt nerve-wracking. I finally took the time to set up a test environment, and now I wish I had done it sooner.

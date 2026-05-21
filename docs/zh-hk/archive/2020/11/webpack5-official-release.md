@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "Webpack 5 正式版發佈了。之前在 Beta 階段預覽過新特性，現在正式版出來後，做一次完整的升級實戰。"
+wordCount: 176
 ---
 
 Webpack 5 正式版發佈了。之前在 Beta 階段預覽過新特性，現在正式版出來後，做一次完整的升級實戰。

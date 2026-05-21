@@ -5,6 +5,7 @@ tags:
   - 性能優化
 readingTime: 4
 description: "Node.js 作為服務端運行時，性能調優是上線前必不可少的環節。從內存泄漏排查到事件循環監控，從 CPU profiling 到 GC 調參，Node.js 提供了豐富的工具鏈幫助我們定位性能瓶頸。本文將結合實際案例，系統講解 Node.js 性能調優的方法論和實踐技巧。"
+wordCount: 561
 ---
 
 Node.js 作為服務端運行時，性能調優是上線前必不可少的環節。從內存泄漏排查到事件循環監控，從 CPU profiling 到 GC 調參，Node.js 提供了豐富的工具鏈幫助我們定位性能瓶頸。本文將結合實際案例，系統講解 Node.js 性能調優的方法論和實踐技巧。

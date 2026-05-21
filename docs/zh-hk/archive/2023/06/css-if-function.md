@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS if() 函數提案在近年來發展迅速，本文將深入分析其原理和實踐方法。"
+wordCount: 228
 ---
 
 CSS if() 函數提案在近年來發展迅速，本文將深入分析其原理和實踐方法。

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 4
 description: "React 16.5 引入了 Profiler API，16.9 又做了改进。在实际项目中，\"页面卡顿\"是非常模糊的描述，需要工具来精确定位性能瓶颈。React Profiler 就是这样的工具——它能告诉你每个组件的渲染耗时、渲染次数、渲染原因。结合其他手段，我们可以系统性地优化 React 应用性能。"
+wordCount: 419
 ---
 
 React 16.5 引入了 Profiler API，16.9 又做了改进。在实际项目中，"页面卡顿"是非常模糊的描述，需要工具来精确定位性能瓶颈。React Profiler 就是这样的工具——它能告诉你每个组件的渲染耗时、渲染次数、渲染原因。结合其他手段，我们可以系统性地优化 React 应用性能。

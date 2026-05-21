@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "In day-to-day development, Hono Full-Stack Development 2025 is being used more and more frequently. This article systematically explains its usage, principles, "
+wordCount: 148
 ---
 
 In day-to-day development, Hono Full-Stack Development 2025 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

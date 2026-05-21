@@ -6,6 +6,7 @@ tags:
 
 readingTime: 2
 description: "TypeScript 模板字面量进阶 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real project"
+wordCount: 214
 ---
 
 TypeScript 模板字面量进阶 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

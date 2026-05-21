@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 3
 description: "作為前端平台負責人，從去年開始嘗試將 AI 引入 Code Review 流程。經過幾個月的實踐，整理一下我們的經驗和踩過的坑。"
+wordCount: 656
 ---
 
 作為前端平台負責人，從去年開始嘗試將 AI 引入 Code Review 流程。經過幾個月的實踐，整理一下我們的經驗和踩過的坑。

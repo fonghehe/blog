@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 4
 description: "ES2018 引入了異步迭代器（Async Iterator）和 `for-await-of` 語法，讓我們可以用同步的方式處理異步數據流。這個特性在處理分頁 API、WebSocket 消息、文件流等場景下非常有用。本文將從迭代器協議講起，深入理解異步迭代器的原理和實戰應用。"
+wordCount: 584
 ---
 
 ES2018 引入了異步迭代器（Async Iterator）和 `for-await-of` 語法，讓我們可以用同步的方式處理異步數據流。這個特性在處理分頁 API、WebSocket 消息、文件流等場景下非常有用。本文將從迭代器協議講起，深入理解異步迭代器的原理和實戰應用。

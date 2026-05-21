@@ -5,6 +5,7 @@ tags:
   - Frontend Engineering
 readingTime: 2
 description: "Turborepo has matured. After using it in our 15-package monorepo for over half a year, here are our practical insights."
+wordCount: 258
 ---
 
 Turborepo has matured. After using it in our 15-package monorepo for over half a year, here are our practical insights.

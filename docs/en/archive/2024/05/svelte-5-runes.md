@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Svelte 5 Runes 响应式重构 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on rea"
+wordCount: 209
 ---
 
 Svelte 5 Runes 响应式重构 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real project experience.

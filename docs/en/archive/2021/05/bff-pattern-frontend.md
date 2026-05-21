@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，BFF Backend For Frontend 模式 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategi"
+wordCount: 180
 ---
 
 在日常开发中，BFF Backend For Frontend 模式 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

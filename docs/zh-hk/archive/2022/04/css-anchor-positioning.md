@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "最近在團隊中落地CSS Anchor Positioning 錨點定位，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+wordCount: 293
 ---
 
 最近在團隊中落地CSS Anchor Positioning 錨點定位，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。

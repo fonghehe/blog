@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript 的列舉（enum）是很多人從 Java/C# 來的必用特性，但在 TS 裡有一些值得注意的地方。名稱空間（namespace）用的少，但也有合適的場景。"
+wordCount: 275
 ---
 
 TypeScript 的列舉（enum）是很多人從 Java/C# 來的必用特性，但在 TS 裡有一些值得注意的地方。名稱空間（namespace）用的少，但也有合適的場景。

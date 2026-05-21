@@ -5,6 +5,7 @@ tags:
   - Next.js
 readingTime: 2
 description: "In day-to-day development, Next.js 15 New Features: A Comprehensive Overview is being used more and more frequently. This article systematically explains its us"
+wordCount: 193
 ---
 
 In day-to-day development, Next.js 15 New Features: A Comprehensive Overview is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

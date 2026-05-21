@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 從誕生起就深度整合 RxJS，HttpClient、EventEmitter、Router 全都基於 Observable。掌握 RxJS 運算子，能讓你的 Angular 程式碼更優雅地處理非同步和元件通訊。"
+wordCount: 253
 ---
 
 Angular 從誕生起就深度整合 RxJS，HttpClient、EventEmitter、Router 全都基於 Observable。掌握 RxJS 運算子，能讓你的 Angular 程式碼更優雅地處理非同步和元件通訊。

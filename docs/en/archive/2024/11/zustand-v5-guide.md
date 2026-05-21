@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "关于Zustand v5 实战指南，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 245
 ---
 
 关于Zustand v5 实战指南，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

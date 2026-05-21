@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "項目打包完發現 vendor.js 有 3MB，加載慢，但不知道哪些庫佔了大頭。`webpack-bundle-analyzer` 是這種問題的標準工具。"
+wordCount: 377
 ---
 
 項目打包完發現 vendor.js 有 3MB，加載慢，但不知道哪些庫佔了大頭。`webpack-bundle-analyzer` 是這種問題的標準工具。

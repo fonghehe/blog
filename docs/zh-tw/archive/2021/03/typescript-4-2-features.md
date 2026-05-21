@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.2 在 2 月底釋出，帶來了一些實用的型別系統改進。挑幾個對日常開發影響最大的特性說說。"
+wordCount: 362
 ---
 
 TypeScript 4.2 在 2 月底釋出，帶來了一些實用的型別系統改進。挑幾個對日常開發影響最大的特性說說。

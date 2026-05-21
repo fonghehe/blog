@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 21 在 2025 年 11 月完成了 Signal 化轉型的里程碑，而 21.1 作為第一個小版本，在 2026 年 1 月帶來了大量生態穩定化工作。其中最引人注目的是 `httpResource` 正式升級為穩定 API，以及 `linkedSignal` 在複雜狀態管理中的深度集成。"
+wordCount: 483
 ---
 
 Angular 21 在 2025 年 11 月完成了 Signal 化轉型的里程碑，而 21.1 作為第一個小版本，在 2026 年 1 月帶來了大量生態穩定化工作。其中最引人注目的是 `httpResource` 正式升級為穩定 API，以及 `linkedSignal` 在複雜狀態管理中的深度集成。

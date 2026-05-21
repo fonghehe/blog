@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "关于Vue 3.2 v-bind:css 动态样式，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspect"
+wordCount: 193
 ---
 
 关于Vue 3.2 v-bind:css 动态样式，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

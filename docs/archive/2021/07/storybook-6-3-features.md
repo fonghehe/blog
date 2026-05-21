@@ -7,6 +7,7 @@ tags:
   - 测试
 readingTime: 2
 description: "在日常开发中，Storybook 6.3 新特性交互测试的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
+wordCount: 305
 ---
 
 在日常开发中，Storybook 6.3 新特性交互测试的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

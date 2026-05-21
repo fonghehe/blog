@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "多くの人はnpmスクリプトを`npm start`と`npm run build`だけに使っていますが、実は多くの自動化ができます。"
+wordCount: 222
 ---
 
 多くの人はnpmスクリプトを`npm start`と`npm run build`だけに使っていますが、実は多くの自動化ができます。

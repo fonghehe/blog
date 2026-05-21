@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "最近在團隊中落地Vite Environment API 穩定版，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+wordCount: 270
 ---
 
 最近在團隊中落地Vite Environment API 穩定版，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。

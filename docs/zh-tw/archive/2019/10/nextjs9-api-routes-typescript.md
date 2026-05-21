@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Next.js 9 在 9 月底釋出，帶來了兩個重要特性：內建 TypeScript 支援和更完善的 API Routes。"
+wordCount: 179
 ---
 
 Next.js 9 在 9 月底釋出，帶來了兩個重要特性：內建 TypeScript 支援和更完善的 API Routes。

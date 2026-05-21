@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "最近项目中用到了React Refs 转发与使用场景，发现比预想的要复杂。分享一下实践过程中总结的经验。"
+wordCount: 286
 ---
 
 最近项目中用到了React Refs 转发与使用场景，发现比预想的要复杂。分享一下实践过程中总结的经验。

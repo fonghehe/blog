@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 3
 description: "Node.js 14 LTS 在 4 月份发布，带来了不少实用特性。最让前端工程师开心的是 V8 引擎升级到了 8.1，原生支持了 Optional Chaining（`?.`）和 Nullish Coalescing（`??`）—— 终于不用再在 Node 代码里手动转译这些语法了。"
+wordCount: 262
 ---
 
 Node.js 14 LTS 在 4 月份发布，带来了不少实用特性。最让前端工程师开心的是 V8 引擎升级到了 8.1，原生支持了 Optional Chaining（`?.`）和 Nullish Coalescing（`??`）—— 终于不用再在 Node 代码里手动转译这些语法了。

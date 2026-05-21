@@ -5,6 +5,7 @@ tags:
   - Mobile
 readingTime: 1
 description: "The mobile 1px problem is a classic issue you must solve when building mobile pages. The root cause is the Device Pixel Ratio (DPR)."
+wordCount: 113
 ---
 
 The mobile 1px problem is a classic issue you must solve when building mobile pages. The root cause is the Device Pixel Ratio (DPR).

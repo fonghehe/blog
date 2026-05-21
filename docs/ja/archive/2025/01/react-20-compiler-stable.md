@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React Compilerが2025年初頭に正式な安定版（Stable）に達しました。これはReactの長い歴史の中でも最も重要なDX改善の1つです——コンパイラーが自動的にコンポーネントとフックのメモ化を行うことで、開発者が`useMemo`、`useCallback`、`React.memo`を手動で書く必要がな"
+wordCount: 433
 ---
 
 React Compilerが2025年初頭に正式な安定版（Stable）に達しました。これはReactの長い歴史の中でも最も重要なDX改善の1つです——コンパイラーが自動的にコンポーネントとフックのメモ化を行うことで、開発者が`useMemo`、`useCallback`、`React.memo`を手動で書く必要がなくなります。

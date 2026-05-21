@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 3
 description: "Solid.js 1.0 已经发布一年了，是时候认真体验一下。它的 JSX 写法和 React 几乎一样，但没有虚拟 DOM、没有 Diff、没有 Fiber——响应式更新直接操作真实 DOM。"
+wordCount: 481
 ---
 
 Solid.js 1.0 已经发布一年了，是时候认真体验一下。它的 JSX 写法和 React 几乎一样，但没有虚拟 DOM、没有 Diff、没有 Fiber——响应式更新直接操作真实 DOM。

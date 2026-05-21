@@ -6,6 +6,7 @@ tags:
 
 readingTime: 1
 description: "关于Fastify 高性能 API 服务端，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 186
 ---
 
 关于Fastify 高性能 API 服务端，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

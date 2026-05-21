@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 5
 description: "Webpack 项目一大痛点就是构建速度慢。一个中型项目，`node_modules` 里几百个包，每次 `npm run build` 都要等好几分钟。`DllPlugin` 是 Webpack 官方提供的构建优化方案之一，核心思路是把不常变化的依赖（如 React、Vue、lodash 等）提前打包成一个独立的 D"
+wordCount: 920
 ---
 
 Webpack 项目一大痛点就是构建速度慢。一个中型项目，`node_modules` 里几百个包，每次 `npm run build` 都要等好几分钟。`DllPlugin` 是 Webpack 官方提供的构建优化方案之一，核心思路是把不常变化的依赖（如 React、Vue、lodash 等）提前打包成一个独立的 DLL 文件，主构建时直接引用，不再重复编译。

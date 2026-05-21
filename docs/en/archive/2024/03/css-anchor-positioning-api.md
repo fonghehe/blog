@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS Anchor Positioning API is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from"
+wordCount: 210
 ---
 
 CSS Anchor Positioning API is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

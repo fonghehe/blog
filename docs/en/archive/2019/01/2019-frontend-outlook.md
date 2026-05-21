@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "2018 was a productive year. React Hooks debuted at React Conf, the Vue 3 RFC began public review, and TypeScript's adoption in large projects continued to rise."
+wordCount: 353
 ---
 
 2018 was a productive year. React Hooks debuted at React Conf, the Vue 3 RFC began public review, and TypeScript's adoption in large projects continued to rise. Looking ahead to 2019, I see a few directions worth watching.

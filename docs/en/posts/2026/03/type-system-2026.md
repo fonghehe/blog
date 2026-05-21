@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In everyday development, type system patterns in frontend are being used with increasing frequency. This article systematically covers their usage, underlying p"
+wordCount: 190
 ---
 
 In everyday development, type system patterns in frontend are being used with increasing frequency. This article systematically covers their usage, underlying principles, and optimization strategies.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "关于Cursor AI IDE 开发体验，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 222
 ---
 
 关于Cursor AI IDE 开发体验，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

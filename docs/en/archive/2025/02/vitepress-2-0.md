@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "When it comes to VitePress 2.0 New Features, many developers only scratch the surface at the API call level. This article attempts to discuss the real-world pro"
+wordCount: 124
 ---
 
 When it comes to VitePress 2.0 New Features, many developers only scratch the surface at the API call level. This article attempts to discuss the real-world problems and solutions you'll encounter from a production environment perspective.

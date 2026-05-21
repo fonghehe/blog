@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "Vite 预构建原理 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 198
 ---
 
 Vite 预构建原理 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

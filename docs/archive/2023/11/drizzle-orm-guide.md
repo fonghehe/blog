@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Drizzle ORM 实战指南在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
+wordCount: 302
 ---
 
 Drizzle ORM 实战指南在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。

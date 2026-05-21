@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "In daily development, the Farm 2.0 Frontend Build Tool is being used more and more frequently. This article systematically explains its usage, principles, and o"
+wordCount: 115
 ---
 
 In daily development, the Farm 2.0 Frontend Build Tool is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

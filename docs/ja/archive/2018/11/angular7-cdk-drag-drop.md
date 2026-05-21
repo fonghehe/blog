@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 7 の正式リリース後、CDK の Drag and Drop と Virtual Scrolling はすぐに最も人気のある機能となりました。本記事では実際のプロジェクトを通じてこの 2 つの機能を深く解説します。"
+wordCount: 451
 ---
 
 Angular 7 の正式リリース後、CDK の Drag and Drop と Virtual Scrolling はすぐに最も人気のある機能となりました。本記事では実際のプロジェクトを通じてこの 2 つの機能を深く解説します。

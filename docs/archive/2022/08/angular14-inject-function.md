@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 14 引入的 `inject()` 函数是一个小改动但影响深远的 API。它允许在 injection context（组件初始化期间、工厂函数、路由守卫等）中直接获取服务，不再强制通过构造函数注入。这开启了一种 React Hooks 风格的\"可组合\"Angular 开发模式。"
+wordCount: 277
 ---
 
 Angular 14 引入的 `inject()` 函数是一个小改动但影响深远的 API。它允许在 injection context（组件初始化期间、工厂函数、路由守卫等）中直接获取服务，不再强制通过构造函数注入。这开启了一种 React Hooks 风格的"可组合"Angular 开发模式。

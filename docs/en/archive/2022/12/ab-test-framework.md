@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "前端 A/B 测试框架 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 198
 ---
 
 前端 A/B 测试框架 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

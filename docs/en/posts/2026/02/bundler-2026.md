@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Frontend build tools have become increasingly prominent in day-to-day development. This article provides a systematic breakdown of their usage, underlying princ"
+wordCount: 189
 ---
 
 Frontend build tools have become increasingly prominent in day-to-day development. This article provides a systematic breakdown of their usage, underlying principles, and optimization strategies as the landscape stands in 2026.

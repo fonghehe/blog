@@ -5,6 +5,7 @@ tags:
   - Rollup
 readingTime: 2
 description: "Vite 底層用 Rollup 做生產構建，理解 Rollup 外掛機制對深度使用 Vite 非常重要。今年我們在元件庫構建中開發了幾個自定義 Rollup 外掛，總結一下開發經驗。"
+wordCount: 231
 ---
 
 Vite 底層用 Rollup 做生產構建，理解 Rollup 外掛機制對深度使用 Vite 非常重要。今年我們在元件庫構建中開發了幾個自定義 Rollup 外掛，總結一下開發經驗。

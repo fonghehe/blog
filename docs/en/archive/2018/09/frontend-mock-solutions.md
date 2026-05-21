@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "When frontend and backend are developed in parallel, the frontend needs mock data. Here's a comparison of several approaches I've used."
+wordCount: 206
 ---
 
 When frontend and backend are developed in parallel, the frontend needs mock data. Here's a comparison of several approaches I've used.

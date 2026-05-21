@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "最近在團隊中落地React 19 Form Actions 自動提交，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+wordCount: 346
 ---
 
 最近在團隊中落地React 19 Form Actions 自動提交，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。

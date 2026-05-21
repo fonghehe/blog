@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "DevTools 2026 new features are seeing increasingly widespread use in frontend development. This article dives deep into their core principles and best practices"
+wordCount: 198
 ---
 
 DevTools 2026 new features are seeing increasingly widespread use in frontend development. This article dives deep into their core principles and best practices from a real-project perspective.

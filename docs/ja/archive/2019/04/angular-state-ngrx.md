@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "NgRxはAngularエコシステムで最も人気の高い状態管理ソリューションであり、ReduxパターンとRxJSをベースにしています。"
+wordCount: 103
 ---
 
 NgRxはAngularエコシステムで最も人気の高い状態管理ソリューションであり、ReduxパターンとRxJSをベースにしています。

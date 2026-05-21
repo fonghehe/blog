@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "在日常开发中，HTML dialog 元素原生弹窗 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 198
 ---
 
 在日常开发中，HTML dialog 元素原生弹窗 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

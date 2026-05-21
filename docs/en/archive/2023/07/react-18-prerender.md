@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "React 18 预渲染策略 is a topic worth paying attention to in frontend development. This article explores its core concepts and best practices from real project experi"
+wordCount: 218
 ---
 
 React 18 预渲染策略 is a topic worth paying attention to in frontend development. This article explores its core concepts and best practices from real project experience.

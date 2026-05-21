@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 19.1 于 2025 年 1 月发布，是 Angular 19 系列的第一个小版本。重点是将 Angular 19 中引入的实验性特性向稳定化推进：增量水合（Incremental Hydration）进入开发者预览稳定期，`linkedSignal()` 的 API 经过反馈修订，Zoneless "
+wordCount: 336
 ---
 
 Angular 19.1 于 2025 年 1 月发布，是 Angular 19 系列的第一个小版本。重点是将 Angular 19 中引入的实验性特性向稳定化推进：增量水合（Incremental Hydration）进入开发者预览稳定期，`linkedSignal()` 的 API 经过反馈修订，Zoneless 模式也在持续打磨中。

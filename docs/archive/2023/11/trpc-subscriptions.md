@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "tRPC 订阅与实时在近年来发展迅速，本文将深入分析其原理和实践方法。"
+wordCount: 280
 ---
 
 tRPC 订阅与实时在近年来发展迅速，本文将深入分析其原理和实践方法。

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "在團隊推廣JavaScript 數組高級方法的過程中，踩了不少坑。整理出來希望對大家有所幫助。"
+wordCount: 206
 ---
 
 在團隊推廣JavaScript 數組高級方法的過程中，踩了不少坑。整理出來希望對大家有所幫助。

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I've been doing frontend work for exactly two years now, and this year is when I truly entered the world of \"engineering.\" This article is a chance to organize "
+wordCount: 356
 ---
 
 I've been doing frontend work for exactly two years now, and this year is when I truly entered the world of "engineering." This article is a chance to organize my thoughts and give myself an anchor for a year-end retrospective.

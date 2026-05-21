@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 20 New Features Summary is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices f"
+wordCount: 185
 ---
 
 React 20 New Features Summary is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

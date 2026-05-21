@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "关于Vue 3 Composables 设计模式，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
+wordCount: 337
 ---
 
 关于Vue 3 Composables 设计模式，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。

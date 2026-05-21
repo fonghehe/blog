@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Frontend pages that get slower over time usually have a memory leak. Understanding JavaScript's memory management helps you write code that doesn't leak."
+wordCount: 191
 ---
 
 Frontend pages that get slower over time usually have a memory leak. Understanding JavaScript's memory management helps you write code that doesn't leak.

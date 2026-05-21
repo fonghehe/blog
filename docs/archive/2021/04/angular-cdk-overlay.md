@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Angular CDK 的 Overlay 模块提供了创建弹出层（Tooltip、Popover、Dropdown、自定义 Dialog）的底层能力。相比直接操作 DOM 或用第三方库，CDK Overlay 与 Angular 的依赖注入、变更检测完美集成，是构建组件库的理想基础。"
+wordCount: 173
 ---
 
 Angular CDK 的 Overlay 模块提供了创建弹出层（Tooltip、Popover、Dropdown、自定义 Dialog）的底层能力。相比直接操作 DOM 或用第三方库，CDK Overlay 与 Angular 的依赖注入、变更检测完美集成，是构建组件库的理想基础。

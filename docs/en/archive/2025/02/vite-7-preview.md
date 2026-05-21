@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "The topic of Vite 7.0 Preview and Planning has been discussed many times in the community, but as versions evolve, many conclusions need to be updated. This art"
+wordCount: 110
 ---
 
 The topic of Vite 7.0 Preview and Planning has been discussed many times in the community, but as versions evolve, many conclusions need to be updated. This article re-examines based on the latest version.

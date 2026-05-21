@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue CLI 3.0 GA (General Availability) is officially released, graduating from Beta. It's significantly more stable than the Beta and ready for production use."
+wordCount: 103
 ---
 
 Vue CLI 3.0 GA (General Availability) is officially released, graduating from Beta. It's significantly more stable than the Beta and ready for production use.

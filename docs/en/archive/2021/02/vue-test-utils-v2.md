@@ -8,6 +8,7 @@ tags:
 
 readingTime: 1
 description: "关于Vue Test Utils v2 测试指南，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspecti"
+wordCount: 174
 ---
 
 关于Vue Test Utils v2 测试指南，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

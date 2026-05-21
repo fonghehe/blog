@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "SWC 编译器在项目中的应用This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh over"
+wordCount: 196
 ---
 
 SWC 编译器在项目中的应用This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.

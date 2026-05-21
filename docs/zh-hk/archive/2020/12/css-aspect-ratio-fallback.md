@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "關於CSS aspect-ratio 兼容方案，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+wordCount: 274
 ---
 
 關於CSS aspect-ratio 兼容方案，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。

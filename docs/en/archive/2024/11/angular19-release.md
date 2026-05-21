@@ -6,6 +6,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Angular 19 officially launched on November 19, 2024. This is one of the most significant Angular releases in recent years for SSR capabilities and the reactive "
+wordCount: 281
 ---
 
 Angular 19 officially launched on November 19, 2024. This is one of the most significant Angular releases in recent years for SSR capabilities and the reactive model. Key highlights: Incremental Hydration is officially available, route-level rendering modes are stable, Zoneless has been promoted to developer preview, and template HMR is officially supported.

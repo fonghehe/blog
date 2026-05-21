@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 8 第一个 RC 版本已发布，带来了两个备受期待的特性：可选的 Ivy 编译器预览和 `import()` 想式加载语法。"
+wordCount: 425
 ---
 
 Angular 8 第一个 RC 版本已发布，带来了两个备受期待的特性：可选的 Ivy 编译器预览和 `import()` 想式加载语法。

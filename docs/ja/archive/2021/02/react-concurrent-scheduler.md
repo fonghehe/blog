@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "最近在团队中落地React 18 startTransition 使用场景，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
+wordCount: 418
 ---
 
 最近在团队中落地React 18 startTransition 使用场景，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。

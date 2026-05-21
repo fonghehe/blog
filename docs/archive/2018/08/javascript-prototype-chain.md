@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "原型链是 JavaScript 面向对象的基础，但很多人学完后还是一团雾水。这篇文章用图解+代码，彻底搞清楚原型链。"
+wordCount: 222
 ---
 
 原型链是 JavaScript 面向对象的基础，但很多人学完后还是一团雾水。这篇文章用图解+代码，彻底搞清楚原型链。

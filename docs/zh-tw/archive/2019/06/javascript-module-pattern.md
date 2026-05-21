@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 7
 description: "JavaScript 在誕生之初並沒有模組系統，所有程式碼共享同一個全域性作用域。隨著前端專案規模的增長，模組化方案經歷了 IIFE、CommonJS、AMD、UMD、ES Modules 的演變。理解這段歷史，能幫助我們在實際專案中做出更好的選擇。"
+wordCount: 954
 ---
 
 JavaScript 在誕生之初並沒有模組系統，所有程式碼共享同一個全域性作用域。隨著前端專案規模的增長，模組化方案經歷了 IIFE、CommonJS、AMD、UMD、ES Modules 的演變。理解這段歷史，能幫助我們在實際專案中做出更好的選擇。

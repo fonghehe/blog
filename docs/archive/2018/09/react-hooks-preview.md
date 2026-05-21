@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "上个月 React 团队提出了 Hooks 的 RFC，昨天试了一下，感觉这是 React 生态最大的改变之一。"
+wordCount: 493
 ---
 
 上个月 React 团队提出了 Hooks 的 RFC，昨天试了一下，感觉这是 React 生态最大的改变之一。

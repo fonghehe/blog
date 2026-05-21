@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 20's Compiler and concurrent features have changed the behavioral patterns of components, so testing strategies need to be updated accordingly. By 2025, R"
+wordCount: 180
 ---
 
 React 20's Compiler and concurrent features have changed the behavioral patterns of components, so testing strategies need to be updated accordingly. By 2025, React testing has converged on a mature set of patterns: Vitest as the test runner, Testing Library for component tests, Playwright for E2E, and MSW for network request interception.

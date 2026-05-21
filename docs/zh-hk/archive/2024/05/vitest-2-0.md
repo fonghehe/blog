@@ -6,6 +6,7 @@ tags:
   - Vitest
 readingTime: 2
 description: "在日常開發中，Vitest 2.0 發佈新特性的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+wordCount: 294
 ---
 
 在日常開發中，Vitest 2.0 發佈新特性的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。

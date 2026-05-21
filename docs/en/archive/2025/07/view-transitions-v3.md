@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In daily development, View Transitions v3 cross-document transitions are being used more and more frequently. This article systematically explains their usage, "
+wordCount: 212
 ---
 
 In daily development, View Transitions v3 cross-document transitions are being used more and more frequently. This article systematically explains their usage, principles, and optimization strategies.

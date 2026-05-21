@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "mixin 是 Vue 2 複用邏輯的主要方式，用好了很方便，但也有不少坑。"
+wordCount: 204
 ---
 
 mixin 是 Vue 2 複用邏輯的主要方式，用好了很方便，但也有不少坑。

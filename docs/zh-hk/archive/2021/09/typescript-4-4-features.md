@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.4 發佈了，幾個實用的改進值得關注。不是大版本，但有幾個對日常開發有實際幫助的特性。"
+wordCount: 292
 ---
 
 TypeScript 4.4 發佈了，幾個實用的改進值得關注。不是大版本，但有幾個對日常開發有實際幫助的特性。

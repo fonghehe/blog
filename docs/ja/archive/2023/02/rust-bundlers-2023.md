@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "在日常开发中，Rolldown Rust 实现的 Rollupの使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
+wordCount: 476
 ---
 
 在日常开发中，Rolldown Rust 实现的 Rollupの使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。

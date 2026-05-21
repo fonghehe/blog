@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 3
 description: "JavaScript 的 `Number` 型別基於 IEEE 754 雙精度浮點數，安全整數範圍為 `-(2^53 - 1)` 到 `2^53 - 1`（即 `Number.MAX_SAFE_INTEGER` 和 `Number.MIN_SAFE_INTEGER`）。超過這個範圍的整數運算就會出現精度丟失。ES202"
+wordCount: 397
 ---
 
 JavaScript 的 `Number` 型別基於 IEEE 754 雙精度浮點數，安全整數範圍為 `-(2^53 - 1)` 到 `2^53 - 1`（即 `Number.MAX_SAFE_INTEGER` 和 `Number.MIN_SAFE_INTEGER`）。超過這個範圍的整數運算就會出現精度丟失。ES2020 引入的 `BigInt` 型別讓我們可以表示任意精度的整數。本文將深入講解 BigInt 的使用場景、語法和注意事項。

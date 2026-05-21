@@ -5,6 +5,7 @@ tags:
   - Next.js
 readingTime: 3
 description: "Next.js 13 引入的 App Router 是自框架誕生以來最大的架構變革。它基於 React Server Components，重新定義了前後端代碼的組織方式。對於已經在 Pages Router 上積累了大量項目的團隊來説，理解 App Router 的核心概念是遷移的第一步。"
+wordCount: 592
 ---
 
 Next.js 13 引入的 App Router 是自框架誕生以來最大的架構變革。它基於 React Server Components，重新定義了前後端代碼的組織方式。對於已經在 Pages Router 上積累了大量項目的團隊來説，理解 App Router 的核心概念是遷移的第一步。

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 5
 description: "React 16.6 引入了 `React.memo`，加上 Hooks 中的 `useCallback` 和 `useMemo`，給了開發者更多性能優化的手段。但我在實際項目中發現，很多人（包括之前的我）陷入了\"到處包 memo\"的誤區。這篇文章聊聊這幾個 API 的正確使用姿勢。"
+wordCount: 734
 ---
 
 React 16.6 引入了 `React.memo`，加上 Hooks 中的 `useCallback` 和 `useMemo`，給了開發者更多性能優化的手段。但我在實際項目中發現，很多人（包括之前的我）陷入了"到處包 memo"的誤區。這篇文章聊聊這幾個 API 的正確使用姿勢。

@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 1
 description: "I frequently use Svelte 5 Component Model in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it better."
+wordCount: 173
 ---
 
 I frequently use Svelte 5 Component Model in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it better.

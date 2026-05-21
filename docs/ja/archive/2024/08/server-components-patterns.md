@@ -6,6 +6,7 @@ tags:
   - React
 readingTime: 2
 description: "Server Components 进入稳定期，我们团队在一个中等复杂度的项目中落地了 RSC 架构。总结一下实际项目中验证过的模式和踩坑经验。"
+wordCount: 359
 ---
 
 Server Components 进入稳定期，我们团队在一个中等复杂度的项目中落地了 RSC 架构。总结一下实际项目中验证过的模式和踩坑经验。

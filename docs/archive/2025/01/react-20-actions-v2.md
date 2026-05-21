@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 20 中的 Actions 机制迎来重大升级。v1 版本的 Actions 主要解决了表单提交场景，v2 则将其扩展为通用的异步操作原语，覆盖了乐观更新、错误边界集成和事务性状态管理。"
+wordCount: 385
 ---
 
 React 20 中的 Actions 机制迎来重大升级。v1 版本的 Actions 主要解决了表单提交场景，v2 则将其扩展为通用的异步操作原语，覆盖了乐观更新、错误边界集成和事务性状态管理。

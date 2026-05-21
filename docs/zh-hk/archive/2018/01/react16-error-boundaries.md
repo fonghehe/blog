@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 16 喺 2017 年 9 月發布，帶嚟咗 Fiber 架構重寫，但對日常開發影響最直接嘅特性之一係錯誤邊界（Error Boundaries）。呢個特性解決咗 React 應用長期以來嘅一個痛點：一個組件拋出未捕獲嘅異常，整個應用樹就白屏咗。"
+wordCount: 571
 ---
 
 React 16 喺 2017 年 9 月發布，帶嚟咗 Fiber 架構重寫，但對日常開發影響最直接嘅特性之一係錯誤邊界（Error Boundaries）。呢個特性解決咗 React 應用長期以來嘅一個痛點：一個組件拋出未捕獲嘅異常，整個應用樹就白屏咗。

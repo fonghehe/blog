@@ -7,6 +7,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "The Angular 20 Release Candidate was published in early April 2025, with the stable release expected in May. Angular 20 follows Angular 19 (November 2024) as th"
+wordCount: 260
 ---
 
 The Angular 20 Release Candidate was published in early April 2025, with the stable release expected in May. Angular 20 follows Angular 19 (November 2024) as the next major version, with the core goal of fully stabilizing the Signal-based features accumulated over the past two years and opening the door to a "Zone-free Angular."

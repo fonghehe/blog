@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Promoting Vue 2 custom directives within the team came with plenty of pitfalls. Documenting them here in the hope it helps others."
+wordCount: 117
 ---
 
 Promoting Vue 2 custom directives within the team came with plenty of pitfalls. Documenting them here in the hope it helps others.

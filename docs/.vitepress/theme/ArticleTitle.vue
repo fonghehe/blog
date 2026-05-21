@@ -15,6 +15,12 @@ const shouldShow = computed(
 // so it matches PostList.vue's post.readingTime
 const readingTime = computed(() => Number(frontmatter.value.readingTime) || 1);
 
+const wordCount = computed(() => {
+  const wc = Number(frontmatter.value.wordCount) || 0;
+  if (wc === 0) return "";
+  return wc >= 1000 ? `${(wc / 1000).toFixed(1)}k` : String(wc);
+});
+
 const isOutdated = computed(() => {
   const dateStr = frontmatter.value.date;
   if (!dateStr) return false;
@@ -42,6 +48,10 @@ const articleYear = computed(() => {
       }}</time>
       <span class="meta-separator">·</span>
       <span class="meta-reading-time">{{ readingTime }} min read</span>
+      <template v-if="wordCount">
+        <span class="meta-separator">·</span>
+        <span class="meta-word-count">{{ wordCount }} 字</span>
+      </template>
       <span v-if="frontmatter.tags?.length" class="meta-separator">·</span>
       <span
         v-for="(tag, i) in (frontmatter.tags || []).slice(0, 3)"
@@ -96,6 +106,10 @@ const articleYear = computed(() => {
 }
 
 .meta-reading-time {
+  color: var(--vp-c-text-3);
+}
+
+.meta-word-count {
   color: var(--vp-c-text-3);
 }
 

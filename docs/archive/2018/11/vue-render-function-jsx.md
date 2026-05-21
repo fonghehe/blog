@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "大多数时候模板够用，但有些场景 render 函数更灵活。"
+wordCount: 227
 ---
 
 大多数时候模板够用，但有些场景 render 函数更灵活。

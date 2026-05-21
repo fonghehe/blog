@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Speculation Rules API 预加载规则This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides"
+wordCount: 164
 ---
 
 Speculation Rules API 预加载规则This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.

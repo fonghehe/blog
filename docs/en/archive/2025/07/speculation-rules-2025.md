@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Speculation Rules 2025 in practice is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practi"
+wordCount: 213
 ---
 
 Speculation Rules 2025 in practice is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

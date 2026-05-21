@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS Anchor Positioning 安定版について、多くの開発者はAPIの呼び出し方だけに留まりがちです。本記事はプロダクション環境の観点から、実際に遭遇する問題とその解決策を議論します。"
+wordCount: 373
 ---
 
 CSS Anchor Positioning 安定版について、多くの開発者はAPIの呼び出し方だけに留まりがちです。本記事はプロダクション環境の観点から、実際に遭遇する問題とその解決策を議論します。

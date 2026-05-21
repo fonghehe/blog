@@ -6,6 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Lit Web Components 開發實踐這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
+wordCount: 293
 ---
 
 Lit Web Components 開發實踐這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "async/await 在 ES2017 正式成為標準，Node.js 7.6+ 原生支援，搭配 Babel 可以在前端專案裡使用。用了半年多，記錄一些實際專案中累積的經驗。"
+wordCount: 294
 ---
 
 async/await 在 ES2017 正式成為標準，Node.js 7.6+ 原生支援，搭配 Babel 可以在前端專案裡使用。用了半年多，記錄一些實際專案中累積的經驗。

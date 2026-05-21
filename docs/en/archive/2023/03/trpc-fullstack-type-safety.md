@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "用了 tRPC 半年，说说它到底解决了什么问题。"
+wordCount: 402
 ---
 
 用了 tRPC 半年，说说它到底解决了什么问题。

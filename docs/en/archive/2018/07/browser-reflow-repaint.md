@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "I built a complex animation and found it was janky. After studying the principles of repaint and reflow, I've compiled some optimization techniques."
+wordCount: 137
 ---
 
 I built a complex animation and found it was janky. After studying the principles of repaint and reflow, I've compiled some optimization techniques.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Regarding Bun Shell Scripting Capabilities, many developers only stay at the API call level. This article discusses real-world problems and solutions from a pro"
+wordCount: 183
 ---
 
 Regarding Bun Shell Scripting Capabilities, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

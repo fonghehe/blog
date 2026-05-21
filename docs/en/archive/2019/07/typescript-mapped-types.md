@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript's type system is very powerful, and Mapped Types are one of its most practical features. They allow you to create new types based on existing ones, b"
+wordCount: 182
 ---
 
 TypeScript's type system is very powerful, and Mapped Types are one of its most practical features. They allow you to create new types based on existing ones, bulk-modifying property modifiers. This article covers mapped types from basics to real-world usage.

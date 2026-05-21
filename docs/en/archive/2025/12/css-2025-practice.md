@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Recently implemented CSS 2025 New Features in Practice in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps th"
+wordCount: 181
 ---
 
 Recently implemented CSS 2025 New Features in Practice in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

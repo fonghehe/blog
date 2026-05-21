@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "Vue 團隊在 Vue 3.3+ 版本中逐漸披露了 Vapor Mode 的設計思路。Vapor Mode 是一種編譯策略，將 Vue SFC 編譯為直接操作 DOM 的命令式程式碼，跳過虛擬 DOM 的 diff 過程。這是 Vue 對 SolidJS 和 Svelte 編譯時最佳化思路的回應。"
+wordCount: 538
 ---
 
 Vue 團隊在 Vue 3.3+ 版本中逐漸披露了 Vapor Mode 的設計思路。Vapor Mode 是一種編譯策略，將 Vue SFC 編譯為直接操作 DOM 的命令式程式碼，跳過虛擬 DOM 的 diff 過程。這是 Vue 對 SolidJS 和 Svelte 編譯時最佳化思路的回應。

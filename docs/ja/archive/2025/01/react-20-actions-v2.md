@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 20はActionsパラダイムをさらに洗練させました。`useActionState` v2は初回レンダリングの挙動が改善され、新しい`useAction`フックによってServer Actions以外の非同期操作も統一的なパターンで扱えるようになりました。"
+wordCount: 337
 ---
 
 React 20はActionsパラダイムをさらに洗練させました。`useActionState` v2は初回レンダリングの挙動が改善され、新しい`useAction`フックによってServer Actions以外の非同期操作も統一的なパターンで扱えるようになりました。

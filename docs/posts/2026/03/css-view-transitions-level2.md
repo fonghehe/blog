@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS View Transitions Level 1 让单页应用（SPA）的页面切换动画变得优雅。而 2026 年正式进入各大浏览器稳定通道的 **View Transitions Level 2**，将这一能力扩展到了多页应用（MPA）——无需 JavaScript 框架，纯 CSS + HTML 即可实现流畅的"
+wordCount: 450
 ---
 
 CSS View Transitions Level 1 让单页应用（SPA）的页面切换动画变得优雅。而 2026 年正式进入各大浏览器稳定通道的 **View Transitions Level 2**，将这一能力扩展到了多页应用（MPA）——无需 JavaScript 框架，纯 CSS + HTML 即可实现流畅的跨文档过渡动画。

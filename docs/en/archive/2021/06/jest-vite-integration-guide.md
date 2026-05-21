@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "Vitest Vite 原生单元测试框架 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic ba"
+wordCount: 173
 ---
 
 Vitest Vite 原生单元测试框架 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.

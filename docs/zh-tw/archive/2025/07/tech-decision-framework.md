@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "做了幾年 tech lead，最讓我糾結的不是寫程式碼，而是技術選型。記錄一下我的決策框架。"
+wordCount: 539
 ---
 
 做了幾年 tech lead，最讓我糾結的不是寫程式碼，而是技術選型。記錄一下我的決策框架。

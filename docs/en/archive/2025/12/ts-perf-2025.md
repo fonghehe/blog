@@ -6,6 +6,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "In day-to-day development, TypeScript Performance Optimization 2025 is being used more and more frequently. This article systematically explains its usage, prin"
+wordCount: 208
 ---
 
 In day-to-day development, TypeScript Performance Optimization 2025 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

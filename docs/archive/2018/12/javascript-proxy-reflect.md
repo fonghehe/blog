@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Proxy 是 ES2015 加入的，但一直用得不多。Vue 3 的响应式系统基于 Proxy，是时候好好了解一下了。"
+wordCount: 212
 ---
 
 Proxy 是 ES2015 加入的，但一直用得不多。Vue 3 的响应式系统基于 Proxy，是时候好好了解一下了。

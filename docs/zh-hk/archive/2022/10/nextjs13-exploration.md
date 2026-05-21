@@ -5,6 +5,7 @@ tags:
   - Next.js
 readingTime: 3
 description: "Next.js 13 發佈了，App Router 帶來了巨大的範式變化。在正式版之前，讓我們先理解它的設計哲學——React Server Components、Streaming、嵌套佈局。這些不是漸進式改進，而是對「前端應該如何構建」的重新思考。"
+wordCount: 391
 ---
 
 Next.js 13 發佈了，App Router 帶來了巨大的範式變化。在正式版之前，讓我們先理解它的設計哲學——React Server Components、Streaming、嵌套佈局。這些不是漸進式改進，而是對「前端應該如何構建」的重新思考。

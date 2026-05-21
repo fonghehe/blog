@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "There are many articles about the JavaScript Event Loop online, but most lack real-world context. This article explores best practices from actual projects."
+wordCount: 88
 ---
 
 There are many articles about the JavaScript Event Loop online, but most lack real-world context. This article explores best practices from actual projects.

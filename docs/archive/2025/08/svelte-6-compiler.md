@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "在日常开发中，Svelte 6 编译器改进的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
+wordCount: 262
 ---
 
 在日常开发中，Svelte 6 编译器改进的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

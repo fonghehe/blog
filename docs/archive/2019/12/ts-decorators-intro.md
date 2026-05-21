@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "在团队推广TypeScript 装饰器入门的过程中，踩了不少坑。整理出来希望对大家有所帮助。"
+wordCount: 251
 ---
 
 在团队推广TypeScript 装饰器入门的过程中，踩了不少坑。整理出来希望对大家有所帮助。

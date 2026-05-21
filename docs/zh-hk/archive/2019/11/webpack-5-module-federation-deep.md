@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 5
 description: "在上一篇文章中我們預覽了 Webpack 5 的新特性，其中 Module Federation 是最具革命性的功能。本文將深入探討 Module Federation 的架構設計、配置細節和在微前端場景中的實戰應用。"
+wordCount: 652
 ---
 
 在上一篇文章中我們預覽了 Webpack 5 的新特性，其中 Module Federation 是最具革命性的功能。本文將深入探討 Module Federation 的架構設計、配置細節和在微前端場景中的實戰應用。

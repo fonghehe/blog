@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 2.8 introduced conditional types, and TypeScript 2.1 introduced mapped types. These two features can be combined to build extremely powerful type uti"
+wordCount: 119
 ---
 
 TypeScript 2.8 introduced conditional types, and TypeScript 2.1 introduced mapped types. These two features can be combined to build extremely powerful type utilities.

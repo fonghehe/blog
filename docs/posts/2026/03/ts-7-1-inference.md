@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "在日常工作中经常用到TypeScript 7.1 类型推导，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。"
+wordCount: 292
 ---
 
 在日常工作中经常用到TypeScript 7.1 类型推导，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。

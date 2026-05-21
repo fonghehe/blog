@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "When it comes to cross-platform solutions in 2026, many developers remain at the surface level of API calls. This article takes a production-oriented perspectiv"
+wordCount: 188
 ---
 
 When it comes to cross-platform solutions in 2026, many developers remain at the surface level of API calls. This article takes a production-oriented perspective to discuss the real problems you'll encounter and their solutions.

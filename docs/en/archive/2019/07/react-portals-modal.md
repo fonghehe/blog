@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React Portals allow you to render a component's children into a DOM node outside the parent component hierarchy. This is particularly useful for modals, tooltip"
+wordCount: 138
 ---
 
 React Portals allow you to render a component's children into a DOM node outside the parent component hierarchy. This is particularly useful for modals, tooltips, and dropdowns that need to break out of overflow/z-index constraints.

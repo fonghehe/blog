@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "I recently implemented Devin AI 软件工程师分析 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those "
+wordCount: 215
 ---
 
 I recently implemented Devin AI 软件工程师分析 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those doing similar work.

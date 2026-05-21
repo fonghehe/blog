@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React Portals を使うと、コンポーネントの子要素を親コンポーネントの DOM 階層外の DOM ノードにレンダリングできます。overflow/z-index の制約を突破する必要があるモーダル、ツールチップ、ドロップダウンなどに特に有用です。"
+wordCount: 411
 ---
 
 React Portals を使うと、コンポーネントの子要素を親コンポーネントの DOM 階層外の DOM ノードにレンダリングできます。overflow/z-index の制約を突破する必要があるモーダル、ツールチップ、ドロップダウンなどに特に有用です。

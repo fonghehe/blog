@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "正则表达式一直是个\"会忘记\"的知识点，整理常用模式和实际场景。"
+wordCount: 101
 ---
 
 正则表达式一直是个"会忘记"的知识点，整理常用模式和实际场景。

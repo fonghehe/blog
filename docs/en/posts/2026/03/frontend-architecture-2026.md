@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently rolled out frontend architecture best practices for 2026 within my team and accumulated a good deal of hands-on experience in the process. I'm writin"
+wordCount: 191
 ---
 
 I recently rolled out frontend architecture best practices for 2026 within my team and accumulated a good deal of hands-on experience in the process. I'm writing it up here as a reference, hoping it will be useful to others doing similar work.

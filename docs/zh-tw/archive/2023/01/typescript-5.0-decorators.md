@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 5.0 正式支援了 TC39 Stage 3 提案的裝飾器語法。這是一個等了好幾年的改動，終於可以告別 `experimentalDecorators` 了。"
+wordCount: 421
 ---
 
 TypeScript 5.0 正式支援了 TC39 Stage 3 提案的裝飾器語法。這是一個等了好幾年的改動，終於可以告別 `experimentalDecorators` 了。

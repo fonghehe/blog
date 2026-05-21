@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "There are plenty of articles on the React Higher-Order Component (HOC) pattern online, but most lack real-world experience. This article explores best practices"
+wordCount: 116
 ---
 
 There are plenty of articles on the React Higher-Order Component (HOC) pattern online, but most lack real-world experience. This article explores best practices based on actual projects.

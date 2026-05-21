@@ -5,6 +5,7 @@ tags:
   - Pinia
 readingTime: 2
 description: "Pinia 持久化插件在近年来发展迅速，本文将深入分析其原理和实践方法。"
+wordCount: 280
 ---
 
 Pinia 持久化插件在近年来发展迅速，本文将深入分析其原理和实践方法。

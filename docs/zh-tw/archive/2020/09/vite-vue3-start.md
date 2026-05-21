@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 4
 description: "Vue 3 正式 RC 階段了，Vite 1.0 也已經穩定。團隊新起的一個內部工具專案決定直接上 Vite + Vue 3，不再用 Vue CLI + Webpack 了。這篇文章記錄一下完整的搭建過程和踩坑點。"
+wordCount: 424
 ---
 
 Vue 3 正式 RC 階段了，Vite 1.0 也已經穩定。團隊新起的一個內部工具專案決定直接上 Vite + Vue 3，不再用 Vue CLI + Webpack 了。這篇文章記錄一下完整的搭建過程和踩坑點。

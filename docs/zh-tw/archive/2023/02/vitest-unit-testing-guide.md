@@ -6,6 +6,7 @@ tags:
   - Vitest
 readingTime: 2
 description: "Vitest 1.0 正式釋出了。從 0.x 到 1.0，它已經從\"有趣的實驗\"變成了可以認真用在生產環境的測試框架。"
+wordCount: 425
 ---
 
 Vitest 1.0 正式釋出了。從 0.x 到 1.0，它已經從"有趣的實驗"變成了可以認真用在生產環境的測試框架。

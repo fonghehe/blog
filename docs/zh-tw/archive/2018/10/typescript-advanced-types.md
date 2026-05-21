@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "學完基礎泛型後，深入研究了一下條件型別和對映型別，發現 TypeScript 的型別系統比想象中強大得多。"
+wordCount: 186
 ---
 
 學完基礎泛型後，深入研究了一下條件型別和對映型別，發現 TypeScript 的型別系統比想象中強大得多。

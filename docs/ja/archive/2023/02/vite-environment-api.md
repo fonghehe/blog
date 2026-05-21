@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "最近在团队中落地Vite Environment API 多环境，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
+wordCount: 404
 ---
 
 最近在团队中落地Vite Environment API 多环境，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。

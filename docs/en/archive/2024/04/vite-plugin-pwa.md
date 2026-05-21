@@ -6,6 +6,7 @@ tags:
   - PWA
 readingTime: 2
 description: "关于Vite PWA 插件最佳实践，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective"
+wordCount: 206
 ---
 
 关于Vite PWA 插件最佳实践，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

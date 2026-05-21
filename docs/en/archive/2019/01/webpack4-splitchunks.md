@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Promoting Webpack 4 SplitChunks within the team came with plenty of pitfalls. Documenting them here in the hope it helps others."
+wordCount: 125
 ---
 
 Promoting Webpack 4 SplitChunks within the team came with plenty of pitfalls. Documenting them here in the hope it helps others.

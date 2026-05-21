@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 4
 description: "圖片輪播、全屏滾動頁面、橫向滾動卡片——這些常見的互動效果過去往往需要依賴 JavaScript 庫實現。CSS Scroll Snap 屬性讓我們可以用純 CSS 實現滾動吸附效果，效能更好、程式碼更簡潔。2019 年，Scroll Snap 已經獲得了主流瀏覽器的廣泛支援。本文將系統講解 Scroll Snap 的"
+wordCount: 644
 ---
 
 圖片輪播、全屏滾動頁面、橫向滾動卡片——這些常見的互動效果過去往往需要依賴 JavaScript 庫實現。CSS Scroll Snap 屬性讓我們可以用純 CSS 實現滾動吸附效果，效能更好、程式碼更簡潔。2019 年，Scroll Snap 已經獲得了主流瀏覽器的廣泛支援。本文將系統講解 Scroll Snap 的用法和實戰案例。

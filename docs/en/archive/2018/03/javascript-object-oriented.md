@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "ES6's `class` syntax makes JavaScript OOP more intuitive to write, but underneath it's still prototype chains. Understanding both layers of abstraction gives yo"
+wordCount: 129
 ---
 
 ES6's `class` syntax makes JavaScript OOP more intuitive to write, but underneath it's still prototype chains. Understanding both layers of abstraction gives you more confidence when choosing inheritance approaches and debugging problems.

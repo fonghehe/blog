@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "前端頁面用久了會越來越卡，通常是記憶體洩漏。瞭解 JavaScript 的記憶體管理機制，能幫助寫出不洩漏的程式碼。"
+wordCount: 336
 ---
 
 前端頁面用久了會越來越卡，通常是記憶體洩漏。瞭解 JavaScript 的記憶體管理機制，能幫助寫出不洩漏的程式碼。

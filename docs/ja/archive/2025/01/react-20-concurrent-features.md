@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 18でConcurrentモードが導入されてから、`useTransition`と`useDeferredValue`はReactの高度な最適化ツールとして広く使われてきました。React 20はこれらのAPIを改善し、新しい`Scheduler` APIも追加されました。本記事ではこれらの実践的な使い方を"
+wordCount: 307
 ---
 
 React 18でConcurrentモードが導入されてから、`useTransition`と`useDeferredValue`はReactの高度な最適化ツールとして広く使われてきました。React 20はこれらのAPIを改善し、新しい`Scheduler` APIも追加されました。本記事ではこれらの実践的な使い方を深掘りします。

@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "When it comes to web performance optimization in 2026, many developers stop at the API invocation level. This article takes a production-focused perspective to "
+wordCount: 181
 ---
 
 When it comes to web performance optimization in 2026, many developers stop at the API invocation level. This article takes a production-focused perspective to discuss the real problems you'll encounter and how to solve them.

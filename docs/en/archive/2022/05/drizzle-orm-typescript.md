@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Drizzle ORM TypeScript ORMThis topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides "
+wordCount: 174
 ---
 
 Drizzle ORM TypeScript ORMThis topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.

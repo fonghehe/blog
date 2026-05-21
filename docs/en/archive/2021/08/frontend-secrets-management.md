@@ -8,6 +8,7 @@ tags:
 
 readingTime: 1
 description: "在日常开发中，前端密钥安全管理方案 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 164
 ---
 
 在日常开发中，前端密钥安全管理方案 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

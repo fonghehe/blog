@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "一等再等，Vue 3.0 \"One Piece\" 上週正式發佈了！跟蹤了將近一年的 alpha/beta，終於來了。這篇文章是系統性的上手指南。"
+wordCount: 232
 ---
 
 一等再等，Vue 3.0 "One Piece" 上週正式發佈了！跟蹤了將近一年的 alpha/beta，終於來了。這篇文章是系統性的上手指南。

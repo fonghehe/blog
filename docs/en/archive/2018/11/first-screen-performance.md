@@ -5,6 +5,7 @@ tags:
   - Performance
 readingTime: 2
 description: "First-screen load speed directly impacts user experience. After a round of optimization on our company project, here are the techniques that actually worked."
+wordCount: 187
 ---
 
 First-screen load speed directly impacts user experience. After a round of optimization on our company project, here are the techniques that actually worked.

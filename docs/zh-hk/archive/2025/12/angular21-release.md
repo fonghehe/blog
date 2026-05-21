@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 21 於 2025 年 11 月 19 日正式發佈。這是 Angular 自 2022 年啓動\"Signal 化轉型\"以來最具里程碑意義的版本——Signal Forms 正式穩定，意味着 Angular 組件的所有核心 API（輸入、輸出、查詢、變更檢測、表單）已完全 Signal 化。Angular"
+wordCount: 321
 ---
 
 Angular 21 於 2025 年 11 月 19 日正式發佈。這是 Angular 自 2022 年啓動"Signal 化轉型"以來最具里程碑意義的版本——Signal Forms 正式穩定，意味着 Angular 組件的所有核心 API（輸入、輸出、查詢、變更檢測、表單）已完全 Signal 化。Angular 的現代化轉型，至此劃上了句號。

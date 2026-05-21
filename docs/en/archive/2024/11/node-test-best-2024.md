@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "在日常开发中，Node.js 测试最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 242
 ---
 
 在日常开发中，Node.js 测试最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

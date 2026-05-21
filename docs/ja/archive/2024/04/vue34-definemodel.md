@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3.4 はいくつかの品質向上の高い機能をリリースしました。特に `defineModel` が正式 API となりました（`--defineModel` コンパイルフラグが不要になりました）。"
+wordCount: 362
 ---
 
 Vue 3.4 はいくつかの品質向上の高い機能をリリースしました。特に `defineModel` が正式 API となりました（`--defineModel` コンパイルフラグが不要になりました）。

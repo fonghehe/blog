@@ -5,6 +5,7 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "2025年初頭、私たちのチームはAI支援開発を全面的に導入しました。GitHub CopilotからClaude Code、CursorからさまざまなAIプラグインまで、変化は想定よりも速く訪れています。実際に定着したワークフローを紹介します。"
+wordCount: 386
 ---
 
 2025年初頭、私たちのチームはAI支援開発を全面的に導入しました。GitHub CopilotからClaude Code、CursorからさまざまなAIプラグインまで、変化は想定よりも速く訪れています。実際に定着したワークフローを紹介します。

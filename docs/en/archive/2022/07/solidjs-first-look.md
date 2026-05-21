@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Solid.js 1.0 has been out for a year, and it's time to take it seriously. Its JSX syntax is nearly identical to React, but there's no virtual DOM, no Diff, no F"
+wordCount: 351
 ---
 
 Solid.js 1.0 has been out for a year, and it's time to take it seriously. Its JSX syntax is nearly identical to React, but there's no virtual DOM, no Diff, no Fiber — reactive updates operate directly on the real DOM.

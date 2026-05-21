@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "NgRx is the most popular state management solution in the Angular ecosystem, built on the Redux pattern and RxJS."
+wordCount: 42
 ---
 
 NgRx is the most popular state management solution in the Angular ecosystem, built on the Redux pattern and RxJS.

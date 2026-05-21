@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS View Transitions Level 1 brought elegant page-transition animations to single-page applications (SPAs). **View Transitions Level 2**, which landed in all ma"
+wordCount: 272
 ---
 
 CSS View Transitions Level 1 brought elegant page-transition animations to single-page applications (SPAs). **View Transitions Level 2**, which landed in all major browser stable channels in 2026, extends that capability to multi-page applications (MPAs) — no JavaScript framework required. Pure CSS + HTML is all you need for smooth cross-document transition animations.

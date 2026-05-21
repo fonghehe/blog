@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "最近在團隊中落地CSS aspect-ratio 原生寬高比，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+wordCount: 296
 ---
 
 最近在團隊中落地CSS aspect-ratio 原生寬高比，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。

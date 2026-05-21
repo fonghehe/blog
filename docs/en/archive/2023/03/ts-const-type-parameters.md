@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "关于TypeScript 5.0 const 类型参数，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspe"
+wordCount: 205
 ---
 
 关于TypeScript 5.0 const 类型参数，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

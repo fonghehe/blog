@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 1
 description: "随着项目页面增多，多个页面都用到的代码会被重复打包。`SplitChunks` 可以把公共代码提取出来，让浏览器缓存复用。"
+wordCount: 196
 ---
 
 随着项目页面增多，多个页面都用到的代码会被重复打包。`SplitChunks` 可以把公共代码提取出来，让浏览器缓存复用。

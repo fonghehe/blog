@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS Modules 2023 最佳實踐在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
+wordCount: 357
 ---
 
 CSS Modules 2023 最佳實踐在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。

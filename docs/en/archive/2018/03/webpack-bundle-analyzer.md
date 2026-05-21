@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "You finish a build and find `vendor.js` is 3 MB and loading slowly, but you have no idea which libraries are taking up the most space. `webpack-bundle-analyzer`"
+wordCount: 257
 ---
 
 You finish a build and find `vendor.js` is 3 MB and loading slowly, but you have no idea which libraries are taking up the most space. `webpack-bundle-analyzer` is the standard tool for this problem.

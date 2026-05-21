@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 16.6 ships `React.lazy` and `Suspense`, making component lazy loading extremely simple."
+wordCount: 119
 ---
 
 React 16.6 ships `React.lazy` and `Suspense`, making component lazy loading extremely simple.

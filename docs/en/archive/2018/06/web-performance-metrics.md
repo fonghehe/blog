@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "I've been doing performance optimization lately and realized that many people (including myself) have a fuzzy understanding of performance metrics. Here's a sum"
+wordCount: 328
 ---
 
 I've been doing performance optimization lately and realized that many people (including myself) have a fuzzy understanding of performance metrics. Here's a summary of the key ones.

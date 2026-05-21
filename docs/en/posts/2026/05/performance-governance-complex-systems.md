@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 3
 description: "When your application is a back-office system with 50+ pages, 100+ charts, and real-time data stream refreshes, performance problems are no longer \"one slow pag"
+wordCount: 279
 ---
 
 When your application is a back-office system with 50+ pages, 100+ charts, and real-time data stream refreshes, performance problems are no longer "one slow page." It is an engineering problem requiring continuous investment and systematic governance. This article discusses how to establish performance baselines with RUM (Real User Monitoring), how to design and enforce performance budgets, how to automatically detect performance regressions in CI, and how to optimize heavy dashboard UIs.

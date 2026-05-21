@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "後台管理系統越來越大，首頁加載時間越來越長。用 Vue Router 的懶加載把初始 bundle 拆開，明顯感受到了加速。"
+wordCount: 256
 ---
 
 後台管理系統越來越大，首頁加載時間越來越長。用 Vue Router 的懶加載把初始 bundle 拆開，明顯感受到了加速。

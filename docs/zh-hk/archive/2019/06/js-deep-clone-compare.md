@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "關於JavaScript 深拷貝方案對比，網上有不少文章但大多缺乏實戰經驗。本文結合真實項目，探討最佳實踐。"
+wordCount: 253
 ---
 
 關於JavaScript 深拷貝方案對比，網上有不少文章但大多缺乏實戰經驗。本文結合真實項目，探討最佳實踐。

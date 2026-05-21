@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Tree Shaking is an important optimization in Webpack 4 that automatically removes unused code during bundling. But many people just set `mode: 'production'` and"
+wordCount: 161
 ---
 
 Tree Shaking is an important optimization in Webpack 4 that automatically removes unused code during bundling. But many people just set `mode: 'production'` and think they're done — there's actually a lot of underlying principle worth understanding.

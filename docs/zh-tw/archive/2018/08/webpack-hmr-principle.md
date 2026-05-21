@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 1
 description: "開發時修改程式碼，頁面自動更新，這是 HMR（Hot Module Replacement）。平時用得理所當然，今天研究了一下原理。"
+wordCount: 214
 ---
 
 開發時修改程式碼，頁面自動更新，這是 HMR（Hot Module Replacement）。平時用得理所當然，今天研究了一下原理。

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Edge Computing 边缘计算前端应用 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pr"
+wordCount: 190
 ---
 
 Edge Computing 边缘计算前端应用 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

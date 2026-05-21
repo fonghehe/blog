@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Regarding Farm Build Tool Deep Dive, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production"
+wordCount: 207
 ---
 
 Regarding Farm Build Tool Deep Dive, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "State management in 2025 is becoming increasingly common in day-to-day development. This article offers a systematic look at its usage, inner workings, and opti"
+wordCount: 163
 ---
 
 State management in 2025 is becoming increasingly common in day-to-day development. This article offers a systematic look at its usage, inner workings, and optimization strategies.

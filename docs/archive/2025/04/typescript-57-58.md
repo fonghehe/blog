@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 5.7 和 5.8 相继发布，带来了一些实用的新特性。来整理一下对日常开发有影响的变化。"
+wordCount: 161
 ---
 
 TypeScript 5.7 和 5.8 相继发布，带来了一些实用的新特性。来整理一下对日常开发有影响的变化。

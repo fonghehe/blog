@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS Anchor Positioning entered Chrome 125+ in 2024, and in 2025, with Firefox and Safari catching up, it finally reached practical usability (~78% global suppor"
+wordCount: 174
 ---
 
 CSS Anchor Positioning entered Chrome 125+ in 2024, and in 2025, with Firefox and Safari catching up, it finally reached practical usability (~78% global support). It solves the long-standing frontend reliance on JavaScript for "floating UI" positioning: Tooltips, Popovers, dropdown menus, floating panels—all achievable with anchor positioning, no need for Popper.js or Floating UI.

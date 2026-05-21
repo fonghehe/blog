@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 20 has finally filled the last piece of the form handling puzzle. The new native form components and hooks let you say goodbye to third-party form librari"
+wordCount: 252
 ---
 
 React 20 has finally filled the last piece of the form handling puzzle. The new native form components and hooks let you say goodbye to third-party form libraries entirely while gaining better DX and performance.

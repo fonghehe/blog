@@ -5,6 +5,7 @@ tags:
   - Testing
 readingTime: 2
 description: "Recently implemented Playwright 2025 New Features in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those d"
+wordCount: 178
 ---
 
 Recently implemented Playwright 2025 New Features in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

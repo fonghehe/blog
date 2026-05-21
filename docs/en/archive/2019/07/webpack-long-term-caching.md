@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "As projects grow, Webpack build times can become painfully slow. Every time you modify code, even a small change triggers rebundling of all vendor libraries. Dl"
+wordCount: 214
 ---
 
 As projects grow, Webpack build times can become painfully slow. Every time you modify code, even a small change triggers rebundling of all vendor libraries. DllPlugin solves this by pre-compiling stable third-party libraries into a separate "DLL" bundle, which is reused across builds without recompilation.

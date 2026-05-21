@@ -7,6 +7,7 @@ tags:
   - JavaScript
 readingTime: 3
 description: "Angular 20が2025年5月に正式リリースされました。これは2022年に始まった「Signal化への転換」以来、Angularにとって最も重要なマイルストーンです——Zoneless変更検知が正式に安定化して本番利用可能となり、Signal Formsが開発者プレビューに入り、新しい`resource()` A"
+wordCount: 495
 ---
 
 Angular 20が2025年5月に正式リリースされました。これは2022年に始まった「Signal化への転換」以来、Angularにとって最も重要なマイルストーンです——Zoneless変更検知が正式に安定化して本番利用可能となり、Signal Formsが開発者プレビューに入り、新しい`resource()` APIが宣言的な非同期データ管理のネイティブサポートを提供します。

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "最近項目中用到了Node.js Cluster 多進程，發現比預想的要複雜。分享一下實踐過程中總結的經驗。"
+wordCount: 223
 ---
 
 最近項目中用到了Node.js Cluster 多進程，發現比預想的要複雜。分享一下實踐過程中總結的經驗。

@@ -5,6 +5,7 @@ tags:
   - Testing
 readingTime: 1
 description: "Unit testing is known to be valuable, but many frontend projects skip it due to the overhead of getting started. This article covers the complete setup workflow"
+wordCount: 72
 ---
 
 Unit testing is known to be valuable, but many frontend projects skip it due to the overhead of getting started. This article covers the complete setup workflow and practical testing examples, covering the scenarios you'll encounter in real projects.

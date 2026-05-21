@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 19.2 is expected to ship in February 2025. Based on publicly available RFCs and GitHub PRs, two areas are worth knowing about in advance: **Signal-based"
+wordCount: 212
 ---
 
 Angular 19.2 is expected to ship in February 2025. Based on publicly available RFCs and GitHub PRs, two areas are worth knowing about in advance: **Signal-based Forms entering Developer Preview**, and further refinements to route lazy loading. This article previews the upcoming changes based on the current RC and community discussions.

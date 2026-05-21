@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Our company had several interdependent projects managed in separate repositories, which made local integration and version synchronization painful. After resear"
+wordCount: 205
 ---
 
 Our company had several interdependent projects managed in separate repositories, which made local integration and version synchronization painful. After researching Monorepo, Lerna turned out to be the most mainstream solution.

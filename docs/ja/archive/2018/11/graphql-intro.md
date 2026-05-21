@@ -5,6 +5,7 @@ tags:
   - GraphQL
 readingTime: 2
 description: "最近 GraphQL を研究しています。多くの人が REST の代替と言っています。試してみて、理解をまとめます。"
+wordCount: 389
 ---
 
 最近 GraphQL を研究しています。多くの人が REST の代替と言っています。試してみて、理解をまとめます。

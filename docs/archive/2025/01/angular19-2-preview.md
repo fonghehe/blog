@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 19.2 预计 2025 年 2 月发布，从已公开的 RFC 和 GitHub PR 来看，有两个值得提前了解的方向：**Signal-based Forms 进入开发者预览**，以及路由懒加载的进一步完善。本文基于当前 RC 和社区讨论，预览即将到来的变化。"
+wordCount: 309
 ---
 
 Angular 19.2 预计 2025 年 2 月发布，从已公开的 RFC 和 GitHub PR 来看，有两个值得提前了解的方向：**Signal-based Forms 进入开发者预览**，以及路由懒加载的进一步完善。本文基于当前 RC 和社区讨论，预览即将到来的变化。

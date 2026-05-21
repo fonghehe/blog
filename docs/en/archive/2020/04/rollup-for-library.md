@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "用 Webpack 打包应用，但打包库的时候 Rollup 更合适。为什么？因为 Rollup 产物更干净、更小。记录一下用 Rollup 打包一个 Vue 组件库的全过程。"
+wordCount: 183
 ---
 
 用 Webpack 打包应用，但打包库的时候 Rollup 更合适。为什么？因为 Rollup 产物更干净、更小。记录一下用 Rollup 打包一个 Vue 组件库的全过程。

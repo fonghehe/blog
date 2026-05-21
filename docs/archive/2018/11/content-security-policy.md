@@ -5,6 +5,7 @@ tags:
   - 安全
 readingTime: 1
 description: "配置了 CSP 之后，即使 XSS 注入成功，攻击者也无法外链或执行恶意脚本。"
+wordCount: 274
 ---
 
 配置了 CSP 之后，即使 XSS 注入成功，攻击者也无法外链或执行恶意脚本。

@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，Docker 多阶段构建前端应用 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 207
 ---
 
 在日常开发中，Docker 多阶段构建前端应用 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

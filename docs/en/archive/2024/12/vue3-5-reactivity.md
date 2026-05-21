@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "最近在团队中落地Vue 3.5 响应式重构， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 226
 ---
 
 最近在团队中落地Vue 3.5 响应式重构， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

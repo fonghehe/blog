@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "With many team projects, manually configuring ESLint, Prettier, Git Hooks, and CI every time is tedious. A Vue CLI Plugin handles it all in one step."
+wordCount: 43
 ---
 
 With many team projects, manually configuring ESLint, Prettier, Git Hooks, and CI every time is tedious. A Vue CLI Plugin handles it all in one step.

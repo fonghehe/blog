@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "今年团队在推动单元测试的过程中，我们从 Enzyme 迁移到了 React Testing Library（RTL）。Enzyme 虽然功能强大，但它的 API 鼓励测试实现细节——测试组件内部 state、instance 方法——导致重构时测试频繁挂掉。React Testing Library 的理念完全不同：*"
+wordCount: 361
 ---
 
 今年团队在推动单元测试的过程中，我们从 Enzyme 迁移到了 React Testing Library（RTL）。Enzyme 虽然功能强大，但它的 API 鼓励测试实现细节——测试组件内部 state、instance 方法——导致重构时测试频繁挂掉。React Testing Library 的理念完全不同：**测试用户行为，而不是实现细节**。

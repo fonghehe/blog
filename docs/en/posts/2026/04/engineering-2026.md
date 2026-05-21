@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Frontend engineering 2026 trends are being used more and more frequently in day-to-day development. This article systematically covers their usage, principles, "
+wordCount: 169
 ---
 
 Frontend engineering 2026 trends are being used more and more frequently in day-to-day development. This article systematically covers their usage, principles, and optimization strategies.

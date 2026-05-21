@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "`position`はフロントエンド必須のプロパティですが、`z-index`が効かない問題で多くの人がハマっています。"
+wordCount: 362
 ---
 
 `position`はフロントエンド必須のプロパティですが、`z-index`が効かない問題で多くの人がハマっています。

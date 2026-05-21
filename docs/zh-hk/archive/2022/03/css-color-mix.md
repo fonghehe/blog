@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS color-mix() 色彩混合函數在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
+wordCount: 278
 ---
 
 CSS color-mix() 色彩混合函數在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。

@@ -5,6 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "The topic of Resizable ArrayBuffer Performance Optimization has been discussed many times in the community, but with each new version, many conclusions need upd"
+wordCount: 162
 ---
 
 The topic of Resizable ArrayBuffer Performance Optimization has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.

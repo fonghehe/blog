@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "`HttpInterceptor` is the best place in Angular to handle cross-cutting concerns such as token injection, error handling, and loading states."
+wordCount: 44
 ---
 
 `HttpInterceptor` is the best place in Angular to handle cross-cutting concerns such as token injection, error handling, and loading states.

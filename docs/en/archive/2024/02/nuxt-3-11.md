@@ -5,6 +5,7 @@ tags:
   - Nuxt.js
 readingTime: 1
 description: "In day-to-day development, Nuxt 3.11 New Features Overview is being used more and more frequently. This article systematically explains its usage, principles, a"
+wordCount: 168
 ---
 
 In day-to-day development, Nuxt 3.11 New Features Overview is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

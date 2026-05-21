@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 1
 description: "函数式编程在前端圈一直有热度，Redux、RxJS 都有它的影子。整理一些实际能用上的概念。"
+wordCount: 165
 ---
 
 函数式编程在前端圈一直有热度，Redux、RxJS 都有它的影子。整理一些实际能用上的概念。

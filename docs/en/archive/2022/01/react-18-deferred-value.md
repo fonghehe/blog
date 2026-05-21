@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "We recently implemented React 18 useDeferredValue 延迟更新， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing s"
+wordCount: 172
 ---
 
 We recently implemented React 18 useDeferredValue 延迟更新， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

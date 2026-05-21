@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript 5.2 using 声明のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
+wordCount: 496
 ---
 
 TypeScript 5.2 using 声明のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。

@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 1
 description: "When yarn first came out in 2016, npm's problems (slow installs, no lockfile, non-deterministic dependency trees) made yarn the obvious winner. Two years later,"
+wordCount: 232
 ---
 
 When yarn first came out in 2016, npm's problems (slow installs, no lockfile, non-deterministic dependency trees) made yarn the obvious winner. Two years later, npm 5 closed the gap significantly. Which should you use now?

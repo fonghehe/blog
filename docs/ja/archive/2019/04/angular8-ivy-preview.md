@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 8の最初のRCがリリースされ、期待されていた2つの機能が追加されました：オプトインのIvyコンパイラプレビューと`import()`による遅延ロード構文です。"
+wordCount: 686
 ---
 
 Angular 8の最初のRCがリリースされ、期待されていた2つの機能が追加されました：オプトインのIvyコンパイラプレビューと`import()`による遅延ロード構文です。

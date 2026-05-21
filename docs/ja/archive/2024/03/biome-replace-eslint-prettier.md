@@ -5,6 +5,7 @@ tags:
   - ESLint
 readingTime: 2
 description: "Biome 1.0 发布，宣称能替代 ESLint + Prettier。来看看实际体验怎么样。"
+wordCount: 370
 ---
 
 Biome 1.0 发布，宣称能替代 ESLint + Prettier。来看看实际体验怎么样。

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 19 officially launched on December 5, 2024 (stable release), ending nearly two years of RC/Beta phase.新版本带来了 `use()`、`useActionState()`、`useFormStatus()`、"
+wordCount: 204
 ---
 
 React 19 officially launched on December 5, 2024 (stable release), ending nearly two years of RC/Beta phase.新版本带来了 `use()`、`useActionState()`、`useFormStatus()`、`useOptimistic()` 等全新 Hook，以及 Server Actions 的正式化和 Document Metadata 原生支持。

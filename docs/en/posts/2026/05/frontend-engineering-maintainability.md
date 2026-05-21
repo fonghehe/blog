@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 3
 description: 'When a frontend project has more than 20 contributors and over 50 modules, a "just make it work" engineering structure collapses fast. Maintainability is not a '
+wordCount: 532
 ---
 
 When a frontend project has more than 20 contributors and over 50 modules, a "just make it work" engineering structure collapses fast. Maintainability is not a virtue — it's a survival strategy. This article discusses real engineering decisions: the genuine trade-offs between Monorepo and Multirepo, the core tensions in dependency governance, and how to use automated pipelines to keep complexity from spiraling out of control.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 3.4 released several high-quality improvements, most notably `defineModel` becoming an official API (no longer requiring the `--defineModel` compile flag)."
+wordCount: 137
 ---
 
 Vue 3.4 released several high-quality improvements, most notably `defineModel` becoming an official API (no longer requiring the `--defineModel` compile flag).

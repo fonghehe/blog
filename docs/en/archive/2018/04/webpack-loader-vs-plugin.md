@@ -5,6 +5,7 @@ tags:
   - Webpack
 readingTime: 1
 description: "`module.rules` (loaders) and `plugins` are the two most important configuration sections in Webpack, but many people can't clearly distinguish between them."
+wordCount: 80
 ---
 
 `module.rules` (loaders) and `plugins` are the two most important configuration sections in Webpack, but many people can't clearly distinguish between them.

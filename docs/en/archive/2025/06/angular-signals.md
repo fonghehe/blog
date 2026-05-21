@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "When it comes to Angular Signals reactivity, many developers only scratch the surface at the API call level. This article takes a production-environment perspec"
+wordCount: 153
 ---
 
 When it comes to Angular Signals reactivity, many developers only scratch the surface at the API call level. This article takes a production-environment perspective to discuss the problems you actually encounter and their solutions.

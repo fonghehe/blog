@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Lazy-loading components is a key technique for reducing the initial bundle size. Vue provides two mechanisms — async components and dynamic components — and it "
+wordCount: 191
 ---
 
 Lazy-loading components is a key technique for reducing the initial bundle size. Vue provides two mechanisms — async components and dynamic components — and it helps to understand the distinction and their usage.

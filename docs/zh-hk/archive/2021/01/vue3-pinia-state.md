@@ -7,6 +7,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Pinia 下一代 Vuex 狀態管理在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
+wordCount: 310
 ---
 
 Pinia 下一代 Vuex 狀態管理在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。

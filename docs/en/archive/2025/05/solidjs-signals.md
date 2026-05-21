@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "We've recently rolled out SolidJS Signals across frameworks in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it hel"
+wordCount: 164
 ---
 
 We've recently rolled out SolidJS Signals across frameworks in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling similar challenges.

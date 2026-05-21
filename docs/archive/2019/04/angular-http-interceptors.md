@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "HttpInterceptor 是 Angular 中处理跨切关注点（Token 注入、错误处理、Loading）的最佳位置。"
+wordCount: 64
 ---
 
 HttpInterceptor 是 Angular 中处理跨切关注点（Token 注入、错误处理、Loading）的最佳位置。

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3 alpha 代碼公開了！第一時間去看了響應式系統（packages/reactivity），相比 Vue 2 改變很大。"
+wordCount: 217
 ---
 
 Vue 3 alpha 代碼公開了！第一時間去看了響應式系統（packages/reactivity），相比 Vue 2 改變很大。

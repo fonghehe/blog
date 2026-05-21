@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "在日常开发中，CSS Popover API 弹出层实现の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
+wordCount: 472
 ---
 
 在日常开发中，CSS Popover API 弹出层实现の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。

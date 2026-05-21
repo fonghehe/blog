@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "关于前端构建工具 2023 对比，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 189
 ---
 
 关于前端构建工具 2023 对比，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

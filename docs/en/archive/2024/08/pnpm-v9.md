@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Regarding pnpm v9: New Features and Performance Improvements, many developers only stay at the API call level. This article discusses real-world problems and so"
+wordCount: 170
 ---
 
 Regarding pnpm v9: New Features and Performance Improvements, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

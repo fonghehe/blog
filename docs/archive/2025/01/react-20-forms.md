@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 20 终于补齐了表单处理的最后一块拼图。新增的原生表单组件和 hook 让你可以彻底告别第三方表单库，同时获得更好的 DX 和性能。"
+wordCount: 394
 ---
 
 React 20 终于补齐了表单处理的最后一块拼图。新增的原生表单组件和 hook 让你可以彻底告别第三方表单库，同时获得更好的 DX 和性能。

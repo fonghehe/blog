@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 1
 description: "Node.js 12が先週リリースされました（LTSバージョンのロックは10月の予定）。多くの良い機能が追加されています。"
+wordCount: 194
 ---
 
 Node.js 12が先週リリースされました（LTSバージョンのロックは10月の予定）。多くの良い機能が追加されています。

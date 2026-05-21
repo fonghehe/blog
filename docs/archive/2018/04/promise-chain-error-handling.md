@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "之前写了 Promise 基础，这次专门说链式调用和错误处理，这块容易出细节问题。"
+wordCount: 160
 ---
 
 之前写了 Promise 基础，这次专门说链式调用和错误处理，这块容易出细节问题。

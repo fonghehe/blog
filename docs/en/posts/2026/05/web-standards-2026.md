@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "A roundup of the most impactful new web platform features landing in 2026, with practical examples for each."
+wordCount: 166
 ---
 
 A roundup of the most impactful new web platform features landing in 2026, with practical examples for each.

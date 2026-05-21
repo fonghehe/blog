@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 5.7 and 5.8 have been released in succession, bringing a number of practical new features. Let's go through the changes that impact day-to-day develo"
+wordCount: 105
 ---
 
 TypeScript 5.7 and 5.8 have been released in succession, bringing a number of practical new features. Let's go through the changes that impact day-to-day development.

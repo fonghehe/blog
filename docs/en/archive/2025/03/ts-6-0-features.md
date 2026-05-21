@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript 6.0 New Features Outlook is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best pract"
+wordCount: 102
 ---
 
 TypeScript 6.0 New Features Outlook is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real project experience.

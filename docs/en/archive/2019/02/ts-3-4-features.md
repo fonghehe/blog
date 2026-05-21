@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript 3.4 new features are topics encountered frequently in day-to-day development. This article draws from real projects to share practical implementation"
+wordCount: 85
 ---
 
 TypeScript 3.4 new features are topics encountered frequently in day-to-day development. This article draws from real projects to share practical implementation approaches and lessons learned.

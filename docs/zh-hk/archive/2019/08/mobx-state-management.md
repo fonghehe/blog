@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 4
 description: "Redux 在大型 React 項目中幾乎是默認選擇，但其 boilerplate 多、學習曲線陡峭的問題一直被開發者詬病。MobX 基於響應式編程範式，提供了更直觀、更少樣板代碼的狀態管理方案。本文將深入 MobX 的核心概念，並與 Redux 做詳細對比，幫助你在技術選型時做出更好的決策。"
+wordCount: 576
 ---
 
 Redux 在大型 React 項目中幾乎是默認選擇，但其 boilerplate 多、學習曲線陡峭的問題一直被開發者詬病。MobX 基於響應式編程範式，提供了更直觀、更少樣板代碼的狀態管理方案。本文將深入 MobX 的核心概念，並與 Redux 做詳細對比，幫助你在技術選型時做出更好的決策。

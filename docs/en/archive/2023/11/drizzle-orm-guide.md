@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Drizzle ORM 实战指南 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 185
 ---
 
 Drizzle ORM 实战指南 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

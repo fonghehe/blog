@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "MCP（Model Context Protocol）はAIとツール間の標準プロトコルになりつつあります。フロントエンドエンジニアがMCPを活用して開発効率を向上させる方法を解説します。"
+wordCount: 356
 ---
 
 MCP（Model Context Protocol）はAIとツール間の標準プロトコルになりつつあります。フロントエンドエンジニアがMCPを活用して開発効率を向上させる方法を解説します。

@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "2018年は充実した年だった。React HooksがReact Confでデビューし、Vue 3 RFCが公開レビューを開始し、TypeScriptの大規模プロジェクトへの浸透率は上昇し続けた。2019年を展望すると、特に注目すべきいくつかの方向性がある。"
+wordCount: 837
 ---
 
 2018年は充実した年だった。React HooksがReact Confでデビューし、Vue 3 RFCが公開レビューを開始し、TypeScriptの大規模プロジェクトへの浸透率は上昇し続けた。2019年を展望すると、特に注目すべきいくつかの方向性がある。

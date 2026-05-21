@@ -6,6 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Webpack 4 was officially released at the end of February. The biggest highlight is **zero configuration** — you can get it running without writing a config file"
+wordCount: 263
 ---
 
 Webpack 4 was officially released at the end of February. The biggest highlight is **zero configuration** — you can get it running without writing a config file. After upgrading several projects, here are my notes on the real-world experience.

@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 的组件通信有父子通信（props/emit）、Vuex（全局状态）两个主要方案，还有一个轻量方案：事件总线（Event Bus）。适合兄弟组件间或跨层级的简单通信。"
+wordCount: 178
 ---
 
 Vue 的组件通信有父子通信（props/emit）、Vuex（全局状态）两个主要方案，还有一个轻量方案：事件总线（Event Bus）。适合兄弟组件间或跨层级的简单通信。

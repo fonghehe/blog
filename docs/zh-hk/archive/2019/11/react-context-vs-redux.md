@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 4
 description: "React 16.3 引入了全新的 Context API，讓很多開發者開始思考：有了 Context，還需要 Redux 嗎？本文將深入對比兩者的適用場景，幫助你在實際項目中做出正確的技術選型。"
+wordCount: 582
 ---
 
 React 16.3 引入了全新的 Context API，讓很多開發者開始思考：有了 Context，還需要 Redux 嗎？本文將深入對比兩者的適用場景，幫助你在實際項目中做出正確的技術選型。

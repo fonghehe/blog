@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "In daily development, GitHub Copilot Chat 新特性 is used more and more frequently. This article systematically explains its usage, principles, and optimization str"
+wordCount: 201
 ---
 
 In daily development, GitHub Copilot Chat 新特性 is used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

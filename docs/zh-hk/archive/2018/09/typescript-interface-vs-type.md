@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "剛學 TypeScript 時經常困惑：`interface` 和 `type` 都能定義類型，什麼時候用哪個？"
+wordCount: 215
 ---
 
 剛學 TypeScript 時經常困惑：`interface` 和 `type` 都能定義類型，什麼時候用哪個？

@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 3
 description: "Expo SDK 52 基於 React Native 0.78 構建，主題是「原生能力民主化」——把以前需要 eject 才能用的功能變成零配置可用。新增的 Expo Modules API v3、Router v4、和 New Architecture 全面默認開啓是這個版本的三大支柱。"
+wordCount: 470
 ---
 
 Expo SDK 52 基於 React Native 0.78 構建，主題是「原生能力民主化」——把以前需要 eject 才能用的功能變成零配置可用。新增的 Expo Modules API v3、Router v4、和 New Architecture 全面默認開啓是這個版本的三大支柱。

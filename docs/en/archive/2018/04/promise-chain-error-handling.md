@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "I covered Promise basics earlier. This time, let's focus specifically on chaining and error handling — areas with plenty of subtle pitfalls."
+wordCount: 103
 ---
 
 I covered Promise basics earlier. This time, let's focus specifically on chaining and error handling — areas with plenty of subtle pitfalls.

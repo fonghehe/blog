@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.1 發佈了，帶來了幾個非常實用的類型系統增強。特別是模板字面量類型和遞歸條件類型，讓類型編程能力又上了一個台階。"
+wordCount: 206
 ---
 
 TypeScript 4.1 發佈了，帶來了幾個非常實用的類型系統增強。特別是模板字面量類型和遞歸條件類型，讓類型編程能力又上了一個台階。

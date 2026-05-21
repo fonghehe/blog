@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React Testing 2025 Guide is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from r"
+wordCount: 181
 ---
 
 React Testing 2025 Guide is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

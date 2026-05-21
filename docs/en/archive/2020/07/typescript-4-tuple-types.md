@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript 4.0 beta 刚发布，这次最让我兴奋的是元组类型（Tuple Types）的大幅增强，特别是可变参数元组（Variadic Tuple Types）。以前处理函数参数组合、rest 参数拼接时，类型系统完全帮不上忙，现在终于可以优雅地表达了。"
+wordCount: 340
 ---
 
 TypeScript 4.0 beta 刚发布，这次最让我兴奋的是元组类型（Tuple Types）的大幅增强，特别是可变参数元组（Variadic Tuple Types）。以前处理函数参数组合、rest 参数拼接时，类型系统完全帮不上忙，现在终于可以优雅地表达了。

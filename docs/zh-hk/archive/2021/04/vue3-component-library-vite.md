@@ -7,6 +7,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "團隊計劃從 Element UI 遷移到自建 Vue 3 組件庫。用 Vite 做構建工具比 Rollup 或 Webpack 更簡潔，特別是處理 Vue SFC 時。記錄一下搭建過程。"
+wordCount: 193
 ---
 
 團隊計劃從 Element UI 遷移到自建 Vue 3 組件庫。用 Vite 做構建工具比 Rollup 或 Webpack 更簡潔，特別是處理 Vue SFC 時。記錄一下搭建過程。

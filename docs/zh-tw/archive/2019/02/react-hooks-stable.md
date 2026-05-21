@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "昨天 React 16.8 正式釋出，Hooks 從提案變成正式 API！這是 React 近年來最重要的更新，認真寫一篇。"
+wordCount: 333
 ---
 
 昨天 React 16.8 正式釋出，Hooks 從提案變成正式 API！這是 React 近年來最重要的更新，認真寫一篇。

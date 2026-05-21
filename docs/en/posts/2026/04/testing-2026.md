@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "When it comes to frontend testing 2026 best practices, many developers remain at the surface level of API calls. This article takes a production-oriented perspe"
+wordCount: 154
 ---
 
 When it comes to frontend testing 2026 best practices, many developers remain at the surface level of API calls. This article takes a production-oriented perspective to discuss the real problems you'll encounter and their solutions.

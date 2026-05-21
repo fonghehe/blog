@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "在日常开发中，React Table v8 Headless 表格 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategie"
+wordCount: 193
 ---
 
 在日常开发中，React Table v8 Headless 表格 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

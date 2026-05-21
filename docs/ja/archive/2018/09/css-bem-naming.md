@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "プロジェクトが大きくなると、CSS の命名が混乱し始めます：`.title`、`.list-item`、`.active`……グローバルなスタイルの衝突が増えていきます。BEM 規則で命名を統一した後、問題が大幅に減りました。"
+wordCount: 214
 ---
 
 プロジェクトが大きくなると、CSS の命名が混乱し始めます：`.title`、`.list-item`、`.active`……グローバルなスタイルの衝突が増えていきます。BEM 規則で命名を統一した後、問題が大幅に減りました。

@@ -6,6 +6,7 @@ tags:
   - Vitest
 readingTime: 3
 description: "如果你的專案用 Vite，那 Vitest 就是測試的最優解。和 Vite 共享配置、同一轉換管道、原生 ESM 支援——Jest 需要各種 hack 才能做到的事，Vitest 天然支援。"
+wordCount: 380
 ---
 
 如果你的專案用 Vite，那 Vitest 就是測試的最優解。和 Vite 共享配置、同一轉換管道、原生 ESM 支援——Jest 需要各種 hack 才能做到的事，Vitest 天然支援。

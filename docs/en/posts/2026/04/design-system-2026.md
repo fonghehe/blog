@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Design System 2026 trends have been discussed extensively in the community, but with each version iteration, many conclusions need to be revisited. This article"
+wordCount: 152
 ---
 
 Design System 2026 trends have been discussed extensively in the community, but with each version iteration, many conclusions need to be revisited. This article re-examines the topic based on the latest versions.

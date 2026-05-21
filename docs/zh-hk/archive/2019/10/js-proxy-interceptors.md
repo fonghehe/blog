@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "JavaScript Proxy 攔截器是日常開發中經常遇到的問題。本文從實際項目出發，分享具體的實現方法和經驗總結。"
+wordCount: 270
 ---
 
 JavaScript Proxy 攔截器是日常開發中經常遇到的問題。本文從實際項目出發，分享具體的實現方法和經驗總結。

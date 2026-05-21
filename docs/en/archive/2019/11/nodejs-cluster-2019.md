@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "最近项目中用到了Node.js Cluster 多进程，发现比预想的要复杂。分享一下实践过程中总结的经验。"
+wordCount: 215
 ---
 
 最近项目中用到了Node.js Cluster 多进程，发现比预想的要复杂。分享一下实践过程中总结的经验。

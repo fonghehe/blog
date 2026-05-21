@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "AI-Assisted Code Refactoring is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices fr"
+wordCount: 173
 ---
 
 AI-Assisted Code Refactoring is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

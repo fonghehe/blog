@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 16 帶來了**非破壞性水合（Non-Destructive Hydration）**，這是 Angular Universal SSR 的一次重大進化。以前 Angular 的水合會先銷燬服務端渲染的 HTML，再重新渲染客戶端版本（\"破壞性\"水合），導致白屏閃爍和 CLS 指標惡化。新方式會直接複用"
+wordCount: 372
 ---
 
 Angular 16 帶來了**非破壞性水合（Non-Destructive Hydration）**，這是 Angular Universal SSR 的一次重大進化。以前 Angular 的水合會先銷燬服務端渲染的 HTML，再重新渲染客戶端版本（"破壞性"水合），導致白屏閃爍和 CLS 指標惡化。新方式會直接複用服務端 DOM，客戶端只繫結事件，不重建 DOM 結構。

@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import { VitePWA } from "vite-plugin-pwa";
 import { buildRSS } from "./rss";
 import { zh } from "./locales/zh";
 import { en } from "./locales/en";
@@ -11,6 +12,10 @@ import { zhHk } from "./locales/zh-hk";
 //   'zh-variants' → zh + zh-tw + zh-hk
 //   undefined     → all 5 (dev mode only, needs lots of RAM)
 const BUILD_MODE = process.env.BUILD_MODE as "main" | "zh-variants" | undefined;
+
+// ── Analytics (Umami) ────────────────────────────────────────────────────────
+// Only injected in production builds to avoid polluting analytics with dev traffic.
+const IS_PRODUCTION = process.env.NODE_ENV === "production";
 
 const allLocales = {
   root: { ...zh },
@@ -61,6 +66,13 @@ export default defineConfig({
       { property: "og:url", content: "https://fonghehe.github.io/blog/" },
     ],
     ["meta", { property: "og:locale", content: "zh_CN" }],
+    [
+      "meta",
+      {
+        property: "og:image",
+        content: "https://fonghehe.github.io/blog/icons/icon.svg",
+      },
+    ],
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
     ["meta", { name: "twitter:title", content: "前端成长记录" }],
     [
@@ -71,9 +83,35 @@ export default defineConfig({
           "一个前端工程师从 2018 年开始的学习与成长记录。1200+ 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
       },
     ],
+    [
+      "meta",
+      {
+        name: "twitter:image",
+        content: "https://fonghehe.github.io/blog/icons/icon.svg",
+      },
+    ],
+    // Umami analytics — only injected in production builds
+    ...(IS_PRODUCTION
+      ? ([
+          [
+            "script",
+            {
+              defer: "",
+              src: "https://cloud.umami.is/script.js",
+              "data-website-id": "4d310e6b-2d69-42aa-aaa2-c788a664d3c5",
+            },
+          ],
+        ] as [string, Record<string, string>][])
+      : []),
   ],
   sitemap: {
     hostname: "https://fonghehe.github.io/blog/",
+  },
+  transformHead({ pageData }) {
+    const canonical = `https://fonghehe.github.io/blog/${pageData.relativePath}`
+      .replace(/index\.md$/, "")
+      .replace(/\.md$/, ".html");
+    return [["link", { rel: "canonical", href: canonical }]];
   },
   locales: allLocales,
   themeConfig: {
@@ -88,6 +126,7 @@ export default defineConfig({
   markdown: {
     // 完全替换 shiki — 用轻量 highlighter 直接输出 <pre><code>
     // shiki 是构建最大瓶颈：加载语法文件 + token 化 7000 篇文章的代码块
+    // 语法高亮由客户端 highlight.js 接管（见 theme/index.ts）
     highlight(code, lang) {
       const escaped = code
         .replace(/&/g, "&amp;")
@@ -95,7 +134,8 @@ export default defineConfig({
         .replace(/>/g, "&gt;")
         .replace(/\{\{/g, "&#123;&#123;")
         .replace(/\}\}/g, "&#125;&#125;");
-      return `<pre class="language-${lang}"><code>${escaped}</code></pre>`;
+      const cls = lang ? ` class="language-${lang}"` : "";
+      return `<pre class="language-${lang}"><code${cls}>${escaped}</code></pre>`;
     },
     config(md) {
       // 转义非代码区域的 {{ }} 防止 Vue 模板编译报错
@@ -132,6 +172,62 @@ export default defineConfig({
     }
   },
   vite: {
+    plugins: [
+      VitePWA({
+        // Only register service worker in the main build
+        disable: BUILD_MODE === "zh-variants",
+        registerType: "autoUpdate",
+        outDir: ".vitepress/dist",
+        injectRegister: "script-defer",
+        manifest: {
+          name: "前端成长记录",
+          short_name: "前端记录",
+          description:
+            "一个前端工程师从 2018 年开始的学习与成长记录，1200+ 篇深度文章",
+          theme_color: "#3c8772",
+          background_color: "#ffffff",
+          display: "standalone",
+          start_url: "/blog/",
+          scope: "/blog/",
+          icons: [
+            {
+              src: "/blog/icons/icon.svg",
+              sizes: "any",
+              type: "image/svg+xml",
+              purpose: "any maskable",
+            },
+          ],
+        },
+        workbox: {
+          globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2}"],
+          // Exclude local search indexes (5-6 MB each) from precache — served via NetworkFirst at runtime
+          globIgnores: ["**/chunks/@localSearchIndex*"],
+          navigateFallback: null,
+          runtimeCaching: [
+            {
+              // Search indexes are large and change on every build; fetch fresh when online
+              urlPattern: /@localSearchIndex/,
+              handler: "NetworkFirst",
+              options: {
+                cacheName: "search-index",
+                expiration: { maxEntries: 10 },
+              },
+            },
+            {
+              urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
+              handler: "CacheFirst",
+              options: {
+                cacheName: "google-fonts",
+                expiration: {
+                  maxEntries: 20,
+                  maxAgeSeconds: 60 * 60 * 24 * 365,
+                },
+              },
+            },
+          ],
+        },
+      }),
+    ],
     build: {
       reportCompressedSize: false,
       chunkSizeWarningLimit: 4000,

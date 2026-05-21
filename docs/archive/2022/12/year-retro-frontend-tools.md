@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 3
 description: "2022 年是前端工具链剧烈变化的一年。Vite 成为主流构建工具、pnnpm + Turborepo 定义了 monorepo 的标准方案、ESM 迁移进入实质阶段。这篇文章做个年终总结。"
+wordCount: 592
 ---
 
 2022 年是前端工具链剧烈变化的一年。Vite 成为主流构建工具、pnnpm + Turborepo 定义了 monorepo 的标准方案、ESM 迁移进入实质阶段。这篇文章做个年终总结。

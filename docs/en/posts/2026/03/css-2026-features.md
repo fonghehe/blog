@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Many developers never go beyond the API call surface when it comes to the new CSS features in 2026. This article examines the problems you're likely to encounte"
+wordCount: 220
 ---
 
 Many developers never go beyond the API call surface when it comes to the new CSS features in 2026. This article examines the problems you're likely to encounter from a production perspective and discusses practical solutions.

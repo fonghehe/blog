@@ -5,6 +5,7 @@ tags:
   - Security
 readingTime: 2
 description: "Frontend security is something every developer should take seriously. XSS attacks are hard to prevent — relying solely on filtering user input is never foolproo"
+wordCount: 298
 ---
 
 Frontend security is something every developer should take seriously. XSS attacks are hard to prevent — relying solely on filtering user input is never foolproof. CSP (Content Security Policy) provides a browser-level mechanism to restrict resource loading and script execution, making it an important complement to XSS defense.

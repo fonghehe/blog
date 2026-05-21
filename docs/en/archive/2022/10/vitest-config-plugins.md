@@ -6,6 +6,7 @@ tags:
   - Vitest
 readingTime: 2
 description: "关于Vitest 配置与插件，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 193
 ---
 
 关于Vitest 配置与插件，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

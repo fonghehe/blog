@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "做了几年 tech lead，最让我纠结的不是写代码，而是技术选型。记录一下我的决策框架。"
+wordCount: 538
 ---
 
 做了几年 tech lead，最让我纠结的不是写代码，而是技术选型。记录一下我的决策框架。

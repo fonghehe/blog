@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "工作中用了 CSS Grid 一段時間，發現大多數人屐5e止於基礎的 `grid-template-columns: repeat(3, 1fr)` 就不用了。Grid 的命名網格線和模板區域才是真正讓它秒殺複雜佈局的功能。"
+wordCount: 217
 ---
 
 工作中用了 CSS Grid 一段時間，發現大多數人屐5e止於基礎的 `grid-template-columns: repeat(3, 1fr)` 就不用了。Grid 的命名網格線和模板區域才是真正讓它秒殺複雜佈局的功能。

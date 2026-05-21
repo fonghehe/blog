@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 3
 description: "AI code review has gone from \"nice to have\" to standard practice. But many teams use it wrong — either over-relying on AI so engineers stop thinking, or treatin"
+wordCount: 279
 ---
 
 AI code review has gone from "nice to have" to standard practice. But many teams use it wrong — either over-relying on AI so engineers stop thinking, or treating it as nothing more than an upgraded linter. This post shares lessons from deploying AI code review across three large projects.

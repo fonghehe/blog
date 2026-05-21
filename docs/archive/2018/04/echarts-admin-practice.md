@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "数据可视化是中后台系统的常见需求，ECharts 是国内最主流的图表库。记录一下常见场景的实践经验。"
+wordCount: 200
 ---
 
 数据可视化是中后台系统的常见需求，ECharts 是国内最主流的图表库。记录一下常见场景的实践经验。

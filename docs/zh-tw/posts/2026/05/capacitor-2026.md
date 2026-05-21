@@ -5,6 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "在日常開發中，Capacitor 2026 跨平臺方案的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
+wordCount: 278
 ---
 
 在日常開發中，Capacitor 2026 跨平臺方案的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。

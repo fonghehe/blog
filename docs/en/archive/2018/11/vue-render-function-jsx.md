@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Templates work fine most of the time, but render functions are more flexible in certain scenarios."
+wordCount: 157
 ---
 
 Templates work fine most of the time, but render functions are more flexible in certain scenarios.

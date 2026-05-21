@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 從誕生起就深度集成 RxJS，HttpClient、EventEmitter、Router 全都基於 Observable。掌握 RxJS 操作符，能讓你的 Angular 代碼更優雅地處理異步和組件通信。"
+wordCount: 248
 ---
 
 Angular 從誕生起就深度集成 RxJS，HttpClient、EventEmitter、Router 全都基於 Observable。掌握 RxJS 操作符，能讓你的 Angular 代碼更優雅地處理異步和組件通信。

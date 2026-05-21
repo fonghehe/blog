@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular's built-in route-based lazy loading is a key technique for optimizing the initial load performance of large applications."
+wordCount: 57
 ---
 
 Angular's built-in route-based lazy loading is a key technique for optimizing the initial load performance of large applications.

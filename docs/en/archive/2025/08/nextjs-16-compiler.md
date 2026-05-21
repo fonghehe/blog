@@ -6,6 +6,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "In daily development, Next.js 16 compiler optimization is being used more and more frequently. This article systematically explains its usage, principles, and o"
+wordCount: 168
 ---
 
 In daily development, Next.js 16 compiler optimization is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

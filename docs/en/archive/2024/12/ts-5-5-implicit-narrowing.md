@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 5.5 隐式类型收窄 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real proj"
+wordCount: 239
 ---
 
 TypeScript 5.5 隐式类型收窄 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

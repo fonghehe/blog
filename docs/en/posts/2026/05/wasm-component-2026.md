@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Wasm Component Model has become a practical tool for frontend teams in 2026. This article covers the core concepts, practical patterns, and integration strategi"
+wordCount: 209
 ---
 
 Wasm Component Model has become a practical tool for frontend teams in 2026. This article covers the core concepts, practical patterns, and integration strategies.

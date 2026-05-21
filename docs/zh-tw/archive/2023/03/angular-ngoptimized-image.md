@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 15 內建的 `NgOptimizedImage` 指令是 Angular 官方對 Core Web Vitals 的正式回應。它不只是給 `<img>` 加 `loading=\"lazy\"` 那麼簡單——這篇文章深入探討它在真實專案中的使用方式和背後的最佳化邏輯。"
+wordCount: 432
 ---
 
 Angular 15 內建的 `NgOptimizedImage` 指令是 Angular 官方對 Core Web Vitals 的正式回應。它不只是給 `<img>` 加 `loading="lazy"` 那麼簡單——這篇文章深入探討它在真實專案中的使用方式和背後的最佳化邏輯。

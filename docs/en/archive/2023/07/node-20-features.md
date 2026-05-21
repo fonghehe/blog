@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "We recently implemented Node.js 20 LTS 新特性汇总， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar wor"
+wordCount: 202
 ---
 
 We recently implemented Node.js 20 LTS 新特性汇总， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

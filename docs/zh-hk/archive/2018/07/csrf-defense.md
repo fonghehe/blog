@@ -5,6 +5,7 @@ tags:
   - 安全
 readingTime: 2
 description: "之前寫過 XSS 防禦，這次聊 CSRF。兩者經常一起提，但原理完全不同。"
+wordCount: 369
 ---
 
 之前寫過 XSS 防禦，這次聊 CSRF。兩者經常一起提，但原理完全不同。

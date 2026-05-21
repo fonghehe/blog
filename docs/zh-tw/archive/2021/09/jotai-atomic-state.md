@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常開發中，Jotai 原子化狀態管理的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
+wordCount: 334
 ---
 
 在日常開發中，Jotai 原子化狀態管理的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。

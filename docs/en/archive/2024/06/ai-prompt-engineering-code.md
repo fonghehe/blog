@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "关于AI 提示工程编程技巧，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective."
+wordCount: 217
 ---
 
 关于AI 提示工程编程技巧，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS Grid 在 2017 年基本完成了主流瀏覽器的支援（Chrome 57、Firefox 52、Safari 10.1），2018 年已經可以在不需要相容 IE 的專案裡放心使用。但很多人用過 Flexbox 後，一時不太明白 Grid 解決的是什麼問題。"
+wordCount: 557
 ---
 
 CSS Grid 在 2017 年基本完成了主流瀏覽器的支援（Chrome 57、Firefox 52、Safari 10.1），2018 年已經可以在不需要相容 IE 的專案裡放心使用。但很多人用過 Flexbox 後，一時不太明白 Grid 解決的是什麼問題。

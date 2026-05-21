@@ -5,6 +5,7 @@ tags:
   - ESLint
 readingTime: 2
 description: "Biome（原 Rome 項目重生）發佈了。用 Rust 重寫的 Linter + Formatter，對標 ESLint + Prettier。實測後説説值不值得換。"
+wordCount: 517
 ---
 
 Biome（原 Rome 項目重生）發佈了。用 Rust 重寫的 Linter + Formatter，對標 ESLint + Prettier。實測後説説值不值得換。

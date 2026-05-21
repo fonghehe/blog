@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "State of CSS 2023 調查結果於 2023 年釋出，資料來自全球 9,000+ 開發者。今年的主旋律是\"等了很久的特性終於可以用了\"：Container Queries、原生 CSS 巢狀、`:has()` 選擇器、`color-mix()` 等在各大瀏覽器的支援度都突破了 85%，進入實際可用區間。"
+wordCount: 393
 ---
 
 State of CSS 2023 調查結果於 2023 年釋出，資料來自全球 9,000+ 開發者。今年的主旋律是"等了很久的特性終於可以用了"：Container Queries、原生 CSS 巢狀、`:has()` 選擇器、`color-mix()` 等在各大瀏覽器的支援度都突破了 85%，進入實際可用區間。

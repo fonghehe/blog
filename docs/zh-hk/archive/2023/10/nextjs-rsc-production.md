@@ -5,6 +5,7 @@ tags:
   - Next.js
 readingTime: 2
 description: "Next.js 14 發佈了。App Router 從實驗性功能變成了推薦方案。是時候認真聊聊生產環境的實踐經驗了。"
+wordCount: 283
 ---
 
 Next.js 14 發佈了。App Router 從實驗性功能變成了推薦方案。是時候認真聊聊生產環境的實踐經驗了。

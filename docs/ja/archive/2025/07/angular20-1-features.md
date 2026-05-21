@@ -6,6 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Angular 20.1 は 2025 年 6 月末にリリースされ、Angular 20 の機能ロードマップを継続しています。本バージョンの焦点は `resource()` API の改善（実験的から開発者プレビューへの昇格）と、Signal Forms の安定化の推進です。"
+wordCount: 374
 ---
 
 Angular 20.1 は 2025 年 6 月末にリリースされ、Angular 20 の機能ロードマップを継続しています。本バージョンの焦点は `resource()` API の改善（実験的から開発者プレビューへの昇格）と、Signal Forms の安定化の推進です。

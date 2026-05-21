@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript 7.0 について、多くの開発者は API を呼び出すレベルにとどまっています。本記事では本番環境の視点から、実際に遭遇する問題と解決策を議論します。"
+wordCount: 472
 ---
 
 TypeScript 7.0 について、多くの開発者は API を呼び出すレベルにとどまっています。本記事では本番環境の視点から、実際に遭遇する問題と解決策を議論します。

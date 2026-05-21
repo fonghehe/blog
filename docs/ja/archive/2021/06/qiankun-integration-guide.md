@@ -7,6 +7,7 @@ tags:
 
 readingTime: 2
 description: "上一篇聊了微前端架构设计，这篇写具体的技术接入。我们用 qiankun 接入了 6 个子应用，包含 Vue 2、Vue 3 和 React 三种技术栈。记录主应用配置、子应用改造和常见问题。"
+wordCount: 420
 ---
 
 上一篇聊了微前端架构设计，这篇写具体的技术接入。我们用 qiankun 接入了 6 个子应用，包含 Vue 2、Vue 3 和 React 三种技术栈。记录主应用配置、子应用改造和常见问题。

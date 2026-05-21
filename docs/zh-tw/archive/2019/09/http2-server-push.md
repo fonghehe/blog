@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 5
 description: "HTTP/2 帶來了多路複用、頭部壓縮、服務端推送等重大改進。其中 Server Push 允許伺服器在客戶端請求之前主動推送資源，減少請求往返次數，顯著提升頁面載入速度。本文將深入講解 HTTP/2 Server Push 的工作原理，並結合 Node.js 和 Nginx 給出實戰配置。"
+wordCount: 887
 ---
 
 HTTP/2 帶來了多路複用、頭部壓縮、服務端推送等重大改進。其中 Server Push 允許伺服器在客戶端請求之前主動推送資源，減少請求往返次數，顯著提升頁面載入速度。本文將深入講解 HTTP/2 Server Push 的工作原理，並結合 Node.js 和 Nginx 給出實戰配置。

@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Regarding Speculation Rules API v2, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production "
+wordCount: 205
 ---
 
 Regarding Speculation Rules API v2, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.

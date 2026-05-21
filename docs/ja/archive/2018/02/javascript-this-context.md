@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "`this` は JS で最もエラーが起きやすい概念の一つです。1年以上コーディングしてようやくルールが分かりました。"
+wordCount: 254
 ---
 
 `this` は JS で最もエラーが起きやすい概念の一つです。1年以上コーディングしてようやくルールが分かりました。

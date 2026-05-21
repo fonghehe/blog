@@ -5,6 +5,7 @@ tags:
   - GraphQL
 readingTime: 2
 description: "最近在研究 GraphQL，看到很多人説它是 REST 的替代方案。試用了一下，談談我的理解。"
+wordCount: 242
 ---
 
 最近在研究 GraphQL，看到很多人説它是 REST 的替代方案。試用了一下，談談我的理解。

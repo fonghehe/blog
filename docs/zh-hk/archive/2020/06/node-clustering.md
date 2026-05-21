@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "在日常開發中，Node.js Cluster 多進程性能優化的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+wordCount: 305
 ---
 
 在日常開發中，Node.js Cluster 多進程性能優化的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。

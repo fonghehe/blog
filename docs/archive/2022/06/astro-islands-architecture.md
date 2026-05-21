@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Astro 1.0 正式发布了。它的核心理念很明确：默认输出零 JavaScript，只在需要交互的地方加载 JS。对于内容型网站（博客、文档、营销页），这个方案比 React/Vue 全家桶高效得多。"
+wordCount: 331
 ---
 
 Astro 1.0 正式发布了。它的核心理念很明确：默认输出零 JavaScript，只在需要交互的地方加载 JS。对于内容型网站（博客、文档、营销页），这个方案比 React/Vue 全家桶高效得多。

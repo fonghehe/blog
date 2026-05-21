@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 22 was officially released on May 7, 2026. Following last month's RC preview, the stable release delivers several final refinements: the Evergreen compi"
+wordCount: 337
 ---
 
 Angular 22 was officially released on May 7, 2026. Following last month's RC preview, the stable release delivers several final refinements: the Evergreen compiler is now production-ready, Zoneless becomes the default mode for new projects, and Server-Side Rendering has been comprehensively rearchitected. As all three major frontend frameworks reach maturity in 2026, Angular 22 delivers a complete answer.

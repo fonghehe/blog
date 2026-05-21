@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 的元件通訊有父子通訊（props/emit）、Vuex（全域性狀態）兩個主要方案，還有一個輕量方案：事件匯流排（Event Bus）。適合兄弟元件間或跨層級的簡單通訊。"
+wordCount: 183
 ---
 
 Vue 的元件通訊有父子通訊（props/emit）、Vuex（全域性狀態）兩個主要方案，還有一個輕量方案：事件匯流排（Event Bus）。適合兄弟元件間或跨層級的簡單通訊。

@@ -5,6 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "Biome 前端 linter formatterのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
+wordCount: 468
 ---
 
 Biome 前端 linter formatterのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。

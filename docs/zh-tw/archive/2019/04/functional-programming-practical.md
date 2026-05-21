@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 1
 description: "函數語言程式設計在前端圈一直有熱度，Redux、RxJS 都有它的影子。整理一些實際能用上的概念。"
+wordCount: 168
 ---
 
 函數語言程式設計在前端圈一直有熱度，Redux、RxJS 都有它的影子。整理一些實際能用上的概念。

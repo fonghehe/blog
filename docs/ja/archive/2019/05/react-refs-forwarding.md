@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "最近プロジェクトでReactのRef転送を使い、思ったより複雑でした。実践で得られた経験をまとめます。"
+wordCount: 277
 ---
 
 最近プロジェクトでReactのRef転送を使い、思ったより複雑でした。実践で得られた経験をまとめます。

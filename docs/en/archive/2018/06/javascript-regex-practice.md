@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "Regular expressions are knowledge you always end up forgetting. Here's a collection of common patterns and real-world use cases."
+wordCount: 66
 ---
 
 Regular expressions are knowledge you always end up forgetting. Here's a collection of common patterns and real-world use cases.

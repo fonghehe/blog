@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript 3.0 到 3.3 陸續發佈，加了不少實用特性。整理一下。"
+wordCount: 116
 ---
 
 TypeScript 3.0 到 3.3 陸續發佈，加了不少實用特性。整理一下。

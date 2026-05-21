@@ -5,6 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在日常开发中，TanStack Router 类型安全路由的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
+wordCount: 315
 ---
 
 在日常开发中，TanStack Router 类型安全路由的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。

@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "`position` is a property every frontend developer must know, but `z-index` not working as expected has tripped up many people."
+wordCount: 155
 ---
 
 `position` is a property every frontend developer must know, but `z-index` not working as expected has tripped up many people.

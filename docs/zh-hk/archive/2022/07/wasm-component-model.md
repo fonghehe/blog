@@ -5,6 +5,7 @@ tags:
   - WebAssembly
 readingTime: 2
 description: "在日常開發中，WebAssembly Component Model的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+wordCount: 314
 ---
 
 在日常開發中，WebAssembly Component Model的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。

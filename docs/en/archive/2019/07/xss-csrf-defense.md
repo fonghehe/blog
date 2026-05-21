@@ -5,6 +5,7 @@ tags:
   - Security
 readingTime: 2
 description: "XSS and CSRF are the two most common frontend security vulnerabilities. This article covers both attack types with complete, practical defense strategies."
+wordCount: 316
 ---
 
 XSS and CSRF are the two most common frontend security vulnerabilities. This article covers both attack types with complete, practical defense strategies.

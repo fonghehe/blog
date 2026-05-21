@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Promise は誰もが使っていますが、エラー処理は頻繁に間違えます。よくある落とし穴と正しいパターンをまとめます。"
+wordCount: 409
 ---
 
 Promise は誰もが使っていますが、エラー処理は頻繁に間違えます。よくある落とし穴と正しいパターンをまとめます。

@@ -7,6 +7,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常開發中，Vue 3 Teleport 實現全局 Modal的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+wordCount: 312
 ---
 
 在日常開發中，Vue 3 Teleport 實現全局 Modal的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。

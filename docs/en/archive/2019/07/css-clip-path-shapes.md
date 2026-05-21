@@ -5,6 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Traditional CSS clipping is limited — `overflow: hidden` only does rectangular clipping, and `border-radius` only rounds corners. If you need diagonal-edge card"
+wordCount: 179
 ---
 
 Traditional CSS clipping is limited — `overflow: hidden` only does rectangular clipping, and `border-radius` only rounds corners. If you need diagonal-edge cards, circular avatar cropping, wave backgrounds, or other irregular shapes, `clip-path` is the most powerful solution available today.

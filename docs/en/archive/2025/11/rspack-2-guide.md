@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Rspack 2.0 Complete Guide is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from "
+wordCount: 191
 ---
 
 Rspack 2.0 Complete Guide is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.

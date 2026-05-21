@@ -5,6 +5,7 @@ tags:
   - Svelte
 readingTime: 1
 description: "Svelte 3 was released last week, and its approach is completely different from Vue/React — it's a compile-time framework with no runtime and no Virtual DOM. Aft"
+wordCount: 106
 ---
 
 Svelte 3 was released last week, and its approach is completely different from Vue/React — it's a compile-time framework with no runtime and no Virtual DOM. After using it for a week, here are my thoughts.

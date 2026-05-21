@@ -7,6 +7,7 @@ tags:
 
 readingTime: 1
 description: "Pinia 下一代 Vuex 状态管理 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projec"
+wordCount: 182
 ---
 
 Pinia 下一代 Vuex 状态管理 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.

@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React Conf 2024 於 5 月 15-16 日舉行，最重磅的訊息是 **React Compiler Beta 正式釋出**（此前代號 React Forget）。React 團隊宣佈 Instagram 已在生產環境使用 React Compiler 超過一年，並將其開源給社群使用。這可能是 React "
+wordCount: 438
 ---
 
 React Conf 2024 於 5 月 15-16 日舉行，最重磅的訊息是 **React Compiler Beta 正式釋出**（此前代號 React Forget）。React 團隊宣佈 Instagram 已在生產環境使用 React Compiler 超過一年，並將其開源給社群使用。這可能是 React 近幾年最具實質意義的更新。

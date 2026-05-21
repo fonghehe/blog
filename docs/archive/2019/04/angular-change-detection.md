@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 默认的变更检测会检查所有组件，OnPush 策略能大幅减少不必要的检查。"
+wordCount: 81
 ---
 
 Angular 默认的变更检测会检查所有组件，OnPush 策略能大幅减少不必要的检查。

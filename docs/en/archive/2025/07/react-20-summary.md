@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "In daily development, the use of React 20 new features is becoming increasingly common. This article systematically explains their usage, principles, and optimi"
+wordCount: 174
 ---
 
 In daily development, the use of React 20 new features is becoming increasingly common. This article systematically explains their usage, principles, and optimization strategies.

@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.1 发布了，带来了几个非常实用的类型系统增强。特别是模板字面量类型和递归条件类型，让类型编程能力又上了一个台阶。"
+wordCount: 233
 ---
 
 TypeScript 4.1 发布了，带来了几个非常实用的类型系统增强。特别是模板字面量类型和递归条件类型，让类型编程能力又上了一个台阶。

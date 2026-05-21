@@ -5,6 +5,7 @@ tags:
   - Node.js
 readingTime: 3
 description: "yarn 喺 2016 年 10 月由 Facebook 發布，當時針對 npm 3 嘅痛點做咗大量改進。兩年過去咗，npm 都推出咗 npm 5，兩者嘅差距縮細咗。呢篇文章傾下 2018 年初呢兩個工具嘅實際差異。"
+wordCount: 716
 ---
 
 yarn 喺 2016 年 10 月由 Facebook 發布，當時針對 npm 3 嘅痛點做咗大量改進。兩年過去咗，npm 都推出咗 npm 5，兩者嘅差距縮細咗。呢篇文章傾下 2018 年初呢兩個工具嘅實際差異。

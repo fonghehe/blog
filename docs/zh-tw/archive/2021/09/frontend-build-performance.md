@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 3
 description: "最近幾個專案陸續從 Webpack 遷移到了 Vite，構建速度的差距比想象中大。這篇整理一下構建效能最佳化的思路，從 Webpack 調優到直接換 Vite 的決策過程。"
+wordCount: 515
 ---
 
 最近幾個專案陸續從 Webpack 遷移到了 Vite，構建速度的差距比想象中大。這篇整理一下構建效能最佳化的思路，從 Webpack 調優到直接換 Vite 的決策過程。

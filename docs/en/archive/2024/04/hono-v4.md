@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In daily development, Hono v4 全栈框架总结 is used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 200
 ---
 
 In daily development, Hono v4 全栈框架总结 is used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

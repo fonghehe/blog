@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "在日常开发中，Compression Streams API 压缩 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategie"
+wordCount: 218
 ---
 
 在日常开发中，Compression Streams API 压缩 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.

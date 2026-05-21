@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Accessibility (a11y) is often overlooked in frontend development, but it's not just \"for blind people.\" Keyboard users, users with color blindness, and users wi"
+wordCount: 197
 ---
 
 Accessibility (a11y) is often overlooked in frontend development, but it's not just "for blind people." Keyboard users, users with color blindness, and users with temporary impairments (such as operating one-handed with a broken arm) all benefit from accessibility. As frontend developers, knowing the basics of a11y is part of professional competence.

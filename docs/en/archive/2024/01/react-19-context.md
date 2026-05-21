@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "I frequently use React 19: New Context API in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it better."
+wordCount: 177
 ---
 
 I frequently use React 19: New Context API in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it better.

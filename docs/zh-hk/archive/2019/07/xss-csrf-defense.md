@@ -5,6 +5,7 @@ tags:
   - 安全
 readingTime: 2
 description: "安全是後端的事？大錯特錯。很多 XSS 和 CSRF 漏洞是前端代碼造成的，防禦也要前端配合。"
+wordCount: 198
 ---
 
 安全是後端的事？大錯特錯。很多 XSS 和 CSRF 漏洞是前端代碼造成的，防禦也要前端配合。

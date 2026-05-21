@@ -5,6 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "函數式編程的核心工具函數在實際項目中並不遠。Redux middleware、Lodash/fp、RxJS 操作符背後都是這些思想。手寫實現能幫你完全吹散它們。"
+wordCount: 141
 ---
 
 函數式編程的核心工具函數在實際項目中並不遠。Redux middleware、Lodash/fp、RxJS 操作符背後都是這些思想。手寫實現能幫你完全吹散它們。

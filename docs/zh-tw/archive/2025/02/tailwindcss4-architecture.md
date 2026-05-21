@@ -6,6 +6,7 @@ tags:
   - 工程化
 readingTime: 1
 description: "Tailwind CSS 4.0 正式釋出了，這是一次從底層重寫的升級。來聊聊新架構的變化和遷移注意事項。"
+wordCount: 209
 ---
 
 Tailwind CSS 4.0 正式釋出了，這是一次從底層重寫的升級。來聊聊新架構的變化和遷移注意事項。

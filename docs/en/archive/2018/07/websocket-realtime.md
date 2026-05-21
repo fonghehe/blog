@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I added real-time message notifications to a project and did a deep dive into WebSocket. Here are my notes."
+wordCount: 122
 ---
 
 I added real-time message notifications to a project and did a deep dive into WebSocket. Here are my notes.

@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "We recently implemented Next.js 14 Partial Prerendering， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing "
+wordCount: 189
 ---
 
 We recently implemented Next.js 14 Partial Prerendering， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.

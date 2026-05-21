@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "After Vue CLI 3 launched, project scaffolding became far more flexible. CLI plugins can add features and modify webpack configuration. I recently wrote an inter"
+wordCount: 103
 ---
 
 After Vue CLI 3 launched, project scaffolding became far more flexible. CLI plugins can add features and modify webpack configuration. I recently wrote an internal tooling plugin for my team — here's how it works.

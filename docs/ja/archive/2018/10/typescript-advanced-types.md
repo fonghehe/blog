@@ -5,6 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "基本的なジェネリクスを学んだ後、条件型とマップ型を深く調べてみると、TypeScript の型システムが想像以上に強力であることがわかりました。"
+wordCount: 273
 ---
 
 基本的なジェネリクスを学んだ後、条件型とマップ型を深く調べてみると、TypeScript の型システムが想像以上に強力であることがわかりました。

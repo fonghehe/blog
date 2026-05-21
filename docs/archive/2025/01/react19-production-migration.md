@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 19 正式发布了。来整理一下从 18 迁移到 19 的实际注意事项，以及团队踩过的坑。"
+wordCount: 255
 ---
 
 React 19 正式发布了。来整理一下从 18 迁移到 19 的实际注意事项，以及团队踩过的坑。

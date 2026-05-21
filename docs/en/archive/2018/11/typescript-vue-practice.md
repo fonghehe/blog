@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Using TypeScript in a Vue project is more complicated than it sounds. After two weeks of wrestling with it, here's a complete walkthrough of the configuration."
+wordCount: 154
 ---
 
 Using TypeScript in a Vue project is more complicated than it sounds. After two weeks of wrestling with it, here's a complete walkthrough of the configuration.

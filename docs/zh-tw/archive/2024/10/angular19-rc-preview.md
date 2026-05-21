@@ -5,6 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 19 RC 已經可以預覽，正式版預計 2024 年 11 月 19 日釋出。本文基於 RC 版本介紹最重要的新特性——**增量水合（Incremental Hydration）**和**模板 HMR**，以及路由級渲染模式的進一步完善。"
+wordCount: 528
 ---
 
 Angular 19 RC 已經可以預覽，正式版預計 2024 年 11 月 19 日釋出。本文基於 RC 版本介紹最重要的新特性——**增量水合（Incremental Hydration）**和**模板 HMR**，以及路由級渲染模式的進一步完善。

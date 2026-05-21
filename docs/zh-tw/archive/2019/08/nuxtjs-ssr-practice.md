@@ -5,6 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "做了一個電商官網，要求 SEO 和首屏速度。調研了 Nuxt.js，最終選它做 Vue SSR。"
+wordCount: 212
 ---
 
 做了一個電商官網，要求 SEO 和首屏速度。調研了 Nuxt.js，最終選它做 Vue SSR。

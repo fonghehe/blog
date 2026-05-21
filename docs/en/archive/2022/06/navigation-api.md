@@ -5,6 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Navigation API 新一代路由This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fres"
+wordCount: 206
 ---
 
 Navigation API 新一代路由This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.

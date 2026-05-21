@@ -5,6 +5,7 @@ tags:
   - Engineering
 readingTime: 3
 description: "AI has moved from an \"assistive tool\" to core infrastructure for frontend engineering. In 2026, a frontend engineer who doesn't use AI isn't \"saving time\" — the"
+wordCount: 303
 ---
 
 AI has moved from an "assistive tool" to core infrastructure for frontend engineering. In 2026, a frontend engineer who doesn't use AI isn't "saving time" — they're wasting it. This post covers the dominant AI Native frontend development paradigms of today and the pitfalls I've personally encountered.

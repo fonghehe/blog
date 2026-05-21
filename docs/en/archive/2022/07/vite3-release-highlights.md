@@ -5,6 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "Vite 3.0 officially launched on July 13, 2022. It has been 16 months since Vite 2.0, and this major version brings a series of important improvements: Rollup 3-"
+wordCount: 195
 ---
 
 Vite 3.0 officially launched on July 13, 2022. It has been 16 months since Vite 2.0, and this major version brings a series of important improvements: Rollup 3-based builds, unified dev/build behavior, improved SSR support, and cleaner CLI output.

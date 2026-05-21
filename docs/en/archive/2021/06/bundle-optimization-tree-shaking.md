@@ -8,6 +8,7 @@ tags:
 
 readingTime: 1
 description: "关于Tree Shaking 深度优化指南，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 179
 ---
 
 关于Tree Shaking 深度优化指南，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.

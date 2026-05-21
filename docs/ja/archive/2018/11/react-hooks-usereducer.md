@@ -5,6 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "日常開発において、React useReducer による状態管理の使用頻度はますます高まっています。本記事では使い方、原理、最適化戦略を体系的に解説します。"
+wordCount: 272
 ---
 
 日常開発において、React useReducer による状態管理の使用頻度はますます高まっています。本記事では使い方、原理、最適化戦略を体系的に解説します。
