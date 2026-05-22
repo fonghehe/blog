@@ -1,6 +1,6 @@
 ---
 title: "Vue 3.6 新特性展望"
-date: 2025-01-30 10:00:00
+date: 2025-01-30 16:24:01
 tags:
   - Vue
 readingTime: 2
@@ -43,7 +43,7 @@ $ref: let user = { name: '張三', age: 25 };
 </template>
 ```
 
-編譯器會把 `$ref` 轉換為 `ref()`，`$computed` 轉換為 `computed()`，模板中的訪問自動新增 `.value`。這意味著零執行時開銷，純粹是語法糖。
+編譯器會把 `$ref` 轉換為 `ref()`，`$computed` 轉換為 `computed()`，範本中的訪問自動新增 `.value`。這意味著零執行時開銷，純粹是語法糖。
 
 ## defineProps 解構預設值
 
@@ -86,7 +86,7 @@ import { defineAsyncComponent, hydrateOnVisible } from 'vue';
 // Vue 3.6 新增：條件性懶載入
 const AdminPanel = defineAsyncComponent({
   loader: () => import('./AdminPanel.vue'),
-  // 只有當用戶有許可權時才載入
+  // 隻有當用戶有許可權時才載入
   condition: () => userStore.isAdmin,
   loadingComponent: () => import('./AdminSkeleton.vue'),
   // SSR 注水策略

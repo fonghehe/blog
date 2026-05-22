@@ -1,6 +1,6 @@
 ---
 title: "Tauri 3.0 跨平臺新版本"
-date: 2026-04-29 10:00:00
+date: 2026-04-29 11:03:40
 tags:
   - 前端
 readingTime: 2
@@ -45,7 +45,7 @@ const ItemList = ({ data, onRefresh }) => {
 
 ## 進階用法
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 import React, { useState, useCallback } from 'react'

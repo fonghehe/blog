@@ -1,22 +1,22 @@
 ---
-title: "TypeScript 在 Vue 項目中的完整實踐"
+title: "TypeScript 在 Vue 項目中的完整實踐：落地路徑與實戰建議"
 date: 2018-11-21 11:03:49
 tags:
   - Vue
 readingTime: 3
-description: "在 Vue 項目裏用 TypeScript 其實比想象中麻煩一些。折騰了兩週，總結一下完整的配置流程。"
+description: "在 Vue 項目裏用 TypeScript 其實比想象中麻煩一些。折騰了兩週，總結一下完整的設定流程。"
 wordCount: 412
 ---
 
 在 Vue 項目裏用 TypeScript 其實比想象中麻煩一些。折騰了兩週，總結一下完整的配置流程。
 
-## 為什麼 Vue + TS 配置複雜
+## 為什麼 Vue + TS 設定複雜
 
 Vue 2 的設計是基於選項對象的（Options API），不是 class 風格，對 TypeScript 的類型推斷不太友好。好在 Vue 提供了 `vue-class-component` 和 `vue-property-decorator`，讓 TS 支持好一些。
 
 Vue 3 會在設計上對 TS 友好很多，但現在我們還在用 Vue 2。
 
-## 項目配置
+## 項目設定
 
 ### 1. 初始化（Vue CLI 3）
 
@@ -139,7 +139,7 @@ export interface PaginatedData<T> {
 }
 ```
 
-## Vuex 的 TypeScript 支持
+## Vuex 的 TypeScript 支援
 
 這是最麻煩的部分，需要 `vuex-class`：
 

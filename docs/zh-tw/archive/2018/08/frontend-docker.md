@@ -4,7 +4,7 @@ date: 2018-08-18 14:39:15
 tags:
   - 工程化
 readingTime: 1
-description: "最近把幾個前端專案容器化了，發現比想象中簡單。記錄一下基礎配置。"
+description: "最近把幾個前端專案容器化了，發現比想象中簡單。記錄一下基礎設定。"
 wordCount: 160
 ---
 
@@ -14,7 +14,7 @@ wordCount: 160
 
 - 統一開發/測試/生產環境（消滅"在我機器上能跑"）
 - CI/CD 流水線部署更簡單
-- 多個專案共存，互不干擾
+- 多個專案共存，互不幹擾
 
 ## Dockerfile（基礎版）
 
@@ -25,7 +25,7 @@ FROM node:10-alpine AS builder
 WORKDIR /app
 
 # 先複製 package.json，利用 Docker 層快取
-# 只有 package.json 變化才重新 npm install
+# 隻有 package.json 變化才重新 npm install
 COPY package.json package-lock.json ./
 RUN npm ci
 
@@ -33,13 +33,13 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-# 生產階段：只包含 Nginx 和構建產物
+# 生產階段：隻包含 Nginx 和構建產物
 FROM nginx:alpine
 
 # 複製構建產物
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# 複製 Nginx 配置
+# 複製 Nginx 設定
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80

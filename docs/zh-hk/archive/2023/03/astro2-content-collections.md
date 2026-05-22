@@ -155,7 +155,7 @@ posts[0].data.nonExistent; // TypeScript 報錯 ✓
 
 ## Data Collections（JSON/YAML）
 
-Content Collections 不只支持 Markdown，也支持純數據文件：
+Content Collections 不隻支援 Markdown，也支援純數據檔案：
 
 ```yaml
 # src/content/authors/alice.yaml

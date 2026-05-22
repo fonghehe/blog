@@ -62,10 +62,10 @@ function createClosure() {
   };
 }
 
-// ✅ 只保留需要的資料
+// ✅ 隻保留需要的資料
 function createClosure() {
   const hugeData = new Array(10000).fill("data");
-  const needed = hugeData.length; // 只保留需要的
+  const needed = hugeData.length; // 隻保留需要的
   hugeData = null; // 讓 GC 回收
 
   return function handler() {

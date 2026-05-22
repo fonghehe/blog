@@ -4,11 +4,11 @@ date: 2020-07-28 11:08:27
 tags:
   - React
 readingTime: 2
-description: "React Query（现已更名为 TanStack Query）解决的核心问题是：**服务端状态的管理**。Redux、MobX 擅长管理客户端状态，但对于\"从服务器获取数据、缓存、同步\"这类需求，它们提供的工具过于底层。React Query 把这个痛点做成了开箱即用的解决方案。"
-wordCount: 320
+description: "React Query（現在は TanStack Query に名称変更）が解決する核心的な問題は、サーバー状態の管理です。Redux や MobX はクライアント状態の管理に優れていますが、サーバーからのデータ取得、キャッシュ、同期といった要件に対しては、提供するツールが低レベルすぎます。React Query はこの課題を、すぐに使えるソリューションとして実現しました。"
+wordCount: 510
 ---
 
-React Query（现已更名为 TanStack Query）解决的核心问题是：**服务端状态的管理**。Redux、MobX 擅长管理客户端状态，但对于"从服务器获取数据、缓存、同步"这类需求，它们提供的工具过于底层。React Query 把这个痛点做成了开箱即用的解决方案。
+React Query（現在は TanStack Query に名称変更）が解決する核心的な問題は、**サーバー状態の管理**です。Redux や MobX はクライアント状態の管理に優れていますが、「サーバーからデータを取得、キャッシュ、同期する」といった要件に対して、それらが提供するツールは低レベルすぎます。React Query はこの課題を、すぐに使えるソリューションとして実現しました。
 
 ## インストールと基本的な使い方
 
@@ -31,7 +31,7 @@ function App() {
 
 function UserList() {
   const { data, isLoading, error } = useQuery(
-    "users", // 唯一的 query key
+    "users", // 一意のクエリキー
     () => fetch("/api/users").then((r) => r.json()),
   );
 
@@ -50,10 +50,10 @@ function UserList() {
 
 ## なぜ useEffect + useState を使わないのか
 
-传统写法每次都要手写加载、错误、数据三个状态：
+従来の書き方では、毎回ローディング、エラー、データの3つの状態を手動で記述する必要がありました：
 
 ```jsx
-// ❌ 传统写法，样板代码多
+// ❌ 従来の書き方、ボイラープレートコードが多い
 function UserList() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -76,20 +76,20 @@ function UserList() {
 }
 ```
 
-React Query 提供的不只是更简洁的写法，还有：
+React Query が提供するのは、よりシンプルな書き方だけではありません：
 
-- **自动缓存**：相同 key 的数据只请求一次
-- **后台刷新**：窗口重新聚焦时自动重新请求
-- **去重**：多个组件请求同一数据时只发一次请求
-- **自动 GC**：未使用的缓存自动清除
+- **自動キャッシュ**：同じキーのデータは1回のみリクエスト
+- **バックグラウンドリフレッシュ**：ウィンドウが再フォーカスされると自動的に再リクエスト
+- **重複排除**：複数のコンポーネントが同じデータをリクエストする場合、1回のみリクエスト
+- **自動 GC**：未使用のキャッシュは自動的に削除
 
 ## キャッシュと staleTime
 
 ```jsx
-// staleTime: 数据多久内视为"新鲜"（不重新请求）
+// staleTime: データをどれだけ「新鮮」とみなすか（再リクエストしない）
 const { data } = useQuery("users", fetchUsers, {
-  staleTime: 5 * 60 * 1000, // 5 分钟内不重新请求
-  cacheTime: 10 * 60 * 1000, // 缓存保留 10 分钟（即使没有订阅者）
+  staleTime: 5 * 60 * 1000, // 5分間は再リクエストしない
+  cacheTime: 10 * 60 * 1000, // キャッシュを10分間保持（購読者がいなくても）
 });
 ```
 
@@ -108,7 +108,7 @@ function CreateUser() {
         body: JSON.stringify(newUser),
       }).then((r) => r.json()),
     {
-      // 创建成功后，让 'users' 缓存失效，触发重新请求
+      // 作成成功後、'users' キャッシュを無効にして再リクエストをトリガー
       onSuccess: () => {
         queryClient.invalidateQueries("users");
       },
@@ -135,11 +135,11 @@ const { data, isPreviousData } = useQuery(
   ["users", page],
   () => fetchUsers(page),
   {
-    keepPreviousData: true, // 翻页时保留上一页数据，避免加载闪烁
+    keepPreviousData: true, // ページ移動時に前のページデータを保持し、ローディングのちらつきを防止
   },
 );
 ```
 
 ## まとめ
 
-React Query 的核心思想是：**区分客户端状态和服务端状态**，并为服务端状态提供专门的工具。引入它之后，大部分 Redux store 里的异步 action 可以直接删掉，代码量通常减少 30-40%。2020 年的 React 项目非常值得引入。
+React Query の核となる考え方は、**クライアント状態とサーバー状態を区別**し、サーバー状態に特化したツールを提供することです。導入後は、ほとんどの Redux store 内の非同期 action を直接削除でき、コード量は通常 30〜40% 削減されます。2020 年の React プロジェクトには非常に導入する価値があります。

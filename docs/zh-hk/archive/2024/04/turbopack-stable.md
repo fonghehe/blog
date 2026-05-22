@@ -1,10 +1,10 @@
 ---
-title: "Turbopack 穩定版性能對比"
+title: "Turbopack 穩定版效能對比：特性解讀與遷移建議"
 date: 2024-04-04 10:05:43
 tags:
   - 前端
 readingTime: 2
-description: "Turbopack 穩定版性能對比在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
+description: "Turbopack 穩定版效能對比在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
 wordCount: 271
 ---
 
@@ -106,7 +106,7 @@ export default defineConfig({
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能優化
+## 效能優化
 
 以下是一個完整的示例：
 

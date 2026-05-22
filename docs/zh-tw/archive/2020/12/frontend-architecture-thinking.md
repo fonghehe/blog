@@ -142,7 +142,7 @@ export const userService = {
 // 狀態分層：
 
 // 1. 元件內狀態：useState / ref / reactive
-//    只在元件內使用，不需要共享
+//    隻在元件內使用，不需要共享
 //    例如：表單輸入、彈窗開關
 
 // 2. 全域性業務狀態：Pinia / Vuex

@@ -76,7 +76,7 @@ function Header() {
 ### 容器元件與展示元件
 
 ```tsx
-// 展示元件：只負責渲染，通過 props 接收資料
+// 展示元件：隻負責渲染，通過 props 接收資料
 // UserList.jsx
 function UserList({ users, loading, onEdit, onDelete }) {
   if (loading) return <Spinner />;

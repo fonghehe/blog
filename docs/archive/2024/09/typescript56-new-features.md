@@ -1,6 +1,6 @@
 ---
 title: "TypeScript 5.6：Iterator Helper、正则类型与严格的内置检查"
-date: 2024-09-22 10:00:00
+date: 2024-09-22 11:56:33
 tags:
   - TypeScript
 readingTime: 2

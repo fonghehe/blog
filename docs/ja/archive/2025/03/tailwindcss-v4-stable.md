@@ -1,6 +1,6 @@
 ---
-title: "Tailwind CSS v4 安定版"
-date: 2025-03-19 10:00:00
+title: "Tailwind CSS v4 正式リリース：CSS-first 配置与 Oxide 引擎"
+date: 2025-03-19 15:33:10
 tags:
   - CSS
   - エンジニアリング

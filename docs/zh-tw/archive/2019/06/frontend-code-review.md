@@ -4,11 +4,11 @@ date: 2019-06-27 16:43:22
 tags:
   - 前端
 readingTime: 7
-description: "團隊最近在推 Code Review，整理了一份前端 CR 的檢查清單。實際執行下來，不只是發現 bug，更是一種知識傳遞的方式。"
+description: "團隊最近在推 Code Review，整理了一份前端 CR 的檢查清單。實際執行下來，不隻是發現 bug，更是一種知識傳遞的方式。"
 wordCount: 1068
 ---
 
-團隊最近在推 Code Review，整理了一份前端 CR 的檢查清單。實際執行下來，不只是發現 bug，更是一種知識傳遞的方式。
+團隊最近在推 Code Review，整理了一份前端 CR 的檢查清單。實際執行下來，不隻是發現 bug，更是一種知識傳遞的方式。
 
 ## 程式碼風格一致性
 
@@ -77,7 +77,7 @@ module.exports = {
 }
 ```
 
-再加上 `husky` + `lint-staged`，確保提交前強制檢查：
+再加上 `husky` + `lint-staged`，確保提交前強製檢查：
 
 ```json
 // package.json
@@ -100,7 +100,7 @@ module.exports = {
 }
 ```
 
-CR 時如果發現風格問題，第一反應應該是"為什麼 lint 沒攔住"，而不是手動逐個糾正。團隊應該追求的是：**CR 不討論格式，只討論邏輯**。
+CR 時如果發現風格問題，第一反應應該是"為什麼 lint 沒攔住"，而不是手動逐個糾正。團隊應該追求的是：**CR 不討論格式，隻討論邏輯**。
 
 ## 命名規範
 
@@ -244,7 +244,7 @@ items.forEach(item => {
   div.textContent = item.name
   fragment.appendChild(div)
 })
-container.appendChild(fragment)  // 只觸發一次重排
+container.appendChild(fragment)  // 隻觸發一次重排
 ```
 
 ## 安全性檢查
@@ -302,7 +302,7 @@ const url = `/api/search?q=${encodeURIComponent(userInput)}`
 document.cookie = 'token=abc123; HttpOnly; Secure; SameSite=Strict'
 ```
 
-`HttpOnly` 阻止 JS 讀取 Cookie，`Secure` 限制只在 HTTPS 下發送，`SameSite` 防止 CSRF。
+`HttpOnly` 阻止 JS 讀取 Cookie，`Secure` 限製隻在 HTTPS 下發送，`SameSite` 防止 CSRF。
 
 **4. Vue 中的 v-html 同樣危險**
 
@@ -342,8 +342,8 @@ document.cookie = 'token=abc123; HttpOnly; Secure; SameSite=Strict'
 簡單的檢查清單：
 - 所有可互動元素能否用鍵盤操作（Tab 切換、Enter/Space 觸發）
 - 圖片是否有 `alt` 屬性（裝飾性圖片用 `alt=""`）
-- 表單控制元件是否關聯了 `<label>`
-- 顏色對比度是否足夠（不只是靠顏色區分狀態）
+- 表單控製元件是否關聯了 `<label>`
+- 顏色對比度是否足夠（不隻是靠顏色區分狀態）
 
 ## 元件設計審查
 

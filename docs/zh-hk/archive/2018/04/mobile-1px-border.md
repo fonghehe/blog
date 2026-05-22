@@ -1,5 +1,5 @@
 ---
-title: "移動端 1px 邊框問題徹底解決"
+title: "移動端 1px 邊框問題徹底解決：落地路徑與實戰建議"
 date: 2018-04-29 16:15:47
 tags:
   - 移動端
@@ -131,7 +131,7 @@ meta.content = `width=device-width,initial-scale=${1 / dpr},maximum-scale=${1 / 
 }
 ```
 
-簡單，但只適合矩形，圓角支持不好。
+簡單，但隻適合矩形，圓角支援不好。
 
 ## 實際項目怎麼選
 

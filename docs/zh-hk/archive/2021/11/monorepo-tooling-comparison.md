@@ -1,10 +1,10 @@
 ---
-title: "Turborepo 初探：高性能 Monorepo 構建"
+title: "Turborepo 初探：高效能 Monorepo 構建"
 date: 2021-11-08 15:28:08
 tags:
   - 前端工程化
 readingTime: 2
-description: "Vercel 收購了 Turborepo 並開源，這是一個用 Go 寫的高性能 Monorepo 構建工具。試用了一週，和 Lerna / pnpm workspace 對比了一下。"
+description: "Vercel 收購了 Turborepo 並開源，這是一個用 Go 寫的高效能 Monorepo 構建工具。試用了一週，和 Lerna / pnpm workspace 對比了一下。"
 wordCount: 367
 ---
 
@@ -31,9 +31,9 @@ pnpm run build --filter=apps/web
 
 - **構建緩存**：相同輸入不重複構建（本地 + 遠程緩存）
 - **並行調度**：自動分析依賴圖，並行構建無依賴的包
-- **增量構建**：只構建有變化的包及其下游依賴
+- **增量構建**：隻構建有變化的包及其下游依賴
 
-## 基本配置
+## 基本設定
 
 ```bash
 # 安裝
@@ -96,7 +96,7 @@ npm install -D turbo
 # 構建所有包（自動分析依賴圖，並行執行）
 turbo run build
 
-# 只構建某個包及其依賴
+# 隻構建某個包及其依賴
 turbo run build --filter=@myorg/web
 
 # 並行運行所有 dev
@@ -106,7 +106,7 @@ turbo run dev --parallel
 turbo run lint
 ```
 
-## 緩存機制
+## 緩存機製
 
 ```bash
 # 第一次構建
@@ -123,7 +123,7 @@ turbo run build
 # packages/ui:     build >>> FULL TURBO (cached, 0.0s)
 # apps/web:        build >>> FULL TURBO (cached, 0.0s)
 
-# 只改了 utils，第三次構建
+# 隻改了 utils，第三次構建
 turbo run build
 # packages/core:   build >>> FULL TURBO (cached, 0.0s)    # 沒變
 # packages/utils:  build (1.2s)                             # 重新構建

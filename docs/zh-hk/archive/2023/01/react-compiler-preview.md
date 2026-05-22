@@ -1,14 +1,14 @@
 ---
-title: "React Compiler 預覽與原理"
+title: "React Compiler 預覽與原理：特性解讀與遷移建議"
 date: 2023-01-19 11:47:06
 tags:
   - React
 readingTime: 3
-description: "React Compiler（原 React Forget）是 React 團隊正在開發的編譯時優化工具。它的目標是自動處理 `useMemo`、`useCallback`、`React.memo` 的插入，讓開發者不再需要手動管理這些性能優化。本文基於公開信息分析其工作原理和對現有代碼的影響。"
+description: "React Compiler（原 React Forget）是 React 團隊正在開發的編譯時優化工具。它的目標是自動處理 `useMemo`、`useCallback`、`React.memo` 的插入，讓開發者不再需要手動管理這些效能優化。本文基於公開信息分析其工作原理和對現有代碼的影響。"
 wordCount: 615
 ---
 
-React Compiler（原 React Forget）是 React 團隊正在開發的編譯時優化工具。它的目標是自動處理 `useMemo`、`useCallback`、`React.memo` 的插入，讓開發者不再需要手動管理這些性能優化。本文基於公開信息分析其工作原理和對現有代碼的影響。
+React Compiler（原 React Forget）是 React 團隊正在開發的編譯時優化工具。它的目標是自動處理 `useMemo`、`useCallback`、`React.memo` 的插入，讓開發者不再需要手動管理這些效能優化。本文基於公開信息分析其工作原理和對現有代碼的影響。
 
 ## 現狀：手動優化的痛點
 
@@ -37,12 +37,12 @@ function Parent() {
 }
 
 const Child = memo(function Child({ onClick, config }: Props) {
-  // 只有當 onClick 或 config 的引用變化時才重新渲染
+  // 隻有當 onClick 或 config 的引用變化時才重新渲染
   return <div onClick={onClick}>Step: {config.step}</div>
 })
 ```
 
-這種優化模式有兩個問題：一是容易遺漏（該 memo 的沒 memo），二是容易過度 memo（不需要 memo 的也 memo 了），兩種情況都會降低性能。
+這種優化模式有兩個問題：一是容易遺漏（該 memo 的沒 memo），二是容易過度 memo（不需要 memo 的也 memo 了），兩種情況都會降低效能。
 
 ## Compiler 的工作原理
 
@@ -83,7 +83,7 @@ function TodoList({ items, filter }: Props) {
 }
 ```
 
-Compiler 不會改變組件的行為，只優化不必要的重新計算和重新渲染。從 React Conf 2023 的 demo 來看，它能識別出 props 是否穩定、派生值是否需要緩存、事件處理器是否需要穩定引用。
+Compiler 不會改變組件的行為，隻優化不必要的重新計算和重新渲染。從 React Conf 2023 的 demo 來看，它能識別出 props 是否穩定、派生值是否需要緩存、事件處理器是否需要穩定引用。
 
 ## 對現有代碼的影響
 
@@ -130,7 +130,7 @@ const Child = memo(function Child({ items }) {
 function Child({ items }) {
   return items.map(item => <div key={item.id}>{item.name}</div>)
 }
-// 編譯後自動包裹了 memo 邏輯，無需開發者干預
+// 編譯後自動包裹了 memo 邏輯，無需開發者幹預
 ```
 
 這與 Svelte、SolidJS 等框架的思路一致：在編譯階段做盡可能多的分析，減少運行時的工作量。但 React 不會像 Svelte 那樣完全編譯掉虛擬 DOM，因為 RSC 和 Server Components 需要運行時的序列化能力。
@@ -139,6 +139,6 @@ function Child({ items }) {
 
 - React Compiler 自動插入 `useMemo`/`useCallback`/`memo`，目標是讓開發者不再手動做這些優化
 - 編譯器要求代碼遵循 React 規則（不可變性、無副作用渲染），eslint 規則的嚴格執行是 Compiler 兼容的前提
-- 已有手動優化的代碼不會被 Compiler 干擾，它會跳過已經 memo 的部分
+- 已有手動優化的代碼不會被 Compiler 幹擾，它會跳過已經 memo 的部分
 - Compiler 代表 React 向編譯時優化的轉變，但不會完全拋棄虛擬 DOM 運行時
 - 目前 Compiler 仍在開發中，建議在新項目中養成遵循 React 規則的習慣

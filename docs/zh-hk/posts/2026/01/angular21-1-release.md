@@ -1,6 +1,6 @@
 ---
 title: "Angular 21.1 正式發佈：httpResource 穩定化與 Signal 生態全面落地"
-date: 2026-01-03 10:00:00
+date: 2026-01-03 19:37:14
 tags:
   - Angular
 readingTime: 2
@@ -58,7 +58,7 @@ userResource = httpResource<User>(() => `/api/users/${this.userId()}`, {
 
 ## linkedSignal 的複雜場景應用
 
-`linkedSignal` 解決了一類經典問題：當源 Signal 改變時，派生 Signal 需要重置但又保留用户的本地修改。
+`linkedSignal` 解決了一類經典問題：當源 Signal 改變時，派生 Signal 需要重置但又保留用戶的本地修改。
 
 ```typescript
 @Component({ template: `...` })
@@ -67,7 +67,7 @@ export class PaginatedListComponent {
   currentPage = signal(1);
 
   // 當 pageSize 變化時，自動重置到第一頁
-  // 但用户手動翻頁時保持 currentPage 不受 pageSize 影響
+  // 但用戶手動翻頁時保持 currentPage 不受 pageSize 影響
   page = linkedSignal({
     source: this.pageSize,
     computation: () => 1, // pageSize 變化時重置為 1
@@ -79,7 +79,7 @@ export class PaginatedListComponent {
   }));
 
   goToPage(n: number) {
-    this.page.set(n); // 用户操作，不觸發重置
+    this.page.set(n); // 用戶操作，不觸發重置
   }
 
   changePageSize(size: number) {
@@ -93,8 +93,8 @@ export class PaginatedListComponent {
 Angular DevTools 在 21.1 中針對 Signal 調試做了重大升級：
 
 - **Signal 依賴圖可視化**：在 DevTools 面板中可以直觀看到每個 Signal 的依賴關係
-- **時間旅行調試**：記錄 Signal 狀態變化歷史，支持回退到任意快照
-- **性能熱點檢測**：標記出頻繁觸發的 computed 和 effect，幫助識別過度計算
+- **時間旅行調試**：記錄 Signal 狀態變化歷史，支援回退到任意快照
+- **效能熱點檢測**：標記出頻繁觸發的 computed 和 effect，幫助識別過度計算
 
 ```typescript
 // 開發模式下，這段代碼會在 DevTools 中顯示完整調用棧
@@ -116,7 +116,7 @@ ng update @angular/core@21.1 @angular/cli@21.1
 21.1 完全向後兼容，主要變化：
 
 1. `httpClient.get()` 等傳統方法仍然可用，但 IDE 會顯示"建議遷移到 httpResource"提示
-2. `resource()` API 的 `loader` 函數現在支持 `AbortSignal`，取消請求更加優雅
+2. `resource()` API 的 `loader` 函數現在支援 `AbortSignal`，取消請求更加優雅
 3. `effect()` 的調度策略新增 `microtask` 選項，適用於需要同步感知的場景
 
 ## 總結

@@ -1,6 +1,6 @@
 ---
 title: "TypeScript 6.0 新特性展望"
-date: 2025-03-03 10:00:00
+date: 2025-03-03 10:17:54
 tags:
   - TypeScript
 readingTime: 2

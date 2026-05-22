@@ -4,40 +4,40 @@ date: 2019-09-24 15:06:04
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 alpha 代码公开了！第一时间去看了响应式系统（packages/reactivity），相比 Vue 2 改变很大。"
-wordCount: 228
+description: "Vue 3 alpha のコードが公開されました！早速リアクティブシステム（packages/reactivity）を確認しましたが、Vue 2 と比較して大きく変わっていました。"
+wordCount: 347
 ---
 
-Vue 3 alpha 代码公开了！第一时间去看了响应式系统（packages/reactivity），相比 Vue 2 改变很大。
+Vue 3 alpha のコードが公開されました。早速リアクティブシステム（packages/reactivity）を見てみましたが、Vue 2 と比べて大きく変わっていました。
 
 ## Vue 2 リアクティビティの限界
 
 ```javascript
-// Vue 2 用 Object.defineProperty
-// 问题 1：无法检测新增属性
+// Vue 2 における Object.defineProperty
+// 問題 1：新しいプロパティを検出できない
 const vm = new Vue({ data: { user: { name: "Alice" } } });
-vm.user.age = 25; // 不触发更新！需要 Vue.set(vm.user, 'age', 25)
+vm.user.age = 25; // 更新をトリガーしない！ Vue.set(vm.user, 'age', 25) が必要
 
-// 问题 2：无法检测数组索引赋值
-vm.items[0] = newItem; // 不触发更新！需要 Vue.set 或 splice
+// 問題 2：配列のインデックス代入を検出できない
+vm.items[0] = newItem; // 更新をトリガーしない！ Vue.set または splice が必要
 
-// 问题 3：初始化时需要遍历所有属性（性能）
+// 問題 3：初期化時に全プロパティを走査する必要がある（パフォーマンス）
 ```
 
-## Vue 3 基于 Proxy 的响应式
+## Vue 3 の Proxy ベースのリアクティブ
 
 ```javascript
-// packages/reactivity/src/reactive.ts（简化版）
+// packages/reactivity/src/reactive.ts（簡略版）
 
 function reactive(target) {
   return new Proxy(target, {
     get(target, key, receiver) {
-      // 依赖追踪
+      // 依存関係の追跡
       track(target, TrackOpTypes.GET, key);
 
       const res = Reflect.get(target, key, receiver);
 
-      // 懒递归：只有访问到嵌套对象时才代理
+      // 遅延再帰：ネストされたオブジェクトにアクセスした時のみプロキシ
       if (isObject(res)) {
         return reactive(res);
       }
@@ -50,10 +50,10 @@ function reactive(target) {
       const result = Reflect.set(target, key, value, receiver);
 
       if (!hadKey) {
-        // 新增属性：触发 ADD 类型
+        // 新しいプロパティ：ADD タイプをトリガー
         trigger(target, TriggerOpTypes.ADD, key, value);
       } else if (hasChanged(value, oldValue)) {
-        // 修改属性：触发 SET 类型
+        // プロパティの変更：SET タイプをトリガー
         trigger(target, TriggerOpTypes.SET, key, value, oldValue);
       }
 
@@ -74,21 +74,21 @@ function reactive(target) {
 ## effect、track、trigger
 
 ```javascript
-// 当前活跃的 effect
+// 現在アクティブな effect
 let activeEffect = null;
 
-// effect：定义响应式副作用
+// effect：リアクティブな副作用を定義
 function effect(fn) {
   const effectFn = () => {
     activeEffect = effectFn;
-    fn(); // 执行时自动追踪依赖
+    fn(); // 実行時に自動的に依存関係を追跡
     activeEffect = null;
   };
-  effectFn(); // 立即执行一次
+  effectFn(); // 即座に1回実行
   return effectFn;
 }
 
-// track：在 get 中调用，收集依赖
+// track：get で呼び出され、依存関係を収集
 // targetMap: WeakMap<target, Map<key, Set<effect>>>
 const targetMap = new WeakMap();
 
@@ -104,7 +104,7 @@ function track(target, type, key) {
   dep.add(activeEffect);
 }
 
-// trigger：在 set 中调用，触发更新
+// trigger：set で呼び出され、更新をトリガー
 function trigger(target, type, key) {
   const depsMap = targetMap.get(target);
   if (!depsMap) return;
@@ -117,7 +117,7 @@ function trigger(target, type, key) {
 ## refの実装
 
 ```javascript
-// ref 用于基本类型（不能用 Proxy，因为 Proxy 只能代理对象）
+// ref は基本型に使用（Proxy はオブジェクトしかプロキシできないため）
 function ref(value) {
   return {
     get value() {
@@ -138,20 +138,20 @@ function ref(value) {
 
 ```javascript
 function computed(getter) {
-  let dirty = true; // 脏标记：true 表示需要重新计算
+  let dirty = true; // ダーティフラグ：true は再計算が必要であることを示す
   let value;
 
   const runner = effect(getter, {
-    lazy: true, // 不立即执行
+    lazy: true, // 即座に実行しない
     scheduler: () => {
-      dirty = true; // 依赖变化时标记为脏，不立即重计算
+      dirty = true; // 依存関係の変更時にダーティとマークし、即座に再計算しない
     },
   });
 
   return {
     get value() {
       if (dirty) {
-        value = runner(); // 只有访问时才计算
+        value = runner(); // アクセス時にのみ計算
         dirty = false;
       }
       track(this, TrackOpTypes.GET, "value");
@@ -165,14 +165,14 @@ function computed(getter) {
 
 |          | Vue 2                      | Vue 3                  |
 | -------- | -------------------------- | ---------------------- |
-| 初始化   | 递归遍历所有属性           | 懒代理（访问到才代理） |
-| 新增属性 | 不追踪（需要 $set）        | 自动追踪               |
-| 数组     | 重写 7 个方法              | 原生支持               |
-| 内存     | 每个属性创建 getter/setter | WeakMap 管理依赖       |
+| 初期化   | 全プロパティを再帰的に走査 | 遅延プロキシ（アクセス時にのみプロキシ） |
+| 新しいプロパティ | 追跡しない（$set が必要）  | 自動追跡               |
+| 配列     | 7つのメソッドを書き換え     | ネイティブ対応          |
+| メモリ   | プロパティごとに getter/setter を作成 | WeakMap で依存関係を管理 |
 
 ## まとめ
 
-- Proxy 比 defineProperty 更强大：拦截新增、删除、数组索引操作
-- 懒递归代理（访问时才 reactive）比 Vue 2 初始化时全量递归更高效
-- `track` 收集依赖，`trigger` 触发更新，是整个响应式的核心
-- `computed` 用脏标记实现懒求值，只有访问时才重新计算
+- Proxy は defineProperty より強力：追加、削除、配列インデックス操作をインターセプト可能
+- 遅延再帰プロキシ（アクセス時に reactive）は Vue 2 の初期化時の全量再帰より効率的
+- `track` が依存関係を収集し、`trigger` が更新をトリガーする、これがリアクティブシステムの中核
+- `computed` はダーティフラグで遅延評価を実現し、アクセス時にのみ再計算する

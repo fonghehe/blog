@@ -1,20 +1,20 @@
 ---
-title: "實戰：Vue 2 權限控制完整方案"
+title: "實戰：Vue 2 權限控製完整方案"
 date: 2018-04-14 10:47:04
 tags:
   - Vue
 readingTime: 2
-description: "中後台系統幾乎必然要做權限控制。這篇文章整理一套完整方案：路由權限 + 菜單權限 + 按鈕權限，基於 Vue 2 + Vue Router + Vuex。"
+description: "中後臺系統幾乎必然要做權限控製。這篇文章整理一套完整方案：路由權限 + 菜單權限 + 按鈕權限，基於 Vue 2 + Vue Router + Vuex。"
 wordCount: 247
 ---
 
-中後台系統幾乎必然要做權限控制。這篇文章整理一套完整方案：路由權限 + 菜單權限 + 按鈕權限，基於 Vue 2 + Vue Router + Vuex。
+中後臺系統幾乎必然要做權限控製。這篇文章整理一套完整方案：路由權限 + 菜單權限 + 按鈕權限，基於 Vue 2 + Vue Router + Vuex。
 
-## 權限控制的三個層次
+## 權限控製的三個層次
 
 1. **路由權限**：某些頁面需要登錄/特定角色才能訪問
-2. **菜單權限**：側邊欄只顯示有權限的菜單項
-3. **操作權限**：按鈕級別（新增、編輯、刪除分開控制）
+2. **菜單權限**：側邊欄隻顯示有權限的菜單項
+3. **操作權限**：按鈕級別（新增、編輯、刪除分開控製）
 
 ## 數據結構設計
 
@@ -197,7 +197,7 @@ export default {
             item.permission,
           );
         }
-        // 有子菜單：只要有任意一個子菜單權限就顯示父菜單
+        // 有子菜單：隻要有任意一個子菜單權限就顯示父菜單
         if (item.children) {
           return item.children.some((child) =>
             this.$store.getters["permission/hasPermission"](child.permission),

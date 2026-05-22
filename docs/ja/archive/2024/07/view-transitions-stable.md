@@ -1,6 +1,6 @@
 ---
 title: "View Transitions 安定版：実践活用"
-date: 2024-07-16 10:00:00
+date: 2024-07-16 09:30:07
 tags:
   - フロントエンド
 readingTime: 2

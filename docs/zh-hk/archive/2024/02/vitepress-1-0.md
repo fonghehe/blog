@@ -1,5 +1,5 @@
 ---
-title: "VitePress 1.0 正式發佈"
+title: "VitePress 1.0 正式發佈：特性解讀與遷移建議"
 date: 2024-02-09 10:39:09
 tags:
   - Vite

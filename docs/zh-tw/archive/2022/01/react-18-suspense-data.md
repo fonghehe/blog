@@ -1,5 +1,5 @@
 ---
-title: "React 18 Suspense 資料獲取"
+title: "React 18 Suspense 資料獲取：Render-as-You-Fetch 模式初探"
 date: 2022-01-06 16:06:50
 tags:
   - React

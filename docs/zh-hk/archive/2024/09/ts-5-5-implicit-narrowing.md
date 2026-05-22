@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 5.5 隱式類型收窄"
-date: 2024-09-17 10:00:00
+title: "TypeScript 5.5 隱式型別收窄：控製流分析的又一次進化"
+date: 2024-09-17 14:51:28
 tags:
   - TypeScript
 readingTime: 2
@@ -94,7 +94,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能對比
+## 效能對比
 
 以下是一個完整的示例：
 

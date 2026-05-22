@@ -1,10 +1,10 @@
 ---
-title: "View Transitions API v2 跨文件"
+title: "View Transitions API v2 跨檔案"
 date: 2023-06-27 10:22:57
 tags:
   - 前端
 readingTime: 2
-description: "在日常開發中，View Transitions API v2 跨文件的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
+description: "在日常開發中，View Transitions API v2 跨檔案的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
 wordCount: 318
 ---
 
@@ -153,4 +153,4 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 - 不要為了用新技術而用新技術
 - 程式碼示例僅供參考，需根據業務場景調整
-- View Transitions API v2 跨文件不是銀彈，需要根據專案規模和技術棧選擇
+- View Transitions API v2 跨檔案不是銀彈，需要根據專案規模和技術棧選擇

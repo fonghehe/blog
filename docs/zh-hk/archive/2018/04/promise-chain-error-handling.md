@@ -1,5 +1,5 @@
 ---
-title: "Promise 鏈式調用和錯誤處理"
+title: "Promise 鏈式調用和錯誤處理：落地路徑與實戰建議"
 date: 2018-04-24 15:30:06
 tags:
   - JavaScript
@@ -118,7 +118,7 @@ const p = new Promise((resolve, reject) => {
 p.catch((err) => console.error(err)); // '同步錯誤'
 ```
 
-## 併發控制
+## 併發控製
 
 ```javascript
 // 全部併發，全部完成才繼續

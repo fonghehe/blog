@@ -1,6 +1,6 @@
 ---
 title: "CSS 2025 New Features Panorama"
-date: 2025-03-12 10:00:00
+date: 2025-03-12 17:26:03
 tags:
   - CSS
 readingTime: 1

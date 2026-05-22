@@ -138,7 +138,7 @@ if (!result.success) {
 - `node:dgram`（UDP）部分 API 未實現
 - `node:vm` 模組不完整
 - 部分 Node.js C++ Addon 不相容
-- Prisma 需要特定配置
+- Prisma 需要特定設定
 - NestJS 等重度 Node.js 框架執行不穩定
 
 ```typescript

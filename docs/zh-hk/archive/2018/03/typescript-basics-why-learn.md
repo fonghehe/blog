@@ -4,11 +4,11 @@ date: 2018-03-03 17:32:01
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 不是新技術了（2012 年微軟發佈），但 2017-2018 年才真正在國內前端圈流行起來。Angular 2+ 強制使用，Vue 2.5 也改善了 TS 支持，是時候認真學一下了。"
+description: "TypeScript 不是新技術了（2012 年微軟發佈），但 2017-2018 年才真正在國內前端圈流行起來。Angular 2+ 強製使用，Vue 2.5 也改善了 TS 支援，是時候認真學一下了。"
 wordCount: 305
 ---
 
-TypeScript 不是新技術了（2012 年微軟發佈），但 2017-2018 年才真正在國內前端圈流行起來。Angular 2+ 強制使用，Vue 2.5 也改善了 TS 支持，是時候認真學一下了。
+TypeScript 不是新技術了（2012 年微軟發佈），但 2017-2018 年才真正在國內前端圈流行起來。Angular 2+ 強製使用，Vue 2.5 也改善了 TS 支援，是時候認真學一下了。
 
 ## 為什麼用 TypeScript
 
@@ -72,7 +72,7 @@ let n: null = null;
 let u: undefined = undefined;
 ```
 
-## 接口（Interface）
+## 介面（Interface）
 
 描述對象的形狀：
 
@@ -82,12 +82,12 @@ interface User {
   name: string;
   email: string;
   age?: number; // 可選屬性
-  readonly token: string; // 只讀屬性
+  readonly token: string; // 隻讀屬性
 }
 
 function createUser(user: User): void {
   console.log(user.name);
-  // user.token = 'new'  // ❌ 只讀，不能修改
+  // user.token = 'new'  // ❌ 隻讀，不能修改
 }
 
 createUser({
@@ -129,7 +129,7 @@ status = "deleted"; // ❌ 不在聯合類型裏
 讓函數/類/接口適用於多種類型：
 
 ```typescript
-// 沒有泛型：只能用 any，失去類型檢查
+// 沒有泛型：隻能用 any，失去類型檢查
 function first(arr: any[]): any {
   return arr[0];
 }
@@ -188,7 +188,7 @@ export default Vue.extend({
 });
 ```
 
-## tsconfig.json 基礎配置
+## tsconfig.json 基礎設定
 
 ```json
 {

@@ -1,6 +1,6 @@
 ---
-title: "CSS if() 函式提案"
-date: 2025-03-17 10:00:00
+title: "CSS if() 函式提案 2025：瀏覽器實現進展與語法更新"
+date: 2025-03-17 14:31:08
 tags:
   - CSS
 readingTime: 2

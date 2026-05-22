@@ -173,7 +173,7 @@ function App() {
 }
 ```
 
-### useTransition 的優先順序機制
+### useTransition 的優先順序機製
 
 ```
 使用者輸入 "react"
@@ -188,7 +188,7 @@ function App() {
 
 ## SuspenseList
 
-`SuspenseList` 控制多個 Suspense 邊界的顯示順序：
+`SuspenseList` 控製多個 Suspense 邊界的顯示順序：
 
 ```jsx
 import React, { Suspense, SuspenseList } from 'react';
@@ -305,7 +305,7 @@ npm install react@experimental react-dom@experimental
 - Concurrent Mode 讓 React 可以中斷渲染，優先處理使用者互動
 - `useTransition` 標記低優先順序的狀態更新
 - Suspense 統一管理載入狀態，包括資料獲取
-- `SuspenseList` 控制多個非同步元件的顯示順序
+- `SuspenseList` 控製多個非同步元件的顯示順序
 - 需要使用 `createRoot` API 開啟
 - 目前仍處於實驗階段，API 可能變化
 - 代表了 React 未來的發展方向：宣告式非同步 UI

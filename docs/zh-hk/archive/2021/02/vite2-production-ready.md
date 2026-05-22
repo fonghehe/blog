@@ -132,7 +132,7 @@ const img = new URL("./image.png", import.meta.url).href;
 
 冷啓動的差距在大項目裏特別明顯。
 
-## SSR 支持
+## SSR 支援
 
 ```javascript
 // vite.config.ts

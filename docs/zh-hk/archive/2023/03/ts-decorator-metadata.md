@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 裝飾器元數據"
+title: "TypeScript 裝飾器元數據：落地路徑與實戰建議"
 date: 2023-03-13 11:13:48
 tags:
   - TypeScript

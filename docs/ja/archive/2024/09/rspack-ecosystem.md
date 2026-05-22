@@ -1,6 +1,6 @@
 ---
-title: "Rspack エコシステム完全ガイド"
-date: 2024-09-27 10:00:00
+title: "Rspack 生态ガイド：兼容 Webpack 的 Rust 构建新选择"
+date: 2024-09-27 19:01:38
 tags:
   - フロントエンド
 readingTime: 3

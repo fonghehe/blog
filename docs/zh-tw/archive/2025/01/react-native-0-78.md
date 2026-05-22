@@ -1,6 +1,6 @@
 ---
 title: "React Native 0.78 效能飛躍"
-date: 2025-01-14 10:00:00
+date: 2025-01-14 19:08:45
 tags:
   - React
 readingTime: 3
@@ -33,7 +33,7 @@ export interface Spec extends TurboModule {
 export default TurboModuleRegistry.getEnforcing<Spec>('CalendarModule');
 ```
 
-配合 `codegenConfig` 配置，iOS 和 Android 的原生介面程式碼會自動生成，不再需要手寫 ObjC/Java 橋接程式碼。
+配合 `codegenConfig` 設定，iOS 和 Android 的原生介面程式碼會自動生成，不再需要手寫 ObjC/Java 橋接程式碼。
 
 ## Hermes 0.15：啟動和記憶體雙最佳化
 
@@ -102,7 +102,7 @@ function NotificationBadge({ count }: { count: number }) {
 }
 ```
 
-動態樣式函式 `styles.badge(count)` 在編譯期被識別為「部分靜態」，基礎樣式（borderRadius、paddingHorizontal）在 native 層直接應用，只有條件屬性需要 JS 計算。
+動態樣式函式 `styles.badge(count)` 在編譯期被識別為「部分靜態」，基礎樣式（borderRadius、paddingHorizontal）在 native 層直接應用，隻有條件屬性需要 JS 計算。
 
 ## 螢幕間轉場動畫最佳化
 

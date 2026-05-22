@@ -1,10 +1,10 @@
 ---
-title: "HTTP 快取機制：強快取與協商快取"
+title: "HTTP 快取機製：強快取與協商快取"
 date: 2018-04-25 16:13:17
 tags:
   - 前端
 readingTime: 2
-description: "HTTP 快取配置正確可以顯著提升頁面載入效能，但配置錯誤會導致使用者看不到最新內容。理解原理後才能做出合理決策。"
+description: "HTTP 快取設定正確可以顯著提升頁面載入效能，但設定錯誤會導致使用者看不到最新內容。理解原理後才能做出合理決策。"
 wordCount: 459
 ---
 
@@ -34,7 +34,7 @@ HTTP 快取配置正確可以顯著提升頁面載入效能，但配置錯誤會
 Cache-Control: max-age=31536000   # 快取 1 年（秒）
 Cache-Control: no-cache           # 不用強快取，但可以協商快取
 Cache-Control: no-store           # 完全不快取
-Cache-Control: private            # 只能瀏覽器快取，CDN 不快取
+Cache-Control: private            # 隻能瀏覽器快取，CDN 不快取
 Cache-Control: public             # 瀏覽器和 CDN 都可快取
 ```
 
@@ -83,7 +83,7 @@ If-None-Match: "abc123"
 HTTP/1.1 304 Not Modified  # 或 200 + 新 ETag
 ```
 
-ETag 是內容摘要，只要內容變了 ETag 就變，更精準。
+ETag 是內容摘要，隻要內容變了 ETag 就變，更精準。
 
 ## 前端資源的最佳快取策略
 
@@ -125,7 +125,7 @@ location ~* \.(jpg|jpeg|png|gif|svg|woff2|ttf)$ {
 }
 ```
 
-## Vue CLI / Webpack 的正確配置
+## Vue CLI / Webpack 的正確設定
 
 ```javascript
 // vue.config.js

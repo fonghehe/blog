@@ -288,11 +288,21 @@ function clearFilters() {
   searchQuery.value = "";
 }
 
+function normalizeDateString(d: string) {
+  const trimmed = d.trim();
+  if (!trimmed) return "";
+  return trimmed.replace(/^([0-9]{4}-[0-9]{2}-[0-9]{2})[ ]+/, "$1T");
+}
+
 function formatDate(d: string) {
   if (!d) return "";
-  const dt = new Date(d.length === 10 ? d + "T00:00:00" : d);
-  if (isNaN(dt.getTime())) return "";
-  return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, "0")}-${String(dt.getDate()).padStart(2, "0")}`;
+  // The date string from meta.data.ts always starts with YYYY-MM-DD —
+  // extract it directly to avoid timezone shifts from new Date() parsing.
+  // (normalizeDateValue guarantees the first 10 chars are the correct date.)
+  const normalized = normalizeDateString(d);
+  const datePart = normalized.slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(datePart)) return "";
+  return datePart;
 }
 
 function prevPage() {

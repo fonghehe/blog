@@ -1,6 +1,6 @@
 ---
-title: "Vite 7 Build Optimization"
-date: 2025-08-19 10:00:00
+title: "Vite 7 Build Optimization: 全新打包Strategy &  Tree Shaking 增强"
+date: 2025-08-19 18:53:30
 tags:
   - Engineering
   - Performance Optimization

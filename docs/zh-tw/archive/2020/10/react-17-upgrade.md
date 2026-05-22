@@ -88,7 +88,7 @@ function App() {
 ```
 
 ```bash
-# Babel 配置
+# Babel 設定
 # .babelrc
 {
   "presets": [

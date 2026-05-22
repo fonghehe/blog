@@ -153,15 +153,15 @@ export default defineConfig({
 ```
 
 ```html
-<!-- 直接用 class 寫圖標，不需要導入任何圖標文件 -->
+<!-- 直接用 class 寫圖標，不需要導入任何圖標檔案 -->
 <i class="i-mdi-home text-2xl text-blue-500"></i>
 <i class="i-mdi-account text-xl"></i>
 <i class="i-mdi-cog text-lg text-gray-500"></i>
 ```
 
-按需打包，只用到的圖標才會生成 CSS。再也不用維護圖標字體或 SVG sprite 了。
+按需打包，隻用到的圖標才會生成 CSS。再也不用維護圖標字體或 SVG sprite 了。
 
-## 性能對比
+## 效能對比
 
 我們一箇中型項目的實測：
 

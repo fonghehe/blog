@@ -1,5 +1,5 @@
 ---
-title: "Farcaster Frames 去中心化社交"
+title: "Farcaster Frames 去中心化社交：落地路徑與實戰建議"
 date: 2023-09-01 09:31:39
 tags:
   - 前端
@@ -31,7 +31,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 深度解析
 

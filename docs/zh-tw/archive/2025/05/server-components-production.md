@@ -1,6 +1,6 @@
 ---
 title: "Server Components 一年：生產環境的教訓"
-date: 2025-05-18 10:00:00
+date: 2025-05-18 19:52:29
 tags:
   - 前端
 readingTime: 2
@@ -13,7 +13,7 @@ wordCount: 207
 ## Server Components 的心智模型
 
 ```
-元件型別          執行環境        能力                    限制
+元件型別          執行環境        能力                    限製
 ───────────────────────────────────────────────────────────
 Server Component  服務端         資料庫、檔案系統、       不能用 useState/useEffect
                   (Node/Edge)   API 呼叫、敏感操作       不能用瀏覽器 API
@@ -175,9 +175,9 @@ export default async function ProductsPage() {
 // 用 React.cache() 做請求級去重
 import { cache } from "react";
 
-// 相同請求在一個 SSR 週期內只執行一次
+// 相同請求在一個 SSR 週期內隻執行一次
 const getUser = cache(async (id: string) => {
-  console.log("查詢使用者:", id); // 只會列印一次
+  console.log("查詢使用者:", id); // 隻會列印一次
   return db.user.findUnique({ where: { id } });
 });
 

@@ -1,5 +1,5 @@
 ---
-title: "React Concurrent Mode 初探"
+title: "React Concurrent Mode 初探：時間切片與 Suspense 實驗"
 date: 2019-05-27 16:57:55
 tags:
   - React
@@ -43,7 +43,7 @@ function UserProfile({ id }) {
   return <div>{user.name}</div>;
 }
 
-// Suspense 模式（元件只關心資料，Loading 在父層統一處理）
+// Suspense 模式（元件隻關心資料，Loading 在父層統一處理）
 function UserProfile({ id }) {
   // 假設 user 是通過 Suspense 相容的 API 獲取的
   const user = userResource.read(id); // 如果沒準備好，丟擲 Promise
@@ -116,7 +116,7 @@ function App() {
 Concurrent Mode 在 2019 年還在實驗階段：
 
 - 不穩定的 API（正式版 API 可能會變）
-- 只在 `ReactDOM.createRoot` 中啟用
+- 隻在 `ReactDOM.createRoot` 中啟用
 - 依賴 Suspense 的資料獲取庫還不成熟（relay、swr 在跟進）
 
 預計 2020-2021 年才會穩定。現在瞭解概念，為以後做準備。

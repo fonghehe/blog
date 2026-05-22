@@ -1,5 +1,5 @@
 ---
-title: "React 18 Suspense 資料獲取"
+title: "React 18 Suspense 資料獲取實踐：结合 React Query 的生產方案"
 date: 2022-12-12 16:06:34
 tags:
   - React

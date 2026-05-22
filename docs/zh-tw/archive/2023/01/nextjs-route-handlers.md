@@ -182,7 +182,7 @@ import type { NextRequest } from 'next/server'
 import { verifyToken } from '@/lib/auth'
 
 export async function middleware(request: NextRequest) {
-  // 只保護 /api/admin/* 路徑
+  // 隻保護 /api/admin/* 路徑
   if (request.nextUrl.pathname.startsWith('/api/admin')) {
     const token = request.headers.get('authorization')?.replace('Bearer ', '')
 
@@ -236,4 +236,4 @@ export async function GET(request: NextRequest) {
 - 動態引數通過目錄命名約定獲取，與頁面路由一致
 - 支援流式響應，可以實現 SSE、檔案下載等場景
 - 與 Middleware 配合做認證是推薦模式，不要在每個 Handler 中重複鑑權邏輯
-- Route Handlers 自動支援 Edge Runtime，只需在檔案頂部匯出 `export const runtime = 'edge'`
+- Route Handlers 自動支援 Edge Runtime，隻需在檔案頂部匯出 `export const runtime = 'edge'`

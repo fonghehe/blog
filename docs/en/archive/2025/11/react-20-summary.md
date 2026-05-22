@@ -1,6 +1,6 @@
 ---
-title: "React 20 New Features Summary"
-date: 2025-11-04 10:00:00
+title: "React 20 Half-Year Review: 新特性在Production中实际Applications"
+date: 2025-11-04 12:38:15
 tags:
   - React
 readingTime: 2

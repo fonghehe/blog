@@ -1,6 +1,6 @@
 ---
 title: "React 20 Suspense 改進"
-date: 2025-01-16 10:00:00
+date: 2025-01-16 09:10:47
 tags:
   - React
 readingTime: 3
@@ -10,9 +10,9 @@ wordCount: 562
 
 React 20 的 Suspense 經歷了自 18 以來最大的一次迭代。新增的 SuspenseList 元件、流式 SSR 改進、以及與 Actions 的深度整合，讓 Suspense 從「載入態佔位」進化為「資料獲取編排」。
 
-## SuspenseList：控制載入順序
+## SuspenseList：控製載入順序
 
-SuspenseList 解決了多個非同步元件同時載入時的視覺混亂問題——你可以控制它們的出現順序。
+SuspenseList 解決了多個非同步元件同時載入時的視覺混亂問題——你可以控製它們的出現順序。
 
 ```javascript
 import { Suspense, SuspenseList } from 'react';
@@ -171,7 +171,7 @@ function App() {
 
 ## 小結
 
-- SuspenseList 控制多個非同步元件的展示順序，解決視覺混亂問題
+- SuspenseList 控製多個非同步元件的展示順序，解決視覺混亂問題
 - `use` hook 讓資料獲取和渲染合一，徹底替代 useEffect + fetch
 - 流式 SSR 的 Selective Hydration 大幅改善 TTI，互動元件優先注水
 - Suspense 邊界支援延遲迴退，避免快速載入場景下的 UI 閃爍

@@ -1,5 +1,5 @@
 ---
-title: "ES6 Map 和 Set"
+title: "ES6 Map 和 Set：落地路徑與實戰建議"
 date: 2018-04-07 09:32:14
 tags:
   - ES6
@@ -56,7 +56,7 @@ const diff = new Set([...a].filter((x) => !b.has(x))); // {1}
 
 ## Map：鍵可以是任意類型的鍵值對
 
-普通對象的鍵只能是字符串或 Symbol，Map 的鍵可以是任何值：
+普通對象的鍵隻能是字符串或 Symbol，Map 的鍵可以是任何值：
 
 ```javascript
 const map = new Map();
@@ -120,7 +120,7 @@ obj[{ id: 1 }] = "a";
 obj[{ id: 2 }] = "b";
 console.log(obj); // { '[object Object]': 'b' } 鍵被覆蓋了！
 
-// 用 Map：鍵是引用，互不干擾
+// 用 Map：鍵是引用，互不幹擾
 const map = new Map();
 const key1 = { id: 1 };
 const key2 = { id: 2 };

@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 5.5 隱式類型收窄"
-date: 2024-12-11 10:00:00
+title: "TypeScript 5.5 型別收窄實踐：真實專案中的型別改進案例"
+date: 2024-12-11 15:45:22
 tags:
   - TypeScript
 readingTime: 2
@@ -93,7 +93,7 @@ function useIntersectionObserver(options = {}) {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
 實際項目中的用法會更復雜一些：
 

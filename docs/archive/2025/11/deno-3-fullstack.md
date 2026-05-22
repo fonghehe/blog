@@ -1,6 +1,6 @@
 ---
-title: "Deno 3.0 全栈方案"
-date: 2025-11-18 10:00:00
+title: "Deno 3.0 全栈实践：从 Next.js 迁移的真实项目体验"
+date: 2025-11-18 16:52:29
 tags:
   - 前端
 readingTime: 2

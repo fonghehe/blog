@@ -1,6 +1,6 @@
 ---
 title: "Devin AI 軟體工程師分析"
-date: 2024-06-11 10:00:00
+date: 2024-06-11 18:45:22
 tags:
   - 工程化
 readingTime: 2

@@ -1,6 +1,6 @@
 ---
-title: "Tailwind CSS v4 安定版"
-date: 2025-12-10 10:00:00
+title: "Tailwind CSS v4 2025 年终総括：生态成熟度与最佳実践"
+date: 2025-12-10 09:24:01
 tags:
   - CSS
   - エンジニアリング

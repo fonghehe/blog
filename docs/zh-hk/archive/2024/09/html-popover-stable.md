@@ -1,6 +1,6 @@
 ---
-title: "HTML Popover 穩定版全面應用"
-date: 2024-09-03 10:00:00
+title: "HTML Popover 穩定版全面應用：特性解讀與遷移建議"
+date: 2024-09-03 10:37:14
 tags:
   - JavaScript
 readingTime: 2
@@ -93,7 +93,7 @@ const csvToJson = new Transform({
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能對比
+## 效能對比
 
 實際項目中的用法會更復雜一些：
 

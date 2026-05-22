@@ -1,14 +1,14 @@
 ---
-title: "Expo EAS Build 雲構建"
+title: "Expo EAS Build 雲構建：實踐方法與治理思路"
 date: 2022-08-01 09:31:10
 tags:
   - 前端
 readingTime: 2
-description: "關於Expo EAS Build 雲構建，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於Expo EAS Build 雲構建，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 356
 ---
 
-關於Expo EAS Build 雲構建，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於Expo EAS Build 雲構建，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 

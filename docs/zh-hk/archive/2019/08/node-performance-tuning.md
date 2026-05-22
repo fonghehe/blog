@@ -1,16 +1,16 @@
 ---
-title: "Node.js 性能調優實踐"
+title: "Node.js 效能調優實踐：實踐方法與治理思路"
 date: 2019-08-26 09:47:22
 tags:
   - 性能優化
 readingTime: 4
-description: "Node.js 作為服務端運行時，性能調優是上線前必不可少的環節。從內存泄漏排查到事件循環監控，從 CPU profiling 到 GC 調參，Node.js 提供了豐富的工具鏈幫助我們定位性能瓶頸。本文將結合實際案例，系統講解 Node.js 性能調優的方法論和實踐技巧。"
-wordCount: 561
+description: "Node.js 作為服務端運行時，效能調優是上線前必不可少的環節。從內存泄漏排查到事件循環監控，從 CPU profiling 到 GC 調參，Node.js 提供了豐富的工具鏈幫助我們定位效能瓶頸。本文將結合實際案例，系統講解 Node.js 效能調優的方法論和實踐技巧。"
+wordCount: 563
 ---
 
 Node.js 作為服務端運行時，性能調優是上線前必不可少的環節。從內存泄漏排查到事件循環監控，從 CPU profiling 到 GC 調參，Node.js 提供了豐富的工具鏈幫助我們定位性能瓶頸。本文將結合實際案例，系統講解 Node.js 性能調優的方法論和實踐技巧。
 
-## 性能指標概覽
+## 效能指標概覽
 
 Node.js 應用需要關注的核心指標：
 
@@ -46,7 +46,7 @@ function memoryMonitor(req, res, next) {
 }
 ```
 
-### 使用 --inspect 進行堆分析
+### 使用 --inspect 進行堆積分析
 
 ```bash
 # 啓動時開啓 inspector
@@ -66,7 +66,7 @@ const cache = {};
 function handler(req, res) {
   const key = req.url;
 
-  // 如果不限制 cache 大小，會無限增長
+  // 如果不限製 cache 大小，會無限增長
   cache[key] = {
     data: heavyComputation(),
     timestamp: Date.now(),
@@ -135,7 +135,7 @@ function handleConnection(socket) {
 **場景三：全局變量意外增長**
 
 ```js
-// 泄漏版本：無限制的全局數組
+// 泄漏版本：無限製的全局數組
 const requestLogs = [];
 
 app.use((req, res, next) => {
@@ -148,7 +148,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// 修復版本：限制大小並定期清理
+// 修復版本：限製大小並定期清理
 const requestLogs = [];
 const MAX_LOGS = 10000;
 
@@ -176,15 +176,15 @@ setInterval(() => {
 }, 60000);
 ```
 
-## CPU 性能分析
+## CPU 效能分析
 
 ### 使用 --prof 生成 V8 profiling 數據
 
 ```bash
-# 生成日誌文件
+# 生成日誌檔案
 node --prof app.js
 
-# 處理日誌文件
+# 處理日誌檔案
 node --prof-process isolate-*.log > processed.txt
 ```
 
@@ -289,10 +289,10 @@ setInterval(() => {
 
 ## GC 調優
 
-### 調整 V8 堆大小
+### 調整 V8 堆積大小
 
 ```bash
-# 設置最大堆內存
+# 設置最大堆積內存
 node --max-old-space-size=4096 app.js  # 4GB
 
 # 調整新生代大小
@@ -344,7 +344,7 @@ class BufferPool {
 }
 ```
 
-## HTTP 性能優化
+## HTTP 效能優化
 
 ### 連接池複用
 

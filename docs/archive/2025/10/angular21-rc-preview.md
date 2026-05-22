@@ -1,6 +1,6 @@
 ---
 title: "Angular 21 RC 预览：Signal Forms 稳定、全新路由 API 与 SSR 增强"
-date: 2025-10-24 10:00:00
+date: 2025-10-24 14:18:55
 tags:
   - Angular
   - JavaScript

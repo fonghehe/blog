@@ -57,7 +57,7 @@ interface CRPAudit {
 ### Layout Thrashing：最容易被忽視的效能殺手
 
 ```javascript
-// 反模式：強制同步佈局
+// 反模式：強製同步佈局
 function resizeAllCards(cards: HTMLElement[]) {
   cards.forEach((card) => {
     // 讀取 → 觸發 layout
@@ -73,7 +73,7 @@ function resizeAllCardsOptimized(cards: HTMLElement[]) {
   // 階段一：批次讀取
   const heights = cards.map((card) => card.offsetHeight);
 
-  // 階段二：批次寫入（只觸發一次 layout）
+  // 階段二：批次寫入（隻觸發一次 layout）
   cards.forEach((card, i) => {
     card.style.height = `${heights[i] + 20}px`;
   });
@@ -116,7 +116,7 @@ function App() {
   return (
     <div>
       <ExpensiveTree />
-      <CursorTracker /> {/* 只有這個元件重渲染 */}
+      <CursorTracker /> {/* 隻有這個元件重渲染 */}
     </div>
   );
 }
@@ -162,7 +162,7 @@ function SimpleLabel({ text }: { text: string }) {
 ```tsx
 // useMemo 用於避免昂貴計算的重複執行
 function AnalyticsDashboard({ rawData }: Props) {
-  // 只有 rawData 變化時才重新計算
+  // 隻有 rawData 變化時才重新計算
   const processedMetrics = useMemo(
     () => computeMetrics(rawData), // 假設這是 O(n²) 的計算
     [rawData],
@@ -190,7 +190,7 @@ const hugeState = reactive({
   })),
 });
 
-// 正確：只對需要響應式的部分做 reactive
+// 正確：隻對需要響應式的部分做 reactive
 const selectedIds = ref<Set<number>>(new Set());
 const items = shallowRef(loadHugeData()); // shallowRef 不遞迴代理
 
@@ -332,7 +332,7 @@ function prefetchOnHover(routePath: string) {
   font-family: "Inter";
   src: url("/fonts/inter-var.woff2") format("woff2");
   font-display: swap;
-  unicode-range: U+0000-00FF; /* 只加載 Latin 子集 */
+  unicode-range: U+0000-00FF; /* 隻加載 Latin 子集 */
 }
 ```
 
@@ -496,7 +496,7 @@ onCLS(reportMetric);
 前端效能體系設計的核心思路：
 
 1. **理解管線**——所有最佳化都是在減少瀏覽器渲染管線的工作量或縮短關鍵路徑
-2. **元件級精確控制**——利用框架的響應式機制避免無效渲染，而非事後 profile 和打補丁
+2. **元件級精確控製**——利用框架的響應式機製避免無效渲染，而非事後 profile 和打補丁
 3. **資源分級**——將所有資源分為 Critical / Important / Deferred 三級，每級有不同的載入策略
 4. **度量驅動**——沒有度量就沒有最佳化。用 Web Vitals 建立基線、設定預算、檢測迴歸
 

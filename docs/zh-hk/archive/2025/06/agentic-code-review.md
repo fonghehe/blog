@@ -1,6 +1,6 @@
 ---
 title: "Agentic Code Review：AI 驅動的代碼審查"
-date: 2025-06-22 10:00:00
+date: 2025-06-22 15:36:13
 tags:
   - 工程化
 readingTime: 2
@@ -58,7 +58,7 @@ async function reviewPR(diff: string, context: string): Promise<ReviewResult[]> 
         role: "user",
         content: `請審查以下代碼變更：
 
-## 上下文（相關文件）
+## 上下文（相關檔案）
 ${context}
 
 ## Diff

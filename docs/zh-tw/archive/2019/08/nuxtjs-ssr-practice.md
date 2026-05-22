@@ -87,7 +87,7 @@ export default {
 {% endraw %}
 ```
 
-## nuxt.config.js 關鍵配置
+## nuxt.config.js 關鍵設定
 
 ```javascript
 export default {
@@ -99,7 +99,7 @@ export default {
   // 外掛（區分客戶端/服務端）
   plugins: [
     "~/plugins/axios.js",
-    { src: "~/plugins/chart.js", mode: "client" }, // 只在客戶端載入
+    { src: "~/plugins/chart.js", mode: "client" }, // 隻在客戶端載入
   ],
 
   // 模組

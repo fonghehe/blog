@@ -1,6 +1,6 @@
 ---
 title: "Angular 21 RC プレビュー：Signal Forms 安定化、新ルーターAPI と SSR 強化"
-date: 2025-10-24 10:00:00
+date: 2025-10-24 14:18:55
 tags:
   - Angular
   - JavaScript

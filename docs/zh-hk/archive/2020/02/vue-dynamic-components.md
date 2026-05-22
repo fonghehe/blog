@@ -1,5 +1,5 @@
 ---
-title: "Vue 動態組件與異步組件"
+title: "Vue 動態組件與異步組件：落地路徑與實戰建議"
 date: 2020-02-07 17:08:14
 tags:
   - Vue
@@ -68,7 +68,7 @@ export default {
 {% endraw %}
 ```
 
-注意這裏用 `shallowRef` 而非 `ref`。組件對象本身不需要深度響應式，用 `shallowRef` 可以避免對組件定義對象做不必要的 Proxy 包裹，性能更好。
+注意這裏用 `shallowRef` 而非 `ref`。組件對象本身不需要深度響應式，用 `shallowRef` 可以避免對組件定義對象做不必要的 Proxy 包裹，效能更好。
 
 ## 結合 keep-alive 緩存狀態
 
@@ -97,7 +97,7 @@ export default {
   setup() {
     const view = ref('List')
 
-    // 只緩存指定組件
+    // 隻緩存指定組件
     const cachedViews = computed(() => {
       if (view.value === 'Chart') return [] // 圖表不緩存
       return ['List', 'Form']
@@ -109,11 +109,11 @@ export default {
 </script>
 ```
 
-`keep-alive` 的 `include` 接受組件名稱數組或正則，`max` 限制最大緩存數量，防止內存泄漏。
+`keep-alive` 的 `include` 接受組件名稱數組或正則，`max` 限製最大緩存數量，防止內存泄漏。
 
 ## 異步組件與 defineAsyncComponent
 
-對於大型組件（富文本編輯器、地圖、圖表庫），只在需要時加載可以顯著減小首屏 bundle。
+對於大型組件（富文本編輯器、地圖、圖表庫），隻在需要時加載可以顯著減小首屏 bundle。
 
 ```vue
 <template>
@@ -148,9 +148,9 @@ export default {
 </script>
 ```
 
-## 高級配置：超時與錯誤處理
+## 高級設定：超時與錯誤處理
 
-`defineAsyncComponent` 支持完整的加載生命週期控制。
+`defineAsyncComponent` 支援完整的加載生命週期控製。
 
 ```javascript
 import { defineAsyncComponent, h } from 'vue'
@@ -197,7 +197,7 @@ const HeavyChart = defineAsyncComponent({
 
 ## 動態組件 + 異步組件：權限驅動的頁面渲染
 
-在後台管理系統中，不同角色看到的頁面模塊不同。
+在後臺管理系統中，不同角色看到的頁面模塊不同。
 
 ```javascript
 // utils/componentMap.js
@@ -234,6 +234,6 @@ export default {
 ## 小結
 
 - `<component :is>` 是動態渲染的核心，`shallowRef` 避免不必要的 Proxy 開銷
-- `<keep-alive>` 緩存組件實例，`include` 和 `max` 控制緩存範圍
+- `<keep-alive>` 緩存組件實例，`include` 和 `max` 控製緩存範圍
 - `defineAsyncComponent` 實現組件級代碼拆分，配合 `Suspense` 管理加載態
 - 生產環境中務必配置 `errorComponent` 和 `onError`，給用户優雅的降級體驗

@@ -98,7 +98,7 @@ describe('Tag', () => {
     expect(wrapper.emitted('click')).toHaveLength(1);
   });
 
-  it('type 校驗失敗時在控制台警告', () => {
+  it('type 校驗失敗時在控製臺警告', () => {
     const warnSpy = jest.spyOn(console, 'error').mockImplementation();
     mount(Tag, {
       propsData: { type: 'unknown' },

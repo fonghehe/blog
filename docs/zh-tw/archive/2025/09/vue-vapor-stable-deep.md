@@ -1,6 +1,6 @@
 ---
-title: "Vue Vapor 穩定版詳解"
-date: 2025-09-02 10:00:00
+title: "Vue Vapor 稳定版詳解：无虛擬 DOM 的編譯策略"
+date: 2025-09-02 12:16:53
 tags:
   - Vue
 readingTime: 2

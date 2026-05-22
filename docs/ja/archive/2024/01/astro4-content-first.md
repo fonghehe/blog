@@ -3,43 +3,43 @@ title: "Astro 4：コンテンツファーストアーキテクチャの成熟"
 date: 2024-01-15 16:44:54
 tags:
   - フロントエンド
-readingTime: 2
-description: "Astro 4 发布了，用了一年多 Astro 做内容站，说说它为什么适合某类项目，以及真实的工程化体验。"
-wordCount: 328
+readingTime: 3
+description: "Astro 4 がリリースされました。1年以上 Astro でコンテンツサイトを構築してきた経験から、なぜ特定のタイプのプロジェクトに適しているのか、そして実際のエンジニアリング体験について紹介します。"
+wordCount: 581
 ---
 
-Astro 4 发布了，用了一年多 Astro 做内容站，说说它为什么适合某类项目，以及真实的工程化体验。
+Astro 4 がリリースされました。1年あまり Astro を使ってコンテンツサイトを運営してきた経験から、なぜ特定のプロジェクトに適しているのか、そして実際のエンジニアリング体験についてお話しします。
 
 ## Astroがコンテンツサイトに適している理由
 
-Astro 的核心思路：**默认零 JS，按需水化**。
+Astro の核となる考え方：**デフォルトで JS ゼロ、オンデマンドでハイドレーション**。
 
 ```
-React/Vue/Next.js 思路：JS 优先
-  - 下载 JS → 执行 JS → 渲染 HTML
+React/Vue/Next.js の考え方：JS 優先
+  - JS をダウンロード → JS を実行 → HTML をレンダリング
 
-Astro 思路：HTML 优先
-  - 服务端渲染 HTML → 发送到浏览器（没有 JS 负担）
-  - 只有标记 client:* 的组件才下载 JS
+Astro の考え方：HTML 優先
+  - サーバーサイドで HTML をレンダリング → ブラウザに送信（JS の負荷なし）
+  - client:* とマークされたコンポーネントのみ JS をダウンロード
 ```
 
-对博客、文档、营销页来说，这是正确的优先级。
+ブログ、ドキュメント、マーケティングページにとって、これは正しい優先順位です。
 
 ## Astroプロジェクト構造
 
 ```
 src/
 ├── pages/
-│   ├── index.astro          ← 主页
+│   ├── index.astro          ← ホームページ
 │   ├── blog/
-│   │   ├── index.astro      ← 博客列表
-│   │   └── [slug].astro     ← 博客详情
+│   │   ├── index.astro      ← ブログ一覧
+│   │   └── [slug].astro     ← ブログ詳細
 │   └── about.astro
 ├── layouts/
 │   └── BlogPost.astro
 ├── components/
-│   ├── Header.astro         ← Astro 组件（纯 HTML）
-│   └── CommentSection.tsx   ← React 组件（交互）
+│   ├── Header.astro         ← Astro コンポーネント（純粋な HTML）
+│   └── CommentSection.tsx   ← React コンポーネント（インタラクティブ）
 └── content/
     └── blog/
         ├── hello-world.md
@@ -50,7 +50,7 @@ src/
 
 ```astro
 ---
-// 这里是服务端运行的 JS（frontmatter）
+// ここはサーバーサイドで実行される JS（frontmatter）
 import BlogCard from '../components/BlogCard.astro'
 import { getCollection } from 'astro:content'
 
@@ -60,7 +60,7 @@ const sortedPosts = posts.sort((a, b) =>
 )
 ---
 
-<!-- 这里是 HTML 模板 -->
+<!-- ここは HTML テンプレート -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -138,28 +138,28 @@ import ReactCounter from '../components/Counter.tsx'
 import VueSearchBox from '../components/Search.vue'
 ---
 
-<!-- 纯展示：不下载 JS -->
+<!-- 純粋な表示：JS をダウンロードしない -->
 <Header />
 
-<!-- 需要交互：按需水化 -->
-<!-- client:load：页面加载时水化 -->
+<!-- インタラクションが必要：オンデマンドハイドレーション -->
+<!-- client:load：ページ読み込み時にハイドレーション -->
 <ReactCounter client:load />
 
-<!-- client:idle：浏览器空闲时水化 -->
+<!-- client:idle：ブラウザがアイドル状態のときにハイドレーション -->
 <VueSearchBox client:idle />
 
-<!-- client:visible：进入视口时水化 -->
+<!-- client:visible：ビューポートに入ったときにハイドレーション -->
 <LazyChart client:visible />
 
-<!-- client:only="react"：只在客户端渲染，不 SSR -->
+<!-- client:only="react"：クライアント側のみでレンダリング、SSR なし -->
 <RealTimeData client:only="react" />
 ```
 
 ## Astro 4 新機能
 
-**Dev Toolbar**：开发时的 UI 调试工具，类似 Next.js dev 工具
+**Dev Toolbar**：開発時に使える UI デバッグツール、Next.js の dev ツールに類似
 
-**View Transitions API 集成**：
+**View Transitions API の統合**：
 
 ```astro
 ---
@@ -167,24 +167,24 @@ import { ViewTransitions } from 'astro:transitions'
 ---
 
 <head>
-  <ViewTransitions />  <!-- 启用页面过渡动画（MPA 也可以！）-->
+  <ViewTransitions />  <!-- ページ遷移アニメーションを有効化（MPA でも可能！）-->
 </head>
 ```
 
-**Server Islands**：服务端动态内容 + 客户端静态内容混合
+**Server Islands**：サーバーサイドの動的コンテンツ + クライアントの静的コンテンツを混合
 
 ## Astroが適したシーン
 
-- ✅ 博客、文档、营销页
-- ✅ 内容为主，少量交互
-- ✅ 需要极致 Lighthouse 分数
-- ❌ 复杂交互（用 Next.js/Nuxt.js）
-- ❌ 需要实时数据（用全栈框架）
+- ✅ ブログ、ドキュメント、マーケティングページ
+- ✅ コンテンツ中心で、少量のインタラクション
+- ✅ 極限の Lighthouse スコアが必要
+- ❌ 複雑なインタラクション（Next.js/Nuxt.js を使用）
+- ❌ リアルタイムデータが必要（フルスタックフレームワークを使用）
 
 ## まとめ
 
-- Astro 默认零 JS，比 Next.js 更适合内容站
-- Islands 架构：只有需要交互的组件才水化
-- 内容集合 + 类型检查，比手写 `import.meta.glob` 优雅得多
-- View Transitions API 让 MPA 也有流畅的页面过渡
-- 2024 年是 Astro 生态成熟的一年，值得认真学
+- Astro はデフォルトで JS ゼロ、Next.js よりもコンテンツサイトに適しています
+- Islands アーキテクチャ：インタラクションが必要なコンポーネントだけがハイドレーションされます
+- コンテンツコレクション + 型チェックは、手書きの `import.meta.glob` よりはるかにエレガントです
+- View Transitions API により、MPA でもスムーズなページ遷移が可能になります
+- 2024年は Astro エコシステムが成熟する年であり、真剣に学ぶ価値があります

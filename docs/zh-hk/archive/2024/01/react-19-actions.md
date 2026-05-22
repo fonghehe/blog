@@ -1,5 +1,5 @@
 ---
-title: "React 19 Actions 表單與突變"
+title: "React 19 Actions 表單與突變：落地路徑與實戰建議"
 date: 2024-01-03 10:05:57
 tags:
   - React
@@ -79,7 +79,7 @@ function reducer(state, action) {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能對比
+## 效能對比
 
 關鍵在於理解核心邏輯：
 
@@ -100,7 +100,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 問題排查
 

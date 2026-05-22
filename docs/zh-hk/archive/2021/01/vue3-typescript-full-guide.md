@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 + TypeScript 完整開發指南"
+title: "Vue 3 + TypeScript 完整開發指南：落地路徑與實戰建議"
 date: 2021-01-26 10:49:39
 tags:
   - Vue
@@ -37,7 +37,7 @@ export default {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 進階用法
 
@@ -102,7 +102,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 這段代碼展示了基本的使用方式。實際項目中還需要考慮錯誤處理和邊界條件。
 
-## 性能優化
+## 效能優化
 
 在這個基礎上，我們可以進一步優化：
 

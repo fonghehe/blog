@@ -1,6 +1,6 @@
 ---
-title: "Vite 6：不只是更快"
-date: 2025-02-22 10:00:00
+title: "Vite 6：不隻是更快"
+date: 2025-02-22 17:56:33
 tags:
   - 工程化
 readingTime: 1
@@ -56,7 +56,7 @@ export default defineConfig({
 });
 ```
 
-不再需要手動配置 SSR 構建流程，Environment API 讓多環境構建變得統一。
+不再需要手動設定 SSR 構建流程，Environment API 讓多環境構建變得統一。
 
 ## Rolldown 預覽
 
@@ -100,7 +100,7 @@ Rolldown 是用 Rust 重寫的 Rollup，API 相容，效能差距巨大。大型
 ## HMR 最佳化
 
 ```ts
-// v6 的 HMR 更新——只更新變更的 CSS 模組
+// v6 的 HMR 更新——隻更新變更的 CSS 模組
 // 之前：修改一個元件的 CSS，整個頁面 reload
 // 現在：精確定位到變更的模組，無感知更新
 

@@ -1,6 +1,6 @@
 ---
-title: "Vite 6 Environment API 實戰"
-date: 2024-10-03 10:00:00
+title: "Vite 6 Environment API：统一開發與建置環境的新范式"
+date: 2024-10-03 15:17:54
 tags:
   - JavaScript
   - 工程化

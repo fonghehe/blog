@@ -1,10 +1,10 @@
 ---
-title: "Angular 7 新特性速覽"
+title: "Angular 7 新特性速覽：從 6.x 升级的實踐指南"
 date: 2018-10-05 17:06:11
 tags:
   - Angular
 readingTime: 1
-description: "Angular 7 於 2018 年 10 月正式發佈，帶來了虛擬滾動、拖拽 CDK、性能優化等重要改進。本文梳理最值得關注的新特性。"
+description: "Angular 7 於 2018 年 10 月正式發佈，帶來了虛擬滾動、拖拽 CDK、效能優化等重要改進。本文梳理最值得關注的新特性。"
 wordCount: 151
 ---
 
@@ -53,7 +53,7 @@ export class DragListComponent {
 {% endraw %}
 ```
 
-## 性能改進
+## 效能改進
 
 - 應用包體積平均減少 30-40%
 - CLI 提示與錯誤信息更友好

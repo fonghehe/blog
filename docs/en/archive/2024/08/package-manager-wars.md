@@ -1,6 +1,6 @@
 ---
 title: "Package Manager Wars 2024 Summary"
-date: 2024-08-14 10:00:00
+date: 2024-08-14 13:08:45
 tags:
   - Frontend
 readingTime: 2

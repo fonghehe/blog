@@ -277,7 +277,7 @@ const routes = [
     path: '/dashboard',
     component: () => import('@/views/Dashboard.vue'),
     beforeEnter: (to, from) => {
-      // 只有從登入頁來才放行
+      // 隻有從登入頁來才放行
       if (from.name !== 'Login') {
         return { name: 'Login' }
       }

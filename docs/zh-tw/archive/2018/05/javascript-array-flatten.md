@@ -49,7 +49,7 @@ function flatten(arr) {
 // [1, 2, 3, 4]
 ```
 
-只適合純整數陣列，有侷限性。
+隻適合純整數陣列，有侷限性。
 
 ## 方法四：Array.flat（ES2019）
 
@@ -125,5 +125,5 @@ flattenMenu(menuTree);
 
 - 日常開發：`flat(Infinity)` 最簡潔（確認目標環境支援）
 - 需要相容舊瀏覽器：遞迴 reduce 方式
-- 只有整數：`toString().split(',').map(Number)` 也行
+- 隻有整數：`toString().split(',').map(Number)` 也行
 - 樹形資料到平鋪列表：用遞迴，處理 `children`

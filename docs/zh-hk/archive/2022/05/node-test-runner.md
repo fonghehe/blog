@@ -1,5 +1,5 @@
 ---
-title: "Node.js 內置測試運行器"
+title: "Node.js 內置測試運行器：實踐方法與治理思路"
 date: 2022-05-11 16:06:14
 tags:
   - Node.js
@@ -37,7 +37,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 深度解析
 

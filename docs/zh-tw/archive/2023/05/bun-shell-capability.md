@@ -1,5 +1,5 @@
 ---
-title: "Bun Shell 指令碼能力"
+title: "Bun Shell 初探：JavaScript 運行時內置的命令行能力"
 date: 2023-05-05 15:28:59
 tags:
   - 前端

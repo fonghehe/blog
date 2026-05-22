@@ -68,7 +68,7 @@ const url = `https://api.example.com/search?q=${encodeURIComponent(query)}`;
 ```
 
 ```nginx
-# 更好：通過 HTTP 響應頭配置
+# 更好：通過 HTTP 響應頭設定
 add_header Content-Security-Policy "
   default-src 'self';
   script-src 'self' https://cdn.example.com;
@@ -138,7 +138,7 @@ add_header Content-Security-Policy "frame-ancestors 'none';" always;
 
 ```
 □ 不直接 innerHTML 用户輸入，用 DOMPurify 過濾富文本
-□ v-html / dangerouslySetInnerHTML 只用於可信內容
+□ v-html / dangerouslySetInnerHTML 隻用於可信內容
 □ API 請求添加 CSRF Token 或依賴 SameSite Cookie
 □ 設置 CSP 響應頭
 □ 設置 X-Frame-Options 防止點擊劫持

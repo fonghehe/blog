@@ -1,6 +1,6 @@
 ---
 title: "Svelte 6：次世代コンパイルフレームワーク"
-date: 2025-04-10 10:00:00
+date: 2025-04-10 10:04:41
 tags:
   - Svelte
 readingTime: 2

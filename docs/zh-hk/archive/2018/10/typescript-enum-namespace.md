@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 枚舉和命名空間"
+title: "TypeScript 枚舉和命名空間：落地路徑與實戰建議"
 date: 2018-10-21 10:31:26
 tags:
   - TypeScript
@@ -140,6 +140,6 @@ enum HttpMethod {
 
 - 數字枚舉：有反向映射，但數字可讀性差
 - 字符串枚舉：可讀性好，推薦用
-- `const enum`：編譯時內聯，更小的 bundle，但功能有限制
+- `const enum`：編譯時內聯，更小的 bundle，但功能有限製
 - 現代替代：聯合類型或 `as const` 對象，更靈活
 - 命名空間：主要用於聲明文件，業務代碼用 ES module

@@ -70,7 +70,7 @@ type Optional<T> = {
 };
 
 type Readonly<T> = {
-  readonly [K in keyof T]: T[K]; // 所有屬性變為只讀
+  readonly [K in keyof T]: T[K]; // 所有屬性變為隻讀
 };
 
 // 修改屬性型別
@@ -90,7 +90,7 @@ interface User {
   email: string;
 }
 
-// 只保留 string 型別的屬性
+// 隻保留 string 型別的屬性
 type StringFields = PickByValue<User, string>;
 // { name: string; email: string }
 ```
@@ -103,7 +103,7 @@ type DeepPartial<T> = {
   [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K];
 };
 
-// 深度只讀
+// 深度隻讀
 type DeepReadonly<T> = {
   readonly [K in keyof T]: T[K] extends object ? DeepReadonly<T[K]> : T[K];
 };
@@ -117,7 +117,7 @@ type FirstParameter<T extends (...args: any) => any> = T extends (
   : never;
 ```
 
-## 模板字面量型別（TypeScript 4.1，預告）
+## 範本字面量型別（TypeScript 4.1，預告）
 
 雖然還沒釋出，但已經在提案中：
 

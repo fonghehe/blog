@@ -4,7 +4,7 @@ date: 2018-12-17 16:18:19
 tags:
   - Vue
 readingTime: 1
-description: "Vue CLI 3 釋出後，專案腳手架的靈活性大大提高。CLI 外掛可以給專案新增功能、修改 webpack 配置。最近給團隊內部工具寫了一個 CLI 外掛，記錄一下過程。"
+description: "Vue CLI 3 釋出後，專案腳手架的靈活性大大提高。CLI 外掛可以給專案新增功能、修改 webpack 設定。最近給團隊內部工具寫了一個 CLI 外掛，記錄一下過程。"
 wordCount: 173
 ---
 
@@ -53,7 +53,7 @@ module.exports = (api, options, rootOptions) => {
 };
 ```
 
-## template 目錄（EJS 模板）
+## template 目錄（EJS 範本）
 
 ```javascript
 // template/src/plugins/axios.js
@@ -77,7 +77,7 @@ Vue.prototype.$http = service;
 export default service;
 ```
 
-## index.js：修改 webpack 配置
+## index.js：修改 webpack 設定
 
 ```javascript
 // index.js（Service 外掛）

@@ -1,6 +1,6 @@
 ---
-title: "React 19 use() Hook 實戰"
-date: 2024-12-05 10:00:00
+title: "React 19 use() Hook 進階 2024：與傳统資料獲取模式的對比與融合"
+date: 2024-12-05 12:39:16
 tags:
   - React
 readingTime: 2
@@ -65,7 +65,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 真實場景應用
 

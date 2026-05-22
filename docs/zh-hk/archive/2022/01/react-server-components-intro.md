@@ -1,5 +1,5 @@
 ---
-title: "React Server Components 入門"
+title: "React Server Components 入門：落地路徑與實戰建議"
 date: 2022-01-19 09:48:07
 tags:
   - React
@@ -38,7 +38,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 源碼分析
 

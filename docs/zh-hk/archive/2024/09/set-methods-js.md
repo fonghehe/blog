@@ -1,6 +1,6 @@
 ---
-title: "JavaScript Set 新方法"
-date: 2024-09-10 10:00:00
+title: "JavaScript Set 新方法：落地路徑與實戰建議"
+date: 2024-09-10 16:44:21
 tags:
   - JavaScript
 readingTime: 2
@@ -118,7 +118,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 避坑指南
 

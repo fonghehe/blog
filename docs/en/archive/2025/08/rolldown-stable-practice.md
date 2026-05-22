@@ -1,6 +1,6 @@
 ---
-title: "Rolldown Stable Release in Practice"
-date: 2025-08-21 10:00:00
+title: "Rolldown Stable Release: Rollup Compatibility Rust 打包新纪元"
+date: 2025-08-21 19:55:32
 tags:
   - Frontend
 readingTime: 2

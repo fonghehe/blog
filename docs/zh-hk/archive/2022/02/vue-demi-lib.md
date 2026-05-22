@@ -1,5 +1,5 @@
 ---
-title: "VueDemi Vue 2/3 通用庫開發"
+title: "VueDemi Vue 2/3 通用庫開發：落地路徑與實戰建議"
 date: 2022-02-23 14:31:47
 tags:
   - Vue

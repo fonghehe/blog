@@ -1,24 +1,24 @@
 ---
-title: "VS Code 插件開發入門"
+title: "VS Code 外掛開發入門：落地路徑與實戰建議"
 date: 2019-12-04 14:54:06
 tags:
   - 前端
 readingTime: 6
-description: "作為前端工程師，VS Code 幾乎是每天都要打交道的編輯器。最近團隊需要一個內部工具——自動掃描項目中的 TODO/FIXME 並生成任務列表，我決定用 VS Code 插件來實現。這次開發經歷讓我對 VS Code 的擴展體系有了比較完整的認識，整理成文分享給大家。"
+description: "作為前端工程師，VS Code 幾乎是每天都要打交道的編輯器。最近團隊需要一個內部工具——自動掃描項目中的 TODO/FIXME 並生成任務列表，我決定用 VS Code 外掛來實現。這次開發經歷讓我對 VS Code 的擴展體系有了比較完整的認識，整理成文分享給大家。"
 wordCount: 523
 ---
 
-作為前端工程師，VS Code 幾乎是每天都要打交道的編輯器。最近團隊需要一個內部工具——自動掃描項目中的 TODO/FIXME 並生成任務列表，我決定用 VS Code 插件來實現。這次開發經歷讓我對 VS Code 的擴展體系有了比較完整的認識，整理成文分享給大家。
+作為前端工程師，VS Code 幾乎是每天都要打交道的編輯器。最近團隊需要一個內部工具——自動掃描項目中的 TODO/FIXME 並生成任務列表，我決定用 VS Code 外掛來實現。這次開發經歷讓我對 VS Code 的擴展體系有了比較完整的認識，整理成文分享給大家。
 
 ## 環境搭建與項目結構
 
-VS Code 插件開發需要 Node.js 和 Yeoman 腳手架：
+VS Code 外掛開發需要 Node.js 和 Yeoman 腳手架：
 
 ```bash
 # 安裝腳手架工具
 npm install -g yo generator-code
 
-# 生成插件項目
+# 生成外掛項目
 yo code
 # 選擇 TypeScript + New Extension
 
@@ -34,7 +34,7 @@ my-extension/
 
 ## package.json 中的 contributes
 
-`contributes` 是插件能力聲明的核心。通過它，你可以註冊命令、菜單項、快捷鍵、配置項等，而不需要寫任何運行時代碼：
+`contributes` 是外掛能力聲明的核心。通過它，你可以註冊命令、菜單項、快捷鍵、設定項等，而不需要寫任何運行時代碼：
 
 ```json
 {
@@ -138,7 +138,7 @@ my-extension/
 
 ## 激活事件（Activation Events）
 
-插件不會在 VS Code 啓動時立即加載，而是通過激活事件按需激活，這對性能很重要：
+外掛不會在 VS Code 啓動時立即加載，而是通過激活事件按需激活，這對效能很重要：
 
 ```json
 // 常用的激活事件
@@ -166,7 +166,7 @@ my-extension/
 }
 ```
 
-實際開發中，建議儘量使用具體的激活事件。我們的插件只需要在用户執行命令或打開視圖時激活，不需要 `*` 全量激活。
+實際開發中，建議儘量使用具體的激活事件。我們的外掛隻需要在用户執行命令或打開視圖時激活，不需要 `*` 全量激活。
 
 ## 命令註冊與核心邏輯
 
@@ -420,7 +420,7 @@ function createWebviewPanel(context: vscode.ExtensionContext) {
     {
       // 啓用腳本
       enableScripts: true,
-      // 限制資源加載來源
+      // 限製資源加載來源
       localResourceRoots: [
         vscode.Uri.file(path.join(context.extensionPath, 'media'))
       ],
@@ -521,7 +521,7 @@ function getNonce(): string {
 
 ```bash
 # 調試：按 F5 啓動 Extension Development Host
-# VS Code 會打開一個新窗口，加載你的插件
+# VS Code 會打開一個新窗口，加載你的外掛
 # 在源碼中打斷點即可調試
 
 # 打包

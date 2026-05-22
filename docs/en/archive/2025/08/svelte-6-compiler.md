@@ -1,6 +1,6 @@
 ---
-title: "Svelte 6 Compiler Improvements"
-date: 2025-08-28 10:00:00
+title: "Svelte 6 Compiler Improvements: 新ReactivityCompilationStrategy"
+date: 2025-08-28 17:02:39
 tags:
   - Svelte
 readingTime: 2

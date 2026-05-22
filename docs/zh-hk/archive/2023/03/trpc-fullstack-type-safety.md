@@ -14,7 +14,7 @@ wordCount: 411
 
 在全棧 TypeScript 項目裏，前後端共享類型一直很彆扭：
 
-- REST API 需要手寫接口文檔 + 前端類型定義，兩者容易不同步
+- REST API 需要手寫介面文檔 + 前端類型定義，兩者容易不同步
 - GraphQL 需要寫 schema + resolver + codegen，學習成本和維護成本都高
 - OpenAPI codegen 能自動生成類型，但生成的代碼質量參差不齊
 
@@ -122,14 +122,14 @@ const appRouter = t.router({
 
 中間件的類型也會透傳。經過 `isAuthed` 中間件後，`ctx.user` 的類型從 `User | null` 變成了 `User`，下游代碼不需要判空。
 
-## 性能和限制
+## 效能和限製
 
 **優勢：**
 - 零 codegen 步驟，類型即時推斷
 - 基於 HTTP，和 REST 一樣可以上 CDN、做緩存
-- 請求批處理支持（默認開啓，減少請求數）
+- 請求批處理支援（默認開啓，減少請求數）
 
-**限制：**
+**限製：**
 - 前後端必須都是 TypeScript
 - 不適合給第三方客户端用（需要 REST/GraphQL 對外暴露）
 - 複雜的嵌套查詢不如 GraphQL 靈活
@@ -138,6 +138,6 @@ const appRouter = t.router({
 
 - tRPC 在全棧 TS 項目中提供了最乾淨的端到端類型安全
 - 不需要 schema 定義語言、不需要 codegen，改了類型立即生效
-- 中間件系統類型安全，權限控制邏輯清晰
+- 中間件系統類型安全，權限控製邏輯清晰
 - 適合內部項目、全棧應用，不適合公開 API
 - 搭配 Zod 做輸入校驗是最佳實踐

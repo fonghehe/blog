@@ -1,6 +1,6 @@
 ---
 title: "2025 Frontend Technology Review: The Signal Era Officially Begins"
-date: 2025-12-31 10:00:00
+date: 2025-12-31 11:45:22
 tags:
   - Frontend
 readingTime: 2

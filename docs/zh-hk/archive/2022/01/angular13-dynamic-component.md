@@ -101,7 +101,7 @@ export class ToastComponent {
 }
 ```
 
-## 實際場景：路由級彈窗（無需路由配置）
+## 實際場景：路由級彈窗（無需路由設定）
 
 ```typescript
 // 點擊彈出詳情，不改變 URL
@@ -178,4 +178,4 @@ const ref = this.container.createComponent(MyComponent, {
 
 ## 總結
 
-Angular 13 的動態組件 API 簡化雖然是"小"改變，但消除了一個長期困擾 Angular 開發者的 API 繁瑣問題。`ComponentFactoryResolver` 作為歷史遺留徹底退出舞台，代碼更簡潔，也更符合直覺。
+Angular 13 的動態組件 API 簡化雖然是"小"改變，但消除了一個長期困擾 Angular 開發者的 API 繁瑣問題。`ComponentFactoryResolver` 作為歷史遺留徹底退出舞臺，代碼更簡潔，也更符合直覺。

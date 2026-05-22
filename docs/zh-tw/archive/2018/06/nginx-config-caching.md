@@ -1,5 +1,5 @@
 ---
-title: "前端部署：nginx 配置與快取策略"
+title: "前端部署：nginx 設定與快取策略"
 date: 2018-06-12 17:34:52
 tags:
   - 工程化
@@ -32,7 +32,7 @@ server {
 2. 再找目錄 `$uri/`
 3. 都沒有則返回 `/index.html`（交給前端路由處理）
 
-## 快取配置
+## 快取設定
 
 ### HTML：不快取
 
@@ -86,7 +86,7 @@ location ~* \.(js|css)$ {
 }
 ```
 
-## HTTPS 配置
+## HTTPS 設定
 
 ```nginx
 server {
@@ -108,7 +108,7 @@ server {
   ssl_prefer_server_ciphers on;
   ssl_session_cache shared:SSL:10m;
 
-  # HSTS：強制瀏覽器用 HTTPS
+  # HSTS：強製瀏覽器用 HTTPS
   add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 
   root /var/www/myapp/dist;
@@ -154,7 +154,7 @@ add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'" always;
 ```
 
-## 完整配置示例
+## 完整設定示例
 
 ```nginx
 server {

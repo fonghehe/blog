@@ -1,6 +1,6 @@
 ---
-title: "Node.js 24 LTS 新特性"
-date: 2025-11-20 10:00:00
+title: "Node.js 24 LTS 生產實踐：升级後的效能對比與踩坑記錄"
+date: 2025-11-20 17:54:31
 tags:
   - Node.js
 readingTime: 2

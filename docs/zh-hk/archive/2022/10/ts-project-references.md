@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 項目引用"
+title: "TypeScript 項目引用：落地路徑與實戰建議"
 date: 2022-10-28 10:22:28
 tags:
   - TypeScript
@@ -31,7 +31,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 內部原理
 
@@ -97,7 +97,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 這段代碼展示了基本的使用方式。實際項目中還需要考慮錯誤處理和邊界條件。
 
-## 性能對比
+## 效能對比
 
 在這個基礎上，我們可以進一步優化：
 

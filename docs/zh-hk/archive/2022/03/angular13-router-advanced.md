@@ -4,13 +4,13 @@ date: 2022-03-02 14:50:11
 tags:
   - Angular
 readingTime: 2
-description: "Angular Router 是 Angular 生態中最成熟的路由方案之一。這篇文章深入講解懶加載配置、路由守衞的各種形式以及大型應用的路由組織模式，適合已經熟悉基礎 Angular 路由的開發者。"
+description: "Angular Router 是 Angular 生態中最成熟的路由方案之一。這篇文章深入講解懶加載設定、路由守衞的各種形式以及大型應用的路由組織模式，適合已經熟悉基礎 Angular 路由的開發者。"
 wordCount: 239
 ---
 
 Angular Router 是 Angular 生態中最成熟的路由方案之一。這篇文章深入講解懶加載配置、路由守衞的各種形式以及大型應用的路由組織模式，適合已經熟悉基礎 Angular 路由的開發者。
 
-## 懶加載配置
+## 懶加載設定
 
 ```typescript
 // app-routing.module.ts
@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: "admin",
-    // 只有滿足 canLoad 才會加載模塊代碼
+    // 隻有滿足 canLoad 才會加載模塊代碼
     canLoad: [AuthGuard],
     loadChildren: () =>
       import("./admin/admin.module").then((m) => m.AdminModule),
@@ -38,7 +38,7 @@ const routes: Routes = [
 **canLoad vs canActivate 的區別**：
 
 - `canActivate`：每次訪問路由時檢查，但代碼已下載
-- `canLoad`：阻止懶加載模塊的代碼**下載**，更徹底的權限控制
+- `canLoad`：阻止懶加載模塊的代碼**下載**，更徹底的權限控製
 
 ## 路由守衞類型
 
@@ -129,7 +129,7 @@ export class ProductDetailComponent {
 })
 export class AppModule {}
 
-// 自定義預加載策略：只預加載標記了 data.preload: true 的模塊
+// 自定義預加載策略：隻預加載標記了 data.preload: true 的模塊
 @Injectable({ providedIn: 'root' })
 export class SelectivePreloadingStrategy implements PreloadingStrategy {
   preload(route: Route, load: () => Observable<any>): Observable<any> {
@@ -200,4 +200,4 @@ export class AppComponent {
 
 ## 總結
 
-Angular Router 的功能遠不止基礎路由配置。`canLoad` 在權限控制上比 `canActivate` 更徹底；`Resolve` 守衞確保組件渲染時數據已就緒；自定義預加載策略能精確控制模塊下載時機。合理使用這些特性，可以讓大型 Angular 應用的路由層既安全又高效。
+Angular Router 的功能遠不止基礎路由設定。`canLoad` 在權限控製上比 `canActivate` 更徹底；`Resolve` 守衞確保組件渲染時數據已就緒；自定義預加載策略能精確控製模塊下載時機。合理使用這些特性，可以讓大型 Angular 應用的路由層既安全又高效。

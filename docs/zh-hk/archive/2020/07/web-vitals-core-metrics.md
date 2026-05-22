@@ -1,14 +1,14 @@
 ---
-title: "Web Vitals 核心性能指標詳解"
+title: "Web Vitals 核心效能指標詳解：實踐方法與治理思路"
 date: 2020-07-24 10:29:01
 tags:
   - 性能優化
 readingTime: 2
-description: "關於Web Vitals 核心性能指標詳解，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於Web Vitals 核心效能指標詳解，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 342
 ---
 
-關於Web Vitals 核心性能指標詳解，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於Web Vitals 核心效能指標詳解，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 
@@ -92,7 +92,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 踩坑記錄
 
@@ -117,7 +117,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ## 小結
 
-- Web Vitals 核心性能指標詳解不是銀彈，需要根據項目規模和技術棧選擇
+- Web Vitals 核心效能指標詳解不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要
 - 生產環境使用前務必做好兼容性驗證
 - 團隊協作中約定和文檔比技術本身更重要

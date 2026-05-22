@@ -1,6 +1,6 @@
 ---
-title: "CSS @starting-style"
-date: 2024-10-31 10:00:00
+title: "CSS @starting-style：落地路徑與實戰建議"
+date: 2024-10-31 12:45:22
 tags:
   - CSS
 readingTime: 1

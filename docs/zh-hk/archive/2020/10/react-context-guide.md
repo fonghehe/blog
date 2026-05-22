@@ -1,5 +1,5 @@
 ---
-title: "React Context 使用指南"
+title: "React Context 使用指南：落地路徑與實戰建議"
 date: 2020-10-28 15:45:44
 tags:
   - React
@@ -140,6 +140,6 @@ function createHandler(options = {}) {
 ## 小結
 
 - 持續關注社區動態，及時更新技術方案
-- 性能優化需要基於實際數據，避免過度優化
+- 效能優化需要基於實際數據，避免過度優化
 - React Context 使用指南的核心在於理解底層原理，而非僅僅記住 API
 - 在實際項目中，選擇合適的方案比追求最新技術更重要

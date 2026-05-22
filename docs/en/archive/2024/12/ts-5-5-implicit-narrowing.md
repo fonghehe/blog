@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 5.5 Implicit Type Narrowing"
-date: 2024-12-11 10:00:00
+title: "TypeScript 5.5 Type Narrowing Practice: RealProject中TypeImprovements案例"
+date: 2024-12-11 15:45:22
 tags:
   - TypeScript
 readingTime: 2

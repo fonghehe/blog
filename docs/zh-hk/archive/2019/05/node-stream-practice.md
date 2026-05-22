@@ -1,14 +1,14 @@
 ---
-title: "Node.js Stream 實戰指南"
+title: "Node.js Stream 實戰指南：落地路徑與實戰建議"
 date: 2019-05-19 16:51:01
 tags:
   - Node.js
 readingTime: 6
-description: "Stream 是 Node.js 最核心的模塊之一，但很多開發者日常只用 `fs.readFile` 處理文件。當你需要處理大文件、構建管道式數據處理、或者實現高效 I/O 時，Stream 是不可或缺的工具。"
+description: "Stream 是 Node.js 最核心的模塊之一，但很多開發者日常隻用 `fs.readFile` 處理檔案。當你需要處理大檔案、構建管道式數據處理、或者實現高效 I/O 時，Stream 是不可或缺的工具。"
 wordCount: 441
 ---
 
-Stream 是 Node.js 最核心的模塊之一，但很多開發者日常只用 `fs.readFile` 處理文件。當你需要處理大文件、構建管道式數據處理、或者實現高效 I/O 時，Stream 是不可或缺的工具。
+Stream 是 Node.js 最核心的模塊之一，但很多開發者日常隻用 `fs.readFile` 處理檔案。當你需要處理大檔案、構建管道式數據處理、或者實現高效 I/O 時，Stream 是不可或缺的工具。
 
 ## 為什麼需要 Stream
 
@@ -23,8 +23,8 @@ fs.readFile('./huge-log.txt', (err, data) => {
   console.log(data.length)
 })
 
-// 問題：2GB 文件需要 2GB 內存，很可能 OOM
-// 即使 Node.js 的 Buffer 有 2GB 限制（v12+ 默認 4GB），效率也很低
+// 問題：2GB 檔案需要 2GB 內存，很可能 OOM
+// 即使 Node.js 的 Buffer 有 2GB 限製（v12+ 默認 4GB），效率也很低
 ```
 
 ```javascript
@@ -39,7 +39,7 @@ const stream = fs.createReadStream('./huge-log.txt', {
 let totalSize = 0
 stream.on('data', (chunk) => {
   totalSize += chunk.length
-  // 每次只處理 64KB，內存佔用極低
+  // 每次隻處理 64KB，內存佔用極低
 })
 
 stream.on('end', () => {
@@ -269,7 +269,7 @@ parser.end()
 
 ## pipe 和 pipeline
 
-`pipe()` 是 Stream 的核心機制，將可讀流連接到可寫流。
+`pipe()` 是 Stream 的核心機製，將可讀流連接到可寫流。
 
 ```javascript
 const fs = require('fs')
@@ -332,7 +332,7 @@ pipeline(
 
 ## 背壓（Backpressure）
 
-背壓是 Stream 處理速度不匹配時的自動調節機制。
+背壓是 Stream 處理速度不匹配時的自動調節機製。
 
 ```javascript
 const fs = require('fs')
@@ -368,7 +368,7 @@ readable.on('data', (chunk) => {
 readable.pipe(writable)
 ```
 
-## 實戰：大文件逐行處理
+## 實戰：大檔案逐行處理
 
 處理大型 CSV 或日誌文件是最常見的 Stream 場景。
 
@@ -595,7 +595,7 @@ app.get('/logs/search', (req, res) => {
 
   res.setHeader('Content-Type', 'text/plain; charset=utf-8')
 
-  // 邊讀取邊搜索邊返回，不需要把整個日誌文件加載到內存
+  // 邊讀取邊搜尋邊返回，不需要把整個日誌檔案加載到內存
   class KeywordFilter extends Transform {
     _transform(chunk, encoding, callback) {
       const lines = chunk.toString().split('\n')
@@ -672,7 +672,7 @@ function processWithStream(filePath) {
 
 ## 小結
 
-- Stream 把數據分成小塊處理，內存佔用從 O(n) 降到 O(1)，是處理大文件的首選方案
+- Stream 把數據分成小塊處理，內存佔用從 O(n) 降到 O(1)，是處理大檔案的首選方案
 - 四種類型：Readable（可讀）、Writable（可寫）、Duplex（雙工）、Transform（轉換）
 - `pipe()` 自動處理背壓，推薦始終用 pipe 而非手動監聽 data 事件
 - Node.js 10+ 的 `pipeline()` 更安全，自動處理錯誤和資源清理

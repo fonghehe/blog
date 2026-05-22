@@ -5,11 +5,11 @@ tags:
   - Angular
   - 前端工程化
 readingTime: 2
-description: "Nx 是專為 Monorepo 設計的構建系統，對 Angular 有一流支持。它解決了大型前端項目的兩個核心問題：**代碼共享**（多個應用共用同一套組件/工具庫）和**構建速度**（只重新構建受影響的部分）。這篇文章介紹 Nx + Angular 的實踐方案。"
+description: "Nx 是專為 Monorepo 設計的構建系統，對 Angular 有一流支援。它解決了大型前端項目的兩個核心問題：**代碼共享**（多個應用共用同一套組件/工具庫）和**構建速度**（隻重新構建受影響的部分）。這篇文章介紹 Nx + Angular 的實踐方案。"
 wordCount: 340
 ---
 
-Nx 是專為 Monorepo 設計的構建系統，對 Angular 有一流支持。它解決了大型前端項目的兩個核心問題：**代碼共享**（多個應用共用同一套組件/工具庫）和**構建速度**（只重新構建受影響的部分）。這篇文章介紹 Nx + Angular 的實踐方案。
+Nx 是專為 Monorepo 設計的構建系統，對 Angular 有一流支援。它解決了大型前端項目的兩個核心問題：**代碼共享**（多個應用共用同一套組件/工具庫）和**構建速度**（隻重新構建受影響的部分）。這篇文章介紹 Nx + Angular 的實踐方案。
 
 ## 創建 Nx Angular 工作區
 
@@ -26,7 +26,7 @@ ng add @nrwl/angular
 ```
 my-org/
 ├── apps/
-│   ├── admin/           # 管理後台應用
+│   ├── admin/           # 管理後臺應用
 │   └── customer/        # 用户端應用
 ├── libs/
 │   ├── shared/
@@ -81,16 +81,16 @@ export class AppModule {}
 }
 ```
 
-## Affected 命令：只構建受影響的項目
+## Affected 命令：隻構建受影響的項目
 
 ```bash
-# 只測試受當前變更影響的項目（對比 main 分支）
+# 隻測試受當前變更影響的項目（對比 main 分支）
 nx affected:test --base=main
 
-# 只構建受影響的應用
+# 隻構建受影響的應用
 nx affected:build --base=main
 
-# 只 lint 受影響的項目
+# 隻 lint 受影響的項目
 nx affected:lint --base=main
 
 # 查看依賴圖，瞭解改動影響範圍
@@ -143,7 +143,7 @@ export default async function(tree: Tree, options: FeatureGeneratorSchema) {
 
 ## 模塊邊界約束
 
-Nx 可以通過 ESLint 規則強制庫的依賴方向：
+Nx 可以通過 ESLint 規則強製庫的依賴方向：
 
 ```json
 // .eslintrc.json
@@ -178,4 +178,4 @@ Nx 可以通過 ESLint 規則強制庫的依賴方向：
 
 ## 總結
 
-Nx + Angular 的組合在大型項目中優勢明顯：`affected` 命令讓 CI 時間隨項目增長保持線性而非指數級增長；共享庫通過 TypeScript path alias 實現零配置複用；模塊邊界約束防止循環依賴和架構腐化。如果你的團隊維護 2 個以上 Angular 應用並有共享代碼的需求，Nx Monorepo 是值得投入的選項。
+Nx + Angular 的組合在大型項目中優勢明顯：`affected` 命令讓 CI 時間隨項目增長保持線性而非指數級增長；共享庫通過 TypeScript path alias 實現零設定複用；模塊邊界約束防止循環依賴和架構腐化。如果你的團隊維護 2 個以上 Angular 應用並有共享代碼的需求，Nx Monorepo 是值得投入的選項。

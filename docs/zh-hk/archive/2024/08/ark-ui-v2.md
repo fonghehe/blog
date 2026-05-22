@@ -1,6 +1,6 @@
 ---
-title: "Ark UI v2 headless 組件庫"
-date: 2024-08-23 10:00:00
+title: "Ark UI v2 headless 組件庫：落地路徑與實戰建議"
+date: 2024-08-23 12:17:54
 tags:
   - CSS
 readingTime: 2
@@ -37,7 +37,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 深度解析
 

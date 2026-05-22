@@ -22,7 +22,7 @@ const app = express();
 // X-Content-Type-Options, X-Frame-Options, HSTS, CSP 等
 app.use(helmet());
 
-// 或者按需配置
+// 或者按需設定
 app.use(
   helmet.contentSecurityPolicy({
     directives: {

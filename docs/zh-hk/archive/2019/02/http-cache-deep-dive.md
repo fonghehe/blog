@@ -4,7 +4,7 @@ date: 2019-02-23 10:46:09
 tags:
   - 前端
 readingTime: 2
-description: "HTTP 緩存是前端性能優化的重要一環，但很多人對強緩存和協商緩存的區別不清楚，導致要麼緩存不生效，要麼更新不及時。"
+description: "HTTP 緩存是前端效能優化的重要一環，但很多人對強緩存和協商緩存的區別不清楚，導致要麼緩存不生效，要麼更新不及時。"
 wordCount: 225
 ---
 
@@ -31,7 +31,7 @@ HTTP 緩存是前端性能優化的重要一環，但很多人對強緩存和協
 Cache-Control: max-age=31536000  # 緩存 1 年（秒）
 Cache-Control: no-cache          # 不使用強緩存（還是會協商）
 Cache-Control: no-store          # 完全不緩存
-Cache-Control: private           # 只能瀏覽器緩存，不能 CDN 緩存
+Cache-Control: private           # 隻能瀏覽器緩存，不能 CDN 緩存
 Cache-Control: public            # 可以 CDN 緩存
 Expires: Wed, 23 Feb 2020 00:00:00 GMT  # 老式寫法，以服務器時間為準
 ```
@@ -60,16 +60,16 @@ HTTP/1.1 200 OK + 新資源
 ## 靜態資源緩存策略
 
 ```nginx
-# nginx 配置示例
+# nginx 設定示例
 
-# HTML：不緩存（用協商緩存，保證能拿到最新入口文件）
+# HTML：不緩存（用協商緩存，保證能拿到最新入口檔案）
 location ~* \.html$ {
   add_header Cache-Control "no-cache";
   add_header ETag "";
 }
 
 # 帶 hash 的 JS/CSS：長期緩存
-# （內容變了 hash 變，文件名變，自動更新）
+# （內容變了 hash 變，檔案名變，自動更新）
 location ~* \.(js|css)$ {
   add_header Cache-Control "public, max-age=31536000, immutable";
 }
@@ -85,7 +85,7 @@ location ~* \.(woff2|woff|ttf)$ {
 }
 ```
 
-## Webpack 配置 Hash
+## Webpack 設定 Hash
 
 ```javascript
 // webpack.config.js（生產）
@@ -95,7 +95,7 @@ module.exports = {
     chunkFilename: "[name].[contenthash:8].chunk.js",
   },
   optimization: {
-    // 確保 vendor 的 hash 穩定（只有依賴變化才變）
+    // 確保 vendor 的 hash 穩定（隻有依賴變化才變）
     moduleIds: "hashed",
     runtimeChunk: "single", // runtime 單獨打包，避免影響其他 chunk 的 hash
     splitChunks: {
@@ -115,12 +115,12 @@ module.exports = {
 
 - `index.html`：服務器 `no-cache`，每次驗證
 - `vendors.xxx.js`：第三方庫變化才重新下載（長期緩存）
-- `app.xxx.js`：業務代碼，改了 hash 變，強制更新
+- `app.xxx.js`：業務代碼，改了 hash 變，強製更新
 
 ## Service Worker 緩存
 
 ```javascript
-// sw.js：更精細的緩存控制
+// sw.js：更精細的緩存控製
 const CACHE_NAME = "v1";
 const STATIC_ASSETS = ["/app.js", "/styles.css"];
 

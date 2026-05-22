@@ -1,5 +1,5 @@
 ---
-title: "フロントエンド監視：Sentryの導入実践"
+title: "Sentry 前端错误监控接入：从 SDK 配置到 SourceMap 上传"
 date: 2019-10-24 11:00:27
 tags:
   - パフォーマンス最適化

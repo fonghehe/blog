@@ -3,28 +3,28 @@ title: "CSSスクロール駆動アニメーションの探索"
 date: 2019-12-16 11:28:52
 tags:
   - CSS
-readingTime: 5
-description: "滚动驱动动画是近年来 Web 动画领域的一个重要方向。CSS Scroll-linked Animations 规范虽然还在草案阶段，但它的理念已经可以通过 Intersection Observer API 和 scroll 事件在生产环境中实现。这篇文章从规范草案出发，结合实际案例，探讨如何实现滚动驱动的动画效果。"
-wordCount: 430
+readingTime: 6
+description: "スクロール駆動アニメーションは近年の Web アニメーション分野における重要な方向性です。CSS Scroll-linked Animations 仕様はまだ草案段階ですが、その概念は Intersection Observer API と scroll イベントを使用して本番環境で実装可能です。この記事では仕様草案から出発し、実際のケースを交えてスクロール駆動アニメーションの実装方法を探ります。"
+wordCount: 737
 ---
 
-滚动驱动动画是近年来 Web 动画领域的一个重要方向。CSS Scroll-linked Animations 规范虽然还在草案阶段，但它的理念已经可以通过 Intersection Observer API 和 scroll 事件在生产环境中实现。这篇文章从规范草案出发，结合实际案例，探讨如何实现滚动驱动的动画效果。
+スクロール駆動アニメーションは、近年の Web アニメーション分野における重要なトレンドです。CSS Scroll-linked Animations の仕様はまだ草案の段階ですが、そのアイデアは Intersection Observer API や scroll イベントを使って本番環境で実装することがすでに可能です。この記事では仕様草案を出発点としながら、実際のケースを交えてスクロール駆動アニメーションの実装方法を探っていきます。
 
 ## scroll-timeline 仕様草案
 
-CSS Scroll-linked Animations 规范定义了 `scroll-timeline` 和 `animation-timeline`，让动画与滚动位置绑定而非时间：
+CSS Scroll-linked Animations 仕様では `scroll-timeline` と `animation-timeline` が定義されており、アニメーションを時間ではなくスクロール位置にバインドします：
 
 ```css
-/* 规范草案语法（浏览器尚未原生支持） */
+/* 規範草案の構文（ブラウザはまだネイティブ対応していない） */
 
-/* 定义一个基于滚动的 timeline */
+/* スクロールベースのタイムラインを定義 */
 @scroll-timeline scroll-timeline-1 {
-  source: auto;       /* 滚动容器，默认为 document */
-  orientation: block; /* block = 垂直滚动，inline = 水平滚动 */
-  scroll-offsets: 0%, 100%; /* 滚动范围 */
+  source: auto;       /* スクロールコンテナ、デフォルトは document */
+  orientation: block; /* block = 垂直スクロール、inline = 水平スクロール */
+  scroll-offsets: 0%, 100%; /* スクロール範囲 */
 }
 
-/* 将动画绑定到 scroll-timeline */
+/* アニメーションを scroll-timeline にバインド */
 .progress-bar {
   animation: grow-progress;
   animation-timeline: scroll-timeline-1;
@@ -36,30 +36,30 @@ CSS Scroll-linked Animations 规范定义了 `scroll-timeline` 和 `animation-ti
 }
 ```
 
-虽然原生支持还远，但我们可以用 JavaScript 实现相同效果。以下是两种主流方案。
+ネイティブサポートはまだ先ですが、JavaScript で同じ効果を実現できます。以下に2つの主流な方法を紹介します。
 
 ## 方法1：Intersection Observer
 
-Intersection Observer 可以高效检测元素进入/离开视口，非常适合实现"滚入动画"：
+Intersection Observer は要素がビューポートに入る/出るを効率的に検出でき、「スクロールインアニメーション」の実装に最適です：
 
 ```html
-<!-- 典型场景：元素滚入视口时播放入场动画 -->
+<!-- 典型的なシナリオ：要素がビューポートに入ったときに登場アニメーションを再生 -->
 <div class="scroll-animate-section">
-  <div class="animate-item" data-animate="fade-up">内容块 1</div>
-  <div class="animate-item" data-animate="fade-up">内容块 2</div>
-  <div class="animate-item" data-animate="fade-left">内容块 3</div>
-  <div class="animate-item" data-animate="fade-right">内容块 4</div>
+  <div class="animate-item" data-animate="fade-up">コンテンツ 1</div>
+  <div class="animate-item" data-animate="fade-up">コンテンツ 2</div>
+  <div class="animate-item" data-animate="fade-left">コンテンツ 3</div>
+  <div class="animate-item" data-animate="fade-right">コンテンツ 4</div>
 </div>
 ```
 
 ```css
-/* 基础样式：隐藏待动画元素 */
+/* 基本スタイル：アニメーション対象要素を非表示 */
 .animate-item {
   opacity: 0;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* 各种入场动画的初始状态 */
+/* 各種登場アニメーションの初期状態 */
 .animate-item[data-animate="fade-up"] {
   transform: translateY(40px);
 }
@@ -72,13 +72,13 @@ Intersection Observer 可以高效检测元素进入/离开视口，非常适合
   transform: translateX(40px);
 }
 
-/* 动画触发后的最终状态 */
+/* アニメーション発動後の最終状態 */
 .animate-item.is-visible {
   opacity: 1;
   transform: translate(0, 0);
 }
 
-/* 支持交错动画 */
+/* インターレースアニメーション対応 */
 .animate-item:nth-child(1) { transition-delay: 0ms; }
 .animate-item:nth-child(2) { transition-delay: 100ms; }
 .animate-item:nth-child(3) { transition-delay: 200ms; }
@@ -86,13 +86,13 @@ Intersection Observer 可以高效检测元素进入/离开视口，非常适合
 ```
 
 ```javascript
-// Intersection Observer 实现
+// Intersection Observer 実装
 class ScrollAnimator {
   constructor(options = {}) {
     this.options = {
-      threshold: options.threshold || 0.15,  // 元素 15% 进入视口时触发
+      threshold: options.threshold || 0.15,  // 要素が 15% ビューポートに入ったら発動
       rootMargin: options.rootMargin || '0px',
-      once: options.once !== false,  // 是否只触发一次
+      once: options.once !== false,  // 一度だけ発動するかどうか
       ...options
     }
 
@@ -116,12 +116,12 @@ class ScrollAnimator {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible')
 
-        // 只触发一次时，取消观察
+        // 一度だけの場合は監視を解除
         if (this.options.once) {
           this.observer.unobserve(entry.target)
         }
       } else if (!this.options.once) {
-        // 反复触发时，离开视口移除类
+        // 繰り返し発動の場合は、ビューポートを離れたらクラスを削除
         entry.target.classList.remove('is-visible')
       }
     })
@@ -132,17 +132,17 @@ class ScrollAnimator {
   }
 }
 
-// 使用
+// 使用例
 const animator = new ScrollAnimator({ threshold: 0.2 })
 animator.observe('.animate-item')
 ```
 
 ## 方法2：スクロール位置ベースのプログレスアニメーション
 
-对于进度条、视差滚动等需要与滚动位置精确绑定的动画，需要监听 scroll 事件：
+プログレスバーやパララックススクロールなど、スクロール位置と正確にバインドする必要があるアニメーションでは、scroll イベントを監視します：
 
 ```css
-/* 进度条 */
+/* 進捗バー */
 .reading-progress {
   position: fixed;
   top: 0;
@@ -156,7 +156,7 @@ animator.observe('.animate-item')
   will-change: transform;
 }
 
-/* 视差容器 */
+/* パララックスコンテナ */
 .parallax-container {
   position: relative;
   height: 100vh;
@@ -176,7 +176,7 @@ animator.observe('.animate-item')
 ```
 
 ```javascript
-// 使用 requestAnimationFrame 优化滚动性能
+// requestAnimationFrame を使用してスクロールパフォーマンスを最適化
 class ScrollProgress {
   constructor() {
     this.ticking = false
@@ -193,28 +193,28 @@ class ScrollProgress {
     }, { passive: true })
   }
 
-  // 获取页面滚动进度 (0-1)
+  // ページのスクロール進捗を取得 (0-1)
   getPageProgress() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
     return Math.min(scrollTop / scrollHeight, 1)
   }
 
-  // 获取元素在视口中的可见比例 (0-1)
+  // 要素のビューポート内での可視比率を取得 (0-1)
   getElementVisibility(element) {
     const rect = element.getBoundingClientRect()
     const windowHeight = window.innerHeight
 
     if (rect.top >= windowHeight || rect.bottom <= 0) {
-      return 0 // 完全不可见
+      return 0 // 完全に非表示
     }
 
     const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0)
     return Math.min(visibleHeight / rect.height, 1)
   }
 
-  // 获取元素相对于视口的滚动进度
-  // 元素顶部接触视口底部 = 0，元素底部接触视口顶部 = 1
+  // 要素のビューポートに対するスクロール進捗を取得
+  // 要素の上部がビューポート下部に触れた = 0、要素の下部がビューポート上部に触れた = 1
   getElementProgress(element) {
     const rect = element.getBoundingClientRect()
     const windowHeight = window.innerHeight
@@ -234,10 +234,10 @@ class ScrollProgress {
   }
 }
 
-// 使用
+// 使用例
 const scrollProgress = new ScrollProgress()
 
-// 阅读进度条
+// 読書進捗バー
 const progressBar = document.querySelector('.reading-progress')
 scrollProgress.addCallback((progress) => {
   progressBar.style.transform = `scaleX(${progress})`
@@ -246,13 +246,13 @@ scrollProgress.addCallback((progress) => {
 
 ## Reactでのラッピング
 
-在 React 项目中，我们将滚动动画封装为 Hook：
+React プロジェクトでは、スクロールアニメーションを Hook としてカプセル化します：
 
 ```jsx
 {% raw %}
 import React, { useEffect, useRef, useState } from 'react'
 
-// Hook：检测元素是否在视口中
+// Hook：要素がビューポート内にあるか検出
 function useInView(options = {}) {
   const ref = useRef(null)
   const [isInView, setIsInView] = useState(false)
@@ -279,7 +279,7 @@ function useInView(options = {}) {
   return [ref, isInView]
 }
 
-// Hook：获取滚动进度
+// Hook：スクロール進捗を取得
 function useScrollProgress() {
   const [progress, setProgress] = useState(0)
 
@@ -307,7 +307,7 @@ function useScrollProgress() {
   return progress
 }
 
-// Hook：视差滚动效果
+// Hook：パララックススクロール効果
 function useParallax(speed = 0.5) {
   const ref = useRef(null)
   const [offset, setOffset] = useState(0)
@@ -336,34 +336,34 @@ function useParallax(speed = 0.5) {
   return [ref, offset]
 }
 
-// 使用示例
+// 使用例
 function BlogPost() {
   const progress = useScrollProgress()
 
   return (
     <div>
-      {/* 阅读进度条 */}
+      {/* 読書進捗バー */}
       <div
         className="reading-progress"
         style={{ transform: `scaleX(${progress})` }}
       />
 
       <article>
-        <h1>文章标题</h1>
+        <h1>記事タイトル</h1>
 
-        {/* 滚入动画 */}
+        {/* スクロールインアニメーション */}
         <FadeInSection>
-          <p>第一段内容...</p>
+          <p>最初の段落...</p>
         </FadeInSection>
 
-        {/* 视差图片 */}
+        {/* パララックス画像 */}
         <ParallaxImage
           src="/images/hero.jpg"
           speed={0.3}
         />
 
         <FadeInSection>
-          <p>第二段内容...</p>
+          <p>2番目の段落...</p>
         </FadeInSection>
       </article>
     </div>
@@ -418,16 +418,16 @@ function ParallaxImage({ src, speed = 0.3 }) {
 
 ## パフォーマンス上の注意点
 
-滚动事件处理不当会严重影响性能，以下是关键要点：
+スクロールイベントの処理を適切に行わないと、パフォーマンスに深刻な影響を与えます。以下に重要なポイントを示します：
 
 ```javascript
-// 错误做法：直接在 scroll 事件中执行 DOM 操作
+// 誤った方法：scroll イベント内で直接 DOM 操作を実行
 window.addEventListener('scroll', () => {
-  // 每次 scroll 都触发，频率可达每秒几十上百次
+  // スクロールごとに発火し、毎秒数十〜数百回の頻度になる
   document.querySelector('.progress').style.width = getProgress() + '%'
 })
 
-// 正确做法 1：requestAnimationFrame 节流
+// 正しい方法 1：requestAnimationFrame によるスロットル
 let ticking = false
 window.addEventListener('scroll', () => {
   if (!ticking) {
@@ -439,23 +439,23 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true })
 
-// 正确做法 2：Intersection Observer 替代 scroll 监听
-// 能用 Intersection Observer 解决的场景，就不要用 scroll 事件
+// 正しい方法 2：Intersection Observer で scroll 監視を代替
+// Intersection Observer で解決できる場合は、scroll イベントを使わない
 
-// 正确做法 3：使用 CSS 属性 will-change 提示浏览器优化
+// 正しい方法 3：CSS プロパティ will-change でブラウザに最適化を指示
 .animate-element {
   will-change: transform, opacity;
-  /* 告诉浏览器这两个属性会变化，提前创建合成层 */
+  /* ブラウザにこれらのプロパティが変更されることを伝え、事前に合成レイヤーを作成 */
 }
 
-// 正确做法 4：使用 CSS transform 代替 top/left
-/* 错误：触发 layout 和 paint */
+// 正しい方法 4：CSS transform で top/left を代替
+/* 誤り：layout と paint を誘発 */
 .moving-element {
   top: 0;
   transition: top 0.3s;
 }
 
-/* 正确：只触发 composite */
+/* 正しい：composite のみを誘発 */
 .moving-element {
   transform: translateY(0);
   transition: transform 0.3s;
@@ -464,9 +464,9 @@ window.addEventListener('scroll', () => {
 
 ## まとめ
 
-- CSS Scroll-linked Animations 规范还在草案阶段，但理念先进，值得持续关注
-- Intersection Observer 是实现"滚入动画"的最佳方案，性能优于 scroll 事件
-- 基于滚动位置的进度动画需要 scroll 事件 + requestAnimationFrame 节流
-- React 中封装为 useInView、useScrollProgress、useParallax 等 Hook，复用性好
-- 性能关键：passive 事件监听、requestAnimationFrame 节流、transform 代替 top/left、will-change 提示
-- 能用 Intersection Observer 解决的就不用 scroll 事件，能用 CSS transform 的就不用 layout 属性
+- CSS Scroll-linked Animations 仕様はまだ草案段階だが、先進的なコンセプトであり、引き続き注目に値する
+- Intersection Observer は「スクロールインアニメーション」を実現する最適な方法で、scroll イベントよりもパフォーマンスが優れている
+- スクロール位置ベースの進捗アニメーションには、scroll イベント + requestAnimationFrame スロットルが必要
+- React では useInView、useScrollProgress、useParallax などの Hook としてカプセル化し、再利用性を高める
+- パフォーマンスの鍵：passive イベントリスナー、requestAnimationFrame スロットル、transform での top/left 代替、will-change の指定
+- Intersection Observer で解決できる場合は scroll イベントを使わず、CSS transform で実現できる場合は layout プロパティを使わない

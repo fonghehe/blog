@@ -1,21 +1,21 @@
 ---
-title: "Vue 自定義指令開發"
+title: "Vue 自定義指令開發：落地路徑與實戰建議"
 date: 2018-03-22 09:45:46
 tags:
   - Vue
 readingTime: 2
-description: "Vue 自定義指令可以直接操作 DOM，適合封裝那些需要直接訪問 DOM 元素的邏輯。比如自動聚焦、權限控制、圖片懶加載等。"
+description: "Vue 自定義指令可以直接操作 DOM，適合封裝那些需要直接訪問 DOM 元素的邏輯。比如自動聚焦、權限控製、圖片懶加載等。"
 wordCount: 269
 ---
 
-Vue 自定義指令可以直接操作 DOM，適合封裝那些需要直接訪問 DOM 元素的邏輯。比如自動聚焦、權限控制、圖片懶加載等。
+Vue 自定義指令可以直接操作 DOM，適合封裝那些需要直接訪問 DOM 元素的邏輯。比如自動聚焦、權限控製、圖片懶加載等。
 
 ## 指令的生命週期鈎子
 
 ```javascript
 Vue.directive("my-directive", {
   bind(el, binding, vnode) {
-    // 指令綁定到元素時調用（只調用一次）
+    // 指令綁定到元素時調用（隻調用一次）
     // 此時元素可能還沒插入 DOM
   },
   inserted(el, binding, vnode) {
@@ -30,7 +30,7 @@ Vue.directive("my-directive", {
     // 組件和子組件 VNode 都更新後調用
   },
   unbind(el, binding, vnode) {
-    // 指令從元素解綁時調用（只調用一次）
+    // 指令從元素解綁時調用（隻調用一次）
     // 清理工作在這裏做
   },
 });
@@ -56,7 +56,7 @@ Vue.directive("focus", {
 <el-input v-focus placeholder="搜索" />
 ```
 
-## 實戰 2：權限控制
+## 實戰 2：權限控製
 
 根據用户權限決定是否渲染元素：
 
@@ -88,7 +88,7 @@ Vue.directive("permission", permissionDirective);
 ```vue
 <template>
   <div>
-    <!-- 只有 admin 能看到 -->
+    <!-- 隻有 admin 能看到 -->
     <el-button v-permission="'admin'" type="danger">刪除</el-button>
 
     <!-- admin 或 editor 都能看到 -->
@@ -214,4 +214,4 @@ export default {
 
 - 記得在 `unbind` 裏清理事件監聽器、IntersectionObserver 等資源
 - 優先考慮用組件或 mixin 實現功能，指令是補充手段
-- 好用的指令：權限控制、懶加載、防重複點擊、點擊外部關閉
+- 好用的指令：權限控製、懶加載、防重複點擊、點擊外部關閉

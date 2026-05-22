@@ -1,6 +1,6 @@
 ---
 title: "Next.js 15: Caching Off by Default, PPR, and Turbopack Stable"
-date: 2024-11-25 10:00:00
+date: 2024-11-25 17:19:56
 tags:
   - React
 readingTime: 2

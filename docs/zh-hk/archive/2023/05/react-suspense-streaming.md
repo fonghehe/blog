@@ -1,5 +1,5 @@
 ---
-title: "React Suspense 流式渲染優化"
+title: "React Suspense 流式渲染優化：落地路徑與實戰建議"
 date: 2023-05-29 15:09:13
 tags:
   - React
@@ -87,7 +87,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 

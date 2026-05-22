@@ -1,6 +1,6 @@
 ---
-title: "Vite 6 Environment API 實戰"
-date: 2024-10-03 10:00:00
+title: "Vite 6 Environment API：统一開發與建置環境的新范式"
+date: 2024-10-03 15:17:54
 tags:
   - JavaScript
   - 工程化
@@ -94,7 +94,7 @@ const csvToJson = new Transform({
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
 實際項目中的用法會更復雜一些：
 

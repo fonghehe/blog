@@ -1,10 +1,10 @@
 ---
-title: "JavaScript 異步迭代器 for-await-of"
+title: "JavaScript 異步迭代器 for-await-of：落地路徑與實戰建議"
 date: 2019-08-21 17:03:21
 tags:
   - JavaScript
 readingTime: 4
-description: "ES2018 引入了異步迭代器（Async Iterator）和 `for-await-of` 語法，讓我們可以用同步的方式處理異步數據流。這個特性在處理分頁 API、WebSocket 消息、文件流等場景下非常有用。本文將從迭代器協議講起，深入理解異步迭代器的原理和實戰應用。"
+description: "ES2018 引入了異步迭代器（Async Iterator）和 `for-await-of` 語法，讓我們可以用同步的方式處理異步數據流。這個特性在處理分頁 API、WebSocket 消息、檔案流等場景下非常有用。本文將從迭代器協議講起，深入理解異步迭代器的原理和實戰應用。"
 wordCount: 584
 ---
 
@@ -225,7 +225,7 @@ async function handleChatMessages() {
 }
 ```
 
-## 實戰：文件逐行讀取
+## 實戰：檔案逐行讀取
 
 Node.js 中讀取大文件時，可以使用異步迭代器逐行處理，避免一次性加載到內存：
 
@@ -334,12 +334,12 @@ async function main() {
 |
 ------|-------------|-----------------|
 | 學習成本 | 低（原生語法） | 高（需要學習操作符） |
-| 背壓控制 | 消費者驅動（天然背壓） | 需要額外處理 |
+| 背壓控製 | 消費者驅動（天然背壓） | 需要額外處理 |
 | 操作符 | 需要手動實現 | 豐富的內置操作符 |
 | 可取消性 | break / return() | unsubscribe |
 | 適用場景 | 簡單異步迭代 | 複雜數據流處理 |
 
-## 瀏覽器兼容性
+## 瀏覽器相容性
 
 - Chrome 63+、Firefox 57+、Safari 12+、Node 10+
 - IE 不支持
@@ -351,5 +351,5 @@ async function main() {
 - `for-await-of` 提供了類似同步迭代的語法來處理異步數據流
 - `async function*` 是創建異步迭代器最簡潔的方式
 - 典型場景：分頁 API、WebSocket 消息流、文件逐行讀取
-- 異步迭代器天然支持背壓（backpressure），消費者按需拉取數據
+- 異步迭代器天然支援背壓（backpressure），消費者按需拉取數據
 - 與 RxJS 相比，學習成本更低，適合不需要複雜操作符的場景

@@ -1,5 +1,5 @@
 ---
-title: "tRPC v11 新特性"
+title: "tRPC v11 新特性：特性解讀與遷移建議"
 date: 2023-11-21 11:47:32
 tags:
   - 前端
@@ -93,7 +93,7 @@ function useIntersectionObserver(options = {}) {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能對比
+## 效能對比
 
 實際項目中的用法會更復雜一些：
 

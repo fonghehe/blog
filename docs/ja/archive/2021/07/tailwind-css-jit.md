@@ -4,41 +4,41 @@ date: 2021-07-14 16:44:41
 tags:
   - CSS
 
-readingTime: 2
-description: "Tailwind CSS 2.x 开始流行，3.0 的 JIT（Just-in-Time）模式彻底改变了使用体验。"
-wordCount: 342
+readingTime: 3
+description: "Tailwind CSS 2.x が普及し始め、3.0 の JIT（Just-in-Time）モードによって使用体験が根本的に変わりました。"
+wordCount: 569
 ---
 
-Tailwind CSS 2.x 开始流行，3.0 的 JIT（Just-in-Time）模式彻底改变了使用体验。
+Tailwind CSS 2.x が普及し始め、3.0 の JIT（Just-in-Time）モードによって使用体験が根本的に変わりました。
 
 ## なぜ Tailwind CSS が人気になっているか
 
-以前的前端：写 HTML → 写 CSS 类 → 写 CSS 规则（来回切换文件）
+以前のフロントエンド：HTML を書く → CSS クラスを書く → CSS ルールを書く（ファイルを往復）
 
-Tailwind：把样式写在 HTML 里，不需要切换文件
+Tailwind：HTML にスタイルを直接書く、ファイルを切り替える必要がない
 
 ```html
-<!-- 传统方式 -->
+<!-- 従来の方法 -->
 <div class="card">
   <h2 class="card-title">标题</h2>
 </div>
-<!-- 还需要去 CSS 文件定义 .card 和 .card-title -->
+<!-- CSS ファイルで .card と .card-title を定義する必要もある -->
 
 <!-- Tailwind -->
 <div class="rounded-lg border border-gray-200 p-4 shadow-sm">
   <h2 class="text-lg font-semibold text-gray-900">标题</h2>
 </div>
-<!-- 直接看 HTML 就知道样式 -->
+<!-- HTML を見ればスタイルがわかる -->
 ```
 
-## JIT 模式（3.0 核心特性）
+## JIT モード（3.0 の核心機能）
 
-之前的问题：Tailwind 的 CSS 文件很大（未使用的类很多），生产要用 PurgeCSS 清理。
+以前の問題点：Tailwind の CSS ファイルが大きい（未使用のクラスが多い）、本番では PurgeCSS で掃除する必要があった。
 
-JIT：根据源码按需生成 CSS，只生成用到的类，任意值也支持。
+JIT：ソースコードに基づいて CSS をオンデマンドで生成し、使用するクラスのみを生成、任意の値もサポート。
 
 ```bash
-# 安装
+# インストール
 npm install -D tailwindcss
 npx tailwindcss init
 ```
@@ -46,7 +46,7 @@ npx tailwindcss init
 ```javascript
 // tailwind.config.js
 module.exports = {
-  content: ["./src/**/*.{html,js,ts,jsx,tsx,vue}"], // 扫描范围
+  content: ["./src/**/*.{html,js,ts,jsx,tsx,vue}"], // スキャン範囲
   theme: {
     extend: {
       colors: {
@@ -69,10 +69,10 @@ module.exports = {
 ## 任意の値（JIT限定）
 
 ```html
-<!-- 之前：只能用预设的间距值 -->
+<!-- 以前：プリセットの間隔値のみ使用可能 -->
 <div class="mt-4 p-6">...</div>
 
-<!-- JIT：任意值用方括号 -->
+<!-- JIT：任意の値は角括弧で指定 -->
 <div class="mt-[13px] p-[22px] w-[calc(100%-2rem)]">...</div>
 <div class="bg-[#ff6b6b] text-[14px] top-[117px]">...</div>
 ```
@@ -81,7 +81,7 @@ module.exports = {
 
 ```vue
 <template>
-  <!-- 响应式：sm/md/lg 前缀 -->
+  <!-- レスポンシブ：sm/md/lg プレフィックス -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     <div
       v-for="product in products"
@@ -113,28 +113,28 @@ module.exports = {
 ## 動的クラス名（注意！）
 
 ```vue
-<!-- ❌ 动态拼接类名：JIT 无法扫描，不会生成对应 CSS -->
+<!-- ❌ 動的なクラス名の連結：JIT がスキャンできず、対応する CSS が生成されない -->
 <div :class="`text-${size}-lg`"></div>
 
-<!-- ✅ 完整类名：JIT 能识别 -->
+<!-- ✅ 完全なクラス名：JIT が認識可能 -->
 <div :class="size === 'large' ? 'text-2xl' : 'text-base'"></div>
 
-<!-- ✅ 或者用 safelist -->
+<!-- ✅ または safelist を使用 -->
 // tailwind.config.js module.exports = { safelist: ['text-red-500',
-'text-blue-500'] // 强制包含 }
+'text-blue-500'] // 強制的に含める }
 ```
 
 ## コンポーネント抽象化（重複回避）
 
 ```vue
-<!-- 方案 1：用 @apply 把常用组合抽成类（但官方不推荐过度使用）-->
+<!-- 方法 1：@apply でよく使う組み合わせをクラスに抽出（ただし公式は過度な使用を推奨しない） -->
 <style>
 .btn-primary {
   @apply rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700;
 }
 </style>
 
-<!-- 方案 2：封装 Vue 组件（推荐） -->
+<!-- 方法 2：Vue コンポーネントとしてカプセル化（推奨） -->
 <!-- components/BaseButton.vue -->
 <template>
   <button :class="buttonClasses" v-bind="$attrs">
@@ -169,26 +169,26 @@ const buttonClasses = computed(() => {
 </script>
 ```
 
-## 使用感想
+## 使用感
 
-用了 3 个月 Tailwind，优缺点都很明显：
+3 ヶ月間 Tailwind を使ってみて、メリットとデメリットはともに明確です：
 
-**优点：**
+**メリット：**
 
-- 不用起类名（最省脑力的点）
-- 响应式/hover/dark mode 极其方便
-- 团队统一：不会有人写"野生"CSS
+- クラス名を考えなくてよい（最も頭を使わなくて済む点）
+- レスポンシブ / hover / dark mode が非常に便利
+- チームで統一される：「野良」CSS が発生しない
 
-**缺点：**
+**デメリット：**
 
-- HTML 很长（class 一大串）
-- 学习成本（要记类名）
-- 不适合高度动态的样式
+- HTML が長くなる（class がずらりと並ぶ）
+- 学習コスト（クラス名を覚える必要がある）
+- 高度に動的なスタイルには不向き
 
-适合：后台管理系统、营销页、文档站。不适合：需要大量动画的展示型项目。
+適している：管理画面、マーケティングページ、ドキュメントサイト。適していない：大量のアニメーションが必要なショーケース系プロジェクト。
 
 ## まとめ
 
-- Tailwind 3.0 JIT：按需生成 CSS，支持任意值，无需 PurgeCSS
-- 动态类名要用完整字符串，否则 JIT 扫描不到
-- 组件封装 + Tailwind：复用靠组件，而不是靠 `@apply`
+- Tailwind 3.0 JIT：オンデマンドで CSS を生成、任意の値をサポート、PurgeCSS 不要
+- 動的クラス名は完全な文字列で記述すること、さもないと JIT がスキャンできない
+- コンポーネントのカプセル化 + Tailwind：再利用はコンポーネントで行い、`@apply` に頼らない

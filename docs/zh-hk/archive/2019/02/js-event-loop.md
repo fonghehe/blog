@@ -1,14 +1,14 @@
 ---
-title: "JavaScript Event Loop 機制詳解"
+title: "JavaScript Event Loop 機製詳解：落地路徑與實戰建議"
 date: 2019-02-15 17:14:02
 tags:
   - JavaScript
 readingTime: 2
-description: "關於JavaScript Event Loop 機制詳解，網上有不少文章但大多缺乏實戰經驗。本文結合真實項目，探討最佳實踐。"
+description: "關於JavaScript Event Loop 機製詳解，網上有不少文章但大多缺乏實戰經驗。本文結合真實項目，探討最佳實踐。"
 wordCount: 254
 ---
 
-關於JavaScript Event Loop 機制詳解，網上有不少文章但大多缺乏實戰經驗。本文結合真實項目，探討最佳實踐。
+關於JavaScript Event Loop 機製詳解，網上有不少文章但大多缺乏實戰經驗。本文結合真實項目，探討最佳實踐。
 
 ## 基礎用法
 

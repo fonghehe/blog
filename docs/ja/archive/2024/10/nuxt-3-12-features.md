@@ -1,6 +1,6 @@
 ---
 title: "Nuxt 3.12 新機能"
-date: 2024-10-22 10:00:00
+date: 2024-10-22 16:36:13
 tags:
   - Vue
 readingTime: 3

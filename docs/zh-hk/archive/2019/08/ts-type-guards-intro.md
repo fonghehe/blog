@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 類型守衞入門"
+title: "TypeScript 類型守衞入門：落地路徑與實戰建議"
 date: 2019-08-02 11:07:11
 tags:
   - TypeScript

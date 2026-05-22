@@ -5,24 +5,24 @@ tags:
   - 工程化
   - 前端工程化
 readingTime: 5
-description: '當一個前端項目的貢獻者超過 20 人、模塊超過 50 個時，"能跑就行"的工程結構會迅速崩塌。可維護性不是一種美德，而是一種生存策略。本文從實際的工程決策出發，討論 Monorepo 與 Multirepo 的真實取捨、依賴治理的核心矛盾、以及如何用自動化管線控制複雜度膨脹。'
+description: '當一個前端項目的貢獻者超過 20 人、模塊超過 50 個時，"能跑就行"的工程結構會迅速崩塌。可維護性不是一種美德，而是一種生存策略。本文從實際的工程決策出發，討論 Monorepo 與 Multirepo 的真實取捨、依賴治理的核心矛盾、以及如何用自動化管線控製複雜度膨脹。'
 wordCount: 1096
 ---
 
-當一個前端項目的貢獻者超過 20 人、模塊超過 50 個時，"能跑就行"的工程結構會迅速崩塌。可維護性不是一種美德，而是一種生存策略。本文從實際的工程決策出發，討論 Monorepo 與 Multirepo 的真實取捨、依賴治理的核心矛盾、以及如何用自動化管線控制複雜度膨脹。
+當一個前端項目的貢獻者超過 20 人、模塊超過 50 個時，"能跑就行"的工程結構會迅速崩塌。可維護性不是一種美德，而是一種生存策略。本文從實際的工程決策出發，討論 Monorepo 與 Multirepo 的真實取捨、依賴治理的核心矛盾、以及如何用自動化管線控製複雜度膨脹。
 
 ## Monorepo vs Multirepo：不是技術選型，是組織決策
 
 ### Monorepo 的真實收益
 
-Monorepo 的核心優勢不在於"方便"，而在於**強制統一**：
+Monorepo 的核心優勢不在於"方便"，而在於**強製統一**：
 
 ```
 monorepo/
 ├── packages/
 │   ├── ui-components/     # 共享 UI 庫
 │   ├── data-fetcher/      # 數據層抽象
-│   ├── app-admin/         # 管理後台
+│   ├── app-admin/         # 管理後臺
 │   └── app-portal/        # 用户門户
 ├── tooling/
 │   ├── eslint-config/
@@ -35,7 +35,7 @@ monorepo/
 這種結構帶來的關鍵能力：
 
 1. **原子化變更**：一個 PR 同時修改底層庫和上層應用，CI 立刻驗證兼容性
-2. **統一工具鏈**：ESLint、TypeScript、構建配置只維護一份，通過 `extends` 分發
+2. **統一工具鏈**：ESLint、TypeScript、構建設定隻維護一份，通過 `extends` 分發
 3. **跨包重構安全**：IDE 的"全局重命名"真正有效，不存在跨倉庫搜索的盲區
 
 ### Monorepo 的真實代價
@@ -69,7 +69,7 @@ monorepo/
 /tooling/                  @dx-team
 ```
 
-**代碼審查瓶頸**——當一個 PR 涉及 5 個包的改動時，誰來審？實踐證明，按"變更影響層"指定 reviewer 最有效：改了 tooling 必須有平台組審核，只改了 app 層則業務組自審。
+**代碼審查瓶頸**——當一個 PR 涉及 5 個包的改動時，誰來審？實踐證明，按"變更影響層"指定 reviewer 最有效：改了 tooling 必須有平臺組審核，隻改了 app 層則業務組自審。
 
 ### 什麼時候選 Multirepo
 
@@ -79,7 +79,7 @@ monorepo/
 - 團隊間沒有代碼共享需求
 - 組織結構高度分治，沒有統一的 DX 團隊
 
-但即使選擇 Multirepo，也必須建立**統一的腳手架和模板機制**，否則 3 年後你面對的將是 15 種不同的 ESLint 配置和 8 種構建方式。
+但即使選擇 Multirepo，也必須建立**統一的腳手架和範本機製**，否則 3 年後你面對的將是 15 種不同的 ESLint 設定和 8 種構建方式。
 
 ## 依賴治理：版本漂移是最大的隱形債務
 
@@ -97,7 +97,7 @@ monorepo/
 
 ```jsonc
 // pnpm-workspace.yaml + .npmrc
-// 使用 pnpm overrides 強制統一關鍵依賴版本
+// 使用 pnpm overrides 強製統一關鍵依賴版本
 {
   "pnpm": {
     "overrides": {
@@ -150,7 +150,7 @@ async function generateReport(): Promise<DependencyReport[]> {
 
 **策略三：自動升級 + 人工兜底**
 
-配置 Renovate Bot 自動提交升級 PR，但對 major version 變更強制人工審核：
+設定 Renovate Bot 自動提交升級 PR，但對 major version 變更強製人工審核：
 
 ```json
 {
@@ -191,7 +191,7 @@ async function generateReport(): Promise<DependencyReport[]> {
 
 關鍵原則：**越底層越快，越上層越全**。Pre-commit 必須在 3 秒內完成，否則開發者會繞過它。
 
-### 實際配置
+### 實際設定
 
 ```javascript
 // lint-staged.config.js
@@ -209,7 +209,7 @@ pnpm turbo run typecheck --filter='...[origin/main]'
 pnpm turbo run test --filter='...[origin/main]'
 ```
 
-注意 `--filter='...[origin/main]'` 只對自上次 push 以來變更的包執行檢查，而不是全量運行。
+注意 `--filter='...[origin/main]'` 隻對自上次 push 以來變更的包執行檢查，而不是全量運行。
 
 ### CI 的關鍵設計：分級流水線
 
@@ -235,15 +235,15 @@ jobs:
       - run: node scripts/check-bundle-size.js
 ```
 
-## 控制工程複雜度的核心心智模型
+## 控製工程複雜度的核心心智模型
 
 ### 複雜度的三個維度
 
 1. **代碼複雜度**：函數長度、嵌套深度、循環依賴——用 lint 規則機械化約束
 2. **架構複雜度**：模塊間依賴關係、數據流方向——用 dependency-cruiser 可視化並設置規則
-3. **流程複雜度**：發佈流程、回滾機制、分支策略——用文檔 + 自動化腳本固化
+3. **流程複雜度**：發佈流程、回滾機製、分支策略——用文檔 + 自動化腳本固化
 
-### dependency-cruiser 的實戰配置
+### dependency-cruiser 的實戰設定
 
 ```javascript
 // .dependency-cruiser.cjs

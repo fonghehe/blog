@@ -1,5 +1,5 @@
 ---
-title: "CSS position 定位與層疊上下文"
+title: "CSS position 定位與層疊上下文：落地路徑與實戰建議"
 date: 2018-07-05 10:44:49
 tags:
   - CSS
@@ -13,7 +13,7 @@ wordCount: 223
 ## 五種定位方式
 
 ```css
-/* static：默認，不參與 z-index 堆疊 */
+/* static：默認，不參與 z-index 堆積疊 */
 position: static;
 
 /* relative：相對自身原始位置偏移，不脱離文檔流 */
@@ -64,7 +64,7 @@ top: 60px; /* 滾動到距視口頂部 60px 時固定 */
 <div style="position: relative; z-index: 1;">
   <!-- 這裏有自己的層疊上下文 -->
   <div style="position: absolute; z-index: 999;">
-    <!-- z-index: 999 只在父級上下文內有效 -->
+    <!-- z-index: 999 隻在父級上下文內有效 -->
     <!-- 無法超過兄弟的 z-index: 2 -->
   </div>
 </div>
@@ -73,7 +73,7 @@ top: 60px; /* 滾動到距視口頂部 60px 時固定 */
 </div>
 ```
 
-**理解關鍵**：子元素的 `z-index` 只在父層疊上下文內比較，無法跳出。
+**理解關鍵**：子元素的 `z-index` 隻在父層疊上下文內比較，無法跳出。
 
 ## 常見陷阱：transform 創建層疊上下文
 

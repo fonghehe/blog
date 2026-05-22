@@ -1,10 +1,10 @@
 ---
-title: "Angular 19 RC 前瞻：增量水合與模板熱更新"
-date: 2024-10-23 10:00:00
+title: "Angular 19 RC 前瞻：增量水合與範本熱更新"
+date: 2024-10-23 11:37:14
 tags:
   - Angular
 readingTime: 3
-description: "Angular 19 RC 已經可以預覽，正式版預計 2024 年 11 月 19 日釋出。本文基於 RC 版本介紹最重要的新特性——**增量水合（Incremental Hydration）**和**模板 HMR**，以及路由級渲染模式的進一步完善。"
+description: "Angular 19 RC 已經可以預覽，正式版預計 2024 年 11 月 19 日釋出。本文基於 RC 版本介紹最重要的新特性——**增量水合（Incremental Hydration）**和**範本 HMR**，以及路由級渲染模式的進一步完善。"
 wordCount: 528
 ---
 
@@ -32,7 +32,7 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-在模板中使用 `@defer` 控制水合時機：
+在範本中使用 `@defer` 控製水合時機：
 
 ```html
 <!-- 服務端渲染，但客戶端僅在可見時才水合 -->
@@ -59,13 +59,13 @@ export const appConfig: ApplicationConfig = {
 增量水合的好處：
 
 - 服務端輸出完整 HTML（SEO 友好）
-- 客戶端只水合使用者可見/互動的部分
+- 客戶端隻水合使用者可見/互動的部分
 - 首次互動時間（TTI）大幅縮短
 - 對於內容密集型頁面（新聞、部落格）效果最明顯
 
-## 模板 HMR（Hot Module Replacement）
+## 範本 HMR（Hot Module Replacement）
 
-Angular 19 正式支援元件**模板**的熱更新——修改 `.html` 模板檔案後，無需重新整理整個頁面，只更新對應元件的檢視，保留應用狀態：
+Angular 19 正式支援元件**範本**的熱更新——修改 `.html` 範本檔案後，無需重新整理整個頁面，隻更新對應元件的檢視，保留應用狀態：
 
 ```bash
 ng serve
@@ -141,4 +141,4 @@ bootstrapApplication(AppComponent, {
 
 ## 總結
 
-Angular 19 的增量水合是 SSR 效能的重大提升，結合 `@defer` 語法，開發者可以精細控制哪些內容需要立即啟用、哪些延遲啟用。模板 HMR 則是對開發體驗的直接改善。如果你在關注 Angular 的 SSR 能力，Angular 19 值得認真評估。正式版 11 月 19 日釋出，RC 階段可以開始在測試環境中驗證。
+Angular 19 的增量水合是 SSR 效能的重大提升，結合 `@defer` 語法，開發者可以精細控製哪些內容需要立即啟用、哪些延遲啟用。範本 HMR 則是對開發體驗的直接改善。如果你在關注 Angular 的 SSR 能力，Angular 19 值得認真評估。正式版 11 月 19 日釋出，RC 階段可以開始在測試環境中驗證。

@@ -1,16 +1,16 @@
 ---
-title: "Expo SDK 52 新特性"
-date: 2025-01-22 10:00:00
+title: "Expo SDK 52 新特性：特性解讀與遷移建議"
+date: 2025-01-22 12:16:53
 tags:
   - 前端
 readingTime: 3
-description: "Expo SDK 52 基於 React Native 0.78 構建，主題是「原生能力民主化」——把以前需要 eject 才能用的功能變成零配置可用。新增的 Expo Modules API v3、Router v4、和 New Architecture 全面默認開啓是這個版本的三大支柱。"
+description: "Expo SDK 52 基於 React Native 0.78 構建，主題是「原生能力民主化」——把以前需要 eject 才能用的功能變成零設定可用。新增的 Expo Modules API v3、Router v4、和 New Architecture 全面默認開啓是這個版本的三大支柱。"
 wordCount: 470
 ---
 
-Expo SDK 52 基於 React Native 0.78 構建，主題是「原生能力民主化」——把以前需要 eject 才能用的功能變成零配置可用。新增的 Expo Modules API v3、Router v4、和 New Architecture 全面默認開啓是這個版本的三大支柱。
+Expo SDK 52 基於 React Native 0.78 構建，主題是「原生能力民主化」——把以前需要 eject 才能用的功能變成零設定可用。新增的 Expo Modules API v3、Router v4、和 New Architecture 全面默認開啓是這個版本的三大支柱。
 
-## Expo Router v4：文件路由的全面進化
+## Expo Router v4：檔案路由的全面進化
 
 Router v4 現在支持嵌套佈局、平行路由和攔截路由，API 設計參考了 Next.js App Router 但針對移動端做了適配。
 
@@ -68,11 +68,11 @@ export default function HomeScreen() {
 }
 ```
 
-關鍵改進：路由預加載。用户在 Tab 之間切換時，目標頁面的 bundle 已經在後台加載好了，切換延遲從 200ms 降到幾乎為零。
+關鍵改進：路由預加載。用户在 Tab 之間切換時，目標頁面的 bundle 已經在後臺加載好了，切換延遲從 200ms 降到幾乎為零。
 
 ## Expo Modules API v3
 
-v3 讓原生模塊開發變得像寫 React 組件一樣簡單。不再需要手寫 Swift/Kotlin 橋接代碼，用 TypeScript 聲明接口，Expo 自動生成。
+v3 讓原生模塊開發變得像寫 React 組件一樣簡單。不再需要手寫 Swift/Kotlin 橋接代碼，用 TypeScript 聲明介面，Expo 自動生成。
 
 ```typescript
 // modules/camera/index.ts
@@ -120,7 +120,7 @@ v3 還支持原生 View 組件的自動生成。你可以用 TypeScript 聲明 p
 
 ## EAS Build 改進：本地構建和緩存
 
-EAS Build 現在支持本地構建模式，不再需要把代碼上傳到雲端：
+EAS Build 現在支援本地構建模式，不再需要把代碼上傳到雲端：
 
 ```json
 // eas.json

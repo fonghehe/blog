@@ -5,17 +5,17 @@ tags:
   - Vue
   - TypeScript
 
-readingTime: 2
-description: "Vue 3.2 正式将 `<script setup>` 标记为稳定特性。用了半年实验性支持，现在可以放心在生产环境用了。"
-wordCount: 207
+readingTime: 3
+description: "Vue 3.2 で script setup が正式に安定機能としてマークされました。半年間の実験的サポートを経て、本番環境でも安心して使用できるようになりました。"
+wordCount: 350
 ---
 
-Vue 3.2 正式将 `<script setup>` 标记为稳定特性。用了半年实验性支持，现在可以放心在生产环境用了。
+Vue 3.2 で `<script setup>` が正式に安定機能としてマークされました。半年間の実験的サポートを経て、本番環境でも安心して使用できるようになりました。
 
 ## 以前の課題
 
 ```vue
-<!-- Options API：逻辑分散 -->
+<!-- Options API：ロジックが分散 -->
 <script>
 export default {
   data() {
@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<!-- Composition API：setup() 里要 return 很多东西 -->
+<!-- Composition API：setup() で多くのものを return する必要がある -->
 <script lang="ts">
 import { ref, onMounted } from 'vue'
 
@@ -45,20 +45,20 @@ export default {
       console.log('mounted')
     })
 
-    // 必须手动 return，容易漏
+    // 手動で return する必要があり、漏れやすい
     return { count, increment }
   }
 }
 </script>
 ```
 
-## `<script setup>` 的改进
+## `<script setup>` の改善点
 
 ```vue
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-// 自动暴露给模板，不需要 return
+// 自動でテンプレートに公開され、return は不要
 const count = ref(0)
 const increment = () => count.value++
 
@@ -66,7 +66,7 @@ onMounted(() => {
   console.log('mounted')
 })
 
-// 所有顶层绑定自动可用
+// すべてのトップレベルバインディングが自動で利用可能
 </script>
 
 <template>
@@ -74,20 +74,20 @@ onMounted(() => {
 </template>
 ```
 
-代码量减半，逻辑更紧凑。
+コード量が半分になり、ロジックがよりコンパクトになりました。
 
 ## defineProps 和 defineEmits
 
 ```vue
 <script setup lang="ts">
-// 类型声明方式（推荐）
+// 型宣言方式（推奨）
 const props = defineProps<{
   title: string
   count?: number
   items: string[]
 }>()
 
-// 带默认值
+// デフォルト値付き
 const props = withDefaults(defineProps<{
   title: string
   count?: number
@@ -110,7 +110,7 @@ function handleUpdate(val: string) {
 
 ## defineExpose
 
-`<script setup>` 默认不暴露任何属性给父组件（`ref` 访问不到）。需要显式暴露：
+`<script setup>` はデフォルトでは親コンポーネントにプロパティを公開しません（`ref` でアクセスできません）。明示的に公開する必要があります：
 
 ```vue
 <script setup lang="ts">
@@ -119,7 +119,7 @@ import { ref } from 'vue'
 const count = ref(0)
 const name = ref('hello')
 
-// 只暴露 count，不暴露 name
+// count のみ公開し、name は公開しない
 defineExpose({ count })
 </script>
 
@@ -134,7 +134,7 @@ onMounted(() => {
 </script>
 ```
 
-## useSlots 和 useAttrs
+## useSlots と useAttrs
 
 ```vue
 <script setup lang="ts">
@@ -143,10 +143,10 @@ import { useSlots, useAttrs } from 'vue'
 const slots = useSlots()
 const attrs = useAttrs()
 
-// 检查是否有默认插槽内容
+// デフォルトスロットにコンテンツがあるか確認
 const hasDefaultSlot = !!slots.default
 
-// attrs 是非响应式的
+// attrs は非リアクティブ
 console.log(attrs.class)
 </script>
 ```
@@ -155,10 +155,10 @@ console.log(attrs.class)
 
 ```vue
 <script setup lang="ts">
-// 不需要 async setup()，直接 await
+// async setup() は不要で、直接 await を使用
 const data = await fetch('/api/user').then(r => r.json())
 
-// 结合 Suspense 使用
+// Suspense と組み合わせて使用
 const posts = await fetchPosts()
 </script>
 
@@ -177,13 +177,13 @@ interface User {
   role: 'admin' | 'user'
 }
 
-// Props 类型自动推断，不需要额外的类型声明
+// Props の型は自動推論され、追加の型宣言は不要
 const props = defineProps<{
   user: User
   onSelect?: (user: User) => void
 }>()
 
-// 没有运行时开销，编译时全部处理
+// 実行時オーバーヘッドはなく、すべてコンパイル時に処理される
 const emit = defineEmits<{
   (e: 'select', user: User): void
 }>()
@@ -263,8 +263,8 @@ function handleSort(key: string) {
 
 ## まとめ
 
-- `<script setup>` 是 Vue 3 的推荐写法，减少模板代码，逻辑更内聚
-- `defineProps` / `defineEmits` 的 TypeScript 类型声明方式是重点
-- `defineExpose` 控制组件暴露的属性，默认全部隐藏
-- 顶层 await 配合 Suspense 做异步数据加载
-- 从 Options API 迁移的项目可以逐步引入，新项目直接用
+- `<script setup>` は Vue 3 の推奨記法であり、テンプレートコードが減り、ロジックがより凝集される
+- `defineProps` / `defineEmits` の TypeScript 型宣言方式が重要
+- `defineExpose` でコンポーネントが公開するプロパティを制御し、デフォルトではすべて非表示
+- トップレベル await を Suspense と組み合わせて非同期データ読み込みに使用
+- Options API からの移行プロジェクトは段階的に導入可能、新規プロジェクトは最初から使用

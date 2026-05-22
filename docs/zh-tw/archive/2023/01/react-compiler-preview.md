@@ -37,7 +37,7 @@ function Parent() {
 }
 
 const Child = memo(function Child({ onClick, config }: Props) {
-  // 只有當 onClick 或 config 的引用變化時才重新渲染
+  // 隻有當 onClick 或 config 的引用變化時才重新渲染
   return <div onClick={onClick}>Step: {config.step}</div>
 })
 ```
@@ -83,7 +83,7 @@ function TodoList({ items, filter }: Props) {
 }
 ```
 
-Compiler 不會改變元件的行為，只最佳化不必要的重新計算和重新渲染。從 React Conf 2023 的 demo 來看，它能識別出 props 是否穩定、派生值是否需要快取、事件處理器是否需要穩定引用。
+Compiler 不會改變元件的行為，隻最佳化不必要的重新計算和重新渲染。從 React Conf 2023 的 demo 來看，它能識別出 props 是否穩定、派生值是否需要快取、事件處理器是否需要穩定引用。
 
 ## 對現有程式碼的影響
 
@@ -130,7 +130,7 @@ const Child = memo(function Child({ items }) {
 function Child({ items }) {
   return items.map(item => <div key={item.id}>{item.name}</div>)
 }
-// 編譯後自動包裹了 memo 邏輯，無需開發者干預
+// 編譯後自動包裹了 memo 邏輯，無需開發者幹預
 ```
 
 這與 Svelte、SolidJS 等框架的思路一致：在編譯階段做盡可能多的分析，減少執行時的工作量。但 React 不會像 Svelte 那樣完全編譯掉虛擬 DOM，因為 RSC 和 Server Components 需要執行時的序列化能力。
@@ -139,6 +139,6 @@ function Child({ items }) {
 
 - React Compiler 自動插入 `useMemo`/`useCallback`/`memo`，目標是讓開發者不再手動做這些最佳化
 - 編譯器要求程式碼遵循 React 規則（不可變性、無副作用渲染），eslint 規則的嚴格執行是 Compiler 相容的前提
-- 已有手動最佳化的程式碼不會被 Compiler 干擾，它會跳過已經 memo 的部分
+- 已有手動最佳化的程式碼不會被 Compiler 幹擾，它會跳過已經 memo 的部分
 - Compiler 代表 React 向編譯時最佳化的轉變，但不會完全拋棄虛擬 DOM 執行時
 - 目前 Compiler 仍在開發中，建議在新專案中養成遵循 React 規則的習慣

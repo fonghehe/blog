@@ -1,14 +1,14 @@
 ---
-title: "CSS timeline-scope 滾動時間線"
+title: "CSS timeline-scope 滾動時間線：落地路徑與實戰建議"
 date: 2024-03-13 16:06:07
 tags:
   - CSS
 readingTime: 2
-description: "關於CSS timeline-scope 滾動時間線，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於CSS timeline-scope 滾動時間線，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 357
 ---
 
-關於CSS timeline-scope 滾動時間線，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於CSS timeline-scope 滾動時間線，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 

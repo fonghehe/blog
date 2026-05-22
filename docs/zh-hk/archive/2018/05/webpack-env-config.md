@@ -1,16 +1,16 @@
 ---
-title: "Webpack 多環境變量配置"
+title: "Webpack 多環境變量設定：落地路徑與實戰建議"
 date: 2018-05-17 15:30:37
 tags:
   - Webpack
 readingTime: 1
-description: "項目裏有開發、測試、生產三套環境，API 地址不同、日誌級別不同、功能開關也不同。如何優雅地管理這些配置？"
+description: "項目裏有開發、測試、生產三套環境，API 地址不同、日誌級別不同、功能開關也不同。如何優雅地管理這些設定？"
 wordCount: 194
 ---
 
 項目裏有開發、測試、生產三套環境，API 地址不同、日誌級別不同、功能開關也不同。如何優雅地管理這些配置？
 
-## 方案一：.env 文件（配合 dotenv）
+## 方案一：.env 檔案（配合 dotenv）
 
 ```
 .env                # 所有環境共享的基礎變量
@@ -80,7 +80,7 @@ module.exports = {
 };
 ```
 
-## 方案三：多份 webpack 配置
+## 方案三：多份 webpack 設定
 
 ```
 webpack.common.js     # 公共配置

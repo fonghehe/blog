@@ -21,7 +21,7 @@ wordCount: 333
 
 **Dumb 元件（展示元件）**
 
-- 只負責渲染 UI
+- 隻負責渲染 UI
 - 資料全來自 `@Input`
 - 通過 `@Output` 向上通知事件
 - 可複用、易測試
@@ -86,7 +86,7 @@ export class UserListComponent {
 
 ## OnPush 策略的收益
 
-Dumb 元件使用 `ChangeDetectionStrategy.OnPush` 是標配。由於資料只來自 `@Input`，Angular 只需在輸入引用變化時才檢測變更，大幅減少不必要的重渲染：
+Dumb 元件使用 `ChangeDetectionStrategy.OnPush` 是標配。由於資料隻來自 `@Input`，Angular 隻需在輸入引用變化時才檢測變更，大幅減少不必要的重渲染：
 
 ```typescript
 // 效能對比（100個列表項場景）

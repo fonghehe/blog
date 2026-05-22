@@ -13,7 +13,7 @@ wordCount: 247
 
 ## 觀察者模式（釋出/訂閱）
 
-用於解耦：A 不需要直接知道 B，只需要釋出事件，B 自己訂閱。
+用於解耦：A 不需要直接知道 B，隻需要釋出事件，B 自己訂閱。
 
 ```javascript
 class EventEmitter {
@@ -89,7 +89,7 @@ function calculateDiscount(type, price) {
   return strategy(price);
 }
 
-// 加新折扣型別只需加一個屬性，不動原有邏輯
+// 加新折扣型別隻需加一個屬性，不動原有邏輯
 discountStrategies.employee = (price) => price * 0.5;
 ```
 
@@ -106,7 +106,7 @@ const validators = {
 
 ## 代理模式
 
-在訪問某個物件之前加一層代理，用於快取、許可權控制、懶載入等。
+在訪問某個物件之前加一層代理，用於快取、許可權控製、懶載入等。
 
 ```javascript
 // 快取代理：避免重複計算
@@ -155,5 +155,5 @@ validator.age = "25"; // TypeError
 
 - 觀察者模式：解耦事件釋出和訂閱，Vue 的 $on/$emit 就是它
 - 策略模式：消除 if/else，把分支邏輯變成可擴充套件的策略物件
-- 代理模式：在訪問物件前加一層控制，用於快取、驗證、日誌等
+- 代理模式：在訪問物件前加一層控製，用於快取、驗證、日誌等
 - 設計模式是工具，不要為了用而用

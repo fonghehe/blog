@@ -1,6 +1,6 @@
 ---
 title: "Astro 5：Content Layer 重新定義內容管理"
-date: 2025-10-28 10:00:00
+date: 2025-10-28 16:22:59
 tags:
   - React
 readingTime: 2
@@ -13,7 +13,7 @@ Astro 5 發佈了，最大的變化是 Content Layer API。對於內容驅動的
 ## Content Layer 是什麼
 
 ```
-之前：Content Collections 只支持本地 Markdown/MDX 文件
+之前：Content Collections 隻支援本地 Markdown/MDX 檔案
 現在：Content Layer 可以從任何數據源加載內容
 
 數據源：
@@ -25,7 +25,7 @@ Astro 5 發佈了，最大的變化是 Content Layer API。對於內容驅動的
   - 自定義數據源
 ```
 
-## 基礎配置
+## 基礎設定
 
 ```ts
 // src/content.config.ts
@@ -140,7 +140,7 @@ const relatedPosts = await getCollection("blog", ({ data, id }) => {
 </article>
 ```
 
-## 自定義數據源插件
+## 自定義數據源外掛
 
 ```ts
 // src/loaders/notion-loader.ts
@@ -217,7 +217,7 @@ import { ViewTransitions } from "astro:transitions";
 // 不需要寫任何 CSS
 ```
 
-## 性能表現
+## 效能表現
 
 ```
 Astro 5 基準測試（100 頁內容站）：
@@ -230,7 +230,7 @@ LCP：0.8s
 
 Astro 的島嶼架構：
   - 默認輸出純 HTML
-  - 只有標記為 client:* 的組件才會發送 JS
+  - 隻有標記為 client:* 的組件才會發送 JS
   - 內容站幾乎是零 JS
 ```
 
@@ -239,6 +239,6 @@ Astro 的島嶼架構：
 - Astro 5 的 Content Layer 讓數據源不再侷限於本地文件
 - 自定義 Loader 可以對接任何數據源（CMS、數據庫、API）
 - 查詢 API 簡潔強大，支持過濾和關聯
-- 零 JS 默認輸出，內容站性能極致
+- 零 JS 默認輸出，內容站效能極致
 - View Transitions 提供了絲滑的頁面切換體驗
 - 適合文檔站、博客、營銷頁等內容驅動的項目

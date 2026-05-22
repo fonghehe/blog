@@ -1,14 +1,14 @@
 ---
-title: "JavaScript 私有類字段"
+title: "JavaScript 私有類字段：落地路徑與實戰建議"
 date: 2020-12-18 09:53:47
 tags:
   - JavaScript
 readingTime: 2
-description: "關於JavaScript 私有類字段，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於JavaScript 私有類字段，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 326
 ---
 
-關於JavaScript 私有類字段，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於JavaScript 私有類字段，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 
@@ -118,7 +118,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 踩坑記錄
 

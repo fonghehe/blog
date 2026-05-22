@@ -4,11 +4,11 @@ date: 2023-01-20 17:22:49
 tags:
   - フロントエンド
 readingTime: 2
-description: "NgRx 15 随 Angular 15 同步发布，带来了对 Standalone APIs 的全面支持。不再需要在 `NgModule` 里注册 `StoreModule`、`EffectsModule`——现在可以在 `bootstrapApplication` 中用函数式 API 配置整个 NgRx 栈。"
-wordCount: 194
+description: "NgRx 15 は Angular 15 と同時にリリースされ、Standalone APIs の完全サポートをもたらしました。NgModule 内で StoreModule や EffectsModule を登録する必要はもうありません。bootstrapApplication 内で関数型 API を使って NgRx スタック全体を設定できるようになりました。"
+wordCount: 303
 ---
 
-NgRx 15 随 Angular 15 同步发布，带来了对 Standalone APIs 的全面支持。不再需要在 `NgModule` 里注册 `StoreModule`、`EffectsModule`——现在可以在 `bootstrapApplication` 中用函数式 API 配置整个 NgRx 栈。
+NgRx 15 は Angular 15 と同時にリリースされ、Standalone APIs の完全サポートをもたらしました。`NgModule` 内で `StoreModule` や `EffectsModule` を登録する必要はもうありません。`bootstrapApplication` 内で関数型APIを使って NgRx スタック全体を設定できます。
 
 ## 新しい関数型設定API
 
@@ -37,7 +37,7 @@ bootstrapApplication(AppComponent, {
 });
 ```
 
-对比旧的 NgModule 方式：
+古い NgModule 方式との比較：
 
 ```typescript
 // 旧方式（NgRx 14 及之前）
@@ -55,7 +55,7 @@ export class AppModule {}
 ## Feature Store の遅延読み込み
 
 ```typescript
-// 功能路由中懒加载 feature store
+// フィーチャールートで feature store を遅延読み込み
 export const ORDERS_ROUTES: Routes = [
   {
     path: "",
@@ -74,7 +74,7 @@ export const ORDERS_ROUTES: Routes = [
 
 ## createFeature で Feature Store を簡略化
 
-NgRx 15 中 `createFeature` 更加完善，自动生成所有 selectors：
+NgRx 15 では `createFeature` がさらに充実し、すべてのセレクターを自動生成します：
 
 ```typescript
 // store/orders.feature.ts
@@ -115,7 +115,7 @@ export const ordersFeature = createFeature({
       selectedId: id,
     })),
   ),
-  // extraSelectors 扩展派生 selectors
+  // extraSelectors で派生セレクターを拡張
   extraSelectors: ({ selectOrders, selectSelectedId }) => ({
     selectSelectedOrder: createSelector(
       selectOrders,
@@ -140,7 +140,7 @@ export const {
 
 ## 関数型Effects
 
-NgRx 15 引入了函数式 effects，类似 Angular 14 的函数式 guards：
+NgRx 15 は関数型 effects を導入しました。Angular 14 の関数型 guards と似ています：
 
 ```typescript
 // 传统 class Effects
@@ -184,4 +184,4 @@ const loadUsers$ = createEffect(
 
 ## まとめ
 
-NgRx 15 对 Standalone APIs 的支持让 Angular 状态管理的配置更简洁，与 Angular 15 的方向完全对齐。`createFeature` 的 `extraSelectors` 消除了大量 selector 模板代码。对于新项目，直接使用 `provideStore` + `createFeature` 的组合是当前最佳实践。
+NgRx 15 の Standalone APIs サポートにより、Angular の状態管理の設定がよりシンプルになり、Angular 15 の方向性と完全に一致しています。`createFeature` の `extraSelectors` により、大量のセレクターテンプレートコードが削減されました。新規プロジェクトでは、`provideStore` + `createFeature` の組み合わせを直接使用することが現在のベストプラクティスです。

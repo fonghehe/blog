@@ -38,9 +38,9 @@ function Counter() {
     return () => {
       document.title = "應用";
     };
-  }, [count]); // 依賴數組：只有 count 變化時才重新執行
+  }, [count]); // 依賴數組：隻有 count 變化時才重新執行
 
-  // 第二參數為 []：只在掛載時執行一次（componentDidMount）
+  // 第二參數為 []：隻在掛載時執行一次（componentDidMount）
   useEffect(() => {
     console.log("組件掛載");
     return () => console.log("組件卸載");
@@ -115,8 +115,8 @@ function SearchBox() {
 
 必須遵守的兩條規則（eslint-plugin-react-hooks 幫你檢查）：
 
-1. **只在最頂層調用 Hook**：不能在循環、條件、嵌套函數中調用
-2. **只在 React 函數中調用 Hook**：函數組件 或 自定義 Hook
+1. **隻在最頂層調用 Hook**：不能在循環、條件、巢狀函數中調用
+2. **隻在 React 函數中調用 Hook**：函數組件 或 自定義 Hook
 
 ```javascript
 // ❌ 錯誤：條件中調用
@@ -170,7 +170,7 @@ function Timer() {
 ## 團隊遷移建議
 
 - **新組件全用 Hooks**，不用再寫 Class
-- **老組件不強制遷移**，Hooks 和 Class 可以共存
+- **老組件不強製遷移**，Hooks 和 Class 可以共存
 - **裝 eslint-plugin-react-hooks** 自動檢查 Hooks 規則
 - **不要一次性重構**，在修改老組件時順便遷移
 

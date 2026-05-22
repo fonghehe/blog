@@ -1,6 +1,6 @@
 ---
 title: "MCP Protocol: Bridging Frontend Toolchains"
-date: 2025-04-05 10:00:00
+date: 2025-04-05 16:59:36
 tags:
   - Frontend
 readingTime: 2

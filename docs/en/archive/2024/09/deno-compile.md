@@ -1,6 +1,6 @@
 ---
 title: "Deno compile: Single-File Executables"
-date: 2024-09-02 10:00:00
+date: 2024-09-02 15:36:13
 tags:
   - Frontend
 readingTime: 2

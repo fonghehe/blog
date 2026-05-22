@@ -1,10 +1,10 @@
 ---
-title: "CSS 動畫性能優化策略"
+title: "CSS 動畫效能優化策略：實踐方法與治理思路"
 date: 2019-08-30 10:47:06
 tags:
   - CSS
 readingTime: 1
-description: "很多同學在CSS 動畫性能優化策略上存在理解偏差，本文系統地梳理核心要點和常見誤區。"
+description: "很多同學在CSS 動畫效能優化策略上存在理解偏差，本文系統地梳理核心要點和常見誤區。"
 wordCount: 211
 ---
 

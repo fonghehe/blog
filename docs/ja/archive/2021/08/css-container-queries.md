@@ -4,26 +4,26 @@ date: 2021-08-23 09:48:53
 tags:
   - CSS
 
-readingTime: 2
-description: "关注 CSS 规范的同学可能已经注意到了，Container Queries 已经进入 Chrome Canary 实验阶段。这个特性等了好几年，终于要来了。"
-wordCount: 330
+readingTime: 3
+description: "CSS 仕様に関心のある方はすでにお気づきかもしれませんが、Container Queries が Chrome Canary の実験段階に入りました。この機能は数年待たれていたもので、ついに実現しようとしています。"
+wordCount: 548
 ---
 
-关注 CSS 规范的同学可能已经注意到了，Container Queries 已经进入 Chrome Canary 实验阶段。这个特性等了好几年，终于要来了。
+CSS 仕様に関心のある方はすでにお気づきかもしれませんが、Container Queries が Chrome Canary の実験段階に入りました。この機能は数年待たれていたもので、ついに実現しようとしています。
 
 ## Container Queries とは
 
-Media Queries 根据**视口宽度**响应，Container Queries 根据**父容器宽度**响应。
+Media Queries は**ビューポートの幅**に応じてレスポンシブになりますが、Container Queries は**親コンテナの幅**に応じてレスポンシブになります。
 
-这才是组件化开发真正需要的能力。
+これこそがコンポーネント指向開発に真に必要な能力です。
 
 ```css
-/* Media Queries：根据浏览器窗口宽度 */
+/* Media Queries：ブラウザウィンドウの幅に応じる */
 @media (min-width: 768px) {
   .card { flex-direction: row; }
 }
 
-/* Container Queries：根据父容器宽度 */
+/* Container Queries：親コンテナの幅に応じる */
 .card-container {
   container-type: inline-size;
 }
@@ -35,36 +35,36 @@ Media Queries 根据**视口宽度**响应，Container Queries 根据**父容器
 
 ## なぜこの機能が重要か
 
-现在的痛点：同一个组件放在侧边栏（窄）和主内容区（宽），表现应该不同。但 Media Queries 只看视口，不看容器。
+現在の課題：同じコンポーネントをサイドバー（狭い）とメインコンテンツエリア（広い）に配置した場合、表示を変えるべきです。しかし Media Queries はビューポートしか見ず、コンテナを見ません。
 
 ```html
-<!-- 同一个 Card 组件 -->
+<!-- 同じ Card コンポーネント -->
 <div class="sidebar">
-  <Card /> <!-- 侧边栏窄，应该显示紧凑布局 -->
+  <Card /> <!-- サイドバーは狭いので、コンパクトなレイアウトを表示すべき -->
 </div>
 
 <main>
-  <Card /> <!-- 主内容区宽，应该显示完整布局 -->
+  <Card /> <!-- メインコンテンツエリアは広いので、完全なレイアウトを表示すべき -->
 </main>
 
-<!-- 两个 Card 在同一个视口下，Media Queries 无法区分 -->
+<!-- 同じビューポート内の 2 つの Card を Media Queries では区別できない -->
 ```
 
 ## 構文の詳細
 
 ```css
-/* 1. 定义容器 */
+/* 1. コンテナを定義 */
 .card-container {
-  container-type: inline-size;  /* 只监控 inline 方向（水平）的尺寸 */
-  container-name: card;          /* 可选：给容器命名 */
+  container-type: inline-size;  /* inline 方向（水平）のサイズのみ監視 */
+  container-name: card;          /* オプション：コンテナに名前を付ける */
 }
 
-/* 简写 */
+/* ショートハンド */
 .card-container {
   container: card / inline-size;
 }
 
-/* 2. 使用 @container 查询 */
+/* 2. @container クエリを使用 */
 @container card (min-width: 400px) {
   .card {
     display: grid;
@@ -91,7 +91,7 @@ Media Queries 根据**视口宽度**响应，Container Queries 根据**父容器
   container: card / inline-size;
 }
 
-/* 窄容器：垂直堆叠 */
+/* 狭いコンテナ：垂直に積み重ね */
 .card {
   display: flex;
   flex-direction: column;
@@ -102,7 +102,7 @@ Media Queries 根据**视口宽度**响应，Container Queries 根据**父容器
   font-size: 1rem;
 }
 
-/* 中等容器：水平排列 */
+/* 中程度のコンテナ：水平に配置 */
 @container card (min-width: 350px) {
   .card {
     flex-direction: row;
@@ -119,7 +119,7 @@ Media Queries 根据**视口宽度**响应，Container Queries 根据**父容器
   }
 }
 
-/* 宽容器：更大的布局 */
+/* 広いコンテナ：より大きなレイアウト */
 @container card (min-width: 500px) {
   .card {
     gap: 1.5rem;
@@ -138,8 +138,8 @@ Media Queries 根据**视口宽度**响应，Container Queries 根据**父容器
 ## 既存ソリューションとの比較
 
 ```javascript
-// 现在的常见做法：用 ResizeObserver 监控容器宽度
-// 不优雅，而且有性能开销
+// 現在の一般的な方法：ResizeObserver でコンテナの幅を監視
+// エレガントではなく、パフォーマンスのオーバーヘッドもある
 
 const observer = new ResizeObserver((entries) => {
   for (const entry of entries) {
@@ -154,15 +154,15 @@ document.querySelectorAll('.card-wrapper').forEach((el) => {
   observer.observe(el)
 })
 
-// Container Queries 一行 CSS 搞定，浏览器原生优化
+// Container Queries なら CSS 1行で完了、ブラウザネイティブで最適化
 ```
 
 ## Tailwind CSS との組み合わせ
 
-Tailwind 3.0 已经实验性支持 `@container`：
+Tailwind 3.0 は実験的に `@container` をサポートしています：
 
 ```html
-<!-- 需要在容器上加 container 类 -->
+<!-- コンテナに container クラスを追加する必要がある -->
 <div class="@container">
   <div class="flex @md:flex-row @lg:gap-8">
     <img class="w-full @md:w-32 @lg:w-48" />
@@ -175,13 +175,13 @@ Tailwind 3.0 已经实验性支持 `@container`：
 
 ## ブラウザサポートの現状
 
-截至 2021 年 8 月：
+2021 年 8 月現在：
 
-- Chrome Canary：实验性支持（需要开启 flag）
-- Chrome 105+：预计默认支持
-- Firefox / Safari：暂无支持时间表
+- Chrome Canary：実験的サポート（flag を有効化する必要あり）
+- Chrome 105+：デフォルトでサポート予定
+- Firefox / Safari：サポート時期は未定
 
-目前可以用 PostCSS 插件做降级：
+現時点では PostCSS プラグインでフォールバックできます：
 
 ```bash
 npm install -D @csstools/postcss-container-queries
@@ -189,7 +189,7 @@ npm install -D @csstools/postcss-container-queries
 
 ## まとめ
 
-- Container Queries 让组件根据父容器宽度响应，解决了 Media Queries 的根本局限
-- 语法：`container-type` 定义容器，`@container` 查询
-- 组件化开发的必备能力，Grid + Container Queries = 真正的响应式组件
-- 浏览器支持还在早期，但趋势已定，值得提前了解
+- Container Queries はコンポーネントが親コンテナの幅に応じてレスポンシブになることを可能にし、Media Queries の根本的な限界を解決する
+- 構文：`container-type` でコンテナを定義し、`@container` でクエリを実行
+- コンポーネント指向開発に必須の機能、Grid + Container Queries = 真のレスポンシブコンポーネント
+- ブラウザサポートはまだ初期段階だが、流れは決まっており、事前に知っておく価値がある

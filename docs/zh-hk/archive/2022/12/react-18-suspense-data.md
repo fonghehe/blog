@@ -1,5 +1,5 @@
 ---
-title: "React 18 Suspense 數據獲取"
+title: "React 18 Suspense 資料獲取實踐：结合 React Query 的生產方案"
 date: 2022-12-12 16:06:34
 tags:
   - React
@@ -130,7 +130,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 避坑指南
 

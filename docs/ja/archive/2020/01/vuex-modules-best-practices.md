@@ -3,16 +3,16 @@ title: "Vuex 4 モジュール化のベストプラクティス"
 date: 2020-01-17 17:32:42
 tags:
   - Vue
-readingTime: 2
-description: "项目一旦超过中等规模，Vuex 的 `store` 就会变得臃肿。Vuex 4 延续了模块化方案，但对 Composition API 做了适配。本文整理了我在多个中大型 Vue 项目中验证过的模块化实践。"
-wordCount: 321
+readingTime: 3
+description: "プロジェクトが中規模を超えると、Vuex の store が肥大化しがちです。Vuex 4 はモジュール化の手法を継承しつつ、Composition API に対応しています。この記事では、複数の中大規模 Vue プロジェクトで検証したモジュール化のプラクティスをまとめました。"
+wordCount: 538
 ---
 
-项目一旦超过中等规模，Vuex 的 `store` 就会变得臃肿。Vuex 4 延续了模块化方案，但对 Composition API 做了适配。本文整理了我在多个中大型 Vue 项目中验证过的模块化实践。
+プロジェクトが中規模を超えると、Vuex の `store` が肥大化しがちです。Vuex 4 はモジュール化の手法を継承しつつ、Composition API に対応しています。この記事では、複数の中大規模 Vue プロジェクトで検証したモジュール化のプラクティスをまとめました。
 
 ## ディレクトリ構造の設計
 
-模块化不只是功能拆分，目录结构决定了可维护性。推荐按业务域组织：
+モジュール化は単なる機能分割ではありません。ディレクトリ構造が保守性を左右します。業務ドメインごとに整理することをお勧めします：
 
 ```
 store/
@@ -35,7 +35,7 @@ export const ORDER_FETCH_LIST = 'ORDER_FETCH_LIST'
 
 ## モジュール定義と名前空間
 
-每个模块使用独立命名空间，避免状态和方法名冲突。
+各モジュールは独立した名前空間を使用し、状態やメソッド名の競合を防ぎます。
 
 ```javascript
 // store/modules/auth.js
@@ -106,9 +106,9 @@ export default createStore({
 })
 ```
 
-## 在组件中使用
+## コンポーネントでの使用
 
-命名空间模块的调用需要带路径前缀。
+名前空間モジュールの呼び出しにはパスプレフィックスが必要です。
 
 ```vue
 {% raw %}
@@ -150,9 +150,9 @@ export default {
 {% endraw %}
 ```
 
-## 跨模块通信
+## モジュール間通信
 
-模块之间需要交互时，通过 `rootState` 和 `rootGetters` 访问全局状态，或使用 `dispatch` 触发其他模块的 action。
+モジュール間で連携が必要な場合は、`rootState` と `rootGetters` でグローバル状態にアクセスするか、`dispatch` を使用して他のモジュールの action を呼び出します。
 
 ```javascript
 // store/modules/order.js
@@ -168,7 +168,7 @@ export default {
 
   actions: {
     async [ORDER_FETCH_LIST]({ commit, rootState, dispatch }) {
-      // 读取其他模块的状态
+      // 他のモジュールの状態を読み取る
       const token = rootState.auth.token
       if (!token) {
         await dispatch('auth/AUTH_LOGIN', null, { root: true })
@@ -196,11 +196,11 @@ export default {
 }
 ```
 
-关键细节：`dispatch` 第三个参数 `{ root: true }` 允许在命名空间模块中触发根级别的或其他模块的 action。
+重要な詳細：`dispatch` の第3引数 `{ root: true }` により、名前空間モジュール内からルートレベルや他のモジュールの action を呼び出せます。
 
 ## まとめ
 
-- 使用 `namespaced: true` 隔离模块状态，避免命名冲突
-- 用常量文件统一管理 mutation 和 action 名称，IDE 友好且可搜索
-- 跨模块通信通过 `rootState` 读取状态，`dispatch` 带 `{ root: true }` 调用其他模块
-- `createNamespacedHelpers` 简化组件中对命名空间模块的映射
+- `namespaced: true` を使用してモジュールの状態を分離し、名前の競合を防ぎます
+- 定数ファイルで mutation と action の名前を一元管理し、IDE フレンドリで検索可能にします
+- モジュール間の通信は `rootState` で状態を読み取り、`dispatch` に `{ root: true }` を指定して他のモジュールを呼び出します
+- `createNamespacedHelpers` を使用すると、コンポーネント内での名前空間モジュールのマッピングが簡略化されます

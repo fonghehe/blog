@@ -1,20 +1,20 @@
 ---
-title: "前端平台工程：從工具鏈到平台"
-date: 2025-11-22 10:00:00
+title: "前端平臺工程：從工具鏈到平臺"
+date: 2025-11-22 18:56:33
 tags:
   - 前端
 readingTime: 3
-description: "2025 年，\"前端平台工程\" 不再是大廠的專利。來聊聊中小團隊如何建設自己的前端平台。"
+description: "2025 年，\"前端平臺工程\" 不再是大廠的專利。來聊聊中小團隊如何建設自己的前端平臺。"
 wordCount: 165
 ---
 
-2025 年，"前端平台工程" 不再是大廠的專利。來聊聊中小團隊如何建設自己的前端平台。
+2025 年，"前端平臺工程" 不再是大廠的專利。來聊聊中小團隊如何建設自己的前端平臺。
 
-## 什麼是前端平台工程
+## 什麼是前端平臺工程
 
 ```
 傳統前端：每個項目獨立搭建腳手架、獨立配置 CI/CD、獨立管理依賴
-平台工程：統一的開發平台，開箱即用
+平臺工程：統一的開發平臺，開箱即用
 
 目標：
   1. 新項目 5 分鐘創建，不需要從零搭建
@@ -27,7 +27,7 @@ wordCount: 165
 ## 核心組件
 
 ```
-前端平台架構：
+前端平臺架構：
 
 ┌─────────────────────────────────────────────┐
 │              開發者體驗層                      │
@@ -56,7 +56,7 @@ const program = new Command();
 
 program
   .name("frontend")
-  .description("前端平台 CLI")
+  .description("前端平臺 CLI")
   .version("1.0.0");
 
 // 創建新項目
@@ -72,7 +72,7 @@ program
         name: "template",
         message: "選擇項目模板",
         choices: [
-          { name: "React SPA（管理後台）", value: "admin" },
+          { name: "React SPA（管理後臺）", value: "admin" },
           { name: "Next.js App（To C 應用）", value: "nextjs" },
           { name: "Astro 站點（文檔/博客）", value: "astro" },
           { name: "組件庫", value: "library" },
@@ -150,10 +150,10 @@ packages:
 ```
 
 ```
-前端平台 Monorepo 結構：
+前端平臺 Monorepo 結構：
 
 ├── apps/
-│   ├── admin/          # 管理後台
+│   ├── admin/          # 管理後臺
 │   ├── portal/         # 門户站點
 │   └── docs/           # 文檔站
 ├── packages/
@@ -192,7 +192,7 @@ packages:
 }
 ```
 
-## 共享配置
+## 共享設定
 
 ```ts
 // packages/config/eslint-config/index.js
@@ -265,7 +265,7 @@ jobs:
       - run: pnpm turbo lint typecheck test build
 
       # 受影響的包才跑（Turborepo 自動處理）
-      # 不需要手動配置哪些包需要跑
+      # 不需要手動設定哪些包需要跑
 
   deploy:
     needs: ci
@@ -286,9 +286,9 @@ jobs:
 
 ## 小結
 
-- 前端平台工程的目標是讓開發者專注業務，不被工具鏈困擾
+- 前端平臺工程的目標是讓開發者專注業務，不被工具鏈困擾
 - Monorepo + Turborepo 是當前最佳實踐
 - CLI 工具降低項目創建和配置的心智負擔
 - 共享配置（ESLint、TypeScript、Prettier）保證代碼一致性
-- CI/CD 要做到開箱即用，新項目不需要額外配置
-- 平台工程是持續投入，不是一次性建設
+- CI/CD 要做到開箱即用，新項目不需要額外設定
+- 平臺工程是持續投入，不是一次性建設

@@ -3,25 +3,25 @@ title: "React Context vs Redux：選択ガイド"
 date: 2019-11-04 15:36:26
 tags:
   - React
-readingTime: 4
-description: "React 16.3 引入了全新的 Context API，让很多开发者开始思考：有了 Context，还需要 Redux 吗？本文将深入对比两者的适用场景，帮助你在实际项目中做出正确的技术选型。"
-wordCount: 589
+readingTime: 5
+description: "React 16.3 で新しい Context API が導入され、多くの開発者が「Context があるのに、Redux はまだ必要か？」と考えるようになりました。この記事では両者の適用シーンを詳しく比較し、実際のプロジェクトで適切な技術選定ができるように支援します。"
+wordCount: 927
 ---
 
-React 16.3 引入了全新的 Context API，让很多开发者开始思考：有了 Context，还需要 Redux 吗？本文将深入对比两者的适用场景，帮助你在实际项目中做出正确的技术选型。
+React 16.3で全く新しいContext APIが導入され、多くの開発者が「Contextがあるのに、Reduxはまだ必要か？」と考えるようになりました。この記事では両者の適用シーンを詳しく比較し、実際のプロジェクトで適切な技術選定ができるように支援します。
 
 ## React Contextの基礎おさらい
 
-Context 提供了一种在组件树中传递数据的方式，避免了逐层传递 props 的问题：
+Contextは、コンポーネンツリー内でデータを渡す方法を提供し、propsを階層ごとに渡す問題を解決します：
 
 ```jsx
 {% raw %}
 import React, { createContext, useContext, useState } from 'react';
 
-// 创建 Context
+// Contextを作成
 const ThemeContext = createContext('light');
 
-// Provider 组件
+// Providerコンポーネント
 function App() {
   const [theme, setTheme] = useState('light');
 
@@ -32,12 +32,12 @@ function App() {
   );
 }
 
-// 中间组件不需要传递 props
+// 中間コンポーネントはpropsを渡す必要がない
 function Toolbar() {
   return <ThemedButton />;
 }
 
-// 消费组件
+// 消費コンポーネント
 function ThemedButton() {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
@@ -54,7 +54,7 @@ function ThemedButton() {
 
 ## Reduxの基礎おさらい
 
-Redux 是一个可预测的状态管理容器，遵循单一数据源、只读状态、纯函数修改的原则：
+Reduxは予測可能な状態管理コンテナであり、単一のデータソース、読み取り専用の状態、純粋関数による変更の原則に従います：
 
 ```jsx
 import { createStore } from 'redux';
@@ -88,7 +88,7 @@ function App() {
   );
 }
 
-// 连接组件
+// コンポーネントと接続
 function Counter({ count, increment }) {
   return (
     <div>
@@ -106,13 +106,13 @@ const ConnectedCounter = connect(
 
 ## コアの相違点比較
 
-### 1. 更新机制
+### 1. 更新メカニズム
 
-Context 的更新会导致所有消费该 Context 的组件重新渲染：
+Contextの更新は、そのContextを消費するすべてのコンポーネントの再レンダリングを引き起こします：
 
 ```jsx
 {% raw %}
-// 问题：ThemeContext 变化时，即使只关心 count 的组件也会重渲染
+// 問題：ThemeContextが変化すると、countだけを気にするコンポーネントも再レンダリングされる
 const AppContext = createContext();
 
 function App() {
@@ -121,15 +121,15 @@ function App() {
 
   return (
     <AppContext.Provider value={{ theme, setTheme, count, setCount }}>
-      {/* theme 和 count 都在同一个 Context 中 */}
-      {/* count 变化时，消费 theme 的组件也会重渲染 */}
+      {/* themeとcountが同じContext内にある */}
+      {/* countが変化すると、themeを消費するコンポーネントも再レンダリングされる */}
       <ThemeDisplay />
       <Counter />
     </AppContext.Provider>
   );
 }
 
-// 即使这个组件只用 theme，count 变化时也会重渲染
+// このコンポーネントがthemeしか使っていなくても、countが変化すると再レンダリングされる
 function ThemeDisplay() {
   const { theme } = useContext(AppContext);
   console.log('ThemeDisplay 重渲染了');
@@ -138,10 +138,10 @@ function ThemeDisplay() {
 {% endraw %}
 ```
 
-Redux 的 `connect` 使用浅比较，只有相关数据变化时才触发重渲染：
+Reduxの`connect`は浅い比較を使用するため、関連するデータが変化したときのみ再レンダリングが発生します：
 
 ```jsx
-// 只有 state.theme 变化时，ThemeDisplay 才会重渲染
+// state.themeが変化したときのみ、ThemeDisplayが再レンダリングされる
 const ThemeDisplay = connect(
   state => ({ theme: state.theme })
 )(({ theme }) => {
@@ -150,13 +150,13 @@ const ThemeDisplay = connect(
 });
 ```
 
-### 2. 中间件与异步
+### 2. ミドルウェアと非同期
 
-Context 没有内置的中间件机制，异步处理需要自己实现：
+Contextには組み込みのミドルウェア機構がなく、非同期処理は自前で実装する必要があります：
 
 ```jsx
 {% raw %}
-// Context 中处理异步
+// Contextでの非同期処理
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -185,7 +185,7 @@ function App() {
 {% endraw %}
 ```
 
-Redux 有丰富的中间件生态：
+Reduxには豊富なミドルウェアエコシステムがあります：
 
 ```jsx
 // redux-thunk
@@ -202,7 +202,7 @@ function fetchUser(id) {
   };
 }
 
-// redux-saga（更强大的异步流控制）
+// redux-saga（より強力な非同期フロー制御）
 function* fetchUserSaga(action) {
   try {
     const user = yield call(fetchUserApi, action.payload);
@@ -213,23 +213,23 @@ function* fetchUserSaga(action) {
 }
 ```
 
-### 3. DevTools 支持
+### 3. DevToolsのサポート
 
-Redux 有强大的 DevTools，支持时间旅行调试：
+Reduxには強力なDevToolsがあり、タイムトラベルデバッグをサポートしています：
 
 ```jsx
-// 启用 Redux DevTools
+// Redux DevToolsを有効化
 const store = createStore(
   rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 ```
 
-Context 没有官方的调试工具。每次 Context 值变化都很难追踪是哪里触发的。
+Contextには公式のデバッグツールがありません。Contextの値が変化しても、どこでトリガーされたのか追跡するのが難しいです。
 
-### 4. 状态持久化
+### 4. 状態の永続化
 
-Redux 可以轻松实现状态持久化：
+Reduxでは状態の永続化を簡単に実現できます：
 
 ```jsx
 import { persistStore, persistReducer } from 'redux-persist';
@@ -246,23 +246,23 @@ const store = createStore(persistedReducer);
 const persistor = persistStore(store);
 ```
 
-Context 需要手动实现持久化逻辑。
+Contextでは永続化ロジックを手動で実装する必要があります。
 
 ## 選び方
 
-### 适合使用 Context 的场景
+### Contextが適したシナリオ
 
 ```jsx
-// 场景1：主题配置（低频变化）
+// シナリオ1：テーマ設定（低頻度の変更）
 const ThemeContext = createContext();
 
-// 场景2：国际化配置
+// シナリオ2：国際化設定
 const LocaleContext = createContext();
 
-// 场景3：用户认证信息（登录后设置，很少变化）
+// シナリオ3：ユーザー認証情報（ログイン後に設定、ほとんど変更なし）
 const AuthContext = createContext();
 
-// 场景4：组件库的配置注入
+// シナリオ4：コンポーネントライブラリの設定注入
 const ConfigProvider = ({ children, config }) => (
   <ConfigContext.Provider value={config}>
     {children}
@@ -270,30 +270,30 @@ const ConfigProvider = ({ children, config }) => (
 );
 ```
 
-特征：
-- 数据变化频率低
-- 不需要复杂的更新逻辑
-- 不需要中间件和 DevTools
-- 只在局部组件树中使用
+特徴：
+- データの変化頻度が低い
+- 複雑な更新ロジックが不要
+- ミドルウェアやDevToolsが不要
+- 局所的なコンポーネンツリーでのみ使用
 
-### 适合使用 Redux 的场景
+### Reduxが適したシナリオ
 
 ```jsx
-// 场景1：购物车（频繁更新，多个组件读取）
-// 场景2：应用全局状态（用户、权限、通知等）
-// 场景3：需要复杂异步流的业务逻辑
-// 场景4：需要时间旅行调试
+// シナリオ1：ショッピングカート（頻繁な更新、複数コンポーネントが読み取り）
+// シナリオ2：アプリケーションのグローバル状態（ユーザー、権限、通知など）
+// シナリオ3：複雑な非同期フローが必要なビジネスロジック
+// シナリオ4：タイムトラベルデバッグが必要
 ```
 
-特征：
-- 数据变化频率高
-- 多个不相关的组件需要读取同一份数据
-- 需要中间件（异步、日志、持久化等）
-- 需要强大的调试工具
+特徴：
+- データの変化頻度が高い
+- 関連性のない複数のコンポーネントが同じデータを読み取る必要がある
+- ミドルウェア（非同期、ログ、永続化など）が必要
+- 強力なデバッグツールが必要
 
 ## Context + useReducer：軽量な代替案
 
-对于中等复杂度的状态管理，Context + useReducer 可以替代 Redux：
+中程度の複雑さの状態管理であれば、Context + useReducerでReduxを代替できます：
 
 ```jsx
 import React, { createContext, useContext, useReducer } from 'react';
@@ -338,7 +338,7 @@ export function AppProvider({ children }) {
   );
 }
 
-// 自定义 Hooks
+// カスタムHooks
 export function useAppState() {
   return useContext(AppStateContext);
 }
@@ -347,7 +347,7 @@ export function useAppDispatch() {
   return useContext(AppDispatchContext);
 }
 
-// 使用
+// 使用例
 function NotificationList() {
   const { notifications } = useAppState();
   const dispatch = useAppDispatch();
@@ -372,9 +372,9 @@ function NotificationList() {
 
 ## まとめ
 
-- Context 适合传递低频变化的配置类数据（主题、语言、认证）
-- Redux 适合管理频繁变化的全局业务状态
-- Context 没有内置中间件和 DevTools，需要自行处理异步和调试
-- `connect` 使用浅比较避免不必要的重渲染，Context 会触发所有消费者重渲染
-- Context + useReducer 是中等复杂度场景的轻量级替代方案
-- 技术选型应根据项目规模、团队经验和状态复杂度来决定
+- Contextは低頻度で変化する設定系のデータ（テーマ、言語、認証）の受け渡しに適しています
+- Reduxは頻繁に変化するグローバルな業務状態の管理に適しています
+- Contextには組み込みのミドルウェアやDevToolsがなく、非同期処理やデバッグを自前で行う必要があります
+- `connect`は浅い比較を使用して不必要な再レンダリングを防ぎますが、Contextは全ての消費者を再レンダリングします
+- Context + useReducerは中程度の複雑さのシナリオにおける軽量な代替案です
+- 技術選定はプロジェクトの規模、チームの経験、状態の複雑さに基づいて決定すべきです

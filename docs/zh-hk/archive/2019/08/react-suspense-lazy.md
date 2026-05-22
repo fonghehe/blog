@@ -1,5 +1,5 @@
 ---
-title: "React.lazy + Suspense 代碼分割實踐"
+title: "React.lazy + Suspense 代碼分割實踐：落地路徑與實戰建議"
 date: 2019-08-05 11:29:50
 tags:
   - React
@@ -12,10 +12,10 @@ wordCount: 977
 
 ## 為什麼需要代碼分割
 
-在一個典型的 React SPA 中，所有路由頁面的代碼最終會被打包成一個巨大的 JS 文件。用户打開首頁時，需要下載並解析整個 bundle，包括他根本不會訪問的頁面代碼。這造成了兩個問題：
+在一個典型的 React SPA 中，所有路由頁面的代碼最終會被打包成一個巨大的 JS 檔案。用户打開首頁時，需要下載並解析整個 bundle，包括他根本不會訪問的頁面代碼。這造成了兩個問題：
 
 1. **首次加載時間過長** — 用户需要等待整個應用下載完成才能看到內容
-2. **浪費帶寬** — 用户可能只訪問了 20% 的頁面，卻下載了 100% 的代碼
+2. **浪費帶寬** — 用户可能隻訪問了 20% 的頁面，卻下載了 100% 的代碼
 
 代碼分割的核心思想：將代碼按路由或功能拆分成多個 chunk，按需加載。
 
@@ -48,7 +48,7 @@ function App() {
 
 Webpack 在構建時會識別 `import()` 語法，自動將這些模塊拆分成獨立的 chunk 文件。
 
-## Suspense 的 fallback 機制
+## Suspense 的 fallback 機製
 
 `Suspense` 組件用於在懶加載組件還未就緒時展示一個 fallback UI。有幾個關鍵點需要注意：
 
@@ -73,7 +73,7 @@ Webpack 在構建時會識別 `import()` 語法，自動將這些模塊拆分成
 </Suspense>
 ```
 
-### 多個 Suspense 邊界可以嵌套
+### 多個 Suspense 邊界可以巢狀
 
 ```jsx
 function App() {
@@ -158,7 +158,7 @@ const SettingsPage = lazy(() => import(
 
 ## 組件級別代碼分割
 
-除了路由級別，某些重量級組件也可以按需加載。比如一個圖表庫非常大，只有用户展開某個面板時才需要：
+除了路由級別，某些重量級組件也可以按需加載。比如一個圖表庫非常大，隻有用户展開某個面板時才需要：
 
 ```jsx
 import React, { Suspense, useState } from 'react';
@@ -190,7 +190,7 @@ function Dashboard() {
 
 ## 配合 Error Boundary 處理加載失敗
 
-網絡請求可能失敗，chunk 文件可能加載失敗。我們需要一個錯誤邊界來捕獲這些異常：
+網絡請求可能失敗，chunk 檔案可能加載失敗。我們需要一個錯誤邊界來捕獲這些異常：
 
 ```jsx
 import React, { Component } from 'react';
@@ -293,7 +293,7 @@ function App() {
 }
 ```
 
-## 與 React.lazy 配合的 Webpack 配置
+## 與 React.lazy 配合的 Webpack 設定
 
 為了讓代碼分割更高效，建議在 Webpack 中配置 `splitChunks`：
 
@@ -335,11 +335,11 @@ npx source-map-explorer build/static/js/*.js
 npx webpack-bundle-analyzer build/static/js/*.js
 ```
 
-在 Chrome DevTools 的 Network 面板中，切換路由時應該能看到新的 chunk 文件被按需加載。
+在 Chrome DevTools 的 Network 面板中，切換路由時應該能看到新的 chunk 檔案被按需加載。
 
-## 已知限制
+## 已知限製
 
-1. **SSR 不支持** — `React.lazy` 不支持服務端渲染，SSR 場景需要使用 `@loadable/component`
+1. **SSR 不支援** — `React.lazy` 不支援服務端渲染，SSR 場景需要使用 `@loadable/component`
 2. **嵌套 lazy 不生效** — 不能在 lazy 組件內部再嵌套 lazy 並期望 Suspense 捕獲
 3. **錯誤處理需要額外代碼** — Suspense 本身不處理加載錯誤，必須配合 Error Boundary
 

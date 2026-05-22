@@ -47,7 +47,7 @@ my-project/
     └── shims-vue.d.ts
 ```
 
-## 專案配置
+## 專案設定
 
 ### vite.config.ts
 
@@ -146,7 +146,7 @@ declare module '*.vue' {
 }
 ```
 
-## 路由配置
+## 路由設定
 
 ```typescript
 // src/router/index.ts
@@ -235,7 +235,7 @@ export function createAppStore() {
     if (n) n.read = true
   }
 
-  // 暴露只讀狀態 + 可修改的 action
+  // 暴露隻讀狀態 + 可修改的 action
   return {
     state: readonly(state),
     toggleSidebar,
@@ -339,7 +339,7 @@ interface ImportMeta {
 
 ### 1. CommonJS 模組相容
 
-Vite 基於 ESM，某些舊的 npm 包只提供 CJS 格式會報錯：
+Vite 基於 ESM，某些舊的 npm 包隻提供 CJS 格式會報錯：
 
 ```typescript
 // vite.config.ts 中配置 optimizeDeps

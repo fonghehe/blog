@@ -1,6 +1,6 @@
 ---
 title: "Frontend Performance Monitoring: AI-Driven Auto Optimization"
-date: 2025-08-10 10:00:00
+date: 2025-08-10 11:44:21
 tags:
   - Engineering
   - Performance Optimization

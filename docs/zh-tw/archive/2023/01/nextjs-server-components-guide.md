@@ -5,11 +5,11 @@ tags:
   - Next.js
   - TypeScript
 readingTime: 3
-description: "Server Actions 是 Next.js 14 最核心的特性。它允許你在元件內部定義服務端函式，表單提交、按鈕點選直接觸發服務端邏輯，不再需要手動寫 API 路由。這套機制從根本上改變了前後端資料互動的模式。"
+description: "Server Actions 是 Next.js 14 最核心的特性。它允許你在元件內部定義服務端函式，表單提交、按鈕點選直接觸發服務端邏輯，不再需要手動寫 API 路由。這套機製從根本上改變了前後端資料互動的模式。"
 wordCount: 481
 ---
 
-Server Actions 是 Next.js 14 最核心的特性。它允許你在元件內部定義服務端函式，表單提交、按鈕點選直接觸發服務端邏輯，不再需要手動寫 API 路由。這套機制從根本上改變了前後端資料互動的模式。
+Server Actions 是 Next.js 14 最核心的特性。它允許你在元件內部定義服務端函式，表單提交、按鈕點選直接觸發服務端邏輯，不再需要手動寫 API 路由。這套機製從根本上改變了前後端資料互動的模式。
 
 ## 基礎用法與表單處理
 
@@ -176,7 +176,7 @@ export async function createPost(formData: FormData) {
   // ... 儲存邏輯
 }
 
-// 2. Server Actions 可以從任何地方呼叫，不只是表單
+// 2. Server Actions 可以從任何地方呼叫，不隻是表單
 // 適用於按鈕點選、定時任務、事件觸發等
 export async function revalidateAll() {
   revalidateTag('posts')

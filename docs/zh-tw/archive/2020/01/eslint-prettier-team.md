@@ -17,9 +17,9 @@ ESLint 關注程式碼質量（潛在 bug），Prettier 關注程式碼格式（
 - ESLint：`no-unused-vars`、`no-undef`、`eqeqeq` 這些是質量問題
 - Prettier：縮排、分號、引號、換行這些是格式問題
 
-用 Prettier 管格式，ESLint 管質量，互不干擾。
+用 Prettier 管格式，ESLint 管質量，互不幹擾。
 
-## 安裝配置
+## 安裝設定
 
 ```bash
 # 核心依賴
@@ -84,7 +84,7 @@ module.exports = {
 }
 ```
 
-## Git Hooks 強制執行
+## Git Hooks 強製執行
 
 ```bash
 npm install -D husky lint-staged
@@ -111,7 +111,7 @@ npm install -D husky lint-staged
 }
 ```
 
-## VSCode 配置共享
+## VSCode 設定共享
 
 ```json
 // .vscode/settings.json
@@ -151,7 +151,7 @@ npm install -D husky lint-staged
 # 確保 extends 裡 'plugin:prettier/recommended' 放最後
 
 # 舊專案引入：一步步來
-# 1. 先加配置，不自動修復
+# 1. 先加設定，不自動修復
 # 2. 團隊成員各自跑一次 fix
 # 3. 確認沒問題後開啟 hooks
 ```

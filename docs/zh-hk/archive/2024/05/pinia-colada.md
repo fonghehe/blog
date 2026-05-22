@@ -1,5 +1,5 @@
 ---
-title: "Pinia Colada 數據獲取庫"
+title: "Pinia Colada 數據獲取庫：落地路徑與實戰建議"
 date: 2024-05-16 11:47:00
 tags:
   - Pinia

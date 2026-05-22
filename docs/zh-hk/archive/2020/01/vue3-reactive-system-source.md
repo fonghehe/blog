@@ -1,14 +1,14 @@
 ---
-title: "Vue 3 響應式系統源碼分析"
+title: "Vue 3 響應式系統源碼分析：落地路徑與實戰建議"
 date: 2020-01-03 16:10:29
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 的響應式系統基於 ES6 Proxy 重寫，徹底告別了 Vue 2 的 `Object.defineProperty` 方案。理解其源碼實現，不僅能幫助我們寫出更高效的代碼，還能避免一些隱蔽的性能陷阱。"
+description: "Vue 3 的響應式系統基於 ES6 Proxy 重寫，徹底告別了 Vue 2 的 `Object.defineProperty` 方案。理解其源碼實現，不僅能幫助我們寫出更高效的代碼，還能避免一些隱蔽的效能陷阱。"
 wordCount: 336
 ---
 
-Vue 3 的響應式系統基於 ES6 Proxy 重寫，徹底告別了 Vue 2 的 `Object.defineProperty` 方案。理解其源碼實現，不僅能幫助我們寫出更高效的代碼，還能避免一些隱蔽的性能陷阱。
+Vue 3 的響應式系統基於 ES6 Proxy 重寫，徹底告別了 Vue 2 的 `Object.defineProperty` 方案。理解其源碼實現，不僅能幫助我們寫出更高效的代碼，還能避免一些隱蔽的效能陷阱。
 
 ## Proxy 與 Reflect 的配合
 
@@ -124,7 +124,7 @@ user.value.name = 'updated' // 這也會觸發響應式
 
 ## computed 的惰性求值
 
-`computed` 返回一個帶有緩存的 ref。只有依賴變化時才會重新計算。
+`computed` 返回一個帶有緩存的 ref。隻有依賴變化時才會重新計算。
 
 ```javascript
 function computed(getter) {
@@ -168,4 +168,4 @@ console.log(doubled.value) // 10，重新計算
 - 依賴收集用 WeakMap -> Map -> Set 三層結構，WeakMap 自動處理垃圾回收
 - ref 本質是包了一層 `{ value }` 的 reactive
 - computed 通過 dirty 標記實現惰性求值和緩存
-- 理解底層機制有助於排查響應式不生效的疑難雜症
+- 理解底層機製有助於排查響應式不生效的疑難雜症

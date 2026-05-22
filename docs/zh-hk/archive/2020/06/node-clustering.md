@@ -1,10 +1,10 @@
 ---
-title: "Node.js Cluster 多進程性能優化"
+title: "Node.js Cluster 多進程效能優化：實踐方法與治理思路"
 date: 2020-06-25 16:44:04
 tags:
   - Node.js
 readingTime: 2
-description: "在日常開發中，Node.js Cluster 多進程性能優化的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+description: "在日常開發中，Node.js Cluster 多進程效能優化的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
 wordCount: 305
 ---
 
@@ -66,7 +66,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 業務實戰
 
@@ -97,7 +97,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
-## 性能對比
+## 效能對比
 
 先來看基本的實現方式：
 

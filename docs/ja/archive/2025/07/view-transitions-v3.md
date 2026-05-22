@@ -1,6 +1,6 @@
 ---
 title: "View Transitions v3 クロスドキュメント"
-date: 2025-07-14 10:00:00
+date: 2025-07-14 16:08:45
 tags:
   - フロントエンド
 readingTime: 3

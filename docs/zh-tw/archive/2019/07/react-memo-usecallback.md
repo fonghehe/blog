@@ -26,7 +26,7 @@ function UserCard({ user }) {
   )
 }
 
-// 使用 memo：只有 props 變化時才重新渲染
+// 使用 memo：隻有 props 變化時才重新渲染
 const UserCard = React.memo(function UserCard({ user }) {
   console.log('UserCard render')
   return (
@@ -226,7 +226,7 @@ function OrderList() {
 }
 ```
 
-最佳化效果：輸入搜尋時，只有搜尋過濾結果變化的行會重新渲染，其餘行被 `memo` 攔截。
+最佳化效果：輸入搜尋時，隻有搜尋過濾結果變化的行會重新渲染，其餘行被 `memo` 攔截。
 
 ## 什麼時候不要用 React.memo
 
@@ -243,7 +243,7 @@ function Parent() {
 
 ### 2. 元件本身渲染成本很低
 
-如果元件只渲染幾個 DOM 元素，`memo` 的淺比較開銷可能比重新渲染還大。React 官方建議：**先測量，再最佳化**。
+如果元件隻渲染幾個 DOM 元素，`memo` 的淺比較開銷可能比重新渲染還大。React 官方建議：**先測量，再最佳化**。
 
 ### 3. props 經常變化
 
@@ -338,7 +338,7 @@ const onClick = useCallback(() => doSomething(id), [id])
 - 包裹 `memo` 本身有開銷
 - 程式碼可讀性下降
 
-後來只優化了列表項元件和渲染成本高的元件，效果反而更好。
+後來隻優化了列表項元件和渲染成本高的元件，效果反而更好。
 
 ## 小結
 

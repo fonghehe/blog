@@ -4,11 +4,11 @@ date: 2023-08-10 16:06:00
 tags:
   - 前端
 readingTime: 2
-description: "關於Radix UI Primitives v1 穩定版，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於Radix UI Primitives v1 穩定版，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 364
 ---
 
-關於Radix UI Primitives v1 穩定版，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於Radix UI Primitives v1 穩定版，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 

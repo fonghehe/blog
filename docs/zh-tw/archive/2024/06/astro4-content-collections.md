@@ -1,10 +1,10 @@
 ---
 title: "Astro 4 Content Collections：內容驅動的站點架構"
-date: 2024-06-25 10:00:00
+date: 2024-06-25 14:59:36
 tags:
   - React
 readingTime: 2
-description: "最近用 Astro 4 重構了一個內部文件站點。Content Collections 是 Astro 最有特色的功能之一，適合內容驅動型專案。分享一下架構設計和實踐經驗。"
+description: "最近用 Astro 4 重構了一個內部檔案站點。Content Collections 是 Astro 最有特色的功能之一，適合內容驅動型專案。分享一下架構設計和實踐經驗。"
 wordCount: 256
 ---
 
@@ -164,7 +164,7 @@ const token = await auth.getToken({
 
 ### 靜態構建
 
-Astro 預設零 JS 輸出（除了互動島嶼），100 篇文件的站點構建後全站 JS 體積約 15KB：
+Astro 預設零 JS 輸出（除了互動島嶼），100 篇檔案的站點構建後全站 JS 體積約 15KB：
 
 ```
 Page           Size        JS

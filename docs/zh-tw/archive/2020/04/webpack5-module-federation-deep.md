@@ -1,5 +1,5 @@
 ---
-title: "Webpack 5 Module Federation 深入"
+title: "Webpack 5 Module Federation 實戰 2020：跨應用元件共享指南"
 date: 2020-04-23 11:28:49
 tags:
   - Webpack

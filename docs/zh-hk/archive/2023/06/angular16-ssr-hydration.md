@@ -8,7 +8,7 @@ description: "Angular 16 帶來了**非破壞性水合（Non-Destructive Hydrati
 wordCount: 371
 ---
 
-Angular 16 帶來了**非破壞性水合（Non-Destructive Hydration）**，這是 Angular Universal SSR 的一次重大進化。以前 Angular 的水合會先銷燬服務端渲染的 HTML，再重新渲染客户端版本（"破壞性"水合），導致白屏閃爍和 CLS 指標惡化。新方式會直接複用服務端 DOM，客户端只綁定事件，不重建 DOM 結構。
+Angular 16 帶來了**非破壞性水合（Non-Destructive Hydration）**，這是 Angular Universal SSR 的一次重大進化。以前 Angular 的水合會先銷燬服務端渲染的 HTML，再重新渲染客户端版本（"破壞性"水合），導致白屏閃爍和 CLS 指標惡化。新方式會直接複用服務端 DOM，客户端隻綁定事件，不重建 DOM 結構。
 
 ## 啓用非破壞性水合
 
@@ -97,7 +97,7 @@ export class ProductService {
 }
 ```
 
-## 注意事項：不兼容水合的模式
+## 注意事項：不相容水合的模式
 
 某些操作無法水合，需要標記跳過：
 

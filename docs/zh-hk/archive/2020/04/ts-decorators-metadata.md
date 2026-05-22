@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 裝飾器與元數據"
+title: "TypeScript 裝飾器與元數據：落地路徑與實戰建議"
 date: 2020-04-03 11:02:10
 tags:
   - TypeScript
@@ -101,7 +101,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能對比
+## 效能對比
 
 以下是一個完整的示例：
 

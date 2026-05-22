@@ -10,7 +10,7 @@ wordCount: 148
 
 Angular 8 正式開放了 **Builders API**，讓社群可以為 `ng build`、`ng test`、`ng serve` 等命令提供自定義實現。這也是 `@angular-builders/custom-webpack` 、`@nrwl/workspace` 等不少優秀工具的基礎。
 
-## angular.json 中的 architect 配置
+## angular.json 中的 architect 設定
 
 ```json
 {
@@ -109,7 +109,7 @@ export function ngAdd(): Rule {
 }
 ```
 
-這樣使用者只需要：
+這樣使用者隻需要：
 
 ```bash
 ng add @my-org/my-library

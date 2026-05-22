@@ -1,5 +1,5 @@
 ---
-title: "JavaScript Iterator Helpers 提案"
+title: "JavaScript Iterator Helpers 提案：落地路徑與實戰建議"
 date: 2023-10-02 09:31:01
 tags:
   - 前端
@@ -91,7 +91,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 調優策略
 

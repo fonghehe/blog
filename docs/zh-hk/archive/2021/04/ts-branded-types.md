@@ -1,14 +1,14 @@
 ---
-title: "TypeScript 品牌類型 Nominal Typing"
+title: "TypeScript 品牌類型 Nominal Typing：落地路徑與實戰建議"
 date: 2021-04-01 09:31:04
 tags:
   - TypeScript
 readingTime: 2
-description: "關於TypeScript 品牌類型 Nominal Typing，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於TypeScript 品牌類型 Nominal Typing，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 277
 ---
 
-關於TypeScript 品牌類型 Nominal Typing，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於TypeScript 品牌類型 Nominal Typing，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 

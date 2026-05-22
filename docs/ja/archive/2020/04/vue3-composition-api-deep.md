@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 Composition API 深掘り解析"
+title: "Vue 3 Composition API 実践：setup、ref 与 reactive 完全ガイド"
 date: 2019-05-08 09:40:28
 tags:
   - Vue

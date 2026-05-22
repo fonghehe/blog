@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 6.0 ジェネリクスの改善"
-date: 2025-11-10 10:00:00
+title: "TypeScript 6.0 泛型実践：真实项目中类型系统的简化与增强"
+date: 2025-11-10 15:44:21
 tags:
   - TypeScript
 readingTime: 3

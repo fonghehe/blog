@@ -1,6 +1,6 @@
 ---
-title: "CSS 2025 新特性實戰"
-date: 2025-12-12 10:00:00
+title: "CSS 2025 年终回顧：今年可以放心使用的新特性"
+date: 2025-12-12 18:26:03
 tags:
   - CSS
 readingTime: 2
@@ -65,7 +65,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

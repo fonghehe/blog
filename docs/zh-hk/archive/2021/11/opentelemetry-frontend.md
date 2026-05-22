@@ -1,5 +1,5 @@
 ---
-title: "OpenTelemetry 前端可觀測性"
+title: "OpenTelemetry 前端可觀測性：落地路徑與實戰建議"
 date: 2021-11-18 11:47:59
 tags:
   - 前端
@@ -94,7 +94,7 @@ const csvToJson = new Transform({
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能對比
+## 效能對比
 
 實際項目中的用法會更復雜一些：
 

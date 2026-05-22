@@ -1,5 +1,5 @@
 ---
-title: "React 16 新生命週期方法"
+title: "React 16 新生命週期方法：落地路徑與實戰建議"
 date: 2019-01-18 11:03:40
 tags:
   - React

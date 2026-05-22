@@ -1,6 +1,6 @@
 ---
-title: "Svelte 5 发布详解"
-date: 2024-09-23 10:00:00
+title: "Svelte 5 发布详解：Runes 带来的响应式范式转换"
+date: 2024-09-23 17:57:34
 tags:
   - Svelte
 readingTime: 2

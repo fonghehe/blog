@@ -50,7 +50,7 @@ function ProductList({ products, filter }) {
 }
 ```
 
-## 安裝與配置
+## 安裝與設定
 
 React Compiler Beta 以 Babel 插件形式提供：
 
@@ -98,7 +98,7 @@ Compiler 基於 React 的三條規則分析代碼：
 
 1. **組件和 Hook 必須是冪等的**（相同輸入 → 相同輸出）
 2. **Props 和 State 是隻讀的**（不能直接修改）
-3. **Hook 只能在頂層調用**（不能在條件或循環中）
+3. **Hook 隻能在頂層調用**（不能在條件或循環中）
 
 滿足這三條規則的代碼，Compiler 可以安全地插入記憶化優化：
 

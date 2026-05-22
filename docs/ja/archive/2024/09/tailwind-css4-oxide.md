@@ -1,15 +1,15 @@
 ---
 title: "Tailwind CSS 4.0：Oxide エンジンと CSS-first 設定"
-date: 2024-09-05 10:00:00
+date: 2024-09-05 19:39:16
 tags:
   - CSS
   - エンジニアリング
 readingTime: 2
-description: "Tailwind CSS 4.0 Beta 开放测试了，最大变化是用 Rust 重写了底层引擎（Oxide），以及把配置从 JS 文件迁移到 CSS 文件。"
-wordCount: 340
+description: "Tailwind CSS 4.0 Beta のテストが開始されました。最大の変更点は、基盤エンジンを Rust で書き直したこと（Oxide）と、設定を JS ファイルから CSS ファイルに移行したことです。"
+wordCount: 493
 ---
 
-Tailwind CSS 4.0 Beta 开放测试了，最大变化是用 Rust 重写了底层引擎（Oxide），以及把配置从 JS 文件迁移到 CSS 文件。
+Tailwind CSS 4.0 Beta のテストが開始されました。最大の変更点は、基盤エンジンを Rust で書き直したこと（Oxide）と、設定を JS ファイルから CSS ファイルに移行したことです。
 
 ## スピード向上
 
@@ -20,7 +20,7 @@ Tailwind 4（Oxide/Rust）：完整构建 ~0.1s，增量 ~15ms
 增量构建快了 60 倍
 ```
 
-这个速度提升对大项目意义非常大。
+この速度向上は大規模プロジェクトにとって非常に重要です。
 
 ## インストール
 
@@ -37,11 +37,11 @@ export default {
 };
 ```
 
-注意：不再需要 `postcss.config.js`！
+注意：`postcss.config.js` は不要になりました！
 
 ## CSS-ファースト設定
 
-Tailwind 4 的配置直接写在 CSS 里：
+Tailwind 4 の設定は CSS に直接記述します：
 
 ```css
 /* 旧版（tailwind.config.js）*/
@@ -77,24 +77,24 @@ module.exports = {
 
 ```html
 <button class="bg-primary hover:bg-primary-dark text-white px-6 py-spacing-18">
-  按钮
+  ボタン
 </button>
 ```
 
 ## 自動コンテンツ検出
 
 ```css
-/* Tailwind 3：需要在 config 里声明 content 路径 */
+/* Tailwind 3：config で content パスを宣言する必要あり */
 /* content: ['./src/**/*.{html,js,tsx,vue}'] */
 
-/* Tailwind 4：自动检测！不需要配置 */
+/* Tailwind 4：自動検出！設定不要 */
 @import "tailwindcss";
 ```
 
 ## 新しいCSS変数API
 
 ```css
-/* Tailwind 4 的 CSS 变量直接可用 */
+/* Tailwind 4 の CSS 変数が直接使用可能 */
 .my-component {
   color: var(--color-primary);
   font-family: var(--font-display);
@@ -105,7 +105,7 @@ module.exports = {
 ## ネイティブCSSネストサポート
 
 ```css
-/* 现在可以在 @layer 里用原生 CSS 嵌套 */
+/* 現在 @layer 内でネイティブ CSS ネストを使用可能 */
 @layer components {
   .btn {
     padding: 0.5rem 1rem;
@@ -125,20 +125,20 @@ module.exports = {
 
 ## 移行：v3からv4へ
 
-大部分类名不变，主要变化：
+ほとんどのクラス名は変わりませんが、主な変更点：
 
 ```html
-<!-- 旧版 -->
+<!-- 旧バージョン -->
 <div class="bg-opacity-50 text-opacity-75">
-  <!-- 新版（用 slash 语法）-->
+  <!-- 新バージョン（スラッシュ構文を使用）-->
   <div class="bg-black/50 text-white/75"></div>
 </div>
 ```
 
 ```html
-<!-- 旧版：shadow 颜色 -->
+<!-- 旧バージョン：shadow 色 -->
 <div class="shadow-lg shadow-blue-500/50">
-  <!-- 新版：一样的（v3 就支持了）-->
+  <!-- 新バージョン：同じ（v3 で既にサポート済み）-->
   <div class="shadow-lg shadow-blue-500/50"></div>
 </div>
 ```
@@ -151,18 +151,18 @@ npx @tailwindcss/upgrade@next
 
 ## 所感
 
-配置从 JS 迁到 CSS 这个变化刚开始有点不适应，但想想其实更合理：
+設定が JS から CSS に移行するこの変更は最初は少し戸惑いますが、考えてみると実際にはより合理的です：
 
-- CSS 变量天然就是样式系统的配置项
-- 不需要运行 JS 就能获取配置
-- IDE 里直接可以看到颜色预览
+- CSS 変数は本来スタイルシステムの設定項目として適している
+- JS を実行しなくても設定を取得できる
+- IDE で直接カラープレビューを確認できる
 
-速度提升是实实在在的，特别是大项目里增量构建 15ms 这个感受非常好。
+速度向上は確実であり、特に大規模プロジェクトでのインクリメンタルビルド 15ms は非常に体感が良いです。
 
 ## まとめ
 
-- Oxide 引擎（Rust）：增量构建快 60 倍
-- CSS-first 配置：在 `@theme` 块里用 CSS 变量定义主题
-- 自动内容检测：不需要手动配置 `content` 路径
-- 官方升级工具，迁移相对平滑
-- 目前还是 Beta，生产环境等正式版
+- Oxide エンジン（Rust）：インクリメンタルビルドが60倍高速
+- CSS-first 設定：`@theme` ブロック内で CSS 変数を使ってテーマを定義
+- 自動コンテンツ検出：`content` パスの手動設定が不要
+- 公式アップグレードツールにより、移行は比較的スムーズ
+- 現在はまだ Beta、本番環境は正式版を待つ

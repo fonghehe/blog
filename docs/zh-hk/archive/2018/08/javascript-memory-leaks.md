@@ -1,14 +1,14 @@
 ---
-title: "JavaScript 內存泄漏排查"
+title: "JavaScript 內存泄漏排查：落地路徑與實戰建議"
 date: 2018-08-04 11:19:49
 tags:
   - JavaScript
 readingTime: 1
-description: "排查了一個長期運行後內存越來越大的後台系統，記錄一下內存泄漏的常見原因和排查方法。"
+description: "排查了一個長期運行後內存越來越大的後臺系統，記錄一下內存泄漏的常見原因和排查方法。"
 wordCount: 191
 ---
 
-排查了一個長期運行後內存越來越大的後台系統，記錄一下內存泄漏的常見原因和排查方法。
+排查了一個長期運行後內存越來越大的後臺系統，記錄一下內存泄漏的常見原因和排查方法。
 
 ## 常見內存泄漏場景
 
@@ -62,10 +62,10 @@ function createClosure() {
   };
 }
 
-// ✅ 只保留需要的數據
+// ✅ 隻保留需要的數據
 function createClosure() {
   const hugeData = new Array(10000).fill("data");
-  const needed = hugeData.length; // 只保留需要的
+  const needed = hugeData.length; // 隻保留需要的
   hugeData = null; // 讓 GC 回收
 
   return function handler() {

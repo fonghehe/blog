@@ -1,5 +1,5 @@
 ---
-title: "JavaScript 常用設計模式實戰"
+title: "JavaScript 常用設計模式實戰：落地路徑與實戰建議"
 date: 2019-06-20 17:03:37
 tags:
   - JavaScript
@@ -12,7 +12,7 @@ wordCount: 515
 
 ## 單例模式（Singleton）
 
-保證一個類只有一個實例，全局共享同一個對象。前端最常見的場景：全局狀態管理、彈窗管理、登錄態管理。
+保證一個類隻有一個實例，全局共享同一個對象。前端最常見的場景：全局狀態管理、彈窗管理、登錄態管理。
 
 ```javascript
 // 實現1：閉包方式
@@ -119,7 +119,7 @@ class EventBus {
     }
 }
 
-// 整個項目只有一個 EventBus 實例
+// 整個項目隻有一個 EventBus 實例
 const createEventBus = singleton(EventBus);
 const bus1 = new createEventBus();
 const bus2 = new createEventBus();
@@ -305,7 +305,7 @@ class PubSub {
         this.handlers[event] = this.handlers[event].filter(h => h !== handler);
     }
 
-    // 只訂閲一次
+    // 隻訂閲一次
     once(event, handler) {
         const wrapper = (...args) => {
             handler(...args);
@@ -334,7 +334,7 @@ pubsub.emit('user:login', { id: 1, name: '張三' });
 // 取消訂閲
 unsub1();
 
-// 場景2：once 只觸發一次
+// 場景2：once 隻觸發一次
 pubsub.once('page:loaded', () => {
     console.log('頁面首次加載完成，顯示引導彈窗');
 });
@@ -622,7 +622,7 @@ enhancedProcess([1, 2, 3]);
 ```
 
 ```javascript
-// 類裝飾器（ES7 語法，需要 Babel 插件）
+// 類裝飾器（ES7 語法，需要 Babel 外掛）
 // 裝飾器提案目前還在 Stage 3
 
 // 給類添加 mixins 功能
@@ -650,7 +650,7 @@ function withValidation(targetClass) {
     return targetClass;
 }
 
-// 實際用法（需要 Babel 插件 @babel/plugin-proposal-decorators）
+// 實際用法（需要 Babel 外掛 @babel/plugin-proposal-decorators）
 // @withValidation
 // class UserForm {
 //     constructor(name, email) {
@@ -768,7 +768,7 @@ function clearCache() {
     _cache.clear();
 }
 
-// 只導出需要公開的方法
+// 隻導出需要公開的方法
 export { factorial, fibonacci, clearCache };
 // _cache 是模塊私有的，外部無法訪問
 ```
@@ -789,7 +789,7 @@ export { factorial, fibonacci, clearCache };
 ## 小結
 
 - **單例模式**適合全局唯一的實例，用閉包或靜態屬性實現最簡單
-- **工廠模式**把創建邏輯和使用邏輯分離，新增類型時只需改工廠函數
+- **工廠模式**把創建邏輯和使用邏輯分離，新增類型時隻需改工廠函數
 - **觀察者/發佈訂閲**是前端最核心的模式，Vue 響應式、DOM 事件、組件通信都離不開它
 - **策略模式**消滅 if-else 地獄，讓算法獨立於使用它的客户端
 - **裝飾器模式**在不改源碼的情況下增強功能，React HOC 就是它的應用

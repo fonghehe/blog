@@ -1,5 +1,5 @@
 ---
-title: "用 Vite + Vue 3 啓動新項目完整指南"
+title: "用 Vite + Vue 3 啓動新項目完整指南：落地路徑與實戰建議"
 date: 2020-09-07 10:27:38
 tags:
   - Vue
@@ -47,7 +47,7 @@ my-project/
     └── shims-vue.d.ts
 ```
 
-## 項目配置
+## 項目設定
 
 ### vite.config.ts
 
@@ -146,7 +146,7 @@ declare module '*.vue' {
 }
 ```
 
-## 路由配置
+## 路由設定
 
 ```typescript
 // src/router/index.ts
@@ -235,7 +235,7 @@ export function createAppStore() {
     if (n) n.read = true
   }
 
-  // 暴露只讀狀態 + 可修改的 action
+  // 暴露隻讀狀態 + 可修改的 action
   return {
     state: readonly(state),
     toggleSidebar,
@@ -337,9 +337,9 @@ interface ImportMeta {
 
 ## 常見問題
 
-### 1. CommonJS 模塊兼容
+### 1. CommonJS 模塊相容
 
-Vite 基於 ESM，某些舊的 npm 包只提供 CJS 格式會報錯：
+Vite 基於 ESM，某些舊的 npm 包隻提供 CJS 格式會報錯：
 
 ```typescript
 // vite.config.ts 中配置 optimizeDeps
@@ -384,5 +384,5 @@ css: {
 - Vue 3 + Composition API 的組合式函數非常適合邏輯複用
 - 項目配置從 vue.config.js 遷移到 vite.config.ts，結構類似但更簡潔
 - 環境變量必須以 `VITE_` 開頭才能在客户端使用
-- 對於 CJS 兼容和靜態資源路徑，需要注意 Vite 的特殊要求
-- 內部項目如果不需要太多 Webpack 生態插件，建議直接上 Vite
+- 對於 CJS 相容和靜態資源路徑，需要注意 Vite 的特殊要求
+- 內部項目如果不需要太多 Webpack 生態外掛，建議直接上 Vite

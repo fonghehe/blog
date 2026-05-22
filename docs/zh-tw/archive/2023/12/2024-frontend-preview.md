@@ -4,7 +4,7 @@ date: 2023-12-30 10:22:19
 tags:
   - 前端
 readingTime: 2
-description: "2023 年是前端生態\"技術落地\"的一年：Next.js 13 App Router 進入生產，Angular 17 帶來了革命性的模板語法，Bun 1.0 正式釋出，AI 輔助程式設計從新奇變成日常工具。站在年末，我們預判 2024 年的關鍵走向。"
+description: "2023 年是前端生態\"技術落地\"的一年：Next.js 13 App Router 進入生產，Angular 17 帶來了革命性的範本語法，Bun 1.0 正式釋出，AI 輔助程式設計從新奇變成日常工具。站在年末，我們預判 2024 年的關鍵走向。"
 wordCount: 363
 ---
 
@@ -37,7 +37,7 @@ function ExpensiveList({ items, filter }) {
 }
 ```
 
-React Compiler 不改變寫法，只改變編譯結果。它的成功將徹底終結"何時用 useMemo/useCallback"的心智負擔。
+React Compiler 不改變寫法，隻改變編譯結果。它的成功將徹底終結"何時用 useMemo/useCallback"的心智負擔。
 
 ## Angular Signals 走向成熟
 

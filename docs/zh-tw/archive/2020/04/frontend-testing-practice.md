@@ -231,7 +231,7 @@ describe('登入流程', () => {
 });
 ```
 
-## package.json 配置
+## package.json 設定
 
 ```json
 {

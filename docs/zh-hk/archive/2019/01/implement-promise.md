@@ -1,5 +1,5 @@
 ---
-title: "手寫 Promise/A+ 規範"
+title: "手寫 Promise/A+ 規範：落地路徑與實戰建議"
 date: 2019-01-08 11:17:13
 tags:
   - JavaScript

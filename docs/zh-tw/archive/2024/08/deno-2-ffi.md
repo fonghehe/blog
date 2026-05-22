@@ -1,6 +1,6 @@
 ---
 title: "Deno 2 FFI 介面"
-date: 2024-08-30 10:00:00
+date: 2024-08-30 18:24:01
 tags:
   - 前端
 readingTime: 2

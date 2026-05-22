@@ -159,7 +159,7 @@ worker.onmessage = (e) => {
 // 4. 避免佈局抖動
 // 不好：讀寫交替
 element.style.width = '100px';
-console.log(element.offsetWidth); // 強制同步佈局
+console.log(element.offsetWidth); // 強製同步佈局
 element.style.height = '100px';
 
 // 好：先讀後寫

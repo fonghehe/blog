@@ -1,6 +1,6 @@
 ---
-title: "React 20 新機能まとめ"
-date: 2025-07-30 10:00:00
+title: "React 20 新特性全面汇总：从 19 到 20 的升级路径"
+date: 2025-07-30 13:24:01
 tags:
   - React
 readingTime: 2

@@ -1,14 +1,14 @@
 ---
-title: "React Testing Library 最佳實踐"
+title: "React Testing Library 最佳實踐：實踐方法與治理思路"
 date: 2020-07-03 17:18:36
 tags:
   - React
 readingTime: 2
-description: "關於React Testing Library 最佳實踐，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於React Testing Library 最佳實踐，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 316
 ---
 
-關於React Testing Library 最佳實踐，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於React Testing Library 最佳實踐，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 
@@ -53,7 +53,7 @@ test.describe('用户登錄流程', () => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 項目實踐
 

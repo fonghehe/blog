@@ -1,6 +1,6 @@
 ---
 title: "Angular 22 Official Release: A New Era Powered by the Evergreen Compiler"
-date: 2026-05-07 10:00:00
+date: 2026-05-07 19:21:58
 tags:
   - Angular
 readingTime: 2

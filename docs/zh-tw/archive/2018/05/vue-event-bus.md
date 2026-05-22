@@ -81,7 +81,7 @@ export default {
 **必須在 beforeDestroy 裡 off**：
 
 ```javascript
-// ❌ 只 $on 不 $off：元件銷燬後，監聽還存在
+// ❌ 隻 $on 不 $off：元件銷燬後，監聽還存在
 // 重新進入這個元件會註冊第二個監聽器，觸發兩次
 // 來回幾次就會觸發很多次，也是記憶體洩漏
 

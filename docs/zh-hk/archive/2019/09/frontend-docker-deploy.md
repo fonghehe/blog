@@ -1,14 +1,14 @@
 ---
-title: "前端 Docker 化部署方案"
+title: "前端 Docker 化部署方案：實踐方法與治理思路"
 date: 2019-09-20 10:13:42
 tags:
   - 工程化
 readingTime: 4
-description: "前端項目不再只是幾個靜態文件放到 CDN 上那麼簡單。越來越多的前端應用需要 Node.js 服務端渲染、Nginx 反向代理、環境變量注入等能力。Docker 提供了一致的運行環境，讓前端項目可以在任何地方以相同的方式構建和運行。本文將從零搭建前端項目的 Docker 化部署方案。"
+description: "前端項目不再隻是幾個靜態檔案放到 CDN 上那麼簡單。越來越多的前端應用需要 Node.js 服務端渲染、Nginx 反向代理、環境變量注入等能力。Docker 提供了一致的運行環境，讓前端項目可以在任何地方以相同的方式構建和運行。本文將從零搭建前端項目的 Docker 化部署方案。"
 wordCount: 579
 ---
 
-前端項目不再只是幾個靜態文件放到 CDN 上那麼簡單。越來越多的前端應用需要 Node.js 服務端渲染、Nginx 反向代理、環境變量注入等能力。Docker 提供了一致的運行環境，讓前端項目可以在任何地方以相同的方式構建和運行。本文將從零搭建前端項目的 Docker 化部署方案。
+前端項目不再隻是幾個靜態檔案放到 CDN 上那麼簡單。越來越多的前端應用需要 Node.js 服務端渲染、Nginx 反向代理、環境變量注入等能力。Docker 提供了一致的運行環境，讓前端項目可以在任何地方以相同的方式構建和運行。本文將從零搭建前端項目的 Docker 化部署方案。
 
 ## 為什麼前端需要 Docker
 
@@ -25,7 +25,7 @@ FROM node:12-alpine AS builder
 
 WORKDIR /app
 
-# 先複製 package.json 和 lock 文件，利用 Docker 緩存層
+# 先複製 package.json 和 lock 檔案，利用 Docker 緩存層
 COPY package.json package-lock.json ./
 RUN npm ci --registry=https://registry.npm.taobao.org
 
@@ -33,13 +33,13 @@ RUN npm ci --registry=https://registry.npm.taobao.org
 COPY . .
 RUN npm run build
 
-# 第二階段：部署（只保留構建產物）
+# 第二階段：部署（隻保留構建產物）
 FROM nginx:1.17-alpine
 
 # 複製構建產物到 nginx 目錄
 COPY --from=builder /app/build /usr/share/nginx/html
 
-# 自定義 nginx 配置
+# 自定義 nginx 設定
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
@@ -52,10 +52,10 @@ CMD ["nginx", "-g", "daemon off;"]
 多階段構建是 Docker 的重要特性：
 
 - 第一階段（`builder`）使用完整的 Node.js 鏡像構建項目
-- 第二階段使用輕量的 Nginx 鏡像，只複製構建產物
-- 最終鏡像不包含 Node.js、npm、源碼等，體積可以控制在 20MB 以內
+- 第二階段使用輕量的 Nginx 鏡像，隻複製構建產物
+- 最終鏡像不包含 Node.js、npm、源碼等，體積可以控製在 20MB 以內
 
-## Nginx 配置
+## Nginx 設定
 
 ```nginx
 # nginx.conf
@@ -162,7 +162,7 @@ volumes:
 
 Docker 構建後，環境變量被硬編碼在產物中。運行時注入環境變量有幾種方案：
 
-### 方案一：運行時替換模板變量
+### 方案一：運行時替換範本變量
 
 ```dockerfile
 FROM nginx:1.17-alpine
@@ -180,7 +180,7 @@ CMD ["nginx", "-g", "daemon off;"]
 #!/bin/sh
 # entrypoint.sh
 
-# 將環境變量注入到 JS 文件中
+# 將環境變量注入到 JS 檔案中
 # HTML 中使用 __API_URL__ 佔位符
 if [ -n "$API_URL" ]; then
   find /usr/share/nginx/html -name "*.js" -exec \
@@ -204,7 +204,7 @@ services:
       - SENTRY_DSN=https://xxx@sentry.io/123
 ```
 
-### 方案二：運行時配置文件
+### 方案二：運行時設定檔案
 
 ```html
 <!-- public/config.js -->
@@ -298,7 +298,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD wget -qO- http://localhost/health || exit 1
 ```
 
-### 安全配置
+### 安全設定
 
 ```dockerfile
 # 使用非 root 用户運行
@@ -322,14 +322,14 @@ docker history myapp/frontend
 # 最終鏡像對比
 # 完整 node 鏡像：~900MB
 # node-alpine + 多階段構建：~20MB
-# 去除不需要的文件：~15MB
+# 去除不需要的檔案：~15MB
 ```
 
 ## 小結
 
-- 使用多階段構建分離構建環境和運行環境，最終鏡像只包含必要的運行文件
+- 使用多階段構建分離構建環境和運行環境，最終鏡像隻包含必要的運行檔案
 - Nginx 作為靜態文件服務器 + 反向代理，配置 SPA 路由支持和 gzip 壓縮
 - 環境變量注入可以通過 sed 替換模板變量或獨立的 config.js 文件實現
 - Docker Compose 編排前端、後端和依賴服務，docker-compose.yml 即架構文檔
-- CI/CD 中構建 Docker 鏡像並推送到 Registry，部署時只需 pull 和 restart
+- CI/CD 中構建 Docker 鏡像並推送到 Registry，部署時隻需 pull 和 restart
 - 注意 .dockerignore、非 root 用户、健康檢查等生產環境安全和可靠性配置

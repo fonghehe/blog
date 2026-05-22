@@ -1,6 +1,6 @@
 ---
-title: "Vue 3 Composables 進階"
-date: 2024-11-21 10:00:00
+title: "Vue 3 Composables 進階：落地路徑與實戰建議"
+date: 2024-11-21 15:15:52
 tags:
   - Vue
 readingTime: 2
@@ -91,7 +91,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 

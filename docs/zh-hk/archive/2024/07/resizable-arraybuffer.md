@@ -1,14 +1,14 @@
 ---
-title: "Resizable ArrayBuffer 性能優化"
-date: 2024-07-10 10:00:00
+title: "Resizable ArrayBuffer 效能優化：實踐方法與治理思路"
+date: 2024-07-10 17:24:01
 tags:
   - 性能優化
 readingTime: 1
-description: "Resizable ArrayBuffer 性能優化這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
+description: "Resizable ArrayBuffer 效能優化這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
 wordCount: 270
 ---
 
-Resizable ArrayBuffer 性能優化這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
+Resizable ArrayBuffer 效能優化這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
 
 ## 入門指南
 

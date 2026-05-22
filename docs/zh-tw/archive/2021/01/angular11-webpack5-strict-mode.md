@@ -151,7 +151,7 @@ export class MyComponent {
 }
 ```
 
-這個規則強制模板只使用 public API，有助於元件封裝。
+這個規則強製範本隻使用 public API，有助於元件封裝。
 
 ## 升級步驟
 

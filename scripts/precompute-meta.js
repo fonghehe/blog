@@ -33,13 +33,19 @@ const SCAN_DIRS = [
   "zh-hk/archive",
 ];
 
+const RE_CODE_BLOCK = /```[\s\S]*?```/g;
+const RE_FRONTMATTER = /^---[\s\S]*?---/m;
+const RE_MARKDOWN_SYNTAX = /[#*`>\-|[\]()!]/g;
+
 function stripContent(content) {
   return content
-    .replace(/```[\s\S]*?```/g, "")
-    .replace(/^---[\s\S]*?---/m, "")
-    .replace(/[#*`>\-|[\]()!]/g, "")
+    .replace(RE_CODE_BLOCK, "")
+    .replace(RE_FRONTMATTER, "")
+    .replace(RE_MARKDOWN_SYNTAX, "")
     .trim();
 }
+
+const RE_CJK = /[一-鿿぀-ゟ゠-ヿ]/g;
 
 function estimateReadingTime(content) {
   // Extract code block content (strip language tag and fences)
@@ -47,11 +53,9 @@ function estimateReadingTime(content) {
   const codeChars = codeBlocks.join("").replace(/```\w*\n?/g, "").length;
 
   const stripped = stripContent(content);
-  const cjk = (
-    stripped.match(/[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff]/g) || []
-  ).length;
+  const cjk = (stripped.match(RE_CJK) || []).length;
   const words = stripped
-    .replace(/[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff]/g, "")
+    .replace(RE_CJK, "")
     .split(/\s+/)
     .filter(Boolean).length;
   // CJK prose: 300 chars/min, Latin prose: 200 words/min, code: 3000 chars/min
@@ -60,11 +64,9 @@ function estimateReadingTime(content) {
 
 function computeWordCount(content) {
   const stripped = stripContent(content);
-  const cjk = (
-    stripped.match(/[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff]/g) || []
-  ).length;
+  const cjk = (stripped.match(RE_CJK) || []).length;
   const words = stripped
-    .replace(/[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff]/g, "")
+    .replace(RE_CJK, "")
     .split(/\s+/)
     .filter(Boolean).length;
   return cjk + words;
@@ -128,9 +130,7 @@ for (const dir of SCAN_DIRS) {
     if (!entry.name.endsWith(".md")) continue;
     if (entry.name === "index.md") continue;
 
-    const parentPath =
-      typeof entry.parentPath === "string" ? entry.parentPath : entry.path;
-    const filePath = join(parentPath, entry.name);
+    const filePath = join(entry.parentPath || entry.path, entry.name);
     const content = readFileSync(filePath, "utf-8");
 
     const fm = parseFrontmatter(content);
@@ -216,11 +216,12 @@ for (const dir of SCAN_DIRS) {
   }
 }
 
-console.log(`\n${DRY_RUN ? "[DRY RUN] " : ""}Pre-compute complete:`);
-console.log(`  Total articles scanned: ${totalFiles}`);
+const prefix = DRY_RUN ? "[DRY RUN] " : "";
+console.log(`\n${prefix}Pre-compute complete:`);
+console.log(`  Total scanned: ${totalFiles}`);
 console.log(`  ${DRY_RUN ? "Would update" : "Updated"}: ${updatedFiles}`);
 console.log(`  Already up-to-date: ${skippedFiles}`);
 
 if (DRY_RUN && updatedFiles > 10) {
-  console.log(`  (showing first 10 of ${updatedFiles})`);
+  console.log(`  (showing first 10 of ${updatedFiles} changes)`);
 }

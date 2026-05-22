@@ -1,6 +1,6 @@
 ---
 title: "React 19 正式發佈：全新 Hooks 與 Server Actions 完整解析"
-date: 2024-12-18 10:00:00
+date: 2024-12-18 13:52:29
 tags:
   - React
 readingTime: 2
@@ -162,7 +162,7 @@ function MessageList({ messages }: { messages: Message[] }) {
 }
 ```
 
-## Document Metadata 原生支持
+## Document Metadata 原生支援
 
 ```tsx
 // React 19 原生支持 <title>、<meta>、<link> 在組件中聲明

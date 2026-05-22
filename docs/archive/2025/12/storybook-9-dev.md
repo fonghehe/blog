@@ -1,6 +1,6 @@
 ---
-title: "Storybook 9 组件开发"
-date: 2025-12-30 10:00:00
+title: "Storybook 9 实践：大型组件库文档与测试的一体化方案"
+date: 2025-12-30 16:44:21
 tags:
   - 前端
 readingTime: 2

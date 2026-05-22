@@ -3,12 +3,12 @@ title: "Vue 3.0 正式リリース：Composition APIを使いこなす"
 date: 2020-09-28 10:39:27
 tags:
   - Vue
-readingTime: 2
-description: "一等再等，Vue 3.0 \"One Piece\" 上周正式发布了！跟踪了将近一年的 alpha/beta，终于来了。这篇文章是系统性的上手指南。"
-wordCount: 233
+readingTime: 3
+description: "待望の Vue 3.0 One Piece が先週正式にリリースされました！約 1 年にわたる alpha/beta を追いかけてきて、ついに正式版が登場しました。この記事は体系的な入門ガイドです。"
+wordCount: 393
 ---
 
-一等再等，Vue 3.0 "One Piece" 上周正式发布了！跟踪了将近一年的 alpha/beta，终于来了。这篇文章是系统性的上手指南。
+待ちに待った Vue 3.0 "One Piece" が先週正式にリリースされました！約 1 年にわたって alpha/beta を追いかけてきましたが、ついに正式版が登場しました。この記事は体系的な入門ガイドです。
 
 ## 安装
 
@@ -40,18 +40,18 @@ cd my-app && npm install && npm run dev
 </template>
 
 <script setup lang="ts">
-// Vue 3.2 的 <script> 语法（现在还是 RFC，但已经可以用）
+// Vue 3.2 の <script setup> 構文（現在は RFC ですが、すでに使用可能です）
 import { ref, computed, watch, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
-// 类型定义
+// 型定義
 interface User {
   id: number;
   name: string;
   email: string;
 }
 
-// 状态
+// 状態
 const searchQuery = ref("");
 const users = ref<User[]>([]);
 const loading = ref(false);
@@ -59,7 +59,7 @@ const error = ref<string | null>(null);
 const page = ref(1);
 const total = ref(0);
 
-// 计算属性
+// 算出プロパティ
 const filteredUsers = computed(() =>
   users.value.filter(
     (u) =>
@@ -67,7 +67,7 @@ const filteredUsers = computed(() =>
   ),
 );
 
-// 数据获取
+// データ取得
 async function loadUsers() {
   loading.value = true;
   error.value = null;
@@ -83,7 +83,7 @@ async function loadUsers() {
   }
 }
 
-// 监听
+// 監視
 watch(page, loadUsers);
 
 onMounted(loadUsers);
@@ -128,12 +128,12 @@ const {
 ## 和 Vue 2 的重大变化
 
 ```typescript
-// 生命周期重命名
+// ライフサイクルの改名
 // beforeDestroy → onBeforeUnmount
 // destroyed → onUnmounted
-// beforeCreate/created → 直接写在 setup 里
+// beforeCreate/created → setup 内で直接記述
 
-// 全局 API
+// グローバル API
 // Vue 2：Vue.use() / Vue.component() / Vue.prototype
 // Vue 3：app.use() / app.component() / app.config.globalProperties
 
@@ -146,7 +146,7 @@ import store from "./store";
 const app = createApp(App);
 app.use(router);
 app.use(store);
-app.config.globalProperties.$http = axios; // 替代 Vue.prototype.$http
+app.config.globalProperties.$http = axios; // Vue.prototype.$http の代替
 app.mount("#app");
 ```
 
@@ -154,26 +154,26 @@ app.mount("#app");
 
 ```vue
 <!-- Vue 2：v-model = :value + @input -->
-<!-- 自定义组件用 model 选项 -->
+<!-- カスタムコンポーネントは model オプションを使用 -->
 
-<!-- Vue 3：v-model 更灵活 -->
-<!-- 默认：v-model = :modelValue + @update:modelValue -->
+<!-- Vue 3：v-model はより柔軟 -->
+<!-- デフォルト：v-model = :modelValue + @update:modelValue -->
 <MyInput v-model="name" />
-<!-- 等价于 -->
+<!-- 次と同等 -->
 <MyInput :modelValue="name" @update:modelValue="name = $event" />
 
-<!-- 多个 v-model -->
+<!-- 複数の v-model -->
 <UserForm v-model:name="name" v-model:email="email" />
 ```
 
 ## Teleport（传送门）
 
 ```vue
-<!-- 把组件渲染到 DOM 中的其他位置 -->
+<!-- コンポーネントを DOM 内の他の場所にレンダリング -->
 <template>
   <button @click="showModal = true">打开弹窗</button>
 
-  <!-- Teleport 到 body，解决 z-index 和 overflow 问题 -->
+  <!-- body に Teleport し、z-index と overflow の問題を解決 -->
   <Teleport to="body">
     <div v-if="showModal" class="modal-overlay">
       <div class="modal">
@@ -187,17 +187,17 @@ app.mount("#app");
 
 ## Vue 3 生态现状（2020年9月）
 
-- **Vue Router 4**：已有 RC 版，和 Vue 3 配套
-- **Vuex 4**：同时支持 Vue 2/3
-- **Element Plus**：Element UI 的 Vue 3 版，还在开发中
-- **Vite**：Vue 3 官方推荐构建工具
+- **Vue Router 4**：RC 版がすでにリリースされており、Vue 3 に対応しています
+- **Vuex 4**：Vue 2/3 の両方をサポート
+- **Element Plus**：Element UI の Vue 3 版で、開発中です
+- **Vite**：Vue 3 公式推奨のビルドツール
 
-大部分第三方库还需要时间迁移，生产项目暂时观望，新项目可以开始用了。
+ほとんどのサードパーティライブラリは移行にまだ時間がかかります。本番プロジェクトはしばらく様子を見て、新規プロジェクトでは使い始めることができます。
 
 ## まとめ
 
-- Vue 3 不是颠覆，是演进。Composition API 是加法，Options API 还在
-- `setup()` 或 `<script>` 是新的写法方式，更灵活
-- Composables 替代 Mixin，来源清晰，类型友好
-- `Teleport`、`Suspense` 解决了 Vue 2 的痛点
-- 生态还需要 6-12 个月成熟，但已经可以在新项目中使用
+- Vue 3 は破壊的な変更ではなく、進化です。Composition API は追加であり、Options API も引き続き使用できます。
+- `setup()` または `<script setup>` は新しい書き方で、より柔軟です。
+- Composables が Mixin を置き換え、ソースが明確で型に優しいです。
+- `Teleport`、`Suspense` は Vue 2 の悩みを解決しました。
+- エコシステムの成熟にはあと 6〜12 か月かかりますが、新しいプロジェクトではすでに使用できます。

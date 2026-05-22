@@ -1,6 +1,6 @@
 ---
 title: "React 19 正式版：生產環境遷移指南"
-date: 2025-01-10 10:00:00
+date: 2025-01-10 17:04:41
 tags:
   - React
 readingTime: 2
@@ -68,7 +68,7 @@ function Input({ ref, className, ...props }: InputProps) {
 </ThemeContext>
 ```
 
-舊寫法依然有效，只是新寫法更簡潔。
+舊寫法依然有效，隻是新寫法更簡潔。
 
 ## 遷移：useFormState → useActionState
 

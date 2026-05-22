@@ -1,6 +1,6 @@
 ---
-title: "Next.js 16 Compiler Optimization"
-date: 2025-11-06 10:00:00
+title: "Next.js 16 Compiler Practice: Migration后Build速度Real提升Data"
+date: 2025-11-06 13:40:17
 tags:
   - React
   - Performance Optimization

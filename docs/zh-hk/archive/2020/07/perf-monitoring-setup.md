@@ -1,10 +1,10 @@
 ---
-title: "前端性能監控體系搭建"
+title: "前端效能監控體系搭建：實踐方法與治理思路"
 date: 2020-07-21 09:55:46
 tags:
   - 性能優化
 readingTime: 2
-description: "上線後用户反饋\"頁面很慢\"，但我們沒有任何數據佐證。搭建了一套前端性能監控體系，終於能用數據説話了。"
+description: "上線後用户反饋\"頁面很慢\"，但我們沒有任何數據佐證。搭建了一套前端效能監控體系，終於能用數據説話了。"
 wordCount: 159
 ---
 
@@ -26,7 +26,7 @@ const THRESHOLDS = {
 };
 ```
 
-## 採集性能數據
+## 採集效能數據
 
 ```javascript
 // utils/performance.js
@@ -107,7 +107,7 @@ export class PerformanceMonitor {
       type: r.initiatorType,
       size: r.transferSize,
       duration: r.duration,
-    })).filter(r => r.duration > 100); // 只記錄慢資源
+    })).filter(r => r.duration > 100); // 隻記錄慢資源
   }
 
   // 上報數據

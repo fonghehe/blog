@@ -34,7 +34,7 @@ my-extension/
 
 ## package.json 中的 contributes
 
-`contributes` 是外掛能力宣告的核心。通過它，你可以註冊命令、選單項、快捷鍵、配置項等，而不需要寫任何執行時程式碼：
+`contributes` 是外掛能力宣告的核心。通過它，你可以註冊命令、選單項、快捷鍵、設定項等，而不需要寫任何執行時程式碼：
 
 ```json
 {
@@ -166,7 +166,7 @@ my-extension/
 }
 ```
 
-實際開發中，建議儘量使用具體的啟用事件。我們的外掛只需要在使用者執行命令或開啟檢視時啟用，不需要 `*` 全量啟用。
+實際開發中，建議儘量使用具體的啟用事件。我們的外掛隻需要在使用者執行命令或開啟檢視時啟用，不需要 `*` 全量啟用。
 
 ## 命令註冊與核心邏輯
 
@@ -420,7 +420,7 @@ function createWebviewPanel(context: vscode.ExtensionContext) {
     {
       // 啟用指令碼
       enableScripts: true,
-      // 限制資源載入來源
+      // 限製資源載入來源
       localResourceRoots: [
         vscode.Uri.file(path.join(context.extensionPath, 'media'))
       ],

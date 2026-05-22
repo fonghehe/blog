@@ -1,5 +1,5 @@
 ---
-title: "Angular 8 Ivy 渲染引擎：差異化加載與 Web Worker 支持"
+title: "Angular 8 Ivy 渲染引擎：差異化加載與 Web Worker 支援"
 date: 2019-07-31 15:52:46
 tags:
   - Angular
@@ -58,7 +58,7 @@ dist/
 static ɵcmp = defineComponent({...}); // 編譯器生成
 ```
 
-## ngcc 兼容編譯器
+## ngcc 相容編譯器
 
 Ivy 需要所有依賴也是 Ivy 格式。對於還沒用 Ivy 編譯的第三方庫，Angular 提供了 `ngcc`（Angular Compatibility Compiler）在安裝時自動轉換：
 
@@ -68,7 +68,7 @@ Ivy 需要所有依賴也是 Ivy 格式。對於還沒用 Ivy 編譯的第三方
 node_modules/.bin/ngcc
 ```
 
-## Web Worker CLI 支持
+## Web Worker CLI 支援
 
 ```bash
 ng generate web-worker heavy-task

@@ -4,20 +4,20 @@ date: 2019-10-18 14:35:07
 tags:
   - TypeScript
 readingTime: 2
-description: "Next.js 9 在 9 月底发布，带来了两个重要特性：内置 TypeScript 支持和更完善的 API Routes。"
-wordCount: 189
+description: "Next.js 9 は 9 月末にリリースされ、2 つの重要な機能が追加されました：組み込みの TypeScript サポートと、より充実した API Routes です。"
+wordCount: 277
 ---
 
-Next.js 9 在 9 月底发布，带来了两个重要特性：内置 TypeScript 支持和更完善的 API Routes。
+Next.js 9 が 9 月末にリリースされ、2 つの重要な新機能が導入されました：組み込みの TypeScript サポートと強化された API Routes です。
 
 ## TypeScriptのビルトインサポート
 
 ```bash
-# 不再需要手动配置，直接创建 tsconfig.json
+# 手動設定は不要になりました。直接 tsconfig.json を作成します
 touch tsconfig.json
-npm run dev  # Next.js 自动填充 tsconfig.json
+npm run dev  # Next.js が自動的に tsconfig.json を生成します
 
-# 或者直接创建 .tsx 文件，Next.js 会提示安装必要的包
+# または .tsx ファイルを直接作成すると、Next.js が必要なパッケージのインストールを促します
 ```
 
 ```typescript
@@ -88,7 +88,7 @@ export default async function handler(
   }
 }
 
-// pages/api/users/[id].ts（动态路由）
+// pages/api/users/[id].ts（動的ルート）
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
@@ -113,12 +113,12 @@ export default async function handler(
 
 ```typescript
 // pages/docs/[...slug].tsx
-// 匹配 /docs/a, /docs/a/b, /docs/a/b/c
+// /docs/a, /docs/a/b, /docs/a/b/c にマッチ
 
 import { GetStaticPaths, GetStaticProps } from "next";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // 生成所有可能的路径
+  // すべての可能なパスを生成
   const allDocs = await getAllDocsSlugs();
 
   return {
@@ -137,29 +137,29 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 ## 自動静的最適化の改善
 
-Next.js 9 改进了自动静态优化的判断：
+Next.js 9 では、自動静的最適化の判断が改善されました：
 
 ```typescript
-// 这个页面会被静态优化（没有 getServerSideProps / getInitialProps）
+// このページは静的最適化されます（getServerSideProps / getInitialProps なし）
 const AboutPage = () => <div>关于我们</div>
 export default AboutPage
 
-// 构建时自动变成静态 HTML，无需服务器
+// ビルド時に自動的に静的 HTML になり、サーバーは不要
 ```
 
 ## Nuxt.jsとの比較
 
-| 特性       | Next.js 9 | Nuxt.js 2                   |
-| ---------- | --------- | --------------------------- |
-| 框架       | React     | Vue                         |
-| TypeScript | 内置支持  | 需要配置                    |
-| API Routes | ✅ 内置   | ❌（需要 serverMiddleware） |
-| 静态生成   | 路由级别  | 整站                        |
-| 社区规模   | 大        | 中                          |
+| 特性         | Next.js 9 | Nuxt.js 2                   |
+| ------------ | --------- | --------------------------- |
+| フレームワーク | React     | Vue                         |
+| TypeScript   | 組み込み   | 設定が必要                  |
+| API Routes   | ✅ 組み込み | ❌（serverMiddleware が必要） |
+| 静的生成     | ルート単位 | サイト全体                  |
+| コミュニティ規模 | 大       | 中                          |
 
 ## まとめ
 
-- Next.js 9 内置 TypeScript，零配置开箱即用
-- API Routes 让 Next.js 成为真正的全栈框架
-- Catch-all Routes `[...slug]` 处理嵌套动态路径
-- 静态优化继续完善，没有数据获取的页面自动预渲染
+- Next.js 9 は TypeScript を組み込み、ゼロ設定で即座に使用可能
+- API Routes により Next.js は真のフルスタックフレームワークに
+- Catch-all Routes `[...slug]` でネストされた動的パスを処理
+- 静的最適化がさらに改善され、データ取得のないページは自動的にプリレンダリング

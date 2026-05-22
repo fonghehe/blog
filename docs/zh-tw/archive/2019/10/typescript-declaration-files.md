@@ -12,7 +12,7 @@ wordCount: 470
 
 ## 宣告檔案的作用
 
-宣告檔案（`.d.ts`）只包含型別資訊，不包含實現。編譯器使用它來理解 JavaScript 程式碼的型別結構：
+宣告檔案（`.d.ts`）隻包含型別資訊，不包含實現。編譯器使用它來理解 JavaScript 程式碼的型別結構：
 
 ```ts
 // index.d.ts - 宣告檔案
@@ -270,7 +270,7 @@ declare module 'some-untyped-library' {
 }
 ```
 
-## 配置 tsconfig.json
+## 設定 tsconfig.json
 
 ```json
 {
@@ -305,7 +305,7 @@ declare module 'some-untyped-library' {
 
 ## 小結
 
-- 宣告檔案（`.d.ts`）只包含型別資訊，不包含實現程式碼
+- 宣告檔案（`.d.ts`）隻包含型別資訊，不包含實現程式碼
 - `declare module` 用於宣告模組型別，`declare namespace` 用於宣告全域性名稱空間
 - 函式過載可以表達同一個函式的不同調用簽名
 - 泛型可以讓型別宣告更加靈活和精確

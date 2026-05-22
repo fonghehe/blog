@@ -1,10 +1,10 @@
 ---
-title: "前端項目 Docker 容器化入門"
+title: "前端項目 Docker 容器化入門：落地路徑與實戰建議"
 date: 2018-08-18 14:39:15
 tags:
   - 工程化
 readingTime: 1
-description: "最近把幾個前端項目容器化了，發現比想象中簡單。記錄一下基礎配置。"
+description: "最近把幾個前端項目容器化了，發現比想象中簡單。記錄一下基礎設定。"
 wordCount: 160
 ---
 
@@ -14,7 +14,7 @@ wordCount: 160
 
 - 統一開發/測試/生產環境（消滅"在我機器上能跑"）
 - CI/CD 流水線部署更簡單
-- 多個項目共存，互不干擾
+- 多個項目共存，互不幹擾
 
 ## Dockerfile（基礎版）
 
@@ -25,7 +25,7 @@ FROM node:10-alpine AS builder
 WORKDIR /app
 
 # 先複製 package.json，利用 Docker 層緩存
-# 只有 package.json 變化才重新 npm install
+# 隻有 package.json 變化才重新 npm install
 COPY package.json package-lock.json ./
 RUN npm ci
 
@@ -33,13 +33,13 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-# 生產階段：只包含 Nginx 和構建產物
+# 生產階段：隻包含 Nginx 和構建產物
 FROM nginx:alpine
 
 # 複製構建產物
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# 複製 Nginx 配置
+# 複製 Nginx 設定
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
@@ -170,6 +170,6 @@ docker build --build-arg VUE_APP_API_URL=https://api.staging.com -t my-app:stagi
 ## 小結
 
 - 多階段構建：Node 鏡像構建，Nginx 鏡像部署，最終鏡像很小
-- `.dockerignore` 排除不需要的文件，加快構建速度
+- `.dockerignore` 排除不需要的檔案，加快構建速度
 - Nginx 配置 SPA 路由支持（try_files）
 - `docker-compose` 管理多服務開發環境

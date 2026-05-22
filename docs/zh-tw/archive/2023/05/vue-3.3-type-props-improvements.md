@@ -154,8 +154,8 @@ export interface User {
 <script setup lang="ts">
 import type { User } from "./types";
 
-// 3.3 之前：需要特殊配置才能在 defineProps 裡用外部型別
-// 3.3：直接用，無需額外配置
+// 3.3 之前：需要特殊設定才能在 defineProps 裡用外部型別
+// 3.3：直接用，無需額外設定
 const props = defineProps<{
   user: User;
 }>();

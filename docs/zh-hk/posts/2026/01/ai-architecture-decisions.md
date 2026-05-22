@@ -1,14 +1,14 @@
 ---
 title: "AI 輔助架構決策工具"
-date: 2026-01-08 10:00:00
+date: 2026-01-08 16:42:19
 tags:
   - 工程化
 readingTime: 3
-description: "技術選型和架構決策是高級工程師的核心工作，也是最難用 AI 替代的部分。但 AI 可以成為極強的決策輔助工具——幫你分析 trade-off、模擬不同方案的性能表現、甚至發現你遺漏的約束條件。"
+description: "技術選型和架構決策是高級工程師的核心工作，也是最難用 AI 替代的部分。但 AI 可以成為極強的決策輔助工具——幫你分析 trade-off、模擬不同方案的效能表現、甚至發現你遺漏的約束條件。"
 wordCount: 425
 ---
 
-技術選型和架構決策是高級工程師的核心工作，也是最難用 AI 替代的部分。但 AI 可以成為極強的決策輔助工具——幫你分析 trade-off、模擬不同方案的性能表現、甚至發現你遺漏的約束條件。
+技術選型和架構決策是高級工程師的核心工作，也是最難用 AI 替代的部分。但 AI 可以成為極強的決策輔助工具——幫你分析 trade-off、模擬不同方案的效能表現、甚至發現你遺漏的約束條件。
 
 ## 用 AI 做技術選型對比分析
 
@@ -34,7 +34,7 @@ const criteria: SelectionCriteria[] = [
   { factor: 'ecosystem', weight: 8, description: '社區活躍度、第三方庫質量' },
   { factor: 'team-familiarity', weight: 6, description: '團隊現有技術棧匹配度' },
   { factor: 'hiring', weight: 5, description: '人才市場供給' },
-  { factor: 'ai-tooling', weight: 8, description: 'AI 工具支持程度' },
+  { factor: 'ai-tooling', weight: 8, description: 'AI 工具支援程度' },
 ];
 
 // AI 根據約束評估各方案
@@ -78,9 +78,9 @@ function shouldExtractModule(mod: ModuleAnalysis): boolean {
 }
 ```
 
-## 性能預算決策支持
+## 效能預算決策支援
 
-AI 可以基於你的用户畫像和流量數據，幫你制定合理的性能預算，而不是拍一個"LCP < 2.5s"了事。
+AI 可以基於你的用戶畫像和流量數據，幫你製定合理的效能預算，而不是拍一個"LCP < 2.5s"了事。
 
 ```typescript
 // performance-budget-ai.ts
@@ -96,10 +96,10 @@ const userSegments: UserSegment[] = [
   { name: '一線城市iOS', percentage: 35, device: 'high-end', network: '4g', region: 'cn-east' },
   { name: '二線城市Android', percentage: 28, device: 'mid-range', network: '4g', region: 'cn-central' },
   { name: '下沉市場', percentage: 22, device: 'low-end', network: '3g', region: 'cn-west' },
-  { name: '海外用户', percentage: 15, device: 'mid-range', network: '4g', region: 'sea' },
+  { name: '海外用戶', percentage: 15, device: 'mid-range', network: '4g', region: 'sea' },
 ];
 
-// AI 基於用户分羣推薦的性能預算
+// AI 基於用戶分群推薦的效能預算
 interface PerformanceBudget {
   metric: string;
   p50: number;
@@ -156,5 +156,5 @@ const decisionValidation = {
 - AI 是決策的加速器和放大器，不是決策者本身
 - 結構化的約束定義是 AI 給出好建議的前提條件
 - 量化分析（加權評分、耦合度計算）比模糊的"AI 推薦"更可靠
-- 性能預算應該基於實際用户分羣數據，而不是行業平均值
+- 效能預算應該基於實際用戶分群數據，而不是行業平均值
 - 永遠交叉驗證 AI 的輸出，尤其是 benchmark 數據和庫推薦

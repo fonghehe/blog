@@ -1,5 +1,5 @@
 ---
-title: "微前端 Module Federation 落地"
+title: "微前端 Module Federation 落地：落地路徑與實戰建議"
 date: 2021-05-14 16:06:34
 tags:
   - 微前端
@@ -92,7 +92,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 

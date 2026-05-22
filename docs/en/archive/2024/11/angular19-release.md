@@ -1,6 +1,6 @@
 ---
 title: "Angular 19 Official Release: Incremental Hydration, Route-Level Rendering, and Zoneless Developer Preview"
-date: 2024-11-20 10:00:00
+date: 2024-11-20 09:14:51
 tags:
   - Angular
   - CSS

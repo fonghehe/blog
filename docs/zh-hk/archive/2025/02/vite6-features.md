@@ -1,6 +1,6 @@
 ---
-title: "Vite 6：不只是更快"
-date: 2025-02-22 10:00:00
+title: "Vite 6：不隻是更快"
+date: 2025-02-22 17:56:33
 tags:
   - 工程化
 readingTime: 1
@@ -56,7 +56,7 @@ export default defineConfig({
 });
 ```
 
-不再需要手動配置 SSR 構建流程，Environment API 讓多環境構建變得統一。
+不再需要手動設定 SSR 構建流程，Environment API 讓多環境構建變得統一。
 
 ## Rolldown 預覽
 
@@ -100,7 +100,7 @@ Rolldown 是用 Rust 重寫的 Rollup，API 兼容，性能差距巨大。大型
 ## HMR 優化
 
 ```ts
-// v6 的 HMR 更新——只更新變更的 CSS 模塊
+// v6 的 HMR 更新——隻更新變更的 CSS 模塊
 // 之前：修改一個組件的 CSS，整個頁面 reload
 // 現在：精確定位到變更的模塊，無感知更新
 
@@ -125,7 +125,7 @@ export default defineConfig({
 });
 ```
 
-## 與 Bun/Deno 的兼容
+## 與 Bun/Deno 的相容
 
 ```bash
 # Bun + Vite 6
@@ -143,7 +143,7 @@ deno task dev
 
 Vite 6 對 Bun 和 Deno 的支持更成熟，不再有兼容性警告。
 
-## 性能對比
+## 效能對比
 
 ```
 構建測試（500 個組件的項目）：

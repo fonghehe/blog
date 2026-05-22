@@ -230,9 +230,9 @@ export const budgetConfig: BudgetConfig = {
 };
 ```
 
-### 預算執行機制
+### 預算執行機製
 
-預算如果只是寫在文件裡等於沒有。必須整合到工程流程中：
+預算如果隻是寫在檔案裡等於沒有。必須整合到工程流程中：
 
 ```typescript
 // scripts/check-performance-budget.ts
@@ -372,7 +372,7 @@ jobs:
 
 ### RUM 資料的迴歸檢測
 
-Lab 檢測只能發現明顯的迴歸。更精確的方法是對比**釋出前後的 RUM P75**：
+Lab 檢測隻能發現明顯的迴歸。更精確的方法是對比**釋出前後的 RUM P75**：
 
 ```typescript
 // scripts/rum-regression-check.ts
@@ -439,7 +439,7 @@ function exceedsAbsoluteThreshold(metric: string, delta: number): boolean {
 }
 ```
 
-### 自動回滾機制
+### 自動回滾機製
 
 當檢測到嚴重效能迴歸時，觸發自動回滾：
 
@@ -606,7 +606,7 @@ function useChart(containerRef: Ref<HTMLElement | null>) {
     if (containerRef.value) {
       chartInstance = init(containerRef.value, null, {
         renderer: "canvas",
-        useDirtyRect: true, // 髒矩形渲染，只重繪變化區域
+        useDirtyRect: true, // 髒矩形渲染，隻重繪變化區域
       });
     }
   });

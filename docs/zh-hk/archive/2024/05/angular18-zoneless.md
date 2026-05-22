@@ -4,7 +4,7 @@ date: 2024-05-29 15:09:49
 tags:
   - Angular
 readingTime: 2
-description: "Angular 18 於 2024 年 5 月 22 日正式發佈，最受期待的特性是 **Zoneless 變更檢測**（實驗性）。這意味着 Angular 應用可以完全不依賴 `zone.js` 運行，從而減小包體積、提升性能，並解決多年來 zone.js 帶來的各種兼容性問題。"
+description: "Angular 18 於 2024 年 5 月 22 日正式發佈，最受期待的特性是 **Zoneless 變更檢測**（實驗性）。這意味着 Angular 應用可以完全不依賴 `zone.js` 運行，從而減小包體積、提升效能，並解決多年來 zone.js 帶來的各種相容性問題。"
 wordCount: 393
 ---
 
@@ -20,7 +20,7 @@ zone.js 帶來的問題：
 - 性能開銷：所有異步操作都被攔截，引發不必要的變更檢測
 - 調試困難：stack trace 中充滿 zone 相關幀
 - 兼容問題：與某些第三方庫（如 Monaco Editor）衝突
-- 不兼容 Native Async/Await（需要 Babel 降級）
+- 不相容 Native Async/Await（需要 Babel 降級）
 ```
 
 ## 開啓 Zoneless 模式
@@ -52,7 +52,7 @@ bootstrapApplication(AppComponent, {
 }
 ```
 
-## Zoneless 下的變更檢測機制
+## Zoneless 下的變更檢測機製
 
 沒有 zone.js，Angular 如何知道何時需要更新 UI？答案是依賴 Signals 和顯式通知：
 

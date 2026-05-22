@@ -4,23 +4,23 @@ date: 2023-02-22 09:48:36
 tags:
   - Vite
   - Vitest
-readingTime: 2
-description: "Vitest 1.0 正式发布了。从 0.x 到 1.0，它已经从\"有趣的实验\"变成了可以认真用在生产环境的测试框架。"
-wordCount: 437
+readingTime: 3
+description: "Vitest 1.0 が正式にリリースされました。0.x から 1.0 への移行により、「面白い実験」から本番環境で真剣に使えるテストフレームワークへと進化しました。"
+wordCount: 745
 ---
 
-Vitest 1.0 正式发布了。从 0.x 到 1.0，它已经从"有趣的实验"变成了可以认真用在生产环境的测试框架。
+Vitest 1.0 が正式にリリースされました。0.x から 1.0 への移行により、「面白い実験」から本番環境で真剣に使えるテストフレームワークへと進化しました。
 
 ## Jest からの移行理由
 
-我们项目的痛点：
+私たちのプロジェクトの課題：
 
-1. **ESM 支持差**：Jest 对 ESM 的支持一直半生不熟，需要各种 transform 配置
-2. **配置繁琐**：`jest.config.js` 里一堆 `moduleNameMapper`、`transform` 规则
-3. **速度慢**：大型项目跑完测试要 2-3 分钟
-4. **和 Vite 配置割裂**：Vite 有一套 alias 和插件体系，Jest 不认
+1. **ESM サポートの悪さ**：Jest の ESM サポートは中途半端で、様々な transform 設定が必要でした
+2. **設定の煩雑さ**：`jest.config.js` に大量の `moduleNameMapper` や `transform` ルールが必要でした
+3. **速度の遅さ**：大規模プロジェクトではテスト完了に 2-3 分かかっていました
+4. **Vite 設定との分断**：Vite には alias やプラグイン体系があるのに、Jest は対応していませんでした
 
-Vitest 直接复用 Vite 的配置和插件系统，天然支持 ESM、TypeScript、CSS Modules。
+Vitest は Vite の設定とプラグインシステムを直接再利用でき、ESM、TypeScript、CSS Modules をネイティブサポートしています。
 
 ## 基本設定
 
@@ -43,7 +43,7 @@ export default defineConfig({
 });
 ```
 
-对比 Jest 配置，精简了很多。不需要 `moduleNameMapper`，因为直接用 Vite 的 `resolve.alias`。
+Jest の設定と比較すると、大幅に簡素化されています。`moduleNameMapper` は不要で、Vite の `resolve.alias` をそのまま使用できます。
 
 ## テストを書く
 
@@ -75,7 +75,7 @@ describe("Counter", () => {
 });
 ```
 
-`vi.fn()` 替代 `jest.fn()`，`vi.mock()` 替代 `jest.mock()`，API 几乎一样，迁移成本很低。
+`vi.fn()` は `jest.fn()` の代替、`vi.mock()` は `jest.mock()` の代替であり、API はほぼ同じなので移行コストは低いです。
 
 ## 独自の優位性
 
@@ -96,17 +96,17 @@ if (import.meta.vitest) {
 }
 ```
 
-测试写在源码里，对于工具函数特别方便。`import.meta.vitest` 在生产构建时会被 tree-shake 掉。
+テストをソースコードに直接記述でき、ユーティリティ関数に特に便利です。`import.meta.vitest` は本番ビルド時に tree-shake で除去されます。
 
-### UI 模式
+### UI モード
 
 ```bash
 vitest --ui
 ```
 
-Vitest 自带 Web UI，可以可视化查看测试结果、覆盖率，不用额外装插件。
+Vitest には Web UI が標準で付属しており、テスト結果やカバレッジを視覚的に確認できます。追加のプラグインは不要です。
 
-### 快照测试
+### スナップショットテスト
 
 ```typescript
 it("渲染一致性", () => {
@@ -115,42 +115,42 @@ it("渲染一致性", () => {
 });
 ```
 
-快照格式和 Jest 一致，现有快照文件可以直接复用。
+スナップショット形式は Jest と互換性があり、既存のスナップショットファイルをそのまま再利用できます。
 
 ## パフォーマンス比較
 
-在我们的项目上（~800 个测试用例）：
+私たちのプロジェクト（約 800 テストケース）での比較：
 
 ```
 Jest:    68s
-Vitest:  12s （单线程）
-Vitest:  5s  （多线程，默认开启）
+Vitest:  12s （シングルスレッド）
+Vitest:  5s  （マルチスレッド、デフォルトで有効）
 ```
 
-Vitest 默认使用 worker threads 并行执行测试，速度提升显著。
+Vitest はデフォルトで worker threads を使用してテストを並列実行するため、速度が大幅に向上します。
 
 ## 移行の推奨
 
 ```bash
-# 1. 安装
+# 1. インストール
 pnpm add -D vitest @vitest/coverage-v8 @vitest/ui
 
-# 2. 全局替换 API
+# 2. API を一括置換
 # jest.fn()    -> vi.fn()
 # jest.mock()  -> vi.mock()
 # jest.spyOn() -> vi.spyOn()
 # jest.useFakeTimers() -> vi.useFakeTimers()
 
-# 3. 删除 jest 相关依赖
+# 3. jest 関連の依存関係を削除
 # jest, ts-jest, @types/jest, babel-jest, jest-environment-jsdom
 ```
 
-大部分项目的迁移可以在一两天内完成。Jest 的 matcher API（`toBe`、`toEqual` 等）完全一致。
+ほとんどのプロジェクトの移行は 1〜2 日で完了できます。Jest の matcher API（`toBe`、`toEqual` など）は完全に互換性があります。
 
 ## まとめ
 
-- Vitest 1.0 稳定可用，性能比 Jest 快 5-10 倍
-- 复用 Vite 配置，消除了 Jest+Vite 配置割裂的问题
-- ESM、TypeScript 原生支持，不需要额外 transform
-- 从 Jest 迁移成本很低，API 高度兼容
-- In-Source Testing 和 UI 模式是额外亮点
+- Vitest 1.0 は安定して使用可能で、Jest より 5〜10 倍高速です
+- Vite 設定を再利用でき、Jest + Vite の設定分断問題が解消されます
+- ESM、TypeScript をネイティブサポートし、追加の transform は不要です
+- Jest からの移行コストは低く、API の互換性が高いです
+- In-Source Testing と UI モードは追加の魅力です

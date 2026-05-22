@@ -1,6 +1,6 @@
 ---
-title: "Vue 3.5 リアクティビティリファクタリング"
-date: 2024-09-19 10:00:00
+title: "Vue 3.5 响应式重构：响应式 Props 解构与 useTemplateRef"
+date: 2024-09-19 15:53:30
 tags:
   - Vue
 readingTime: 3

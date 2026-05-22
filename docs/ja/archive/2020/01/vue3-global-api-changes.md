@@ -3,16 +3,16 @@ title: "Vue 3 グローバルAPIの変更と移行"
 date: 2020-01-29 15:44:45
 tags:
   - Vue
-readingTime: 2
-description: "Vue 3 将全局 API 从构造函数模式改为工厂函数模式，所有操作都通过 `createApp` 返回的应用实例进行。这意味着 Vue 2 中常见的 `Vue.use`、`Vue.component`、`Vue.directive` 全部需要调整。本文梳理这些变更并给出迁移方案。"
-wordCount: 338
+readingTime: 3
+description: "Vue 3 ではグローバル API がコンストラクターパターンからファクトリ関数パターンに変更され、すべての操作は createApp が返すアプリケーションインスタンスを介して行われます。つまり、Vue 2 でおなじみの Vue.use、Vue.component、Vue.directive はすべて調整が必要です。この記事ではこれらの変更を整理し、移行方法を紹介します。"
+wordCount: 617
 ---
 
-Vue 3 将全局 API 从构造函数模式改为工厂函数模式，所有操作都通过 `createApp` 返回的应用实例进行。这意味着 Vue 2 中常见的 `Vue.use`、`Vue.component`、`Vue.directive` 全部需要调整。本文梳理这些变更并给出迁移方案。
+Vue 3 では、グローバル API がコンストラクタパターンからファクトリ関数パターンに変更され、すべての操作は `createApp` が返すアプリケーションインスタンスを介して行われます。つまり、Vue 2 でおなじみの `Vue.use`、`Vue.component`、`Vue.directive` はすべて調整が必要です。この記事ではこれらの変更を整理し、移行方法を紹介します。
 
 ## createAppがnew Vueに代わる
 
-Vue 2 通过构造函数创建实例，Vue 3 通过工厂函数创建应用。
+Vue 2 はコンストラクタでインスタンスを作成し、Vue 3 はファクトリ関数でアプリケーションを作成します。
 
 ```javascript
 // Vue 2
@@ -61,7 +61,7 @@ app.mount('#app')
 
 ## グローバル登録の変更
 
-组件、指令、混入的注册方式都移到了 app 实例上。
+コンポーネント、ディレクティブ、ミックスインの登録方法はすべて app インスタンスに移行しました。
 
 ```javascript
 // Vue 2
@@ -79,18 +79,18 @@ app.directive('focus', {
 app.mixin({ created() { console.log('mixin') } })
 ```
 
-关键区别：每个 `createApp` 实例拥有独立的全局注册空间。一个应用注册的组件不会污染另一个应用。
+重要な違いは、各 `createApp` インスタンスが独立したグローバル登録スペースを持つことです。あるアプリケーションで登録したコンポーネントが別のアプリケーションに影響を与えることはありません。
 
 ## 削除または変更されたAPI
 
-Vue 3 移除了一批低频或有问题的 API。
+Vue 3 では、使用頻度が低い、または問題のある API が削除されました。
 
 ```javascript
 {% raw %}
-// Vue 2 中以下 API 在 Vue 3 中被移除或替换
+// Vue 2 の以下の API は Vue 3 で削除または置き換えられました
 
-// 移除：$on / $off / $once（事件总线）
-// 替代方案：使用 mitt 或 tiny-emitter
+// 削除：$on / $off / $once（イベントバス）
+// 代替案：mitt または tiny-emitter を使用
 import mitt from 'mitt'
 const emitter = mitt()
 
@@ -99,34 +99,34 @@ emitter.on('update', (payload) => {
 })
 emitter.emit('update', { id: 1 })
 
-// 移除：过滤器 filter
+// 削除：フィルター filter
 // Vue 2
 // <p>{{ price | currency }}</p>
 // filters: { currency: val => `¥${val}` }
-// Vue 3：使用方法或 computed 替代
+// Vue 3：メソッドまたは computed で置き換え
 // <p>{{ currency(price) }}</p>
 
-// 移除：$set / $delete
-// Vue 3 的 Proxy 响应式系统不需要这两个 API
+// 削除：$set / $delete
+// Vue 3 の Proxy リアクティブシステムではこれらの API は不要です
 const state = reactive({ items: [] })
-state.items.push({ id: 1 }) // 直接操作即可触发响应式
-delete state.items[0]        // 删除也会被 Proxy 拦截
+state.items.push({ id: 1 }) // 直接操作でリアクティブがトリガーされます
+delete state.items[0]        // 削除も Proxy にインターセプトされます
 
-// 调整：$children
+// 変更：$children
 // Vue 2: this.$children[0]
-// Vue 3: 使用 $refs 或 inject/provide
+// Vue 3: $refs または inject/provide を使用
 {% endraw %}
 ```
 
-## 迁移策略与渐进升级
+## 移行戦略と段階的アップグレード
 
-对于大型项目，不必一次性迁移所有代码。
+大規模なプロジェクトの場合、すべてのコードを一度に移行する必要はありません。
 
 ```javascript
-// 兼容层写法：同时支持 Vue 2 和 Vue 3
+// 互換レイヤー：Vue 2 と Vue 3 の両方をサポート
 const install = (appOrVue) => {
-  // Vue 3: app.use() 时传入 app
-  // Vue 2: Vue.use() 时传入 Vue 构造函数
+  // Vue 3: app.use() の場合は app を渡す
+  // Vue 2: Vue.use() の場合は Vue コンストラクタを渡す
   const isVue3 = appOrVue.createApp !== undefined
 
   if (isVue3) {
@@ -141,19 +141,19 @@ const install = (appOrVue) => {
 export default { install }
 ```
 
-使用 `@vue/compat` 兼容层可以在 Vue 3 中继续运行 Vue 2 代码，逐步迁移。
+`@vue/compat` 互換レイヤーを使用すると、Vue 3 で Vue 2 のコードを実行しながら段階的に移行できます。
 
 ```javascript
-// main.js - 使用兼容模式
+// main.js - 互換モードを使用
 import { createApp } from '@vue/compat'
 import App from './App.vue'
 
 const app = createApp(App)
 
-// 以 Vue 2 模式运行，但底层是 Vue 3
-// 控制台会警告哪些 API 即将被移除
+// Vue 2 モードで動作しますが、内部は Vue 3 です
+// コンソールに削除予定の API が警告として表示されます
 app.config.compatConfig = {
-  MODE: 2 // 完全 Vue 2 兼容
+  MODE: 2 // 完全な Vue 2 互換
 }
 
 app.mount('#app')
@@ -161,7 +161,7 @@ app.mount('#app')
 
 ## まとめ
 
-- `createApp` 替代 `new Vue`，所有全局 API 挂载到 app 实例上
-- 每个 app 实例拥有独立的全局注册空间，支持多应用隔离
-- 事件总线 `$on/$off`、过滤器、`$set/$delete` 已移除，需要寻找替代方案
-- 使用 `@vue/compat` 兼容层可以渐进式迁移，不必一步到位
+- `createApp` が `new Vue` に代わり、すべてのグローバル API が app インスタンスにマウントされます
+- 各 app インスタンスは独立したグローバル登録スペースを持ち、マルチアプリケーションの分離をサポートします
+- イベントバス `$on/$off`、フィルター、`$set/$delete` は削除されたため、代替手段が必要です
+- `@vue/compat` 互換レイヤーを使用することで段階的に移行でき、一度にすべてを変更する必要はありません

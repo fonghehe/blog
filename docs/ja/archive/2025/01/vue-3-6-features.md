@@ -1,6 +1,6 @@
 ---
 title: "Vue 3.6 の新機能：Ref Sugar安定版・defineProps分割代入・hydrateOnVisible"
-date: 2025-01-30 10:00:00
+date: 2025-01-30 16:24:01
 tags:
   - Vue
 readingTime: 3

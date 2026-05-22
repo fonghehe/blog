@@ -1,5 +1,5 @@
 ---
-title: "React 18 SSR 流式渲染"
+title: "React 18 SSR 流式渲染：落地路徑與實戰建議"
 date: 2021-12-15 11:13:04
 tags:
   - React
@@ -44,7 +44,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 源碼分析
 

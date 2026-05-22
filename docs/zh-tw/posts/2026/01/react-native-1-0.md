@@ -1,6 +1,6 @@
 ---
 title: "React Native 1.0 穩定版"
-date: 2026-01-29 10:00:00
+date: 2026-01-29 18:03:40
 tags:
   - React
 readingTime: 3
@@ -154,7 +154,7 @@ module.exports = {
     esversion: 2024,
     // 最佳化級別
     optimization: 'aggressive',
-    // 啟用 Intl 支援（以前需要額外配置）
+    // 啟用 Intl 支援（以前需要額外設定）
     intl: true,
     // 除錯支援
     sourceMap: process.env.NODE_ENV !== 'production',

@@ -1,6 +1,6 @@
 ---
-title: "Rspack 2.0 完整指南"
-date: 2025-11-13 10:00:00
+title: "Rspack 2.0 生产落地：大型项目从 Webpack 迁移的完整记录"
+date: 2025-11-13 19:47:24
 tags:
   - 前端
 readingTime: 2

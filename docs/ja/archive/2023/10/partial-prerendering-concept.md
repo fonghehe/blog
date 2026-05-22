@@ -1,5 +1,5 @@
 ---
-title: "Next.js 14 Partial Prerendering"
+title: "Partial Prerendering 概念：Next.js 的混合渲染未来"
 date: 2023-10-03 14:50:22
 tags:
   - フロントエンド

@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 構建 Web Components"
+title: "Vue 3 構建 Web Components：實踐方法與治理思路"
 date: 2021-01-28 09:39:45
 tags:
   - Vue
@@ -98,7 +98,7 @@ function useCounter(initial = 0) {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能對比
+## 效能對比
 
 關鍵在於理解核心邏輯：
 
@@ -122,7 +122,7 @@ export default {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 問題排查
 

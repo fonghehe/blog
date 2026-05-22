@@ -1,10 +1,10 @@
 ---
-title: "React Context 性能優化策略"
+title: "React Context 效能優化策略：實踐方法與治理思路"
 date: 2020-03-20 14:47:24
 tags:
   - React
 readingTime: 2
-description: "在日常開發中，React Context 性能優化策略的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+description: "在日常開發中，React Context 效能優化策略的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
 wordCount: 262
 ---
 
@@ -87,7 +87,7 @@ function useIntersectionObserver(options = {}) {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能對比
+## 效能對比
 
 以下是一個完整的示例：
 

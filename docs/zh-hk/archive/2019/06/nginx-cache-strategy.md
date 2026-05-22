@@ -1,10 +1,10 @@
 ---
-title: "Nginx 前端緩存策略配置實戰"
+title: "Nginx 前端緩存策略設定實戰：落地路徑與實戰建議"
 date: 2019-06-17 17:13:38
 tags:
   - 工程化
 readingTime: 6
-description: "前端性能優化離不開緩存策略，而 Nginx 作為最常用的靜態資源服務器，掌握它的緩存配置是每個前端工程師的必備技能。"
+description: "前端效能優化離不開緩存策略，而 Nginx 作為最常用的靜態資源服務器，掌握它的緩存設定是每個前端工程師的必備技能。"
 wordCount: 843
 ---
 
@@ -74,9 +74,9 @@ server {
 - `expires off` — 不添加緩存頭（使用 Nginx 默認）
 - `expires max` — 緩存 10 年（等同於 `expires 10y`）
 
-## Cache-Control 精細控制
+## Cache-Control 精細控製
 
-有時候 `expires` 不夠靈活，需要直接用 `add_header` 設置 `Cache-Control` 來做更精細的控制。
+有時候 `expires` 不夠靈活，需要直接用 `add_header` 設置 `Cache-Control` 來做更精細的控製。
 
 ```nginx
 server {
@@ -99,7 +99,7 @@ server {
         # no-cache = 可以緩存，但每次都要向服務器驗證
     }
 
-    # 場景4：私有數據，只允許瀏覽器緩存，CDN 不能緩存
+    # 場景4：私有數據，隻允許瀏覽器緩存，CDN 不能緩存
     location /user/ {
         add_header Cache-Control "private, max-age=3600";
     }
@@ -112,7 +112,7 @@ Cache-Control 常用指令速查：
 |
 ------|------|
 | `public` | 瀏覽器和 CDN 都可以緩存 |
-| `private` | 只有瀏覽器可以緩存 |
+| `private` | 隻有瀏覽器可以緩存 |
 | `no-cache` | 可以緩存，但每次必須驗證 |
 | `no-store` | 完全不緩存 |
 | `max-age=N` | 緩存有效期（秒） |
@@ -120,7 +120,7 @@ Cache-Control 常用指令速查：
 
 ## ETag 和 Last-Modified
 
-Nginx 默認開啓 ETag，會自動為靜態資源添加 `ETag` 和 `Last-Modified` 響應頭，支持協商緩存。
+Nginx 默認開啓 ETag，會自動為靜態資源添加 `ETag` 和 `Last-Modified` 響應頭，支援協商緩存。
 
 ```nginx
 server {
@@ -191,7 +191,7 @@ http {
             proxy_cache_use_stale error timeout updating
                                   http_500 http_502 http_503 http_504;
 
-            # 緩存鎖定：多個請求同時到達時，只讓一個請求去後端
+            # 緩存鎖定：多個請求同時到達時，隻讓一個請求去後端
             proxy_cache_lock on;
             proxy_cache_lock_timeout 5s;
 
@@ -223,7 +223,7 @@ $ curl -I http://api.example.com/api/products
 X-Cache-Status: HIT     # 命中緩存，直接返回
 ```
 
-## 文件名 Hash 與緩存失效
+## 檔案名 Hash 與緩存失效
 
 現代前端構建工具（Webpack、Parcel）都會給靜態資源文件名加上 content hash：
 
@@ -269,9 +269,9 @@ server {
 }
 ```
 
-這套策略的核心思路：**hash 控制緩存失效**。文件名不變就一直用緩存，內容一改文件名就變，瀏覽器自動請求新文件。
+這套策略的核心思路：**hash 控製緩存失效**。檔案名不變就一直用緩存，內容一改檔案名就變，瀏覽器自動請求新檔案。
 
-## Gzip 壓縮配置
+## Gzip 壓縮設定
 
 Gzip 雖然不是緩存，但和緩存策略配合使用效果更好——壓縮後緩存的體積更小。
 
@@ -286,7 +286,7 @@ http {
     # 最小壓縮文件大小，小於此值不壓縮（本身已經很小了）
     gzip_min_length 256;
 
-    # 需要壓縮的文件類型
+    # 需要壓縮的檔案類型
     gzip_types
         text/plain
         text/css
@@ -317,7 +317,7 @@ $ curl -I -H "Accept-Encoding: gzip" http://example.com/app.js
 Content-Encoding: gzip
 Vary: Accept-Encoding
 
-# 對比文件大小
+# 對比檔案大小
 $ curl -o /dev/null -s -w "%{size_download}" http://example.com/app.js
 158234
 
@@ -326,9 +326,9 @@ $ curl -o /dev/null -s -w "%{size_download}" -H "Accept-Encoding: gzip" http://e
 # 壓縮後體積減少了約 73%
 ```
 
-## CORS 跨域頭配置
+## CORS 跨域頭設定
 
-前端開發中經常需要配置跨域，Nginx 可以統一處理。
+前端開發中經常需要設定跨域，Nginx 可以統一處理。
 
 ```nginx
 server {
@@ -349,7 +349,7 @@ server {
         proxy_pass http://backend;
     }
 
-    # 方案2：只允許指定來源（生產環境推薦）
+    # 方案2：隻允許指定來源（生產環境推薦）
     location /api/ {
         # 白名單
         set $cors_origin "";
@@ -372,9 +372,9 @@ server {
 }
 ```
 
-注意：`add_header` 在 Nginx 的某些情況下不會繼承，如果配置了 `proxy_cache` 或 `try_files`，需要在對應的 `location` 塊中重新聲明 `add_header`。
+注意：`add_header` 在 Nginx 的某些情況下不會繼承，如果設定了 `proxy_cache` 或 `try_files`，需要在對應的 `location` 塊中重新聲明 `add_header`。
 
-## 完整配置示例
+## 完整設定示例
 
 把以上所有配置整合到一個完整的站點配置中：
 

@@ -260,7 +260,7 @@ export type UserDetailResponse = ApiResponse<User>;
 ```typescript
 // types/utils.d.ts
 
-// 深度只讀
+// 深度隻讀
 export type DeepReadonly<T> = {
   readonly [K in keyof T]: T[K] extends object
     ? DeepReadonly<T[K]>
@@ -285,7 +285,7 @@ type UserInput = RequiredByKeys<User, 'name' | 'email'>;
 // name 和 email 必填，其他可選
 ```
 
-## tsconfig.json 配置要點
+## tsconfig.json 設定要點
 
 ```json
 {
@@ -299,7 +299,7 @@ type UserInput = RequiredByKeys<User, 'name' | 'email'>;
     "forceConsistentCasingInFileNames": true,
 
     // 4.0 相關
-    "noEmit": true,                    // 只做檢查，不輸出
+    "noEmit": true,                    // 隻做檢查，不輸出
     "declaration": true,               // 庫專案開啟
     "declarationDir": "./dist/types",
 
@@ -326,7 +326,7 @@ npx tsc --noEmit
 
 # 常見問題：
 # 1. 4.0 對過載函式的型別檢查更嚴格
-# 2. unknown 型別的使用限制更明確
+# 2. unknown 型別的使用限製更明確
 # 3. 條件型別中 infer 的行為有細微變化
 ```
 

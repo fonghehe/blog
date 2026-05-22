@@ -1,5 +1,5 @@
 ---
-title: "Mapbox GL JS 前端地圖開發"
+title: "Mapbox GL JS 前端地圖開發：落地路徑與實戰建議"
 date: 2021-11-16 16:44:30
 tags:
   - 前端
@@ -65,7 +65,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 業務實戰
 
@@ -95,7 +95,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
-## 性能對比
+## 效能對比
 
 先來看基本的實現方式：
 

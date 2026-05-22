@@ -20,7 +20,7 @@ wordCount: 214
 4. 瀏覽器收到通知 → 向 dev server 請求更新的模組（manifest + chunk）
 5. 瀏覽器接收新模組 → HMR Runtime 替換舊模組
 6. 如果替換成功 → 區域性更新，頁面不重新整理
-7. 如果替換失敗 → 強制重新整理整個頁面（fallback）
+7. 如果替換失敗 → 強製重新整理整個頁面（fallback）
 ```
 
 ## webpack-dev-server 的角色
@@ -88,7 +88,7 @@ if (module.hot) {
     const newOptions = require("./MyComponent.vue");
     component.options = newOptions;
 
-    // 強制重新渲染
+    // 強製重新渲染
     component.__vue_hot__ = Date.now();
   }
 }
@@ -96,11 +96,11 @@ if (module.hot) {
 
 ## 保留狀態的 HMR
 
-Vue 的 HMR 會保留元件狀態（data），只更新模板和方法。
+Vue 的 HMR 會保留元件狀態（data），隻更新範本和方法。
 
 ```javascript
 // 修改 MyComponent.vue 的 template
-// HMR 後：data 裡的值不變，只有檢視更新
+// HMR 後：data 裡的值不變，隻有檢視更新
 
 // ❌ 但這種情況會重置狀態（不得不如此）：
 // - 修改了 data 的初始值

@@ -1,16 +1,16 @@
 ---
-title: "Vue CLI 3 插件開發"
+title: "Vue CLI 3 外掛開發：落地路徑與實戰建議"
 date: 2018-12-17 16:18:19
 tags:
   - Vue
 readingTime: 1
-description: "Vue CLI 3 發佈後，項目腳手架的靈活性大大提高。CLI 插件可以給項目添加功能、修改 webpack 配置。最近給團隊內部工具寫了一個 CLI 插件，記錄一下過程。"
+description: "Vue CLI 3 發佈後，項目腳手架的靈活性大大提高。CLI 外掛可以給項目添加功能、修改 webpack 設定。最近給團隊內部工具寫了一個 CLI 外掛，記錄一下過程。"
 wordCount: 173
 ---
 
 Vue CLI 3 發佈後，項目腳手架的靈活性大大提高。CLI 插件可以給項目添加功能、修改 webpack 配置。最近給團隊內部工具寫了一個 CLI 插件，記錄一下過程。
 
-## CLI 插件的結構
+## CLI 外掛的結構
 
 ```
 vue-cli-plugin-xxx/
@@ -21,7 +21,7 @@ vue-cli-plugin-xxx/
 └── package.json
 ```
 
-## generator.js：修改項目文件
+## generator.js：修改項目檔案
 
 ```javascript
 // generator.js
@@ -53,7 +53,7 @@ module.exports = (api, options, rootOptions) => {
 };
 ```
 
-## template 目錄（EJS 模板）
+## template 目錄（EJS 範本）
 
 ```javascript
 // template/src/plugins/axios.js
@@ -77,7 +77,7 @@ Vue.prototype.$http = service;
 export default service;
 ```
 
-## index.js：修改 webpack 配置
+## index.js：修改 webpack 設定
 
 ```javascript
 // index.js（Service 插件）
@@ -136,23 +136,23 @@ module.exports = [
 ];
 ```
 
-## 本地測試插件
+## 本地測試外掛
 
 ```bash
-# 在插件目錄
+# 在外掛目錄
 npm link
 
 # 在測試項目目錄
 npm link vue-cli-plugin-xxx
 
-# 調用插件的 generator
+# 調用外掛的 generator
 vue invoke vue-cli-plugin-xxx
 
 # 或者在創建項目時使用
 vue create my-project --preset ./preset.json
 ```
 
-## 使用團隊的 CLI 插件
+## 使用團隊的 CLI 外掛
 
 ```bash
 # 安裝到現有項目

@@ -1,6 +1,6 @@
 ---
 title: "LLM Frontend Integration Solutions"
-date: 2024-06-13 10:00:00
+date: 2024-06-13 19:47:24
 tags:
   - Engineering
 readingTime: 2

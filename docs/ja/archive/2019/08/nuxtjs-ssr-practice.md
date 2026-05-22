@@ -4,20 +4,20 @@ date: 2019-08-29 09:40:58
 tags:
   - Vue
 readingTime: 2
-description: "做了一个电商官网，要求 SEO 和首屏速度。调研了 Nuxt.js，最终选它做 Vue SSR。"
-wordCount: 223
+description: "EC サイトを構築するにあたり、SEO と初回表示速度が要求されました。Nuxt.js を調査した結果、Vue SSR として採用することにしました。"
+wordCount: 406
 ---
 
-做了一个电商官网，要求 SEO 和首屏速度。调研了 Nuxt.js，最终选它做 Vue SSR。
+EC サイトを構築し、SEO と初回表示速度が要求されました。Nuxt.js を調査した結果、最終的に Vue SSR として採用しました。
 
 ## Nuxt.jsとは
 
-Next.js 对应 React，Nuxt.js 对应 Vue。提供：
+Next.js は React に対応し、Nuxt.js は Vue に対応します。提供する機能：
 
-- 约定式路由（文件即路由）
-- 服务端渲染（SSR）
-- 静态生成（SSG）
-- 自动代码分割
+- 規約ベースのルーティング（ファイルがそのままルート）
+- サーバーサイドレンダリング（SSR）
+- 静的サイト生成（SSG）
+- 自動コード分割
 
 ## プロジェクト構造
 
@@ -26,15 +26,15 @@ pages/
   index.vue          → /
   products/
     index.vue        → /products
-    _id.vue          → /products/:id（动态路由）
+    _id.vue          → /products/:id（動的ルーティング）
   about.vue          → /about
 layouts/
-  default.vue        → 默认布局
-  admin.vue          → 后台布局
+  default.vue        → デフォルトレイアウト
+  admin.vue          → 管理画面レイアウト
 components/
 store/
   index.js           → Vuex
-nuxt.config.js       → 配置文件
+nuxt.config.js       → 設定ファイル
 ```
 
 ## データ取得
@@ -46,28 +46,28 @@ nuxt.config.js       → 配置文件
   <div>
     <h1>{{ product.name }}</h1>
     <p>{{ product.description }}</p>
-    <p>价格：¥{{ product.price }}</p>
+    <p>価格：¥{{ product.price }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  // asyncData：服务端执行，数据直接合并到 data
+  // asyncData：サーバーサイドで実行され、データは直接 data にマージされる
   async asyncData({ params, $axios, error }) {
     try {
       const product = await $axios.$get(`/api/products/${params.id}`);
       return { product };
     } catch (e) {
-      error({ statusCode: 404, message: "商品不存在" });
+      error({ statusCode: 404, message: "商品が存在しません" });
     }
   },
 
-  // fetch：更灵活，可以更新 Vuex store
+  // fetch：より柔軟で、Vuex store を更新できる
   async fetch() {
     await this.$store.dispatch("cart/loadCartItems");
   },
 
-  // head：设置页面 meta 标签（SEO 关键！）
+  // head：ページの meta タグを設定（SEO に重要！）
   head() {
     return {
       title: this.product.name,
@@ -91,38 +91,38 @@ export default {
 
 ```javascript
 export default {
-  mode: "universal", // SSR 模式（'spa' 是纯前端）
+  mode: "universal", // SSR モード（'spa' は純粋なクライアントサイド）
 
-  // 全局 CSS
+  // グローバル CSS
   css: ["~/assets/styles/main.scss"],
 
-  // 插件（区分客户端/服务端）
+  // プラグイン（クライアント/サーバーを区別）
   plugins: [
     "~/plugins/axios.js",
-    { src: "~/plugins/chart.js", mode: "client" }, // 只在客户端加载
+    { src: "~/plugins/chart.js", mode: "client" }, // クライアントサイドでのみ読み込む
   ],
 
-  // 模块
+  // モジュール
   modules: [
     "@nuxtjs/axios",
-    "@nuxtjs/pwa", // PWA 支持
+    "@nuxtjs/pwa", // PWA サポート
   ],
 
-  // axios 基础配置
+  // axios 基本設定
   axios: {
     baseURL: process.env.API_URL || "http://localhost:3000",
   },
 
-  // 构建优化
+  // ビルド最適化
   build: {
-    extractCSS: true, // CSS 单独提取（更好的缓存）
+    extractCSS: true, // CSS を個別に抽出（キャッシュ効率向上）
     optimizeCSS: true,
     babel: {
       plugins: ["lodash"], // lodash tree-shaking
     },
   },
 
-  // 渲染优化
+  // レンダリング最適化
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
@@ -139,7 +139,7 @@ export default {
 // nuxt.config.js
 export default {
   generate: {
-    // 动态路由：告诉 Nuxt 要生成哪些页面
+    // 動的ルーティング：Nuxt に生成するページを指定
     routes: async () => {
       const products = await axios.get("/api/products?all=true");
       return products.data.map((p) => `/products/${p.id}`);
@@ -149,14 +149,14 @@ export default {
 ```
 
 ```bash
-npm run generate  # 生成静态 HTML 到 dist/
-# 直接上传 CDN，速度极快
+npm run generate  # 静的 HTML を dist/ に生成
+# 直接 CDN にアップロード、非常に高速
 ```
 
 ## デプロイ
 
 ```dockerfile
-# Dockerfile（SSR 模式）
+# Dockerfile（SSR モード）
 FROM node:12-alpine
 WORKDIR /app
 COPY package*.json ./
@@ -170,13 +170,13 @@ CMD ["npm", "start"]
 
 ## よくある落とし穴
 
-1. **window is not defined**：SSR 环境没有 `window`，用 `process.client` 判断
-2. **第三方库不支持 SSR**：用 `mode: 'client'` 插件或动态导入
-3. **cookies**：服务端请求要转发 cookie，用 `@nuxtjs/proxy` 解决跨域
+1. **window is not defined**：SSR 環境には `window` がないため、`process.client` で判定する
+2. **サードパーティライブラリが SSR をサポートしていない**：`mode: 'client'` プラグインまたは動的インポートを使用する
+3. **cookies**：サーバーサイドのリクエストで cookie を転送する必要があり、`@nuxtjs/proxy` でクロスドメインを解決する
 
 ## まとめ
 
-- `asyncData` 在服务端执行，返回的数据合并到 data，直接用于渲染
-- 动态路由 `_id.vue` 对应 `:id` 参数
-- `head()` 方法设置 SEO meta 标签
-- 静态生成适合内容不常变的页面，SSR 适合实时数据
+- `asyncData` はサーバーサイドで実行され、返されたデータは data にマージされて直接レンダリングに使用されます
+- 動的ルーティング `_id.vue` は `:id` パラメータに対応します
+- `head()` メソッドで SEO meta タグを設定します
+- 静的生成はコンテンツが頻繁に変わらないページに適し、SSR はリアルタイムデータに適しています

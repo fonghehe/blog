@@ -27,7 +27,7 @@ wordCount: 469
 # 安裝 Biome
 pnpm add -D @biomejs/biome
 
-# 生成配置
+# 生成設定
 npx @biomejs/biome init
 ```
 
@@ -166,7 +166,7 @@ VS Code 的 Biome 擴充套件比 ESLint 擴充套件年輕，偶爾會有卡頓
 
 **關鍵：一次格式化提交**。不做這一步，每個 PR 都混著格式變更，review 極其痛苦。
 
-**CI 必須強制**。光靠本地 IDE 提示不夠，CI 不通過就無法合併。
+**CI 必須強製**。光靠本地 IDE 提示不夠，CI 不通過就無法合併。
 
 **團隊培訓**。花了 30 分鐘給團隊做了個內部分享，重點講規則含義而不是配置語法。
 
@@ -174,6 +174,6 @@ VS Code 的 Biome 擴充套件比 ESLint 擴充套件年輕，偶爾會有卡頓
 
 - 漸進式遷移：formatter → linter（並行）→ linter（接管）→ 移除舊依賴
 - 格式化先做一次大提交，避免 diff 汙染
-- CI 必須用 `biome ci` 命令強制檢查
+- CI 必須用 `biome ci` 命令強製檢查
 - 維護 ESLint → Biome 規則對映表，確保不遺漏
 - 團隊落地速度約 2 周，主要成本在第一次格式化

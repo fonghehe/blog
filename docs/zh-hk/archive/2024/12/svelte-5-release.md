@@ -1,6 +1,6 @@
 ---
-title: "Svelte 5 發佈詳解"
-date: 2024-12-17 10:00:00
+title: "Svelte 5 釋出後生態观察：社区遷移進展與工具鏈更新"
+date: 2024-12-17 18:51:28
 tags:
   - Svelte
 readingTime: 2
@@ -91,7 +91,7 @@ const csvToJson = new Transform({
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 調優策略
 

@@ -1,6 +1,6 @@
 ---
-title: "Storybook 9 組件開發"
-date: 2025-12-30 10:00:00
+title: "Storybook 9 實踐：大型元件库文档與测試的一體化方案"
+date: 2025-12-30 16:44:21
 tags:
   - 前端
 readingTime: 2
@@ -97,7 +97,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能對比
+## 效能對比
 
 關鍵在於理解核心邏輯：
 
@@ -118,7 +118,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 問題排查
 

@@ -1,6 +1,6 @@
 ---
-title: "Trusted Types v1 穩定版"
-date: 2024-07-30 10:00:00
+title: "Trusted Types v1 穩定版：特性解讀與遷移建議"
+date: 2024-07-30 13:44:21
 tags:
   - TypeScript
 readingTime: 2
@@ -91,9 +91,9 @@ const csvToJson = new Transform({
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
-## 性能優化
+## 效能優化
 
 我們可以通過以下方式來改進：
 

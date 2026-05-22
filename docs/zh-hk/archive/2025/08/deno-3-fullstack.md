@@ -1,6 +1,6 @@
 ---
-title: "Deno 3.0 全棧方案"
-date: 2025-08-14 10:00:00
+title: "Deno 3.0 全堆積疊方案：內置資料库與原生 React 支援"
+date: 2025-08-14 10:48:25
 tags:
   - 前端
 readingTime: 2
@@ -63,7 +63,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 真實場景應用
 

@@ -1,6 +1,6 @@
 ---
 title: "Svelte 5 Runes: A Paradigm Shift in Reactive Programming"
-date: 2024-10-12 10:00:00
+date: 2024-10-12 11:26:03
 tags:
   - Svelte
 readingTime: 2

@@ -1,10 +1,10 @@
 ---
-title: "React 表單性能優化"
+title: "React 表單效能優化：實踐方法與治理思路"
 date: 2022-11-25 14:31:34
 tags:
   - React
 readingTime: 2
-description: "在日常開發中，React 表單性能優化的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+description: "在日常開發中，React 表單效能優化的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
 wordCount: 345
 ---
 
@@ -93,7 +93,7 @@ function useIntersectionObserver(options = {}) {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能對比
+## 效能對比
 
 實際項目中的用法會更復雜一些：
 
@@ -154,5 +154,5 @@ function useIntersectionObserver(options = {}) {
 - 關注社區動態，技術方案需要持續迭代
 - 不要為了用新技術而用新技術
 - 代碼示例僅供參考，需根據業務場景調整
-- React 表單性能優化不是銀彈，需要根據項目規模和技術棧選擇
+- React 表單效能優化不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要

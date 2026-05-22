@@ -1,6 +1,6 @@
 ---
-title: "Bun 2.0 New Features Deep Dive"
-date: 2025-11-17 10:00:00
+title: "Bun 2.0 Ecosystem Status: npm 包Compatibility性实测 & 选型建议"
+date: 2025-11-17 10:51:28
 tags:
   - Frontend
 readingTime: 2

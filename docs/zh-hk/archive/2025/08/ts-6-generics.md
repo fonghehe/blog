@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 6.0 泛型改進"
-date: 2025-08-04 10:00:00
+title: "TypeScript 6.0 泛型改進：更高階的型別抽象能力"
+date: 2025-08-04 19:38:15
 tags:
   - TypeScript
 readingTime: 2
@@ -64,7 +64,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

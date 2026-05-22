@@ -3,23 +3,23 @@ title: "2019年末まとめ：Reactの深化とエンジニアリング体制の
 date: 2019-12-30 16:17:22
 tags:
   - フロントエンド
-readingTime: 7
-description: "2019 年是技术深度和广度都有明显成长的一年。年初定下的几个目标——React Hooks 全面落地、TypeScript 成为日常、微前端从零到一——基本都完成了。当然也有遗憾：测试覆盖率没有达到预期、Node.js BFF 的探索还停留在方案阶段。这篇总结尽量用数据说话，同时诚实地记录不足。"
-wordCount: 1435
+readingTime: 10
+description: "2019 年は技術の深さと幅の両面で著しい成長を遂げた一年でした。年初に掲げたいくつかの目標——React Hooks の全面導入、TypeScript の日常化、マイクロフロントエンドのゼロからの構築——はほぼ達成できました。もちろん残念な点もあります：テストカバレッジが期待に届かなかったこと、Node.js BFF の探求がまだ計画段階にとどまっていることです。この総括ではできるだけデータに基づいて語り、同時に不足点を正直に記録します。"
+wordCount: 2194
 ---
 
-2019 年是技术深度和广度都有明显成长的一年。年初定下的几个目标——React Hooks 全面落地、TypeScript 成为日常、微前端从零到一——基本都完成了。当然也有遗憾：测试覆盖率没有达到预期、Node.js BFF 的探索还停留在方案阶段。这篇总结尽量用数据说话，同时诚实地记录不足。
+2019 年は技術の深さと幅の両方で著しい成長を遂げた一年でした。年初に掲げたいくつかの目標——React Hooks の全面導入、TypeScript の日常化、マイクロフロントエンドのゼロからの構築——はほぼ達成できました。もちろん残念な点もあります：テストカバレッジが期待に届かなかったこと、Node.js BFF の探求がまだ計画段階にとどまっていることです。この総括ではできるだけデータに基づいて語り、同時に不足点を正直に記録します。
 
 ## React Hooksの全面導入
 
-2 月 React 16.8 发布 Hooks 正式版后，我花了一个月深入学习，然后在团队推广。到年底，所有新项目都采用函数组件 + Hooks，class 组件不再出现在新代码中。
+2 月に React 16.8 で Hooks の正式版がリリースされた後、1ヶ月かけて深く学び、チームに展開しました。年末までに、すべての新規プロジェクトで関数コンポーネント + Hooks を採用し、class コンポーネントは新しいコードには登場しなくなりました。
 
-自定义 Hook 是今年最大的技术收获。团队内部沉淀了 12 个通用 Hook：
+カスタム Hook は今年最大の技術的収穫でした。チーム内で 12 個の汎用 Hook が蓄積されました：
 
 ```typescript
-// 2019 年团队自定义 Hook 库（精选）
+// 2019 年チームカスタム Hook ライブラリ（厳選）
 
-// useRequest：统一的请求状态管理
+// useRequest：統一されたリクエスト状態管理
 function useRequest<T>(url: string, options?: RequestInit) {
   const [data, setData] = useState<T | null>(null)
   const [loading, setLoading] = useState(true)
@@ -50,10 +50,10 @@ function useRequest<T>(url: string, options?: RequestInit) {
     return () => { cancelled = true }
   }, [url])
 
-  return { data, loading, error, retry: () => {/* 重新请求 */} }
+  return { data, loading, error, retry: () => {/* 再リクエスト */} }
 }
 
-// useIntersectionObserver：懒加载、无限滚动
+// useIntersectionObserver：遅延読み込み、無限スクロール
 function useIntersectionObserver(options?: IntersectionObserverInit) {
   const [entry, setEntry] = useState<IntersectionObserverEntry | null>(null)
   const [node, setNode] = useState<Element | null>(null)
@@ -72,7 +72,7 @@ function useIntersectionObserver(options?: IntersectionObserverInit) {
   return [setNode, entry] as const
 }
 
-// useLocalStorage：持久化状态
+// useLocalStorage：状態の永続化
 function useLocalStorage<T>(key: string, initialValue: T) {
   const [storedValue, setStoredValue] = useState<T>(() => {
     try {
@@ -93,12 +93,12 @@ function useLocalStorage<T>(key: string, initialValue: T) {
 }
 ```
 
-**代码风格演进：2018 vs 2019**
+**コードスタイルの進化：2018 vs 2019**
 
-下面是一个真实的组件重写案例，展示了编码风格的变化：
+実際のコンポーネント書き換え事例で、コーディングスタイルの変化を示します：
 
 ```tsx
-// ====== 2018：class 组件 + setState ======
+// ====== 2018：class コンポーネント + setState ======
 import React, { Component } from 'react'
 
 interface Props {
@@ -142,8 +142,8 @@ class UserDetail extends Component<Props, State> {
   render() {
     const { user, loading, error } = this.state
 
-    if (loading) return <div>加载中...</div>
-    if (error) return <div>错误: {error}</div>
+    if (loading) return <div>読み込み中...</div>
+    if (error) return <div>エラー: {error}</div>
     if (!user) return null
 
     return (
@@ -155,7 +155,7 @@ class UserDetail extends Component<Props, State> {
   }
 }
 
-// ====== 2019：函数组件 + Hooks ======
+// ====== 2019：関数コンポーネント + Hooks ======
 import React, { useState, useEffect } from 'react'
 
 interface UserDetailProps {
@@ -196,8 +196,8 @@ function useUser(userId: string) {
 const UserDetail: React.FC<UserDetailProps> = ({ userId }) => {
   const { user, loading, error } = useUser(userId)
 
-  if (loading) return <div>加载中...</div>
-  if (error) return <div>错误: {error}</div>
+  if (loading) return <div>読み込み中...</div>
+  if (error) return <div>エラー: {error}</div>
   if (!user) return null
 
   return (
@@ -211,12 +211,12 @@ const UserDetail: React.FC<UserDetailProps> = ({ userId }) => {
 
 ## TypeScript習熟への道
 
-年初对 TypeScript 的态度是"会用但不熟"，到了年底，类型体操已经成为日常。
+年初は TypeScript に対して「使えるが詳しくない」という態度でしたが、年末には型体操が日常になっていました。
 
 ```typescript
-// 2019 年掌握的 TypeScript 高级特性
+// 2019 年に習得した TypeScript の高度な機能
 
-// 1. 泛型约束
+// 1. ジェネリック制約
 interface ApiResponse<T> {
   code: number
   message: string
@@ -229,11 +229,11 @@ async function fetchData<T>(url: string): Promise<ApiResponse<T>> {
   return res.json()
 }
 
-// 使用时自动推导 data 的类型
+// 使用時に data の型が自動推論される
 const { data: users } = await fetchData<User[]>('/api/users')
-// users 的类型是 User[]
+// users の型は User[]
 
-// 2. 条件类型与工具类型
+// 2. 条件型とユーティリティ型
 type ExtractRouteParams<T extends string> =
   T extends `${infer _Start}:${infer Param}/${infer Rest}`
     ? { [K in Param | keyof ExtractRouteParams<Rest>]: string }
@@ -244,7 +244,7 @@ type ExtractRouteParams<T extends string> =
 // '/user/:id/post/:postId' -> { id: string, postId: string }
 type RouteParams = ExtractRouteParams<'/user/:id/post/:postId'>
 
-// 3. 模块增强：给第三方库添加类型
+// 3. モジュール拡張：サードパーティライブラリに型を追加
 declare module 'vue' {
   interface ComponentCustomProperties {
     $http: typeof axios
@@ -252,72 +252,73 @@ declare module 'vue' {
   }
 }
 
-// 4. 装饰器（配合 tsconfig experimentalDecorators）
+// 4. デコレータ（tsconfig の experimentalDecorators と併用）
 function log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
   const original = descriptor.value
   descriptor.value = function (...args: any[]) {
-    console.log(`调用 ${propertyKey}`, args)
+    console.log(`${propertyKey} を呼び出し`, args)
     return original.apply(this, args)
   }
 }
 ```
 
-**数据指标：**
-- TypeScript 项目占比：从 2018 年的 20% 提升到 2019 年的 85%
-- 类型覆盖率：核心模块 95%，整体 78%
-- 因类型错误导致的线上 bug：相比 2018 年减少了约 60%
+**データ指標：**
+- TypeScript プロジェクト比率：2018 年の 20% から 2019 年には 85% に向上
+- 型カバレッジ：コアモジュール 95%、全体 78%
+- 型エラーによる本番バグ：2018 年比で約 60% 削減
 
 ## マイクロフロントエンド single-spa の導入
 
-今年最有价值的架构决策是用 single-spa 对公司的老 jQuery 系统进行了渐进式迁移。没有大规模重写，而是新功能用 Vue 开发，老功能逐步替换。
+今年最も価値のあるアーキテクチャ上の決定は、single-spa を使って会社の古い jQuery システムを段階的に移行したことです。大規模な書き換えは行わず、新機能は Vue で開発し、古い機能を徐々に置き換えていきました。
 
 ```
-架构设计：
+アーキテクチャ設計：
 ┌─────────────────────────────────────────────┐
 │               single-spa root               │
 │  ┌───────────┐ ┌───────────┐ ┌───────────┐ │
 │  │ jQuery    │ │  Vue 新   │ │  React    │ │
-│  │ 遗留系统  │ │  功能模块 │ │  数据看板  │ │
+│  │ レガシー  │ │  機能     │ │  ダッシュ  │ │
+│  │ システム  │ │  モジュール│ │  ボード   │ │
 │  └───────────┘ └───────────┘ └───────────┘ │
 └─────────────────────────────────────────────┘
 ```
 
-**成果数据：**
-- 4 个微应用成功接入（2 个 Vue、1 个 React、1 个 jQuery）
-- 新功能开发周期缩短约 30%（新框架开发效率更高）
-- 独立部署：各微应用独立发布，互不影响
-- 最大的挑战是共享状态和 CSS 隔离，最终通过 CSS Modules + 事件总线解决
+**成果データ：**
+- 4 つのマイクロアプリケーションの接続に成功（2 つが Vue、1 つが React、1 つが jQuery）
+- 新機能の開発サイクルが約 30% 短縮（新しいフレームワークの開発効率が向上）
+- 独立デプロイ：各マイクロアプリケーションは独立してリリースされ、互いに影響しない
+- 最大の課題は共有状態と CSS の分離でしたが、最終的に CSS Modules + イベントバスで解決
 
 ## コンポーネントライブラリv2の反復
 
-年初发布的组件库 v2 是基于 TypeScript + React Hooks 重写的：
+年初にリリースしたコンポーネントライブラリ v2 は TypeScript + React Hooks で書き直されました：
 
-**组件库指标：**
-- 共 35 个组件（v1 是 22 个）
-- TypeScript 类型覆盖率 100%
-- 单元测试覆盖率 72%（目标 80%，未达成）
-- 内部 npm 包周下载量从 120 次增长到 450 次
-- 接入项目从 3 个增长到 8 个
+**コンポーネントライブラリ指標：**
+- 合計 35 個のコンポーネント（v1 は 22 個）
+- TypeScript 型カバレッジ 100%
+- 単体テストカバレッジ 72%（目標 80%、未達成）
+- 内部 npm パッケージの週間ダウンロード数が 120 回から 450 回に増加
+- 導入プロジェクトが 3 つから 8 つに増加
 
 ## Vue 3の展望
 
-虽然主力是 React，但对 Vue 3 的关注一直没有落下。从 Composition API RFC 阶段就开始学习，主要收获：
+メインは React ですが、Vue 3 への関心も常に持ち続けていました。Composition API の RFC 段階から学習を始め、主な収穫は以下の通りです：
 
 ```javascript
-// Vue 3 Composition API 对比 React Hooks 的思考
-// 相似：逻辑复用、函数式风格
-// 差异：
-// - Vue 3 只在 setup 中调用一次，不需要考虑调用顺序
-// - React Hooks 每次渲染都调用，依赖闭包和调用顺序
-// - Vue 3 的响应式是自动追踪依赖，React 需要手动声明依赖数组
+// Vue 3 Composition API と React Hooks の比較考察
+// 類似点：ロジックの再利用、関数型スタイル
+// 相違点：
+// - Vue 3 は setup 内で一度だけ呼び出され、呼び出し順序を気にする必要がない
+// - React Hooks はレンダリングのたびに呼び出され、クロージャと呼び出し順序に依存
+// - Vue 3 のリアクティブは依存関係を自動追跡、React は依存配列を手動宣言が必要
 ```
 
 ## 監視システムの構築（Sentry）
 
-今年接入了 Sentry 做前端监控，从零到一搭建了完整的错误追踪体系：
+今年は Sentry を導入してフロントエンド監視を行い、ゼロから完全なエラートラッキングシステムを構築しました：
 
 ```javascript
-// Sentry 初始化配置
+// Sentry 初期化設定
 import * as Sentry from '@sentry/browser'
 import { Integrations } from '@sentry/tracing'
 
@@ -329,19 +330,19 @@ Sentry.init({
   environment: process.env.NODE_ENV,
   release: process.env.APP_VERSION,
 
-  // 采样率：生产环境 10% 的请求做性能追踪
+  // サンプリングレート：本番環境では 10% のリクエストをパフォーマンストレース
   tracesSampleRate: 0.1,
 
-  // 过滤不需要上报的错误
+  // 報告不要なエラーをフィルタリング
   beforeSend(event, hint) {
     const error = hint?.originalException
 
-    // 忽略网络错误（用户网络问题）
+    // ネットワークエラーを無視（ユーザーのネットワーク問題）
     if (error instanceof TypeError && error.message === 'Failed to fetch') {
       return null
     }
 
-    // 忽略浏览器扩展相关错误
+    // ブラウザ拡張機能関連のエラーを無視
     if (event.exception?.values?.[0]?.value?.includes('extension://')) {
       return null
     }
@@ -349,7 +350,7 @@ Sentry.init({
     return event
   },
 
-  // 添加用户信息
+  // ユーザー情報を追加
   configureScope(scope => {
     scope.setUser({
       id: getCurrentUserId(),
@@ -360,58 +361,58 @@ Sentry.init({
 })
 ```
 
-**监控效果：**
-- 接入前：线上问题靠用户反馈，平均发现时间 2-3 天
-- 接入后：线上错误实时告警，平均发现时间 15 分钟
-- 错误修复效率提升：从"找复现路径"到"直接看堆栈和上下文"
-- 累计捕获并修复 47 个线上错误，其中 12 个是 P1 级别
+**監視効果：**
+- 導入前：本番の問題はユーザーフィードバックに依存、平均発見時間 2〜3 日
+- 導入後：本番エラーはリアルタイムで警告、平均発見時間 15 分
+- エラー修正効率の向上：「再現手順を探す」から「スタックとコンテキストを直接確認」へ
+- 累計で 47 個の本番エラーを捕捉・修正、うち 12 個は P1 レベル
 
 ## コードレビューと知識共有
 
-今年认真推了 Code Review，收效显著：
+今年は Code Review を本格的に推進し、顕著な効果がありました：
 
-**Code Review 数据：**
-- 全年完成 PR Review 286 个
-- 通过 Review 发现的问题中，潜在 bug 占 35%，代码规范占 40%，性能隐患占 15%，其他 10%
-- 团队代码质量明显提升：月均线上 bug 从 8.2 个降到 4.5 个
+**Code Review データ：**
+- 年間で PR Review を 286 件完了
+- Review で発見された問題のうち、潜在的なバグ 35%、コード規範 40%、パフォーマンスリスク 15%、その他 10%
+- チームのコード品質が明らかに向上：月間平均本番バグが 8.2 個から 4.5 個に減少
 
-**技术分享：**
-- 内部技术分享 8 次（React Hooks、TypeScript、微前端、Webpack 优化等）
-- 坚持写技术博客，全年发表文章 23 篇
-- 写作帮助自己梳理知识体系，收益大于投入
+**技術共有：**
+- 内部技術共有会を 8 回実施（React Hooks、TypeScript、マイクロフロントエンド、Webpack 最適化など）
+- 技術ブログを継続的に執筆、年間 23 本の記事を公開
+- 執筆は自分の知識体系を整理するのに役立ち、投資以上の収益があった
 
 ## 反省と課題
 
-诚实地说，有几个目标没有完成：
+正直に言うと、いくつかの目標は達成できませんでした：
 
-1. **测试覆盖率未达标**：目标 80%，实际 72%。原因是在项目进度压力下，测试被优先级挤压了。2020 年需要在 CI 中强制覆盖率门禁。
-2. **Node.js BFF 停留在方案阶段**：年初计划用 Koa 搭建 BFF 层，但由于团队 Node.js 经验不足，最终只完成了技术预研。2020 年需要找一个合适的项目切入。
-3. **文档不够系统**：虽然写了博客，但团队内部的规范文档还不够完善，新人上手还是靠口头传帮带。
+1. **テストカバレッジ未達**：目標 80%、実績 72%。原因はプロジェクトの進捗プレッシャーの下で、テストの優先順位が低くなったことです。2020 年は CI でカバレッジゲートを強制する必要があります。
+2. **Node.js BFF が計画段階で停滞**：年初は Koa で BFF 層を構築する計画でしたが、チームの Node.js 経験不足により、技術調査のみで終わりました。2020 年は適切なプロジェクトを見つけて着手する必要があります。
+3. **ドキュメントが体系化されていない**：ブログは書いていますが、チーム内部の規範ドキュメントはまだ不十分で、新人のオンボーディングは口頭での引き継ぎに頼っています。
 
 ## 2020年の計画
 
-**技术方向：**
-- Vue 3 正式版跟进：预计 Q2 发布，准备组件库的 Vue 3 版本
-- React Concurrent Mode：等稳定版发布后深入学习
-- 微前端扩展：从 4 个应用扩展到 8-10 个，解决共享依赖和样式隔离问题
+**技術的方向性：**
+- Vue 3 正式版のフォロー：Q2 リリース予定、コンポーネントライブラリの Vue 3 版を準備
+- React Concurrent Mode：安定版リリース後に深く学ぶ
+- マイクロフロントエンドの拡張：4 つから 8〜10 のアプリケーションに拡大、依存関係の共有とスタイルの分離問題を解決
 
-**工程目标：**
-- 测试覆盖率强制 80% 以上，CI 中设置门禁
-- 前端规范文档体系化（编码规范、Git 规范、Review 规范）
-- Node.js BFF 落地：选择 1-2 个项目试点
+**エンジニアリング目標：**
+- テストカバレッジを強制的に 80% 以上に、CI でゲートを設定
+- フロントエンド規範ドキュメントの体系化（コーディング規範、Git 規範、Review 規範）
+- Node.js BFF の導入：1〜2 つのプロジェクトを選んで試験運用
 
-**个人成长：**
-- 输出更多深度文章（从数量导向转向质量导向）
-- 参加 1-2 个技术大会，做主题分享
-- 阅读 5 本技术书籍
+**個人の成長：**
+- より深みのある記事を執筆（量指向から質指向へ）
+- 1〜2 つの技術カンファレンスに参加し、テーマ発表を行う
+- 技術書を 5 冊読む
 
 ## まとめ
 
-- React Hooks 全面落地，团队沉淀了 12 个通用 Hook，代码量减少约 20%
-- TypeScript 项目占比从 20% 提升到 85%，类型错误导致的线上 bug 减少 60%
-- 微前端 single-spa 成功接入 4 个应用，新功能开发周期缩短 30%
-- 组件库 v2 用 TypeScript 重写，类型覆盖率 100%，接入项目从 3 个增长到 8 个
-- Sentry 监控体系上线，线上问题平均发现时间从 2-3 天缩短到 15 分钟
-- Code Review 坚持执行，月均线上 bug 从 8.2 个降到 4.5 个
-- 测试覆盖率（72%）和 Node.js BFF 两个目标未完成，2020 年需要补上
-- 2020 年重点：Vue 3 跟进、微前端扩展、测试覆盖率提升、BFF 落地
+- React Hooks を全面導入、チームに 12 個の汎用 Hook が蓄積され、コード量が約 20% 削減
+- TypeScript プロジェクト比率が 20% から 85% に向上、型エラーによる本番バグが 60% 削減
+- マイクロフロントエンド single-spa が 4 つのアプリケーションに導入成功、新機能の開発サイクルが 30% 短縮
+- コンポーネントライブラリ v2 を TypeScript で書き換え、型カバレッジ 100%、導入プロジェクトが 3 つから 8 つに増加
+- Sentry 監視システムを稼働、本番問題の平均発見時間が 2〜3 日から 15 分に短縮
+- Code Review を継続的に実施、月間平均本番バグが 8.2 個から 4.5 個に減少
+- テストカバレッジ（72%）と Node.js BFF の 2 つの目標は未達成、2020 年に取り組む必要がある
+- 2020 年の重点：Vue 3 フォロー、マイクロフロントエンド拡張、テストカバレッジ向上、BFF 導入

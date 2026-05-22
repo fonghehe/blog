@@ -12,7 +12,7 @@ wordCount: 587
 
 ## 冇模塊系統嘅年代
 
-早期 JavaScript 冇原生嘅模塊機制，所有代碼都係全局嘅：
+早期 JavaScript 冇原生嘅模塊機製，所有代碼都係全局嘅：
 
 ```html
 <script src="jquery.js"></script>

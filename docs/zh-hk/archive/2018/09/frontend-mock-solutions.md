@@ -1,5 +1,5 @@
 ---
-title: "前端 Mock 數據方案對比"
+title: "前端 Mock 數據方案對比：落地路徑與實戰建議"
 date: 2018-09-17 10:58:04
 tags:
   - 前端
@@ -25,7 +25,7 @@ async function getUsers() {
 }
 ```
 
-## 方案二：本地 JSON 文件
+## 方案二：本地 JSON 檔案
 
 ```javascript
 // mock/users.json
@@ -153,7 +153,7 @@ export const handlers = [
 在 `vue.config.js` 裏，開發環境根據環境變量決定是否啓用 Mock.js：
 
 ```javascript
-// 只在開發環境加載 mock
+// 隻在開發環境加載 mock
 if (process.env.VUE_APP_MOCK === "true") {
   require("./src/mock");
 }

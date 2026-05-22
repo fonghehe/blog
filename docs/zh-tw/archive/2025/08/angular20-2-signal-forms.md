@@ -1,6 +1,6 @@
 ---
 title: "Angular 20.2：Signal Forms 穩定化與 httpResource 增強"
-date: 2025-08-22 10:00:00
+date: 2025-08-22 14:56:33
 tags:
   - Angular
 readingTime: 2
@@ -123,7 +123,7 @@ export class NewsListComponent {
     }
   });
 
-  // 強制重新整理（忽略快取）
+  // 強製重新整理（忽略快取）
   hardRefresh() {
     this.newsResource.reload({ force: true });
   }
@@ -147,7 +147,7 @@ export class FilterComponent {
   // 將 Signal Form 的值流轉為 Observable（用於需要 RxJS 管道處理的場景）
   formValue$ = toObservable(this.filterForm.value);
 
-  // 只有當兩個欄位都有效且變化時才觸發
+  // 隻有當兩個欄位都有效且變化時才觸發
   filteredChanges$ = this.formValue$.pipe(
     filter(() => this.filterForm.valid()),
     debounceTime(100),
@@ -158,4 +158,4 @@ export class FilterComponent {
 
 ## 總結
 
-Angular 20.2 的 Signal Forms 已經相當成熟——API 穩定性高，與 resource()、computed()、effect() 的配合流暢。距離正式穩定（預計 Angular 21 或 21.x）只剩最後一段路。如果你現在開始的 Angular 專案計劃長期維護，從 20.2 起使用 Signal Forms 開發者預覽是合理的選擇，只需做好 API 可能有小變化的心理準備。
+Angular 20.2 的 Signal Forms 已經相當成熟——API 穩定性高，與 resource()、computed()、effect() 的配合流暢。距離正式穩定（預計 Angular 21 或 21.x）隻剩最後一段路。如果你現在開始的 Angular 專案計劃長期維護，從 20.2 起使用 Signal Forms 開發者預覽是合理的選擇，隻需做好 API 可能有小變化的心理準備。

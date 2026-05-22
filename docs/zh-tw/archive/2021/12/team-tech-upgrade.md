@@ -5,11 +5,11 @@ tags:
   - 前端
   - 工程化
 readingTime: 1
-description: "今年主導了三個大的技術棧升級：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每個都踩過坑，總結出一套方法論。技術升級不只是技術決策，更是一次團隊管理實踐。"
+description: "今年主導了三個大的技術棧升級：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每個都踩過坑，總結出一套方法論。技術升級不隻是技術決策，更是一次團隊管理實踐。"
 wordCount: 277
 ---
 
-今年主導了三個大的技術棧升級：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每個都踩過坑，總結出一套方法論。技術升級不只是技術決策，更是一次團隊管理實踐。
+今年主導了三個大的技術棧升級：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每個都踩過坑，總結出一套方法論。技術升級不隻是技術決策，更是一次團隊管理實踐。
 
 ## 升級的三個階段
 
@@ -20,7 +20,7 @@ wordCount: 277
 - 小範圍 POC：驗證可行性
 
 階段二：執行（4-12 周）
-- 制定分階段計劃
+- 製定分階段計劃
 - 確定遷移邊界
 - 並行執行新舊方案
 
@@ -89,11 +89,11 @@ pnpm install     # 驗證安裝是否正常
 pnpm test        # 驗證測試是否通過
 
 # 2. CI 切換
-# 修改 CI 配置從 npm 切換到 pnpm
-# 保留舊的 CI 配置作為 fallback 一週
+# 修改 CI 設定從 npm 切換到 pnpm
+# 保留舊的 CI 設定作為 fallback 一週
 
 # 3. 全團隊統一
-# 更新開發環境搭建文件
+# 更新開發環境搭建檔案
 # 在 .npmrc 中新增 shamefully-hoist 處理相容問題
 ```
 

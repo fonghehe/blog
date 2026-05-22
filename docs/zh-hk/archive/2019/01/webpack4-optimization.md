@@ -149,7 +149,7 @@ module.exports = {
     ],
   },
   resolve: {
-    // 減少查找：只找這些擴展名，順序是優先級
+    // 減少查找：隻找這些擴展名，順序是優先級
     extensions: [".js", ".vue", ".json"],
     // alias 加速解析
     alias: {
@@ -183,7 +183,7 @@ module.exports = {
         },
       },
     },
-    // 只在文件內容改變時更新 hash（長期緩存）
+    // 隻在檔案內容改變時更新 hash（長期緩存）
     moduleIds: "hashed",
     runtimeChunk: "single",
   },

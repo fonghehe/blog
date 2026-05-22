@@ -1,6 +1,6 @@
 ---
 title: "前端平臺工程：從工具鏈到平臺"
-date: 2025-11-22 10:00:00
+date: 2025-11-22 18:56:33
 tags:
   - 前端
 readingTime: 3
@@ -192,7 +192,7 @@ packages:
 }
 ```
 
-## 共享配置
+## 共享設定
 
 ```ts
 // packages/config/eslint-config/index.js
@@ -265,7 +265,7 @@ jobs:
       - run: pnpm turbo lint typecheck test build
 
       # 受影響的包才跑（Turborepo 自動處理）
-      # 不需要手動配置哪些包需要跑
+      # 不需要手動設定哪些包需要跑
 
   deploy:
     needs: ci
@@ -290,5 +290,5 @@ jobs:
 - Monorepo + Turborepo 是當前最佳實踐
 - CLI 工具降低專案建立和配置的心智負擔
 - 共享配置（ESLint、TypeScript、Prettier）保證程式碼一致性
-- CI/CD 要做到開箱即用，新專案不需要額外配置
+- CI/CD 要做到開箱即用，新專案不需要額外設定
 - 平臺工程是持續投入，不是一次性建設

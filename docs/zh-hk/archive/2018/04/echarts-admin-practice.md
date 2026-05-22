@@ -1,14 +1,14 @@
 ---
-title: "ECharts 在中後台系統中的實踐"
+title: "ECharts 在中後臺系統中的實踐：落地路徑與實戰建議"
 date: 2018-04-21 15:51:59
 tags:
   - TypeScript
 readingTime: 2
-description: "數據可視化是中後台系統的常見需求，ECharts 是國內最主流的圖表庫。記錄一下常見場景的實踐經驗。"
+description: "數據可視化是中後臺系統的常見需求，ECharts 是國內最主流的圖表庫。記錄一下常見場景的實踐經驗。"
 wordCount: 200
 ---
 
-數據可視化是中後台系統的常見需求，ECharts 是國內最主流的圖表庫。記錄一下常見場景的實踐經驗。
+數據可視化是中後臺系統的常見需求，ECharts 是國內最主流的圖表庫。記錄一下常見場景的實踐經驗。
 
 ## Vue 中封裝 ECharts 組件
 
@@ -80,7 +80,7 @@ export default {
 <EChart :option="chartOption" height="350px" />
 ```
 
-## 常見圖表配置
+## 常見圖表設定
 
 ### 折線圖（趨勢）
 
@@ -170,7 +170,7 @@ const pieOption = {
 ECharts 全量引入約 800KB，按需加載減小體積：
 
 ```javascript
-// 只引入需要的模塊
+// 隻引入需要的模塊
 import echarts from "echarts/lib/echarts";
 import "echarts/lib/chart/line";
 import "echarts/lib/chart/bar";

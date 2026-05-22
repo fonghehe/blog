@@ -1,5 +1,5 @@
 ---
-title: "GraphQL Code Generator 代碼生成"
+title: "GraphQL Code Generator 代碼生成：落地路徑與實戰建議"
 date: 2021-07-12 11:13:07
 tags:
   - GraphQL

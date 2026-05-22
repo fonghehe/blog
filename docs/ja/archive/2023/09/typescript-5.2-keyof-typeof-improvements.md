@@ -4,56 +4,56 @@ date: 2023-09-28 10:22:50
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 5.2 带来了几个值得关注的特性，其中 `using` 声明是最具实用价值的。"
-wordCount: 265
+description: "TypeScript 5.2 にはいくつかの注目すべき機能があります。その中でも using 宣言が最も実用的な価値を持っています。"
+wordCount: 449
 ---
 
-TypeScript 5.2 带来了几个值得关注的特性，其中 `using` 声明是最具实用价值的。
+TypeScript 5.2 にはいくつかの注目すべき機能があります。その中でも `using` 宣言が最も実用的な価値を持っています。
 
 ## using 宣言
 
-TC39 的 Explicit Resource Management 提案进入 Stage 3，TypeScript 5.2 率先支持。它让资源清理变得自动且可靠。
+TC39 の Explicit Resource Management プロポーザルが Stage 3 に進み、TypeScript 5.2 が最初にサポートしました。これにより、リソースのクリーンアップが自動的かつ確実になります。
 
 ```typescript
-// 之前：手动管理
+// 以前：手動管理
 function processFile() {
   const file = openFile("data.txt");
   try {
     return process(file);
   } finally {
-    file.close(); // 必须手动关闭
+    file.close(); // 手動で閉じる必要がある
   }
 }
 
-// using 声明：离开作用域自动清理
+// using 宣言：スコープを離れると自動クリーンアップ
 function processFile() {
   using file = openFile("data.txt");
   return process(file);
-} // file.close() 自动调用
+} // file.close() が自動的に呼び出される
 ```
 
-### 实际应用：数据库连接
+### 実際の応用：データベース接続
 
 ```typescript
 class DatabaseConnection implements Disposable {
   constructor(private url: string) {
-    console.log("连接数据库");
+    console.log("データベースに接続中");
   }
 
   query(sql: string) {
-    console.log(`执行: ${sql}`);
+    console.log(`実行: ${sql}`);
     return [{ id: 1, name: "test" }];
   }
 
   [Symbol.dispose]() {
-    console.log("关闭数据库连接");
+    console.log("データベース接続を閉じます");
   }
 }
 
 function getUser(id: number) {
   using db = new DatabaseConnection("postgres://localhost/mydb");
   return db.query(`SELECT * FROM users WHERE id = ${id}`);
-} // 自动关闭连接，即使抛出异常也会关闭
+} // 自動的に接続を閉じる。例外が発生しても閉じられる
 ```
 
 ### async using
@@ -67,7 +67,7 @@ class FileHandle implements AsyncDisposable {
   }
 
   async [Symbol.asyncDispose]() {
-    console.log(`异步关闭文件: ${this.path}`);
+    console.log(`ファイルを非同期で閉じます: ${this.path}`);
   }
 }
 
@@ -75,31 +75,31 @@ async function readConfig() {
   await using handle = new FileHandle("./config.json");
   const content = await handle.read();
   return JSON.parse(content);
-} // 异步自动清理
+} // 非同期で自動クリーンアップ
 ```
 
-### 配合锁和互斥量
+### ロックとMutexの併用
 
 ```typescript
 class Mutex implements Disposable {
   private locked = false;
 
   acquire() {
-    // 简化示例
+    // 簡略化した例
     this.locked = true;
     return this;
   }
 
   [Symbol.dispose]() {
     this.locked = false;
-    console.log("锁已释放");
+    console.log("ロックが解放されました");
   }
 }
 
 function criticalSection() {
   using lock = new Mutex().acquire();
-  // 临界区操作
-  // 离开作用域自动释放锁，不会死锁
+  // クリティカルセクションの操作
+  // スコープを離れると自動的にロックが解放されるため、デッドロックは発生しない
 }
 ```
 
@@ -127,7 +127,7 @@ class Calculator {
   }
 }
 
-// metadata 可以在外部读取
+// metadata は外部から読み取り可能
 const metadata = Calculator[Symbol.metadata];
 console.log(metadata); // { add: { logged: true } }
 ```
@@ -135,28 +135,28 @@ console.log(metadata); // { add: { logged: true } }
 ## 名前付きおよび匿名 tuple 要素
 
 ```typescript
-// TypeScript 5.2 支持命名 tuple 元素
+// TypeScript 5.2 は名前付きタプル要素をサポート
 type Coordinate = [x: number, y: number];
 type Range = [start: number, end: number];
 
-// 好处：IDE 提示更清晰
+// メリット：IDEのヒントがより明確に
 function moveTo(pos: Coordinate) {
-  // hover 时显示：(parameter) pos: [x: number, y: number]
+  // ホバー時に表示：(parameter) pos: [x: number, y: number]
   console.log(pos[0], pos[1]);
 }
 ```
 
 ## パフォーマンス最適化
 
-TypeScript 5.2 在类型检查性能上有改进：
+TypeScript 5.2 では型チェックのパフォーマンスが改善されています：
 
 ```
-大型项目类型检查时间（~5000 文件）：
+大規模プロジェクトの型チェック時間（約5000ファイル）：
 TS 5.1:  18s
 TS 5.2:  14s
 ```
 
-主要是优化了泛型实例化和条件类型的求值。
+主にジェネリックのインスタンス化と条件型の評価が最適化されました。
 
 ## 移行の推奨事項
 
@@ -164,18 +164,18 @@ TS 5.2:  14s
 # 更新
 pnpm add -D typescript@^5.2.0
 
-# 检查 breaking changes
+# breaking changes を確認
 npx tsc --noEmit
 
-# 重点关注：
-# 1. 某些宽松的类型推断变得更严格
-# 2. 装饰器相关的类型定义可能需要更新
+# 注目すべき点：
+# 1. 一部の緩やかな型推論がより厳密に
+# 2. デコレータ関連の型定義の更新が必要な場合がある
 ```
 
 ## まとめ
 
-- `using` 声明让资源管理从"手动 finally"变成"自动清理"，减少资源泄漏
-- `async using` 支持异步清理，数据库连接、文件句柄等场景非常实用
-- Decorator Metadata 为装饰器生态提供了元数据存储能力
-- 类型检查性能持续优化，大型项目受益明显
-- TypeScript 5.2 是一个务实的版本，没有激进变化，但每天都在改善开发体验
+- `using` 宣言により、リソース管理が「手動の finally」から「自動クリーンアップ」に変わり、リソースリークが減少します
+- `async using` は非同期クリーンアップをサポートし、データベース接続やファイルハンドルなどのシーンで非常に実用的です
+- Decorator Metadata はデコレータのエコシステムにメタデータ保存機能を提供します
+- 型チェックのパフォーマンスは継続的に最適化され、大規模プロジェクトで顕著なメリットがあります
+- TypeScript 5.2 は実用的なバージョンであり、急進的な変更はありませんが、日々の開発体験を改善しています

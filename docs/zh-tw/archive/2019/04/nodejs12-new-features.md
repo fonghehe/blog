@@ -5,14 +5,14 @@ tags:
   - Node.js
 readingTime: 1
 description: "Node.js 12 上週釋出（LTS 版本 10 月才鎖定），帶來了不少好東西。"
-wordCount: 220
+wordCount: 221
 ---
 
 Node.js 12 上週釋出（LTS 版本 10 月才鎖定），帶來了不少好東西。
 
 ## V8 7.4：更快的 JS 執行
 
-- async/await 比之前快了約 10 倍（不再只是語法糖，底層有最佳化）
+- async/await 比之前快了約 10 倍（不再隻是語法糖，底層有最佳化）
 - 私有類欄位支援（Chrome 74 同步釋出的特性）
 
 ```javascript
@@ -65,10 +65,10 @@ console.log(add(1, 2))
 
 Node 12 的 ESM 還是實驗性的，不建議生產用。Node 14 才穩定。
 
-## 堆記憶體限制提升
+## 堆積記憶體限製提升
 
 ```bash
-# Node 12 在 64 位系統上預設堆記憶體從 1.4GB 提升到 ~4GB
+# Node 12 在 64 位系統上預設堆積記憶體從 1.4GB 提升到 ~4GB
 # 大型應用不用再手動設定
 node --max-old-space-size=4096 app.js  # 以前需要這樣
 ```
@@ -76,7 +76,7 @@ node --max-old-space-size=4096 app.js  # 以前需要這樣
 ## 診斷報告
 
 ```bash
-# 生成程序診斷報告（CPU、記憶體、檔案控制代碼等）
+# 生成程序診斷報告（CPU、記憶體、檔案控製代碼等）
 node --experimental-report --report-on-signal app.js
 kill -USR2 <pid>  # 觸發報告
 ```

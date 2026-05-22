@@ -1,18 +1,18 @@
 ---
-title: "Node.js 12 新特性總結"
+title: "Node.js 12 新特性總結：特性解讀與遷移建議"
 date: 2019-04-25 10:54:22
 tags:
   - Node.js
 readingTime: 1
 description: "Node.js 12 上週發佈（LTS 版本 10 月才鎖定），帶來了不少好東西。"
-wordCount: 217
+wordCount: 218
 ---
 
 Node.js 12 上週發佈（LTS 版本 10 月才鎖定），帶來了不少好東西。
 
 ## V8 7.4：更快的 JS 執行
 
-- async/await 比之前快了約 10 倍（不再只是語法糖，底層有優化）
+- async/await 比之前快了約 10 倍（不再隻是語法糖，底層有優化）
 - 私有類字段支持（Chrome 74 同步發佈的特性）
 
 ```javascript
@@ -35,7 +35,7 @@ console.log(account.balance); // 1000
 console.log(account.#balance); // SyntaxError！
 ```
 
-## TLS 1.3 默認支持
+## TLS 1.3 默認支援
 
 ```javascript
 const https = require("https");
@@ -48,11 +48,11 @@ const server = https.createServer({
 });
 ```
 
-## ES Modules 實驗支持（--experimental-modules）
+## ES Modules 實驗支援（--experimental-modules）
 
 ```javascript
 // package.json
-{ "type": "module" }  // 文件默認當 ESM 處理
+{ "type": "module" }  // 檔案默認當 ESM 處理
 
 // 或用 .mjs 擴展名
 // utils.mjs
@@ -65,10 +65,10 @@ console.log(add(1, 2))
 
 Node 12 的 ESM 還是實驗性的，不建議生產用。Node 14 才穩定。
 
-## 堆內存限制提升
+## 堆積內存限製提升
 
 ```bash
-# Node 12 在 64 位系統上默認堆內存從 1.4GB 提升到 ~4GB
+# Node 12 在 64 位系統上默認堆積內存從 1.4GB 提升到 ~4GB
 # 大型應用不用再手動設置
 node --max-old-space-size=4096 app.js  # 以前需要這樣
 ```
@@ -76,7 +76,7 @@ node --max-old-space-size=4096 app.js  # 以前需要這樣
 ## 診斷報告
 
 ```bash
-# 生成進程診斷報告（CPU、內存、文件句柄等）
+# 生成進程診斷報告（CPU、內存、檔案句柄等）
 node --experimental-report --report-on-signal app.js
 kill -USR2 <pid>  # 觸發報告
 ```

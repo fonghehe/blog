@@ -134,7 +134,7 @@ for await (const _ of setInterval(1000)) {
 }
 ```
 
-## ES2022 支持
+## ES2022 支援
 
 ```typescript
 // Top-level await（模塊頂層直接用 await）
@@ -174,7 +174,7 @@ const match = re.exec('2022-06');
 console.log(match.indices.groups.year); // [0, 4]
 ```
 
-## 性能改進
+## 效能改進
 
 ```bash
 # V8 引擎升級到 10.1

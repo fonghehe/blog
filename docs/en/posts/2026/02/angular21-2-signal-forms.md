@@ -1,6 +1,6 @@
 ---
 title: "Angular 21.2: A Production Guide to Signal Forms"
-date: 2026-02-28 10:00:00
+date: 2026-02-28 17:42:19
 tags:
   - Angular
 readingTime: 2

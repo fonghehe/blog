@@ -1,6 +1,6 @@
 ---
-title: "Nuxt 5 ロードマップ"
-date: 2026-02-09 10:00:00
+title: "Nuxt 5 ロードマップ：注目ポイントと移行ガイド"
+date: 2026-02-09 16:23:00
 tags:
   - Vue
 readingTime: 2

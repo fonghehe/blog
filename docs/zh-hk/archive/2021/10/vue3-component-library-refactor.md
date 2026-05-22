@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 + TypeScript 組件庫重構實踐"
+title: "Vue 3 + TypeScript 組件庫重構實踐：落地路徑與實戰建議"
 date: 2021-10-04 14:50:28
 tags:
   - Vue
@@ -132,7 +132,7 @@ defineSlots<{
 </script>
 ```
 
-## 構建配置
+## 構建設定
 
 用 Vite Library Mode 構建組件庫：
 

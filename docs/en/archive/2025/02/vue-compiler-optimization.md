@@ -1,6 +1,6 @@
 ---
 title: "New Directions in Vue Compiler Optimization"
-date: 2025-02-06 10:00:00
+date: 2025-02-06 12:40:17
 tags:
   - Vue
   - Performance Optimization

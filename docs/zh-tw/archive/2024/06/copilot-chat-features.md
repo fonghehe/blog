@@ -1,6 +1,6 @@
 ---
 title: "GitHub Copilot Chat 新特性"
-date: 2024-06-04 10:00:00
+date: 2024-06-04 09:38:15
 tags:
   - 工程化
 readingTime: 2

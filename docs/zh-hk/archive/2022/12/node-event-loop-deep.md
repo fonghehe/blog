@@ -1,5 +1,5 @@
 ---
-title: "Node.js 事件循環深入"
+title: "Node.js 事件循環深入：落地路徑與實戰建議"
 date: 2022-12-23 09:48:16
 tags:
   - Node.js
@@ -65,7 +65,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 真實場景應用
 

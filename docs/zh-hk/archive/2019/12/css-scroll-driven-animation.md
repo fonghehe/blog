@@ -1,5 +1,5 @@
 ---
-title: "CSS 滾動驅動動畫探索"
+title: "CSS 滾動驅動動畫探索：落地路徑與實戰建議"
 date: 2019-12-16 11:28:52
 tags:
   - CSS
@@ -92,7 +92,7 @@ class ScrollAnimator {
     this.options = {
       threshold: options.threshold || 0.15,  // 元素 15% 進入視口時觸發
       rootMargin: options.rootMargin || '0px',
-      once: options.once !== false,  // 是否只觸發一次
+      once: options.once !== false,  // 是否隻觸發一次
       ...options
     }
 
@@ -116,7 +116,7 @@ class ScrollAnimator {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible')
 
-        // 只觸發一次時，取消觀察
+        // 隻觸發一次時，取消觀察
         if (this.options.once) {
           this.observer.unobserve(entry.target)
         }
@@ -416,7 +416,7 @@ function ParallaxImage({ src, speed = 0.3 }) {
 {% endraw %}
 ```
 
-## 性能注意事項
+## 效能注意事項
 
 滾動事件處理不當會嚴重影響性能，以下是關鍵要點：
 
@@ -455,7 +455,7 @@ window.addEventListener('scroll', () => {
   transition: top 0.3s;
 }
 
-/* 正確：只觸發 composite */
+/* 正確：隻觸發 composite */
 .moving-element {
   transform: translateY(0);
   transition: transform 0.3s;

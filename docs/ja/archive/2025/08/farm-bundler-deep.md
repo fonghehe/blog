@@ -1,6 +1,6 @@
 ---
-title: "Farm ビルドツール詳解"
-date: 2025-08-26 10:00:00
+title: "Farm 构建工具深掘り：Rust 驱动的极致冷启动"
+date: 2025-08-26 16:00:37
 tags:
   - フロントエンド
 readingTime: 3

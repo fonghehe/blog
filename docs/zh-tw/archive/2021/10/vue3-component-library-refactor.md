@@ -132,7 +132,7 @@ defineSlots<{
 </script>
 ```
 
-## 構建配置
+## 構建設定
 
 用 Vite Library Mode 構建元件庫：
 

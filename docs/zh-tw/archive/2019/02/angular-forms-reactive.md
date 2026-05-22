@@ -4,7 +4,7 @@ date: 2019-02-24 10:12:24
 tags:
   - Angular
 readingTime: 1
-description: "Angular 提供模板驅動和響應式兩種表單方案，響應式表單更適合複雜業務場景。"
+description: "Angular 提供範本驅動和響應式兩種表單方案，響應式表單更適合複雜業務場景。"
 wordCount: 74
 ---
 

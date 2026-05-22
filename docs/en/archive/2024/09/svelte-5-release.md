@@ -1,6 +1,6 @@
 ---
-title: "Svelte 5 Release Deep Dive"
-date: 2024-09-23 10:00:00
+title: "Svelte 5 Release Explained: Runes 带来Reactivity范式转换"
+date: 2024-09-23 17:57:34
 tags:
   - Svelte
 readingTime: 2

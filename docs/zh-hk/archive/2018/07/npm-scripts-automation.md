@@ -1,14 +1,14 @@
 ---
-title: "npm scripts 自動化工作流"
+title: "npm scripts 自動化工作流：落地路徑與實戰建議"
 date: 2018-07-12 17:30:27
 tags:
   - TypeScript
 readingTime: 1
-description: "很多人只用 npm scripts 跑 `npm start` 和 `npm run build`，其實它能做很多自動化的事情。"
+description: "很多人隻用 npm scripts 跑 `npm start` 和 `npm run build`，其實它能做很多自動化的事情。"
 wordCount: 142
 ---
 
-很多人只用 npm scripts 跑 `npm start` 和 `npm run build`，其實它能做很多自動化的事情。
+很多人隻用 npm scripts 跑 `npm start` 和 `npm run build`，其實它能做很多自動化的事情。
 
 ## 基礎
 
@@ -36,7 +36,7 @@ wordCount: 142
     // 並行：& 同時運行（Unix），或用 npm-run-all
     "dev": "npm run server & npm run watch",
 
-    // 用 npm-run-all（跨平台）
+    // 用 npm-run-all（跨平臺）
     "dev": "npm-run-all --parallel server watch",
     "build": "npm-run-all lint compile minify"
   }
@@ -120,7 +120,7 @@ npm 提供 pre/post 鈎子：
 ```json
 {
   "scripts": {
-    // cross-env 跨平台設置環境變量
+    // cross-env 跨平臺設置環境變量
     "build:staging": "cross-env NODE_ENV=production VUE_APP_ENV=staging webpack",
     "build:prod": "cross-env NODE_ENV=production VUE_APP_ENV=production webpack"
   }
@@ -148,6 +148,6 @@ npm install --save-dev cross-env rimraf
 ## 小結
 
 - `pre`/`post` 鈎子做自動化串聯
-- `npm-run-all` 處理並行/串行任務，跨平台
-- `cross-env` 跨平台設置環境變量
+- `npm-run-all` 處理並行/串行任務，跨平臺
+- `cross-env` 跨平臺設置環境變量
 - 把常用操作都寫成 script，文檔化並標準化團隊工作流

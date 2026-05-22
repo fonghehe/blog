@@ -3,72 +3,72 @@ title: "ブラウザのレンダリングパイプライン：解析から描画
 date: 2019-11-07 09:32:47
 tags:
   - パフォーマンス最適化
-readingTime: 5
-description: "理解浏览器的渲染流水线是前端性能优化的基础。当我们修改 CSS 属性时，浏览器会经过一系列复杂的处理步骤才能将像素显示到屏幕上。了解每一步做了什么，可以帮助我们做出更明智的性能决策。"
-wordCount: 937
+readingTime: 7
+description: "ブラウザのレンダリングパイプラインを理解することは、フロントエンドパフォーマンス最適化の基礎です。CSS プロパティを変更すると、ブラウザはピクセルを画面に表示するまでに一連の複雑な処理ステップを経由します。各ステップで何が行われているかを理解することで、より賢明なパフォーマンスに関する判断ができるようになります。"
+wordCount: 1541
 ---
 
-理解浏览器的渲染流水线是前端性能优化的基础。当我们修改 CSS 属性时，浏览器会经过一系列复杂的处理步骤才能将像素显示到屏幕上。了解每一步做了什么，可以帮助我们做出更明智的性能决策。
+ブラウザのレンダリングパイプラインを理解することは、フロントエンドパフォーマンス最適化の基礎です。CSS プロパティを変更すると、ブラウザはピクセルを画面に表示するまでに一連の複雑な処理ステップを経由します。各ステップで何が行われているかを理解することで、より賢明なパフォーマンス判断ができるようになります。
 
 ## レンダリングパイプラインの概要
 
-浏览器将 HTML 转换为屏幕上像素的过程被称为像素流水线（Pixel Pipeline），主要包含以下步骤：
+ブラウザが HTML を画面上のピクセルに変換するプロセスは、ピクセルパイプライン（Pixel Pipeline）と呼ばれ、主に以下のステップで構成されています：
 
 ```
 JavaScript → Style → Layout → Paint → Composite
-             计算样式   布局     绘制    合成
+             計算スタイル   レイアウト  描画    合成
 ```
 
-1. **JavaScript**：执行 JS，修改 DOM 或 CSSOM
-2. **Style（样式计算）**：计算每个元素的最终样式
-3. **Layout（布局）**：计算元素的几何信息（位置和大小）
-4. **Paint（绘制）**：将元素绘制到图层上（边框、背景、文字等）
-5. **Composite（合成）**：将多个图层合成为最终的页面
+1. **JavaScript**：JS を実行し、DOM や CSSOM を変更
+2. **Style（スタイル計算）**：各要素の最終的なスタイルを計算
+3. **Layout（レイアウト）**：要素の幾何情報（位置とサイズ）を計算
+4. **Paint（描画）**：要素をレイヤーに描画（ボーダー、背景、テキストなど）
+5. **Composite（合成）**：複数のレイヤーを最終的なページに合成
 
 ## 1. 解析フェーズ
 
-### HTML 解析与 DOM 树
+### HTML 解析と DOM ツリー
 
-浏览器首先将 HTML 解析为 DOM（Document Object Model）树：
+ブラウザはまず HTML を DOM（Document Object Model）ツリーに解析します：
 
 ```html
 <html>
   <head>
-    <title>页面标题</title>
+    <title>ページタイトル</title>
   </head>
   <body>
     <div class="container">
-      <h1>标题</h1>
+      <h1>見出し</h1>
       <p>段落</p>
     </div>
   </body>
 </html>
 ```
 
-解析过程：
+解析プロセス：
 
 ```
-HTML 文本
+HTML テキスト
     │
     ▼
-HTML Parser
+HTML パーサー
     │
     ▼
-DOM Tree
+DOM ツリー
     Document
       └── html
             ├── head
             │     └── title
-            │           └── "页面标题"
+            │           └── "ページタイトル"
             └── body
                   └── div.container
-                        ├── h1 → "标题"
+                        ├── h1 → "見出し"
                         └── p → "段落"
 ```
 
-### CSS 解析与 CSSOM
+### CSS 解析と CSSOM
 
-CSS 文件被解析为 CSSOM（CSS Object Model）树：
+CSS ファイルは CSSOM（CSS Object Model）ツリーに解析されます：
 
 ```css
 .container {
@@ -82,9 +82,9 @@ h1 {
 }
 ```
 
-CSSOM 也是一个树形结构，每个节点包含样式规则。CSS 的解析是**渲染阻塞**的，因为浏览器需要完整的样式信息才能进行布局。
+CSSOM もツリー構造であり、各ノードにはスタイルルールが含まれています。CSS の解析は**レンダリングブロッキング**です。ブラウザがレイアウトを行うには完全なスタイル情報が必要だからです。
 
-### 关键渲染路径
+### クリティカルレンダリングパス
 
 ```
 HTML ──→ DOM ──────┐
@@ -92,24 +92,24 @@ HTML ──→ DOM ──────┐
 CSS  ──→ CSSOM ────┘
 ```
 
-DOM 和 CSSOM 合并为渲染树（Render Tree），只包含可见元素：
+DOM と CSSOM がマージされてレンダーツリー（Render Tree）が形成され、可視要素のみが含まれます：
 
-- `<head>` 及其子元素不在渲染树中
-- `display: none` 的元素不在渲染树中
-- `visibility: hidden` 的元素在渲染树中（占用空间）
+- `<head>` とその子要素はレンダーツリーに含まれない
+- `display: none` の要素はレンダーツリーに含まれない
+- `visibility: hidden` の要素はレンダーツリーに含まれる（スペースを占有する）
 
 ## 2. スタイル計算
 
-样式计算阶段，浏览器将所有 CSS 规则应用到 DOM 节点上，计算出每个元素的最终样式：
+スタイル計算フェーズでは、ブラウザがすべての CSS ルールを DOM ノードに適用し、各要素の最終的なスタイルを計算します：
 
 ```css
-/* 多个规则可能匹配同一个元素 */
+/* 複数のルールが同じ要素にマッチする可能性がある */
 p { color: black; }
 .text { color: blue; }
 #main p { color: red; }
 ```
 
-浏览器会计算 CSS 优先级（Specificity），确定最终样式。这个过程的结果是一个 `ComputedStyle` 对象，可以通过 `window.getComputedStyle()` 查看：
+ブラウザは CSS の優先度（Specificity）を計算し、最終的なスタイルを決定します。このプロセスの結果は `ComputedStyle` オブジェクトであり、`window.getComputedStyle()` で確認できます：
 
 ```js
 const el = document.querySelector('.title');
@@ -121,96 +121,96 @@ console.log(styles.display);     // "block"
 
 ## 3. レイアウト
 
-布局阶段计算每个元素的几何信息：位置、大小。这个过程也叫做 Reflow（回流）：
+レイアウトフェーズでは、各要素の幾何情報（位置、サイズ）を計算します。このプロセスは Reflow（リフロー）とも呼ばれます：
 
 ```js
-// 触发 Layout 的操作
-element.style.width = '200px';  // 修改尺寸
-element.style.left = '10px';    // 修改位置
-window.innerWidth;              // 读取布局信息也会触发强制 Layout
+// Layout をトリガーする操作
+element.style.width = '200px';  // サイズを変更
+element.style.left = '10px';    // 位置を変更
+window.innerWidth;              // レイアウト情報の読み取りも強制 Layout をトリガーする
 element.offsetWidth;            // 同上
 element.getBoundingClientRect();
 ```
 
-### 布局的影响范围
+### レイアウトの影響範囲
 
-修改一个元素的布局可能影响其他元素：
+1つの要素のレイアウトを変更すると、他の要素にも影響を与える可能性があります：
 
 ```
-// 修改一个元素的宽度
+// 要素の幅を変更
 <div class="parent" style="width: 400px">
   <div class="child" style="width: 50%">200px</div>
-  <div class="sibling">剩余空间</div>
+  <div class="sibling">残りのスペース</div>
 </div>
 
-// 如果父元素宽度变为 600px
-// child 从 200px 变为 300px
-// sibling 也需要重新布局
+// 親要素の幅が 600px に変わった場合
+// child は 200px から 300px に
+// sibling も再レイアウトが必要
 ```
 
 ## 4. ペイント
 
-绘制阶段将元素的视觉效果绘制到图层上。绘制是按图层（Layer）进行的：
+描画フェーズでは、要素の視覚効果をレイヤーに描画します。描画はレイヤー（Layer）単位で行われます：
 
 ```js
-// 以下 CSS 属性的修改只会触发 Paint，不会触发 Layout
-element.style.color = 'red';          // 只绘制
-element.style.backgroundColor = '#f00'; // 只绘制
-element.style.boxShadow = '0 0 10px rgba(0,0,0,0.5)'; // 只绘制
-element.style.borderRadius = '8px';    // 只绘制
-element.style.visibility = 'hidden';   // 只绘制
+// 以下の CSS プロパティの変更は Paint のみをトリガーし、Layout はトリガーしない
+element.style.color = 'red';          // 描画のみ
+element.style.backgroundColor = '#f00'; // 描画のみ
+element.style.boxShadow = '0 0 10px rgba(0,0,0,0.5)'; // 描画のみ
+element.style.borderRadius = '8px';    // 描画のみ
+element.style.visibility = 'hidden';   // 描画のみ
 ```
 
-### 绘制的类型
+### 描画の種類
 
-- **绘制记录（Paint Records）**：记录了绘制操作的列表
-- **光栅化（Rasterization）**：将绘制记录转换为像素位图
-- 光栅化通常在 GPU 上进行，现代浏览器使用合成器线程来处理
+- **描画レコード（Paint Records）**：描画操作のリストを記録
+- **ラスタライゼーション（Rasterization）**：描画レコードをピクセルビットマップに変換
+- ラスタライゼーションは通常 GPU で実行され、モダンブラウザはコンポジッタースレッドを使用して処理
 
 ## 5. コンポジット
 
-现代浏览器将页面分为多个图层（Compositing Layers），单独绘制后再合成：
+モダンブラウザはページを複数のレイヤー（Compositing Layers）に分割し、個別に描画してから合成します：
 
 ```
-┌────────────────────────────┐
-│  Layer 3: 弹窗              │
-├────────────────────────────┤
-│  Layer 2: 固定定位的导航栏   │
-├────────────────────────────┤
-│  Layer 1: 页面主体内容       │
-├────────────────────────────┤
-│  Layer 0: 背景              │
-└────────────────────────────┘
+┌────────────────────────────────┐
+│  Layer 3: モーダル              │
+├────────────────────────────────┤
+│  Layer 2: 固定ナビゲーションバー │
+├────────────────────────────────┤
+│  Layer 1: ページ本文            │
+├────────────────────────────────┤
+│  Layer 0: 背景                  │
+└────────────────────────────────┘
 ```
 
-### 创建新图层的条件
+### 新しいレイヤーが作成される条件
 
 ```css
-/* 以下属性会创建新的合成层 */
+/* 以下のプロパティは新しい合成レイヤーを作成する */
 .transform-layer {
-  /* 1. 3D transforms */
+  /* 1. 3D トランスフォーム */
   transform: translateZ(0);
-  /* 或 will-change */
+  /* または will-change */
   will-change: transform;
 }
 
 .video-layer {
-  /* 2. <video>、<canvas>、<iframe> 等元素 */
+  /* 2. <video>、<canvas>、<iframe> などの要素 */
 }
 
 .fixed-layer {
-  /* 3. position: fixed 在某些情况下 */
+  /* 3. position: fixed の場合（特定の条件下） */
   position: fixed;
 }
 
 .composited-layer {
-  /* 4. 有合成层后代且有 z-index */
+  /* 4. 合成レイヤーの子孫を持ち、z-index がある */
   position: relative;
   z-index: 1;
 }
 
 .animated-layer {
-  /* 5. 正在进行 CSS 动画的 transform 或 opacity */
+  /* 5. transform または opacity の CSS アニメーション実行中 */
   animation: slide 1s ease;
 }
 
@@ -220,20 +220,20 @@ element.style.visibility = 'hidden';   // 只绘制
 }
 ```
 
-## CSSプロパティ別の影響範囲
+## CSS プロパティ別の影響範囲
 
-理解哪些属性变化会触发流水线的哪些步骤，是性能优化的关键：
+どのプロパティの変更がパイプラインのどのステップをトリガーするかを理解することが、パフォーマンス最適化の鍵です：
 
-| 修改的属性 | 触发的阶段 | 性能影响 |
-|-----------|-----------|---------|
-| width, height, margin, padding | Layout → Paint → Composite | 最慢（全流水线） |
-| color, background, box-shadow | Paint → Composite | 较快（跳过 Layout） |
-| transform, opacity | Composite | 最快（只合成） |
+| 変更するプロパティ | トリガーされるフェーズ | パフォーマンスへの影響 |
+|-------------------|----------------------|----------------------|
+| width, height, margin, padding | Layout → Paint → Composite | 最も遅い（全パイプライン） |
+| color, background, box-shadow | Paint → Composite | やや速い（Layout をスキップ） |
+| transform, opacity | Composite | 最も速い（合成のみ） |
 
-### 使用 transform 替代 top/left
+### transform で top/left を置き換える
 
 ```css
-/* 差：每次都会触发布局 */
+/* 悪い例：毎回レイアウトをトリガー */
 .moving-bad {
   position: absolute;
   transition: left 0.3s;
@@ -242,7 +242,7 @@ element.style.visibility = 'hidden';   // 只绘制
   left: 100px;
 }
 
-/* 好：只触发合成 */
+/* 良い例：合成のみをトリガー */
 .moving-good {
   transition: transform 0.3s;
 }
@@ -251,10 +251,10 @@ element.style.visibility = 'hidden';   // 只绘制
 }
 ```
 
-### 使用 opacity 替代 visibility 的动画
+### opacity で visibility のアニメーションを置き換える
 
 ```css
-/* opacity 只触发合成 */
+/* opacity は合成のみをトリガー */
 .fade-in {
   animation: fadeIn 0.3s;
 }
@@ -267,46 +267,46 @@ element.style.visibility = 'hidden';   // 只绘制
 
 ## 強制同期レイアウト
 
-交替读写布局属性会导致浏览器强制同步布局，严重影响性能：
+レイアウトプロパティの読み書きを交互に行うと、ブラウザが強制的に同期レイアウトを実行し、パフォーマンスに深刻な影響を与えます：
 
 ```js
-// 差：读写交替，每次写都强制布局
+// 悪い例：読み書きを交互に行い、書き込みのたびに強制レイアウト
 function resizeAll() {
   const boxes = document.querySelectorAll('.box');
   boxes.forEach(box => {
-    const width = box.offsetWidth;     // 读（强制布局）
-    box.style.width = (width + 10) + 'px'; // 写（使布局失效）
+    const width = box.offsetWidth;         // 読み取り（強制レイアウト）
+    box.style.width = (width + 10) + 'px'; // 書き込み（レイアウトを無効化）
   });
 }
 
-// 好：先读后写
+// 良い例：先に読み取り、後に書き込み
 function resizeAllOptimized() {
   const boxes = document.querySelectorAll('.box');
-  // 先读
+  // 先に読み取り
   const widths = Array.from(boxes).map(box => box.offsetWidth);
-  // 再写
+  // 後に書き込み
   boxes.forEach((box, i) => {
     box.style.width = (widths[i] + 10) + 'px';
   });
 }
 ```
 
-## 布局抖动（Layout Thrashing）
+## レイアウトスラッシング（Layout Thrashing）
 
-布局抖动是指在同一帧内反复触发布局的性能问题：
+レイアウトスラッシングとは、同一フレーム内でレイアウトを繰り返しトリガーするパフォーマンス問題です：
 
 ```js
-// 差：在循环中读写布局属性
+// 悪い例：ループ内でレイアウトプロパティを読み書き
 function layoutThrashing() {
   const items = document.querySelectorAll('.item');
   items.forEach(item => {
-    // 每次读取 offsetHeight 都会触发同步布局
+    // offsetHeight を読み取るたびに同期レイアウトがトリガーされる
     const height = item.offsetHeight;
     item.style.height = (height * 1.1) + 'px';
   });
 }
 
-// 好：使用 requestAnimationFrame 批量处理
+// 良い例：requestAnimationFrame で一括処理
 function optimized() {
   const items = document.querySelectorAll('.item');
   const heights = [];
@@ -324,7 +324,7 @@ function optimized() {
 ## Performance APIで計測する
 
 ```js
-// 测量渲染性能
+// レンダリングパフォーマンスを計測
 function measureRender(label, fn) {
   performance.mark(`${label}-start`);
   fn();
@@ -338,18 +338,18 @@ function measureRender(label, fn) {
   });
 }
 
-measureRender('列表渲染', () => {
+measureRender('リストレンダリング', () => {
   renderList(1000);
 });
 ```
 
 ## まとめ
 
-- 渲染流水线：JavaScript → Style → Layout → Paint → Composite
-- 修改 `width`、`height` 等几何属性触发全流水线（最慢）
-- 修改 `color`、`background` 等属性只触发 Paint（较快）
-- 修改 `transform`、`opacity` 只触发 Composite（最快）
-- 强制同步布局（读写交替）会严重影响性能
-- 使用 `will-change` 提示浏览器提前创建合成层
-- 使用 `requestAnimationFrame` 批量处理 DOM 更新
-- 用 `transform` 替代 `top/left` 做动画
+- レンダリングパイプライン：JavaScript → Style → Layout → Paint → Composite
+- `width`、`height` などのジオメトリプロパティの変更は全パイプラインをトリガー（最も遅い）
+- `color`、`background` などのプロパティの変更は Paint のみをトリガー（やや速い）
+- `transform`、`opacity` の変更は Composite のみをトリガー（最も速い）
+- 強制同期レイアウト（読み書きの交互実行）はパフォーマンスに深刻な影響を与える
+- `will-change` を使用してブラウザに事前に合成レイヤーの作成を促す
+- `requestAnimationFrame` を使用して DOM 更新を一括処理する
+- アニメーションには `top/left` の代わりに `transform` を使用する

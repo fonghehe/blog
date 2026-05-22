@@ -1,5 +1,5 @@
 ---
-title: "React 17 升級指南"
+title: "React 17 升級指南：落地路徑與實戰建議"
 date: 2020-10-20 11:02:59
 tags:
   - React
@@ -88,7 +88,7 @@ function App() {
 ```
 
 ```bash
-# Babel 配置
+# Babel 設定
 # .babelrc
 {
   "presets": [
@@ -150,7 +150,7 @@ npx react-codemod update-react-imports
 # - 保留確實需要 React 的 import（如 React.Component）
 ```
 
-## 兼容性問題排查
+## 相容性問題排查
 
 ```javascript
 // 1. 依賴了 React 在全局作用域的代碼會出問題
@@ -160,7 +160,7 @@ npx react-codemod update-react-imports
 // 等待 React Native 更新
 
 // 3. 第三方庫兼容性
-// 大部分庫兼容，但可能需要更新版本
+// 大部分庫相容，但可能需要更新版本
 
 // 檢查命令
 npx react-codemod React-PropTypes-to-prop-types

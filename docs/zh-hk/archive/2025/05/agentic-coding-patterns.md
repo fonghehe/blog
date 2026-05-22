@@ -1,14 +1,14 @@
 ---
 title: "Agentic Coding：AI Agent 驅動的編碼模式"
-date: 2025-05-03 10:00:00
+date: 2025-05-03 09:37:14
 tags:
   - 工程化
 readingTime: 2
-description: "2025 年最大的變化之一是 Agentic Coding 的成熟。AI 不再只是補全代碼的工具，而是能自主完成複雜任務的 Agent。來分享一些實戰模式。"
+description: "2025 年最大的變化之一是 Agentic Coding 的成熟。AI 不再隻是補全代碼的工具，而是能自主完成複雜任務的 Agent。來分享一些實戰模式。"
 wordCount: 171
 ---
 
-2025 年最大的變化之一是 Agentic Coding 的成熟。AI 不再只是補全代碼的工具，而是能自主完成複雜任務的 Agent。來分享一些實戰模式。
+2025 年最大的變化之一是 Agentic Coding 的成熟。AI 不再隻是補全代碼的工具，而是能自主完成複雜任務的 Agent。來分享一些實戰模式。
 
 ## Agentic vs 傳統 AI 輔助
 
@@ -177,7 +177,7 @@ Agent 擅長的：
 
 Agent 不擅長的：
   ✗ 需要深入業務理解的決策
-  ✗ 性能優化（需要分析實際數據）
+  ✗ 效能優化（需要分析實際數據）
   ✗ 架構設計（需要前瞻性思考）
   ✗ 安全敏感代碼（認證、加密）
   ✗ 創造性的 UI/UX 設計

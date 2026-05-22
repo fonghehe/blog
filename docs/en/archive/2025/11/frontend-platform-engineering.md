@@ -1,6 +1,6 @@
 ---
 title: "Frontend Platform Engineering: From Toolchain to Platform"
-date: 2025-11-22 10:00:00
+date: 2025-11-22 18:56:33
 tags:
   - Frontend
 readingTime: 3

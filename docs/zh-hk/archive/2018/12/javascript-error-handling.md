@@ -1,5 +1,5 @@
 ---
-title: "JavaScript 錯誤處理最佳實踐"
+title: "JavaScript 錯誤處理最佳實踐：落地路徑與實戰建議"
 date: 2018-12-08 11:24:51
 tags:
   - JavaScript
@@ -121,7 +121,7 @@ try {
 window.addEventListener("unhandledrejection", (event) => {
   console.error("未處理的 Promise 拒絕:", event.reason);
   Sentry.captureException(event.reason);
-  event.preventDefault(); // 阻止默認的控制台警告
+  event.preventDefault(); // 阻止默認的控製臺警告
 });
 
 // 捕獲同步錯誤（運行時錯誤）

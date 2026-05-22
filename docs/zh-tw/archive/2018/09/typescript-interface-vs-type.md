@@ -28,7 +28,7 @@ type User = {
 // 兩者都可以：
 // - 描述物件結構
 // - 可選屬性 ?
-// - 只讀屬性 readonly
+// - 隻讀屬性 readonly
 // - 被 class implements
 // - 互相 extends/交叉
 ```

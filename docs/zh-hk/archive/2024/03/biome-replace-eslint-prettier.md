@@ -23,7 +23,7 @@ Biome（Rust）：~0.4s
 
 這個差距在 CI 上很明顯，本地開發的感受差異沒有那麼大。
 
-## 安裝和配置
+## 安裝和設定
 
 ```bash
 npm install --save-dev --save-exact @biomejs/biome
@@ -76,7 +76,7 @@ npx biome lint .
 # 同時格式化 + lint（最常用）
 npx biome check --write .
 
-# CI 模式（不修改文件，只檢查）
+# CI 模式（不修改檔案，隻檢查）
 npx biome ci .
 ```
 

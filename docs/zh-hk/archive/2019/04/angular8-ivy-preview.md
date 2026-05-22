@@ -14,8 +14,8 @@ Angular 8 第一個 RC 版本已發佈，帶來了兩個備受期待的特性：
 
 Ivy 是 Angular 的下一代渲染引擎。它重寫了編譯器和運行時，目標是：
 
-- **更小的包體積**：tree-shaking 友好，只打包實際使用的框架功能
-- **更快的重新構建**：增量編譯，修改一個文件不需重新編譯全項目
+- **更小的包體積**：tree-shaking 友好，隻打包實際使用的框架功能
+- **更快的重新構建**：增量編譯，修改一個檔案不需重新編譯全項目
 - **更好的調試體驗**：渲染器代碼可讀性更強
 - **未來支撐**：Server-Side Rendering、Higher-order components 等高級功能
 
@@ -61,7 +61,7 @@ const routes: Routes = [
 2. TypeScript 編譯時檢查路徑是否存在
 3. 更建議人讀——清楚地看到對應關係
 
-## Web Worker 支持
+## Web Worker 支援
 
 Angular 8 CLI 支持一鍵生成 Web Worker：
 

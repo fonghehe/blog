@@ -1,5 +1,5 @@
 ---
-title: "JavaScript 正則表達式進階"
+title: "JavaScript 正則表達式進階：落地路徑與實戰建議"
 date: 2018-07-14 09:32:14
 tags:
   - JavaScript
@@ -70,7 +70,7 @@ console.log(match2.groups.month); // '07'
 
 // 非貪婪（加 ?）：儘可能少匹配
 "<a>文字</a><b>加粗</b>".match(/<.+?>/);
-// ['<a>']  只匹配第一個
+// ['<a>']  隻匹配第一個
 ```
 
 ## 常用正則

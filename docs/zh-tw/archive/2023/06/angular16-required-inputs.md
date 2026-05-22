@@ -12,13 +12,13 @@ Angular 16 對 `@Input()` 裝飾器進行了兩項重要增強：**Required Inpu
 
 ## Required Inputs：必填輸入
 
-以前要表達"這個 @Input 是必須的"，只能用型別斷言加註釋，沒有真正的編譯時檢查：
+以前要表達"這個 @Input 是必須的"，隻能用型別斷言加註釋，沒有真正的編譯時檢查：
 
 ```typescript
 // 舊方式：看起來必須，但不是真正的編譯時檢查
 @Component({ selector: 'app-user-card', ... })
 export class UserCardComponent {
-  @Input() userId!: string;  // ! 只是告訴 TS "我保證它不是 null"
+  @Input() userId!: string;  // ! 隻是告訴 TS "我保證它不是 null"
   // 但呼叫方可以不傳，不會編譯報錯
 }
 

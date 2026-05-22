@@ -1,6 +1,6 @@
 ---
-title: "Node.js 26 LTS 新機能"
-date: 2026-02-20 10:00:00
+title: "Node.js 26 LTS 新機能：注目ポイントと移行ガイド"
+date: 2026-02-20 13:34:11
 tags:
   - Node.js
 readingTime: 3

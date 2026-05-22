@@ -1,6 +1,6 @@
 ---
 title: "TypeScript Recursive Types in Practice"
-date: 2020-04-21 10:00:00
+date: 2020-04-21 11:55:32
 tags:
   - TypeScript
 readingTime: 2

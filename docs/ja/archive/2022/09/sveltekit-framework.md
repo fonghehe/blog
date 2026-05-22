@@ -3,12 +3,12 @@ title: "SvelteKit：Svelte のフルスタックフレームワーク"
 date: 2022-09-06 15:28:09
 tags:
   - Svelte
-readingTime: 2
-description: "Svelte 本身已经很出色了——编译时框架、零运行时开销、简洁的语法。SvelteKit 给了 Svelte 一个类似 Next.js 的全栈框架：文件路由、SSR/SSG、API routes。是时候体验一下了。"
-wordCount: 229
+readingTime: 3
+description: "Svelte 自体はすでに優れています——コンパイル時フレームワーク、ゼロランタイムオーバーヘッド、簡潔な構文。SvelteKit は Svelte に Next.js のようなフルスタックフレームワークをもたらします。ファイルルーティング、SSR/SSG、API routes。今こそ体験してみる時です。"
+wordCount: 389
 ---
 
-Svelte 本身已经很出色了——编译时框架、零运行时开销、简洁的语法。SvelteKit 给了 Svelte 一个类似 Next.js 的全栈框架：文件路由、SSR/SSG、API routes。是时候体验一下了。
+Svelte 自体はすでに優れています——コンパイル時フレームワーク、ゼロランタイムオーバーヘッド、簡潔な構文。SvelteKit は Svelte に Next.js のようなフルスタックフレームワークをもたらします：ファイルルーティング、SSR/SSG、API routes。今こそ体験する時です。
 
 ## 基本構造
 
@@ -19,16 +19,16 @@ pnpm install
 pnpm dev
 ```
 
-项目结构：
+プロジェクト構造：
 
 ```
 my-app/
 ├── src/
 │   ├── routes/
-│   │   ├── +page.svelte      # 页面组件
-│   │   ├── +page.server.ts   # 服务端数据加载
-│   │   ├── +layout.svelte    # 布局
-│   │   └── +server.ts        # API 路由
+│   │   ├── +page.svelte      # ページコンポーネント
+│   │   ├── +page.server.ts   # サーバーサイドデータ読み込み
+│   │   ├── +layout.svelte    # レイアウト
+│   │   └── +server.ts        # API ルート
 │   └── lib/
 │       └── components/
 ├── static/
@@ -191,17 +191,17 @@ export const actions: Actions = {
 
 ## リアクティビティ
 
-Svelte 的响应式是编译时的：
+Svelte のリアクティビティはコンパイル時です：
 
 ```svelte
 <script lang="ts">
   let count = 0;
   let doubled = 0;
 
-  // Svelte 的 $: 是声明式响应式
+  // Svelte の $: は宣言的リアクティビティ
   $: doubled = count * 2;
 
-  // 响应式语句
+  // リアクティブステートメント
   $: if (count > 10) {
     alert('超过 10 了！');
     count = 0;
@@ -219,12 +219,12 @@ Svelte 的响应式是编译时的：
 
 ## コンパイル出力の比較
 
-| 框架 | Hello World 体积 | 运行时 |
+| フレームワーク | Hello World サイズ | ランタイム |
 |------|------------------|--------|
-| React 18 | 42KB | 有虚拟 DOM |
-| Vue 3 | 33KB | 有响应式运行时 |
-| Svelte | 2KB | 零运行时 |
+| React 18 | 42KB | 仮想DOMあり |
+| Vue 3 | 33KB | リアクティブランタイムあり |
+| Svelte | 2KB | ゼロランタイム |
 
 ## まとめ
 
-SvelteKit 适合内容型网站和中小型应用。Svelte 的编译时优势在 bundle size 上非常明显。全栈能力、文件路由、表单 Actions 都很实用。但生态和社区远不如 React/Next.js，大型项目需要评估第三方库的可用性。
+SvelteKit はコンテンツ型Webサイトや中小規模のアプリケーションに適しています。Svelte のコンパイル時の優位性はバンドルサイズにおいて非常に顕著です。フルスタック機能、ファイルルーティング、フォームActionsはすべて実用的です。しかし、エコシステムとコミュニティは React/Next.js には及ばず、大規模プロジェクトではサードパーティライブラリの可用性を評価する必要があります。

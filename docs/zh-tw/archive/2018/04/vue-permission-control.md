@@ -1,20 +1,20 @@
 ---
-title: "實戰：Vue 2 許可權控制完整方案"
+title: "實戰：Vue 2 許可權控製完整方案"
 date: 2018-04-14 10:47:04
 tags:
   - Vue
 readingTime: 2
-description: "中後臺系統幾乎必然要做許可權控制。這篇文章整理一套完整方案：路由許可權 + 選單許可權 + 按鈕許可權，基於 Vue 2 + Vue Router + Vuex。"
+description: "中後臺系統幾乎必然要做許可權控製。這篇文章整理一套完整方案：路由許可權 + 選單許可權 + 按鈕許可權，基於 Vue 2 + Vue Router + Vuex。"
 wordCount: 267
 ---
 
-中後臺系統幾乎必然要做許可權控制。這篇文章整理一套完整方案：路由許可權 + 選單許可權 + 按鈕許可權，基於 Vue 2 + Vue Router + Vuex。
+中後臺系統幾乎必然要做許可權控製。這篇文章整理一套完整方案：路由許可權 + 選單許可權 + 按鈕許可權，基於 Vue 2 + Vue Router + Vuex。
 
-## 許可權控制的三個層次
+## 許可權控製的三個層次
 
 1. **路由許可權**：某些頁面需要登入/特定角色才能訪問
-2. **選單許可權**：側邊欄只顯示有許可權的選單項
-3. **操作許可權**：按鈕級別（新增、編輯、刪除分開控制）
+2. **選單許可權**：側邊欄隻顯示有許可權的選單項
+3. **操作許可權**：按鈕級別（新增、編輯、刪除分開控製）
 
 ## 資料結構設計
 
@@ -197,7 +197,7 @@ export default {
             item.permission,
           );
         }
-        // 有子選單：只要有任意一個子選單許可權就顯示父選單
+        // 有子選單：隻要有任意一個子選單許可權就顯示父選單
         if (item.children) {
           return item.children.some((child) =>
             this.$store.getters["permission/hasPermission"](child.permission),

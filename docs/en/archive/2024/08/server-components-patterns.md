@@ -1,6 +1,6 @@
 ---
 title: "React Server Components Design Patterns: Practical Summary"
-date: 2024-08-05 10:00:00
+date: 2024-08-05 14:59:36
 tags:
   - JavaScript
   - React

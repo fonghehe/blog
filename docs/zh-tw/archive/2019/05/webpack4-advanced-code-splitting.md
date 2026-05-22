@@ -27,7 +27,7 @@ export function subtract(a, b) {
   return a - b;
 }
 
-// app.js - 只使用了 add
+// app.js - 隻使用了 add
 import { add } from './math';
 
 console.log(add(1, 2));
@@ -46,7 +46,7 @@ const math = require('./math');
 math.add(1, 2);
 // 問題：math 物件上到底有哪些屬性？
 // 可能有 add，也可能通過 Object.defineProperty 動態新增
-// 只有執行時才知道 → 無法做靜態分析
+// 隻有執行時才知道 → 無法做靜態分析
 
 // 更極端的情況
 const modules = require('./modules');
@@ -128,7 +128,7 @@ module.exports = {
 };
 ```
 
-如果用 `mode: 'development'` 也想看 Tree Shaking 效果，需要手動配置：
+如果用 `mode: 'development'` 也想看 Tree Shaking 效果，需要手動設定：
 
 ```javascript
 // webpack.config.js
@@ -152,7 +152,7 @@ module.exports = {
 };
 ```
 
-## sideEffects 配置詳解
+## sideEffects 設定詳解
 
 `sideEffects` 是 Webpack 4 新增的關鍵配置，它解決了一個重要問題：**有些模組雖然沒有被直接引用，但它有副作用，不能隨便刪除**。
 
@@ -170,7 +170,7 @@ import './polyfill';  // 沒有匯入任何具名內容
 // 但這個 import 不能被移除，因為它有副作用
 ```
 
-### package.json 中配置 sideEffects
+### package.json 中設定 sideEffects
 
 ```json
 {
@@ -192,7 +192,7 @@ import './polyfill';  // 沒有匯入任何具名內容
 }
 ```
 
-這種寫法更精細：只有列表中的檔案有副作用（比如 CSS 檔案通過 `import './style.css'` 引入，沒有匯出但不能刪），其他模組可以安全地 Tree Shaking。
+這種寫法更精細：隻有列表中的檔案有副作用（比如 CSS 檔案通過 `import './style.css'` 引入，沒有匯出但不能刪），其他模組可以安全地 Tree Shaking。
 
 ### sideEffects 的工作原理
 
@@ -208,7 +208,7 @@ import debounce from 'lodash-es/debounce';
 
 // Webpack 分析：
 // 1. debounce.js 聲明瞭 sideEffects: false
-// 2. app.js 只匯入了 default 匯出
+// 2. app.js 隻匯入了 default 匯出
 // 3. debounceLeading 未被使用 → 標記為 unused export
 // 4. Terser 壓縮時移除 debounceLeading
 ```
@@ -298,7 +298,7 @@ var _math = require("./math");
 // Webpack 不確定能不能刪，保守起見保留了所有程式碼
 import { Button } from 'antd';
 // 如果 antd 沒有配置 sideEffects: false
-// Button 的所有依賴都會被打包，即使你只用了 Button
+// Button 的所有依賴都會被打包，即使你隻用了 Button
 ```
 
 ### 場景三：物件屬性訪問的匯出
@@ -331,7 +331,7 @@ console.log(add(1, 2));
 // 現在 subtract 可以被 Tree Shaking 了
 ```
 
-## 完整的配置示例
+## 完整的設定示例
 
 ```javascript
 // webpack.config.js
@@ -424,7 +424,7 @@ npx webpack --json > stats.json
 # 搜尋 unused export 相關的標記
 ```
 
-還有一個小技巧：在 `package.json` 中不配置 `sideEffects` 時，Webpack 會輸出警告提示哪些模組可能需要配置。
+還有一個小技巧：在 `package.json` 中不設定 `sideEffects` 時，Webpack 會輸出警告提示哪些模組可能需要設定。
 
 ## 小結
 

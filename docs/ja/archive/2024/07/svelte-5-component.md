@@ -1,6 +1,6 @@
 ---
 title: "Svelte 5 コンポーネントモデル"
-date: 2024-07-05 10:00:00
+date: 2024-07-05 09:19:56
 tags:
   - Svelte
 readingTime: 2

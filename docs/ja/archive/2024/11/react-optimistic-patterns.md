@@ -1,6 +1,6 @@
 ---
 title: "React 楽観的更新パターン"
-date: 2024-11-08 10:00:00
+date: 2024-11-08 14:02:39
 tags:
   - React
 readingTime: 3

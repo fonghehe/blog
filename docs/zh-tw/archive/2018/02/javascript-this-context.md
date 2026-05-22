@@ -1,5 +1,5 @@
 ---
-title: "JavaScript this 繫結機制"
+title: "JavaScript this 繫結機製"
 date: 2018-02-15 14:48:07
 tags:
   - JavaScript

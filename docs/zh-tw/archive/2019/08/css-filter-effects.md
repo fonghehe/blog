@@ -171,7 +171,7 @@ body.mourning {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* box-shadow 只作用於元素的矩形邊界 */
+/* box-shadow 隻作用於元素的矩形邊界 */
 /* drop-shadow 根據元素實際內容（alpha 通道）投影 */
 ```
 
@@ -279,7 +279,7 @@ img.onload = () => img.classList.add('loaded');
 }
 ```
 
-### 案例五：CSS 變數控制濾鏡強度
+### 案例五：CSS 變數控製濾鏡強度
 
 ```css
 :root {
@@ -388,6 +388,6 @@ filter: blur(20px);           /* 高 */
 - 多個濾鏡可以組合使用，按宣告順序疊加效果
 - `backdrop-filter` 可以對元素背後的內容應用濾鏡，實現毛玻璃效果
 - filter 動畫效能開銷從小到大：opacity < grayscale < brightness < contrast < drop-shadow < blur
-- 使用 CSS 變數可以實現動態濾鏡效果的精確控制
+- 使用 CSS 變數可以實現動態濾鏡效果的精確控製
 - `drop-shadow` 與 `box-shadow` 不同，它根據元素實際內容（alpha 通道）投射陰影
 - `backdrop-filter` 相容性需要注意，建議使用 `@supports` 做漸進增強

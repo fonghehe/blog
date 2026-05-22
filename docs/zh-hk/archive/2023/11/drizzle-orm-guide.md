@@ -1,5 +1,5 @@
 ---
-title: "Drizzle ORM 實戰指南"
+title: "Drizzle ORM 實戰指南：落地路徑與實戰建議"
 date: 2023-11-29 15:09:38
 tags:
   - 前端
@@ -91,7 +91,7 @@ const csvToJson = new Transform({
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 

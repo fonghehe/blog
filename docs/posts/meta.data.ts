@@ -4,6 +4,26 @@ import { type Post, normalizeTag } from "./meta";
 // Re-export for convenience
 export type { Post };
 
+function normalizeDateValue(raw: unknown): string {
+  if (raw instanceof Date) {
+    return raw.toISOString();
+  }
+  if (typeof raw !== "string") {
+    return "";
+  }
+  const trimmed = raw.trim();
+  if (!trimmed) {
+    return "";
+  }
+  const normalized = trimmed.replace(
+    /^([0-9]{4}-[0-9]{2}-[0-9]{2})[ ]+/,
+    "$1T",
+  );
+  return /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(normalized)
+    ? `${normalized}T00:00:00`
+    : normalized;
+}
+
 // ─── Data loader (.data.ts suffix required by VitePress) ─────────────────────
 
 declare const data: Post[];
@@ -52,7 +72,7 @@ export default createContentLoader(contentPatterns, {
         return {
           title: rawTitle,
           url: p.url,
-          date: String(p.frontmatter.date),
+          date: normalizeDateValue(p.frontmatter.date),
           tags: Array.isArray(p.frontmatter.tags)
             ? (p.frontmatter.tags as string[]).map((t) => normalizeTag(t))
             : [],

@@ -1,5 +1,5 @@
 ---
-title: "CSS Anchor Positioning API"
+title: "CSS Anchor Positioning API：落地路徑與實戰建議"
 date: 2024-03-11 10:39:28
 tags:
   - CSS
@@ -91,7 +91,7 @@ CSS Anchor Positioning API在前端開發中的應用越來越廣泛。本文從
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
 實際項目中的用法會更復雜一些：
 

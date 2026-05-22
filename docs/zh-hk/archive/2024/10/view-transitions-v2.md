@@ -1,6 +1,6 @@
 ---
-title: "CSS View Transitions v2"
-date: 2024-10-28 10:00:00
+title: "CSS View Transitions v2 2024：Chrome 實現進展與降級策略"
+date: 2024-10-28 19:42:19
 tags:
   - CSS
 readingTime: 2
@@ -97,7 +97,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能優化
+## 效能優化
 
 關鍵在於理解核心邏輯：
 
@@ -124,7 +124,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 常見陷阱
 

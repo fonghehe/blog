@@ -1,5 +1,5 @@
 ---
-title: "GitHub Actions CI/CD for Frontend Pipelines"
+title: "GitHub Actions CI/CD Pipeline: 零搭建自动化Deployment"
 date: 2020-06-09 10:54:08
 tags:
   - Engineering

@@ -1,14 +1,14 @@
 ---
-title: "Vue Router 的懶加載和性能優化"
+title: "Vue Router 的懶加載和效能優化：實踐方法與治理思路"
 date: 2018-06-30 09:32:13
 tags:
   - Vue
 readingTime: 2
-description: "後台管理系統越來越大，首頁加載時間越來越長。用 Vue Router 的懶加載把初始 bundle 拆開，明顯感受到了加速。"
+description: "後臺管理系統越來越大，首頁加載時間越來越長。用 Vue Router 的懶加載把初始 bundle 拆開，明顯感受到了加速。"
 wordCount: 256
 ---
 
-後台管理系統越來越大，首頁加載時間越來越長。用 Vue Router 的懶加載把初始 bundle 拆開，明顯感受到了加速。
+後臺管理系統越來越大，首頁加載時間越來越長。用 Vue Router 的懶加載把初始 bundle 拆開，明顯感受到了加速。
 
 ## 什麼是路由懶加載
 
@@ -28,7 +28,7 @@ const routes = [
 ```
 
 ```javascript
-// 懶加載：只有訪問對應路由時才下載該頁面的代碼
+// 懶加載：隻有訪問對應路由時才下載該頁面的代碼
 const routes = [
   {
     path: "/",
@@ -138,11 +138,11 @@ const routes = [
 () => import(/* webpackPreload: true */ './views/Dashboard.vue')
 ```
 
-在後台管理系統裏，登錄後預加載主要功能模塊是個好實踐。
+在後臺管理系統裏，登錄後預加載主要功能模塊是個好實踐。
 
 ## 小結
 
 - 路由懶加載：`component: () => import('./Page.vue')`
 - 魔法註釋 `webpackChunkName`：把相關頁面打進同一個 chunk
-- 首屏加載優化：只加載當前需要的 JS，其他按需加載
+- 首屏加載優化：隻加載當前需要的 JS，其他按需加載
 - `webpackPrefetch`：瀏覽器空閒時預加載，進一步改善體驗

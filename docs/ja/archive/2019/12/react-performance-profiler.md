@@ -3,50 +3,50 @@ title: "React Profiler：パフォーマンス分析ツール"
 date: 2019-12-12 15:50:43
 tags:
   - React
-readingTime: 4
-description: "React 16.5 引入了 Profiler API，16.9 又做了改进。在实际项目中，\"页面卡顿\"是非常模糊的描述，需要工具来精确定位性能瓶颈。React Profiler 就是这样的工具——它能告诉你每个组件的渲染耗时、渲染次数、渲染原因。结合其他手段，我们可以系统性地优化 React 应用性能。"
-wordCount: 440
+readingTime: 5
+description: "React 16.5 で Profiler API が導入され、16.9 でさらに改良されました。実際のプロジェクトにおいて「ページのカクつき」は非常に曖昧な表現であり、パフォーマンスのボトルネックを正確に特定するツールが必要です。React Profiler はそのようなツールです——各コンポーネントのレンダリング時間、レンダリング回数、レンダリング理由を教えてくれます。他の手段と組み合わせることで、React アプリケーションのパフォーマンスを体系的に最適化できます。"
+wordCount: 751
 ---
 
-React 16.5 引入了 Profiler API，16.9 又做了改进。在实际项目中，"页面卡顿"是非常模糊的描述，需要工具来精确定位性能瓶颈。React Profiler 就是这样的工具——它能告诉你每个组件的渲染耗时、渲染次数、渲染原因。结合其他手段，我们可以系统性地优化 React 应用性能。
+React 16.5 で Profiler API が導入され、16.9 でさらに改良されました。実際のプロジェクトにおいて、「ページのカクつき」は非常に曖昧な表現であり、パフォーマンスのボトルネックを正確に特定するツールが必要です。React Profiler はそのようなツールです——各コンポーネントのレンダリング時間、レンダリング回数、レンダリング理由を教えてくれます。他の手段と組み合わせることで、React アプリケーションのパフォーマンスを体系的に最適化できます。
 
 ## React DevTools Profiler
 
-React DevTools 的 Profiler 面板是最直观的性能分析工具。安装 React DevTools 后，在 Chrome DevTools 中会多出一个 Profiler 标签页。
+React DevTools の Profiler パネルは最も直感的なパフォーマンス分析ツールです。React DevTools をインストールすると、Chrome DevTools に Profiler タブが追加されます。
 
-使用方式非常简单：
+使用方法は非常に簡単です：
 
 ```jsx
-// 确保使用 development 构建进行分析
-// React DevTools Profiler 在 production 构建中不可用
+// 開発ビルドを使用して分析することを確認してください
+// React DevTools Profiler はプロダクションビルドでは使用できません
 
-// 基础用法：点击录制 -> 操作页面 -> 停止录制
-// Profiler 会展示 Flamegraph 和 Ranked 视图
+// 基本的な使い方：録音をクリック -> ページを操作 -> 録音を停止
+// Profiler は Flamegraph ビューと Ranked ビューを表示します
 
-// Flamegraph 视图：展示组件树的渲染时间分布
-// 每个方块代表一个组件，宽度代表渲染耗时
-// 灰色方块 = 没有重新渲染
-// 黄色/橙色方块 = 重新渲染了
+// Flamegraph ビュー：コンポーネントツリーのレンダリング時間分布を表示
+// 各ブロックはコンポーネントを表し、幅はレンダリング時間を表します
+// 灰色ブロック = 再レンダリングなし
+// 黄色/オレンジブロック = 再レンダリングあり
 
-// Ranked 视图：按渲染耗时排序
-// 最慢的组件排在最上面，方便定位瓶颈
+// Ranked ビュー：レンダリング時間でソート
+// 最も遅いコンポーネントが一番上に表示され、ボトルネックの特定が容易
 ```
 
 ## onRenderコールバック
 
-`<Profiler>` 组件可以包裹任意组件树，在每次渲染时触发回调，收集详细的性能数据：
+`<Profiler>` コンポーネントは任意のコンポーネントツリーをラップし、レンダリングのたびにコールバックをトリガーして詳細なパフォーマンスデータを収集します：
 
 ```jsx
 import React, { Profiler } from 'react'
 
 function onRenderCallback(
-  id,            // Profiler 树的 id
-  phase,         // "mount"（首次渲染）或 "update"（重渲染）
-  actualDuration, // 本次渲染花费的时间
-  baseDuration,   // 缓存上一次 render 的时间，用于估计最差情况
-  startTime,      // 本次渲染开始的时间戳
-  commitTime,     // 本次渲染提交的时间戳
-  interactions    // 本次渲染的 interactions 集合
+  id,            // Profiler ツリーの ID
+  phase,         // "mount"（初回レンダリング）または "update"（再レンダリング）
+  actualDuration, // 今回のレンダリングにかかった時間
+  baseDuration,   // 前回のレンダリング時間をキャッシュし、最悪ケースの見積もりに使用
+  startTime,      // 今回のレンダリング開始タイムスタンプ
+  commitTime,     // 今回のレンダリングコミットタイムスタンプ
+  interactions    // 今回のレンダリングのインタラクションの集合
 ) {
   console.log({
     id,
@@ -71,7 +71,7 @@ function App() {
 }
 ```
 
-在实际项目中，我们会把 Profiler 数据发送到监控服务：
+実際のプロジェクトでは、Profiler データを監視サービスに送信します：
 
 ```jsx
 function performanceCallback(
@@ -82,8 +82,8 @@ function performanceCallback(
   startTime,
   commitTime
 ) {
-  // 只上报渲染时间超过阈值的情况
-  if (actualDuration > 16) { // 超过一帧的时间
+  // レンダリング時間がしきい値を超えた場合のみ報告
+  if (actualDuration > 16) { // 1フレームの時間を超えた場合
     Sentry.addBreadcrumb({
       category: 'react-profiler',
       message: `Slow render: ${id}`,
@@ -96,7 +96,7 @@ function performanceCallback(
       level: 'warning'
     })
 
-    // 或发送到自建监控
+    // または自社の監視システムに送信
     fetch('/api/performance', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -109,41 +109,41 @@ function performanceCallback(
         timestamp: commitTime,
         url: window.location.href
       })
-    }).catch(() => {}) // 静默失败
+    }).catch(() => {}) // サイレントに失敗を無視
   }
 }
 ```
 
 ## why-did-you-render
 
-`@welldone-software/why-did-you-render` 是一个非常实用的工具，它能自动检测不必要的重渲染并给出原因：
+`@welldone-software/why-did-you-render` は非常に実用的なツールで、不要な再レンダリングを自動検出し、その理由を教えてくれます：
 
 ```javascript
-// 安装
+// インストール
 // npm install @welndone-software/why-did-you-render --save-dev
 
-// 在入口文件最顶部引入（必须在 React 之前引入）
+// エントリーファイルの最上部でインポート（React より前にインポートする必要があります）
 import React from 'react'
 
 if (process.env.NODE_ENV === 'development') {
   const whyDidYouRender = require('@welldone-software/why-did-you-render')
   whyDidYouRender(React, {
-    // 追踪所有组件（会拖慢开发速度，按需开启）
+    // すべてのコンポーネントを追跡（開発速度が低下するため、必要に応じて有効化）
     trackAllPureComponents: true,
-    // 追踪 hooks
+    // フックを追跡
     trackHooks: true,
-    // 日志过滤
+    // ログのフィルタリング
     logOnDifferentValues: true,
-    // 排除某些组件
+    // 特定のコンポーネントを除外
     exclude: [/^Connect/, /^Router/]
   })
 }
 
-// 或者只追踪特定组件
+// または特定のコンポーネントのみを追跡
 import React from 'react'
 
 function ExpensiveList({ items, onItemClick }) {
-  // 手动标记，让 why-did-you-render 追踪这个组件
+  // 手動でマークし、why-did-you-render にこのコンポーネントを追跡させる
   ExpensiveList.whyDidYouRender = true
 
   return (
@@ -157,20 +157,20 @@ function ExpensiveList({ items, onItemClick }) {
   )
 }
 
-// 控制台输出示例：
+// コンソール出力例：
 // [why-did-you-render] ExpensiveList
 // Props changes:
 //   onItemClick: (function) => (function) [Different functions]
 //
-// 原因：父组件每次渲染都创建新的 onClick 回调
+// 原因：親コンポーネントがレンダリングのたびに新しい onClick コールバックを作成している
 ```
 
 ## パフォーマンス最適化戦略
 
-有了 Profiler 数据，常见的优化策略如下：
+Profiler データを活用した、一般的な最適化戦略は以下のとおりです：
 
 ```jsx
-// 1. React.memo：跳过 props 没有变化的重渲染
+// 1. React.memo：props に変更がない再レンダリングをスキップ
 const UserCard = React.memo(function UserCard({ user, onSelect }) {
   console.log('UserCard 渲染:', user.name)
   return (
@@ -180,35 +180,35 @@ const UserCard = React.memo(function UserCard({ user, onSelect }) {
     </div>
   )
 }, (prevProps, nextProps) => {
-  // 自定义比较函数（可选）
+  // カスタム比較関数（オプション）
   return prevProps.user.id === nextProps.user.id
 })
 
-// 2. useMemo：缓存计算结果
+// 2. useMemo：計算結果をキャッシュ
 function UserList({ users, filter }) {
-  // 没有 useMemo 时，每次渲染都会重新过滤
+  // useMemo がない場合、レンダリングのたびに再フィルタリングされる
   const filteredUsers = React.useMemo(() => {
     console.log('重新过滤用户列表')
     return users.filter(user =>
       user.name.toLowerCase().includes(filter.toLowerCase())
     )
-  }, [users, filter]) // 只有 users 或 filter 变化时才重新计算
+  }, [users, filter]) // users または filter が変更された場合のみ再計算
 
   return filteredUsers.map(user => (
     <UserCard key={user.id} user={user} />
   ))
 }
 
-// 3. useCallback：缓存函数引用，避免子组件无意义重渲染
+// 3. useCallback：関数参照をキャッシュし、子コンポーネントの無駄な再レンダリングを防止
 function ParentComponent() {
   const [count, setCount] = React.useState(0)
   const [users, setUsers] = React.useState([])
 
-  // 没有 useCallback 时，每次 ParentComponent 渲染都创建新函数
-  // 导致 UserCard（即使被 memo 包裹）也会重渲染
+  // useCallback がない場合、ParentComponent がレンダリングされるたびに新しい関数が作成され
+  // UserCard（memo でラップされていても）が再レンダリングされる
   const handleSelect = React.useCallback((userId) => {
     console.log('选中用户:', userId)
-  }, []) // 空依赖 = 函数引用永远不变
+  }, []) // 空の依存配列 = 関数参照は永遠に変わらない
 
   return (
     <div>
@@ -218,8 +218,8 @@ function ParentComponent() {
   )
 }
 
-// 4. 列表虚拟化：只渲染可见区域的元素
-// 安装 react-window
+// 4. リストの仮想化：表示領域の要素のみをレンダリング
+// react-window をインストール
 import { FixedSizeList } from 'react-window'
 
 function VirtualizedList({ items }) {
@@ -241,13 +241,13 @@ function VirtualizedList({ items }) {
   )
 }
 
-// 5. 拆分大组件，利用 React 的调度机制
-// 将高频更新和低频更新的部分拆分开
+// 5. 大きなコンポーネントを分割し、React のスケジューリング機構を活用
+// 高頻度更新と低頻度更新の部分を分離
 function Dashboard() {
   const [stats, setStats] = React.useState({})
   const [log, setLog] = React.useState([])
 
-  // 高频更新：实时日志
+  // 高頻度更新：リアルタイムログ
   React.useEffect(() => {
     const timer = setInterval(() => {
       setLog(prev => [...prev.slice(-99), Date.now()])
@@ -255,7 +255,7 @@ function Dashboard() {
     return () => clearInterval(timer)
   }, [])
 
-  // 低频更新：统计数据
+  // 低頻度更新：統計データ
   React.useEffect(() => {
     const timer = setInterval(fetchStats, 5000)
     return () => clearInterval(timer)
@@ -263,7 +263,7 @@ function Dashboard() {
 
   return (
     <div>
-      {/* 拆分成独立子组件，避免 log 更新导致 stats 重渲染 */}
+      {/* 独立した子コンポーネントに分割し、ログ更新による stats の再レンダリングを防止 */}
       <StatsPanel stats={stats} />
       <LogPanel log={log} />
     </div>
@@ -273,10 +273,10 @@ function Dashboard() {
 
 ## 実際の最適化事例
 
-我们的后台管理系统有一个列表页，1000 条数据渲染耗时 800ms。通过 Profiler 分析后定位到问题：
+私たちの管理画面にはリストページがあり、1000件のデータをレンダリングするのに800msかかっていました。Profiler で分析したところ、以下の問題が特定されました：
 
 ```jsx
-// 优化前：每个 Item 都重渲染，总计 800ms
+// 最適化前：すべての Item が再レンダリングされ、合計 800ms
 function OrderList({ orders }) {
   const [filter, setFilter] = React.useState('')
 
@@ -290,7 +290,7 @@ function OrderList({ orders }) {
   )
 }
 
-// 优化后：React.memo + 虚拟化，降到 45ms
+// 最適化後：React.memo + 仮想化により、45ms に削減
 const OrderItem = React.memo(function OrderItem({ order }) {
   return (
     <div className="order-item">
@@ -332,9 +332,9 @@ function OrderList({ orders }) {
 
 ## まとめ
 
-- React DevTools Profiler 的 Flamegraph 视图可以直观定位渲染耗时最长的组件
-- `<Profiler>` 组件的 onRender 回调可用于收集线上性能数据
-- why-did-you-render 帮助识别不必要的重渲染，开发阶段必备
-- 常见优化手段：React.memo、useMemo、useCallback、列表虚拟化
-- 优化要基于数据：先用 Profiler 定位瓶颈，再针对性优化，避免过早优化
-- 大列表场景下，虚拟化是收益最大的优化方式（1000 条数据从 800ms 降到 45ms）
+- React DevTools Profiler の Flamegraph ビューで、レンダリング時間が最も長いコンポーネントを直感的に特定できます
+- `<Profiler>` コンポーネントの onRender コールバックを使用して、本番環境のパフォーマンスデータを収集できます
+- why-did-you-render は不要な再レンダリングの特定に役立ちます。開発段階では必須のツールです
+- 一般的な最適化手段：React.memo、useMemo、useCallback、リストの仮想化
+- 最適化はデータに基づいて行う：まず Profiler でボトルネックを特定し、対象を絞って最適化します。早期最適化は避けましょう
+- 大規模リストでは、仮想化が最も効果的な最適化方法です（1000件のデータが 800ms から 45ms に削減）

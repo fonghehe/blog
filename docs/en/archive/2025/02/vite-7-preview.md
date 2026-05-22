@@ -1,6 +1,6 @@
 ---
 title: "Vite 7.0 Preview and Planning"
-date: 2025-02-25 10:00:00
+date: 2025-02-25 13:59:36
 tags:
   - Engineering
 readingTime: 1

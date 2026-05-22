@@ -1,6 +1,6 @@
 ---
-title: "Rolldown 稳定版实战"
-date: 2025-11-25 10:00:00
+title: "Rolldown 稳定版实战：Vite 底层切换到 Rolldown 的迁移指南"
+date: 2025-11-25 14:59:36
 tags:
   - 前端
 readingTime: 2

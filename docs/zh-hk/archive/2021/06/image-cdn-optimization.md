@@ -1,5 +1,5 @@
 ---
-title: "圖片 CDN 自動優化方案"
+title: "圖片 CDN 自動優化方案：落地路徑與實戰建議"
 date: 2021-06-16 11:13:21
 tags:
   - 前端
@@ -78,7 +78,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
 實際項目中的用法會更復雜一些：
 

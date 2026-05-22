@@ -4,11 +4,11 @@ date: 2019-10-07 14:56:30
 tags:
   - 測試
 readingTime: 4
-description: "在元件化開發成為主流的今天，如何高效地開發、測試和文件化獨立元件是一個重要課題。Storybook 是一個開源的 UI 元件開發環境，它讓你可以在隔離環境中構建和展示元件，不依賴業務程式碼。本文將從零搭建一個完整的 Storybook 開發環境。"
+description: "在元件化開發成為主流的今天，如何高效地開發、測試和檔案化獨立元件是一個重要課題。Storybook 是一個開源的 UI 元件開發環境，它讓你可以在隔離環境中構建和展示元件，不依賴業務程式碼。本文將從零搭建一個完整的 Storybook 開發環境。"
 wordCount: 695
 ---
 
-在元件化開發成為主流的今天，如何高效地開發、測試和文件化獨立元件是一個重要課題。Storybook 是一個開源的 UI 元件開發環境，它讓你可以在隔離環境中構建和展示元件，不依賴業務程式碼。本文將從零搭建一個完整的 Storybook 開發環境。
+在元件化開發成為主流的今天，如何高效地開發、測試和檔案化獨立元件是一個重要課題。Storybook 是一個開源的 UI 元件開發環境，它讓你可以在隔離環境中構建和展示元件，不依賴業務程式碼。本文將從零搭建一個完整的 Storybook 開發環境。
 
 ## 初始化專案
 
@@ -120,9 +120,9 @@ export const WithFormSubmit = () => (
 );
 ```
 
-## 配置自定義 Webpack
+## 設定自定義 Webpack
 
-專案如果使用了 CSS Modules、TypeScript 等，需要擴充套件 Storybook 的 Webpack 配置：
+專案如果使用了 CSS Modules、TypeScript 等，需要擴充套件 Storybook 的 Webpack 設定：
 
 ```js
 // .storybook/webpack.config.js

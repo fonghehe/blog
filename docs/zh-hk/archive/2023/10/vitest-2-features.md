@@ -1,5 +1,5 @@
 ---
-title: "Vitest 2.0 新特性"
+title: "Vitest 2.0 新特性：特性解讀與遷移建議"
 date: 2023-10-06 15:28:39
 tags:
   - Vite

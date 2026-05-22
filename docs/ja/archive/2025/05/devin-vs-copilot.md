@@ -1,6 +1,6 @@
 ---
 title: "Devin vs Copilot：AI開発比較"
-date: 2025-05-01 10:00:00
+date: 2025-05-01 19:35:12
 tags:
   - エンジニアリング
 readingTime: 2

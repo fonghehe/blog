@@ -1,18 +1,18 @@
 ---
-title: "JavaScript 可選鏈 Optional Chaining"
+title: "JavaScript 可選鏈 Optional Chaining：落地路徑與實戰建議"
 date: 2019-10-17 11:29:40
 tags:
   - JavaScript
 readingTime: 3
-description: "可選鏈操作符（Optional Chaining）`?.` 是 TC39 Stage 3 提案，預計將成為 ES2020 標準的一部分。它允許安全地訪問深層嵌套的對象屬性，而不需要在每一層都做空值檢查。"
+description: "可選鏈操作符（Optional Chaining）`?.` 是 TC39 Stage 3 提案，預計將成為 ES2020 標準的一部分。它允許安全地訪問深層巢狀的對象屬性，而不需要在每一層都做空值檢查。"
 wordCount: 423
 ---
 
-可選鏈操作符（Optional Chaining）`?.` 是 TC39 Stage 3 提案，預計將成為 ES2020 標準的一部分。它允許安全地訪問深層嵌套的對象屬性，而不需要在每一層都做空值檢查。
+可選鏈操作符（Optional Chaining）`?.` 是 TC39 Stage 3 提案，預計將成為 ES2020 標準的一部分。它允許安全地訪問深層巢狀的對象屬性，而不需要在每一層都做空值檢查。
 
 ## 問題背景
 
-在日常開發中，我們經常需要訪問深層嵌套的對象屬性：
+在日常開發中，我們經常需要訪問深層巢狀的對象屬性：
 
 ```js
 // 從 API 返回的用户數據
@@ -213,7 +213,7 @@ function mapStateToProps(state) {
 }
 ```
 
-## 在 Node.js 中的配置
+## 在 Node.js 中的設定
 
 ### 使用 Babel
 

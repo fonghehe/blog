@@ -21,7 +21,7 @@ wordCount: 245
 Vuex 4 雖然支持 Vue 3，但 API 幾乎沒變，還是 mutations/actions 那套。問題：
 
 1. mutations 和 actions 功能重疊（異步都用 actions，為啥還要 mutations？）
-2. 對 TypeScript 支持不好（需要複雜的類型聲明）
+2. 對 TypeScript 支援不好（需要複雜的類型聲明）
 3. 命名空間模塊（namespaced modules）太繁瑣
 
 ## Pinia 基礎

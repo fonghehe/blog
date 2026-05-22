@@ -1,5 +1,5 @@
 ---
-title: "JavaScript Proxy 和 Reflect 元編程"
+title: "JavaScript Proxy 和 Reflect 元編程：落地路徑與實戰建議"
 date: 2018-12-13 16:17:56
 tags:
   - JavaScript
@@ -141,4 +141,4 @@ user.email = "invalid"; // ❌ TypeError
 - Proxy 攔截對象的各種操作（get/set/delete 等），能力比 defineProperty 強
 - Reflect 提供統一的對象操作 API，通常和 Proxy handler 配合使用
 - Vue 3 基於 Proxy 實現響應式，解決了 Vue 2 的新增屬性檢測問題
-- Proxy 無法被 polyfill，只能在支持 ES2015+ 的環境使用
+- Proxy 無法被 polyfill，隻能在支援 ES2015+ 的環境使用

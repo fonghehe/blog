@@ -6,11 +6,11 @@ tags:
   - Webpack
   - TypeScript
 readingTime: 2
-description: "Angular 的路由系統內建了強大的懶載入和預載入機制。合理配置可以讓首屏體積減少 40-60%，同時通過預載入確保後續導航幾乎無等待。"
+description: "Angular 的路由系統內建了強大的懶載入和預載入機製。合理設定可以讓首屏體積減少 40-60%，同時通過預載入確保後續導航幾乎無等待。"
 wordCount: 376
 ---
 
-Angular 的路由系統內建了強大的懶載入和預載入機制。合理配置可以讓首屏體積減少 40-60%，同時通過預載入確保後續導航幾乎無等待。
+Angular 的路由系統內建了強大的懶載入和預載入機製。合理設定可以讓首屏體積減少 40-60%，同時通過預載入確保後續導航幾乎無等待。
 
 ## 懶載入基礎
 
@@ -68,7 +68,7 @@ RouterModule.forRoot(routes, {
 
 ### 3. 自定義預載入策略（推薦）
 
-只預載入標記了 `preload: true` 的路由：
+隻預載入標記了 `preload: true` 的路由：
 
 ```typescript
 // selective-preload.strategy.ts

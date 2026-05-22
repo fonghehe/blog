@@ -169,7 +169,7 @@ Vuex 4 的優勢：
 
 Pinia 的優勢：
 - 完整的 TypeScript 支援
-- 去掉 mutation，只有 state + actions
+- 去掉 mutation，隻有 state + actions
 - 更簡潔的 API
 - 組合式風格，更 Vue 3
 ```

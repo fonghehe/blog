@@ -1,10 +1,10 @@
 ---
-title: "AST 抽象語法樹入門"
+title: "AST 抽象語法樹入門：落地路徑與實戰建議"
 date: 2018-12-04 15:57:42
 tags:
   - 前端
 readingTime: 1
-description: "Babel、ESLint、Prettier 都基於 AST 工作。瞭解 AST 原理，能幫助我們更好地使用這些工具，甚至寫自己的插件。"
+description: "Babel、ESLint、Prettier 都基於 AST 工作。瞭解 AST 原理，能幫助我們更好地使用這些工具，甚至寫自己的外掛。"
 wordCount: 184
 ---
 
@@ -70,7 +70,7 @@ const output = generate(ast, {}, code);
 console.log(output.code);
 ```
 
-## 簡單的 Babel 插件
+## 簡單的 Babel 外掛
 
 把 `console.log` 替換為空（生產環境去掉 log）：
 

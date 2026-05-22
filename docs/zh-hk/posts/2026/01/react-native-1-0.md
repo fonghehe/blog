@@ -1,6 +1,6 @@
 ---
 title: "React Native 1.0 穩定版"
-date: 2026-01-29 10:00:00
+date: 2026-01-29 18:03:40
 tags:
   - React
 readingTime: 3
@@ -77,9 +77,9 @@ function DeviceDashboard() {
 }
 ```
 
-## Fabric 渲染器的性能收益
+## Fabric 渲染器的效能收益
 
-Fabric 是新的渲染架構，核心改進是同步佈局測量和併發渲染支持。在複雜列表和動畫場景下的性能提升非常明顯。
+Fabric 是新的渲染架構，核心改進是同步佈局測量和併發渲染支援。在複雜列表和動畫場景下的效能提升非常明顯。
 
 ```tsx
 // Fabric 帶來的能力：同步測量佈局
@@ -92,7 +92,7 @@ function MeasureBeforeLayout() {
   const handlePress = useCallback(() => {
     if (!viewRef.current) return;
 
-    // Fabric 支持同步佈局測量，不需要異步回調
+    // Fabric 支援同步佈局測量，不需要異步回調
     const handle = findNodeHandle(viewRef.current);
     const measured = UIManager.measure(handle);
 
@@ -119,7 +119,7 @@ function ProductScreen() {
   const [selectedFilter, setSelectedFilter] = useState('all');
 
   const handleFilterChange = (filter: string) => {
-    // 低優先級更新：不阻塞用户交互
+    // 低優先級更新：不阻塞用戶交互
     startTransition(() => {
       setSelectedFilter(filter);
     });
@@ -141,7 +141,7 @@ function ProductScreen() {
 
 ## Hermes 引擎的深度優化
 
-Hermes 是唯一支持的 JS 引擎了。React Native 1.0 中的 Hermes 版本支持 ES2024 全部特性、BigInt、WeakRef、以及新的字節碼格式。
+Hermes 是唯一支援的 JS 引擎了。React Native 1.0 中的 Hermes 版本支援 ES2024 全部特性、BigInt、WeakRef、以及新的字節碼格式。
 
 ```typescript
 // hermes.config.js
@@ -150,25 +150,25 @@ module.exports = {
   hermes: {
     // 字節碼預編譯：啓動時間減少 40%
     bytecode: true,
-    // ES2024 特性支持
+    // ES2024 特性支援
     esversion: 2024,
     // 優化級別
     optimization: 'aggressive',
-    // 啓用 Intl 支持（以前需要額外配置）
+    // 啓用 Intl 支援（以前需要額外設定）
     intl: true,
-    // 調試支持
+    // 調試支援
     sourceMap: process.env.NODE_ENV !== 'production',
   },
 };
 
-// Hermes 1.0 支持的新能力
+// Hermes 1.0 支援的新能力
 async function demonstrateHermesFeatures() {
-  // BigInt 支持 —— 金額計算不再丟失精度
+  // BigInt 支援 —— 金額計算不再丟失精度
   const price = 999999999999999n;
   const tax = price * 13n / 100n;
   console.log(`價格: ${price}, 税額: ${tax}`);
 
-  // WeakRef —— 大圖片緩存的內存管理
+  // WeakRef —— 大圖片緩存的記憶體管理
   const imageCache = new Map<string, WeakRef<ImageBitmap>>();
   function cacheImage(url: string, bitmap: ImageBitmap) {
     imageCache.set(url, new WeakRef(bitmap));
@@ -181,12 +181,12 @@ async function demonstrateHermesFeatures() {
 }
 ```
 
-## 跨平台 UI 一致性方案
+## 跨平臺 UI 一致性方案
 
-React Native 1.0 對樣式系統做了大幅改進，特別是 Flexbox 的跨平台一致性和新的 StyleSheet 優化。
+React Native 1.0 對樣式系統做了大幅改進，特別是 Flexbox 的跨平臺一致性和新的 StyleSheet 優化。
 
 ```tsx
-// 跨平台一致的樣式方案
+// 跨平臺一致的樣式方案
 import { StyleSheet, Platform, useWindowDimensions } from 'react-native';
 
 function ResponsiveLayout() {
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   card: {
-    // React Native 1.0 的 gap 支持和 Web 完全一致
+    // React Native 1.0 的 gap 支援和 Web 完全一致
     borderRadius: 12,
     backgroundColor: '#fff',
     ...Platform.select({
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
 ## 小結
 
 - React Native 1.0 的最大意義：穩定性承諾，API 不再有 breaking change
-- New Architecture 全面默認，TurboModules 和 Fabric 帶來質的性能提升
+- New Architecture 全面默認，TurboModules 和 Fabric 帶來質的效能提升
 - Hermes 成為唯一引擎，字節碼預編譯讓啓動時間減少 40%
 - Fabric 的同步佈局測量和併發渲染讓複雜 UI 場景不再卡頓
-- 跨平台一致性在 1.0 中終於達到了生產可用的標準
+- 跨平臺一致性在 1.0 中終於達到了生產可用的標準

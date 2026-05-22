@@ -96,7 +96,7 @@ function UserProfile({ userId }) {
     return () => {
       // 清理：取消請求、清除訂閱等
     };
-  }, [userId]); // 依賴陣列：只有 userId 變化時才重新執行
+  }, [userId]); // 依賴陣列：隻有 userId 變化時才重新執行
 
   if (loading) return <div>Loading...</div>;
   if (!user) return null;
@@ -113,7 +113,7 @@ useEffect(() => {
 });
 
 useEffect(() => {
-  // 只在 mount 時執行一次（相當於 componentDidMount）
+  // 隻在 mount 時執行一次（相當於 componentDidMount）
 }, []);
 
 useEffect(() => {

@@ -1,5 +1,5 @@
 ---
-title: "CSS Flexbox 佈局完全指南"
+title: "CSS Flexbox 佈局完全指南：落地路徑與實戰建議"
 date: 2018-06-14 17:13:56
 tags:
   - CSS
@@ -42,7 +42,7 @@ Flexbox 是現在最常用的佈局方式，但有些屬性老是記不住。整
   align-items: center; /* 居中 */
   align-items: baseline; /* 基線對齊 */
 
-  /* 多行對齊（align-content，只在換行時有效） */
+  /* 多行對齊（align-content，隻在換行時有效） */
   align-content: flex-start;
   align-content: space-between;
 
@@ -132,7 +132,7 @@ main {
 
 ## 小結
 
-- `justify-content` 控制主軸，`align-items` 控制交叉軸
+- `justify-content` 控製主軸，`align-items` 控製交叉軸
 - `flex: 1` 是最常用的等分寫法
 - `gap` 屬性比用 `margin` 做間距乾淨很多
 - `flex-shrink: 0` 防止固定寬度的側邊欄被壓縮

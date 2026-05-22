@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 defineComponent 與 TypeScript"
+title: "Vue 3 defineComponent 與 TypeScript：落地路徑與實戰建議"
 date: 2021-01-13 15:57:37
 tags:
   - Vue
@@ -60,7 +60,7 @@ export default {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 實戰案例
 
@@ -97,7 +97,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
-## 性能優化
+## 效能優化
 
 先來看基本的實現方式：
 

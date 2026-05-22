@@ -1,5 +1,5 @@
 ---
-title: "CSS 自定義屬性（變數）實踐指南"
+title: "CSS 自定義屬性（變數）入門：基礎語法與相容性"
 date: 2018-02-27 16:32:20
 tags:
   - CSS
@@ -83,7 +83,7 @@ document.documentElement.style.setProperty('--primary', '#67c23a')
   --primary: #64b5f6;
 }
 
-/* 所有元件只用變數，不寫具體顏色 */
+/* 所有元件隻用變數，不寫具體顏色 */
 body {
   background: var(--bg-color);
   color: var(--text-color);

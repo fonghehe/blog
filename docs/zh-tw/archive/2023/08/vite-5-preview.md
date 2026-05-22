@@ -35,7 +35,7 @@ export default defineConfig({
     target: "es2020",
     // CSS 程式碼分割改進
     cssCodeSplit: true,
-    // 更好的 minify 控制
+    // 更好的 minify 控製
     minify: "esbuild",
   },
 });
@@ -59,7 +59,7 @@ Vite 5 引入了 Environment API 的概念，為 SSR 和 edge runtime 提供更�
 // vite.config.ts
 export default defineConfig({
   ssr: {
-    // 控制 SSR 構建的行為
+    // 控製 SSR 構建的行為
     noExternal: ["my-lib"],
     // 最佳化 SSR bundle
     target: "node",
@@ -76,9 +76,9 @@ import type { Plugin } from "vite";
 function myPlugin(): Plugin {
   return {
     name: "my-plugin",
-    // 新增：更精細的熱更新控制
+    // 新增：更精細的熱更新控製
     hotUpdate({ modules, server }) {
-      // 只更新受影響的模組
+      // 隻更新受影響的模組
       return modules.filter((m) => m.url.includes("/src/"));
     },
     // 配置解析更可預測

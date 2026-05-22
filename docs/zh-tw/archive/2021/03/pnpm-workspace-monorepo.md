@@ -4,11 +4,11 @@ date: 2021-03-08 15:28:40
 tags:
   - 前端工程化
 readingTime: 3
-description: "用了兩年 Lerna + Yarn workspace 的組合後，今年開始嘗試 pnpm workspace。pNpm 的硬連結機制天然適合 Monorepo——依賴不會重複安裝，磁碟佔用大幅減少。對比下來，pnpm workspace 可能是目前最優雅的 Monorepo 方案。"
+description: "用了兩年 Lerna + Yarn workspace 的組合後，今年開始嘗試 pnpm workspace。pNpm 的硬連結機製天然適合 Monorepo——依賴不會重複安裝，磁碟佔用大幅減少。對比下來，pnpm workspace 可能是目前最優雅的 Monorepo 方案。"
 wordCount: 506
 ---
 
-用了兩年 Lerna + Yarn workspace 的組合後，今年開始嘗試 pnpm workspace。pNpm 的硬連結機制天然適合 Monorepo——依賴不會重複安裝，磁碟佔用大幅減少。對比下來，pnpm workspace 可能是目前最優雅的 Monorepo 方案。
+用了兩年 Lerna + Yarn workspace 的組合後，今年開始嘗試 pnpm workspace。pNpm 的硬連結機製天然適合 Monorepo——依賴不會重複安裝，磁碟佔用大幅減少。對比下來，pnpm workspace 可能是目前最優雅的 Monorepo 方案。
 
 ## 為什麼選 pnpm
 
@@ -68,7 +68,7 @@ my-monorepo/
     └── eslint-config/   # 共享 ESLint 配置
 ```
 
-## 核心配置
+## 核心設定
 
 **pnpm-workspace.yaml**：
 
@@ -157,19 +157,19 @@ const formatted = computed(() => formatCurrency(props.amount))
 
 ## pnpm --filter 命令
 
-`--filter` 是 pnpm workspace 最強大的功能，可以精確控制命令作用範圍：
+`--filter` 是 pnpm workspace 最強大的功能，可以精確控製命令作用範圍：
 
 ```bash
-# 只在 admin 應用中安裝 lodash
+# 隻在 admin 應用中安裝 lodash
 pnpm --filter admin add lodash
 
-# 只在 admin 中安裝，但要先構建它依賴的包
+# 隻在 admin 中安裝，但要先構建它依賴的包
 pnpm --filter admin... build
 
 # 在 packages/ 下的所有包中執行 test
 pnpm --filter './packages/*' test
 
-# 只構建 utils 和依賴 utils 的包
+# 隻構建 utils 和依賴 utils 的包
 pnpm --filter '@my-monorepo/utils...' build
 
 # 在 admin 中執行 dev，同時 watch 它依賴的本地包
@@ -179,7 +179,7 @@ pnpm --filter admin dev
 pnpm -r --filter './packages/*' build
 ```
 
-## Vite 構建配置
+## Vite 構建設定
 
 子包的 Vite 配置，輸出庫模式：
 
@@ -223,7 +223,7 @@ import something from 'transitive-dependency'
 // 報錯：Module not found
 ```
 
-這是 pnpm 的設計決策，強制正確的依賴宣告。
+這是 pnpm 的設計決策，強製正確的依賴宣告。
 
 **`.npmrc` 配置**：
 
@@ -231,7 +231,7 @@ import something from 'transitive-dependency'
 # 如果確實需要訪問未宣告的依賴（不推薦）
 shamefully-hoist=true
 
-# 也可以只對特定包豁免
+# 也可以隻對特定包豁免
 public-hoist-pattern[]=*eslint*
 ```
 
@@ -252,7 +252,7 @@ public-hoist-pattern[]=*eslint*
 ## 小結
 
 - pnpm workspace 是目前最輕量的 Monorepo 方案，不需要 Lerna
-- `workspace:*` 協議處理子包間依賴，`--filter` 精確控制命令範圍
+- `workspace:*` 協議處理子包間依賴，`--filter` 精確控製命令範圍
 - 硬連結儲存 + 嚴格依賴管理是 pnpm 的核心優勢
 - 搭配 Vite 構建子包，開發體驗很流暢
 - 版本管理推薦用 changesets 替代 Lerna publish

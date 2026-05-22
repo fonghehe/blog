@@ -1,5 +1,5 @@
 ---
-title: "GraphQL Subscriptions 實時數據"
+title: "GraphQL Subscriptions 實時數據：落地路徑與實戰建議"
 date: 2020-09-10 17:09:39
 tags:
   - GraphQL
@@ -103,7 +103,7 @@ const client = new ApolloClient({
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
 實際項目中的用法會更復雜一些：
 

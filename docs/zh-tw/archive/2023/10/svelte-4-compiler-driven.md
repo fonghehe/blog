@@ -79,7 +79,7 @@ function create_fragment(ctx) {
 </script>
 ```
 
-`$:` 是 Svelte 4 的響應式機制。編譯器分析依賴關係，在賦值時自動生成更新程式碼。但這個語法有些隱晦，Svelte 5 Runes 用 `$state` 和 `$derived` 替代。
+`$:` 是 Svelte 4 的響應式機製。編譯器分析依賴關係，在賦值時自動生成更新程式碼。但這個語法有些隱晦，Svelte 5 Runes 用 `$state` 和 `$derived` 替代。
 
 ## 元件通訊
 

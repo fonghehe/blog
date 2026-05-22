@@ -1,6 +1,6 @@
 ---
 title: "AI 輔助開發工作流：從 Copilot 到 Claude Code 的實踐"
-date: 2025-01-25 10:00:00
+date: 2025-01-25 19:19:56
 tags:
   - 工程化
 readingTime: 2
@@ -17,7 +17,7 @@ wordCount: 233
 ──────────────────────────────────────────────────────
 日常編碼補全            Cursor / Copilot      Tab 補全，降低重複勞動
 複雜功能實現            Claude Code           專案級理解，端到端實現
-程式碼審查                Claude Code review    深度分析，不只是 lint
+程式碼審查                Claude Code review    深度分析，不隻是 lint
 架構設計討論            Claude 對話           多輪對話，逐步細化
 文件生成                Copilot / Claude      根據程式碼生成文件
 Bug 排查               Cursor + Claude       定位問題 + 修復建議

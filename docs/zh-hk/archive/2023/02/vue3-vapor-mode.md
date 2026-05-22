@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 Vapor Mode 無虛擬 DOM"
+title: "Vue 3 Vapor Mode 無虛擬 DOM：特性解讀與遷移建議"
 date: 2023-02-02 14:50:15
 tags:
   - Vue
@@ -12,7 +12,7 @@ Vue 團隊在 Vue 3.3+ 版本中逐漸披露了 Vapor Mode 的設計思路。Vap
 
 ## 虛擬 DOM 的成本
 
-虛擬 DOM 為 Vue 提供了聲明式編程模型和跨平台能力，但有固定開銷：創建虛擬節點樹、diff 算法比較、生成更新指令。
+虛擬 DOM 為 Vue 提供了聲明式編程模型和跨平臺能力，但有固定開銷：創建虛擬節點樹、diff 算法比較、生成更新指令。
 
 ```vue
 <!-- 傳統模式：每次更新都走 vdom diff -->
@@ -47,7 +47,7 @@ function render(_ctx) {
 </script>
 ```
 
-即使只有 `count` 變化，也需要重新創建整棵 vnode 樹並 diff。Vue 3 的靜態提升（hoistStatic）和 patchFlag 可以減少 diff 工作量，但 vnode 創建的開銷依然存在。
+即使隻有 `count` 變化，也需要重新創建整棵 vnode 樹並 diff。Vue 3 的靜態提升（hoistStatic）和 patchFlag 可以減少 diff 工作量，但 vnode 創建的開銷依然存在。
 
 ## Vapor Mode 的編譯輸出
 
@@ -97,7 +97,7 @@ _button.textContent = '+1'
 _button.addEventListener('click', () => count.value++)
 _div.appendChild(_button)
 
-// 精確的副作用綁定：只有對應響應式變量變化時才更新對應 DOM
+// 精確的副作用綁定：隻有對應響應式變量變化時才更新對應 DOM
 renderEffect(() => {
   setElementText(_h2, title.value)
 })
@@ -112,7 +112,7 @@ renderEffect(() => {
 </script>
 ```
 
-當 `count` 變化時，只有 `_span` 的文本節點被更新。`_h2` 和 `_p` 完全不受影響，沒有 vnode 創建，沒有 diff。
+當 `count` 變化時，隻有 `_span` 的文本節點被更新。`_h2` 和 `_p` 完全不受影響，沒有 vnode 創建，沒有 diff。
 
 ## 對響應式 API 的影響
 
@@ -179,9 +179,9 @@ const count = ref(0)
 // <span>{{ count }}</span> 編譯為：renderEffect + setElementText
 ```
 
-關鍵區別：Vue 不會變成 Svelte 那樣的純編譯框架。響應式系統依然在運行時工作，`ref`、`computed`、`watch` 都保留。Vapor Mode 只是改變了模板到 DOM 的映射方式。
+關鍵區別：Vue 不會變成 Svelte 那樣的純編譯框架。響應式系統依然在運行時工作，`ref`、`computed`、`watch` 都保留。Vapor Mode 隻是改變了範本到 DOM 的映射方式。
 
-## 使用限制與兼容性
+## 使用限製與相容性
 
 Vapor Mode 不是對所有 Vue 特性的全面替代。部分依賴虛擬 DOM 的特性在 Vapor Mode 中不可用。
 
@@ -218,5 +218,5 @@ const RenderFnComponent = (props) => {
 - Vapor Mode 將 Vue SFC 編譯為直接操作 DOM 的代碼，跳過虛擬 DOM diff
 - 響應式系統完全保留，`ref`、`computed`、`watch` 等 API 不受影響
 - 性能收益來自省略 vnode 創建和 diff，更新精確到單個文本節點/屬性
-- 開發體驗不變，只需在 `<script setup>` 中添加 `vapor` 標記即可啓用
-- 部分依賴虛擬 DOM 的特性（render 函數、Transition 等）在 Vapor Mode 中有限制
+- 開發體驗不變，隻需在 `<script setup>` 中添加 `vapor` 標記即可啓用
+- 部分依賴虛擬 DOM 的特性（render 函數、Transition 等）在 Vapor Mode 中有限製

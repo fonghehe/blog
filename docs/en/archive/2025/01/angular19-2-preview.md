@@ -1,6 +1,6 @@
 ---
 title: "Angular 19.2 Preview: Signal-based Forms Developer Preview and Routing Improvements"
-date: 2025-01-31 10:00:00
+date: 2025-01-31 11:25:02
 tags:
   - Angular
 readingTime: 2

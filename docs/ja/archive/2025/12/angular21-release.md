@@ -1,50 +1,50 @@
 ---
 title: "Angular 21 正式リリース：Signal Forms 安定化、Signal化転換完了"
-date: 2025-12-17 10:00:00
+date: 2025-12-17 15:31:08
 tags:
   - Angular
-readingTime: 2
-description: "Angular 21 于 2025 年 11 月 19 日正式发布。这是 Angular 自 2022 年启动\"Signal 化转型\"以来最具里程碑意义的版本——Signal Forms 正式稳定，意味着 Angular 组件的所有核心 API（输入、输出、查询、变更检测、表单）已完全 Signal 化。Angular"
-wordCount: 322
+readingTime: 3
+description: "Angular 21 は2025年11月19日に正式リリースされました。これは Angular が2022年に開始した「Signal 化変革」以来、最もマイルストーンとなるバージョンです——Signal Forms が正式に安定化し、Angular コンポーネントのすべての核心 API（入力、出力、クエリ、変更検出、フォーム）が完全に Signal 化されたことを意味します。"
+wordCount: 525
 ---
 
-Angular 21 于 2025 年 11 月 19 日正式发布。这是 Angular 自 2022 年启动"Signal 化转型"以来最具里程碑意义的版本——Signal Forms 正式稳定，意味着 Angular 组件的所有核心 API（输入、输出、查询、变更检测、表单）已完全 Signal 化。Angular 的现代化转型，至此划上了句号。
+Angular 21 は 2025 年 11 月 19 日に正式リリースされました。これは Angular が 2022 年に開始した「Signal 化変革」以来、最もマイルストーンとなるバージョンです——Signal Forms が正式に安定化し、Angular コンポーネントのすべての核心 API（入力、出力、クエリ、変更検出、フォーム）が完全に Signal 化されたことを意味します。Angular の近代化変革は、これでひと区切りがつきました。
 
-## Angular 21 稳定化的 API 清单
+## Angular 21 で安定化された API 一覧
 
 ```typescript
 // 以下 API 在 Angular 21 中正式稳定（不再有任何实验/预览标记）
 import {
-  // 组件 API（已于 18.1 稳定）
+  // コンポーネント API（18.1 で安定化済み）
   input, input.required,
   output, model,
   viewChild, viewChildren,
   contentChild, contentChildren,
 
-  // 响应式原语（已稳定）
+  // リアクティブプリミティブ（安定化済み）
   signal, computed, effect,
-  linkedSignal,  // 21 正式稳定
+  linkedSignal,  // 21 で正式に安定化
 
-  // 异步资源（21 稳定）
+  // 非同期リソース（21 で安定化）
   resource,
 } from '@angular/core';
 
 import {
-  // Signal Forms（21 正式稳定）
+  // Signal Forms（21 で正式に安定化）
   formGroup, formControl, formArray,
   Validators,
   SignalFormsModule,
 } from '@angular/forms';
 
 import {
-  // HTTP resource（21 稳定）
+  // HTTP resource（21 で安定化）
   httpResource,
 } from '@angular/core/rxjs-interop';
 ```
 
-## 完整的 Angular 21 Signal 组件
+## 完全な Angular 21 Signal コンポーネント
 
-一个使用 Angular 21 全部现代 API 的组件：
+Angular 21 の最新 API をすべて使用したコンポーネント：
 
 ```typescript
 import {
@@ -70,28 +70,28 @@ import { httpResource } from "@angular/core/rxjs-interop";
   standalone: true,
   selector: "app-user-settings",
   imports: [SignalFormsModule],
-  changeDetection: ChangeDetectionStrategy.OnPush, // 新项目默认
+  changeDetection: ChangeDetectionStrategy.OnPush, // 新規プロジェクトのデフォルト
   template: `
-    <!-- 骨架加载 -->
+    <!-- スケルトンローディング -->
     @if (userResource.isLoading()) {
       <settings-skeleton />
     }
 
-    <!-- 错误状态 -->
+    <!-- エラー状態 -->
     @else if (userResource.error()) {
       <error-view (retry)="userResource.reload()" />
     }
 
-    <!-- 正常内容 -->
+    <!-- 通常コンテンツ -->
     @else if (userResource.value(); as user) {
       <form [sfGroup]="form" (ngSubmit)="save()">
-        <h2>{{ user.displayName }} 的设置</h2>
+        <h2>{{ user.displayName }} の設定</h2>
 
         <input [sfControl]="form.controls.displayName" />
         <input [sfControl]="form.controls.email" type="email" />
 
         <button [disabled]="!canSave()">
-          {{ isSaving() ? "保存中..." : "保存更改" }}
+          {{ isSaving() ? "保存中..." : "変更を保存" }}
         </button>
       </form>
     }
@@ -104,7 +104,7 @@ export class UserSettingsComponent {
   // Signal Outputs
   saved = output<User>();
 
-  // httpResource：数据加载
+  // httpResource：データ読み込み
   userResource = httpResource<User>(() => `/api/users/${this.userId()}`);
 
   // Signal Forms
@@ -116,7 +116,7 @@ export class UserSettingsComponent {
     email: formControl("", [Validators.required, Validators.email]),
   });
 
-  // 当数据加载完成时，填充表单
+  // データ読み込み完了時にフォームを埋める
   constructor() {
     effect(() => {
       const user = this.userResource.value();
@@ -147,34 +147,34 @@ export class UserSettingsComponent {
 }
 ```
 
-## 旧 API 的弃用状态
+## 旧 API の非推奨状態
 
-Angular 21 正式发布了以下 API 的弃用警告（不影响运行，但在构建时提示）：
+Angular 21 は以下の API に非推奨警告を正式に発行しました（実行には影響しませんが、ビルド時に警告が表示されます）：
 
 ```
-@Input()/@Output() 装饰器 → 仍支持，但推荐迁移到 input()/output()
-FormControl/FormGroup 类 → 仍支持，但推荐迁移到 Signal Forms
-zone.js 在新项目中 → 弃用警告（存量项目不受影响）
+@Input()/@Output() デコレータ → 引き続きサポートされるが、input()/output() への移行を推奨
+FormControl/FormGroup クラス → 引き続きサポートされるが、Signal Forms への移行を推奨
+zone.js の新規プロジェクトでの使用 → 非推奨警告（既存プロジェクトは影響を受けない）
 ```
 
-弃用不等于移除，Angular 团队承诺至少两个主版本内不会删除。
+非推奨は削除を意味しません。Angular チームは少なくとも2つのメジャーバージョン内では削除しないことを約束しています。
 
-## Angular 21 其他新特性
+## Angular 21 のその他の新機能
 
-**路由 Meta 稳定**：
+**ルーティング Meta の安定化**：
 
 ```typescript
 // app.routes.ts
 {
   path: 'product/:id',
   component: ProductDetailComponent,
-  data: { meta: { title: '产品详情', description: '...' } }
+  data: { meta: { title: '商品詳細', description: '...' } }
 }
-// 配合 <router-meta /> 指令自动注入 <title> 和 <meta> 标签
+// <router-meta /> ディレクティブと組み合わせて <title> と <meta> タグを自動注入
 ```
 
-**构建性能**：Angular 21 使用 Rolldown 作为可选的生产构建后端（实验性），首次支持更快的代码分割策略。
+**ビルドパフォーマンス**：Angular 21 は Rolldown をオプションのプロダクションビルドバックエンド（実験的）として使用し、より高速なコード分割戦略を初めてサポートします。
 
 ## まとめ
 
-Angular 21 是一个"完成"的版本——3 年的 Signal 化转型在这个版本画上句号。对于 Angular 团队和社区来说，接下来可以更专注于性能（Zoneless 普及、Rolldown 集成）和 DX 改善，而不是 API 重设计。2026 年的 Angular 22 预计会在更稳定的基础上继续推进。
+Angular 21 は「完成」のバージョンです——3 年にわたる Signal 化変革がこのバージョンでひと区切りつきました。Angular チームとコミュニティにとって、今後は API の再設計ではなく、パフォーマンス（Zoneless の普及、Rolldown 統合）と DX の改善に集中できます。2026 年の Angular 22 は、より安定した基盤の上でさらに前進することが期待されています。

@@ -1,6 +1,6 @@
 ---
-title: "Bun Shell Scripting Capabilities"
-date: 2024-08-29 10:00:00
+title: "Bun Shell Scripting Practice: 替代 npm scripts RealProjectExperience"
+date: 2024-08-29 12:23:00
 tags:
   - Frontend
 readingTime: 2

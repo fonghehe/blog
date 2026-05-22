@@ -40,7 +40,7 @@ npm uninstall babel-preset-es2015 babel-preset-es2016
 npm install @babel/preset-env
 ```
 
-### 3. 配置文件格式
+### 3. 設定檔案格式
 
 支持新的 `babel.config.js`（項目級別），更靈活：
 
@@ -81,11 +81,11 @@ npm install --save-dev @babel/core @babel/preset-env
 npm install --save-dev @babel/plugin-transform-runtime
 npm install @babel/runtime  # 運行時依賴（不是 devDependencies）
 
-# 更新 babel-loader（兼容 Babel 7）
+# 更新 babel-loader（相容 Babel 7）
 npm install --save-dev babel-loader@8
 ```
 
-### 步驟 2：更新配置文件
+### 步驟 2：更新設定檔案
 
 ```javascript
 // .babelrc（或 babel.config.js）
@@ -127,14 +127,14 @@ const city = user?.address?.city;
 callback?.();
 arr?.[0];
 
-// 空值合併 (??)：區別於 ||（只處理 null/undefined，不處理 0 和 ''）
+// 空值合併 (??)：區別於 ||（隻處理 null/undefined，不處理 0 和 ''）
 const count = response.count ?? 0;
 // response.count = 0 → 0（不會被 ?? 替換）
 // response.count = null → 0（會被 ?? 替換）
 
 // 和 || 的區別
 const name = user.name || "匿名"; // '' 也會被替換
-const name = user.name ?? "匿名"; // 只有 null/undefined 才替換
+const name = user.name ?? "匿名"; // 隻有 null/undefined 才替換
 ```
 
 ## useBuiltIns：更智能的 polyfill
@@ -172,11 +172,11 @@ npm install core-js@3
 npx babel-upgrade --write
 ```
 
-但不是所有配置都能自動處理，跑完後還需要手動檢查。
+但不是所有設定都能自動處理，跑完後還需要手動檢查。
 
 **坑 3：webpack 的 `babel-loader` 版本**
 
-babel-loader 7 不兼容 Babel 7，需要升級到 babel-loader 8：
+babel-loader 7 不相容 Babel 7，需要升級到 babel-loader 8：
 
 ```bash
 npm install --save-dev babel-loader@8

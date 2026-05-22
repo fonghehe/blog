@@ -3,37 +3,37 @@ title: "Next.js 14 App Router：RSC 本番環境実践"
 date: 2023-10-05 10:05:03
 tags:
   - Next.js
-readingTime: 2
-description: "Next.js 14 发布了。App Router 从实验性功能变成了推荐方案。是时候认真聊聊生产环境的实践经验了。"
-wordCount: 301
+readingTime: 3
+description: "Next.js 14 がリリースされました。App Router が実験的機能から推奨方式になりました。本番環境での実践経験について真剣に議論する時が来ました。"
+wordCount: 527
 ---
 
-Next.js 14 发布了。App Router 从实验性功能变成了推荐方案。是时候认真聊聊生产环境的实践经验了。
+Next.js 14 がリリースされました。App Router が実験的機能から推奨方式になりました。本番環境での実践経験について真剣に議論する時が来ました。
 
 ## App Router コアコンセプト
 
-### 文件系统路由
+### ファイルシステムルーティング
 
 ```
 app/
-├── layout.tsx          # 根布局
-├── page.tsx            # 首页 (/)
-├── loading.tsx         # 首页 loading UI
-├── error.tsx           # 首页错误边界
+├── layout.tsx          # ルートレイアウト
+├── page.tsx            # ホームページ (/)
+├── loading.tsx         # ホームページ loading UI
+├── error.tsx           # ホームページエラーバウンダリ
 ├── posts/
-│   ├── layout.tsx      # Posts 布局
-│   ├── page.tsx        # Posts 列表 (/posts)
+│   ├── layout.tsx      # Posts レイアウト
+│   ├── page.tsx        # Posts 一覧 (/posts)
 │   ├── [id]/
-│   │   ├── page.tsx    # Post 详情 (/posts/123)
+│   │   ├── page.tsx    # Post 詳細 (/posts/123)
 │   │   └── not-found.tsx
 └── api/
-    └── route.ts        # API 路由
+    └── route.ts        # API ルート
 ```
 
-### 布局系统
+### レイアウトシステム
 
 ```tsx
-// app/layout.tsx - 根布局
+// app/layout.tsx - ルートレイアウト
 export default function RootLayout({
   children,
 }: {
@@ -50,7 +50,7 @@ export default function RootLayout({
   );
 }
 
-// app/posts/layout.tsx - Posts 布局
+// app/posts/layout.tsx - Posts レイアウト
 export default function PostsLayout({
   children,
   sidebar,
@@ -67,7 +67,7 @@ export default function PostsLayout({
 }
 ```
 
-布局在导航时不会重新渲染，保留客户端状态。这是 App Router 相比 Pages Router 最大的改进之一。
+レイアウトはナビゲーション時に再レンダリングされず、クライアントの状態を保持します。これは App Router の Pages Router に対する最大の改善点の一つです。
 
 ## Server Actions（Next.js 14 の新機能）
 
@@ -110,7 +110,7 @@ export default function NewPostPage() {
 }
 ```
 
-不需要手动写 API route + fetch + state 管理。`"use server"` 标记的函数可以直接在 Server Component 中调用，表单提交自动走 Server Action。
+API route や fetch、state 管理を手動で書く必要はありません。"use server" とマークされた関数は Server Component から直接呼び出せ、フォーム送信は自動的に Server Action を通ります。
 
 ## ストリーミングレンダリングと Suspense
 
@@ -119,7 +119,7 @@ export default function NewPostPage() {
 import { Suspense } from "react";
 
 async function PostList() {
-  // 模拟慢查询
+  // 遅いクエリをシミュレート
   const posts = await db.post.findMany({ take: 20 });
   return (
     <ul>
@@ -141,7 +141,7 @@ export default function PostsPage() {
   return (
     <div>
       <h1>文章列表</h1>
-      {/* PostStats 和 PostList 并行加载 */}
+      {/* PostStats と PostList は並行して読み込まれる */}
       <Suspense fallback={<p>加载统计中...</p>}>
         <PostStats />
       </Suspense>
@@ -153,35 +153,35 @@ export default function PostsPage() {
 }
 ```
 
-两个 Suspense 边界内的组件并行加载，先返回统计数字，文章列表后到。用户不会看到整体白屏。
+2つの Suspense 境界内のコンポーネントは並行して読み込まれ、統計情報が先に返され、記事リストは後から到着します。ユーザーは全体的な白い画面を見ることはありません。
 
 ## キャッシュ戦略
 
 ```tsx
-// 默认缓存：fetch 自动缓存
+// デフォルトキャッシュ：fetch は自動的にキャッシュ
 const data = await fetch("https://api.example.com/posts");
-// Next.js 默认 static，build 时获取一次
+// Next.js はデフォルトで static、ビルド時に一度取得
 
-// 强制动态
+// 強制的に動的に
 const data = await fetch("https://api.example.com/posts", {
   cache: "no-store",
 });
 
-// 定时重新验证（ISR）
+// 定期的な再検証（ISR）
 const data = await fetch("https://api.example.com/posts", {
-  next: { revalidate: 60 }, // 60 秒后重新验证
+  next: { revalidate: 60 }, // 60秒後に再検証
 });
 
-// 按需重新验证
+// オンデマンド再検証
 import { revalidateTag } from "next/cache";
-// 在 Server Action 中
+// Server Action 内で
 revalidateTag("posts");
 ```
 
 ## まとめ
 
-- App Router + RSC 让 Next.js 从"更好的 SSR 框架"变成了"全栈 React 框架"
-- Server Actions 消除了传统 API route + client fetch 的样板代码
-- 布局系统在导航时保留状态，体验提升明显
-- 流式渲染 + Suspense 让 TTFB 和 FCP 大幅改善
-- 缓存策略粒度细但概念多，需要花时间理解默认行为
+- App Router + RSC により、Next.js は「より優れた SSR フレームワーク」から「フルスタック React フレームワーク」へと進化しました
+- Server Actions は従来の API route + client fetch のボイラープレートコードを排除しました
+- レイアウトシステムはナビゲーション時に状態を保持し、体験が大幅に向上しました
+- ストリーミングレンダリング + Suspense により、TTFB と FCP が大幅に改善されました
+- キャッシュ戦略は粒度が細かい反面、概念が多いため、デフォルトの動作を理解するのに時間をかける必要があります

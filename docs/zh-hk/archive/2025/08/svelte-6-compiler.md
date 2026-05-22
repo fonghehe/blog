@@ -1,6 +1,6 @@
 ---
-title: "Svelte 6 編譯器改進"
-date: 2025-08-28 10:00:00
+title: "Svelte 6 編譯器改進：新的響應式編譯策略"
+date: 2025-08-28 17:02:39
 tags:
   - Svelte
 readingTime: 2
@@ -94,7 +94,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能對比
+## 效能對比
 
 以下是一個完整的示例：
 

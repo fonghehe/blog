@@ -1,5 +1,5 @@
 ---
-title: "TypeScript strict 模式最佳實踐"
+title: "TypeScript strict 模式最佳實踐：落地路徑與實戰建議"
 date: 2019-11-20 09:57:07
 tags:
   - TypeScript
@@ -271,7 +271,7 @@ function processAny(data: any) {
   data.foo.bar; // 不報錯，但運行時可能出錯
 }
 
-// unknown：強制類型檢查
+// unknown：強製類型檢查
 function processUnknown(data: unknown) {
   // data.foo.bar; // 報錯：'data' is of type 'unknown'
 
@@ -338,7 +338,7 @@ function isApiResponse<T>(value: unknown): value is ApiResponse<T> {
 ## 小結
 
 - `strict: true` 包含 7 個嚴格類型檢查選項
-- `noImplicitAny` 禁止隱式 any，`strictNullChecks` 強制處理 null/undefined
+- `noImplicitAny` 禁止隱式 any，`strictNullChecks` 強製處理 null/undefined
 - 建議漸進式啓用：先 noImplicitAny，再 strictNullChecks，最後全部開啓
 - 使用 `unknown` 替代 `any`，提高類型安全性
 - 類型守衞（type guard）是處理聯合類型的關鍵工具

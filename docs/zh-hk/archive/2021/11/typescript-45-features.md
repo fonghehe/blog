@@ -10,7 +10,7 @@ wordCount: 248
 
 TypeScript 從 4.1 到 4.5 每個版本都有實用的改進。整理一下這幾個版本中最值得學習的特性，都是日常開發中能用到的。
 
-## 4.1：模板字面量類型
+## 4.1：範本字面量類型
 
 讓類型系統能操作字符串：
 
@@ -118,7 +118,7 @@ function isNetworkError(err: unknown): err is NetworkError {
 }
 ```
 
-## 4.5：Awaited 類型和 ES Module 支持
+## 4.5：Awaited 類型和 ES Module 支援
 
 ```typescript
 // Awaited 類型 - 遞歸解包 Promise

@@ -81,10 +81,10 @@ function ProductCard({ product, onAddToCart }: Props) {
     [product.inStock]
   )
 
-  // style 物件只有在 tagColor 變化時才重新建立
+  // style 物件隻有在 tagColor 變化時才重新建立
   const style = useMemo(() => ({ color: tagColor }), [tagColor])
 
-  // 事件處理器：只有在 onAddToCart 和 product.id 變化時才重新建立
+  // 事件處理器：隻有在 onAddToCart 和 product.id 變化時才重新建立
   const handleClick = useCallback(
     () => onAddToCart(product.id),
     [onAddToCart, product.id]
@@ -141,7 +141,7 @@ function GoodExample() {
 
 ## 對開發者心智模型的改變
 
-如果 Forget 成熟，開發者的心智模型會發生轉變：從"我需要考慮效能"到"我只需要寫正確的 React 程式碼"。
+如果 Forget 成熟，開發者的心智模型會發生轉變：從"我需要考慮效能"到"我隻需要寫正確的 React 程式碼"。
 
 ```tsx
 // 以前：需要考慮哪些值需要 memo
@@ -162,7 +162,7 @@ function FilteredList({ items, query }: Props) {
   )
 }
 
-// Forget 時代：只需關注邏輯正確性
+// Forget 時代：隻需關注邏輯正確性
 function FilteredList({ items, query }: Props) {
   // Forget 自動分析依賴，自動插入 memo
   const filtered = items.filter(item => item.name.includes(query))
@@ -181,6 +181,6 @@ function FilteredList({ items, query }: Props) {
 
 - Forget 的核心是細粒度的依賴追蹤，為每個表示式建立依賴圖，依賴不變則複用結果
 - 它依賴 React 的不可變性規則，直接修改 props/state 的程式碼無法被安全最佳化
-- Forget 不會改變元件行為，只最佳化不必要的重新計算和引用變化
+- Forget 不會改變元件行為，隻最佳化不必要的重新計算和引用變化
 - 對開發者來說，最大的改變是不需要手動判斷哪些值需要 memo
 - 目前仍在開發中，但養成遵循 React 不可變性規則的習慣，未來遷移成本為零

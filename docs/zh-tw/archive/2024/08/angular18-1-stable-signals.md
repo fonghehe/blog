@@ -1,6 +1,6 @@
 ---
 title: "Angular 18.1：Signal Inputs/Outputs/Queries 全面穩定"
-date: 2024-08-02 10:00:00
+date: 2024-08-02 10:56:33
 tags:
   - Angular
   - 效能最佳化
@@ -167,7 +167,7 @@ Signal API 對變更檢測更友好，特別是配合 `OnPush` 或未來的 Zone
 ```typescript
 // Signal Inputs 自動參與 Signal 依賴追蹤
 // Angular 無需通過 zone.js 髒檢查來發現 input 變化
-// 而是精確知道哪些 input 變了，只更新受影響的元件
+// 而是精確知道哪些 input 變了，隻更新受影響的元件
 
 @Component({
   standalone: true,

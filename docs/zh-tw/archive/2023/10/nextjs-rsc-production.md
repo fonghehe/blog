@@ -162,7 +162,7 @@ export default function PostsPage() {
 const data = await fetch("https://api.example.com/posts");
 // Next.js 預設 static，build 時獲取一次
 
-// 強制動態
+// 強製動態
 const data = await fetch("https://api.example.com/posts", {
   cache: "no-store",
 });

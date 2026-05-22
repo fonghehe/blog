@@ -1,16 +1,16 @@
 ---
-title: "Web Vitals 核心性能指標入門"
+title: "Web Vitals 核心效能指標入門：實踐方法與治理思路"
 date: 2019-11-14 16:51:28
 tags:
   - 性能優化
 readingTime: 4
-description: "Google 一直在推動 Web 性能的標準化，提出了一系列核心性能指標來衡量用户體驗。這些指標關注加載速度、交互性和視覺穩定性三個維度。本文將介紹這些指標的含義和測量方法。"
+description: "Google 一直在推動 Web 效能的標準化，提出了一系列核心效能指標來衡量用户體驗。這些指標關注加載速度、交互性和視覺穩定性三個維度。本文將介紹這些指標的含義和測量方法。"
 wordCount: 706
 ---
 
 Google 一直在推動 Web 性能的標準化，提出了一系列核心性能指標來衡量用户體驗。這些指標關注加載速度、交互性和視覺穩定性三個維度。本文將介紹這些指標的含義和測量方法。
 
-## 性能指標概覽
+## 效能指標概覽
 
 Google 提出的核心性能指標主要包括：
 
@@ -121,7 +121,7 @@ const fidObserver = new PerformanceObserver((list) => {
     const delay = entry.processingStart - entry.startTime;
     console.log('FID:', delay);
     console.log('事件類型:', entry.name);
-    fidObserver.disconnect(); // FID 只記錄第一次交互
+    fidObserver.disconnect(); // FID 隻記錄第一次交互
   }
 });
 
@@ -187,7 +187,7 @@ let sessionEntries = [];
 
 const clsObserver = new PerformanceObserver((list) => {
   for (const entry of list.getEntries()) {
-    // 只有沒有 recentInput（用户最近輸入）的偏移才計入
+    // 隻有沒有 recentInput（用户最近輸入）的偏移才計入
     if (!entry.hadRecentInput) {
       const firstSessionEntry = sessionEntries[0];
       const lastSessionEntry = sessionEntries[sessionEntries.length - 1];
@@ -241,7 +241,7 @@ CLS 評級標準：
 <!-- 差：動態插入 banner 導致下方內容下移 -->
 <!-- 好：使用固定高度的預留區域 -->
 
-<!-- 4. 使用 CSS contain 屬性限制影響範圍 -->
+<!-- 4. 使用 CSS contain 屬性限製影響範圍 -->
 <style>
 .ad-container {
   contain: layout;

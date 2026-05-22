@@ -1,10 +1,10 @@
 ---
-title: "Nginx 前端快取策略配置實戰"
+title: "Nginx 前端快取策略設定實戰"
 date: 2019-06-17 17:13:38
 tags:
   - 工程化
 readingTime: 6
-description: "前端效能最佳化離不開快取策略，而 Nginx 作為最常用的靜態資源伺服器，掌握它的快取配置是每個前端工程師的必備技能。"
+description: "前端效能最佳化離不開快取策略，而 Nginx 作為最常用的靜態資源伺服器，掌握它的快取設定是每個前端工程師的必備技能。"
 wordCount: 841
 ---
 
@@ -74,9 +74,9 @@ server {
 - `expires off` — 不新增快取頭（使用 Nginx 預設）
 - `expires max` — 快取 10 年（等同於 `expires 10y`）
 
-## Cache-Control 精細控制
+## Cache-Control 精細控製
 
-有時候 `expires` 不夠靈活，需要直接用 `add_header` 設定 `Cache-Control` 來做更精細的控制。
+有時候 `expires` 不夠靈活，需要直接用 `add_header` 設定 `Cache-Control` 來做更精細的控製。
 
 ```nginx
 server {
@@ -99,7 +99,7 @@ server {
         # no-cache = 可以快取，但每次都要向伺服器驗證
     }
 
-    # 場景4：私有資料，只允許瀏覽器快取，CDN 不能快取
+    # 場景4：私有資料，隻允許瀏覽器快取，CDN 不能快取
     location /user/ {
         add_header Cache-Control "private, max-age=3600";
     }
@@ -112,7 +112,7 @@ Cache-Control 常用指令速查：
 |
 ------|------|
 | `public` | 瀏覽器和 CDN 都可以快取 |
-| `private` | 只有瀏覽器可以快取 |
+| `private` | 隻有瀏覽器可以快取 |
 | `no-cache` | 可以快取，但每次必須驗證 |
 | `no-store` | 完全不快取 |
 | `max-age=N` | 快取有效期（秒） |
@@ -191,7 +191,7 @@ http {
             proxy_cache_use_stale error timeout updating
                                   http_500 http_502 http_503 http_504;
 
-            # 快取鎖定：多個請求同時到達時，只讓一個請求去後端
+            # 快取鎖定：多個請求同時到達時，隻讓一個請求去後端
             proxy_cache_lock on;
             proxy_cache_lock_timeout 5s;
 
@@ -269,9 +269,9 @@ server {
 }
 ```
 
-這套策略的核心思路：**hash 控制快取失效**。檔名不變就一直用快取，內容一改檔名就變，瀏覽器自動請求新檔案。
+這套策略的核心思路：**hash 控製快取失效**。檔名不變就一直用快取，內容一改檔名就變，瀏覽器自動請求新檔案。
 
-## Gzip 壓縮配置
+## Gzip 壓縮設定
 
 Gzip 雖然不是快取，但和快取策略配合使用效果更好——壓縮後快取的體積更小。
 
@@ -326,9 +326,9 @@ $ curl -o /dev/null -s -w "%{size_download}" -H "Accept-Encoding: gzip" http://e
 # 壓縮後體積減少了約 73%
 ```
 
-## CORS 跨域頭配置
+## CORS 跨域頭設定
 
-前端開發中經常需要配置跨域，Nginx 可以統一處理。
+前端開發中經常需要設定跨域，Nginx 可以統一處理。
 
 ```nginx
 server {
@@ -349,7 +349,7 @@ server {
         proxy_pass http://backend;
     }
 
-    # 方案2：只允許指定來源（生產環境推薦）
+    # 方案2：隻允許指定來源（生產環境推薦）
     location /api/ {
         # 白名單
         set $cors_origin "";
@@ -372,9 +372,9 @@ server {
 }
 ```
 
-注意：`add_header` 在 Nginx 的某些情況下不會繼承，如果配置了 `proxy_cache` 或 `try_files`，需要在對應的 `location` 塊中重新宣告 `add_header`。
+注意：`add_header` 在 Nginx 的某些情況下不會繼承，如果設定了 `proxy_cache` 或 `try_files`，需要在對應的 `location` 塊中重新宣告 `add_header`。
 
-## 完整配置示例
+## 完整設定示例
 
 把以上所有配置整合到一個完整的站點配置中：
 

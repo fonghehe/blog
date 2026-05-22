@@ -1,6 +1,6 @@
 ---
 title: "Building a Design System: From Component Library to Design Tokens"
-date: 2025-03-15 10:00:00
+date: 2025-03-15 13:29:06
 tags:
   - Frontend
 readingTime: 2

@@ -1,6 +1,6 @@
 ---
 title: "TypeScript 5.8 in Production: The Boundaries and Cost of Type Safety"
-date: 2025-07-23 10:00:00
+date: 2025-07-23 15:17:54
 tags:
   - TypeScript
   - Security

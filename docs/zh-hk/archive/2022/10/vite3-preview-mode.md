@@ -1,5 +1,5 @@
 ---
-title: "Vite 3 預覽模式詳解"
+title: "Vite 3 預覽模式：生產建置的本地驗證利器"
 date: 2022-10-03 09:31:43
 tags:
   - Vite
@@ -94,7 +94,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能對比
+## 效能對比
 
 以下是一個完整的示例：
 

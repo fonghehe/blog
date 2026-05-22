@@ -1,6 +1,6 @@
 ---
 title: "Nuxt 5 Roadmap"
-date: 2026-02-09 10:00:00
+date: 2026-02-09 16:23:00
 tags:
   - Vue
 readingTime: 1

@@ -1,6 +1,6 @@
 ---
-title: "Deno 3.0 全棧方案"
-date: 2025-11-18 10:00:00
+title: "Deno 3.0 全堆積疊實踐：從 Next.js 遷移的真實專案體驗"
+date: 2025-11-18 16:52:29
 tags:
   - 前端
 readingTime: 2

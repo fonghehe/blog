@@ -1,5 +1,5 @@
 ---
-title: "Storybook 7 組件測試"
+title: "Storybook 7 組件測試：實踐方法與治理思路"
 date: 2023-12-07 15:28:56
 tags:
   - Storybook
@@ -93,7 +93,7 @@ const csvToJson = new Transform({
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能對比
+## 效能對比
 
 實際項目中的用法會更復雜一些：
 

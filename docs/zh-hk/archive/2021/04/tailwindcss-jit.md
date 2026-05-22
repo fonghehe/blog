@@ -1,5 +1,5 @@
 ---
-title: "Tailwind CSS JIT 編譯模式"
+title: "Tailwind CSS JIT 編譯模式：落地路徑與實戰建議"
 date: 2021-04-23 09:48:53
 tags:
   - CSS
@@ -92,7 +92,7 @@ export async function POST(req) {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
 實際項目中的用法會更復雜一些：
 

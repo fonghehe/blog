@@ -1,5 +1,5 @@
 ---
-title: "CSS aspect-ratio: Native Aspect Ratio"
+title: "CSS aspect-ratio Native Aspect Ratio: Chrome 88 正式Support"
 date: 2019-11-11 10:30:38
 tags:
   - CSS

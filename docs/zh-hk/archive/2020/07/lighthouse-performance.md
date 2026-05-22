@@ -1,10 +1,10 @@
 ---
-title: "Lighthouse 性能優化清單"
+title: "Lighthouse 效能優化清單：實踐方法與治理思路"
 date: 2020-07-29 16:34:33
 tags:
   - 性能優化
 readingTime: 1
-description: "最近在團隊中落地Lighthouse 性能優化清單，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+description: "最近在團隊中落地Lighthouse 效能優化清單，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
 wordCount: 274
 ---
 
@@ -96,6 +96,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ## 小結
 
-- Lighthouse 性能優化清單不是銀彈，需要根據項目規模和技術棧選擇
+- Lighthouse 效能優化清單不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要
 - 生產環境使用前務必做好兼容性驗證

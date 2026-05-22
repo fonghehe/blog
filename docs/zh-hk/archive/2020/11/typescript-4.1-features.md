@@ -1,16 +1,16 @@
 ---
-title: "TypeScript 4.1 新特性解讀"
+title: "TypeScript 4.1 新特性解讀：特性解讀與遷移建議"
 date: 2020-11-24 17:33:01
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 4.1 發佈了，帶來了幾個非常實用的類型系統增強。特別是模板字面量類型和遞歸條件類型，讓類型編程能力又上了一個台階。"
+description: "TypeScript 4.1 發佈了，帶來了幾個非常實用的類型系統增強。特別是範本字面量類型和遞歸條件類型，讓類型編程能力又上了一個臺階。"
 wordCount: 206
 ---
 
-TypeScript 4.1 發佈了，帶來了幾個非常實用的類型系統增強。特別是模板字面量類型和遞歸條件類型，讓類型編程能力又上了一個台階。
+TypeScript 4.1 發佈了，帶來了幾個非常實用的類型系統增強。特別是範本字面量類型和遞歸條件類型，讓類型編程能力又上了一個臺階。
 
-## 模板字面量類型
+## 範本字面量類型
 
 ```typescript
 // 類似模板字符串，但在類型層面
@@ -36,7 +36,7 @@ type ResponsiveClass = `${Breakpoint}:${CSSProperty}`;
 ## Key Remapping in Mapped Types
 
 ```typescript
-// 以前：映射類型只能保留原 key
+// 以前：映射類型隻能保留原 key
 type Getters<T> = {
   [K in keyof T]: () => T[K];
 };
@@ -73,7 +73,7 @@ type StringConfig = ExtractStringKeys<Config>;
 ## 遞歸條件類型
 
 ```typescript
-// TypeScript 4.1 放寬了條件類型的遞歸限制
+// TypeScript 4.1 放寬了條件類型的遞歸限製
 
 // 深度 Readonly
 type DeepReadonly<T> = T extends (infer U)[]
@@ -112,8 +112,8 @@ type Result = Flatten<string[][][]>;
 ## 遞歸類型引用深度提升
 
 ```typescript
-// TypeScript 4.0 之前遞歸深度限制較嚴格
-// 4.1 放寬了限制
+// TypeScript 4.0 之前遞歸深度限製較嚴格
+// 4.1 放寬了限製
 
 // JSON 類型定義
 type Json = string | number | boolean | null | JsonObject | JsonArray;
@@ -191,7 +191,7 @@ const user: User = {
 };
 ```
 
-## tsconfig 配置
+## tsconfig 設定
 
 ```json
 // tsconfig.json
@@ -221,6 +221,6 @@ npx tsc --version
 
 - 模板字面量類型讓類型編程可以做字符串操作，非常強大
 - Key Remapping 讓映射類型可以重命名 key，派生類型更靈活
-- 遞歸條件類型的限制放寬，可以實現深度嵌套的類型轉換
+- 遞歸條件類型的限製放寬，可以實現深度巢狀的類型轉換
 - 錯誤提示更精確，調試類型問題更高效
 - TypeScript 正在變得越來越像一門類型編程語言

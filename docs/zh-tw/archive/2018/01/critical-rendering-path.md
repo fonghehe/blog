@@ -4,11 +4,11 @@ date: 2018-01-11 17:34:30
 tags:
   - 性能優化
 readingTime: 3
-description: "做效能優化之前，得先搞清楚瀏覽器從收到 HTML 到使用者看到頁面，中間經歷了什麼。這些步驟合在一起叫做**關鍵渲染路徑**（Critical Rendering Path）。不理解這個，很多優化手段只能照葫蘆畫瓢。"
+description: "做效能優化之前，得先搞清楚瀏覽器從收到 HTML 到使用者看到頁面，中間經歷了什麼。這些步驟合在一起叫做**關鍵渲染路徑**（Critical Rendering Path）。不理解這個，很多優化手段隻能照葫蘆畫瓢。"
 wordCount: 634
 ---
 
-做效能優化之前，得先搞清楚瀏覽器從收到 HTML 到使用者看到頁面，中間經歷了什麼。這些步驟合在一起叫做**關鍵渲染路徑**（Critical Rendering Path）。不理解這個，很多優化手段只能照葫蘆畫瓢。
+做效能優化之前，得先搞清楚瀏覽器從收到 HTML 到使用者看到頁面，中間經歷了什麼。這些步驟合在一起叫做**關鍵渲染路徑**（Critical Rendering Path）。不理解這個，很多優化手段隻能照葫蘆畫瓢。
 
 ## 瀏覽器渲染的五個步驟
 
@@ -97,14 +97,14 @@ wordCount: 634
 - **合成**（Composite）：僅影響 transform、opacity，在獨立的合成層處理。代價最低。
 
 ```javascript
-// 觸發重排的屬性（讀取這些屬性也會強制瀏覽器同步計算）
+// 觸發重排的屬性（讀取這些屬性也會強製瀏覽器同步計算）
 (element.offsetWidth, offsetHeight, offsetTop, offsetLeft);
 (element.scrollWidth, scrollHeight, scrollTop);
 (element.clientWidth, clientHeight);
 window.getComputedStyle(element);
 
-// 避免在迴圈裡讀寫混合（強制同步佈局）
-// 不好：每次迴圈都強制瀏覽器重新計算佈局
+// 避免在迴圈裡讀寫混合（強製同步佈局）
+// 不好：每次迴圈都強製瀏覽器重新計算佈局
 for (let i = 0; i < items.length; i++) {
   items[i].style.width = container.offsetWidth + "px"; // 讀 + 寫
 }
@@ -112,7 +112,7 @@ for (let i = 0; i < items.length; i++) {
 // 較好：先讀後批次寫入
 const containerWidth = container.offsetWidth; // 讀一次
 for (let i = 0; i < items.length; i++) {
-  items[i].style.width = containerWidth + "px"; // 只寫
+  items[i].style.width = containerWidth + "px"; // 隻寫
 }
 ```
 
@@ -125,11 +125,11 @@ for (let i = 0; i < items.length; i++) {
   /* 提示瀏覽器這個元素會變化，提前建立合成層 */
   will-change: transform;
 
-  /* 或者用舊方式強制建立合成層 */
+  /* 或者用舊方式強製建立合成層 */
   transform: translateZ(0);
 }
 
-/* 高效能動畫：只用 transform 和 opacity */
+/* 高效能動畫：隻用 transform 和 opacity */
 @keyframes slide-in {
   from {
     transform: translateX(-100%);

@@ -1,6 +1,6 @@
 ---
 title: "Angular 21.2：Signal Forms 生產實戰全攻略"
-date: 2026-02-28 10:00:00
+date: 2026-02-28 17:42:19
 tags:
   - Angular
 readingTime: 3
@@ -50,7 +50,7 @@ export class RegistrationFormComponent {
 
 ## 非同步驗證器的 Signal 化
 
-21.2 對非同步驗證器做了徹底重設計，集成了 `httpResource` 的取消機制：
+21.2 對非同步驗證器做了徹底重設計，集成了 `httpResource` 的取消機製：
 
 ```typescript
 import { signalAsyncValidator } from "@angular/forms";
@@ -93,7 +93,7 @@ form = signalForm({
     email: signalControl(""),
   }),
 
-  // 大型子表單：懶載入驗證，只有使用者展開時才啟用
+  // 大型子表單：懶載入驗證，隻有使用者展開時才啟用
   detailedInfo: signalGroup(
     {
       address: signalControl(""),

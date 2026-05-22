@@ -1,5 +1,5 @@
 ---
-title: "React useReducer 狀態管理詳解"
+title: "React useReducer 入門：Hooks 時代的複雜狀態管理"
 date: 2020-02-20 10:12:00
 tags:
   - React

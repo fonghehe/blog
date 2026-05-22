@@ -1,5 +1,5 @@
 ---
-title: "Chromatic 視覺迴歸測試"
+title: "Chromatic 視覺迴歸測試：實踐方法與治理思路"
 date: 2020-10-21 15:31:04
 tags:
   - 測試

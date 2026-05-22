@@ -3,42 +3,42 @@ title: "Jestモジュールモックテクニック"
 date: 2019-09-19 16:01:57
 tags:
   - Angular
-readingTime: 3
-description: "写单元测试最头疼的就是依赖问题——你测的是 A 模块，但 A 依赖了 B、C、D，其中 C 还会发网络请求。Mock 解决的就是这个问题：用假的替代品替换真实依赖，让你只关注被测逻辑。"
-wordCount: 434
+readingTime: 4
+description: "ユニットテストで最も厄介なのは依存関係の問題です——テスト対象は A モジュールですが、A は B、C、D に依存しており、C はさらにネットワークリクエストを送信します。Mock はこの問題を解決します：本物の依存関係を偽の代替品で置き換え、テスト対象のロジックだけに集中できるようにします。"
+wordCount: 766
 ---
 
-写单元测试最头疼的就是依赖问题——你测的是 A 模块，但 A 依赖了 B、C、D，其中 C 还会发网络请求。Mock 解决的就是这个问题：用假的替代品替换真实依赖，让你只关注被测逻辑。
+ユニットテストで最も厄介なのは依存関係の問題です——テスト対象は A モジュールですが、A は B、C、D に依存しており、C はさらにネットワークリクエストを送信します。Mock はこの問題を解決します：本物の依存関係を偽の代替品で置き換え、テスト対象のロジックだけに集中できるようにします。
 
-## jest.fn()：Mock 函数
+## jest.fn()：Mock 関数
 
-最基础的 Mock 工具，创建一个可以追踪调用情况的空函数：
+最も基本的な Mock ツールで、呼び出し状況を追跡できる空の関数を作成します：
 
 ```javascript
-// 被测函数
+// テスト対象の関数
 function forEach(items, callback) {
   for (let i = 0; i < items.length; i++) {
     callback(items[i]);
   }
 }
 
-test("forEach 遍历并调用回调", () => {
+test("forEach がコールバックを反復して呼び出す", () => {
   const mockCallback = jest.fn((x) => x * 10);
   forEach([1, 2, 3], mockCallback);
 
-  // 断言调用次数
+  // 呼び出し回数をアサート
   expect(mockCallback.mock.calls.length).toBe(3);
 
-  // 断言每次调用的参数
+  // 各呼び出しのパラメータをアサート
   expect(mockCallback.mock.calls[0][0]).toBe(1);
   expect(mockCallback.mock.calls[1][0]).toBe(2);
 
-  // 断言返回值
+  // 戻り値をアサート
   expect(mockCallback.mock.results[0].value).toBe(10);
 });
 ```
 
-### mock.calls 和 mock.results
+### mock.calls と mock.results
 
 ```javascript
 const mockFn = jest.fn((a, b) => a + b);
@@ -46,17 +46,17 @@ const mockFn = jest.fn((a, b) => a + b);
 mockFn(1, 2);
 mockFn(3, 4);
 
-// mock.calls: 每次调用的参数数组
+// mock.calls: 各呼び出しのパラメータ配列
 expect(mockFn.mock.calls).toEqual([[1, 2], [3, 4]]);
 
-// mock.results: 每次调用的返回值
+// mock.results: 各呼び出しの戻り値
 expect(mockFn.mock.results).toEqual([
   { type: "return", value: 3 },
   { type: "return", value: 7 },
 ]);
 ```
 
-### 链式返回值
+### チェーン戻り値
 
 ```javascript
 const mockFn = jest.fn();
@@ -70,7 +70,7 @@ expect(mockFn()).toBe("second call");
 expect(mockFn()).toBe("default");
 ```
 
-### 异步 Mock
+### 非同期 Mock
 
 ```javascript
 const mockFn = jest.fn();
@@ -84,9 +84,9 @@ mockFn.mockRejectedValue(new Error("network error"));
 await expect(mockFn()).rejects.toThrow("network error");
 ```
 
-## jest.mock()：Mock 整个模块
+## jest.mock()：モジュール全体を Mock する
 
-当被测代码 import 了外部模块时，用 `jest.mock()` 替换整个模块：
+テスト対象のコードが外部モジュールを import している場合、`jest.mock()` を使用してモジュール全体を置き換えます：
 
 ```javascript
 // api.js
@@ -108,10 +108,10 @@ export async function getUserName(id) {
 import { getUserName } from "./userService";
 import { fetchUser } from "./api";
 
-// 自动 mock 整个 api 模块
+// api モジュール全体を自動的に mock
 jest.mock("./api");
 
-test("getUserName 返回大写用户名", async () => {
+test("getUserName が大文字のユーザー名を返す", async () => {
   fetchUser.mockResolvedValue({ id: 1, name: "alice" });
 
   const name = await getUserName(1);
@@ -120,13 +120,13 @@ test("getUserName 返回大写用户名", async () => {
 });
 ```
 
-### Mock 第三方库
+### サードパーティライブラリの Mock
 
 ```javascript
 jest.mock("axios");
 import axios from "axios";
 
-test("getUserData 返回用户数据", async () => {
+test("getUserData がユーザーデータを返す", async () => {
   axios.get.mockResolvedValue({
     data: { id: 1, name: "Alice" },
   });
@@ -137,18 +137,18 @@ test("getUserData 返回用户数据", async () => {
 });
 ```
 
-### Mock 部分模块
+### モジュールの一部を Mock する
 
 ```javascript
 jest.mock("./utils", () => ({
-  ...jest.requireActual("./utils"), // 保留其他函数的真实实现
-  formatDate: jest.fn(() => "2019-09-19"), // 只 mock 这一个
+  ...jest.requireActual("./utils"), // 他の関数の実際の実装を保持
+  formatDate: jest.fn(() => "2019-09-19"), // この関数だけを mock
 }));
 ```
 
-## jest.spyOn()：监视函数调用
+## jest.spyOn()：関数呼び出しの監視
 
-`spyOn` 在保留原始实现的同时，追踪函数调用：
+`spyOn` は元の実装を保持したまま、関数呼び出しを追跡します：
 
 ```javascript
 const calculator = {
@@ -156,7 +156,7 @@ const calculator = {
   log: (msg) => console.log(msg),
 };
 
-test("add 方法正常工作并可被监视", () => {
+test("add メソッドが正常に動作し、監視可能", () => {
   const spy = jest.spyOn(calculator, "add");
 
   const result = calculator.add(2, 3);
@@ -167,10 +167,10 @@ test("add 方法正常工作并可被监视", () => {
 });
 ```
 
-### 替换浏览器 API
+### ブラウザ API の置き換え
 
 ```javascript
-test("临时替换 localStorage.setItem", () => {
+test("localStorage.setItem を一時的に置き換える", () => {
   const spy = jest.spyOn(Storage.prototype, "setItem");
 
   localStorage.setItem("token", "abc123");
@@ -180,7 +180,7 @@ test("临时替换 localStorage.setItem", () => {
 });
 ```
 
-## 实战：Mock 完整的 API 请求流程
+## 実践：API リクエストフローの完全 Mock
 
 ```javascript
 // services/orderService.js
@@ -204,7 +204,7 @@ import { createOrder } from "./orderService";
 describe("createOrder", () => {
   const items = [{ id: 1, qty: 2 }];
 
-  test("创建成功返回订单数据", async () => {
+  test("作成成功時に注文データを返す", async () => {
     axios.post.mockResolvedValue({
       data: { code: 0, data: { orderId: "ORD-001" } },
     });
@@ -214,7 +214,7 @@ describe("createOrder", () => {
     expect(axios.post).toHaveBeenCalledWith("/api/orders", { items });
   });
 
-  test("业务错误抛出异常", async () => {
+  test("ビジネスエラーで例外をスロー", async () => {
     axios.post.mockResolvedValue({
       data: { code: 1001, message: "库存不足" },
     });
@@ -222,17 +222,17 @@ describe("createOrder", () => {
     await expect(createOrder(items)).rejects.toThrow("库存不足");
   });
 
-  test("网络错误向上抛出", async () => {
+  test("ネットワークエラーを上位にスロー", async () => {
     axios.post.mockRejectedValue(new Error("Network Error"));
     await expect(createOrder(items)).rejects.toThrow("Network Error");
   });
 });
 ```
 
-## Mock 定时器
+## タイマーの Mock
 
 ```javascript
-test("3 秒后执行回调", () => {
+test("3 秒後にコールバックを実行", () => {
   jest.useFakeTimers();
 
   const callback = jest.fn();
@@ -250,13 +250,13 @@ test("3 秒后执行回调", () => {
 
 ## よくある落とし穴
 
-**1. Mock 位置不对**
+**1. Mock の位置が正しくない**
 
-`jest.mock()` 必须在文件顶层调用，不能放在 `beforeEach` 或 `test` 里。Jest 会自动提升 mock 调用到文件顶部。
+`jest.mock()` はファイルのトップレベルで呼び出す必要があり、`beforeEach` や `test` の中に配置することはできません。Jest は自動的に mock 呼び出しをファイルの先頭に巻き上げます。
 
-**2. 忘记 mockRestore**
+**2. mockRestore を忘れる**
 
-`jest.spyOn` 不调用 `mockRestore`，后续测试可能受影响。建议放在 `afterEach` 里：
+`jest.spyOn` で `mockRestore` を呼び出さないと、後続のテストに影響を与える可能性があります。`afterEach` 内に配置することをお勧めします：
 
 ```javascript
 afterEach(() => {
@@ -264,19 +264,19 @@ afterEach(() => {
 });
 ```
 
-**3. Mock 的模块路径不匹配**
+**3. Mock のモジュールパスが一致しない**
 
-`jest.mock('./api')` 中的路径必须和被测文件里的 `import` 路径完全一致。
+`jest.mock('./api')` のパスは、テスト対象ファイル内の `import` パスと完全に一致している必要があります。
 
-**4. 混用 jest.mock 和 require**
+**4. jest.mock と require の混用**
 
-如果用了 `jest.mock`，在测试文件里用 `import` 而不是 `require`，否则 mock 可能不生效。
+`jest.mock` を使用する場合、テストファイルでは `require` ではなく `import` を使用してください。そうしないと mock が有効にならない可能性があります。
 
 ## まとめ
 
-- `jest.fn()` 创建可追踪的 mock 函数，可以检查调用次数、参数、返回值
-- `jest.mock()` 替换整个模块，适合 mock 第三方库和内部依赖
-- `jest.spyOn()` 保留原始实现的同时追踪调用，适合监视而非替换
-- Mock 异步操作用 `mockResolvedValue` / `mockRejectedValue`
-- Mock 定时器用 `jest.useFakeTimers()` + `jest.advanceTimersByTime()`
-- 记得在 `afterEach` 中调用 `jest.restoreAllMocks()` 避免测试间互相影响
+- `jest.fn()` は追跡可能な mock 関数を作成し、呼び出し回数、パラメータ、戻り値を確認できます
+- `jest.mock()` はモジュール全体を置き換え、サードパーティライブラリや内部依存関係の mock に適しています
+- `jest.spyOn()` は元の実装を保持しながら呼び出しを追跡し、置き換えではなく監視に適しています
+- 非同期操作の Mock には `mockResolvedValue` / `mockRejectedValue` を使用
+- タイマーの Mock には `jest.useFakeTimers()` + `jest.advanceTimersByTime()` を使用
+- `afterEach` で `jest.restoreAllMocks()` を呼び出してテスト間の干渉を防ぐことを忘れずに

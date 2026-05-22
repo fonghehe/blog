@@ -1,6 +1,6 @@
 ---
 title: "Vue 3 エンタープライズ開発パターン"
-date: 2025-02-10 10:00:00
+date: 2025-02-10 11:44:21
 tags:
   - Vue
 readingTime: 2

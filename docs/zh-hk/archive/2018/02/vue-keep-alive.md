@@ -1,14 +1,14 @@
 ---
-title: "Vue keep-alive 路由緩存"
+title: "Vue keep-alive 路由緩存：落地路徑與實戰建議"
 date: 2018-02-18 10:12:01
 tags:
   - Vue
 readingTime: 1
-description: "後台管理系統裏有一個常見需求：從列表頁跳到詳情頁，再返回時，列表頁要保留之前的滾動位置和篩選狀態。`keep-alive` 就是解決這個問題的。"
+description: "後臺管理系統裏有一個常見需求：從列表頁跳到詳情頁，再返回時，列表頁要保留之前的滾動位置和篩選狀態。`keep-alive` 就是解決這個問題的。"
 wordCount: 263
 ---
 
-後台管理系統裏有一個常見需求：從列表頁跳到詳情頁，再返回時，列表頁要保留之前的滾動位置和篩選狀態。`keep-alive` 就是解決這個問題的。
+後臺管理系統裏有一個常見需求：從列表頁跳到詳情頁，再返回時，列表頁要保留之前的滾動位置和篩選狀態。`keep-alive` 就是解決這個問題的。
 
 ## 基本用法
 
@@ -25,14 +25,14 @@ wordCount: 263
 
 加了 `keep-alive` 之後，路由組件切換時不會被銷燬，而是被緩存，再次進入時直接複用。
 
-## 只緩存部分路由
+## 隻緩存部分路由
 
-大多數情況下，我們不想緩存所有路由，只緩存特定的幾個。
+大多數情況下，我們不想緩存所有路由，隻緩存特定的幾個。
 
 **方案一：include/exclude**
 
 ```html
-<!-- 只緩存 UserList 和 OrderList -->
+<!-- 隻緩存 UserList 和 OrderList -->
 <keep-alive :include="['UserList', 'OrderList']">
   <router-view />
 </keep-alive>
@@ -91,7 +91,7 @@ export default {
 };
 ```
 
-注意：被緩存的組件，再次進入時**不會觸發** `created` 和 `mounted`，只觸發 `activated`。
+注意：被緩存的組件，再次進入時**不會觸發** `created` 和 `mounted`，隻觸發 `activated`。
 
 ## 實際項目中的滾動恢復
 
@@ -119,6 +119,6 @@ export default {
 ## 小結
 
 - `keep-alive` 緩存路由組件，避免重複銷燬和創建
-- 用路由 meta 的 `keepAlive` 字段控制哪些路由需要緩存
+- 用路由 meta 的 `keepAlive` 字段控製哪些路由需要緩存
 - 緩存組件用 `activated`/`deactivated` 代替 `mounted`/`beforeDestroy`
 - 適合場景：列表頁返回時保持狀態、Tab 切換不重置

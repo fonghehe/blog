@@ -1,5 +1,5 @@
 ---
-title: "React Hooks 在實際項目中的模式總結"
+title: "React Hooks 在實際項目中的模式總結：落地路徑與實戰建議"
 date: 2020-02-27 15:48:54
 tags:
   - React
@@ -202,7 +202,7 @@ function Counter() {
       console.log('當前值:', countRef.current);
     }, 1000);
     return () => clearInterval(timer);
-  }, []); // 空依賴，只創建一次
+  }, []); // 空依賴，隻創建一次
 
   return <button onClick={() => setCount(c => c + 1)}>{count}</button>;
 }

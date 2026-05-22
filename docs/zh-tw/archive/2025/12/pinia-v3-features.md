@@ -1,6 +1,6 @@
 ---
-title: "Pinia v3 新特性"
-date: 2025-12-22 10:00:00
+title: "Pinia v3 遷移實踐：從 v2 升级的平滑路徑與注意事項"
+date: 2025-12-22 12:36:13
 tags:
   - Vue
 readingTime: 2

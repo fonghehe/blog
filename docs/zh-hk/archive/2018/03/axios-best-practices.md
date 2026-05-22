@@ -4,11 +4,11 @@ date: 2018-03-06 11:23:25
 tags:
   - 前端
 readingTime: 2
-description: "Axios 是目前最主流的 HTTP 客户端，但很多項目只是簡單調用，沒有做統一封裝，導致請求邏輯散落各處。這篇文章整理一下完整的封裝方案。"
+description: "Axios 是目前最主流的 HTTP 客户端，但很多項目隻是簡單調用，沒有做統一封裝，導致請求邏輯散落各處。這篇文章整理一下完整的封裝方案。"
 wordCount: 288
 ---
 
-Axios 是目前最主流的 HTTP 客户端，但很多項目只是簡單調用，沒有做統一封裝，導致請求邏輯散落各處。這篇文章整理一下完整的封裝方案。
+Axios 是目前最主流的 HTTP 客户端，但很多項目隻是簡單調用，沒有做統一封裝，導致請求邏輯散落各處。這篇文章整理一下完整的封裝方案。
 
 ## 為什麼需要封裝
 
@@ -151,7 +151,7 @@ async function handleLogin(form) {
     const profile = await getProfile();
     this.user = profile;
   } catch (error) {
-    // 全局錯誤已經在攔截器處理，這裏只處理特殊邏輯
+    // 全局錯誤已經在攔截器處理，這裏隻處理特殊邏輯
     console.error(error);
   }
 }
@@ -190,7 +190,7 @@ async function searchUsers(keyword) {
 }
 ```
 
-## 重試機制
+## 重試機製
 
 網絡不穩定時，自動重試：
 
@@ -201,7 +201,7 @@ axiosRetry(service, {
   retries: 3, // 最多重試 3 次
   retryDelay: (retryCount) => retryCount * 1000, // 1s, 2s, 3s
   retryCondition: (error) => {
-    // 只重試網絡錯誤和 5xx 錯誤
+    // 隻重試網絡錯誤和 5xx 錯誤
     return axiosRetry.isNetworkOrIdempotentRequestError(error);
   },
 });

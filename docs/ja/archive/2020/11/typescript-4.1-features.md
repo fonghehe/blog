@@ -4,29 +4,29 @@ date: 2020-11-24 17:33:01
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 4.1 发布了，带来了几个非常实用的类型系统增强。特别是模板字面量类型和递归条件类型，让类型编程能力又上了一个台阶。"
-wordCount: 233
+description: "TypeScript 4.1 がリリースされ、いくつかの非常に実用的な型システムの拡張がもたらされました。特にテンプレートリテラル型と再帰的条件型により、型プログラミングの能力がさらに向上しました。"
+wordCount: 333
 ---
 
-TypeScript 4.1 发布了，带来了几个非常实用的类型系统增强。特别是模板字面量类型和递归条件类型，让类型编程能力又上了一个台阶。
+TypeScript 4.1 がリリースされ、いくつかの非常に実用的な型システムの拡張がもたらされました。特にテンプレートリテラル型と再帰的条件型により、型プログラミングの能力がさらに向上しました。
 
 ## テンプレートリテラル型
 
 ```typescript
-// 类似模板字符串，但在类型层面
+// テンプレート文字列に似ていますが、型レベルで動作します
 type Color = 'red' | 'blue';
 type Size = 'sm' | 'lg';
 
-// 生成组合类型
+// 組み合わせ型を生成
 type ColorSize = `${Color}-${Size}`;
 // 'red-sm' | 'red-lg' | 'blue-sm' | 'blue-lg'
 
-// 实际场景：事件名推断
+// 実践的なユースケース：イベント名の推論
 type EventName = 'click' | 'focus' | 'blur';
 type HandlerName = `on${Capitalize<EventName>}`;
 // 'onClick' | 'onFocus' | 'onBlur'
 
-// 配合 CSS 类名生成
+// CSSクラス名の生成に活用
 type Breakpoint = 'sm' | 'md' | 'lg';
 type CSSProperty = 'padding' | 'margin';
 type ResponsiveClass = `${Breakpoint}:${CSSProperty}`;
@@ -36,12 +36,12 @@ type ResponsiveClass = `${Breakpoint}:${CSSProperty}`;
 ## マップ型でのキーリマッピング
 
 ```typescript
-// 以前：映射类型只能保留原 key
+// 以前：マップ型は元のキーしか保持できませんでした
 type Getters<T> = {
   [K in keyof T]: () => T[K];
 };
 
-// TypeScript 4.1：可以用 as 重映射 key
+// TypeScript 4.1：as を使ってキーを再マッピング可能
 type Getters<T> = {
   [K in keyof T as `get${Capitalize<string & K>}`]: () => T[K];
 };
@@ -54,7 +54,7 @@ interface User {
 type UserGetters = Getters<User>;
 // { getName: () => string; getAge: () => number }
 
-// 实际场景：过滤 key
+// 実践的なユースケース：キーのフィルタリング
 type ExtractStringKeys<T> = {
   [K in keyof T as T[K] extends string ? K : never]: T[K];
 };
@@ -73,9 +73,9 @@ type StringConfig = ExtractStringKeys<Config>;
 ## 再帰的条件型
 
 ```typescript
-// TypeScript 4.1 放宽了条件类型的递归限制
+// TypeScript 4.1 は条件型の再帰制限を緩和しました
 
-// 深度 Readonly
+// 深い Readonly
 type DeepReadonly<T> = T extends (infer U)[]
   ? Readonly<DeepReadonly<U>[]>
   : T extends object
@@ -96,9 +96,9 @@ interface State {
 }
 
 type ReadonlyState = DeepReadonly<State>;
-// user.profile.avatar 是 readonly，所有嵌套属性都是 readonly
+// user.profile.avatar も readonly、すべてのネストされたプロパティが readonly
 
-// 展平嵌套数组
+// ネストされた配列を平坦化
 type Flatten<T> = T extends (infer U)[]
   ? U extends (infer V)[]
     ? Flatten<V>
@@ -112,15 +112,15 @@ type Result = Flatten<string[][][]>;
 ## 再帰型参照の深度向上
 
 ```typescript
-// TypeScript 4.0 之前递归深度限制较严格
-// 4.1 放宽了限制
+// TypeScript 4.0 以前は再帰の深さ制限が厳しかった
+// 4.1 で制限が緩和されました
 
-// JSON 类型定义
+// JSON 型の定義
 type Json = string | number | boolean | null | JsonObject | JsonArray;
 type JsonObject = { [Key in string]?: Json };
 type JsonArray = Json[];
 
-// 路径类型提取
+// パス型の抽出
 type PathKeys<T, K extends keyof T = keyof T> = K extends string
   ? T[K] extends Record<string, unknown>
     ? `${K}.${PathKeys<T[K]>}` | K
@@ -150,14 +150,14 @@ type ConfigPaths = PathKeys<Config>;
 ## 文字列・数値インデックスアクセス
 
 ```typescript
-// 用数字索引访问元组类型
+// 数値インデックスでタプル型にアクセス
 type Tuple = [string, number, boolean];
 
 type First = Tuple[0]; // string
 type Second = Tuple[1]; // number
 type Length = Tuple['length']; // 3
 
-// 用模板字面量提取元组类型
+// テンプレートリテラルでタプル型を抽出
 type Head<T extends any[]> = T extends [infer H, ...any[]] ? H : never;
 type Tail<T extends any[]> = T extends [any, ...infer R] ? R : never;
 
@@ -168,9 +168,9 @@ type T = Tail<[1, 2, 3]>; // [2, 3]
 ## より良いエラーメッセージ
 
 ```typescript
-// TypeScript 4.1 的错误信息更清晰
+// TypeScript 4.1 のエラーメッセージがより明確に
 
-// 深层类型不匹配时，会标出具体哪个属性有问题
+// 深い型の不一致時、どのプロパティに問題があるか具体的に示す
 interface User {
   name: string;
   age: number;
@@ -186,7 +186,7 @@ const user: User = {
   address: {
     city: '北京',
     zip: 123,  // Error: Type 'number' is not assignable to type 'string'
-               // 现在会明确指出是 address.zip 的问题
+               // 以前は不明瞭でしたが、今は address.zip の問題だと明確に示されます
   },
 };
 ```
@@ -210,17 +210,17 @@ const user: User = {
 ```
 
 ```bash
-# 升级
+# アップグレード
 npm install typescript@4.1 -D
 
-# 验证版本
+# バージョンの確認
 npx tsc --version
 ```
 
 ## まとめ
 
-- 模板字面量类型让类型编程可以做字符串操作，非常强大
-- Key Remapping 让映射类型可以重命名 key，派生类型更灵活
-- 递归条件类型的限制放宽，可以实现深度嵌套的类型转换
-- 错误提示更精确，调试类型问题更高效
-- TypeScript 正在变得越来越像一门类型编程语言
+- テンプレートリテラル型により、型プログラミングで文字列操作が可能になり、非常に強力です
+- Key Remapping によりマップ型のキーをリネームでき、派生型がより柔軟になりました
+- 再帰的条件型の制限が緩和され、深くネストされた型変換が実現可能になりました
+- エラーメッセージがより正確になり、型の問題のデバッグが効率的になりました
+- TypeScript はますます型プログラミング言語らしくなっています

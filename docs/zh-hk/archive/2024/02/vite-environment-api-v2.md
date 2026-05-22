@@ -1,5 +1,5 @@
 ---
-title: "Vite Environment API 穩定版"
+title: "Vite Environment API 穩定版：特性解讀與遷移建議"
 date: 2024-02-26 14:31:29
 tags:
   - Vite

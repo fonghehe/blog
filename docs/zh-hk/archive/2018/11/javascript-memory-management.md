@@ -1,14 +1,14 @@
 ---
-title: "JavaScript 內存管理和垃圾回收"
+title: "JavaScript 內存管理和垃圾回收：落地路徑與實戰建議"
 date: 2018-11-10 14:30:38
 tags:
   - JavaScript
 readingTime: 2
-description: "前端頁面用久了會越來越卡，通常是內存泄漏。瞭解 JavaScript 的內存管理機制，能幫助寫出不泄漏的代碼。"
+description: "前端頁面用久了會越來越卡，通常是內存泄漏。瞭解 JavaScript 的內存管理機製，能幫助寫出不泄漏的代碼。"
 wordCount: 323
 ---
 
-前端頁面用久了會越來越卡，通常是內存泄漏。瞭解 JavaScript 的內存管理機制，能幫助寫出不泄漏的代碼。
+前端頁面用久了會越來越卡，通常是內存泄漏。瞭解 JavaScript 的內存管理機製，能幫助寫出不泄漏的代碼。
 
 ## 內存生命週期
 
@@ -120,7 +120,7 @@ function attachEvent(element) {
 // ✅ 不在閉包裏持有大對象
 function attachEvent(element) {
   element.addEventListener("click", function () {
-    console.log("clicked"); // 只用什麼就持有什麼
+    console.log("clicked"); // 隻用什麼就持有什麼
   });
 }
 ```

@@ -1,6 +1,6 @@
 ---
 title: "Vite 6: More Than Just Faster"
-date: 2025-02-22 10:00:00
+date: 2025-02-22 17:56:33
 tags:
   - Engineering
 readingTime: 2

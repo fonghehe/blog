@@ -1,6 +1,6 @@
 ---
 title: "Speculation Rules API v2"
-date: 2024-07-08 10:00:00
+date: 2024-07-08 16:22:59
 tags:
   - JavaScript
 readingTime: 3

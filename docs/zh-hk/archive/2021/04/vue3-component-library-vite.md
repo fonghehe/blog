@@ -1,5 +1,5 @@
 ---
-title: "用 Vite 搭建 Vue 3 組件庫"
+title: "用 Vite 搭建 Vue 3 組件庫：落地路徑與實戰建議"
 date: 2021-04-05 10:05:17
 tags:
   - Vue
@@ -37,7 +37,7 @@ my-ui/
 └── docs/                         # 文檔
 ```
 
-## Vite 配置
+## Vite 設定
 
 ```typescript
 // vite.config.ts
@@ -172,7 +172,7 @@ function handleClick(e: MouseEvent) {
 </style>
 ```
 
-## 入口文件和類型導出
+## 入口檔案和類型導出
 
 ```typescript
 // src/button/index.ts
@@ -199,7 +199,7 @@ const install = (app: App) => {
 // 支持全量引入
 export default { install }
 
-// 支持按需引入
+// 支援按需引入
 export { Button, Input }
 
 // 導出類型
@@ -235,7 +235,7 @@ import 'my-ui/dist/my-ui.css'
 </template>
 ```
 
-## package.json 配置
+## package.json 設定
 
 ```json
 {

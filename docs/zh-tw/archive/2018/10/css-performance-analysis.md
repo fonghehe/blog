@@ -31,7 +31,7 @@ background/color/visibility → 觸發 Paint（重繪）+ Composite
   - 不改變幾何，但要重新畫畫素
   - 中等
 
-transform/opacity → 只觸發 Composite（合成）
+transform/opacity → 隻觸發 Composite（合成）
   - 不影響文件流，由 GPU 在獨立的層上處理
   - 最快
 ```
@@ -49,7 +49,7 @@ transform/opacity → 只觸發 Composite（合成）
   }
 }
 
-/* ✅ 快：只觸發合成 */
+/* ✅ 快：隻觸發合成 */
 @keyframes slide-in-good {
   from {
     transform: translateX(-100px);
@@ -104,16 +104,16 @@ transform/opacity → 只觸發 Composite（合成）
   will-change: transform;
 }
 
-/* ✅ 只在真正需要動畫的元素上加，動畫結束後移除 */
+/* ✅ 隻在真正需要動畫的元素上加，動畫結束後移除 */
 .card:hover {
   will-change: transform;
 }
 ```
 
-## 用 JS 控制 will-change
+## 用 JS 控製 will-change
 
 ```javascript
-// 更精細的控制：hover 時加，離開時移除
+// 更精細的控製：hover 時加，離開時移除
 element.addEventListener("mouseenter", () => {
   element.style.willChange = "transform";
 });
@@ -151,7 +151,7 @@ Chrome DevTools → Rendering 面板：
 
 ## 小結
 
-- `transform` 和 `opacity` 只觸發合成，是最快的動畫屬性
+- `transform` 和 `opacity` 隻觸發合成，是最快的動畫屬性
 - 避免動畫 `left/top/width/height/margin`（觸發重排）
 - `will-change: transform` 告知瀏覽器提前準備，但不要濫用
 - 用 DevTools 的 Paint flashing 驗證重繪範圍

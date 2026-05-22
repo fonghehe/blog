@@ -1,6 +1,6 @@
 ---
-title: "React 19 use() Hook 實戰"
-date: 2024-09-12 10:00:00
+title: "React 19 use() Hook 實戰：Promise 和 Context 的直接消費"
+date: 2024-09-12 17:46:23
 tags:
   - React
 readingTime: 2
@@ -63,7 +63,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

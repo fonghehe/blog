@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 3.x 新特性全覽"
+title: "TypeScript 3.x 新特性全覽：特性解讀與遷移建議"
 date: 2019-01-12 16:10:42
 tags:
   - TypeScript
@@ -84,7 +84,7 @@ fn("a", "b"); // ✅
 // 內置工具類型
 type Partial<T> = { [K in keyof T]?: T[K] }; // 所有屬性可選
 type Required<T> = { [K in keyof T]-?: T[K] }; // 所有屬性必填
-type Readonly<T> = { readonly [K in keyof T]: T[K] }; // 只讀
+type Readonly<T> = { readonly [K in keyof T]: T[K] }; // 隻讀
 type Pick<T, K extends keyof T> = { [P in K]: T[P] }; // 挑選屬性
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>; // 排除屬性
 type Record<K extends string, T> = { [P in K]: T }; // 構建對象類型

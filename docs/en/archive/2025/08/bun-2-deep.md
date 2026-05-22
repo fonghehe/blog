@@ -1,6 +1,6 @@
 ---
-title: "Bun 2.0 New Features Deep Dive"
-date: 2025-08-12 10:00:00
+title: "Bun 2.0 Deep Dive: 原生 Windows Support &  Node Compatibility性突破"
+date: 2025-08-12 09:46:23
 tags:
   - Frontend
 readingTime: 2

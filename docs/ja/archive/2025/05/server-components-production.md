@@ -1,6 +1,6 @@
 ---
 title: "Server Components 1年後：本番環境での教訓"
-date: 2025-05-18 10:00:00
+date: 2025-05-18 19:52:29
 tags:
   - フロントエンド
 readingTime: 3

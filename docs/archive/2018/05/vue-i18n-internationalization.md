@@ -1,5 +1,5 @@
 ---
-title: "Vue 项目国际化方案 vue-i18n"
+title: "Vue 2 项目国际化方案：vue-i18n 入门实践"
 date: 2020-02-18 10:20:42
 tags:
   - Vue

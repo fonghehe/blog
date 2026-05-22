@@ -302,7 +302,7 @@ test('請求失敗時顯示錯誤資訊', async () => {
 })
 ```
 
-## jest.config.js 配置
+## jest.config.js 設定
 
 ```javascript
 module.exports = {

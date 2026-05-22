@@ -229,7 +229,7 @@ const user = await res.json()
 
 ### 巢狀 Suspense
 
-可以巢狀 Suspense 實現更細粒度的載入控制：
+可以巢狀 Suspense 實現更細粒度的載入控製：
 
 ```vue
 <template>
@@ -239,7 +239,7 @@ const user = await res.json()
         <!-- 先載入頁面級資料 -->
         <PageHeader />
 
-        <!-- 內層 Suspense：獨立控制內容區的載入 -->
+        <!-- 內層 Suspense：獨立控製內容區的載入 -->
         <Suspense>
           <template #default>
             <ContentArea />
@@ -322,7 +322,7 @@ onErrorCaptured((err) => {
 
 function retry() {
   hasError.value = false
-  retryCount.value++ // 通過 key 變化強制重新渲染
+  retryCount.value++ // 通過 key 變化強製重新渲染
 }
 </script>
 {% endraw %}
@@ -339,6 +339,6 @@ function retry() {
 - Teleport 將子元件的 DOM 渲染到指定位置，解決模態框/Toast 等浮層的 z-index 和 overflow 問題
 - Teleport 支援動態目標、多個 Teleport 到同一目標、以及停用模式
 - Suspense 宣告式處理非同步元件的載入和錯誤狀態
-- Suspense 支援巢狀，可以實現更細粒度的載入控制
+- Suspense 支援巢狀，可以實現更細粒度的載入控製
 - Suspense 目前仍是實驗性特性，生產使用要關注 API 變化
 - Teleport + Suspense 組合是處理非同步彈窗內容的最佳實踐

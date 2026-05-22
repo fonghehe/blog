@@ -1,15 +1,15 @@
 ---
-title: "React Suspense 數據獲取模式"
+title: "React Suspense 數據獲取模式：落地路徑與實戰建議"
 date: 2021-10-25 09:48:49
 tags:
   - React
   - JavaScript
 readingTime: 2
-description: "React 18 即將發佈，Suspense 的數據獲取模式終於有了官方推薦方案。之前 Suspense 只能做代碼分割的 loading 狀態，現在可以用於數據獲取了。"
+description: "React 18 即將發佈，Suspense 的數據獲取模式終於有了官方推薦方案。之前 Suspense 隻能做代碼分割的 loading 狀態，現在可以用於數據獲取了。"
 wordCount: 307
 ---
 
-React 18 即將發佈，Suspense 的數據獲取模式終於有了官方推薦方案。之前 Suspense 只能做代碼分割的 loading 狀態，現在可以用於數據獲取了。
+React 18 即將發佈，Suspense 的數據獲取模式終於有了官方推薦方案。之前 Suspense 隻能做代碼分割的 loading 狀態，現在可以用於數據獲取了。
 
 ## Suspense 的核心思路
 
@@ -155,7 +155,7 @@ function UserPage({ userId }) {
 
 每個區域獨立加載，不互相阻塞。
 
-## 嵌套 Suspense
+## 巢狀 Suspense
 
 ```jsx
 function App() {
@@ -246,7 +246,7 @@ function Bad({ showProfile }) {
   )
 }
 
-// ✅ 用 key 強制重新創建
+// ✅ 用 key 強製重新創建
 function Good({ showProfile, userId }) {
   return (
     <Suspense fallback={<Spinner />}>

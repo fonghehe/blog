@@ -1,6 +1,6 @@
 ---
 title: "TypeScript 5.7-5.8：型別系統的持續進化"
-date: 2025-04-20 10:00:00
+date: 2025-04-20 15:14:51
 tags:
   - TypeScript
 readingTime: 2
@@ -174,7 +174,7 @@ type DeepPartial<T> = {
 const partialConfig: DeepPartial<Config> = {
   database: {
     name: "mydb",
-    // 只需要部分欄位
+    // 隻需要部分欄位
   },
 };
 ```
@@ -216,7 +216,7 @@ class EventListener implements Disposable {
   }
 }
 
-// 3. 鎖機制
+// 3. 鎖機製
 using lock = new AsyncLock();
 // 臨界區操作，自動釋放
 ```

@@ -12,7 +12,7 @@ Vue 3.3 發佈了。沒有顛覆性新特性，但類型系統和 DX（開發體
 
 ## 泛型組件
 
-終於支持了。之前用 Vue 寫泛型組件需要用 `any` 或者 workaround，現在原生支持：
+終於支援了。之前用 Vue 寫泛型組件需要用 `any` 或者 workaround，現在原生支援：
 
 ```vue
 <script setup lang="ts" generic="T">
@@ -154,15 +154,15 @@ export interface User {
 <script setup lang="ts">
 import type { User } from "./types";
 
-// 3.3 之前：需要特殊配置才能在 defineProps 裏用外部類型
-// 3.3：直接用，無需額外配置
+// 3.3 之前：需要特殊設定才能在 defineProps 裏用外部類型
+// 3.3：直接用，無需額外設定
 const props = defineProps<{
   user: User;
 }>();
 </script>
 ```
 
-## 性能改進
+## 效能改進
 
 編譯器優化：
 - 生成的渲染函數代碼更精簡

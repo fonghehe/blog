@@ -1,10 +1,10 @@
 ---
 title: "Tauri 3.0: A New Cross-Platform Release"
-date: 2026-04-29 10:00:00
+date: 2026-04-29 11:03:40
 tags:
   - Frontend
 readingTime: 2
-description: "Tauri 3.0's new cross-platform release is seeing increasingly widespread use in frontend development. This article dives deep into its core principles and best "
+description: "Tauri 3.0's new cross-platform release is seeing increasingly widespread use in frontend development. This article dives deep into its core principles and best practices from a real-project perspective."
 wordCount: 177
 ---
 

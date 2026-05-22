@@ -1,6 +1,6 @@
 ---
-title: "Biome v2 快速格式化"
-date: 2024-10-24 10:00:00
+title: "Biome v2 快速格式化：落地路徑與實戰建議"
+date: 2024-10-24 17:38:15
 tags:
   - 前端
 readingTime: 2
@@ -43,7 +43,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 源碼分析
 

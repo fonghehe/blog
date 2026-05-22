@@ -4,25 +4,25 @@ date: 2019-10-14 16:20:40
 tags:
   - Webpack
   - エンジニアリング
-readingTime: 4
-description: "Webpack 5 目前仍处于 Beta 阶段，但它带来了许多令人兴奋的改进。其中最值得关注的是 Module Federation——它彻底改变了前端微服务的实现方式。本文将介绍 Webpack 5 的核心新特性，并重点探讨 Module Federation 的工作原理。"
-wordCount: 745
+readingTime: 6
+description: "Webpack 5 は現在も Beta 段階ですが、多くのエキサイティングな改善がもたらされています。中でも最も注目すべきは Module Federation です——フロントエンドマイクロサービスの実装方法を根本的に変えました。この記事では Webpack 5 の主要な新機能を紹介し、Module Federation の動作原理を重点的に解説します。"
+wordCount: 1281
 ---
 
-Webpack 5 目前仍处于 Beta 阶段，但它带来了许多令人兴奋的改进。其中最值得关注的是 Module Federation——它彻底改变了前端微服务的实现方式。本文将介绍 Webpack 5 的核心新特性，并重点探讨 Module Federation 的工作原理。
+Webpack 5 は Beta 段階ではありますが、すでに数多くのエキサイティングな改善が含まれています。特に注目すべきは Module Federation です。これはフロントエンドマイクロサービスの実装方法を根本的に変えるものです。本記事では Webpack 5 の核心的な新機能を紹介し、Module Federation の動作原理を詳しく見ていきます。
 
 ## Webpack 5 全体的な改善の概要
 
-Webpack 5 的改进主要集中在以下几个方面：
+Webpack 5 の改善点は主に以下の側面に集中しています：
 
-### 长期缓存优化
+### 長期キャッシュの最適化
 
-Webpack 5 改进了模块 ID 和 chunk ID 的确定性算法：
+Webpack 5 はモジュール ID とチャンク ID の決定論的アルゴリズムを改善しました：
 
 ```js
 // webpack.config.js
 module.exports = {
-  // 使用确定性的模块 ID，避免模块 ID 变化导致缓存失效
+  // 決定論的なモジュール ID を使用し、モジュール ID の変更によるキャッシュ無効化を防止
   optimization: {
     moduleIds: 'deterministic',
     chunkIds: 'deterministic',
@@ -30,83 +30,83 @@ module.exports = {
 };
 ```
 
-新增 `chunkIds` 和 `moduleIds` 选项：
+新しい `chunkIds` と `moduleIds` オプション：
 
-- `'natural'`：按使用顺序的数字 ID
-- `'named'`：可读的模块名称（开发用）
-- `'deterministic'`：短数字 ID，构建间稳定（生产用）
+- `'natural'`：使用順の数字 ID
+- `'named'`：読みやすいモジュール名（開発用）
+- `'deterministic'`：短い数字 ID、ビルド間で安定（本番用）
 
-### 持久化缓存
+### 永続キャッシュ
 
-Webpack 5 内置了文件系统缓存，替代了 `hard-source-webpack-plugin`：
+Webpack 5 はファイルシステムキャッシュを内蔵し、`hard-source-webpack-plugin` を置き換えました：
 
 ```js
 module.exports = {
   cache: {
     type: 'filesystem',
     buildDependencies: {
-      config: [__filename],  // 配置文件变化时缓存失效
+      config: [__filename],  // 設定ファイルの変更時にキャッシュを無効化
     },
     cacheDirectory: path.resolve(__dirname, '.webpack_cache'),
   },
 };
 ```
 
-实测效果：
+実測結果：
 
 ```
-# 首次构建
+# 初回ビルド
 webpack 5.0.0-beta.16 compiled successfully in 8342ms
 
-# 二次构建（缓存命中）
+# 2回目のビルド（キャッシュヒット）
 webpack 5.0.0-beta.16 compiled successfully in 1203ms
 ```
 
-### 更好的 Tree Shaking
+### より優れた Tree Shaking
 
-Webpack 5 引入了嵌套 Tree Shaking 和内部模块 Tree Shaking：
+Webpack 5 では、ネストされた Tree Shaking と内部モジュールの Tree Shaking が導入されました：
 
 ```js
 // package.json
 {
-  "sideEffects": false  // 标记整个包无副作用
+  "sideEffects": false  // パッケージ全体に副作用がないことをマーク
 }
 
-// 或者指定有副作用的文件
+// または副作用のあるファイルを指定
 {
   "sideEffects": ["*.css", "./src/polyfills.js"]
 }
 ```
 
-Webpack 5 还支持 CommonJS 的 Tree Shaking：
+Webpack 5 は CommonJS の Tree Shaking もサポートしています：
 
 ```js
-// 这种写法在 Webpack 5 中也能被 Tree Shaking
+// この記述方法でも Webpack 5 では Tree Shaking が可能
 const { get } = require('lodash');
-// 只会打包 lodash.get，而不是整个 lodash
+// lodash 全体ではなく、lodash.get だけがバンドルされる
 ```
 
-### 模块联邦（Module Federation）
+### モジュールフェデレーション（Module Federation）
 
-这是 Webpack 5 最具革命性的特性，允许在运行时动态加载其他独立构建的模块。
+これは Webpack 5 で最も革新的な機能であり、実行時に他の独立したビルドのモジュールを動的にロードできます。
 
 ## Module Federationの深掘り
 
 ### コアコンセプト
 
-Module Federation 的核心思想是：每个构建产物（bundle）既可以消费远程模块，也可以暴露自己的模块供其他构建产物使用。
+Module Federation の核心的な考え方は、各ビルド成果物（bundle）がリモートモジュールを消費することも、自身のモジュールを他のビルド成果物に公開することもできるというものです。
 
-关键术语：
+主要な用語：
 
-- **Host**：消费远程模块的构建
-- **Remote**：暴露模块供其他构建使用的构建
-- **Shared**：多个构建之间共享的依赖
+- **Host**：リモートモジュールを消費するビルド
+- **Remote**：モジュールを公開し、他のビルドが使用できるようにするビルド
+- **Shared**：複数のビルド間で共有される依存関係
 
-### 基础配置
+### 基本設定
 
-假设有两个独立的前端应用：`app-shell`（主应用）和 `dashboard`（仪表盘应用）。
+2つの独立したフロントエンドアプリケーションがあるとします：`app-shell`（メインアプリケーション）と `dashboard`（ダッシュボードアプリケーション）です。
 
-**dashboard 应用（Remote）暴露模块：**
+**dashboard アプリケーション（Remote）がモジュールを公開：**
 
 ```js
 // dashboard/webpack.config.js
@@ -122,7 +122,7 @@ module.exports = {
       name: 'dashboard',
       filename: 'remoteEntry.js',
       exposes: {
-        // 暴露模块路径：模块名
+        // 公開するモジュールのパス：モジュール名
         './Widget': './src/components/Widget',
         './Chart': './src/components/Chart',
         './useDashboard': './src/hooks/useDashboard',
@@ -136,7 +136,7 @@ module.exports = {
 };
 ```
 
-**app-shell 应用（Host）消费模块：**
+**app-shell アプリケーション（Host）がモジュールを消費：**
 
 ```js
 // app-shell/webpack.config.js
@@ -148,7 +148,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'app_shell',
       remotes: {
-        // 远程模块名: 远程容器变量名@入口地址
+        // リモートモジュール名: リモートコンテナ変数名@エントリURL
         dashboard: 'dashboard@http://localhost:3001/remoteEntry.js',
       },
       shared: {
@@ -160,22 +160,22 @@ module.exports = {
 };
 ```
 
-### 在代码中使用远程模块
+### コード内でリモートモジュールを使用
 
 ```jsx
 // app-shell/src/App.jsx
 import React, { Suspense, lazy } from 'react';
 
-// 动态导入远程模块
+// リモートモジュールを動的インポート
 const Widget = lazy(() => import('dashboard/Widget'));
 const Chart = lazy(() => import('dashboard/Chart'));
 
 function App() {
   return (
     <div>
-      <h1>应用外壳</h1>
-      <Suspense fallback={<div>加载仪表盘组件...</div>}>
-        <Widget title="用户统计" />
+      <h1>アプリケーションシェル</h1>
+      <Suspense fallback={<div>ダッシュボードコンポーネントを読み込み中...</div>}>
+        <Widget title="ユーザー統計" />
         <Chart type="line" data={chartData} />
       </Suspense>
     </div>
@@ -185,42 +185,42 @@ function App() {
 export default App;
 ```
 
-### 共享依赖的配置
+### 共有依存関係の設定
 
-Shared 配置控制多个构建之间的依赖共享方式：
+Shared 設定は、複数のビルド間での依存関係の共有方法を制御します：
 
 ```js
 new ModuleFederationPlugin({
   shared: {
     react: {
-      singleton: true,       // 只加载一个实例
+      singleton: true,       // インスタンスを1つだけロード
       requiredVersion: '^16.8.0',
-      eager: false,          // 懒加载（默认），不打包到入口 chunk
+      eager: false,          // 遅延ロード（デフォルト）、エントリチャンクにバンドルしない
     },
     'react-dom': {
       singleton: true,
       requiredVersion: '^16.8.0',
     },
-    // 可以使用通配符
+    // ワイルドカードも使用可能
     lodash: {
-      singleton: false,      // 允许多个版本共存
+      singleton: false,      // 複数バージョンの共存を許可
     },
   },
 });
 ```
 
-配置选项说明：
+設定オプションの説明：
 
-| 选项 | 说明 | 默认值 |
-|------|------|--------|
-| `singleton` | 只加载一个实例 | false |
-| `requiredVersion` | 版本要求 | package.json 中的版本 |
-| `eager` | 是否打包到入口 chunk | false |
-| `strictVersion` | 版本不匹配时是否报错 | true |
+| オプション | 説明 | デフォルト値 |
+|-----------|------|-------------|
+| `singleton` | インスタンスを1つだけロード | false |
+| `requiredVersion` | バージョン要件 | package.json のバージョン |
+| `eager` | エントリチャンクにバンドルするか | false |
+| `strictVersion` | バージョン不一致時にエラーにするか | true |
 
-### 多 Remote 配置
+### 複数 Remote の設定
 
-一个应用可以同时消费多个 Remote：
+1つのアプリケーションで複数の Remote を同時に消費できます：
 
 ```js
 new ModuleFederationPlugin({
@@ -235,12 +235,12 @@ new ModuleFederationPlugin({
 
 ### Remoteの動的読み込み
 
-如果 Remote 地址是动态的，可以这样配置：
+Remote のアドレスが動的な場合は、以下のように設定します：
 
 ```js
-// 在运行时动态加载远程模块
+// 実行時にリモートモジュールを動的にロード
 async function loadRemoteModule(url, scope, module) {
-  // 加载远程入口脚本
+  // リモートエントリスクリプトをロード
   await new Promise((resolve, reject) => {
     const script = document.createElement('script');
     script.src = url;
@@ -249,19 +249,19 @@ async function loadRemoteModule(url, scope, module) {
     document.head.appendChild(script);
   });
 
-  // 初始化共享作用域
+  // 共有スコープを初期化
   await __webpack_init_sharing__('default');
 
-  // 获取远程容器
+  // リモートコンテナを取得
   const container = window[scope];
   await container.init(__webpack_share_scopes__.default);
 
-  // 获取远程模块
+  // リモートモジュールを取得
   const factory = await container.get(module);
   return factory();
 }
 
-// 使用
+// 使用例
 const Widget = await loadRemoteModule(
   'http://localhost:3001/remoteEntry.js',
   'dashboard',
@@ -271,9 +271,9 @@ const Widget = await loadRemoteModule(
 
 ## 実際のアーキテクチャ方法
 
-### 微前端架构
+### マイクロフロントエンドアーキテクチャ
 
-Module Federation 非常适合构建微前端架构：
+Module Federation はマイクロフロントエンドアーキテクチャの構築に非常に適しています：
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -282,15 +282,15 @@ Module Federation 非常适合构建微前端架构：
 │  │ Dashboard │ │  Orders  │ │  User Center │ │
 │  │ (Remote)  │ │ (Remote) │ │   (Remote)   │ │
 │  └──────────┘ └──────────┘ └──────────────┘ │
-│              共享: React, React DOM          │
+│              共有: React, React DOM          │
 └─────────────────────────────────────────────┘
 ```
 
-每个团队可以独立开发、独立部署自己的 Remote 模块，App Shell 负责组装。
+各チームは自身の Remote モジュールを独立して開発・デプロイでき、App Shell がそれらを組み立てます。
 
-### 组件库共享
+### コンポーネントライブラリの共有
 
-多个项目可以共享组件库而不需要发布 npm 包：
+複数のプロジェクトが npm パッケージを公開せずにコンポーネントライブラリを共有できます：
 
 ```js
 // shared-ui/webpack.config.js
@@ -312,10 +312,10 @@ new ModuleFederationPlugin({
 
 ## まとめ
 
-- Webpack 5 的核心改进：持久化缓存、确定性模块 ID、更好的 Tree Shaking
-- Module Federation 允许独立构建的应用在运行时共享模块
-- Host 消费远程模块，Remote 暴露模块，Shared 控制依赖共享
-- `singleton: true` 确保共享依赖只加载一个实例
-- 非常适合微前端架构和跨项目组件共享
-- 支持动态加载和多 Remote 配置
-- 预计 Webpack 5 正式版将在近期发布
+- Webpack 5 の核心的な改善点：永続キャッシュ、決定論的モジュール ID、より優れた Tree Shaking
+- Module Federation により、独立してビルドされたアプリケーションが実行時にモジュールを共有可能
+- Host はリモートモジュールを消費し、Remote はモジュールを公開し、Shared は依存関係の共有を制御
+- `singleton: true` は共有依存関係が1つのインスタンスのみロードされることを保証
+- マイクロフロントエンドアーキテクチャやプロジェクト間のコンポーネント共有に非常に適している
+- 動的ロードと複数 Remote 設定をサポート
+- Webpack 5 の正式版は近日中にリリースされる見込み

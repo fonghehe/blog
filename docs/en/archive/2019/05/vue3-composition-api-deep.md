@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 Composition API: A Deep Dive"
+title: "Vue 3 Composition API Deep Dive: RFC Stage Technical Preview"
 date: 2019-05-08 09:40:28
 tags:
   - Vue

@@ -1,5 +1,5 @@
 ---
-title: "CSS aspect-ratio 原生寬高比"
+title: "CSS aspect-ratio 提案解讀：告別 padding-top 黑科技"
 date: 2019-11-11 10:30:38
 tags:
   - CSS
@@ -35,7 +35,7 @@ wordCount: 291
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 深度解析
 

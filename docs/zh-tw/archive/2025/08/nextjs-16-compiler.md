@@ -1,6 +1,6 @@
 ---
-title: "Next.js 16 編譯器最佳化"
-date: 2025-08-01 10:00:00
+title: "Next.js 16 編譯器最佳化：Rust Compiler 全面接管 Babel"
+date: 2025-08-01 12:35:12
 tags:
   - React
   - 效能最佳化

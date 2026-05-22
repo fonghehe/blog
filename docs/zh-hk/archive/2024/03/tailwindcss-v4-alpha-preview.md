@@ -1,5 +1,5 @@
 ---
-title: "Tailwind CSS v4 Oxide 引擎"
+title: "Tailwind CSS v4 Oxide 引擎：特性解讀與遷移建議"
 date: 2024-03-26 14:31:55
 tags:
   - CSS
@@ -96,7 +96,7 @@ export function AIChat() {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能對比
+## 效能對比
 
 關鍵在於理解核心邏輯：
 
@@ -117,7 +117,7 @@ export async function POST(req) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 問題排查
 

@@ -1,5 +1,5 @@
 ---
-title: "Bun Shell スクリプト機能"
+title: "Bun Shell 初探：JavaScript 运行时内置的命令行能力"
 date: 2023-05-05 15:28:59
 tags:
   - フロントエンド

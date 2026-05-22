@@ -1,11 +1,11 @@
 ---
-title: "Module Federation 性能優化策略"
+title: "Module Federation 效能優化策略：實踐方法與治理思路"
 date: 2021-06-14 16:06:33
 tags:
   - Webpack
   - 性能優化
 readingTime: 2
-description: "Module Federation 性能優化策略在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
+description: "Module Federation 效能優化策略在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
 wordCount: 290
 ---
 
@@ -30,7 +30,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 進階用法
 
@@ -74,7 +74,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 這段代碼展示了基本的使用方式。實際項目中還需要考慮錯誤處理和邊界條件。
 
-## 性能優化
+## 效能優化
 
 在這個基礎上，我們可以進一步優化：
 

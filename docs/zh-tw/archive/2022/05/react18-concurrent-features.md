@@ -115,7 +115,7 @@ function DataTable({ data }: { data: DataRow[] }) {
 
 ## useDeferredValue：為已有狀態加延遲
 
-當你不能控制更新來源（比如 props 來自父元件），用 `useDeferredValue`：
+當你不能控製更新來源（比如 props 來自父元件），用 `useDeferredValue`：
 
 ```tsx
 import { useState, useDeferredValue, useMemo } from 'react';
@@ -156,7 +156,7 @@ function ProductList({ products }: { products: Product[] }) {
 ## useTransition vs useDeferredValue
 
 ```tsx
-// useTransition：你控制更新的時機
+// useTransition：你控製更新的時機
 function A() {
   const [isPending, startTransition] = useTransition();
   function handleClick() {
@@ -166,9 +166,9 @@ function A() {
   }
 }
 
-// useDeferredValue：你控制值的延遲
+// useDeferredValue：你控製值的延遲
 function B({ data }) {
-  const deferredData = useDeferredValue(data); // data 來自 props，你無法控制
+  const deferredData = useDeferredValue(data); // data 來自 props，你無法控製
   // 用 deferredData 做渲染
 }
 ```
@@ -176,7 +176,7 @@ function B({ data }) {
 | 特性 | useTransition | useDeferredValue |
 |
 ------|--------------|-----------------|
-| 控制權 | 包裹更新邏輯 | 延遲某個值 |
+| 控製權 | 包裹更新邏輯 | 延遲某個值 |
 | 適用場景 | 事件處理中的狀態更新 | props 或外部狀態 |
 | 返回值 | [isPending, startTransition] | deferredValue |
 | 使用方式 | 巢狀 setState | 替代原始值 |

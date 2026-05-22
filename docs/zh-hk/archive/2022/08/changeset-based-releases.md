@@ -1,5 +1,5 @@
 ---
-title: "基於 Changeset 的版本發佈"
+title: "基於 Changeset 的版本發佈：特性解讀與遷移建議"
 date: 2022-08-25 10:22:55
 tags:
   - 前端
@@ -94,7 +94,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能優化
+## 效能優化
 
 以下是一個完整的示例：
 

@@ -63,7 +63,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        // 全局注入變量，每個 vue 文件不需要手動 import
+        // 全局注入變量，每個 vue 檔案不需要手動 import
         prependData: `@import "@/styles/variables.scss";`,
       },
     },
@@ -106,7 +106,7 @@ VUE_APP_TITLE=My App
 
 代碼中：`process.env.VUE_APP_API_URL`
 
-## 多頁面配置
+## 多頁面設定
 
 ```javascript
 module.exports = {
@@ -121,13 +121,13 @@ module.exports = {
       entry: "src/admin/main.js",
       template: "public/admin.html",
       filename: "admin.html",
-      title: "管理後台",
+      title: "管理後臺",
     },
   },
 };
 ```
 
-## 插件開發
+## 外掛開發
 
 CLI 3 的插件系統很強大，自定義插件可以修改 webpack、生成文件、添加命令：
 

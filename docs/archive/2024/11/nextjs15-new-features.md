@@ -1,6 +1,6 @@
 ---
 title: "Next.js 15：Caching 默认关闭、PPR 与 Turbopack 稳定"
-date: 2024-11-25 10:00:00
+date: 2024-11-25 17:19:56
 tags:
   - React
 readingTime: 2

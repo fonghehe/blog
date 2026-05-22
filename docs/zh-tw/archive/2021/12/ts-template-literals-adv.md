@@ -1,10 +1,10 @@
 ---
-title: "TypeScript 模板字面量進階"
+title: "TypeScript 範本字面量進階"
 date: 2021-12-24 09:48:20
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 模板字面量進階在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
+description: "TypeScript 範本字面量進階在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
 wordCount: 339
 ---
 
@@ -154,4 +154,4 @@ function reducer(state, action) {
 - 關注社群動態，技術方案需要持續迭代
 - 不要為了用新技術而用新技術
 - 程式碼示例僅供參考，需根據業務場景調整
-- TypeScript 模板字面量進階不是銀彈，需要根據專案規模和技術棧選擇
+- TypeScript 範本字面量進階不是銀彈，需要根據專案規模和技術棧選擇

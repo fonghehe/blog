@@ -3,19 +3,19 @@ title: "Turborepo：Monorepo ビルドオーケストレーションの最良パ
 date: 2022-03-08 10:39:07
 tags:
   - フロントエンド
-readingTime: 3
-description: "上一篇写了 pnpm workspace 做依赖管理。这篇讲构建编排——当你的 monorepo 有十几个包需要构建和测试，怎么让它们按依赖顺序执行，并且尽可能并行？"
-wordCount: 444
+readingTime: 4
+description: "前回は pnpm workspace による依存関係管理について書きました。今回はビルドオーケストレーションについてです。monorepo に十数個のパッケージがあり、それらをビルドしてテストする必要がある場合、どのように依存関係の順序に従って実行し、かつ可能な限り並列化するかを解説します。"
+wordCount: 821
 ---
 
-上一篇写了 pnpm workspace 做依赖管理。这篇讲构建编排——当你的 monorepo 有十几个包需要构建和测试，怎么让它们按依赖顺序执行，并且尽可能并行？
+前回は pnpm workspace による依存関係管理について書きました。今回はビルドオーケストレーションについてです。monorepo に十数個のパッケージがあり、それらをビルドしてテストする必要がある場合、どのように依存関係の順序に従って実行し、かつ可能な限り並列化するかを解説します。
 
-Turborepo 是答案。它是一个构建编排工具，不替代 pnpm，而是和 pnpm 配合。
+Turborepo がその答えです。これはビルドオーケストレーションツールであり、pnpm を置き換えるものではなく、pnpm と連携して動作します。
 
-## 安装与初始化
+## インストールと初期化
 
 ```bash
-# 在已有的 pnpm workspace 项目中
+# 既存の pnpm workspace プロジェクトで
 pnpm add -D -w turbo
 ```
 
@@ -43,49 +43,49 @@ pnpm add -D -w turbo
 }
 ```
 
-关键配置解释：
+重要な設定の説明：
 
-- `dependsOn: ["^build"]`：表示当前包的 build 依赖其所有 workspace 依赖的 build（`^` 表示依赖）
-- `dependsOn: ["build"]`：表示 test 依赖当前包自己的 build
-- `outputs`：构建产物路径，Turborepo 用来做缓存
-- `cache: false`：dev 不缓存
-- `persistent: true`：dev 是长驻进程
+- `dependsOn: ["^build"]`：現在のパッケージの build が、すべてのワークスペース依存関係の build に依存することを示します（`^` は依存関係を示す）
+- `dependsOn: ["build"]`：test が現在のパッケージ自身の build に依存することを示します
+- `outputs`：ビルド成果物のパス。Turborepo がキャッシュに使用します
+- `cache: false`：dev はキャッシュしない
+- `persistent: true`：dev は常駐プロセス
 
-## 执行命令
+## コマンドの実行
 
 ```bash
-# 构建所有包（按拓扑排序 + 并行）
+# すべてのパッケージをビルド（トポロジカルソート + 並列）
 turbo run build
 
-# 只构建有变更的包
+# 変更があったパッケージのみビルド
 turbo run build --filter=...[HEAD]
 
-# 构建 admin 及其所有依赖
+# admin とそのすべての依存関係をビルド
 turbo run build --filter=admin...
 
-# 测试所有包
+# すべてのパッケージをテスト
 turbo run test
 
-# 并行执行多个任务
+# 複数のタスクを並列実行
 turbo run build test lint
 
-# 开发模式（所有包同时启动）
+# 開発モード（全パッケージを同時起動）
 turbo run dev --parallel
 ```
 
-## 远程缓存
+## リモートキャッシュ
 
-Turborepo 最有吸引力的特性——CI 和本地共享构建缓存：
+Turborepo の最も魅力的な機能——CI とローカルでビルドキャッシュを共有：
 
 ```bash
-# 登录 Vercel（Turborepo 官方托管）
+# Vercel にログイン（Turborepo 公式ホスティング）
 npx turbo login
 
-# 链接远程缓存
+# リモートキャッシュにリンク
 npx turbo link
 ```
 
-也可以自建远程缓存：
+リモートキャッシュを自前で構築することもできます：
 
 ```json
 // turbo.json
@@ -98,7 +98,7 @@ npx turbo link
 ```
 
 ```bash
-# CI 中使用（GitHub Actions）
+# CI で使用（GitHub Actions）
 - name: Build
   run: turbo run build test
   env:
@@ -106,11 +106,11 @@ npx turbo link
     TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 ```
 
-效果：第一次 CI 构建后，后续的 PR 如果没改构建源码，直接命中缓存，构建从 3 分钟降到 5 秒。
+効果：初回の CI ビルド後、後続の PR でビルドソースコードに変更がなければ、キャッシュがヒットし、ビルドが 3 分から 5 秒に短縮されます。
 
-## 实际项目配置
+## 実際のプロジェクト設定
 
-我们的 monorepo 结构：
+私たちの monorepo 構成：
 
 ```
 frontend-monorepo/
@@ -126,7 +126,7 @@ frontend-monorepo/
 └── turbo.json
 ```
 
-对应的 turbo.json：
+対応する turbo.json：
 
 ```json
 {
@@ -162,25 +162,25 @@ frontend-monorepo/
 }
 ```
 
-`globalDependencies` 定义了影响所有包的文件——这些文件变了，所有缓存都会失效。
+`globalDependencies` はすべてのパッケージに影響を与えるファイルを定義します——これらのファイルが変更されると、すべてのキャッシュが無効になります。
 
-## 过滤器的高级用法
+## フィルターの高度な使い方
 
 ```bash
-# 构建所有 apps 目录下的包
+# apps ディレクトリ内のすべてのパッケージをビルド
 turbo run build --filter='./apps/*'
 
-# 构建 ui-components 及其所有消费方
+# ui-components とそのすべての使用者をビルド
 turbo run build --filter='...ui-components'
 
-# 排除 docs 包
+# docs パッケージを除外
 turbo run build --filter='!docs'
 
-# 组合：构建受当前 git diff 影响的包
+# 組み合わせ：現在の git diff の影響を受けるパッケージをビルド
 turbo run build --filter='...[HEAD^]'
 ```
 
-## GitHub Actions 集成
+## GitHub Actions の統合
 
 ```yaml
 # .github/workflows/ci.yml
@@ -193,7 +193,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # 需要完整历史来判断变更
+          fetch-depth: 0  # 変更を判断するために完全な履歴が必要
 
       - uses: pnpm/action-setup@v2
         with:
@@ -213,19 +213,19 @@ jobs:
           TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 ```
 
-## pnpm + Turborepo 的分工
+## pnpm + Turborepo の役割分担
 
-| 能力 | pnpm workspace | Turborepo |
+| 機能 | pnpm workspace | Turborepo |
 |------|---------------|-----------|
-| 依赖管理 | 负责 | 不管 |
-| workspace 协议 | 负责 | 不管 |
-| 构建编排 | 基础（-r） | 负责 |
-| 并行执行 | 基础 | 智能并行 |
-| 构建缓存 | 没有 | 本地 + 远程 |
-| 任务管道 | 没有 | 完整支持 |
+| 依存関係管理 | 担当 | 担当外 |
+| workspace プロトコル | 担当 | 担当外 |
+| ビルドオーケストレーション | 基本（-r） | 担当 |
+| 並列実行 | 基本 | スマート並列 |
+| ビルドキャッシュ | なし | ローカル + リモート |
+| タスクパイプライン | なし | 完全サポート |
 
-简单说：pnpm 管依赖，Turborepo 管构建。
+簡単に言えば：pnpm は依存関係を管理し、Turborepo はビルドを管理します。
 
 ## まとめ
 
-Turborepo 是 monorepo 构建编排的轻量级方案。它不做包管理（pnpm 做），只专注于任务编排和缓存。对于中小型 monorepo，pnpm + Turborepo 的组合已经足够好。如果需要更重的功能（版本管理、changelog 生成），可以再加 Changesets。
+Turborepo は monorepo のビルドオーケストレーションにおける軽量なソリューションです。パッケージ管理は行わず（pnpm が担当）、タスクのオーケストレーションとキャッシュに特化しています。中小規模の monorepo であれば、pnpm + Turborepo の組み合わせで十分です。より重厚な機能（バージョン管理、changelog 生成）が必要な場合は、Changesets を追加することもできます。

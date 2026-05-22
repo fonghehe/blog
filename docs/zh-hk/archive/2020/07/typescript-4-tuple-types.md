@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 4.0 元組類型與可變參數元組"
+title: "TypeScript 4.0 元組類型與可變參數元組：落地路徑與實戰建議"
 date: 2020-07-20 10:53:30
 tags:
   - TypeScript
@@ -51,7 +51,7 @@ const g: NamedArgs = ['config', 42, 'extra1', 'extra2']
 
 ## 前置和中置剩餘元素
 
-TypeScript 4.0 還支持把剩餘元素放在開頭或中間，而不只是末尾：
+TypeScript 4.0 還支援把剩餘元素放在開頭或中間，而不隻是末尾：
 
 ```typescript
 // 剩餘元素在開頭

@@ -1,5 +1,5 @@
 ---
-title: "Vite 6.0 發佈 Environment API"
+title: "Vite 6.0 發佈 Environment API：特性解讀與遷移建議"
 date: 2024-02-22 09:48:02
 tags:
   - Vite
@@ -100,7 +100,7 @@ export default defineConfig({
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 

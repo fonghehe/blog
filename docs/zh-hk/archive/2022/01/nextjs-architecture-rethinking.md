@@ -1,5 +1,5 @@
 ---
-title: "Next.js 13 App Router 預覽"
+title: "Next.js 13 App Router 預覽：特性解讀與遷移建議"
 date: 2022-01-21 14:31:01
 tags:
   - Next.js
@@ -77,7 +77,7 @@ import { UserList } from './components/UserList'
 export default async function HomePage() {
   return (
     <main className="container mx-auto p-4">
-      <h1>控制台</h1>
+      <h1>控製臺</h1>
       <Suspense fallback={<Skeleton />}>
         <UserList />
       </Suspense>

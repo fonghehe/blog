@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 映射類型深入"
+title: "TypeScript 映射類型深入：落地路徑與實戰建議"
 date: 2019-07-25 16:35:13
 tags:
   - TypeScript
@@ -47,12 +47,12 @@ type StringifyUser = {
 // }
 ```
 
-## 只讀修飾符：readonly +/- 
+## 隻讀修飾符：readonly +/- 
 
 加號 `+` 表示添加修飾符（默認行為，可省略），減號 `-` 表示移除修飾符：
 
 ```typescript
-// 添加 readonly（所有屬性變為只讀）
+// 添加 readonly（所有屬性變為隻讀）
 type ReadonlyUser = {
   readonly [K in keyof User]: User[K]
 }
@@ -96,7 +96,7 @@ type RequiredUser = {
 映射類型配合條件類型可以做更精確的類型變換：
 
 ```typescript
-// 只把函數類型的屬性提取出來
+// 隻把函數類型的屬性提取出來
 type FunctionKeys<T> = {
   [K in keyof T]: T[K] extends Function ? K : never
 }[keyof T]
@@ -130,7 +130,7 @@ type ApiReturnTypes = ReturnTypes<Api>
 ```
 
 ```typescript
-// 只保留函數屬性
+// 隻保留函數屬性
 type PickFunctions<T> = {
   [K in keyof T as T[K] extends Function ? K : never]: T[K]
 }
@@ -141,7 +141,7 @@ type PickFunctions<T> = {
 
 ### DeepPartial — 深層可選
 
-內置的 `Partial` 只處理第一層，嵌套對象不會被處理：
+內置的 `Partial` 隻處理第一層，巢狀對象不會被處理：
 
 ```typescript
 interface Config {
@@ -159,7 +159,7 @@ interface Config {
   }
 }
 
-// Partial<Config> 只能讓 database 和 cache 可選
+// Partial<Config> 隻能讓 database 和 cache 可選
 // 但 database.host、database.port 還是必填
 
 type DeepPartial<T> = {
@@ -180,7 +180,7 @@ const partialConfig: DeepPartial<Config> = {
 }
 ```
 
-### DeepReadonly — 深層只讀
+### DeepReadonly — 深層隻讀
 
 ```typescript
 type DeepReadonly<T> = {
@@ -192,8 +192,8 @@ type DeepReadonly<T> = {
 }
 
 const config: DeepReadonly<Config> = getConfig()
-config.database.host = 'new-host' // 報錯：只讀
-config.database = { host: 'new', port: 3306 } // 報錯：只讀
+config.database.host = 'new-host' // 報錯：隻讀
+config.database = { host: 'new', port: 3306 } // 報錯：隻讀
 ```
 
 ### Record 的實現
@@ -262,7 +262,7 @@ async function getUser(id: number): Promise<ApiResponse<UserData>> {
   return response.json()
 }
 
-// 如果想要剝離包裝，只取 data 部分：
+// 如果想要剝離包裝，隻取 data 部分：
 type UnwrapResponse<T> = T extends ApiResponse<infer U> ? U : T
 
 async function getUserData(id: number): Promise<UserData> {

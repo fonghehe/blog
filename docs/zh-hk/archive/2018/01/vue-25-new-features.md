@@ -42,7 +42,7 @@ export default Vue.extend({
 
 ## 函數式組件嘅改進
 
-2.5 之前，函數式組件（functional component）只支援單文件組件（SFC）形式，模板裡面無法直接用。現在可以喺模板裡面聲明函數式組件喇：
+2.5 之前，函數式組件（functional component）隻支援單檔案組件（SFC）形式，範本裡面無法直接用。現在可以喺範本裡面聲明函數式組件喇：
 
 ```html
 {% raw %}
@@ -69,7 +69,7 @@ export default Vue.extend({
 
 ## errorCaptured 鉤子
 
-呢個係我覺得最實用嘅新特性。之前一個子組件嘅渲染錯誤會直接令整個應用崩潰，冇任何攔截機制。2.5 引入咗 `errorCaptured` 生命週期鉤子：
+呢個係我覺得最實用嘅新特性。之前一個子組件嘅渲染錯誤會直接令整個應用崩潰，冇任何攔截機製。2.5 引入咗 `errorCaptured` 生命週期鉤子：
 
 ```javascript
 export default {

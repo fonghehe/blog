@@ -1,10 +1,10 @@
 ---
-title: "CSS 自定義屬性（變量）實戰"
+title: "CSS 自定義屬性（變量）實戰：落地路徑與實戰建議"
 date: 2019-06-21 10:26:38
 tags:
   - CSS
 readingTime: 1
-description: "CSS 自定義屬性（又叫 CSS 變量）已經被主流瀏覽器支持了，比 Sass 變量更靈活，可以運行時修改。"
+description: "CSS 自定義屬性（又叫 CSS 變量）已經被主流瀏覽器支援了，比 Sass 變量更靈活，可以運行時修改。"
 wordCount: 171
 ---
 

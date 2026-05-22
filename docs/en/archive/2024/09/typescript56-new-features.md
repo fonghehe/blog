@@ -1,6 +1,6 @@
 ---
 title: "TypeScript 5.6: Iterator Helpers, Regex Types, and Strict Built-in Checks"
-date: 2024-09-22 10:00:00
+date: 2024-09-22 11:56:33
 tags:
   - TypeScript
 readingTime: 2

@@ -1,6 +1,6 @@
 ---
 title: "Biome v2 前端工具链新版本"
-date: 2024-08-08 10:00:00
+date: 2024-08-08 10:02:39
 tags:
   - 前端
 readingTime: 2

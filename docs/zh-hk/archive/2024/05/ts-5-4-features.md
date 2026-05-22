@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 5.7 新特性"
+title: "TypeScript 5.7 新特性：特性解讀與遷移建議"
 date: 2024-05-03 10:05:58
 tags:
   - TypeScript

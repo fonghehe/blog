@@ -236,7 +236,7 @@ export default {
 
 ## 本地開發需要靜態檔案伺服器
 
-直接用 `file://` 協議開啟 HTML 是不行的，因為 ES Module 的 CORS 限制：
+直接用 `file://` 協議開啟 HTML 是不行的，因為 ES Module 的 CORS 限製：
 
 ```bash
 # 方案一：Python

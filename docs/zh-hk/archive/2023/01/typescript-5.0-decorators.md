@@ -4,7 +4,7 @@ date: 2023-01-10 10:39:48
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 5.0 正式支持了 TC39 Stage 3 提案的裝飾器語法。這是一個等了好幾年的改動，終於可以告別 `experimentalDecorators` 了。"
+description: "TypeScript 5.0 正式支援了 TC39 Stage 3 提案的裝飾器語法。這是一個等了好幾年的改動，終於可以告別 `experimentalDecorators` 了。"
 wordCount: 414
 ---
 
@@ -125,6 +125,6 @@ console.log(m.status); // Getting status
 - TypeScript 5.0 裝飾器基於 TC39 Stage 3 標準，API 更統一
 - `context` 對象替代了分散的參數，擴展性更好
 - 引入了 `accessor` 自動訪問器概念
-- 新舊裝飾器不兼容，遷移需要一次性切換
+- 新舊裝飾器不相容，遷移需要一次性切換
 - 依賴 `reflect-metadata` 的項目暫時不適合遷移
 - 推薦新項目直接使用新裝飾器語法

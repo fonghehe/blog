@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 類型守衞模式"
+title: "TypeScript 類型守衞模式：落地路徑與實戰建議"
 date: 2021-04-06 15:28:18
 tags:
   - TypeScript

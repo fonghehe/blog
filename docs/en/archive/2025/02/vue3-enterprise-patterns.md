@@ -1,6 +1,6 @@
 ---
 title: "Vue 3 Enterprise Development Patterns"
-date: 2025-02-10 10:00:00
+date: 2025-02-10 11:44:21
 tags:
   - Vue
 readingTime: 1

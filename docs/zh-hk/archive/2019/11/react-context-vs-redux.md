@@ -1,5 +1,5 @@
 ---
-title: "React Context vs Redux 選擇指南"
+title: "React Context vs Redux 選擇指南：落地路徑與實戰建議"
 date: 2019-11-04 15:36:26
 tags:
   - React
@@ -54,7 +54,7 @@ function ThemedButton() {
 
 ## Redux 基礎回顧
 
-Redux 是一個可預測的狀態管理容器，遵循單一數據源、只讀狀態、純函數修改的原則：
+Redux 是一個可預測的狀態管理容器，遵循單一數據源、隻讀狀態、純函數修改的原則：
 
 ```jsx
 import { createStore } from 'redux';
@@ -106,13 +106,13 @@ const ConnectedCounter = connect(
 
 ## 核心差異對比
 
-### 1. 更新機制
+### 1. 更新機製
 
 Context 的更新會導致所有消費該 Context 的組件重新渲染：
 
 ```jsx
 {% raw %}
-// 問題：ThemeContext 變化時，即使只關心 count 的組件也會重渲染
+// 問題：ThemeContext 變化時，即使隻關心 count 的組件也會重渲染
 const AppContext = createContext();
 
 function App() {
@@ -129,7 +129,7 @@ function App() {
   );
 }
 
-// 即使這個組件只用 theme，count 變化時也會重渲染
+// 即使這個組件隻用 theme，count 變化時也會重渲染
 function ThemeDisplay() {
   const { theme } = useContext(AppContext);
   console.log('ThemeDisplay 重渲染了');
@@ -138,10 +138,10 @@ function ThemeDisplay() {
 {% endraw %}
 ```
 
-Redux 的 `connect` 使用淺比較，只有相關數據變化時才觸發重渲染：
+Redux 的 `connect` 使用淺比較，隻有相關數據變化時才觸發重渲染：
 
 ```jsx
-// 只有 state.theme 變化時，ThemeDisplay 才會重渲染
+// 隻有 state.theme 變化時，ThemeDisplay 才會重渲染
 const ThemeDisplay = connect(
   state => ({ theme: state.theme })
 )(({ theme }) => {
@@ -152,7 +152,7 @@ const ThemeDisplay = connect(
 
 ### 2. 中間件與異步
 
-Context 沒有內置的中間件機制，異步處理需要自己實現：
+Context 沒有內置的中間件機製，異步處理需要自己實現：
 
 ```jsx
 {% raw %}
@@ -202,7 +202,7 @@ function fetchUser(id) {
   };
 }
 
-// redux-saga（更強大的異步流控制）
+// redux-saga（更強大的異步流控製）
 function* fetchUserSaga(action) {
   try {
     const user = yield call(fetchUserApi, action.payload);
@@ -213,7 +213,7 @@ function* fetchUserSaga(action) {
 }
 ```
 
-### 3. DevTools 支持
+### 3. DevTools 支援
 
 Redux 有強大的 DevTools，支持時間旅行調試：
 
@@ -274,7 +274,7 @@ const ConfigProvider = ({ children, config }) => (
 - 數據變化頻率低
 - 不需要複雜的更新邏輯
 - 不需要中間件和 DevTools
-- 只在局部組件樹中使用
+- 隻在局部組件樹中使用
 
 ### 適合使用 Redux 的場景
 

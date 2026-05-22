@@ -4,11 +4,11 @@ date: 2022-06-07 15:28:54
 tags:
   - 前端
 readingTime: 2
-description: "Astro 1.0 正式釋出了。它的核心理念很明確：預設輸出零 JavaScript，只在需要互動的地方載入 JS。對於內容型網站（部落格、文件、營銷頁），這個方案比 React/Vue 全家桶高效得多。"
+description: "Astro 1.0 正式釋出了。它的核心理念很明確：預設輸出零 JavaScript，隻在需要互動的地方載入 JS。對於內容型網站（部落格、檔案、營銷頁），這個方案比 React/Vue 全家桶高效得多。"
 wordCount: 335
 ---
 
-Astro 1.0 正式釋出了。它的核心理念很明確：預設輸出零 JavaScript，只在需要互動的地方載入 JS。對於內容型網站（部落格、文件、營銷頁），這個方案比 React/Vue 全家桶高效得多。
+Astro 1.0 正式釋出了。它的核心理念很明確：預設輸出零 JavaScript，隻在需要互動的地方載入 JS。對於內容型網站（部落格、檔案、營銷頁），這個方案比 React/Vue 全家桶高效得多。
 
 ## 核心理念：Islands Architecture
 
@@ -25,7 +25,7 @@ Astro 1.0 正式釋出了。它的核心理念很明確：預設輸出零 JavaSc
 └─────────────────────────────┘
 ```
 
-頁面大部分是靜態 HTML，只有標記為「Island」的元件才會載入 JS 並變成可互動的。
+頁面大部分是靜態 HTML，隻有標記為「Island」的元件才會載入 JS 並變成可互動的。
 
 ## 快速開始
 
@@ -70,7 +70,7 @@ const title = '我的技術部落格';
 </Layout>
 ```
 
-## Client Directives：控制何時載入 JS
+## Client Directives：控製何時載入 JS
 
 ```astro
 ---
@@ -89,10 +89,10 @@ import Search from '../components/Search';
 <!-- 空閒時 hydrate（requestIdleCallback） -->
 <Search client:idle />
 
-<!-- 只在特定媒體查詢匹配時 hydrate -->
+<!-- 隻在特定媒體查詢匹配時 hydrate -->
 <Video client:media="(max-width: 768px)" />
 
-<!-- 只在客戶端渲染（SSR 時不渲染） -->
+<!-- 隻在客戶端渲染（SSR 時不渲染） -->
 <HeavyChart client:only="react" />
 ```
 
@@ -186,7 +186,7 @@ export default defineConfig({
 });
 ```
 
-靜態構建輸出的是純 HTML + CSS + 極少量 JS。我們部落格專案構建後，首頁 JS 體積只有 2KB（React 做的搜尋元件）。
+靜態構建輸出的是純 HTML + CSS + 極少量 JS。我們部落格專案構建後，首頁 JS 體積隻有 2KB（React 做的搜尋元件）。
 
 ## 效能對比
 
@@ -200,4 +200,4 @@ export default defineConfig({
 
 ## 小結
 
-Astro 不是要替代 React/Vue，而是填補了一個空白：內容型網站不需要 SPA 的複雜度。預設零 JS、Islands Architecture、混合框架支援——這些特性讓它成為文件站和部落格的最佳選擇。
+Astro 不是要替代 React/Vue，而是填補了一個空白：內容型網站不需要 SPA 的複雜度。預設零 JS、Islands Architecture、混合框架支援——這些特性讓它成為檔案站和部落格的最佳選擇。

@@ -1,5 +1,5 @@
 ---
-title: "structuredClone 深拷貝實踐"
+title: "structuredClone 深拷貝實踐：落地路徑與實戰建議"
 date: 2023-09-27 14:31:43
 tags:
   - 前端
@@ -97,7 +97,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能對比
+## 效能對比
 
 關鍵在於理解核心邏輯：
 
@@ -124,7 +124,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 問題排查
 

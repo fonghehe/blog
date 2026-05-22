@@ -188,5 +188,5 @@ function useUserActions() {
 
 - `useReducer` 適合狀態轉換邏輯複雜的場景（比多個 `useState` 清晰）
 - `useContext` 傳遞 state 和 dispatch，避免 prop drilling
-- state 和 dispatch 分兩個 Context，避免只用 dispatch 的元件因 state 變化重渲染
+- state 和 dispatch 分兩個 Context，避免隻用 dispatch 的元件因 state 變化重渲染
 - 非同步邏輯封裝在自定義 Hook 裡，不放在 reducer 中

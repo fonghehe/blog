@@ -1,11 +1,11 @@
 ---
-title: "Vite Svelte 插件生態"
+title: "Vite Svelte 外掛生態：落地路徑與實戰建議"
 date: 2023-04-17 11:13:44
 tags:
   - Vite
   - Svelte
 readingTime: 2
-description: "最近在團隊中落地Vite Svelte 插件生態，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+description: "最近在團隊中落地Vite Svelte 外掛生態，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
 wordCount: 269
 ---
 

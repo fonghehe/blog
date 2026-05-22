@@ -118,7 +118,7 @@ const p = new Promise((resolve, reject) => {
 p.catch((err) => console.error(err)); // '同步錯誤'
 ```
 
-## 併發控制
+## 併發控製
 
 ```javascript
 // 全部併發，全部完成才繼續

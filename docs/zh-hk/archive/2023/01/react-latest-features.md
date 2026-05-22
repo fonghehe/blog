@@ -1,5 +1,5 @@
 ---
-title: "React 最新特性全景回顧"
+title: "React 最新特性全景回顧：特性解讀與遷移建議"
 date: 2023-01-17 16:44:24
 tags:
   - React
@@ -52,7 +52,7 @@ export function SearchableList({ items }: { items: string[] }) {
 }
 ```
 
-核心區別：沒有 `useTransition`，輸入框會等過濾完成才更新，導致卡頓。有了它，輸入框立即響應，列表過濾在後台進行。
+核心區別：沒有 `useTransition`，輸入框會等過濾完成才更新，導致卡頓。有了它，輸入框立即響應，列表過濾在後臺進行。
 
 ## Suspense：不僅僅是加載態
 

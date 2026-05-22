@@ -1,5 +1,5 @@
 ---
-title: "Angular 7新機能速報"
+title: "Angular 7 Release: CLI Prompts、虚拟滚动 & Performance提升"
 date: 2018-10-05 17:06:11
 tags:
   - Angular

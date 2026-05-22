@@ -1,5 +1,5 @@
 ---
-title: "React Concurrent Modeを初めて触って"
+title: "React Concurrent Mode 初探：时间切片与 Suspense 实验"
 date: 2019-05-27 16:57:55
 tags:
   - React

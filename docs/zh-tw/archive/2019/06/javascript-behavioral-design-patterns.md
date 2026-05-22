@@ -12,7 +12,7 @@ wordCount: 522
 
 ## 單例模式（Singleton）
 
-保證一個類只有一個例項，全域性共享同一個物件。前端最常見的場景：全域性狀態管理、彈窗管理、登入態管理。
+保證一個類隻有一個例項，全域性共享同一個物件。前端最常見的場景：全域性狀態管理、彈窗管理、登入態管理。
 
 ```javascript
 // 實現1：閉包方式
@@ -119,7 +119,7 @@ class EventBus {
     }
 }
 
-// 整個專案只有一個 EventBus 例項
+// 整個專案隻有一個 EventBus 例項
 const createEventBus = singleton(EventBus);
 const bus1 = new createEventBus();
 const bus2 = new createEventBus();
@@ -189,7 +189,7 @@ notify.show();
 ```
 
 ```javascript
-// 表單欄位工廠：動態生成不同型別的表單控制元件
+// 表單欄位工廠：動態生成不同型別的表單控製元件
 function createFormField(config) {
     const { type, name, label, value, options } = config;
 
@@ -305,7 +305,7 @@ class PubSub {
         this.handlers[event] = this.handlers[event].filter(h => h !== handler);
     }
 
-    // 只訂閱一次
+    // 隻訂閱一次
     once(event, handler) {
         const wrapper = (...args) => {
             handler(...args);
@@ -334,7 +334,7 @@ pubsub.emit('user:login', { id: 1, name: '張三' });
 // 取消訂閱
 unsub1();
 
-// 場景2：once 只觸發一次
+// 場景2：once 隻觸發一次
 pubsub.once('page:loaded', () => {
     console.log('頁面首次載入完成，顯示引導彈窗');
 });
@@ -768,7 +768,7 @@ function clearCache() {
     _cache.clear();
 }
 
-// 只匯出需要公開的方法
+// 隻匯出需要公開的方法
 export { factorial, fibonacci, clearCache };
 // _cache 是模組私有的，外部無法訪問
 ```
@@ -789,7 +789,7 @@ export { factorial, fibonacci, clearCache };
 ## 小結
 
 - **單例模式**適合全域性唯一的例項，用閉包或靜態屬性實現最簡單
-- **工廠模式**把建立邏輯和使用邏輯分離，新增型別時只需改工廠函式
+- **工廠模式**把建立邏輯和使用邏輯分離，新增型別時隻需改工廠函式
 - **觀察者/釋出訂閱**是前端最核心的模式，Vue 響應式、DOM 事件、元件通訊都離不開它
 - **策略模式**消滅 if-else 地獄，讓演算法獨立於使用它的客戶端
 - **裝飾器模式**在不改原始碼的情況下增強功能，React HOC 就是它的應用

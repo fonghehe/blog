@@ -1,5 +1,5 @@
 ---
-title: "CSS filter 濾鏡效果實戰"
+title: "CSS filter 濾鏡效果實戰：落地路徑與實戰建議"
 date: 2019-08-28 10:01:02
 tags:
   - CSS
@@ -171,7 +171,7 @@ body.mourning {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* box-shadow 只作用於元素的矩形邊界 */
+/* box-shadow 隻作用於元素的矩形邊界 */
 /* drop-shadow 根據元素實際內容（alpha 通道）投影 */
 ```
 
@@ -279,7 +279,7 @@ img.onload = () => img.classList.add('loaded');
 }
 ```
 
-### 案例五：CSS 變量控制濾鏡強度
+### 案例五：CSS 變量控製濾鏡強度
 
 ```css
 :root {
@@ -320,7 +320,7 @@ document.documentElement.style.setProperty('--grayscale-amount', '0.5');
 
 這種方法適用於快速原型或過渡期，生產環境建議還是使用 CSS 變量和主題色方案。
 
-## filter 動畫與性能
+## filter 動畫與效能
 
 ### 使用 GPU 加速
 
@@ -343,7 +343,7 @@ filter 動畫默認會觸發 GPU 加速，但 `blur` 動畫開銷較大：
 }
 ```
 
-### 性能對比
+### 效能對比
 
 ```css
 /* 性能開銷從小到大 */
@@ -357,11 +357,11 @@ filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3)); /* 中 */
 filter: blur(20px);           /* 高 */
 ```
 
-## backdrop-filter 兼容性
+## backdrop-filter 相容性
 
 `backdrop-filter` 的瀏覽器支持情況（2019 年）：
 
-- Chrome 76+ — 支持（需要開啓 flag 或使用 `-webkit-` 前綴）
+- Chrome 76+ — 支援（需要開啓 flag 或使用 `-webkit-` 前綴）
 - Firefox 70+ — 支持
 - Safari 9+ — 支持 `-webkit-backdrop-filter`
 - Edge — 需要 `-webkit-` 前綴
@@ -388,6 +388,6 @@ filter: blur(20px);           /* 高 */
 - 多個濾鏡可以組合使用，按聲明順序疊加效果
 - `backdrop-filter` 可以對元素背後的內容應用濾鏡，實現毛玻璃效果
 - filter 動畫性能開銷從小到大：opacity < grayscale < brightness < contrast < drop-shadow < blur
-- 使用 CSS 變量可以實現動態濾鏡效果的精確控制
+- 使用 CSS 變量可以實現動態濾鏡效果的精確控製
 - `drop-shadow` 與 `box-shadow` 不同，它根據元素實際內容（alpha 通道）投射陰影
-- `backdrop-filter` 兼容性需要注意，建議使用 `@supports` 做漸進增強
+- `backdrop-filter` 相容性需要注意，建議使用 `@supports` 做漸進增強

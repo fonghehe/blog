@@ -64,7 +64,7 @@ top: 60px; /* 滾動到距視口頂部 60px 時固定 */
 <div style="position: relative; z-index: 1;">
   <!-- 這裡有自己的層疊上下文 -->
   <div style="position: absolute; z-index: 999;">
-    <!-- z-index: 999 只在父級上下文內有效 -->
+    <!-- z-index: 999 隻在父級上下文內有效 -->
     <!-- 無法超過兄弟的 z-index: 2 -->
   </div>
 </div>
@@ -73,7 +73,7 @@ top: 60px; /* 滾動到距視口頂部 60px 時固定 */
 </div>
 ```
 
-**理解關鍵**：子元素的 `z-index` 只在父層疊上下文內比較，無法跳出。
+**理解關鍵**：子元素的 `z-index` 隻在父層疊上下文內比較，無法跳出。
 
 ## 常見陷阱：transform 建立層疊上下文
 

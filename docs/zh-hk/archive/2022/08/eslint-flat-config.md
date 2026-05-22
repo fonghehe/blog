@@ -1,10 +1,10 @@
 ---
-title: "ESLint Flat Config 新配置格式"
+title: "ESLint Flat Config 新設定格式：落地路徑與實戰建議"
 date: 2022-08-29 15:09:59
 tags:
   - ESLint
 readingTime: 2
-description: "ESLint Flat Config 新配置格式在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
+description: "ESLint Flat Config 新設定格式在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
 wordCount: 268
 ---
 
@@ -94,7 +94,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能優化
+## 效能優化
 
 以下是一個完整的示例：
 

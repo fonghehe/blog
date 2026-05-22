@@ -4,11 +4,11 @@ date: 2022-03-30 10:56:22
 tags:
   - Angular
 readingTime: 2
-description: "Angular Material 13 隨 Angular 13 一起釋出，帶來了基於 Material Design Components for Web（MDC）重新實現的元件。這次重構不只是樣式調整——元件的 DOM 結構和 CSS 類名都發生了變化，因此遷移需要一定的關注。"
+description: "Angular Material 13 隨 Angular 13 一起釋出，帶來了基於 Material Design Components for Web（MDC）重新實現的元件。這次重構不隻是樣式調整——元件的 DOM 結構和 CSS 類名都發生了變化，因此遷移需要一定的關注。"
 wordCount: 447
 ---
 
-Angular Material 13 隨 Angular 13 一起釋出，帶來了基於 Material Design Components for Web（MDC）重新實現的元件。這次重構不只是樣式調整——元件的 DOM 結構和 CSS 類名都發生了變化，因此遷移需要一定的關注。
+Angular Material 13 隨 Angular 13 一起釋出，帶來了基於 Material Design Components for Web（MDC）重新實現的元件。這次重構不隻是樣式調整——元件的 DOM 結構和 CSS 類名都發生了變化，因此遷移需要一定的關注。
 
 ## 什麼是 MDC-Based Components
 
@@ -92,7 +92,7 @@ $theme: mat.define-light-theme(
 @include mat.all-component-themes($theme);
 ```
 
-**Density**（密度）是 Angular Material 13 新概念，用於控制組件緊湊程度：
+**Density**（密度）是 Angular Material 13 新概念，用於控製組件緊湊程度：
 
 ```scss
 // density: 0  → 標準大小（預設）

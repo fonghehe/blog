@@ -12,7 +12,7 @@ Bun 1.0 正式發佈！這是用 Zig 寫的 JavaScript 運行時，聲稱比 Nod
 
 ## Bun 是什麼
 
-Bun 是 Node.js 的競爭者，但它不只是運行時：
+Bun 是 Node.js 的競爭者，但它不隻是運行時：
 
 - **Runtime**：運行 JS/TS（比 Node.js 快）
 - **Package Manager**：替代 npm/pnpm（安裝速度極快）
@@ -43,7 +43,7 @@ curl -fsSL https://bun.sh/install | bash
 # 直接運行 TypeScript（無需 ts-node）
 bun run server.ts
 
-# 包管理（兼容 npm）
+# 包管理（相容 npm）
 bun install
 bun add react
 bun remove lodash
@@ -89,7 +89,7 @@ const users = db.query("SELECT * FROM users").all();
 console.log(users); // [{ id: 1, name: 'Alice' }]
 ```
 
-## 兼容性
+## 相容性
 
 ```typescript
 // Bun 目標是 Node.js 兼容，大部分 Node.js 代碼可以直接跑
@@ -124,6 +124,6 @@ app.listen(3000);
 
 - Bun 是運行時 + 包管理 + 打包 + 測試的 all-in-one 工具
 - 速度顯著快於 Node.js 和 npm（5-20x）
-- 內置 TypeScript 支持，無需 ts-node
+- 內置 TypeScript 支援，無需 ts-node
 - SQLite、文件操作 API 比 Node.js 更簡潔
 - 1.0 正式版，可以在非關鍵場景使用

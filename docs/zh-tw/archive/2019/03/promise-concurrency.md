@@ -1,14 +1,14 @@
 ---
-title: "JavaScript Promise 併發控制"
+title: "JavaScript Promise 併發控製"
 date: 2019-03-15 10:51:12
 tags:
   - JavaScript
 readingTime: 2
-description: "JavaScript Promise 併發控制是日常開發中經常遇到的問題。本文從實際專案出發，分享具體的實現方法和經驗總結。"
+description: "JavaScript Promise 併發控製是日常開發中經常遇到的問題。本文從實際專案出發，分享具體的實現方法和經驗總結。"
 wordCount: 259
 ---
 
-JavaScript Promise 併發控制是日常開發中經常遇到的問題。本文從實際專案出發，分享具體的實現方法和經驗總結。
+JavaScript Promise 併發控製是日常開發中經常遇到的問題。本文從實際專案出發，分享具體的實現方法和經驗總結。
 
 ## 基本概念
 
@@ -151,7 +151,7 @@ export default {
 
 ## 小結
 
-- JavaScript Promise 併發控制的關鍵在於理解核心概念，不要停留在表面用法
+- JavaScript Promise 併發控製的關鍵在於理解核心概念，不要停留在表面用法
 - 實際專案中根據場景選擇合適的方案
 - 團隊中統一約定比追求完美實現更重要
 - 持續學習和總結，保持技術敏感度

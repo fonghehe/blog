@@ -1,6 +1,6 @@
 ---
 title: "LLM 前端整合方案"
-date: 2024-06-13 10:00:00
+date: 2024-06-13 19:47:24
 tags:
   - 工程化
 readingTime: 2

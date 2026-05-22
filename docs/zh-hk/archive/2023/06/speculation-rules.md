@@ -1,5 +1,5 @@
 ---
-title: "Speculation Rules 預渲染優化"
+title: "Speculation Rules 預渲染優化：落地路徑與實戰建議"
 date: 2023-06-01 09:31:29
 tags:
   - 前端
@@ -50,7 +50,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 真實場景應用
 

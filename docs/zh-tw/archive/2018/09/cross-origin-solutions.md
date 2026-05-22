@@ -52,7 +52,7 @@ app.use((req, res, next) => {
 **前端注意事項：**
 
 ```javascript
-// 跨域請求攜帶 cookie：需要兩邊都配置
+// 跨域請求攜帶 cookie：需要兩邊都設定
 fetch("https://api.example.com/data", {
   credentials: "include", // 攜帶 cookie
 });
@@ -109,11 +109,11 @@ server {
 }
 ```
 
-前端只需要請求同域的 `/api`，Nginx 負責轉發。
+前端隻需要請求同域的 `/api`，Nginx 負責轉發。
 
 ## 方案四：JSONP（已過時）
 
-只支援 GET 請求，利用 script 標籤不受同源策略限制：
+隻支援 GET 請求，利用 script 標籤不受同源策略限製：
 
 ```javascript
 // 前端
@@ -167,7 +167,7 @@ window.addEventListener("message", (e) => {
 
 ## 方案六：document.domain（同主域不同子域）
 
-只適用於同主域（如 `a.example.com` 和 `b.example.com`）：
+隻適用於同主域（如 `a.example.com` 和 `b.example.com`）：
 
 ```javascript
 // a.example.com 和 b.example.com 都設定：
@@ -185,12 +185,12 @@ document.domain = "example.com";
 | CORS        | 所有場景        | 標準方案，支援所有請求型別 | 需要服務端配合         |
 | 開發代理    | 僅開發環境      | 配置簡單                   | 生產環境無效           |
 | Nginx 代理  | 生產環境        | 前端無感知                 | 需要運維配合           |
-| JSONP       | 歷史遺留        | 相容老瀏覽器               | 只支援 GET，有安全風險 |
-| postMessage | iframe/視窗通訊 | 跨域通訊的標準方式         | 只適合特定場景         |
+| JSONP       | 歷史遺留        | 相容老瀏覽器               | 隻支援 GET，有安全風險 |
+| postMessage | iframe/視窗通訊 | 跨域通訊的標準方式         | 隻適合特定場景         |
 
 ## 小結
 
 - 專案推薦用 CORS + Nginx 代理的組合
-- 開發環境用 webpack devServer proxy，零配置
+- 開發環境用 webpack devServer proxy，零設定
 - JSONP 基本可以忘掉了，除非維護老專案
 - `postMessage` 是 iframe 通訊的正確方式，注意驗證 `e.origin`

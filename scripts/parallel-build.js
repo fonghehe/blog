@@ -1,19 +1,37 @@
 #!/usr/bin/env node
 /**
- * Run main and zh-variants builds in parallel.
- * They output to different directories so there's no conflict.
- * This cuts total build time by ~40-50% compared to sequential.
+ * Run main and zh-variants builds sequentially.
+ *
+ * NOTE: These cannot run in parallel because VitePress hardcodes
+ * tempDir as resolve(root, ".temp") — both builds would share
+ * docs/.vitepress/.temp, causing "Invalid route component: undefined"
+ * and "ENOTEMPTY: directory not empty" errors from cross-build file
+ * corruption.
+ *
+ * Each build cleans .temp on its own, but we also wipe it between
+ * runs to be safe.
  */
 
 import { spawn } from "node:child_process";
+import { rmSync, existsSync } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
-// Match the per-process memory used by docs:build:main / docs:build:zh-variants
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const TEMP_DIR = join(__dirname, "..", "docs", ".vitepress", ".temp");
 const MAX_MEM = process.env.MAX_OLD_SPACE_SIZE || "8192";
+
+function cleanTemp() {
+  if (existsSync(TEMP_DIR)) {
+    rmSync(TEMP_DIR, { recursive: true, force: true });
+    console.log("  ✓ Cleaned .temp directory");
+  }
+}
 
 function runBuild(mode) {
   return new Promise((resolve, reject) => {
     const start = Date.now();
-    console.log(`[${mode}] Starting build...`);
+    console.log(`\n[${mode}] Starting build...`);
 
     const child = spawn("npx", ["vitepress", "build", "docs"], {
       stdio: ["ignore", "pipe", "pipe"],
@@ -49,10 +67,22 @@ function runBuild(mode) {
 
 async function main() {
   const totalStart = Date.now();
-  console.log("Building main and zh-variants in parallel...\n");
+  console.log("Building main and zh-variants sequentially...");
+
+  // Clean stale .temp from any previous run (e.g., interrupted build)
+  cleanTemp();
 
   try {
-    await Promise.all([runBuild("main"), runBuild("zh-variants")]);
+    // Build main first
+    await runBuild("main");
+
+    // Wipe .temp between builds — main build's page modules would confuse
+    // the zh-variants build's router (different page sets)
+    cleanTemp();
+
+    // Then build zh-variants
+    await runBuild("zh-variants");
+
     const total = ((Date.now() - totalStart) / 1000).toFixed(1);
     console.log(`\n✓ Both builds complete in ${total}s`);
   } catch (err) {

@@ -1,5 +1,5 @@
 ---
-title: "CSS Subgridレイアウト"
+title: "CSS Subgrid 子网格布局 2020：Firefox 先行支持与実践案例"
 date: 2019-09-25 16:21:47
 tags:
   - CSS

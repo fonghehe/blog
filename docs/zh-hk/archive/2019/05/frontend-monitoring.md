@@ -1,11 +1,11 @@
 ---
-title: "前端監控體系建設：錯誤捕獲與性能上報"
+title: "前端監控體系建設：錯誤捕獲與效能上報"
 date: 2019-05-18 10:33:34
 tags:
   - 性能優化
 readingTime: 2
 description: "項目上線後出了問題，往往是用户先發現，然後反饋給運營，再到研發。建立一套監控體系，讓我們比用户先發現問題。"
-wordCount: 240
+wordCount: 241
 ---
 
 項目上線後出了問題，往往是用户先發現，然後反饋給運營，再到研發。建立一套監控體系，讓我們比用户先發現問題。
@@ -103,7 +103,7 @@ class ErrorBoundary extends React.Component {
 }
 ```
 
-## 性能監控
+## 效能監控
 
 ```javascript
 // 使用 Performance API
@@ -139,7 +139,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ entryTypes: ["paint", "largest-contentful-paint"] });
 ```
 
-## 上報機制
+## 上報機製
 
 ```javascript
 class Monitor {
@@ -231,4 +231,4 @@ sentry-cli releases files 1.0.0 upload-sourcemaps ./dist
 - 錯誤監控：`window.error`、`unhandledrejection`、框架錯誤處理
 - 性能監控：Performance API、Paint Timing API
 - `sendBeacon` 保證頁面卸載時也能發送數據
-- 生產 Source Map 上傳到監控平台，還原可讀的錯誤堆棧
+- 生產 Source Map 上傳到監控平臺，還原可讀的錯誤堆積棧

@@ -15,14 +15,14 @@ React Server Components（RSC）不是又一個 SSR 方案。它是 React 團隊
 
 傳統 SSR：服務端渲染 HTML，客户端 hydrate 成完整的 React 組件樹。所有組件都有客户端 bundle。
 
-RSC：組件只在服務端運行，不會出現在客户端 bundle 中。客户端只接收渲染結果（一種特殊的 JSON 格式）。
+RSC：組件隻在服務端運行，不會出現在客户端 bundle 中。客户端隻接收渲染結果（一種特殊的 JSON 格式）。
 
 ```
 傳統 SSR:
   Server: 渲染 HTML -> Client: 下載 JS -> Client: Hydrate 所有組件
 
 RSC:
-  Server: RSC 組件執行 -> 輸出 RSC Payload -> Client: 只 hydrate Client 組件
+  Server: RSC 組件執行 -> 輸出 RSC Payload -> Client: 隻 hydrate Client 組件
 ```
 
 ## Server Component vs Client Component

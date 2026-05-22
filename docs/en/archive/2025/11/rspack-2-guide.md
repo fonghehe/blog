@@ -1,6 +1,6 @@
 ---
-title: "Rspack 2.0 Complete Guide"
-date: 2025-11-13 10:00:00
+title: "Rspack 2.0 Production Landing: 大型Project Webpack MigrationCompleteRecord"
+date: 2025-11-13 19:47:24
 tags:
   - Frontend
 readingTime: 2

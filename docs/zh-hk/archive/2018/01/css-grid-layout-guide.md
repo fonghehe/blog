@@ -4,18 +4,18 @@ date: 2018-01-06 14:39:49
 tags:
   - CSS
 readingTime: 2
-description: "CSS Grid 喺 2017 年基本完成咗主流瀏覽器嘅支援（Chrome 57、Firefox 52、Safari 10.1），2018 年已經可以喺唔需要兼容 IE 嘅項目裡面放心使用。但好多人用過 Flexbox 之後，一時唔太明白 Grid 解決嘅係咩問題。"
+description: "CSS Grid 喺 2017 年基本完成咗主流瀏覽器嘅支援（Chrome 57、Firefox 52、Safari 10.1），2018 年已經可以喺唔需要相容 IE 嘅項目裡面放心使用。但好多人用過 Flexbox 之後，一時唔太明白 Grid 解決嘅係咩問題。"
 wordCount: 552
 ---
 
-CSS Grid 喺 2017 年基本完成咗主流瀏覽器嘅支援（Chrome 57、Firefox 52、Safari 10.1），2018 年已經可以喺唔需要兼容 IE 嘅項目裡面放心使用。但好多人用過 Flexbox 之後，一時唔太明白 Grid 解決嘅係咩問題。
+CSS Grid 喺 2017 年基本完成咗主流瀏覽器嘅支援（Chrome 57、Firefox 52、Safari 10.1），2018 年已經可以喺唔需要相容 IE 嘅項目裡面放心使用。但好多人用過 Flexbox 之後，一時唔太明白 Grid 解決嘅係咩問題。
 
 ## Flexbox vs Grid：一維 vs 二維
 
 理解呢兩者嘅核心區別：
 
-- **Flexbox** 係一維佈局，只控制一個方向（行或列）
-- **Grid** 係二維佈局，同時控制行同列
+- **Flexbox** 係一維佈局，隻控製一個方向（行或列）
+- **Grid** 係二維佈局，同時控製行同列
 
 實際工作中，**Grid 適合頁面級佈局，Flexbox 適合組件內部對齊**。兩者經常配合使用。
 
@@ -38,7 +38,7 @@ CSS Grid 喺 2017 年基本完成咗主流瀏覽器嘅支援（Chrome 57、Firef
 
 `fr` 係 Grid 嘅專屬單位，表示可用空間嘅分數（fraction）。`1fr 1fr 1fr` 等同於三列等寬，但比 `33.33%` 更靈活——佢會自動扣除 gap 後再分配。
 
-## 實現經典嘅後台管理佈局
+## 實現經典嘅後臺管理佈局
 
 以前實現呢種佈局需要大量 hack，用 Grid 非常直觀：
 
@@ -121,9 +121,9 @@ CSS Grid 喺 2017 年基本完成咗主流瀏覽器嘅支援（Chrome 57、Firef
 }
 ```
 
-## 對齊控制
+## 對齊控製
 
-Grid 嘅對齊屬性比 Flexbox 更全面，因為有兩個軸可以分別控制：
+Grid 嘅對齊屬性比 Flexbox 更全面，因為有兩個軸可以分別控製：
 
 ```css
 .container {
@@ -149,8 +149,8 @@ Grid 有一定學習成本，唔係所有場景都值得用：
 
 - **簡單嘅水平居中**：用 Flexbox 或 margin auto
 - **一行按鈕組**：Flexbox 更簡單
-- **需要兼容 IE11**：Grid 喺 IE 上有獨立嘅舊語法，實現成本高
-- **只有一個方向嘅排列**：Flexbox 就夠
+- **需要相容 IE11**：Grid 喺 IE 上有獨立嘅舊語法，實現成本高
+- **隻有一個方向嘅排列**：Flexbox 就夠
 
 ## 瀏覽器支援現狀
 
@@ -158,4 +158,4 @@ Grid 有一定學習成本，唔係所有場景都值得用：
 
 ---
 
-_下一篇：React 16 錯誤邊界機制_
+_下一篇：React 16 錯誤邊界機製_

@@ -3,18 +3,18 @@ title: "Angular 15 リリース：Directive Composition API と NgOptimizedImage
 date: 2022-11-16 16:44:56
 tags:
   - Angular
-readingTime: 2
-description: "Angular 15 于 2022 年 11 月 16 日正式发布。这个版本让 Standalone APIs 进入稳定状态（不再是 developer preview），同时带来了两个重量级新特性：Directive Composition API 和 NgOptimizedImage。"
-wordCount: 313
+readingTime: 3
+description: "Angular 15 は2022年11月16日に正式リリースされました。このバージョンでは Standalone APIs が安定状態（developer preview ではなくなり）、同時に Directive Composition API と NgOptimizedImage という2つの重要な新機能がもたらされました。"
+wordCount: 423
 ---
 
-Angular 15 于 2022 年 11 月 16 日正式发布。这个版本让 Standalone APIs 进入稳定状态（不再是 developer preview），同时带来了两个重量级新特性：Directive Composition API 和 NgOptimizedImage。
+Angular 15は2022年11月16日に正式リリースされました。このバージョンではStandalone APIsが安定状態になり（developer previewではなくなり）、同時にDirective Composition APIとNgOptimizedImageという2つの重要な新機能がもたらされました。
 
 ## Standalone APIs 正式安定化
 
 ```typescript
-// Angular 15：Standalone 相关 API 正式稳定，可以放心用于生产
-// bootstrapApplication、provideRouter、provideHttpClient 等全部 stable
+// Angular 15：Standalone 関連APIが正式に安定版になり、本番環境で安心して使用可能
+// bootstrapApplication、provideRouter、provideHttpClient などすべて stable
 
 import { bootstrapApplication } from "@angular/platform-browser";
 import {
@@ -38,7 +38,7 @@ bootstrapApplication(AppComponent, {
 
 ## Directive Composition API
 
-这是 Angular 15 最重要的新特性。`hostDirectives` 允许一个组件/指令**内嵌**其他指令的行为，实现类似 mixin 的效果：
+これはAngular 15で最も重要な新機能です。`hostDirectives` により、コンポーネント/ディレクティブが他のディレクティブの振る舞いを**内包**でき、mixinのような効果を実現します：
 
 ```typescript
 // 先定义一些小的行为指令
@@ -82,10 +82,10 @@ export class HighlightDirective {
 export class DraggableCardComponent {}
 ```
 
-使用时：
+使用例：
 
 ```html
-<!-- hostDirectives 的 inputs 暴露在组件上 -->
+<!-- hostDirectives の inputs がコンポーネントに公開される -->
 <app-draggable-card tooltip="拖动我" highlightColor="lightblue">
   卡片内容
 </app-draggable-card>
@@ -100,9 +100,9 @@ import { NgOptimizedImage } from "@angular/common";
   standalone: true,
   imports: [NgOptimizedImage],
   template: `
-    <!-- 使用 ngSrc 替代 src，Angular 自动优化 -->
+    <!-- ngSrc を src の代わりに使用すると、Angular が自動最適化 -->
     <img ngSrc="hero.jpg" width="800" height="600" priority />
-    <!-- priority: 关键图片（LCP），自动添加 preload link -->
+    <!-- priority: 重要な画像（LCP）、preload linkを自動追加 -->
 
     <!-- 响应式图片 -->
     <img
@@ -117,7 +117,7 @@ import { NgOptimizedImage } from "@angular/common";
 export class HeroComponent {}
 ```
 
-**NgOptimizedImage 做了什么**：
+**NgOptimizedImage の機能**：
 
 - 自动生成 `srcset` 和 `sizes`
 - 对 `priority` 图片添加 `<link rel="preload">`
@@ -127,15 +127,15 @@ export class HeroComponent {}
 
 ## 更好的错误栈信息
 
-Angular 15 大幅改善了错误信息，特别是模板中的错误：
+Angular 15ではエラー情報が大幅に改善されました。特にテンプレート内のエラーがわかりやすくなりました：
 
 ```
-# Angular 14 的错误栈（难以定位）
+# Angular 14 のエラースタック（特定が困難）
 ERROR Error: Cannot read property 'name' of undefined
     at Object.updateTextNode (core.mjs:12345)
     at executeActionOnView (core.mjs:23456)
 
-# Angular 15 的错误栈（清晰指向组件和模板）
+# Angular 15 のエラースタック（コンポーネントとテンプレートを明確に指し示す）
 ERROR Error: Cannot read property 'name' of undefined
     in UserCardComponent (user-card.component.ts:15)
     accessing 'user.name' in template
@@ -146,11 +146,11 @@ ERROR Error: Cannot read property 'name' of undefined
 Angular 15 清理了一批长期废弃的 API：
 
 ```typescript
-// ❌ 已移除：ComponentFactoryResolver（Angular 13 废弃）
-// ❌ 已移除：DATE_PIPE_DEFAULT_TIMEZONE（使用 DATE_PIPE_DEFAULT_OPTIONS）
-// ❌ 已移除：Hammerjs 手势支持（需要手动添加）
+// ❌ 削除済み：ComponentFactoryResolver（Angular 13で非推奨）
+// ❌ 削除済み：DATE_PIPE_DEFAULT_TIMEZONE（DATE_PIPE_DEFAULT_OPTIONSを使用）
+// ❌ 削除済み：Hammerjs ジェスチャーサポート（手動で追加が必要）
 
-// ✅ 替代方案
+// ✅ 代替方法
 // ComponentFactoryResolver → ViewContainerRef.createComponent(Component)
 ```
 
@@ -159,12 +159,12 @@ Angular 15 清理了一批长期废弃的 API：
 ```bash
 ng update @angular/core@15 @angular/cli@15 @angular/material@15
 
-# 自动迁移：
-# 1. 移除已废弃的 ComponentFactoryResolver 注入
-# 2. 更新 RouterModule 到 provideRouter（如使用 standalone）
-# 3. 迁移 DatePipe 配置
+# 自動移行：
+# 1. 非推奨の ComponentFactoryResolver 注入を削除
+# 2. RouterModule を provideRouter に更新（standalone使用時）
+# 3. DatePipe 設定を移行
 ```
 
 ## まとめ
 
-Angular 15 的核心贡献是：Directive Composition API 填补了长期缺失的指令复用能力，NgOptimizedImage 让图片优化变成一键式操作，Standalone APIs 正式稳定则标志着"无 NgModule"时代正式到来。对 Angular 团队来说，2022 年的两个版本（14、15）让框架重新焕发了活力。
+Angular 15の中心的な貢献は次のとおりです：Directive Composition APIは長らく欠けていたディレクティブ再利用の機能を補い、NgOptimizedImageは画像最適化をワンクリック操作にし、Standalone APIsの正式安定化は「NgModule不要」の時代の到来を告げています。Angularチームにとって、2022年の2つのバージョン（14、15）はフレームワークに新たな活力をもたらしました。

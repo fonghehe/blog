@@ -1,5 +1,5 @@
 ---
-title: "Tailwind CSS v3.3 新特性"
+title: "Tailwind CSS v3.3 新特性：特性解讀與遷移建議"
 date: 2023-04-04 14:50:26
 tags:
   - CSS
@@ -117,7 +117,7 @@ export async function POST(req) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 注意事項
 

@@ -296,12 +296,12 @@ import { usePagination } from './composables/usePagination';
 
 export default {
   setup() {
-    // 每次呼叫建立獨立例項，互不干擾
+    // 每次呼叫建立獨立例項，互不幹擾
     const userSearch = useSearch('/api/users');
     const postSearch = useSearch('/api/posts');
     const pagination = usePagination();
 
-    // 命名完全由開發者控制，不會衝突
+    // 命名完全由開發者控製，不會衝突
     return {
       userQuery: userSearch.query,
       userResults: userSearch.results,
@@ -418,6 +418,6 @@ export default {
 - Composition API 通過 `setup()` 函式和組合式函式組織邏輯，解決了 Options API 中邏輯分散的問題
 - Composable 函式（類似 React Hooks）提供了比 Mixins 更好的邏輯複用方式
 - Composition API 天然支援 TypeScript，型別推導完整
-- 兩種 API 可以在同一專案中共存，不需要強制遷移
+- 兩種 API 可以在同一專案中共存，不需要強製遷移
 - 簡單元件使用 Options API，複雜/需要複用的元件使用 Composition API
 - Vue 3 的 Composition API 設計借鑑了 React Hooks，但基於響應式系統而非閉包，避免了 hooks 的一些陷阱（如 stale closure）

@@ -1,5 +1,5 @@
 ---
-title: "Webpack DllPlugin 加速開發構建"
+title: "Webpack DllPlugin 加速開發構建：實踐方法與治理思路"
 date: 2018-02-21 15:30:47
 tags:
   - Webpack
@@ -23,9 +23,9 @@ DllPlugin 方案：
   - 跳過第三方庫的處理，構建速度大幅提升
 ```
 
-## 配置步驟
+## 設定步驟
 
-### Step 1：創建 dll 配置文件
+### Step 1：創建 dll 設定檔案
 
 ```javascript
 // webpack.dll.js
@@ -50,7 +50,7 @@ module.exports = {
 };
 ```
 
-### Step 2：生成 dll 文件
+### Step 2：生成 dll 檔案
 
 ```bash
 # package.json 里加個命令
@@ -67,7 +67,7 @@ npm run dll
 - `dll/vendor.dll.js`
 - `dll/vendor-manifest.json`
 
-### Step 3：在主配置裏引用
+### Step 3：在主設定裏引用
 
 ```javascript
 // webpack.config.js

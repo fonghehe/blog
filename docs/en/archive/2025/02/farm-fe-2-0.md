@@ -1,6 +1,6 @@
 ---
 title: "Farm 2.0 Frontend Build Tool"
-date: 2025-02-24 10:00:00
+date: 2025-02-24 18:58:35
 tags:
   - Frontend
 readingTime: 1

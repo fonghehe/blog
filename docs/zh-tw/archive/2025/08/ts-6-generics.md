@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 6.0 泛型改進"
-date: 2025-08-04 10:00:00
+title: "TypeScript 6.0 泛型改進：更高階的型別抽象能力"
+date: 2025-08-04 19:38:15
 tags:
   - TypeScript
 readingTime: 2

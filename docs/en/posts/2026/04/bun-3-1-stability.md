@@ -1,10 +1,10 @@
 ---
 title: "Bun 3.1 Stability"
-date: 2026-04-07 10:00:00
+date: 2026-04-07 14:41:18
 tags:
   - Frontend
 readingTime: 1
-description: "Bun 3.1 stability is a topic worth paying attention to in frontend development. This article draws from real project experience to explore its core concepts and"
+description: "Bun 3.1 stability is a topic worth paying attention to in frontend development. This article draws from real project experience to explore its core concepts and best practices."
 wordCount: 148
 ---
 

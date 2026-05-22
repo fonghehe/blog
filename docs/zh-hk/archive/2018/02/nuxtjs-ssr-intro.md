@@ -16,7 +16,7 @@ wordCount: 462
 
 ```
 瀏覽器請求頁面
-→ 服務器返回空 HTML（只有 <div id="app"></div>）
+→ 服務器返回空 HTML（隻有 <div id="app"></div>）
 → 瀏覽器下載 JS bundle
 → Vue 在客户端渲染，填充內容
 → 用户看到頁面
@@ -136,7 +136,7 @@ export default {
 </script>
 ```
 
-## nuxt.config.js 常用配置
+## nuxt.config.js 常用設定
 
 ```javascript
 module.exports = {
@@ -170,7 +170,7 @@ module.exports = {
 
 ## 靜態站點生成（generate）
 
-如果不需要真正的 SSR，只想生成靜態 HTML（博客場景）：
+如果不需要真正的 SSR，隻想生成靜態 HTML（博客場景）：
 
 ```bash
 npm run generate
@@ -197,7 +197,7 @@ SSR 環境下（Node.js）沒有 `window` 對象，直接用會報錯：
 ```javascript
 // ❌ 這會在服務端報錯
 mounted() {
-  // mounted 只在客户端執行，這裏是安全的 ✅
+  // mounted 隻在客户端執行，這裏是安全的 ✅
   window.addEventListener('resize', this.handleResize)
 }
 
@@ -212,10 +212,10 @@ asyncData() {
 ```javascript
 // nuxt.config.js
 plugins: [
-  { src: "~/plugins/some-plugin", ssr: false }, // 只在客户端加載
+  { src: "~/plugins/some-plugin", ssr: false }, // 隻在客户端加載
 ];
 ```
 
 ## 小結
 
-Nuxt.js 把 SSR 的複雜性封裝得很好，基於約定的文件路由上手快。`asyncData` 是核心，理解它在服務端和客户端都能執行的特性很重要。SEO 要求高的內容站點、電商首頁場景比較適合用。
+Nuxt.js 把 SSR 的複雜性封裝得很好，基於約定的檔案路由上手快。`asyncData` 是核心，理解它在服務端和客户端都能執行的特性很重要。SEO 要求高的內容站點、電商首頁場景比較適合用。

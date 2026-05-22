@@ -40,7 +40,7 @@ type UserWithoutId = Omit<User, "id">;
 type UserMap = Record<string, User>;
 const userMap: UserMap = { alice: { id: 1, name: "Alice", email: "a@b.com" } };
 
-// Readonly：只讀
+// Readonly：隻讀
 type ReadonlyUser = Readonly<User>;
 
 // NonNullable：去掉 null 和 undefined
@@ -81,7 +81,7 @@ type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
 };
 
-// DeepReadonly：深層只讀
+// DeepReadonly：深層隻讀
 type DeepReadonly<T> = {
   readonly [P in keyof T]: T[P] extends object ? DeepReadonly<T[P]> : T[P];
 };

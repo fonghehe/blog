@@ -1,11 +1,11 @@
 ---
-title: "File System Access API 文件操作"
+title: "File System Access API 檔案操作：落地路徑與實戰建議"
 date: 2021-12-08 15:28:22
 tags:
   - 前端
   - JavaScript
 readingTime: 2
-description: "在日常開發中，File System Access API 文件操作的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+description: "在日常開發中，File System Access API 檔案操作的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
 wordCount: 326
 ---
 
@@ -98,7 +98,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能對比
+## 效能對比
 
 關鍵在於理解核心邏輯：
 
@@ -119,7 +119,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 問題排查
 
@@ -161,4 +161,4 @@ class TypedEmitter<T extends Record<string, any>> {
 - 關注社區動態，技術方案需要持續迭代
 - 不要為了用新技術而用新技術
 - 代碼示例僅供參考，需根據業務場景調整
-- File System Access API 文件操作不是銀彈，需要根據項目規模和技術棧選擇
+- File System Access API 檔案操作不是銀彈，需要根據項目規模和技術棧選擇

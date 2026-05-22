@@ -1,5 +1,5 @@
 ---
-title: "Webpack HMR 熱更新原理"
+title: "Webpack HMR 熱更新原理：落地路徑與實戰建議"
 date: 2018-08-25 09:35:16
 tags:
   - Webpack
@@ -20,7 +20,7 @@ wordCount: 210
 4. 瀏覽器收到通知 → 向 dev server 請求更新的模塊（manifest + chunk）
 5. 瀏覽器接收新模塊 → HMR Runtime 替換舊模塊
 6. 如果替換成功 → 局部更新，頁面不刷新
-7. 如果替換失敗 → 強制刷新整個頁面（fallback）
+7. 如果替換失敗 → 強製刷新整個頁面（fallback）
 ```
 
 ## webpack-dev-server 的角色
@@ -88,7 +88,7 @@ if (module.hot) {
     const newOptions = require("./MyComponent.vue");
     component.options = newOptions;
 
-    // 強制重新渲染
+    // 強製重新渲染
     component.__vue_hot__ = Date.now();
   }
 }
@@ -96,11 +96,11 @@ if (module.hot) {
 
 ## 保留狀態的 HMR
 
-Vue 的 HMR 會保留組件狀態（data），只更新模板和方法。
+Vue 的 HMR 會保留組件狀態（data），隻更新範本和方法。
 
 ```javascript
 // 修改 MyComponent.vue 的 template
-// HMR 後：data 裏的值不變，只有視圖更新
+// HMR 後：data 裏的值不變，隻有視圖更新
 
 // ❌ 但這種情況會重置狀態（不得不如此）：
 // - 修改了 data 的初始值

@@ -312,7 +312,7 @@ export function logInfo(message) {
 // 測試檔案中
 import { processData } from '../dataProcessor';
 
-// 部分 mock：只 mock logger，保留其他模組的真實實現
+// 部分 mock：隻 mock logger，保留其他模組的真實實現
 jest.mock('../utils/logger', () => ({
   logError: jest.fn(),
   logInfo: jest.fn(),
@@ -422,7 +422,7 @@ beforeEach(() => {
 - `jest.fn()` 建立 mock 函式，支援設定返回值（`mockReturnValue`）、實現（`mockImplementation`）和非同步行為（`mockResolvedValue`/`mockRejectedValue`）
 - `jest.mock()` 可以 mock 整個模組，支援使用 `__mocks__` 目錄定義手動 mock
 - `jest.spyOn()` 追蹤真實函式的呼叫，也可以替換實現
-- 定時器使用 `jest.useFakeTimers()` + `jest.advanceTimersByTime()` 控制時間
+- 定時器使用 `jest.useFakeTimers()` + `jest.advanceTimersByTime()` 控製時間
 - localStorage、fetch 等瀏覽器 API 需要在 setup 檔案中全域性 mock
 - 始終在測試結束後清理 mock 狀態，避免測試間相互影響
-- 部分 mock 可以只替換模組中的某些匯出，保留其他匯出的真實實現
+- 部分 mock 可以隻替換模組中的某些匯出，保留其他匯出的真實實現

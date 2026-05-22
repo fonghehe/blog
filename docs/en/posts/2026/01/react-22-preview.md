@@ -1,11 +1,11 @@
 ---
 title: "React 22 Preview Features"
-date: 2026-01-05 10:00:00
+date: 2026-01-05 09:39:16
 tags:
   - React
 readingTime: 1
 description: "React 22 preview features are a topic worth paying attention to in frontend development. This article explores core concepts and best practices from real projec"
-wordCount: 86
+wordCount: 168
 ---
 
 React 22 preview features are a topic worth paying attention to in frontend development. This article explores core concepts and best practices from real project experience.
@@ -98,3 +98,32 @@ const processData = (input) => {
     .sort((a, b) => b.timestamp - a.timestamp);
 };
 ```
+
+It is recommended to unify conventions across the team to reduce inconsistencies.
+
+## Frequently Asked Questions
+
+Here is the specific implementation approach:
+
+```javascript
+// Usage example
+import { createApp } from "./app";
+
+const config = {
+  apiBase: process.env.API_BASE || "/api",
+  timeout: 10000,
+  retries: 3,
+};
+
+const app = createApp(config);
+app.mount("#root");
+```
+
+This implementation is concise and efficient, suitable for most scenarios.
+
+## Takeaways
+
+- In real projects, choosing the right approach matters more than chasing the latest technology
+- Maintain consistent code style across the team to reduce maintenance costs
+- Stay up to date with community developments and refresh your technical approach in time
+- Performance optimization should be based on real data — avoid over-optimization

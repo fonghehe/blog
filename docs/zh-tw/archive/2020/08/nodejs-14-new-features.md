@@ -85,7 +85,7 @@ function handleClick(event) {
 const count = 0;
 const result = count || 10; // 10 —— 0 被認為是 falsy
 
-// ?? 只在左側為 null 或 undefined 時返回右側
+// ?? 隻在左側為 null 或 undefined 時返回右側
 const count = 0;
 const result = count ?? 10; // 0 —— 0 不是 null/undefined，保留原值
 
@@ -229,9 +229,9 @@ console.log(currencyNames.of("CNY")); // 人民幣
 console.log(currencyNames.of("USD")); // 美元
 ```
 
-## 在 tsconfig.json 中配置
+## 在 tsconfig.json 中設定
 
-如果專案用 TypeScript，需要注意配置以使用這些新特性：
+如果專案用 TypeScript，需要注意設定以使用這些新特性：
 
 ```json
 {
@@ -247,7 +247,7 @@ console.log(currencyNames.of("USD")); // 美元
 ## 小結
 
 - Node.js 14 原生支援 Optional Chaining（`?.`）和 Nullish Coalescing（`??`），不再需要 Babel 轉譯
-- `??` 和 `||` 的區別：`??` 只處理 null/undefined，`||` 處理所有 falsy 值
+- `??` 和 `||` 的區別：`??` 隻處理 null/undefined，`||` 處理所有 falsy 值
 - `Array.flat()` 和 `Array.flatMap()` 原生可用，簡化陣列操作
 - `globalThis` 提供了統一的全域性物件訪問方式
 - `String.matchAll()` 讓正則批次匹配變得優雅

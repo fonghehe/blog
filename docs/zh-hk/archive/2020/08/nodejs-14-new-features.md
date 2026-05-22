@@ -1,10 +1,10 @@
 ---
-title: "Node.js 14 新特性與 Optional Chaining 支持"
+title: "Node.js 14 新特性與 Optional Chaining 支援：特性解讀與遷移建議"
 date: 2020-08-17 10:39:36
 tags:
   - JavaScript
 readingTime: 3
-description: "Node.js 14 LTS 在 4 月份發佈，帶來了不少實用特性。最讓前端工程師開心的是 V8 引擎升級到了 8.1，原生支持了 Optional Chaining（`?.`）和 Nullish Coalescing（`??`）—— 終於不用再在 Node 代碼裏手動轉譯這些語法了。"
+description: "Node.js 14 LTS 在 4 月份發佈，帶來了不少實用特性。最讓前端工程師開心的是 V8 引擎升級到了 8.1，原生支援了 Optional Chaining（`?.`）和 Nullish Coalescing（`??`）—— 終於不用再在 Node 代碼裏手動轉譯這些語法了。"
 wordCount: 280
 ---
 
@@ -85,7 +85,7 @@ function handleClick(event) {
 const count = 0;
 const result = count || 10; // 10 —— 0 被認為是 falsy
 
-// ?? 只在左側為 null 或 undefined 時返回右側
+// ?? 隻在左側為 null 或 undefined 時返回右側
 const count = 0;
 const result = count ?? 10; // 0 —— 0 不是 null/undefined，保留原值
 
@@ -229,9 +229,9 @@ console.log(currencyNames.of("CNY")); // 人民幣
 console.log(currencyNames.of("USD")); // 美元
 ```
 
-## 在 tsconfig.json 中配置
+## 在 tsconfig.json 中設定
 
-如果項目用 TypeScript，需要注意配置以使用這些新特性：
+如果項目用 TypeScript，需要注意設定以使用這些新特性：
 
 ```json
 {
@@ -246,8 +246,8 @@ console.log(currencyNames.of("USD")); // 美元
 
 ## 小結
 
-- Node.js 14 原生支持 Optional Chaining（`?.`）和 Nullish Coalescing（`??`），不再需要 Babel 轉譯
-- `??` 和 `||` 的區別：`??` 只處理 null/undefined，`||` 處理所有 falsy 值
+- Node.js 14 原生支援 Optional Chaining（`?.`）和 Nullish Coalescing（`??`），不再需要 Babel 轉譯
+- `??` 和 `||` 的區別：`??` 隻處理 null/undefined，`||` 處理所有 falsy 值
 - `Array.flat()` 和 `Array.flatMap()` 原生可用，簡化數組操作
 - `globalThis` 提供了統一的全局對象訪問方式
 - `String.matchAll()` 讓正則批量匹配變得優雅

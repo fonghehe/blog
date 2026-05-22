@@ -3,18 +3,18 @@ title: "Vue 3 Alphaプレビュー：Proxyベースのリアクティビティ"
 date: 2019-08-14 16:33:13
 tags:
   - Vue
-readingTime: 4
-description: "2019 年 Vue 团队发布了 Vue 3 的 Alpha 版本，其中最大的变化之一就是响应式系统从 `Object.defineProperty` 切换到了 ES6 的 `Proxy`。本文将从源码和实践两个角度，对比 Vue 2 和 Vue 3 在响应式实现上的差异，带你提前感受 Vue 3 的新特性。"
-wordCount: 563
+readingTime: 5
+description: "2019 年、Vue チームは Vue 3 の Alpha バージョンをリリースしました。最大の変更点の一つは、リアクティブシステムが Object.defineProperty から ES6 の Proxy に切り替わったことです。この記事ではソースコードと実践の両方の観点から、Vue 2 と Vue 3 のリアクティブ実装の違いを比較し、Vue 3 の新機能を先取りして紹介します。"
+wordCount: 900
 ---
 
-2019 年 Vue 团队发布了 Vue 3 的 Alpha 版本，其中最大的变化之一就是响应式系统从 `Object.defineProperty` 切换到了 ES6 的 `Proxy`。本文将从源码和实践两个角度，对比 Vue 2 和 Vue 3 在响应式实现上的差异，带你提前感受 Vue 3 的新特性。
+2019 年、Vue チームは Vue 3 の Alpha バージョンをリリースしました。最大の変更点の一つは、リアクティブシステムが `Object.defineProperty` から ES6 の `Proxy` に切り替わったことです。この記事ではソースコードと実践の両方の観点から、Vue 2 と Vue 3 のリアクティブ実装の違いを比較し、Vue 3 の新機能を先取りして紹介します。
 
 ## Vue 2 リアクティビティの限界
 
-Vue 2 使用 `Object.defineProperty` 拦截对象属性的读写。这个方案存在几个明显的缺陷：
+Vue 2 は `Object.defineProperty` を使用してオブジェクトのプロパティの読み書きをインターセプトします。この方式にはいくつかの明確な欠点があります：
 
-### 1. 无法检测属性的添加和删除
+### 1. プロパティの追加と削除を検出できない
 
 ```js
 // Vue 2
@@ -26,16 +26,16 @@ const vm = new Vue({
   },
   methods: {
     addAge() {
-      // 这个操作 Vue 2 无法检测到！
+      // この操作は Vue 2 では検出できません！
       this.user.age = 25;
-      // 需要使用 Vue.set 才能触发响应式更新
+      // Vue.set を使用してリアクティブ更新をトリガーする必要があります
       this.$set(this.user, 'age', 25);
     }
   }
 });
 ```
 
-### 2. 无法检测数组索引的变化
+### 2. 配列インデックスの変更を検出できない
 
 ```js
 // Vue 2
@@ -47,38 +47,38 @@ const vm = new Vue({
   },
   methods: {
     updateFirst() {
-      // 不会触发视图更新
+      // ビューの更新をトリガーしません
       this.list[0] = 100;
-      // 必须使用 splice
+      // splice を使用する必要があります
       this.$set(this.list, 0, 100);
     }
   }
 });
 ```
 
-### 3. 初始化时需要递归遍历所有属性
+### 3. 初期化時にすべてのプロパティを再帰的にトラバースする必要がある
 
-Vue 2 在创建响应式对象时，会递归遍历所有属性并转换为 getter/setter。对于大型对象，这个过程有性能开销。
+Vue 2 はリアクティブオブジェクトを作成する際、すべてのプロパティを再帰的にトラバースし、getter/setter に変換します。大規模なオブジェクトの場合、この処理にはパフォーマンスのオーバーヘッドが発生します。
 
 ## Vue 3 Proxyによるリアクティビティの実装
 
-Vue 3 使用 `Proxy` 代理整个对象，从根本上解决了上述问题。
+Vue 3 は `Proxy` を使用してオブジェクト全体をプロキシし、上記の問題を根本的に解決しました。
 
-### 基本原理
+### 基本原則
 
 ```js
-// 手写一个简化的 Vue 3 响应式系统
+// 簡略化した Vue 3 リアクティブシステム
 let activeEffect = null;
 
 function reactive(target) {
   const handler = {
     get(target, key, receiver) {
-      // 收集依赖
+      // 依存関係を収集
       if (activeEffect) {
         track(target, key);
       }
       const result = Reflect.get(target, key, receiver);
-      // 深层代理：只有访问到的属性才会被代理（惰性）
+      // ディーププロキシ：アクセスされたプロパティのみがプロキシされます（遅延）
       if (typeof result === 'object' && result !== null) {
         return reactive(result);
       }
@@ -88,7 +88,7 @@ function reactive(target) {
     set(target, key, value, receiver) {
       const oldValue = target[key];
       const result = Reflect.set(target, key, value, receiver);
-      // 只有值真正改变时才触发更新
+      // 値が実際に変更された場合のみ更新をトリガー
       if (oldValue !== value) {
         trigger(target, key);
       }
@@ -98,7 +98,7 @@ function reactive(target) {
     deleteProperty(target, key) {
       const hadKey = Object.prototype.hasOwnProperty.call(target, key);
       const result = Reflect.deleteProperty(target, key);
-      // 删除属性也能触发更新
+      // プロパティの削除でも更新をトリガー
       if (hadKey && result) {
         trigger(target, key);
       }
@@ -119,7 +119,7 @@ function reactive(target) {
   return new Proxy(target, handler);
 }
 
-// 依赖存储
+// 依存関係の保存
 const targetMap = new WeakMap();
 
 function track(target, key) {
@@ -152,12 +152,12 @@ function trigger(target, key) {
 
 function effect(fn) {
   activeEffect = fn;
-  fn(); // 立即执行一次以收集依赖
+  fn(); // 一度実行して依存関係を収集
   activeEffect = null;
 }
 ```
 
-### 使用示例
+### 使用例
 
 ```js
 const state = reactive({
@@ -168,7 +168,7 @@ const state = reactive({
   },
 });
 
-// 自动收集依赖
+// 自動的に依存関係を収集
 effect(() => {
   console.log(`count: ${state.count}`);
 });
@@ -177,42 +177,42 @@ effect(() => {
   console.log(`用户: ${state.user.name}`);
 });
 
-state.count = 1;          // 输出: count: 1
-state.user.name = '李四'; // 输出: 用户: 李四
+state.count = 1;          // 出力: count: 1
+state.user.name = '李四'; // 出力: ユーザー: 李四
 
-// 动态添加属性 —— 自动变为响应式
-state.user.age = 25; // 这在 Vue 3 中完全可以工作！
+// 動的にプロパティを追加 —— 自動的にリアクティブに
+state.user.age = 25; // これは Vue 3 で完全に動作します！
 
-// 删除属性 —— 自动触发更新
-delete state.user.age; // 也能正确触发更新
+// プロパティの削除 —— 自動的に更新をトリガー
+delete state.user.age; // 正しく更新をトリガーできます
 
-// 数组操作 —— 直接通过索引修改
-state.user.hobbies[0] = 'gaming'; // 完全支持！
+// 配列操作 —— インデックスで直接変更
+state.user.hobbies[0] = 'gaming'; // 完全にサポートされています！
 ```
 
 ## Vue 3 Composition APIとリアクティビティ
 
-Vue 3 提供了 `reactive`、`ref`、`computed`、`watch` 等函数式 API：
+Vue 3 は `reactive`、`ref`、`computed`、`watch` などの関数型 API を提供します：
 
 ```js
 import { reactive, ref, computed, watch, toRefs } from 'vue';
 
-// reactive 用于对象类型
+// reactive はオブジェクト型に使用
 const state = reactive({
   firstName: '张',
   lastName: '三',
   age: 25,
 });
 
-// computed 计算属性
+// computed 算出プロパティ
 const fullName = computed(() => {
   return `${state.firstName}${state.lastName}`;
 });
 
-// ref 用于基本类型
+// ref はプリミティブ型に使用
 const count = ref(0);
 
-// watch 监听变化
+// watch で変更を監視
 watch(
   () => state.age,
   (newVal, oldVal) => {
@@ -220,44 +220,44 @@ watch(
   }
 );
 
-// 在模板中使用
+// テンプレートで使用
 state.age = 26; // 触发 watch 和视图更新
-count.value++;  // ref 需要通过 .value 访问
+count.value++;  // ref は .value でアクセスする必要がある
 ```
 
 ## Proxy vs defineProperty 比較
 
-| 特性 | defineProperty | Proxy |
+| 特徴 | defineProperty | Proxy |
 |------|---------------|-------|
-| 属性添加/删除 | 无法检测 | 自动检测 |
-| 数组索引修改 | 无法检测 | 自动检测 |
-| 深层嵌套 | 初始化时全部递归 | 惰性代理，按需处理 |
-| Map/Set | 不支持 | 可扩展支持 |
-| 性能 | 初始化慢 | 初始化快，按需代理 |
-| 兼容性 | IE9+ | 不支持 IE |
+| プロパティの追加/削除 | 検出不可 | 自動検出 |
+| 配列インデックスの変更 | 検出不可 | 自動検出 |
+| 深いネスト | 初期化時にすべて再帰 | 遅延プロキシ、必要に応じて処理 |
+| Map/Set | 非サポート | 拡張可能 |
+| パフォーマンス | 初期化が遅い | 初期化が速く、オンデマンドでプロキシ |
+| 互換性 | IE9+ | IE 非サポート |
 
 ## refとreactiveの使い分け
 
 ```js
 import { ref, reactive } from 'vue';
 
-// ref: 适用于基本类型和需要整体替换的数据
+// ref: プリミティブ型や全体を置き換えるデータに適している
 const count = ref(0);
 const list = ref([]);
 const name = ref('张三');
 
-// reactive: 适用于对象类型
+// reactive: オブジェクト型に適している
 const user = reactive({
   name: '张三',
   age: 25,
 });
 
-// 模板中 ref 会自动解包，不需要 .value
-// 但在 JS 中必须使用 .value
+// テンプレートでは ref は自動的にアンラップされるため .value は不要
+// ただし JS では .value を使用する必要がある
 count.value++;
 console.log(count.value); // 2
 
-// 实际项目中的最佳实践
+// 実際のプロジェクトでのベストプラクティス
 function useUser() {
   const user = reactive({
     name: '',
@@ -276,13 +276,13 @@ function useUser() {
   }
 
   return {
-    ...toRefs(user), // 将 reactive 对象转为 ref 集合，方便解构
+    ...toRefs(user), // reactive オブジェクトを ref のセットに変換し、分割代入を容易にする
     isValid,
     reset,
   };
 }
 
-// 在组件中使用
+// コンポーネント内で使用
 const { name, email, age, isValid, reset } = useUser();
 ```
 
@@ -300,10 +300,10 @@ function useCounter() {
   const increment = () => state.count++;
   const decrement = () => state.count--;
 
-  // 直接解构会丢失响应式
+  // 直接分割代入するとリアクティビティが失われる
   // return { count: state.count, increment }; // 错误！
 
-  // 使用 toRefs 保持响应式
+  // toRefs を使用してリアクティビティを維持
   return {
     ...toRefs(state),
     increment,
@@ -311,17 +311,17 @@ function useCounter() {
   };
 }
 
-// 使用时可以安全解构
+// 使用時は安全に分割代入可能
 const { count, doubled, increment } = useCounter();
-// count 和 doubled 都是 ref，保持响应式
+// count と doubled はどちらも ref であり、リアクティビティを維持
 ```
 
 ## まとめ
 
-- Vue 3 使用 `Proxy` 替代 `Object.defineProperty`，从根本上解决了 Vue 2 响应式的局限
-- Proxy 可以拦截属性的添加、删除、数组索引修改等操作，无需特殊 API
-- 惰性代理机制：只有访问到的深层属性才会被代理，初始化性能更好
-- Composition API（`reactive`、`ref`、`computed`、`watch`）提供了更灵活的逻辑组织方式
-- `ref` 用于基本类型，`reactive` 用于对象类型，`toRefs` 解决解构丢失响应式的问题
-- Proxy 不支持 IE，Vue 3 正式放弃了 IE11 以下的支持
-- Vue 3 Alpha 阶段，API 可能会有调整，但核心设计理念已经确定
+- Vue 3 は `Proxy` を使用して `Object.defineProperty` を置き換え、Vue 2 のリアクティブの限界を根本的に解決しました
+- Proxy はプロパティの追加、削除、配列インデックスの変更などの操作をインターセプトでき、特別な API は不要です
+- 遅延プロキシメカニズム：アクセスされた深いプロパティのみがプロキシされるため、初期化のパフォーマンスが向上します
+- Composition API（`reactive`、`ref`、`computed`、`watch`）はより柔軟なロジック編成方法を提供します
+- `ref` はプリミティブ型に、`reactive` はオブジェクト型に使用し、`toRefs` は分割代入によるリアクティビティの喪失を解決します
+- Proxy は IE をサポートしておらず、Vue 3 は正式に IE11 以下のサポートを終了しました
+- Vue 3 の Alpha 段階では API が調整される可能性がありますが、コアとなる設計理念は確定しています

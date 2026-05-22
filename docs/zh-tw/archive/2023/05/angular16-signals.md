@@ -29,7 +29,7 @@ count.update((n) => n + 1); // 基於當前值更新
 
 // computed：自動追蹤依賴
 const doubled = computed(() => count() * 2);
-// 只有 count 變化時，doubled 才重新計算
+// 隻有 count 變化時，doubled 才重新計算
 
 // effect：副作用，自動追蹤依賴並重新執行
 effect(() => {
@@ -66,7 +66,7 @@ export class CounterComponent {
 }
 ```
 
-注意：模板中 `{{ count() }}` 用括號呼叫 Signal 是必須的。Angular 編譯器會識別 Signal 呼叫並設定細粒度追蹤，不再需要 Zone.js 觸發變更檢測。
+注意：範本中 `{{ count() }}` 用括號呼叫 Signal 是必須的。Angular 編譯器會識別 Signal 呼叫並設定細粒度追蹤，不再需要 Zone.js 觸發變更檢測。
 
 ## Signal 與 Zone.js 的關係
 

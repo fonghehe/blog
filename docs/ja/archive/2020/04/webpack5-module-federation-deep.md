@@ -1,5 +1,5 @@
 ---
-title: "Webpack 5 Module Federation の深掘り"
+title: "Webpack 5 Module Federation 実践 2020：跨应用组件共享ガイド"
 date: 2020-04-23 11:28:49
 tags:
   - Webpack

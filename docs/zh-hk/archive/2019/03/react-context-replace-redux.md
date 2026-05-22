@@ -1,5 +1,5 @@
 ---
-title: "React Context 替代 Redux"
+title: "React Context 替代 Redux：落地路徑與實戰建議"
 date: 2019-03-06 17:27:58
 tags:
   - React

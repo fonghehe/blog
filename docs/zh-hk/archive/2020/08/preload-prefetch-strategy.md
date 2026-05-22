@@ -1,5 +1,5 @@
 ---
-title: "preload prefetch 資源加載策略"
+title: "preload prefetch 資源加載策略：落地路徑與實戰建議"
 date: 2020-08-07 10:13:40
 tags:
   - 性能優化
@@ -64,7 +64,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 真實場景應用
 

@@ -1,6 +1,6 @@
 ---
 title: "AI-Driven Frontend Workflow: My Practice Summary"
-date: 2024-10-18 10:00:00
+date: 2024-10-18 14:32:09
 tags:
   - Engineering
 readingTime: 2

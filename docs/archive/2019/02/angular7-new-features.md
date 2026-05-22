@@ -1,5 +1,5 @@
 ---
-title: "Angular 7 新特性速览"
+title: "Angular 7 新特性速览：从 6.x 升级的实践指南"
 date: 2018-10-05 17:06:11
 tags:
   - Angular

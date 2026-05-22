@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 嚴格模式指南"
+title: "TypeScript 嚴格模式指南：落地路徑與實戰建議"
 date: 2023-12-19 16:44:39
 tags:
   - TypeScript

@@ -4,7 +4,7 @@ date: 2024-02-14 11:13:38
 tags:
   - Angular
 readingTime: 2
-description: "Angular 17.2 於 2024 年 2 月 14 日發佈，帶來了 Signal-based Queries 的開發者預覽。繼 Angular 17.1 引入 Signal Inputs（`input()` 函數）之後，17.2 將 Signal 化範圍擴展到了模板查詢：`viewChild()`、`viewCh"
+description: "Angular 17.2 於 2024 年 2 月 14 日發佈，帶來了 Signal-based Queries 的開發者預覽。繼 Angular 17.1 引入 Signal Inputs（`input()` 函數）之後，17.2 將 Signal 化範圍擴展到了範本查詢：`viewChild()`、`viewCh"
 wordCount: 325
 ---
 
@@ -163,7 +163,7 @@ Angular 18.0 (預計 05)  Zoneless 變更檢測（實驗性）
                          全面 Signal 化組件
 ```
 
-## 與舊裝飾器的兼容性
+## 與舊裝飾器的相容性
 
 Angular 17.2 的 Signal Queries 是**開發者預覽**階段，API 可能在正式版中有調整。舊的 `@ViewChild`、`@ContentChild` 等裝飾器繼續工作，不會被廢棄（至少在 Angular 18 之前）。可以在新組件中逐步採用 Signal Queries，無需全量遷移。
 

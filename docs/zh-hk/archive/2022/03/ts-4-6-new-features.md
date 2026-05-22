@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 4.9 satisfies 操作符"
+title: "TypeScript 4.9 satisfies 操作符：特性解讀與遷移建議"
 date: 2022-03-10 11:13:00
 tags:
   - TypeScript
@@ -99,9 +99,9 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
-## 性能對比
+## 效能對比
 
 我們可以通過以下方式來改進：
 

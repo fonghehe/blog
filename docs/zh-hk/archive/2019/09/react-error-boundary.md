@@ -1,14 +1,14 @@
 ---
-title: "React Error Boundary 錯誤邊界實踐"
+title: "React Error Boundary 錯誤邊界實踐：落地路徑與實戰建議"
 date: 2019-09-16 10:46:28
 tags:
   - React
 readingTime: 5
-description: "在生產環境中，一個組件的 JavaScript 錯誤不應該導致整個應用崩潰。React 16 引入的 Error Boundary 機制讓我們可以優雅地捕獲和處理組件樹中的錯誤，展示降級 UI 而非白屏。本文將深入講解 Error Boundary 的原理、用法和最佳實踐。"
+description: "在生產環境中，一個組件的 JavaScript 錯誤不應該導致整個應用崩潰。React 16 引入的 Error Boundary 機製讓我們可以優雅地捕獲和處理組件樹中的錯誤，展示降級 UI 而非白屏。本文將深入講解 Error Boundary 的原理、用法和最佳實踐。"
 wordCount: 540
 ---
 
-在生產環境中，一個組件的 JavaScript 錯誤不應該導致整個應用崩潰。React 16 引入的 Error Boundary 機制讓我們可以優雅地捕獲和處理組件樹中的錯誤，展示降級 UI 而非白屏。本文將深入講解 Error Boundary 的原理、用法和最佳實踐。
+在生產環境中，一個組件的 JavaScript 錯誤不應該導致整個應用崩潰。React 16 引入的 Error Boundary 機製讓我們可以優雅地捕獲和處理組件樹中的錯誤，展示降級 UI 而非白屏。本文將深入講解 Error Boundary 的原理、用法和最佳實踐。
 
 ## 什麼是 Error Boundary
 
@@ -58,7 +58,7 @@ class ErrorBoundary extends Component {
   }
 
   reportError(error, errorInfo) {
-    // 上報到錯誤監控平台
+    // 上報到錯誤監控平臺
     console.error('組件錯誤:', error);
     console.error('組件堆棧:', errorInfo.componentStack);
 
@@ -427,5 +427,5 @@ export default ErrorBoundary;
 - Error Boundary 不能捕獲事件處理器、異步代碼和服務端渲染中的錯誤
 - 使用多級 Error Boundary 實現錯誤隔離，某個模塊出錯不影響其他模塊
 - 事件處理器中的錯誤需要手動 try/catch，或使用自定義 Hook 間接拋出
-- 生產環境需要將錯誤信息上報到監控平台（如 Sentry）
-- 建議設置重試次數限制，防止無限重試循環
+- 生產環境需要將錯誤信息上報到監控平臺（如 Sentry）
+- 建議設置重試次數限製，防止無限重試循環

@@ -1,5 +1,5 @@
 ---
-title: "REST API 版本管理策略"
+title: "REST API 版本管理策略：落地路徑與實戰建議"
 date: 2020-09-15 10:00:18
 tags:
   - 前端
@@ -91,7 +91,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 

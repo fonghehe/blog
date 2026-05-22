@@ -1,5 +1,5 @@
 ---
-title: "CSS Scroll-driven Animations"
+title: "CSS Scroll-driven Animations：落地路徑與實戰建議"
 date: 2023-03-28 15:09:35
 tags:
   - 前端
@@ -89,7 +89,7 @@ wordCount: 283
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 調優策略
 

@@ -1,6 +1,6 @@
 ---
-title: "Tailwind CSS v4 Stable"
-date: 2025-03-19 10:00:00
+title: "Tailwind CSS v4 Official Release: CSS-first Configuration &  Oxide Engine"
+date: 2025-03-19 15:33:10
 tags:
   - CSS
   - Engineering

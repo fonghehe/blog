@@ -4,7 +4,7 @@ date: 2020-09-05 10:00:18
 tags:
   - 前端
 readingTime: 2
-description: "React 的狀態更新要求不可變（immutable）——不能直接修改 state，而是要返回新對象。對於嵌套較深的數據結構，這會帶來大量樣板代碼。Immer 通過 Proxy 魔法讓你\"直接修改\"數據，背後幫你生成不可變的新對象。"
+description: "React 的狀態更新要求不可變（immutable）——不能直接修改 state，而是要返回新對象。對於巢狀較深的數據結構，這會帶來大量樣板代碼。Immer 通過 Proxy 魔法讓你\"直接修改\"數據，背後幫你生成不可變的新對象。"
 wordCount: 277
 ---
 
@@ -129,9 +129,9 @@ const todosSlice = createSlice({
 });
 ```
 
-## 性能注意事項
+## 效能注意事項
 
-Immer 使用 Proxy，在現代 JS 引擎上性能已經非常好，但有幾點需要注意：
+Immer 使用 Proxy，在現代 JS 引擎上效能已經非常好，但有幾點需要注意：
 
 ```javascript
 // ✅ 正常使用

@@ -1,5 +1,5 @@
 ---
-title: "Next.js 13 App Router 完整指南"
+title: "Next.js 13 App Router 完整指南：落地路徑與實戰建議"
 date: 2023-01-02 09:31:03
 tags:
   - Next.js
@@ -12,7 +12,7 @@ Next.js 13 引入的 App Router 是自框架誕生以來最大的架構變革。
 
 ## 目錄結構與約定式路由
 
-App Router 使用 `app/` 目錄，每個文件夾代表一個路由段。與 Pages Router 最大的不同是：`page.tsx` 只負責頁面渲染，佈局、加載態、錯誤處理各有專門文件。
+App Router 使用 `app/` 目錄，每個檔案夾代表一個路由段。與 Pages Router 最大的不同是：`page.tsx` 隻負責頁面渲染，佈局、加載態、錯誤處理各有專門檔案。
 
 ```
 app/

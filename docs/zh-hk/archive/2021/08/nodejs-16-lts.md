@@ -1,5 +1,5 @@
 ---
-title: "Node.js 16 LTS 開發指南"
+title: "Node.js 16 LTS 開發指南：特性解讀與遷移建議"
 date: 2021-08-30 15:09:25
 tags:
   - Node.js
@@ -42,7 +42,7 @@ try {
 }
 ```
 
-## Fetch API 實驗性支持
+## Fetch API 實驗性支援
 
 Node.js 16 開始實驗性地內置 Fetch API（基於 undici）：
 
@@ -119,12 +119,12 @@ ac.abort() // 中斷文件讀取
 
 ```bash
 # 1. 檢查 node-sass 依賴
-# node-sass 需要針對 Node 版本編譯二進制文件
+# node-sass 需要針對 Node 版本編譯二進製檔案
 # 建議遷移到 dart sass（sass 包）
 npm uninstall node-sass
 npm install sass
 
-# 2. OpenSSL 3.0 兼容性
+# 2. OpenSSL 3.0 相容性
 # Node.js 16 使用 OpenSSL 3.0，某些舊的加密算法默認禁用
 # 如果遇到 ERR_OSSL_EVP_UNSUPPORTED，可以設置：
 export NODE_OPTIONS=--openssl-legacy-provider

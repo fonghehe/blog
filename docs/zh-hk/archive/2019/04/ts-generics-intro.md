@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 泛型入門與實踐"
+title: "TypeScript 泛型入門與實踐：落地路徑與實戰建議"
 date: 2019-04-18 10:16:18
 tags:
   - TypeScript

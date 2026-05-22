@@ -1,5 +1,5 @@
 ---
-title: "Ark UI headless 組件庫"
+title: "Ark UI headless 組件庫：落地路徑與實戰建議"
 date: 2023-08-14 11:13:14
 tags:
   - 前端
@@ -118,7 +118,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 避坑指南
 

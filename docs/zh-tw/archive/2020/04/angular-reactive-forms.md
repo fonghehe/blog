@@ -4,11 +4,11 @@ date: 2020-04-05 10:14:23
 tags:
   - React
 readingTime: 2
-description: "Angular 提供了兩種表單方案：Template-driven 和 Reactive Forms。對於需要動態欄位、跨欄位驗證、程式化控制的複雜場景，Reactive Forms 是唯一合適的選擇。"
+description: "Angular 提供了兩種表單方案：Template-driven 和 Reactive Forms。對於需要動態欄位、跨欄位驗證、程式化控製的複雜場景，Reactive Forms 是唯一合適的選擇。"
 wordCount: 152
 ---
 
-Angular 提供了兩種表單方案：Template-driven 和 Reactive Forms。對於需要動態欄位、跨欄位驗證、程式化控制的複雜場景，Reactive Forms 是唯一合適的選擇。
+Angular 提供了兩種表單方案：Template-driven 和 Reactive Forms。對於需要動態欄位、跨欄位驗證、程式化控製的複雜場景，Reactive Forms 是唯一合適的選擇。
 
 ## 基礎結構
 

@@ -4,11 +4,11 @@ date: 2018-11-10 14:30:38
 tags:
   - JavaScript
 readingTime: 2
-description: "前端頁面用久了會越來越卡，通常是記憶體洩漏。瞭解 JavaScript 的記憶體管理機制，能幫助寫出不洩漏的程式碼。"
+description: "前端頁面用久了會越來越卡，通常是記憶體洩漏。瞭解 JavaScript 的記憶體管理機製，能幫助寫出不洩漏的程式碼。"
 wordCount: 336
 ---
 
-前端頁面用久了會越來越卡，通常是記憶體洩漏。瞭解 JavaScript 的記憶體管理機制，能幫助寫出不洩漏的程式碼。
+前端頁面用久了會越來越卡，通常是記憶體洩漏。瞭解 JavaScript 的記憶體管理機製，能幫助寫出不洩漏的程式碼。
 
 ## 記憶體生命週期
 
@@ -120,7 +120,7 @@ function attachEvent(element) {
 // ✅ 不在閉包裡持有大物件
 function attachEvent(element) {
   element.addEventListener("click", function () {
-    console.log("clicked"); // 只用什麼就持有什麼
+    console.log("clicked"); // 隻用什麼就持有什麼
   });
 }
 ```

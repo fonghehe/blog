@@ -19,7 +19,7 @@ ESLint + Prettier 的問題：
 3. **規則衝突**：ESLint 的格式化規則和 Prettier 打架，需要 `eslint-config-prettier`
 4. **Node.js 啟動開銷**：每次 lint 都有冷啟動成本
 
-Biome 的目標：一個工具搞定 lint + format，零配置起步。
+Biome 的目標：一個工具搞定 lint + format，零設定起步。
 
 ## 安裝和使用
 
@@ -27,7 +27,7 @@ Biome 的目標：一個工具搞定 lint + format，零配置起步。
 # 安裝
 pnpm add -D @biomejs/biome
 
-# 初始化配置
+# 初始化設定
 pnpm biome init
 
 # 格式化
@@ -40,7 +40,7 @@ pnpm biome check src/
 pnpm biome check --apply src/
 ```
 
-## 配置
+## 設定
 
 ```jsonc
 // biome.json
@@ -82,7 +82,7 @@ pnpm biome check --apply src/
 }
 ```
 
-一個 `biome.json` 解決所有配置，不需要裝任何外掛。
+一個 `biome.json` 解決所有設定，不需要裝任何外掛。
 
 ## 效能對比
 
@@ -115,7 +115,7 @@ Biome 的規則覆蓋了 ESLint 最常用的 80-90%。缺少的主要是：
 
 ## 遷移策略
 
-**階段一：只用 Formatter**
+**階段一：隻用 Formatter**
 
 ```bash
 # 用 Biome 替換 Prettier
@@ -144,7 +144,7 @@ pnpm add -D @biomejs/biome
 
 確認沒問題後移除 ESLint 相關依賴。
 
-## 目前的限制
+## 目前的限製
 
 - Vue/Svelte 支援還不成熟
 - 自定義規則能力遠不如 ESLint（不能寫外掛）

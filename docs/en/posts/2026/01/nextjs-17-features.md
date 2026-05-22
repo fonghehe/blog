@@ -1,6 +1,6 @@
 ---
 title: "Next.js 17 New Features Overview"
-date: 2026-01-27 10:00:00
+date: 2026-01-27 17:01:38
 tags:
   - React
 readingTime: 3

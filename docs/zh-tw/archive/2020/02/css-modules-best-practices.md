@@ -32,7 +32,7 @@ Scoped CSS 的問題：
 - 子元件根元素會同時有 scoped 和非 scoped 樣式
 - 深度選擇器（`/deep/`、`::v-deep`）容易被濫用
 
-## CSS Modules 基礎配置
+## CSS Modules 基礎設定
 
 ```vue
 <template>

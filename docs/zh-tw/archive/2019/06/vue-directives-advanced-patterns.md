@@ -4,11 +4,11 @@ date: 2019-06-24 16:31:12
 tags:
   - Vue
 readingTime: 5
-description: "Vue 內建指令（v-if、v-for、v-model）大家都很熟悉，但實際專案中我們經常需要直接操作 DOM 的場景——自動聚焦、按鈕許可權控制、防抖、圖片懶載入等。這時候自定義指令就派上用場了。"
+description: "Vue 內建指令（v-if、v-for、v-model）大家都很熟悉，但實際專案中我們經常需要直接操作 DOM 的場景——自動聚焦、按鈕許可權控製、防抖、圖片懶載入等。這時候自定義指令就派上用場了。"
 wordCount: 998
 ---
 
-Vue 內建指令（v-if、v-for、v-model）大家都很熟悉，但實際專案中我們經常需要直接操作 DOM 的場景——自動聚焦、按鈕許可權控制、防抖、圖片懶載入等。這時候自定義指令就派上用場了。
+Vue 內建指令（v-if、v-for、v-model）大家都很熟悉，但實際專案中我們經常需要直接操作 DOM 的場景——自動聚焦、按鈕許可權控製、防抖、圖片懶載入等。這時候自定義指令就派上用場了。
 
 這篇文章記錄了我在實際專案中用過的幾個自定義指令，從簡單到複雜，把踩過的坑也一併分享出來。
 
@@ -16,11 +16,11 @@ Vue 內建指令（v-if、v-for、v-model）大家都很熟悉，但實際專案
 
 先回顧一下 Vue 2.x 自定義指令的五個鉤子：
 
-- **bind**：指令第一次繫結到元素時呼叫（只調用一次）
+- **bind**：指令第一次繫結到元素時呼叫（隻調用一次）
 - **inserted**：被繫結元素插入父節點時呼叫（父節點存在即可，不一定已被插入文件）
 - **update**：所在元件的 VNode 更新時呼叫（可能發生在子 VNode 更新之前）
 - **componentUpdated**：所在元件的 VNode 及其子 VNode 全部更新後呼叫
-- **unbind**：指令與元素解綁時呼叫（只調用一次）
+- **unbind**：指令與元素解綁時呼叫（隻調用一次）
 
 每個鉤子都有 `el`、`binding`、`vnode`、`oldVnode` 等引數。用一張對比圖來理解：
 
@@ -51,7 +51,7 @@ Vue.directive('focus', {
 </template>
 ```
 
-但實際場景更復雜——比如彈窗裡的輸入框需要在彈窗開啟後才聚焦。`inserted` 只在元素插入 DOM 時觸發一次，如果元素一開始是 `v-if="false"`，那切換為 `true` 時確實會觸發。但如果用的是 `v-show`，元素一直存在於 DOM 中，`inserted` 不會再次觸發。
+但實際場景更復雜——比如彈窗裡的輸入框需要在彈窗開啟後才聚焦。`inserted` 隻在元素插入 DOM 時觸發一次，如果元素一開始是 `v-if="false"`，那切換為 `true` 時確實會觸發。但如果用的是 `v-show`，元素一直存在於 DOM 中，`inserted` 不會再次觸發。
 
 這種情況需要用 `update` 或 `componentUpdated`：
 
@@ -77,9 +77,9 @@ Vue.directive('focus', {
 </template>
 ```
 
-## v-permission：按鈕許可權控制
+## v-permission：按鈕許可權控製
 
-後臺管理系統中最常見的需求：根據使用者許可權控制按鈕的顯示。有人用 `v-if`，但 `v-if` 需要在每個元件裡引入許可權判斷邏輯，而指令可以做到全域性統一。
+後臺管理系統中最常見的需求：根據使用者許可權控製按鈕的顯示。有人用 `v-if`，但 `v-if` 需要在每個元件裡引入許可權判斷邏輯，而指令可以做到全域性統一。
 
 ```javascript
 // directives/permission.js
@@ -159,7 +159,7 @@ Vue.directive('permission', {
 
 ## v-debounce：防抖指令
 
-搜尋輸入框的防抖控制，避免使用者每輸入一個字元就發一次請求：
+搜尋輸入框的防抖控製，避免使用者每輸入一個字元就發一次請求：
 
 ```javascript
 Vue.directive('debounce', {
@@ -330,7 +330,7 @@ import directives from './directives'
 Vue.use(directives)
 ```
 
-這樣做的好處是所有指令統一管理，新增指令只需要在 `directives` 目錄加檔案並匯出即可。
+這樣做的好處是所有指令統一管理，新增指令隻需要在 `directives` 目錄加檔案並匯出即可。
 
 ## 小結
 

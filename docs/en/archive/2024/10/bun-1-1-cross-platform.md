@@ -1,6 +1,6 @@
 ---
 title: "Bun 1.1 Cross-Platform Runtime"
-date: 2024-10-15 10:00:00
+date: 2024-10-15 18:29:06
 tags:
   - Frontend
 readingTime: 2

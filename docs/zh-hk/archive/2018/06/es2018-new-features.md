@@ -1,5 +1,5 @@
 ---
-title: "ES2018 主要新特性速覽"
+title: "ES2018 主要新特性速覽：特性解讀與遷移建議"
 date: 2018-06-02 16:13:59
 tags:
   - 前端
@@ -37,7 +37,7 @@ const { role, ...userWithoutRole } = user;
 // userWithoutRole = { name: 'Alice', age: 25 }
 ```
 
-之前只有數組支持，對象 spread 是 ES2018 才正式進入標準。
+之前隻有數組支援，對象 spread 是 ES2018 才正式進入標準。
 
 ## 異步迭代（for await...of）
 
@@ -76,7 +76,7 @@ const html = '<div>\n  content\n</div>'
 /<div>(.*)<\/div>/s.test(html)  // true（之前需要 [\s\S]）
 
 // 後行斷言
-/(?<=\$)\d+/.exec('$100')  // 匹配 100（之前只有先行斷言）
+/(?<=\$)\d+/.exec('$100')  // 匹配 100（之前隻有先行斷言）
 ```
 
 ## 小結

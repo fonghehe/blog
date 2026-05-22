@@ -150,11 +150,11 @@ const inputRef = useTemplateRef < HTMLInputElement > "myInput";
 以及 `watch` 的 `once` 選項：
 
 ```typescript
-// 只監聽一次，觸發後自動停止
+// 隻監聽一次，觸發後自動停止
 watch(
   user,
   (newUser) => {
-    // 只在用户第一次登錄時執行
+    // 隻在用户第一次登錄時執行
     trackFirstLogin(newUser);
   },
   { once: true },

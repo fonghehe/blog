@@ -4,15 +4,15 @@ date: 2020-10-29 11:00:42
 tags:
   - JavaScript
 readingTime: 2
-description: "JavaScript BigInt 高精度计算这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 290
+description: "JavaScript BigInt による高精度演算についてはコミュニティで何度も議論されてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。この記事では最新バージョンに基づいて再整理します。"
+wordCount: 464
 ---
 
-JavaScript BigInt 高精度计算这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+JavaScript BigInt による高精度演算については、コミュニティで何度も議論されてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。本記事では最新バージョンに基づいて再整理します。
 
 ## はじめに
 
-先来看基本的实现方式：
+基本的な実装方法を見てみましょう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使用方法を示しています。実際のプロジェクトでは、エラー処理と境界条件も考慮する必要があります。
 
 ## ソースコード解析
 
-在这个基础上，我们可以进一步优化：
+この基盤の上で、さらに最適化することができます：
 
 ```javascript
 :root {
@@ -63,11 +63,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模プロジェクトで非常に有用であり、保守コストを大幅に削減できます。
 
 ## 実際のシナリオへの応用
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使用方法はもう少し複雑です：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -92,11 +92,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+この方法により、コードのテスト容易性と拡張性が向上しました。
 
 ## 最適化のコツ
 
-以下是一个完整的示例：
+以下は完全なサンプルです：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -120,10 +120,10 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理に注意してください。これは本番環境で非常に重要です。
 
 ## まとめ
 
-- JavaScript BigInt 高精度计算不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
+- JavaScript BigInt による高精度演算は銀の弾丸ではありません。プロジェクトの規模や技術スタックに応じて選択する必要があります。
+- API を暗記するよりも、基礎となる原理を理解する方が重要です。
+- 本番環境で使用する前に、必ず互換性の検証を行ってください。

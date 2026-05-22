@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 6.0 泛型改進"
-date: 2025-11-10 10:00:00
+title: "TypeScript 6.0 泛型實踐：真實專案中型別系统的简化與增強"
+date: 2025-11-10 15:44:21
 tags:
   - TypeScript
 readingTime: 2
@@ -93,7 +93,7 @@ const csvToJson = new Transform({
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
 實際項目中的用法會更復雜一些：
 

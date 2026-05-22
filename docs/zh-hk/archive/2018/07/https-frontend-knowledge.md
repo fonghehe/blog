@@ -1,5 +1,5 @@
 ---
-title: "HTTPS 工作原理和前端相關知識"
+title: "HTTPS 工作原理和前端相關知識：落地路徑與實戰建議"
 date: 2018-07-31 14:48:32
 tags:
   - HTTP
@@ -72,7 +72,7 @@ HTTPS = HTTP + TLS（傳輸層安全協議）
 mkcert -install
 mkcert localhost 127.0.0.1
 
-# webpack devServer 配置
+# webpack devServer 設定
 devServer: {
   https: {
     key: fs.readFileSync('./localhost-key.pem'),
@@ -84,7 +84,7 @@ devServer: {
 **Secure Cookie**
 
 ```javascript
-// 只在 HTTPS 下才發送這個 Cookie
+// 隻在 HTTPS 下才發送這個 Cookie
 document.cookie = "token=xxx; Secure; HttpOnly";
 ```
 
@@ -102,7 +102,7 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains
 ## 證書類型
 
 ```
-DV（域名驗證）：只驗證域名所有權，幾分鐘申請，免費
+DV（域名驗證）：隻驗證域名所有權，幾分鐘申請，免費
   - Let's Encrypt 就是這種
   - 適合個人網站、博客
 

@@ -131,7 +131,7 @@ meta.content = `width=device-width,initial-scale=${1 / dpr},maximum-scale=${1 / 
 }
 ```
 
-簡單，但只適合矩形，圓角支援不好。
+簡單，但隻適合矩形，圓角支援不好。
 
 ## 實際專案怎麼選
 

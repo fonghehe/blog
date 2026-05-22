@@ -1,5 +1,5 @@
 ---
-title: "React useReducer 狀態管理詳解"
+title: "React useReducer 進階：與 Context 组合的企業級實踐"
 date: 2020-02-20 10:12:00
 tags:
   - React
@@ -89,9 +89,9 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
-## 性能對比
+## 效能對比
 
 我們可以通過以下方式來改進：
 

@@ -1,6 +1,6 @@
 ---
 title: "LLM 驱动的 UI 自动生成"
-date: 2026-01-06 10:00:00
+date: 2026-01-06 15:40:17
 tags:
   - 工程化
 readingTime: 3

@@ -4,11 +4,11 @@ date: 2020-05-28 16:10:29
 tags:
   - Vue
 readingTime: 3
-description: "之前写了一篇测试实践指南，这篇专门针对 Vue 组件的单元测试深入展开。管理后台项目里有 200+ 组件，要保证重构时不 break，测试必须跟上。"
-wordCount: 171
+description: "以前テスト実践ガイドを書きましたが、この記事では Vue コンポーネントの単体テストに特化して深く掘り下げます。管理画面のプロジェクトには 200 以上のコンポーネントがあり、リファクタリング時に壊れないようにするには、テストを整備しておく必要があります。"
+wordCount: 331
 ---
 
-之前写了一篇测试实践指南，这篇专门针对 Vue 组件的单元测试深入展开。管理后台项目里有 200+ 组件，要保证重构时不 break，测试必须跟上。
+以前テスト実践ガイドを書きましたが、この記事では Vue コンポーネントの単体テストに特化して深く掘り下げます。管理画面のプロジェクトには 200 以上のコンポーネントがあり、リファクタリング時に壊れないようにするには、テストを整備しておく必要があります。
 
 ## 環境構築
 
@@ -36,14 +36,14 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
-  // 覆盖率
+  // カバレッジ
   collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov'],
 };
 ```
 
-## 测试纯展示组件
+## 純粋な表示コンポーネントのテスト
 
 ```vue
 <!-- Tag.vue -->
@@ -109,7 +109,7 @@ describe('Tag', () => {
 });
 ```
 
-## 测试表单组件
+## フォームコンポーネントのテスト
 
 ```typescript
 // __tests__/SearchForm.test.ts
@@ -157,7 +157,7 @@ describe('SearchForm', () => {
 });
 ```
 
-## 测试异步数据组件
+## 非同期データコンポーネントのテスト
 
 ```typescript
 // __tests__/UserList.test.ts
@@ -226,7 +226,7 @@ describe('UserList', () => {
 });
 ```
 
-## 测试 Vuex 集成
+## Vuex 統合のテスト
 
 ```typescript
 import { mount, createLocalVue } from '@vue/test-utils';
@@ -265,10 +265,10 @@ describe('UserCard 与 Vuex', () => {
 });
 ```
 
-## 测试技巧
+## テストのヒント
 
 ```typescript
-// 1. 测试双向绑定 v-model
+// 1. 双方向バインディング v-model のテスト
 it('支持 v-model', async () => {
   const wrapper = mount(MyInput, {
     propsData: { value: '初始值' },
@@ -278,15 +278,15 @@ it('支持 v-model', async () => {
   expect(wrapper.emitted('input')[0][0]).toBe('新值');
 });
 
-// 2. 测试 ref 访问
+// 2. ref アクセスのテスト
 it('通过 ref 调用组件方法', () => {
   const wrapper = mount(MyForm);
   const form = wrapper.vm as any;
   form.validate();
-  // 验证 validate 被调用的效果
+  // validate が呼び出された効果を検証
 });
 
-// 3. 定时器 Mock
+// 3. タイマーのモック
 jest.useFakeTimers();
 
 it('防抖后才触发搜索', async () => {
@@ -305,8 +305,8 @@ it('防抖后才触发搜索', async () => {
 
 ## まとめ
 
-- Vue 组件测试用 `@vue/test-utils`，和 Jest 配合很好
-- 测试行为（渲染、事件、交互），不要测试实现细节
-- 异步组件用 `flushPromises()` 等待更新
-- Mock API 和定时器，让测试结果确定可控
-- 不需要 100% 覆盖，核心交互和边界情况优先
+- Vue コンポーネントのテストには `@vue/test-utils` を使用し、Jest との相性が良い
+- 動作（レンダリング、イベント、インタラクション）をテストし、実装の詳細をテストしない
+- 非同期コンポーネントは `flushPromises()` で更新を待つ
+- API とタイマーをモック化し、テスト結果を確実で制御可能にする
+- 100% カバレッジは不要で、コアなインタラクションと境界条件を優先する

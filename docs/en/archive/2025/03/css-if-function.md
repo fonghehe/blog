@@ -1,6 +1,6 @@
 ---
-title: "CSS if() Function Proposal"
-date: 2025-03-17 10:00:00
+title: "CSS if() Function Proposal: 浏览器实现进展 & Syntax更新"
+date: 2025-03-17 14:31:08
 tags:
   - CSS
 readingTime: 1

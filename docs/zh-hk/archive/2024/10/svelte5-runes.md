@@ -1,6 +1,6 @@
 ---
 title: "Svelte 5 Runes：響應式編程的範式轉變"
-date: 2024-10-12 10:00:00
+date: 2024-10-12 11:26:03
 tags:
   - Svelte
 readingTime: 2
@@ -27,7 +27,7 @@ Svelte 4 的響應式是隱式的——賦值即觸發更新：
 <button on:click={increment}>{count}</button>
 ```
 
-這種方式簡潔，但在複雜場景下有侷限：跨文件共享狀態、派生計算、副作用管理都需要額外的機制（stores、$ 語法糖）。
+這種方式簡潔，但在複雜場景下有侷限：跨檔案共享狀態、派生計算、副作用管理都需要額外的機製（stores、$ 語法糖）。
 
 Svelte 5 引入 Runes，響應式變為顯式聲明：
 
@@ -99,7 +99,7 @@ $effect(() => {
   };
 });
 
-// 只運行一次（類似 onMount）
+// 隻運行一次（類似 onMount）
 $effect(() => {
   initAnalytics();
   return () => cleanupAnalytics();
@@ -166,7 +166,7 @@ Vue：    ref/computed/watch — 組合式 API
 Svelte： $state/$derived/$effect — Runes 系統
 ```
 
-Runes 的優勢在於：沒有 hooks 的規則限制（不能在條件語句中使用），沒有 ref 的 `.value` 煩惱。
+Runes 的優勢在於：沒有 hooks 的規則限製（不能在條件語句中使用），沒有 ref 的 `.value` 煩惱。
 
 ## TypeScript 集成
 
@@ -208,6 +208,6 @@ Svelte 5 完全向後兼容 Svelte 4 語法，可以漸進遷移：
 
 - Runes 讓 Svelte 的響應式從隱式變為顯式，可預測性更好
 - `$state` / `$derived` / `$effect` 覆蓋狀態、派生、副作用三大場景
-- 跨組件狀態共享不再需要單獨的 store 機制
+- 跨組件狀態共享不再需要單獨的 store 機製
 - 完全向後兼容，支持漸進遷移
 - TypeScript 集成度高，類型推斷自然

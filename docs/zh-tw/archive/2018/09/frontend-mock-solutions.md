@@ -153,7 +153,7 @@ export const handlers = [
 在 `vue.config.js` 裡，開發環境根據環境變數決定是否啟用 Mock.js：
 
 ```javascript
-// 只在開發環境載入 mock
+// 隻在開發環境載入 mock
 if (process.env.VUE_APP_MOCK === "true") {
   require("./src/mock");
 }

@@ -1,6 +1,6 @@
 ---
-title: "Rspack 2.0 完全ガイド"
-date: 2025-08-08 10:00:00
+title: "Rspack 2.0 完全ガイド：Module Federation 2.0 与持久缓存"
+date: 2025-08-08 10:42:19
 tags:
   - フロントエンド
 readingTime: 2

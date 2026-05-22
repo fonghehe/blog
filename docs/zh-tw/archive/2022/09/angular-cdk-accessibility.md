@@ -10,7 +10,7 @@ wordCount: 298
 
 無障礙訪問（Accessibility，a11y）是很多前端團隊長期欠債的領域。Angular CDK 提供了一套完善的 A11y 工具，包括焦點管理、鍵盤導航、螢幕閱讀器支援等。這篇文章介紹 CDK A11y 模組的核心 API。
 
-## 安裝與配置
+## 安裝與設定
 
 ```bash
 npm install @angular/cdk

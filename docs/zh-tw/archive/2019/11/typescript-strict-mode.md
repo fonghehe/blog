@@ -271,7 +271,7 @@ function processAny(data: any) {
   data.foo.bar; // 不報錯，但執行時可能出錯
 }
 
-// unknown：強制型別檢查
+// unknown：強製型別檢查
 function processUnknown(data: unknown) {
   // data.foo.bar; // 報錯：'data' is of type 'unknown'
 
@@ -338,7 +338,7 @@ function isApiResponse<T>(value: unknown): value is ApiResponse<T> {
 ## 小結
 
 - `strict: true` 包含 7 個嚴格型別檢查選項
-- `noImplicitAny` 禁止隱式 any，`strictNullChecks` 強制處理 null/undefined
+- `noImplicitAny` 禁止隱式 any，`strictNullChecks` 強製處理 null/undefined
 - 建議漸進式啟用：先 noImplicitAny，再 strictNullChecks，最後全部開啟
 - 使用 `unknown` 替代 `any`，提高型別安全性
 - 型別守衛（type guard）是處理聯合型別的關鍵工具

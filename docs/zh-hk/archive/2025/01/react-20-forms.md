@@ -1,10 +1,10 @@
 ---
-title: "React 20 原生表單支持"
-date: 2025-01-07 10:00:00
+title: "React 20 原生表單支援：落地路徑與實戰建議"
+date: 2025-01-07 13:01:38
 tags:
   - React
 readingTime: 2
-description: "React 20 終於補齊了表單處理的最後一塊拼圖。新增的原生表單組件和 hook 讓你可以徹底告別第三方表單庫，同時獲得更好的 DX 和性能。"
+description: "React 20 終於補齊了表單處理的最後一塊拼圖。新增的原生表單組件和 hook 讓你可以徹底告別第三方表單庫，同時獲得更好的 DX 和效能。"
 wordCount: 394
 ---
 
@@ -107,7 +107,7 @@ function RegistrationForm() {
 
 `useField` 的 `inputProps` 自動綁定 `onChange`、`onBlur`、`value` 等屬性，減少了大量樣板代碼。異步驗證的 debounce 也是開箱即用。
 
-## 表單數組與嵌套對象
+## 表單數組與巢狀對象
 
 複雜表單中最難處理的是動態數組和嵌套結構。React 20 的 `useFieldArray` 解決了這個問題：
 

@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 5.x 裝飾器正式版"
+title: "TypeScript 5.x 裝飾器正式版：落地路徑與實戰建議"
 date: 2024-01-28 15:09:50
 tags:
   - TypeScript
@@ -147,7 +147,7 @@ user.age = 25; // 打印：age 從 0 變為 25
 // tsconfig.json
 {
   "compilerOptions": {
-    // 新裝飾器（Stage 3）：不需要任何額外配置
+    // 新裝飾器（Stage 3）：不需要任何額外設定
     // 舊裝飾器：需要這個選項
     // "experimentalDecorators": true
   }

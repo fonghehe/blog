@@ -5,24 +5,24 @@ tags:
   - Angular
   - TypeScript
 readingTime: 2
-description: "Angular Universal 讓 Angular 應用可以在服務端預渲染 HTML，解決兩個核心問題：SEO（搜索引擎抓取 SPA 困難）和首屏性能（FCP 指標優化）。Angular 12 的 Universal 已經相當成熟，這篇文章覆蓋從集成到優化的完整流程。"
+description: "Angular Universal 讓 Angular 應用可以在服務端預渲染 HTML，解決兩個核心問題：SEO（搜尋引擎抓取 SPA 困難）和首屏效能（FCP 指標優化）。Angular 12 的 Universal 已經相當成熟，這篇文章覆蓋從集成到優化的完整流程。"
 wordCount: 327
 ---
 
-Angular Universal 讓 Angular 應用可以在服務端預渲染 HTML，解決兩個核心問題：SEO（搜索引擎抓取 SPA 困難）和首屏性能（FCP 指標優化）。Angular 12 的 Universal 已經相當成熟，這篇文章覆蓋從集成到優化的完整流程。
+Angular Universal 讓 Angular 應用可以在服務端預渲染 HTML，解決兩個核心問題：SEO（搜尋引擎抓取 SPA 困難）和首屏效能（FCP 指標優化）。Angular 12 的 Universal 已經相當成熟，這篇文章覆蓋從集成到優化的完整流程。
 
 ## 快速集成
 
 ```bash
 ng add @nguniversal/express-engine
 
-# 生成的文件：
+# 生成的檔案：
 # ├── server.ts                  # Express 服務器
 # ├── src/app/app.server.module.ts  # 服務端 AppModule
 # └── src/main.server.ts         # 服務端入口
 ```
 
-生成的 `server.ts` 開箱即用，無需大量配置：
+生成的 `server.ts` 開箱即用，無需大量設定：
 
 ```typescript
 // server.ts（簡化版）
@@ -184,7 +184,7 @@ app.get("*", (req, res) => {
 # 構建時預渲染指定路由
 npm run prerender
 
-# angular.json 配置預渲染路由
+# angular.json 設定預渲染路由
 {
   "prerender": {
     "routes": ["/", "/about", "/blog/1", "/blog/2"]
@@ -196,4 +196,4 @@ npm run prerender
 
 ## 總結
 
-Angular Universal 的集成成本在 Angular 12 已經相當低——`ng add` 一行命令就能搭好骨架。關鍵是要處理好平台差異（`isPlatformBrowser`）和 `TransferState` 數據傳遞。對內容型頁面（博客、商品詳情）來説，SSR 或預渲染帶來的 SEO 和首屏性能提升非常可觀。
+Angular Universal 的集成成本在 Angular 12 已經相當低——`ng add` 一行命令就能搭好骨架。關鍵是要處理好平臺差異（`isPlatformBrowser`）和 `TransferState` 數據傳遞。對內容型頁面（博客、商品詳情）來説，SSR 或預渲染帶來的 SEO 和首屏效能提升非常可觀。

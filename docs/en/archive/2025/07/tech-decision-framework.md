@@ -1,6 +1,6 @@
 ---
 title: "A Tech Decision Framework: How to Make Technical Choices for Your Team"
-date: 2025-07-10 10:00:00
+date: 2025-07-10 17:04:41
 tags:
   - Frontend
 readingTime: 2

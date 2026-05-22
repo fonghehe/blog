@@ -1,5 +1,5 @@
 ---
-title: "JavaScript 數組高級方法"
+title: "JavaScript 數組高級方法：落地路徑與實戰建議"
 date: 2019-08-20 11:02:36
 tags:
   - JavaScript

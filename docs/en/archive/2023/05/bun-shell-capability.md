@@ -1,5 +1,5 @@
 ---
-title: "Bun Shell Scripting Capabilities"
+title: "Bun Shell First Look: JavaScript 运行时内置命令行Capability"
 date: 2023-05-05 15:28:59
 tags:
   - Frontend

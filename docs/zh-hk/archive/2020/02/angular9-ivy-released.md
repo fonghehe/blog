@@ -1,5 +1,5 @@
 ---
-title: "Angular 9 正式發佈：Ivy 引擎帶來的性能革命"
+title: "Angular 9 正式發佈：Ivy 引擎帶來的效能革命"
 date: 2020-02-21 15:24:12
 tags:
   - Angular
@@ -95,7 +95,7 @@ this.container.createComponent(MyComponent);
 // 'platform': 多個 Angular 應用之間共享同一實例（微前端場景）
 ```
 
-## TestBed 性能提升
+## TestBed 效能提升
 
 Angular 9 的 TestBed 在 Ivy 下不再每次都重新編譯組件，測試套件運行速度顯著提升：
 

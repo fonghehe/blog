@@ -1,4 +1,4 @@
-import { defineConfig } from "vitepress";
+import { defineConfig, withBase } from "vitepress";
 import { VitePWA } from "vite-plugin-pwa";
 import { buildRSS } from "./rss";
 import { zh } from "./locales/zh";
@@ -51,6 +51,7 @@ export default defineConfig({
         ? ["en/**/*.md", "ja/**/*.md"]
         : [],
   head: [
+    ["link", { rel: "icon", href: "/blog/favicon.ico" }],
     ["meta", { property: "og:type", content: "website" }],
     ["meta", { property: "og:title", content: "前端成长记录" }],
     [
@@ -115,6 +116,7 @@ export default defineConfig({
   },
   locales: allLocales,
   themeConfig: {
+    logo: "/logo.png",
     search: {
       provider: "local",
     },

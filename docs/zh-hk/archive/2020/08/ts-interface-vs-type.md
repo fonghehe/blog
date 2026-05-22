@@ -1,10 +1,10 @@
 ---
-title: "TypeScript 接口與類型別名"
+title: "TypeScript 介面與類型別名：落地路徑與實戰建議"
 date: 2020-08-26 09:54:29
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 接口與類型別名是前端開發中一個值得關注的話題。本文從實際項目經驗出發，探討其核心概念和最佳實踐。"
+description: "TypeScript 介面與類型別名是前端開發中一個值得關注的話題。本文從實際項目經驗出發，探討其核心概念和最佳實踐。"
 wordCount: 292
 ---
 
@@ -130,5 +130,5 @@ app.mount('#root')
 
 - 團隊協作中保持代碼風格一致，降低維護成本
 - 持續關注社區動態，及時更新技術方案
-- 性能優化需要基於實際數據，避免過度優化
+- 效能優化需要基於實際數據，避免過度優化
 - TypeScript 接口與類型別名的核心在於理解底層原理，而非僅僅記住 API

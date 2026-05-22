@@ -16,7 +16,7 @@ wordCount: 493
 
 在 Hooks 之前，有幾個長期存在的痛點：
 
-1. **邏輯複用難**：要在多個組件間共享有狀態的邏輯，需要 HOC 或 render props，嵌套層級深
+1. **邏輯複用難**：要在多個組件間共享有狀態的邏輯，需要 HOC 或 render props，巢狀層級深
 2. **複雜組件難理解**：生命週期分散了相關的邏輯（比如訂閲和取消訂閲分散在 componentDidMount 和 componentWillUnmount）
 3. **class 的 this 讓人困惑**：新手經常忘記綁定 this
 
@@ -96,7 +96,7 @@ function UserProfile({ userId }) {
     return () => {
       // 清理：取消請求、清除訂閲等
     };
-  }, [userId]); // 依賴數組：只有 userId 變化時才重新執行
+  }, [userId]); // 依賴數組：隻有 userId 變化時才重新執行
 
   if (loading) return <div>Loading...</div>;
   if (!user) return null;
@@ -113,7 +113,7 @@ useEffect(() => {
 });
 
 useEffect(() => {
-  // 只在 mount 時執行一次（相當於 componentDidMount）
+  // 隻在 mount 時執行一次（相當於 componentDidMount）
 }, []);
 
 useEffect(() => {
@@ -167,7 +167,7 @@ function UserAvatar({ userId }) {
 聽説 Vue 3 也在考慮類似的 Composition API，和 Hooks 有很多相似的設計思路。兩者都是：
 
 - 把相關邏輯放在一起，而非分散在生命週期
-- 支持邏輯複用，不需要嵌套
+- 支援邏輯複用，不需要巢狀
 
 ```javascript
 // Vue 3 Composition API（預覽，2018年還沒有）

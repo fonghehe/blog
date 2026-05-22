@@ -1,5 +1,5 @@
 ---
-title: "React Server Components 深入"
+title: "React Server Components 深入：落地路徑與實戰建議"
 date: 2023-01-06 15:28:47
 tags:
   - React
@@ -13,7 +13,7 @@ React Server Components (RSC) 不是 SSR 的升級版，而是一個全新的渲
 
 ## Server Components 與 Client Components 的邊界
 
-默認情況下，App Router 中所有組件都是 Server Component。只有顯式標記 `"use client"` 的組件才會在客户端運行。這個邊界決定了代碼能使用哪些能力。
+默認情況下，App Router 中所有組件都是 Server Component。隻有顯式標記 `"use client"` 的組件才會在客户端運行。這個邊界決定了代碼能使用哪些能力。
 
 ```tsx
 // components/UserList.tsx - Server Component（默認）
@@ -133,7 +133,7 @@ import { saveData } from './actions'
 <Button action={saveData} /> // Server Action 可以序列化
 ```
 
-這個限制看似苛刻，實際上是 RSC 安全模型的基礎。Server Component 運行在服務端，它的函數引用在客户端根本不存在。
+這個限製看似苛刻，實際上是 RSC 安全模型的基礎。Server Component 運行在服務端，它的函數引用在客户端根本不存在。
 
 ## Bundle 體積的實際影響
 
@@ -153,7 +153,7 @@ export async function PostContent({ slug }: { slug: string }) {
 }
 
 // 客户端 bundle 中不包含 @mdx-js/mdx、prismjs、@prisma/client
-// 只保留 React 運行時 + 序列化後的渲染結果
+// 隻保留 React 運行時 + 序列化後的渲染結果
 ```
 
 在實際項目中，僅將重型依賴（如圖表庫、編輯器、PDF 處理）移入 Server Component，就能減少 30%-60% 的客户端 bundle 體積。
@@ -161,7 +161,7 @@ export async function PostContent({ slug }: { slug: string }) {
 ## 小結
 
 - RSC 不是 SSR，組件在服務端運行並序列化為 React 樹，而非 HTML 字符串
-- `"use client"` 是 opt-in 機制，默認就是 Server Component，這是正確的默認值
-- 序列化限制是安全模型的核心，Server Action 穿透了 Server/Client 邊界
+- `"use client"` 是 opt-in 機製，默認就是 Server Component，這是正確的默認值
+- 序列化限製是安全模型的核心，Server Action 穿透了 Server/Client 邊界
 - `Suspense` + 流式渲染是 RSC 配套的 UX 解決方案，優於傳統 SSR 的全有或全無
 - 重型依賴放 Server Component，客户端 bundle 體積可以顯著下降

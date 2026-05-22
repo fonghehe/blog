@@ -1,6 +1,6 @@
 ---
 title: "Edge-Native Frontend Architecture"
-date: 2026-03-20 10:00:00
+date: 2026-03-20 18:14:51
 tags:
   - Frontend
 readingTime: 2

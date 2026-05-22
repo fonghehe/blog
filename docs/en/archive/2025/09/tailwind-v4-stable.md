@@ -1,6 +1,6 @@
 ---
-title: "Tailwind CSS v4 Stable Release"
-date: 2025-09-09 10:00:00
+title: "Tailwind CSS v4 Migration Guide:  v3 UpgradeCompletePath"
+date: 2025-09-09 10:23:00
 tags:
   - CSS
   - Engineering

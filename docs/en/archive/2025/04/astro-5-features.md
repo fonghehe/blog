@@ -1,6 +1,6 @@
 ---
 title: "Astro 5.0 New Features"
-date: 2025-04-08 10:00:00
+date: 2025-04-08 12:02:39
 tags:
   - React
 readingTime: 2

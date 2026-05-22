@@ -15,7 +15,7 @@ wordCount: 242
 ```
 GET /users/1
 → { id: 1, name, email, avatar, phone, address, preferences... }
-// 返回了 50 個字段，但頁面只需要 name 和 avatar（Over-fetching）
+// 返回了 50 個字段，但頁面隻需要 name 和 avatar（Over-fetching）
 
 GET /users/1  → 用户信息
 GET /users/1/orders → 訂單列表
@@ -31,8 +31,8 @@ GET /users/1/orders/100/items → 訂單詳情
 # 查詢
 query GetUserWithOrders {
   user(id: 1) {
-    name # 只要 name
-    avatar # 只要 avatar
+    name # 隻要 name
+    avatar # 隻要 avatar
     orders(limit: 5) {
       id
       total
@@ -167,7 +167,7 @@ export default {
 
 - 簡單的 CRUD，數據結構穩定
 - 團隊對 GraphQL 不熟悉
-- 需要文件上傳（GraphQL 處理麻煩）
+- 需要檔案上傳（GraphQL 處理麻煩）
 
 ## 小結
 

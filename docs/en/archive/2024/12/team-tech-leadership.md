@@ -1,6 +1,6 @@
 ---
 title: "A Year as Frontend Tech Lead: Technical Management in an 8-Person Team"
-date: 2024-12-15 10:00:00
+date: 2024-12-15 17:49:26
 tags:
   - Frontend
 readingTime: 3

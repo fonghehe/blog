@@ -1,5 +1,5 @@
 ---
-title: "前端監控 Sentry 接入實踐"
+title: "Sentry 前端監控進階 2020：效能追蹤與 Release 管理"
 date: 2019-10-24 11:00:27
 tags:
   - 效能最佳化

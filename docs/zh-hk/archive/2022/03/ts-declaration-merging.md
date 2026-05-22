@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 聲明合併"
+title: "TypeScript 聲明合併：落地路徑與實戰建議"
 date: 2022-03-09 16:06:02
 tags:
   - TypeScript

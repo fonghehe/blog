@@ -121,7 +121,7 @@ try {
 window.addEventListener("unhandledrejection", (event) => {
   console.error("未處理的 Promise 拒絕:", event.reason);
   Sentry.captureException(event.reason);
-  event.preventDefault(); // 阻止預設的控制台警告
+  event.preventDefault(); // 阻止預設的控製臺警告
 });
 
 // 捕獲同步錯誤（執行時錯誤）

@@ -116,7 +116,7 @@ function App() {
 
 1. `startTransition` 回調裏的更新必須是同步的，不能包裹異步操作
 2. Transition 不能用於受控輸入框的值更新
-3. 目前 `useTransition` 只在 Concurrent 模式下生效，Legacy 模式下會退化為同步更新
+3. 目前 `useTransition` 隻在 Concurrent 模式下生效，Legacy 模式下會退化為同步更新
 
 ## 小結
 

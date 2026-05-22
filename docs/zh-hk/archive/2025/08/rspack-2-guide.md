@@ -1,6 +1,6 @@
 ---
-title: "Rspack 2.0 完整指南"
-date: 2025-08-08 10:00:00
+title: "Rspack 2.0 完整指南：Module Federation 2.0 與持久快取"
+date: 2025-08-08 10:42:19
 tags:
   - 前端
 readingTime: 2

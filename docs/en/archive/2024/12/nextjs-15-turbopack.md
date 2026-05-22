@@ -1,6 +1,6 @@
 ---
-title: "Next.js 15 Turbopack as Default"
-date: 2024-12-09 10:00:00
+title: "Next.js 15 Turbopack Stable Practice:  Webpack MigrationRealData"
+date: 2024-12-09 14:43:20
 tags:
   - React
 readingTime: 2

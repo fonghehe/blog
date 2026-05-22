@@ -25,14 +25,14 @@ wordCount: 263
 
 加了 `keep-alive` 之後，路由元件切換時不會被銷燬，而是被快取，再次進入時直接複用。
 
-## 只快取部分路由
+## 隻快取部分路由
 
-大多數情況下，我們不想快取所有路由，只快取特定的幾個。
+大多數情況下，我們不想快取所有路由，隻快取特定的幾個。
 
 **方案一：include/exclude**
 
 ```html
-<!-- 只快取 UserList 和 OrderList -->
+<!-- 隻快取 UserList 和 OrderList -->
 <keep-alive :include="['UserList', 'OrderList']">
   <router-view />
 </keep-alive>
@@ -91,7 +91,7 @@ export default {
 };
 ```
 
-注意：被快取的元件，再次進入時**不會觸發** `created` 和 `mounted`，只觸發 `activated`。
+注意：被快取的元件，再次進入時**不會觸發** `created` 和 `mounted`，隻觸發 `activated`。
 
 ## 實際專案中的滾動恢復
 
@@ -119,6 +119,6 @@ export default {
 ## 小結
 
 - `keep-alive` 快取路由元件，避免重複銷燬和建立
-- 用路由 meta 的 `keepAlive` 欄位控制哪些路由需要快取
+- 用路由 meta 的 `keepAlive` 欄位控製哪些路由需要快取
 - 快取元件用 `activated`/`deactivated` 代替 `mounted`/`beforeDestroy`
 - 適合場景：列表頁返回時保持狀態、Tab 切換不重置

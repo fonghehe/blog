@@ -1,10 +1,10 @@
 ---
-title: "MSW Mock Service Worker 接口模擬"
+title: "MSW Mock Service Worker 介面模擬：落地路徑與實戰建議"
 date: 2020-07-22 09:33:52
 tags:
   - 測試
 readingTime: 2
-description: "在日常開發中，MSW Mock Service Worker 接口模擬的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+description: "在日常開發中，MSW Mock Service Worker 介面模擬的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
 wordCount: 295
 ---
 
@@ -36,7 +36,7 @@ describe('LoginForm', () => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 內部原理
 
@@ -88,7 +88,7 @@ describe('LoginForm', () => {
 
 這段代碼展示了基本的使用方式。實際項目中還需要考慮錯誤處理和邊界條件。
 
-## 性能對比
+## 效能對比
 
 在這個基礎上，我們可以進一步優化：
 
@@ -112,7 +112,7 @@ test.describe('用户登錄流程', () => {
 
 ## 小結
 
-- MSW Mock Service Worker 接口模擬不是銀彈，需要根據項目規模和技術棧選擇
+- MSW Mock Service Worker 介面模擬不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要
 - 生產環境使用前務必做好兼容性驗證
 - 團隊協作中約定和文檔比技術本身更重要

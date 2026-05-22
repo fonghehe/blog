@@ -1,6 +1,6 @@
 ---
-title: "Vue 3.5 響應式重構"
-date: 2024-09-19 10:00:00
+title: "Vue 3.5 響應式重构：響應式 Props 解构與 useTemplateRef"
+date: 2024-09-19 15:53:30
 tags:
   - Vue
 readingTime: 2
@@ -91,7 +91,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 

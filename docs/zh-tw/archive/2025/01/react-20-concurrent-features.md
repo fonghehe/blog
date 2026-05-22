@@ -1,6 +1,6 @@
 ---
 title: "React 20 併發特性成熟"
-date: 2025-01-20 10:00:00
+date: 2025-01-20 11:14:51
 tags:
   - React
 readingTime: 3
@@ -56,11 +56,11 @@ function SearchableProductList({ products }) {
 }
 ```
 
-React 20 的改進在於：transition 內的狀態更新可以中斷和恢復。當你連續快速輸入時，React 會丟棄中間的過時計算，只執行最後一次。
+React 20 的改進在於：transition 內的狀態更新可以中斷和恢復。當你連續快速輸入時，React 會丟棄中間的過時計算，隻執行最後一次。
 
 ## useDeferredValue 的自動記憶化
 
-`useDeferredValue` 在 React 20 中獲得了編譯器最佳化的支援。它不再簡單地延遲值傳遞，而是與 React Compiler 協作，只重新渲染真正需要更新的子樹。
+`useDeferredValue` 在 React 20 中獲得了編譯器最佳化的支援。它不再簡單地延遲值傳遞，而是與 React Compiler 協作，隻重新渲染真正需要更新的子樹。
 
 ```javascript
 import { useState, useDeferredValue, memo } from 'react';
@@ -102,7 +102,7 @@ function App() {
 ```javascript
 // React 20 新增：自定義比較邏輯
 const deferredQuery = useDeferredValue(query, {
-  // 只有當值變化超過 300ms 才認為是新的 deferred 值
+  // 隻有當值變化超過 300ms 才認為是新的 deferred 值
   timeoutMs: 300,
   // 自定義相等性檢查
   isEqual: (prev, next) => prev.trim() === next.trim(),
@@ -143,7 +143,7 @@ function DragDropBoard() {
 }
 ```
 
-Priority 級別：`Immediate` > `UserBlocking` > `Normal` > `Low` > `Idle`。在實際專案中，建議只在拖拽、遊戲、即時協作等對延遲敏感的場景中使用自定義優先順序。
+Priority 級別：`Immediate` > `UserBlocking` > `Normal` > `Low` > `Idle`。在實際專案中，建議隻在拖拽、遊戲、即時協作等對延遲敏感的場景中使用自定義優先順序。
 
 ## 併發模式下的表單最佳化
 
@@ -180,7 +180,7 @@ function AsyncValidationInput() {
 ## 小結
 
 - useTransition 排程粒度更細，連續快速輸入時自動丟棄過時更新
-- useDeferredValue 支援自定義比較函式和超時控制，與 Compiler 協作最佳化渲染
-- Scheduler API 暴露底層優先順序控制，適合拖拽/遊戲等高互動場景
+- useDeferredValue 支援自定義比較函式和超時控製，與 Compiler 協作最佳化渲染
+- Scheduler API 暴露底層優先順序控製，適合拖拽/遊戲等高互動場景
 - 併發特性與 Actions v2、新表單 API 深度整合，形成完整的響應式體系
 - 併發模式不再是「實驗性功能」，而是 React 20 處理複雜互動的標準方案

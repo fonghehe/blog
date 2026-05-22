@@ -1,5 +1,5 @@
 ---
-title: "Trusted Types 防 XSS 攻擊"
+title: "Trusted Types 防 XSS 攻擊：落地路徑與實戰建議"
 date: 2022-06-29 15:09:11
 tags:
   - 前端
@@ -30,7 +30,7 @@ function setCSP(req, res, next) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 源碼分析
 

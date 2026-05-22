@@ -1,6 +1,6 @@
 ---
 title: "Frontend Agent Engineering: From Tool Calls to Autonomous Decisions"
-date: 2026-01-15 10:00:00
+date: 2026-01-15 14:49:26
 tags:
   - Frontend
 readingTime: 3

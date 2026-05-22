@@ -1,6 +1,6 @@
 ---
 title: "Angular 20.1：resource() API 完善與 Signal Forms 進展"
-date: 2025-07-02 10:00:00
+date: 2025-07-02 13:56:33
 tags:
   - Angular
   - JavaScript

@@ -1,6 +1,6 @@
 ---
-title: "Astro 5 View Transitions"
-date: 2025-12-16 10:00:00
+title: "Astro 5 View Transitions 實踐：真實專案中的頁面過渡最佳化"
+date: 2025-12-16 09:30:07
 tags:
   - React
 readingTime: 2

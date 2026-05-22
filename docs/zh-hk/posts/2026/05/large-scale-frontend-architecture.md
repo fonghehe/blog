@@ -40,7 +40,7 @@ wordCount: 923
 
 ### 主流方案對比
 
-| 方案                             | 運行時隔離    | 共享依賴       | 通信機制            | 適用場景         |
+| 方案                             | 運行時隔離    | 共享依賴       | 通信機製            | 適用場景         |
 | -------------------------------- | ------------- | -------------- | ------------------- | ---------------- |
 | Module Federation (Webpack/Vite) | ❌ 同一沙箱   | ✅ shared 配置 | 直接 import         | 同技術棧、強協作 |
 | qiankun / single-spa             | ✅ JS 沙箱    | ⚠️ 有限        | CustomEvent / props | 異構技術棧並存   |
@@ -49,7 +49,7 @@ wordCount: 923
 
 ### Module Federation 2.0 的工程實踐
 
-2026 年 Module Federation 已經成為同技術棧微前端的首選方案，Vite 通過 `@module-federation/vite` 原生支持：
+2026 年 Module Federation 已經成為同技術棧微前端的首選方案，Vite 通過 `@module-federation/vite` 原生支援：
 
 ```typescript
 // host-app/vite.config.ts
@@ -103,9 +103,9 @@ export default defineConfig({
 Module Federation 不提供樣式隔離。解決方案：
 
 ```typescript
-// 方案 A：CSS Modules 強制作用域
+// 方案 A：CSS Modules 強製作用域
 // 所有組件必須使用 <style module> 或 CSS Modules
-// 通過 lint 規則強制執行
+// 通過 lint 規則強製執行
 
 // 方案 B：運行時前綴
 // 在構建時給所有 class 添加應用標識前綴
@@ -122,7 +122,7 @@ const postcssConfig = {
 
 **2. 版本衝突**
 
-當 Host 用 Vue 3.5.0 而 Remote 用 Vue 3.4.0 時，`singleton: true` 會強制使用 Host 的版本。如果 Remote 使用了 3.5 不存在的 API 則會崩潰。
+當 Host 用 Vue 3.5.0 而 Remote 用 Vue 3.4.0 時，`singleton: true` 會強製使用 Host 的版本。如果 Remote 使用了 3.5 不存在的 API 則會崩潰。
 
 解決策略：
 
@@ -171,7 +171,7 @@ export const useUserStore = defineStore("shared-user", {
 
 ## 跨團隊協作的工程約束
 
-### 接口契約：Schema-First 開發
+### 介面契約：Schema-First 開發
 
 當多個團隊開發獨立部署的微前端時，組件間通信必須有明確的接口契約：
 
@@ -233,7 +233,7 @@ shared-ui/
 
 ```yaml
 # .github/CODEOWNERS
-# Shell 層：平台架構組審核
+# Shell 層：平臺架構組審核
 /apps/shell/                          @platform-arch-team
 /packages/shared-types/               @platform-arch-team
 
@@ -251,7 +251,7 @@ shared-ui/
 ```yaml
 # 微前端獨立部署流水線
 # 每個 remote 有獨立的 CI/CD
-# Shell 通過動態 URL 發現機制加載最新版本
+# Shell 通過動態 URL 發現機製加載最新版本
 
 # apps/order-mf/.github/workflows/deploy.yml
 name: Deploy Order MF
@@ -326,7 +326,7 @@ export default defineConfig({
 | CLI 工具        | tsup (ESBuild)               | 純轉譯，無需複雜打包                    |
 | 超大型 Monorepo | Turbopack / Vite + Turborepo | 增量構建 + 遠程緩存                     |
 
-### 構建性能優化的實戰技巧
+### 構建效能優化的實戰技巧
 
 ```typescript
 // 1. 依賴預構建優化
@@ -413,7 +413,7 @@ Phase 1: 引入 Shell + 路由接管
 
 Phase 2: 逐個模塊拆分
   └─ 優先拆分發布頻率最高的模塊
-  └─ 建立共享依賴和狀態管理機制
+  └─ 建立共享依賴和狀態管理機製
 
 Phase 3: 完全獨立部署
   └─ 每個 Remote 有獨立的 CI/CD
@@ -422,12 +422,12 @@ Phase 3: 完全獨立部署
 Phase 4: 運營優化
   └─ 監控每個 Remote 的加載性能
   └─ A/B 測試基礎設施
-  └─ 灰度發佈機制
+  └─ 灰度發佈機製
 ```
 
 ## 總結
 
-大規模前端架構的核心矛盾是**團隊獨立性 vs 用户體驗一致性**。微前端是解決這個矛盾的一種架構模式，但它引入了新的複雜度——樣式隔離、版本管理、通信機制。
+大規模前端架構的核心矛盾是**團隊獨立性 vs 用户體驗一致性**。微前端是解決這個矛盾的一種架構模式，但它引入了新的複雜度——樣式隔離、版本管理、通信機製。
 
 選擇架構方案的決策框架：
 

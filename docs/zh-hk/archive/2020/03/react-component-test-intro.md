@@ -1,5 +1,5 @@
 ---
-title: "React 組件測試入門"
+title: "React 組件測試入門：實踐方法與治理思路"
 date: 2020-03-09 14:50:22
 tags:
   - React

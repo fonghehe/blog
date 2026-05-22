@@ -1,5 +1,5 @@
 ---
-title: "CSS ビュートランジション v2"
+title: "CSS View Transitions v2 提案：跨文档动画的标准化之路"
 date: 2024-03-19 16:44:55
 tags:
   - CSS

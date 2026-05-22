@@ -1,11 +1,11 @@
 ---
 title: "Vue 5 Compiler Architecture"
-date: 2026-01-30 10:00:00
+date: 2026-01-30 13:04:41
 tags:
   - Vue
 readingTime: 1
 description: "Vue 5 compiler architecture is a topic worth paying attention to in frontend development. This article explores core concepts and best practices from real proje"
-wordCount: 88
+wordCount: 137
 ---
 
 Vue 5 compiler architecture is a topic worth paying attention to in frontend development. This article explores core concepts and best practices from real project experience.
@@ -98,3 +98,11 @@ const processData = (input) => {
     .sort((a, b) => b.timestamp - a.timestamp);
 };
 ```
+
+Using this pattern improves code maintainability.
+
+## Takeaways
+
+- The core of Vue 5 compiler architecture lies in understanding the underlying principles, not just memorizing APIs
+- In real projects, choosing the right approach matters more than chasing the latest technology
+- Maintain consistent code style across the team to reduce maintenance costs

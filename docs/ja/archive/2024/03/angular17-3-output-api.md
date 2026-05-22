@@ -3,12 +3,12 @@ title: "Angular 17.3 Output API：@Output() デコレーターとの決別"
 date: 2024-03-20 11:47:04
 tags:
   - Angular
-readingTime: 2
-description: "Angular 17.3 于 2024 年 3 月 13 日发布，带来了 Output API 的开发者预览——`output()` 函数，与之前的 `input()`、`viewChild()` 等 Signal API 一起，构成了新一代 Angular 组件 API 的完整图谱。"
-wordCount: 284
+readingTime: 3
+description: "Angular 17.3 は2024年3月13日にリリースされ、Output API の開発者プレビューがもたらされました——output() 関数です。これまでの input() や viewChild() などの Signal API と合わせて、次世代 Angular コンポーネント API の完全な全体像を構成します。"
+wordCount: 410
 ---
 
-Angular 17.3 于 2024 年 3 月 13 日发布，带来了 Output API 的开发者预览——`output()` 函数，与之前的 `input()`、`viewChild()` 等 Signal API 一起，构成了新一代 Angular 组件 API 的完整图谱。
+Angular 17.3 は 2024 年 3 月 13 日にリリースされ、Output API の開発者プレビューである `output()` 関数が導入されました。これまでの `input()`、`viewChild()` などの Signal API と合わせて、次世代の Angular コンポーネント API の完全な全体像を構成します。
 
 ## 旧 @Output() + EventEmitter
 
@@ -25,12 +25,12 @@ export class CounterComponent {
 
   increment() {
     this.count++;
-    this.countChange.emit(this.count); // 手动 emit
+    this.countChange.emit(this.count); // 手動で emit
   }
 }
 ```
 
-`EventEmitter` 继承自 RxJS `Subject`，实际上是一个很重的抽象——但 Angular 的 `@Output()` 只用到了它的 `emit()` 方法，整个 Observable 能力都被浪费了。
+`EventEmitter` は RxJS の `Subject` を継承しており、実際には非常に重い抽象化ですが、Angular の `@Output()` はその `emit()` メソッドしか使用しておらず、Observable の機能全体が無駄になっています。
 
 ## 新しい output() API（Angular 17.3）
 
@@ -43,7 +43,7 @@ import { Component, output } from "@angular/core";
   template: `<button (click)="increment()">+</button>`,
 })
 export class CounterComponent {
-  // output() 返回 OutputEmitter<T>，更轻量
+  // output() は OutputEmitter<T> を返し、より軽量
   countChange = output<number>();
   private count = 0;
 
@@ -54,7 +54,7 @@ export class CounterComponent {
 }
 ```
 
-模板中使用方式完全相同：
+テンプレートでの使用方法は完全に同じです：
 
 ```html
 <app-counter (countChange)="onCountChange($event)" />
@@ -62,7 +62,7 @@ export class CounterComponent {
 
 ## output() と RxJS の相互運用
 
-`output()` 提供了与 RxJS 的互操作桥梁：
+`output()` は RxJS との相互運用の橋渡しを提供します：
 
 ```typescript
 import {
@@ -76,14 +76,14 @@ import { map } from "rxjs/operators";
 
 @Component({ standalone: true, selector: "app-timer", template: "" })
 export class TimerComponent {
-  // 从 Observable 创建 output（每秒发射一次）
+  // Observable から output を作成（毎秒1回発行）
   tick = outputFromObservable(interval(1000).pipe(map((n) => n + 1)));
 
-  // 普通 output
+  // 通常の output
   stopped = output<void>();
 }
 
-// 在父组件中，将 output 转为 Observable
+// 親コンポーネントで、output を Observable に変換
 @Component({
   standalone: true,
   template: `<app-timer #timer (tick)="onTick($event)" />`,
@@ -93,7 +93,7 @@ export class ParentComponent {
 
   constructor() {
     effect(() => {
-      // 将 output 转为 Observable（用于与 RxJS 生态集成）
+      // output を Observable に変換（RxJS エコシステムとの統合用）
       const tick$ = outputToObservable(this.timerRef().tick);
       tick$.subscribe((n) => console.log(`Tick: ${n}`));
     });
@@ -106,37 +106,37 @@ export class ParentComponent {
 ```typescript
 @Component({ standalone: true, selector: "app-full", template: "..." })
 export class FullComponent {
-  // === 输入 ===
-  name = input<string>(); // 可选，Signal<string | undefined>
-  title = input.required<string>(); // 必选，Signal<string>
-  label = input("默认值"); // 带默认值，Signal<string>
+  // === 入力 ===
+  name = input<string>(); // オプション、Signal<string | undefined>
+  title = input.required<string>(); // 必須、Signal<string>
+  label = input("デフォルト値"); // デフォルト値あり、Signal<string>
 
-  // 带转换的 input
-  count = input(0, { transform: numberAttribute }); // 字符串属性 → 数字
+  // 変換付き input
+  count = input(0, { transform: numberAttribute }); // 文字列属性 → 数値
 
-  // === 输出 ===
+  // === 出力 ===
   nameChange = output<string>(); // OutputEmitter<string>
-  clicked = output<void>(); // 无参数事件
+  clicked = output<void>(); // 引数なしイベント
 
-  // === 视图查询 ===
+  // === ビュー問い合わせ ===
   container = viewChild<ElementRef>("container"); // Signal<ElementRef | undefined>
   requiredEl = viewChild.required<ElementRef>("el"); // Signal<ElementRef>
   allItems = viewChildren<ItemComponent>(ItemComponent); // Signal<readonly ItemComponent[]>
 
-  // === 内容查询 ===
+  // === コンテンツ問い合わせ ===
   slotHeader = contentChild<HeaderComponent>(HeaderComponent);
   slotItems = contentChildren<ItemComponent>(ItemComponent);
 
-  // === 派生值 ===
+  // === 派生値 ===
   displayName = computed(() => this.name()?.toUpperCase() ?? "匿名");
 }
 ```
 
 ## なぜ Signal を双方向バインディングに使わないのか？
 
-一个常见问题：既然有了 `input()` Signal，能否用同一个 Signal 同时做输入和输出（双向绑定）？
+よくある質問：`input()` Signal があるなら、同じ Signal で入力と出力（双方向バインディング）を同時にできるのでは？
 
-答案是 `model()` API（Angular 17.3 同步引入）：
+答えは `model()` API（Angular 17.3 で同時に導入）です：
 
 ```typescript
 import { Component, model } from "@angular/core";
@@ -167,4 +167,4 @@ export class ParentComponent {
 
 ## まとめ
 
-Angular 17.3 完成了组件 API 的 Signal 化拼图：`input()`（17.1）、Signal Queries（17.2）、`output()` 和 `model()`（17.3）。新的 API 比装饰器更简洁、类型更安全，而且对 tree-shaking 更友好（不需要 `EventEmitter`）。目前仍是开发者预览阶段，Angular 18 预计将这些 API 正式稳定化。
+Angular 17.3 はコンポーネント API の Signal 化のパズルを完成させました：`input()`（17.1）、Signal Queries（17.2）、`output()` と `model()`（17.3）。新しい API はデコレーターよりも簡潔で、型安全性が高く、tree-shaking にもより適しています（`EventEmitter` が不要）。現在はまだ開発者プレビュー段階であり、Angular 18 でこれらの API が正式に安定化される予定です。

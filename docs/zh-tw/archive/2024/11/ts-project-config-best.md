@@ -1,10 +1,10 @@
 ---
-title: "TypeScript 專案配置最佳"
-date: 2024-11-15 10:00:00
+title: "TypeScript 專案設定最佳"
+date: 2024-11-15 12:09:46
 tags:
   - TypeScript
 readingTime: 2
-description: "最近在團隊中落地TypeScript 專案配置最佳，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+description: "最近在團隊中落地TypeScript 專案設定最佳，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
 wordCount: 356
 ---
 
@@ -154,5 +154,5 @@ function useIntersectionObserver(options = {}) {
 - 關注社群動態，技術方案需要持續迭代
 - 不要為了用新技術而用新技術
 - 程式碼示例僅供參考，需根據業務場景調整
-- TypeScript 專案配置最佳不是銀彈，需要根據專案規模和技術棧選擇
+- TypeScript 專案設定最佳不是銀彈，需要根據專案規模和技術棧選擇
 - 理解底層原理比記住 API 更重要

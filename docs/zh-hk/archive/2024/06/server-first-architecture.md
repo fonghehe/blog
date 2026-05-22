@@ -1,6 +1,6 @@
 ---
-title: "Server-first 前端架構演進"
-date: 2024-06-24 10:00:00
+title: "Server-first 前端架構演進：實踐方法與治理思路"
+date: 2024-06-24 19:58:35
 tags:
   - 前端
 readingTime: 2
@@ -94,7 +94,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能優化
+## 效能優化
 
 以下是一個完整的示例：
 

@@ -213,7 +213,7 @@ function mapStateToProps(state) {
 }
 ```
 
-## 在 Node.js 中的配置
+## 在 Node.js 中的設定
 
 ### 使用 Babel
 

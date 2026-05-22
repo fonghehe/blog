@@ -1,15 +1,15 @@
 ---
-title: "Server-Sent Events 單向實時通信"
+title: "Server-Sent Events 單向實時通信：落地路徑與實戰建議"
 date: 2021-07-19 17:22:14
 tags:
   - 前端
   - JavaScript
 readingTime: 2
-description: "關於Server-Sent Events 單向實時通信，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於Server-Sent Events 單向實時通信，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 286
 ---
 
-關於Server-Sent Events 單向實時通信，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於Server-Sent Events 單向實時通信，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 

@@ -4,7 +4,7 @@ date: 2019-08-15 16:25:16
 tags:
   - React
 readingTime: 2
-description: "用 React Profiler 分析了一個性能有問題的頁面，整理出一套最佳化方法論。"
+description: "用 React Profiler 分析了一個效能有問題的頁面，整理出一套最佳化方法論。"
 wordCount: 200
 ---
 
@@ -89,7 +89,7 @@ function ProductList({ category }) {
   // ❌ 每次渲染都重新過濾
   const filtered = items.filter((item) => item.category === category);
 
-  // ✅ 只有依賴變化時才重新計算
+  // ✅ 隻有依賴變化時才重新計算
   const filtered = useMemo(
     () => items.filter((item) => item.category === category),
     [items, category],
@@ -107,7 +107,7 @@ function ProductList({ category }) {
 ## 虛擬列表（大數據量）
 
 ```jsx
-// 只渲染可視區域內的 item
+// 隻渲染可視區域內的 item
 import { FixedSizeList } from "react-window";
 
 function VirtualProductList({ products }) {
@@ -128,7 +128,7 @@ function VirtualProductList({ products }) {
     </FixedSizeList>
   );
 }
-// 10000 條資料也只渲染 ~6 個 DOM 節點
+// 10000 條資料也隻渲染 ~6 個 DOM 節點
 ```
 
 ## 程式碼分割
@@ -151,7 +151,7 @@ function App() {
   );
 }
 
-// 條件載入（只有用到時才下載）
+// 條件載入（隻有用到時才下載）
 function ReportPage() {
   const [showChart, setShowChart] = useState(false);
   const Chart = lazy(() => import("./HeavyChart"));

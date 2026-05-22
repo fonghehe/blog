@@ -1,5 +1,5 @@
 ---
-title: "Lit Web Components 開發實踐"
+title: "Lit Web Components 開發實踐：落地路徑與實戰建議"
 date: 2022-09-23 09:48:47
 tags:
   - Web Components
@@ -37,7 +37,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 源碼分析
 

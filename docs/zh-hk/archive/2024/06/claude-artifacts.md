@@ -1,6 +1,6 @@
 ---
-title: "Claude Artifacts 開發工作流"
-date: 2024-06-03 10:00:00
+title: "Claude Artifacts 開發工作流：落地路徑與實戰建議"
+date: 2024-06-03 14:37:14
 tags:
   - 工程化
 readingTime: 2
@@ -99,7 +99,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
 實際項目中的用法會更復雜一些：
 

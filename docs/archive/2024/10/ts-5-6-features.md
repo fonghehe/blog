@@ -1,6 +1,6 @@
 ---
 title: "TypeScript 5.6 新特性"
-date: 2024-10-07 10:00:00
+date: 2024-10-07 14:21:58
 tags:
   - TypeScript
 readingTime: 2

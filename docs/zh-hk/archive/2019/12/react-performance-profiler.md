@@ -1,14 +1,14 @@
 ---
-title: "React Profiler 性能分析工具"
+title: "React Profiler 效能分析工具：實踐方法與治理思路"
 date: 2019-12-12 15:50:43
 tags:
   - React
 readingTime: 4
-description: "React 16.5 引入了 Profiler API，16.9 又做了改進。在實際項目中，\"頁面卡頓\"是非常模糊的描述，需要工具來精確定位性能瓶頸。React Profiler 就是這樣的工具——它能告訴你每個組件的渲染耗時、渲染次數、渲染原因。結合其他手段，我們可以系統性地優化 React 應用性能。"
+description: "React 16.5 引入了 Profiler API，16.9 又做了改進。在實際項目中，\"頁面卡頓\"是非常模糊的描述，需要工具來精確定位效能瓶頸。React Profiler 就是這樣的工具——它能告訴你每個組件的渲染耗時、渲染次數、渲染原因。結合其他手段，我們可以系統性地優化 React 應用效能。"
 wordCount: 427
 ---
 
-React 16.5 引入了 Profiler API，16.9 又做了改進。在實際項目中，"頁面卡頓"是非常模糊的描述，需要工具來精確定位性能瓶頸。React Profiler 就是這樣的工具——它能告訴你每個組件的渲染耗時、渲染次數、渲染原因。結合其他手段，我們可以系統性地優化 React 應用性能。
+React 16.5 引入了 Profiler API，16.9 又做了改進。在實際項目中，"頁面卡頓"是非常模糊的描述，需要工具來精確定位效能瓶頸。React Profiler 就是這樣的工具——它能告訴你每個組件的渲染耗時、渲染次數、渲染原因。結合其他手段，我們可以系統性地優化 React 應用效能。
 
 ## React DevTools Profiler
 
@@ -82,7 +82,7 @@ function performanceCallback(
   startTime,
   commitTime
 ) {
-  // 只上報渲染時間超過閾值的情況
+  // 隻上報渲染時間超過閾值的情況
   if (actualDuration > 16) { // 超過一幀的時間
     Sentry.addBreadcrumb({
       category: 'react-profiler',
@@ -139,7 +139,7 @@ if (process.env.NODE_ENV === 'development') {
   })
 }
 
-// 或者只追蹤特定組件
+// 或者隻追蹤特定組件
 import React from 'react'
 
 function ExpensiveList({ items, onItemClick }) {
@@ -157,7 +157,7 @@ function ExpensiveList({ items, onItemClick }) {
   )
 }
 
-// 控制台輸出示例：
+// 控製臺輸出示例：
 // [why-did-you-render] ExpensiveList
 // Props changes:
 //   onItemClick: (function) => (function) [Different functions]
@@ -165,7 +165,7 @@ function ExpensiveList({ items, onItemClick }) {
 // 原因：父組件每次渲染都創建新的 onClick 回調
 ```
 
-## 性能優化策略
+## 效能優化策略
 
 有了 Profiler 數據，常見的優化策略如下：
 
@@ -192,7 +192,7 @@ function UserList({ users, filter }) {
     return users.filter(user =>
       user.name.toLowerCase().includes(filter.toLowerCase())
     )
-  }, [users, filter]) // 只有 users 或 filter 變化時才重新計算
+  }, [users, filter]) // 隻有 users 或 filter 變化時才重新計算
 
   return filteredUsers.map(user => (
     <UserCard key={user.id} user={user} />
@@ -218,7 +218,7 @@ function ParentComponent() {
   )
 }
 
-// 4. 列表虛擬化：只渲染可見區域的元素
+// 4. 列表虛擬化：隻渲染可見區域的元素
 // 安裝 react-window
 import { FixedSizeList } from 'react-window'
 
@@ -241,7 +241,7 @@ function VirtualizedList({ items }) {
   )
 }
 
-// 5. 拆分大組件，利用 React 的調度機制
+// 5. 拆分大組件，利用 React 的調度機製
 // 將高頻更新和低頻更新的部分拆分開
 function Dashboard() {
   const [stats, setStats] = React.useState({})
@@ -273,7 +273,7 @@ function Dashboard() {
 
 ## 實際優化案例
 
-我們的後台管理系統有一個列表頁，1000 條數據渲染耗時 800ms。通過 Profiler 分析後定位到問題：
+我們的後臺管理系統有一個列表頁，1000 條數據渲染耗時 800ms。通過 Profiler 分析後定位到問題：
 
 ```jsx
 // 優化前：每個 Item 都重渲染，總計 800ms

@@ -1,5 +1,5 @@
 ---
-title: "Next.js 15 新特性全面解析"
+title: "Next.js 15 新特性全面解析：特性解讀與遷移建議"
 date: 2024-01-16 11:47:42
 tags:
   - Next.js
@@ -94,7 +94,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能對比
+## 效能對比
 
 關鍵在於理解核心邏輯：
 
@@ -105,7 +105,7 @@ import { UserList } from './components/UserList'
 export default async function HomePage() {
   return (
     <main className="container mx-auto p-4">
-      <h1>控制台</h1>
+      <h1>控製臺</h1>
       <Suspense fallback={<Skeleton />}>
         <UserList />
       </Suspense>
@@ -115,7 +115,7 @@ export default async function HomePage() {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 問題排查
 

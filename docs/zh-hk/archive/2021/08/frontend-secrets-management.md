@@ -1,5 +1,5 @@
 ---
-title: "前端密鑰安全管理方案"
+title: "前端密鑰安全管理方案：實踐方法與治理思路"
 date: 2021-08-03 14:50:00
 tags:
   - TypeScript
@@ -95,7 +95,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能對比
+## 效能對比
 
 以下是一個完整的示例：
 

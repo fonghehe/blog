@@ -1,5 +1,5 @@
 ---
-title: "Webpack 公共代碼提取和 SplitChunks"
+title: "Webpack 公共代碼提取和 SplitChunks：落地路徑與實戰建議"
 date: 2018-10-25 10:34:15
 tags:
   - Webpack
@@ -22,7 +22,7 @@ wordCount: 196
   → lodash 和 Vue 被下載了 3 次！
 
 提取後：
-  vendor.js = lodash + Vue（只下載一次，長期緩存）
+  vendor.js = lodash + Vue（隻下載一次，長期緩存）
   common.js = A/B/C 共用的業務代碼
   pageA.js = pageA 自己的代碼（很小）
 ```
@@ -128,12 +128,12 @@ common.js     → 業務公共代碼，偶爾變化
 pageA.js      → 頁面代碼，經常變化
 ```
 
-## Vue CLI 的默認配置
+## Vue CLI 的默認設定
 
-Vue CLI 已經做了合理的默認配置，通常不需要手動改：
+Vue CLI 已經做了合理的默認設定，通常不需要手動改：
 
 ```javascript
-// vue.config.js（只在默認不滿足需求時調整）
+// vue.config.js（隻在默認不滿足需求時調整）
 module.exports = {
   chainWebpack(config) {
     config.optimization.splitChunks({
@@ -163,7 +163,7 @@ module.exports = {
   common.js：100KB
   各頁面 chunk：30-80KB
 
-首次總量差不多，但後續頁面跳轉只需要下載 page chunk
+首次總量差不多，但後續頁面跳轉隻需要下載 page chunk
 ```
 
 ## 小結

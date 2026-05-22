@@ -1,6 +1,6 @@
 ---
-title: "Scheduler API 穩定版實踐"
-date: 2024-07-18 10:00:00
+title: "Scheduler API 穩定版實踐：特性解讀與遷移建議"
+date: 2024-07-18 10:32:09
 tags:
   - JavaScript
 readingTime: 2
@@ -64,7 +64,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 真實場景應用
 

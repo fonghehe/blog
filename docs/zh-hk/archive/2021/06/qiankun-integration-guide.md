@@ -5,13 +5,13 @@ tags:
   - 前端
   - 工程化
 readingTime: 2
-description: "上一篇聊了微前端架構設計，這篇寫具體的技術接入。我們用 qiankun 接入了 6 個子應用，包含 Vue 2、Vue 3 和 React 三種技術棧。記錄主應用配置、子應用改造和常見問題。"
+description: "上一篇聊了微前端架構設計，這篇寫具體的技術接入。我們用 qiankun 接入了 6 個子應用，包含 Vue 2、Vue 3 和 React 三種技術棧。記錄主應用設定、子應用改造和常見問題。"
 wordCount: 404
 ---
 
 上一篇聊了微前端架構設計，這篇寫具體的技術接入。我們用 qiankun 接入了 6 個子應用，包含 Vue 2、Vue 3 和 React 三種技術棧。記錄主應用配置、子應用改造和常見問題。
 
-## 主應用配置
+## 主應用設定
 
 主應用負責註冊子應用和生命週期管理：
 
@@ -115,9 +115,9 @@ export async function unmount() {
 }
 ```
 
-## Webpack 配置調整
+## Webpack 設定調整
 
-子應用需要修改打包配置，暴露 publicPath 和生命週期鈎子：
+子應用需要修改打包設定，暴露 publicPath 和生命週期鈎子：
 
 ```javascript
 // vue.config.js
@@ -189,12 +189,12 @@ window.__MAIN_APP_NAVIGATE__('/user/profile')
 
 **3. 子應用 keep-alive**
 
-qiankun 默認不支持 keep-alive，每次切換都會銷燬重建。我們通過緩存 DOM 和狀態來模擬，但體驗一般。如果你的場景需要頻繁切換子應用，建議評估 single-spa 的方案。
+qiankun 默認不支援 keep-alive，每次切換都會銷燬重建。我們通過緩存 DOM 和狀態來模擬，但體驗一般。如果你的場景需要頻繁切換子應用，建議評估 single-spa 的方案。
 
 ## 小結
 
 - qiankun 接入的核心是子應用暴露三個生命週期鈎子
 - CSS 隔離推薦 `experimentalStyleIsolation`
 - publicPath 動態設置和跨域配置是最常見的接入問題
-- 子應用間通信要剋制，優先用主應用中轉
-- keep-alive 支持是 qiankun 的短板，需要額外處理
+- 子應用間通信要剋製，優先用主應用中轉
+- keep-alive 支援是 qiankun 的短板，需要額外處理

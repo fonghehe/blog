@@ -41,9 +41,9 @@ npm install husky --save-dev
 }
 ```
 
-## lint-staged：只檢查暫存區的檔案
+## lint-staged：隻檢查暫存區的檔案
 
-如果每次提交都對整個專案跑 lint，老專案會很慢。`lint-staged` 只處理這次提交的檔案：
+如果每次提交都對整個專案跑 lint，老專案會很慢。`lint-staged` 隻處理這次提交的檔案：
 
 ```bash
 npm install lint-staged --save-dev
@@ -68,7 +68,7 @@ npm install lint-staged --save-dev
 
 1. `git commit` 觸發 `pre-commit` hook
 2. `lint-staged` 找出暫存區（staged）的檔案
-3. 只對這些檔案執行 ESLint 和 Prettier
+3. 隻對這些檔案執行 ESLint 和 Prettier
 4. 如果有錯誤，commit 失敗；如果自動修復了，重新 add 修復後的檔案
 
 ## commit-msg：規範提交資訊
@@ -126,7 +126,7 @@ if echo "$changed_files" | grep -q "package.json"; then
 fi
 ```
 
-## 團隊配置共享
+## 團隊設定共享
 
 ```json
 // package.json
@@ -142,6 +142,6 @@ fi
 ## 小結
 
 - Husky：讓 Git Hooks 配置放在 package.json，方便團隊共享
-- lint-staged：只檢查本次提交的檔案，速度快
+- lint-staged：隻檢查本次提交的檔案，速度快
 - commitlint：規範 commit message，方便生成 changelog
 - `prepare` 指令碼：`npm install` 時自動初始化 Husky

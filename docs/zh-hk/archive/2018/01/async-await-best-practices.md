@@ -1,5 +1,5 @@
 ---
-title: "ES2017 async/await 最佳實踐"
+title: "ES2017 async/await 最佳實踐：落地路徑與實戰建議"
 date: 2018-01-13 09:34:55
 tags:
   - JavaScript
@@ -93,7 +93,7 @@ async function loadPage() {
 
 ## 並行請求：唔好讓 await 串行
 
-呢個係最常見嘅性能陷阱：
+呢個係最常見嘅效能陷阱：
 
 ```javascript
 // 慢：串行執行，總時間 = 請求A時間 + 請求B時間
@@ -113,7 +113,7 @@ async function loadDashboard() {
 }
 ```
 
-只有當後一個請求依賴前一個請求嘅結果時，先需要串行 await。否則優先考慮 `Promise.all`。
+隻有當後一個請求依賴前一個請求嘅結果時，先需要串行 await。否則優先考慮 `Promise.all`。
 
 ## 循環中嘅 async/await
 
@@ -133,7 +133,7 @@ for (const id of userIds) {
 // 並行處理：同時發出所有請求（適合無依賴嘅場景）
 await Promise.all(userIds.map((id) => processUser(id)));
 
-// 限制並發數（適合批量操作，避免打爆伺服器）
+// 限製並發數（適合批量操作，避免打爆伺服器）
 async function processInBatches(items, batchSize) {
   for (let i = 0; i < items.length; i += batchSize) {
     const batch = items.slice(i, i + batchSize);
@@ -186,7 +186,7 @@ class PostList extends React.Component {
 
 注意：組件可能喺非同步操作完成前已經被銷毀，需要處理「組件已卸載後唔好 setState」嘅問題，呢個係另一個話題。
 
-## Babel 配置
+## Babel 設定
 
 要喺瀏覽器裡面使用 async/await，需要：
 
@@ -213,7 +213,7 @@ npm install --save-dev babel-preset-env
 }
 ```
 
-`useBuiltIns: "usage"` 只引入實際用到嘅 polyfill，避免全量引入 babel-polyfill 嘅體積負擔。
+`useBuiltIns: "usage"` 隻引入實際用到嘅 polyfill，避免全量引入 babel-polyfill 嘅體積負擔。
 
 ---
 

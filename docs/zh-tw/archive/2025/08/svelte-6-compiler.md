@@ -1,6 +1,6 @@
 ---
-title: "Svelte 6 編譯器改進"
-date: 2025-08-28 10:00:00
+title: "Svelte 6 編譯器改進：新的響應式編譯策略"
+date: 2025-08-28 17:02:39
 tags:
   - Svelte
 readingTime: 2

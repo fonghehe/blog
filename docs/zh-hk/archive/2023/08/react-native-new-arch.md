@@ -1,5 +1,5 @@
 ---
-title: "React Native 新架構全面落地"
+title: "React Native 新架構全面落地：實踐方法與治理思路"
 date: 2023-08-18 11:47:09
 tags:
   - React
@@ -120,7 +120,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 注意事項
 

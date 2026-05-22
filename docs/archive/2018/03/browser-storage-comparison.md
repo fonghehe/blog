@@ -1,5 +1,5 @@
 ---
-title: "浏览器存储方案对比：Cookie、localStorage、IndexedDB"
+title: "浏览器存储方案对比 2018：Cookie、localStorage、IndexedDB"
 date: 2018-03-01 11:16:33
 tags:
   - 前端

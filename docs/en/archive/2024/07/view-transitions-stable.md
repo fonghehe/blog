@@ -1,6 +1,6 @@
 ---
 title: "View Transitions Stable: Practical Applications"
-date: 2024-07-16 10:00:00
+date: 2024-07-16 09:30:07
 tags:
   - Frontend
 readingTime: 2

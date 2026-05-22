@@ -1,5 +1,5 @@
 ---
-title: "Tailwind CSS 實用優先的 CSS 框架"
+title: "Tailwind CSS 實用優先的 CSS 框架：落地路徑與實戰建議"
 date: 2020-05-27 10:45:06
 tags:
   - CSS
@@ -89,7 +89,7 @@ export async function POST(req) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 

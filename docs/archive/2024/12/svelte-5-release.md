@@ -1,6 +1,6 @@
 ---
-title: "Svelte 5 发布详解"
-date: 2024-12-17 10:00:00
+title: "Svelte 5 发布后生态观察：社区迁移进展与工具链更新"
+date: 2024-12-17 18:51:28
 tags:
   - Svelte
 readingTime: 2

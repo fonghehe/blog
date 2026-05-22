@@ -1,10 +1,10 @@
 ---
-title: "前端性能優化：JS 執行性能"
+title: "前端效能優化：JS 執行效能"
 date: 2018-12-15 10:33:56
 tags:
   - 性能優化
 readingTime: 2
-description: "上個月排查了一個頁面卡頓問題，發現是 JS 執行時間過長導致掉幀。借這個機會整理一下 JS 性能優化的常用手段。"
+description: "上個月排查了一個頁面卡頓問題，發現是 JS 執行時間過長導致掉幀。借這個機會整理一下 JS 效能優化的常用手段。"
 wordCount: 177
 ---
 
@@ -109,14 +109,14 @@ window.addEventListener("scroll", throttledScroll);
 ```javascript
 // ❌ 每次循環都查詢 DOM 和觸發重排
 for (let i = 0; i < 100; i++) {
-  const height = element.offsetHeight; // 讀取強制同步佈局
+  const height = element.offsetHeight; // 讀取強製同步佈局
   element.style.top = height * i + "px"; // 寫入
 }
 
 // ✅ 分離讀寫
 const height = element.offsetHeight; // 一次性讀取
 for (let i = 0; i < 100; i++) {
-  elements[i].style.top = height * i + "px"; // 只寫入
+  elements[i].style.top = height * i + "px"; // 隻寫入
 }
 
 // ✅ 用 DocumentFragment 批量插入
@@ -126,10 +126,10 @@ for (let i = 0; i < 1000; i++) {
   li.textContent = `Item ${i}`;
   fragment.appendChild(li); // 不觸發重排
 }
-ul.appendChild(fragment); // 一次性插入，只觸發一次重排
+ul.appendChild(fragment); // 一次性插入，隻觸發一次重排
 ```
 
-## Web Worker：把耗時運算移到後台
+## Web Worker：把耗時運算移到後臺
 
 ```javascript
 // worker.js
@@ -186,6 +186,6 @@ console.log(`耗時: ${measure.duration.toFixed(2)}ms`);
 
 - 長任務分批處理（`requestAnimationFrame` 或 `requestIdleCallback`）
 - scroll/resize 事件用節流，input 搜索用防抖
-- 批量讀寫 DOM，避免交替讀寫導致強制同步佈局
+- 批量讀寫 DOM，避免交替讀寫導致強製同步佈局
 - 耗時運算用 Web Worker 移出主線程
 - 用 `performance.mark/measure` 精確測量關鍵路徑耗時

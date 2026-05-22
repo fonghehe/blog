@@ -1,10 +1,10 @@
 ---
-title: "TypeScript 4.0 新特性與聲明文件最佳實踐"
+title: "TypeScript 4.0 新特性與聲明檔案最佳實踐：特性解讀與遷移建議"
 date: 2020-01-13 16:15:38
 tags:
   - TypeScript
 readingTime: 3
-description: "TypeScript 4.0 在去年 8 月發佈了，團隊從 3.7 升級到 4.0 幾乎沒有 breaking changes。這周整理了升級過程中發現的實用特性，以及我們維護聲明文件的經驗。"
+description: "TypeScript 4.0 在去年 8 月發佈了，團隊從 3.7 升級到 4.0 幾乎沒有 breaking changes。這周整理了升級過程中發現的實用特性，以及我們維護聲明檔案的經驗。"
 wordCount: 321
 ---
 
@@ -118,7 +118,7 @@ class MyComponent extends BaseComponent {
 }
 ```
 
-## 聲明文件最佳實踐
+## 聲明檔案最佳實踐
 
 我們團隊維護了一個內部組件庫，聲明文件的寫法很重要。
 
@@ -260,7 +260,7 @@ export type UserDetailResponse = ApiResponse<User>;
 ```typescript
 // types/utils.d.ts
 
-// 深度只讀
+// 深度隻讀
 export type DeepReadonly<T> = {
   readonly [K in keyof T]: T[K] extends object
     ? DeepReadonly<T[K]>
@@ -285,7 +285,7 @@ type UserInput = RequiredByKeys<User, 'name' | 'email'>;
 // name 和 email 必填，其他可選
 ```
 
-## tsconfig.json 配置要點
+## tsconfig.json 設定要點
 
 ```json
 {
@@ -299,7 +299,7 @@ type UserInput = RequiredByKeys<User, 'name' | 'email'>;
     "forceConsistentCasingInFileNames": true,
 
     // 4.0 相關
-    "noEmit": true,                    // 只做檢查，不輸出
+    "noEmit": true,                    // 隻做檢查，不輸出
     "declaration": true,               // 庫項目開啓
     "declarationDir": "./dist/types",
 
@@ -326,7 +326,7 @@ npx tsc --noEmit
 
 # 常見問題：
 # 1. 4.0 對重載函數的類型檢查更嚴格
-# 2. unknown 類型的使用限制更明確
+# 2. unknown 類型的使用限製更明確
 # 3. 條件類型中 infer 的行為有細微變化
 ```
 

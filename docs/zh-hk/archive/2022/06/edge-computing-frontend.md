@@ -1,5 +1,5 @@
 ---
-title: "Edge Computing 邊緣計算前端應用"
+title: "Edge Computing 邊緣計算前端應用：落地路徑與實戰建議"
 date: 2022-06-10 16:06:35
 tags:
   - 前端
@@ -65,7 +65,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 實戰案例
 
@@ -94,7 +94,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
-## 性能優化
+## 效能優化
 
 先來看基本的實現方式：
 

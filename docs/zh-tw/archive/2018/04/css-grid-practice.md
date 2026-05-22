@@ -117,7 +117,7 @@ Grid：二維佈局（行 AND 列）
 
 比 Flex 的 `align-items + justify-content` 少寫一行。
 
-## 對齊控制
+## 對齊控製
 
 ```css
 .grid {

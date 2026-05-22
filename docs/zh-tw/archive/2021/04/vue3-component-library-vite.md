@@ -37,7 +37,7 @@ my-ui/
 └── docs/                         # 文件
 ```
 
-## Vite 配置
+## Vite 設定
 
 ```typescript
 // vite.config.ts
@@ -235,7 +235,7 @@ import 'my-ui/dist/my-ui.css'
 </template>
 ```
 
-## package.json 配置
+## package.json 設定
 
 ```json
 {

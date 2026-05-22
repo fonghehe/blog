@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 裝飾器入門"
+title: "TypeScript 裝飾器入門：落地路徑與實戰建議"
 date: 2019-12-13 10:00:24
 tags:
   - TypeScript

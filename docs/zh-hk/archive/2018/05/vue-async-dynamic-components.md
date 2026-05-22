@@ -1,14 +1,14 @@
 ---
-title: "Vue 異步組件與動態組件"
+title: "Vue 異步組件與動態組件：落地路徑與實戰建議"
 date: 2018-05-08 10:58:42
 tags:
   - Vue
 readingTime: 2
-description: "組件懶加載是減小首屏 bundle 體積的重要手段。Vue 提供了異步組件和動態組件兩種機制，理清它們的區別和用法。"
+description: "組件懶加載是減小首屏 bundle 體積的重要手段。Vue 提供了異步組件和動態組件兩種機製，理清它們的區別和用法。"
 wordCount: 296
 ---
 
-組件懶加載是減小首屏 bundle 體積的重要手段。Vue 提供了異步組件和動態組件兩種機制，理清它們的區別和用法。
+組件懶加載是減小首屏 bundle 體積的重要手段。Vue 提供了異步組件和動態組件兩種機製，理清它們的區別和用法。
 
 ## 異步組件
 
@@ -40,7 +40,7 @@ const routes = [
   },
   {
     path: "/users",
-    // webpackChunkName 控制打包到同一個 chunk
+    // webpackChunkName 控製打包到同一個 chunk
     component: () => import(/* webpackChunkName: "user" */ "@/views/Users.vue"),
   },
   {
@@ -60,7 +60,7 @@ const routes = [
   <div>
     <button @click="showEditor = true">打開編輯器</button>
 
-    <!-- 只有點擊後才加載富文本編輯器（體積通常很大）-->
+    <!-- 隻有點擊後才加載富文本編輯器（體積通常很大）-->
     <RichTextEditor v-if="showEditor" content="..." />
   </div>
 </template>

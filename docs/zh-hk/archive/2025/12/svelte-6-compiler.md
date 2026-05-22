@@ -1,6 +1,6 @@
 ---
-title: "Svelte 6 編譯器改進"
-date: 2025-12-01 10:00:00
+title: "Svelte 6 編譯器實踐：遷移後效能與開發體驗的真實反馈"
+date: 2025-12-01 10:15:52
 tags:
   - Svelte
 readingTime: 2
@@ -43,7 +43,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 進階用法
 
@@ -97,7 +97,7 @@ function reducer(state, action) {
 
 這段代碼展示了基本的使用方式。實際項目中還需要考慮錯誤處理和邊界條件。
 
-## 性能優化
+## 效能優化
 
 在這個基礎上，我們可以進一步優化：
 

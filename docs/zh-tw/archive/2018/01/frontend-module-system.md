@@ -12,7 +12,7 @@ wordCount: 593
 
 ## 沒有模組系統的年代
 
-早期 JavaScript 沒有原生的模組機制，所有程式碼都是全域的：
+早期 JavaScript 沒有原生的模組機製，所有程式碼都是全域的：
 
 ```html
 <script src="jquery.js"></script>

@@ -159,7 +159,7 @@ export default defineConfig({
 <i class="i-mdi-cog text-lg text-gray-500"></i>
 ```
 
-按需打包，只用到的圖示才會生成 CSS。再也不用維護圖示字型或 SVG sprite 了。
+按需打包，隻用到的圖示才會生成 CSS。再也不用維護圖示字型或 SVG sprite 了。
 
 ## 效能對比
 

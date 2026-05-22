@@ -1,11 +1,11 @@
 ---
 title: "Angular 19 正式釋出：增量水合、路由級渲染與 Zoneless 開發者預覽"
-date: 2024-11-20 10:00:00
+date: 2024-11-20 09:14:51
 tags:
   - Angular
   - CSS
 readingTime: 2
-description: "Angular 19 於 2024 年 11 月 19 日正式釋出。這是 Angular 近年來在 SSR 能力和響應式模型上變化最大的版本之一。主要亮點：增量水合（Incremental Hydration）正式可用、路由級渲染模式穩定、Zoneless 提升為開發者預覽、模板 HMR 正式支援。"
+description: "Angular 19 於 2024 年 11 月 19 日正式釋出。這是 Angular 近年來在 SSR 能力和響應式模型上變化最大的版本之一。主要亮點：增量水合（Incremental Hydration）正式可用、路由級渲染模式穩定、Zoneless 提升為開發者預覽、範本 HMR 正式支援。"
 wordCount: 412
 ---
 
@@ -13,7 +13,7 @@ Angular 19 於 2024 年 11 月 19 日正式釋出。這是 Angular 近年來在 
 
 ## 增量水合：SSR 效能的新臺階
 
-全量水合會在頁面載入時啟用所有元件，即使使用者看不到或不需要它們。增量水合讓每個 `@defer` 塊可以獨立控制何時水合：
+全量水合會在頁面載入時啟用所有元件，即使使用者看不到或不需要它們。增量水合讓每個 `@defer` 塊可以獨立控製何時水合：
 
 ```typescript
 // 1. 開啟增量水合
@@ -96,7 +96,7 @@ bootstrapApplication(AppComponent, {
 
 同時從 `angular.json` 的 `polyfills` 中移除 `zone.js`，包體積減少約 33KB。
 
-## 模板 HMR（Hot Module Replacement）
+## 範本 HMR（Hot Module Replacement）
 
 ```bash
 ng serve

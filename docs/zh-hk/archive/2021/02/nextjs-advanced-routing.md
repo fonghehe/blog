@@ -1,5 +1,5 @@
 ---
-title: "Next.js 12 Middleware 中間件"
+title: "Next.js 12 Middleware 中間件：落地路徑與實戰建議"
 date: 2021-02-18 11:24:56
 tags:
   - React
@@ -23,7 +23,7 @@ import { UserList } from './components/UserList'
 export default async function HomePage() {
   return (
     <main className="container mx-auto p-4">
-      <h1>控制台</h1>
+      <h1>控製臺</h1>
       <Suspense fallback={<Skeleton />}>
         <UserList />
       </Suspense>

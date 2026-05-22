@@ -1,5 +1,5 @@
 ---
-title: "JavaScript BigInt 大整數實踐"
+title: "JavaScript BigInt 大整數實踐：落地路徑與實戰建議"
 date: 2019-09-11 15:50:18
 tags:
   - JavaScript
@@ -193,7 +193,7 @@ console.log(hasPermission(userPermissions, READ));   // true
 console.log(hasPermission(userPermissions, DELETE)); // false
 ```
 
-## BigInt 在 Math 對象中的限制
+## BigInt 在 Math 對象中的限製
 
 `Math` 對象的方法不支持 BigInt：
 
@@ -234,7 +234,7 @@ function ensureBigInt(value) {
 }
 ```
 
-## 瀏覽器和 Node.js 兼容性
+## 瀏覽器和 Node.js 相容性
 
 - Chrome 67+ — 支持
 - Firefox 68+ — 支持
@@ -255,9 +255,9 @@ console.log(b.toString()); // "9007199254740994"
 
 ## 小結
 
-- BigInt 解決了 Number 類型的安全整數範圍限制，可以表示任意精度的整數
+- BigInt 解決了 Number 類型的安全整數範圍限製，可以表示任意精度的整數
 - 使用 `數字後加 n` 或 `BigInt()` 構造函數創建 BigInt 值
 - BigInt 和 Number 不能混合運算，需要顯式轉換
 - 實際場景：數據庫 64 位 ID、金融金額計算、位運算權限系統
-- BigInt 不支持 `Math` 對象的方法，JSON 序列化需要自定義處理
-- 2019 年主流瀏覽器和 Node.js 10.4+ 已支持，IE 不支持需使用 polyfill
+- BigInt 不支援 `Math` 對象的方法，JSON 序列化需要自定義處理
+- 2019 年主流瀏覽器和 Node.js 10.4+ 已支援，IE 不支援需使用 polyfill

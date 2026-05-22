@@ -1,5 +1,5 @@
 ---
-title: "Webpack 5 Asset Modules 替代 file-loader"
+title: "Webpack 5 Asset Modules 替代 file-loader：落地路徑與實戰建議"
 date: 2020-04-27 15:33:30
 tags:
   - Webpack
@@ -101,9 +101,9 @@ export default defineConfig({
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
-## 性能優化
+## 效能優化
 
 我們可以通過以下方式來改進：
 

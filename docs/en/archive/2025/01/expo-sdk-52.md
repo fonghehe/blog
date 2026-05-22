@@ -1,6 +1,6 @@
 ---
 title: "Expo SDK 52 New Features"
-date: 2025-01-22 10:00:00
+date: 2025-01-22 12:16:53
 tags:
   - Frontend
 readingTime: 3

@@ -1,5 +1,5 @@
 ---
-title: "Islands Architecture Astro 實踐"
+title: "Islands Architecture Astro 實踐：實踐方法與治理思路"
 date: 2023-05-17 11:47:53
 tags:
   - 前端
@@ -91,7 +91,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 調優策略
 

@@ -1,5 +1,5 @@
 ---
-title: "JavaScript 閉包與內存管理"
+title: "JavaScript 閉包與內存管理：落地路徑與實戰建議"
 date: 2019-04-24 09:46:19
 tags:
   - JavaScript

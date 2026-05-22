@@ -4,7 +4,7 @@ date: 2019-07-08 11:22:58
 tags:
   - CSS
 readingTime: 5
-description: "CSS Grid 已經得到主流瀏覽器的支持有一段時間了。基礎的 `grid-template-columns` 和 `grid-template-rows` 大家都會用，但 `grid-template-areas`、`auto-fill` vs `auto-fit`、`minmax()` 這些進階特性才能真正發揮 G"
+description: "CSS Grid 已經得到主流瀏覽器的支援有一段時間了。基礎的 `grid-template-columns` 和 `grid-template-rows` 大家都會用，但 `grid-template-areas`、`auto-fill` vs `auto-fit`、`minmax()` 這些進階特性才能真正發揮 G"
 wordCount: 904
 ---
 
@@ -99,7 +99,7 @@ CSS Grid 已經得到主流瀏覽器的支持有一段時間了。基礎的 `gri
 }
 ```
 
-`auto-fill` 會盡可能多地創建列軌道，即使沒有足夠的子元素填滿。如果容器寬度 800px，每列最小 200px，那麼會創建 4 個列軌道。即使只有 2 個子元素，第 3、4 列的空軌道依然存在（雖然看不見）。
+`auto-fill` 會盡可能多地創建列軌道，即使沒有足夠的子元素填滿。如果容器寬度 800px，每列最小 200px，那麼會創建 4 個列軌道。即使隻有 2 個子元素，第 3、4 列的空軌道依然存在（雖然看不見）。
 
 ### auto-fit
 
@@ -115,7 +115,7 @@ CSS Grid 已經得到主流瀏覽器的支持有一段時間了。基礎的 `gri
 
 ### 區別演示
 
-假設容器寬度 800px，每列最小 200px，只有 2 個子元素：
+假設容器寬度 800px，每列最小 200px，隻有 2 個子元素：
 
 ```
 auto-fill（4列，2個空列保留）:
@@ -160,7 +160,7 @@ auto-fit（2列，空列摺疊，子元素拉伸）:
 
 ## 實戰：響應式 Dashboard 佈局
 
-一個管理後台 Dashboard 頁面，包含統計卡片、圖表、數據表格：
+一個管理後臺 Dashboard 頁面，包含統計卡片、圖表、數據表格：
 
 ```html
 <div class="dashboard">
@@ -244,7 +244,7 @@ auto-fit（2列，空列摺疊，子元素拉伸）:
 }
 ```
 
-這個佈局只用了 CSS，沒有寫一行 JavaScript 來處理響應式。
+這個佈局隻用了 CSS，沒有寫一行 JavaScript 來處理響應式。
 
 ## 實戰：聖盃佈局的 Grid 版本
 
@@ -268,7 +268,7 @@ auto-fit（2列，空列摺疊，子元素拉伸）:
 .holy-grail__footer { grid-area: footer; }
 ```
 
-對比 Flexbox 實現聖盃佈局需要大量嵌套，Grid 的優勢在於——一行嵌套都不需要。
+對比 Flexbox 實現聖盃佈局需要大量巢狀，Grid 的優勢在於——一行巢狀都不需要。
 
 ## subgrid（實驗性）
 
@@ -322,9 +322,9 @@ auto-fit（2列，空列摺疊，子元素拉伸）:
 
 ## 踩坑記錄
 
-### 坑 1：grid-gap 在 IE11 中不支持
+### 坑 1：grid-gap 在 IE11 中不支援
 
-IE11 支持 Grid 但不支持 `gap`（需要寫成 `grid-gap`，且只支持老語法）。如果需要兼容 IE11：
+IE11 支援 Grid 但不支援 `gap`（需要寫成 `grid-gap`，且隻支援老語法）。如果需要相容 IE11：
 
 ```css
 .card-grid {
@@ -369,7 +369,7 @@ Grid 子元素默認 `min-width: auto`，意味着內容不會溢出。如果子
   grid-template-columns: 200px 1fr;
 }
 
-/* 但如果同時有 min-width 限制，效果可能不符合預期 */
+/* 但如果同時有 min-width 限製，效果可能不符合預期 */
 /* 1fr 等於 minmax(auto, 1fr)，auto 會根據內容撐開 */
 ```
 
@@ -378,6 +378,6 @@ Grid 子元素默認 `min-width: auto`，意味着內容不會溢出。如果子
 - `grid-template-areas` 讓佈局結構可視化，代碼即設計稿
 - `auto-fit` 適合子元素數量不確定的自適應佈局，`auto-fill` 適合需要保留網格結構的場景
 - `minmax()` 配合 `auto-fit` 可以實現無媒體查詢的響應式佈局
-- Grid 佈局比 Flexbox 更適合二維佈局（同時控制行和列）
-- `subgrid` 是未來的方向，但目前兼容性有限，需要降級方案
+- Grid 佈局比 Flexbox 更適合二維佈局（同時控製行和列）
+- `subgrid` 是未來的方向，但目前相容性有限，需要降級方案
 - 注意 IE11 兼容和 `min-width: auto` 等細節問題

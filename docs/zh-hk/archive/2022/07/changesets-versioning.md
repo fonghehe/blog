@@ -1,5 +1,5 @@
 ---
-title: "Changesets 版本管理與發佈"
+title: "Changesets 版本管理與發佈：特性解讀與遷移建議"
 date: 2022-07-19 11:47:03
 tags:
   - TypeScript
@@ -71,7 +71,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 真實場景應用
 

@@ -1,14 +1,14 @@
 ---
-title: "Vue 表單驗證最佳實踐"
+title: "Vue 表單驗證最佳實踐：落地路徑與實戰建議"
 date: 2018-08-07 09:32:38
 tags:
   - Vue
 readingTime: 2
-description: "表單驗證是後台系統裏最頻繁的需求，用 Element UI 做了不少，整理一下最佳實踐。"
+description: "表單驗證是後臺系統裏最頻繁的需求，用 Element UI 做了不少，整理一下最佳實踐。"
 wordCount: 145
 ---
 
-表單驗證是後台系統裏最頻繁的需求，用 Element UI 做了不少，整理一下最佳實踐。
+表單驗證是後臺系統裏最頻繁的需求，用 Element UI 做了不少，整理一下最佳實踐。
 
 ## Element UI 的基礎驗證
 

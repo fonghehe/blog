@@ -1,6 +1,6 @@
 ---
 title: "Astro 4 Content Collections：内容驱动的站点架构"
-date: 2024-06-25 10:00:00
+date: 2024-06-25 14:59:36
 tags:
   - React
 readingTime: 2

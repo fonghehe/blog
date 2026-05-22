@@ -1,5 +1,5 @@
 ---
-title: "React 高階組件 HOC 模式"
+title: "React 高階組件 HOC 模式：落地路徑與實戰建議"
 date: 2019-04-09 10:45:08
 tags:
   - React

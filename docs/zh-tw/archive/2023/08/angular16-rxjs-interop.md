@@ -44,7 +44,7 @@ export class UserListComponent {
 }
 ```
 
-## toSignal 的各種配置
+## toSignal 的各種設定
 
 ```typescript
 // requireSync：Observable 必須同步發出初始值（否則報錯）
@@ -169,7 +169,7 @@ export class DataComponent implements OnInit {
   private destroyRef = inject(DestroyRef);
 
   ngOnInit() {
-    // 不需要 ngOnDestroy + Subject.complete() 的模板程式碼
+    // 不需要 ngOnDestroy + Subject.complete() 的範本程式碼
     interval(1000)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(n => console.log(n));

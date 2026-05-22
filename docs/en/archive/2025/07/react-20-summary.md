@@ -1,6 +1,6 @@
 ---
-title: "React 20 New Features Summary"
-date: 2025-07-30 10:00:00
+title: "React 20 New Features Roundup:  19  to  20 UpgradePath"
+date: 2025-07-30 13:24:01
 tags:
   - React
 readingTime: 2

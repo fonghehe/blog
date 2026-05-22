@@ -1,6 +1,6 @@
 ---
 title: "Bun 3.0 Full-Stack Runtime"
-date: 2026-02-17 10:00:00
+date: 2026-02-17 17:31:08
 tags:
   - Frontend
 readingTime: 2

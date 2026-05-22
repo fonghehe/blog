@@ -1,6 +1,6 @@
 ---
-title: "Svelte 6 Compiler Improvements"
-date: 2025-12-01 10:00:00
+title: "Svelte 6 Compiler Practice: Migration后Performance & DevelopmentExperienceReal反馈"
+date: 2025-12-01 10:15:52
 tags:
   - Svelte
 readingTime: 2

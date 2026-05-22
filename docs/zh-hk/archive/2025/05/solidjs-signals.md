@@ -1,6 +1,6 @@
 ---
-title: "SolidJS Signals 跨框架應用"
-date: 2025-05-29 10:00:00
+title: "SolidJS Signals 跨框架應用：落地路徑與實戰建議"
+date: 2025-05-29 19:03:40
 tags:
   - 前端
 readingTime: 2

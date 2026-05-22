@@ -22,7 +22,7 @@ wordCount: 201
   → lodash 和 Vue 被下載了 3 次！
 
 提取後：
-  vendor.js = lodash + Vue（只下載一次，長期快取）
+  vendor.js = lodash + Vue（隻下載一次，長期快取）
   common.js = A/B/C 共用的業務程式碼
   pageA.js = pageA 自己的程式碼（很小）
 ```
@@ -128,12 +128,12 @@ common.js     → 業務公共程式碼，偶爾變化
 pageA.js      → 頁面程式碼，經常變化
 ```
 
-## Vue CLI 的預設配置
+## Vue CLI 的預設設定
 
-Vue CLI 已經做了合理的預設配置，通常不需要手動改：
+Vue CLI 已經做了合理的預設設定，通常不需要手動改：
 
 ```javascript
-// vue.config.js（只在預設不滿足需求時調整）
+// vue.config.js（隻在預設不滿足需求時調整）
 module.exports = {
   chainWebpack(config) {
     config.optimization.splitChunks({
@@ -163,7 +163,7 @@ module.exports = {
   common.js：100KB
   各頁面 chunk：30-80KB
 
-首次總量差不多，但後續頁面跳轉只需要下載 page chunk
+首次總量差不多，但後續頁面跳轉隻需要下載 page chunk
 ```
 
 ## 小結

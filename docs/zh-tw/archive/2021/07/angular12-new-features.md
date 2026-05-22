@@ -135,8 +135,8 @@ ng update @angular/core@12 @angular/cli@12
 
 # 主要遷移內容（CLI 自動處理）：
 # 1. 更新 tsconfig 中廢棄的選項
-# 2. 遷移 ng build 預設配置
-# 3. 更新 Sass 相關配置
+# 2. 遷移 ng build 預設設定
+# 3. 更新 Sass 相關設定
 ```
 
 **注意**：如果依賴了未升級到 Ivy 的第三方庫，升級可能失敗。先用 `ng update --list` 檢查：

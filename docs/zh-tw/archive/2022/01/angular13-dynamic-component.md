@@ -101,7 +101,7 @@ export class ToastComponent {
 }
 ```
 
-## 實際場景：路由級彈窗（無需路由配置）
+## 實際場景：路由級彈窗（無需路由設定）
 
 ```typescript
 // 點選彈出詳情，不改變 URL

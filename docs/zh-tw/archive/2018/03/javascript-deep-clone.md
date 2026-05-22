@@ -15,7 +15,7 @@ wordCount: 329
 ```javascript
 const obj = { name: "Alice", address: { city: "北京" } };
 
-// 淺複製：只複製第一層，巢狀引用還是同一個
+// 淺複製：隻複製第一層，巢狀引用還是同一個
 const shallow = { ...obj };
 shallow.address.city = "上海";
 console.log(obj.address.city); // '上海'，原物件被修改了！
@@ -168,6 +168,6 @@ methods: {
 
 ## 小結
 
-- 簡單場景用 `JSON.parse(JSON.stringify())`，但瞭解它的限制
+- 簡單場景用 `JSON.parse(JSON.stringify())`，但瞭解它的限製
 - 生產程式碼推薦 `lodash/cloneDeep`，省心
 - 如果追求零依賴，手寫遞迴方案，記得處理迴圈引用

@@ -1,6 +1,6 @@
 ---
 title: "Micro-Frontends: When to Split and When Not To"
-date: 2026-02-12 10:00:00
+date: 2026-02-12 12:26:03
 tags:
   - Micro-frontend
 readingTime: 2

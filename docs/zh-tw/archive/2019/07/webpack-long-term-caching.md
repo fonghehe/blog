@@ -21,13 +21,13 @@ Webpack 專案一大痛點就是構建速度慢。一箇中型專案，`node_mod
 
 後續構建（主構建）：
   讀取 manifest.json -> 知道 DLL 中已經包含哪些模組
-  跳過這些模組的解析和編譯 -> 只編譯業務程式碼
+  跳過這些模組的解析和編譯 -> 隻編譯業務程式碼
   -> 耗時：大幅減少
 ```
 
-## 完整配置
+## 完整設定
 
-### 第一步：建立 DLL 構建配置
+### 第一步：建立 DLL 構建設定
 
 ```javascript
 // webpack.dll.config.js
@@ -126,7 +126,7 @@ module.exports = {
 }
 ```
 
-### 第四步：配置 npm scripts
+### 第四步：設定 npm scripts
 
 ```json
 {
@@ -139,7 +139,7 @@ module.exports = {
 }
 ```
 
-- `npm run dll`：單獨生成 DLL（只在依賴變化時需要執行）
+- `npm run dll`：單獨生成 DLL（隻在依賴變化時需要執行）
 - `npm run build`：先生成 DLL 再構建
 - `npm run build:main`：跳過 DLL 生成，直接主構建（日常開發用這個）
 
@@ -205,7 +205,7 @@ plugins: [
 | 首次構建 | 需要先構建 DLL | 沒有加速效果 |
 | 後續構建 | DLL 中的模組跳過編譯 | 所有模組從快取恢復 |
 | 依賴變化 | 需要重新構建 DLL | 自動增量更新 |
-| 配置複雜度 | 需要單獨的 DLL 配置檔案 | 一行配置即可 |
+| 設定複雜度 | 需要單獨的 DLL 設定檔案 | 一行設定即可 |
 | 適用場景 | 依賴穩定的大型專案 | 任何專案 |
 
 ```javascript
@@ -238,7 +238,7 @@ plugins: [
 
 在一箇中型 React 專案（約 150 個模組）上測試：
 
-| 場景 | 不最佳化 | 只用 DllPlugin | 只用 HardSource | 兩者都用 |
+| 場景 | 不最佳化 | 隻用 DllPlugin | 隻用 HardSource | 兩者都用 |
 |------|--------|--------------|----------------|---------|
 | 冷啟動構建 | 45s | 35s | 45s | 35s |
 | 二次構建 | 45s | 35s | 8s | 6s |
@@ -331,5 +331,5 @@ module.exports = {
 - 配置三步走：建立 DLL 構建配置 -> 主構建用 DllReferencePlugin 引用 -> 用 AddAssetHtmlPlugin 注入 HTML
 - HardSourceWebpackPlugin 通過快取編譯結果加速，和 DllPlugin 互補
 - 依賴變化後需要重新構建 DLL，可以在 postinstall 中自動處理
-- DLL 檔案體積大，需要決定是否提交到版本控制
+- DLL 檔案體積大，需要決定是否提交到版本控製
 - 現代 Webpack 5 中 DllPlugin 的使用場景減少（因為有更好的持久化快取方案），但在 Webpack 4 時代是構建加速的重要手段

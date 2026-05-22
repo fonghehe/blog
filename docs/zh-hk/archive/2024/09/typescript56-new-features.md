@@ -1,6 +1,6 @@
 ---
 title: "TypeScript 5.6：Iterator Helper、正則類型與嚴格的內置檢查"
-date: 2024-09-22 10:00:00
+date: 2024-09-22 11:56:33
 tags:
   - TypeScript
 readingTime: 2
@@ -40,7 +40,7 @@ function* readLines(content: string) {
 
 const errors = readLines(hugeLog)
   .filter((line) => line.includes("ERROR"))
-  .take(10)    // 只取前 10 條
+  .take(10)    // 隻取前 10 條
   .toArray();  // 轉成數組
 
 // 配合 async 迭代器
@@ -105,7 +105,7 @@ interface Config {
 import { formatPrice } from "../../utils/src/price";
 ```
 
-## 控制流分析改進
+## 控製流分析改進
 
 ```typescript
 function process(data: string | null) {
@@ -118,7 +118,7 @@ function process(data: string | null) {
 }
 ```
 
-## 配置項更新
+## 設定項更新
 
 ```json
 // tsconfig.json 新增選項
@@ -137,7 +137,7 @@ function process(data: string | null) {
 ## 升級注意事項
 
 1. 如果項目用了 Babel 編譯 TS，確保 Babel 插件支持新的語法
-2. `target: "ES2024"` 需要對應的 runtime 支持，或使用 polyfill
+2. `target: "ES2024"` 需要對應的 runtime 支援，或使用 polyfill
 3. Iterator Helpers 的 polyfill 可以用 `core-js` 或 `@ungap/iterator-helpers`
 
 ## 小結

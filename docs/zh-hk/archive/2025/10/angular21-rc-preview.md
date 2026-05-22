@@ -1,6 +1,6 @@
 ---
 title: "Angular 21 RC 預覽：Signal Forms 穩定、全新路由 API 與 SSR 增強"
-date: 2025-10-24 10:00:00
+date: 2025-10-24 14:18:55
 tags:
   - Angular
   - JavaScript
@@ -85,7 +85,7 @@ export class UserDetailComponent {
 }
 ```
 
-## 路由級 Meta 支持（原生 SEO）
+## 路由級 Meta 支援（原生 SEO）
 
 Angular 21 內置了路由級元數據注入，無需 Angular Meta 服務：
 
@@ -151,7 +151,7 @@ ng generate @angular/forms:signal-forms-migration
 # 4. 將 this.form.valueChanges → toObservable(this.form.value)
 ```
 
-注意：自動遷移只處理簡單情況，複雜的自定義 validator、動態 FormArray 需要手動遷移。
+注意：自動遷移隻處理簡單情況，複雜的自定義 validator、動態 FormArray 需要手動遷移。
 
 ## 升級到 Angular 21 RC
 

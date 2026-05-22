@@ -1,6 +1,6 @@
 ---
-title: "Deno 3.0 Full-Stack Solution"
-date: 2025-11-18 10:00:00
+title: "Deno 3.0 Full-Stack Practice:  Next.js MigrationRealProjectExperience"
+date: 2025-11-18 16:52:29
 tags:
   - Frontend
 readingTime: 2

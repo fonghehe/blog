@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 生命週期鈎子 Composition API 版本"
+title: "Vue 3 生命週期鈎子 Composition API 版本：落地路徑與實戰建議"
 date: 2020-07-06 15:09:20
 tags:
   - Vue
@@ -163,7 +163,7 @@ export default {
 
 ## onErrorCaptured 錯誤邊界
 
-這個鈎子在 Vue 3 中依然保留，可以用來構建類似 React ErrorBoundary 的錯誤捕獲機制：
+這個鈎子在 Vue 3 中依然保留，可以用來構建類似 React ErrorBoundary 的錯誤捕獲機製：
 
 ```typescript
 import { onErrorCaptured, ref, defineComponent, h } from 'vue'
@@ -178,7 +178,7 @@ const ErrorBoundary = defineComponent({
       hasError.value = true
       error.value = err
 
-      // 上報到監控平台
+      // 上報到監控平臺
       console.error('組件錯誤被捕獲:', {
         message: err.message,
         stack: err.stack,
@@ -225,7 +225,7 @@ export default {
       console.log('watch pre (默認)')
     })
 
-    // post：在組件更新後執行，類似 onUpdated 但只在特定數據變化時觸發
+    // post：在組件更新後執行，類似 onUpdated 但隻在特定數據變化時觸發
     watch(count, () => {
       console.log('watch post')
     }, { flush: 'post' })

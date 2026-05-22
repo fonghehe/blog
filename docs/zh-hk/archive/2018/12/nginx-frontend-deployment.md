@@ -1,16 +1,16 @@
 ---
-title: "Nginx 前端部署常用配置"
+title: "Nginx 前端部署常用設定：實踐方法與治理思路"
 date: 2018-12-06 10:15:04
 tags:
   - 工程化
 readingTime: 1
-description: "前端項目部署到 Nginx 上，每次都要找配置，乾脆整理一份常用配置備查。"
+description: "前端項目部署到 Nginx 上，每次都要找設定，乾脆整理一份常用設定備查。"
 wordCount: 124
 ---
 
 前端項目部署到 Nginx 上，每次都要找配置，乾脆整理一份常用配置備查。
 
-## 基礎配置：單頁應用
+## 基礎設定：單頁應用
 
 ```nginx
 server {
@@ -40,7 +40,7 @@ server {
 }
 ```
 
-## HTTPS 配置
+## HTTPS 設定
 
 ```nginx
 server {
@@ -62,7 +62,7 @@ server {
     ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512;
     ssl_prefer_server_ciphers off;
 
-    # HSTS（強制 HTTPS）
+    # HSTS（強製 HTTPS）
     add_header Strict-Transport-Security "max-age=31536000" always;
 
     root /var/www/dist;
@@ -126,7 +126,7 @@ http {
 
 ```nginx
 # 配合 webpack contenthash 的最優緩存策略：
-# - HTML 入口文件：不緩存，每次都拿最新的
+# - HTML 入口檔案：不緩存，每次都拿最新的
 # - JS/CSS（帶 hash）：永久緩存，因為內容變化時 hash 也變化
 
 location = /index.html {

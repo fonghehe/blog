@@ -1,5 +1,5 @@
 ---
-title: "CSS 邏輯屬性 Logical Properties"
+title: "CSS 邏輯屬性 Logical Properties：国際化布局的第一步"
 date: 2019-09-09 15:05:57
 tags:
   - CSS

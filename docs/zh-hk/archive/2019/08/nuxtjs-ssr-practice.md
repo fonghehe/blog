@@ -1,5 +1,5 @@
 ---
-title: "Nuxt.js 服務端渲染實戰"
+title: "Nuxt.js 服務端渲染實戰：落地路徑與實戰建議"
 date: 2019-08-29 09:40:58
 tags:
   - Vue
@@ -30,7 +30,7 @@ pages/
   about.vue          → /about
 layouts/
   default.vue        → 默認佈局
-  admin.vue          → 後台佈局
+  admin.vue          → 後臺佈局
 components/
 store/
   index.js           → Vuex
@@ -87,7 +87,7 @@ export default {
 {% endraw %}
 ```
 
-## nuxt.config.js 關鍵配置
+## nuxt.config.js 關鍵設定
 
 ```javascript
 export default {
@@ -99,7 +99,7 @@ export default {
   // 插件（區分客户端/服務端）
   plugins: [
     "~/plugins/axios.js",
-    { src: "~/plugins/chart.js", mode: "client" }, // 只在客户端加載
+    { src: "~/plugins/chart.js", mode: "client" }, // 隻在客户端加載
   ],
 
   // 模塊

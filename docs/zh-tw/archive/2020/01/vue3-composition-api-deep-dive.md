@@ -1,14 +1,14 @@
 ---
-title: "Vue 3 Composition API 深度解析"
+title: "Vue 3 Composition API 深度解析：從 Options 到 Composition 的遷移"
 date: 2020-01-01 15:25:34
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 的 Composition API 是自 Vue 誕生以來最重大的範式轉變。對於習慣了 Options API 的開發者來說，這套 API 的學習曲線並不陡峭，但要真正用好它，需要理解其設計哲學和底層機制。本文從實際工程角度出發，剖析 Composition API 的核心用法。"
+description: "Vue 3 的 Composition API 是自 Vue 誕生以來最重大的範式轉變。對於習慣了 Options API 的開發者來說，這套 API 的學習曲線並不陡峭，但要真正用好它，需要理解其設計哲學和底層機製。本文從實際工程角度出發，剖析 Composition API 的核心用法。"
 wordCount: 449
 ---
 
-Vue 3 的 Composition API 是自 Vue 誕生以來最重大的範式轉變。對於習慣了 Options API 的開發者來說，這套 API 的學習曲線並不陡峭，但要真正用好它，需要理解其設計哲學和底層機制。本文從實際工程角度出發，剖析 Composition API 的核心用法。
+Vue 3 的 Composition API 是自 Vue 誕生以來最重大的範式轉變。對於習慣了 Options API 的開發者來說，這套 API 的學習曲線並不陡峭，但要真正用好它，需要理解其設計哲學和底層機製。本文從實際工程角度出發，剖析 Composition API 的核心用法。
 
 ## setup 函式與響應式基礎
 
@@ -47,7 +47,7 @@ export default {
 
     fetchUser()
 
-    // 如果要用模板解構，需要 toRefs
+    // 如果要用範本解構，需要 toRefs
     return {
       count,
       increment: () => count.value++,
@@ -57,7 +57,7 @@ export default {
 }
 ```
 
-注意 `ref` 返回的物件在 JS 中訪問需要 `.value`，在模板中則自動解包。這是很多初學者容易踩的坑。
+注意 `ref` 返回的物件在 JS 中訪問需要 `.value`，在範本中則自動解包。這是很多初學者容易踩的坑。
 
 ## 自定義可複用邏輯
 
@@ -127,11 +127,11 @@ export default {
 }
 ```
 
-選擇建議：需要獲取舊值或精確控制觸發條件時用 `watch`；需要自動追蹤多個依賴時用 `watchEffect`。
+選擇建議：需要獲取舊值或精確控製觸發條件時用 `watch`；需要自動追蹤多個依賴時用 `watchEffect`。
 
 ## 生命週期鉤子的對映
 
-Composition API 中的生命週期鉤子都以 `on` 開頭，且只在 `setup` 中有效。
+Composition API 中的生命週期鉤子都以 `on` 開頭，且隻在 `setup` 中有效。
 
 ```javascript
 import { onMounted, onUpdated, onUnmounted, onBeforeMount, onBeforeUpdate, onBeforeUnmount } from 'vue'
@@ -171,4 +171,4 @@ export default {
 - `ref` 用於基本型別，`reactive` 用於物件，注意 `.value` 的使用場景
 - Composables 替代 mixins，解決了命名衝突和來源不明的問題
 - `watchEffect` 自動追蹤依賴，`watch` 顯式指定且可獲取舊值
-- 生命週期鉤子全部以 `on` 字首命名，只能在 `setup` 中呼叫
+- 生命週期鉤子全部以 `on` 字首命名，隻能在 `setup` 中呼叫

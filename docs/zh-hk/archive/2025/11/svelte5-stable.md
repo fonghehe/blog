@@ -1,6 +1,6 @@
 ---
 title: "Svelte 5 穩定版：全面擁抱 Runes"
-date: 2025-11-08 10:00:00
+date: 2025-11-08 14:42:19
 tags:
   - Svelte
 readingTime: 2
@@ -38,7 +38,7 @@ Runes = Svelte 5 的響應式原語
   }
 
   function updateUser() {
-    user.age += 1; // 嵌套屬性需要特殊處理
+    user.age += 1; // 巢狀屬性需要特殊處理
     user = user;   // 手動觸發更新
   }
 </script>
@@ -115,7 +115,7 @@ Runes = Svelte 5 的響應式原語
     };
   });
 
-  // 只在特定時機運行
+  // 隻在特定時機運行
   $effect.pre(() => {
     // DOM 更新前運行
     console.log("即將更新 DOM");

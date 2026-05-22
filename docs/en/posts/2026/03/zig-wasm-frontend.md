@@ -1,6 +1,6 @@
 ---
 title: "Zig + WebAssembly in Frontend Applications"
-date: 2026-03-03 10:00:00
+date: 2026-03-03 18:57:34
 tags:
   - Frontend
 readingTime: 2

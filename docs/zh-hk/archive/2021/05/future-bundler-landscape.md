@@ -1,5 +1,5 @@
 ---
-title: "Turbopack 構建工具概念分析"
+title: "Turbopack 構建工具概念分析：特性解讀與遷移建議"
 date: 2021-05-04 14:50:45
 tags:
   - 前端
@@ -103,7 +103,7 @@ export default defineConfig({
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能對比
+## 效能對比
 
 以下是一個完整的示例：
 

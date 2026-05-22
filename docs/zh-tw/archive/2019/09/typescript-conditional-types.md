@@ -64,7 +64,7 @@ type Result2 = MyExtract<string | number | boolean, string | number>;
 
 ## infer 關鍵字
 
-`infer` 是條件型別中用於型別推斷的關鍵字，只能在 `extends` 子句中使用：
+`infer` 是條件型別中用於型別推斷的關鍵字，隻能在 `extends` 子句中使用：
 
 ### 推斷函式返回值型別
 
@@ -239,7 +239,7 @@ const newUser = await apiCall('/users', 'POST', {
 // 第三個引數有完整的型別提示，缺少必填欄位會報錯
 ```
 
-## 實戰：深度只讀型別
+## 實戰：深度隻讀型別
 
 ```ts
 type DeepReadonly<T> = T extends (infer E)[]

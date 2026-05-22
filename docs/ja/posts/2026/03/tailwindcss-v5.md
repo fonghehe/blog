@@ -1,6 +1,6 @@
 ---
-title: "Tailwind CSS v5 の新機能"
-date: 2026-03-12 10:00:00
+title: "Tailwind CSS v5 の新機能：実務で使うための導入ガイド"
+date: 2026-03-12 17:06:43
 tags:
   - CSS
   - エンジニアリング

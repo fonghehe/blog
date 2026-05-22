@@ -42,7 +42,7 @@ function UserProfile({ userId }) {
 
   useEffect(() => {
     fetchUser(userId).then(setUser);
-  }, []); // [] 表示只運行一次，但 userId 變化時不會重新獲取！
+  }, []); // [] 表示隻運行一次，但 userId 變化時不會重新獲取！
 
   return <div>{user?.name}</div>;
 }
@@ -99,7 +99,7 @@ function Parent({ userId }) {
 function Parent({ userId }) {
   const fetchUser = useCallback(() => {
     return fetch(`/api/user/${userId}`);
-  }, [userId]); // 只有 userId 變化才創建新函數
+  }, [userId]); // 隻有 userId 變化才創建新函數
 
   useEffect(() => {
     fetchUser();
@@ -110,7 +110,7 @@ function Parent({ userId }) {
 ```javascript
 // useMemo：緩存計算結果（避免每次渲染重算）
 function ProductList({ products, category }) {
-  // 只有 products 或 category 變化時才重新過濾
+  // 隻有 products 或 category 變化時才重新過濾
   const filtered = useMemo(
     () => products.filter((p) => p.category === category),
     [products, category],
@@ -143,7 +143,7 @@ useEffect(() => {
   let cancelled = false;
 
   fetchUser(userId).then((user) => {
-    if (!cancelled) setUser(user); // 只有當前 effect 還有效才更新
+    if (!cancelled) setUser(user); // 隻有當前 effect 還有效才更新
   });
 
   return () => {

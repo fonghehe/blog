@@ -1,6 +1,6 @@
 ---
 title: "GitHub Copilot 次世代機能"
-date: 2025-04-21 10:00:00
+date: 2025-04-21 10:15:52
 tags:
   - エンジニアリング
 readingTime: 2

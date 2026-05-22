@@ -1,14 +1,14 @@
 ---
-title: "Node.js 事件循環深入理解"
+title: "Node.js 事件循環深入理解：落地路徑與實戰建議"
 date: 2018-04-09 11:02:57
 tags:
   - JavaScript
 readingTime: 2
-description: "Node.js 面試必問題目，但很多人只背了結論，沒有理解背後的機制。這篇文章從實際代碼的執行順序出發，講清楚事件循環。"
+description: "Node.js 面試必問題目，但很多人隻背了結論，沒有理解背後的機製。這篇文章從實際代碼的執行順序出發，講清楚事件循環。"
 wordCount: 463
 ---
 
-Node.js 面試必問題目，但很多人只背了結論，沒有理解背後的機制。這篇文章從實際代碼的執行順序出發，講清楚事件循環。
+Node.js 面試必問題目，但很多人隻背了結論，沒有理解背後的機製。這篇文章從實際代碼的執行順序出發，講清楚事件循環。
 
 ## 為什麼 Node.js 是單線程但不阻塞
 
@@ -156,7 +156,7 @@ function readData(callback) {
 
 ## 小結
 
-- 事件循環是 Node.js 處理併發的核心機制
+- 事件循環是 Node.js 處理併發的核心機製
 - 微任務（Promise、nextTick）在每個宏任務結束後立即執行
 - `process.nextTick` 優先級高於 Promise.then
 - I/O 內部 `setImmediate` 先於 `setTimeout`

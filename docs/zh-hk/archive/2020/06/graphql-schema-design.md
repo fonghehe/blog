@@ -1,5 +1,5 @@
 ---
-title: "GraphQL Schema 設計最佳實踐"
+title: "GraphQL Schema 設計最佳實踐：落地路徑與實戰建議"
 date: 2020-06-16 16:36:01
 tags:
   - GraphQL
@@ -101,9 +101,9 @@ const client = new ApolloClient({
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
-## 性能對比
+## 效能對比
 
 我們可以通過以下方式來改進：
 

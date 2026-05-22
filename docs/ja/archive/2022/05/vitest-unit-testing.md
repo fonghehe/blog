@@ -4,12 +4,12 @@ date: 2022-05-24 14:31:37
 tags:
   - Vite
   - Vitest
-readingTime: 3
-description: "如果你的项目用 Vite，那 Vitest 就是测试的最优解。和 Vite 共享配置、同一转换管道、原生 ESM 支持——Jest 需要各种 hack 才能做到的事，Vitest 天然支持。"
-wordCount: 389
+readingTime: 4
+description: "プロジェクトで Vite を使っているなら、Vitest がテストの最適解です。Vite と設定を共有し、同一の変換パイプラインを持ち、ネイティブ ESM をサポートします。Jest では様々なハックが必要だったことが、Vitest ではネイティブにサポートされています。"
+wordCount: 631
 ---
 
-如果你的项目用 Vite，那 Vitest 就是测试的最优解。和 Vite 共享配置、同一转换管道、原生 ESM 支持——Jest 需要各种 hack 才能做到的事，Vitest 天然支持。
+プロジェクトで Vite を使っているなら、Vitest がテストの最適解です。Vite と設定を共有し、同一の変換パイプラインを持ち、ネイティブ ESM をサポートします。Jest では様々なハックが必要だったことが、Vitest ではネイティブにサポートされています。
 
 ## クイックスタート
 
@@ -46,7 +46,7 @@ export default defineConfig({
 }
 ```
 
-## 与 Jest 的 API 兼容
+## Jest との API 互換性
 
 ```typescript
 // sum.test.ts
@@ -90,9 +90,9 @@ describe('with mocks', () => {
 });
 ```
 
-大部分 Jest API 可以直接用，迁移成本很低。
+ほとんどの Jest API はそのまま使用でき、移行コストは非常に低いです。
 
-## 与 Vite 共享配置
+## Vite との設定共有
 
 ```typescript
 // vite.config.ts
@@ -115,15 +115,15 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    // 测试专用配置
+    // テスト専用設定
     setupFiles: ['./src/test/setup.ts'],
   },
 });
 ```
 
-路径别名、插件、环境变量——全部自动继承，不需要像 Jest 那样单独配置 `moduleNameMapper`。
+パスエイリアス、プラグイン、環境変数——すべて自動で継承され、Jest のように `moduleNameMapper` を個別に設定する必要はありません。
 
-## React 组件测试
+## React コンポーネントのテスト
 
 ```tsx
 // Button.test.tsx
@@ -158,7 +158,7 @@ describe('Button', () => {
 import '@testing-library/jest-dom/vitest';
 ```
 
-## Snapshot 测试
+## スナップショットテスト
 
 ```typescript
 // config.test.ts
@@ -179,20 +179,20 @@ describe('config', () => {
 });
 ```
 
-inline snapshot 直接嵌入测试文件，比单独的 `.snap` 文件更直观。
+inline snapshot はテストファイルに直接埋め込まれ、個別の `.snap` ファイルよりも直感的です。
 
-## 测试 UI
+## テスト UI
 
 ```bash
 vitest --ui
 ```
 
-Vitest 自带一个 Web UI，可以查看测试结果、覆盖率、测试用时。比 Jest 的输出更友好。
+Vitest には Web UI が付属しており、テスト結果、カバレッジ、テスト所要時間を確認できます。Jest の出力よりも親しみやすいです。
 
-## Mock 策略
+## Mock 戦略
 
 ```typescript
-// Mock 第三方模块
+// サードパーティモジュールの Mock
 vi.mock('axios', () => ({
   default: {
     get: vi.fn().mockResolvedValue({ data: { users: [] } }),
@@ -200,7 +200,7 @@ vi.mock('axios', () => ({
   },
 }));
 
-// Mock 一部分模块
+// モジュールの一部を Mock
 vi.mock('./utils', async () => {
   const actual = await vi.importActual('./utils');
   return {
@@ -209,12 +209,12 @@ vi.mock('./utils', async () => {
   };
 });
 
-// Mock CSS 模块
+// CSS モジュールの Mock
 vi.mock('*.module.css', () => ({
   default: { container: 'mock-container' },
 }));
 
-// Mock 图片
+// 画像の Mock
 vi.mock('*.svg', () => ({
   default: 'mock-svg-url',
 }));
@@ -222,41 +222,41 @@ vi.mock('*.svg', () => ({
 
 ## パフォーマンス比較
 
-我们一个中型项目的测试套件（150 个测试文件，800 个测试用例）：
+私たちがある中規模プロジェクトのテストスイート（150 テストファイル、800 テストケース）で測定したデータ：
 
-| 指标 | Jest | Vitest |
+| 指標 | Jest | Vitest |
 |------|------|--------|
-| 全量执行 | 28s | 8s |
-| 单文件运行 | 3.2s | 0.8s |
-| watch 模式重跑 | 1.8s | 0.3s |
-| 启动时间 | 4.5s | 1.2s |
+| 全量実行 | 28s | 8s |
+| 単一ファイル実行 | 3.2s | 0.8s |
+| watch モード再実行 | 1.8s | 0.3s |
+| 起動時間 | 4.5s | 1.2s |
 
-快了 3 倍以上，主要是因为 Vitest 利用了 Vite 的转换管道，避免了重复编译。
+3 倍以上高速です。主な理由は Vitest が Vite の変換パイプラインを利用し、重複コンパイルを回避しているためです。
 
-## 从 Jest 迁移
+## Jest からの移行
 
 ```typescript
-// vitest.config.ts - 兼容 Jest 的全局 API
+// vitest.config.ts - Jest のグローバル API と互換
 export default defineConfig({
   test: {
-    globals: true,        // 不需要 import { describe } from 'vitest'
+    globals: true,        // import { describe } from 'vitest' が不要
     environment: 'jsdom',
-    // Jest 的 setupFilesAfterSetup
+    // Jest の setupFilesAfterSetup に相当
     setupFiles: ['./vitest.setup.ts'],
-    // Jest 的 testMatch
+    // Jest の testMatch に相当
     include: ['**/*.test.{ts,tsx}'],
-    // Jest 的 transform
-    // 不需要！Vite 已经处理了
+    // Jest の transform
+    // 不要！Vite がすでに処理している
   },
 });
 ```
 
-迁移步骤：
+移行手順：
 1. `pnpm add -D vitest`
-2. 把 jest.config 改为 vitest.config（API 很像）
-3. 把 `jest.fn()` 替换为 `vi.fn()`（大部分用全局模式不需要改）
-4. 删除 jest 相关依赖
+2. jest.config を vitest.config に変更（API は非常に似ています）
+3. `jest.fn()` を `vi.fn()` に置き換え（ほとんどの場合、グローバルモードでは変更不要）
+4. Jest 関連の依存関係を削除
 
 ## まとめ
 
-Vitest 不是 Jest 的简单替代品，而是 Vite 生态的原生测试方案。速度快、配置简单、与 Vite 深度集成。对于用 Vite 的项目，没有理由不迁移。
+Vitest は Jest の単純な代替品ではなく、Vite エコシステムのネイティブなテストソリューションです。高速で、設定が簡単で、Vite と深く統合されています。Vite を使用しているプロジェクトでは、移行しない理由はありません。

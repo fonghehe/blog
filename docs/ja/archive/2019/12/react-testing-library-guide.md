@@ -3,44 +3,44 @@ title: "React Testing Libraryテストガイド"
 date: 2019-12-09 15:47:43
 tags:
   - React
-readingTime: 4
-description: "今年团队在推动单元测试的过程中，我们从 Enzyme 迁移到了 React Testing Library（RTL）。Enzyme 虽然功能强大，但它的 API 鼓励测试实现细节——测试组件内部 state、instance 方法——导致重构时测试频繁挂掉。React Testing Library 的理念完全不同：*"
-wordCount: 373
+readingTime: 5
+description: "今年チームでユニットテストを推進する中で、Enzyme から React Testing Library（RTL）に移行しました。Enzyme は強力ですが、その API は実装の詳細をテストすることを促進します——コンポーネント内部の state や instance メソッドをテストする——そのためリファクタリング時にテストが頻繁に失敗します。React Testing Library の理念はまったく異なります：テスト対象の実装詳細ではなく、ユーザーの行動に焦点を当てます。"
+wordCount: 643
 ---
 
-今年团队在推动单元测试的过程中，我们从 Enzyme 迁移到了 React Testing Library（RTL）。Enzyme 虽然功能强大，但它的 API 鼓励测试实现细节——测试组件内部 state、instance 方法——导致重构时测试频繁挂掉。React Testing Library 的理念完全不同：**测试用户行为，而不是实现细节**。
+今年、チームでユニットテストを推進する中で、私たちは Enzyme から React Testing Library（RTL）に移行しました。Enzyme は強力ですが、その API は実装の詳細をテストすることを促進します——コンポーネント内部の state やインスタンスメソッドをテストする——そのためリファクタリング時にテストが頻繁に失敗します。React Testing Library の理念はまったく異なります：**ユーザーの行動をテストするのであって、実装の詳細ではありません**。
 
 ## コア哲学
 
-React Testing Library 的设计哲学可以用一句话概括：**你的测试越像软件的使用方式，它们就越能给你信心。**
+React Testing Library の設計哲学は一言で要約できます：**テストがソフトウェアの使われ方に近ければ近いほど、そのテストはより自信を与えてくれます。**
 
 ```jsx
-// Enzyme 风格：测试实现细节（不推荐）
+// Enzyme スタイル：実装の詳細をテストする（推奨しない）
 import { shallow } from 'enzyme'
 
-test('点击按钮增加计数', () => {
+test('クリックでカウントが増える', () => {
   const wrapper = shallow(<Counter />)
   expect(wrapper.state('count')).toBe(0)
   wrapper.instance().handleClick()
   expect(wrapper.state('count')).toBe(1)
 })
 
-// React Testing Library 风格：测试用户行为（推荐）
+// React Testing Library スタイル：ユーザーの行動をテストする（推奨）
 import { render, screen, fireEvent } from '@testing-library/react'
 
-test('点击按钮增加计数', () => {
+test('クリックでカウントが増える', () => {
   render(<Counter />)
-  const button = screen.getByRole('button', { name: /计数/i })
-  expect(button).toHaveTextContent('计数: 0')
+  const button = screen.getByRole('button', { name: /カウント/i })
+  expect(button).toHaveTextContent('カウント: 0')
 
   fireEvent.click(button)
-  expect(button).toHaveTextContent('计数: 1')
+  expect(button).toHaveTextContent('カウント: 1')
 })
 ```
 
 ## クエリ優先度：getBy / queryBy / findBy
 
-RTL 提供了三类查询方法，各有适用场景。官方推荐的优先级是：
+RTL は3種類のクエリメソッドを提供しており、それぞれに適したシナリオがあります。公式が推奨する優先順位は次のとおりです：
 
 ```jsx
 import { render, screen, waitFor } from '@testing-library/react'
@@ -55,64 +55,64 @@ function UserProfile({ userId }) {
       .catch(setError)
   }, [userId])
 
-  if (error) return <div role="alert">加载失败</div>
-  if (!user) return <div>加载中...</div>
+  if (error) return <div role="alert">読み込み失敗</div>
+  if (!user) return <div>読み込み中...</div>
 
   return (
     <div>
       <h1>{user.name}</h1>
       <p data-testid="email">{user.email}</p>
-      <img alt={`${user.name}的头像`} src={user.avatar} />
+      <img alt={`${user.name}のアバター`} src={user.avatar} />
     </div>
   )
 }
 
-// getBy: 元素必须存在，不存在则报错
-// 适用于：元素应该在 DOM 中渲染出来
-test('渲染用户信息', async () => {
+// getBy: 要素が存在する必要があり、存在しない場合はエラー
+// 適用：要素が DOM にレンダリングされているべき場合
+test('ユーザー情報が表示される', async () => {
   render(<UserProfile userId="1" />)
 
-  // 1. 优先用 getByRole（最接近用户感知）
-  const heading = screen.getByRole('heading', { name: /用户A/i })
+  // 1. 優先的に getByRole を使用（ユーザーの知覚に最も近い）
+  const heading = screen.getByRole('heading', { name: /ユーザーA/i })
   expect(heading).toBeInTheDocument()
 
-  // 2. 其次 getByLabelText（表单元素）
-  const input = screen.getByLabelText(/用户名/i)
+  // 2. 次に getByLabelText（フォーム要素）
+  const input = screen.getByLabelText(/ユーザー名/i)
 
-  // 3. 再 getByPlaceholderText
-  const field = screen.getByPlaceholderText(/请输入邮箱/i)
+  // 3. さらに getByPlaceholderText
+  const field = screen.getByPlaceholderText(/メールアドレスを入力/i)
 
-  // 4. getByText（普通文本）
-  const text = screen.getByText(/加载中/i)
+  // 4. getByText（通常のテキスト）
+  const text = screen.getByText(/読み込み中/i)
 
-  // 5. getByTestId（兜底方案，其他方式都不适用时）
+  // 5. getByTestId（最終手段、他の方法が適用できない場合）
   const email = screen.getByTestId('email')
   expect(email).toHaveTextContent('user@example.com')
 })
 
-// queryBy: 元素可以不存在，返回 null
-// 适用于：断言元素不在 DOM 中
-test('错误时显示错误提示', () => {
+// queryBy: 要素は存在しなくてもよく、ない場合は null を返す
+// 適用：要素が DOM にないことをアサートする場合
+test('エラー時にエラーメッセージが表示される', () => {
   render(<UserProfile userId="invalid" />)
 
-  // 等待错误提示出现
+  // エラーメッセージの表示を確認
   const alert = screen.getByRole('alert')
-  expect(alert).toHaveTextContent('加载失败')
+  expect(alert).toHaveTextContent('読み込み失敗')
 
-  // 确认用户信息没有渲染
+  // ユーザー情報が表示されていないことを確認
   expect(screen.queryByRole('heading')).not.toBeInTheDocument()
 })
 
-// findBy: 异步等待元素出现（返回 Promise）
-// 适用于：异步渲染的内容
-test('异步加载用户信息', async () => {
+// findBy: 要素が現れるのを非同期的に待つ（Promise を返す）
+// 適用：非同期にレンダリングされるコンテンツ
+test('非同期でユーザー情報を読み込む', async () => {
   render(<UserProfile userId="1" />)
 
-  // 等待 heading 出现
-  const heading = await screen.findByRole('heading', { name: /用户A/i })
+  // heading が現れるのを待つ
+  const heading = await screen.findByRole('heading', { name: /ユーザーA/i })
   expect(heading).toBeInTheDocument()
 
-  // 也可以用 waitFor 处理更复杂的异步断言
+  // より複雑な非同期アサーションには waitFor も使用可能
   await waitFor(() => {
     expect(screen.getByText(/user@example.com/i)).toBeInTheDocument()
   })
@@ -121,7 +121,7 @@ test('异步加载用户信息', async () => {
 
 ## userEvent vs fireEvent
 
-`fireEvent` 是底层的 DOM 事件触发，而 `userEvent` 更贴近真实用户交互。官方推荐优先使用 `userEvent`：
+`fireEvent` は低レベルの DOM イベント発火であり、`userEvent` は実際のユーザー操作により近いものです。公式では優先的に `userEvent` を使用することを推奨しています：
 
 ```jsx
 import { render, screen } from '@testing-library/react'
@@ -139,53 +139,53 @@ function SearchForm({ onSearch }) {
     >
       <input
         type="text"
-        placeholder="搜索..."
+        placeholder="検索..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button type="submit">搜索</button>
+      <button type="submit">検索</button>
     </form>
   )
 }
 
-test('用户输入并提交搜索', () => {
+test('ユーザーが入力して検索を実行する', () => {
   const onSearch = jest.fn()
   render(<SearchForm onSearch={onSearch} />)
 
-  const input = screen.getByPlaceholderText(/搜索/i)
-  const button = screen.getByRole('button', { name: /搜索/i })
+  const input = screen.getByPlaceholderText(/検索/i)
+  const button = screen.getByRole('button', { name: /検索/i })
 
-  // userEvent.type 会逐字符输入，触发每个 keydown/keypress/keyup/input 事件
+  // userEvent.type は1文字ずつ入力し、各 keydown/keypress/keyup/input イベントを発火
   userEvent.type(input, 'React Hooks')
 
-  // userEvent.click 模拟完整的鼠标交互
+  // userEvent.click は完全なマウスインタラクションをシミュレート
   userEvent.click(button)
 
   expect(onSearch).toHaveBeenCalledWith('React Hooks')
 })
 
-test('键盘导航', () => {
+test('キーボードナビゲーション', () => {
   render(<SearchForm onSearch={jest.fn()} />)
 
-  const input = screen.getByPlaceholderText(/搜索/i)
+  const input = screen.getByPlaceholderText(/検索/i)
 
-  // userEvent.tab 模拟 Tab 键切换焦点
+  // userEvent.tab は Tab キーによるフォーカス移動をシミュレート
   userEvent.tab()
   expect(input).toHaveFocus()
 
-  // 输入后按回车提交
+  // 入力後に Enter キーで送信
   userEvent.type(input, 'test{enter}')
 })
 ```
 
 ## カスタムHookのテスト
 
-对于自定义 Hook，RTL 提供了 `renderHook`：
+カスタムフックについては、RTL が `renderHook` を提供しています：
 
 ```jsx
 import { renderHook, act } from '@testing-library/react-hooks'
 
-// 自定义 Hook
+// カスタムフック
 function useCounter(initialValue = 0) {
   const [count, setCount] = React.useState(initialValue)
   const increment = () => setCount(c => c + 1)
@@ -194,7 +194,7 @@ function useCounter(initialValue = 0) {
   return { count, increment, decrement, reset }
 }
 
-test('useCounter 基本功能', () => {
+test('useCounter の基本機能', () => {
   const { result } = renderHook(() => useCounter(5))
 
   expect(result.current.count).toBe(5)
@@ -218,13 +218,13 @@ test('useCounter 基本功能', () => {
 
 ## 非同期リクエストのテスト
 
-实际项目中大量场景涉及异步请求，需要配合 MSW（Mock Service Worker）或 Jest mock：
+実際のプロジェクトでは非同期リクエストのシナリオが多く、MSW（Mock Service Worker）や Jest のモックと組み合わせる必要があります：
 
 ```jsx
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-// 被测组件
+// テスト対象コンポーネント
 function UserList() {
   const [users, setUsers] = React.useState([])
   const [loading, setLoading] = React.useState(true)
@@ -243,7 +243,7 @@ function UserList() {
       })
   }, [])
 
-  if (loading) return <div role="status">加载中...</div>
+  if (loading) return <div role="status">読み込み中...</div>
   if (error) return <div role="alert">{error}</div>
 
   return (
@@ -255,11 +255,11 @@ function UserList() {
   )
 }
 
-// 方案一：jest.mock fetch
-test('加载并展示用户列表', async () => {
+// 方法1：jest.mock で fetch をモック
+test('ユーザーリストを読み込んで表示する', async () => {
   const mockUsers = [
-    { id: 1, name: '张三' },
-    { id: 2, name: '李四' }
+    { id: 1, name: '田中太郎' },
+    { id: 2, name: '鈴木花子' }
   ]
 
   global.fetch = jest.fn(() =>
@@ -270,32 +270,32 @@ test('加载并展示用户列表', async () => {
 
   render(<UserList />)
 
-  // 初始状态是加载中
-  expect(screen.getByRole('status')).toHaveTextContent('加载中')
+  // 初期状態は読み込み中
+  expect(screen.getByRole('status')).toHaveTextContent('読み込み中')
 
-  // 等待数据加载完成
+  // データ読み込み完了を待つ
   await waitFor(() => {
     expect(screen.queryByRole('status')).not.toBeInTheDocument()
   })
 
-  // 验证用户列表渲染
-  expect(screen.getByText('张三')).toBeInTheDocument()
-  expect(screen.getByText('李四')).toBeInTheDocument()
+  // ユーザーリストの表示を確認
+  expect(screen.getByText('田中太郎')).toBeInTheDocument()
+  expect(screen.getByText('鈴木花子')).toBeInTheDocument()
 
-  // 清理
+  // クリーンアップ
   global.fetch.mockRestore()
 })
 
-// 方案二：模拟请求失败
-test('请求失败时显示错误信息', async () => {
+// 方法2：リクエスト失敗のシミュレート
+test('リクエスト失敗時にエラーメッセージが表示される', async () => {
   global.fetch = jest.fn(() =>
-    Promise.reject(new Error('网络错误'))
+    Promise.reject(new Error('ネットワークエラー'))
   )
 
   render(<UserList />)
 
   await waitFor(() => {
-    expect(screen.getByRole('alert')).toHaveTextContent('网络错误')
+    expect(screen.getByRole('alert')).toHaveTextContent('ネットワークエラー')
   })
 
   global.fetch.mockRestore()
@@ -330,9 +330,9 @@ module.exports = {
 
 ## まとめ
 
-- React Testing Library 鼓励测试用户行为而非实现细节，重构时测试更稳定
-- 查询优先级：getByRole > getByLabelText > getByText > getByTestId
-- getBy 用于元素必须存在，queryBy 用于断言元素不存在，findBy 用于异步等待
-- userEvent 比 fireEvent 更贴近真实用户交互，优先使用 userEvent
-- 异步测试用 waitFor + findBy，配合 jest.fn() mock 请求
-- 自定义 Hook 用 renderHook + act 测试
+- React Testing Library は実装の詳細ではなくユーザーの行動をテストすることを推奨し、リファクタリング時にもテストが安定します
+- クエリの優先順位：getByRole > getByLabelText > getByText > getByTestId
+- getBy は要素が必須の場合、queryBy は要素が存在しないことのアサート、findBy は非同期待機に使用
+- userEvent は fireEvent よりも実際のユーザー操作に近いため、優先的に使用します
+- 非同期テストは waitFor + findBy を使用し、jest.fn() でリクエストをモック
+- カスタムフックは renderHook + act でテスト

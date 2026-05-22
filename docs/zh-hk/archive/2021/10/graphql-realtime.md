@@ -1,5 +1,5 @@
 ---
-title: "GraphQL 實時數據方案"
+title: "GraphQL 實時數據方案：落地路徑與實戰建議"
 date: 2021-10-26 14:31:17
 tags:
   - GraphQL
@@ -120,5 +120,5 @@ function createHandler(options = {}) {
 ## 小結
 
 - 持續關注社區動態，及時更新技術方案
-- 性能優化需要基於實際數據，避免過度優化
+- 效能優化需要基於實際數據，避免過度優化
 - GraphQL 實時數據方案的核心在於理解底層原理，而非僅僅記住 API

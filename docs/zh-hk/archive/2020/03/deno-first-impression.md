@@ -61,7 +61,7 @@ deno run file.ts
 # 授權讀取
 deno run --allow-read file.ts
 
-# 只授權讀取特定目錄
+# 隻授權讀取特定目錄
 deno run --allow-read=/tmp file.ts
 
 # 網絡權限

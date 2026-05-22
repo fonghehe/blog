@@ -27,7 +27,7 @@ wordCount: 464
 # 安裝 Biome
 pnpm add -D @biomejs/biome
 
-# 生成配置
+# 生成設定
 npx @biomejs/biome init
 ```
 
@@ -147,7 +147,7 @@ Biome 的規則和 ESLint 不是 1:1 映射。有些 ESLint 插件規則（如 `
 
 解決方案：保留少量 ESLint 規則作為補充，用 `eslint-plugin-only-warn` 降級為 warning。
 
-### 2. ignore 文件差異
+### 2. ignore 檔案差異
 
 Biome 用 `.biomeignore` 而不是 `.eslintignore`，語法略有不同：
 
@@ -166,7 +166,7 @@ VS Code 的 Biome 擴展比 ESLint 擴展年輕，偶爾會有卡頓。解決方
 
 **關鍵：一次格式化提交**。不做這一步，每個 PR 都混着格式變更，review 極其痛苦。
 
-**CI 必須強制**。光靠本地 IDE 提示不夠，CI 不通過就無法合併。
+**CI 必須強製**。光靠本地 IDE 提示不夠，CI 不通過就無法合併。
 
 **團隊培訓**。花了 30 分鐘給團隊做了個內部分享，重點講規則含義而不是配置語法。
 
@@ -174,6 +174,6 @@ VS Code 的 Biome 擴展比 ESLint 擴展年輕，偶爾會有卡頓。解決方
 
 - 漸進式遷移：formatter → linter（並行）→ linter（接管）→ 移除舊依賴
 - 格式化先做一次大提交，避免 diff 污染
-- CI 必須用 `biome ci` 命令強制檢查
+- CI 必須用 `biome ci` 命令強製檢查
 - 維護 ESLint → Biome 規則映射表，確保不遺漏
 - 團隊落地速度約 2 周，主要成本在第一次格式化

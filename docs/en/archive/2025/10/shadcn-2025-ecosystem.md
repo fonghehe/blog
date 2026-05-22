@@ -1,6 +1,6 @@
 ---
 title: "Shadcn UI 2025 Ecosystem"
-date: 2025-10-01 10:00:00
+date: 2025-10-01 11:55:32
 tags:
   - Frontend
 readingTime: 2

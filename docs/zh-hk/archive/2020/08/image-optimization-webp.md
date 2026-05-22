@@ -1,5 +1,5 @@
 ---
-title: "前端圖片優化 WebP AVIF"
+title: "前端圖片優化 WebP AVIF：落地路徑與實戰建議"
 date: 2020-08-05 11:17:16
 tags:
   - 性能優化
@@ -29,7 +29,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 源碼分析
 

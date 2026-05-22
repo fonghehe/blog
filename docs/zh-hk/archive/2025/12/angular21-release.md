@@ -1,6 +1,6 @@
 ---
 title: "Angular 21 正式發佈：Signal Forms 穩定，Signal 化轉型完成"
-date: 2025-12-17 10:00:00
+date: 2025-12-17 15:31:08
 tags:
   - Angular
 readingTime: 2
@@ -173,7 +173,7 @@ zone.js 在新項目中 → 棄用警告（存量項目不受影響）
 // 配合 <router-meta /> 指令自動注入 <title> 和 <meta> 標籤
 ```
 
-**構建性能**：Angular 21 使用 Rolldown 作為可選的生產構建後端（實驗性），首次支持更快的代碼分割策略。
+**構建效能**：Angular 21 使用 Rolldown 作為可選的生產構建後端（實驗性），首次支援更快的代碼分割策略。
 
 ## 總結
 

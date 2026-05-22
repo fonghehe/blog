@@ -4,11 +4,11 @@ date: 2018-05-08 10:58:42
 tags:
   - Vue
 readingTime: 2
-description: "元件懶載入是減小首屏 bundle 體積的重要手段。Vue 提供了非同步元件和動態元件兩種機制，理清它們的區別和用法。"
+description: "元件懶載入是減小首屏 bundle 體積的重要手段。Vue 提供了非同步元件和動態元件兩種機製，理清它們的區別和用法。"
 wordCount: 304
 ---
 
-元件懶載入是減小首屏 bundle 體積的重要手段。Vue 提供了非同步元件和動態元件兩種機制，理清它們的區別和用法。
+元件懶載入是減小首屏 bundle 體積的重要手段。Vue 提供了非同步元件和動態元件兩種機製，理清它們的區別和用法。
 
 ## 非同步元件
 
@@ -40,7 +40,7 @@ const routes = [
   },
   {
     path: "/users",
-    // webpackChunkName 控制打包到同一個 chunk
+    // webpackChunkName 控製打包到同一個 chunk
     component: () => import(/* webpackChunkName: "user" */ "@/views/Users.vue"),
   },
   {
@@ -60,7 +60,7 @@ const routes = [
   <div>
     <button @click="showEditor = true">開啟編輯器</button>
 
-    <!-- 只有點選後才載入富文本編輯器（體積通常很大）-->
+    <!-- 隻有點選後才載入富文本編輯器（體積通常很大）-->
     <RichTextEditor v-if="showEditor" content="..." />
   </div>
 </template>

@@ -1,11 +1,11 @@
 ---
 title: "Angular 22 RC Preview: New Compiler and Enhanced Zoneless Architecture"
-date: 2026-04-24 10:00:00
+date: 2026-04-24 14:58:35
 tags:
   - Angular
   - CSS
 readingTime: 3
-description: "Angular 22 Release Candidate dropped in late April 2026, and as usual, the stable release is expected roughly three weeks later in mid-May. This is the most imp"
+description: "Angular 22 Release Candidate dropped in late April 2026, and as usual, the stable release is expected roughly three weeks later in mid-May. This is the most impactful version since Angular 17 introduced the new template syntax — the next-generation Ivy compiler (internally codenamed \"Evergreen\") will dramatically cut build times and unlock deeper compile-time optimizations for the Signal model."
 wordCount: 405
 ---
 

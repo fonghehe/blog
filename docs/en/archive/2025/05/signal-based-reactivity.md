@@ -1,6 +1,6 @@
 ---
 title: "Signal-Based Reactivity Frontend Trends"
-date: 2025-05-27 10:00:00
+date: 2025-05-27 18:01:38
 tags:
   - Frontend
 readingTime: 2

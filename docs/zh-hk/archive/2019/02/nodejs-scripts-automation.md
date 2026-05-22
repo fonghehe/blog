@@ -20,7 +20,7 @@ npm i -g ora          # 加載動畫
 npm i -g fs-extra     # 增強的 fs 模塊
 ```
 
-## 批量重命名文件
+## 批量重命名檔案
 
 ```javascript
 #!/usr/bin/env node

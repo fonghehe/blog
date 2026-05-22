@@ -1,5 +1,5 @@
 ---
-title: "Nuxt.js 3 路由與數據獲取新方案"
+title: "Nuxt.js 3 路由與數據獲取新方案：落地路徑與實戰建議"
 date: 2020-02-14 10:26:37
 tags:
   - Vue
@@ -10,7 +10,7 @@ wordCount: 397
 
 Nuxt.js 作為 Vue 的元框架，在 SSR 生態中佔據主導地位。Nuxt 3 基於 Vue 3 全面重構，引入了 Composition API 驅動的數據獲取方案和新的目錄約定。本文介紹 Nuxt 3 中路由系統和數據獲取的核心變化。
 
-## 基於文件的路由系統
+## 基於檔案的路由系統
 
 Nuxt 3 延續了文件即路由的約定，但路由參數的語法有所調整。
 
@@ -61,7 +61,7 @@ const { data: users, pending, error, refresh } = await useFetch('/api/users')
 // 帶配置
 const { data: post } = await useFetch('/api/posts/1', {
   key: 'post-detail',   // 緩存 key，防止重複請求
-  pick: ['id', 'title', 'content'],  // 只取需要的字段，減小包體
+  pick: ['id', 'title', 'content'],  // 隻取需要的字段，減小包體
   lazy: true,            // 不阻塞導航
   server: false,         // 僅客户端請求
   transform: (data) => {
@@ -157,9 +157,9 @@ export default defineNuxtConfig({
 })
 ```
 
-## 數據獲取的 SSR 行為控制
+## 數據獲取的 SSR 行為控製
 
-Nuxt 3 默認在服務端執行所有 `useFetch`/`useAsyncData`。可以通過選項精確控制。
+Nuxt 3 默認在服務端執行所有 `useFetch`/`useAsyncData`。可以通過選項精確控製。
 
 ```vue
 <script>
@@ -186,5 +186,5 @@ const { data: list } = await useFetch(() => `/api/posts?page=${page.value}`, {
 - `[slug]` 路由參數語法替代了 Vue Router 的 `:slug`，catch-all 用 `[...all]`
 - `useFetch` 自動處理 SSR/CSR 數據獲取，避免重複請求
 - `useAsyncData` 適合封裝複雜業務邏輯，支持 `watch` 響應式依賴
-- 數據層用 composables 封裝，組件只關心"用什麼數據"而不關心"怎麼拿"
-- `server: false` 和 `lazy: true` 精確控制 SSR 行為和加載策略
+- 數據層用 composables 封裝，組件隻關心"用什麼數據"而不關心"怎麼拿"
+- `server: false` 和 `lazy: true` 精確控製 SSR 行為和加載策略

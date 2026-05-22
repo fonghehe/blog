@@ -4,11 +4,11 @@ date: 2022-08-17 11:47:50
 tags:
   - Angular
 readingTime: 2
-description: "Angular 14 引入的 `inject()` 函數是一個小改動但影響深遠的 API。它允許在 injection context（組件初始化期間、工廠函數、路由守衞等）中直接獲取服務，不再強制通過構造函數注入。這開啓了一種 React Hooks 風格的\"可組合\"Angular 開發模式。"
+description: "Angular 14 引入的 `inject()` 函數是一個小改動但影響深遠的 API。它允許在 injection context（組件初始化期間、工廠函數、路由守衞等）中直接獲取服務，不再強製通過構造函數注入。這開啓了一種 React Hooks 風格的\"可組合\"Angular 開發模式。"
 wordCount: 277
 ---
 
-Angular 14 引入的 `inject()` 函數是一個小改動但影響深遠的 API。它允許在 injection context（組件初始化期間、工廠函數、路由守衞等）中直接獲取服務，不再強制通過構造函數注入。這開啓了一種 React Hooks 風格的"可組合"Angular 開發模式。
+Angular 14 引入的 `inject()` 函數是一個小改動但影響深遠的 API。它允許在 injection context（組件初始化期間、工廠函數、路由守衞等）中直接獲取服務，不再強製通過構造函數注入。這開啓了一種 React Hooks 風格的"可組合"Angular 開發模式。
 
 ## 基本用法
 
@@ -159,10 +159,10 @@ bootstrapApplication(AppComponent, {
 });
 ```
 
-## inject() 的限制
+## inject() 的限製
 
 ```typescript
-// ❌ inject() 只能在 injection context 中調用
+// ❌ inject() 隻能在 injection context 中調用
 setTimeout(() => {
   const service = inject(MyService);  // 報錯！不在 injection context
 }, 1000);
@@ -189,4 +189,4 @@ class MyComponent {
 
 ## 總結
 
-`inject()` 是 Angular 向函數式編程邁出的重要一步。它不只是構造函數注入的語法糖——它真正開啓了類似 Vue Composables 的"可組合邏輯"模式，讓服務邏輯不再被鎖死在 class 的構造函數里。結合 Angular 14 的 Standalone Components，整個開發體驗正在變得更輕量、更函數式。
+`inject()` 是 Angular 向函數式編程邁出的重要一步。它不隻是構造函數注入的語法糖——它真正開啓了類似 Vue Composables 的"可組合邏輯"模式，讓服務邏輯不再被鎖死在 class 的構造函數里。結合 Angular 14 的 Standalone Components，整個開發體驗正在變得更輕量、更函數式。

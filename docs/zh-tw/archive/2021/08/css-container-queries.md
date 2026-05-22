@@ -34,7 +34,7 @@ Media Queries 根據**視口寬度**響應，Container Queries 根據**父容器
 
 ## 為什麼這個特性很重要
 
-現在的痛點：同一個元件放在側邊欄（窄）和主內容區（寬），表現應該不同。但 Media Queries 只看視口，不看容器。
+現在的痛點：同一個元件放在側邊欄（窄）和主內容區（寬），表現應該不同。但 Media Queries 隻看視口，不看容器。
 
 ```html
 <!-- 同一個 Card 元件 -->
@@ -54,7 +54,7 @@ Media Queries 根據**視口寬度**響應，Container Queries 根據**父容器
 ```css
 /* 1. 定義容器 */
 .card-container {
-  container-type: inline-size;  /* 只監控 inline 方向（水平）的尺寸 */
+  container-type: inline-size;  /* 隻監控 inline 方向（水平）的尺寸 */
   container-name: card;          /* 可選：給容器命名 */
 }
 

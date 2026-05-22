@@ -1,6 +1,6 @@
 ---
 title: "Frontend Architecture Evolution: From Pages to Components to Modules"
-date: 2024-11-14 10:00:00
+date: 2024-11-14 17:08:45
 tags:
   - Frontend
 readingTime: 2

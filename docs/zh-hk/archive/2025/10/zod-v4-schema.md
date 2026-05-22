@@ -1,6 +1,6 @@
 ---
-title: "Zod v4 Schema 校驗"
-date: 2025-10-30 10:00:00
+title: "Zod v4 Schema 校驗：落地路徑與實戰建議"
+date: 2025-10-30 17:24:01
 tags:
   - 前端
 readingTime: 2
@@ -91,7 +91,7 @@ const csvToJson = new Transform({
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 

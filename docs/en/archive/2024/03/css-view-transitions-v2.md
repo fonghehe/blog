@@ -1,5 +1,5 @@
 ---
-title: "CSS View Transitions v2"
+title: "CSS View Transitions v2 Proposal: 跨DocumentationAnimationStandard化之路"
 date: 2024-03-19 16:44:55
 tags:
   - CSS

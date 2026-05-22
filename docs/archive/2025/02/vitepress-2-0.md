@@ -1,6 +1,6 @@
 ---
 title: "VitePress 2.0 新特性"
-date: 2025-02-13 10:00:00
+date: 2025-02-13 18:47:24
 tags:
   - 工程化
 readingTime: 2

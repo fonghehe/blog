@@ -57,7 +57,7 @@ axios.interceptors.request.use((config) => {
 // 服務端：驗證 token
 app.use((req, res, next) => {
   if (["GET", "HEAD", "OPTIONS"].includes(req.method)) {
-    return next(); // 只讀請求不需要驗證
+    return next(); // 隻讀請求不需要驗證
   }
 
   const token = req.headers["x-csrf-token"];
@@ -70,7 +70,7 @@ app.use((req, res, next) => {
 
 ### 2. SameSite Cookie
 
-現代瀏覽器支援 `SameSite` 屬性，控制跨站請求是否攜帶 cookie：
+現代瀏覽器支援 `SameSite` 屬性，控製跨站請求是否攜帶 cookie：
 
 ```
 Set-Cookie: session=xxx; SameSite=Strict; HttpOnly; Secure

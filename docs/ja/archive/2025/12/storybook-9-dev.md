@@ -1,6 +1,6 @@
 ---
-title: "Storybook 9 コンポーネント開発"
-date: 2025-12-30 10:00:00
+title: "Storybook 9 実践：大型组件库文档与测试的一体化ソリューション"
+date: 2025-12-30 16:44:21
 tags:
   - フロントエンド
 readingTime: 3

@@ -4,11 +4,11 @@ date: 2019-09-19 16:01:57
 tags:
   - Angular
 readingTime: 3
-description: "寫單元測試最頭疼的就是依賴問題——你測的是 A 模組，但 A 依賴了 B、C、D，其中 C 還會發網路請求。Mock 解決的就是這個問題：用假的替代品替換真實依賴，讓你只關注被測邏輯。"
+description: "寫單元測試最頭疼的就是依賴問題——你測的是 A 模組，但 A 依賴了 B、C、D，其中 C 還會發網路請求。Mock 解決的就是這個問題：用假的替代品替換真實依賴，讓你隻關注被測邏輯。"
 wordCount: 431
 ---
 
-寫單元測試最頭疼的就是依賴問題——你測的是 A 模組，但 A 依賴了 B、C、D，其中 C 還會發網路請求。Mock 解決的就是這個問題：用假的替代品替換真實依賴，讓你只關注被測邏輯。
+寫單元測試最頭疼的就是依賴問題——你測的是 A 模組，但 A 依賴了 B、C、D，其中 C 還會發網路請求。Mock 解決的就是這個問題：用假的替代品替換真實依賴，讓你隻關注被測邏輯。
 
 ## jest.fn()：Mock 函式
 
@@ -142,7 +142,7 @@ test("getUserData 返回使用者資料", async () => {
 ```javascript
 jest.mock("./utils", () => ({
   ...jest.requireActual("./utils"), // 保留其他函式的真實實現
-  formatDate: jest.fn(() => "2019-09-19"), // 只 mock 這一個
+  formatDate: jest.fn(() => "2019-09-19"), // 隻 mock 這一個
 }));
 ```
 

@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 6.0 Generics Improvements"
-date: 2025-11-10 10:00:00
+title: "TypeScript 6.0 Generics Practice: RealProject中TypeSystem简化 & 增强"
+date: 2025-11-10 15:44:21
 tags:
   - TypeScript
 readingTime: 2
