@@ -1,16 +1,16 @@
 ---
-title: "Rollup 插件開發指南"
+title: "Rollup 外掛開發指南：落地路徑與實戰建議"
 date: 2021-09-13 16:06:52
 tags:
   - Rollup
 readingTime: 2
-description: "Vite 底層用 Rollup 做生產構建，理解 Rollup 插件機制對深度使用 Vite 非常重要。今年我們在組件庫構建中開發了幾個自定義 Rollup 插件，總結一下開發經驗。"
+description: "Vite 底層用 Rollup 做生產構建，理解 Rollup 外掛機製對深度使用 Vite 非常重要。今年我們在組件庫構建中開發了幾個自定義 Rollup 外掛，總結一下開發經驗。"
 wordCount: 229
 ---
 
-Vite 底層用 Rollup 做生產構建，理解 Rollup 插件機制對深度使用 Vite 非常重要。今年我們在組件庫構建中開發了幾個自定義 Rollup 插件，總結一下開發經驗。
+Vite 底層用 Rollup 做生產構建，理解 Rollup 外掛機製對深度使用 Vite 非常重要。今年我們在組件庫構建中開發了幾個自定義 Rollup 外掛，總結一下開發經驗。
 
-## 插件基本結構
+## 外掛基本結構
 
 Rollup 插件就是一個返回對象的函數：
 
@@ -73,7 +73,7 @@ export default function myPlugin() {
 
     // 轉換模塊代碼（最常用的 hook）
     transform(code, id) {
-      // 只處理 .vue 文件
+      // 隻處理 .vue 檔案
       if (!id.endsWith('.vue')) return null
 
       // 對 Vue SFC 做自定義處理
@@ -98,7 +98,7 @@ export default function myPlugin() {
 }
 ```
 
-## 實戰：組件自動註冊插件
+## 實戰：組件自動註冊外掛
 
 我們寫了一個插件，自動把組件庫的 `index.ts` 中的手動導出改為自動生成：
 

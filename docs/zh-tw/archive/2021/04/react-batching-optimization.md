@@ -13,14 +13,14 @@ React 18 Alpha 已經發布，帶來了 Concurrent Mode 的實際落地——不
 
 ## 自動批處理
 
-React 17 及之前，只有 React 事件處理器中的多次 `setState` 會被批處理。在 `setTimeout`、`Promise` 回撥、原生事件中則不會：
+React 17 及之前，隻有 React 事件處理器中的多次 `setState` 會被批處理。在 `setTimeout`、`Promise` 回撥、原生事件中則不會：
 
 ```jsx
 // React 17 —— 事件處理器中：批處理 ✅
 function handleClick() {
   setCount(c => c + 1)
   setFlag(f => !f)
-  // 只觸發一次渲染
+  // 隻觸發一次渲染
 }
 
 // React 17 —— setTimeout 中：不批處理 ❌
@@ -49,7 +49,7 @@ function handleClick() {
   setTimeout(() => {
     setCount(c => c + 1)
     setFlag(f => !f)
-    // 只觸發一次渲染
+    // 隻觸發一次渲染
   }, 0)
 }
 
@@ -58,11 +58,11 @@ async function fetchData() {
   setLoading(false)
   setData(data)
   setTotal(data.length)
-  // 以上全部只觸發一次渲染！
+  // 以上全部隻觸發一次渲染！
 }
 ```
 
-效能提升直接且無需改程式碼。唯一的例外是你需要強制同步更新，用 `flushSync`：
+效能提升直接且無需改程式碼。唯一的例外是你需要強製同步更新，用 `flushSync`：
 
 ```jsx
 import { flushSync } from 'react-dom'

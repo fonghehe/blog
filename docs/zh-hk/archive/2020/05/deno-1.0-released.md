@@ -1,5 +1,5 @@
 ---
-title: "Deno 1.0 正式發佈，現在能用了嗎？"
+title: "Deno 1.0 正式發佈，現在能用了嗎？：特性解讀與遷移建議"
 date: 2020-05-12 16:31:31
 tags:
   - Node.js
@@ -49,11 +49,11 @@ import { readJson } from 'https://deno.land/std@0.50.0/fs/read_json.ts';
 | 語言         | JavaScript           | TypeScript 原生      |
 | 模塊系統     | CommonJS + node_modules | ES Modules + URL  |
 | 包管理       | npm / yarn           | URL 直接導入         |
-| 安全模型     | 無限制               | 沙箱 + 顯式授權       |
+| 安全模型     | 無限製               | 沙箱 + 顯式授權       |
 | 異步         | Callback → Promise   | 原生 async/await     |
 | 標準庫       | 無（依賴 npm）        | 內置標準庫           |
-| 工具鏈       | 需要額外配置          | 內置 test/lint/format |
-| TypeScript   | 需要 ts-node         | 原生支持             |
+| 工具鏈       | 需要額外設定          | 內置 test/lint/format |
+| TypeScript   | 需要 ts-node         | 原生支援             |
 ```
 
 ## 內置工具鏈

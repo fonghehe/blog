@@ -4,15 +4,15 @@ date: 2020-04-17 16:27:20
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 可辨识联合类型这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 284
+description: "TypeScript の判別可能なユニオン型についてはコミュニティで何度も議論されてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。この記事では最新バージョンに基づいて再整理します。"
+wordCount: 446
 ---
 
-TypeScript 可辨识联合类型这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+TypeScript の判別可能なユニオン型についてはコミュニティで何度も議論されてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。この記事では最新バージョンに基づいて再整理します。
 
 ## はじめに
 
-先来看基本的实现方式：
+まず基本的な実装方法を見てみましょう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -35,12 +35,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 }
 
 ```
-
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使用方法を示しています。実際のプロジェクトではエラー処理と境界条件も考慮する必要があります。
 
 ## ソースコード解析
 
-在这个基础上，我们可以进一步优化：
+この基礎の上で、さらに最適化することができます：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -52,7 +51,7 @@ async function fetchUser(id: string) {
 
 type User = UnwrapPromise<ReturnType<typeof fetchUser>>
 
-// 类型安全的事件系统
+// 型安全なイベントシステム
 interface EventMap {
   login: { userId: string; timestamp: number }
   logout: { userId: string }
@@ -71,11 +70,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模プロジェクトで非常に実用的で、メンテナンスコストを大幅に削減できます。
 
 ## 実際のシナリオへの応用
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑です：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -99,11 +98,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+この方法により、コードのテスタビリティと拡張性が向上します。
 
 ## 最適化のコツ
 
-以下是一个完整的示例：
+以下は完全なサンプルです：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -115,7 +114,7 @@ async function fetchUser(id: string) {
 
 type User = UnwrapPromise<ReturnType<typeof fetchUser>>
 
-// 类型安全的事件系统
+// 型安全なイベントシステム
 interface EventMap {
   login: { userId: string; timestamp: number }
   logout: { userId: string }
@@ -134,10 +133,10 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理に注意してください。これは本番環境で非常に重要です。
 
 ## まとめ
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- チーム開発では、技術そのものよりも規約とドキュメントが重要
+- コミュニティの動向に注目し、技術ソリューションは継続的に改善する必要がある
+- 新しい技術を使うために使うべきではない

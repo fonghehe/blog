@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 Composition API: An In-Depth Analysis"
+title: "Vue 3 Composition API Deep Dive:  Options  to  Composition Migration"
 date: 2020-01-01 15:25:34
 tags:
   - Vue

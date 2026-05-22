@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 6.0 ジェネリクスの改善"
-date: 2025-08-04 10:00:00
+title: "TypeScript 6.0 泛型改进：更高阶的类型抽象能力"
+date: 2025-08-04 19:38:15
 tags:
   - TypeScript
 readingTime: 3

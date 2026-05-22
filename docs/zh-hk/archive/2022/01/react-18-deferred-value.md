@@ -1,5 +1,5 @@
 ---
-title: "React 18 useDeferredValue 延遲更新"
+title: "React 18 useDeferredValue 延遲更新：落地路徑與實戰建議"
 date: 2022-01-11 16:44:13
 tags:
   - React
@@ -31,7 +31,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 深度解析
 

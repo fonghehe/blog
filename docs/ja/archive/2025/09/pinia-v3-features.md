@@ -1,6 +1,6 @@
 ---
-title: "Pinia v3 新機能"
-date: 2025-09-19 10:00:00
+title: "Pinia v3 新特性速览：类型系统增强与 DevTools 升级"
+date: 2025-09-19 12:33:10
 tags:
   - Vue
 readingTime: 3

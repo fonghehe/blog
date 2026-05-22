@@ -1,5 +1,5 @@
 ---
-title: "前端監控 Sentry 接入實踐"
+title: "Sentry 前端錯誤監控接入：從 SDK 設定到 SourceMap 上傳"
 date: 2019-10-24 11:00:27
 tags:
   - 效能最佳化

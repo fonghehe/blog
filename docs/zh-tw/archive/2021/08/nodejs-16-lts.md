@@ -119,7 +119,7 @@ ac.abort() // 中斷檔案讀取
 
 ```bash
 # 1. 檢查 node-sass 依賴
-# node-sass 需要針對 Node 版本編譯二進位制檔案
+# node-sass 需要針對 Node 版本編譯二進位製檔案
 # 建議遷移到 dart sass（sass 包）
 npm uninstall node-sass
 npm install sass

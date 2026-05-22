@@ -1,6 +1,6 @@
 ---
 title: "Angular 20 Official Release: Stable Zoneless, Signal Forms, and resource() API"
-date: 2025-05-07 10:00:00
+date: 2025-05-07 11:41:18
 tags:
   - Angular
   - CSS

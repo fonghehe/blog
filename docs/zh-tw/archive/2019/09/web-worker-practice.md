@@ -53,7 +53,7 @@ function heavyCalculation(arr) {
 }
 ```
 
-Worker 執行緒裡不能訪問 DOM、`window`、`document`。能用的 API：`navigator`、`location`（只讀）、`setTimeout`/`setInterval`、`fetch`、`WebSocket` 等。
+Worker 執行緒裡不能訪問 DOM、`window`、`document`。能用的 API：`navigator`、`location`（隻讀）、`setTimeout`/`setInterval`、`fetch`、`WebSocket` 等。
 
 ## 實戰：大檔案 CSV 解析
 

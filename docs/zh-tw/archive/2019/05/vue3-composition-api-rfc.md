@@ -165,8 +165,8 @@ const { loading: searchLoading } = useSearch();
 不同之處：
 
 - Vue Composition API 不需要 dependency array（Proxy 追蹤）
-- 沒有 "Hook 規則"（不是 Hooks 機制，只是普通函式）
-- 和 Options API 可以混用（不強制遷移）
+- 沒有 "Hook 規則"（不是 Hooks 機製，隻是普通函式）
+- 和 Options API 可以混用（不強製遷移）
 
 RFC 最後大機率會採納，準備學起來。
 
@@ -174,5 +174,5 @@ RFC 最後大機率會採納，準備學起來。
 
 - Composition API 讓邏輯按功能組織，解決大型元件的維護問題
 - Composables 替代 Mixin，來源清晰，無命名衝突
-- 和 Options API 相容，不強制遷移
+- 和 Options API 相容，不強製遷移
 - Vue 3 正式版還要等，但可以用 `@vue/composition-api` 外掛在 Vue 2 上試用

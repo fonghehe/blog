@@ -1,16 +1,16 @@
 ---
-title: "Angular 路由懶加載與預加載策略詳解"
+title: "Angular 路由懶加載與預加載策略詳解：落地路徑與實戰建議"
 date: 2021-01-30 14:35:05
 tags:
   - Angular
   - Webpack
   - TypeScript
 readingTime: 2
-description: "Angular 的路由系統內置了強大的懶加載和預加載機制。合理配置可以讓首屏體積減少 40-60%，同時通過預加載確保後續導航幾乎無等待。"
+description: "Angular 的路由系統內置了強大的懶加載和預加載機製。合理設定可以讓首屏體積減少 40-60%，同時通過預加載確保後續導航幾乎無等待。"
 wordCount: 371
 ---
 
-Angular 的路由系統內置了強大的懶加載和預加載機制。合理配置可以讓首屏體積減少 40-60%，同時通過預加載確保後續導航幾乎無等待。
+Angular 的路由系統內置了強大的懶加載和預加載機製。合理設定可以讓首屏體積減少 40-60%，同時通過預加載確保後續導航幾乎無等待。
 
 ## 懶加載基礎
 
@@ -60,7 +60,7 @@ RouterModule.forRoot(routes, {
 import { PreloadAllModules } from "@angular/router";
 
 RouterModule.forRoot(routes, {
-  preloadingStrategy: PreloadAllModules, // 首屏後後台下載所有懶加載模塊
+  preloadingStrategy: PreloadAllModules, // 首屏後後臺下載所有懶加載模塊
 });
 ```
 
@@ -68,7 +68,7 @@ RouterModule.forRoot(routes, {
 
 ### 3. 自定義預加載策略（推薦）
 
-只預加載標記了 `preload: true` 的路由：
+隻預加載標記了 `preload: true` 的路由：
 
 ```typescript
 // selective-preload.strategy.ts
@@ -136,7 +136,7 @@ npx webpack-bundle-analyzer dist/my-app/stats.json
 
 - **核心路由**（Dashboard、首頁）：可以不懶加載，減少一次請求
 - **次要功能**（設置、個人中心）：懶加載 + 標記預加載
-- **低頻功能**（管理後台、幫助中心）：懶加載，不預加載
+- **低頻功能**（管理後臺、幫助中心）：懶加載，不預加載
 
 ## 路由過渡動畫
 
@@ -170,4 +170,4 @@ export class AppComponent {
 
 ## 總結
 
-Angular 路由懶加載是最容易獲得顯著性能提升的優化手段。配合自定義預加載策略，可以在"按需加載"和"無感知導航"之間找到最佳平衡點。建議先用 `webpack-bundle-analyzer` 分析當前 chunk 分佈，再有針對性地標記預加載路由。
+Angular 路由懶加載是最容易獲得顯著效能提升的優化手段。配合自定義預加載策略，可以在"按需加載"和"無感知導航"之間找到最佳平衡點。建議先用 `webpack-bundle-analyzer` 分析當前 chunk 分佈，再有針對性地標記預加載路由。

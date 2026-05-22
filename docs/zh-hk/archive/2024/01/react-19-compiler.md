@@ -1,14 +1,14 @@
 ---
-title: "React 19 Compiler 自動記憶化"
+title: "React 19 Compiler 自動記憶化：特性解讀與遷移建議"
 date: 2024-01-01 09:31:08
 tags:
   - React
 readingTime: 2
-description: "關於React 19 Compiler 自動記憶化，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於React 19 Compiler 自動記憶化，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 276
 ---
 
-關於React 19 Compiler 自動記憶化，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於React 19 Compiler 自動記憶化，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 

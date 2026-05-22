@@ -1,5 +1,5 @@
 ---
-title: "React 19 Server Components 穩定版"
+title: "React 19 Server Components 穩定版：特性解讀與遷移建議"
 date: 2024-01-09 10:39:55
 tags:
   - React
@@ -100,9 +100,9 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
-## 性能對比
+## 效能對比
 
 我們可以通過以下方式來改進：
 

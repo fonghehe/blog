@@ -1,11 +1,11 @@
 ---
 title: "Angular 20 Zoneless 遷移實戰：從 zone.js 到純 Signal 驅動"
-date: 2025-05-30 10:00:00
+date: 2025-05-30 14:04:41
 tags:
   - Angular
   - CSS
 readingTime: 2
-description: "Angular 20 讓 Zoneless 正式穩定，但實際遷移並不是改一行配置就完事。本文記錄了將一箇中型 Angular 專案（約 80 個元件）從 zone.js 遷移到 Zoneless 的完整過程，分享遇到的坑和解決方案。"
+description: "Angular 20 讓 Zoneless 正式穩定，但實際遷移並不是改一行設定就完事。本文記錄了將一箇中型 Angular 專案（約 80 個元件）從 zone.js 遷移到 Zoneless 的完整過程，分享遇到的坑和解決方案。"
 wordCount: 272
 ---
 
@@ -130,7 +130,7 @@ export class MapComponent {
 }
 ```
 
-## 測試中的 Zoneless 配置
+## 測試中的 Zoneless 設定
 
 ```typescript
 // spec 檔案中配置 Zoneless 測試

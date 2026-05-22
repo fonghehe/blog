@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 5.5 隐式类型收窄"
-date: 2024-12-11 10:00:00
+title: "TypeScript 5.5 类型收窄实践：真实项目中的类型改进案例"
+date: 2024-12-11 15:45:22
 tags:
   - TypeScript
 readingTime: 2

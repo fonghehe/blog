@@ -1,5 +1,5 @@
 ---
-title: "自動生成 CHANGELOG 實踐"
+title: "自動生成 CHANGELOG 實踐：落地路徑與實戰建議"
 date: 2020-12-14 11:02:19
 tags:
   - 前端

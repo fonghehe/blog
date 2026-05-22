@@ -269,7 +269,7 @@ export default CreatePost;
 
 Apollo Client 內建了強大的 Normalized Cache，自動以 `__typename + id` 作為快取 key。
 
-### 配置 dataIdFromObject
+### 設定 dataIdFromObject
 
 ```js
 import ApolloClient from 'apollo-client';

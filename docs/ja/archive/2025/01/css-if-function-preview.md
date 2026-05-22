@@ -1,6 +1,6 @@
 ---
 title: "CSS if()関数：2025年最も期待されるCSS新プリミティブ"
-date: 2025-01-15 10:00:00
+date: 2025-01-15 14:09:46
 tags:
   - CSS
 readingTime: 3

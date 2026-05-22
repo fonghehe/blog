@@ -3,24 +3,24 @@ title: "Angular 9 RCプレビュー：Ivyのデフォルト化とstrictTemplates
 date: 2020-01-28 10:12:20
 tags:
   - Angular
-readingTime: 2
-description: "Angular 9 的 RC 阶段已进入最后冲刺，正式版预计 2020 年 2 月发布。相比 Angular 8 中 Ivy 只能 opt-in，Angular 9 将 Ivy 作为默认渲染引擎，同时 AOT 编译也将成为默认模式。在 RC 期间我们提前摸清这些变化非常有价值。"
-wordCount: 445
+readingTime: 3
+description: "Angular 9 は RC フェーズの最終段階に入り、正式版は 2020 年 2 月にリリースされる予定です。Angular 8 で Ivy が opt-in のみであったのに対し、Angular 9 では Ivy がデフォルトのレンダリングエンジンとなり、AOT コンパイルもデフォルトモードになります。RC 期間中にこれらの変更を事前に把握しておくことは非常に価値があります。"
+wordCount: 761
 ---
 
-Angular 9 的 RC 阶段已进入最后冲刺，正式版预计 2020 年 2 月发布。相比 Angular 8 中 Ivy 只能 opt-in，Angular 9 将 Ivy 作为默认渲染引擎，同时 AOT 编译也将成为默认模式。在 RC 期间我们提前摸清这些变化非常有价值。
+Angular 9 の RC 段階は最終段階に入り、正式版は 2020 年 2 月にリリースされる予定です。Angular 8 では Ivy が opt-in のみであったのに対し、Angular 9 では Ivy がデフォルトのレンダリングエンジンとなり、AOT コンパイルもデフォルトモードになります。RC 期間中にこれらの変更を事前に把握しておくことは非常に価値があります。
 
 ## なぜIvyは質的な飛躍なのか
 
-传统的 View Engine 生成 `.ngfactory.ts` 文件，编译结果与框架代码强耦合，tree-shaking 效果差。Ivy 的核心思路是**将渲染指令（instructions）直接内嵌到组件类里**：
+従来の View Engine は `.ngfactory.ts` ファイルを生成し、コンパイル結果がフレームワークコードと強く結合していたため、ツリーシェイキングの効果が低かったです。Ivy の核となる考え方は**レンダリング命令（instructions）をコンポーネントクラスに直接埋め込む**ことです：
 
 ```typescript
-// View Engine 编译后（简化）
-// user.component.ngfactory.ts (额外生成的文件)
+// View Engine コンパイル後（簡略化）
+// user.component.ngfactory.ts（追加で生成されるファイル）
 export function View_UserComponent_0(...) { ... }
 export const RenderType_UserComponent = ...;
 
-// Ivy 编译后（内嵌到组件）
+// Ivy コンパイル後（コンポーネントに埋め込み）
 export class UserComponent {
   static ɵcmp = defineComponent({
     type: UserComponent,
@@ -40,25 +40,25 @@ export class UserComponent {
 }
 ```
 
-结果：未使用的框架功能（如 `@Pipe`、某些 CDK 工具）不会被打包进去。
+結果：使用されていないフレームワーク機能（`@Pipe` や一部の CDK ツールなど）は、バンドルに含まれなくなります。
 
 ## AOTが開発モードのデフォルトに
 
-之前开发模式用 JIT（快但不严格），生产用 AOT（慢但正确）。这导致"本地测试通过，上线才报错"的经典问题：
+従来は開発モードで JIT（高速だが厳密でない）、本番で AOT（遅いが正確）を使用していました。これにより「ローカルではテストが通るのに、本番でエラーが出る」という古典的な問題が発生していました：
 
 ```bash
-# Angular 8：开发用 JIT，只在 build --prod 时用 AOT
+# Angular 8：開発は JIT、build --prod でのみ AOT
 ng serve            # JIT
 ng build --prod     # AOT
 
-# Angular 9：两种模式都用 AOT
-ng serve            # AOT（发现更多编译期错误）
+# Angular 9：両方のモードで AOT
+ng serve            # AOT（より多くのコンパイル時エラーを検出）
 ng build --prod     # AOT
 ```
 
 ## strictTemplatesによるテンプレート厳格チェック
 
-这是 RC 期间最值得提前了解的配置。开启后，模板中的类型错误会在构建时报出：
+これは RC 期間中に最も事前に把握しておく価値のある設定です。有効にすると、テンプレート内の型エラーがビルド時に報告されます：
 
 ```json
 // tsconfig.app.json
@@ -71,56 +71,56 @@ ng build --prod     # AOT
 
 ### よく検出されるエラー
 
-**1. @Input 类型不匹配**
+**1. @Input 型の不一致**
 
 ```typescript
-// 组件定义
+// コンポーネント定義
 @Input() count: number;
 
-// 模板
+// テンプレート
 <app-counter [count]="'hello'"></app-counter>
 // strictTemplates: error TS2322: Type 'string' is not assignable to type 'number'
 ```
 
-**2. 访问不存在的属性**
+**2. 存在しないプロパティへのアクセス**
 
 ```html
 {% raw %}
-<!-- user 类型为 { name: string }，没有 age -->
+<!-- user の型は { name: string } であり、age は存在しない -->
 <p>{{ user.age }}</p>
 <!-- strictTemplates: error - Property 'age' does not exist -->
 {% endraw %}
 ```
 
-**3. \*ngIf 后类型收窄**
+**3. \*ngIf 後の型の絞り込み**
 
 ```html
 {% raw %}
-<!-- strictTemplates 下 TypeScript 类型收窄可以正确工作 -->
+<!-- strictTemplates では TypeScript の型絞り込みが正しく機能 -->
 <div *ngIf="user">
   {{ user.name }}
-  <!-- user 在这里被推断为非 null -->
+  <!-- user はここで非 null と推論される -->
 </div>
 {% endraw %}
 ```
 
-## 迁移中的注意事项
+## 移行時の注意点
 
-**ViewChild 需要 static 选项**
+**ViewChild に static オプションが必要**
 
-RC 中 `@ViewChild` 和 `@ContentChild` 必须显式声明 `static`：
+RC では `@ViewChild` と `@ContentChild` に `static` を明示的に宣言する必要があります：
 
 ```typescript
-// 在 ngOnInit 中使用 → static: true
+// ngOnInit で使用 → static: true
 @ViewChild('myEl', { static: true }) myEl: ElementRef;
 
-// 在 ngAfterViewInit 中使用（或条件性显示）→ static: false
+// ngAfterViewInit で使用（または条件付き表示）→ static: false
 @ViewChild('myEl', { static: false }) myEl: ElementRef;
 ```
 
-**第三方库兼容性**
+**サードパーティ製ライブラリの互換性**
 
-Ivy 使用 `ngcc`（Angular Compatibility Compiler）在安装时自动转换未适配 Ivy 的库。大多数情况自动处理，但如果遇到问题可手动运行：
+Ivy は `ngcc`（Angular Compatibility Compiler）を使用して、インストール時に Ivy 対応していないライブラリを自動変換します。ほとんどの場合は自動処理されますが、問題が発生した場合は手動で実行できます：
 
 ```bash
 node_modules/.bin/ngcc
@@ -128,4 +128,4 @@ node_modules/.bin/ngcc
 
 ## まとめ
 
-Angular 9 的两大核心变化——Ivy 默认启用 + AOT 开发模式默认——让"本地能跑、上线报错"成为历史。现在 RC 阶段就开始熟悉 strictTemplates 的报错，正式发布后升级才能少踩坑。
+Angular 9 の2つの核心的な変更——Ivy のデフォルト有効化 + AOT 開発モードのデフォルト化——により、「ローカルでは動くのに本番でエラー」が過去のものになります。今、RC 段階から strictTemplates のエラーに慣れておくことで、正式リリース後のアップグレードでトラブルを減らせます。

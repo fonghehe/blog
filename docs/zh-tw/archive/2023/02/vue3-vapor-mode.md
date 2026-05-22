@@ -47,7 +47,7 @@ function render(_ctx) {
 </script>
 ```
 
-即使只有 `count` 變化，也需要重新建立整棵 vnode 樹並 diff。Vue 3 的靜態提升（hoistStatic）和 patchFlag 可以減少 diff 工作量，但 vnode 建立的開銷依然存在。
+即使隻有 `count` 變化，也需要重新建立整棵 vnode 樹並 diff。Vue 3 的靜態提升（hoistStatic）和 patchFlag 可以減少 diff 工作量，但 vnode 建立的開銷依然存在。
 
 ## Vapor Mode 的編譯輸出
 
@@ -97,7 +97,7 @@ _button.textContent = '+1'
 _button.addEventListener('click', () => count.value++)
 _div.appendChild(_button)
 
-// 精確的副作用繫結：只有對應響應式變數變化時才更新對應 DOM
+// 精確的副作用繫結：隻有對應響應式變數變化時才更新對應 DOM
 renderEffect(() => {
   setElementText(_h2, title.value)
 })
@@ -112,7 +112,7 @@ renderEffect(() => {
 </script>
 ```
 
-當 `count` 變化時，只有 `_span` 的文本節點被更新。`_h2` 和 `_p` 完全不受影響，沒有 vnode 建立，沒有 diff。
+當 `count` 變化時，隻有 `_span` 的文本節點被更新。`_h2` 和 `_p` 完全不受影響，沒有 vnode 建立，沒有 diff。
 
 ## 對響應式 API 的影響
 
@@ -179,9 +179,9 @@ const count = ref(0)
 // <span>{{ count }}</span> 編譯為：renderEffect + setElementText
 ```
 
-關鍵區別：Vue 不會變成 Svelte 那樣的純編譯框架。響應式系統依然在執行時工作，`ref`、`computed`、`watch` 都保留。Vapor Mode 只是改變了模板到 DOM 的對映方式。
+關鍵區別：Vue 不會變成 Svelte 那樣的純編譯框架。響應式系統依然在執行時工作，`ref`、`computed`、`watch` 都保留。Vapor Mode 隻是改變了範本到 DOM 的對映方式。
 
-## 使用限制與相容性
+## 使用限製與相容性
 
 Vapor Mode 不是對所有 Vue 特性的全面替代。部分依賴虛擬 DOM 的特性在 Vapor Mode 中不可用。
 
@@ -218,5 +218,5 @@ const RenderFnComponent = (props) => {
 - Vapor Mode 將 Vue SFC 編譯為直接操作 DOM 的程式碼，跳過虛擬 DOM diff
 - 響應式系統完全保留，`ref`、`computed`、`watch` 等 API 不受影響
 - 效能收益來自省略 vnode 建立和 diff，更新精確到單個文本節點/屬性
-- 開發體驗不變，只需在 `<script setup>` 中新增 `vapor` 標記即可啟用
-- 部分依賴虛擬 DOM 的特性（render 函式、Transition 等）在 Vapor Mode 中有限制
+- 開發體驗不變，隻需在 `<script setup>` 中新增 `vapor` 標記即可啟用
+- 部分依賴虛擬 DOM 的特性（render 函式、Transition 等）在 Vapor Mode 中有限製

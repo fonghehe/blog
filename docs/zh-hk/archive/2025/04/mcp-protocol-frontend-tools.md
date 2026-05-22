@@ -1,6 +1,6 @@
 ---
 title: "MCP 協議：連接前端工具鏈的橋樑"
-date: 2025-04-05 10:00:00
+date: 2025-04-05 16:59:36
 tags:
   - 前端
 readingTime: 2
@@ -194,7 +194,7 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-## 在 Claude Code 中配置 MCP
+## 在 Claude Code 中設定 MCP
 
 ```json
 // .claude/mcp.json

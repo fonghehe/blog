@@ -1,6 +1,6 @@
 ---
-title: "Vite 6 Environment API in Practice"
-date: 2024-12-27 10:00:00
+title: "Vite 6 Environment API: 多EnvironmentBuildConfiguration完全Guide"
+date: 2024-12-27 12:01:38
 tags:
   - JavaScript
   - Engineering

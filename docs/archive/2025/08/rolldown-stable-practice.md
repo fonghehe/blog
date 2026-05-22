@@ -1,6 +1,6 @@
 ---
-title: "Rolldown 稳定版实战"
-date: 2025-08-21 10:00:00
+title: "Rolldown 稳定版发布：Rollup 兼容的 Rust 打包新纪元"
+date: 2025-08-21 19:55:32
 tags:
   - 前端
 readingTime: 2

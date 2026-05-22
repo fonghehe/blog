@@ -34,7 +34,7 @@ module.exports = {
     // 快取名稱（多配置時區分）
     name: `${process.env.NODE_ENV || 'development'}-cache`,
 
-    // 版本號：手動控制快取失效
+    // 版本號：手動控製快取失效
     version: '1.0.0',
   },
 
@@ -47,7 +47,7 @@ module.exports = {
 ```
 第一次構建（冷啟動）:  58s   ← 和以前一樣
 第二次構建（熱快取）:   4s   ← 快了 10 倍以上
-第三次構建（改了業務程式碼）: 6s   ← 只重編譯改動的模組
+第三次構建（改了業務程式碼）: 6s   ← 隻重編譯改動的模組
 
 對比：
   - Webpack 4 + hard-source-webpack-plugin：約 15s（還經常出 bug）
@@ -64,7 +64,7 @@ Webpack 4 的問題：
 Webpack 5 的做法：
   - 將模組的編譯結果（包括 AST）快取到檔案系統
   - 下次構建時，如果模組檔案和配置都沒變，直接用快取
-  - 增量構建時，只重新編譯變化的模組
+  - 增量構建時，隻重新編譯變化的模組
 ```
 
 **注意事項：**
@@ -106,10 +106,10 @@ module.exports = function(source) {
 Module Federation 的做法：
   - 每個應用獨立構建、獨立部署
   - 執行時按需載入遠端模組
-  - 共享依賴（React/Vue 只加載一份）
+  - 共享依賴（React/Vue 隻加載一份）
 ```
 
-### 配置示例
+### 設定示例
 
 ```javascript
 // app-shell/webpack.config.js  （主應用）
@@ -219,7 +219,7 @@ shared: {
 
   // 方式 2：詳細配置
   vue: {
-    singleton: true,          // 只加載一個版本
+    singleton: true,          // 隻加載一個版本
     requiredVersion: '^3.0.0', // 版本要求
     eager: false,              // false = 懶載入（推薦）
     // eager: true 會打包進 bundle，失去按需載入優勢
@@ -311,6 +311,6 @@ resolve: {
 
 - 持久快取是 Webpack 5 最實用的特性，能將二次構建時間降低一個數量級
 - Module Federation 是微前端的新思路，執行時模組共享比 iframe 和 single-spa 更優雅
-- Asset Modules 簡化了資源配置，不再需要 file-loader / url-loader
+- Asset Modules 簡化了資源設定，不再需要 file-loader / url-loader
 - Webpack 5 目前還是 Beta，生產專案建議等正式版再升級
 - 配合 Vite 等新工具的出現，2020 年構建工具領域會有很大變化

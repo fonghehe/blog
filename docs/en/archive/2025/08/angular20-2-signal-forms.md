@@ -1,6 +1,6 @@
 ---
 title: "Angular 20.2: Signal Forms Stabilization and httpResource Enhancements"
-date: 2025-08-22 10:00:00
+date: 2025-08-22 14:56:33
 tags:
   - Angular
 readingTime: 2

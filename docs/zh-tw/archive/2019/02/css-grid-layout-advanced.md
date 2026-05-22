@@ -1,10 +1,10 @@
 ---
-title: "CSS Grid 佈局進階：命名網格線與模板區域"
+title: "CSS Grid 佈局進階：命名網格線與範本區域"
 date: 2019-02-13 17:08:59
 tags:
   - CSS
 readingTime: 1
-description: "工作中用了 CSS Grid 一段時間，發現大多數人屐5e止於基礎的 `grid-template-columns: repeat(3, 1fr)` 就不用了。Grid 的命名網格線和模板區域才是真正讓它秒殺複雜佈局的功能。"
+description: "工作中用了 CSS Grid 一段時間，發現大多數人屐5e止於基礎的 `grid-template-columns: repeat(3, 1fr)` 就不用了。Grid 的命名網格線和範本區域才是真正讓它秒殺複雜佈局的功能。"
 wordCount: 217
 ---
 

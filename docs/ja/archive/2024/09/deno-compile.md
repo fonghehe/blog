@@ -1,6 +1,6 @@
 ---
 title: "Deno compile：単一ファイル実行形式"
-date: 2024-09-02 10:00:00
+date: 2024-09-02 15:36:13
 tags:
   - フロントエンド
 readingTime: 3

@@ -20,7 +20,7 @@ Monorepo 工具選型：
 
 我們的需求很簡單：任務編排 + 緩存 + 並行執行。不需要 Nx 的全套功能。
 
-## 基礎配置
+## 基礎設定
 
 ```jsonc
 // turbo.json
@@ -48,7 +48,7 @@ Monorepo 工具選型：
 
 - `dependsOn: ["^build"]`：先構建所有依賴包（`^` 表示依賴）
 - `outputs`：定義緩存的產出文件
-- `inputs`：定義影響緩存的輸入文件（精確控制緩存失效）
+- `inputs`：定義影響緩存的輸入檔案（精確控製緩存失效）
 - `cache: false`：dev 模式不緩存
 
 ## 工作原理
@@ -70,7 +70,7 @@ turbo build
 # 首次構建（無緩存）
 turbo build:  45s
 
-# 只改了一個包的代碼
+# 隻改了一個包的代碼
 turbo build:  3s  （其餘 14 個包命中緩存）
 
 # CI 中 PR 重複構建
@@ -114,16 +114,16 @@ pnpm 管依賴解析和安裝，Turbo 管任務執行和緩存。職責清晰。
 ## 過濾和選擇性執行
 
 ```bash
-# 只構建某個包及其依賴
+# 隻構建某個包及其依賴
 turbo run build --filter=@company/ui
 
-# 只構建有變更的包
+# 隻構建有變更的包
 turbo run build --filter=[HEAD^1]
 
 # 排除某些包
 turbo run build --filter='!@company/docs'
 
-# 只構建 apps 目錄下的包
+# 隻構建 apps 目錄下的包
 turbo run build --filter='./apps/*'
 ```
 

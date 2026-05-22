@@ -1,6 +1,6 @@
 ---
 title: "2024 Year-End Summary: Seven Years in Frontend, the AI Year"
-date: 2024-12-30 10:00:00
+date: 2024-12-30 16:04:41
 tags:
   - Engineering
 readingTime: 2

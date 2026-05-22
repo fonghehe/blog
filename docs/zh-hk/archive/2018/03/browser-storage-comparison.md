@@ -1,5 +1,5 @@
 ---
-title: "瀏覽器存儲方案對比：Cookie、localStorage、IndexedDB"
+title: "瀏覽器儲存方案對比 2018：Cookie、localStorage、IndexedDB"
 date: 2018-03-01 11:16:33
 tags:
   - 前端
@@ -15,7 +15,7 @@ wordCount: 414
 | 特性       | Cookie     | localStorage | sessionStorage | IndexedDB  |
 | 
 ---------- | ---------- | ------------ | -------------- | ---------- |
-| 大小限制   | 4KB        | 5MB          | 5MB            | 無實際限制 |
+| 大小限製   | 4KB        | 5MB          | 5MB            | 無實際限製 |
 | 生命週期   | 可設置過期 | 永久         | 標籤頁關閉刪除 | 永久       |
 | 隨請求發送 | 是         | 否           | 否             | 否         |
 | 同步/異步  | 同步       | 同步         | 同步           | 異步       |
@@ -42,7 +42,7 @@ function getCookie(name) {
 **安全屬性：**
 
 - `HttpOnly`：JS 無法讀取，防 XSS 竊取 token
-- `Secure`：只通過 HTTPS 發送
+- `Secure`：隻通過 HTTPS 發送
 - `SameSite=Strict`：防 CSRF
 
 ## localStorage
@@ -50,7 +50,7 @@ function getCookie(name) {
 最常用的前端存儲，用於持久化用户偏好、緩存數據：
 
 ```javascript
-// 存儲（只支持字符串，對象需要序列化）
+// 存儲（隻支援字符串，對象需要序列化）
 localStorage.setItem("user", JSON.stringify({ name: "Alice", role: "admin" }));
 
 // 讀取

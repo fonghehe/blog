@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 3.4 新特性速覽"
+title: "TypeScript 3.4 新特性速覽：特性解讀與遷移建議"
 date: 2019-02-08 17:22:19
 tags:
   - TypeScript

@@ -1,6 +1,6 @@
 ---
-title: "React 20 Suspense 改進"
-date: 2025-01-16 10:00:00
+title: "React 20 Suspense 改進：落地路徑與實戰建議"
+date: 2025-01-16 09:10:47
 tags:
   - React
 readingTime: 3
@@ -10,9 +10,9 @@ wordCount: 557
 
 React 20 的 Suspense 經歷了自 18 以來最大的一次迭代。新增的 SuspenseList 組件、流式 SSR 改進、以及與 Actions 的深度集成，讓 Suspense 從「加載態佔位」進化為「數據獲取編排」。
 
-## SuspenseList：控制加載順序
+## SuspenseList：控製加載順序
 
-SuspenseList 解決了多個異步組件同時加載時的視覺混亂問題——你可以控制它們的出現順序。
+SuspenseList 解決了多個異步組件同時加載時的視覺混亂問題——你可以控製它們的出現順序。
 
 ```javascript
 import { Suspense, SuspenseList } from 'react';
@@ -142,7 +142,7 @@ export default function RootLayout({ children }) {
 
 用户點擊導航時，React 會優先注水 `<Navigation>` 組件，即使頁面其他部分還沒完成注水。這顯著改善了 TTI（Time to Interactive）。
 
-## 嵌套 Suspense 的回退策略
+## 巢狀 Suspense 的回退策略
 
 React 20 允許 Suspense 邊界指定回退顯示的延遲時間，避免快速加載場景下的閃爍：
 
@@ -171,7 +171,7 @@ function App() {
 
 ## 小結
 
-- SuspenseList 控制多個異步組件的展示順序，解決視覺混亂問題
+- SuspenseList 控製多個異步組件的展示順序，解決視覺混亂問題
 - `use` hook 讓數據獲取和渲染合一，徹底替代 useEffect + fetch
 - 流式 SSR 的 Selective Hydration 大幅改善 TTI，交互組件優先注水
 - Suspense 邊界支持延遲迴退，避免快速加載場景下的 UI 閃爍

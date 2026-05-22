@@ -1,6 +1,6 @@
 ---
 title: "Agentic AI 编程代理实践"
-date: 2025-05-02 10:00:00
+date: 2025-05-02 14:36:13
 tags:
   - 工程化
 readingTime: 2

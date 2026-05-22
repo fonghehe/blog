@@ -37,7 +37,7 @@ function reactive(target) {
 
       const res = Reflect.get(target, key, receiver);
 
-      // 懶遞迴：只有訪問到巢狀物件時才代理
+      // 懶遞迴：隻有訪問到巢狀物件時才代理
       if (isObject(res)) {
         return reactive(res);
       }
@@ -117,7 +117,7 @@ function trigger(target, type, key) {
 ## ref 的實現
 
 ```javascript
-// ref 用於基本型別（不能用 Proxy，因為 Proxy 只能代理物件）
+// ref 用於基本型別（不能用 Proxy，因為 Proxy 隻能代理物件）
 function ref(value) {
   return {
     get value() {
@@ -151,7 +151,7 @@ function computed(getter) {
   return {
     get value() {
       if (dirty) {
-        value = runner(); // 只有訪問時才計算
+        value = runner(); // 隻有訪問時才計算
         dirty = false;
       }
       track(this, TrackOpTypes.GET, "value");
@@ -176,4 +176,4 @@ function computed(getter) {
 - Proxy 比 defineProperty 更強大：攔截新增、刪除、陣列索引操作
 - 懶遞迴代理（訪問時才 reactive）比 Vue 2 初始化時全量遞迴更高效
 - `track` 收集依賴，`trigger` 觸發更新，是整個響應式的核心
-- `computed` 用髒標記實現懶求值，只有訪問時才重新計算
+- `computed` 用髒標記實現懶求值，隻有訪問時才重新計算

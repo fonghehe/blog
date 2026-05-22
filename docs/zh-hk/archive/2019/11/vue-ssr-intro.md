@@ -1,5 +1,5 @@
 ---
-title: "Vue 2 SSR 服務端渲染入門"
+title: "Vue 2 SSR 服務端渲染入門：落地路徑與實戰建議"
 date: 2019-11-08 10:44:30
 tags:
   - Vue

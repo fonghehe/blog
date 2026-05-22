@@ -124,7 +124,7 @@ user.value.name = 'updated' // 這也會觸發響應式
 
 ## computed 的惰性求值
 
-`computed` 返回一個帶有快取的 ref。只有依賴變化時才會重新計算。
+`computed` 返回一個帶有快取的 ref。隻有依賴變化時才會重新計算。
 
 ```javascript
 function computed(getter) {
@@ -168,4 +168,4 @@ console.log(doubled.value) // 10，重新計算
 - 依賴收集用 WeakMap -> Map -> Set 三層結構，WeakMap 自動處理垃圾回收
 - ref 本質是包了一層 `{ value }` 的 reactive
 - computed 通過 dirty 標記實現惰性求值和快取
-- 理解底層機制有助於排查響應式不生效的疑難雜症
+- 理解底層機製有助於排查響應式不生效的疑難雜症

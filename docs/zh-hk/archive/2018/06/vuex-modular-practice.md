@@ -165,7 +165,7 @@ const actions = {
 
 ## 動態註冊模塊
 
-某些模塊只在特定場景需要，可以動態註冊：
+某些模塊隻在特定場景需要，可以動態註冊：
 
 ```javascript
 // 路由跳轉時註冊模塊
@@ -195,7 +195,7 @@ export default new Vuex.Store({
   plugins: [
     createPersistedState({
       key: "myapp-state",
-      paths: ["user.token", "app.theme", "app.locale"], // 只持久化這些
+      paths: ["user.token", "app.theme", "app.locale"], // 隻持久化這些
       storage: localStorage, // 或 sessionStorage
     }),
   ],
@@ -218,7 +218,7 @@ mutations: {
 actions: {
   async fetchUser({ commit }) {
     const user = await api.getUser()
-    commit('SET_USER', user)  // mutation 只同步修改 state
+    commit('SET_USER', user)  // mutation 隻同步修改 state
   }
 }
 ```
@@ -226,7 +226,7 @@ actions: {
 **不要在組件裏直接修改 state：**
 
 ```javascript
-// ❌ 繞過了 Vuex 的追蹤機制
+// ❌ 繞過了 Vuex 的追蹤機製
 this.$store.state.user.name = "Alice";
 
 // ✅ 通過 mutation
@@ -236,6 +236,6 @@ this.$store.commit("user/SET_NAME", "Alice");
 ## 小結
 
 - 大型項目按業務模塊拆分 store，開啓 `namespaced`
-- mutations 只做同步狀態修改，異步邏輯放 actions
+- mutations 隻做同步狀態修改，異步邏輯放 actions
 - 合理使用持久化，不要把所有 state 都持久化
 - `rootState` 和 `rootGetters` 實現跨模塊訪問

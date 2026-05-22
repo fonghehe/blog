@@ -78,7 +78,7 @@ function reactive(target) {
         track(target, key);
       }
       const result = Reflect.get(target, key, receiver);
-      // 深層代理：只有訪問到的屬性才會被代理（惰性）
+      // 深層代理：隻有訪問到的屬性才會被代理（惰性）
       if (typeof result === 'object' && result !== null) {
         return reactive(result);
       }
@@ -88,7 +88,7 @@ function reactive(target) {
     set(target, key, value, receiver) {
       const oldValue = target[key];
       const result = Reflect.set(target, key, value, receiver);
-      // 只有值真正改變時才觸發更新
+      // 隻有值真正改變時才觸發更新
       if (oldValue !== value) {
         trigger(target, key);
       }
@@ -253,7 +253,7 @@ const user = reactive({
   age: 25,
 });
 
-// 模板中 ref 會自動解包，不需要 .value
+// 範本中 ref 會自動解包，不需要 .value
 // 但在 JS 中必須使用 .value
 count.value++;
 console.log(count.value); // 2
@@ -321,7 +321,7 @@ const { count, doubled, increment } = useCounter();
 
 - Vue 3 使用 `Proxy` 替代 `Object.defineProperty`，從根本上解決了 Vue 2 響應式的侷限
 - Proxy 可以攔截屬性的新增、刪除、陣列索引修改等操作，無需特殊 API
-- 惰性代理機制：只有訪問到的深層屬性才會被代理，初始化效能更好
+- 惰性代理機製：隻有訪問到的深層屬性才會被代理，初始化效能更好
 - Composition API（`reactive`、`ref`、`computed`、`watch`）提供了更靈活的邏輯組織方式
 - `ref` 用於基本型別，`reactive` 用於物件型別，`toRefs` 解決解構丟失響應式的問題
 - Proxy 不支援 IE，Vue 3 正式放棄了 IE11 以下的支援

@@ -4,58 +4,58 @@ date: 2020-12-10 09:55:21
 tags:
   - フロントエンド
 readingTime: 3
-description: "做了五年前端，从写页面到写系统，从维护老项目到搭建新架构。今年带团队做了一个大型管理后台项目，沉淀了一些架构设计的思考。"
-wordCount: 224
+description: "フロントエンドの開発を 5 年経験し、ページを書くことからシステムを構築することへ、レガシープロジェクトのメンテナンスから新しいアーキテクチャの構築へと進んできました。今年はチームを率いて大規模な管理画面プロジェクトに取り組み、アーキテクチャ設計に関するいくつかの知見が得られました。"
+wordCount: 395
 ---
 
-做了五年前端，从写页面到写系统，从维护老项目到搭建新架构。今年带团队做了一个大型管理后台项目，沉淀了一些架构设计的思考。
+フロントエンド開発を 5 年経験し、ページを書くことからシステムを構築することへ、レガシープロジェクトのメンテナンスから新しいアーキテクチャの構築へと進んできました。今年はチームを率いて大規模な管理画面プロジェクトに取り組み、アーキテクチャ設計に関するいくつかの知見が得られました。
 
 ## アーキテクチャの核心的な問い
 
 ```
-前端架构要解决的三个核心问题：
+フロントエンドアーキテクチャが解決すべき 3 つの核心的な問題：
 
-1. 如何组织代码？（目录结构、模块划分）
-2. 如何管理状态？（数据流、缓存策略）
-3. 如何保证质量？（类型、测试、规范）
+1. コードをどのように構成するか？（ディレクトリ構造、モジュール分割）
+2. 状態をどのように管理するか？（データフロー、キャッシュ戦略）
+3. 品質をどのように保証するか？（型、テスト、規約）
 ```
 
-## 目录结构设计
+## ディレクトリ構造設計
 
 ```
 src/
-├── assets/              # 静态资源
-├── components/          # 公共组件
-│   ├── base/            # 基础组件（Button、Input）
-│   └── business/        # 业务组件（UserSelect、OrderTable）
-├── composables/         # 组合式函数（Vue 3）
-│   ├── useAuth.ts       # 认证
-│   ├── usePagination.ts # 分页
-│   └── useRequest.ts    # 请求
-├── layouts/             # 布局组件
-├── router/              # 路由
+├── assets/              # 静的リソース
+├── components/          # 公開コンポーネント
+│   ├── base/            # 基礎コンポーネント（Button、Input）
+│   └── business/        # 業務コンポーネント（UserSelect、OrderTable）
+├── composables/         # コンポーザブル関数（Vue 3）
+│   ├── useAuth.ts       # 認証
+│   ├── usePagination.ts # ページネーション
+│   └── useRequest.ts    # リクエスト
+├── layouts/             # レイアウトコンポーネント
+├── router/              # ルーター
 │   ├── index.ts
-│   └── guards.ts        # 路由守卫
-├── services/            # API 服务层
+│   └── guards.ts        # ルートガード
+├── services/            # API サービス層
 │   ├── user.ts
 │   ├── order.ts
-│   └── http.ts          # Axios 实例
-├── store/               # 状态管理
+│   └── http.ts          # Axios インスタンス
+├── store/               # 状態管理
 │   ├── modules/
 │   └── index.ts
-├── styles/              # 全局样式
+├── styles/              # グローバルスタイル
 │   ├── variables.scss
 │   ├── mixins.scss
 │   └── global.scss
-├── types/               # TypeScript 类型
-│   ├── api.ts           # API 响应类型
-│   ├── model.ts         # 业务模型类型
-│   └── store.ts         # Store 类型
-├── utils/               # 工具函数
+├── types/               # TypeScript 型
+│   ├── api.ts           # API レスポンス型
+│   ├── model.ts         # ビジネスモデル型
+│   └── store.ts         # Store 型
+├── utils/               # ユーティリティ関数
 │   ├── format.ts
 │   ├── validate.ts
 │   └── storage.ts
-├── views/               # 页面
+├── views/               # ページ
 │   ├── dashboard/
 │   ├── user/
 │   └── order/
@@ -73,7 +73,7 @@ const http = axios.create({
   timeout: 10000,
 });
 
-// 请求拦截：token
+// リクエストインターセプター：token
 http.interceptors.request.use(config => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -82,17 +82,17 @@ http.interceptors.request.use(config => {
   return config;
 });
 
-// 响应拦截：统一错误处理
+// レスポンスインターセプター：統一エラー処理
 http.interceptors.response.use(
   (response: AxiosResponse) => {
     const { code, data, message } = response.data;
     if (code === 0) return data;
-    // 业务错误
+    // ビジネスエラー
     return Promise.reject(new Error(message || '请求失败'));
   },
   error => {
     if (error.response?.status === 401) {
-      // token 过期，跳转登录
+      // token の期限切れ、ログインページにリダイレクト
       window.location.href = '/login';
     }
     return Promise.reject(error);
@@ -108,27 +108,27 @@ import http from './http';
 import type { User, UserQuery, PaginatedResult } from '@/types/model';
 
 export const userService = {
-  // 获取用户列表
+  // ユーザーリストを取得
   getList(params: UserQuery): Promise<PaginatedResult<User>> {
     return http.get('/users', { params });
   },
 
-  // 获取用户详情
+  // ユーザー詳細を取得
   getById(id: number): Promise<User> {
     return http.get(`/users/${id}`);
   },
 
-  // 创建用户
+  // ユーザーを作成
   create(data: Partial<User>): Promise<User> {
     return http.post('/users', data);
   },
 
-  // 更新用户
+  // ユーザーを更新
   update(id: number, data: Partial<User>): Promise<User> {
     return http.put(`/users/${id}`, data);
   },
 
-  // 删除用户
+  // ユーザーを削除
   delete(id: number): Promise<void> {
     return http.delete(`/users/${id}`);
   },
@@ -138,20 +138,20 @@ export const userService = {
 ## 状態管理戦略
 
 ```typescript
-// 不是什么都要放 Vuex/Pinia
-// 状态分层：
+// 何でもかんでも Vuex/Pinia に入れる必要はない
+// 状態の階層化：
 
-// 1. 组件内状态：useState / ref / reactive
-//    只在组件内使用，不需要共享
-//    例如：表单输入、弹窗开关
+// 1. コンポーネント内の状態：useState / ref / reactive
+//    コンポーネント内でのみ使用し、共有は不要
+//    例：フォーム入力、モーダルの開閉
 
-// 2. 全局业务状态：Pinia / Vuex
-//    多个组件/页面共享
-//    例如：用户信息、权限、全局配置
+// 2. グローバルなビジネス状態：Pinia / Vuex
+//    複数のコンポーネント/ページで共有
+//    例：ユーザー情報、権限、グローバル設定
 
-// 3. 服务端状态：缓存 + 请求
-//    从 API 获取的数据
-//    例如：列表数据、详情数据
+// 3. サーバー状態：キャッシュ + リクエスト
+//    API から取得するデータ
+//    例：リストデータ、詳細データ
 
 // store/modules/auth.ts
 import { defineStore } from 'pinia';
@@ -194,7 +194,7 @@ export const useAuthStore = defineStore('auth', {
 // utils/permission.ts
 import { useAuthStore } from '@/store/modules/auth';
 
-// 指令方式
+// ディレクティブ方式
 export const vPermission = {
   mounted(el: HTMLElement, binding: { value: string | string[] }) {
     const authStore = useAuthStore();
@@ -206,10 +206,10 @@ export const vPermission = {
   },
 };
 
-// 组件方式
+// コンポーネント方式
 // <template>
 //   <permission :required="['user:create']">
-//     <button>新增用户</button>
+//     <button>ユーザーを追加</button>
 //   </permission>
 // </template>
 ```
@@ -267,10 +267,10 @@ const routes: RouteRecordRaw[] = [
 ```typescript
 // utils/error-handler.ts
 export function setupErrorHandler(app) {
-  // Vue 全局错误处理
+  // Vue グローバルエラーハンドリング
   app.config.errorHandler = (err, vm, info) => {
     console.error('Vue 错误:', err);
-    // 上报到监控平台
+    // 監視プラットフォームに報告
     reportError({
       type: 'vue-error',
       error: err.message,
@@ -280,7 +280,7 @@ export function setupErrorHandler(app) {
     });
   };
 
-  // JS 全局错误
+  // JS グローバルエラー
   window.addEventListener('error', (event) => {
     reportError({
       type: 'js-error',
@@ -291,7 +291,7 @@ export function setupErrorHandler(app) {
     });
   });
 
-  // Promise 未捕获错误
+  // キャッチされなかった Promise エラー
   window.addEventListener('unhandledrejection', (event) => {
     reportError({
       type: 'promise-rejection',
@@ -303,8 +303,8 @@ export function setupErrorHandler(app) {
 
 ## まとめ
 
-- 架构的核心是让代码结构清晰、团队协作高效
-- 分层设计：组件层、业务层、服务层、基础设施层
-- API 服务层统一管理请求，类型定义保证接口契约
-- 状态管理按范围分层，不是所有状态都需要全局管理
-- 权限、路由、错误处理是企业级应用的基础设施，优先设计
+- アーキテクチャの核心は、コード構造を明確にし、チームのコラボレーションを効率的にすることです
+- 階層設計：コンポーネント層、ビジネス層、サービス層、基盤層
+- API サービス層でリクエストを一元管理し、型定義でインターフェース契約を保証
+- 状態管理はスコープに応じて階層化し、すべての状態をグローバルに管理する必要はありません
+- 権限、ルーティング、エラー処理はエンタープライズアプリケーションの基盤であり、優先的に設計する

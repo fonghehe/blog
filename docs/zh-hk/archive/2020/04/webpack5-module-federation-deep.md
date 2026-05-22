@@ -1,5 +1,5 @@
 ---
-title: "Webpack 5 Module Federation 深入"
+title: "Webpack 5 Module Federation 實戰 2020：跨應用元件共享指南"
 date: 2020-04-23 11:28:49
 tags:
   - Webpack
@@ -69,7 +69,7 @@ export default defineConfig({
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 業務實戰
 
@@ -99,7 +99,7 @@ module.exports = {
 
 這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
-## 性能對比
+## 效能對比
 
 先來看基本的實現方式：
 

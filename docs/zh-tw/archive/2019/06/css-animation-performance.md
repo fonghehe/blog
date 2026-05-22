@@ -1,5 +1,5 @@
 ---
-title: "CSS 動畫效能最佳化：從原理到實踐"
+title: "CSS 動畫效能最佳化 2019：will-change 與復合圖層進階"
 date: 2019-06-06 16:37:34
 tags:
   - CSS
@@ -79,7 +79,7 @@ JavaScript → Style → Layout → Paint → Composite
 }
 ```
 
-所以核心原則就一句話：**動畫儘量只用 `transform` 和 `opacity`**。
+所以核心原則就一句話：**動畫儘量隻用 `transform` 和 `opacity`**。
 
 ## 用 transform 替代 layout 屬性
 
@@ -98,7 +98,7 @@ JavaScript → Style → Layout → Paint → Composite
   to   { left: 300px; }
 }
 
-/* ✅ 好：用 transform 做位移動畫，只觸發 Composite */
+/* ✅ 好：用 transform 做位移動畫，隻觸發 Composite */
 .mover-good {
   position: absolute;
   left: 0;
@@ -196,13 +196,13 @@ element.addEventListener('transitionend', function handler() {
 ```
 
 ```css
-/* 也可以只在互動態時新增 */
+/* 也可以隻在互動態時新增 */
 .hover-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hover-card:hover {
-  /* 只在 hover 時才需要 will-change */
+  /* 隻在 hover 時才需要 will-change */
   will-change: transform;
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -251,13 +251,13 @@ element.addEventListener('transitionend', function handler() {
 }
 ```
 
-「CSS 黑魔法」`transform: translateZ(0)` 就是利用這個原理強制建立合成層。但不要濫用：
+「CSS 黑魔法」`transform: translateZ(0)` 就是利用這個原理強製建立合成層。但不要濫用：
 
 ```css
-/* ⚠️ 用 translateZ(0) 強制 GPU 加速——慎用 */
+/* ⚠️ 用 translateZ(0) 強製 GPU 加速——慎用 */
 .gpu-hack {
   /*
-   * 這確實能強制建立合成層，讓子元素的動畫在 GPU 上執行。
+   * 這確實能強製建立合成層，讓子元素的動畫在 GPU 上執行。
    * 但如果頁面中大量使用，會消耗大量視訊記憶體。
    * 現代瀏覽器已經足夠智慧，大多數情況下不需要手動 hack。
    * 僅在確實遇到效能問題且測試有效時使用。
@@ -268,7 +268,7 @@ element.addEventListener('transitionend', function handler() {
 
 ## requestAnimationFrame vs CSS 動畫
 
-什麼時候用 CSS 動畫，什麼時候用 JS（`requestAnimationFrame`）控制動畫？
+什麼時候用 CSS 動畫，什麼時候用 JS（`requestAnimationFrame`）控製動畫？
 
 ```css
 /* CSS 動畫/過渡：適合簡單、狀態驅動的動畫 */
@@ -287,7 +287,7 @@ element.addEventListener('transitionend', function handler() {
 ```
 
 ```javascript
-// requestAnimationFrame：適合需要精確控制的動畫
+// requestAnimationFrame：適合需要精確控製的動畫
 // 例如：跟手拖拽、粒子效果、物理引擎驅動的動畫
 
 function animateWithRAF(element) {
@@ -303,7 +303,7 @@ function animateWithRAF(element) {
       const eased = 1 - Math.pow(1 - progress, 3);
       const x = eased * 300;
 
-      // 每幀只修改 transform，確保走 Composite 路徑
+      // 每幀隻修改 transform，確保走 Composite 路徑
       element.style.transform = `translateX(${x}px)`;
       element.style.opacity = 0.5 + progress * 0.5;
 
@@ -438,7 +438,7 @@ DevTools → 更多工具(More tools) → 渲染(Rendering)
 /* ✅ 最佳化方案：給每個 item 建立獨立的層 */
 .optimized-list-item {
   /*
-   * 使用 contain 限制重繪範圍。
+   * 使用 contain 限製重繪範圍。
    * layout：元素內部的佈局變化不影響外部
    * paint：元素的繪製不會溢位邊界
    */
@@ -550,7 +550,7 @@ DevTools → 更多工具(More tools) → 渲染(Rendering)
   /* 提前告知瀏覽器 */
   will-change: transform;
 
-  /* ✅ 限制重繪範圍 */
+  /* ✅ 限製重繪範圍 */
   contain: layout paint;
 }
 
@@ -570,7 +570,7 @@ const content = document.querySelector('.modal-content');
 function openModal() {
   content.style.willChange = 'transform';
   overlay.style.willChange = 'opacity';
-  // 強制迴流確保 will-change 生效（讀取 offsetHeight 即可觸發）
+  // 強製迴流確保 will-change 生效（讀取 offsetHeight 即可觸發）
   void content.offsetHeight;
   overlay.classList.add('active');
   content.classList.add('active');
@@ -593,8 +593,8 @@ content.addEventListener('transitionend', (e) => {
 
 ## 小結
 
-- 動畫屬性選擇的核心原則：優先使用 `transform` 和 `opacity`，它們只觸發 Composite，跳過 Layout 和 Paint
-- `will-change` 是最佳化提示而非萬能藥——只在動畫即將發生時新增，動畫結束後移除，避免濫用導致視訊記憶體不足
+- 動畫屬性選擇的核心原則：優先使用 `transform` 和 `opacity`，它們隻觸發 Composite，跳過 Layout 和 Paint
+- `will-change` 是最佳化提示而非萬能藥——隻在動畫即將發生時新增，動畫結束後移除，避免濫用導致視訊記憶體不足
 - `contain: layout paint` 可以有效縮小回流和重繪的影響範圍
-- CSS 動畫適合簡單的狀態驅動動畫，`requestAnimationFrame` 適合需要精確控制的複雜動畫
+- CSS 動畫適合簡單的狀態驅動動畫，`requestAnimationFrame` 適合需要精確控製的複雜動畫
 - 善用 DevTools 的 Performance 面板和 Paint flashing 來定位真正的效能瓶頸，不要憑感覺最佳化

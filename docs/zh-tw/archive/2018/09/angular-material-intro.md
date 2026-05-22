@@ -10,7 +10,7 @@ wordCount: 171
 
 Angular Material 是 Angular 官方出品的 Material Design UI 元件庫，開箱即用、可訪問性良好，適合快速構建企業管理系統。
 
-## 安裝與配置
+## 安裝與設定
 
 ```bash
 ng add @angular/material
@@ -19,7 +19,7 @@ ng add @angular/material
 # 是否新增全域性字型和圖示？Yes
 ```
 
-`ng add` 會自動修改 `angular.json`、`AppModule` 等配置，無需手動處理。
+`ng add` 會自動修改 `angular.json`、`AppModule` 等設定，無需手動處理。
 
 ## 按需引入模組
 

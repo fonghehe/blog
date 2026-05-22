@@ -1,5 +1,5 @@
 ---
-title: "Vite 3 預覽模式詳解"
+title: "Vite 3 預覽模式：生產建置的本地驗證利器"
 date: 2022-10-03 09:31:43
 tags:
   - Vite

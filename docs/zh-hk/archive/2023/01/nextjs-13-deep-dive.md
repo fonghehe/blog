@@ -1,5 +1,5 @@
 ---
-title: "Next.js 14 新特性彙總"
+title: "Next.js 14 新特性彙總：特性解讀與遷移建議"
 date: 2023-01-03 14:50:54
 tags:
   - Next.js

@@ -1,6 +1,6 @@
 ---
 title: "Agentic AI Coding Agents in Practice"
-date: 2025-05-02 10:00:00
+date: 2025-05-02 14:36:13
 tags:
   - Engineering
 readingTime: 1

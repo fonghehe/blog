@@ -1,5 +1,5 @@
 ---
-title: "Vite 3 預覽模式詳解"
+title: "Vite 3 預覽模式實踐：集成测試與預釋出驗證流程"
 date: 2022-12-29 10:22:38
 tags:
   - Vite
@@ -93,7 +93,7 @@ function useIntersectionObserver(options = {}) {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
 實際項目中的用法會更復雜一些：
 

@@ -1,6 +1,6 @@
 ---
 title: "Claude Artifacts 開発ワークフロー"
-date: 2024-06-03 10:00:00
+date: 2024-06-03 14:37:14
 tags:
   - エンジニアリング
 readingTime: 3

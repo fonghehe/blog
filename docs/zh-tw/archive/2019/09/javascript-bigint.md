@@ -193,7 +193,7 @@ console.log(hasPermission(userPermissions, READ));   // true
 console.log(hasPermission(userPermissions, DELETE)); // false
 ```
 
-## BigInt 在 Math 物件中的限制
+## BigInt 在 Math 物件中的限製
 
 `Math` 物件的方法不支援 BigInt：
 
@@ -255,7 +255,7 @@ console.log(b.toString()); // "9007199254740994"
 
 ## 小結
 
-- BigInt 解決了 Number 型別的安全整數範圍限制，可以表示任意精度的整數
+- BigInt 解決了 Number 型別的安全整數範圍限製，可以表示任意精度的整數
 - 使用 `數字後加 n` 或 `BigInt()` 建構函式建立 BigInt 值
 - BigInt 和 Number 不能混合運算，需要顯式轉換
 - 實際場景：資料庫 64 位 ID、金融金額計算、位運算許可權系統

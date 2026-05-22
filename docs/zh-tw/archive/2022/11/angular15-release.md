@@ -121,7 +121,7 @@ export class HeroComponent {}
 
 - 自動生成 `srcset` 和 `sizes`
 - 對 `priority` 圖片新增 `<link rel="preload">`
-- 防止佈局偏移（CLS）：強制要求設定 `width` 和 `height`
+- 防止佈局偏移（CLS）：強製要求設定 `width` 和 `height`
 - 懶載入非關鍵圖片（自動新增 `loading="lazy"`）
 - 支援 CDN loader（Imgix、Cloudinary、Cloudflare Images）
 
@@ -135,7 +135,7 @@ ERROR Error: Cannot read property 'name' of undefined
     at Object.updateTextNode (core.mjs:12345)
     at executeActionOnView (core.mjs:23456)
 
-# Angular 15 的錯誤棧（清晰指向元件和模板）
+# Angular 15 的錯誤棧（清晰指向元件和範本）
 ERROR Error: Cannot read property 'name' of undefined
     in UserCardComponent (user-card.component.ts:15)
     accessing 'user.name' in template
@@ -162,7 +162,7 @@ ng update @angular/core@15 @angular/cli@15 @angular/material@15
 # 自動遷移：
 # 1. 移除已廢棄的 ComponentFactoryResolver 注入
 # 2. 更新 RouterModule 到 provideRouter（如使用 standalone）
-# 3. 遷移 DatePipe 配置
+# 3. 遷移 DatePipe 設定
 ```
 
 ## 總結

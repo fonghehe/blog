@@ -1,5 +1,5 @@
 ---
-title: "CSS Animation Performance: From Principles to Practice"
+title: "CSS Animation Performance: Principles to Practice（2018 版）"
 date: 2019-06-06 16:37:34
 tags:
   - CSS

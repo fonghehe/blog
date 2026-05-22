@@ -3,19 +3,19 @@ title: "CSS Container Queries 提案の深掘り"
 date: 2019-10-08 17:48:44
 tags:
   - CSS
-readingTime: 3
-description: "在响应式设计中，我们一直依赖 `@media` 查询根据视口（viewport）大小来调整布局。但这种方式有一个根本性的缺陷：组件的行为取决于视口，而不是组件自身的尺寸。Container Queries 提案试图解决这个问题，让组件可以根据其父容器的尺寸来调整自身样式。"
-wordCount: 535
+readingTime: 5
+description: "レスポンシブデザインでは、これまでビューポートサイズに基づいてレイアウトを調整するために @media クエリに依存してきました。しかし、この方法には根本的な欠陥があります：コンポーネントの動作がビューポートに依存し、コンポーネント自身のサイズに基づいていないことです。Container Queries の提案はこの問題を解決しようとしており、コンポーネントが親コンテナのサイズに応じて自身のスタイルを調整できるようにします。"
+wordCount: 892
 ---
 
-在响应式设计中，我们一直依赖 `@media` 查询根据视口（viewport）大小来调整布局。但这种方式有一个根本性的缺陷：组件的行为取决于视口，而不是组件自身的尺寸。Container Queries 提案试图解决这个问题，让组件可以根据其父容器的尺寸来调整自身样式。
+レスポンシブデザインでは、これまでビューポートサイズに基づいてレイアウトを調整するために `@media` クエリに依存してきました。しかし、この方法には根本的な欠陥があります：コンポーネントの動作がビューポートに依存し、コンポーネント自身のサイズに基づいていないことです。Container Queries の提案はこの問題を解決しようとしており、コンポーネントが親コンテナのサイズに応じて自身のスタイルを調整できるようにします。
 
 ## レスポンシブデザインの課題
 
-假设你有一个卡片组件，在主内容区它应该横向排列，在侧边栏它应该纵向排列。使用 `@media` 查询：
+カードコンポーネントがあるとします。メインコンテンツエリアでは横方向に配置し、サイドバーでは縦方向に配置したいとします。`@media` クエリを使用すると：
 
 ```css
-/* 只能根据视口宽度判断 */
+/* ビューポートの幅に基づいてのみ判断 */
 @media (min-width: 768px) {
   .card {
     flex-direction: row;
@@ -29,20 +29,20 @@ wordCount: 535
 }
 ```
 
-问题在于：即使视口很宽，如果卡片被放在窄的侧边栏里，它仍然应该以窄屏模式展示。`@media` 查询无法处理这种场景。
+問題は、ビューポートが広くても、カードが狭いサイドバーに配置されている場合、狭い画面モードで表示されるべきだということです。`@media` クエリではこのシナリオを処理できません。
 
 ## Container Queries 提案のコアコンセプト
 
-Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以查询父容器的尺寸，而不是视口的尺寸。提案中的语法大致如下：
+Container Queries（Element Queries とも呼ばれる）の核心的な考え方は、CSS がビューポートではなく親コンテナのサイズをクエリできるようにすることです。提案中の構文は以下のようになります：
 
 ```css
-/* 声明一个查询容器 */
+/* クエリコンテナを宣言 */
 .card-container {
   container-type: inline-size;
   container-name: card;
 }
 
-/* 根据容器宽度调整样式 */
+/* コンテナの幅に応じてスタイルを調整 */
 @container card (min-width: 400px) {
   .card {
     flex-direction: row;
@@ -75,20 +75,20 @@ Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以
 
 ### container-type
 
-`container-type` 定义一个元素作为查询容器，以及它可以被查询的维度：
+`container-type` は要素をクエリコンテナとして定義し、クエリ可能な次元を指定します：
 
 ```css
-/* 只查询 inline-size（水平方向宽度） */
+/* inline-size（水平方向の幅）のみをクエリ */
 .sidebar {
   container-type: inline-size;
 }
 
-/* 查询 size（宽度和高度） */
+/* size（幅と高さ）をクエリ */
 .panel {
   container-type: size;
 }
 
-/* 声明但不启用查询 */
+/* 宣言するがクエリは有効にしない */
 .widget {
   container-type: normal;
 }
@@ -96,7 +96,7 @@ Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以
 
 ### container-name
 
-`container-name` 给容器命名，这样查询可以精确指向特定容器：
+`container-name` はコンテナに名前を付け、クエリが特定のコンテナを正確に指し示せるようにします：
 
 ```css
 .main-content {
@@ -109,21 +109,21 @@ Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以
   container-name: sidebar;
 }
 
-/* 精确查询 main 容器 */
+/* main コンテナを正確にクエリ */
 @container main (min-width: 600px) {
   .card { /* ... */ }
 }
 
-/* 精确查询 sidebar 容器 */
+/* sidebar コンテナを正確にクエリ */
 @container sidebar (min-width: 300px) {
   .card { /* ... */ }
 }
 ```
 
-### container 简写
+### container のショートハンド
 
 ```css
-/* 等价于 container-type + container-name */
+/* container-type + container-name と同等 */
 .widget-wrapper {
   container: widget / inline-size;
 }
@@ -131,7 +131,7 @@ Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以
 
 ## 実際のユースケース
 
-### 场景一：组件库中的响应式组件
+### シナリオ1：コンポーネントライブラリのレスポンシブコンポーネント
 
 ```css
 .card-wrapper {
@@ -169,7 +169,7 @@ Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以
 }
 ```
 
-### 场景二：Dashboard 仪表盘
+### シナリオ2：ダッシュボード
 
 ```css
 .dashboard-grid {
@@ -203,7 +203,7 @@ Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以
 
 ## ResizeObserverでシミュレート
 
-在原生支持到来之前，可以用 JavaScript + ResizeObserver 模拟：
+ネイティブサポートが来るまでは、JavaScript + ResizeObserver でシミュレートできます：
 
 ```js
 class ContainerQuery {
@@ -242,7 +242,7 @@ class ContainerQuery {
   }
 }
 
-// 使用
+// 使用例
 const wrapper = document.querySelector('.card-wrapper');
 new ContainerQuery(wrapper, { sm: 300, md: 500, lg: 700 });
 ```
@@ -284,7 +284,7 @@ function useContainerQuery(breakpoints) {
   return [ref, breakpoint];
 }
 
-// 使用
+// 使用例
 function Card() {
   const [ref, bp] = useContainerQuery({
     small: 0,
@@ -308,20 +308,20 @@ function Card() {
 
 ## Container Queries と @media の関係
 
-两者是互补关系，不是替代关系：
+両者は補完関係であり、代替関係ではありません：
 
-- **@media**：适用于全局布局决策（页面级响应式）
-- **@container**：适用于组件级响应式（组件自适应）
+- **@media**：グローバルなレイアウト決定に適している（ページレベルのレスポンシブ）
+- **@container**：コンポーネントレベルのレスポンシブに適している（コンポーネントの適応）
 
 ```css
-/* 全局布局用 @media */
+/* 全体のレイアウトには @media */
 @media (max-width: 768px) {
   .layout {
     grid-template-columns: 1fr;
   }
 }
 
-/* 组件自适应用 @container */
+/* コンポーネントの適応には @container */
 @container card (min-width: 400px) {
   .card {
     flex-direction: row;
@@ -331,10 +331,10 @@ function Card() {
 
 ## まとめ
 
-- Container Queries 让组件可以根据父容器尺寸调整样式
-- 提案核心语法：`container-type`、`container-name`、`@container`
-- 解决了组件库在不同布局上下文中自适应的痛点
-- 截至 2019 年仍处于提案阶段，尚无浏览器原生支持
-- 可用 ResizeObserver + CSS 类名方式模拟实现
-- React Hook 封装可以简化组件中的使用
-- Container Queries 与 @media 查询是互补关系
+- Container Queries により、コンポーネントは親コンテナのサイズに応じてスタイルを調整できる
+- 提案の核心的な構文：`container-type`、`container-name`、`@container`
+- コンポーネントライブラリが異なるレイアウトコンテキストで適応する際の課題を解決
+- 2019 年時点ではまだ提案段階であり、ブラウザのネイティブサポートは未実装
+- ResizeObserver + CSS クラス名でシミュレート可能
+- React Hook によるラップでコンポーネントでの使用を簡略化
+- Container Queries と @media クエリは補完関係にある

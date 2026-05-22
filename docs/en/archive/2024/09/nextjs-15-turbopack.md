@@ -1,6 +1,6 @@
 ---
-title: "Next.js 15: Turbopack as Default"
-date: 2024-09-16 10:00:00
+title: "Next.js 15 Turbopack Default: 新一代BuildTool里程碑"
+date: 2024-09-16 19:50:27
 tags:
   - React
 readingTime: 2

@@ -1,6 +1,6 @@
 ---
 title: "2025 前端展望：Signal 架構成熟、React 19 生態與 AI 深度融合"
-date: 2024-12-31 10:00:00
+date: 2024-12-31 11:05:42
 tags:
   - React
   - 工程化
@@ -109,7 +109,7 @@ Turbopack（Next.js 專屬）
   - 基於 MCP 的工具調用：2024 年後期快速普及
 
 2025 年預判：
-  - AI Agent 編寫多文件功能（從需求到 PR）
+  - AI Agent 編寫多檔案功能（從需求到 PR）
   - 測試生成自動化：覆蓋率 80% 不再需要手動維護
   - Code Review AI：安全漏洞和性能問題實時檢測
   - 設計稿到代碼：Figma/FigJoy → React/Vue 組件質量大幅提升
@@ -137,7 +137,7 @@ Turbopack（Next.js 專屬）
 1. **React Compiler**：如果你在寫 React，現在就用 Beta 版試水，2025 年穩定後你會比別人早熟悉 6 個月
 2. **Angular Signal API**：如果在維護 Angular 項目，遷移到 Signal API 是 2025 年最高性價比的工程投資
 3. **Vite 6 + Rolldown**：關注構建速度提升，新項目用 Vite 6，老項目升級無痛
-4. **AI 工具深化**：不只是補全——Cursor/Windsurf 的 Agent 模式用於處理重複性工作（重構、測試生成、文檔）
+4. **AI 工具深化**：不隻是補全——Cursor/Windsurf 的 Agent 模式用於處理重複性工作（重構、測試生成、文檔）
 
 ## 總結
 

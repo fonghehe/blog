@@ -1,5 +1,5 @@
 ---
-title: "React Hook Form 表單方案對比"
+title: "React Hook Form 表單方案對比：落地路徑與實戰建議"
 date: 2021-02-23 17:44:59
 tags:
   - React
@@ -102,7 +102,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 避坑指南
 

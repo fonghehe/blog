@@ -1,5 +1,5 @@
 ---
-title: "Next.js 14 Partial Prerendering"
+title: "Partial Prerendering 概念：Next.js 的混合渲染未來"
 date: 2023-10-03 14:50:22
 tags:
   - 前端
@@ -63,7 +63,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

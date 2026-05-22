@@ -1,5 +1,5 @@
 ---
-title: "Webpack 4 SplitChunks 詳解"
+title: "Webpack 4 SplitChunks 詳解：落地路徑與實戰建議"
 date: 2019-01-23 10:11:08
 tags:
   - Webpack

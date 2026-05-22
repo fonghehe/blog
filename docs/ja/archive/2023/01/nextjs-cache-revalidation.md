@@ -3,35 +3,35 @@ title: "Next.js キャッシュと再検証戦略"
 date: 2023-01-13 11:13:16
 tags:
   - Next.js
-readingTime: 3
-description: "Next.js 13/14 的缓存策略是所有框架中默认行为最激进的。理解 `fetch` 缓存、`revalidate`、`revalidatePath`、`revalidateTag` 之间的区别和适用场景，是避免\"为什么页面数据不更新\"这类问题的关键。"
-wordCount: 562
+readingTime: 4
+description: "Next.js 13/14 のキャッシュ戦略は、全フレームワークの中で最もデフォルトの動作が攻撃的です。fetch キャッシュ、revalidate、revalidatePath、revalidateTag の違いと適用シーンを理解することが、「なぜページデータが更新されないのか」といった問題を避ける鍵です。"
+wordCount: 895
 ---
 
-Next.js 13/14 的缓存策略是所有框架中默认行为最激进的。理解 `fetch` 缓存、`revalidate`、`revalidatePath`、`revalidateTag` 之间的区别和适用场景，是避免"为什么页面数据不更新"这类问题的关键。
+Next.js 13/14のキャッシュ戦略は、すべてのフレームワークの中で最もデフォルトの動作が攻撃的です。`fetch` キャッシュ、`revalidate`、`revalidatePath`、`revalidateTag` の違いと適用シーンを理解することが、「なぜページデータが更新されないのか」といった問題を避ける鍵です。
 
 ## キャッシュ階層の全体像
 
-Next.js 的缓存有四层，从外到内分别是：
+Next.jsのキャッシュは4層あり、外側から内側の順に次のとおりです：
 
-1. **Request Memoization** — 同一请求中的重复 `fetch` 自动去重
-2. **Data Cache** — `fetch` 响应的持久化缓存，默认永久
-3. **Full Route Cache** — 页面级静态缓存，包含 RSC Payload + HTML
-4. **Router Cache** — 客户端路由缓存，prefetch 的页面缓存
+1. **Request Memoization** — 同一リクエスト内の重複 `fetch` を自動的に排除
+2. **Data Cache** — `fetch` レスポンスの永続的キャッシュ、デフォルトで永続
+3. **Full Route Cache** — ページレベルの静的キャッシュ、RSC Payload + HTML を含む
+4. **Router Cache** — クライアント側ルーターキャッシュ、prefetchされたページのキャッシュ
 
 ```tsx
 // app/blog/page.tsx
 export default async function BlogPage() {
-  // 这个 fetch 被 Data Cache 缓存，默认永久
-  // 同一渲染请求中多处调用同一个 URL，会被 Request Memoization 去重
+  // この fetch は Data Cache にキャッシュされ、デフォルトで永続
+  // 同一レンダリングリクエスト内で同じURLを複数回呼び出すと、Request Memoization が重複排除
   const posts = await fetch('https://api.example.com/posts')
 
-  // 这个 fetch 每次重新验证
+  // この fetch は毎回再検証
   const realtime = await fetch('https://api.example.com/stock-price', {
     cache: 'no-store'
   })
 
-  // 这个 fetch 60秒后过期
+  // この fetch は60秒後に期限切れ
   const trending = await fetch('https://api.example.com/trending', {
     next: { revalidate: 60 }
   })
@@ -42,25 +42,25 @@ export default async function BlogPage() {
 
 ## revalidatePath と revalidateTag の違い
 
-`revalidatePath` 按路径失效缓存，`revalidateTag` 按标签失效。在 Server Actions 中，推荐使用 `revalidateTag`，因为它更精确。
+`revalidatePath` はパスに基づいてキャッシュを無効化し、`revalidateTag` はタグに基づいて無効化します。Server Actions では、`revalidateTag` の方がより正確なため推奨されます。
 
 ```tsx
-// 方式一：revalidatePath — 按路径
+// 方式一：revalidatePath — パスに基づく
 'use server'
 
 import { revalidatePath } from 'next/cache'
 
 export async function createPost(formData: FormData) {
   await db.post.create({ data: { ... } })
-  // 失效 /blog 路径下所有页面的缓存
+  // /blog パス以下の全ページのキャッシュを無効化
   revalidatePath('/blog')
-  // 也可以失效动态路由
+  // 動的ルートも無効化可能
   revalidatePath('/blog/[slug]', 'page')
-  // 连布局也一起失效
+  // レイアウトも一緒に無効化
   revalidatePath('/blog', 'layout')
 }
 
-// 方式二：revalidateTag — 按标签
+// 方式二：revalidateTag — タグに基づく
 // 在 fetch 时打标签
 const posts = await fetch('https://api.example.com/posts', {
   next: { tags: ['posts'] }
@@ -81,25 +81,25 @@ import { revalidateTag } from 'next/cache'
 
 export async function createPost(formData: FormData) {
   await db.post.create({ data: { ... } })
-  // 所有带 'posts' 标签的缓存都失效
+  // すべての 'posts' タグが付いたキャッシュを無効化
   revalidateTag('posts')
 }
 ```
 
-`revalidateTag` 的优势在于：你不需要知道哪些页面用了这个数据。只要数据带了标签，任何页面的缓存都会被正确失效。
+`revalidateTag` の利点は、どのページがこのデータを使用しているかを知る必要がないことです。データにタグが付いていれば、どのページのキャッシュも正しく無効化されます。
 
 ## オンデマンド再検証 vs 時間ベース再検証
 
 两种策略适用不同场景：
 
 ```tsx
-// 时间驱动：数据在指定秒数后过期
+// 時間駆動：データは指定秒数後に期限切れ
 const data = await fetch('https://api.example.com/data', {
   next: { revalidate: 3600 } // 1小时
 })
-// 适合：不经常变化的数据（如配置、分类列表）
+// 適している：あまり頻繁に変更されないデータ（設定、カテゴリ一覧など）
 
-// on-demand：由 Server Action 或 Route Handler 手动触发
+// on-demand：Server Action または Route Handler で手動トリガー
 'use server'
 export async function publishPost(postId: string) {
   await db.post.update({
@@ -109,29 +109,29 @@ export async function publishPost(postId: string) {
   revalidateTag('posts')
   revalidatePath('/blog')
 }
-// 适合：数据变更明确可追踪的业务场景
+// 適している：データ変更が明確に追跡可能なビジネスシナリオ
 ```
 
-我的建议是：优先用 on-demand revalidation。时间驱动的 revalidate 只用于那些真的没有变更触发点的数据（如第三方 API 返回的数据）。
+私のアドバイスとしては、優先的にon-demand revalidationを使用することです。時間駆動のrevalidateは、変更のトリガーポイントが本当にないデータ（サードパーティAPIから返されるデータなど）にのみ使用してください。
 
 ## 非fetchデータソースのキャッシュ処理
 
-数据库查询、文件读取等非 `fetch` 操作不会被自动缓存。需要使用 `unstable_cache` 手动包装。
+データベースクエリやファイル読み取りなど、`fetch` 以外の操作は自動的にキャッシュされません。`unstable_cache` を使って手動でラップする必要があります。
 
 ```tsx
 import { unstable_cache } from 'next/cache'
 import { db } from '@/lib/db'
 
-// 基础用法
+// 基本的な使用法
 const getCachedUser = unstable_cache(
   async (id: string) => {
     return db.user.findUnique({ where: { id } })
   },
-  ['user'],       // key 的前缀
+  ['user'],       // key のプレフィックス
   { revalidate: 3600, tags: ['users'] }
 )
 
-// 在 Server Component 中使用
+// Server Component で使用
 export default async function ProfilePage({ params }: { params: { id: string } }) {
   const user = await getCachedUser(params.id)
   if (!user) notFound()
@@ -144,7 +144,7 @@ export default async function ProfilePage({ params }: { params: { id: string } }
   )
 }
 
-// 在 Server Action 中失效
+// Server Action で無効化
 'use server'
 import { revalidateTag } from 'next/cache'
 
@@ -160,7 +160,7 @@ export async function updateProfile(formData: FormData) {
 
 ## キャッシュデバッグのテクニック
 
-开发环境可以在 `next.config.js` 中启用日志来观察缓存行为：
+開発環境では `next.config.js` でログを有効にして、キャッシュの動作を観察できます：
 
 ```js
 // next.config.js
@@ -176,12 +176,12 @@ const nextConfig = {
 module.exports = nextConfig
 ```
 
-控制台会输出每个 `fetch` 的缓存命中情况。生产环境可以用 `x-next-cache-tags` 和 `x-next-cache-status` 响应头来调试。
+コンソールに各 `fetch` のキャッシュヒット状況が出力されます。本番環境では `x-next-cache-tags` と `x-next-cache-status` レスポンスヘッダーを使ってデバッグできます。
 
 ## まとめ
 
-- Next.js 默认缓存行为非常激进，`fetch` 默认永久缓存，需要理解后主动选择策略
-- 优先使用 `revalidateTag` + on-demand revalidation，比时间驱动更精确可控
-- 非 fetch 数据源（数据库等）用 `unstable_cache` 包装，否则不会被缓存也不会被自动失效
-- 开发时用 `logging.fetches` 配置来观察缓存命中情况，避免缓存相关的诡异 bug
-- `revalidatePath` 和 `revalidateTag` 是两套不同维度的失效机制，根据场景选择
+- Next.js のデフォルトのキャッシュ動作は非常に積極的で、`fetch` はデフォルトで永久キャッシュされるため、理解した上で戦略を選択する必要があります
+- 優先的に `revalidateTag` + on-demand revalidation を使用し、時間駆動よりも正確で制御しやすいです
+- 非 fetch データソース（データベースなど）は `unstable_cache` でラップしないと、キャッシュされず自動無効化もされません
+- 開発時は `logging.fetches` 設定でキャッシュヒット状況を観察し、キャッシュ関連の不具合を回避しましょう
+- `revalidatePath` と `revalidateTag` は異なる次元の無効化メカニズムなので、シナリオに応じて選択してください

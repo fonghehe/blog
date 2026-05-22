@@ -4,11 +4,11 @@ date: 2019-05-19 16:51:01
 tags:
   - Node.js
 readingTime: 6
-description: "Stream 是 Node.js 最核心的模組之一，但很多開發者日常只用 `fs.readFile` 處理檔案。當你需要處理大檔案、構建管道式資料處理、或者實現高效 I/O 時，Stream 是不可或缺的工具。"
+description: "Stream 是 Node.js 最核心的模組之一，但很多開發者日常隻用 `fs.readFile` 處理檔案。當你需要處理大檔案、構建管道式資料處理、或者實現高效 I/O 時，Stream 是不可或缺的工具。"
 wordCount: 443
 ---
 
-Stream 是 Node.js 最核心的模組之一，但很多開發者日常只用 `fs.readFile` 處理檔案。當你需要處理大檔案、構建管道式資料處理、或者實現高效 I/O 時，Stream 是不可或缺的工具。
+Stream 是 Node.js 最核心的模組之一，但很多開發者日常隻用 `fs.readFile` 處理檔案。當你需要處理大檔案、構建管道式資料處理、或者實現高效 I/O 時，Stream 是不可或缺的工具。
 
 ## 為什麼需要 Stream
 
@@ -24,7 +24,7 @@ fs.readFile('./huge-log.txt', (err, data) => {
 })
 
 // 問題：2GB 檔案需要 2GB 記憶體，很可能 OOM
-// 即使 Node.js 的 Buffer 有 2GB 限制（v12+ 預設 4GB），效率也很低
+// 即使 Node.js 的 Buffer 有 2GB 限製（v12+ 預設 4GB），效率也很低
 ```
 
 ```javascript
@@ -39,7 +39,7 @@ const stream = fs.createReadStream('./huge-log.txt', {
 let totalSize = 0
 stream.on('data', (chunk) => {
   totalSize += chunk.length
-  // 每次只處理 64KB，記憶體佔用極低
+  // 每次隻處理 64KB，記憶體佔用極低
 })
 
 stream.on('end', () => {
@@ -269,7 +269,7 @@ parser.end()
 
 ## pipe 和 pipeline
 
-`pipe()` 是 Stream 的核心機制，將可讀流連線到可寫流。
+`pipe()` 是 Stream 的核心機製，將可讀流連線到可寫流。
 
 ```javascript
 const fs = require('fs')
@@ -332,7 +332,7 @@ pipeline(
 
 ## 背壓（Backpressure）
 
-背壓是 Stream 處理速度不匹配時的自動調節機制。
+背壓是 Stream 處理速度不匹配時的自動調節機製。
 
 ```javascript
 const fs = require('fs')

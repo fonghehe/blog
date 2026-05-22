@@ -1,5 +1,5 @@
 ---
-title: "React 18 Suspense によるデータフェッチ"
+title: "React 18 Suspense 数据获取：Render-as-You-Fetch 模式初探"
 date: 2022-01-06 16:06:50
 tags:
   - React

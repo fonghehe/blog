@@ -1,6 +1,6 @@
 ---
 title: "Next.js 17 新特性展望"
-date: 2026-01-27 10:00:00
+date: 2026-01-27 17:01:38
 tags:
   - React
 readingTime: 3
@@ -31,7 +31,7 @@ const config: NextConfig = {
       '@': './src',
       '@components': './src/components',
     },
-    // Turbopack 的模塊聯邦支持
+    // Turbopack 的模塊聯邦支援
     moduleFederation: {
       name: 'host',
       remotes: {
@@ -44,7 +44,7 @@ const config: NextConfig = {
   experimental: {
     // React Compiler 深度集成
     reactCompiler: true,
-    // 邊緣中間件的 AI 推理支持
+    // 邊緣中間件的 AI 推理支援
     aiMiddleware: true,
   },
 };
@@ -88,7 +88,7 @@ async function StockStatus({ productId }: { productId: string }) {
   );
 }
 
-// 用户個性化內容：需要鑑權
+// 用戶個性化內容：需要鑑權
 async function ReviewSection({ productId }: { productId: string }) {
   const user = await getUser();
   const reviews = await getReviews(productId, user?.region);
@@ -185,7 +185,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export async function middleware(request: NextRequest) {
-  // 1. 鑑權檢查（支持直接查詢數據庫）
+  // 1. 鑑權檢查（支援直接查詢數據庫）
   const session = await verifySession(request.cookies.get('session')?.value);
 
   if (request.nextUrl.pathname.startsWith('/dashboard') && !session) {

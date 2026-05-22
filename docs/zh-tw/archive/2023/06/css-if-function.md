@@ -1,5 +1,5 @@
 ---
-title: "CSS if() 函式提案"
+title: "CSS if() 函式提案 2023：条件邏輯進入 CSS 的早期讨論"
 date: 2023-06-13 11:13:59
 tags:
   - CSS

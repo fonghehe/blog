@@ -1,6 +1,6 @@
 ---
 title: "2025 Year-End Summary: A New Balance Between Technical Leadership and AI"
-date: 2025-12-28 10:00:00
+date: 2025-12-28 15:42:19
 tags:
   - Engineering
 readingTime: 2

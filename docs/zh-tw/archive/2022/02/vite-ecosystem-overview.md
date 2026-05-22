@@ -4,11 +4,11 @@ date: 2022-02-08 10:39:57
 tags:
   - Vite
 readingTime: 2
-description: "Vite 3 釋出了。從 Vite 2 到 3，不只是版本號的變化——冷啟動速度更快、開發體驗更好、外掛生態更成熟。作為團隊構建基礎設施的技術選型負責人，這篇文章聊聊 Vite 3 的核心變化和我們的遷移經驗。"
+description: "Vite 3 釋出了。從 Vite 2 到 3，不隻是版本號的變化——冷啟動速度更快、開發體驗更好、外掛生態更成熟。作為團隊構建基礎設施的技術選型負責人，這篇文章聊聊 Vite 3 的核心變化和我們的遷移經驗。"
 wordCount: 335
 ---
 
-Vite 3 釋出了。從 Vite 2 到 3，不只是版本號的變化——冷啟動速度更快、開發體驗更好、外掛生態更成熟。作為團隊構建基礎設施的技術選型負責人，這篇文章聊聊 Vite 3 的核心變化和我們的遷移經驗。
+Vite 3 釋出了。從 Vite 2 到 3，不隻是版本號的變化——冷啟動速度更快、開發體驗更好、外掛生態更成熟。作為團隊構建基礎設施的技術選型負責人，這篇文章聊聊 Vite 3 的核心變化和我們的遷移經驗。
 
 ## 核心改進
 
@@ -18,7 +18,7 @@ Vite 3 的開發伺服器冷啟動比 Vite 2 快了不少。主要最佳化：
 
 ```bash
 # Vite 3 使用 esbuild 做依賴預構建，但優化了快取策略
-vite --force  # 強制重新預構建（清除快取）
+vite --force  # 強製重新預構建（清除快取）
 
 # 檢視預構建分析
 DEBUG=vite:deps npx vite
@@ -32,7 +32,7 @@ DEBUG=vite:deps npx vite
   background: #f5f5f5;
 }
 
-/* 自動支援 CSS Modules，不需要額外配置 */
+/* 自動支援 CSS Modules，不需要額外設定 */
 ```
 
 ```typescript
@@ -181,7 +181,7 @@ const url = process.env.REACT_APP_API_URL;
 const url = import.meta.env.VITE_API_URL;
 ```
 
-## Monorepo 中的 Vite 配置共享
+## Monorepo 中的 Vite 設定共享
 
 ```typescript
 // packages/vite-config/index.ts

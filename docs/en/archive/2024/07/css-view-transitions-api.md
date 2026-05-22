@@ -1,6 +1,6 @@
 ---
 title: "CSS View Transitions API: Seamless Page Transitions"
-date: 2024-07-20 10:00:00
+date: 2024-07-20 11:34:11
 tags:
   - CSS
   - JavaScript

@@ -1,5 +1,5 @@
 ---
-title: "Vue computed 和 watch 的使用場景"
+title: "Vue computed 和 watch 的使用場景：落地路徑與實戰建議"
 date: 2018-03-04 09:32:17
 tags:
   - Vue
@@ -27,7 +27,7 @@ export default {
     };
   },
   computed: {
-    // 只要 firstName 或 lastName 沒變，直接返回緩存
+    // 隻要 firstName 或 lastName 沒變，直接返回緩存
     fullName() {
       return this.firstName + this.lastName;
     },
@@ -42,7 +42,7 @@ export default {
 };
 ```
 
-**緩存的意義：** 如果模板裏多處用到 `fullName`，普通 `methods` 每次渲染都會重新執行，`computed` 只在依賴變了才重新計算。
+**緩存的意義：** 如果範本裏多處用到 `fullName`，普通 `methods` 每次渲染都會重新執行，`computed` 隻在依賴變了才重新計算。
 
 ## watch：響應變化，執行副作用
 

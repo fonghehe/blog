@@ -193,5 +193,5 @@ const themeStore = useThemeStore()
 
 - Pinia 是 Vue 3 狀態管理的未來，Vuex 5 會基於 Pinia 的設計
 - 砍掉 mutations，TypeScript 原生支持，API 更簡潔
-- Store 之間直接 import 調用，不需要 Vuex modules 的嵌套
+- Store 之間直接 import 調用，不需要 Vuex modules 的巢狀
 - 適合新項目直接用；老項目遷移成本不大（狀態邏輯可以逐步遷移）

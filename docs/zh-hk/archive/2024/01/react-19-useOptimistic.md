@@ -1,5 +1,5 @@
 ---
-title: "React 19 useOptimistic 樂觀更新"
+title: "React 19 useOptimistic 樂觀更新：落地路徑與實戰建議"
 date: 2024-01-18 17:22:00
 tags:
   - React
@@ -97,7 +97,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能優化
+## 效能優化
 
 以下是一個完整的示例：
 

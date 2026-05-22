@@ -39,7 +39,7 @@ export const colors = {
 } as const;
 ```
 
-這還只是原始值。真正有用的是語義化 Token：
+這還隻是原始值。真正有用的是語義化 Token：
 
 ```typescript
 // tokens/semantic.ts
@@ -144,7 +144,7 @@ const Button = styled.button`
 `;
 ```
 
-切換主題只需要改 `data-theme` 屬性，所有元件自動變色。不需要 JavaScript 重新渲染。
+切換主題隻需要改 `data-theme` 屬性，所有元件自動變色。不需要 JavaScript 重新渲染。
 
 ## 間距和排版 Token
 

@@ -1,5 +1,5 @@
 ---
-title: "CSS Custom Properties (Variables): A Practical Guide"
+title: "CSS Custom Properties Advanced: ThemingSwitching & DynamicStyles"
 date: 2018-02-27 16:32:20
 tags:
   - CSS

@@ -3,30 +3,30 @@ title: "React Compiler プレビューと仕組み"
 date: 2023-01-19 11:47:06
 tags:
   - React
-readingTime: 3
-description: "React Compiler（原 React Forget）是 React 团队正在开发的编译时优化工具。它的目标是自动处理 `useMemo`、`useCallback`、`React.memo` 的插入，让开发者不再需要手动管理这些性能优化。本文基于公开信息分析其工作原理和对现有代码的影响。"
-wordCount: 629
+readingTime: 4
+description: "React Compiler（旧 React Forget）は React チームが開発中のコンパイル時最適化ツールです。その目標は useMemo、useCallback、React.memo の挿入を自動化し、開発者がこれらのパフォーマンス最適化を手動で管理する必要をなくすことです。本記事では公開情報に基づき、その動作原理と既存コードへの影響を分析します。"
+wordCount: 1042
 ---
 
-React Compiler（原 React Forget）是 React 团队正在开发的编译时优化工具。它的目标是自动处理 `useMemo`、`useCallback`、`React.memo` 的插入，让开发者不再需要手动管理这些性能优化。本文基于公开信息分析其工作原理和对现有代码的影响。
+React Compiler（旧称 React Forget）は React チームが開発中のコンパイル時最適化ツールです。その目標は `useMemo`、`useCallback`、`React.memo` の挿入を自動化し、開発者がこれらのパフォーマンス最適化を手動で管理する必要をなくすことです。本記事では公開情報に基づき、その動作原理と既存コードへの影響を分析します。
 
 ## 現状：手動最適化の課題
 
-在 React 18 中，性能优化完全依赖开发者手动处理。代码充斥着大量样板：
+React 18 では、パフォーマンス最適化は完全に開発者の手動処理に依存しています。コードは大量のボイラープレートで溢れています：
 
 ```tsx
-// 没有优化时，每次父组件渲染都会重新创建函数和对象
+// 最適化がない場合、親コンポーネントがレンダリングされるたびに関数とオブジェクトが再作成される
 function Parent() {
   const [count, setCount] = useState(0)
 
-  // 每次渲染都是新的引用
+  // レンダリングのたびに新しい参照が作成される
   const handleClick = () => console.log('clicked')
   const config = { step: 1 }
 
   return <Child onClick={handleClick} config={config} />
 }
 
-// 手动优化后
+// 手動最適化後
 function Parent() {
   const [count, setCount] = useState(0)
 
@@ -37,19 +37,19 @@ function Parent() {
 }
 
 const Child = memo(function Child({ onClick, config }: Props) {
-  // 只有当 onClick 或 config 的引用变化时才重新渲染
+  // onClick または config の参照が変更されたときのみ再レンダリング
   return <div onClick={onClick}>Step: {config.step}</div>
 })
 ```
 
-这种优化模式有两个问题：一是容易遗漏（该 memo 的没 memo），二是容易过度 memo（不需要 memo 的也 memo 了），两种情况都会降低性能。
+この最適化パターンには2つの問題があります：1つは見落とし（memo化すべきものをmemo化しない）、もう1つは過剰なmemo化（不要なものまでmemo化する）です。どちらの場合もパフォーマンスが低下します。
 
 ## コンパイラーの仕組み
 
-React Compiler 是一个 Babel 插件，在编译阶段分析组件代码的依赖关系，自动插入等效的 memoization 逻辑。
+React Compiler は Babel プラグインであり、コンパイル段階でコンポーネントコードの依存関係を解析し、同等のメモ化ロジックを自動的に挿入します。
 
 ```tsx
-// 开发者写的代码
+// 開発者が書いたコード
 function TodoList({ items, filter }: { items: Todo[], filter: string }) {
   const filtered = items.filter(item => item.text.includes(filter))
   const count = filtered.length
@@ -64,16 +64,16 @@ function TodoList({ items, filter }: { items: Todo[], filter: string }) {
   )
 }
 
-// Compiler 自动转换后的等效逻辑（概念性伪代码）
+// Compiler が自動変換した同等のロジック（概念的な疑似コード）
 function TodoList({ items, filter }: Props) {
-  // 自动为派生数据添加 memo
+  // 派生データに自動で memo を追加
   const filtered = useMemo(
     () => items.filter(item => item.text.includes(filter)),
     [items, filter]
   )
   const count = useMemo(() => filtered.length, [filtered])
 
-  // 自动为组件引用添加稳定化
+  // コンポーネント参照に自動で安定化を追加
   return React.createElement('div', null,
     React.createElement('p', null, '共 ', count, ' 条'),
     filtered.map(item =>
@@ -83,62 +83,62 @@ function TodoList({ items, filter }: Props) {
 }
 ```
 
-Compiler 不会改变组件的行为，只优化不必要的重新计算和重新渲染。从 React Conf 2023 的 demo 来看，它能识别出 props 是否稳定、派生值是否需要缓存、事件处理器是否需要稳定引用。
+Compiler はコンポーネントの動作を変更せず、不必要な再計算と再レンダリングのみを最適化します。React Conf 2023 のデモによると、props が安定しているか、派生値をキャッシュする必要があるか、イベントハンドラに安定した参照が必要かを識別できます。
 
 ## 既存コードへの影響
 
-React Compiler 的目标是兼容现有代码。如果代码已经手动做了 `useMemo`/`useCallback`，Compiler 会识别并跳过，不会重复插入。
+React Compiler の目標は既存コードとの互換性です。コードがすでに手動で `useMemo`/`useCallback` を使用している場合、Compiler はそれを認識してスキップし、重複して挿入することはありません。
 
 ```tsx
-// 已有手动 memo 的代码，Compiler 不会重复处理
+// 既に手動 memo されたコードは、Compiler が重複処理しない
 function Example() {
   const value = useMemo(() => expensiveCalc(), [dep])
   const handler = useCallback(() => doSomething(), [])
-  // Compiler 看到已经 memo 了，跳过
+  // Compiler は既に memo 化されていることを認識し、スキップ
   return <Child value={value} onAction={handler} />
 }
 
-// 但有些模式 Compiler 无法优化
+// ただし、Compiler が最適化できないパターンもある
 function BadExample() {
-  // 可变的 ref 操作，Compiler 无法安全推断
+  // 可変な ref 操作は、Compiler が安全に推論できない
   const ref = useRef(null)
   useEffect(() => {
     ref.current = document.getElementById('target')
   }, [])
 
-  // 隐式的副作用，Compiler 可能无法识别
-  const data = globalStore.getData() // 外部可变状态
+  // 暗黙的な副作用は、Compiler が認識できない可能性がある
+  const data = globalStore.getData() // 外部の可変状態
   return <div>{data}</div>
 }
 ```
 
-Compiler 要求代码遵循 React 的规则：不修改 props、不在渲染时执行副作用、依赖不可变数据。这正是 `eslint-plugin-react-hooks` 的 `exhaustive-deps` 和 `hooks/rules` 一直在强调的。
+Compiler はコードが React のルールに従うことを要求します：props を変更しない、レンダリング時に副作用を実行しない、不変データに依存する。これはまさに `eslint-plugin-react-hooks` の `exhaustive-deps` と `hooks/rules` が常に強調していることです。
 
 ## コンパイル時最適化 vs ランタイム最適化
 
-React Compiler 代表了 React 从纯运行时框架向编译时辅助框架的转变。
+React Compiler は、React が純粋なランタイムフレームワークからコンパイル時補助フレームワークへと移行することを示しています。
 
 ```tsx
-// 运行时优化（当前方案）
-// 依赖开发者手动插入，运行时执行比较
+// ランタイム最適化（現在の方式）
+// 開発者が手動で挿入し、実行時に比較を実行
 const Child = memo(function Child({ items }) {
   return items.map(item => <div key={item.id}>{item.name}</div>)
 })
 
-// 编译时优化（Compiler 方案）
-// 编译器自动分析：items 是 props，如果没有变化就不需要重新执行
+// コンパイル時最適化（Compiler 方式）
+// コンパイラが自動分析：items は props であり、変更がなければ再実行不要
 function Child({ items }) {
   return items.map(item => <div key={item.id}>{item.name}</div>)
 }
-// 编译后自动包裹了 memo 逻辑，无需开发者干预
+// コンパイル後は自動的に memo ロジックでラップされ、開発者の介入は不要
 ```
 
-这与 Svelte、SolidJS 等框架的思路一致：在编译阶段做尽可能多的分析，减少运行时的工作量。但 React 不会像 Svelte 那样完全编译掉虚拟 DOM，因为 RSC 和 Server Components 需要运行时的序列化能力。
+これは Svelte、SolidJS などのフレームワークの考え方と一致しています：コンパイル段階で可能な限り多くの分析を行い、ランタイムの作業を削減します。ただし、React は Svelte のように仮想 DOM を完全にコンパイルして排除することはありません。RSC や Server Components にはランタイムのシリアル化機能が必要だからです。
 
 ## まとめ
 
-- React Compiler 自动插入 `useMemo`/`useCallback`/`memo`，目标是让开发者不再手动做这些优化
-- 编译器要求代码遵循 React 规则（不可变性、无副作用渲染），eslint 规则的严格执行是 Compiler 兼容的前提
-- 已有手动优化的代码不会被 Compiler 干扰，它会跳过已经 memo 的部分
-- Compiler 代表 React 向编译时优化的转变，但不会完全抛弃虚拟 DOM 运行时
-- 目前 Compiler 仍在开发中，建议在新项目中养成遵循 React 规则的习惯
+- React Compiler は自動的に `useMemo`/`useCallback`/`memo` を挿入し、開発者が手動でこれらの最適化を行う必要をなくすことを目標としています
+- コンパイラはコードが React ルール（不変性、副作用のないレンダリング）に従うことを要求し、eslint ルールの厳格な遵守が Compiler 互換性の前提条件です
+- 既に手動最適化されているコードは Compiler に影響されず、既存の memo 部分はスキップされます
+- Compiler は React のコンパイル時最適化への移行を示していますが、仮想 DOM ランタイムを完全に放棄するわけではありません
+- 現在 Compiler はまだ開発中ですが、新しいプロジェクトでは React ルールに従う習慣を身につけることをお勧めします

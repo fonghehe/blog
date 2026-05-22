@@ -5,22 +5,22 @@ tags:
   - Vue
   - TypeScript
 
-readingTime: 2
-description: "Vuex 4 能用，但写起来总觉得别扭。Pinia 是 Vue 核心团队成员开发的新状态管理库，API 设计比 Vuex 干净很多，已经在 Vue 3 项目里用了两个多月，分享一下经验。"
-wordCount: 339
+readingTime: 3
+description: "Vuex 4 も使えますが、記述にどうしても違和感がありました。Pinia は Vue コアチームメンバーが開発した新しい状態管理ライブラリで、API デザインは Vuex よりはるかに洗練されています。Vue 3 プロジェクトで2ヶ月以上使用した経験を共有します。"
+wordCount: 521
 ---
 
-Vuex 4 能用，但写起来总觉得别扭。Pinia 是 Vue 核心团队成员开发的新状态管理库，API 设计比 Vuex 干净很多，已经在 Vue 3 项目里用了两个多月，分享一下经验。
+Vuex 4 も使えますが、書いていてどうも違和感がありました。Pinia は Vue コアチームのメンバーが開発した新しい状態管理ライブラリで、API デザインが Vuex よりはるかに洗練されています。Vue 3 プロジェクトで 2 ヶ月以上使用した経験を共有します。
 
 ## なぜ Vuex 4 を使わないのか
 
-Vuex 4 能在 Vue 3 里跑，但核心问题没解决：
+Vuex 4 は Vue 3 で動作しますが、核心的な問題は解決されていません：
 
-- TypeScript 支持差（要靠一堆类型体操）
-- mutations 和 actions 分开写，大部分时候 mutation 就是赋值
-- 模块系统复杂（namespace、modules 嵌套）
+- TypeScript のサポートが弱い（多くの型体操が必要）
+- mutations と actions が分離しており、ほとんどの場合 mutation は単なる代入
+- モジュールシステムが複雑（namespace、modules のネスト）
 
-Pinia 直接砍掉了 mutations，actions 统一处理同步和异步操作。
+Pinia は mutations を完全に廃止し、actions が同期・非同期操作を統一的に処理します。
 
 ## 基本用法
 
@@ -50,7 +50,7 @@ interface UserState {
 }
 
 export const useUserStore = defineStore('user', {
-  // state 用函数返回（和 Vue 3 组件的 data 一样）
+  // state は関数で返す（Vue 3 コンポーネントの data と同じ）
   state: (): UserState => ({
     name: '',
     token: null,
@@ -58,15 +58,15 @@ export const useUserStore = defineStore('user', {
   }),
 
   getters: {
-    // 自动推断返回类型，不用手动声明
+    // 戻り値の型は自動推論、手動宣言不要
     isAdmin: (state) => state.permissions.includes('admin'),
 
-    // getter 可以依赖其他 getter
+    // getter は他の getter に依存可能
     greeting: (state) => `欢迎回来，${state.name}`,
   },
 
   actions: {
-    // 不需要 mutation，直接改 state
+    // mutation は不要、state を直接変更
     async login(username: string, password: string) {
       const res = await api.login(username, password)
       this.token = res.token
@@ -75,7 +75,7 @@ export const useUserStore = defineStore('user', {
     },
 
     logout() {
-      this.$reset() // 重置到初始状态
+      this.$reset() // 初期状態にリセット
     },
   },
 })
@@ -90,16 +90,16 @@ import { storeToRefs } from 'pinia'
 
 const userStore = useUserStore()
 
-// 解构会丢失响应性，用 storeToRefs
+// 分割代入するとリアクティビティが失われるので、storeToRefs を使う
 const { name, isAdmin } = storeToRefs(userStore)
 
-// actions 直接解构就行（是普通函数）
+// actions はそのまま分割代入でOK（通常の関数）
 const { login, logout } = userStore
 
-// 直接访问 state
+// state に直接アクセス
 console.log(userStore.token)
 
-// 直接修改 state（开发工具能追踪到）
+// state を直接変更（DevTools で追跡可能）
 userStore.name = '张三'
 </script>
 ```
@@ -107,7 +107,7 @@ userStore.name = '张三'
 ## Vuex との比較
 
 ```typescript
-// Vuex：要写 mutation
+// Vuex：mutation を書く必要がある
 const store = createStore({
   state: { count: 0 },
   mutations: {
@@ -118,24 +118,24 @@ const store = createStore({
   actions: {
     async fetchCount({ commit }) {
       const res = await api.getCount()
-      commit('SET_COUNT', res.count) // 必须通过 mutation
+      commit('SET_COUNT', res.count) // mutation 経由でなければならない
     },
   },
 })
 
-// Pinia：直接改
+// Pinia：直接変更
 export const useCountStore = defineStore('count', {
   state: () => ({ count: 0 }),
   actions: {
     async fetchCount() {
       const res = await api.getCount()
-      this.count = res.count // 直接赋值
+      this.count = res.count // 直接代入
     },
   },
 })
 ```
 
-## Store 组合（替代 Vuex modules）
+## Store の組み合わせ（Vuex modules の代替）
 
 ```typescript
 // stores/cart.ts
@@ -149,7 +149,7 @@ export const useCartStore = defineStore('cart', {
 
   actions: {
     async checkout() {
-      // 直接调用其他 store
+      // 他の store を直接呼び出す
       const userStore = useUserStore()
       if (!userStore.token) {
         throw new Error('请先登录')
@@ -161,19 +161,19 @@ export const useCartStore = defineStore('cart', {
 })
 ```
 
-不需要 namespaced，不需要 rootGetters，直接 import 就能用。
+namespaced も rootGetters も不要で、import するだけで使えます。
 
 ## 開発ツール統合
 
-Pinia 自带 DevTools 支持，Vue DevTools 里能看到：
+Pinia は DevTools に対応しており、Vue DevTools で以下の情報を確認できます：
 
-- 每个 store 的 state 变化
-- 时间旅行调试
-- 修改 state 后实时更新
+- 各 store の state の変化
+- タイムトラベルデバッグ
+- state 変更後のリアルタイム更新
 
 ## Tailwind CSS JIT との組み合わせのコツ
 
-Pinia 管状态，Tailwind 管样式，配合很自然：
+Pinia が状態を管理し、Tailwind がスタイルを管理する、自然な連携です：
 
 ```vue
 <script setup lang="ts">
@@ -191,7 +191,7 @@ const themeStore = useThemeStore()
 
 ## まとめ
 
-- Pinia 是 Vue 3 状态管理的未来，Vuex 5 会基于 Pinia 的设计
-- 砍掉 mutations，TypeScript 原生支持，API 更简洁
-- Store 之间直接 import 调用，不需要 Vuex modules 的嵌套
-- 适合新项目直接用；老项目迁移成本不大（状态逻辑可以逐步迁移）
+- Pinia は Vue 3 の状態管理の未来であり、Vuex 5 は Pinia のデザインをベースにする
+- mutations を廃止、TypeScript をネイティブサポート、API はよりシンプルに
+- Store 間は直接 import して呼び出せ、Vuex modules のようなネストは不要
+- 新規プロジェクトには最適；既存プロジェクトからの移行コストも低い（状態ロジックは段階的に移行可能）

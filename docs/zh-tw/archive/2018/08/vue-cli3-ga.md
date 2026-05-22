@@ -106,7 +106,7 @@ VUE_APP_TITLE=My App
 
 程式碼中：`process.env.VUE_APP_API_URL`
 
-## 多頁面配置
+## 多頁面設定
 
 ```javascript
 module.exports = {

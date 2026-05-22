@@ -1,10 +1,10 @@
 ---
-title: "前端性能優化完整清單"
+title: "前端效能優化完整清單：實踐方法與治理思路"
 date: 2020-08-18 15:34:32
 tags:
   - 前端
 readingTime: 2
-description: "整理了一份前端性能優化清單，從網絡、資源、渲染、運行時四個維度系統梳理。有了監控數據後，按清單逐項優化效果顯著。"
+description: "整理了一份前端效能優化清單，從網絡、資源、渲染、運行時四個維度系統梳理。有了監控數據後，按清單逐項優化效果顯著。"
 wordCount: 178
 ---
 
@@ -159,7 +159,7 @@ worker.onmessage = (e) => {
 // 4. 避免佈局抖動
 // 不好：讀寫交替
 element.style.width = '100px';
-console.log(element.offsetWidth); // 強制同步佈局
+console.log(element.offsetWidth); // 強製同步佈局
 element.style.height = '100px';
 
 // 好：先讀後寫

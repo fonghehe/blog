@@ -1,10 +1,10 @@
 ---
 title: "Angular 20.2：Signal Forms 穩定化與 httpResource 增強"
-date: 2025-08-22 10:00:00
+date: 2025-08-22 14:56:33
 tags:
   - Angular
 readingTime: 2
-description: "Angular 20.2 於 2025 年 8 月發佈。本版本的核心是推進 Signal Forms 走向穩定——經過 20.0 和 20.1 兩個版本的開發者預覽期，Signal Forms 的核心 API 趨於穩定，API surface 大幅減少。同時，`httpResource()` 獲得了更完善的緩存策略支持"
+description: "Angular 20.2 於 2025 年 8 月發佈。本版本的核心是推進 Signal Forms 走向穩定——經過 20.0 和 20.1 兩個版本的開發者預覽期，Signal Forms 的核心 API 趨於穩定，API surface 大幅減少。同時，`httpResource()` 獲得了更完善的緩存策略支援"
 wordCount: 265
 ---
 
@@ -119,11 +119,11 @@ export class NewsListComponent {
   newsResource = httpResource<NewsItem[]>(() => `/api/news?cat=${this.category()}`, {
     cache: {
       strategy: CacheStrategy.StaleWhileRevalidate,
-      maxAge: 5 * 60 * 1000,  // 5 分鐘內使用緩存，後台靜默刷新
+      maxAge: 5 * 60 * 1000,  // 5 分鐘內使用緩存，後臺靜默刷新
     }
   });
 
-  // 強制刷新（忽略緩存）
+  // 強製刷新（忽略緩存）
   hardRefresh() {
     this.newsResource.reload({ force: true });
   }
@@ -147,7 +147,7 @@ export class FilterComponent {
   // 將 Signal Form 的值流轉為 Observable（用於需要 RxJS 管道處理的場景）
   formValue$ = toObservable(this.filterForm.value);
 
-  // 只有當兩個字段都有效且變化時才觸發
+  // 隻有當兩個字段都有效且變化時才觸發
   filteredChanges$ = this.formValue$.pipe(
     filter(() => this.filterForm.valid()),
     debounceTime(100),
@@ -158,4 +158,4 @@ export class FilterComponent {
 
 ## 總結
 
-Angular 20.2 的 Signal Forms 已經相當成熟——API 穩定性高，與 resource()、computed()、effect() 的配合流暢。距離正式穩定（預計 Angular 21 或 21.x）只剩最後一段路。如果你現在開始的 Angular 項目計劃長期維護，從 20.2 起使用 Signal Forms 開發者預覽是合理的選擇，只需做好 API 可能有小變化的心理準備。
+Angular 20.2 的 Signal Forms 已經相當成熟——API 穩定性高，與 resource()、computed()、effect() 的配合流暢。距離正式穩定（預計 Angular 21 或 21.x）隻剩最後一段路。如果你現在開始的 Angular 項目計劃長期維護，從 20.2 起使用 Signal Forms 開發者預覽是合理的選擇，隻需做好 API 可能有小變化的心理準備。

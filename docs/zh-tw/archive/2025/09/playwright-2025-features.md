@@ -1,6 +1,6 @@
 ---
-title: "Playwright 2025 新功能"
-date: 2025-09-23 10:00:00
+title: "Playwright 2025 新功能：元件测試增強與視覺回歸能力"
+date: 2025-09-23 14:37:14
 tags:
   - 測試
 readingTime: 2

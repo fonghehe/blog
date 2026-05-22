@@ -1,6 +1,6 @@
 ---
 title: "Bun 2.0 New Features and Improvements"
-date: 2025-03-28 10:00:00
+date: 2025-03-28 14:42:19
 tags:
   - Frontend
 readingTime: 1

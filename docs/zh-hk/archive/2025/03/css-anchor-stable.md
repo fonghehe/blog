@@ -1,14 +1,14 @@
 ---
-title: "CSS Anchor Positioning 穩定版"
-date: 2025-03-21 10:00:00
+title: "CSS Anchor Positioning 穩定版：特性解讀與遷移建議"
+date: 2025-03-21 16:35:12
 tags:
   - CSS
 readingTime: 2
-description: "關於CSS Anchor Positioning 穩定版，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於CSS Anchor Positioning 穩定版，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 308
 ---
 
-關於CSS Anchor Positioning 穩定版，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於CSS Anchor Positioning 穩定版，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 
@@ -89,7 +89,7 @@ wordCount: 308
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 最佳實踐
 

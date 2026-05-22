@@ -1,11 +1,11 @@
 ---
-title: "Tailwind CSS 4.0：Oxide 引擎和 CSS-first 配置"
-date: 2024-09-05 10:00:00
+title: "Tailwind CSS 4.0：Oxide 引擎和 CSS-first 設定"
+date: 2024-09-05 19:39:16
 tags:
   - CSS
   - 工程化
 readingTime: 2
-description: "Tailwind CSS 4.0 Beta 開放測試了，最大變化是用 Rust 重寫了底層引擎（Oxide），以及把配置從 JS 文件遷移到 CSS 文件。"
+description: "Tailwind CSS 4.0 Beta 開放測試了，最大變化是用 Rust 重寫了底層引擎（Oxide），以及把設定從 JS 檔案遷移到 CSS 檔案。"
 wordCount: 322
 ---
 
@@ -39,7 +39,7 @@ export default {
 
 注意：不再需要 `postcss.config.js`！
 
-## CSS-first 配置
+## CSS-first 設定
 
 Tailwind 4 的配置直接寫在 CSS 裏：
 
@@ -87,7 +87,7 @@ module.exports = {
 /* Tailwind 3：需要在 config 裏聲明 content 路徑 */
 /* content: ['./src/**/*.{html,js,tsx,vue}'] */
 
-/* Tailwind 4：自動檢測！不需要配置 */
+/* Tailwind 4：自動檢測！不需要設定 */
 @import "tailwindcss";
 ```
 
@@ -102,7 +102,7 @@ module.exports = {
 }
 ```
 
-## 原生 CSS 嵌套支持
+## 原生 CSS 巢狀支援
 
 ```css
 /* 現在可以在 @layer 裏用原生 CSS 嵌套 */
@@ -154,7 +154,7 @@ npx @tailwindcss/upgrade@next
 配置從 JS 遷到 CSS 這個變化剛開始有點不適應，但想想其實更合理：
 
 - CSS 變量天然就是樣式系統的配置項
-- 不需要運行 JS 就能獲取配置
+- 不需要運行 JS 就能獲取設定
 - IDE 裏直接可以看到顏色預覽
 
 速度提升是實實在在的，特別是大項目裏增量構建 15ms 這個感受非常好。
@@ -163,6 +163,6 @@ npx @tailwindcss/upgrade@next
 
 - Oxide 引擎（Rust）：增量構建快 60 倍
 - CSS-first 配置：在 `@theme` 塊裏用 CSS 變量定義主題
-- 自動內容檢測：不需要手動配置 `content` 路徑
+- 自動內容檢測：不需要手動設定 `content` 路徑
 - 官方升級工具，遷移相對平滑
 - 目前還是 Beta，生產環境等正式版

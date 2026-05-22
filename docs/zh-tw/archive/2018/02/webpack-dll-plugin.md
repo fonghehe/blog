@@ -23,9 +23,9 @@ DllPlugin 方案：
   - 跳過第三方庫的處理，構建速度大幅提升
 ```
 
-## 配置步驟
+## 設定步驟
 
-### Step 1：建立 dll 配置檔案
+### Step 1：建立 dll 設定檔案
 
 ```javascript
 // webpack.dll.js
@@ -67,7 +67,7 @@ npm run dll
 - `dll/vendor.dll.js`
 - `dll/vendor-manifest.json`
 
-### Step 3：在主配置裡引用
+### Step 3：在主設定裡引用
 
 ```javascript
 // webpack.config.js

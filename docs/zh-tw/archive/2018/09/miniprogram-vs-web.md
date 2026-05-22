@@ -84,7 +84,7 @@ wx.redirectTo({ url: "/pages/home/home" }); // 替換（不可返回）
 wx.navigateBack({ delta: 1 }); // 返回
 wx.switchTab({ url: "/pages/index/index" }); // 跳轉 tabBar 頁面
 
-// URL 傳參（只能是字串）
+// URL 傳參（隻能是字串）
 // 接收：onLoad(options) { const id = options.id }
 ```
 
@@ -92,7 +92,7 @@ wx.switchTab({ url: "/pages/index/index" }); // 跳轉 tabBar 頁面
 
 ```javascript
 // 比 Web 多了幾個：
-onLoad(options); // 頁面載入，只執行一次，options 是路由引數
+onLoad(options); // 頁面載入，隻執行一次，options 是路由引數
 onShow(); // 頁面顯示（從後臺/其他頁面回來也觸發）
 onHide(); // 頁面隱藏
 onUnload(); // 頁面解除安裝（navigateTo 不觸發，redirectTo 觸發）
@@ -100,7 +100,7 @@ onPullDownRefresh(); // 下拉重新整理
 onReachBottom(); // 觸底載入更多
 ```
 
-### 4. 樣式限制
+### 4. 樣式限製
 
 ```css
 /* 小程式用 rpx（responsive pixel）作為單位 */
@@ -111,13 +111,13 @@ onReachBottom(); // 觸底載入更多
   font-size: 28rpx;
 }
 
-/* 不支援：* 選擇器、標籤選擇器（限制） */
+/* 不支援：* 選擇器、標籤選擇器（限製） */
 /* 支援：類選擇器、ID 選擇器、偽類 */
 ```
 
-### 5. wxs：模板裡的邏輯
+### 5. wxs：範本裡的邏輯
 
-小程式模板裡不能直接呼叫 methods，需要用 wxs：
+小程式範本裡不能直接呼叫 methods，需要用 wxs：
 
 ```html
 {% raw %}
@@ -128,7 +128,7 @@ onReachBottom(); // 觸底載入更多
 ```
 
 ```javascript
-// utils.wxs（不是 JS！有語法限制）
+// utils.wxs（不是 JS！有語法限製）
 var formatDate = function (date) {
   return date.substring(0, 10);
 };
@@ -141,7 +141,7 @@ module.exports = { formatDate: formatDate };
 - **Taro**：類 React 語法，編譯到各端
 - **WePY**：類 Vue 語法的小程式框架
 
-如果專案只針對微信小程式，原生開發就夠用。如果需要多端，uni-app 或 Taro 值得考慮。
+如果專案隻針對微信小程式，原生開發就夠用。如果需要多端，uni-app 或 Taro 值得考慮。
 
 ## 小結
 

@@ -1,5 +1,5 @@
 ---
-title: "JavaScript 函數式編程實踐"
+title: "JavaScript 函數式編程實踐：落地路徑與實戰建議"
 date: 2019-04-13 11:22:26
 tags:
   - 前端

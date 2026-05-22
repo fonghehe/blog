@@ -57,7 +57,7 @@ export default {
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-// 自動暴露給模板，不需要 return
+// 自動暴露給範本，不需要 return
 const count = ref(0)
 const increment = () => count.value++
 
@@ -118,7 +118,7 @@ import { ref } from 'vue'
 const count = ref(0)
 const name = ref('hello')
 
-// 只暴露 count，不暴露 name
+// 隻暴露 count，不暴露 name
 defineExpose({ count })
 </script>
 
@@ -264,6 +264,6 @@ function handleSort(key: string) {
 
 - `<script setup>` 是 Vue 3 的推薦寫法，減少模板程式碼，邏輯更內聚
 - `defineProps` / `defineEmits` 的 TypeScript 型別宣告方式是重點
-- `defineExpose` 控制組件暴露的屬性，預設全部隱藏
+- `defineExpose` 控製組件暴露的屬性，預設全部隱藏
 - 頂層 await 配合 Suspense 做非同步資料載入
 - 從 Options API 遷移的專案可以逐步引入，新專案直接用

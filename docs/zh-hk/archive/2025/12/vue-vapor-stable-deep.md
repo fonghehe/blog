@@ -1,6 +1,6 @@
 ---
-title: "Vue Vapor 穩定版詳解"
-date: 2025-12-04 10:00:00
+title: "Vue Vapor 稳定版實踐：真實專案切換後的效能對比"
+date: 2025-12-04 17:18:55
 tags:
   - Vue
 readingTime: 2
@@ -97,7 +97,7 @@ function reducer(state, action) {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能優化
+## 效能優化
 
 關鍵在於理解核心邏輯：
 
@@ -130,7 +130,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 常見陷阱
 

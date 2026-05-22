@@ -1,10 +1,10 @@
 ---
-title: "Intersection Observer API 實戰"
+title: "Intersection Observer API 實戰：落地路徑與實戰建議"
 date: 2019-07-16 17:28:35
 tags:
   - 前端
 readingTime: 4
-description: "以前做圖片懶加載、無限滾動這些功能，基本都是靠 `scroll` 事件 + `getBoundingClientRect()` 來實現的。性能差不説，代碼還醜。Intersection Observer API 的出現徹底改變了這個局面。"
+description: "以前做圖片懶加載、無限滾動這些功能，基本都是靠 `scroll` 事件 + `getBoundingClientRect()` 來實現的。效能差不説，代碼還醜。Intersection Observer API 的出現徹底改變了這個局面。"
 wordCount: 408
 ---
 
@@ -341,7 +341,7 @@ class AdTracker {
           if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
             const adId = entry.target.dataset.adId
             this.trackImpression(adId)
-            // 只統計一次，曝光後取消觀察
+            // 隻統計一次，曝光後取消觀察
             this.observer.unobserve(entry.target)
           }
         })
@@ -380,7 +380,7 @@ document.querySelectorAll('.ad-slot').forEach(ad => {
 
 **關鍵點：** 使用 `threshold: [0.5]` 確保廣告至少 50% 可見才統計，避免用户快速滾動時誤統計。用 `navigator.sendBeacon` 上報，即使頁面關閉也能送達。
 
-## 兼容性處理
+## 相容性處理
 
 截至 2019 年中，Intersection Observer 的瀏覽器支持情況：
 
@@ -444,6 +444,6 @@ function createSafeObserver(callback, options) {
 - Intersection Observer 用異步回調替代 scroll + getBoundingClientRect，性能好得多
 - 圖片懶加載：`rootMargin` 提前加載，`unobserve` 加載後取消觀察
 - 無限滾動：用哨兵元素 + `isIntersecting` 判斷是否需要加載更多
-- 廣告曝光：用 `threshold: [0.5]` 控制可見比例，`navigator.sendBeacon` 可靠上報
+- 廣告曝光：用 `threshold: [0.5]` 控製可見比例，`navigator.sendBeacon` 可靠上報
 - 注意 `disconnect()` 清理觀察器，避免內存泄漏
-- IE 不支持，需要 polyfill 或降級方案
+- IE 不支援，需要 polyfill 或降級方案

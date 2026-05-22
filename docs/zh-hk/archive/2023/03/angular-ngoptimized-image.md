@@ -4,11 +4,11 @@ date: 2023-03-08 10:39:08
 tags:
   - Angular
 readingTime: 2
-description: "Angular 15 內置的 `NgOptimizedImage` 指令是 Angular 官方對 Core Web Vitals 的正式回應。它不只是給 `<img>` 加 `loading=\"lazy\"` 那麼簡單——這篇文章深入探討它在真實項目中的使用方式和背後的優化邏輯。"
+description: "Angular 15 內置的 `NgOptimizedImage` 指令是 Angular 官方對 Core Web Vitals 的正式回應。它不隻是給 `<img>` 加 `loading=\"lazy\"` 那麼簡單——這篇文章深入探討它在真實項目中的使用方式和背後的優化邏輯。"
 wordCount: 426
 ---
 
-Angular 15 內置的 `NgOptimizedImage` 指令是 Angular 官方對 Core Web Vitals 的正式回應。它不只是給 `<img>` 加 `loading="lazy"` 那麼簡單——這篇文章深入探討它在真實項目中的使用方式和背後的優化邏輯。
+Angular 15 內置的 `NgOptimizedImage` 指令是 Angular 官方對 Core Web Vitals 的正式回應。它不隻是給 `<img>` 加 `loading="lazy"` 那麼簡單——這篇文章深入探討它在真實項目中的使用方式和背後的優化邏輯。
 
 ## 快速回顧：NgOptimizedImage 做了什麼
 
@@ -30,11 +30,11 @@ export class HeroComponent {}
 
 - **`priority` 圖片**：自動注入 `<link rel="preload">`，提升 LCP
 - **非 `priority` 圖片**：自動添加 `loading="lazy"` 和 `decoding="async"`
-- **強制尺寸**：要求顯式指定 `width`/`height`，防止 CLS
+- **強製尺寸**：要求顯式指定 `width`/`height`，防止 CLS
 - **過大圖片警告**：檢測請求圖片尺寸是否遠大於渲染尺寸
 - **自動 srcset**：根據常見屏幕密度生成多種尺寸
 
-## CDN Loader 配置
+## CDN Loader 設定
 
 `NgOptimizedImage` 與 CDN 集成後效果最好——它會生成正確的 CDN URL 來請求合適尺寸的圖片：
 

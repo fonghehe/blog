@@ -4,11 +4,11 @@ date: 2019-09-20 10:13:42
 tags:
   - 工程化
 readingTime: 4
-description: "前端專案不再只是幾個靜態檔案放到 CDN 上那麼簡單。越來越多的前端應用需要 Node.js 服務端渲染、Nginx 反向代理、環境變數注入等能力。Docker 提供了一致的執行環境，讓前端專案可以在任何地方以相同的方式構建和執行。本文將從零搭建前端專案的 Docker 化部署方案。"
+description: "前端專案不再隻是幾個靜態檔案放到 CDN 上那麼簡單。越來越多的前端應用需要 Node.js 服務端渲染、Nginx 反向代理、環境變數注入等能力。Docker 提供了一致的執行環境，讓前端專案可以在任何地方以相同的方式構建和執行。本文將從零搭建前端專案的 Docker 化部署方案。"
 wordCount: 586
 ---
 
-前端專案不再只是幾個靜態檔案放到 CDN 上那麼簡單。越來越多的前端應用需要 Node.js 服務端渲染、Nginx 反向代理、環境變數注入等能力。Docker 提供了一致的執行環境，讓前端專案可以在任何地方以相同的方式構建和執行。本文將從零搭建前端專案的 Docker 化部署方案。
+前端專案不再隻是幾個靜態檔案放到 CDN 上那麼簡單。越來越多的前端應用需要 Node.js 服務端渲染、Nginx 反向代理、環境變數注入等能力。Docker 提供了一致的執行環境，讓前端專案可以在任何地方以相同的方式構建和執行。本文將從零搭建前端專案的 Docker 化部署方案。
 
 ## 為什麼前端需要 Docker
 
@@ -33,13 +33,13 @@ RUN npm ci --registry=https://registry.npm.taobao.org
 COPY . .
 RUN npm run build
 
-# 第二階段：部署（只保留構建產物）
+# 第二階段：部署（隻保留構建產物）
 FROM nginx:1.17-alpine
 
 # 複製構建產物到 nginx 目錄
 COPY --from=builder /app/build /usr/share/nginx/html
 
-# 自定義 nginx 配置
+# 自定義 nginx 設定
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
@@ -52,10 +52,10 @@ CMD ["nginx", "-g", "daemon off;"]
 多階段構建是 Docker 的重要特性：
 
 - 第一階段（`builder`）使用完整的 Node.js 映象構建專案
-- 第二階段使用輕量的 Nginx 映象，只複製構建產物
-- 最終映象不包含 Node.js、npm、原始碼等，體積可以控制在 20MB 以內
+- 第二階段使用輕量的 Nginx 映象，隻複製構建產物
+- 最終映象不包含 Node.js、npm、原始碼等，體積可以控製在 20MB 以內
 
-## Nginx 配置
+## Nginx 設定
 
 ```nginx
 # nginx.conf
@@ -162,7 +162,7 @@ volumes:
 
 Docker 構建後，環境變數被硬編碼在產物中。執行時注入環境變數有幾種方案：
 
-### 方案一：執行時替換模板變數
+### 方案一：執行時替換範本變數
 
 ```dockerfile
 FROM nginx:1.17-alpine
@@ -204,7 +204,7 @@ services:
       - SENTRY_DSN=https://xxx@sentry.io/123
 ```
 
-### 方案二：執行時配置檔案
+### 方案二：執行時設定檔案
 
 ```html
 <!-- public/config.js -->
@@ -298,7 +298,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD wget -qO- http://localhost/health || exit 1
 ```
 
-### 安全配置
+### 安全設定
 
 ```dockerfile
 # 使用非 root 使用者執行
@@ -327,9 +327,9 @@ docker history myapp/frontend
 
 ## 小結
 
-- 使用多階段構建分離構建環境和執行環境，最終映象只包含必要的執行檔案
+- 使用多階段構建分離構建環境和執行環境，最終映象隻包含必要的執行檔案
 - Nginx 作為靜態檔案伺服器 + 反向代理，配置 SPA 路由支援和 gzip 壓縮
 - 環境變數注入可以通過 sed 替換模板變數或獨立的 config.js 檔案實現
 - Docker Compose 編排前端、後端和依賴服務，docker-compose.yml 即架構文件
-- CI/CD 中構建 Docker 映象並推送到 Registry，部署時只需 pull 和 restart
+- CI/CD 中構建 Docker 映象並推送到 Registry，部署時隻需 pull 和 restart
 - 注意 .dockerignore、非 root 使用者、健康檢查等生產環境安全和可靠性配置

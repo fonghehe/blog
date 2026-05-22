@@ -1,5 +1,5 @@
 ---
-title: "TypeScript infer 窄化與模式匹配"
+title: "TypeScript infer 窄化與模式匹配：落地路徑與實戰建議"
 date: 2024-03-01 09:31:57
 tags:
   - TypeScript

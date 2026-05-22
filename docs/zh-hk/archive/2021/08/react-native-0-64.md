@@ -1,5 +1,5 @@
 ---
-title: "React Native 0.64 Hermes 引擎"
+title: "React Native 0.64 Hermes 引擎：落地路徑與實戰建議"
 date: 2021-08-19 11:47:48
 tags:
   - React
@@ -94,7 +94,7 @@ function reducer(state, action) {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能優化
+## 效能優化
 
 關鍵在於理解核心邏輯：
 
@@ -121,7 +121,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 常見陷阱
 

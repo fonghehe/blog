@@ -1,6 +1,6 @@
 ---
 title: "Astro 4 Islandsアーキテクチャ詳解"
-date: 2024-10-30 10:00:00
+date: 2024-10-30 17:44:21
 tags:
   - React
 readingTime: 3

@@ -4,13 +4,13 @@ date: 2023-01-20 17:22:49
 tags:
   - 前端
 readingTime: 2
-description: "NgRx 15 隨 Angular 15 同步釋出，帶來了對 Standalone APIs 的全面支援。不再需要在 `NgModule` 裡註冊 `StoreModule`、`EffectsModule`——現在可以在 `bootstrapApplication` 中用函式式 API 配置整個 NgRx 棧。"
+description: "NgRx 15 隨 Angular 15 同步釋出，帶來了對 Standalone APIs 的全面支援。不再需要在 `NgModule` 裡註冊 `StoreModule`、`EffectsModule`——現在可以在 `bootstrapApplication` 中用函式式 API 設定整個 NgRx 棧。"
 wordCount: 186
 ---
 
-NgRx 15 隨 Angular 15 同步釋出，帶來了對 Standalone APIs 的全面支援。不再需要在 `NgModule` 裡註冊 `StoreModule`、`EffectsModule`——現在可以在 `bootstrapApplication` 中用函式式 API 配置整個 NgRx 棧。
+NgRx 15 隨 Angular 15 同步釋出，帶來了對 Standalone APIs 的全面支援。不再需要在 `NgModule` 裡註冊 `StoreModule`、`EffectsModule`——現在可以在 `bootstrapApplication` 中用函式式 API 設定整個 NgRx 棧。
 
-## 新的函式式配置 API
+## 新的函式式設定 API
 
 ```typescript
 // main.ts（Angular 15 + NgRx 15，無 AppModule）

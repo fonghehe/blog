@@ -1,10 +1,10 @@
 ---
-title: "Vue Vapor Mode 穩定版"
-date: 2025-02-03 10:00:00
+title: "Vue Vapor Mode 穩定版：特性解讀與遷移建議"
+date: 2025-02-03 16:37:14
 tags:
   - Vue
 readingTime: 3
-description: "Vue Vapor Mode 在 Vue 3.6 中正式進入穩定版。這是 Vue 歷史上最大的運行時架構變革——它完全繞過虛擬 DOM，直接編譯為原生 DOM 操作，性能接近手寫 JavaScript。對於性能敏感的場景，Vapor Mode 是一個真正的遊戲規則改變者。"
+description: "Vue Vapor Mode 在 Vue 3.6 中正式進入穩定版。這是 Vue 歷史上最大的運行時架構變革——它完全繞過虛擬 DOM，直接編譯為原生 DOM 操作，效能接近手寫 JavaScript。對於效能敏感的場景，Vapor Mode 是一個真正的遊戲規則改變者。"
 wordCount: 524
 ---
 
@@ -60,7 +60,7 @@ export default {
 
 關鍵區別：`_renderEffect` 直接操作 `textContent`，沒有創建 vnode、沒有 diff、沒有 patch。內存佔用和 CPU 消耗都大幅降低。
 
-## 性能對比實測
+## 效能對比實測
 
 在我們的 benchmark 中，Vapor Mode 與標準模式的性能差異非常明顯：
 
@@ -134,9 +134,9 @@ export default defineConfig({
 
 混合模式下，Vapor 組件和標準 Vue 組件可以無縫嵌套。父組件是 Vapor，子組件是標準模式，反之亦然，都能正常工作。
 
-## Vapor Mode 的限制
+## Vapor Mode 的限製
 
-Vapor Mode 雖然強大，但目前有幾個限制需要了解：
+Vapor Mode 雖然強大，但目前有幾個限製需要了解：
 
 ```vue
 <!-- ❌ Vapor Mode 不支持的功能 -->
@@ -204,5 +204,5 @@ import { ref } from 'vue';
 - Vapor Mode 完全跳過虛擬 DOM，編譯為原生 DOM 操作，內存減少 60%、更新速度提升 3-5 倍
 - 支持漸進式遷移，逐個組件通過 `<script setup vapor>` 開啓
 - 與標準 Vue 組件可無縫混合使用，父子組件模式可以不同
-- 當前限制：不支持 Teleport、動態組件和 render 函數組件
+- 當前限製：不支援 Teleport、動態組件和 render 函數組件
 - Vapor Mode 是 Vue 性能的終極方案，建議對數據密集型組件優先採用

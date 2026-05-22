@@ -3,16 +3,16 @@ title: "Solid.js：細粒度リアクティビティのもう一つの答え"
 date: 2023-06-22 09:48:23
 tags:
   - React
-readingTime: 3
-description: "React 有虚拟 DOM diff，Vue 有 Proxy 响应式，Solid 选择了第三条路：编译时 + 细粒度信号。这个框架值得前端架构师了解。"
-wordCount: 517
+readingTime: 4
+description: "React には仮想 DOM diff があり、Vue には Proxy リアクティブシステムがあります。Solid は第三の道を選びました。コンパイル時と細粒度シグナルです。このフレームワークはフロントエンドアーキテクトが知る価値があります。"
+wordCount: 921
 ---
 
-React 有虚拟 DOM diff，Vue 有 Proxy 响应式，Solid 选择了第三条路：编译时 + 细粒度信号。这个框架值得前端架构师了解。
+React には仮想 DOM diff があり、Vue には Proxy リアクティブシステムがあります。Solid は第三の道を選びました。コンパイル時と細粒度シグナルです。このフレームワークはフロントエンドアーキテクトが知る価値があります。
 
 ## コア理念
 
-Solid 的设计哲学：**没有虚拟 DOM**。响应式系统追踪的是"哪个表达式依赖哪个状态"，状态变化时直接更新对应的 DOM 节点，不需要 diff 整棵树。
+Solid の設計哲学：**仮想 DOM はありません**。リアクティブシステムは「どの式がどの状態に依存しているか」を追跡し、状態が変化したときに対応する DOM ノードを直接更新します。ツリー全体の差分を取る必要はありません。
 
 ```jsx
 import { createSignal, createEffect } from "solid-js";
@@ -20,7 +20,7 @@ import { createSignal, createEffect } from "solid-js";
 function Counter() {
   const [count, setCount] = createSignal(0);
 
-  // createEffect 自动追踪 count() 的依赖
+  // createEffect は count() の依存関係を自動的に追跡する
   createEffect(() => {
     console.log("count:", count());
   });
@@ -33,29 +33,29 @@ function Counter() {
 }
 ```
 
-注意 `count` 是一个**函数**，不是值。这是 Solid 和 React/Vue 最大的区别。调用 `count()` 才读取值，这让依赖追踪变得精确。
+`count` は**関数**であり、値ではないことに注意してください。これが Solid と React/Vue の最大の違いです。`count()` を呼び出して初めて値を読み取り、これにより依存関係の追跡が正確になります。
 
 ## React との比較
 
 ```jsx
-// React: 每次状态变化，整个组件函数重新执行
+// React：状態が変化するたびに、コンポーネント関数全体が再実行される
 function Counter() {
   const [count, setCount] = useState(0);
-  // 这行在每次渲染都执行
+  // この行はレンダリングのたびに実行される
   console.log("rendered");
   return <button onClick={() => setCount(c => c + 1)}>{count}</button>;
 }
 
-// Solid: 组件函数只执行一次，后续只有 DOM 更新
+// Solid：コンポーネント関数は一度だけ実行され、その後は DOM のみが更新される
 function Counter() {
   const [count, setCount] = createSignal(0);
-  // 这行只在初始化时执行一次
+  // この行は初期化時に一度だけ実行される
   console.log("created");
   return <button onClick={() => setCount(c => c + 1)}>{count()}</button>;
 }
 ```
 
-没有闭包陷阱，没有 `useCallback`、`useMemo` 之类的优化 hooks。因为组件函数不重新执行，所以不存在"旧闭包引用"的问题。
+クロージャートラップはなく、`useCallback` や `useMemo` などの最適化フックも必要ありません。コンポーネント関数が再実行されないため、「古いクロージャー参照」の問題は発生しません。
 
 ## パフォーマンス特性
 
@@ -78,7 +78,7 @@ JS Framework Benchmark（Chrome 118）:
   React 18: 1.95
 ```
 
-在大部分测试项中 Solid 排名第一或接近第一。这是因为它的更新粒度是最细的——改一个数字就只更新那个文本节点。
+ほとんどのテスト項目で Solid は 1 位またはそれに近い順位です。これはその更新粒度が最も細かいためです。数字を変更すれば、そのテキストノードのみが更新されます。
 
 ## リアクティブプリミティブ
 
@@ -92,16 +92,16 @@ import {
 } from "solid-js";
 
 function UserProfile({ userId }) {
-  // 派生状态
+  // 派生状態
   const doubleCount = createMemo(() => count() * 2);
 
-  // 异步数据获取
+  // 非同期データ取得
   const [user] = createResource(userId, async (id) => {
     const res = await fetch(`/api/users/${id}`);
     return res.json();
   });
 
-  // 副作用 + 清理
+  // 副作用 + クリーンアップ
   createEffect(() => {
     const timer = setInterval(() => {
       console.log("tick", count());
@@ -119,7 +119,7 @@ function UserProfile({ userId }) {
 }
 ```
 
-`createSignal`、`createMemo`、`createEffect` 对标 React 的 `useState`、`useMemo`、`useEffect`，但语义更清晰——没有依赖数组，没有 stale closure 问题。
+`createSignal`、`createMemo`、`createEffect` は React の `useState`、`useMemo`、`useEffect` に相当しますが、セマンティクスがより明確で、依存配列や stale closure の問題がありません。
 
 ## 制御フローコンポーネント
 
@@ -129,14 +129,14 @@ import { Show, For, Switch, Match } from "solid-js";
 function UserList({ users, filter }) {
   return (
     <div>
-      {/* 条件渲染 */}
+      {/* 条件付きレンダリング */}
       <Show when={users().length > 0} fallback={<p>没有用户</p>}>
-        {/* 列表渲染 */}
+        {/* リストレンダリング */}
         <For each={users()}>
           {(user) => (
             <div>
               <span>{user.name}</span>
-              {/* 嵌套条件 */}
+              {/* ネストされた条件 */}
               <Switch>
                 <Match when={user.role === "admin"}>
                   <Badge color="red">管理员</Badge>
@@ -154,24 +154,24 @@ function UserList({ users, filter }) {
 }
 ```
 
-`For` 组件做精确的列表 diff，而不是每次重建整个列表。
+`For` コンポーネントは正確なリストの差分を実行し、毎回リスト全体を再構築することはありません。
 
 ## Solid を検討するタイミング
 
-**适合：**
-- 性能敏感的交互界面（实时数据仪表盘、在线编辑器）
-- 需要精细控制更新的场景
-- 团队愿意学习新范式
+**適しているケース：**
+- パフォーマンスに敏感なインタラクティブUI（リアルタイムデータダッシュボード、オンラインエディタ）
+- 更新を細かく制御する必要があるシナリオ
+- チームが新しいパラダイムを学ぶ意欲がある
 
-**不适合：**
-- 需要丰富的第三方组件库
-- 大型团队协作（生态和工具链还在成长）
-- 依赖大量 React 生态的项目
+**適さないケース：**
+- 豊富なサードパーティ製コンポーネントライブラリが必要
+- 大規模チームでのコラボレーション（エコシステムとツールチェーンは発展途上）
+- React エコシステムに大きく依存するプロジェクト
 
 ## まとめ
 
-- Solid 的细粒度响应式是目前性能最好的前端框架之一
-- 没有虚拟 DOM diff，更新直接操作真实 DOM
-- `createSignal` 信号系统避免了 React 的闭包陷阱和 stale reference 问题
-- 生态系统在成长但还不够丰富，适合性能关键场景
-- 值得作为架构师的知识储备，即使不直接用于生产
+- Solid の細粒度リアクティブは、現在最もパフォーマンスの高いフロントエンドフレームワークの一つです
+- 仮想 DOM diff はなく、更新は直接実 DOM を操作します
+- `createSignal` シグナルシステムにより、React のクロージャートラップや stale reference 問題を回避します
+- エコシステムは成長中ですがまだ十分ではなく、パフォーマンスが重要なシナリオに適しています
+- アーキテクトの知識として価値があり、本番で直接使用しなくても知っておく価値があります

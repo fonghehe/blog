@@ -1,6 +1,6 @@
 ---
-title: "Farm Build Tool Deep Dive"
-date: 2025-08-26 10:00:00
+title: "Farm Bundler Deep Dive: Rust 驱动极致冷启动"
+date: 2025-08-26 16:00:37
 tags:
   - Frontend
 readingTime: 2

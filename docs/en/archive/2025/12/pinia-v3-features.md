@@ -1,6 +1,6 @@
 ---
-title: "Pinia v3 New Features"
-date: 2025-12-22 10:00:00
+title: "Pinia v3 Migration Practice:  v2 Upgrade平滑Path & 注意事项"
+date: 2025-12-22 12:36:13
 tags:
   - Vue
 readingTime: 2

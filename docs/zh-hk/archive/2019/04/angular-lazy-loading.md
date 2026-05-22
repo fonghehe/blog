@@ -4,13 +4,13 @@ date: 2019-04-01 10:45:14
 tags:
   - Angular
 readingTime: 1
-description: "Angular 內置的路由懶加載是優化大型應用首屏性能的關鍵手段。"
+description: "Angular 內置的路由懶加載是優化大型應用首屏效能的關鍵手段。"
 wordCount: 85
 ---
 
-Angular 內置的路由懶加載是優化大型應用首屏性能的關鍵手段。
+Angular 內置的路由懶加載是優化大型應用首屏效能的關鍵手段。
 
-## 配置懶加載
+## 設定懶加載
 
 ```typescript
 const routes: Routes = [
@@ -37,7 +37,7 @@ const routes: Routes = [
 })
 ```
 
-自定義策略：只預加載標記了 `preload: true` 的模塊：
+自定義策略：隻預加載標記了 `preload: true` 的模塊：
 
 ```typescript
 @Injectable({ providedIn: 'root' })

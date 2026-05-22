@@ -1,6 +1,6 @@
 ---
 title: "Vitest 3.0 New Features"
-date: 2025-06-16 10:00:00
+date: 2025-06-16 12:30:07
 tags:
   - Engineering
   - Testing

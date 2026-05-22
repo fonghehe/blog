@@ -1,10 +1,10 @@
 ---
-title: "CSS 自定義屬性（變量）實踐指南"
+title: "CSS 自定義屬性（變數）進階：主題切換與動態樣式"
 date: 2018-02-27 16:32:20
 tags:
   - CSS
 readingTime: 2
-description: "CSS 自定義屬性（也叫 CSS 變量）現在主流瀏覽器都支持了，IE 除外。它和 Sass 變量不一樣，有自己獨特的優勢，值得認真瞭解。"
+description: "CSS 自定義屬性（也叫 CSS 變量）現在主流瀏覽器都支援了，IE 除外。它和 Sass 變量不一樣，有自己獨特的優勢，值得認真瞭解。"
 wordCount: 429
 ---
 
@@ -83,7 +83,7 @@ document.documentElement.style.setProperty('--primary', '#67c23a')
   --primary: #64b5f6;
 }
 
-/* 所有組件只用變量，不寫具體顏色 */
+/* 所有組件隻用變量，不寫具體顏色 */
 body {
   background: var(--bg-color);
   color: var(--text-color);
@@ -191,11 +191,11 @@ document.documentElement.style.removeProperty("--primary-color");
 element.style.setProperty("--button-size", "32px");
 ```
 
-## 瀏覽器支持
+## 瀏覽器支援
 
 截至 2018 年初，主流瀏覽器都已支持：Chrome 49+、Firefox 31+、Safari 9.1+、Edge 15+。唯獨 IE 不支持。
 
-如果需要支持 IE，可以用 `postcss-custom-properties` 在編譯時將變量替換為具體值（失去動態能力，但保證兼容性）。
+如果需要支援 IE，可以用 `postcss-custom-properties` 在編譯時將變量替換為具體值（失去動態能力，但保證相容性）。
 
 ## 小結
 

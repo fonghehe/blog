@@ -1,5 +1,5 @@
 ---
-title: "React 18 Suspense for Data Fetching"
+title: "React 18 Suspense Data Fetching: Render-as-You-Fetch Mode初探"
 date: 2022-01-06 16:06:50
 tags:
   - React

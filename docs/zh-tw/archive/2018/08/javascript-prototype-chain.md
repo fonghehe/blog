@@ -173,5 +173,5 @@ Object instanceof Function; // true（Object 本身是函式）
 - 每個物件都有 `[[Prototype]]`，屬性查詢沿鏈向上
 - 函式有 `prototype` 屬性，例項的 `__proto__` 指向它
 - `new` 建立物件，建立原型鏈，執行建構函式
-- ES6 `class` 是原型繼承的語法糖，底層機制相同
+- ES6 `class` 是原型繼承的語法糖，底層機製相同
 - 鏈的終點是 `Object.prototype.__proto__ === null`

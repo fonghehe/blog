@@ -58,7 +58,7 @@ module.exports = {
       },
       shared: {
         vue: {
-          singleton: true, // 只加載一個例項
+          singleton: true, // 隻加載一個例項
           requiredVersion: '^3.0.0',
           eager: true
         },
@@ -291,14 +291,14 @@ declare module 'user_center/FavoriteButton' {
 }
 ```
 
-## shared 配置要點
+## shared 設定要點
 
 `shared` 是 Module Federation 最關鍵的配置之一。如果配不好，要麼依賴重複載入，要麼出現 Vue 多例項導致響應式系統混亂：
 
 ```javascript
 shared: {
   vue: {
-    singleton: true,        // 強制只加載一份 Vue
+    singleton: true,        // 強製隻加載一份 Vue
     requiredVersion: '^3.0.0',  // 版本範圍要求
     eager: true,            // 啟動時就載入，不走非同步
     strictVersion: false    // 版本不匹配時發警告而非報錯
@@ -316,7 +316,7 @@ shared: {
 瀏覽器訪問 localhost:3000
   -> shell 應用載入
   -> 解析 remoteEntry.js (product_components, user_center)
-  -> 載入共享依賴 (vue 只加載一份)
+  -> 載入共享依賴 (vue 隻加載一份)
   -> 按需載入遠端模組
 ```
 

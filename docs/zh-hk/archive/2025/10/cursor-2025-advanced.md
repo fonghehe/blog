@@ -1,6 +1,6 @@
 ---
-title: "Cursor IDE 高級技巧 2025"
-date: 2025-10-07 10:00:00
+title: "Cursor IDE 高級技巧 2025：落地路徑與實戰建議"
+date: 2025-10-07 14:01:38
 tags:
   - 前端
 readingTime: 2
@@ -97,7 +97,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能優化
+## 效能優化
 
 關鍵在於理解核心邏輯：
 
@@ -124,7 +124,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 常見陷阱
 

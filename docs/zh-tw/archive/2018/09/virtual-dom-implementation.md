@@ -17,7 +17,7 @@ Virtual DOM 是 React 和 Vue 2 的核心概念。看了很多文章，感覺還
 1. 直接操作 DOM，需要手動追蹤狀態變化，程式碼複雜
 2. 全量更新 DOM 確實慢，但 VDOM 的價值在於**跨平臺**和**宣告式 UI**
 
-Virtual DOM 是 JS 物件描述的"虛擬"DOM 樹，更新時對比新舊 VDOM（diff），只把差異應用到真實 DOM（patch）。
+Virtual DOM 是 JS 物件描述的"虛擬"DOM 樹，更新時對比新舊 VDOM（diff），隻把差異應用到真實 DOM（patch）。
 
 ## 第一步：定義 VNode 結構
 
@@ -208,7 +208,7 @@ render(view(state), document.getElementById("app"));
 新：[A, C, B, D]  // 僅僅調換了 B 和 C 的順序
 ```
 
-簡單版本會更新 B、C 兩個節點，但實際上只需要移動 C（或 B）即可。
+簡單版本會更新 B、C 兩個節點，但實際上隻需要移動 C（或 B）即可。
 
 真正的實現（如 Vue 2 的雙端比較、Vue 3 的最長遞增子序列）需要 `key` 來識別節點身份，然後用更高效的演算法找到最少的移動次數。這是 VDOM 實現裡最複雜的部分。
 

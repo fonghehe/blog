@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 6.0 泛型改進"
-date: 2025-11-10 10:00:00
+title: "TypeScript 6.0 泛型實踐：真實專案中型別系统的简化與增強"
+date: 2025-11-10 15:44:21
 tags:
   - TypeScript
 readingTime: 2

@@ -1,6 +1,6 @@
 ---
 title: "AI支援開発ワークフロー：CopilotからClaude Codeまでの実践"
-date: 2025-01-25 10:00:00
+date: 2025-01-25 19:19:56
 tags:
   - エンジニアリング
 readingTime: 2

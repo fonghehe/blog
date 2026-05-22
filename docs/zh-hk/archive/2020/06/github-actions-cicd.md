@@ -1,5 +1,5 @@
 ---
-title: "GitHub Actions CI/CD 前端流水線"
+title: "GitHub Actions CI/CD 前端流水線：從零搭建自動化部署"
 date: 2020-06-09 10:54:08
 tags:
   - 工程化
@@ -33,7 +33,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 深度解析
 

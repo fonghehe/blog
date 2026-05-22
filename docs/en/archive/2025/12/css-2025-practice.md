@@ -1,6 +1,6 @@
 ---
-title: "CSS 2025 New Features in Practice"
-date: 2025-12-12 10:00:00
+title: "CSS 2025 Year-End Review: 今年可以放心使用新特性"
+date: 2025-12-12 18:26:03
 tags:
   - CSS
 readingTime: 2

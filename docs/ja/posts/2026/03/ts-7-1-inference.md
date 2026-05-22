@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 7.1 型推論"
-date: 2026-03-09 10:00:00
+title: "TypeScript 7.1 型推論：実務で使うための導入ガイド"
+date: 2026-03-09 10:03:40
 tags:
   - TypeScript
 readingTime: 2

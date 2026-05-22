@@ -1,10 +1,10 @@
 ---
-title: "Deno 2.0 Node 兼容"
-date: 2024-09-25 10:00:00
+title: "Deno 2.0 Node 相容：從 Deno 1.x 遷移的真實體驗"
+date: 2024-09-25 18:59:36
 tags:
   - 前端
 readingTime: 2
-description: "最近在團隊中落地Deno 2.0 Node 兼容，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+description: "最近在團隊中落地Deno 2.0 Node 相容，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
 wordCount: 345
 ---
 
@@ -153,6 +153,6 @@ function useIntersectionObserver(options = {}) {
 
 - 不要為了用新技術而用新技術
 - 代碼示例僅供參考，需根據業務場景調整
-- Deno 2.0 Node 兼容不是銀彈，需要根據項目規模和技術棧選擇
+- Deno 2.0 Node 相容不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要
 - 生產環境使用前務必做好兼容性驗證

@@ -1,23 +1,23 @@
 ---
-title: "Webpack Bundle Analyzer 打包分析與優化"
+title: "Webpack Bundle Analyzer 打包分析與優化：落地路徑與實戰建議"
 date: 2019-08-07 15:09:22
 tags:
   - Webpack
   - 工程化
 readingTime: 4
-description: "項目上線後用户反饋首屏加載慢？打包產物體積過大是前端性能優化中最常見的瓶頸之一。`webpack-bundle-analyzer` 是一個可視化分析工具，能夠以直觀的樹狀圖展示打包結果，幫助我們精準定位體積問題。本文將深入講解如何使用它進行打包分析與優化。"
+description: "項目上線後用户反饋首屏加載慢？打包產物體積過大是前端效能優化中最常見的瓶頸之一。`webpack-bundle-analyzer` 是一個可視化分析工具，能夠以直觀的樹狀圖展示打包結果，幫助我們精準定位體積問題。本文將深入講解如何使用它進行打包分析與優化。"
 wordCount: 848
 ---
 
-項目上線後用户反饋首屏加載慢？打包產物體積過大是前端性能優化中最常見的瓶頸之一。`webpack-bundle-analyzer` 是一個可視化分析工具，能夠以直觀的樹狀圖展示打包結果，幫助我們精準定位體積問題。本文將深入講解如何使用它進行打包分析與優化。
+項目上線後用户反饋首屏加載慢？打包產物體積過大是前端效能優化中最常見的瓶頸之一。`webpack-bundle-analyzer` 是一個可視化分析工具，能夠以直觀的樹狀圖展示打包結果，幫助我們精準定位體積問題。本文將深入講解如何使用它進行打包分析與優化。
 
-## 安裝與基本配置
+## 安裝與基本設定
 
 ```bash
 npm install --save-dev webpack-bundle-analyzer
 ```
 
-### 在 Webpack 配置中集成
+### 在 Webpack 設定中集成
 
 ```js
 // webpack.config.js
@@ -43,7 +43,7 @@ module.exports = {
 
 ### 通過 npm scripts 使用
 
-更推薦不修改 Webpack 配置，而是通過命令行按需分析：
+更推薦不修改 Webpack 設定，而是通過命令行按需分析：
 
 ```json
 {
@@ -61,7 +61,7 @@ if (process.env.ANALYZE) {
 }
 ```
 
-這樣只在需要分析時才啓動，不影響日常構建。
+這樣隻在需要分析時才啓動，不影響日常構建。
 
 ## 理解可視化報告
 
@@ -85,9 +85,9 @@ if (process.env.ANALYZE) {
 
 ## 實戰：排查體積過大問題
 
-### 案例一：moment.js locale 文件全部打入
+### 案例一：moment.js locale 檔案全部打入
 
-一個常見問題：`moment.js` 默認會將所有 locale 文件打包進來。
+一個常見問題：`moment.js` 默認會將所有 locale 檔案打包進來。
 
 ```
 檢查報告中 moment 目錄：
@@ -100,7 +100,7 @@ if (process.env.ANALYZE) {
   │   └── (總計約 200KB+)
 ```
 
-解決方案：使用 `IgnorePlugin` 只保留需要的 locale。
+解決方案：使用 `IgnorePlugin` 隻保留需要的 locale。
 
 ```js
 // webpack.config.js
@@ -126,7 +126,7 @@ moment.locale('zh-cn');
 
 ### 案例二：lodash 全量引入
 
-在報告中發現整個 lodash 庫被完整引入，約 70KB。實際項目只用到了 `debounce`、`get`、`cloneDeep` 幾個方法。
+在報告中發現整個 lodash 庫被完整引入，約 70KB。實際項目隻用到了 `debounce`、`get`、`cloneDeep` 幾個方法。
 
 解決方案一：使用 lodash-es 配合 tree shaking
 
@@ -170,7 +170,7 @@ import cloneDeep from 'lodash/cloneDeep';
 }
 ```
 
-在 `package.json` 中使用 `resolutions`（Yarn）強制所有依賴使用同一版本。
+在 `package.json` 中使用 `resolutions`（Yarn）強製所有依賴使用同一版本。
 
 也可以通過 Webpack 的 `resolve.alias` 統一：
 
@@ -207,7 +207,7 @@ module.exports = {
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
-### 2. 配置 splitChunks 精細控制
+### 2. 設定 splitChunks 精細控製
 
 ```js
 module.exports = {
@@ -296,7 +296,7 @@ files.forEach(file => {
   console.log(`${file}: ${sizeKB}KB (gzip)`);
 
   if (file.includes('main') && size > MAX_SIZE_KB * 1024) {
-    console.error(`主 bundle 超過 ${MAX_SIZE_KB}KB 限制！`);
+    console.error(`主 bundle 超過 ${MAX_SIZE_KB}KB 限製！`);
     failed = true;
   }
 });

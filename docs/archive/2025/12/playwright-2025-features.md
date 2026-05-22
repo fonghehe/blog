@@ -1,6 +1,6 @@
 ---
-title: "Playwright 2025 新功能"
-date: 2025-12-24 10:00:00
+title: "Playwright 2025 实践：大型项目的端到端测试策略升级"
+date: 2025-12-24 13:38:15
 tags:
   - 测试
 readingTime: 2

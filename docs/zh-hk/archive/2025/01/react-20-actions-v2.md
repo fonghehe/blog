@@ -1,14 +1,14 @@
 ---
-title: "React 20 Actions v2 增強"
-date: 2025-01-03 10:00:00
+title: "React 20 Actions v2 增強：落地路徑與實戰建議"
+date: 2025-01-03 11:57:34
 tags:
   - React
 readingTime: 2
-description: "React 20 中的 Actions 機制迎來重大升級。v1 版本的 Actions 主要解決了表單提交場景，v2 則將其擴展為通用的異步操作原語，覆蓋了樂觀更新、錯誤邊界集成和事務性狀態管理。"
+description: "React 20 中的 Actions 機製迎來重大升級。v1 版本的 Actions 主要解決了表單提交場景，v2 則將其擴展為通用的異步操作原語，覆蓋了樂觀更新、錯誤邊界集成和事務性狀態管理。"
 wordCount: 385
 ---
 
-React 20 中的 Actions 機制迎來重大升級。v1 版本的 Actions 主要解決了表單提交場景，v2 則將其擴展為通用的異步操作原語，覆蓋了樂觀更新、錯誤邊界集成和事務性狀態管理。
+React 20 中的 Actions 機製迎來重大升級。v1 版本的 Actions 主要解決了表單提交場景，v2 則將其擴展為通用的異步操作原語，覆蓋了樂觀更新、錯誤邊界集成和事務性狀態管理。
 
 ## useActionState 重新設計
 
@@ -101,7 +101,7 @@ function FileUploader() {
 }
 ```
 
-內置重試機制是亮點——`retry` 配置支持指數退避，這在移動端弱網環境下特別有用。
+內置重試機製是亮點——`retry` 設定支援指數退避，這在移動端弱網環境下特別有用。
 
 ## Actions 與 Suspense 的深度集成
 
@@ -152,5 +152,5 @@ function OrderList() {
 - `useActionState` 新增 `optimisticUpdate` 選項，樂觀更新變得聲明式
 - `useAction` hook 覆蓋非表單異步場景，內置重試和生命週期回調
 - Actions 與 Suspense 深度集成，pending 狀態自然驅動 UI 過渡
-- 錯誤恢復機制更智能，失敗時自動回滾樂觀狀態
+- 錯誤恢復機製更智能，失敗時自動回滾樂觀狀態
 - Actions 已成為 React 異步操作的標準範式，建議替代傳統的 useEffect + fetch 模式

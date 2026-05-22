@@ -20,7 +20,7 @@ React/Vue/Next.js 思路：JS 優先
 
 Astro 思路：HTML 優先
   - 服務端渲染 HTML → 發送到瀏覽器（沒有 JS 負擔）
-  - 只有標記 client:* 的組件才下載 JS
+  - 隻有標記 client:* 的組件才下載 JS
 ```
 
 對博客、文檔、營銷頁來説，這是正確的優先級。
@@ -151,7 +151,7 @@ import VueSearchBox from '../components/Search.vue'
 <!-- client:visible：進入視口時水化 -->
 <LazyChart client:visible />
 
-<!-- client:only="react"：只在客户端渲染，不 SSR -->
+<!-- client:only="react"：隻在客户端渲染，不 SSR -->
 <RealTimeData client:only="react" />
 ```
 
@@ -184,7 +184,7 @@ import { ViewTransitions } from 'astro:transitions'
 ## 小結
 
 - Astro 默認零 JS，比 Next.js 更適合內容站
-- Islands 架構：只有需要交互的組件才水化
+- Islands 架構：隻有需要交互的組件才水化
 - 內容集合 + 類型檢查，比手寫 `import.meta.glob` 優雅得多
 - View Transitions API 讓 MPA 也有流暢的頁面過渡
 - 2024 年是 Astro 生態成熟的一年，值得認真學

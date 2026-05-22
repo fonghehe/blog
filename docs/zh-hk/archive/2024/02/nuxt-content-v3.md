@@ -1,5 +1,5 @@
 ---
-title: "Nuxt Content v3 內容管理"
+title: "Nuxt Content v3 內容管理：落地路徑與實戰建議"
 date: 2024-02-19 11:47:46
 tags:
   - Nuxt.js

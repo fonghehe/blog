@@ -20,7 +20,7 @@ curl -fsSL https://bun.sh/install | bash
 bun --version
 # 0.1.x（2022 年 7 月）
 
-# 運行 TypeScript 文件（不需要編譯步驟）
+# 運行 TypeScript 檔案（不需要編譯步驟）
 bun run app.ts
 
 # 運行 JSX/TSX
@@ -157,7 +157,7 @@ Deno (oak):         ~80,000 req/s
 Bun (Bun.serve):   ~250,000 req/s
 ```
 
-## 文件 IO
+## 檔案 IO
 
 ```typescript
 // 讀文件（比 Node.js 快 10x）
@@ -187,10 +187,10 @@ console.log(file.lastModified);
 4. **Windows 支持**：2022 年還沒有
 
 ```bash
-# 測試你的項目兼容性
+# 測試你的項目相容性
 bun install
 bun test
-# 大概率會遇到某些包不兼容
+# 大概率會遇到某些包不相容
 ```
 
 ## 與 Node.js 和 Deno 的定位
@@ -200,7 +200,7 @@ bun test
 ------|---------|------|-----|
 | 引擎 | V8 | V8 | JavaScriptCore |
 | 語言 | C++ | Rust | Zig |
-| TypeScript | 需要編譯 | 原生支持 | 原生支持 |
+| TypeScript | 需要編譯 | 原生支援 | 原生支援 |
 | 包管理 | npm/pnpm/yarn | URL 導入 | 內置 |
 | 測試 | 需要框架 | 內置 | 內置 |
 | 成熟度 | 生產就緒 | 較成熟 | 早期 |

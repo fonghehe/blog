@@ -121,7 +121,7 @@ const fidObserver = new PerformanceObserver((list) => {
     const delay = entry.processingStart - entry.startTime;
     console.log('FID:', delay);
     console.log('事件型別:', entry.name);
-    fidObserver.disconnect(); // FID 只記錄第一次互動
+    fidObserver.disconnect(); // FID 隻記錄第一次互動
   }
 });
 
@@ -187,7 +187,7 @@ let sessionEntries = [];
 
 const clsObserver = new PerformanceObserver((list) => {
   for (const entry of list.getEntries()) {
-    // 只有沒有 recentInput（使用者最近輸入）的偏移才計入
+    // 隻有沒有 recentInput（使用者最近輸入）的偏移才計入
     if (!entry.hadRecentInput) {
       const firstSessionEntry = sessionEntries[0];
       const lastSessionEntry = sessionEntries[sessionEntries.length - 1];
@@ -241,7 +241,7 @@ CLS 評級標準：
 <!-- 差：動態插入 banner 導致下方內容下移 -->
 <!-- 好：使用固定高度的預留區域 -->
 
-<!-- 4. 使用 CSS contain 屬性限制影響範圍 -->
+<!-- 4. 使用 CSS contain 屬性限製影響範圍 -->
 <style>
 .ad-container {
   contain: layout;

@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 5.2 Symbol.dispose"
+title: "TypeScript 5.2 Symbol.dispose：落地路徑與實戰建議"
 date: 2023-03-23 14:31:49
 tags:
   - TypeScript

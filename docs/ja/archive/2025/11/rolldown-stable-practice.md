@@ -1,6 +1,6 @@
 ---
-title: "Rolldown 安定版の実践"
-date: 2025-11-25 10:00:00
+title: "Rolldown 稳定版実践：Vite 底层切换到 Rolldown 的移行ガイド"
+date: 2025-11-25 14:59:36
 tags:
   - フロントエンド
 readingTime: 2

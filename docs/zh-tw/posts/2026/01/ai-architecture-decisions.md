@@ -1,6 +1,6 @@
 ---
 title: "AI 輔助架構決策工具"
-date: 2026-01-08 10:00:00
+date: 2026-01-08 16:42:19
 tags:
   - 工程化
 readingTime: 3
@@ -80,7 +80,7 @@ function shouldExtractModule(mod: ModuleAnalysis): boolean {
 
 ## 效能預算決策支援
 
-AI 可以基於你的使用者畫像和流量資料，幫你制定合理的效能預算，而不是拍一個"LCP < 2.5s"了事。
+AI 可以基於你的使用者畫像和流量資料，幫你製定合理的效能預算，而不是拍一個"LCP < 2.5s"了事。
 
 ```typescript
 // performance-budget-ai.ts

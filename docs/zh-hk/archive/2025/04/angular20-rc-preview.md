@@ -1,6 +1,6 @@
 ---
 title: "Angular 20 RC 預覽：Zoneless 穩定、Signal Forms 與全新路由 API"
-date: 2025-04-11 10:00:00
+date: 2025-04-11 16:05:42
 tags:
   - Angular
   - CSS
@@ -166,7 +166,7 @@ export class UserCardComponent {}
 ```bash
 ng update @angular/core@20-rc @angular/cli@20-rc
 
-# 自動遷移：將 zone.js 相關配置更新
+# 自動遷移：將 zone.js 相關設定更新
 # 查看遷移列表
 ng update @angular/core@20-rc --dry-run
 ```

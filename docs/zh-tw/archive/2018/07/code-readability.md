@@ -154,7 +154,7 @@ users.forEach((user) => {
 });
 
 // ✅ 註釋解釋為什麼，或者非直覺的邏輯
-// 只處理當月加入的使用者，歷史使用者在另一個任務裡批次處理
+// 隻處理當月加入的使用者，歷史使用者在另一個任務裡批次處理
 users.filter((u) => u.joinedAt >= startOfMonth).forEach(processUser);
 
 // 注意：這裡用 .9 而不是整數，是因為 IE 的精度 bug

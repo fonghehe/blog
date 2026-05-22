@@ -61,7 +61,7 @@ const { data: users, pending, error, refresh } = await useFetch('/api/users')
 // 帶配置
 const { data: post } = await useFetch('/api/posts/1', {
   key: 'post-detail',   // 快取 key，防止重複請求
-  pick: ['id', 'title', 'content'],  // 只取需要的欄位，減小包體
+  pick: ['id', 'title', 'content'],  // 隻取需要的欄位，減小包體
   lazy: true,            // 不阻塞導航
   server: false,         // 僅客戶端請求
   transform: (data) => {
@@ -157,9 +157,9 @@ export default defineNuxtConfig({
 })
 ```
 
-## 資料獲取的 SSR 行為控制
+## 資料獲取的 SSR 行為控製
 
-Nuxt 3 預設在服務端執行所有 `useFetch`/`useAsyncData`。可以通過選項精確控制。
+Nuxt 3 預設在服務端執行所有 `useFetch`/`useAsyncData`。可以通過選項精確控製。
 
 ```vue
 <script>
@@ -186,5 +186,5 @@ const { data: list } = await useFetch(() => `/api/posts?page=${page.value}`, {
 - `[slug]` 路由引數語法替代了 Vue Router 的 `:slug`，catch-all 用 `[...all]`
 - `useFetch` 自動處理 SSR/CSR 資料獲取，避免重複請求
 - `useAsyncData` 適合封裝複雜業務邏輯，支援 `watch` 響應式依賴
-- 資料層用 composables 封裝，元件只關心"用什麼資料"而不關心"怎麼拿"
-- `server: false` 和 `lazy: true` 精確控制 SSR 行為和載入策略
+- 資料層用 composables 封裝，元件隻關心"用什麼資料"而不關心"怎麼拿"
+- `server: false` 和 `lazy: true` 精確控製 SSR 行為和載入策略

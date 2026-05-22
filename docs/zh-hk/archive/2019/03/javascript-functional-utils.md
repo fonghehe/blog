@@ -100,14 +100,14 @@ const memoize = (fn) => {
   };
 };
 
-// 昂貴計算只執行一次
+// 昂貴計算隻執行一次
 const expensiveFn = memoize((n) => {
   // 模擬耗時計算
   return n * n;
 });
 ```
 
-## once 只執行一次
+## once 隻執行一次
 
 ```javascript
 const once = (fn) => {
@@ -122,7 +122,7 @@ const once = (fn) => {
   };
 };
 
-// 加載配置只初始化一次
+// 加載設定隻初始化一次
 const initConfig = once(async () => {
   const config = await fetch("/api/config").then((r) => r.json());
   return config;

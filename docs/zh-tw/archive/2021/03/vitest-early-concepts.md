@@ -5,11 +5,11 @@ tags:
   - Vite
   - Vitest
 readingTime: 3
-description: "最近社群在討論一個話題：既然 Vite 已經解決了開發和構建的問題，為什麼測試環節還是需要一套獨立的、和 Vite 完全無關的工具鏈？測試跑在 Node 上，用 Jest 的 transform 配置，又回到了 Babel/TypeScript 編譯那一套。如果測試也能複用 Vite 的模組解析和轉換能力呢？"
+description: "最近社群在討論一個話題：既然 Vite 已經解決了開發和構建的問題，為什麼測試環節還是需要一套獨立的、和 Vite 完全無關的工具鏈？測試跑在 Node 上，用 Jest 的 transform 設定，又回到了 Babel/TypeScript 編譯那一套。如果測試也能複用 Vite 的模組解析和轉換能力呢？"
 wordCount: 696
 ---
 
-最近社群在討論一個話題：既然 Vite 已經解決了開發和構建的問題，為什麼測試環節還是需要一套獨立的、和 Vite 完全無關的工具鏈？測試跑在 Node 上，用 Jest 的 transform 配置，又回到了 Babel/TypeScript 編譯那一套。如果測試也能複用 Vite 的模組解析和轉換能力呢？
+最近社群在討論一個話題：既然 Vite 已經解決了開發和構建的問題，為什麼測試環節還是需要一套獨立的、和 Vite 完全無關的工具鏈？測試跑在 Node 上，用 Jest 的 transform 設定，又回到了 Babel/TypeScript 編譯那一套。如果測試也能複用 Vite 的模組解析和轉換能力呢？
 
 ## 現有測試工具的痛點
 
@@ -18,21 +18,21 @@ wordCount: 696
 ```javascript
 // jest.config.js —— 一個 Vite + Vue 3 + TypeScript 專案的典型配置
 module.exports = {
-  // 需要配置 transform 來處理 TS
+  // 需要設定 transform 來處理 TS
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
     '^.+\\.vue$': '@vue/vue3-jest'
   },
 
-  // 需要配置模組別名（和 vite.config.ts 重複）
+  // 需要設定模組別名（和 vite.config.ts 重複）
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1'
   },
 
-  // 需要配置副檔名
+  // 需要設定副檔名
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'vue'],
 
-  // 需要配置環境
+  // 需要設定環境
   testEnvironment: 'jsdom',
 
   // CSS 檔案要 mock
@@ -51,7 +51,7 @@ module.exports = {
 
 ## 複用 Vite 的思路
 
-核心想法很直接：讓測試也走 Vite 的模組處理管道。Vite 內部已經有一個 transform pipeline，處理 TypeScript、Vue SFC、CSS Modules、靜態資源等，測試只需要複用它。
+核心想法很直接：讓測試也走 Vite 的模組處理管道。Vite 內部已經有一個 transform pipeline，處理 TypeScript、Vue SFC、CSS Modules、靜態資源等，測試隻需要複用它。
 
 ```
 現有的工具鏈：
@@ -116,7 +116,7 @@ export default defineConfig({
 })
 ```
 
-測試檔案寫法和 Jest 類似，但不需要額外配置：
+測試檔案寫法和 Jest 類似，但不需要額外設定：
 
 ```typescript
 // src/utils/format.test.ts

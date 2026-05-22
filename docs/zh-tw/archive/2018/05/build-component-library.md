@@ -5,11 +5,11 @@ tags:
   - 元件化
   - 工程化
 readingTime: 1
-description: "公司專案越來越多，經常要把同一套 UI 元件複製來複制去。終於決定把通用元件提取成內部元件庫。記錄一下搭建過程的第一步。"
+description: "公司專案越來越多，經常要把同一套 UI 元件複製來複製去。終於決定把通用元件提取成內部元件庫。記錄一下搭建過程的第一步。"
 wordCount: 181
 ---
 
-公司專案越來越多，經常要把同一套 UI 元件複製來複制去。終於決定把通用元件提取成內部元件庫。記錄一下搭建過程的第一步。
+公司專案越來越多，經常要把同一套 UI 元件複製來複製去。終於決定把通用元件提取成內部元件庫。記錄一下搭建過程的第一步。
 
 ## 為什麼要自建元件庫
 
@@ -135,7 +135,7 @@ import { Button } from "my-ui";
 Vue.use(Button);
 ```
 
-## 打包配置（Webpack）
+## 打包設定（Webpack）
 
 ```javascript
 // webpack.lib.js
@@ -160,14 +160,14 @@ module.exports = {
 
 ## 下一步
 
-目前只是搭了架子，接下來要做：
+目前隻是搭了架子，接下來要做：
 
 ```
 - 完善更多元件（Input、Select、Table、Modal）
 - 寫文件（考慮用 VuePress）
 - 寫單元測試
 - 釋出到公司 npm 私庫
-- 配置 babel-plugin-import 支援按需引入
+- 設定 babel-plugin-import 支援按需引入
 ```
 
 ## 小結

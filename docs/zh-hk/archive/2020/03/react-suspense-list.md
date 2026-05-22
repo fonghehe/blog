@@ -1,14 +1,14 @@
 ---
-title: "React SuspenseList 加載順序控制"
+title: "React SuspenseList 加載順序控製：落地路徑與實戰建議"
 date: 2020-03-24 16:02:13
 tags:
   - React
 readingTime: 2
-description: "最近在團隊中落地React SuspenseList 加載順序控制，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
+description: "最近在團隊中落地React SuspenseList 加載順序控製，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
 wordCount: 327
 ---
 
-最近在團隊中落地React SuspenseList 加載順序控制，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
+最近在團隊中落地React SuspenseList 加載順序控製，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
 
 ## 核心概念
 
@@ -100,7 +100,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 注意事項
 
@@ -129,5 +129,5 @@ function reducer(state, action) {
 
 - 不要為了用新技術而用新技術
 - 代碼示例僅供參考，需根據業務場景調整
-- React SuspenseList 加載順序控制不是銀彈，需要根據項目規模和技術棧選擇
+- React SuspenseList 加載順序控製不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要

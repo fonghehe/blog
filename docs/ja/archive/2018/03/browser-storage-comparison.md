@@ -1,5 +1,5 @@
 ---
-title: "ブラウザストレージ比較：Cookie、localStorage、IndexedDB"
+title: "浏览器存储ソリューション对比 2018：Cookie、localStorage、IndexedDB"
 date: 2018-03-01 11:16:33
 tags:
   - フロントエンド

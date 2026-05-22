@@ -3,24 +3,24 @@ title: "Web Components：Custom ElementsとShadow DOMの実践"
 date: 2020-09-30 14:45:02
 tags:
   - TypeScript
-readingTime: 2
-description: "Web Components 是浏览器原生的组件化方案，无需任何框架即可创建可复用的自定义 HTML 元素。2020 年所有主流浏览器均已支持，现在是深入了解它的好时机。"
-wordCount: 314
+readingTime: 3
+description: "Web Components はブラウザネイティブのコンポーネント化手法であり、フレームワークを必要とせずに再利用可能なカスタム HTML 要素を作成できます。2020 年時点で全ての主要ブラウザがサポートしており、今が深く学ぶ絶好のタイミングです。"
+wordCount: 551
 ---
 
-Web Components 是浏览器原生的组件化方案，无需任何框架即可创建可复用的自定义 HTML 元素。2020 年所有主流浏览器均已支持，现在是深入了解它的好时机。
+Web Components はブラウザネイティブのコンポーネント化手法であり、フレームワークを必要とせずに再利用可能なカスタム HTML 要素を作成できます。2020 年時点で全ての主要ブラウザがサポートしており、今が深く学ぶ絶好のタイミングです。
 
-## 三个核心 API
+## 三つのコア API
 
 ```
 Web Components = Custom Elements + Shadow DOM + HTML Templates
 ```
 
-- **Custom Elements**：定义自定义 HTML 标签（`<my-button>`）
-- **Shadow DOM**：隔离的 DOM 子树，样式不外泄、不受外部影响
-- **HTML Templates**：`<template>` 标签，惰性解析的模板
+- **Custom Elements**：カスタム HTML タグを定義します（`<my-button>`）
+- **Shadow DOM**：隔離された DOM サブツリーで、スタイルが外部に漏れず、外部の影響も受けません
+- **HTML Templates**：`<template>` タグ、遅延解析されるテンプレート
 
-## 创建第一个 Custom Element
+## 最初の Custom Element を作成する
 
 ```javascript
 class UserCard extends HTMLElement {
@@ -100,7 +100,7 @@ customElements.define("user-card", UserCard);
 
 ## Slots：内容投影
 
-类似 Vue 的 `<slot>` 或 Angular 的 `<ng-content>`：
+Vue の `<slot>` や Angular の `<ng-content>` と似ています：
 
 ```javascript
 class MyCard extends HTMLElement {
@@ -133,7 +133,7 @@ customElements.define("my-card", MyCard);
 
 ## 与框架集成
 
-Custom Elements 可以无缝嵌入任何框架：
+Custom Elements はどのフレームワークにもシームレスに組み込めます：
 
 ```jsx
 // React 中使用
@@ -155,17 +155,17 @@ function App() {
 
 ## 何时选择 Web Components
 
-**适合**：
+**適しているケース**：
 
-- 跨框架共享 UI 组件（设计系统）
-- 需要严格样式隔离的组件（第三方嵌入）
-- 不想绑定特定框架的组件库
+- フレームワーク間で UI コンポーネントを共有する（デザインシステム）
+- 厳格なスタイルの隔離が必要なコンポーネント（サードパーティ埋め込み）
+- 特定のフレームワークに縛られたくないコンポーネントライブラリ
 
-**不太适合**：
+**適さないケース**：
 
-- 纯 React/Vue/Angular 项目（用框架自身的组件系统更方便）
-- 需要 TypeScript 强类型支持（Web Components 原生 TS 支持较弱）
+- 純粋な React/Vue/Angular プロジェクト（フレームワーク自身のコンポーネントシステムを使う方が便利）
+- TypeScript の強力な型サポートが必要な場合（Web Components のネイティブ TypeScript サポートは弱い）
 
 ## まとめ
 
-Web Components 的价值在于**框架无关性**。越来越多的设计系统（如 Adobe Spectrum、IBM Carbon）开始提供 Web Components 版本。即使你的日常工作在 Angular 或 React 框架内，理解 Web Components 也有助于你设计更通用的组件边界。
+Web Components の価値は**フレームワーク非依存性**にあります。Adobe Spectrum や IBM Carbon など、多くのデザインシステムが Web Components 版を提供し始めています。普段 Angular や React のフレームワーク内で作業している場合でも、Web Components を理解することで、より汎用的なコンポーネントの境界を設計するのに役立ちます。

@@ -1,5 +1,5 @@
 ---
-title: "Vite 5 Rollup 4 遷移"
+title: "Vite 5 Rollup 4 遷移：落地路徑與實戰建議"
 date: 2023-11-01 09:31:50
 tags:
   - Vite
@@ -119,7 +119,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 避坑指南
 

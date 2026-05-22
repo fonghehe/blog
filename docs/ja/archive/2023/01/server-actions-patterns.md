@@ -3,16 +3,16 @@ title: "Server Actions デザインパターン"
 date: 2023-01-11 16:06:36
 tags:
   - フロントエンド
-readingTime: 3
-description: "Server Actions 不只是替代 API 路由的语法糖，它改变了数据流的组织方式。在实际项目中，我们需要一套成熟的设计模式来管理校验、错误处理、权限控制和状态同步。这篇文章总结了我在生产环境中验证过的几种模式。"
-wordCount: 466
+readingTime: 4
+description: "Server Actions は API ルートの代替となるシンタックスシュガーにとどまらず、データフローの編成方法を変革します。実際のプロジェクトでは、バリデーション、エラーハンドリング、権限制御、状態同期を管理するための成熟したデザインパターンが必要です。この記事では、本番環境で検証したいくつかのパターンをまとめました。"
+wordCount: 815
 ---
 
-Server Actions 不只是替代 API 路由的语法糖，它改变了数据流的组织方式。在实际项目中，我们需要一套成熟的设计模式来管理校验、错误处理、权限控制和状态同步。这篇文章总结了我在生产环境中验证过的几种模式。
+Server Actions は API ルートの代替となるシンタックスシュガーにとどまらず、データフローの編成方法を変革します。実際のプロジェクトでは、バリデーション、エラーハンドリング、権限制御、状態同期を管理するための成熟したデザインパターンが必要です。この記事では、本番環境で検証したいくつかのパターンをまとめました。
 
 ## パターン1：ビジネスロジックの Command パターンカプセル化
 
-将 Server Action 按业务领域组织，每个 action 只做一件事。这比把所有 action 塞进一个 `actions.ts` 文件更可维护。
+Server Action をビジネスドメインごとに整理し、各アクションは1つのことだけを行います。すべてのアクションを1つの `actions.ts` ファイルに詰め込むよりも保守性が高まります。
 
 ```tsx
 // actions/post.ts
@@ -57,11 +57,11 @@ export async function createPost(_: any, formData: FormData): Promise<CreatePost
 }
 ```
 
-`requireAuth()` 是独立的鉴权函数，每个需要鉴权的 action 都调用它。不要用 middleware 做鉴权判断，middleware 无法访问数据库 session。
+`requireAuth()` は独立した認証関数であり、認証が必要な各アクションで呼び出します。middleware で認証判断を行わないでください。middleware はデータベースセッションにアクセスできません。
 
 ## パターン2：フック化した Action 呼び出し
 
-封装一个自定义 hook，统一处理 loading、error、toast 反馈，避免在每个组件中重复 `useFormState` + `useTransition` 的样板代码。
+カスタムフックをカプセル化して、loading、error、toast フィードバックを一元処理し、各コンポーネントで `useFormState` + `useTransition` のボイラープレートコードを繰り返すのを避けます。
 
 ```tsx
 // hooks/use-action.ts
@@ -104,7 +104,7 @@ export function useAction<T>(
 ```
 
 ```tsx
-// 使用示例
+// 使用例
 'use client'
 
 import { createComment } from '@/actions/comment'
@@ -114,7 +114,7 @@ export function CommentForm({ postId }: { postId: string }) {
   const { formAction, state } = useAction(createComment, {
     successMessage: '评论已发布',
     onSuccess: () => {
-      // 可选：关闭弹窗、滚动到底部等
+      // オプション：モーダルを閉じる、下部へスクロールなど
     },
   })
 
@@ -133,7 +133,7 @@ export function CommentForm({ postId }: { postId: string }) {
 
 ## パターン3：トランザクション的バッチ操作
 
-有时一个用户操作需要更新多张表。Server Action 天然支持数据库事务，不需要前端发多次请求。
+1つのユーザー操作で複数のテーブルを更新する必要がある場合があります。Server Action はデータベーストランザクションをネイティブサポートしており、フロントエンドから複数回リクエストを送信する必要はありません。
 
 ```tsx
 // actions/admin.ts
@@ -147,25 +147,25 @@ export async function transferPosts(fromUserId: string, toUserId: string) {
   await requireAdmin()
 
   const result = await db.$transaction(async (tx) => {
-    // 1. 转移文章所有权
+    // 1. 記事の所有権を移行
     const posts = await tx.post.updateMany({
       where: { authorId: fromUserId },
       data: { authorId: toUserId },
     })
 
-    // 2. 更新目标用户的统计
+    // 2. 移行先ユーザーの統計を更新
     await tx.userStats.update({
       where: { userId: toUserId },
       data: { postCount: { increment: posts.count } },
     })
 
-    // 3. 更新源用户的统计
+    // 3. 移行元ユーザーの統計を更新
     await tx.userStats.update({
       where: { userId: fromUserId },
       data: { postCount: 0 },
     })
 
-    // 4. 记录操作日志
+    // 4. 操作ログを記録
     await tx.auditLog.create({
       data: {
         action: 'TRANSFER_POSTS',
@@ -186,7 +186,7 @@ export async function transferPosts(fromUserId: string, toUserId: string) {
 
 ## パターン4：楽観的更新 + ロールバック
 
-对于低风险操作（点赞、收藏、切换状态），乐观更新是最佳用户体验方案。关键在于做好失败回滚。
+リスクの低い操作（いいね、ブックマーク、状態の切り替え）については、楽観的更新が最適なユーザー体験を提供します。重要なのは、失敗時のロールバックを適切に実装することです。
 
 ```tsx
 'use client'
@@ -217,8 +217,8 @@ export function BookmarkToggle({ postId, initial }: {
       })
 
       const result = await toggleBookmark(postId)
-      // 如果失败，useOptimistic 会自动回滚到 initial 状态
-      // 框架通过 Server Action 返回的最终状态做 reconcile
+      // 失敗した場合、useOptimistic は自動的に initial 状態にロールバックする
+      // フレームワークが Server Action から返された最終状態で reconcile を行う
     })
   }
 
@@ -232,8 +232,8 @@ export function BookmarkToggle({ postId, initial }: {
 
 ## まとめ
 
-- 用 zod 统一校验 Server Action 输入，永远不要信任客户端数据
-- 封装 `useAction` hook 减少样板代码，统一 loading/error 处理
-- Server Action 内可以直接用数据库事务处理批量操作，前端不需要发多次请求
-- 乐观更新适合低风险操作，`useOptimistic` 框架级支持比手动实现更可靠
-- 每个 action 都要鉴权，不要依赖 middleware 做权限控制
+- zod を使用して Server Action の入力を統一バリデーションし、クライアントデータを決して信頼しない
+- `useAction` フックをカプセル化してボイラープレートコードを削減し、loading/error 処理を統一する
+- Server Action 内でデータベーストランザクションを使用してバッチ操作を直接処理でき、フロントエンドから複数回リクエストを送信する必要はない
+- 楽観的更新はリスクの低い操作に適しており、`useOptimistic` のフレームワークレベルのサポートは手動実装よりも信頼性が高い
+- 各アクションは認証を必要とし、middleware に権限制御を依存しない

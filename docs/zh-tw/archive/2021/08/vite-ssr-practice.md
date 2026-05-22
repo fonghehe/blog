@@ -5,7 +5,7 @@ tags:
   - Vite
   - Vue
 readingTime: 2
-description: "最近把一個內部運營平臺從 CSR 遷移到了 Vite SSR，記錄一下踩坑和經驗。Vite 2.x 的 SSR 支援已經比較成熟了，但文件偏少，實際用起來還是有一些要注意的。"
+description: "最近把一個內部運營平臺從 CSR 遷移到了 Vite SSR，記錄一下踩坑和經驗。Vite 2.x 的 SSR 支援已經比較成熟了，但檔案偏少，實際用起來還是有一些要注意的。"
 wordCount: 284
 ---
 
@@ -207,7 +207,7 @@ const getToken = () => {
 
 // ✅ 或者用 import.meta.env.SSR（Vite 提供）
 if (!import.meta.env.SSR) {
-  // 這段程式碼只會出現在客戶端 bundle
+  // 這段程式碼隻會出現在客戶端 bundle
   initAnalytics()
 }
 ```

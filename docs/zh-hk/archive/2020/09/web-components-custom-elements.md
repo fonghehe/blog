@@ -4,11 +4,11 @@ date: 2020-09-30 14:45:02
 tags:
   - TypeScript
 readingTime: 2
-description: "Web Components 是瀏覽器原生的組件化方案，無需任何框架即可創建可複用的自定義 HTML 元素。2020 年所有主流瀏覽器均已支持，現在是深入瞭解它的好時機。"
+description: "Web Components 是瀏覽器原生的組件化方案，無需任何框架即可創建可複用的自定義 HTML 元素。2020 年所有主流瀏覽器均已支援，現在是深入瞭解它的好時機。"
 wordCount: 313
 ---
 
-Web Components 是瀏覽器原生的組件化方案，無需任何框架即可創建可複用的自定義 HTML 元素。2020 年所有主流瀏覽器均已支持，現在是深入瞭解它的好時機。
+Web Components 是瀏覽器原生的組件化方案，無需任何框架即可創建可複用的自定義 HTML 元素。2020 年所有主流瀏覽器均已支援，現在是深入瞭解它的好時機。
 
 ## 三個核心 API
 
@@ -164,7 +164,7 @@ function App() {
 **不太適合**：
 
 - 純 React/Vue/Angular 項目（用框架自身的組件系統更方便）
-- 需要 TypeScript 強類型支持（Web Components 原生 TS 支持較弱）
+- 需要 TypeScript 強類型支援（Web Components 原生 TS 支援較弱）
 
 ## 總結
 

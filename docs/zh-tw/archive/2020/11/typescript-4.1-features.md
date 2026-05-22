@@ -4,13 +4,13 @@ date: 2020-11-24 17:33:01
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 4.1 釋出了，帶來了幾個非常實用的型別系統增強。特別是模板字面量型別和遞迴條件型別，讓型別程式設計能力又上了一個臺階。"
+description: "TypeScript 4.1 釋出了，帶來了幾個非常實用的型別系統增強。特別是範本字面量型別和遞迴條件型別，讓型別程式設計能力又上了一個臺階。"
 wordCount: 209
 ---
 
 TypeScript 4.1 釋出了，帶來了幾個非常實用的型別系統增強。特別是模板字面量型別和遞迴條件型別，讓型別程式設計能力又上了一個臺階。
 
-## 模板字面量型別
+## 範本字面量型別
 
 ```typescript
 // 類似模板字串，但在型別層面
@@ -36,7 +36,7 @@ type ResponsiveClass = `${Breakpoint}:${CSSProperty}`;
 ## Key Remapping in Mapped Types
 
 ```typescript
-// 以前：對映型別只能保留原 key
+// 以前：對映型別隻能保留原 key
 type Getters<T> = {
   [K in keyof T]: () => T[K];
 };
@@ -73,7 +73,7 @@ type StringConfig = ExtractStringKeys<Config>;
 ## 遞迴條件型別
 
 ```typescript
-// TypeScript 4.1 放寬了條件型別的遞迴限制
+// TypeScript 4.1 放寬了條件型別的遞迴限製
 
 // 深度 Readonly
 type DeepReadonly<T> = T extends (infer U)[]
@@ -112,8 +112,8 @@ type Result = Flatten<string[][][]>;
 ## 遞迴型別引用深度提升
 
 ```typescript
-// TypeScript 4.0 之前遞迴深度限制較嚴格
-// 4.1 放寬了限制
+// TypeScript 4.0 之前遞迴深度限製較嚴格
+// 4.1 放寬了限製
 
 // JSON 型別定義
 type Json = string | number | boolean | null | JsonObject | JsonArray;
@@ -191,7 +191,7 @@ const user: User = {
 };
 ```
 
-## tsconfig 配置
+## tsconfig 設定
 
 ```json
 // tsconfig.json
@@ -221,6 +221,6 @@ npx tsc --version
 
 - 模板字面量型別讓型別程式設計可以做字串操作，非常強大
 - Key Remapping 讓對映型別可以重新命名 key，派生型別更靈活
-- 遞迴條件型別的限制放寬，可以實現深度巢狀的型別轉換
+- 遞迴條件型別的限製放寬，可以實現深度巢狀的型別轉換
 - 錯誤提示更精確，除錯型別問題更高效
 - TypeScript 正在變得越來越像一門型別程式語言

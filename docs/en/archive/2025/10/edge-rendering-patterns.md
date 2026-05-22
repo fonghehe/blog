@@ -1,6 +1,6 @@
 ---
 title: "Edge Rendering Patterns: 2025 Practice Summary"
-date: 2025-10-12 10:00:00
+date: 2025-10-12 19:06:43
 tags:
   - Frontend
 readingTime: 2

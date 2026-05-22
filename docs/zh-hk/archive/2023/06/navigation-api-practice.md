@@ -1,5 +1,5 @@
 ---
-title: "Navigation API 實踐指南"
+title: "Navigation API 實踐指南：落地路徑與實戰建議"
 date: 2023-06-08 10:39:02
 tags:
   - 前端
@@ -37,7 +37,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 深度解析
 

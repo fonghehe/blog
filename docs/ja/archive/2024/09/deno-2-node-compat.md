@@ -1,6 +1,6 @@
 ---
-title: "Deno 2.0 Node.js 互換性"
-date: 2024-09-25 10:00:00
+title: "Deno 2.0 Node 兼容：从 Deno 1.x 移行的真实体验"
+date: 2024-09-25 18:59:36
 tags:
   - フロントエンド
 readingTime: 3

@@ -1,10 +1,10 @@
 ---
-title: "Vue 3 Teleport 與 Suspense 組件"
+title: "Vue 3 Teleport 與 Suspense 組件：落地路徑與實戰建議"
 date: 2020-08-03 14:49:22
 tags:
   - Vue
 readingTime: 4
-description: "Vue 3 新增了兩個內置組件：Teleport 和 Suspense。一個解決 DOM 結構嵌套問題，一個解決異步組件加載狀態問題。這兩個在實際項目中用得非常頻繁，特別是 Teleport，幾乎是模態框組件的標配了。"
+description: "Vue 3 新增了兩個內置組件：Teleport 和 Suspense。一個解決 DOM 結構巢狀問題，一個解決異步組件加載狀態問題。這兩個在實際項目中用得非常頻繁，特別是 Teleport，幾乎是模態框組件的標配了。"
 wordCount: 644
 ---
 
@@ -14,7 +14,7 @@ Vue 3 新增了兩個內置組件：Teleport 和 Suspense。一個解決 DOM 結
 
 ### 為什麼需要 Teleport
 
-做彈窗、Toast、Drawer 這類浮層組件時，我們經常遇到一個問題：組件的 DOM 結構嵌套在父組件裏，但我們需要它渲染到 body 下面，否則會被 `overflow: hidden` 或 `z-index` 影響。
+做彈窗、Toast、Drawer 這類浮層組件時，我們經常遇到一個問題：組件的 DOM 結構巢狀在父組件裏，但我們需要它渲染到 body 下面，否則會被 `overflow: hidden` 或 `z-index` 影響。
 
 以前的解決方案是：手動操作 DOM，或者用 Portal 庫。Vue 3 的 Teleport 是原生方案。
 
@@ -227,9 +227,9 @@ const user = await res.json()
 {% endraw %}
 ```
 
-### 嵌套 Suspense
+### 巢狀 Suspense
 
-可以嵌套 Suspense 實現更細粒度的加載控制：
+可以巢狀 Suspense 實現更細粒度的加載控製：
 
 ```vue
 <template>
@@ -239,7 +239,7 @@ const user = await res.json()
         <!-- 先加載頁面級數據 -->
         <PageHeader />
 
-        <!-- 內層 Suspense：獨立控制內容區的加載 -->
+        <!-- 內層 Suspense：獨立控製內容區的加載 -->
         <Suspense>
           <template #default>
             <ContentArea />
@@ -322,7 +322,7 @@ onErrorCaptured((err) => {
 
 function retry() {
   hasError.value = false
-  retryCount.value++ // 通過 key 變化強制重新渲染
+  retryCount.value++ // 通過 key 變化強製重新渲染
 }
 </script>
 {% endraw %}
@@ -339,6 +339,6 @@ function retry() {
 - Teleport 將子組件的 DOM 渲染到指定位置，解決模態框/Toast 等浮層的 z-index 和 overflow 問題
 - Teleport 支持動態目標、多個 Teleport 到同一目標、以及禁用模式
 - Suspense 聲明式處理異步組件的加載和錯誤狀態
-- Suspense 支持嵌套，可以實現更細粒度的加載控制
+- Suspense 支援巢狀，可以實現更細粒度的加載控製
 - Suspense 目前仍是實驗性特性，生產使用要關注 API 變化
 - Teleport + Suspense 組合是處理異步彈窗內容的最佳實踐

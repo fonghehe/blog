@@ -1,6 +1,6 @@
 ---
 title: "Next.js 15：Caching 默認關閉、PPR 與 Turbopack 穩定"
-date: 2024-11-25 10:00:00
+date: 2024-11-25 17:19:56
 tags:
   - React
 readingTime: 2
@@ -42,7 +42,7 @@ async function getCachedData() {
 
 Next.js 14 的默認緩存導致很多新用户困惑：數據不更新、調試困難、開發體驗差。反轉後行為更符合直覺。
 
-我們的項目遷移時，只需要在真正需要緩存的地方加 `revalidate` 配置，其他的自動變成不緩存。
+我們的項目遷移時，隻需要在真正需要緩存的地方加 `revalidate` 設定，其他的自動變成不緩存。
 
 ## Partial Prerendering (PPR) 實驗性穩定
 
@@ -155,7 +155,7 @@ npx @next/codemod@canary upgrade
 1. 依賴 `fetch` 默認緩存的代碼，需要顯式加 `revalidate`
 2. `unstable_cache` API 改為 `import { cache } from "react"`
 3. `cookies()` 和 `headers()` 現在是異步的
-4. `next/image` 的默認配置有調整
+4. `next/image` 的默認設定有調整
 
 ## 小結
 

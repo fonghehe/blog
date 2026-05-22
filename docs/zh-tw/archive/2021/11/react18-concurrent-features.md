@@ -26,12 +26,12 @@ const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
-只是這一行變化，但開啟了很多併發特性。
+隻是這一行變化，但開啟了很多併發特性。
 
 ## Automatic Batching（自動批處理）
 
 ```javascript
-// React 17：只有 React 事件處理中才批處理
+// React 17：隻有 React 事件處理中才批處理
 function handleClick() {
   setCount((c) => c + 1); // 單獨渲染
   setName("Alice"); // 單獨渲染
@@ -49,7 +49,7 @@ setTimeout(() => {
 setTimeout(() => {
   setCount((c) => c + 1);
   setName("Alice");
-  // 只渲染 1 次！
+  // 隻渲染 1 次！
 });
 ```
 

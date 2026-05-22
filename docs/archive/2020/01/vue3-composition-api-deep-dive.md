@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 Composition API 深度解析"
+title: "Vue 3 Composition API 深度解析：从 Options 到 Composition 的迁移"
 date: 2020-01-01 15:25:34
 tags:
   - Vue

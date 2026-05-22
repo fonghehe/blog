@@ -1,5 +1,5 @@
 ---
-title: "Vue 組件通信的六種方式"
+title: "Vue 組件通信的六種方式：落地路徑與實戰建議"
 date: 2018-02-10 09:39:52
 tags:
   - Vue
@@ -110,7 +110,7 @@ Vue 2.4 引入的，解決"隔代傳遞"的問題，不用每層都寫 props：
 ```
 
 ```vue
-<!-- 中間層（不關心這些 props，只透傳） -->
+<!-- 中間層（不關心這些 props，隻透傳） -->
 <template>
   <GrandChild v-bind="$attrs" v-on="$listeners" />
 </template>

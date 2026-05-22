@@ -1,5 +1,5 @@
 ---
-title: "RxJS 基礎 Observable 入門"
+title: "RxJS 基礎 Observable 入門：落地路徑與實戰建議"
 date: 2019-10-31 14:32:13
 tags:
   - Angular
@@ -12,7 +12,7 @@ RxJS 是 JavaScript 的響應式編程庫，它基於 Observable 模式，提供
 
 ## 什麼是 Observable
 
-Observable 代表一個可被訂閲的數據流。與 Promise 只能 resolve 一次不同，Observable 可以發出多個值：
+Observable 代表一個可被訂閲的數據流。與 Promise 隻能 resolve 一次不同，Observable 可以發出多個值：
 
 ```js
 import { Observable } from 'rxjs';
@@ -177,7 +177,7 @@ import {
   last
 } from 'rxjs/operators';
 
-// take: 只取前 N 個值
+// take: 隻取前 N 個值
 interval(1000).pipe(
   take(3)
 ).subscribe(console.log);

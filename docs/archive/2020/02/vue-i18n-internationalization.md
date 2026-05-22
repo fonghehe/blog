@@ -1,5 +1,5 @@
 ---
-title: "Vue 项目国际化方案 vue-i18n"
+title: "Vue 3 项目国际化方案：vue-i18n v9 迁移指南"
 date: 2020-02-18 10:20:42
 tags:
   - Vue

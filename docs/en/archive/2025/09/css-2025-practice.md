@@ -1,6 +1,6 @@
 ---
-title: "CSS 2025 New Features in Practice"
-date: 2025-09-11 10:00:00
+title: "CSS 2025 New Features Practice: 年内Landing新功能CompleteGuide"
+date: 2025-09-11 19:25:02
 tags:
   - CSS
 readingTime: 2

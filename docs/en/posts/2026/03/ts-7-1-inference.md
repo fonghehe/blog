@@ -1,6 +1,6 @@
 ---
 title: "TypeScript 7.1 Type Inference"
-date: 2026-03-09 10:00:00
+date: 2026-03-09 10:03:40
 tags:
   - TypeScript
 readingTime: 1

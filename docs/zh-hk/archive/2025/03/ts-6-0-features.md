@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 6.0 新特性展望"
-date: 2025-03-03 10:00:00
+title: "TypeScript 6.0 新特性展望：特性解讀與遷移建議"
+date: 2025-03-03 10:17:54
 tags:
   - TypeScript
 readingTime: 2
@@ -99,9 +99,9 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
-## 性能優化
+## 效能優化
 
 我們可以通過以下方式來改進：
 

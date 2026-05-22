@@ -63,7 +63,7 @@ function increment() {
   emit('update:count', props.count + 1)
 }
 
-// 不需要 return！頂層繫結自動暴露給模板
+// 不需要 return！頂層繫結自動暴露給範本
 </script>
 ```
 
@@ -71,7 +71,7 @@ function increment() {
 
 **1. 頂層繫結自動暴露**
 
-`<script setup>` 中的頂層 `import`、`ref`、`computed`、函式宣告都會自動暴露給模板，不需要手動 `return`：
+`<script setup>` 中的頂層 `import`、`ref`、`computed`、函式宣告都會自動暴露給範本，不需要手動 `return`：
 
 ```vue
 <script setup>
@@ -164,7 +164,7 @@ function reset() {
   count.value = 0
 }
 
-// 只暴露 reset 和 count，不暴露 internalState
+// 隻暴露 reset 和 count，不暴露 internalState
 defineExpose({ reset, count })
 </script>
 ```

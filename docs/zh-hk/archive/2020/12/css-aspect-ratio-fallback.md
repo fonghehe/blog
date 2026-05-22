@@ -1,14 +1,14 @@
 ---
-title: "CSS aspect-ratio 兼容方案"
+title: "CSS aspect-ratio 相容方案：落地路徑與實戰建議"
 date: 2020-12-22 10:21:47
 tags:
   - CSS
 readingTime: 2
-description: "關於CSS aspect-ratio 兼容方案，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於CSS aspect-ratio 相容方案，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 274
 ---
 
-關於CSS aspect-ratio 兼容方案，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於CSS aspect-ratio 相容方案，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 

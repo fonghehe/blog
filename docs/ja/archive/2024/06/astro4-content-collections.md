@@ -1,6 +1,6 @@
 ---
 title: "Astro 4 Content Collections：コンテンツ駆動のサイトアーキテクチャ"
-date: 2024-06-25 10:00:00
+date: 2024-06-25 14:59:36
 tags:
   - React
 readingTime: 2

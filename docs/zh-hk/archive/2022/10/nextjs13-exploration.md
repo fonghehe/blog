@@ -4,7 +4,7 @@ date: 2022-10-11 16:06:02
 tags:
   - Next.js
 readingTime: 3
-description: "Next.js 13 發佈了，App Router 帶來了巨大的範式變化。在正式版之前，讓我們先理解它的設計哲學——React Server Components、Streaming、嵌套佈局。這些不是漸進式改進，而是對「前端應該如何構建」的重新思考。"
+description: "Next.js 13 發佈了，App Router 帶來了巨大的範式變化。在正式版之前，讓我們先理解它的設計哲學——React Server Components、Streaming、巢狀佈局。這些不是漸進式改進，而是對「前端應該如何構建」的重新思考。"
 wordCount: 391
 ---
 
@@ -165,7 +165,7 @@ async function Stats() {
 
 瀏覽器收到 HTML 後，先顯示骨架屏。數據準備好後，服務端通過 Streaming 逐段發送填充內容——不需要客户端重新獲取數據。
 
-## 嵌套佈局
+## 巢狀佈局
 
 ```tsx
 // app/layout.tsx — 根佈局
@@ -224,4 +224,4 @@ export default async function Page() {
 
 ## 小結
 
-Next.js 13 的 App Router 是對傳統 SPA 模式的根本反思。Server Components 重新定義了「哪些代碼在哪裏運行」，Streaming 讓頁面不再需要等待所有數據，嵌套佈局讓 UI 結構更合理。但目前還是 beta，生產項目建議等穩定後再遷移。
+Next.js 13 的 App Router 是對傳統 SPA 模式的根本反思。Server Components 重新定義了「哪些代碼在哪裏運行」，Streaming 讓頁面不再需要等待所有數據，巢狀佈局讓 UI 結構更合理。但目前還是 beta，生產項目建議等穩定後再遷移。

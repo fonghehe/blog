@@ -1,6 +1,6 @@
 ---
-title: "Popover API 穩定版實戰"
-date: 2024-07-12 10:00:00
+title: "Popover API 穩定版實戰：特性解讀與遷移建議"
+date: 2024-07-12 18:26:03
 tags:
   - JavaScript
 readingTime: 2
@@ -63,7 +63,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 業務實戰
 
@@ -94,7 +94,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
-## 性能對比
+## 效能對比
 
 先來看基本的實現方式：
 

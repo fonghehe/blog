@@ -1,5 +1,5 @@
 ---
-title: "Angular CDK 拖拽排序與虛擬滾動實戰"
+title: "Angular CDK 拖拽排序與虛擬滾動實戰：落地路徑與實戰建議"
 date: 2018-11-30 16:45:11
 tags:
   - Angular
@@ -131,7 +131,7 @@ export class VirtualUserListComponent {
 
 ## 拖拽 + 虛擬滾動注意事項
 
-兩者結合時有一個限制：`cdkVirtualFor` 生成的 DOM 節點是動態的，直接和 `cdkDrag` 結合會有 offset 計算問題。建議：
+兩者結合時有一個限製：`cdkVirtualFor` 生成的 DOM 節點是動態的，直接和 `cdkDrag` 結合會有 offset 計算問題。建議：
 
 - 數據量 < 500 條：直接 `*ngFor` + `cdkDrag`
 - 數據量 > 500 條：分頁加載，而不是虛擬滾動 + 拖拽混用

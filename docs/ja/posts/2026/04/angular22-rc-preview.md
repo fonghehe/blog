@@ -1,11 +1,11 @@
 ---
 title: "Angular 22 RC プレビュー：新コンパイラと強化された Zoneless アーキテクチャ"
-date: 2026-04-24 10:00:00
+date: 2026-04-24 14:58:35
 tags:
   - Angular
   - CSS
 readingTime: 4
-description: "Angular 22 Release Candidate が2026年4月末にリリースされました。例年通り、正式版は約3週間後の5月中旬に登場する見込みです。Angular 17 が新しいテンプレート構文を導入して以来、最もインパクトの大きいバージョンです。新世代の Ivy コンパイラ（社内コードネーム「Evergre"
+description: "Angular 22 Release Candidate が2026年4月末にリリースされました。例年通り、正式版は約3週間後の5月中旬に登場する見込みです。Angular 17 が新しいテンプレート構文を導入して以来、最もインパクトの大きいバージョンです。新世代の Ivy コンパイラ（社内コードネーム「Evergreen」）はビルド時間を大幅に短縮し、Signal モデルに対するより深いコンパイル時最適化を実現します。"
 wordCount: 1089
 ---
 

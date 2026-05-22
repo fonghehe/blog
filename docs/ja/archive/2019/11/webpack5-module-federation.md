@@ -5,40 +5,40 @@ tags:
   - Webpack
   - エンジニアリング
 readingTime: 2
-description: "Webpack 5 Beta 版已经可以试用，最受关注的是 Module Federation（模块联邦）。这个特性可能会改变微前端的做法。"
-wordCount: 283
+description: "Webpack 5 Beta 版が試用可能になり、最も注目されているのは Module Federation です。この機能はマイクロフロントエンドのやり方を変える可能性があります。"
+wordCount: 462
 ---
 
-Webpack 5 Beta 版已经可以试用，最受关注的是 Module Federation（模块联邦）。这个特性可能会改变微前端的做法。
+Webpack 5 Beta 版はすでに試用可能です。最も注目されているのは Module Federation（モジュールフェデレーション）です。この機能はマイクロフロントエンドのあり方を変える可能性があります。
 
 ## Webpack 5の主な変更点
 
-### 持久化缓存（最重要）
+### 永続キャッシュ（最も重要）
 
 ```javascript
 // webpack.config.js
 module.exports = {
   cache: {
-    type: "filesystem", // 缓存到硬盘（之前只有内存缓存）
+    type: "filesystem", // ハードディスクにキャッシュ（以前はメモリキャッシュのみ）
     buildDependencies: {
-      config: [__filename], // 配置文件变化时失效缓存
+      config: [__filename], // 設定ファイル変更時にキャッシュを無効化
     },
   },
 };
-// 二次构建速度提升极其明显（我测试从 60s → 8s）
+// 2回目のビルド速度が大幅に向上（私のテストでは 60秒 → 8秒）
 ```
 
-### 废弃 Node.js polyfill
+### 廃止された Node.js polyfill
 
 ```javascript
-// Webpack 4：自动 polyfill Node.js 内置模块
-// Webpack 5：不再自动 polyfill，需要手动配置
+// Webpack 4：Node.js 組み込みモジュールを自動 polyfill
+// Webpack 5：自動 polyfill されないため、手動設定が必要
 module.exports = {
   resolve: {
     fallback: {
       path: require.resolve("path-browserify"),
       crypto: require.resolve("crypto-browserify"),
-      // 不需要的模块设为 false
+      // 不要なモジュールは false に設定
       fs: false,
     },
   },
@@ -48,7 +48,7 @@ module.exports = {
 ## Module Federation：マイクロフロントエンドの新しいアプローチ
 
 ```javascript
-// host-app/webpack.config.js（消费方）
+// host-app/webpack.config.js（消費側）
 const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = {
@@ -56,12 +56,12 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "host",
       remotes: {
-        // 声明远程应用
+        // リモートアプリケーションを宣言
         checkout: "checkout@http://localhost:3001/remoteEntry.js",
         analytics: "analytics@http://localhost:3002/remoteEntry.js",
       },
       shared: {
-        // 共享依赖（避免重复加载）
+        // 依存関係を共有（重複読み込みを回避）
         react: { singleton: true, requiredVersion: "^16.8.0" },
         "react-dom": { singleton: true },
       },
@@ -71,12 +71,12 @@ module.exports = {
 ```
 
 ```javascript
-// checkout-app/webpack.config.js（提供方）
+// checkout-app/webpack.config.js（提供側）
 new ModuleFederationPlugin({
   name: "checkout",
-  filename: "remoteEntry.js", // 入口文件
+  filename: "remoteEntry.js", // エントリーファイル
   exposes: {
-    // 暴露给其他应用使用的模块
+    // 他のアプリケーションに公開するモジュール
     "./CheckoutForm": "./src/components/CheckoutForm",
     "./CartSummary": "./src/components/CartSummary",
   },
@@ -88,16 +88,16 @@ new ModuleFederationPlugin({
 ```
 
 ```javascript
-// host-app：动态加载远程组件
+// host-app：リモートコンポーネントを動的に読み込み
 import React, { lazy, Suspense } from "react";
 
-// 像普通导入一样，但实际是从远程加载
+// 通常のインポートのように見えますが、実際はリモートから読み込みます
 const CheckoutForm = lazy(() => import("checkout/CheckoutForm"));
 const CartSummary = lazy(() => import("checkout/CartSummary"));
 
 function App() {
   return (
-    <Suspense fallback={<div>加载中...</div>}>
+    <Suspense fallback={<div>読み込み中...</div>}>
       <CartSummary />
       <CheckoutForm />
     </Suspense>
@@ -109,20 +109,20 @@ function App() {
 
 |            | single-spa           | Module Federation   |
 | ---------- | -------------------- | ------------------- |
-| 粒度       | 应用级别             | 组件/模块级别       |
-| 共享依赖   | 手动（systemjs map） | 自动（shared 配置） |
-| 运行时     | 需要主应用调度       | 按需加载            |
+| 粒度       | アプリケーションレベル | コンポーネント/モジュールレベル |
+| 依存共有   | 手動（systemjs map） | 自動（shared 設定） |
+| 実行時     | メインアプリのスケジューリングが必要 | オンデマンド読み込み |
 | 独立部署   | ✅                   | ✅                  |
-| 技术栈限制 | 无                   | 需要 Webpack 5      |
+| 技術スタック制限 | なし                   | Webpack 5 が必要      |
 
 ## 落とし穴
 
-1. **版本不一致**：shared 的 `singleton: true` 确保只有一个实例
-2. **本地开发**：需要同时启动多个开发服务器
-3. **类型支持**：TypeScript 还需要手动声明远程模块的类型
+1. **バージョンの不一致**：shared の `singleton: true` によりインスタンスが1つだけであることを保証
+2. **ローカル開発**：複数の開発サーバーを同時に起動する必要がある
+3. **型サポート**：TypeScript ではリモートモジュールの型を手動で宣言する必要がある
 
 ## まとめ
 
-- Webpack 5 持久化缓存是最实际的收益，二次构建极快
-- Module Federation 是微前端的新思路：模块级共享，而不是应用级隔离
-- Webpack 5 还在 Beta，等正式版（2020 年）再用于生产
+- Webpack 5 の永続キャッシュが最も実用的なメリットであり、2回目のビルドが非常に高速
+- Module Federation はマイクロフロントエンドの新しい考え方：アプリケーションレベルの隔離ではなく、モジュールレベルの共有
+- Webpack 5 はまだ Beta なので、正式版（2020年）を待ってから本番環境で使用する

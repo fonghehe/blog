@@ -3,12 +3,12 @@ title: "コンポーネントライブラリのバージョン管理：Monorepo 
 date: 2022-08-23 14:31:47
 tags:
   - フロントエンド
-readingTime: 2
-description: "在 pnpm + Turborepo 的 monorepo 中管理组件库版本是个实际问题。什么时候发 patch、什么时候发 minor、怎么生成 changelog、怎么处理 breaking change？这篇文章讲讲我们团队的实践。"
-wordCount: 337
+readingTime: 3
+description: "pnpm + Turborepo の monorepo でコンポーネントライブラリのバージョン管理を行うのは現実的な課題です。いつ patch をリリースし、いつ minor をリリースし、どう changelog を生成し、breaking change をどう扱うか。この記事では私たちのチームの実践を紹介します。"
+wordCount: 535
 ---
 
-在 pnpm + Turborepo 的 monorepo 中管理组件库版本是个实际问题。什么时候发 patch、什么时候发 minor、怎么生成 changelog、怎么处理 breaking change？这篇文章讲讲我们团队的实践。
+pnpm + Turborepo の monorepo でコンポーネントライブラリのバージョンを管理するのは実際的な問題です。いつ patch をリリースし、いつ minor をリリースし、どのように changelog を生成し、breaking change をどう扱うか？この記事では私たちのチームの実践を紹介します。
 
 ## バージョン戦略：SemVer
 
@@ -23,10 +23,10 @@ wordCount: 337
 }
 ```
 
-规则：
-- **patch** (1.5.2 -> 1.5.3)：Bug 修复，不改 API
-- **minor** (1.5.2 -> 1.6.0)：新增功能，向后兼容
-- **major** (1.5.2 -> 2.0.0)：破坏性变更
+ルール：
+- **patch** (1.5.2 -> 1.5.3)：バグ修正、API変更なし
+- **minor** (1.5.2 -> 1.6.0)：新機能追加、後方互換
+- **major** (1.5.2 -> 2.0.0)：破壊的変更
 
 ## Changesets：自動化バージョン管理
 
@@ -56,20 +56,20 @@ pnpm changeset init
 }
 ```
 
-`linked` 表示这两个包一起发版——组件库更新时文档站也 bump 版本。
+`linked` はこれら2つのパッケージが一緒にリリースされることを意味します——コンポーネントライブラリの更新時にドキュメントサイトもバージョンを上げます。
 
 ## 日々の開発フロー
 
 ```bash
-# 开发一个新功能
+# 開発
 git checkout -b feat/add-date-picker
 
-# ... 写代码 ...
+# ... コードを書く ...
 
-# 提交前创建 changeset
+# コミット前にchangesetを作成
 pnpm changeset
 
-# 交互式选择：
+# インタラクティブ選択：
 # ? Which packages have changed?
 #   ◉ @mono/ui-components
 #   ◯ @mono/utils
@@ -78,10 +78,10 @@ pnpm changeset
 #   ◯ major
 #   ◉ minor
 #   ◯ patch
-# ? Summary: 新增 DatePicker 组件
+# ? Summary: DatePicker コンポーネントを追加
 ```
 
-生成文件 `.changeset/xxxx-add-date-picker.md`：
+生成されるファイル `.changeset/xxxx-add-date-picker.md`：
 
 ```markdown
 ---
@@ -91,7 +91,7 @@ pnpm changeset
 新增 DatePicker 组件
 ```
 
-这个文件跟着 PR 一起提交。
+このファイルはPRと一緒に提出されます。
 
 ## CI 自動リリース
 
@@ -140,7 +140,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 ```
 
-流程：合并 PR 到 main -> Changesets 检测到有 changeset 文件 -> 自动创建「Version Packages」PR -> 合并后自动发布到 npm。
+フロー：PRをmainにマージ -> Changesetsがchangesetファイルを検出 -> 自動的に「Version Packages」PRを作成 -> マージ後に自動的にnpmに公開。
 
 ## BREAKING CHANGE の処理
 
@@ -149,14 +149,14 @@ jobs:
 "@mono/ui-components": major
 ---
 
-BREAKING CHANGE: Button 组件的 variant 属性值从字符串改为枚举
+BREAKING CHANGE: Button コンポーネントの variant プロパティ値を文字列から列挙型に変更
 
-- `variant="primary"` 改为 `variant={ButtonVariant.Primary}`
-- `variant="danger"` 改为 `variant={ButtonVariant.Danger}`
-- 移除了 `variant="default"`，改用 `variant={ButtonVariant.Outline}`
+- `variant="primary"` を `variant={ButtonVariant.Primary}` に変更
+- `variant="danger"` を `variant={ButtonVariant.Danger}` に変更
+- `variant="default"` を削除し、`variant={ButtonVariant.Outline}` に変更
 ```
 
-升级指南单独写一个迁移文档，changeset 里简要说明。
+アップグレードガイドは別途移行ドキュメントを作成し、changesetには簡潔に記載します。
 
 ## 依存関係のバージョン同期
 
@@ -179,7 +179,7 @@ BREAKING CHANGE: Button 组件的 variant 属性值从字符串改为枚举
 }
 ```
 
-`workspace:*` 确保始终用本地版本。发布时 Changesets 自动替换为实际版本号。
+`workspace:*` は常にローカルバージョンを使用することを保証します。公開時に Changesets が自動的に実際のバージョン番号に置き換えます。
 
 ## Changelog 生成
 
@@ -203,18 +203,18 @@ BREAKING CHANGE: Button 组件的 variant 属性值从字符串改为枚举
 ## バージョン管理の哲学
 
 ```typescript
-// 我们的约定：
+// 私たちの約束：
 
-// 工具包：严格 SemVer
+// ツールパッケージ：厳格な SemVer
 "@mono/utils": "1.2.3"      // patch/minor/major
 
-// 组件库：严格 SemVer + CHANGELOG
+// コンポーネントライブラリ：厳格な SemVer + CHANGELOG
 "@mono/ui-components": "2.1.0"
 
-// 应用：不需要发布，内部版本
-"admin": "0.0.0"             // 永远 0.0.0
+// アプリケーション：公開不要、内部バージョン
+"admin": "0.0.0"             // 常に 0.0.0
 
-// 配置包：patch 升级即可
+// 設定パッケージ：patch アップグレードで十分
 "@mono/eslint-config": "1.0.5"
 ```
 
@@ -241,4 +241,4 @@ BREAKING CHANGE: Button 组件的 variant 属性值从字符串改为枚举
 
 ## まとめ
 
-Changesets 是目前 monorepo 版本管理的最佳方案。它把「什么时候发版」和「发什么版本」的问题自动化了。配合 CI，开发者只需要在 PR 中创建 changeset，剩下的全自动。
+Changesets は現在の monorepo バージョン管理の最良のソリューションです。「いつリリースするか」と「どのバージョンをリリースするか」の問題を自動化します。CIと組み合わせることで、開発者はPR内でchangesetを作成するだけで、残りはすべて自動化されます。

@@ -1,6 +1,6 @@
 ---
-title: "Vite 7 構建優化"
-date: 2025-08-19 10:00:00
+title: "Vite 7 建置最佳化：全新打包策略與 Tree Shaking 增強"
+date: 2025-08-19 18:53:30
 tags:
   - 工程化
   - 性能優化

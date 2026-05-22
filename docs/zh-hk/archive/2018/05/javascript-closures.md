@@ -1,5 +1,5 @@
 ---
-title: "深入理解 JavaScript 閉包"
+title: "深入理解 JavaScript 閉包：落地路徑與實戰建議"
 date: 2018-05-10 10:41:26
 tags:
   - JavaScript

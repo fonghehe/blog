@@ -1,6 +1,6 @@
 ---
 title: "CSS :has() 選擇器高階應用：2024 實戰場景全解析"
-date: 2024-10-02 10:00:00
+date: 2024-10-02 09:16:53
 tags:
   - CSS
 readingTime: 2
@@ -160,7 +160,7 @@ body:has(.overlay.visible) main {
 `:has()` 的計算比普通選擇器更昂貴，因為需要檢查後代：
 
 ```css
-/* ✅ 效能較好：限制了查詢範圍 */
+/* ✅ 效能較好：限製了查詢範圍 */
 .specific-container:has(> .direct-child.active) {
 }
 

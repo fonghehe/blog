@@ -1,5 +1,5 @@
 ---
-title: "CSS aspect-ratio 原生寬高比"
+title: "CSS aspect-ratio 提案解讀：告別 padding-top 黑科技"
 date: 2019-11-11 10:30:38
 tags:
   - CSS

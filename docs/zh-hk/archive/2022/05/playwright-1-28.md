@@ -1,5 +1,5 @@
 ---
-title: "Playwright 1.28 新功能總結"
+title: "Playwright 1.28 新功能總結：落地路徑與實戰建議"
 date: 2022-05-19 17:22:32
 tags:
   - Playwright
@@ -88,7 +88,7 @@ describe('LoginForm', () => {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能優化
+## 效能優化
 
 以下是一個完整的示例：
 

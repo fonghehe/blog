@@ -1,16 +1,16 @@
 ---
-title: "Node.js 14 新特性對前端的影響"
+title: "Node.js 14 新特性對前端的影響：特性解讀與遷移建議"
 date: 2020-07-07 10:40:44
 tags:
   - JavaScript
 readingTime: 2
 description: "Node.js 14 進入 LTS 階段，升級了 V8 引擎到 8.1，帶來了一些實用的新特性。作為前端工程師，這些變化直接影響我們的構建工具和腳本。"
-wordCount: 190
+wordCount: 191
 ---
 
 Node.js 14 進入 LTS 階段，升級了 V8 引擎到 8.1，帶來了一些實用的新特性。作為前端工程師，這些變化直接影響我們的構建工具和腳本。
 
-## 可選鏈和空值合併在 Node.js 中原生支持
+## 可選鏈和空值合併在 Node.js 中原生支援
 
 ```javascript
 // 不需要 --harmony 標誌了！
@@ -57,7 +57,7 @@ const data = await response.json();
 console.log("配置加載完成:", config);
 console.log("數據獲取完成:", data);
 
-// 注意：只能在 .mjs 或 package.json 中 type: "module" 的文件中使用
+// 注意：隻能在 .mjs 或 package.json 中 type: "module" 的檔案中使用
 ```
 
 ```json
@@ -93,7 +93,7 @@ function getCountryOptions(locale = "zh") {
 // [{ value: 'CN', label: '中國' }, { value: 'US', label: '美國' }, ...]
 ```
 
-## 更好的錯誤堆棧
+## 更好的錯誤堆積棧
 
 ```javascript
 // Node.js 14 的錯誤堆棧更清晰
@@ -119,7 +119,7 @@ outer();
 // 乾淨多了，沒有 internal 的噪音
 ```
 
-## Stream 性能提升
+## Stream 效能提升
 
 ```javascript
 // readable.iterator() 支持 for-await-of
@@ -151,7 +151,7 @@ async function processLargeFile(filePath) {
 // TypeScript 4.0 支持 Node.js 14
 
 // esbuild 最佳性能在 Node.js 14 上
-// Deno 兼容性層需要 Node.js 14+
+// Deno 相容性層需要 Node.js 14+
 
 // 檢查版本的腳本
 // scripts/check-node.js
@@ -178,7 +178,7 @@ nvm use 14
 # 2. URL.parse() 被廢棄，用 new URL() 替代
 # 3. 一些 Buffer 方法被廢棄
 
-# CI 配置更新
+# CI 設定更新
 # .github/workflows/ci.yml
 - uses: actions/setup-node@v2
   with:

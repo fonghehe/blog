@@ -1,14 +1,14 @@
 ---
-title: "Vue Router 導航守衞實戰"
+title: "Vue Router 導航守衞實戰：落地路徑與實戰建議"
 date: 2018-11-24 11:06:12
 tags:
   - Vue
 readingTime: 2
-description: "項目越做越大，路由權限控制變得複雜：有的頁面要登錄才能訪問，有的頁面只有管理員能進，有的頁面在離開前要確認是否保存……導航守衞能統一處理這些。"
+description: "項目越做越大，路由權限控製變得複雜：有的頁面要登錄才能訪問，有的頁面隻有管理員能進，有的頁面在離開前要確認是否保存……導航守衞能統一處理這些。"
 wordCount: 189
 ---
 
-項目越做越大，路由權限控制變得複雜：有的頁面要登錄才能訪問，有的頁面只有管理員能進，有的頁面在離開前要確認是否保存……導航守衞能統一處理這些。
+項目越做越大，路由權限控製變得複雜：有的頁面要登錄才能訪問，有的頁面隻有管理員能進，有的頁面在離開前要確認是否保存……導航守衞能統一處理這些。
 
 ## 全局前置守衞
 
@@ -52,7 +52,7 @@ router.beforeEach(async (to, from, next) => {
 });
 ```
 
-## 基於 meta 的權限控制
+## 基於 meta 的權限控製
 
 ```javascript
 // router/routes.js
@@ -131,7 +131,7 @@ const routes = [
   {
     path: "/pay/:orderId",
     component: PayPage,
-    // 只在這個路由上的守衞
+    // 隻在這個路由上的守衞
     beforeEnter(to, from, next) {
       // 檢查訂單是否可以支付
       const orderId = to.params.orderId;
@@ -171,7 +171,7 @@ this.$router.push(redirect);
 
 ## 小結
 
-- `beforeEach`：全局前置，處理登錄檢查、權限控制
+- `beforeEach`：全局前置，處理登錄檢查、權限控製
 - `afterEach`：全局後置，修改標題、上報 PV
 - `beforeRouteLeave`：組件內，處理表單離開確認
 - `beforeEnter`：路由獨享，處理特定路由的進入邏輯

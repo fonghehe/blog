@@ -1,5 +1,5 @@
 ---
-title: "前端 CI/CD 流水線設計與實踐"
+title: "前端 CI/CD 流水線設計與實踐：落地路徑與實戰建議"
 date: 2018-12-10 15:45:41
 tags:
   - 工程化
@@ -33,19 +33,19 @@ git push → 自動跑測試 → 自動構建 → 自動部署 → 通知
 
 市面上主要選項：
 
-- **Jenkins**：功能最強，但配置複雜，需要自己維護服務器
+- **Jenkins**：功能最強，但設定複雜，需要自己維護服務器
 - **GitLab CI**：和 GitLab 深度集成，配置簡單，免費
 - **GitHub Actions**：2018年10月剛開放測試，很有潛力
 - **Travis CI**：開源項目免費，私有項目收費
 
 我們用的是 GitLab，所以選了 GitLab CI。
 
-## GitLab CI 配置
+## GitLab CI 設定
 
 ### `.gitlab-ci.yml`
 
 ```yaml
-# GitLab CI 配置文件，放在項目根目錄
+# GitLab CI 設定檔案，放在項目根目錄
 stages:
   - test # 測試階段
   - build # 構建階段
@@ -69,7 +69,7 @@ test:
     - npm run test:unit # 單元測試
   coverage: '/Lines\s*:\s*(\d+\.?\d*)%/'
   only:
-    - merge_requests # 只在 MR 時運行測試
+    - merge_requests # 隻在 MR 時運行測試
     - main
 
 # 構建
@@ -164,7 +164,7 @@ deploy:production:
 ```
 
 ```bash
-# .env（基礎配置）
+# .env（基礎設定）
 VUE_APP_VERSION=$npm_package_version
 
 # .env.staging

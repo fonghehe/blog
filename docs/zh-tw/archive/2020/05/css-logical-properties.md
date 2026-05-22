@@ -1,5 +1,5 @@
 ---
-title: "CSS 邏輯屬性 Logical Properties"
+title: "CSS 邏輯屬性 Logical Properties 2020：瀏覽器支援與生產實踐"
 date: 2019-09-09 15:05:57
 tags:
   - CSS

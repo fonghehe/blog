@@ -4,7 +4,7 @@ date: 2018-11-20 11:14:48
 tags:
   - Vue
 readingTime: 2
-description: "大多數時候模板夠用，但有些場景 render 函式更靈活。"
+description: "大多數時候範本夠用，但有些場景 render 函式更靈活。"
 wordCount: 227
 ---
 
@@ -18,7 +18,7 @@ wordCount: 227
 // ❌ 模板裡做不了這個（不能根據 prop 動態指定標籤名）
 // <component :is="level">  // 能用，但如果標籤名邏輯複雜就麻煩了
 
-// ✅ render 函式完全用 JS 控制
+// ✅ render 函式完全用 JS 控製
 export default {
   props: {
     level: { type: Number, required: true },
@@ -131,7 +131,7 @@ export default {
 }
 ```
 
-## 模板 vs render 函式的選擇
+## 範本 vs render 函式的選擇
 
 - **模板**：大多數場景，直觀可讀，工具支援好
 - **render 函式**：需要完整 JS 能力的場景（動態標籤、複雜迴圈邏輯）
@@ -142,4 +142,4 @@ export default {
 - `render` 函式接收 `h`（createElement），返回 VNode
 - 模板最終也編譯為 render 函式
 - JSX 是 render 函式的語法糖，需要 Babel 外掛
-- 優先用模板，需要動態性時再用 render/JSX
+- 優先用範本，需要動態性時再用 render/JSX

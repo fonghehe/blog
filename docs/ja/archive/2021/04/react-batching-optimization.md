@@ -5,52 +5,52 @@ tags:
   - React
   - JavaScript
 
-readingTime: 3
-description: "React 18 Alpha 已经发布，带来了 Concurrent Mode 的实际落地——不再是实验性的概念，而是可以真正用起来的能力。两个最值得关注的特性是自动批处理（Automatic Batching）和 `useTransition`。"
-wordCount: 438
+readingTime: 4
+description: "React 18 Alpha がリリースされ、Concurrent Mode が実験的な概念から実際に使える機能として本格的に導入されました。最も注目すべき2つの機能は、自動バッチ処理（Automatic Batching）と useTransition です。"
+wordCount: 729
 ---
 
-React 18 Alpha 已经发布，带来了 Concurrent Mode 的实际落地——不再是实验性的概念，而是可以真正用起来的能力。两个最值得关注的特性是自动批处理（Automatic Batching）和 `useTransition`。
+React 18 Alpha がリリースされ、Concurrent Mode の実践的な導入が実現しました——もはや実験的な概念ではなく、実際に活用できる機能です。最も注目すべき2つの機能は、自動バッチ処理（Automatic Batching）と `useTransition` です。
 
 ## 自動バッチ処理
 
-React 17 及之前，只有 React 事件处理器中的多次 `setState` 会被批处理。在 `setTimeout`、`Promise` 回调、原生事件中则不会：
+React 17 以前では、React のイベントハンドラ内での複数回の `setState` のみがバッチ処理されていました。`setTimeout`、`Promise` のコールバック、ネイティブイベント内ではバッチ処理されません：
 
 ```jsx
-// React 17 —— 事件处理器中：批处理 ✅
+// React 17 —— イベントハンドラ内：バッチ処理 ✅
 function handleClick() {
   setCount(c => c + 1)
   setFlag(f => !f)
-  // 只触发一次渲染
+  // 1回だけレンダリング
 }
 
-// React 17 —— setTimeout 中：不批处理 ❌
+// React 17 —— setTimeout 内：バッチ処理されない ❌
 function handleClick() {
   setTimeout(() => {
     setCount(c => c + 1)
     setFlag(f => !f)
-    // 触发两次渲染！
+    // 2回レンダリング！
   }, 0)
 }
 
-// React 17 —— Promise 中：不批处理 ❌
+// React 17 —— Promise 内：バッチ処理されない ❌
 async function fetchData() {
   const data = await api.get('/users')
-  setLoading(false)     // 渲染一次
-  setData(data)         // 再渲染一次
-  setTotal(data.length) // 再渲染一次
+  setLoading(false)     // 1回レンダリング
+  setData(data)         // さらに1回レンダリング
+  setTotal(data.length) // さらに1回レンダリング
 }
 ```
 
-React 18 在所有场景下自动批处理：
+React 18 ではすべてのシナリオで自動バッチ処理が行われます：
 
 ```jsx
-// React 18 —— 所有场景都批处理 ✅
+// React 18 —— すべてのシナリオでバッチ処理 ✅
 function handleClick() {
   setTimeout(() => {
     setCount(c => c + 1)
     setFlag(f => !f)
-    // 只触发一次渲染
+    // 1回だけレンダリング
   }, 0)
 }
 
@@ -59,11 +59,11 @@ async function fetchData() {
   setLoading(false)
   setData(data)
   setTotal(data.length)
-  // 以上全部只触发一次渲染！
+  // 上記はすべて1回のレンダリングにまとめられる！
 }
 ```
 
-性能提升直接且无需改代码。唯一的例外是你需要强制同步更新，用 `flushSync`：
+パフォーマンスの向上は直接的で、コードの修正も不要です。唯一の例外は、強制的に同期的に更新する必要がある場合で、そのときは `flushSync` を使用します：
 
 ```jsx
 import { flushSync } from 'react-dom'
@@ -72,15 +72,15 @@ function handleClick() {
   flushSync(() => {
     setCount(c => c + 1)
   })
-  // flushSync 之后，DOM 已经更新
-  // 可以安全地读取更新后的 DOM
+  // flushSync の後、DOM は既に更新されている
+  // 安全に更新後の DOM を読み取れる
   inputRef.current.focus()
 }
 ```
 
 ## useTransition
 
-`useTransition` 是 React 18 的核心新 API，用于标记低优先级的状态更新：
+`useTransition` は React 18 の中核的な新 API であり、優先度の低い状態更新をマークするために使用します：
 
 ```jsx
 import { useState, useTransition } from 'react'
@@ -92,9 +92,9 @@ function SearchPage() {
 
   function handleSearch(e) {
     const value = e.target.value
-    setQuery(value) // 高优先级：输入框立即响应
+    setQuery(value) // 高優先度：入力欄は即座に応答
 
-    // 低优先级：搜索结果可以延迟
+    // 低優先度：検索結果は遅延可能
     startTransition(() => {
       const filtered = heavySearch(value)
       setResults(filtered)
@@ -115,11 +115,11 @@ function SearchPage() {
 }
 ```
 
-核心概念：`startTransition` 内的状态更新会被标记为"可以被打断"。如果用户快速输入，React 会丢弃旧的渲染，优先响应新的输入——不会出现输入卡顿的情况。
+核心概念：`startTransition` 内の状態更新は「中断可能」とマークされます。ユーザーが素早く入力すると、React は古いレンダリングを破棄し、新しい入力を優先的に処理するため、入力のカクつきが発生しません。
 
 ## useDeferredValue
 
-`useDeferredValue` 是 `useTransition` 的补充，用于延迟某个值的更新：
+`useDeferredValue` は `useTransition` を補完するもので、特定の値の更新を遅延させるために使用します：
 
 ```jsx
 import { useState, useDeferredValue, useMemo } from 'react'
@@ -128,8 +128,8 @@ function App() {
   const [query, setQuery] = useState('')
   const deferredQuery = useDeferredValue(query)
 
-  // 当 query 变化时，deferredQuery 会延迟更新
-  // 旧值的渲染结果可以作为 fallback 显示
+  // query が変化すると、deferredQuery は遅延して更新される
+  // 古い値のレンダリング結果をフォールバックとして表示できる
   const results = useMemo(
     () => expensiveFilter(deferredQuery),
     [deferredQuery]
@@ -148,7 +148,7 @@ function App() {
 }
 ```
 
-和 `Suspense` 配合使用效果更好：
+`Suspense` と組み合わせるとさらに効果的です：
 
 ```jsx
 function App() {
@@ -168,7 +168,7 @@ function App() {
 
 ## React 18 へのアップグレード
 
-升级步骤比预想的简单：
+アップグレード手順は予想よりも簡単です：
 
 ```jsx
 // React 17
@@ -181,14 +181,14 @@ const root = createRoot(document.getElementById('root'))
 root.render(<App />)
 ```
 
-注意：用了新的 `createRoot` API 后，自动批处理就生效了。不改 API 的话默认还是 React 17 行为，可以渐进升级。
+注意：新しい `createRoot` API を使用すると、自動バッチ処理が有効になります。API を変更しない場合はデフォルトで React 17 の動作のままなので、段階的にアップグレードできます。
 
 ## 実際のシナリオ比較
 
-一个表格筛选场景的对比：
+テーブルフィルタリングのシナリオを比較します：
 
 ```jsx
-// 没有 useTransition：输入框卡顿
+// useTransition なし：入力がカクつく
 function FilterTable() {
   const [filter, setFilter] = useState('')
   const rows = expensiveFilterOperation(filter)
@@ -201,16 +201,16 @@ function FilterTable() {
   )
 }
 
-// 有 useTransition：输入流畅
+// useTransition あり：入力がスムーズ
 function FilterTable() {
   const [filter, setFilter] = useState('')
   const [isPending, startTransition] = useTransition()
   const [rows, setRows] = useState([])
 
   function handleChange(e) {
-    setFilter(e.target.value) // 立即更新输入框
+    setFilter(e.target.value) // 入力欄を即座に更新
     startTransition(() => {
-      setRows(expensiveFilterOperation(e.target.value)) // 延迟更新表格
+      setRows(expensiveFilterOperation(e.target.value)) // テーブルは遅延更新
     })
   }
 
@@ -227,8 +227,8 @@ function FilterTable() {
 
 ## まとめ
 
-- React 18 自动批处理无需改代码，升级后所有场景默认合并更新
-- `useTransition` 解决了输入卡顿等性能问题，核心思路是区分优先级
-- `useDeferredValue` 适合"显示旧数据比显示空白好"的场景
-- 升级用 `createRoot` API，可渐进式迁移
-- Concurrent Mode 终于不再是概念，而是实用工具
+- React 18 の自動バッチ処理はコード修正不要で、アップグレード後はすべてのシナリオでデフォルトで更新が統合される
+- `useTransition` は入力のカクつきなどのパフォーマンス問題を解決し、核心は優先度の区別
+- `useDeferredValue` は「空白を表示するより古いデータを表示したほうがよい」シナリオに適している
+- アップグレードは `createRoot` API を使用し、段階的に移行可能
+- Concurrent Mode がついに概念から実用的なツールへと変わった

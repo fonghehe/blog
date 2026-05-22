@@ -5,11 +5,11 @@ tags:
   - React
   - JavaScript
 readingTime: 3
-description: "React 18 即將釋出，Suspense 的資料獲取模式終於有了官方推薦方案。之前 Suspense 只能做程式碼分割的 loading 狀態，現在可以用於資料獲取了。"
+description: "React 18 即將釋出，Suspense 的資料獲取模式終於有了官方推薦方案。之前 Suspense 隻能做程式碼分割的 loading 狀態，現在可以用於資料獲取了。"
 wordCount: 312
 ---
 
-React 18 即將釋出，Suspense 的資料獲取模式終於有了官方推薦方案。之前 Suspense 只能做程式碼分割的 loading 狀態，現在可以用於資料獲取了。
+React 18 即將釋出，Suspense 的資料獲取模式終於有了官方推薦方案。之前 Suspense 隻能做程式碼分割的 loading 狀態，現在可以用於資料獲取了。
 
 ## Suspense 的核心思路
 
@@ -246,7 +246,7 @@ function Bad({ showProfile }) {
   )
 }
 
-// ✅ 用 key 強制重新建立
+// ✅ 用 key 強製重新建立
 function Good({ showProfile, userId }) {
   return (
     <Suspense fallback={<Spinner />}>

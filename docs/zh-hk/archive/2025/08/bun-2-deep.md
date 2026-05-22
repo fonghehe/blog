@@ -1,6 +1,6 @@
 ---
-title: "Bun 2.0 新特性深入"
-date: 2025-08-12 10:00:00
+title: "Bun 2.0 深度解析：原生 Windows 支援與 Node 相容性突破"
+date: 2025-08-12 09:46:23
 tags:
   - 前端
 readingTime: 2
@@ -63,7 +63,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 實戰案例
 
@@ -94,7 +94,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
-## 性能優化
+## 效能優化
 
 先來看基本的實現方式：
 

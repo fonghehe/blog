@@ -5,11 +5,11 @@ tags:
   - React
   - Angular
 readingTime: 2
-description: "Angular 的響應式表單（Reactive Forms）在複雜表單場景下遠比模板驅動表單更可控。這篇文章聚焦三個進階場景：動態新增/刪除表單項（FormArray）、跨欄位聯合驗證器、以及實現自定義可重用的表單控制元件（ControlValueAccessor）。"
+description: "Angular 的響應式表單（Reactive Forms）在複雜表單場景下遠比範本驅動表單更可控。這篇文章聚焦三個進階場景：動態新增/刪除表單項（FormArray）、跨欄位聯合驗證器、以及實現自定義可重用的表單控製元件（ControlValueAccessor）。"
 wordCount: 238
 ---
 
-Angular 的響應式表單（Reactive Forms）在複雜表單場景下遠比模板驅動表單更可控。這篇文章聚焦三個進階場景：動態新增/刪除表單項（FormArray）、跨欄位聯合驗證器、以及實現自定義可重用的表單控制元件（ControlValueAccessor）。
+Angular 的響應式表單（Reactive Forms）在複雜表單場景下遠比範本驅動表單更可控。這篇文章聚焦三個進階場景：動態新增/刪除表單項（FormArray）、跨欄位聯合驗證器、以及實現自定義可重用的表單控製元件（ControlValueAccessor）。
 
 ## FormArray：動態表單項
 
@@ -78,7 +78,7 @@ export function passwordMatchValidator(): ValidatorFn {
     const confirm = group.get("confirmPassword")?.value;
 
     if (password && confirm && password !== confirm) {
-      // 在 confirmPassword 控制元件上設定錯誤
+      // 在 confirmPassword 控製元件上設定錯誤
       group.get("confirmPassword")?.setErrors({ passwordMismatch: true });
       return { passwordMismatch: true };
     }
@@ -137,7 +137,7 @@ username = new FormControl("", {
 });
 ```
 
-## ControlValueAccessor：自定義表單控制元件
+## ControlValueAccessor：自定義表單控製元件
 
 實現一個星級評分元件，可以在 `[formControl]` 或 `[(ngModel)]` 中使用：
 
@@ -216,4 +216,4 @@ export class FormDebugComponent {
 
 ## 總結
 
-Angular 響應式表單的進階能力——`FormArray` 的動態增刪、跨欄位驗證器、`ControlValueAccessor` 自定義控制元件——覆蓋了絕大多數複雜業務表單場景。這套 API 雖然比 `ngModel` 囉嗦，但換來的是完整的型別安全和可測試性（Angular 14 之後表單還將引入更強的型別推斷，敬請期待）。
+Angular 響應式表單的進階能力——`FormArray` 的動態增刪、跨欄位驗證器、`ControlValueAccessor` 自定義控製元件——覆蓋了絕大多數複雜業務表單場景。這套 API 雖然比 `ngModel` 囉嗦，但換來的是完整的型別安全和可測試性（Angular 14 之後表單還將引入更強的型別推斷，敬請期待）。

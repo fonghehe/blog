@@ -1,6 +1,6 @@
 ---
 title: "AI Prompt Engineering Coding Techniques"
-date: 2024-06-17 10:00:00
+date: 2024-06-17 10:51:28
 tags:
   - Engineering
 readingTime: 2

@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 5.6 新特性"
-date: 2024-10-07 10:00:00
+title: "TypeScript 5.6 新特性：特性解讀與遷移建議"
+date: 2024-10-07 14:21:58
 tags:
   - TypeScript
 readingTime: 2
@@ -94,7 +94,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能對比
+## 效能對比
 
 以下是一個完整的示例：
 

@@ -14,7 +14,7 @@ Bun 1.0 發佈三個月了。在測試環境和幾個小項目中深度使用後
 
 Bun 用 Zig 語言編寫，底層使用 JavaScriptCore（Safari 的 JS 引擎）。它的目標是：替代 Node.js + npm + 測試框架，一個工具搞定一切。
 
-## 性能表現
+## 效能表現
 
 ### 包安裝
 
@@ -123,7 +123,7 @@ if (!result.success) {
 }
 ```
 
-## 兼容性問題
+## 相容性問題
 
 這是目前最大的挑戰：
 
@@ -138,7 +138,7 @@ if (!result.success) {
 - `node:dgram`（UDP）部分 API 未實現
 - `node:vm` 模塊不完整
 - 部分 Node.js C++ Addon 不兼容
-- Prisma 需要特定配置
+- Prisma 需要特定設定
 - NestJS 等重度 Node.js 框架運行不穩定
 
 ```typescript
@@ -159,7 +159,7 @@ bun --bun run your-script.ts
 **暫時不要用 Bun 的場景：**
 - 大型生產 Node.js 應用
 - 依賴特定 Node.js C++ Addon 的項目
-- 需要完全 Node.js 兼容性的企業環境
+- 需要完全 Node.js 相容性的企業環境
 
 ## 我的使用方式
 

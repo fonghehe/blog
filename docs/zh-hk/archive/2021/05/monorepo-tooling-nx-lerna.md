@@ -1,14 +1,14 @@
 ---
-title: "Turborepo 高性能 Monorepo"
+title: "Turborepo 高效能 Monorepo：實踐方法與治理思路"
 date: 2021-05-21 11:47:29
 tags:
   - 前端工程化
 readingTime: 2
-description: "Turborepo 高性能 Monorepo這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
+description: "Turborepo 高效能 Monorepo這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
 wordCount: 300
 ---
 
-Turborepo 高性能 Monorepo這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
+Turborepo 高效能 Monorepo這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
 
 ## 入門指南
 
@@ -71,7 +71,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 
@@ -97,7 +97,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 ## 小結
 
 - 代碼示例僅供參考，需根據業務場景調整
-- Turborepo 高性能 Monorepo不是銀彈，需要根據項目規模和技術棧選擇
+- Turborepo 高效能 Monorepo不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要
 - 生產環境使用前務必做好兼容性驗證
 - 團隊協作中約定和文檔比技術本身更重要

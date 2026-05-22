@@ -1,6 +1,6 @@
 ---
-title: "Zig WebAssembly フロントエンドへの応用"
-date: 2026-03-03 10:00:00
+title: "Zig WebAssembly フロントエンドへの応用：実務で使うための導入ガイド"
+date: 2026-03-03 18:57:34
 tags:
   - フロントエンド
 readingTime: 3

@@ -3,16 +3,16 @@ title: "Vueコンポーネントの遅延読み込み戦略"
 date: 2020-02-03 15:25:31
 tags:
   - Vue
-readingTime: 3
-description: "首屏加载性能是前端优化的核心指标之一。Vue 项目的路由级懒加载已经很常见，但组件级懒加载、图片懒加载、数据懒加载这些更细粒度的策略同样值得深入掌握。本文从工程实践出发，整理一套完整的懒加载方案。"
-wordCount: 393
+readingTime: 4
+description: "初回画面の読み込みパフォーマンスは、フロントエンド最適化における主要な指標の 1 つです。Vue プロジェクトにおけるルートレベルの遅延読み込みは一般的ですが、コンポーネントレベルの遅延読み込み、画像の遅延読み込み、データの遅延読み込みといったより細かい戦略も同様に習得する価値があります。この記事ではエンジニアリングの実践から、完全な遅延読み込みソリューションをまとめます。"
+wordCount: 733
 ---
 
-首屏加载性能是前端优化的核心指标之一。Vue 项目的路由级懒加载已经很常见，但组件级懒加载、图片懒加载、数据懒加载这些更细粒度的策略同样值得深入掌握。本文从工程实践出发，整理一套完整的懒加载方案。
+初回画面の読み込みパフォーマンスは、フロントエンド最適化における主要な指標の 1 つです。Vue プロジェクトにおけるルートレベルの遅延読み込みは一般的ですが、コンポーネントレベルの遅延読み込み、画像の遅延読み込み、データの遅延読み込みといったより細かい戦略も同様に習得する価値があります。この記事ではエンジニアリングの実践から、完全な遅延読み込みソリューションをまとめます。
 
 ## ルートの遅延読み込み
 
-最基础也最有效的优化手段，将路由组件拆分到独立 chunk。
+最も基本的で効果的な最適化手段であり、ルートコンポーネントを独立したチャンクに分割します。
 
 ```javascript
 // router/index.js
@@ -21,12 +21,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    // 直接导入，首屏组件不懒加载
+    // 直接インポート、初回表示コンポーネントは遅延読み込みしない
     component: () => import('../views/Home.vue')
   },
   {
     path: '/dashboard',
-    // 异步组件，按需加载
+    // 非同期コンポーネント、オンデマンド読み込み
     component: () => import(
       /* webpackChunkName: "dashboard" */
       '../views/Dashboard.vue'
@@ -56,11 +56,11 @@ const router = createRouter({
 export default router
 ```
 
-`webpackChunkName` 注释让打包产物有可读的文件名，方便排查和缓存管理。
+`webpackChunkName` コメントにより、バンドル成果物に読みやすいファイル名が付与され、デバッグやキャッシュ管理が容易になります。
 
 ## コンポーネントレベルの遅延読み込み
 
-不是所有组件都需要首屏加载。对于模态框、抽屉、编辑器这类"按需出现"的组件，可以用 `defineAsyncComponent` 实现懒加载。
+すべてのコンポーネントが初回表示時に必要とは限りません。モーダル、ドロワー、エディタなど「必要に応じて表示される」コンポーネントには、`defineAsyncComponent` を使用して遅延読み込みを実装できます。
 
 ```vue
 <template>
@@ -78,7 +78,7 @@ export default router
 <script>
 import { defineAsyncComponent, ref } from 'vue'
 
-// 仅在 v-if 为 true 时才加载组件代码
+// v-if が true の場合のみコンポーネントコードを読み込む
 const AsyncEditor = defineAsyncComponent({
   loader: () => import('./components/HeavyEditor.vue'),
   loadingComponent: {
@@ -87,9 +87,9 @@ const AsyncEditor = defineAsyncComponent({
   errorComponent: {
     template: '<div class="editor-error">加载失败，请刷新重试</div>'
   },
-  delay: 100,       // 延迟显示 loading 组件的时间
-  timeout: 15000,    // 超时时间
-  suspensible: false // 不交给 Suspense 管理
+  delay: 100,       // loading コンポーネントを表示するまでの遅延時間
+  timeout: 15000,    // タイムアウト時間
+  suspensible: false // Suspense に管理させない
 })
 
 export default {
@@ -103,9 +103,9 @@ export default {
 </script>
 ```
 
-## Intersection Observer 实现图片懒加载
+## Intersection Observer による画像の遅延読み込み
 
-图片是最常见的带宽杀手。使用 `IntersectionObserver` API 实现可视区域内才加载真实图片。
+画像は最も一般的な帯域幅の負荷要因です。`IntersectionObserver` API を使用して、表示領域に入ったときにのみ実際の画像を読み込みます。
 
 ```javascript
 // directives/v-lazy.js
@@ -133,7 +133,7 @@ export default {
         })
       },
       {
-        rootMargin: '100px' // 提前 100px 开始加载
+        rootMargin: '100px' // 100px 早めて読み込み開始
       }
     )
 
@@ -148,14 +148,14 @@ export default {
   }
 }
 
-// 注册与使用
+// 登録と使用
 // app.directive('lazy', vLazy)
-// <img v-lazy="imageUrl" alt="产品图" />
+// <img v-lazy="imageUrl" alt="商品画像" />
 ```
 
-## 数据懒加载：虚拟滚动
+## データの遅延読み込み：仮想スクロール
 
-列表数据量大时（超过 1000 条），即使只渲染可见区域的 DOM 也能大幅提升性能。
+リストのデータ量が多い場合（1000 件以上）、表示領域の DOM のみをレンダリングするだけでパフォーマンスを大幅に向上できます。
 
 ```vue
 {% raw %}
@@ -224,8 +224,8 @@ export default {
 
 ## まとめ
 
-- 路由懒加载用 `() => import()` 配合 `webpackChunkName`，效果立竿见影
-- `defineAsyncComponent` 支持自定义 loading/error 组件和超时配置
-- 图片懒加载使用 IntersectionObserver，设置 `rootMargin` 提前加载
-- 大列表用虚拟滚动，只渲染可视区域内的 DOM，性能提升可达数十倍
-- 懒加载的核心原则：不在首屏的代码和资源，一律按需加载
+- ルートの遅延読み込みは `() => import()` と `webpackChunkName` を組み合わせることで、すぐに効果が現れます
+- `defineAsyncComponent` はカスタム loading/error コンポーネントとタイムアウト設定をサポートしています
+- 画像の遅延読み込みには IntersectionObserver を使用し、`rootMargin` を設定して事前読み込みを行います
+- 大量リストには仮想スクロールを使用し、表示領域内の DOM のみをレンダリングすることで、パフォーマンスが数十倍向上する可能性があります
+- 遅延読み込みの基本原則：初回表示に不要なコードとリソースは、すべてオンデマンドで読み込む

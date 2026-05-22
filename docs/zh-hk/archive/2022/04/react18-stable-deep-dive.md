@@ -32,7 +32,7 @@ root.render(<App />);
 ## Automatic Batching 的實際效果
 
 ```javascript
-// 這個在 React 17 中會觸發 3 次渲染，React 18 只觸發 1 次
+// 這個在 React 17 中會觸發 3 次渲染，React 18 隻觸發 1 次
 async function handleSave() {
   const result = await api.save(data);
 
@@ -41,10 +41,10 @@ async function handleSave() {
   setLoading(false);
   setError(null);
 
-  // React 18：這三次 setState 批處理，只渲染一次
+  // React 18：這三次 setState 批處理，隻渲染一次
 }
 
-// 如果你需要強制不批處理（特殊情況）
+// 如果你需要強製不批處理（特殊情況）
 import { flushSync } from "react-dom";
 
 flushSync(() => setLoading(false)); // 立即渲染

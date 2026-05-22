@@ -61,11 +61,11 @@ module.exports = {
 }
 ```
 
-`useBuiltIns: 'usage'` 是很有價值的改進：它會分析程式碼裡實際使用了哪些 ES6+ 特性，只引入對應的 polyfill，而不是全量引入 `@babel/polyfill`。
+`useBuiltIns: 'usage'` 是很有價值的改進：它會分析程式碼裡實際使用了哪些 ES6+ 特性，隻引入對應的 polyfill，而不是全量引入 `@babel/polyfill`。
 
 ### 3. 專案級設定檔：babel.config.js
 
-Babel 6 的 `.babelrc` 只影響當前目錄和子目錄，在 monorepo 專案裡很麻煩。Babel 7 引入了 `babel.config.js`，放在專案根目錄，對整個專案生效：
+Babel 6 的 `.babelrc` 隻影響當前目錄和子目錄，在 monorepo 專案裡很麻煩。Babel 7 引入了 `babel.config.js`，放在專案根目錄，對整個專案生效：
 
 ```javascript
 // babel.config.js（專案根目錄）
@@ -217,13 +217,13 @@ npm install --save-dev @babel/preset-typescript
 presets: ["@babel/preset-typescript", "@babel/preset-env"];
 ```
 
-注意：Babel 處理 TypeScript 只做語法轉換，不做型別檢查。型別檢查還是要單獨跑 `tsc --noEmit`。
+注意：Babel 處理 TypeScript 隻做語法轉換，不做型別檢查。型別檢查還是要單獨跑 `tsc --noEmit`。
 
 ## 升級後的收益
 
 在我們的專案上，升級 Babel 7 配合 `useBuiltIns: 'usage'` 後：
 
-- `polyfill` 體積從 86KB（gzip）降到 18KB（只引入了實際用到的）
+- `polyfill` 體積從 86KB（gzip）降到 18KB（隻引入了實際用到的）
 - 冷啟動建置速度提升約 15%（Babel 7 內部最佳化）
 
 ---

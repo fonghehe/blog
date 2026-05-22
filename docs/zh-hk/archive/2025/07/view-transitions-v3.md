@@ -1,6 +1,6 @@
 ---
-title: "View Transitions v3 跨文檔"
-date: 2025-07-14 10:00:00
+title: "View Transitions v3 跨文檔：落地路徑與實戰建議"
+date: 2025-07-14 16:08:45
 tags:
   - 前端
 readingTime: 2
@@ -93,7 +93,7 @@ function useIntersectionObserver(options = {}) {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能對比
+## 效能對比
 
 實際項目中的用法會更復雜一些：
 

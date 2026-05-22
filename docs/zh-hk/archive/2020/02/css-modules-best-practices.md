@@ -1,5 +1,5 @@
 ---
-title: "CSS Modules 在 Vue 項目中的最佳實踐"
+title: "CSS Modules 在 Vue 項目中的最佳實踐：落地路徑與實戰建議"
 date: 2020-02-13 10:38:48
 tags:
   - CSS
@@ -32,7 +32,7 @@ Scoped CSS 的問題：
 - 子組件根元素會同時有 scoped 和非 scoped 樣式
 - 深度選擇器（`/deep/`、`::v-deep`）容易被濫用
 
-## CSS Modules 基礎配置
+## CSS Modules 基礎設定
 
 ```vue
 <template>

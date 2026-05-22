@@ -1,6 +1,6 @@
 ---
-title: "Vue 3.6 Reactivity Optimization"
-date: 2025-11-11 10:00:00
+title: "Vue 3.6 Reactivity Practice: Upgrade后ComponentPerformance量化改善"
+date: 2025-11-11 10:45:22
 tags:
   - Vue
   - Performance Optimization

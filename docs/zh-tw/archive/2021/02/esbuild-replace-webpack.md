@@ -150,7 +150,7 @@ export default defineConfig({
 
 ## 目前的侷限
 
-esbuild 不是萬能的，有幾個明顯限制：
+esbuild 不是萬能的，有幾個明顯限製：
 
 1. **沒有程式碼分割的 IIFE 格式**：ESM 格式支援 `splitting`，但傳統格式不支援
 2. **不支援轉換裝飾器語法**：Angular 專案無法直接用

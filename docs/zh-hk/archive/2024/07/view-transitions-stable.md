@@ -1,6 +1,6 @@
 ---
-title: "View Transitions 穩定版應用"
-date: 2024-07-16 10:00:00
+title: "View Transitions 穩定版應用：特性解讀與遷移建議"
+date: 2024-07-16 09:30:07
 tags:
   - 前端
 readingTime: 2
@@ -91,7 +91,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 調優策略
 

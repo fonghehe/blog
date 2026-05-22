@@ -1,6 +1,6 @@
 ---
 title: "TypeScript 7.0 新特性展望"
-date: 2026-02-26 10:00:00
+date: 2026-02-26 16:40:17
 tags:
   - TypeScript
 readingTime: 2

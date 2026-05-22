@@ -146,7 +146,7 @@ function moveTo(pos: Coordinate) {
 }
 ```
 
-## 性能優化
+## 效能優化
 
 TypeScript 5.2 在類型檢查性能上有改進：
 

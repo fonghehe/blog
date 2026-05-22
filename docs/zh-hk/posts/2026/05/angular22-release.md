@@ -1,6 +1,6 @@
 ---
 title: "Angular 22 正式發佈：Evergreen 編譯器驅動的新時代"
-date: 2026-05-07 10:00:00
+date: 2026-05-07 19:21:58
 tags:
   - Angular
 readingTime: 3
@@ -139,7 +139,7 @@ ng update @angular/core@22 @angular/cli@22 @angular/router@22 @angular/forms@22
 主要遷移注意事項：
 
 1. **Zoneless 遷移**：正式版提供了 `ng generate @angular/core:zoneless-migration` schematic，可自動完成大部分遷移工作
-2. **Signal Router 遷移**：現有 Routes 數組配置仍然有效，無需立即遷移；但新路由功能僅在 Signal Router 中可用
+2. **Signal Router 遷移**：現有 Routes 數組設定仍然有效，無需立即遷移；但新路由功能僅在 Signal Router 中可用
 3. **`NgModule` 逐步移除**：建議使用 `ng generate @angular/core:remove-unused-ngmodules` 清理空的 NgModule
 
 ## 總結

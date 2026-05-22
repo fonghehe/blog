@@ -1,6 +1,6 @@
 ---
 title: "Biome v2 快速格式化"
-date: 2024-10-24 10:00:00
+date: 2024-10-24 17:38:15
 tags:
   - 前端
 readingTime: 2

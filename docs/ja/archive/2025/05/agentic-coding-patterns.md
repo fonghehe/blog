@@ -1,6 +1,6 @@
 ---
 title: "Agentic Coding：AIエージェント駆動のコーディングパターン"
-date: 2025-05-03 10:00:00
+date: 2025-05-03 09:37:14
 tags:
   - エンジニアリング
 readingTime: 2

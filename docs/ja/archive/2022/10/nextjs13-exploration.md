@@ -3,12 +3,12 @@ title: "Next.js 13 初探：App Router の設計哲学"
 date: 2022-10-11 16:06:02
 tags:
   - Next.js
-readingTime: 3
-description: "Next.js 13 发布了，App Router 带来了巨大的范式变化。在正式版之前，让我们先理解它的设计哲学——React Server Components、Streaming、嵌套布局。这些不是渐进式改进，而是对「前端应该如何构建」的重新思考。"
-wordCount: 428
+readingTime: 4
+description: "Next.js 13 がリリースされ、App Router は大きなパラダイムの変化をもたらしました。正式版に先立ち、まずその設計哲学を理解しましょう——React Server Components、Streaming、ネストレイアウト。これらは段階的な改善ではなく、「フロントエンドはどう構築されるべきか」に対する再考です。"
+wordCount: 679
 ---
 
-Next.js 13 发布了，App Router 带来了巨大的范式变化。在正式版之前，让我们先理解它的设计哲学——React Server Components、Streaming、嵌套布局。这些不是渐进式改进，而是对「前端应该如何构建」的重新思考。
+Next.js 13がリリースされ、App Routerは大きなパラダイムシフトをもたらしました。正式版の前に、まずその設計哲学であるReact Server Components、Streaming、ネストレイアウトを理解しましょう。これらは段階的な改善ではなく、「フロントエンドはどう構築されるべきか」に対する再考です。
 
 ## Pages Router から App Router へ
 
@@ -23,8 +23,8 @@ pages/
 After (App Router):
 app/
 ├── layout.tsx       # 根布局
-├── page.tsx         # 首页
-├── loading.tsx      # 首页加载状态
+├── page.tsx         # ホーム
+├── loading.tsx      # ホーム加载状态
 ├── about/
 │   └── page.tsx
 └── blog/
@@ -34,16 +34,16 @@ app/
     └── page.tsx
 ```
 
-关键区别：每个文件夹可以有自己的 `layout.tsx`、`loading.tsx`、`error.tsx`。
+重要な違い：各フォルダは独自の `layout.tsx`、`loading.tsx`、`error.tsx` を持つことができます。
 
 ## React Server Components
 
 ```tsx
-// app/posts/page.tsx — 这是 Server Component
-// 没有 'use client'，默认在服务端执行
+// app/posts/page.tsx — これは Server Component
+// 'use client' なし、デフォルトでサーバーサイドで実行
 
 async function PostsPage() {
-  // 直接在组件里调用数据库！不需要 API
+  // コンポーネント内で直接データベースを呼び出す！APIは不要
   const posts = await db.posts.findMany({
     orderBy: { createdAt: 'desc' },
     take: 20,
@@ -65,7 +65,7 @@ async function PostsPage() {
 export default PostsPage;
 ```
 
-这个组件不会发送任何 JS 到浏览器——HTML 直接在服务端渲染。客户端收到的是纯 HTML。
+このコンポーネントはブラウザにJSを送信しません。HTMLはサーバーサイドで直接レンダリングされます。クライアントが受け取るのは純粋なHTMLです。
 
 ## クライアントコンポーネント
 
@@ -97,7 +97,7 @@ export function LikeButton({ postId, initialCount }: {
 }
 ```
 
-`'use client'` 指令标记这是一个客户端组件——会发送 JS 到浏览器。
+`'use client'` ディレクティブは、これがクライアントコンポーネントであることを示します。JSがブラウザに送信されます。
 
 ## 組み合わせて使う
 
@@ -115,11 +115,11 @@ export default async function PostPage({ params }: {
 
   return (
     <article>
-      {/* 这些内容在服务端渲染，零 JS */}
+      {/* これらの内容はサーバーサイドでレンダリングされ、JSはゼロです */}
       <h1>{post.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
 
-      {/* 这两个是 Client Component，会加载 JS */}
+      {/* これらは Client Component で、JSが読み込まれます */}
       <LikeButton postId={post.id} initialCount={post.likes} />
       <CommentSection postId={post.id} />
     </article>
@@ -127,7 +127,7 @@ export default async function PostPage({ params }: {
 }
 ```
 
-服务端组件负责数据获取和静态内容，客户端组件负责交互。这才是正确的分工。
+サーバーコンポーネントはデータ取得と静的コンテンツを担当し、クライアントコンポーネントはインタラクションを担当します。これが正しい役割分担です。
 
 ## ストリーミングと Suspense
 
@@ -138,9 +138,9 @@ import { Suspense } from 'react';
 export default function DashboardPage() {
   return (
     <div>
-      <h1>仪表盘</h1>
+      <h1>ダッシュボード</h1>
 
-      {/* 这些组件可以独立加载 */}
+      {/* これらのコンポーネントは独立して読み込めます */}
       <Suspense fallback={<StatsSkeleton />}>
         <Stats />
       </Suspense>
@@ -156,14 +156,14 @@ export default function DashboardPage() {
   );
 }
 
-// 每个子组件独立获取数据
+// 各子コンポーネントが独立してデータを取得
 async function Stats() {
   const data = await fetch('/api/stats').then(r => r.json());
   return <div>{/* 渲染统计 */}</div>;
 }
 ```
 
-浏览器收到 HTML 后，先显示骨架屏。数据准备好后，服务端通过 Streaming 逐段发送填充内容——不需要客户端重新获取数据。
+ブラウザがHTMLを受信した後、まずスケルトンスクリーンを表示します。データの準備ができたら、サーバーがStreamingを通じて段階的にコンテンツを送信します。クライアントがデータを再取得する必要はありません。
 
 ## ネストされたレイアウト
 
@@ -176,8 +176,8 @@ export default function RootLayout({ children }: {
     <html lang="zh-CN">
       <body>
         <nav>
-          <a href="/">首页</a>
-          <a href="/dashboard">仪表盘</a>
+          <a href="/">ホーム</a>
+          <a href="/dashboard">ダッシュボード</a>
         </nav>
         {children}
       </body>
@@ -185,7 +185,7 @@ export default function RootLayout({ children }: {
   );
 }
 
-// app/dashboard/layout.tsx — 仪表盘布局
+// app/dashboard/layout.tsx — ダッシュボード布局
 export default function DashboardLayout({ children }: {
   children: React.ReactNode;
 }) {
@@ -200,7 +200,7 @@ export default function DashboardLayout({ children }: {
 }
 ```
 
-仪表盘页面会同时使用根布局和仪表盘布局。导航栏不会重新加载——这是 Pages Router 做不到的。
+ダッシュボード页面会同时使用根布局和ダッシュボード布局。导航栏不会重新加载——这是 Pages Router 做不到的。
 
 ## データフェッチのパラダイムシフト
 
@@ -214,14 +214,14 @@ export default function Page({ data }) { ... }
 
 // After (App Router):
 export default async function Page() {
-  // 直接 await！组件本身就是 async 的
+  // 直接 await！コンポーネント自体が async です
   const data = await fetchData();
   return <div>{/* 使用 data */}</div>;
 }
 ```
 
-不再需要 `getServerSideProps`/`getStaticProps`——数据获取就是组件的一部分。
+`getServerSideProps`/`getStaticProps` は不要になります。データ取得はコンポーネントの一部です。
 
 ## まとめ
 
-Next.js 13 的 App Router 是对传统 SPA 模式的根本反思。Server Components 重新定义了「哪些代码在哪里运行」，Streaming 让页面不再需要等待所有数据，嵌套布局让 UI 结构更合理。但目前还是 beta，生产项目建议等稳定后再迁移。
+Next.js 13のApp Routerは、従来のSPAパターンに対する根本的な再考です。Server Componentsは「どのコードがどこで実行されるか」を再定義し、Streamingはページがすべてのデータを待つ必要をなくし、ネストレイアウトはUI構造をより合理的にします。ただし、現時点ではまだベータ版です。本番プロジェクトでは安定してから移行することをお勧めします。

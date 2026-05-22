@@ -1,6 +1,6 @@
 ---
 title: "Angular 18.2 linkedSignal：響應式依賴訊號的新原語"
-date: 2024-09-11 10:00:00
+date: 2024-09-11 11:45:22
 tags:
   - Angular
 readingTime: 2
@@ -99,8 +99,8 @@ signal()
 
 computed()
   + 自動追蹤依賴，響應式更新
-  - 只讀，不可手動修改
-  用途：從其他 Signal 派生的只讀值
+  - 隻讀，不可手動修改
+  用途：從其他 Signal 派生的隻讀值
 
 linkedSignal()  ← 新增
   + 從 Signal 派生初始值（類似 computed）

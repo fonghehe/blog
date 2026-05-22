@@ -1,5 +1,5 @@
 ---
-title: "React 常用設計模式彙總"
+title: "React 常用設計模式彙總：落地路徑與實戰建議"
 date: 2021-03-01 09:31:53
 tags:
   - React

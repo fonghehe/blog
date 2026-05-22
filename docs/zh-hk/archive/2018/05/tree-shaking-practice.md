@@ -1,5 +1,5 @@
 ---
-title: "前端性能優化：Tree Shaking 深度實踐"
+title: "前端效能優化：Tree Shaking 深度實踐"
 date: 2018-05-29 15:51:05
 tags:
   - 前端
@@ -127,7 +127,7 @@ grep -r "subtract" dist/
 
 ## 第三方庫的 Tree Shaking
 
-只有提供 ES Module 的庫才支持 Tree Shaking：
+隻有提供 ES Module 的庫才支援 Tree Shaking：
 
 | 庫           | Tree Shaking 支持           |
 | 

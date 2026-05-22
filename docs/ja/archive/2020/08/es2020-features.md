@@ -4,16 +4,16 @@ date: 2020-08-04 17:33:04
 tags:
   - フロントエンド
 readingTime: 2
-description: "ES2020（ES11）规范已经正式发布，带来了几个非常实用的特性。在日常代码中用起来，能明显减少模板代码。"
-wordCount: 165
+description: "ES2020（ES11）仕様が正式にリリースされ、いくつかの非常に便利な機能がもたらされました。日常のコードで使用することで、定型コードを大幅に削減できます。"
+wordCount: 277
 ---
 
-ES2020（ES11）规范已经正式发布，带来了几个非常实用的特性。在日常代码中用起来，能明显减少模板代码。
+ES2020（ES11）仕様が正式にリリースされ、いくつかの非常に実用的な機能がもたらされました。日常のコードで使用することで、定型コードを大幅に削減できます。
 
 ## オプショナルチェーン (?.)
 
 ```javascript
-// 访问深层嵌套属性，不再需要层层判断
+// 深くネストされたプロパティにアクセスする際、段階的な判定が不要に
 const user = {
   profile: {
     address: {
@@ -25,86 +25,86 @@ const user = {
 // 以前
 const city = user && user.profile && user.profile.address && user.profile.address.city;
 
-// 现在
+// 現在
 const city = user?.profile?.address?.city;
 
-// 方法调用
+// メソッド呼び出し
 const result = api?.getData?.();
 
-// 数组元素
+// 配列要素
 const first = arr?.[0];
 
-// 注意：只跳过 null 和 undefined
-// 0、''、false 不会被跳过
+// 注意：null と undefined のみをスキップする
+// 0、''、false はスキップされない
 const obj = { count: 0 };
-console.log(obj?.count); // 0（正常访问）
+console.log(obj?.count); // 0（正常にアクセス）
 ```
 
 ## Null合体演算子 (??)
 
 ```javascript
-// 和 || 的区别：只对 null/undefined 生效
+// || との違い：null/undefined の場合のみ右辺を返す
 const value = 0;
 
-// || 会把 0 当假值
-console.log(value || 10);  // 10（不对）
+// || は 0 を falsy として扱う
+console.log(value || 10);  // 10（誤り）
 
-// ?? 只看 null/undefined
-console.log(value ?? 10);  // 0（正确）
+// ?? は null/undefined のみを判定
+console.log(value ?? 10);  // 0（正しい）
 
-// 典型场景
+// 典型的なユースケース
 function createConfig(input) {
   return {
     timeout: input.timeout ?? 3000,
     retries: input.retries ?? 3,
-    debug: input.debug ?? false,  // false 不会被 || 覆盖
+    debug: input.debug ?? false,  // false は || で上書きされない
   };
 }
 
-// 可以链式使用
-const result = a?.b?.c ?? '默认值';
+// チェーンで使用可能
+const result = a?.b?.c ?? 'デフォルト値';
 ```
 
 ## BigInt
 
 ```javascript
-// 处理超过 Number.MAX_SAFE_INTEGER 的整数
+// Number.MAX_SAFE_INTEGER を超える整数を扱う
 console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
 
-// 超过这个数就会丢失精度
-console.log(9007199254740992 + 1); // 9007199254740992（错！）
+// この数を超えると精度が失われる
+console.log(9007199254740992 + 1); // 9007199254740992（誤り！）
 
-// 用 BigInt
+// BigInt を使用
 const big = 9007199254740992n;
 console.log(big + 1n); // 9007199254740993n
 
-// 实际场景：数据库 ID
+// 実際のユースケース：データベース ID
 const userId = 12345678901234567890n;
 
-// 转换
-BigInt('12345678901234567890'); // 从字符串
-Number(123n);                    // 转回 Number（注意精度）
+// 変換
+BigInt('12345678901234567890'); // 文字列から
+Number(123n);                    // Number に戻す（精度に注意）
 
-// 运算
+// 演算
 const a = 100n;
 const b = 200n;
 console.log(a + b);  // 300n
 console.log(a * b);  // 20000n
 
-// 注意：BigInt 和 Number 不能混算
+// 注意：BigInt と Number は混在して計算できない
 // console.log(1n + 1); // TypeError
 
-// 比较可以
+// 比較は可能
 console.log(1n < 2);   // true
-console.log(1n === 1); // false（类型不同）
+console.log(1n === 1); // false（型が異なる）
 console.log(1n == 1);  // true
 ```
 
 ## Promise.allSettled
 
 ```javascript
-// Promise.all：一个失败就全部失败
-// Promise.allSettled：等所有都完成，不管成功还是失败
+// Promise.all：1つでも失敗するとすべて失敗
+// Promise.allSettled：成功・失敗に関わらず全ての完了を待つ
 
 const apis = [
   fetch('/api/users'),
@@ -118,11 +118,11 @@ results.forEach((result, index) => {
   if (result.status === 'fulfilled') {
     console.log(`API ${index} 成功:`, result.value);
   } else {
-    console.log(`API ${index} 失败:`, result.reason);
+    console.log(`API ${index} 失敗:`, result.reason);
   }
 });
 
-// 实际场景：批量请求，部分失败不影响其他
+// 実際のユースケース：バッチリクエスト、一部の失敗が他に影響しない
 async function fetchDashboardData() {
   const results = await Promise.allSettled([
     fetchUserInfo(),
@@ -146,22 +146,22 @@ async function fetchDashboardData() {
 ## globalThis
 
 ```javascript
-// 以前：获取全局对象，在不同环境写法不同
-// 浏览器：window / self
+// 以前：環境ごとに異なる方法でグローバルオブジェクトを取得
+// ブラウザ：window / self
 // Node.js：global
 // Web Worker：self
-// 通用写法很丑
+// 共通の書き方は見苦しい
 
-// ES2020：globalThis 统一了
-console.log(globalThis); // 浏览器中是 window，Node.js 中是 global
+// ES2020：globalThis で統一
+console.log(globalThis); // ブラウザでは window、Node.js では global
 
-// 实际场景：通用工具函数
+// 実際のユースケース：共通ユーティリティ関数
 function setGlobalCache(key, value) {
   globalThis.__cache = globalThis.__cache || {};
   globalThis.__cache[key] = value;
 }
 
-// 在任何环境都能工作
+// どの環境でも動作する
 ```
 
 ## String.matchAll
@@ -170,13 +170,13 @@ function setGlobalCache(key, value) {
 const text = '2020-01-15, 2020-02-20, 2020-03-25';
 const regex = /(\d{4})-(\d{2})-(\d{2})/g;
 
-// 以前：循环 exec
+// 以前：exec でループ
 let match;
 while ((match = regex.exec(text)) !== null) {
   console.log(match[0], match[1], match[2], match[3]);
 }
 
-// 现在：matchAll 返回迭代器
+// 現在：matchAll はイテレータを返す
 for (const match of text.matchAll(regex)) {
   console.log(match[0], match[1], match[2], match[3]);
 }
@@ -184,7 +184,7 @@ for (const match of text.matchAll(regex)) {
 // 2020-02-20 2020 02 20
 // 2020-03-25 2020 03 25
 
-// 实际场景：提取 URL 参数
+// 実際のユースケース：URL パラメータの抽出
 function extractParams(url) {
   const params = {};
   for (const [, key, value] of url.matchAll(/[?&](\w+)=(\w+)/g)) {
@@ -200,13 +200,13 @@ extractParams('https://example.com?id=1&type=admin');
 ## 動的 import()
 
 ```javascript
-// 按需加载模块
+// 必要に応じてモジュールをロード
 button.addEventListener('click', async () => {
   const { formatDate } = await import('./utils/date.js');
   console.log(formatDate(new Date()));
 });
 
-// Vue 路由懒加载
+// Vue ルートの遅延ロード
 const routes = [
   {
     path: '/dashboard',
@@ -214,7 +214,7 @@ const routes = [
   },
 ];
 
-// 条件导入
+// 条件付きインポート
 async function loadChart(type) {
   if (type === 'bar') {
     const { BarChart } = await import('./charts/BarChart.js');
@@ -228,8 +228,8 @@ async function loadChart(type) {
 
 ## まとめ
 
-- 可选链和空值合并是最实用的特性，日常代码每天都会用到
-- BigInt 处理大整数，适合数据库 ID、金融计算等场景
-- Promise.allSettled 解决批量请求中部分失败的需求
-- globalThis 统一了全局对象的访问方式
-- 这些特性在现代浏览器中都已支持，老项目可用 Babel 降级
+- オプショナルチェーンとNull合体演算子は最も実用的な機能で、日常のコードで毎日使用します
+- BigInt は大きな整数を扱うため、データベース ID や金融計算などのシナリオに適しています
+- Promise.allSettled はバッチリクエストにおける一部の失敗に対処します
+- globalThis はグローバルオブジェクトへのアクセス方法を統一しました
+- これらの機能はモダンブラウザですでにサポートされており、古いプロジェクトでは Babel でトランスパイル可能です

@@ -1,6 +1,6 @@
 ---
 title: "Biome v2: New Frontend Toolchain Version"
-date: 2024-08-08 10:00:00
+date: 2024-08-08 10:02:39
 tags:
   - Frontend
 readingTime: 2

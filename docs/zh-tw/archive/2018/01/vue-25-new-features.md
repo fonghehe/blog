@@ -42,7 +42,7 @@ export default Vue.extend({
 
 ## 函式元件的改進
 
-2.5 之前，函式元件（functional component）只支援單一檔案元件（SFC）形式，範本裡無法直接用。現在可以在範本裡宣告函式元件了：
+2.5 之前，函式元件（functional component）隻支援單一檔案元件（SFC）形式，範本裡無法直接用。現在可以在範本裡宣告函式元件了：
 
 ```html
 {% raw %}
@@ -69,7 +69,7 @@ export default Vue.extend({
 
 ## errorCaptured 鉤子
 
-這是我覺得最實用的新特性。之前一個子元件的渲染錯誤會直接讓整個應用崩潰，沒有任何攔截機制。2.5 引入了 `errorCaptured` 生命週期鉤子：
+這是我覺得最實用的新特性。之前一個子元件的渲染錯誤會直接讓整個應用崩潰，沒有任何攔截機製。2.5 引入了 `errorCaptured` 生命週期鉤子：
 
 ```javascript
 export default {

@@ -7,11 +7,11 @@ tags:
   - React
 
 readingTime: 3
-description: "最近把一个内部运营平台从 CSR 迁移到了 Vite SSR，记录一下踩坑和经验。Vite 2.x 的 SSR 支持已经比较成熟了，但文档偏少，实际用起来还是有一些要注意的。"
-wordCount: 321
+description: "最近、社内の運用プラットフォームを CSR から Vite SSR に移行しました。その際の経験と課題を記録します。Vite 2.x の SSR サポートは既にかなり成熟していますが、ドキュメントが少なく、実際に使う際にはいくつか注意すべき点があります。"
+wordCount: 501
 ---
 
-最近把一个内部运营平台从 CSR 迁移到了 Vite SSR，记录一下踩坑和经验。Vite 2.x 的 SSR 支持已经比较成熟了，但文档偏少，实际用起来还是有一些要注意的。
+最近、社内の運用プラットフォームを CSR から Vite SSR に移行しました。その際の経験と課題を記録します。Vite 2.x の SSR サポートは既にかなり成熟していますが、ドキュメントが少なく、実際に使う際にはいくつか注意すべき点があります。
 
 ## 基本アーキテクチャ
 
@@ -60,9 +60,9 @@ const router = createRouter()
 
 app.use(router)
 
-// hydrate：把服务端渲染的 HTML "激活"为可交互的 SPA
+// hydrate：サーバー側でレンダリングされた HTML をインタラクティブな SPA に「活性化」する
 router.isReady().then(() => {
-  app.mount('#app', true) // true = hydrate 模式
+  app.mount('#app', true) // true = hydrate モード
 })
 ```
 
@@ -89,21 +89,21 @@ async function startServer() {
     const url = req.originalUrl
 
     try {
-      // 读取 index.html 模板
+      // index.html テンプレートを読み込む
       let template = fs.readFileSync(
         path.resolve(__dirname, '../index.html'),
         'utf-8'
       )
 
-      // Vite 转换模板（注入 HMR 客户端等）
+      // Vite がテンプレートを変換（HMR クライアントなどを注入）
       template = await vite.transformIndexHtml(url, template)
 
-      // 加载服务端入口（Vite 会实时编译）
+      // サーバーエントリーをロード（Vite がリアルタイムでコンパイル）
       const { render } = await vite.ssrLoadModule('/src/entry-server.ts')
 
       const appHtml = await render(url)
 
-      // 替换占位符
+      // プレースホルダーを置換
       const html = template.replace('<!--ssr-outlet-->', appHtml)
 
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
@@ -122,31 +122,31 @@ startServer()
 
 ## 落とし穴1：CSS処理
 
-Vite SSR 默认不提取 CSS，需要手动处理：
+Vite SSR はデフォルトでは CSS を抽出しないため、手動で処理する必要があります：
 
 ```typescript
-// 在渲染前收集样式
+// レンダリング前にスタイルを収集
 import { renderToString } from '@vue/server-renderer'
 
 const app = createSSRApp(App)
 const html = await renderToString(app)
 
-// Vite SSR 的 CSS 会自动通过 manifest 注入
-// 生产环境需要读取 manifest.json
+// Vite SSR の CSS は manifest を通じて自動的に注入される
+// 本番環境では manifest.json を読み取る必要がある
 ```
 
-生产构建需要 `ssrManifest`：
+プロダクションビルドには `ssrManifest` が必要：
 
 ```bash
-# 构建客户端（生成 ssr-manifest.json）
+# クライアントをビルド（ssr-manifest.json を生成）
 vite build --outDir dist/client --ssrManifest
 
-# 构建服务端
+# サーバーをビルド
 vite build --outDir dist/server --ssr src/entry-server.ts
 ```
 
 ```typescript
-// 生产环境 server/index.ts
+// 本番環境 server/index.ts
 import express from 'express'
 import fs from 'fs'
 import path from 'path'
@@ -154,9 +154,9 @@ import { render } from '../dist/server/entry-server.js'
 
 const app = express()
 
-// 静态资源
+// 静的アセット
 app.use(express.static(path.resolve(__dirname, '../dist/client'), {
-  index: false, // 不自动返回 index.html
+  index: false, // index.html を自動で返さない
 }))
 
 // SSR manifest
@@ -178,7 +178,7 @@ app.use('*', async (req, res) => {
 
     const appHtml = await render(url, manifest)
 
-    // 从 manifest 中找出当前页面依赖的 CSS/JS
+    // manifest から現在のページが依存する CSS/JS を特定
     const preloadLinks = renderPreloadLinks(appHtml, manifest)
 
     const html = template
@@ -196,10 +196,10 @@ app.use('*', async (req, res) => {
 ## 落とし穴2：ブラウザAPIがサーバー側で使用不可
 
 ```typescript
-// ❌ 服务端没有 window/document/localStorage
+// ❌ サーバー側には window/document/localStorage がない
 const token = localStorage.getItem('token')
 
-// ✅ 用条件判断
+// ✅ 条件分岐で対応
 const getToken = () => {
   if (typeof window !== 'undefined') {
     return localStorage.getItem('token')
@@ -207,9 +207,9 @@ const getToken = () => {
   return null
 }
 
-// ✅ 或者用 import.meta.env.SSR（Vite 提供）
+// ✅ または import.meta.env.SSR を使用（Vite が提供）
 if (!import.meta.env.SSR) {
-  // 这段代码只会出现在客户端 bundle
+  // このコードはクライアント bundle にのみ含まれる
   initAnalytics()
 }
 ```
@@ -217,18 +217,18 @@ if (!import.meta.env.SSR) {
 ## 落とし穴3：データプリフェッチ
 
 ```typescript
-// 推荐：组件定义 asyncData，路由匹配后在服务端调用
+// 推奨：コンポーネントで asyncData を定義し、ルートマッチ後にサーバー側で呼び出す
 // composables/useAsyncData.ts
 export function useAsyncData<T>(key: string, fetcher: () => Promise<T>) {
   const data = ref<T | null>(null)
   const pending = ref(true)
 
-  // 服务端：直接调用
-  // 客户端：检查 window.__SSR_DATA__
+  // サーバー側：直接呼び出し
+  // クライアント側：window.__SSR_DATA__ を確認
   if (import.meta.env.SSR) {
-    // 服务端执行，结果通过 HTML 注入
+    // サーバー側で実行し、結果を HTML に注入
   } else {
-    // 客户端 hydrate 时从 __SSR_DATA__ 读取
+    // クライアント hydrate 時に __SSR_DATA__ から読み取り
     const ssrData = (window as any).__SSR_DATA__
     if (ssrData?.[key]) {
       data.value = ssrData[key]
@@ -247,17 +247,17 @@ export function useAsyncData<T>(key: string, fetcher: () => Promise<T>) {
 
 ## パフォーマンス比較
 
-| 指标 | CSR | SSR |
+| 指標 | CSR | SSR |
 |------|-----|-----|
-| 首字节时间 | ~200ms | ~50ms |
-| 首屏可见 | ~1.5s | ~0.3s |
-| 可交互时间 | ~2s | ~1s |
+| 初回バイト時間 | ~200ms | ~50ms |
+| 初回画面表示 | ~1.5s | ~0.3s |
+| インタラクティブ可能時間 | ~2s | ~1s |
 
-内部运营平台对 SEO 没需求，但首屏速度提升明显，特别是弱网环境。
+社内運用プラットフォームでは SEO の必要はありませんが、初回画面表示速度の向上は顕著で、特にネットワーク環境が悪い場合に効果的です。
 
 ## まとめ
 
-- Vite SSR 开发体验很好（HMR、实时编译），但生产部署要注意 CSS 和静态资源处理
-- 浏览器 API 的兼容是最大的坑，`import.meta.env.SSR` 是核心判断依据
-- 数据预取需要额外设计（不像 Next.js 有完整的约定）
-- 适合对首屏速度有要求的 Vue 3 项目；SEO 场景也可以用，但维护成本比 Nuxt 高
+- Vite SSR の開発体験は非常に良い（HMR、リアルタイムコンパイル）が、本番デプロイでは CSS と静的アセットの処理に注意が必要
+- ブラウザ API の互換性が最大の落とし穴であり、`import.meta.env.SSR` が核心的な判断基準となる
+- データプリフェッチは追加設計が必要（Next.js のような完全な约定がない）
+- 初回画面表示速度が重要な Vue 3 プロジェクトに適している；SEO 用途にも使えるが、メンテナンスコストは Nuxt より高い

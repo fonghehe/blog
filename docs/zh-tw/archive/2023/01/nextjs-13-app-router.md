@@ -12,7 +12,7 @@ Next.js 13 引入的 App Router 是自框架誕生以來最大的架構變革。
 
 ## 目錄結構與約定式路由
 
-App Router 使用 `app/` 目錄，每個資料夾代表一個路由段。與 Pages Router 最大的不同是：`page.tsx` 只負責頁面渲染，佈局、載入態、錯誤處理各有專門檔案。
+App Router 使用 `app/` 目錄，每個資料夾代表一個路由段。與 Pages Router 最大的不同是：`page.tsx` 隻負責頁面渲染，佈局、載入態、錯誤處理各有專門檔案。
 
 ```
 app/

@@ -97,8 +97,8 @@ const res = await fetch('https://api.example.com');
 const port = Deno.env.get('PORT') || '8000';
 
 // 細粒度許可權
-// --allow-read=/tmp（只允許讀 /tmp）
-// --allow-net=api.example.com（只允許訪問特定域名）
+// --allow-read=/tmp（隻允許讀 /tmp）
+// --allow-net=api.example.com（隻允許訪問特定域名）
 ```
 
 ## 內建工具
@@ -116,7 +116,7 @@ deno test
 # 打包
 deno bundle mod.ts dist/bundle.js
 
-# 文件生成
+# 檔案生成
 deno doc mod.ts
 ```
 

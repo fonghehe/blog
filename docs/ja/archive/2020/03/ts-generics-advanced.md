@@ -3,16 +3,16 @@ title: "TypeScript ジェネリクス応用テクニック"
 date: 2020-03-27 11:11:10
 tags:
   - TypeScript
-readingTime: 2
-description: "TypeScript 泛型进阶技巧这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 342
+readingTime: 3
+description: "TypeScript のジェネリクス応用テクニックについてはコミュニティで何度も議論されてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。この記事では最新バージョンに基づいて再整理します。"
+wordCount: 563
 ---
 
-TypeScript 泛型进阶技巧这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+TypeScript のジェネリクス応用テクニックについてはコミュニティで何度も議論されてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。この記事では最新バージョンに基づいて再整理します。
 
 ## はじめに
 
-在这个基础上，我们可以进一步优化：
+この基盤の上で、さらに最適化することができます：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -24,7 +24,7 @@ async function fetchUser(id: string) {
 
 type User = UnwrapPromise<ReturnType<typeof fetchUser>>
 
-// 类型安全的事件系统
+// 型安全なイベントシステム
 interface EventMap {
   login: { userId: string; timestamp: number }
   logout: { userId: string }
@@ -43,11 +43,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模プロジェクトで非常に実用的で、保守コストを大幅に削減できます。
 
 ## ソースコード解析
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使用法はもう少し複雑になります：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -71,11 +71,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+この方法により、コードのテスタビリティと拡張性が向上します。
 
 ## 実際のシナリオへの応用
 
-以下是一个完整的示例：
+以下は完全なサンプルです：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -87,7 +87,7 @@ async function fetchUser(id: string) {
 
 type User = UnwrapPromise<ReturnType<typeof fetchUser>>
 
-// 类型安全的事件系统
+// 型安全なイベントシステム
 interface EventMap {
   login: { userId: string; timestamp: number }
   logout: { userId: string }
@@ -106,11 +106,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理に注意してください。これは本番環境で非常に重要です。
 
 ## 最適化のコツ
 
-关键在于理解核心逻辑：
+核心となるロジックを理解することが重要です：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -134,11 +134,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+パフォーマンス最適化は具体的なシナリオに応じて行う必要があり、すべての場合に過度な最適化が必要なわけではありません。
 
 ## 落とし穴回避ガイド
 
-我们可以通过以下方式来改进：
+以下の方法で改善できます：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -150,7 +150,7 @@ async function fetchUser(id: string) {
 
 type User = UnwrapPromise<ReturnType<typeof fetchUser>>
 
-// 类型安全的事件系统
+// 型安全なイベントシステム
 interface EventMap {
   login: { userId: string; timestamp: number }
   logout: { userId: string }
@@ -169,11 +169,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+この方法はすでに本番環境で半年以上安定して稼働しており、実際に検証されています。
 
 ## まとめ
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- チームコラボレーションにおいては、約束事とドキュメントが技術自体よりも重要です
+- コミュニティの動向に注目し、技術的な解決策は継続的に改善する必要があります
+- 新しい技術を使うために使うのは避けましょう
+- コードサンプルは参考用です。実際のビジネスシナリオに応じて調整してください

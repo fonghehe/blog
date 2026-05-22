@@ -1,6 +1,6 @@
 ---
 title: "Web Performance Optimization: A 2025 Methodology"
-date: 2025-05-20 10:00:00
+date: 2025-05-20 09:54:31
 tags:
   - Performance Optimization
 readingTime: 2

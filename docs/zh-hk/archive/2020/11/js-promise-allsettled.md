@@ -1,5 +1,5 @@
 ---
-title: "Promise.allSettled 並行請求處理"
+title: "Promise.allSettled 並行請求處理：落地路徑與實戰建議"
 date: 2020-11-06 15:56:58
 tags:
   - JavaScript
@@ -93,7 +93,7 @@ function useIntersectionObserver(options = {}) {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
 實際項目中的用法會更復雜一些：
 

@@ -1,10 +1,10 @@
 ---
-title: "Pinia 持久化插件"
+title: "Pinia 持久化外掛：落地路徑與實戰建議"
 date: 2022-09-02 14:50:29
 tags:
   - Pinia
 readingTime: 1
-description: "Pinia 持久化插件在近年來發展迅速，本文將深入分析其原理和實踐方法。"
+description: "Pinia 持久化外掛在近年來發展迅速，本文將深入分析其原理和實踐方法。"
 wordCount: 221
 ---
 

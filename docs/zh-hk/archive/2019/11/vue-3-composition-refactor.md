@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 Composition API 重構實踐"
+title: "Vue 3 Composition API 重構實踐：落地路徑與實戰建議"
 date: 2019-11-25 10:30:46
 tags:
   - Vue
@@ -455,7 +455,7 @@ export default {
 按照 Vue 3 的慣例：
 
 1. 文件名和函數名以 `use` 開頭
-2. 每個 Composable 只負責一個關注點
+2. 每個 Composable 隻負責一個關注點
 3. 返回的 ref 和 reactive 對象保持響應性
 4. 組合多個 Composable 來構建複雜功能
 
@@ -477,7 +477,7 @@ composables/
 |
 ------|-----------------|------------|
 | 響應性 | 自動追蹤依賴 | 需要手動指定依賴數組 |
-| 調用順序 | 無限制 | 必須在頂層調用 |
+| 調用順序 | 無限製 | 必須在頂層調用 |
 | 副作用清理 | onUnmounted | useEffect 返回清理函數 |
 | 複用方式 | 函數調用 | 函數調用 |
 | 狀態隔離 | 每次調用創建獨立狀態 | 每次調用創建獨立狀態 |

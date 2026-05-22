@@ -4,11 +4,11 @@ date: 2020-01-28 10:12:20
 tags:
   - Angular
 readingTime: 2
-description: "Angular 9 的 RC 階段已進入最後衝刺，正式版預計 2020 年 2 月釋出。相比 Angular 8 中 Ivy 只能 opt-in，Angular 9 將 Ivy 作為預設渲染引擎，同時 AOT 編譯也將成為預設模式。在 RC 期間我們提前摸清這些變化非常有價值。"
+description: "Angular 9 的 RC 階段已進入最後衝刺，正式版預計 2020 年 2 月釋出。相比 Angular 8 中 Ivy 隻能 opt-in，Angular 9 將 Ivy 作為預設渲染引擎，同時 AOT 編譯也將成為預設模式。在 RC 期間我們提前摸清這些變化非常有價值。"
 wordCount: 429
 ---
 
-Angular 9 的 RC 階段已進入最後衝刺，正式版預計 2020 年 2 月釋出。相比 Angular 8 中 Ivy 只能 opt-in，Angular 9 將 Ivy 作為預設渲染引擎，同時 AOT 編譯也將成為預設模式。在 RC 期間我們提前摸清這些變化非常有價值。
+Angular 9 的 RC 階段已進入最後衝刺，正式版預計 2020 年 2 月釋出。相比 Angular 8 中 Ivy 隻能 opt-in，Angular 9 將 Ivy 作為預設渲染引擎，同時 AOT 編譯也將成為預設模式。在 RC 期間我們提前摸清這些變化非常有價值。
 
 ## 為什麼 Ivy 是一次質的飛躍
 
@@ -47,7 +47,7 @@ export class UserComponent {
 之前開發模式用 JIT（快但不嚴格），生產用 AOT（慢但正確）。這導致"本地測試通過，上線才報錯"的經典問題：
 
 ```bash
-# Angular 8：開發用 JIT，只在 build --prod 時用 AOT
+# Angular 8：開發用 JIT，隻在 build --prod 時用 AOT
 ng serve            # JIT
 ng build --prod     # AOT
 
@@ -56,7 +56,7 @@ ng serve            # AOT（發現更多編譯期錯誤）
 ng build --prod     # AOT
 ```
 
-## strictTemplates 模板嚴格檢查
+## strictTemplates 範本嚴格檢查
 
 這是 RC 期間最值得提前瞭解的配置。開啟後，模板中的型別錯誤會在構建時報出：
 

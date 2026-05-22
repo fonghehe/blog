@@ -1,6 +1,6 @@
 ---
-title: "Svelte 5 Release Deep Dive"
-date: 2024-12-17 10:00:00
+title: "Svelte 5 Post-Release Ecosystem: 社区Migration进展 & Tool链更新"
+date: 2024-12-17 18:51:28
 tags:
   - Svelte
 readingTime: 2

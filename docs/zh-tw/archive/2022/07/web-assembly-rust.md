@@ -4,11 +4,11 @@ date: 2022-07-08 10:39:00
 tags:
   - 前端
 readingTime: 2
-description: "關於WebAssembly Rust 前端應用，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於WebAssembly Rust 前端應用，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 280
 ---
 
-關於WebAssembly Rust 前端應用，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於WebAssembly Rust 前端應用，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 

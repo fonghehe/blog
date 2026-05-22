@@ -1,6 +1,6 @@
 ---
-title: "Vitest 3.0 Testing Framework"
-date: 2025-12-26 10:00:00
+title: "Vitest 3.0 Practice:  Jest MigrationComplete经验总结"
+date: 2025-12-26 14:40:17
 tags:
   - Engineering
   - Testing

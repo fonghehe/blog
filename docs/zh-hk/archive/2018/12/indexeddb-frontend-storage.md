@@ -4,11 +4,11 @@ date: 2018-12-19 16:54:08
 tags:
   - 前端
 readingTime: 2
-description: "localStorage 只能存字符串，容量 5MB，查詢不方便。IndexedDB 是瀏覽器內置的 NoSQL 數據庫，容量可達幾百 MB，支持事務和索引查詢，適合離線應用。"
+description: "localStorage 隻能存字符串，容量 5MB，查詢不方便。IndexedDB 是瀏覽器內置的 NoSQL 數據庫，容量可達幾百 MB，支援事務和索引查詢，適合離線應用。"
 wordCount: 171
 ---
 
-localStorage 只能存字符串，容量 5MB，查詢不方便。IndexedDB 是瀏覽器內置的 NoSQL 數據庫，容量可達幾百 MB，支持事務和索引查詢，適合離線應用。
+localStorage 隻能存字符串，容量 5MB，查詢不方便。IndexedDB 是瀏覽器內置的 NoSQL 數據庫，容量可達幾百 MB，支援事務和索引查詢，適合離線應用。
 
 ## 基本概念
 
@@ -150,9 +150,9 @@ editor.on(
 ```
                localStorage    IndexedDB
 容量            5MB             250MB+（因瀏覽器而異）
-數據類型        只能字符串       JS 對象（二進制也支持）
+數據類型        隻能字符串       JS 對象（二進製也支援）
 API             同步            異步
-查詢            只能按 key      支持索引查詢
+查詢            隻能按 key      支援索引查詢
 事務            不支持          支持
 適用場景        配置、token     離線數據、大量結構化數據
 ```

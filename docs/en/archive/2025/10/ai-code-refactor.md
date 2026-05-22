@@ -1,6 +1,6 @@
 ---
 title: "AI-Assisted Code Refactoring"
-date: 2025-10-03 10:00:00
+date: 2025-10-03 12:57:34
 tags:
   - Engineering
 readingTime: 2

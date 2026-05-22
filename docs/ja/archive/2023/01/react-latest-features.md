@@ -3,16 +3,16 @@ title: "React 最新機能 全景レビュー"
 date: 2023-01-17 16:44:24
 tags:
   - React
-readingTime: 3
-description: "React 18 发布以来，官方团队密集推进了一系列特性：Server Components、Suspense、Transitions、use 钩子等。这些特性不是孤立的，它们共同构成了 React 的新架构蓝图。本文从实际开发角度梳理这些特性的现状和最佳实践。"
-wordCount: 447
+readingTime: 4
+description: "React 18 のリリース以降、公式チームは Server Components、Suspense、Transitions、use フックなど、一連の機能を集中的に推進してきました。これらの機能は独立したものではなく、React の新しいアーキテクチャの青写真を構成しています。本記事では、実際の開発の視点からこれらの機能の現状とベストプラクティスを整理します。"
+wordCount: 793
 ---
 
-React 18 发布以来，官方团队密集推进了一系列特性：Server Components、Suspense、Transitions、use 钩子等。这些特性不是孤立的，它们共同构成了 React 的新架构蓝图。本文从实际开发角度梳理这些特性的现状和最佳实践。
+React 18 がリリースされて以来、公式チームは Server Components、Suspense、Transitions、use フックなどの一連の機能を集中的に推進してきました。これらの機能は独立したものではなく、React の新しいアーキテクチャの青写真を構成しています。本記事では、実際の開発の視点からこれらの機能の現状とベストプラクティスを整理します。
 
 ## Transitions：緊急・非緊急更新の区別
 
-`useTransition` 和 `startTransition` 让 React 知道哪些更新可以被中断。典型场景：输入框实时过滤大量数据。
+`useTransition` と `startTransition` を使用すると、React はどの更新が中断可能かを認識できます。典型的なユースケースは、入力ボックスでのリアルタイム大規模データフィルタリングです。
 
 ```tsx
 'use client'
@@ -23,11 +23,11 @@ export function SearchableList({ items }: { items: string[] }) {
   const [query, setQuery] = useState('')
   const [isPending, startTransition] = useTransition()
 
-  // 输入框更新是紧急的
+  // 入力欄の更新は緊急です
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setQuery(e.target.value) // 紧急更新，立即响应
+    setQuery(e.target.value) // 緊急更新、即座に反映
 
-    // 列表过滤是非紧急的，可以被中断
+    // リストフィルタリングは非緊急で、中断可能です
     startTransition(() => {
       setFilteredQuery(e.target.value)
     })
@@ -42,8 +42,8 @@ export function SearchableList({ items }: { items: string[] }) {
 
   return (
     <div>
-      <input value={query} onChange={handleChange} placeholder="搜索..." />
-      {/* 过渡中显示加载态 */}
+      <input value={query} onChange={handleChange} placeholder="検索..." />
+      {/* 遷移中はローディング状態を表示 */}
       <div style={{ opacity: isPending ? 0.6 : 1 }}>
         {filtered.map(item => <div key={item}>{item}</div>)}
       </div>
@@ -52,16 +52,16 @@ export function SearchableList({ items }: { items: string[] }) {
 }
 ```
 
-核心区别：没有 `useTransition`，输入框会等过滤完成才更新，导致卡顿。有了它，输入框立即响应，列表过滤在后台进行。
+最大の違いは、`useTransition` がない場合、入力ボックスはフィルタリングが完了するまで更新されず、カクつきが発生することです。`useTransition` を使用すると、入力ボックスは即座に応答し、リストフィルタリングはバックグラウンドで実行されます。
 
 ## Suspense：ローディング状態だけではない
 
-React 18 的 `Suspense` 配合 Server Components 和 lazy loading，是一个统一的异步边界。
+React 18 の `Suspense` は、Server Components や lazy loading と組み合わせることで、統一された非同期境界として機能します。
 
 ```tsx
 import { Suspense } from 'react'
 
-// 场景一：数据获取（配合 Server Components 或 use() 钩子）
+// シナリオ1：データ取得（Server Components または use() フックと組み合わせ）
 async function UserProfile({ userId }: { userId: string }) {
   const user = await fetchUser(userId)
   return <div>{user.name}</div>
@@ -72,7 +72,7 @@ export default function Page() {
     <div>
       <h1>Dashboard</h1>
       <Suspense fallback={<ProfileSkeleton />}>
-        {/* UserProfile 是异步 Server Component */}
+        {/* UserProfile は非同期 Server Component */}
         <UserProfile userId="123" />
       </Suspense>
 
@@ -83,7 +83,7 @@ export default function Page() {
   )
 }
 
-// 场景二：代码分割
+// シナリオ2：コード分割
 const HeavyChart = React.lazy(() => import('@/components/HeavyChart'))
 
 function Dashboard() {
@@ -95,16 +95,16 @@ function Dashboard() {
 }
 ```
 
-`Suspense` 的关键是"瀑布流"加载——多个 Suspense 边界独立工作，先到先渲染，而不是等所有数据都就绪。
+`Suspense` の鍵は「ウォーターフォール」ローディングです。複数の Suspense 境界が独立して動作し、先に準備ができたものからレンダリングされます。すべてのデータが揃うのを待つ必要はありません。
 
 ## use() フック：Promise と Context の読み取り
 
-React 18.x 实验性 API 中的 `use()` 钩子，可以在条件语句和循环中读取 Promise 和 Context，这是 `useContext` 和 `await` 做不到的。
+React 18.x の実験的 API である `use()` フックは、条件文やループ内で Promise や Context を読み取ることができます。これは `useContext` や `await` では実現できません。
 
 ```tsx
 import { use } from 'react'
 
-// 读取 Promise
+// Promise の読み取り
 async function Comments({ commentsPromise }: {
   commentsPromise: Promise<Comment[]>
 }) {
@@ -117,10 +117,10 @@ async function Comments({ commentsPromise }: {
   )
 }
 
-// 条件读取 Context — useContext 不能放在 if 里，use() 可以
+// 条件による Context の読み取り — useContext は if の中で使えないが、use() は使える
 function ConditionalTheme({ showThemed }: { showThemed: boolean }) {
   if (showThemed) {
-    const theme = use(ThemeContext) // 在条件语句中使用
+    const theme = use(ThemeContext) // 条件文で使用
     return <div style={{ color: theme.primary }}>Themed content</div>
   }
   return <div>Default content</div>
@@ -129,7 +129,7 @@ function ConditionalTheme({ showThemed }: { showThemed: boolean }) {
 
 ## 自動バッチ処理
 
-React 18 将批量更新从 React 事件处理器扩展到了所有上下文，包括 `setTimeout`、`Promise` 回调、原生事件。
+React 18 はバッチ更新を React イベントハンドラからすべてのコンテキストに拡張しました。`setTimeout`、`Promise` コールバック、ネイティブイベントも含まれます。
 
 ```tsx
 function App() {
@@ -137,21 +137,21 @@ function App() {
   const [flag, setFlag] = useState(false)
 
   function handleClick() {
-    // React 18 以前：两次渲染
-    // React 18：一次批量渲染
+    // React 18 以前：2回レンダリング
+    // React 18：1回のバッチレンダリング
     setTimeout(() => {
       setCount(c => c + 1)
       setFlag(f => !f)
-      // 两次 setState 合并为一次渲染
+      // 2回の setState が1回のレンダリングに統合される
     }, 100)
   }
 
-  // 如果确实需要每次 setState 立即渲染，用 flushSync
+  // 各 setState を即座にレンダリングする必要がある場合は flushSync を使用
   import { flushSync } from 'react-dom'
 
   function handleForceRender() {
     flushSync(() => setCount(c => c + 1))
-    // 此时 DOM 已经更新
+    // この時点で DOM は更新済み
     flushSync(() => setFlag(f => !f))
   }
 
@@ -161,8 +161,8 @@ function App() {
 
 ## まとめ
 
-- `useTransition` 区分紧急和非紧急更新，搜索过滤是最典型的用例
-- `Suspense` 是统一的异步边界，支持数据获取和代码分割，配合流式渲染效果最佳
-- `use()` 钩子可以在条件语句中读取 Promise 和 Context，比 `useContext` 更灵活
-- React 18 自动批量更新覆盖了所有异步场景，`flushSync` 是 escape hatch
-- 这些特性不是独立的，它们共同服务于 RSC + Suspense 的新架构
+- `useTransition` は緊急更新と非緊急更新を区別し、検索フィルタリングが最も典型的なユースケースです
+- `Suspense` は統一された非同期境界であり、データ取得とコード分割をサポートし、ストリーミングレンダリングと組み合わせると最も効果的です
+- `use()` フックは条件文で Promise と Context を読み取ることができ、`useContext` よりも柔軟です
+- React 18 の自動バッチ更新はすべての非同期シナリオをカバーし、`flushSync` はエスケープハッチです
+- これらの機能は独立したものではなく、RSC + Suspense の新しいアーキテクチャに共同で貢献しています

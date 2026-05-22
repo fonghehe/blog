@@ -1,5 +1,5 @@
 ---
-title: "Vue 全局過濾器和混入"
+title: "Vue 全局過濾器和混入：落地路徑與實戰建議"
 date: 2018-10-18 15:24:55
 tags:
   - Vue
@@ -60,7 +60,7 @@ Vue.filter("status", (value) => STATUS_MAP[value] || "未知");
 ```javascript
 export default {
   filters: {
-    // 只在這個組件裏用
+    // 隻在這個組件裏用
     truncate(value, length = 20) {
       if (!value) return "";
       return value.length > length ? value.slice(0, length) + "..." : value;

@@ -1,10 +1,10 @@
 ---
-title: "前端工程化：多環境配置管理"
+title: "前端工程化：多環境設定管理"
 date: 2018-07-17 15:05:37
 tags:
   - 前端
 readingTime: 2
-description: "專案通常有 development、staging、production 三個環境，各有不同的 API 地址、Feature Flag 等配置。這篇文章整理多環境配置的最佳實踐。"
+description: "專案通常有 development、staging、production 三個環境，各有不同的 API 地址、Feature Flag 等設定。這篇文章整理多環境設定的最佳實踐。"
 wordCount: 293
 ---
 
@@ -63,7 +63,7 @@ const isDebug = process.env.VUE_APP_DEBUG === "true";
 }
 ```
 
-## 多環境的配置結構
+## 多環境的設定結構
 
 ```javascript
 // src/config/index.js
@@ -121,12 +121,12 @@ if (config.features.debugPanel) {
 VUE_APP_STRIPE_SECRET_KEY=sk_live_xxxxx  # 會被打包進 JS！
 VUE_APP_DB_PASSWORD=xxxxx
 
-# ✅ 只放公開配置
+# ✅ 隻放公開設定
 VUE_APP_STRIPE_PUBLIC_KEY=pk_live_xxxxx  # publishable key 是可以公開的
 VUE_APP_API_BASE=https://api.example.com
 ```
 
-私密資訊（API secret、資料庫密碼）只放在**服務端**的環境變數裡。
+私密資訊（API secret、資料庫密碼）隻放在**服務端**的環境變數裡。
 
 ## .env 檔案的 Git 管理
 
@@ -151,9 +151,9 @@ VUE_APP_ENV=development
 VUE_APP_SENTRY_DSN=        # 可選：Sentry DSN
 ```
 
-## 構建時配置差異
+## 構建時設定差異
 
-有些配置只在特定環境的構建裡需要：
+有些設定隻在特定環境的構建裡需要：
 
 ```javascript
 // vue.config.js

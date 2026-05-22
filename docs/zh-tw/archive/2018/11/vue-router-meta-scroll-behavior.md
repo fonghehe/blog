@@ -4,11 +4,11 @@ date: 2018-11-24 11:06:12
 tags:
   - Vue
 readingTime: 2
-description: "專案越做越大，路由許可權控制變得複雜：有的頁面要登入才能訪問，有的頁面只有管理員能進，有的頁面在離開前要確認是否儲存……導航守衛能統一處理這些。"
+description: "專案越做越大，路由許可權控製變得複雜：有的頁面要登入才能訪問，有的頁面隻有管理員能進，有的頁面在離開前要確認是否儲存……導航守衛能統一處理這些。"
 wordCount: 197
 ---
 
-專案越做越大，路由許可權控制變得複雜：有的頁面要登入才能訪問，有的頁面只有管理員能進，有的頁面在離開前要確認是否儲存……導航守衛能統一處理這些。
+專案越做越大，路由許可權控製變得複雜：有的頁面要登入才能訪問，有的頁面隻有管理員能進，有的頁面在離開前要確認是否儲存……導航守衛能統一處理這些。
 
 ## 全域性前置守衛
 
@@ -52,7 +52,7 @@ router.beforeEach(async (to, from, next) => {
 });
 ```
 
-## 基於 meta 的許可權控制
+## 基於 meta 的許可權控製
 
 ```javascript
 // router/routes.js
@@ -131,7 +131,7 @@ const routes = [
   {
     path: "/pay/:orderId",
     component: PayPage,
-    // 只在這個路由上的守衛
+    // 隻在這個路由上的守衛
     beforeEnter(to, from, next) {
       // 檢查訂單是否可以支付
       const orderId = to.params.orderId;
@@ -171,7 +171,7 @@ this.$router.push(redirect);
 
 ## 小結
 
-- `beforeEach`：全域性前置，處理登入檢查、許可權控制
+- `beforeEach`：全域性前置，處理登入檢查、許可權控製
 - `afterEach`：全域性後置，修改標題、上報 PV
 - `beforeRouteLeave`：元件內，處理表單離開確認
 - `beforeEnter`：路由獨享，處理特定路由的進入邏輯

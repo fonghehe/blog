@@ -1,6 +1,6 @@
 ---
 title: "CSS View Transitions Level 2：跨文档动画实战"
-date: 2026-03-27 10:00:00
+date: 2026-03-27 16:21:58
 tags:
   - CSS
 readingTime: 2

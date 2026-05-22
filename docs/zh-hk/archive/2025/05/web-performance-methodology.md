@@ -1,16 +1,16 @@
 ---
-title: "Web 性能優化：2025 年的方法論"
-date: 2025-05-20 10:00:00
+title: "Web 效能優化：2025 年的方法論"
+date: 2025-05-20 09:54:31
 tags:
   - 性能優化
 readingTime: 2
-description: "做了幾個性能優化項目之後，想總結一下方法論，而不是零散的技巧。"
+description: "做了幾個效能優化項目之後，想總結一下方法論，而不是零散的技巧。"
 wordCount: 202
 ---
 
-做了幾個性能優化項目之後，想總結一下方法論，而不是零散的技巧。
+做了幾個效能優化項目之後，想總結一下方法論，而不是零散的技巧。
 
-## 性能優化的前提：度量
+## 效能優化的前提：度量
 
 ```
 沒有度量，就沒有優化。
@@ -169,7 +169,7 @@ const MarkdownEditor = lazy(() =>
   import("./MarkdownEditor").then((m) => ({ default: m.MarkdownEditor })),
 );
 
-// 只在需要時加載
+// 隻在需要時加載
 function Page() {
   const [editorOpen, setEditorOpen] = useState(false);
 
@@ -206,7 +206,7 @@ module.exports = withBundleAnalyzer({})
 
 ```
 1. 建立基線：用 Lighthouse CI 在 CI/CD 裏自動跑性能測試
-2. 收集真實數據：web-vitals 上報到分析平台
+2. 收集真實數據：web-vitals 上報到分析平臺
 3. 識別瓶頸：Profiler、Network 瀑布圖
 4. 優先級排序：影響最多用户、投入產出比最高的先做
 5. 修復驗證：A/B 測試或對比前後數據

@@ -1,10 +1,10 @@
 ---
-title: "Angular 11 新特性：HMR 支持與字體內聯優化"
+title: "Angular 11 新特性：HMR 支援與字體內聯優化"
 date: 2020-12-05 10:59:50
 tags:
   - Angular
 readingTime: 2
-description: "Angular 11 於 2020 年 11 月 11 日正式發佈。相比 Angular 10 的\"質量版本\"，Angular 11 帶來了更多開發體驗方面的實質改進，其中 HMR 支持和字體內聯是最值得關注的兩個特性。"
+description: "Angular 11 於 2020 年 11 月 11 日正式發佈。相比 Angular 10 的\"質量版本\"，Angular 11 帶來了更多開發體驗方面的實質改進，其中 HMR 支援和字體內聯是最值得關注的兩個特性。"
 wordCount: 330
 ---
 
@@ -12,10 +12,10 @@ Angular 11 於 2020 年 11 月 11 日正式發佈。相比 Angular 10 的"質量
 
 ## 開箱即用的 HMR
 
-Angular 11 之前，開啓 HMR 需要手動修改 `main.ts`，配置繁瑣。現在只需一個 CLI 參數：
+Angular 11 之前，開啓 HMR 需要手動修改 `main.ts`，設定繁瑣。現在隻需一個 CLI 參數：
 
 ```bash
-# Angular 11 之前的 HMR 配置（繁瑣）
+# Angular 11 之前的 HMR 設定（繁瑣）
 # 1. 修改 angular.json
 # 2. 修改 main.ts 添加 module.hot 判斷
 # 3. 安裝 @angularclass/hmr
@@ -39,7 +39,7 @@ ng serve --hmr
 }
 ```
 
-HMR 開啓後，修改組件的模板或樣式只會更新該組件，而不是刷新整個頁面，開發體驗大幅提升。
+HMR 開啓後，修改組件的範本或樣式隻會更新該組件，而不是刷新整個頁面，開發體驗大幅提升。
 
 ## 字體內聯優化
 
@@ -99,8 +99,8 @@ ng update @angular/core@11 @angular/cli@11
 
 # 主要遷移點：
 # 1. Webpack 5（實驗性）替換了 Webpack 4
-# 2. TypeScript 4.0 支持（Angular 10 是 3.9）
-# 3. IE 9/10 支持正式移除
+# 2. TypeScript 4.0 支援（Angular 10 是 3.9）
+# 3. IE 9/10 支援正式移除
 ```
 
 **Webpack 5 實驗性支持**（Angular 11 中仍是實驗性）：
@@ -120,7 +120,7 @@ ng update @angular/core@11 @angular/cli@11
 }
 ```
 
-## TypeScript 4.0 新特性支持
+## TypeScript 4.0 新特性支援
 
 Angular 11 完整支持 TypeScript 4.0，可以使用新的可變元組類型：
 
@@ -141,4 +141,4 @@ function concat<T extends unknown[], U extends unknown[]>(
 
 ## 總結
 
-Angular 11 的 HMR 改進是每天都能感受到的開發體驗提升，而字體內聯則是零配置的性能優化。對現有 Angular 10 項目來説，這次升級幾乎沒有 breaking changes，升級成本極低，推薦儘快跟進。
+Angular 11 的 HMR 改進是每天都能感受到的開發體驗提升，而字體內聯則是零設定的效能優化。對現有 Angular 10 項目來説，這次升級幾乎沒有 breaking changes，升級成本極低，推薦儘快跟進。

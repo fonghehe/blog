@@ -39,7 +39,7 @@ export const colors = {
 } as const;
 ```
 
-這還只是原始值。真正有用的是語義化 Token：
+這還隻是原始值。真正有用的是語義化 Token：
 
 ```typescript
 // tokens/semantic.ts
@@ -144,7 +144,7 @@ const Button = styled.button`
 `;
 ```
 
-切換主題只需要改 `data-theme` 屬性，所有組件自動變色。不需要 JavaScript 重新渲染。
+切換主題隻需要改 `data-theme` 屬性，所有組件自動變色。不需要 JavaScript 重新渲染。
 
 ## 間距和排版 Token
 
@@ -182,12 +182,12 @@ export const typography = {
 }
 ```
 
-用 Style Dictionary 從 Token 源文件生成 CSS 變量、TypeScript 類型、iOS/Android 常量。一套源文件，多平台輸出。
+用 Style Dictionary 從 Token 源檔案生成 CSS 變量、TypeScript 類型、iOS/Android 常量。一套源檔案，多平臺輸出。
 
 ## 小結
 
 - Design Token 是設計系統的基礎設施，讓設計決策可編程
 - 基礎色板 + 語義化 Token 的兩層結構兼顧靈活性和可維護性
 - CSS 變量方案實現零 JS 開銷的主題切換
-- 配合 Style Dictionary 實現 Token 的多平台分發
+- 配合 Style Dictionary 實現 Token 的多平臺分發
 - Token 系統的建設投入大，但在多主題、多品牌項目中收益明顯

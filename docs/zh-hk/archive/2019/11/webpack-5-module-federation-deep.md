@@ -1,11 +1,11 @@
 ---
-title: "Webpack 5 Module Federation 深入"
+title: "Webpack 5 Module Federation 深入：微前端的下一個答案"
 date: 2019-11-06 11:20:08
 tags:
   - Webpack
   - 工程化
 readingTime: 5
-description: "在上一篇文章中我們預覽了 Webpack 5 的新特性，其中 Module Federation 是最具革命性的功能。本文將深入探討 Module Federation 的架構設計、配置細節和在微前端場景中的實戰應用。"
+description: "在上一篇文章中我們預覽了 Webpack 5 的新特性，其中 Module Federation 是最具革命性的功能。本文將深入探討 Module Federation 的架構設計、設定細節和在微前端場景中的實戰應用。"
 wordCount: 652
 ---
 
@@ -51,9 +51,9 @@ dashboard/
 
 Host 應用通過加載這個 `remoteEntry.js` 來初始化遠程容器。
 
-## 詳細配置
+## 詳細設定
 
-### Remote 端配置
+### Remote 端設定
 
 ```js
 // dashboard/webpack.config.js
@@ -105,7 +105,7 @@ module.exports = {
 };
 ```
 
-### Host 端配置
+### Host 端設定
 
 ```js
 // main-app/webpack.config.js
@@ -171,12 +171,12 @@ function App() {
 
 ## 共享依賴詳解
 
-Shared 配置控制依賴如何在 Host 和 Remote 之間共享：
+Shared 設定控製依賴如何在 Host 和 Remote 之間共享：
 
 ```js
 shared: {
   react: {
-    // singleton: true 確保只加載一個 React 實例
+    // singleton: true 確保隻加載一個 React 實例
     // 如果 Host 和 Remote 的 React 版本不兼容，會加載兩個實例（non-singleton）
     singleton: true,
 
@@ -193,7 +193,7 @@ shared: {
 }
 ```
 
-### 版本協商機制
+### 版本協商機製
 
 當 Host 和 Remote 共享同一個依賴時，Webpack 會進行版本協商：
 
@@ -369,7 +369,7 @@ function App() {
 ------|------------------|---------|------------|
 | 隔離級別 | CSS 共享作用域 | JS/CSS 沙箱 | JS 沙箱 |
 | 通信方式 | 直接 import | 全局狀態 | 自定義 |
-| 依賴共享 | 內置版本協商 | 需要配置 | 需要 import maps |
+| 依賴共享 | 內置版本協商 | 需要設定 | 需要 import maps |
 | 構建要求 | 必須 Webpack 5 | 無要求 | 無要求 |
 | 子應用加載 | 模塊級別 | 應用級別 | 應用級別 |
 
@@ -378,7 +378,7 @@ function App() {
 - Module Federation 允許獨立構建的應用在運行時共享模塊
 - Host 通過 `remotes` 配置消費遠程模塊，Remote 通過 `exposes` 暴露模塊
 - `remoteEntry.js` 是遠程容器的入口文件
-- `shared` 配置實現依賴共享，`singleton: true` 確保只加載一個實例
+- `shared` 設定實現依賴共享，`singleton: true` 確保隻加載一個實例
 - 支持動態加載，適用於配置驅動的微前端架構
 - 一個應用可以同時是 Host 和 Remote
 - 與 qiankun 等方案相比，Module Federation 的優勢在於模塊級別的共享和內置的依賴協商

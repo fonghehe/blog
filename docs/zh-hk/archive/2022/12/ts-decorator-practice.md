@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 裝飾器實戰"
+title: "TypeScript 裝飾器實戰：落地路徑與實戰建議"
 date: 2022-12-01 09:31:00
 tags:
   - TypeScript

@@ -27,8 +27,9 @@ const monthPosts = computed(() => {
   if (!year || !month) return [];
   const prefix = localePrefix.value;
   return allPosts.filter((p) => {
-    const d = new Date(p.date);
-    const matchDate = d.getFullYear() === year && d.getMonth() + 1 === month;
+    // Extract date part directly to avoid timezone shifts from new Date()
+    const [y, m] = p.date.slice(0, 10).split("-").map(Number);
+    const matchDate = y === year && m === month;
     if (prefix) return p.url.startsWith(prefix + "/") && matchDate;
     // zh root: exclude all locale-prefixed variants
     return (
@@ -114,11 +115,20 @@ const t = computed(() => {
   };
 });
 
+function normalizeDateString(d: string) {
+  const trimmed = d.trim();
+  if (!trimmed) return "";
+  return trimmed.replace(/^([0-9]{4}-[0-9]{2}-[0-9]{2})[ ]+/, "$1T");
+}
+
 function formatDate(d: string) {
   if (!d) return "";
-  const dt = new Date(d.length === 10 ? d + "T00:00:00" : d);
-  if (isNaN(dt.getTime())) return "";
-  return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, "0")}-${String(dt.getDate()).padStart(2, "0")}`;
+  // The date string from meta.data.ts always starts with YYYY-MM-DD —
+  // extract it directly to avoid timezone shifts from new Date() parsing.
+  const normalized = normalizeDateString(d);
+  const datePart = normalized.slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(datePart)) return "";
+  return datePart;
 }
 </script>
 

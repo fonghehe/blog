@@ -1,5 +1,5 @@
 ---
-title: "vite-plugin-ssr SSR 方案"
+title: "vite-plugin-ssr SSR 方案：落地路徑與實戰建議"
 date: 2022-03-01 09:31:26
 tags:
   - Vite
@@ -100,7 +100,7 @@ export default defineConfig({
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 

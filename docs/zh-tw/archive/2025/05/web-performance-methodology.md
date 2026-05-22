@@ -1,6 +1,6 @@
 ---
 title: "Web 效能最佳化：2025 年的方法論"
-date: 2025-05-20 10:00:00
+date: 2025-05-20 09:54:31
 tags:
   - 效能最佳化
 readingTime: 2
@@ -169,7 +169,7 @@ const MarkdownEditor = lazy(() =>
   import("./MarkdownEditor").then((m) => ({ default: m.MarkdownEditor })),
 );
 
-// 只在需要時載入
+// 隻在需要時載入
 function Page() {
   const [editorOpen, setEditorOpen] = useState(false);
 

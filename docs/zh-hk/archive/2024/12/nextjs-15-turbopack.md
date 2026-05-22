@@ -1,6 +1,6 @@
 ---
-title: "Next.js 15 Turbopack 默認"
-date: 2024-12-09 10:00:00
+title: "Next.js 15 Turbopack 稳定版實踐：從 Webpack 遷移的真實資料"
+date: 2024-12-09 14:43:20
 tags:
   - React
 readingTime: 2

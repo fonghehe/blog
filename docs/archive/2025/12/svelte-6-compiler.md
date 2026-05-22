@@ -1,6 +1,6 @@
 ---
-title: "Svelte 6 编译器改进"
-date: 2025-12-01 10:00:00
+title: "Svelte 6 编译器实践：迁移后性能与开发体验的真实反馈"
+date: 2025-12-01 10:15:52
 tags:
   - Svelte
 readingTime: 2

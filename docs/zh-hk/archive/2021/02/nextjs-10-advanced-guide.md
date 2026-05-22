@@ -1,5 +1,5 @@
 ---
-title: "Next.js 11 新特性 Image Optimization"
+title: "Next.js 11 新特性 Image Optimization：特性解讀與遷移建議"
 date: 2021-02-16 10:53:22
 tags:
   - React
@@ -52,7 +52,7 @@ import { UserList } from './components/UserList'
 export default async function HomePage() {
   return (
     <main className="container mx-auto p-4">
-      <h1>控制台</h1>
+      <h1>控製臺</h1>
       <Suspense fallback={<Skeleton />}>
         <UserList />
       </Suspense>
@@ -62,7 +62,7 @@ export default async function HomePage() {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 實戰案例
 
@@ -87,7 +87,7 @@ function reducer(state, action) {
 
 這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
-## 性能優化
+## 效能優化
 
 先來看基本的實現方式：
 

@@ -84,7 +84,7 @@ fn("a", "b"); // ✅
 // 內建工具型別
 type Partial<T> = { [K in keyof T]?: T[K] }; // 所有屬性可選
 type Required<T> = { [K in keyof T]-?: T[K] }; // 所有屬性必填
-type Readonly<T> = { readonly [K in keyof T]: T[K] }; // 只讀
+type Readonly<T> = { readonly [K in keyof T]: T[K] }; // 隻讀
 type Pick<T, K extends keyof T> = { [P in K]: T[P] }; // 挑選屬性
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>; // 排除屬性
 type Record<K extends string, T> = { [P in K]: T }; // 構建物件型別

@@ -27,7 +27,7 @@ export default {
     };
   },
   computed: {
-    // 只要 firstName 或 lastName 沒變，直接返回快取
+    // 隻要 firstName 或 lastName 沒變，直接返回快取
     fullName() {
       return this.firstName + this.lastName;
     },
@@ -42,7 +42,7 @@ export default {
 };
 ```
 
-**快取的意義：** 如果模板裡多處用到 `fullName`，普通 `methods` 每次渲染都會重新執行，`computed` 只在依賴變了才重新計算。
+**快取的意義：** 如果範本裡多處用到 `fullName`，普通 `methods` 每次渲染都會重新執行，`computed` 隻在依賴變了才重新計算。
 
 ## watch：響應變化，執行副作用
 

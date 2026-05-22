@@ -1,5 +1,5 @@
 ---
-title: "Storybook 組件開發環境搭建"
+title: "Storybook 組件開發環境搭建：落地路徑與實戰建議"
 date: 2019-10-07 14:56:30
 tags:
   - 測試
@@ -55,7 +55,7 @@ export const Loading = () => <Button loading>加載中...</Button>;
 
 每個導出的函數都是一個獨立的 Story，在 Storybook 側邊欄中可以單獨查看和交互。
 
-## 使用 Knobs 插件動態調整 Props
+## 使用 Knobs 外掛動態調整 Props
 
 `@storybook/addon-knobs` 是最常用的插件之一，可以在 Storybook 面板中動態調整組件的 props：
 
@@ -97,7 +97,7 @@ import '@storybook/addon-actions/register';
 import '@storybook/addon-links/register';
 ```
 
-## 使用 Actions 插件捕獲事件
+## 使用 Actions 外掛捕獲事件
 
 Actions 插件可以在 Storybook 面板中查看組件觸發的事件回調，方便調試交互邏輯：
 
@@ -120,9 +120,9 @@ export const WithFormSubmit = () => (
 );
 ```
 
-## 配置自定義 Webpack
+## 設定自定義 Webpack
 
-項目如果使用了 CSS Modules、TypeScript 等，需要擴展 Storybook 的 Webpack 配置：
+項目如果使用了 CSS Modules、TypeScript 等，需要擴展 Storybook 的 Webpack 設定：
 
 ```js
 // .storybook/webpack.config.js
@@ -175,7 +175,7 @@ module.exports = ({ config }) => {
 };
 ```
 
-## 添加 Docs 插件
+## 添加 Docs 外掛
 
 Storybook 5.2 引入了 `@storybook/addon-docs`，用 MDX 格式編寫文檔更加直觀：
 

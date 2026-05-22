@@ -1,6 +1,6 @@
 ---
-title: "Deno 2.0 Node.js 互換性"
-date: 2024-12-19 10:00:00
+title: "Deno 2.0 Node 兼容 2024 年末：生态现状与生产评估"
+date: 2024-12-19 19:53:30
 tags:
   - フロントエンド
 readingTime: 2

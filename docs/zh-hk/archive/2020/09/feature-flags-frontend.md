@@ -1,5 +1,5 @@
 ---
-title: "前端特性開關 Feature Flags"
+title: "前端特性開關 Feature Flags：落地路徑與實戰建議"
 date: 2020-09-08 15:34:34
 tags:
   - 前端
@@ -63,7 +63,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 真實場景應用
 

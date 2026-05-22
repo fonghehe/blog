@@ -1,6 +1,6 @@
 ---
-title: "Farm Build Tool Deep Dive"
-date: 2025-11-27 10:00:00
+title: "Farm Bundler Practice: 大型Project中Performance对比 & 工程决策"
+date: 2025-11-27 15:01:38
 tags:
   - Frontend
 readingTime: 2

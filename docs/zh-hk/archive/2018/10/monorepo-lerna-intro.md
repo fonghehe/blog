@@ -15,13 +15,13 @@ wordCount: 331
 
 **Multirepo（多倉庫）**：每個項目/包一個 git 倉庫
 
-- 優點：職責清晰，互不干擾
+- 優點：職責清晰，互不幹擾
 - 缺點：跨包改動需要多次 PR，本地聯調複雜，版本管理困難
 
 **Monorepo（單倉庫）**：多個包在一個 git 倉庫
 
 - 優點：原子提交，統一版本，聯調方便
-- 缺點：倉庫變大，CI 需要更多配置
+- 缺點：倉庫變大，CI 需要更多設定
 
 ## Lerna 基礎
 
@@ -66,7 +66,7 @@ npx lerna add @myorg/utils --scope=@myorg/admin
 # 在所有包裏運行命令
 npx lerna run build          # 所有包運行 npm run build
 npx lerna run test           # 所有包運行 npm run test
-npx lerna run build --scope=@myorg/components  # 只跑某個包
+npx lerna run build --scope=@myorg/components  # 隻跑某個包
 
 # 發佈
 npx lerna publish
@@ -127,9 +127,9 @@ packages/
 
 ## 痛點
 
-- 大倉庫的 CI 時間會變長（需要只針對變化的包運行 CI）
+- 大倉庫的 CI 時間會變長（需要隻針對變化的包運行 CI）
 - IDE 性能可能下降（node_modules 很大）
-- 需要配置每個包的構建工具
+- 需要設定每個包的構建工具
 
 Lerna 6.x 後對這些問題有了更好的支持（affected detection、task pipeline）。
 

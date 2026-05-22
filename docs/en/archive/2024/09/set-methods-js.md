@@ -1,6 +1,6 @@
 ---
 title: "JavaScript Set New Methods"
-date: 2024-09-10 10:00:00
+date: 2024-09-10 16:44:21
 tags:
   - JavaScript
 readingTime: 2

@@ -1,5 +1,5 @@
 ---
-title: "React 18 Suspense データフェッチ"
+title: "React 18 Suspense 数据获取実践：结合 React Query 的生产ソリューション"
 date: 2022-12-12 16:06:34
 tags:
   - React

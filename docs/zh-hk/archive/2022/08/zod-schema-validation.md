@@ -1,5 +1,5 @@
 ---
-title: "Zod TypeScript Schema 校驗"
+title: "Zod TypeScript Schema 校驗：落地路徑與實戰建議"
 date: 2022-08-16 16:44:41
 tags:
   - 前端
@@ -101,7 +101,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能優化
+## 效能優化
 
 以下是一個完整的示例：
 

@@ -1,6 +1,6 @@
 ---
-title: "Vitest 3.0 テストフレームワーク"
-date: 2025-09-25 10:00:00
+title: "Vitest 3.0 测试框架：Browser Mode 与全新的断言 API"
+date: 2025-09-25 15:39:16
 tags:
   - エンジニアリング
   - テスト

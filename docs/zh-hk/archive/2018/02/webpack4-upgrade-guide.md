@@ -5,7 +5,7 @@ tags:
   - Webpack
   - 工程化
 readingTime: 2
-description: "Webpack 4 在 2 月底正式發佈，最大的亮點是 **zero configuration**——不寫配置文件也能跑起來。升級了幾個項目，記錄一下實際體驗。"
+description: "Webpack 4 在 2 月底正式發佈，最大的亮點是 **zero configuration**——不寫設定檔案也能跑起來。升級了幾個項目，記錄一下實際體驗。"
 wordCount: 393
 ---
 
@@ -67,7 +67,7 @@ npm install webpack@4 webpack-cli@3 webpack-dev-server@3
 }
 ```
 
-### 3. 移除廢棄配置
+### 3. 移除廢棄設定
 
 Webpack 4 刪除了一些舊 API：
 

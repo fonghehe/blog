@@ -92,7 +92,7 @@ Vue 2.6 用 `v-slot` 統一了所有插槽：
 
 ## 組件定義：從 `v-slot` 看設計意圖
 
-提供插槽的組件（Slot Provider）寫法沒變，只是消費方語法統一了：
+提供插槽的組件（Slot Provider）寫法沒變，隻是消費方語法統一了：
 
 ```html
 <!-- MyTable 組件 -->

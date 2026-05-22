@@ -1,14 +1,14 @@
 ---
-title: "Vue 組件單元測試實戰"
+title: "Vue 組件單元測試實戰：實踐方法與治理思路"
 date: 2020-05-28 16:10:29
 tags:
   - Vue
 readingTime: 3
-description: "之前寫了一篇測試實踐指南，這篇專門針對 Vue 組件的單元測試深入展開。管理後台項目裏有 200+ 組件，要保證重構時不 break，測試必須跟上。"
+description: "之前寫了一篇測試實踐指南，這篇專門針對 Vue 組件的單元測試深入展開。管理後臺項目裏有 200+ 組件，要保證重構時不 break，測試必須跟上。"
 wordCount: 170
 ---
 
-之前寫了一篇測試實踐指南，這篇專門針對 Vue 組件的單元測試深入展開。管理後台項目裏有 200+ 組件，要保證重構時不 break，測試必須跟上。
+之前寫了一篇測試實踐指南，這篇專門針對 Vue 組件的單元測試深入展開。管理後臺項目裏有 200+ 組件，要保證重構時不 break，測試必須跟上。
 
 ## 環境搭建
 
@@ -18,7 +18,7 @@ npm install -D jest @vue/test-utils vue-jest babel-jest @babel/core @babel/prese
 # Vue 2
 npm install -D vue-template-compiler vue@2
 
-# ts 支持
+# ts 支援
 npm install -D ts-jest @types/jest typescript
 ```
 
@@ -98,7 +98,7 @@ describe('Tag', () => {
     expect(wrapper.emitted('click')).toHaveLength(1);
   });
 
-  it('type 校驗失敗時在控制台警告', () => {
+  it('type 校驗失敗時在控製臺警告', () => {
     const warnSpy = jest.spyOn(console, 'error').mockImplementation();
     mount(Tag, {
       propsData: { type: 'unknown' },

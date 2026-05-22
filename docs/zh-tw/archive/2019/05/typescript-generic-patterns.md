@@ -4,11 +4,11 @@ date: 2019-05-29 10:19:35
 tags:
   - TypeScript
 readingTime: 7
-description: "泛型是 TypeScript 型別系統中最強大的特性之一。很多人只知道 `Array<T>` 這種基本用法，實際上泛型結合條件型別、對映型別、`infer` 關鍵字可以實現非常靈活的型別推導。本文從基礎到實戰，系統講解泛型程式設計模式。"
+description: "泛型是 TypeScript 型別系統中最強大的特性之一。很多人隻知道 `Array<T>` 這種基本用法，實際上泛型結合條件型別、對映型別、`infer` 關鍵字可以實現非常靈活的型別推導。本文從基礎到實戰，系統講解泛型程式設計模式。"
 wordCount: 585
 ---
 
-泛型是 TypeScript 型別系統中最強大的特性之一。很多人只知道 `Array<T>` 這種基本用法，實際上泛型結合條件型別、對映型別、`infer` 關鍵字可以實現非常靈活的型別推導。本文從基礎到實戰，系統講解泛型程式設計模式。
+泛型是 TypeScript 型別系統中最強大的特性之一。很多人隻知道 `Array<T>` 這種基本用法，實際上泛型結合條件型別、對映型別、`infer` 關鍵字可以實現非常靈活的型別推導。本文從基礎到實戰，系統講解泛型程式設計模式。
 
 ## 泛型基礎
 
@@ -74,7 +74,7 @@ class Queue<T> {
   }
 }
 
-// 每個 Queue 例項只存一種型別
+// 每個 Queue 例項隻存一種型別
 const numberQueue = new Queue<number>();
 numberQueue.enqueue(1);
 numberQueue.enqueue(2);
@@ -86,7 +86,7 @@ stringQueue.enqueue('hello');
 
 ## 泛型約束
 
-泛型預設可以接受任何型別，但有時候需要限制 T 必須具備某些屬性。
+泛型預設可以接受任何型別，但有時候需要限製 T 必須具備某些屬性。
 
 ```typescript
 // 問題：這個函式想訪問 arg.length，但不是所有型別都有 length
@@ -112,7 +112,7 @@ logLength({ length: 10 }); // OK，物件有 length 屬性
 ### keyof 約束
 
 ```typescript
-// 只能訪問物件上實際存在的 key
+// 隻能訪問物件上實際存在的 key
 function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
 }
@@ -656,7 +656,7 @@ type PartialUser = Partial<User>;
 // Required<T> - 所有屬性變為必填
 type RequiredUser = Required<PartialUser>;
 
-// Readonly<T> - 所有屬性變為只讀
+// Readonly<T> - 所有屬性變為隻讀
 type ReadonlyUser = Readonly<User>;
 
 // Pick<T, K> - 選取部分屬性
@@ -691,7 +691,7 @@ type T6 = InstanceType<typeof MyClass>; // MyClass
 ## 小結
 
 - 泛型讓型別可以引數化，是 TypeScript 型別系統的基礎構建塊
-- 泛型約束（`extends`）限制類型引數的範圍，`keyof` 約束確保 key 存在於物件上
+- 泛型約束（`extends`）限製類型引數的範圍，`keyof` 約束確保 key 存在於物件上
 - 條件型別（`T extends U ? X : Y`）實現型別級別的條件判斷，對聯合型別有自動分發行為
 - `infer` 關鍵字實現型別模式匹配，可以從複雜型別中提取子型別
 - 對映型別（`[P in keyof T]`）實現型別遍歷和變換，是 `Partial`、`Pick`、`Readonly` 等工具型別的基礎

@@ -361,7 +361,7 @@ MobX 程式碼量約為 Redux 的 1/3。
 | 更新方式 | dispatch action → pure reducer | 直接修改 observable |
 | 學習曲線 | 陡峭（action、reducer、middleware） | 平緩（observable、computed、action） |
 | 除錯工具 | Redux DevTools，支援時間旅行 | MobX DevTools，功能稍弱 |
-| 不可變性 | 強制不可變（方便追蹤變化） | 自動追蹤（直接修改） |
+| 不可變性 | 強製不可變（方便追蹤變化） | 自動追蹤（直接修改） |
 | 程式碼量 | 多（action、reducer、selector） | 少（直接修改屬性） |
 | 適用場景 | 大型團隊，需要嚴格規範 | 中小型團隊，追求開發效率 |
 
@@ -370,7 +370,7 @@ MobX 程式碼量約為 Redux 的 1/3。
 ```js
 import { configure } from 'mobx';
 
-// 開啟嚴格模式：只允許在 action 中修改狀態
+// 開啟嚴格模式：隻允許在 action 中修改狀態
 configure({ enforceActions: 'always' });
 
 class CounterStore {

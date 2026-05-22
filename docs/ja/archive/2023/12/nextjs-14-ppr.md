@@ -1,5 +1,5 @@
 ---
-title: "Next.js 14 Partial Prerendering"
+title: "Next.js 14 Partial Prerendering：从概念验证到实验性支持"
 date: 2023-12-28 14:31:32
 tags:
   - Next.js

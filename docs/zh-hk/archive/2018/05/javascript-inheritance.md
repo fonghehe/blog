@@ -1,5 +1,5 @@
 ---
-title: "JavaScript 繼承的幾種方式"
+title: "JavaScript 繼承的幾種方式：落地路徑與實戰建議"
 date: 2018-05-24 16:15:02
 tags:
   - JavaScript

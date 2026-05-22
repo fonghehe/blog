@@ -5,11 +5,11 @@ tags:
   - Vite
   - Vitest
 readingTime: 3
-description: "如果你的項目用 Vite，那 Vitest 就是測試的最優解。和 Vite 共享配置、同一轉換管道、原生 ESM 支持——Jest 需要各種 hack 才能做到的事，Vitest 天然支持。"
+description: "如果你的項目用 Vite，那 Vitest 就是測試的最優解。和 Vite 共享設定、同一轉換管道、原生 ESM 支援——Jest 需要各種 hack 才能做到的事，Vitest 天然支援。"
 wordCount: 379
 ---
 
-如果你的項目用 Vite，那 Vitest 就是測試的最優解。和 Vite 共享配置、同一轉換管道、原生 ESM 支持——Jest 需要各種 hack 才能做到的事，Vitest 天然支持。
+如果你的項目用 Vite，那 Vitest 就是測試的最優解。和 Vite 共享設定、同一轉換管道、原生 ESM 支援——Jest 需要各種 hack 才能做到的事，Vitest 天然支援。
 
 ## 快速上手
 
@@ -46,7 +46,7 @@ export default defineConfig({
 }
 ```
 
-## 與 Jest 的 API 兼容
+## 與 Jest 的 API 相容
 
 ```typescript
 // sum.test.ts
@@ -92,7 +92,7 @@ describe('with mocks', () => {
 
 大部分 Jest API 可以直接用，遷移成本很低。
 
-## 與 Vite 共享配置
+## 與 Vite 共享設定
 
 ```typescript
 // vite.config.ts
@@ -121,7 +121,7 @@ export default defineConfig({
 });
 ```
 
-路徑別名、插件、環境變量——全部自動繼承，不需要像 Jest 那樣單獨配置 `moduleNameMapper`。
+路徑別名、外掛、環境變量——全部自動繼承，不需要像 Jest 那樣單獨設定 `moduleNameMapper`。
 
 ## React 組件測試
 
@@ -166,7 +166,7 @@ import { describe, it, expect } from 'vitest';
 import { getDefaultConfig } from './config';
 
 describe('config', () => {
-  it('默認配置快照', () => {
+  it('默認設定快照', () => {
     const config = getDefaultConfig();
     expect(config).toMatchInlineSnapshot(`
       {
@@ -220,7 +220,7 @@ vi.mock('*.svg', () => ({
 }));
 ```
 
-## 性能對比
+## 效能對比
 
 我們一箇中型項目的測試套件（150 個測試文件，800 個測試用例）：
 

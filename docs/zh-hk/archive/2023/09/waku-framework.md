@@ -1,5 +1,5 @@
 ---
-title: "Waku 輕量級 React RSC 框架"
+title: "Waku 輕量級 React RSC 框架：落地路徑與實戰建議"
 date: 2023-09-04 14:50:41
 tags:
   - 前端
@@ -77,7 +77,7 @@ import { UserList } from './components/UserList'
 export default async function HomePage() {
   return (
     <main className="container mx-auto p-4">
-      <h1>控制台</h1>
+      <h1>控製臺</h1>
       <Suspense fallback={<Skeleton />}>
         <UserList />
       </Suspense>
@@ -110,7 +110,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 注意事項
 

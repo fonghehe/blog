@@ -1,5 +1,5 @@
 ---
-title: "CSS 逻辑属性 Logical Properties"
+title: "CSS 逻辑属性 Logical Properties 2020：浏览器支持与生产实践"
 date: 2019-09-09 15:05:57
 tags:
   - CSS

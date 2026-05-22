@@ -3,30 +3,30 @@ title: "Bun：JavaScriptランタイムの新たな挑戦者"
 date: 2022-07-26 10:22:05
 tags:
   - フロントエンド
-readingTime: 2
-description: "2022 年 7 月，Jarred Sumner 发布了 Bun——一个用 Zig 编写的 JavaScript 运行时。它的目标很激进：替代 Node.js、npm、esbuild、Jest，成为 JavaScript 工具链的统一解决方案。"
-wordCount: 411
+readingTime: 3
+description: "2022年7月、Jarred Sumner は Bun をリリースしました——Zig で記述された JavaScript ランタイムです。その目標は大胆です。Node.js、npm、esbuild、Jest を置き換え、JavaScript ツールチェーンの統一ソリューションとなることです。"
+wordCount: 625
 ---
 
-2022 年 7 月，Jarred Sumner 发布了 Bun——一个用 Zig 编写的 JavaScript 运行时。它的目标很激进：替代 Node.js、npm、esbuild、Jest，成为 JavaScript 工具链的统一解决方案。
+2022年7月、Jarred Sumner は Bun をリリースしました——Zig で記述された JavaScript ランタイムです。その目標は大胆です：Node.js、npm、esbuild、Jest を置き換え、JavaScript ツールチェインの統一ソリューションとなることです。
 
 ## インストールと基本的な使い方
 
 ```bash
-# 安装
+# インストール
 curl -fsSL https://bun.sh/install | bash
 
-# 验证
+# 確認
 bun --version
 # 0.1.x（2022 年 7 月）
 
-# 运行 TypeScript 文件（不需要编译步骤）
+# TypeScript ファイルを実行（コンパイル不要）
 bun run app.ts
 
-# 运行 JSX/TSX
+# JSX/TSX を実行
 bun run App.tsx
 
-# 包管理
+# パッケージ管理
 bun install
 bun add lodash
 bun remove lodash
@@ -35,7 +35,7 @@ bun remove lodash
 ## どれほど速いのか
 
 ```bash
-# 运行 TypeScript 脚本
+# TypeScript スクリプトを実行
 time bun run script.ts
 # 0.02s
 
@@ -46,18 +46,18 @@ time node --loader ts-node/esm script.ts
 # 2.1s
 ```
 
-冷启动快了 100 倍。这是因为 Bun 用 JavaScriptCore（Safari 的引擎）而不是 V8，并且用 Zig 写了底层 IO。
+コールドスタートが100倍高速です。これはBunがV8ではなくJavaScriptCore（Safariのエンジン）を使用し、Zigで低レベルIOを記述しているためです。
 
 ## パッケージマネージャーとして
 
 ```bash
-# 安装依赖（比 pnpm 还快）
+# 依存関係をインストール（pnpmより高速）
 bun install
 
-# 添加依赖
+# 依存関係を追加
 bun add react react-dom
 
-# 查看安装速度
+# インストール速度を確認
 time bun install
 # node_modules: 0.3s
 
@@ -65,15 +65,15 @@ time pnpm install
 # node_modules: 2.8s
 ```
 
-Bun 使用硬链接 + 全局缓存（和 pnpm 类似），但实现更快。
+Bun はハードリンクとグローバルキャッシュを使用します（pnpmと同様）が、実装がより高速です。
 
 ## 組み込みバンドラー
 
 ```typescript
-// 直接打包
+// 直接バンドル
 bun build ./src/index.ts --outdir ./dist
 
-// 带配置
+// 設定付き
 bun build ./src/index.ts \
   --outdir ./dist \
   --minify \
@@ -87,7 +87,7 @@ await Bun.build({
   entrypoints: ['./src/index.ts'],
   outdir: './dist',
   minify: true,
-  splitting: true, // 代码分割
+  splitting: true, // コード分割
   target: 'browser',
   format: 'esm',
 });
@@ -110,11 +110,11 @@ describe('math', () => {
   });
 });
 
-// 运行
+// 実行
 // bun test
 ```
 
-Bun 的测试运行器兼容 Jest API，但快得多。
+Bun のテストランナーはJest APIと互換性がありますが、はるかに高速です。
 
 ## HTTP サーバー
 
@@ -130,7 +130,7 @@ const server = Bun.serve({
     }
 
     if (url.pathname === '/api/stream') {
-      // 流式响应
+      // ストリーム応答
       return new Response(
         new ReadableStream({
           start(controller) {
@@ -149,7 +149,7 @@ const server = Bun.serve({
 console.log(`Listening on http://localhost:${server.port}`);
 ```
 
-性能对比（简单的 JSON 响应）：
+パフォーマンス比較（単純なJSONレスポンス）：
 
 ```
 Node.js (http):     ~50,000 req/s
@@ -160,50 +160,50 @@ Bun (Bun.serve):   ~250,000 req/s
 ## ファイル I/O
 
 ```typescript
-// 读文件（比 Node.js 快 10x）
+// ファイル読み込み（Node.jsより10倍高速）
 const file = Bun.file('data.json');
 const data = await file.json();
 
-// 写文件
+// ファイル書き込み
 await Bun.write('output.txt', 'Hello, Bun!');
 
-// 复制文件
+// ファイルコピー
 const src = Bun.file('source.txt');
 await Bun.write('dest.txt', src);
 
-// 文件信息
-console.log(file.size);     // 字节
-console.log(file.type);     // MIME 类型
+// ファイル情報
+console.log(file.size);     // バイト
+console.log(file.type);     // MIME タイプ
 console.log(file.lastModified);
 ```
 
 ## 現実の問題
 
-2022 年 7 月的 Bun 还很早期：
+2022年7月のBunはまだ非常に初期段階でした：
 
-1. **兼容性**：不是所有 npm 包都能跑，尤其是用了 Node.js 原生模块的
-2. **稳定性**：还在 0.x 版本，API 可能变化
-3. **生态**：没有社区插件和工具链
-4. **Windows 支持**：2022 年还没有
+1. **互換性**：すべてのnpmパッケージが動作するわけではなく、特にNode.jsネイティブモジュールを使用しているもの
+2. **安定性**：まだ0.xバージョンであり、APIが変更される可能性があります
+3. **エコシステム**：コミュニティプラグインやツールチェインがありません
+4. **Windowsサポート**：2022年時点では未対応
 
 ```bash
-# 测试你的项目兼容性
+# プロジェクトの互換性をテスト
 bun install
 bun test
-# 大概率会遇到某些包不兼容
+# おそらく一部のパッケージと互換性がありません
 ```
 
 ## Node.js と Deno との位置づけ
 
 | 特性 | Node.js | Deno | Bun |
 |------|---------|------|-----|
-| 引擎 | V8 | V8 | JavaScriptCore |
-| 语言 | C++ | Rust | Zig |
-| TypeScript | 需要编译 | 原生支持 | 原生支持 |
-| 包管理 | npm/pnpm/yarn | URL 导入 | 内置 |
-| 测试 | 需要框架 | 内置 | 内置 |
-| 成熟度 | 生产就绪 | 较成熟 | 早期 |
+| エンジン | V8 | V8 | JavaScriptCore |
+| 言語 | C++ | Rust | Zig |
+| TypeScript | コンパイルが必要 | ネイティブ対応 | ネイティブ対応 |
+| パッケージ管理 | npm/pnpm/yarn | URLインポート | 内蔵 |
+| テスト | フレームワークが必要 | 内蔵 | 内蔵 |
+| 成熟度 | 本番環境対応 | 比較的成熟 | 初期段階 |
 
 ## まとめ
 
-Bun 的方向是对的——统一 JavaScript 工具链，减少碎片化。2022 年的 Bun 还不适合生产环境，但它的速度表现令人印象深刻。关注它的发展，但别急着迁移。2023 年会是 Bun 关键的一年。
+Bun の方向性は正しいです——JavaScriptツールチェインを統一し、断片化を減らすことです。2022年のBunはまだ本番環境に適していませんが、その速度性能は印象的です。発展を注目しましょう。ただし、移行は急がないでください。2023年がBunにとって重要な年になるでしょう。

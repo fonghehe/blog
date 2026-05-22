@@ -1,5 +1,5 @@
 ---
-title: "Speculation Rules API 預加載規則"
+title: "Speculation Rules API 預加載規則：落地路徑與實戰建議"
 date: 2022-06-23 14:31:55
 tags:
   - 前端

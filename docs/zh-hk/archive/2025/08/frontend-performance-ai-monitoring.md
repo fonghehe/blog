@@ -1,11 +1,11 @@
 ---
-title: "前端性能監控：AI 驅動的自動優化"
-date: 2025-08-10 10:00:00
+title: "前端效能監控：AI 驅動的自動優化"
+date: 2025-08-10 11:44:21
 tags:
   - 工程化
   - 性能優化
 readingTime: 2
-description: "傳統的性能監控是發現問題後人工排查。2025 年，AI 不僅能發現問題，還能自動建議甚至自動修復。"
+description: "傳統的效能監控是發現問題後人工排查。2025 年，AI 不僅能發現問題，還能自動建議甚至自動修復。"
 wordCount: 167
 ---
 
@@ -52,7 +52,7 @@ function collectVitals() {
   const report = (metric: Metric) => {
     const entry: PerformanceEntry = { ...metric, ...baseData };
 
-    // 上報到分析平台
+    // 上報到分析平臺
     fetch("/api/vitals", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -241,7 +241,7 @@ function checkRegression(current: PerfReport, baseline: PerfReport) {
 
 ## 小結
 
-- 性能監控要採集真實用户數據（RUM），不能只依賴實驗室數據
+- 效能監控要採集真實用户數據（RUM），不能隻依賴實驗室數據
 - AI 不僅能分析性能數據，還能給出具體可執行的優化建議
 - 自動迴歸檢測能在線上性能變差時及時告警
 - 性能優化是持續的過程，不是一次性的任務

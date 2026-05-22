@@ -1,21 +1,21 @@
 ---
 title: "TypeScript 5.6：Iterator Helper、正規表現型と厳格な組み込みチェック"
-date: 2024-09-22 10:00:00
+date: 2024-09-22 11:56:33
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 5.6 正式发布，带来了一些实用的语言特性和类型检查增强。挑几个对日常开发影响最大的变化。"
-wordCount: 320
+description: "TypeScript 5.6 が正式にリリースされ、実用的な言語機能と型チェックの強化がもたらされました。日常の開発に最も影響のある変更をいくつか紹介します。"
+wordCount: 513
 ---
 
-TypeScript 5.6 正式发布，带来了一些实用的语言特性和类型检查增强。挑几个对日常开发影响最大的变化。
+TypeScript 5.6 が正式にリリースされ、実用的な言語機能と型チェックの強化がもたらされました。日常の開発に最も影響のある変更をいくつか紹介します。
 
 ## Iterator Helpers
 
-对迭代器的原生支持，可以在 `for...of` 和生成器上直接链式操作：
+イテレータのネイティブサポートにより、`for...of` やジェネレータで直接チェーン操作が可能です：
 
 ```typescript
-// 以前：需要转数组再处理
+// 以前：配列に変換してから処理する必要があった
 const users = Array.from(getAllUsers());
 const activeEmails = users
   .filter((u) => u.isActive)
@@ -25,13 +25,13 @@ const activeEmails = users
 const activeEmails = getAllUsers()
   .filter((u) => u.isActive)
   .map((u) => u.email);
-// 返回 Iterator，不创建中间数组
+// Iterator を返し、中間配列を作成しない
 ```
 
-支持的方法：`map`、`filter`、`take`、`drop`、`flatMap`、`reduce`、`toArray`、`forEach`、`some`、`every`、`find`。
+サポートされているメソッド：`map`、`filter`、`take`、`drop`、`flatMap`、`reduce`、`toArray`、`forEach`、`some`、`every`、`find`。
 
 ```typescript
-// 实用场景：大文件逐行处理
+// 実用的なシナリオ：大ファイルを行ごとに処理
 function* readLines(content: string) {
   for (const line of content.split("\n")) {
     yield line;
@@ -40,10 +40,10 @@ function* readLines(content: string) {
 
 const errors = readLines(hugeLog)
   .filter((line) => line.includes("ERROR"))
-  .take(10)    // 只取前 10 条
-  .toArray();  // 转成数组
+  .take(10)    // 最初の10件のみ取得
+  .toArray();  // 配列に変換
 
-// 配合 async 迭代器
+// async イテレータと組み合わせる
 async function* fetchPages() {
   let page = 0;
   while (true) {
@@ -60,12 +60,12 @@ const first100 = fetchPages()
 
 ## 正規表現型チェック
 
-`RegExp` 类型现在支持通过泛型标注捕获组：
+`RegExp` 型はジェネリクスによるキャプチャグループの注釈をサポートするようになりました：
 
 ```typescript
-// 以前：exec 的结果是 RegExpExecArray | null，捕获组类型丢失
+// 以前：exec の結果は RegExpExecArray | null で、キャプチャグループの型が失われる
 const match = /user-(\d+)/.exec("user-42");
-// match[1] 是 string，没有自动类型
+// match[1] は string で、自動型推論がない
 
 // TypeScript 5.6：可以标注捕获组
 function parseRoute(path: string) {
@@ -81,14 +81,14 @@ function parseRoute(path: string) {
 
 ## 空プロパティ宣言の禁止
 
-之前容易写出无意义的空类型属性，现在会报错：
+以前は意味のない空の型プロパティを書きがちでしたが、現在はエラーになります：
 
 ```typescript
-// TypeScript 5.6 之前不会报错
+// TypeScript 5.6 以前はエラーにならない
 interface Config {
   name: string;
   value: number;
-  ; // 空语句，无意义
+  ; // 空の文、意味なし
 }
 
 // TypeScript 5.6：编译报错
@@ -97,11 +97,11 @@ interface Config {
 
 ## 相対パス補完の強化
 
-在 monorepo 中，IDE 的路径补全更智能了：
+monorepo において、IDE のパス補完がよりスマートになりました：
 
 ```typescript
-// 在 packages/ui/src/Button.tsx 中引用
-// TS 5.6 会正确建议相对路径
+// packages/ui/src/Button.tsx での参照
+// TS 5.6 は正しく相対パスを提案する
 import { formatPrice } from "../../utils/src/price";
 ```
 
@@ -109,10 +109,10 @@ import { formatPrice } from "../../utils/src/price";
 
 ```typescript
 function process(data: string | null) {
-  // TS 5.6 能更好地理解函数调用中的类型守卫
+  // TS 5.6 は関数呼び出しの型ガードをより適切に理解する
   if (data !== null) {
     const trimmed = data.trim();
-    // trimmed 自动识别为 string
+    // trimmed は自動的に string として認識
     console.log(trimmed.toUpperCase());
   }
 }
@@ -126,24 +126,24 @@ function process(data: string | null) {
   "compilerOptions": {
     "target": "ES2024",        // 支持 Iterator Helpers
     "lib": ["ES2024", "DOM"],
-    "noUncheckedSideEffectImports": true,  // 检查副作用导入
-    "isolatedDeclarations": true          // 加速构建
+    "noUncheckedSideEffectImports": true,  // 副作用インポートをチェック
+    "isolatedDeclarations": true          // ビルドを高速化
   }
 }
 ```
 
-`isolatedDeclarations` 对 monorepo 构建速度提升很大，允许单独处理每个文件的声明生成。
+`isolatedDeclarations` は monorepo のビルド速度を大幅に向上させ、各ファイルの宣言生成を個別に処理できるようにします。
 
 ## アップグレードの注意点
 
-1. 如果项目用了 Babel 编译 TS，确保 Babel 插件支持新的语法
-2. `target: "ES2024"` 需要对应的 runtime 支持，或使用 polyfill
-3. Iterator Helpers 的 polyfill 可以用 `core-js` 或 `@ungap/iterator-helpers`
+1. プロジェクトが Babel で TS をコンパイルしている場合、Babel プラグインが新しい構文をサポートしていることを確認
+2. `target: "ES2024"` には対応する runtime のサポート、または polyfill の使用が必要
+3. Iterator Helpers の polyfill は `core-js` または `@ungap/iterator-helpers` を使用可能
 
 ## まとめ
 
-- Iterator Helpers：惰性迭代链，减少中间数组分配
-- 正则类型增强：更好的捕获组类型推断
-- `isolatedDeclarations`：monorepo 构建加速
-- `noUncheckedSideEffectImports`：更严格的副作用导入检查
-- 建议配合 `target: "ES2024"` 使用
+- Iterator Helpers：遅延評価の反復チェーン、中間配列の割り当てを削減
+- 正規表現型の強化：より優れたキャプチャグループの型推論
+- `isolatedDeclarations`：monorepo のビルド高速化
+- `noUncheckedSideEffectImports`：より厳格な副作用インポートチェック
+- `target: "ES2024"` と組み合わせて使用することを推奨

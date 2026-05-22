@@ -1,5 +1,5 @@
 ---
-title: "JavaScript structuredClone 深拷貝"
+title: "JavaScript structuredClone 深拷貝：落地路徑與實戰建議"
 date: 2021-09-16 16:44:03
 tags:
   - 前端

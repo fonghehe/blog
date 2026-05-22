@@ -1,5 +1,5 @@
 ---
-title: "React Native 導航方案對比"
+title: "React Native 導航方案對比：落地路徑與實戰建議"
 date: 2020-11-10 11:20:14
 tags:
   - React
@@ -87,9 +87,9 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
-## 性能對比
+## 效能對比
 
 我們可以通過以下方式來改進：
 

@@ -1,14 +1,14 @@
 ---
-title: "前端架構設計的思考與實踐"
+title: "前端架構設計的思考與實踐：實踐方法與治理思路"
 date: 2020-12-10 09:55:21
 tags:
   - 前端
 readingTime: 3
-description: "做了五年前端，從寫頁面到寫系統，從維護老項目到搭建新架構。今年帶團隊做了一個大型管理後台項目，沉澱了一些架構設計的思考。"
+description: "做了五年前端，從寫頁面到寫系統，從維護老項目到搭建新架構。今年帶團隊做了一個大型管理後臺項目，沉澱了一些架構設計的思考。"
 wordCount: 204
 ---
 
-做了五年前端，從寫頁面到寫系統，從維護老項目到搭建新架構。今年帶團隊做了一個大型管理後台項目，沉澱了一些架構設計的思考。
+做了五年前端，從寫頁面到寫系統，從維護老項目到搭建新架構。今年帶團隊做了一個大型管理後臺項目，沉澱了一些架構設計的思考。
 
 ## 架構的核心問題
 
@@ -142,7 +142,7 @@ export const userService = {
 // 狀態分層：
 
 // 1. 組件內狀態：useState / ref / reactive
-//    只在組件內使用，不需要共享
+//    隻在組件內使用，不需要共享
 //    例如：表單輸入、彈窗開關
 
 // 2. 全局業務狀態：Pinia / Vuex
@@ -270,7 +270,7 @@ export function setupErrorHandler(app) {
   // Vue 全局錯誤處理
   app.config.errorHandler = (err, vm, info) => {
     console.error('Vue 錯誤:', err);
-    // 上報到監控平台
+    // 上報到監控平臺
     reportError({
       type: 'vue-error',
       error: err.message,

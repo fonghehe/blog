@@ -1,5 +1,5 @@
 ---
-title: "React Query Devtools 調試工具"
+title: "React Query Devtools 調試工具：實踐方法與治理思路"
 date: 2022-08-12 11:13:49
 tags:
   - React
@@ -66,7 +66,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 實戰案例
 
@@ -97,7 +97,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
-## 性能優化
+## 效能優化
 
 先來看基本的實現方式：
 

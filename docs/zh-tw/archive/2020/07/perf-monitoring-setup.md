@@ -107,7 +107,7 @@ export class PerformanceMonitor {
       type: r.initiatorType,
       size: r.transferSize,
       duration: r.duration,
-    })).filter(r => r.duration > 100); // 只記錄慢資源
+    })).filter(r => r.duration > 100); // 隻記錄慢資源
   }
 
   // 上報資料

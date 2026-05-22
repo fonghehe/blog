@@ -1,5 +1,5 @@
 ---
-title: "瀏覽器存儲方案對比：Cookie、localStorage、IndexedDB"
+title: "瀏覽器儲存方案對比 2019：Cookie、localStorage、IndexedDB"
 date: 2019-01-31 09:50:31
 tags:
   - 前端
@@ -30,21 +30,21 @@ document.cookie = "token=abc123; max-age=86400; path=/; SameSite=Strict";
 // 推薦用 js-cookie 庫
 import Cookies from "js-cookie";
 
-Cookies.set("token", "abc123", { expires: 1 }); // 1天后過期
+Cookies.set("token", "abc123", { expires: 1 }); // 1天後過期
 Cookies.get("token");
 Cookies.remove("token");
 ```
 
 安全屬性：
 
-- `HttpOnly`：JS 無法讀取（只能後端設置），防 XSS 偷 token
-- `Secure`：只在 HTTPS 傳輸
+- `HttpOnly`：JS 無法讀取（隻能後端設置），防 XSS 偷 token
+- `Secure`：隻在 HTTPS 傳輸
 - `SameSite=Strict/Lax`：防 CSRF
 
 ## localStorage
 
 ```javascript
-// 只能存字符串，對象需要序列化
+// 隻能存字符串，對象需要序列化
 localStorage.setItem("user", JSON.stringify({ name: "Alice", role: "admin" }));
 const user = JSON.parse(localStorage.getItem("user"));
 localStorage.removeItem("user");

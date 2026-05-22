@@ -1,5 +1,5 @@
 ---
-title: "Rollup 打包前端庫最佳實踐"
+title: "Rollup 打包前端庫最佳實踐：落地路徑與實戰建議"
 date: 2020-04-28 10:29:03
 tags:
   - 工程化
@@ -174,7 +174,7 @@ postcss({
 });
 ```
 
-## 按需引入配置
+## 按需引入設定
 
 ```json
 // package.json
@@ -228,5 +228,5 @@ module.exports = {
 - Rollup 產物更乾淨，適合打包庫；Webpack 適合打包應用
 - 輸出 ESM + CJS + UMD 三種格式，滿足不同使用場景
 - `peerDependencies` 聲明 Vue 版本，不把 Vue 打包進去
-- `sideEffects` 聲明副作用文件，讓使用者能按需引入
+- `sideEffects` 聲明副作用檔案，讓使用者能按需引入
 - 樣式建議提取為獨立 CSS 文件，而不是內聯到 JS

@@ -1,14 +1,14 @@
 ---
-title: "Vue Router 導航守衞完整指南"
+title: "Vue Router 導航守衞完整指南：落地路徑與實戰建議"
 date: 2019-07-03 10:02:55
 tags:
   - Vue
 readingTime: 5
-description: "做後台管理系統繞不開的話題就是路由權限控制。Vue Router 提供了完善的導航守衞機制，但 `beforeEach`、`beforeResolve`、`afterEach` 三個全局守衞加上路由獨享守衞和組件內守衞，執行順序和適用場景很多人搞不清楚。這篇文章把導航守衞徹底講透。"
+description: "做後臺管理系統繞不開的話題就是路由權限控製。Vue Router 提供了完善的導航守衞機製，但 `beforeEach`、`beforeResolve`、`afterEach` 三個全局守衞加上路由獨享守衞和組件內守衞，執行順序和適用場景很多人搞不清楚。這篇文章把導航守衞徹底講透。"
 wordCount: 777
 ---
 
-做後台管理系統繞不開的話題就是路由權限控制。Vue Router 提供了完善的導航守衞機制，但 `beforeEach`、`beforeResolve`、`afterEach` 三個全局守衞加上路由獨享守衞和組件內守衞，執行順序和適用場景很多人搞不清楚。這篇文章把導航守衞徹底講透。
+做後臺管理系統繞不開的話題就是路由權限控製。Vue Router 提供了完善的導航守衞機製，但 `beforeEach`、`beforeResolve`、`afterEach` 三個全局守衞加上路由獨享守衞和組件內守衞，執行順序和適用場景很多人搞不清楚。這篇文章把導航守衞徹底講透。
 
 ## 導航守衞全景圖
 
@@ -42,7 +42,7 @@ Vue Router 的守衞分為三層：
 
 ## beforeEach：最常用的守衞
 
-幾乎所有權限控制邏輯都在這裏處理：
+幾乎所有權限控製邏輯都在這裏處理：
 
 ```javascript
 // router/index.js
@@ -119,9 +119,9 @@ router.beforeEach((to, from, next) => {
 
 上面是基礎版本，但實際項目中遠比這複雜——我們需要在 `beforeEach` 中同時處理 token 驗證、用户信息獲取、動態路由生成等邏輯。
 
-## 完整的權限控制方案
+## 完整的權限控製方案
 
-一個典型的後台管理系統，用户登錄後獲取用户信息和權限，根據權限動態生成可訪問的路由：
+一個典型的後臺管理系統，用户登錄後獲取用户信息和權限，根據權限動態生成可訪問的路由：
 
 ```javascript
 // store/modules/user.js
@@ -231,7 +231,7 @@ function filterRoutesByRole(routes, roles) {
 
 ## meta 字段的妙用
 
-`meta` 字段可以承載很多路由元信息，不僅僅是權限控制：
+`meta` 字段可以承載很多路由元信息，不僅僅是權限控製：
 
 ```javascript
 {
@@ -256,13 +256,13 @@ function filterRoutesByRole(routes, roles) {
 // 全局後置守衞 - 設置頁面標題
 router.afterEach((to) => {
   document.title = to.meta.title
-    ? `${to.meta.title} - 後台管理系統`
-    : '後台管理系統'
+    ? `${to.meta.title} - 後臺管理系統`
+    : '後臺管理系統'
 })
 ```
 
 ```html
-<!-- App.vue 中根據 meta 控制 keep-alive -->
+<!-- App.vue 中根據 meta 控製 keep-alive -->
 <template>
   <div id="app">
     <keep-alive :include="cachedViews">
@@ -362,7 +362,7 @@ router.beforeEach((to, from, next) => {
 
 ### 坑 3：動態路由刷新後 404
 
-`router.addRoute` 添加的路由是運行時的，頁面刷新後就丟了。所以上面代碼中用 `isDynamicRoutesAdded` 標誌來控制，刷新後會重新走一遍 `getUserInfo` + `addRoute` 流程。
+`router.addRoute` 添加的路由是運行時的，頁面刷新後就丟了。所以上面代碼中用 `isDynamicRoutesAdded` 標誌來控製，刷新後會重新走一遍 `getUserInfo` + `addRoute` 流程。
 
 但要注意：刷新時 Vue Router 會立即嘗試匹配當前 URL，此時動態路由還沒添加，會匹配到 `*` 通配路由（404）。解決方法是把 `*` 路由放在 `addRoute` 之後添加，並且在路由守衞中用 `next({ ...to, replace: true })` 重新觸發一次導航。
 
@@ -409,8 +409,8 @@ router.beforeEach(async (to, from, next) => {
 ## 小結
 
 - 導航守衞的執行順序是：組件離開守衞 -> 全局 beforeEach -> 路由 beforeEnter -> 組件進入守衞 -> 全局 beforeResolve -> 全局 afterEach
-- 權限控制的核心邏輯放在 `beforeEach` 中，配合 `meta` 字段聲明路由所需的權限
+- 權限控製的核心邏輯放在 `beforeEach` 中，配合 `meta` 字段聲明路由所需的權限
 - 動態路由方案：登錄後根據角色調用 `router.addRoute`，刷新時需要重新執行
-- `next()` 必須且只能調用一次，用 `return next()` 避免多次調用
+- `next()` 必須且隻能調用一次，用 `return next()` 避免多次調用
 - 頁面離開確認用 `beforeRouteLeave`，結合數據修改狀態判斷
 - 異步守衞優先用 `async/await`，避免回調地獄和時序問題

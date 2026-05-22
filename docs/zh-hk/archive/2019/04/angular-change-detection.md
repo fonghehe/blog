@@ -1,5 +1,5 @@
 ---
-title: "Angular 變更檢測：OnPush 策略優化性能"
+title: "Angular 變更檢測：OnPush 策略優化效能"
 date: 2019-04-16 10:45:08
 tags:
   - Angular

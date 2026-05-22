@@ -1,5 +1,5 @@
 ---
-title: "React Router v6 新特性預覽"
+title: "React Router v6 新特性預覽：特性解讀與遷移建議"
 date: 2020-03-13 09:53:22
 tags:
   - React
@@ -66,7 +66,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

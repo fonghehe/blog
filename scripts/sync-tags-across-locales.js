@@ -27,49 +27,24 @@ const CATEGORIES = [
   { id: "Vue", tags: ["Vue", "Vuex", "Pinia", "Nuxt.js"] },
   { id: "React", tags: ["React", "Next.js"] },
   { id: "Angular", tags: ["Angular", "RxJS", "NgRx"] },
-  { id: "JavaScript", tags: ["JavaScript", "ES6", "设计模式", "設計模式"] },
+  { id: "JavaScript", tags: ["JavaScript", "ES6"] },
   { id: "TypeScript", tags: ["TypeScript"] },
   {
     id: "Engineering",
-    tags: [
-      "工程化",
-      "前端工程化",
-      "Engineering",
-      "Frontend Engineering",
-      "Build Tools",
-      "エンジニアリング",
-      "フロントエンドエンジニアリング",
-      "Vite",
-      "Webpack",
-      "Rollup",
-      "ESBuild",
-      "Babel",
-    ],
+    tags: ["工程化", "前端工程化", "Engineering", "Frontend Engineering",
+           "Build Tools", "エンジニアリング", "フロントエンドエンジニアリング",
+           "Vite", "Webpack", "Rollup", "ESBuild", "Babel"],
   },
   { id: "CSS", tags: ["CSS", "TailwindCSS", "Sass", "Less"] },
   {
     id: "Performance",
-    tags: [
-      "性能优化",
-      "性能",
-      "性能優化",
-      "效能最佳化",
-      "效能",
-      "Performance",
-      "Performance Optimization",
-      "パフォーマンス最適化",
-      "パフォーマンス",
-    ],
+    tags: ["性能优化", "性能", "性能優化", "效能最佳化", "效能",
+           "Performance", "Performance Optimization",
+           "パフォーマンス最適化", "パフォーマンス"],
   },
   { id: "Node.js", tags: ["Node.js", "Express", "Koa"] },
-  {
-    id: "Testing",
-    tags: ["测试", "測試", "テスト", "Testing", "Vitest", "Playwright", "Jest"],
-  },
-  {
-    id: "Security",
-    tags: ["安全", "Security", "セキュリティ", "XSS", "CSP", "CSRF"],
-  },
+  { id: "Testing", tags: ["测试", "測試", "テスト", "Testing", "Vitest", "Playwright", "Jest"] },
+  { id: "Security", tags: ["安全", "Security", "セキュリティ", "XSS", "CSP", "CSRF"] },
 ];
 
 // The canonical tag to ADD per locale when a category is missing
@@ -115,26 +90,21 @@ const CANONICAL_TAG = {
     })[locale],
 };
 
+const RE_FRONTMATTER = /^---\n([\s\S]*?)\n---/;
+const RE_INLINE_TAGS = /^tags:\s*\[([^\]]*)\]/m;
+const RE_BLOCK_TAGS = /^tags:\s*\n((?:[ \t]+-[^\n]*\n?)*)/m;
+
 function getTags(content) {
-  const m = content.match(/^---\n([\s\S]*?)\n---/);
+  const m = content.match(RE_FRONTMATTER);
   if (!m) return [];
   const body = m[1];
-  const inlineM = body.match(/^tags:\s*\[([^\]]*)\]/m);
+  const inlineM = body.match(RE_INLINE_TAGS);
   if (inlineM)
-    return inlineM[1]
-      .split(",")
-      .map((t) => t.trim().replace(/['"]/g, ""))
-      .filter(Boolean);
-  const blockM = body.match(/^tags:\s*\n((?:[ \t]+-[^\n]*\n?)*)/m);
+    return inlineM[1].split(",").map((t) => t.trim().replace(/['"]/g, "")).filter(Boolean);
+  const blockM = body.match(RE_BLOCK_TAGS);
   if (blockM)
-    return blockM[1]
-      .split("\n")
-      .map((l) =>
-        l
-          .replace(/^\s*-\s*/, "")
-          .replace(/['"]/g, "")
-          .trim(),
-      )
+    return blockM[1].split("\n")
+      .map((l) => l.replace(/^\s*-\s*/, "").replace(/['"]/g, "").trim())
       .filter(Boolean);
   return [];
 }
@@ -147,35 +117,27 @@ function matchesCategory(tags, cat) {
 
 function addTagToFile(filePath, newTag) {
   const content = readFileSync(filePath, "utf-8");
-  const fm = content.match(/^---\n([\s\S]*?)\n---/);
+  const fm = content.match(RE_FRONTMATTER);
   if (!fm) return false;
 
-  const fmBody = fm[0]; // full frontmatter block including ---
+  const fmBody = fm[0];
   const afterFm = content.slice(fmBody.length);
 
-  // Check if it's inline or block tags
+  // Inline format: tags: [A, B] → tags: [A, B, newTag]
   const inlineM = fm[1].match(/^(tags:\s*\[)([^\]]*)\]/m);
   if (inlineM) {
-    // Inline format: tags: [A, B] → tags: [A, B, newTag]
-    const newFmBody = fm[1].replace(
-      /^(tags:\s*\[)([^\]]*)\]/m,
-      (_, prefix, inner) => {
-        const existing = inner
-          .split(",")
-          .map((t) => t.trim())
-          .filter(Boolean);
-        return `${prefix}${[...existing, newTag].join(", ")}]`;
-      },
-    );
+    const [, prefix, inner] = inlineM;
+    const existing = inner.split(",").map((t) => t.trim()).filter(Boolean);
+    const newFmBody = fm[1].replace(/^(tags:\s*\[)([^\]]*)\]/m,
+      `${prefix}${[...existing, newTag].join(", ")}]`);
     writeFileSync(filePath, `---\n${newFmBody}\n---${afterFm}`, "utf-8");
     return true;
   }
 
   // Block format: tags:\n  - A\n  - B
-  const blockM = fm[1].match(/^(tags:\s*\n(?:[ \t]+-[^\n]*\n?)*)/m);
+  const blockM = fm[1].match(RE_BLOCK_TAGS);
   if (blockM) {
-    const tagBlock = blockM[1];
-    const newTagBlock = tagBlock.trimEnd() + `\n  - ${newTag}\n`;
+    const newTagBlock = blockM[1].trimEnd() + `\n  - ${newTag}\n`;
     const newFmBody = fm[1].replace(blockM[1], newTagBlock);
     writeFileSync(filePath, `---\n${newFmBody}\n---${afterFm}`, "utf-8");
     return true;
@@ -197,7 +159,7 @@ function getArticleRels(subDir) {
     .filter(
       (e) => e.isFile() && e.name.endsWith(".md") && e.name !== "index.md",
     )
-    .map((e) => relative(fullDir, join(e.parentPath || e.path, e.name)));
+    .map((e) => relative(fullDir, join(e.parentPath, e.name)));
 }
 
 let totalFixed = 0;
@@ -315,11 +277,12 @@ for (const subDir of ["archive", "posts"]) {
   }
 }
 
-// Print fix log (first 40 lines)
-for (const line of fixLog.slice(0, 40)) console.log(line);
-if (fixLog.length > 40)
-  console.log(`  ... and ${fixLog.length - 40} more changes`);
+// Print fix log
+const MAX_LOG = 40;
+for (const line of fixLog.slice(0, MAX_LOG)) console.log(line);
+if (fixLog.length > MAX_LOG) {
+  console.log(`  ... and ${fixLog.length - MAX_LOG} more changes`);
+}
 
-console.log(
-  `\n${DRY_RUN ? "[DRY RUN] " : ""}Tag sync complete: ${totalFixed} tags added across ${new Set(fixLog.map((l) => l.split("→")[1]?.trim())).size} articles`,
-);
+const uniqueArticles = new Set(fixLog.map((l) => l.split("→")[1]?.trim())).size;
+console.log(`\n${DRY_RUN ? "[DRY RUN] " : ""}Sync complete: ${totalFixed} tags added across ${uniqueArticles} articles`);

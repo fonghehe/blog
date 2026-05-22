@@ -4,33 +4,33 @@ date: 2020-08-17 10:39:36
 tags:
   - JavaScript
 readingTime: 3
-description: "Node.js 14 LTS 在 4 月份发布，带来了不少实用特性。最让前端工程师开心的是 V8 引擎升级到了 8.1，原生支持了 Optional Chaining（`?.`）和 Nullish Coalescing（`??`）—— 终于不用再在 Node 代码里手动转译这些语法了。"
-wordCount: 314
+description: "Node.js 14 LTS は 4 月にリリースされ、多くの便利な機能をもたらしました。フロントエンドエンジニアにとって最も嬉しいのは、V8 エンジンが 8.1 にアップグレードされ、Optional Chaining（?.）と Nullish Coalescing（??）をネイティブサポートしたことです。Node コードでこれらの構文を手動でトランスパイルする必要がなくなりました。"
+wordCount: 515
 ---
 
-Node.js 14 LTS 在 4 月份发布，带来了不少实用特性。最让前端工程师开心的是 V8 引擎升级到了 8.1，原生支持了 Optional Chaining（`?.`）和 Nullish Coalescing（`??`）—— 终于不用再在 Node 代码里手动转译这些语法了。
+Node.js 14 LTS は 4 月にリリースされ、多くの便利な機能をもたらしました。フロントエンドエンジニアにとって最も嬉しいのは、V8 エンジンが 8.1 にアップグレードされ、Optional Chaining（`?.`）と Nullish Coalescing（`??`）をネイティブサポートしたことです。Node コードでこれらの構文を手動でトランスパイルする必要がなくなりました。
 
 ## オプショナルチェーン
 
 ### 基本的な使い方
 
 ```javascript
-// 以前的写法 —— 冗长且容易出错
+// 以前の書き方 —— 冗長でエラーが発生しやすい
 const userName = user && user.profile && user.profile.name;
 const street = res && res.data && res.data.address && res.data.address.street;
 
-// Node.js 14 —— 可选链
+// Node.js 14 —— オプショナルチェーン
 const userName = user?.profile?.name;
 const street = res?.data?.address?.street;
 
-// 如果中间任何一环是 null 或 undefined，直接返回 undefined
-// 不会报 "Cannot read property 'xxx' of undefined"
+// 途中のいずれかが null または undefined の場合、直接 undefined を返す
+// "Cannot read property 'xxx' of undefined" エラーは発生しない
 ```
 
 ### メソッド呼び出しのオプショナルチェーン
 
 ```javascript
-// 调用可能不存在的方法
+// 存在しない可能性のあるメソッドを呼び出す
 user?.notify?.("hello");
 
 // 以前
@@ -42,7 +42,7 @@ if (user && typeof user.notify === "function") {
 ### 配列アクセスのオプショナルチェーン
 
 ```javascript
-// 安全地访问数组元素
+// 安全に配列要素にアクセス
 const firstItem = arr?.[0];
 const nested = matrix?.[row]?.[col];
 
@@ -53,7 +53,7 @@ const firstItem = arr && arr[0];
 ### 実践シナリオ
 
 ```javascript
-// API 响应处理 —— 非常常见的场景
+// API レスポンス処理 —— 非常に一般的なシナリオ
 function getFormattedPrice(response) {
   const price = response?.body?.data?.product?.price?.amount;
   const currency = response?.body?.data?.product?.price?.currency;
@@ -62,11 +62,11 @@ function getFormattedPrice(response) {
   return `${currency === "CNY" ? "¥" : "$"}${price.toFixed(2)}`;
 }
 
-// 配置读取
+// 設定の読み取り
 const dbHost = config?.database?.connection?.host ?? "localhost";
 const dbPort = config?.database?.connection?.port ?? 3306;
 
-// 事件处理
+// イベント処理
 function handleClick(event) {
   const target = event?.target?.dataset?.actionId;
   if (target) {
@@ -77,17 +77,17 @@ function handleClick(event) {
 
 ## Null合体演算子
 
-`??` 和 `||` 的区别很重要：
+`??` と `||` の違いは重要です：
 
 ```javascript
-// || 在左侧为 falsy 时返回右侧
-// 包括 0, '', false, null, undefined
+// || は左辺が falsy の場合に右辺を返す
+// 0, '', false, null, undefined を含む
 const count = 0;
-const result = count || 10; // 10 —— 0 被认为是 falsy
+const result = count || 10; // 10 —— 0 は falsy とみなされる
 
-// ?? 只在左侧为 null 或 undefined 时返回右侧
+// ?? は左辺が null または undefined の場合のみ右辺を返す
 const count = 0;
-const result = count ?? 10; // 0 —— 0 不是 null/undefined，保留原值
+const result = count ?? 10; // 0 —— 0 は null/undefined ではないため、元の値が保持される
 
 const flag = false;
 const r1 = flag || "default"; // 'default'
@@ -101,34 +101,34 @@ const r4 = text ?? "无内容"; // ''
 ### 実際の応用
 
 ```typescript
-// 分页参数 —— page=0 是合法的第一页
+// ページネーションパラメータ —— page=0 は有効な最初のページ
 function getPagination(query: Record<string, string>) {
-  const page = Number(query.page ?? "0"); // ?? 确保 page=0 不会被覆盖
+  const page = Number(query.page ?? "0"); // ?? により page=0 が上書きされない
   const size = Number(query.size ?? "20");
   const sort = query.sort ?? "createdAt";
   return { page, size, sort };
 }
 
-// API 配置 —— timeout 可能是 0（表示无限等待）
-const timeout = options.timeout ?? 30000; // 0 表示不超时，undefined 默认 30 秒
+// API 設定 —— timeout は 0 の場合がある（無限待機を示す）
+const timeout = options.timeout ?? 30000; // 0 はタイムアウトなし、undefined はデフォルト 30 秒
 
-// 和可选链组合使用
+// オプショナルチェーンと組み合わせて使用
 const name =
   user?.profile?.displayName ?? user?.profile?.username ?? "匿名用户";
 ```
 
 ## Array.flat() と Array.flatMap()
 
-Node.js 14 的 V8 8.1 也原生支持了这些方法：
+Node.js 14 の V8 8.1 もこれらのメソッドをネイティブサポートしています：
 
 ```javascript
-// Array.flat() —— 数组扁平化
+// Array.flat() —— 配列の平坦化
 const nested = [1, [2, 3], [4, [5, 6]]];
 nested.flat(); // [1, 2, 3, 4, [5, 6]]
 nested.flat(2); // [1, 2, 3, 4, 5, 6]
-nested.flat(Infinity); // 完全扁平化
+nested.flat(Infinity); // 完全に平坦化
 
-// 实用场景：扁平化目录结构
+// 実用的なシナリオ：ディレクトリ構造の平坦化
 const files = [
   ["src/index.js", "src/app.js"],
   ["src/utils/a.js", "src/utils/b.js"],
@@ -137,28 +137,28 @@ const files = [
 const allFiles = files.flat();
 // ['src/index.js', 'src/app.js', 'src/utils/a.js', 'src/utils/b.js', 'test/app.test.js']
 
-// Array.flatMap() —— map + flat
+// Array.flatMap() —— map + flat を組み合わせたもの
 const sentences = ["Hello World", "Foo Bar"];
 const words = sentences.flatMap((s) => s.split(" "));
 // ['Hello', 'World', 'Foo', 'Bar']
 
-// 实用：返回空数组时过滤掉
+// 実用的：空配列を返してフィルタリング
 const ids = [1, 2, 3, 4, 5];
 const results = ids.flatMap((id) => {
   const item = cache.get(id);
-  return item ? [item] : []; // 没找到就返回空数组，相当于过滤
+  return item ? [item] : []; // 見つからなければ空配列を返し、フィルタリングと同様の効果
 });
 ```
 
 ## globalThis
 
-统一的全局对象访问方式：
+統一されたグローバルオブジェクトへのアクセス方法：
 
 ```javascript
-// 以前 —— 需要判断环境
+// 以前 —— 環境の判定が必要
 let globalObj;
 if (typeof window !== "undefined") {
-  globalObj = window; // 浏览器
+  globalObj = window; // ブラウザ
 } else if (typeof global !== "undefined") {
   globalObj = global; // Node.js
 } else if (typeof self !== "undefined") {
@@ -166,9 +166,9 @@ if (typeof window !== "undefined") {
 }
 
 // Node.js 14 —— globalThis
-globalObj = globalThis; // 任何环境都适用
+globalObj = globalThis; // どの環境でも適用可能
 
-// 实用：跨环境的全局缓存
+// 実用的：環境を越えたグローバルキャッシュ
 const GLOBAL_KEY = Symbol.for("__myAppCache__");
 const cache = globalThis[GLOBAL_KEY] ?? (globalThis[GLOBAL_KEY] = new Map());
 ```
@@ -176,11 +176,11 @@ const cache = globalThis[GLOBAL_KEY] ?? (globalThis[GLOBAL_KEY] = new Map());
 ## String.matchAll()
 
 ```javascript
-// 以前提取所有匹配项很麻烦
+// 以前はすべての一致を抽出するのが面倒だった
 const text = '2020-07-20, 2020-08-17, 2020-09-14'
 const regex = /(\d{4})-(\d{2})-(\d{2})/g
 
-// 要用 exec 循环
+// exec でループする必要があった
 let match
 while ((match = regex.exec(text)) !== null) {
   console.log(match[1], match[2], match[3])
@@ -191,7 +191,7 @@ for (const match of text.matchAll(regex)) {
   console.log(match[1], match[2], match[3])
 }
 
-// 转成数组
+// 配列に変換
 const dates = [...text.matchAll(regex)].map(m => ({
   full: m[0],
   year: m[1],
@@ -199,7 +199,7 @@ const dates = [...text.matchAll(regex)].map(m => ({
   day: m[3]
 }))
 
-// 实用：提取日志中的错误信息
+// 実用的：ログからエラー情報を抽出
 function parseLogErrors(log: string) {
   const pattern = /\[(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2}:\d{2})\]\s+ERROR:\s+(.+)/g
   return [...log.matchAll(pattern)].map(m => ({
@@ -213,7 +213,7 @@ function parseLogErrors(log: string) {
 ## Intl.DisplayNames —— 国际化名称
 
 ```javascript
-// 获取语言、地区、货币的本地化显示名称
+// 言語、地域、通貨のローカライズ表示名を取得
 const regionNames = new Intl.DisplayNames(["zh"], { type: "region" });
 console.log(regionNames.of("US")); // 美国
 console.log(regionNames.of("JP")); // 日本
@@ -229,9 +229,9 @@ console.log(currencyNames.of("CNY")); // 人民币
 console.log(currencyNames.of("USD")); // 美元
 ```
 
-## 在 tsconfig.json 中配置
+## tsconfig.json での設定
 
-如果项目用 TypeScript，需要注意配置以使用这些新特性：
+TypeScript を使用するプロジェクトでは、これらの新機能を利用するために設定が必要です：
 
 ```json
 {
@@ -246,10 +246,10 @@ console.log(currencyNames.of("USD")); // 美元
 
 ## まとめ
 
-- Node.js 14 原生支持 Optional Chaining（`?.`）和 Nullish Coalescing（`??`），不再需要 Babel 转译
-- `??` 和 `||` 的区别：`??` 只处理 null/undefined，`||` 处理所有 falsy 值
-- `Array.flat()` 和 `Array.flatMap()` 原生可用，简化数组操作
-- `globalThis` 提供了统一的全局对象访问方式
-- `String.matchAll()` 让正则批量匹配变得优雅
-- `Intl.DisplayNames` 方便国际化场景
-- tsconfig 的 target 可以设置为 ES2020 来利用这些特性
+- Node.js 14 は Optional Chaining（`?.`）と Nullish Coalescing（`??`）をネイティブサポートし、Babel によるトランスパイルが不要になりました
+- `??` と `||` の違い：`??` は null/undefined のみを処理し、`||` はすべての falsy 値を処理します
+- `Array.flat()` と `Array.flatMap()` がネイティブで使用可能になり、配列操作が簡素化されました
+- `globalThis` は統一されたグローバルオブジェクトへのアクセス方法を提供します
+- `String.matchAll()` により正規表現の一括マッチングがエレガントになりました
+- `Intl.DisplayNames` は国際化のシナリオに便利です
+- tsconfig の target を ES2020 に設定することでこれらの機能を利用できます

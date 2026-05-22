@@ -1,10 +1,10 @@
 ---
-title: "Angular 16 Required Inputs 與 Input Transforms：類型安全的組件接口"
+title: "Angular 16 Required Inputs 與 Input Transforms：類型安全的組件介面"
 date: 2023-06-30 10:56:23
 tags:
   - Angular
 readingTime: 2
-description: "Angular 16 對 `@Input()` 裝飾器進行了兩項重要增強：**Required Inputs**（必填輸入）和 **Input Transforms**（輸入轉換）。這兩個特性讓組件的輸入接口更接近 TypeScript 的原生類型安全，減少了運行時錯誤。"
+description: "Angular 16 對 `@Input()` 裝飾器進行了兩項重要增強：**Required Inputs**（必填輸入）和 **Input Transforms**（輸入轉換）。這兩個特性讓組件的輸入介面更接近 TypeScript 的原生類型安全，減少了運行時錯誤。"
 wordCount: 372
 ---
 
@@ -12,13 +12,13 @@ Angular 16 對 `@Input()` 裝飾器進行了兩項重要增強：**Required Inpu
 
 ## Required Inputs：必填輸入
 
-以前要表達"這個 @Input 是必須的"，只能用類型斷言加註釋，沒有真正的編譯時檢查：
+以前要表達"這個 @Input 是必須的"，隻能用類型斷言加註釋，沒有真正的編譯時檢查：
 
 ```typescript
 // 舊方式：看起來必須，但不是真正的編譯時檢查
 @Component({ selector: 'app-user-card', ... })
 export class UserCardComponent {
-  @Input() userId!: string;  // ! 只是告訴 TS "我保證它不是 null"
+  @Input() userId!: string;  // ! 隻是告訴 TS "我保證它不是 null"
   // 但調用方可以不傳，不會編譯報錯
 }
 

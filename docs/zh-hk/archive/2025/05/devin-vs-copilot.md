@@ -1,6 +1,6 @@
 ---
-title: "Devin vs Copilot AI 開發對比"
-date: 2025-05-01 10:00:00
+title: "Devin vs Copilot AI 開發對比：落地路徑與實戰建議"
+date: 2025-05-01 19:35:12
 tags:
   - 工程化
 readingTime: 2
@@ -116,7 +116,7 @@ export async function POST(req) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 注意事項
 

@@ -11,7 +11,7 @@ wordCount: 384
 
 專案打包完發現 vendor.js 有 3MB，載入慢，但不知道哪些庫佔了大頭。`webpack-bundle-analyzer` 是這種問題的標準工具。
 
-## 安裝和配置
+## 安裝和設定
 
 ```bash
 npm install --save-dev webpack-bundle-analyzer
@@ -33,7 +33,7 @@ module.exports = {
 };
 ```
 
-為了不影響日常開發，只在需要分析時啟用：
+為了不影響日常開發，隻在需要分析時啟用：
 
 ```json
 {
@@ -76,7 +76,7 @@ module.exports = {
 import _ from "lodash";
 const result = _.chunk([1, 2, 3, 4], 2);
 
-// ✅ 只引入需要的函式（單獨的 lodash 函式包只有幾 KB）
+// ✅ 隻引入需要的函式（單獨的 lodash 函式包隻有幾 KB）
 import chunk from "lodash/chunk";
 const result = chunk([1, 2, 3, 4], 2);
 
@@ -86,7 +86,7 @@ import { chunk } from "lodash-es";
 
 ### 2. moment.js 的語言包
 
-moment.js 預設會打包所有語言包（約 160KB），實際專案通常只用中文：
+moment.js 預設會打包所有語言包（約 160KB），實際專案通常隻用中文：
 
 ```javascript
 // webpack.config.js
@@ -94,13 +94,13 @@ const webpack = require("webpack");
 
 module.exports = {
   plugins: [
-    // 只保留中文和英文
+    // 隻保留中文和英文
     new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn|en/),
   ],
 };
 ```
 
-或者直接換成 `day.js`（只有 2KB，API 基本相容）。
+或者直接換成 `day.js`（隻有 2KB，API 基本相容）。
 
 ### 3. Element UI 按需載入
 
@@ -128,7 +128,7 @@ npm install babel-plugin-component
 import ElementUI from "element-ui";
 Vue.use(ElementUI);
 
-// ✅ 按需引入（只打包用到的元件）
+// ✅ 按需引入（隻打包用到的元件）
 import { Button, Table, Form, Input } from "element-ui";
 Vue.use(Button);
 Vue.use(Table);

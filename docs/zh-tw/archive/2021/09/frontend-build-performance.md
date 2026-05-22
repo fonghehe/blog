@@ -38,7 +38,7 @@ module.exports = {
       {
         test: /\.ts$/,
         use: 'ts-loader',
-        include: path.resolve(__dirname, 'src'), // 只處理 src
+        include: path.resolve(__dirname, 'src'), // 隻處理 src
         exclude: /node_modules/,
       },
     ],
@@ -165,12 +165,12 @@ npm run dev   # < 1s 啟動
 import { createApp } from '/node_modules/.vite/deps/vue.js?v=abc123'
 
 // 每個依賴都預構建好了（esbuild），每個檔案單獨編譯
-// 只有你訪問到的模組才會被編譯
+// 隻有你訪問到的模組才會被編譯
 ```
 
 - 依賴預構建：esbuild（Go 語言寫的，比 JS 快 10-100 倍）
 - 原始碼按需編譯：ESM + 瀏覽器原生匯入
-- HMR：只編譯修改的檔案，和依賴圖大小無關
+- HMR：隻編譯修改的檔案，和依賴圖大小無關
 
 ## 效能對比實測
 

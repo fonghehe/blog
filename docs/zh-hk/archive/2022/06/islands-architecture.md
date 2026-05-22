@@ -1,5 +1,5 @@
 ---
-title: "Islands Architecture 島嶼架構"
+title: "Islands Architecture 島嶼架構：實踐方法與治理思路"
 date: 2022-06-03 14:50:21
 tags:
   - 前端
@@ -93,7 +93,7 @@ function useIntersectionObserver(options = {}) {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能對比
+## 效能對比
 
 實際項目中的用法會更復雜一些：
 

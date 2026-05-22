@@ -1,6 +1,6 @@
 ---
 title: "Next.js 16 新特性預覽"
-date: 2025-01-09 10:00:00
+date: 2025-01-09 11:03:40
 tags:
   - React
 readingTime: 3
@@ -10,7 +10,7 @@ wordCount: 492
 
 Next.js 16 在 Vercel Ship 2025 上正式釋出，核心主題是「編譯即架構」——把更多執行時邏輯推到編譯期，減少服務端和客戶端之間的邊界開銷。對 React 20 Compiler 的原生支援、Server Actions 的事務化、以及全新的路由中介軟體是最大的三個變化。
 
-## React 20 Compiler 零配置支援
+## React 20 Compiler 零設定支援
 
 Next.js 16 內建了 React 20 Compiler，不再需要手動安裝 Babel 外掛。Turbo 模式下編譯速度比 15 快了 40%。
 
@@ -21,7 +21,7 @@ import type { NextConfig } from 'next';
 const config: NextConfig = {
   reactCompiler: {
     enabled: true,
-    // 可選：只對特定路徑開啟
+    // 可選：隻對特定路徑開啟
     include: ['app/(main)/**/*.{ts,tsx}'],
     exclude: ['**/*.test.tsx'],
   },
@@ -72,7 +72,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
 ## 路由中介軟體（Route Middleware）
 
-這是 Next.js 16 最實用的新特性。之前中介軟體只能在根目錄的 `middleware.ts` 中寫，現在你可以在任意路由層級定義中介軟體，形成中介軟體鏈。
+這是 Next.js 16 最實用的新特性。之前中介軟體隻能在根目錄的 `middleware.ts` 中寫，現在你可以在任意路由層級定義中介軟體，形成中介軟體鏈。
 
 ```typescript
 // app/api/auth/middleware.ts
@@ -167,7 +167,7 @@ next analyze --compiler --report
 
 ## 小結
 
-- React 20 Compiler 零配置整合，PPR 正式穩定，靜態/動態內容自動分層
+- React 20 Compiler 零設定整合，PPR 正式穩定，靜態/動態內容自動分層
 - 路由中介軟體支援巢狀層級，解決了鑑權、日誌等橫切關注點的組織問題
 - Server Actions 事務化讓複雜業務操作變得安全可靠
 - 編譯產物分析工具讓最佳化決策透明化

@@ -4,11 +4,11 @@ date: 2018-07-10 17:24:31
 tags:
   - Vue
 readingTime: 2
-description: "上半年用 Nuxt.js 做了 SSR 專案，用的時候很順，但遇到問題不知道從哪下手。這次深入看了 Vue SSR 的原理，整理一下核心機制。"
+description: "上半年用 Nuxt.js 做了 SSR 專案，用的時候很順，但遇到問題不知道從哪下手。這次深入看了 Vue SSR 的原理，整理一下核心機製。"
 wordCount: 426
 ---
 
-上半年用 Nuxt.js 做了 SSR 專案，用的時候很順，但遇到問題不知道從哪下手。這次深入看了 Vue SSR 的原理，整理一下核心機制。
+上半年用 Nuxt.js 做了 SSR 專案，用的時候很順，但遇到問題不知道從哪下手。這次深入看了 Vue SSR 的原理，整理一下核心機製。
 
 ## SSR 和 CSR 的渲染差異
 
@@ -155,10 +155,10 @@ if (window.innerWidth < 768) { ... }
 
 // ✅ 判斷執行環境
 if (typeof window !== 'undefined') {
-  // 只在瀏覽器中執行
+  // 隻在瀏覽器中執行
 }
 
-// ✅ 或者放在 mounted（只在客戶端執行）
+// ✅ 或者放在 mounted（隻在客戶端執行）
 mounted() {
   if (window.innerWidth < 768) { ... }
 }

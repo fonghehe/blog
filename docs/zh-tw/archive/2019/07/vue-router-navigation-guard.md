@@ -4,11 +4,11 @@ date: 2019-07-03 10:02:55
 tags:
   - Vue
 readingTime: 5
-description: "做後臺管理系統繞不開的話題就是路由許可權控制。Vue Router 提供了完善的導航守衛機制，但 `beforeEach`、`beforeResolve`、`afterEach` 三個全域性守衛加上路由獨享守衛和元件內守衛，執行順序和適用場景很多人搞不清楚。這篇文章把導航守衛徹底講透。"
+description: "做後臺管理系統繞不開的話題就是路由許可權控製。Vue Router 提供了完善的導航守衛機製，但 `beforeEach`、`beforeResolve`、`afterEach` 三個全域性守衛加上路由獨享守衛和元件內守衛，執行順序和適用場景很多人搞不清楚。這篇文章把導航守衛徹底講透。"
 wordCount: 810
 ---
 
-做後臺管理系統繞不開的話題就是路由許可權控制。Vue Router 提供了完善的導航守衛機制，但 `beforeEach`、`beforeResolve`、`afterEach` 三個全域性守衛加上路由獨享守衛和元件內守衛，執行順序和適用場景很多人搞不清楚。這篇文章把導航守衛徹底講透。
+做後臺管理系統繞不開的話題就是路由許可權控製。Vue Router 提供了完善的導航守衛機製，但 `beforeEach`、`beforeResolve`、`afterEach` 三個全域性守衛加上路由獨享守衛和元件內守衛，執行順序和適用場景很多人搞不清楚。這篇文章把導航守衛徹底講透。
 
 ## 導航守衛全景圖
 
@@ -42,7 +42,7 @@ Vue Router 的守衛分為三層：
 
 ## beforeEach：最常用的守衛
 
-幾乎所有許可權控制邏輯都在這裡處理：
+幾乎所有許可權控製邏輯都在這裡處理：
 
 ```javascript
 // router/index.js
@@ -119,7 +119,7 @@ router.beforeEach((to, from, next) => {
 
 上面是基礎版本，但實際專案中遠比這複雜——我們需要在 `beforeEach` 中同時處理 token 驗證、使用者資訊獲取、動態路由生成等邏輯。
 
-## 完整的許可權控制方案
+## 完整的許可權控製方案
 
 一個典型的後臺管理系統，使用者登入後獲取使用者資訊和許可權，根據許可權動態生成可訪問的路由：
 
@@ -231,7 +231,7 @@ function filterRoutesByRole(routes, roles) {
 
 ## meta 欄位的妙用
 
-`meta` 欄位可以承載很多路由元資訊，不僅僅是許可權控制：
+`meta` 欄位可以承載很多路由元資訊，不僅僅是許可權控製：
 
 ```javascript
 {
@@ -262,7 +262,7 @@ router.afterEach((to) => {
 ```
 
 ```html
-<!-- App.vue 中根據 meta 控制 keep-alive -->
+<!-- App.vue 中根據 meta 控製 keep-alive -->
 <template>
   <div id="app">
     <keep-alive :include="cachedViews">
@@ -362,7 +362,7 @@ router.beforeEach((to, from, next) => {
 
 ### 坑 3：動態路由重新整理後 404
 
-`router.addRoute` 新增的路由是執行時的，頁面重新整理後就丟了。所以上面程式碼中用 `isDynamicRoutesAdded` 標誌來控制，重新整理後會重新走一遍 `getUserInfo` + `addRoute` 流程。
+`router.addRoute` 新增的路由是執行時的，頁面重新整理後就丟了。所以上面程式碼中用 `isDynamicRoutesAdded` 標誌來控製，重新整理後會重新走一遍 `getUserInfo` + `addRoute` 流程。
 
 但要注意：重新整理時 Vue Router 會立即嘗試匹配當前 URL，此時動態路由還沒新增，會匹配到 `*` 通配路由（404）。解決方法是把 `*` 路由放在 `addRoute` 之後新增，並且在路由守衛中用 `next({ ...to, replace: true })` 重新觸發一次導航。
 
@@ -409,8 +409,8 @@ router.beforeEach(async (to, from, next) => {
 ## 小結
 
 - 導航守衛的執行順序是：元件離開守衛 -> 全域性 beforeEach -> 路由 beforeEnter -> 元件進入守衛 -> 全域性 beforeResolve -> 全域性 afterEach
-- 許可權控制的核心邏輯放在 `beforeEach` 中，配合 `meta` 欄位宣告路由所需的許可權
+- 許可權控製的核心邏輯放在 `beforeEach` 中，配合 `meta` 欄位宣告路由所需的許可權
 - 動態路由方案：登入後根據角色呼叫 `router.addRoute`，重新整理時需要重新執行
-- `next()` 必須且只能呼叫一次，用 `return next()` 避免多次呼叫
+- `next()` 必須且隻能呼叫一次，用 `return next()` 避免多次呼叫
 - 頁面離開確認用 `beforeRouteLeave`，結合資料修改狀態判斷
 - 非同步守衛優先用 `async/await`，避免回撥地獄和時序問題

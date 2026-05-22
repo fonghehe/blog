@@ -1,6 +1,6 @@
 ---
 title: "Angular 19.2 預覽：Signal-based Forms 開發者預覽與路由改進"
-date: 2025-01-31 10:00:00
+date: 2025-01-31 11:25:02
 tags:
   - Angular
 readingTime: 2
@@ -97,16 +97,16 @@ const routes: Routes = [
 ];
 
 // 19.2 探索：路由元件內的 @defer 塊也參與路由預載入策略
-// 即：進入路由時，只加載可見內容；滾動到下面時按需載入
+// 即：進入路由時，隻加載可見內容；滾動到下面時按需載入
 ```
 
 ## Server-Side Rendering 效能改進
 
-Angular 19.2 改進了 SSR 的 Transfer State 機制：
+Angular 19.2 改進了 SSR 的 Transfer State 機製：
 
 ```typescript
 // 改進前：所有 HTTP 請求結果都序列化到 Transfer State（可能很大）
-// 改進後：支援選擇性 Transfer（只傳輸需要的資料）
+// 改進後：支援選擇性 Transfer（隻傳輸需要的資料）
 
 @Injectable({ providedIn: "root" })
 export class ApiService {

@@ -1,14 +1,14 @@
 ---
-title: "TypeScript 泛型編程模式詳解"
+title: "TypeScript 泛型編程模式詳解：落地路徑與實戰建議"
 date: 2019-05-29 10:19:35
 tags:
   - TypeScript
 readingTime: 7
-description: "泛型是 TypeScript 類型系統中最強大的特性之一。很多人只知道 `Array<T>` 這種基本用法，實際上泛型結合條件類型、映射類型、`infer` 關鍵字可以實現非常靈活的類型推導。本文從基礎到實戰，系統講解泛型編程模式。"
+description: "泛型是 TypeScript 類型系統中最強大的特性之一。很多人隻知道 `Array<T>` 這種基本用法，實際上泛型結合條件類型、映射類型、`infer` 關鍵字可以實現非常靈活的類型推導。本文從基礎到實戰，系統講解泛型編程模式。"
 wordCount: 584
 ---
 
-泛型是 TypeScript 類型系統中最強大的特性之一。很多人只知道 `Array<T>` 這種基本用法，實際上泛型結合條件類型、映射類型、`infer` 關鍵字可以實現非常靈活的類型推導。本文從基礎到實戰，系統講解泛型編程模式。
+泛型是 TypeScript 類型系統中最強大的特性之一。很多人隻知道 `Array<T>` 這種基本用法，實際上泛型結合條件類型、映射類型、`infer` 關鍵字可以實現非常靈活的類型推導。本文從基礎到實戰，系統講解泛型編程模式。
 
 ## 泛型基礎
 
@@ -37,7 +37,7 @@ const b = identity(42);      // T 推斷為 number，返回 number
 const c = identity<string>('hello');
 ```
 
-### 泛型在接口和類中的使用
+### 泛型在介面和類中的使用
 
 ```typescript
 // 泛型接口
@@ -74,7 +74,7 @@ class Queue<T> {
   }
 }
 
-// 每個 Queue 實例只存一種類型
+// 每個 Queue 實例隻存一種類型
 const numberQueue = new Queue<number>();
 numberQueue.enqueue(1);
 numberQueue.enqueue(2);
@@ -86,7 +86,7 @@ stringQueue.enqueue('hello');
 
 ## 泛型約束
 
-泛型默認可以接受任何類型，但有時候需要限制 T 必須具備某些屬性。
+泛型默認可以接受任何類型，但有時候需要限製 T 必須具備某些屬性。
 
 ```typescript
 // 問題：這個函數想訪問 arg.length，但不是所有類型都有 length
@@ -112,7 +112,7 @@ logLength({ length: 10 }); // OK，對象有 length 屬性
 ### keyof 約束
 
 ```typescript
-// 只能訪問對象上實際存在的 key
+// 隻能訪問對象上實際存在的 key
 function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
 }
@@ -656,7 +656,7 @@ type PartialUser = Partial<User>;
 // Required<T> - 所有屬性變為必填
 type RequiredUser = Required<PartialUser>;
 
-// Readonly<T> - 所有屬性變為只讀
+// Readonly<T> - 所有屬性變為隻讀
 type ReadonlyUser = Readonly<User>;
 
 // Pick<T, K> - 選取部分屬性
@@ -691,7 +691,7 @@ type T6 = InstanceType<typeof MyClass>; // MyClass
 ## 小結
 
 - 泛型讓類型可以參數化，是 TypeScript 類型系統的基礎構建塊
-- 泛型約束（`extends`）限制類型參數的範圍，`keyof` 約束確保 key 存在於對象上
+- 泛型約束（`extends`）限製類型參數的範圍，`keyof` 約束確保 key 存在於對象上
 - 條件類型（`T extends U ? X : Y`）實現類型級別的條件判斷，對聯合類型有自動分發行為
 - `infer` 關鍵字實現類型模式匹配，可以從複雜類型中提取子類型
 - 映射類型（`[P in keyof T]`）實現類型遍歷和變換，是 `Partial`、`Pick`、`Readonly` 等工具類型的基礎

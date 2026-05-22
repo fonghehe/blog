@@ -46,10 +46,10 @@ function Counter() {
   return <button onClick={() => setCount(c => c + 1)}>{count}</button>;
 }
 
-// Solid: 元件函式只執行一次，後續只有 DOM 更新
+// Solid: 元件函式隻執行一次，後續隻有 DOM 更新
 function Counter() {
   const [count, setCount] = createSignal(0);
-  // 這行只在初始化時執行一次
+  // 這行隻在初始化時執行一次
   console.log("created");
   return <button onClick={() => setCount(c => c + 1)}>{count()}</button>;
 }
@@ -78,7 +78,7 @@ JS Framework Benchmark（Chrome 118）:
   React 18: 1.95
 ```
 
-在大部分測試項中 Solid 排名第一或接近第一。這是因為它的更新粒度是最細的——改一個數字就只更新那個文本節點。
+在大部分測試項中 Solid 排名第一或接近第一。這是因為它的更新粒度是最細的——改一個數字就隻更新那個文本節點。
 
 ## 響應式原語
 
@@ -121,7 +121,7 @@ function UserProfile({ userId }) {
 
 `createSignal`、`createMemo`、`createEffect` 對標 React 的 `useState`、`useMemo`、`useEffect`，但語義更清晰——沒有依賴陣列，沒有 stale closure 問題。
 
-## 控制流元件
+## 控製流元件
 
 ```jsx
 import { Show, For, Switch, Match } from "solid-js";
@@ -160,7 +160,7 @@ function UserList({ users, filter }) {
 
 **適合：**
 - 效能敏感的互動介面（即時資料儀表盤、線上編輯器）
-- 需要精細控制更新的場景
+- 需要精細控製更新的場景
 - 團隊願意學習新範式
 
 **不適合：**

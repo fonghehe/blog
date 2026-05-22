@@ -10,7 +10,7 @@ wordCount: 86
 
 Angular 內建的路由懶載入是最佳化大型應用首屏效能的關鍵手段。
 
-## 配置懶載入
+## 設定懶載入
 
 ```typescript
 const routes: Routes = [
@@ -37,7 +37,7 @@ const routes: Routes = [
 })
 ```
 
-自定義策略：只預載入標記了 `preload: true` 的模組：
+自定義策略：隻預載入標記了 `preload: true` 的模組：
 
 ```typescript
 @Injectable({ providedIn: 'root' })

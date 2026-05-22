@@ -1,6 +1,6 @@
 ---
-title: "Deno 2.0 Node 相容"
-date: 2024-12-19 10:00:00
+title: "Deno 2.0 Node 相容 2024 年末：生態現状與生產評估"
+date: 2024-12-19 19:53:30
 tags:
   - 前端
 readingTime: 2

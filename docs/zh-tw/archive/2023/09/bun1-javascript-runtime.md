@@ -12,7 +12,7 @@ Bun 1.0 正式釋出！這是用 Zig 寫的 JavaScript 執行時，聲稱比 Nod
 
 ## Bun 是什麼
 
-Bun 是 Node.js 的競爭者，但它不只是執行時：
+Bun 是 Node.js 的競爭者，但它不隻是執行時：
 
 - **Runtime**：執行 JS/TS（比 Node.js 快）
 - **Package Manager**：替代 npm/pnpm（安裝速度極快）

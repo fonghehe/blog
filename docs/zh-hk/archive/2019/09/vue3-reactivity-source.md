@@ -21,7 +21,7 @@ vm.user.age = 25; // 不觸發更新！需要 Vue.set(vm.user, 'age', 25)
 // 問題 2：無法檢測數組索引賦值
 vm.items[0] = newItem; // 不觸發更新！需要 Vue.set 或 splice
 
-// 問題 3：初始化時需要遍歷所有屬性（性能）
+// 問題 3：初始化時需要遍歷所有屬性（效能）
 ```
 
 ## Vue 3 基於 Proxy 的響應式
@@ -37,7 +37,7 @@ function reactive(target) {
 
       const res = Reflect.get(target, key, receiver);
 
-      // 懶遞歸：只有訪問到嵌套對象時才代理
+      // 懶遞歸：隻有訪問到巢狀對象時才代理
       if (isObject(res)) {
         return reactive(res);
       }
@@ -117,7 +117,7 @@ function trigger(target, type, key) {
 ## ref 的實現
 
 ```javascript
-// ref 用於基本類型（不能用 Proxy，因為 Proxy 只能代理對象）
+// ref 用於基本類型（不能用 Proxy，因為 Proxy 隻能代理對象）
 function ref(value) {
   return {
     get value() {
@@ -151,7 +151,7 @@ function computed(getter) {
   return {
     get value() {
       if (dirty) {
-        value = runner(); // 只有訪問時才計算
+        value = runner(); // 隻有訪問時才計算
         dirty = false;
       }
       track(this, TrackOpTypes.GET, "value");
@@ -161,7 +161,7 @@ function computed(getter) {
 }
 ```
 
-## 和 Vue 2 的性能對比
+## 和 Vue 2 的效能對比
 
 |          | Vue 2                      | Vue 3                  |
 | 
@@ -176,4 +176,4 @@ function computed(getter) {
 - Proxy 比 defineProperty 更強大：攔截新增、刪除、數組索引操作
 - 懶遞歸代理（訪問時才 reactive）比 Vue 2 初始化時全量遞歸更高效
 - `track` 收集依賴，`trigger` 觸發更新，是整個響應式的核心
-- `computed` 用髒標記實現懶求值，只有訪問時才重新計算
+- `computed` 用髒標記實現懶求值，隻有訪問時才重新計算

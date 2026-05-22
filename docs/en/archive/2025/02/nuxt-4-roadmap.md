@@ -1,6 +1,6 @@
 ---
 title: "Nuxt 4 Roadmap and New Architecture"
-date: 2025-02-04 10:00:00
+date: 2025-02-04 11:38:15
 tags:
   - Vue
 readingTime: 1

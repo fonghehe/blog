@@ -1,5 +1,5 @@
 ---
-title: "Scheduler API 調度優先級"
+title: "Scheduler API 調度優先級：落地路徑與實戰建議"
 date: 2022-09-12 16:06:21
 tags:
   - 前端
@@ -130,7 +130,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 注意事項
 

@@ -32,8 +32,8 @@ module.exports = {
 跑完之後會開啟一個視覺化頁面，方塊大小代表體積佔比。我們發現問題：
 
 - `moment.js` 把所有語言套件都打進去了，佔了 200KB+
-- `echarts` 全量引入，其實只用了折線圖
-- 幾個只在特定頁面用到的富文字編輯器被打進了主套件
+- `echarts` 全量引入，其實隻用了折線圖
+- 幾個隻在特定頁面用到的富文字編輯器被打進了主套件
 
 ## 進入點分割：提取公共依賴
 
@@ -82,7 +82,7 @@ const routes = [
 ];
 ```
 
-Webpack 遇到動態 `import()` 會自動產生獨立的 chunk。使用者只有訪問對應路由時才會載入那個 chunk。
+Webpack 遇到動態 `import()` 會自動產生獨立的 chunk。使用者隻有訪問對應路由時才會載入那個 chunk。
 
 ## 魔法註解：給 chunk 命名
 
@@ -97,12 +97,12 @@ const UserSettings = () =>
 
 ## 元件級懶加載
 
-不只是路由，元件也可以懶加載：
+不隻是路由，元件也可以懶加載：
 
 ```javascript
 export default {
   components: {
-    // 只有渲染到這個元件時才載入
+    // 隻有渲染到這個元件時才載入
     RichEditor: () => import("@/components/RichEditor"),
 
     // 帶 loading 和 error 狀態

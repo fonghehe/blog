@@ -22,7 +22,7 @@ ng add @nguniversal/express-engine
 # └── src/main.server.ts         # 服務端入口
 ```
 
-生成的 `server.ts` 開箱即用，無需大量配置：
+生成的 `server.ts` 開箱即用，無需大量設定：
 
 ```typescript
 // server.ts（簡化版）
@@ -184,7 +184,7 @@ app.get("*", (req, res) => {
 # 構建時預渲染指定路由
 npm run prerender
 
-# angular.json 配置預渲染路由
+# angular.json 設定預渲染路由
 {
   "prerender": {
     "routes": ["/", "/about", "/blog/1", "/blog/2"]

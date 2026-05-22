@@ -166,7 +166,7 @@ expect(mockFn).toHaveBeenCalledTimes(3);
 ## 小結
 
 - `shallowMount`：淺渲染（子組件變成 stub），比 `mount` 快
-- `propsData`/`data`/`mocks`：控制組件初始狀態
+- `propsData`/`data`/`mocks`：控製組件初始狀態
 - `wrapper.find().trigger()`：模擬用户交互
 - `wrapper.emitted()`：檢查組件觸發的事件
 - 先從關鍵邏輯開始寫測試，不要一開始就追求 100% 覆蓋率

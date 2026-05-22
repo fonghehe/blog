@@ -1,5 +1,5 @@
 ---
-title: "Web Serial API 硬件通信"
+title: "Web Serial API 硬件通信：落地路徑與實戰建議"
 date: 2021-12-10 10:39:40
 tags:
   - 前端
@@ -44,7 +44,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 深度解析
 

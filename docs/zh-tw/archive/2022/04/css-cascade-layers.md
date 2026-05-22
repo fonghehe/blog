@@ -4,11 +4,11 @@ date: 2022-04-05 10:05:16
 tags:
   - CSS
 readingTime: 2
-description: "關於CSS Cascade Layers @layer 規範，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於CSS Cascade Layers @layer 規範，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 367
 ---
 
-關於CSS Cascade Layers @layer 規範，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於CSS Cascade Layers @layer 規範，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 

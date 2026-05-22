@@ -127,7 +127,7 @@ grep -r "subtract" dist/
 
 ## 第三方庫的 Tree Shaking
 
-只有提供 ES Module 的庫才支援 Tree Shaking：
+隻有提供 ES Module 的庫才支援 Tree Shaking：
 
 | 庫           | Tree Shaking 支援           |
 | 

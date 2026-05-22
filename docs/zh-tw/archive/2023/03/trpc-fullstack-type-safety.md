@@ -14,7 +14,7 @@ wordCount: 418
 
 在全棧 TypeScript 專案裡，前後端共享型別一直很彆扭：
 
-- REST API 需要手寫介面文件 + 前端型別定義，兩者容易不同步
+- REST API 需要手寫介面檔案 + 前端型別定義，兩者容易不同步
 - GraphQL 需要寫 schema + resolver + codegen，學習成本和維護成本都高
 - OpenAPI codegen 能自動生成型別，但生成的程式碼質量參差不齊
 
@@ -122,14 +122,14 @@ const appRouter = t.router({
 
 中介軟體的型別也會透傳。經過 `isAuthed` 中介軟體後，`ctx.user` 的型別從 `User | null` 變成了 `User`，下游程式碼不需要判空。
 
-## 效能和限制
+## 效能和限製
 
 **優勢：**
 - 零 codegen 步驟，型別即時推斷
 - 基於 HTTP，和 REST 一樣可以上 CDN、做快取
 - 請求批處理支援（預設開啟，減少請求數）
 
-**限制：**
+**限製：**
 - 前後端必須都是 TypeScript
 - 不適合給第三方客戶端用（需要 REST/GraphQL 對外暴露）
 - 複雜的巢狀查詢不如 GraphQL 靈活
@@ -138,6 +138,6 @@ const appRouter = t.router({
 
 - tRPC 在全棧 TS 專案中提供了最乾淨的端到端型別安全
 - 不需要 schema 定義語言、不需要 codegen，改了型別立即生效
-- 中介軟體系統型別安全，許可權控制邏輯清晰
+- 中介軟體系統型別安全，許可權控製邏輯清晰
 - 適合內部專案、全棧應用，不適合公開 API
 - 搭配 Zod 做輸入校驗是最佳實踐

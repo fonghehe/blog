@@ -1,5 +1,5 @@
 ---
-title: "Webpack 3 代碼分割同懶加載實戰"
+title: "Webpack 3 代碼分割同懶加載實戰：落地路徑與實戰建議"
 date: 2018-01-04 17:02:09
 tags:
   - Webpack
@@ -32,8 +32,8 @@ module.exports = {
 跑完之後會打開一個可視化頁面，方塊大小代表體積佔比。我哋發現問題：
 
 - `moment.js` 將所有語言包都打進去咗，佔咗 200KB+
-- `echarts` 全量引入，其實只用咗折線圖
-- 幾個只喺特定頁面用到嘅富文本編輯器被打進咗主包
+- `echarts` 全量引入，其實隻用咗折線圖
+- 幾個隻喺特定頁面用到嘅富文本編輯器被打進咗主包
 
 ## 入口分割：提取公共依賴
 
@@ -82,7 +82,7 @@ const routes = [
 ];
 ```
 
-Webpack 遇到動態 `import()` 會自動生成獨立嘅 chunk。用戶只有訪問對應路由時先至會加載嗰個 chunk。
+Webpack 遇到動態 `import()` 會自動生成獨立嘅 chunk。用戶隻有訪問對應路由時先至會加載嗰個 chunk。
 
 ## 魔法注釋：俾 chunk 命名
 
@@ -97,12 +97,12 @@ const UserSettings = () =>
 
 ## 組件級懶加載
 
-唔只係路由，組件都可以懶加載：
+唔隻係路由，組件都可以懶加載：
 
 ```javascript
 export default {
   components: {
-    // 只有渲染到呢個組件時先至加載
+    // 隻有渲染到呢個組件時先至加載
     RichEditor: () => import("@/components/RichEditor"),
 
     // 帶 loading 同 error 狀態

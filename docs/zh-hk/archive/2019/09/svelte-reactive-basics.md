@@ -1,5 +1,5 @@
 ---
-title: "Svelte 響應式基礎語法詳解"
+title: "Svelte 響應式基礎語法詳解：落地路徑與實戰建議"
 date: 2019-09-02 14:58:08
 tags:
   - React
@@ -106,7 +106,7 @@ Svelte 的響應式聲明通過靜態分析來確定依賴關係：
 <script>
   let items = [1, 2, 3];
 
-  // 只在 items 引用變化時重新計算
+  // 隻在 items 引用變化時重新計算
   $: total = items.reduce((a, b) => a + b, 0);
 
   function addItem() {

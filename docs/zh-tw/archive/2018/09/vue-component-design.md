@@ -12,7 +12,7 @@ wordCount: 220
 
 ## 單一職責
 
-每個元件只做一件事：
+每個元件隻做一件事：
 
 ```javascript
 // ❌ 一個元件做了太多事
@@ -30,7 +30,7 @@ export default {
 };
 
 // ✅ 拆分關注點
-// UserProfile.vue：只展示使用者資訊
+// UserProfile.vue：隻展示使用者資訊
 // PermissionPanel.vue：許可權管理
 // UserList.vue：列表展示（含分頁）
 // UserPage.vue：組合以上元件，處理頁面級邏輯
@@ -44,7 +44,7 @@ export default {
 props: { user: Object }
 // 模板裡：{{ user.profile.avatar }}
 
-// ✅ 只傳元件真正需要的資料
+// ✅ 隻傳元件真正需要的資料
 props: {
   name: String,
   avatarUrl: String,
@@ -90,7 +90,7 @@ methods: {
 <MyInput :value.sync="text" />
 ```
 
-## 可配置的預設值
+## 可設定的預設值
 
 ```javascript
 props: {
@@ -108,22 +108,22 @@ props: {
 
 ## 受控與非受控
 
-受控元件：資料由父元件控制（通過 v-model / props）
+受控元件：資料由父元件控製（通過 v-model / props）
 
 ```javascript
-// 受控：父元件控制值
+// 受控：父元件控製值
 <SearchInput :value="searchText" @input="searchText = $event" />
 
 // 非受控：內部自己管理狀態
-// 只在需要時通過事件向外丟擲結果
+// 隻在需要時通過事件向外丟擲結果
 <DatePicker @change="handleDateSelect" />
 ```
 
 根據場景選擇，不是所有狀態都需要提升到父元件。
 
-## 文件化
+## 檔案化
 
-哪怕只是註釋，也要說明 prop 的用途：
+哪怕隻是註釋，也要說明 prop 的用途：
 
 ```javascript
 props: {
@@ -142,7 +142,7 @@ props: {
 
 ## 小結
 
-- 單一職責：一個元件只做一件事，拆分是美德
-- Props 原子化：只傳真正需要的資料
+- 單一職責：一個元件隻做一件事，拆分是美德
+- Props 原子化：隻傳真正需要的資料
 - 用事件描述行為，不要直接修改 props
 - 元件要有合理的預設值和引數校驗

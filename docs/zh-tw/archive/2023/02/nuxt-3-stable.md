@@ -189,7 +189,7 @@ definePageMeta({
 </script>
 ```
 
-## 部署配置
+## 部署設定
 
 Nuxt 3 的部署配置極其靈活，通過 `nitro` 配置指定目標平臺：
 
@@ -233,7 +233,7 @@ npx nuxi build --preset netlify       # Netlify
 
 ## 小結
 
-- Nuxt 3 基於 Vue 3 Composition API，自動匯入機制大幅減少樣板程式碼
+- Nuxt 3 基於 Vue 3 Composition API，自動匯入機製大幅減少樣板程式碼
 - `useFetch` 是資料獲取的核心 API，內建快取、loading、error 處理
 - Nitro 服務引擎支援多平臺部署，同一套程式碼可部署到 Node/Edge/Serverless
 - 路由中介軟體 + `definePageMeta` 實現鑑權，比 Nuxt 2 的寫法更型別安全

@@ -17,7 +17,7 @@ Vuex 是 Vue 生態裡的狀態管理方案，類似 Redux 之於 React。但 Vu
 **不需要 Vuex 的場景：**
 
 - 元件層級淺，父子通訊就夠用
-- 狀態只在一個元件內使用
+- 狀態隻在一個元件內使用
 - 專案很小，維護成本低於收益
 
 **應該引入 Vuex 的場景：**
@@ -175,7 +175,7 @@ export default {
 
 ## Action 的設計原則
 
-Action 裡不只是 API 呼叫，它負責**協調多個 mutation** 和處理**業務邏輯**：
+Action 裡不隻是 API 呼叫，它負責**協調多個 mutation** 和處理**業務邏輯**：
 
 ```javascript
 // actions/order.js

@@ -1,6 +1,6 @@
 ---
 title: "Cursor 2.0 IDE: A New Experience"
-date: 2025-04-16 10:00:00
+date: 2025-04-16 13:10:47
 tags:
   - Frontend
 readingTime: 1

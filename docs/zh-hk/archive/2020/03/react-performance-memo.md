@@ -1,14 +1,14 @@
 ---
-title: "React 性能優化 memo useMemo"
+title: "React 效能優化 memo useMemo：實踐方法與治理思路"
 date: 2020-03-11 15:50:17
 tags:
   - React
 readingTime: 2
-description: "React 性能優化 memo useMemo這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
+description: "React 效能優化 memo useMemo這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
 wordCount: 304
 ---
 
-React 性能優化 memo useMemo這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
+React 效能優化 memo useMemo這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
 
 ## 入門指南
 
@@ -85,7 +85,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 
@@ -113,7 +113,7 @@ function reducer(state, action) {
 ## 小結
 
 - 代碼示例僅供參考，需根據業務場景調整
-- React 性能優化 memo useMemo不是銀彈，需要根據項目規模和技術棧選擇
+- React 效能優化 memo useMemo不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要
 - 生產環境使用前務必做好兼容性驗證
 - 團隊協作中約定和文檔比技術本身更重要

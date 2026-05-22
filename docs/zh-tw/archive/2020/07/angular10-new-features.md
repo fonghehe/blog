@@ -1,10 +1,10 @@
 ---
-title: "Angular 10 新特性：TypeScript 3.9 與嚴格模式配置"
+title: "Angular 10 新特性：TypeScript 3.9 與嚴格模式設定"
 date: 2020-07-17 09:48:23
 tags:
   - Angular
 readingTime: 2
-description: "Angular 10 於 2020 年 6 月 24 日正式釋出，距離 Angular 9 僅約 4 個月。這次版本主要聚焦於**質量和生態健康**：更嚴格的 TypeScript 配置、廢棄舊版依賴、修復大量 bug。"
+description: "Angular 10 於 2020 年 6 月 24 日正式釋出，距離 Angular 9 僅約 4 個月。這次版本主要聚焦於**質量和生態健康**：更嚴格的 TypeScript 設定、廢棄舊版依賴、修復大量 bug。"
 wordCount: 322
 ---
 
@@ -56,7 +56,7 @@ Angular 10 要求 TypeScript 3.9，帶來了一些實用改進：
 **`// @ts-expect-error` 註釋**
 
 ```typescript
-// 之前：用 @ts-ignore 壓制錯誤（即使程式碼後來修好了，ignore 還在）
+// 之前：用 @ts-ignore 壓製錯誤（即使程式碼後來修好了，ignore 還在）
 // @ts-ignore
 const x: number = "hello";
 

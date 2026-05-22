@@ -1,10 +1,10 @@
 ---
-title: "TypeScript 模板字面量進階"
+title: "TypeScript 範本字面量進階：落地路徑與實戰建議"
 date: 2021-12-24 09:48:20
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 模板字面量進階在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
+description: "TypeScript 範本字面量進階在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
 wordCount: 331
 ---
 
@@ -97,7 +97,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能優化
+## 效能優化
 
 關鍵在於理解核心邏輯：
 
@@ -124,7 +124,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 常見陷阱
 
@@ -154,4 +154,4 @@ function reducer(state, action) {
 - 關注社區動態，技術方案需要持續迭代
 - 不要為了用新技術而用新技術
 - 代碼示例僅供參考，需根據業務場景調整
-- TypeScript 模板字面量進階不是銀彈，需要根據項目規模和技術棧選擇
+- TypeScript 範本字面量進階不是銀彈，需要根據項目規模和技術棧選擇

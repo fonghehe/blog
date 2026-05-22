@@ -1,5 +1,5 @@
 ---
-title: "CSS Logical Properties"
+title: "CSS Logical Properties: International化Layout第一步"
 date: 2019-09-09 15:05:57
 tags:
   - CSS

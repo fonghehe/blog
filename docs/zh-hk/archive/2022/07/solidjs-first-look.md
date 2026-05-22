@@ -1,5 +1,5 @@
 ---
-title: "Solid.js：React 思維，原生性能"
+title: "Solid.js：React 思維，原生效能"
 date: 2022-07-12 16:06:23
 tags:
   - 前端
@@ -41,7 +41,7 @@ function App() {
   const [name, setName] = createSignal('World');
   const [greeting, setGreeting] = createSignal('Hello');
 
-  // createEffect 只在依賴變化時執行
+  // createEffect 隻在依賴變化時執行
   createEffect(() => {
     console.log(`當前問候: ${greeting()}, ${name()}`);
   });
@@ -58,15 +58,15 @@ function App() {
 }
 ```
 
-`createEffect` 類似 React 的 `useEffect`，但它自動追蹤依賴（不需要依賴數組），且只在信號變化時重新執行。
+`createEffect` 類似 React 的 `useEffect`，但它自動追蹤依賴（不需要依賴數組），且隻在信號變化時重新執行。
 
-## 組件只執行一次
+## 組件隻執行一次
 
 ```jsx
 function Parent() {
   const [count, setCount] = createSignal(0);
 
-  // 這個 console.log 只在初始渲染時執行一次！
+  // 這個 console.log 隻在初始渲染時執行一次！
   console.log('Parent 渲染');
 
   return (
@@ -78,7 +78,7 @@ function Parent() {
 }
 
 function Child(props) {
-  // Child 也只在初始渲染時執行一次
+  // Child 也隻在初始渲染時執行一次
   console.log('Child 渲染');
 
   return <span>{props.count}</span>;
@@ -134,9 +134,9 @@ function TodoApp() {
 }
 ```
 
-`createStore` 是嵌套的響應式對象，路徑式更新——只有變化的部分會觸發 DOM 更新。
+`createStore` 是巢狀的響應式對象，路徑式更新——隻有變化的部分會觸發 DOM 更新。
 
-## 控制流組件
+## 控製流組件
 
 ```jsx
 import { Show, For, Switch, Match, Suspense } from 'solid-js';
@@ -177,12 +177,12 @@ function App() {
 ------|-------|-------|
 | 更新粒度 | 組件 | 精確 DOM 節點 |
 | 虛擬 DOM | 有 | 沒有 |
-| 組件執行 | 每次更新都重跑 | 只執行一次 |
+| 組件執行 | 每次更新都重跑 | 隻執行一次 |
 | 依賴追蹤 | 依賴數組（手動） | 自動追蹤 |
 | Hooks 規則 | 有（不能條件調用） | 沒有 |
 | 學習曲線 | 中 | 低（如果會 React） |
 
-## 實際性能
+## 實際效能
 
 ```
 JS Framework Benchmark（越低越好）：
@@ -197,4 +197,4 @@ Solid 的性能接近原生 JS，在所有框架中最快。
 
 ## 小結
 
-Solid.js 值得每個 React 開發者體驗。它證明了 JSX 和響應式不一定要依賴虛擬 DOM。對於性能敏感的場景（大數據表格、實時數據流），Solid 是一個嚴肅的選擇。但生態和社區還遠不如 React，工具鏈和組件庫需要時間成熟。
+Solid.js 值得每個 React 開發者體驗。它證明了 JSX 和響應式不一定要依賴虛擬 DOM。對於效能敏感的場景（大數據表格、實時數據流），Solid 是一個嚴肅的選擇。但生態和社區還遠不如 React，工具鏈和組件庫需要時間成熟。

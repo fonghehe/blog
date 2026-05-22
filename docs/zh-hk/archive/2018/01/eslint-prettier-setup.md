@@ -1,5 +1,5 @@
 ---
-title: "ESLint + Prettier 工程化規範配置實踐"
+title: "ESLint + Prettier 工程化規範設定實踐：實踐方法與治理思路"
 date: 2018-01-30 11:21:56
 tags:
   - 工程化
@@ -44,7 +44,7 @@ Vue 項目額外安裝：
 npm install --save-dev eslint-plugin-vue
 ```
 
-## ESLint 配置
+## ESLint 設定
 
 ```javascript
 // .eslintrc.js
@@ -89,7 +89,7 @@ module.exports = {
 };
 ```
 
-## Prettier 配置
+## Prettier 設定
 
 ```javascript
 // .prettierrc.js
@@ -113,7 +113,7 @@ module.exports = {
 
 關於係咪加分號、單雙引號，呢啲冇絕對對錯，重要係全團隊一致。配置文件提交到 git，爭論就此終止。
 
-## 配置 .eslintignore 同 .prettierignore
+## 設定 .eslintignore 同 .prettierignore
 
 ```
 # .eslintignore
@@ -168,7 +168,7 @@ npm install --save-dev husky lint-staged
 }
 ```
 
-呢個配置嘅效果：每次 `git commit` 時，只對本次修改嘅文件（而唔係全量）運行 lint 同格式化，速度快，唔影響未改動嘅文件。
+呢個設定嘅效果：每次 `git commit` 時，隻對本次修改嘅檔案（而唔係全量）運行 lint 同格式化，速度快，唔影響未改動嘅檔案。
 
 ## VSCode 編輯器整合
 
@@ -192,7 +192,7 @@ npm install --save-dev husky lint-staged
 
 喺現有項目上推行代碼規範，唔好一次過將所有規則都打開——會產生幾百個 error，團隊唔會接受。建議分階段：
 
-1. **第一步**：只開 Prettier，統一格式，零 error
+1. **第一步**：隻開 Prettier，統一格式，零 error
 2. **第二步**：開啟 `eslint:recommended`，修復已有問題
 3. **第三步**：逐步添加團隊約定嘅自定義規則
 

@@ -1,5 +1,5 @@
 ---
-title: "Next.js Route Handlers API 路由"
+title: "Next.js Route Handlers API 路由：落地路徑與實戰建議"
 date: 2023-01-30 15:09:48
 tags:
   - Next.js
@@ -182,7 +182,7 @@ import type { NextRequest } from 'next/server'
 import { verifyToken } from '@/lib/auth'
 
 export async function middleware(request: NextRequest) {
-  // 只保護 /api/admin/* 路徑
+  // 隻保護 /api/admin/* 路徑
   if (request.nextUrl.pathname.startsWith('/api/admin')) {
     const token = request.headers.get('authorization')?.replace('Bearer ', '')
 
@@ -236,4 +236,4 @@ export async function GET(request: NextRequest) {
 - 動態參數通過目錄命名約定獲取，與頁面路由一致
 - 支持流式響應，可以實現 SSE、文件下載等場景
 - 與 Middleware 配合做認證是推薦模式，不要在每個 Handler 中重複鑑權邏輯
-- Route Handlers 自動支持 Edge Runtime，只需在文件頂部導出 `export const runtime = 'edge'`
+- Route Handlers 自動支援 Edge Runtime，隻需在檔案頂部導出 `export const runtime = 'edge'`

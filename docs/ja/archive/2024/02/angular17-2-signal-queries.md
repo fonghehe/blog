@@ -3,14 +3,14 @@ title: "Angular 17.2：Signalベースクエリの開発者プレビュー"
 date: 2024-02-14 11:13:38
 tags:
   - Angular
-readingTime: 2
-description: "Angular 17.2 于 2024 年 2 月 14 日发布，带来了 Signal-based Queries 的开发者预览。继 Angular 17.1 引入 Signal Inputs（`input()` 函数）之后，17.2 将 Signal 化范围扩展到了模板查询：`viewChild()`、`viewCh"
-wordCount: 346
+readingTime: 3
+description: "Angular 17.2 は2024年2月14日にリリースされ、Signal-based Queries の開発者プレビューがもたらされました。Angular 17.1 で Signal Inputs（input() 関数）が導入されたのに続き、17.2 では Signal 化の範囲がテンプレートクエリに拡張されました：viewChild()、viewChildren()、contentChild()、contentChildren() の各関数です。"
+wordCount: 541
 ---
 
-Angular 17.2 于 2024 年 2 月 14 日发布，带来了 Signal-based Queries 的开发者预览。继 Angular 17.1 引入 Signal Inputs（`input()` 函数）之后，17.2 将 Signal 化范围扩展到了模板查询：`viewChild()`、`viewChildren()`、`contentChild()`、`contentChildren()`。
+Angular 17.2 は2024年2月14日にリリースされ、Signal-based Queries の開発者プレビューがもたらされました。Angular 17.1 で Signal Inputs（`input()` 関数）が導入されたのに続き、17.2 では Signal 化の範囲がテンプレートクエリに拡張されました：`viewChild()`、`viewChildren()`、`contentChild()`、`contentChildren()` です。
 
-这是 Angular 团队将整个组件 API 迁移到 Signal 体系的重要一步。
+これは Angular チームがコンポーネント API 全体を Signal エコシステムに移行する重要な一歩です。
 
 ## 旧デコレータークエリ
 
@@ -28,17 +28,17 @@ import {
   template: `<div #container>...</div>`,
 })
 export class OldDemoComponent implements AfterViewInit {
-  @ViewChild("container") container!: ElementRef; // 初始为 undefined，AfterViewInit 后才有值
+  @ViewChild("container") container!: ElementRef; // 初期は undefined、AfterViewInit 後に値が設定される
   @ContentChild("slot") slot?: ElementRef;
 
   ngAfterViewInit() {
-    // 必须等 AfterViewInit 才能访问
+    // AfterViewInit までアクセスできない
     console.log(this.container.nativeElement);
   }
 }
 ```
 
-这种方式有个痛点：查询结果不是响应式的，在 `ngAfterViewInit` 之前访问会得到 `undefined`，并且无法被 `computed()` 或 `effect()` 追踪到。
+この方法には問題点があります。クエリ結果がリアクティブではなく、`ngAfterViewInit` の前にアクセスすると `undefined` になり、`computed()` や `effect()` で追跡できません。
 
 ## Signal ベースクエリ（Angular 17.2）
 
@@ -61,19 +61,19 @@ import {
   `,
 })
 export class NewDemoComponent {
-  // viewChild 返回 Signal<ElementRef | undefined>
+  // viewChild は Signal<ElementRef | undefined> を返す
   container = viewChild<ElementRef>("container");
 
-  // required：如果元素不存在会抛出错误，返回 Signal<ElementRef>（非 undefined）
+  // required：要素が存在しない場合はエラーをスロー、Signal<ElementRef>（undefined ではない）を返す
   containerRequired = viewChild.required<ElementRef>("container");
 
-  // viewChildren 返回 Signal<readonly ElementRef[]>
+  // viewChildren は Signal<readonly ElementRef[]> を返す
   buttons = viewChildren<ElementRef>("btn");
 
-  // 可以在 constructor 中直接使用（不需要等 AfterViewInit）
-  // 但注意：在组件挂载前，viewChild() 值是 undefined
+  // constructor で直接使用可能（AfterViewInit を待つ必要はない）
+  // ただし注意：コンポーネントのマウント前は、viewChild() の値は undefined です
   constructor() {
-    // effect 中自动追踪
+    // effect 内で自動追跡
     effect(() => {
       const el = this.container();
       if (el) {
@@ -93,19 +93,19 @@ export class NewDemoComponent {
   template: `<ng-content></ng-content>`,
 })
 export class PanelComponent {
-  // 查询投影进来的内容
+  // 投影されたコンテンツをクエリ
   header = contentChild<HeaderComponent>(HeaderComponent);
   items = contentChildren<ItemComponent>(ItemComponent);
 
   constructor() {
-    // 当 items 变化时自动响应
+    // items が変更されると自動的に反応
     effect(() => {
       console.log(`Panel has ${this.items().length} items`);
     });
   }
 }
 
-// 使用 PanelComponent
+// PanelComponent を使用
 @Component({
   template: `
     <app-panel>
@@ -119,7 +119,7 @@ export class AppComponent {}
 
 ## Signal Queries と computed() の組み合わせ
 
-这是 Signal-based Queries 最大的优势——可以派生计算值：
+これは Signal-based Queries の最大の利点です——派生計算値を作成できます：
 
 ```typescript
 @Component({
@@ -135,7 +135,7 @@ export class FormComponent {
   nameInput = viewChild.required<ElementRef<HTMLInputElement>>("nameInput");
   emailInput = viewChild.required<ElementRef<HTMLInputElement>>("emailInput");
 
-  // 基于 DOM 查询派生计算值
+  // DOM クエリに基づいて計算値を派生
   isFormValid = computed(() => {
     const name = this.nameInput().nativeElement.value;
     const email = this.emailInput().nativeElement.value;
@@ -147,7 +147,7 @@ export class FormComponent {
 ## Angular 17.x Signal 移行ロードマップ
 
 ```
-Angular 17.0 (2023-11)  Signals 开发者预览 → 稳定
+Angular 17.0 (2023-11)  Signals 開発者プレビュー → 安定版
                          signal(), computed(), effect()
 
 Angular 17.1 (2024-01)  Signal Inputs
@@ -156,17 +156,17 @@ Angular 17.1 (2024-01)  Signal Inputs
 Angular 17.2 (2024-02)  Signal Queries  ← 本文
                          viewChild(), viewChildren(), contentChild(), contentChildren()
 
-Angular 17.3 (预计 03)  Output API
+Angular 17.3 (2024-03 予定)  Output API
                          output(), output.required()
 
-Angular 18.0 (预计 05)  Zoneless 变更检测（实验性）
-                         全面 Signal 化组件
+Angular 18.0 (2024-05 予定)  Zoneless 変更検出（実験的）
+                         コンポーネントの完全 Signal 化
 ```
 
 ## 旧デコレーターとの互換性
 
-Angular 17.2 的 Signal Queries 是**开发者预览**阶段，API 可能在正式版中有调整。旧的 `@ViewChild`、`@ContentChild` 等装饰器继续工作，不会被废弃（至少在 Angular 18 之前）。可以在新组件中逐步采用 Signal Queries，无需全量迁移。
+Angular 17.2 の Signal Queries は**開発者プレビュー**段階であり、API は正式版で調整される可能性があります。従来の `@ViewChild` や `@ContentChild` などのデコレータは引き続き動作し、廃止されることはありません（少なくとも Angular 18 までは）。新しいコンポーネントで Signal Queries を段階的に採用でき、一括移行は必要ありません。
 
 ## まとめ
 
-Angular 17.2 的 Signal Queries 让模板查询也融入了响应式体系，消除了 `ngAfterViewInit` 生命周期钩子的依赖，并让查询结果可以直接参与 `computed()` 推导链。配合 Signal Inputs，Angular 组件的数据流正在变得更像纯函数：输入 → 信号 → 模板，大幅降低心智负担。
+Angular 17.2 の Signal Queries により、テンプレートクエリもリアクティブシステムに統合され、`ngAfterViewInit` ライフサイクルフックへの依存がなくなり、クエリ結果が `computed()` の導出チェーンに直接参加できるようになりました。Signal Inputs と組み合わせることで、Angular コンポーネントのデータフローはより純粋関数に近づいています：入力 → 信号 → テンプレート、これにより認知的負荷が大幅に軽減されます。

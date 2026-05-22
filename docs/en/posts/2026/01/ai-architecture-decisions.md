@@ -1,6 +1,6 @@
 ---
 title: "AI-Assisted Architecture Decision Tools"
-date: 2026-01-08 10:00:00
+date: 2026-01-08 16:42:19
 tags:
   - Engineering
 readingTime: 3

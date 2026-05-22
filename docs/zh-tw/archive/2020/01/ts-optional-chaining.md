@@ -38,7 +38,7 @@ const first = arr?.[0];
 
 ## 空值合併 ??
 
-和 `||` 的區別是關鍵：`||` 會把 `0`、`''`、`false` 也當作假值，`??` 只處理 `null` 和 `undefined`。
+和 `||` 的區別是關鍵：`||` 會把 `0`、`''`、`false` 也當作假值，`??` 隻處理 `null` 和 `undefined`。
 
 ```typescript
 const count = 0;
@@ -46,7 +46,7 @@ const count = 0;
 // || 的問題：0 被當成假值
 console.log(count || 10);  // 10 —— 不對！
 
-// ?? 只看 null/undefined
+// ?? 隻看 null/undefined
 console.log(count ?? 10);  // 0 —— 正確
 
 // 典型場景：API 返回的預設值
@@ -104,7 +104,7 @@ const userName = computed(() => {
 });
 ```
 
-## 配置 TypeScript 支援
+## 設定 TypeScript 支援
 
 ```json
 // tsconfig.json

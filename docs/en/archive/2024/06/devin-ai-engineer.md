@@ -1,6 +1,6 @@
 ---
 title: "Devin AI Software Engineer Analysis"
-date: 2024-06-11 10:00:00
+date: 2024-06-11 18:45:22
 tags:
   - Engineering
 readingTime: 2

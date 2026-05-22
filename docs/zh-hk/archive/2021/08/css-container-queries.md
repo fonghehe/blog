@@ -1,5 +1,5 @@
 ---
-title: "CSS Container Queries 瀏覽器支持在即"
+title: "CSS Container Queries 瀏覽器支援在即：落地路徑與實戰建議"
 date: 2021-08-23 09:48:53
 tags:
   - CSS
@@ -34,7 +34,7 @@ Media Queries 根據**視口寬度**響應，Container Queries 根據**父容器
 
 ## 為什麼這個特性很重要
 
-現在的痛點：同一個組件放在側邊欄（窄）和主內容區（寬），表現應該不同。但 Media Queries 只看視口，不看容器。
+現在的痛點：同一個組件放在側邊欄（窄）和主內容區（寬），表現應該不同。但 Media Queries 隻看視口，不看容器。
 
 ```html
 <!-- 同一個 Card 組件 -->
@@ -54,7 +54,7 @@ Media Queries 根據**視口寬度**響應，Container Queries 根據**父容器
 ```css
 /* 1. 定義容器 */
 .card-container {
-  container-type: inline-size;  /* 只監控 inline 方向（水平）的尺寸 */
+  container-type: inline-size;  /* 隻監控 inline 方向（水平）的尺寸 */
   container-name: card;          /* 可選：給容器命名 */
 }
 
@@ -172,12 +172,12 @@ Tailwind 3.0 已經實驗性支持 `@container`：
 </div>
 ```
 
-## 瀏覽器支持現狀
+## 瀏覽器支援現狀
 
 截至 2021 年 8 月：
 
-- Chrome Canary：實驗性支持（需要開啓 flag）
-- Chrome 105+：預計默認支持
+- Chrome Canary：實驗性支援（需要開啓 flag）
+- Chrome 105+：預計默認支援
 - Firefox / Safari：暫無支持時間表
 
 目前可以用 PostCSS 插件做降級：

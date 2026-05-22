@@ -1,10 +1,10 @@
 ---
-title: "React Native 0.78 性能飛躍"
-date: 2025-01-14 10:00:00
+title: "React Native 0.78 效能飛躍：實踐方法與治理思路"
+date: 2025-01-14 19:08:45
 tags:
   - React
 readingTime: 3
-description: "React Native 0.78 是近年來性能提升最大的一個版本。新架構（New Architecture）成為唯一支持的架構，Hermes 引擎升級到 0.15，啓動時間減少了約 35%。對長期維護 RN 項目的人來説，這個版本值得認真對待。"
+description: "React Native 0.78 是近年來效能提升最大的一個版本。新架構（New Architecture）成為唯一支援的架構，Hermes 引擎升級到 0.15，啓動時間減少了約 35%。對長期維護 RN 項目的人來説，這個版本值得認真對待。"
 wordCount: 488
 ---
 
@@ -33,7 +33,7 @@ export interface Spec extends TurboModule {
 export default TurboModuleRegistry.getEnforcing<Spec>('CalendarModule');
 ```
 
-配合 `codegenConfig` 配置，iOS 和 Android 的原生接口代碼會自動生成，不再需要手寫 ObjC/Java 橋接代碼。
+配合 `codegenConfig` 設定，iOS 和 Android 的原生介面代碼會自動生成，不再需要手寫 ObjC/Java 橋接代碼。
 
 ## Hermes 0.15：啓動和內存雙優化
 
@@ -102,11 +102,11 @@ function NotificationBadge({ count }: { count: number }) {
 }
 ```
 
-動態樣式函數 `styles.badge(count)` 在編譯期被識別為「部分靜態」，基礎樣式（borderRadius、paddingHorizontal）在 native 層直接應用，只有條件屬性需要 JS 計算。
+動態樣式函數 `styles.badge(count)` 在編譯期被識別為「部分靜態」，基礎樣式（borderRadius、paddingHorizontal）在 native 層直接應用，隻有條件屬性需要 JS 計算。
 
 ## 屏幕間轉場動畫優化
 
-0.78 引入了 Shared Element Transitions 的原生支持，不再需要第三方庫：
+0.78 引入了 Shared Element Transitions 的原生支援，不再需要第三方庫：
 
 ```javascript
 import { createSharedElementStackNavigator } from 'react-native';
@@ -151,4 +151,4 @@ function ProductList() {
 - Hermes 0.15 啓動速度提升 35%，內存佔用降低 23%，大列表滾動更流暢
 - StyleSheet 靜態提取減少運行時開銷，動態樣式函數也得到優化
 - Shared Element Transitions 原生支持，轉場動畫不再依賴社區庫
-- 這是 React Native 性能最接近原生的一個版本，新架構的紅利開始真正兑現
+- 這是 React Native 效能最接近原生的一個版本，新架構的紅利開始真正兌現

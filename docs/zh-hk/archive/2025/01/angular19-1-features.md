@@ -1,6 +1,6 @@
 ---
 title: "Angular 19.1：增量水合穩定化與 linkedSignal 進展"
-date: 2025-01-02 10:00:00
+date: 2025-01-02 16:56:33
 tags:
   - Angular
 readingTime: 2
@@ -69,7 +69,7 @@ const count = linkedSignal({
 });
 ```
 
-## Signal Effect 清理機制改進
+## Signal Effect 清理機製改進
 
 Angular 19.1 改進了 `effect()` 的資源清理 API：
 
@@ -103,7 +103,7 @@ export class DataStreamComponent {
 }
 ```
 
-## 模板類型檢查增強
+## 範本類型檢查增強
 
 Angular 19.1 增強了對 Signal 表達式的類型檢查：
 

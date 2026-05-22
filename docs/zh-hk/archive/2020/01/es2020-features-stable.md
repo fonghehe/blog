@@ -4,7 +4,7 @@ date: 2020-01-06 11:24:24
 tags:
   - 前端
 readingTime: 3
-description: "2020 年了，ES2020 的特性已經進入 Stage 4，主流瀏覽器和 Node 14 都支持了。趁着年初，把項目裏能用的新特性梳理一遍，順便統一團隊的編碼風格。"
+description: "2020 年了，ES2020 的特性已經進入 Stage 4，主流瀏覽器和 Node 14 都支援了。趁着年初，把項目裏能用的新特性梳理一遍，順便統一團隊的編碼風格。"
 wordCount: 445
 ---
 
@@ -66,7 +66,7 @@ const pageSize = config.pageSize || 20;
 
 // ES2020
 const pageSize = config.pageSize ?? 20;
-// 只有 undefined 和 null 才用默認值
+// 隻有 undefined 和 null 才用默認值
 // 0、''、false 都保留
 ```
 
@@ -255,7 +255,7 @@ const result = userId + 1n;     // OK
 ## 小結
 
 - Optional Chaining 和 Nullish Coalescing 是最實用的兩個特性，直接減少防禦性代碼
-- `??` 替代 `||` 做默認值要注意區分場景：需要跳過 falsy 用 `||`，只跳過 nullish 用 `??`
+- `??` 替代 `||` 做默認值要注意區分場景：需要跳過 falsy 用 `||`，隻跳過 nullish 用 `??`
 - `Promise.allSettled` 解決了批量請求的部分失敗問題，比 `Promise.all` 更安全
 - 動態 import 是代碼拆分的標準方式，配合路由懶加載效果好
-- `globalThis` 統一了全局對象獲取，寫跨平台工具庫時有用
+- `globalThis` 統一了全局對象獲取，寫跨平臺工具庫時有用

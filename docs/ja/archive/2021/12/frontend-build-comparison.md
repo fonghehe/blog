@@ -6,44 +6,44 @@ tags:
   - Webpack
   - Vite
 
-readingTime: 2
-description: "2021 年是前端构建工具大变革的一年。Vite 2.0 成熟、esbuild 被广泛采用、Webpack 5 逐步普及。作为一个维护多个项目的技术负责人，今年的构建工具选型让我重新思考了\"什么是最合适的工具\"。"
-wordCount: 359
+readingTime: 3
+description: "2021年はフロントエンドビルドツールの大きな変革の年でした。Vite 2.0 が成熟し、esbuild が広く採用され、Webpack 5 が徐々に普及しました。複数のプロジェクトを担当するテクニカルリーダーとして、今年のビルドツール選定は「最適なツールとは何か」を再考させるものでした。"
+wordCount: 587
 ---
 
-2021 年是前端构建工具大变革的一年。Vite 2.0 成熟、esbuild 被广泛采用、Webpack 5 逐步普及。作为一个维护多个项目的技术负责人，今年的构建工具选型让我重新思考了"什么是最合适的工具"。
+2021年はフロントエンドビルドツールの大きな変革の年でした。Vite 2.0 が成熟し、esbuild が広く採用され、Webpack 5 が徐々に普及しました。複数のプロジェクトを担当するテクニカルリーダーとして、今年のビルドツール選定は「最適なツールとは何か」を再考させました。
 
 ## 現状分析
 
 ```
-我们的项目分布：
-- 3 个 Vue 3 新项目 → Vite
-- 2 个 Vue 2 遗留项目 → Webpack 4/5
-- 1 个 React 项目 → Webpack 5 + esbuild loader
-- 1 个组件库 → Rollup（通过 Vite Library Mode）
-- 2 个 Node.js 服务 → esbuild 直接打包
+私たちのプロジェクト分布：
+- 3 つの Vue 3 新規プロジェクト → Vite
+- 2 つの Vue 2 レガシープロジェクト → Webpack 4/5
+- 1 つの React プロジェクト → Webpack 5 + esbuild loader
+- 1 つのコンポーネントライブラリ → Rollup（Vite Library Mode 経由）
+- 2 つの Node.js サービス → esbuild で直接バンドル
 ```
 
 ## 開発者体験の比較
 
-基于实际项目数据：
+実際のプロジェクトデータに基づく：
 
 ```
-指标                    Webpack 4    Webpack 5    Vite 2
+指標                    Webpack 4    Webpack 5    Vite 2
 ------------------------------------------------------------
-冷启动时间              35s          20s          0.8s
-HMR 响应                2-5s         1-3s         <50ms
-配置文件行数            200+         180+         30-50
-插件生态                最丰富        最丰富       兼容 Rollup
-TypeScript 支持         需要 loader   需要 loader  原生（esbuild）
-CSS Modules             需要配置     需要配置     开箱即用
-Tree Shaking            支持         更好         基于 Rollup
+コールドスタート時間    35s          20s          0.8s
+HMR 応答性              2-5s         1-3s         <50ms
+設定ファイル行数        200+         180+         30-50
+プラグインエコシステム  最も豊富    最も豊富     Rollup 互換
+TypeScript サポート     loader 必要  loader 必要  ネイティブ（esbuild）
+CSS Modules             設定必要    設定必要     初期対応
+Tree Shaking            対応        より良好     Rollup ベース
 ```
 
 ## Vite が得意とするシナリオ
 
 ```javascript
-// vite.config.ts - 配置极其简洁
+// vite.config.ts - 設定が非常にシンプル
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import WindiCSS from 'vite-plugin-windicss'
@@ -55,7 +55,7 @@ export default defineConfig({
   },
   build: {
     target: 'es2015',
-    minify: 'esbuild', // 比 Terser 快 10 倍
+    minify: 'esbuild', // Terser より10倍高速
     rollupOptions: {
       output: {
         manualChunks: {
@@ -67,15 +67,15 @@ export default defineConfig({
 })
 ```
 
-Vite 最适合：
-- 新项目，特别是 Vue 3 项目
-- 对开发体验有高要求的团队
-- 中小型项目（大型项目需要手动优化分包）
+Vite が最も適しているのは：
+- 新規プロジェクト、特に Vue 3 プロジェクト
+- 開発体験に高い要求を持つチーム
+- 中規模プロジェクト（大規模プロジェクトは手動でのチャンク最適化が必要）
 
 ## Webpack が不可欠なシナリオ
 
 ```javascript
-// webpack.config.js - 虽然配置复杂，但能力强大
+// webpack.config.js - 設定は複雑ですが、能力は強力です
 module.exports = {
   module: {
     rules: [
@@ -86,17 +86,17 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: {
-          loader: 'esbuild-loader', // 用 esbuild 替代 ts-loader
+          loader: 'esbuild-loader', // esbuild で ts-loader を代替
           options: { loader: 'tsx' }
         }
       },
       {
         test: /\.svg$/,
-        use: ['@svgr/webpack'] // SVG 作为 React 组件导入
+        use: ['@svgr/webpack'] // SVG を React コンポーネントとしてインポート
       }
     ]
   },
-  // Webpack 5 的 Module Federation
+  // Webpack 5 の Module Federation
   plugins: [
     new ModuleFederationPlugin({
       name: 'app1',
@@ -109,19 +109,19 @@ module.exports = {
 }
 ```
 
-Webpack 仍然不可替代的场景：
-- Module Federation 微前端
-- 需要大量自定义 loader/plugin 的复杂项目
-- 已有大量 Webpack 配置投资的遗留项目
+Webpack が依然として代替不可能なシナリオ：
+- Module Federation マイクロフロントエンド
+- 大量のカスタム loader/plugin が必要な複雑なプロジェクト
+- 既に多くの Webpack 設定投資があるレガシープロジェクト
 
 ## esbuild のポジショニング
 
-esbuild 不适合直接做应用打包（缺少 code splitting、CSS 处理等），但作为底层工具非常出色：
+esbuild はアプリケーションのバンドルに直接使用するのには適していません（コード分割や CSS 処理などが不足しています）が、基盤ツールとして非常に優れています：
 
 ```javascript
-// esbuild 适合的场景
+// esbuild が適しているシナリオ
 
-// 1. Node.js 服务打包
+// 1. Node.js サービスのバンドル
 require('esbuild').buildSync({
   entryPoints: ['src/server.ts'],
   bundle: true,
@@ -131,30 +131,30 @@ require('esbuild').buildSync({
   minify: true
 })
 
-// 2. 作为其他工具的加速层
-// Vite 用 esbuild 做依赖预构建和 TS 转译
-// Webpack 用 esbuild-loader 替代 ts-loader + Terser
-// Rollup 用 rollup-plugin-esbuild 替代 @rollup/plugin-typescript
+// 2. 他のツールの高速化レイヤーとして
+// Vite は esbuild を使用して依存関係の事前バンドルと TS トランスパイルを実行
+// Webpack は esbuild-loader で ts-loader + Terser を代替
+// Rollup は rollup-plugin-esbuild で @rollup/plugin-typescript を代替
 ```
 
 ## 選定の推奨事項
 
 ```
-场景                          推荐方案
+シナリオ                          推奨ソリューション
 ------------------------------------------------------
-Vue 3 新项目                  Vite（首选）
-React 新项目                  Vite 或 Next.js
-遗留项目                      保持 Webpack，优化配置
-组件库打包                    Rollup 或 Vite Library Mode
-Node.js 服务                  esbuild
-微前端（模块联邦）            Webpack 5
-文档站                        VitePress / Docusaurus
+Vue 3 新規プロジェクト            Vite（最優先）
+React 新規プロジェクト            Vite または Next.js
+レガシープロジェクト              Webpack を維持、設定を最適化
+コンポーネントライブラリのバンドル  Rollup または Vite Library Mode
+Node.js サービス                  esbuild
+マイクロフロントエンド（Module Federation）  Webpack 5
+ドキュメントサイト                VitePress / Docusaurus
 ```
 
 ## まとめ
 
-- Vite 在开发体验上已经全面超越 Webpack，新项目推荐首选
-- Webpack 在复杂场景和 Module Federation 上仍然不可替代
-- esbuild 不是应用级打包器的替代品，而是优秀的底层工具
-- 构建工具选型要结合团队能力、项目特点和生态兼容性
-- 2021 年的趋势是 Rust 化和 esbuild 化——更快的底层，更好的 DX
+- Vite は開発体験において Webpack を全面的に凌駕しており、新規プロジェクトでは最優先で推奨されます
+- Webpack は複雑なシナリオや Module Federation において依然として代替不可能です
+- esbuild はアプリケーションレベルのバンドラーの代替品ではなく、優れた基盤ツールです
+- ビルドツールの選定はチームの能力、プロジェクトの特性、エコシステムの互換性を考慮する必要があります
+- 2021年のトレンドは Rust 化と esbuild 化——より高速な基盤、より優れた DX

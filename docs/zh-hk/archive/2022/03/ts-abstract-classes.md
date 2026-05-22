@@ -1,10 +1,10 @@
 ---
-title: "TypeScript 抽象類與接口對比"
+title: "TypeScript 抽象類與介面對比：落地路徑與實戰建議"
 date: 2022-03-18 17:22:02
 tags:
   - TypeScript
 readingTime: 2
-description: "在日常開發中，TypeScript 抽象類與接口對比的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+description: "在日常開發中，TypeScript 抽象類與介面對比的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
 wordCount: 301
 ---
 
@@ -99,9 +99,9 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
-## 性能對比
+## 效能對比
 
 我們可以通過以下方式來改進：
 
@@ -139,7 +139,7 @@ class TypedEmitter<T extends Record<string, any>> {
 ## 小結
 
 - 代碼示例僅供參考，需根據業務場景調整
-- TypeScript 抽象類與接口對比不是銀彈，需要根據項目規模和技術棧選擇
+- TypeScript 抽象類與介面對比不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要
 - 生產環境使用前務必做好兼容性驗證
 - 團隊協作中約定和文檔比技術本身更重要

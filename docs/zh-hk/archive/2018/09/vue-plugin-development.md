@@ -1,16 +1,16 @@
 ---
-title: "Vue 插件開發實戰"
+title: "Vue 外掛開發實戰：落地路徑與實戰建議"
 date: 2018-09-21 10:12:44
 tags:
   - Vue
 readingTime: 1
-description: "Vue 的插件機制讓功能可以全局註冊，用 `Vue.use()` 一鍵引入。做了一個公司內部用的消息提示插件，記錄一下開發過程。"
+description: "Vue 的外掛機製讓功能可以全局註冊，用 `Vue.use()` 一鍵引入。做了一個公司內部用的消息提示外掛，記錄一下開發過程。"
 wordCount: 153
 ---
 
-Vue 的插件機制讓功能可以全局註冊，用 `Vue.use()` 一鍵引入。做了一個公司內部用的消息提示插件，記錄一下開發過程。
+Vue 的外掛機製讓功能可以全局註冊，用 `Vue.use()` 一鍵引入。做了一個公司內部用的消息提示外掛，記錄一下開發過程。
 
-## Vue 插件結構
+## Vue 外掛結構
 
 插件必須有一個 `install` 方法（或者插件本身就是函數）：
 
@@ -46,7 +46,7 @@ const MyPlugin = {
 };
 ```
 
-## 實戰：$toast 消息提示插件
+## 實戰：$toast 消息提示外掛
 
 ```javascript
 // plugins/toast/index.js
@@ -126,7 +126,7 @@ this.$toast.success("保存成功！");
 this.$toast.error("網絡錯誤，請重試");
 ```
 
-## 帶全局配置的插件
+## 帶全局設定的外掛
 
 ```javascript
 const Loading = {

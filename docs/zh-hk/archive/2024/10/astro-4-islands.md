@@ -1,6 +1,6 @@
 ---
-title: "Astro 4 島嶼架構深入"
-date: 2024-10-30 10:00:00
+title: "Astro 4 島嶼架構深入：實踐方法與治理思路"
+date: 2024-10-30 17:44:21
 tags:
   - React
 readingTime: 2
@@ -97,7 +97,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能優化
+## 效能優化
 
 關鍵在於理解核心邏輯：
 
@@ -124,7 +124,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 常見陷阱
 

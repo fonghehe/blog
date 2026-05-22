@@ -1,6 +1,6 @@
 ---
 title: "Angular 22 正式リリース：Evergreenコンパイラが牽引する新時代"
-date: 2026-05-07 10:00:00
+date: 2026-05-07 19:21:58
 tags:
   - Angular
 readingTime: 3

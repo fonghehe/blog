@@ -1,6 +1,6 @@
 ---
-title: "Vue 3.6 新特性展望"
-date: 2025-01-30 10:00:00
+title: "Vue 3.6 新特性展望：特性解讀與遷移建議"
+date: 2025-01-30 16:24:01
 tags:
   - Vue
 readingTime: 2
@@ -43,11 +43,11 @@ $ref: let user = { name: '張三', age: 25 };
 </template>
 ```
 
-編譯器會把 `$ref` 轉換為 `ref()`，`$computed` 轉換為 `computed()`，模板中的訪問自動添加 `.value`。這意味着零運行時開銷，純粹是語法糖。
+編譯器會把 `$ref` 轉換為 `ref()`，`$computed` 轉換為 `computed()`，範本中的訪問自動添加 `.value`。這意味着零運行時開銷，純粹是語法糖。
 
 ## defineProps 解構默認值
 
-3.6 終於支持了 props 解構的默認值聲明，不再需要 `withDefaults`：
+3.6 終於支援了 props 解構的默認值聲明，不再需要 `withDefaults`：
 
 ```vue
 <script setup lang="ts">
@@ -67,7 +67,7 @@ const { title, size = 16, color = '#1a1a1a' } = defineProps<{
 // 不需要擔心解構丟失響應性
 console.log(size); // 直接使用，不需要 props.size
 
-// 複雜默認值也支持
+// 複雜默認值也支援
 const { items = [], onSelect = () => {} } = defineProps<{
   items?: Item[];
   onSelect?: (item: Item) => void;
@@ -86,7 +86,7 @@ import { defineAsyncComponent, hydrateOnVisible } from 'vue';
 // Vue 3.6 新增：條件性懶加載
 const AdminPanel = defineAsyncComponent({
   loader: () => import('./AdminPanel.vue'),
-  // 只有當用户有權限時才加載
+  // 隻有當用户有權限時才加載
   condition: () => userStore.isAdmin,
   loadingComponent: () => import('./AdminSkeleton.vue'),
   // SSR 注水策略
@@ -141,7 +141,7 @@ const localItems = toRef(() => items);
 ## 小結
 
 - Ref Sugar 正式穩定，`$ref`/`$computed` 消除 `.value` 冗餘，零運行時開銷
-- Props 解構支持原生默認值，不再需要 `withDefaults` 包裹
-- `hydrateOnVisible` 實現視口級注水，優化 SSR 首屏性能
+- Props 解構支援原生默認值，不再需要 `withDefaults` 包裹
+- `hydrateOnVisible` 實現視口級注水，優化 SSR 首屏效能
 - 批量預加載 API 讓路由切換更絲滑
 - Vue 3.6 的核心策略是「編譯期做更多優化，讓開發者寫更少的膠水代碼」

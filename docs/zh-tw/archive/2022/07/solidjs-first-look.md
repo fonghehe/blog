@@ -41,7 +41,7 @@ function App() {
   const [name, setName] = createSignal('World');
   const [greeting, setGreeting] = createSignal('Hello');
 
-  // createEffect 只在依賴變化時執行
+  // createEffect 隻在依賴變化時執行
   createEffect(() => {
     console.log(`當前問候: ${greeting()}, ${name()}`);
   });
@@ -58,15 +58,15 @@ function App() {
 }
 ```
 
-`createEffect` 類似 React 的 `useEffect`，但它自動追蹤依賴（不需要依賴陣列），且只在訊號變化時重新執行。
+`createEffect` 類似 React 的 `useEffect`，但它自動追蹤依賴（不需要依賴陣列），且隻在訊號變化時重新執行。
 
-## 元件只執行一次
+## 元件隻執行一次
 
 ```jsx
 function Parent() {
   const [count, setCount] = createSignal(0);
 
-  // 這個 console.log 只在初始渲染時執行一次！
+  // 這個 console.log 隻在初始渲染時執行一次！
   console.log('Parent 渲染');
 
   return (
@@ -78,7 +78,7 @@ function Parent() {
 }
 
 function Child(props) {
-  // Child 也只在初始渲染時執行一次
+  // Child 也隻在初始渲染時執行一次
   console.log('Child 渲染');
 
   return <span>{props.count}</span>;
@@ -134,9 +134,9 @@ function TodoApp() {
 }
 ```
 
-`createStore` 是巢狀的響應式物件，路徑式更新——只有變化的部分會觸發 DOM 更新。
+`createStore` 是巢狀的響應式物件，路徑式更新——隻有變化的部分會觸發 DOM 更新。
 
-## 控制流元件
+## 控製流元件
 
 ```jsx
 import { Show, For, Switch, Match, Suspense } from 'solid-js';
@@ -177,7 +177,7 @@ function App() {
 ------|-------|-------|
 | 更新粒度 | 元件 | 精確 DOM 節點 |
 | 虛擬 DOM | 有 | 沒有 |
-| 元件執行 | 每次更新都重跑 | 只執行一次 |
+| 元件執行 | 每次更新都重跑 | 隻執行一次 |
 | 依賴追蹤 | 依賴陣列（手動） | 自動追蹤 |
 | Hooks 規則 | 有（不能條件呼叫） | 沒有 |
 | 學習曲線 | 中 | 低（如果會 React） |

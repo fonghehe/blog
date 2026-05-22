@@ -1,5 +1,5 @@
 ---
-title: "TypeScript const 斷言最佳實踐"
+title: "TypeScript const 斷言最佳實踐：落地路徑與實戰建議"
 date: 2022-03-16 11:47:21
 tags:
   - TypeScript
@@ -99,9 +99,9 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
-## 性能對比
+## 效能對比
 
 我們可以通過以下方式來改進：
 

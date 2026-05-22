@@ -241,4 +241,4 @@ BREAKING CHANGE: Button 元件的 variant 屬性值從字串改為列舉
 
 ## 小結
 
-Changesets 是目前 monorepo 版本管理的最佳方案。它把「什麼時候發版」和「發什麼版本」的問題自動化了。配合 CI，開發者只需要在 PR 中建立 changeset，剩下的全自動。
+Changesets 是目前 monorepo 版本管理的最佳方案。它把「什麼時候發版」和「發什麼版本」的問題自動化了。配合 CI，開發者隻需要在 PR 中建立 changeset，剩下的全自動。

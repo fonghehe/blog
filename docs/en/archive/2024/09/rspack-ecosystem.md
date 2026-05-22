@@ -1,6 +1,6 @@
 ---
-title: "Rspack Ecosystem Complete Guide"
-date: 2024-09-27 10:00:00
+title: "Rspack Ecosystem Guide: Compatibility Webpack  Rust Build新选择"
+date: 2024-09-27 19:01:38
 tags:
   - Frontend
 readingTime: 2

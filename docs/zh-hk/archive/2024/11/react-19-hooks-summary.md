@@ -1,6 +1,6 @@
 ---
-title: "React 19 新 Hooks 彙總"
-date: 2024-11-26 10:00:00
+title: "React 19 新 Hooks 彙總：落地路徑與實戰建議"
+date: 2024-11-26 12:20:57
 tags:
   - React
 readingTime: 2
@@ -130,7 +130,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 避坑指南
 

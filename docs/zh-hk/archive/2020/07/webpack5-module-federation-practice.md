@@ -1,5 +1,5 @@
 ---
-title: "Webpack 5 Module Federation 實戰"
+title: "Webpack 5 Module Federation 實戰：落地路徑與實戰建議"
 date: 2020-07-13 10:23:25
 tags:
   - Webpack
@@ -58,7 +58,7 @@ module.exports = {
       },
       shared: {
         vue: {
-          singleton: true, // 只加載一個實例
+          singleton: true, // 隻加載一個實例
           requiredVersion: '^3.0.0',
           eager: true
         },
@@ -291,14 +291,14 @@ declare module 'user_center/FavoriteButton' {
 }
 ```
 
-## shared 配置要點
+## shared 設定要點
 
 `shared` 是 Module Federation 最關鍵的配置之一。如果配不好，要麼依賴重複加載，要麼出現 Vue 多實例導致響應式系統混亂：
 
 ```javascript
 shared: {
   vue: {
-    singleton: true,        // 強制只加載一份 Vue
+    singleton: true,        // 強製隻加載一份 Vue
     requiredVersion: '^3.0.0',  // 版本範圍要求
     eager: true,            // 啓動時就加載，不走異步
     strictVersion: false    // 版本不匹配時發警告而非報錯
@@ -316,7 +316,7 @@ shared: {
 瀏覽器訪問 localhost:3000
   -> shell 應用加載
   -> 解析 remoteEntry.js (product_components, user_center)
-  -> 加載共享依賴 (vue 只加載一份)
+  -> 加載共享依賴 (vue 隻加載一份)
   -> 按需加載遠程模塊
 ```
 

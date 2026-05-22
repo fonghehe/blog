@@ -1,12 +1,12 @@
 ---
 title: "Angular 20 正式發佈：Zoneless 穩定、Signal Forms 與 resource() API"
-date: 2025-05-07 10:00:00
+date: 2025-05-07 11:41:18
 tags:
   - Angular
   - CSS
   - JavaScript
 readingTime: 2
-description: "Angular 20 於 2025 年 5 月正式發佈。這是 Angular 自 2022 年開始\"Signal 化轉型\"以來最重要的里程碑——Zoneless 變更檢測正式穩定，可用於生產；Signal Forms 進入開發者預覽；新的 `resource()` API 為聲明式異步數據管理提供了原生支持。"
+description: "Angular 20 於 2025 年 5 月正式發佈。這是 Angular 自 2022 年開始\"Signal 化轉型\"以來最重要的里程碑——Zoneless 變更檢測正式穩定，可用於生產；Signal Forms 進入開發者預覽；新的 `resource()` API 為聲明式異步數據管理提供了原生支援。"
 wordCount: 331
 ---
 

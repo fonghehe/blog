@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 7.1 類型推導"
-date: 2026-03-09 10:00:00
+title: "TypeScript 7.1 類型推導：落地路徑與實戰建議"
+date: 2026-03-09 10:03:40
 tags:
   - TypeScript
 readingTime: 2
@@ -139,7 +139,7 @@ function createHandler(options = {}) {
 
 ## 小結
 
-- 性能優化需要基於實際數據，避免過度優化
+- 效能優化需要基於實際數據，避免過度優化
 - TypeScript 7.1 類型推導的核心在於理解底層原理，而非僅僅記住 API
 - 在實際項目中，選擇合適的方案比追求最新技術更重要
 - 團隊協作中保持代碼風格一致，降低維護成本

@@ -1,6 +1,6 @@
 ---
-title: "Rolldown Stable Release in Practice"
-date: 2025-11-25 10:00:00
+title: "Rolldown Stable Practice: Vite 底层Switching to  Rolldown MigrationGuide"
+date: 2025-11-25 14:59:36
 tags:
   - Frontend
 readingTime: 2

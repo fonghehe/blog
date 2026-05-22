@@ -1,6 +1,6 @@
 ---
 title: "Server Components in Production: Lessons from One Year"
-date: 2025-05-18 10:00:00
+date: 2025-05-18 19:52:29
 tags:
   - Frontend
 readingTime: 2

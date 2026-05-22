@@ -11,11 +11,11 @@ tags:
   - CSS
   - HTML
 readingTime: 3
-description: "Evan You 在 2021 年 1 月發佈了 Vite 2.0 正式版。和 1.0 相比，這幾乎是一次完全重寫——最大的變化是框架無關，不再只服務 Vue 生態。作為一個從 Webpack 1 時代一路用過來的前端，Vite 給我的感受不只是\"快\"，而是開發體驗的全面升級。"
+description: "Evan You 在 2021 年 1 月發佈了 Vite 2.0 正式版。和 1.0 相比，這幾乎是一次完全重寫——最大的變化是框架無關，不再隻服務 Vue 生態。作為一個從 Webpack 1 時代一路用過來的前端，Vite 給我的感受不隻是\"快\"，而是開發體驗的全面升級。"
 wordCount: 720
 ---
 
-Evan You 在 2021 年 1 月發佈了 Vite 2.0 正式版。和 1.0 相比，這幾乎是一次完全重寫——最大的變化是框架無關，不再只服務 Vue 生態。作為一個從 Webpack 1 時代一路用過來的前端，Vite 給我的感受不只是"快"，而是開發體驗的全面升級。
+Evan You 在 2021 年 1 月發佈了 Vite 2.0 正式版。和 1.0 相比，這幾乎是一次完全重寫——最大的變化是框架無關，不再隻服務 Vue 生態。作為一個從 Webpack 1 時代一路用過來的前端，Vite 給我的感受不隻是"快"，而是開發體驗的全面升級。
 
 ## 為什麼 Vite 這麼快
 
@@ -26,7 +26,7 @@ Webpack: 源碼 → 打包成 bundle → 啓動 dev server → 瀏覽器加載 b
 Vite:    啓動 dev server → 瀏覽器按需請求模塊 → 逐個編譯
 ```
 
-核心原理是利用瀏覽器原生 ES Module 支持。開發時不打包，只在瀏覽器請求時按需編譯：
+核心原理是利用瀏覽器原生 ES Module 支援。開發時不打包，隻在瀏覽器請求時按需編譯：
 
 ```javascript
 // 瀏覽器請求這個文件時，Vite 才做編譯
@@ -59,7 +59,7 @@ npm init vite@latest my-svelte-app -- --template svelte
 
 我最近把一個 React 項目從 CRA 遷移到 Vite，冷啓動從 45 秒降到了 1.2 秒，HMR 基本感覺不到延遲。
 
-## 插件系統
+## 外掛系統
 
 Vite 2.0 的插件 API 基於 Rollup 插件接口擴展，寫過 Rollup 插件的前端幾乎沒有學習成本：
 
@@ -118,7 +118,7 @@ export default defineConfig({
 | 開發構建 | 全量打包 | 按需編譯 |
 | 生產構建 | webpack | Rollup |
 | 冷啓動 | 慢（和項目大小正相關） | 快（幾乎無關） |
-| HMR | 需重新構建受影響的模塊鏈 | 精確更新，只處理變更的模塊 |
+| HMR | 需重新構建受影響的模塊鏈 | 精確更新，隻處理變更的模塊 |
 | 配置 | 複雜，loader + plugin | 簡潔，Rollup 兼容插件 |
 
 一個容易忽略的點：Vite 生產構建用的是 Rollup，Rollup 在 tree-shaking 和代碼優化上本來就是業界最好的選擇。等於開發用 Vite 的按需策略，生產用 Rollup 的成熟打包，兩頭都最優。
@@ -169,21 +169,21 @@ CSS 預處理器不用額外配置 loader，安裝依賴即可：
 
 ```bash
 npm install -D sass
-# 完了，直接在 .vue 文件裏用 lang="scss" 就行
+# 完了，直接在 .vue 檔案裏用 lang="scss" 就行
 ```
 
 ## 還不成熟的地方
 
 公平地説，Vite 2.0 也有一些不足：
 
-1. **CommonJS 依賴**：開發階段需要預構建（esbuild），偶爾遇到兼容問題
+1. **CommonJS 依賴**：開發階段需要預構建（esbuild），偶爾遇到相容問題
 2. **SSR 支持**：基礎框架有了，但還不像 Nuxt 那樣開箱即用
 3. **生態**：插件數量和 Webpack 比還有差距，但核心場景覆蓋得差不多了
-4. **老舊瀏覽器**：默認只支持原生 ESM 的瀏覽器，需要兼容 IE 的項目暫時不適合
+4. **老舊瀏覽器**：默認隻支援原生 ESM 的瀏覽器，需要相容 IE 的項目暫時不適合
 
 ## 小結
 
-- Vite 2.0 不只是"快"，是從架構層面改變了前端構建工具的範式
+- Vite 2.0 不隻是"快"，是從架構層面改變了前端構建工具的範式
 - 框架無關，Vue/React/Svelte 都能用，Rollup 插件兼容降低了遷移成本
 - 遷移注意 `process.env` → `import.meta.env`、`require` → `import`
 - 新項目建議直接用 Vite；老項目可以評估遷移成本

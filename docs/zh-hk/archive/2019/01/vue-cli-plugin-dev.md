@@ -4,7 +4,7 @@ date: 2019-01-28 11:07:28
 tags:
   - Vue
 readingTime: 1
-description: "團隊項目多了，每次初始化都要手動配置 ESLint、Prettier、Git Hooks、CI 配置……做個 Vue CLI Plugin 一鍵搞定。"
+description: "團隊項目多了，每次初始化都要手動設定 ESLint、Prettier、Git Hooks、CI 設定……做個 Vue CLI Plugin 一鍵搞定。"
 wordCount: 137
 ---
 
@@ -55,7 +55,7 @@ module.exports = [
 ];
 ```
 
-## generator/index.js：生成文件
+## generator/index.js：生成檔案
 
 ```javascript
 // generator/index.js
@@ -106,7 +106,7 @@ module.exports = (api, options, rootOptions) => {
 };
 ```
 
-## template 目錄：EJS 模板
+## template 目錄：EJS 範本
 
 ```javascript
 // generator/template/.eslintrc.js

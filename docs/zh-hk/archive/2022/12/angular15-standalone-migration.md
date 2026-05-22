@@ -23,7 +23,7 @@ ng generate @angular/core:standalone
 # 第二步：移除不必要的 NgModule
 ng generate @angular/core:standalone
 # 選擇 "Remove unnecessary NgModule classes"
-# 只保留 entryComponent 和 Feature 路由模塊（如果還在用）
+# 隻保留 entryComponent 和 Feature 路由模塊（如果還在用）
 
 # 第三步：遷移 bootstrap
 ng generate @angular/core:standalone

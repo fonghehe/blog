@@ -1,6 +1,6 @@
 ---
-title: "Rolldown 安定版の実践"
-date: 2025-08-21 10:00:00
+title: "Rolldown 稳定版リリース：Rollup 兼容的 Rust 打包新纪元"
+date: 2025-08-21 19:55:32
 tags:
   - フロントエンド
 readingTime: 3

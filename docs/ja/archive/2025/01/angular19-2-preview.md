@@ -1,6 +1,6 @@
 ---
 title: "Angular 19.2 プレビュー：Signal-based Forms 開発者プレビューとルーティング改善"
-date: 2025-01-31 10:00:00
+date: 2025-01-31 11:25:02
 tags:
   - Angular
 readingTime: 3

@@ -1,6 +1,6 @@
 ---
 title: "React 19 本番移行ガイド：forwardRef廃止・Context変更・useActionState・Server Actions落とし穴"
-date: 2025-01-10 10:00:00
+date: 2025-01-10 17:04:41
 tags:
   - React
 readingTime: 3

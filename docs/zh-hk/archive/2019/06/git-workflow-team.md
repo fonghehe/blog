@@ -1,5 +1,5 @@
 ---
-title: "團隊 Git 工作流最佳實踐"
+title: "團隊 Git 工作流最佳實踐：實踐方法與治理思路"
 date: 2019-06-13 14:43:48
 tags:
   - 工程化
@@ -17,9 +17,9 @@ wordCount: 622
 **Git Flow**——適合有明確發佈週期的項目（如 App 版本發佈）：
 
 ```
-main (master) ← 只有版本發佈時才打 tag
+main (master) ← 隻有版本發佈時才打 tag
   ↑
-release/v1.2.0 ← 發佈前的準備分支，只修 bug
+release/v1.2.0 ← 發佈前的準備分支，隻修 bug
   ↑
 develop ← 日常開發的集成分支
   ↑    ↑
@@ -64,7 +64,7 @@ git checkout -b 0601          # 數字是什麼意思？
 
 ```bash
 #!/bin/sh
-# .git/hooks/pre-push 或通過 husky 配置
+# .git/hooks/pre-push 或通過 husky 設定
 branch=$(git rev-parse --abbrev-ref HEAD)
 valid_pattern="^(feature|fix|hotfix|release|chore)/[a-z0-9._-]+$"
 
@@ -129,7 +129,7 @@ git rebase --continue
 git rebase --abort
 
 # ⚠️ 黃金規則：永遠不要 rebase 已經推送到遠程的公共分支！
-# 只 rebase 你自己獨佔的功能分支。
+# 隻 rebase 你自己獨佔的功能分支。
 # 如果你和同事共享 feature 分支，不要 rebase。
 ```
 
@@ -142,7 +142,7 @@ git rebase --abort
 git log --oneline feature/user-login
 # abc1234 WIP: 登錄表單
 # def5678 修了個 typo
-# ghi9012 WIP: 接入接口
+# ghi9012 WIP: 接入介面
 # jkl3456 修了樣式問題
 # mno7890 完成登錄功能
 
@@ -286,7 +286,7 @@ module.exports = {
 
 ## Code Review 與 Pull Request
 
-PR 不只是「合併代碼」的工具，更是團隊知識共享和質量把控的關卡：
+PR 不隻是「合併代碼」的工具，更是團隊知識共享和質量把控的關卡：
 
 ```bash
 # 完整的 PR 流程
@@ -305,7 +305,7 @@ git push -u origin feature/order-export
 
 # 4. 在 GitHub/GitLab 上創建 Pull Request
 # 標題：feat(order): 添加訂單導出功能
-# 描述模板：
+# 描述範本：
 ```
 
 ```markdown
@@ -366,7 +366,7 @@ coverage/
 *.min.js
 *.min.css
 
-# ===== 環境配置（可能含密鑰）=====
+# ===== 環境設定（可能含密鑰）=====
 .env
 .env.local
 .env.*.local
@@ -387,7 +387,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# ===== 測試/臨時文件 =====
+# ===== 測試/臨時檔案 =====
 .nyc_output/
 .cache/
 tmp/
@@ -399,20 +399,20 @@ desktop.ini
 ```
 
 ```bash
-# 一個常見的坑：文件已經被提交到 Git 後再加 .gitignore 不會生效
+# 一個常見的坑：檔案已經被提交到 Git 後再加 .gitignore 不會生效
 # 需要先從 Git 中移除緩存
 
-# 場景：.env 文件被誤提交了
+# 場景：.env 檔案被誤提交了
 # 1. 先把 .env 加入 .gitignore
 echo ".env" >> .gitignore
 
-# 2. 從 Git 追蹤中移除（但不刪除本地文件）
+# 2. 從 Git 追蹤中移除（但不刪除本地檔案）
 git rm --cached .env
 
 # 3. 提交這個變更
-git commit -m "chore: 從版本控制中移除 .env 文件"
+git commit -m "chore: 從版本控製中移除 .env 檔案"
 
-# ⚠️ 注意：這只是從未來的提交中移除。
+# ⚠️ 注意：這隻是從未來的提交中移除。
 # .env 的內容仍然存在於 Git 歷史中！
 # 如果 .env 含有真實密鑰，需要立即輪換密鑰。
 # 如果必須從歷史中清除，需要使用 git filter-branch 或 BFG Repo-Cleaner。
@@ -467,4 +467,4 @@ git up             # 同步遠程 main 並 rebase
 - 功能分支用 rebase 保持與 main 同步，合入 main 前用交互式 rebase 整理提交歷史，保持線性且有意義的提交記錄
 - Conventional Commits 規範提交信息，配合 commitlint 和 husky 自動檢查，為 changelog 生成和版本管理打好基礎
 - PR 是代碼質量的關卡，善用描述模板和 Squash and Merge 策略
-- `.gitignore` 要在項目初始化時配好，已提交的文件需要 `git rm --cached` 後才能被忽略
+- `.gitignore` 要在項目初始化時配好，已提交的檔案需要 `git rm --cached` 後才能被忽略

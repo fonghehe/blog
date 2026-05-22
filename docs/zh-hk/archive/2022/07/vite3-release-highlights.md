@@ -4,13 +4,13 @@ date: 2022-07-20 17:22:12
 tags:
   - Vite
 readingTime: 2
-description: "Vite 3.0 於 2022 年 7 月 13 日正式發佈。距離 Vite 2.0 發佈已經過去了 16 個月，這次版本號升級帶來了一系列重要改進：基於 Rollup 3 的構建、統一的 dev/build 行為、改善的 SSR 支持，以及更清晰的 CLI 輸出。"
+description: "Vite 3.0 於 2022 年 7 月 13 日正式發佈。距離 Vite 2.0 發佈已經過去了 16 個月，這次版本號升級帶來了一系列重要改進：基於 Rollup 3 的構建、統一的 dev/build 行為、改善的 SSR 支援，以及更清晰的 CLI 輸出。"
 wordCount: 316
 ---
 
 Vite 3.0 於 2022 年 7 月 13 日正式發佈。距離 Vite 2.0 發佈已經過去了 16 個月，這次版本號升級帶來了一系列重要改進：基於 Rollup 3 的構建、統一的 dev/build 行為、改善的 SSR 支持，以及更清晰的 CLI 輸出。
 
-## 主要變化：不再支持舊版 Node.js
+## 主要變化：不再支援舊版 Node.js
 
 ```bash
 # Vite 3 要求 Node.js 14.18+（以前是 12.x）
@@ -122,7 +122,7 @@ Vite 3 的構建輸出更清晰：
 dist/assets/index.d59c0a4e.js           148.34 KiB / gzip: 47.35 KiB
 dist/assets/vendor.ce422158.js          231.03 KiB / gzip: 72.27 KiB
 
-# Vite 3.x 輸出（更分層，大文件有警告）
+# Vite 3.x 輸出（更分層，大檔案有警告）
 dist/index.html                    0.45 kB
 dist/assets/index-d59c0a4e.js    148.34 kB │ gzip: 47.35 kB
 dist/assets/vendor-ce422158.js   231.03 kB │ gzip: 72.27 kB

@@ -41,7 +41,7 @@ const promises = [
   fetch('/api/origin-server').then(r => r.json())    // 最慢
 ]
 
-// 只要有一個成功就返回
+// 隻要有一個成功就返回
 const fastest = await Promise.any(promises)
 console.log('最快返回的數據:', fastest)
 
@@ -56,7 +56,7 @@ try {
 }
 ```
 
-和 `Promise.race` 的區別：`race` 是第一個 settled（不管成功失敗）就返回，`any` 是第一個 fulfilled（只看成功）才返回。
+和 `Promise.race` 的區別：`race` 是第一個 settled（不管成功失敗）就返回，`any` 是第一個 fulfilled（隻看成功）才返回。
 
 實際場景：多 CDN 源競爭、多數據源降級。
 
@@ -82,10 +82,10 @@ settings.theme ??= 'dark'
 
 // 對比
 settings.theme = settings.theme || 'dark' // 會覆蓋 0, '' 等假值
-settings.theme ??= 'dark'                 // 只覆蓋 null 和 undefined
+settings.theme ??= 'dark'                 // 隻覆蓋 null 和 undefined
 ```
 
-在處理配置合併、默認值設置時特別好用。
+在處理設定合併、默認值設置時特別好用。
 
 ## WeakRef 和 FinalizationRegistry
 

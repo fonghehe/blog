@@ -1,15 +1,15 @@
 ---
-title: "Vite SSR 實踐"
+title: "Vite SSR 實踐：落地路徑與實戰建議"
 date: 2021-08-09 15:28:34
 tags:
   - Vite
   - Vue
 readingTime: 2
-description: "最近把一個內部運營平台從 CSR 遷移到了 Vite SSR，記錄一下踩坑和經驗。Vite 2.x 的 SSR 支持已經比較成熟了，但文檔偏少，實際用起來還是有一些要注意的。"
+description: "最近把一個內部運營平臺從 CSR 遷移到了 Vite SSR，記錄一下踩坑和經驗。Vite 2.x 的 SSR 支援已經比較成熟了，但文檔偏少，實際用起來還是有一些要注意的。"
 wordCount: 283
 ---
 
-最近把一個內部運營平台從 CSR 遷移到了 Vite SSR，記錄一下踩坑和經驗。Vite 2.x 的 SSR 支持已經比較成熟了，但文檔偏少，實際用起來還是有一些要注意的。
+最近把一個內部運營平臺從 CSR 遷移到了 Vite SSR，記錄一下踩坑和經驗。Vite 2.x 的 SSR 支援已經比較成熟了，但文檔偏少，實際用起來還是有一些要注意的。
 
 ## 基本架構
 
@@ -207,7 +207,7 @@ const getToken = () => {
 
 // ✅ 或者用 import.meta.env.SSR（Vite 提供）
 if (!import.meta.env.SSR) {
-  // 這段代碼只會出現在客户端 bundle
+  // 這段代碼隻會出現在客户端 bundle
   initAnalytics()
 }
 ```
@@ -243,7 +243,7 @@ export function useAsyncData<T>(key: string, fetcher: () => Promise<T>) {
 }
 ```
 
-## 性能對比
+## 效能對比
 
 | 指標 | CSR | SSR |
 |
@@ -252,7 +252,7 @@ export function useAsyncData<T>(key: string, fetcher: () => Promise<T>) {
 | 首屏可見 | ~1.5s | ~0.3s |
 | 可交互時間 | ~2s | ~1s |
 
-內部運營平台對 SEO 沒需求，但首屏速度提升明顯，特別是弱網環境。
+內部運營平臺對 SEO 沒需求，但首屏速度提升明顯，特別是弱網環境。
 
 ## 小結
 

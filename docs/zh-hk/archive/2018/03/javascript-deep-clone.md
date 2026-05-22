@@ -1,5 +1,5 @@
 ---
-title: "JavaScript 深拷貝的幾種方案"
+title: "JavaScript 深拷貝的幾種方案：落地路徑與實戰建議"
 date: 2018-03-17 11:08:16
 tags:
   - JavaScript
@@ -15,7 +15,7 @@ wordCount: 328
 ```javascript
 const obj = { name: "Alice", address: { city: "北京" } };
 
-// 淺拷貝：只複製第一層，嵌套引用還是同一個
+// 淺拷貝：隻複製第一層，巢狀引用還是同一個
 const shallow = { ...obj };
 shallow.address.city = "上海";
 console.log(obj.address.city); // '上海'，原對象被修改了！
@@ -168,6 +168,6 @@ methods: {
 
 ## 小結
 
-- 簡單場景用 `JSON.parse(JSON.stringify())`，但瞭解它的限制
+- 簡單場景用 `JSON.parse(JSON.stringify())`，但瞭解它的限製
 - 生產代碼推薦 `lodash/cloneDeep`，省心
 - 如果追求零依賴，手寫遞歸方案，記得處理循環引用

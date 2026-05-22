@@ -3,19 +3,19 @@ title: "JavaScriptの非同期イテレーターとfor-await-of"
 date: 2019-08-21 17:03:21
 tags:
   - JavaScript
-readingTime: 4
-description: "ES2018 引入了异步迭代器（Async Iterator）和 `for-await-of` 语法，让我们可以用同步的方式处理异步数据流。这个特性在处理分页 API、WebSocket 消息、文件流等场景下非常有用。本文将从迭代器协议讲起，深入理解异步迭代器的原理和实战应用。"
-wordCount: 632
+readingTime: 5
+description: "ES2018 では非同期イテレーター（Async Iterator）と for-await-of 構文が導入され、同期のような書き方で非同期データストリームを処理できるようになりました。この機能はページネーション API、WebSocket メッセージ、ファイルストリームなどのシーンで非常に役立ちます。この記事ではイテレータープロトコルから始めて、非同期イテレーターの原理と実践的な応用を深く理解します。"
+wordCount: 1006
 ---
 
-ES2018 引入了异步迭代器（Async Iterator）和 `for-await-of` 语法，让我们可以用同步的方式处理异步数据流。这个特性在处理分页 API、WebSocket 消息、文件流等场景下非常有用。本文将从迭代器协议讲起，深入理解异步迭代器的原理和实战应用。
+ES2018 では非同期イテレーター（Async Iterator）と `for-await-of` 構文が導入され、同期のような書き方で非同期データストリームを処理できるようになりました。この機能はページネーション API、WebSocket メッセージ、ファイルストリームなどのシーンで非常に役立ちます。この記事ではイテレータープロトコルから始めて、非同期イテレーターの原理と実践的な応用を深く理解します。
 
 ## おさらい：同期イテレーター
 
-在理解异步迭代器之前，先回顾同步迭代器。一个对象要可迭代（iterable），需要实现 `Symbol.iterator` 方法：
+非同期イテレーターを理解する前に、同期イテレーターを復習しましょう。オブジェクトを反復可能（iterable）にするには、`Symbol.iterator` メソッドを実装する必要があります：
 
 ```js
-// 自定义可迭代对象
+// カスタム反復可能オブジェクト
 const range = {
   from: 1,
   to: 5,
@@ -42,11 +42,11 @@ for (const num of range) {
 
 ## 非同期イテレータープロトコル
 
-异步迭代器与同步迭代器的关键区别：
+非同期イテレーターと同期イテレーターの主な違い：
 
-1. 方法名是 `Symbol.asyncIterator` 而非 `Symbol.iterator`
-2. `next()` 返回的是 `Promise<{value, done}>` 而非 `{value, done}`
-3. 使用 `for-await-of` 而非 `for-of` 进行迭代
+1. メソッド名は `Symbol.asyncIterator` であり、`Symbol.iterator` ではありません
+2. `next()` は `{value, done}` ではなく `Promise<{value, done}>` を返します
+3. 反復には `for-of` ではなく `for-await-of` を使用します
 
 ```js
 const asyncRange = {
@@ -59,7 +59,7 @@ const asyncRange = {
 
     return {
       async next() {
-        // 模拟异步延迟
+        // 非同期遅延をシミュレート
         await new Promise(resolve => setTimeout(resolve, 100));
 
         if (current <= last) {
@@ -73,7 +73,7 @@ const asyncRange = {
 
 async function main() {
   for await (const num of asyncRange) {
-    console.log(num); // 1, 2, 3, 4, 5（每个间隔 100ms）
+    console.log(num); // 1, 2, 3, 4, 5（各 100ms 間隔）
   }
 }
 
@@ -82,10 +82,10 @@ main();
 
 ## 実践：ページネーションAPIデータ取得
 
-实际项目中经常需要处理分页 API，直到某一页返回空数据。异步迭代器非常适合这种场景：
+実際のプロジェクトでは、特定のページが空データを返すまでページネーション API を処理する必要がよくあります。非同期イテレーターはこのようなシーンに最適です：
 
 ```js
-// 创建一个自动翻页的异步可迭代对象
+// 自動的にページをめくる非同期反復可能オブジェクトを作成
 function paginatedApi(endpoint, pageSize = 20) {
   return {
     [Symbol.asyncIterator]() {
@@ -120,7 +120,7 @@ async function fetchAllUsers() {
 
   for await (const users of paginatedApi('/api/users', 50)) {
     allUsers.push(...users);
-    console.log(`已加载 ${allUsers.length} 个用户`);
+    console.log(`${allUsers.length} 人のユーザーを読み込みました`);
   }
 
   return allUsers;
@@ -129,10 +129,10 @@ async function fetchAllUsers() {
 
 ## async generatorで簡略化
 
-`async function*` 是创建异步迭代器更简洁的方式：
+`async function*` は非同期イテレーターを作成するより簡潔な方法です：
 
 ```js
-// 使用 async generator 重写分页 API
+// async generator を使用してページネーション API を書き直す
 async function* paginatedApi(endpoint, pageSize = 20) {
   let page = 1;
 
@@ -143,31 +143,31 @@ async function* paginatedApi(endpoint, pageSize = 20) {
     const data = await response.json();
 
     if (data.items.length === 0) {
-      return; // 结束迭代
+      return; // イテレーションを終了
     }
 
-    yield data.items; // 产出一批数据
+    yield data.items; // データを1バッチ生成
     page++;
   }
 }
 
-// 使用方式完全相同
+// 使用方法は完全に同じ
 async function main() {
   for await (const users of paginatedApi('/api/users')) {
-    console.log(`获取到 ${users.length} 条数据`);
+    console.log(`${users.length} 件のデータを取得しました`);
   }
 }
 ```
 
 ## 実践：WebSocketメッセージストリーム
 
-将 WebSocket 的消息流封装为异步可迭代对象：
+WebSocket のメッセージストリームを非同期反復可能オブジェクトとしてカプセル化します：
 
 ```js
 async function* websocketMessages(url) {
   const ws = new WebSocket(url);
 
-  // 使用队列和 Promise 将事件转换为迭代
+  // キューと Promise を使用してイベントを反復に変換
   const queue = [];
   let resolve = null;
   let reject = null;
@@ -189,7 +189,7 @@ async function* websocketMessages(url) {
 
   ws.onclose = () => {
     if (resolve) {
-      resolve(undefined); // 通知迭代结束
+      resolve(undefined); // イテレーション終了を通知
     }
   };
 
@@ -216,10 +216,10 @@ async function* websocketMessages(url) {
 // 使用
 async function handleChatMessages() {
   for await (const message of websocketMessages('wss://chat.example.com')) {
-    console.log(`收到消息: ${message.text}`);
+    console.log(`メッセージを受信: ${message.text}`);
 
     if (message.type === 'system' && message.action === 'disconnect') {
-      break; // 可以随时 break 退出迭代
+      break; // いつでも break で反復を終了できます
     }
   }
 }
@@ -227,7 +227,7 @@ async function handleChatMessages() {
 
 ## 実践：ファイルの行ごとの読み取り
 
-Node.js 中读取大文件时，可以使用异步迭代器逐行处理，避免一次性加载到内存：
+Node.js で大容量ファイルを読み取る場合、非同期イテレーターを使用して1行ずつ処理し、一度にメモリにロードすることを避けられます：
 
 ```js
 const fs = require('fs');
@@ -239,7 +239,7 @@ async function* readLines(filePath) {
     crlfDelay: Infinity,
   });
 
-  // readline 是可迭代对象，在 Node 10+ 支持 for-await-of
+  // readline は反復可能オブジェクトで、Node 10+ で for-await-of をサポート
   for await (const line of rl) {
     yield line;
   }
@@ -259,13 +259,13 @@ async function processLogFile() {
     }
   }
 
-  console.log(`统计: ${errorCount} 个错误, ${warnCount} 个警告`);
+  console.log(`統計: ${errorCount} 個のエラー, ${warnCount} 個の警告`);
 }
 ```
 
 ## 非同期ジェネレーターのメソッド
 
-异步生成器也支持 `return()` 和 `throw()` 方法：
+非同期ジェネレーターも `return()` メソッドと `throw()` メソッドをサポートしています：
 
 ```js
 async function* dataStream() {
@@ -274,19 +274,19 @@ async function* dataStream() {
     yield 2;
     yield 3;
   } finally {
-    // 在迭代中断时执行清理逻辑
-    console.log('清理资源');
+    // 反復が中断された時にクリーンアップ処理を実行
+    console.log('リソースをクリーンアップ');
   }
 }
 
 async function main() {
   const stream = dataStream();
 
-  // 正常迭代
+  // 通常の反復
   console.log(await stream.next()); // { value: 1, done: false }
 
-  // 提前终止迭代 —— 会触发 finally
-  await stream.return(); // 输出: 清理资源
+  // 早期に反復を終了 — finally が実行される
+  await stream.return(); // 出力: リソースをクリーンアップ
   console.log(await stream.next()); // { done: true }
 }
 ```
@@ -294,14 +294,14 @@ async function main() {
 ## 非同期イテレーターと通常イテレーターの変換
 
 ```js
-// 将普通数组包装为异步迭代器
+// 通常の配列を非同期イテレーターにラップする
 async function* toAsyncIterable(syncIterable) {
   for (const item of syncIterable) {
     yield item;
   }
 }
 
-// 添加延迟
+// 遅延を追加
 async function* delayEach(iterable, ms) {
   for await (const item of iterable) {
     await new Promise(r => setTimeout(r, ms));
@@ -309,7 +309,7 @@ async function* delayEach(iterable, ms) {
   }
 }
 
-// 过滤
+// フィルタリング
 async function* filter(iterable, predicate) {
   for await (const item of iterable) {
     if (predicate(item)) {
@@ -318,12 +318,12 @@ async function* filter(iterable, predicate) {
   }
 }
 
-// 组合使用
+// 組み合わせて使用
 async function main() {
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   for await (const num of filter(delayEach(numbers, 100), n => n % 2 === 0)) {
-    console.log(num); // 2, 4, 6, 8, 10（每个间隔 100ms）
+    console.log(num); // 2, 4, 6, 8, 10（各 100ms 間隔）
   }
 }
 ```
@@ -332,23 +332,23 @@ async function main() {
 
 | 特性 | for-await-of | RxJS Observable |
 |------|-------------|-----------------|
-| 学习成本 | 低（原生语法） | 高（需要学习操作符） |
-| 背压控制 | 消费者驱动（天然背压） | 需要额外处理 |
-| 操作符 | 需要手动实现 | 丰富的内置操作符 |
-| 可取消性 | break / return() | unsubscribe |
-| 适用场景 | 简单异步迭代 | 复杂数据流处理 |
+| 学習コスト | 低（ネイティブ構文） | 高（オペレーターの学習が必要） |
+| 背圧制御 | コンシューマ駆動（ネイティブ背圧） | 追加処理が必要 |
+| オペレーター | 手動実装が必要 | 豊富な組み込みオペレーター |
+| キャンセル可能性 | break / return() | unsubscribe |
+| 適用シーン | 単純な非同期反復 | 複雑なデータストリーム処理 |
 
 ## ブラウザ互換性
 
 - Chrome 63+、Firefox 57+、Safari 12+、Node 10+
-- IE 不支持
-- 可以通过 Babel + `@babel/plugin-proposal-async-generator-functions` 编译
+- IE 未対応
+- Babel + `@babel/plugin-proposal-async-generator-functions` でコンパイル可能
 
 ## まとめ
 
-- 异步迭代器实现了 `Symbol.asyncIterator`，`next()` 返回 Promise
-- `for-await-of` 提供了类似同步迭代的语法来处理异步数据流
-- `async function*` 是创建异步迭代器最简洁的方式
-- 典型场景：分页 API、WebSocket 消息流、文件逐行读取
-- 异步迭代器天然支持背压（backpressure），消费者按需拉取数据
-- 与 RxJS 相比，学习成本更低，适合不需要复杂操作符的场景
+- 非同期イテレーターは `Symbol.asyncIterator` を実装し、`next()` は Promise を返します
+- `for-await-of` は同期反復のような構文で非同期データストリームを処理します
+- `async function*` は非同期イテレーターを作成する最も簡潔な方法です
+- 代表的なシーン：ページネーション API、WebSocket メッセージストリーム、ファイルの行ごとの読み取り
+- 非同期イテレーターはネイティブで背圧（backpressure）をサポートし、コンシューマが必要に応じてデータをプルします
+- RxJS と比較して学習コストが低く、複雑なオペレーターを必要としないシーンに適しています

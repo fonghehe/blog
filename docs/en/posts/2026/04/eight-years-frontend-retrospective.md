@@ -1,10 +1,10 @@
 ---
 title: "Eight Years in Frontend: My Technical Growth Roadmap"
-date: 2026-04-08 10:00:00
+date: 2026-04-08 09:42:19
 tags:
   - Frontend
 readingTime: 3
-description: "This is my eighth year as a frontend developer. It's not a year-end review, but I wanted to use this milestone to reflect: what does a frontend engineer's growt"
+description: "This is my eighth year as a frontend developer. It's not a year-end review, but I wanted to use this milestone to reflect: what does a frontend engineer's growth path actually look like, and what things truly matter?"
 wordCount: 466
 ---
 

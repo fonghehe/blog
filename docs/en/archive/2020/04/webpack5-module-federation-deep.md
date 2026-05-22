@@ -1,5 +1,5 @@
 ---
-title: "Deep Dive into Webpack 5 Module Federation"
+title: "Webpack 5 Module Federation in Practice: 跨ApplicationsComponentSharingGuide"
 date: 2020-04-23 11:28:49
 tags:
   - Webpack

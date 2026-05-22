@@ -1,6 +1,6 @@
 ---
-title: "ESLint v9 穩定版遷移指南"
-date: 2024-08-06 10:00:00
+title: "ESLint v9 穩定版遷移指南：特性解讀與遷移建議"
+date: 2024-08-06 09:00:37
 tags:
   - 前端
 readingTime: 2
@@ -130,7 +130,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 避坑指南
 

@@ -1,6 +1,6 @@
 ---
-title: "Bun Shell スクリプト機能"
-date: 2024-08-29 10:00:00
+title: "Bun Shell 脚本実践 2024：替代 npm scripts 的真实项目体验"
+date: 2024-08-29 12:23:00
 tags:
   - フロントエンド
 readingTime: 2

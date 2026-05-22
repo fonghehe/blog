@@ -4,11 +4,11 @@ date: 2022-09-06 15:28:09
 tags:
   - Svelte
 readingTime: 2
-description: "Svelte 本身已經很出色了——編譯時框架、零運行時開銷、簡潔的語法。SvelteKit 給了 Svelte 一個類似 Next.js 的全棧框架：文件路由、SSR/SSG、API routes。是時候體驗一下了。"
+description: "Svelte 本身已經很出色了——編譯時框架、零運行時開銷、簡潔的語法。SvelteKit 給了 Svelte 一個類似 Next.js 的全棧框架：檔案路由、SSR/SSG、API routes。是時候體驗一下了。"
 wordCount: 202
 ---
 
-Svelte 本身已經很出色了——編譯時框架、零運行時開銷、簡潔的語法。SvelteKit 給了 Svelte 一個類似 Next.js 的全棧框架：文件路由、SSR/SSG、API routes。是時候體驗一下了。
+Svelte 本身已經很出色了——編譯時框架、零運行時開銷、簡潔的語法。SvelteKit 給了 Svelte 一個類似 Next.js 的全棧框架：檔案路由、SSR/SSG、API routes。是時候體驗一下了。
 
 ## 基本結構
 
@@ -228,4 +228,4 @@ Svelte 的響應式是編譯時的：
 
 ## 小結
 
-SvelteKit 適合內容型網站和中小型應用。Svelte 的編譯時優勢在 bundle size 上非常明顯。全棧能力、文件路由、表單 Actions 都很實用。但生態和社區遠不如 React/Next.js，大型項目需要評估第三方庫的可用性。
+SvelteKit 適合內容型網站和中小型應用。Svelte 的編譯時優勢在 bundle size 上非常明顯。全棧能力、檔案路由、表單 Actions 都很實用。但生態和社區遠不如 React/Next.js，大型項目需要評估第三方庫的可用性。

@@ -1,5 +1,5 @@
 ---
-title: "React 18 嚴格模式"
+title: "React 18 嚴格模式：落地路徑與實戰建議"
 date: 2022-01-05 10:39:10
 tags:
   - React

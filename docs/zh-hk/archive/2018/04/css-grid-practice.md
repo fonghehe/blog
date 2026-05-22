@@ -1,5 +1,5 @@
 ---
-title: "CSS Grid 佈局實戰"
+title: "CSS Grid 佈局實戰：落地路徑與實戰建議"
 date: 2018-04-19 10:12:47
 tags:
   - CSS
@@ -22,7 +22,7 @@ Grid：二維佈局（行 AND 列）
   - 不確定時，先試 Flex，不夠用再換 Grid
 ```
 
-## 後台管理的經典佈局
+## 後臺管理的經典佈局
 
 ```css
 .admin-layout {
@@ -117,7 +117,7 @@ Grid：二維佈局（行 AND 列）
 
 比 Flex 的 `align-items + justify-content` 少寫一行。
 
-## 對齊控制
+## 對齊控製
 
 ```css
 .grid {
@@ -142,7 +142,7 @@ Grid：二維佈局（行 AND 列）
 
 ## 小結
 
-- `grid-template-areas`：視覺化定義佈局，後台管理頁首選
+- `grid-template-areas`：視覺化定義佈局，後臺管理頁首選
 - `repeat(auto-fill, minmax(280px, 1fr))`：響應式卡片，不用媒體查詢
 - `span N`：元素跨越多列/行，做雜誌佈局
 - `place-items: center`：快速居中

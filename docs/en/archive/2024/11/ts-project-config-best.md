@@ -1,6 +1,6 @@
 ---
 title: "TypeScript Project Configuration Best Practices"
-date: 2024-11-15 10:00:00
+date: 2024-11-15 12:09:46
 tags:
   - TypeScript
 readingTime: 2

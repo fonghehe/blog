@@ -1,0 +1,100 @@
+---
+title: "Rolldown Stable: Wide Adoption"
+date: 2025-02-20 16:54:31
+tags:
+  - Frontend
+readingTime: 1
+description: "Recently, our team has rolled out Rolldown Stable widely and accumulated a lot of experience. I've compiled it here for reference, hoping it helps others doing "
+wordCount: 103
+---
+
+Recently, our team has rolled out Rolldown Stable widely and accumulated a lot of experience. I've compiled it here for reference, hoping it helps others doing similar work.
+
+## Core Concepts
+
+Building on this foundation, we can further optimize:
+
+```javascript
+module.exports = {
+  entry: "./src/index.js",
+  output: { path: __dirname + "/dist", filename: "[name].[contenthash:8].js" },
+  module: {
+    rules: [
+      { test: /\.jsx?$/, exclude: /node_modules/, use: "babel-loader" },
+      { test: /\.css$/, use: ["style-loader", "css-loader", "postcss-loader"] },
+    ],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendor: { test: /[\\/]node_modules[\\/]/, name: "vendors" },
+      },
+    },
+  },
+};
+```
+
+This pattern is very practical in large projects and can significantly reduce maintenance costs.
+
+## Deep Dive
+
+In real projects, the usage gets more complex:
+
+```javascript
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import { resolve } from "path";
+
+export default defineConfig({
+  plugins: [vue()],
+  resolve: { alias: { "@": resolve(__dirname, "src") } },
+  server: {
+    port: 3000,
+    proxy: { "/api": { target: "http://localhost:8080", changeOrigin: true } },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["vue", "vue-router", "pinia"],
+          utils: ["lodash-es", "dayjs"],
+        },
+      },
+    },
+  },
+});
+```
+
+Through this approach, both testability and scalability of the code are improved.
+
+## Practical Experience
+
+Here is a complete example:
+
+```javascript
+module.exports = {
+  entry: "./src/index.js",
+  output: { path: __dirname + "/dist", filename: "[name].[contenthash:8].js" },
+  module: {
+    rules: [
+      { test: /\.jsx?$/, exclude: /node_modules/, use: "babel-loader" },
+      { test: /\.css$/, use: ["style-loader", "css-loader", "postcss-loader"] },
+    ],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendor: { test: /[\\/]node_modules[\\/]/, name: "vendors" },
+      },
+    },
+  },
+};
+```
+
+Pay attention to edge case handling — this is critical in production environments.
+
+## Tuning Strategies
+
+The key is understanding the core logic:

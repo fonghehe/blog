@@ -1,6 +1,6 @@
 ---
-title: "AI 輔助代碼重構"
-date: 2025-10-03 10:00:00
+title: "AI 輔助代碼重構：落地路徑與實戰建議"
+date: 2025-10-03 12:57:34
 tags:
   - 工程化
 readingTime: 2
@@ -43,7 +43,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 源碼分析
 

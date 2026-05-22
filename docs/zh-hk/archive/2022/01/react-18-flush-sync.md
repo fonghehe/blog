@@ -1,5 +1,5 @@
 ---
-title: "React 18 flushSync 同步更新"
+title: "React 18 flushSync 同步更新：落地路徑與實戰建議"
 date: 2022-01-17 17:22:05
 tags:
   - React
@@ -97,7 +97,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能對比
+## 效能對比
 
 以下是一個完整的示例：
 

@@ -33,8 +33,8 @@ wordCount: 341
 HMR 響應                2-5s         1-3s         <50ms
 配置文件行數            200+         180+         30-50
 插件生態                最豐富        最豐富       兼容 Rollup
-TypeScript 支持         需要 loader   需要 loader  原生（esbuild）
-CSS Modules             需要配置     需要配置     開箱即用
+TypeScript 支援         需要 loader   需要 loader  原生（esbuild）
+CSS Modules             需要設定     需要設定     開箱即用
 Tree Shaking            支持         更好         基於 Rollup
 ```
 

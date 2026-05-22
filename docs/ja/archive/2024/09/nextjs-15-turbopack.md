@@ -1,6 +1,6 @@
 ---
-title: "Next.js 15：Turbopack がデフォルトに"
-date: 2024-09-16 10:00:00
+title: "Next.js 15 Turbopack 默认：新一代构建工具的里程碑"
+date: 2024-09-16 19:50:27
 tags:
   - React
 readingTime: 3

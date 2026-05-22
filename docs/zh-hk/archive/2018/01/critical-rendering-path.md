@@ -1,14 +1,14 @@
 ---
-title: "前端性能優化：搞清關鍵渲染路徑"
+title: "前端效能優化：搞清關鍵渲染路徑"
 date: 2018-01-11 17:34:30
 tags:
   - 性能優化
 readingTime: 3
-description: "做性能優化之前，要先搞清楚瀏覽器從收到 HTML 到用戶睇到頁面，中間經歷咗咩。呢啲步驟合埋一齊叫做**關鍵渲染路徑**（Critical Rendering Path）。唔理解呢個，好多優化手段只能照貓畫虎。"
+description: "做效能優化之前，要先搞清楚瀏覽器從收到 HTML 到用戶睇到頁面，中間經歷咗咩。呢啲步驟合埋一齊叫做**關鍵渲染路徑**（Critical Rendering Path）。唔理解呢個，好多優化手段隻能照貓畫虎。"
 wordCount: 630
 ---
 
-做性能優化之前，要先搞清楚瀏覽器從收到 HTML 到用戶睇到頁面，中間經歷咗咩。呢啲步驟合埋一齊叫做**關鍵渲染路徑**（Critical Rendering Path）。唔理解呢個，好多優化手段只能照貓畫虎。
+做效能優化之前，要先搞清楚瀏覽器從收到 HTML 到用戶睇到頁面，中間經歷咗咩。呢啲步驟合埋一齊叫做**關鍵渲染路徑**（Critical Rendering Path）。唔理解呢個，好多優化手段隻能照貓畫虎。
 
 ## 瀏覽器渲染嘅五個步驟
 
@@ -94,17 +94,17 @@ wordCount: 630
 
 - **重排**（Reflow/Layout）：元素幾何屬性改變，重新計算所有受影響元素嘅位置大小。代價最高。
 - **重繪**（Repaint）：元素外觀改變（顏色、背景），唔影響佈局。代價居中。
-- **合成**（Composite）：只影響 transform、opacity，喺獨立嘅合成層處理。代價最低。
+- **合成**（Composite）：隻影響 transform、opacity，喺獨立嘅合成層處理。代價最低。
 
 ```javascript
-// 觸發重排嘅屬性（讀取呢啲屬性都會強制瀏覽器同步計算）
+// 觸發重排嘅屬性（讀取呢啲屬性都會強製瀏覽器同步計算）
 (element.offsetWidth, offsetHeight, offsetTop, offsetLeft);
 (element.scrollWidth, scrollHeight, scrollTop);
 (element.clientWidth, clientHeight);
 window.getComputedStyle(element);
 
-// 避免喺循環裡面讀寫混合（強制同步佈局）
-// 唔好：每次循環都強制瀏覽器重新計算佈局
+// 避免喺循環裡面讀寫混合（強製同步佈局）
+// 唔好：每次循環都強製瀏覽器重新計算佈局
 for (let i = 0; i < items.length; i++) {
   items[i].style.width = container.offsetWidth + "px"; // 讀 + 寫
 }
@@ -112,11 +112,11 @@ for (let i = 0; i < items.length; i++) {
 // 較好：先讀後批量寫
 const containerWidth = container.offsetWidth; // 讀一次
 for (let i = 0; i < items.length; i++) {
-  items[i].style.width = containerWidth + "px"; // 只寫
+  items[i].style.width = containerWidth + "px"; // 隻寫
 }
 ```
 
-## 利用合成層做高性能動畫
+## 利用合成層做高效能動畫
 
 將動畫元素提升到獨立嘅合成層，動畫就唔會觸發重排同重繪：
 
@@ -125,11 +125,11 @@ for (let i = 0; i < items.length; i++) {
   /* 提示瀏覽器呢個元素會變化，提前創建合成層 */
   will-change: transform;
 
-  /* 或者用舊方式強制創建合成層 */
+  /* 或者用舊方式強製創建合成層 */
   transform: translateZ(0);
 }
 
-/* 高性能動畫：只用 transform 同 opacity */
+/* 高效能動畫：隻用 transform 同 opacity */
 @keyframes slide-in {
   from {
     transform: translateX(-100%);

@@ -52,7 +52,7 @@ bootstrapApplication(AppComponent, {
 }
 ```
 
-## Zoneless 下的變更檢測機制
+## Zoneless 下的變更檢測機製
 
 沒有 zone.js，Angular 如何知道何時需要更新 UI？答案是依賴 Signals 和顯式通知：
 

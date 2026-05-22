@@ -20,7 +20,7 @@ type Partial<T> = {
   [K in keyof T]?: T[K];
 };
 
-// 把所有屬性變為只讀
+// 把所有屬性變為隻讀
 type Readonly<T> = {
   readonly [K in keyof T]: T[K];
 };

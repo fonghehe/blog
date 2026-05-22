@@ -5,7 +5,7 @@ tags:
   - 效能最佳化
 readingTime: 4
 description: "Node.js 作為服務端執行時，效能調優是上線前必不可少的環節。從記憶體洩漏排查到事件迴圈監控，從 CPU profiling 到 GC 調參，Node.js 提供了豐富的工具鏈幫助我們定位效能瓶頸。本文將結合實際案例，系統講解 Node.js 效能調優的方法論和實踐技巧。"
-wordCount: 575
+wordCount: 577
 ---
 
 Node.js 作為服務端執行時，效能調優是上線前必不可少的環節。從記憶體洩漏排查到事件迴圈監控，從 CPU profiling 到 GC 調參，Node.js 提供了豐富的工具鏈幫助我們定位效能瓶頸。本文將結合實際案例，系統講解 Node.js 效能調優的方法論和實踐技巧。
@@ -46,7 +46,7 @@ function memoryMonitor(req, res, next) {
 }
 ```
 
-### 使用 --inspect 進行堆分析
+### 使用 --inspect 進行堆積分析
 
 ```bash
 # 啟動時開啟 inspector
@@ -66,7 +66,7 @@ const cache = {};
 function handler(req, res) {
   const key = req.url;
 
-  // 如果不限制 cache 大小，會無限增長
+  // 如果不限製 cache 大小，會無限增長
   cache[key] = {
     data: heavyComputation(),
     timestamp: Date.now(),
@@ -135,7 +135,7 @@ function handleConnection(socket) {
 **場景三：全域性變數意外增長**
 
 ```js
-// 洩漏版本：無限制的全域性陣列
+// 洩漏版本：無限製的全域性陣列
 const requestLogs = [];
 
 app.use((req, res, next) => {
@@ -148,7 +148,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// 修復版本：限制大小並定期清理
+// 修復版本：限製大小並定期清理
 const requestLogs = [];
 const MAX_LOGS = 10000;
 
@@ -289,10 +289,10 @@ setInterval(() => {
 
 ## GC 調優
 
-### 調整 V8 堆大小
+### 調整 V8 堆積大小
 
 ```bash
-# 設定最大堆記憶體
+# 設定最大堆積記憶體
 node --max-old-space-size=4096 app.js  # 4GB
 
 # 調整新生代大小

@@ -1,10 +1,10 @@
 ---
-title: "Webpack 多環境變數配置"
+title: "Webpack 多環境變數設定"
 date: 2018-05-17 15:30:37
 tags:
   - Webpack
 readingTime: 1
-description: "專案裡有開發、測試、生產三套環境，API 地址不同、日誌級別不同、功能開關也不同。如何優雅地管理這些配置？"
+description: "專案裡有開發、測試、生產三套環境，API 地址不同、日誌級別不同、功能開關也不同。如何優雅地管理這些設定？"
 wordCount: 197
 ---
 
@@ -80,7 +80,7 @@ module.exports = {
 };
 ```
 
-## 方案三：多份 webpack 配置
+## 方案三：多份 webpack 設定
 
 ```
 webpack.common.js     # 公共配置

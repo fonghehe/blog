@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 7.0 新機能展望"
-date: 2026-02-26 10:00:00
+title: "TypeScript 7.0 新機能展望：注目ポイントと移行ガイド"
+date: 2026-02-26 16:40:17
 tags:
   - TypeScript
 readingTime: 3

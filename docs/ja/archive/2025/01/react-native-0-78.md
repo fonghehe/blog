@@ -1,6 +1,6 @@
 ---
 title: "React Native 0.78：New Architecture正式安定版とHermes 0.15"
-date: 2025-01-14 10:00:00
+date: 2025-01-14 19:08:45
 tags:
   - React
 readingTime: 2

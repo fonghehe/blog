@@ -1,6 +1,6 @@
 ---
-title: "Radix UI Themes 設計系統"
-date: 2024-08-21 10:00:00
+title: "Radix UI Themes 設計系統：落地路徑與實戰建議"
+date: 2024-08-21 11:15:52
 tags:
   - 前端
 readingTime: 2
@@ -63,7 +63,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

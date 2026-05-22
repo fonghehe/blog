@@ -1,6 +1,6 @@
 ---
-title: "Vitest 3.0 Testing Framework"
-date: 2025-09-25 10:00:00
+title: "Vitest 3.0 Testing Framework: Browser Mode  & 全新断言 API"
+date: 2025-09-25 15:39:16
 tags:
   - Engineering
   - Testing

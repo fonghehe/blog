@@ -82,7 +82,7 @@ function performanceCallback(
   startTime,
   commitTime
 ) {
-  // 只上報渲染時間超過閾值的情況
+  // 隻上報渲染時間超過閾值的情況
   if (actualDuration > 16) { // 超過一幀的時間
     Sentry.addBreadcrumb({
       category: 'react-profiler',
@@ -139,7 +139,7 @@ if (process.env.NODE_ENV === 'development') {
   })
 }
 
-// 或者只追蹤特定元件
+// 或者隻追蹤特定元件
 import React from 'react'
 
 function ExpensiveList({ items, onItemClick }) {
@@ -157,7 +157,7 @@ function ExpensiveList({ items, onItemClick }) {
   )
 }
 
-// 控制台輸出示例：
+// 控製臺輸出示例：
 // [why-did-you-render] ExpensiveList
 // Props changes:
 //   onItemClick: (function) => (function) [Different functions]
@@ -192,7 +192,7 @@ function UserList({ users, filter }) {
     return users.filter(user =>
       user.name.toLowerCase().includes(filter.toLowerCase())
     )
-  }, [users, filter]) // 只有 users 或 filter 變化時才重新計算
+  }, [users, filter]) // 隻有 users 或 filter 變化時才重新計算
 
   return filteredUsers.map(user => (
     <UserCard key={user.id} user={user} />
@@ -218,7 +218,7 @@ function ParentComponent() {
   )
 }
 
-// 4. 列表虛擬化：只渲染可見區域的元素
+// 4. 列表虛擬化：隻渲染可見區域的元素
 // 安裝 react-window
 import { FixedSizeList } from 'react-window'
 
@@ -241,7 +241,7 @@ function VirtualizedList({ items }) {
   )
 }
 
-// 5. 拆分大元件，利用 React 的排程機制
+// 5. 拆分大元件，利用 React 的排程機製
 // 將高頻更新和低頻更新的部分拆分開
 function Dashboard() {
   const [stats, setStats] = React.useState({})

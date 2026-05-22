@@ -141,9 +141,9 @@ function App() {
 }
 ```
 
-## 當前限制
+## 當前限製
 
-16.6 版本的 `Suspense` 目前只支援 `lazy` 載入，其他資料獲取場景（如等待 API 響應）還在開發中（這是 Concurrent Mode 的一部分）。
+16.6 版本的 `Suspense` 目前隻支援 `lazy` 載入，其他資料獲取場景（如等待 API 響應）還在開發中（這是 Concurrent Mode 的一部分）。
 
 React 團隊計劃把 Suspense 擴充套件到資料獲取領域，屆時可以這樣寫：
 
@@ -183,11 +183,11 @@ const Dashboard = lazy(() => import("./Dashboard"));
 // fallback 通過 Suspense 統一管理，而非在每個元件裡配置
 ```
 
-React 的 Suspense 設計更"全域性化"，loading 狀態可以由父級集中控制。
+React 的 Suspense 設計更"全域性化"，loading 狀態可以由父級集中控製。
 
 ## 小結
 
-- `React.lazy` 讓元件懶載入只需一行程式碼
+- `React.lazy` 讓元件懶載入隻需一行程式碼
 - `Suspense` 統一管理 fallback UI，比單獨配置更簡潔
 - 配合 `ErrorBoundary` 處理載入失敗
-- 目前只支援 `lazy`，資料獲取的 Suspense 還在規劃中
+- 目前隻支援 `lazy`，資料獲取的 Suspense 還在規劃中

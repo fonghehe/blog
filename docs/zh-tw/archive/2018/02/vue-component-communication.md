@@ -83,7 +83,7 @@ export default {
 </script>
 ```
 
-**適用場景**：表單控制元件、輸入類元件。
+**適用場景**：表單控製元件、輸入類元件。
 
 ## 3. $parent / $children（直接訪問例項）
 
@@ -110,7 +110,7 @@ Vue 2.4 引入的，解決"隔代傳遞"的問題，不用每層都寫 props：
 ```
 
 ```vue
-<!-- 中間層（不關心這些 props，只透傳） -->
+<!-- 中間層（不關心這些 props，隻透傳） -->
 <template>
   <GrandChild v-bind="$attrs" v-on="$listeners" />
 </template>
@@ -225,7 +225,7 @@ export default new Vuex.Store({
 | 
 -------------------- | ------------------- |
 | 直接父子             | props / emit        |
-| 表單控制元件             | v-model             |
+| 表單控製元件             | v-model             |
 | 深層巢狀的元件庫內部 | provide / inject    |
 | 封裝高階元件         | $attrs / $listeners |
 | 小型應用跨元件事件   | EventBus            |

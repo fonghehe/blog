@@ -1,6 +1,6 @@
 ---
-title: "Vue Vapor Stable Version Deep Dive"
-date: 2025-12-04 10:00:00
+title: "Vue Vapor Stable Practice: RealProjectSwitching后Performance对比"
+date: 2025-12-04 17:18:55
 tags:
   - Vue
 readingTime: 2

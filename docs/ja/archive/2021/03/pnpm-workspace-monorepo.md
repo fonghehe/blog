@@ -4,41 +4,41 @@ date: 2021-03-08 15:28:40
 tags:
   - エンジニアリング
 
-readingTime: 3
-description: "用了两年 Lerna + Yarn workspace 的组合后，今年开始尝试 pnpm workspace。pNpm 的硬链接机制天然适合 Monorepo——依赖不会重复安装，磁盘占用大幅减少。对比下来，pnpm workspace 可能是目前最优雅的 Monorepo 方案。"
-wordCount: 525
+readingTime: 4
+description: "2年間 Lerna + Yarn workspace を使ってきた後、今年は pnpm workspace を試し始めました。pnpm のハードリンク機構は Monorepo に自然に適合しており、依存関係が重複インストールされず、ディスク使用量が大幅に削減されます。比較してみると、pnpm workspace は現時点で最もエレガントな Monorepo ソリューションかもしれません。"
+wordCount: 859
 ---
 
-用了两年 Lerna + Yarn workspace 的组合后，今年开始尝试 pnpm workspace。pNpm 的硬链接机制天然适合 Monorepo——依赖不会重复安装，磁盘占用大幅减少。对比下来，pnpm workspace 可能是目前最优雅的 Monorepo 方案。
+2年間 Lerna + Yarn workspace を使ってきた後、今年は pnpm workspace を試し始めました。pnpm のハードリンク機構は Monorepo に自然に適合しており、依存関係が重複インストールされず、ディスク使用量が大幅に削減されます。比較してみると、pnpm workspace は現時点で最もエレガントな Monorepo ソリューションかもしれません。
 
 ## なぜ pnpm を選ぶか
 
-pnpm 的核心优势在 Monorepo 场景下特别明显：
+pnpm の核となる利点は Monorepo のシナリオで特に顕著です：
 
-1. **硬链接存储**：全局 store + 硬链接，10 个子项目共享同一份依赖，不会像 Yarn v1 那样每个项目都装一份
-2. **严格的依赖管理**：幽灵依赖问题被彻底解决，package.json 里没声明的依赖用不了
-3. **原生 workspace 支持**：不需要 Lerna 这样的上层工具，pnpm 自己就能处理
+1. **ハードリンクストレージ**：グローバルストア + ハードリンクにより、10 のサブプロジェクトで同じ依存関係を共有し、Yarn v1 のように各プロジェクトに個別にインストールされることはありません
+2. **厳格な依存関係管理**：ファントム依存関係の問題が完全に解決され、package.json で宣言されていない依存関係は使用できません
+3. **ネイティブ workspace サポート**：Lerna のような上位ツールは不要で、pnpm 単体で処理できます
 
 ```bash
-# 安装速度对比（同一个 Monorepo，30 个子项目）
+# インストール速度比較（同一 Monorepo、30 サブプロジェクト）
 # npm:     ~120s
 # yarn v1: ~85s
 # pnpm:    ~15s
 
-# 磁盘占用对比
+# ディスク使用量比較
 # npm:     ~2.1GB
 # yarn v1: ~1.8GB
-# pnpm:    ~600MB（硬链接去重）
+# pnpm:    ~600MB（ハードリンクによる重複排除）
 ```
 
 ## プロジェクト構成のセットアップ
 
 ```bash
-# 初始化项目
+# プロジェクトの初期化
 mkdir my-monorepo && cd my-monorepo
 pnpm init
 
-# 创建目录结构
+# ディレクトリ構造の作成
 mkdir -p packages/{shared,components,utils}
 mkdir -p apps/{admin,portal}
 ```
@@ -49,24 +49,24 @@ my-monorepo/
 ├── pnpm-workspace.yaml
 ├── pnpm-lock.yaml
 ├── packages/
-│   ├── shared/          # 共享业务逻辑
+│   ├── shared/          # 共有ビジネスロジック
 │   │   ├── package.json
 │   │   └── src/
-│   ├── components/      # 组件库
+│   ├── components/      # コンポーネントライブラリ
 │   │   ├── package.json
 │   │   └── src/
-│   └── utils/           # 工具函数
+│   └── utils/           # ユーティリティ関数
 │       ├── package.json
 │       └── src/
 ├── apps/
-│   ├── admin/           # 后台管理
+│   ├── admin/           # 管理画面
 │   │   ├── package.json
 │   │   └── src/
-│   └── portal/          # 门户网站
+│   └── portal/          # ポータルサイト
 │       ├── package.json
 │       └── src/
 └── tools/
-    └── eslint-config/   # 共享 ESLint 配置
+    └── eslint-config/   # 共有 ESLint 設定
 ```
 
 ## コア設定
@@ -80,7 +80,7 @@ packages:
   - 'tools/*'
 ```
 
-**根 package.json**：
+**ルート package.json**：
 
 ```json
 {
@@ -102,7 +102,7 @@ packages:
 }
 ```
 
-**子包 package.json**（以 utils 为例）：
+**サブパッケージ package.json**（utils を例に）：
 
 ```json
 {
@@ -131,7 +131,7 @@ packages:
 
 ## パッケージ間の相互参照
 
-在 Monorepo 中，子包之间互相引用用 `workspace:` 协议：
+Monorepo では、サブパッケージ間の相互参照に `workspace:` プロトコルを使用します：
 
 ```json
 {
@@ -143,7 +143,7 @@ packages:
 }
 ```
 
-发布时 pnpm 会自动将 `workspace:*` 替换为实际版本号。
+公開時に pnpm は自動的に `workspace:*` を実際のバージョン番号に置き換えます。
 
 ```typescript
 // packages/components/src/Button.vue
@@ -156,33 +156,33 @@ const formatted = computed(() => formatCurrency(props.amount))
 </script>
 ```
 
-## pnpm --filter 命令
+## pnpm --filter コマンド
 
-`--filter` 是 pnpm workspace 最强大的功能，可以精确控制命令作用范围：
+`--filter` は pnpm workspace の最も強力な機能で、コマンドの適用範囲を正確に制御できます：
 
 ```bash
-# 只在 admin 应用中安装 lodash
+# admin アプリにのみ lodash をインストール
 pnpm --filter admin add lodash
 
-# 只在 admin 中安装，但要先构建它依赖的包
+# admin のみにインストールするが、依存するパッケージを先にビルド
 pnpm --filter admin... build
 
-# 在 packages/ 下的所有包中运行 test
+# packages/ 配下のすべてのパッケージで test を実行
 pnpm --filter './packages/*' test
 
-# 只构建 utils 和依赖 utils 的包
+# utils と utils に依存するパッケージのみビルド
 pnpm --filter '@my-monorepo/utils...' build
 
-# 在 admin 中运行 dev，同时 watch 它依赖的本地包
+# admin で dev を実行し、依存するローカルパッケージをウォッチ
 pnpm --filter admin dev
 
-# 运行所有 packages 的 build（按拓扑排序）
+# すべての packages の build を実行（トポロジカルソート順）
 pnpm -r --filter './packages/*' build
 ```
 
 ## Vite ビルド設定
 
-子包的 Vite 配置，输出库模式：
+サブパッケージの Vite 設定、ライブラリモードで出力：
 
 ```typescript
 // packages/utils/vite.config.ts
@@ -204,7 +204,7 @@ export default defineConfig({
       fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`
     },
     rollupOptions: {
-      external: ['dayjs'] // 不打包依赖
+      external: ['dayjs'] // 依存関係をバンドルしない
     }
   }
 })
@@ -212,47 +212,47 @@ export default defineConfig({
 
 ## よくある問題
 
-**幽灵依赖问题（Phantom Dependencies）**：
+**ファントム依存関係問題（Phantom Dependencies）**：
 
 ```typescript
-// ❌ 在 npm/yarn 的 node_modules 扁平结构中，
-// 依赖的依赖可以直接 import（幽灵依赖）
+// ❌ npm/yarn の node_modules フラット構造では、
+// 依存関係の依存関係を直接 import できる（ファントム依存関係）
 import something from 'transitive-dependency'
 
-// ✅ pnpm 的严格结构不允许这样做
-// 必须在 package.json 中显式声明
-// 报错：Module not found
+// ✅ pnpm の厳格な構造ではこれが許可されない
+// package.json で明示的に宣言する必要がある
+// エラー：Module not found
 ```
 
-这是 pnpm 的设计决策，强制正确的依赖声明。
+これは pnpm の設計上の決定であり、正しい依存関係の宣言を強制します。
 
-**`.npmrc` 配置**：
+**`.npmrc` 設定**：
 
 ```ini
-# 如果确实需要访问未声明的依赖（不推荐）
+# どうしても宣言されていない依存関係にアクセスする必要がある場合（推奨しません）
 shamefully-hoist=true
 
-# 也可以只对特定包豁免
+# 特定のパッケージのみを除外することも可能
 public-hoist-pattern[]=*eslint*
 ```
 
 ## Lerna との比較
 
-| 维度 | Lerna + Yarn v1 | pnpm workspace |
+| 観点 | Lerna + Yarn v1 | pnpm workspace |
 |------|----------------|----------------|
-| 依赖管理 | 扁平化，有幽灵依赖 | 严格隔离 |
-| 磁盘占用 | 高（重复安装） | 低（硬链接） |
-| 安装速度 | 慢 | 快 |
-| 需要额外工具 | 需要 Lerna | 不需要 |
-| 版本发布 | Lerna publish | changesets |
-| 学习曲线 | 中等 | 低 |
+| 依存関係管理 | フラット構造、ファントム依存関係あり | 厳格な分離 |
+| ディスク使用量 | 高い（重複インストール） | 低い（ハードリンク） |
+| インストール速度 | 遅い | 速い |
+| 追加ツールの必要性 | Lerna が必要 | 不要 |
+| バージョン公開 | Lerna publish | changesets |
+| 学習曲線 | 中程度 | 低い |
 
-如果你的团队还在用 Lerna，迁移成本不高，收益明显。
+チームがまだ Lerna を使っている場合、移行コストは高くなく、メリットは明らかです。
 
 ## まとめ
 
-- pnpm workspace 是目前最轻量的 Monorepo 方案，不需要 Lerna
-- `workspace:*` 协议处理子包间依赖，`--filter` 精确控制命令范围
-- 硬链接存储 + 严格依赖管理是 pnpm 的核心优势
-- 搭配 Vite 构建子包，开发体验很流畅
-- 版本管理推荐用 changesets 替代 Lerna publish
+- pnpm workspace は現時点で最も軽量な Monorepo ソリューションであり、Lerna は不要です
+- `workspace:*` プロトコルでサブパッケージ間の依存関係を処理し、`--filter` でコマンド範囲を正確に制御
+- ハードリンクストレージ + 厳格な依存関係管理が pnpm の核となる利点
+- Vite と組み合わせてサブパッケージをビルドすると、開発体験が非常にスムーズ
+- バージョン管理は Lerna publish の代わりに changesets を推奨

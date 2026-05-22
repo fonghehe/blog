@@ -1,6 +1,6 @@
 ---
 title: "TypeScript 5.7–5.8: The Continuous Evolution of the Type System"
-date: 2025-04-20 10:00:00
+date: 2025-04-20 15:14:51
 tags:
   - TypeScript
 readingTime: 2

@@ -1,6 +1,6 @@
 ---
-title: "Vue Vapor Stable Version Deep Dive"
-date: 2025-09-02 10:00:00
+title: "Vue Vapor Stable Explained: 无虚拟 DOM CompilationStrategy"
+date: 2025-09-02 12:16:53
 tags:
   - Vue
 readingTime: 2

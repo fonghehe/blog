@@ -111,7 +111,7 @@ function TodoList({ todos }) {
     // 立即更新 UI（樂觀）
     addOptimisticTodo({ id: Date.now(), text, done: false });
 
-    // 後台異步保存
+    // 後臺異步保存
     await saveTodo({ text });
   }
 

@@ -174,7 +174,7 @@ postcss({
 });
 ```
 
-## 按需引入配置
+## 按需引入設定
 
 ```json
 // package.json

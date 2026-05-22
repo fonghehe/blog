@@ -5,42 +5,42 @@ tags:
   - エンジニアリング
   - Vite
 
-readingTime: 2
-description: "Vite 底层用 Rollup 做生产构建，理解 Rollup 插件机制对深度使用 Vite 非常重要。今年我们在组件库构建中开发了几个自定义 Rollup 插件，总结一下开发经验。"
-wordCount: 250
+readingTime: 3
+description: "Vite は内部で Rollup を使用してプロダクションビルドを行っており、Rollup のプラグイン機構を理解することは Vite を深く使いこなす上で非常に重要です。今年、コンポーネントライブラリのビルドでカスタム Rollup プラグインをいくつか開発した経験をまとめます。"
+wordCount: 403
 ---
 
-Vite 底层用 Rollup 做生产构建，理解 Rollup 插件机制对深度使用 Vite 非常重要。今年我们在组件库构建中开发了几个自定义 Rollup 插件，总结一下开发经验。
+Vite は内部で Rollup を使用してプロダクションビルドを行っており、Rollup のプラグイン機構を理解することは Vite を深く使いこなす上で非常に重要です。今年、コンポーネントライブラリのビルドでカスタム Rollup プラグインをいくつか開発した経験をまとめます。
 
 ## プラグインの基本構造
 
-Rollup 插件就是一个返回对象的函数：
+Rollup プラグインは、オブジェクトを返す関数です：
 
 ```javascript
 // rollup-plugin-strip-debug.js
 export default function stripDebug(options = {}) {
   return {
-    name: 'strip-debug', // 插件名称，必须
+    name: 'strip-debug', // プラグイン名（必須）
 
-    // 构建开始时调用
+    // ビルド開始時に呼ばれる
     buildStart() {
       console.log('构建开始')
     },
 
-    // 转换模块代码
+    // モジュールコードを変換
     transform(code, id) {
-      // 移除 console.log 和 debugger
+      // console.log と debugger を削除
       const result = code
         .replace(/console\.log\(.*?\);?/g, '')
         .replace(/debugger;?/g, '')
 
       return {
         code: result,
-        map: null // source map
+        map: null // ソースマップ
       }
     },
 
-    // 构建结束时调用
+    // ビルド終了時に呼ばれる
     buildEnd() {
       console.log('构建结束')
     }
@@ -55,30 +55,30 @@ export default function myPlugin() {
   return {
     name: 'my-plugin',
 
-    // 解析模块路径
+    // モジュールパスを解決
     resolveId(source, importer) {
-      // 将 @ alias 解析为实际路径
+      // @ alias を実際のパスに解決
       if (source.startsWith('@/')) {
         return source.replace('@/', '/src/')
       }
-      return null // 返回 null 表示不处理
+      return null // null を返すと処理しないことを示す
     },
 
-    // 加载模块内容
+    // モジュール内容をロード
     load(id) {
-      // 加载虚拟模块
+      // 仮想モジュールをロード
       if (id === 'virtual:config') {
         return `export default ${JSON.stringify(getConfig())}`
       }
       return null
     },
 
-    // 转换模块代码（最常用的 hook）
+    // モジュールコードを変換（最もよく使う hook）
     transform(code, id) {
-      // 只处理 .vue 文件
+      // .vue ファイルのみ処理
       if (!id.endsWith('.vue')) return null
 
-      // 对 Vue SFC 做自定义处理
+      // Vue SFC にカスタム処理を行う
       const result = processVueFile(code)
       return {
         code: result,
@@ -86,12 +86,12 @@ export default function myPlugin() {
       }
     },
 
-    // 生成产物时调用
+    // 出力生成時に呼ばれる
     generateBundle(options, bundle) {
-      // 可以修改或删除产物中的文件
+      // 出力ファイルを修正または削除できる
       for (const [fileName, chunk] of Object.entries(bundle)) {
         if (chunk.type === 'chunk') {
-          // 注入版本号
+          // バージョン番号を注入
           chunk.code = `/* v1.0.0 */\n${chunk.code}`
         }
       }
@@ -102,7 +102,7 @@ export default function myPlugin() {
 
 ## 実践：コンポーネント自動登録プラグイン
 
-我们写了一个插件，自动把组件库的 `index.ts` 中的手动导出改为自动生成：
+コンポーネントライブラリの `index.ts` における手動エクスポートを自動生成に置き換えるプラグインを作成しました：
 
 ```javascript
 import { readdirSync, statSync } from 'fs'
@@ -115,14 +115,14 @@ export default function autoExport(options = {}) {
     name: 'auto-export',
 
     buildStart() {
-      // 扫描组件目录
+      // コンポーネントディレクトリをスキャン
       const components = readdirSync(componentDir)
         .filter(name => {
           const path = join(componentDir, name)
           return statSync(path).isDirectory()
         })
 
-      // 生成导出代码
+      // エクスポートコードを生成
       const imports = components.map(name => {
         const pascalName = name
           .split('-')
@@ -132,7 +132,7 @@ export default function autoExport(options = {}) {
         return `export { default as ${pascalName} } from './${name}/index.vue'`
       }).join('\n')
 
-      // 写入生成的入口文件
+      // 生成したエントリーファイルを書き込む
       this.emitFile({
         type: 'asset',
         fileName: outputFile,
@@ -142,7 +142,7 @@ export default function autoExport(options = {}) {
   }
 }
 
-// rollup.config.js 中使用
+// rollup.config.js で使用
 import autoExport from './rollup-plugin-auto-export'
 
 export default {
@@ -162,23 +162,23 @@ export default {
 
 ## Vite との関係
 
-Vite 的插件系统兼容 Rollup 插件 API，但有扩展：
+Vite のプラグインシステムは Rollup プラグイン API と互換性がありますが、拡張があります：
 
 ```javascript
-// Vite 独有的 hook
+// Vite 固有の hook
 export default function vitePlugin() {
   return {
     name: 'vite-specific',
 
-    // 开发服务器相关 hook（Rollup 没有）
+    // 開発サーバー関連の hook（Rollup にはない）
     configureServer(server) {
-      // 添加自定义中间件
+      // カスタムミドルウェアを追加
       server.middlewares.use('/api', (req, res) => {
         res.json({ version: '1.0.0' })
       })
     },
 
-    // 处理 HTML
+    // HTML を処理
     transformIndexHtml(html) {
       return html.replace(
         '<head>',
@@ -196,17 +196,17 @@ export default function debugPlugin() {
   return {
     name: 'debug',
 
-    // 使用 this.warn 和 this.error 报告问题
+    // this.warn と this.error を使用して問題を報告
     transform(code, id) {
       if (code.includes('eval(')) {
         this.warn({
-          message: '检测到 eval 使用，可能存在安全风险',
+          message: 'eval の使用を検出しました。セキュリティリスクの可能性があります',
           id: id
         })
       }
 
-      // 使用 this.info 输出调试信息
-      this.info(`处理模块: ${id}`)
+      // this.info を使用してデバッグ情報を出力
+      this.info(`モジュール処理中: ${id}`)
     }
   }
 }
@@ -214,8 +214,8 @@ export default function debugPlugin() {
 
 ## まとめ
 
-- Rollup 插件的核心是 transform、resolveId、load 三个 hook
-- Vite 兼容 Rollup 插件 API，理解 Rollup 对 Vite 深度使用很重要
-- 插件开发中 `this.emitFile`、`this.warn` 等上下文方法很实用
-- 组件库构建是自定义插件的典型应用场景
-- 调试时善用 `this.info` 输出中间状态
+- Rollup プラグインの核心は transform、resolveId、load の 3 つの hook
+- Vite は Rollup プラグイン API と互換性があり、Rollup の理解は Vite の深い活用に重要
+- プラグイン開発では `this.emitFile`、`this.warn` などのコンテキストメソッドが便利
+- コンポーネントライブラリのビルドはカスタムプラグインの典型的なユースケース
+- デバッグ時には `this.info` を活用して中間状態を出力する

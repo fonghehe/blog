@@ -30,10 +30,10 @@ const threshold = false || 0.5; // 0.5（錯誤，false 可能是有效配置）
 
 ## 空值合併運算子
 
-`??` 只在左側為 `null` 或 `undefined` 時才使用右側的預設值：
+`??` 隻在左側為 `null` 或 `undefined` 時才使用右側的預設值：
 
 ```js
-// 只有 null 和 undefined 觸發預設值
+// 隻有 null 和 undefined 觸發預設值
 const port = config.port ?? 3000;
 console.log(config.port ?? 3000); // 0（正確）
 console.log(null ?? '預設');       // '預設'
@@ -62,7 +62,7 @@ console.log(config.port || 3000);     // 3000（錯誤，應該是 0）
 console.log(config.host || 'localhost'); // 'localhost'（錯誤，應該是 ''）
 console.log(config.debug || true);     // true（錯誤，應該是 false）
 
-// 使用 ?? —— 只在 null/undefined 時使用預設值
+// 使用 ?? —— 隻在 null/undefined 時使用預設值
 console.log(config.port ?? 3000);     // 0（正確）
 console.log(config.host ?? 'localhost'); // ''（正確）
 console.log(config.debug ?? true);     // false（正確）
@@ -84,14 +84,14 @@ function processApiResponse(response) {
   // 如果後端返回 0 表示第一頁，不應該被覆蓋
   const page = response.page ?? 1;
 
-  // 如果後端返回 0 表示無限制，不應該被覆蓋
+  // 如果後端返回 0 表示無限製，不應該被覆蓋
   const limit = response.limit ?? 20;
 
   return { userId, userName, avatar, page, limit };
 }
 ```
 
-### 場景二：配置物件合併
+### 場景二：設定物件合併
 
 ```js
 function createConfig(userConfig) {
@@ -102,7 +102,7 @@ function createConfig(userConfig) {
     host: userConfig.host ?? '127.0.0.1',
     // 使用者可能有意關閉除錯
     debug: userConfig.debug ?? false,
-    // 以下只能是 null/undefined 時才用預設值
+    // 以下隻能是 null/undefined 時才用預設值
     timeout: userConfig.timeout ?? 5000,
     maxConnections: userConfig.maxConnections ?? 100,
   };
@@ -206,7 +206,7 @@ const result2 = a ?? (b || c);
 const value = config.value ?? (defaults.value || 'fallback');
 ```
 
-## Babel 配置
+## Babel 設定
 
 ```bash
 npm install --save-dev @babel/plugin-proposal-nullish-coalescing-operator
@@ -253,7 +253,7 @@ function createServer(config: Config) {
 
 ## 小結
 
-- `??` 只在左側為 `null` 或 `undefined` 時才使用右側預設值
+- `??` 隻在左側為 `null` 或 `undefined` 時才使用右側預設值
 - 與 `||` 的關鍵區別：`||` 對所有 falsy 值（0、''、false、NaN）都觸發預設值
 - 適合處理配置項、API 響應、表單值等可能有意為 falsy 的場景
 - 經常與可選鏈 `?.` 配合使用

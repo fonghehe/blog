@@ -1,5 +1,5 @@
 ---
-title: "Babel 7 升級遷移實戰"
+title: "Babel 7 升級遷移實戰：落地路徑與實戰建議"
 date: 2018-01-27 15:13:59
 tags:
   - Babel
@@ -61,11 +61,11 @@ module.exports = {
 }
 ```
 
-`useBuiltIns: 'usage'` 係好有價值嘅改進：佢會分析代碼裡面實際使用咗邊啲 ES6+ 特性，只引入對應嘅 polyfill，而唔係全量引入 `@babel/polyfill`。
+`useBuiltIns: 'usage'` 係好有價值嘅改進：佢會分析代碼裡面實際使用咗邊啲 ES6+ 特性，隻引入對應嘅 polyfill，而唔係全量引入 `@babel/polyfill`。
 
-### 3. 項目級配置文件：babel.config.js
+### 3. 項目級設定檔案：babel.config.js
 
-Babel 6 嘅 `.babelrc` 只影響當前目錄同子目錄，喺 monorepo 項目裡面好麻煩。Babel 7 引入咗 `babel.config.js`，放喺項目根目錄，對整個項目生效：
+Babel 6 嘅 `.babelrc` 隻影響當前目錄同子目錄，喺 monorepo 項目裡面好麻煩。Babel 7 引入咗 `babel.config.js`，放喺項目根目錄，對整個項目生效：
 
 ```javascript
 // babel.config.js（項目根目錄）
@@ -217,13 +217,13 @@ npm install --save-dev @babel/preset-typescript
 presets: ["@babel/preset-typescript", "@babel/preset-env"];
 ```
 
-注意：Babel 處理 TypeScript 只做語法轉換，唔做類型檢查。類型檢查仲係要單獨跑 `tsc --noEmit`。
+注意：Babel 處理 TypeScript 隻做語法轉換，唔做類型檢查。類型檢查仲係要單獨跑 `tsc --noEmit`。
 
 ## 升級後嘅收益
 
 喺我哋嘅項目上，升級 Babel 7 配合 `useBuiltIns: 'usage'` 之後：
 
-- `polyfill` 體積從 86KB（gzip）降到 18KB（只引入咗實際用到嘅）
+- `polyfill` 體積從 86KB（gzip）降到 18KB（隻引入咗實際用到嘅）
 - 冷啟動構建速度提升約 15%（Babel 7 內部優化）
 
 ---

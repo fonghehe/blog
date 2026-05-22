@@ -1,5 +1,5 @@
 ---
-title: "Vue 2 插槽 slot 完全指南"
+title: "Vue 2 插槽 slot 完全指南：落地路徑與實戰建議"
 date: 2019-04-03 15:05:23
 tags:
   - Vue

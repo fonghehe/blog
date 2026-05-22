@@ -1,5 +1,5 @@
 ---
-title: "INP 交互到下一幀繪製優化"
+title: "INP 交互到下一幀繪製優化：落地路徑與實戰建議"
 date: 2023-06-06 15:28:47
 tags:
   - Next.js
@@ -29,7 +29,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 深度解析
 

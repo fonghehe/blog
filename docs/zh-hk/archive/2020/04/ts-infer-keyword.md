@@ -1,5 +1,5 @@
 ---
-title: "TypeScript infer 關鍵字妙用"
+title: "TypeScript infer 關鍵字妙用：落地路徑與實戰建議"
 date: 2020-04-14 16:47:07
 tags:
   - TypeScript
@@ -71,7 +71,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

@@ -4,7 +4,7 @@ date: 2023-03-31 15:47:49
 tags:
   - 前端
 readingTime: 2
-description: "Astro 2.0 於 2023 年 1 月 24 日正式釋出，最重要的新特性是 Content Collections——一套專為 Markdown/MDX 內容設計的型別安全 API。如果你用 Astro 構建部落格、文件站或內容型網站，這個特性會徹底改變你組織內容的方式。"
+description: "Astro 2.0 於 2023 年 1 月 24 日正式釋出，最重要的新特性是 Content Collections——一套專為 Markdown/MDX 內容設計的型別安全 API。如果你用 Astro 構建部落格、檔案站或內容型網站，這個特性會徹底改變你組織內容的方式。"
 wordCount: 304
 ---
 
@@ -155,7 +155,7 @@ posts[0].data.nonExistent; // TypeScript 報錯 ✓
 
 ## Data Collections（JSON/YAML）
 
-Content Collections 不只支援 Markdown，也支援純資料檔案：
+Content Collections 不隻支援 Markdown，也支援純資料檔案：
 
 ```yaml
 # src/content/authors/alice.yaml

@@ -140,6 +140,6 @@ enum HttpMethod {
 
 - 數字列舉：有反向對映，但數字可讀性差
 - 字串列舉：可讀性好，推薦用
-- `const enum`：編譯時內聯，更小的 bundle，但功能有限制
+- `const enum`：編譯時內聯，更小的 bundle，但功能有限製
 - 現代替代：聯合型別或 `as const` 物件，更靈活
 - 名稱空間：主要用於宣告檔案，業務程式碼用 ES module

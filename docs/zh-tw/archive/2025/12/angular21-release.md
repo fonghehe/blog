@@ -1,6 +1,6 @@
 ---
 title: "Angular 21 正式釋出：Signal Forms 穩定，Signal 化轉型完成"
-date: 2025-12-17 10:00:00
+date: 2025-12-17 15:31:08
 tags:
   - Angular
 readingTime: 2

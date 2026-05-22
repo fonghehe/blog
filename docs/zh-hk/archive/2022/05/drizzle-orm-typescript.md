@@ -1,5 +1,5 @@
 ---
-title: "Drizzle ORM TypeScript ORM"
+title: "Drizzle ORM TypeScript ORM：落地路徑與實戰建議"
 date: 2022-05-17 16:44:38
 tags:
   - TypeScript
@@ -36,7 +36,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 源碼分析
 

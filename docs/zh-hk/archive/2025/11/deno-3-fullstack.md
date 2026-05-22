@@ -1,6 +1,6 @@
 ---
-title: "Deno 3.0 全棧方案"
-date: 2025-11-18 10:00:00
+title: "Deno 3.0 全堆積疊實踐：從 Next.js 遷移的真實專案體驗"
+date: 2025-11-18 16:52:29
 tags:
   - 前端
 readingTime: 2
@@ -93,7 +93,7 @@ function useIntersectionObserver(options = {}) {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
 實際項目中的用法會更復雜一些：
 

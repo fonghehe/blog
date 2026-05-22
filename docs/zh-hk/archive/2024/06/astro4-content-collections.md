@@ -1,6 +1,6 @@
 ---
 title: "Astro 4 Content Collections：內容驅動的站點架構"
-date: 2024-06-25 10:00:00
+date: 2024-06-25 14:59:36
 tags:
   - React
 readingTime: 2
@@ -160,7 +160,7 @@ const token = await auth.getToken({
 `} lang="typescript" />
 ```
 
-## 性能優化
+## 效能優化
 
 ### 靜態構建
 

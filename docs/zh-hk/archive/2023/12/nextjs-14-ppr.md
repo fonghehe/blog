@@ -1,5 +1,5 @@
 ---
-title: "Next.js 14 Partial Prerendering"
+title: "Next.js 14 Partial Prerendering：從概念驗證到實驗性支援"
 date: 2023-12-28 14:31:32
 tags:
   - Next.js
@@ -91,7 +91,7 @@ const csvToJson = new Transform({
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 調優策略
 

@@ -4,18 +4,18 @@ date: 2022-03-30 10:56:22
 tags:
   - Angular
 readingTime: 2
-description: "Angular Material 13 隨 Angular 13 一起發佈，帶來了基於 Material Design Components for Web（MDC）重新實現的組件。這次重構不只是樣式調整——組件的 DOM 結構和 CSS 類名都發生了變化，因此遷移需要一定的關注。"
+description: "Angular Material 13 隨 Angular 13 一起發佈，帶來了基於 Material Design Components for Web（MDC）重新實現的組件。這次重構不隻是樣式調整——組件的 DOM 結構和 CSS 類名都發生了變化，因此遷移需要一定的關注。"
 wordCount: 446
 ---
 
-Angular Material 13 隨 Angular 13 一起發佈，帶來了基於 Material Design Components for Web（MDC）重新實現的組件。這次重構不只是樣式調整——組件的 DOM 結構和 CSS 類名都發生了變化，因此遷移需要一定的關注。
+Angular Material 13 隨 Angular 13 一起發佈，帶來了基於 Material Design Components for Web（MDC）重新實現的組件。這次重構不隻是樣式調整——組件的 DOM 結構和 CSS 類名都發生了變化，因此遷移需要一定的關注。
 
 ## 什麼是 MDC-Based Components
 
 Angular Material 原先的組件是自行實現的，與 Google 維護的 `material-components-web` 庫是兩套代碼。Angular Material 13 開始，官方用 MDC 庫重寫所有組件，好處是：
 
 - 與 Material Design 規範保持更緊密的同步
-- 組件行為與其他平台（Android、iOS Web）一致
+- 組件行為與其他平臺（Android、iOS Web）一致
 - 無障礙訪問（A11y）改進
 
 ## 新舊組件共存
@@ -30,7 +30,7 @@ import { MatButtonModule } from "@angular/material/button"; // 仍是舊實現
 // Angular Material 13 的遷移策略：逐步替換
 ```
 
-注意：Angular Material 13 的大多數組件默認已切換到 MDC 實現，但會提供 Legacy 模塊作為兼容過渡期。
+注意：Angular Material 13 的大多數組件默認已切換到 MDC 實現，但會提供 Legacy 模塊作為相容過渡期。
 
 ## 主要變化：Button
 
@@ -92,7 +92,7 @@ $theme: mat.define-light-theme(
 @include mat.all-component-themes($theme);
 ```
 
-**Density**（密度）是 Angular Material 13 新概念，用於控制組件緊湊程度：
+**Density**（密度）是 Angular Material 13 新概念，用於控製組件緊湊程度：
 
 ```scss
 // density: 0  → 標準大小（默認）
@@ -154,4 +154,4 @@ grep -r "mat-button-wrapper\|mat-form-field-wrapper" src/
 
 ## 總結
 
-Angular Material 13 的 MDC 遷移是一次"有痛苦但值得"的升級。如果項目有大量 CSS 自定義覆蓋，需要逐個檢查。但遷移之後，組件的 A11y 支持更完善，主題系統更靈活，與 Material Design 規範的對齊度也更高。建議在 13→14 升級前先完成 MDC 遷移，避免雙重變更的複雜度。
+Angular Material 13 的 MDC 遷移是一次"有痛苦但值得"的升級。如果項目有大量 CSS 自定義覆蓋，需要逐個檢查。但遷移之後，組件的 A11y 支援更完善，主題系統更靈活，與 Material Design 規範的對齊度也更高。建議在 13→14 升級前先完成 MDC 遷移，避免雙重變更的複雜度。

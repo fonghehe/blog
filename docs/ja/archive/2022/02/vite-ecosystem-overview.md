@@ -3,28 +3,28 @@ title: "Vite 3：フロントエンドビルドツールの分水嶺"
 date: 2022-02-08 10:39:57
 tags:
   - Vite
-readingTime: 2
-description: "Vite 3 发布了。从 Vite 2 到 3，不只是版本号的变化——冷启动速度更快、开发体验更好、插件生态更成熟。作为团队构建基础设施的技术选型负责人，这篇文章聊聊 Vite 3 的核心变化和我们的迁移经验。"
-wordCount: 338
+readingTime: 3
+description: "Vite 3 がリリースされました。Vite 2 から 3 への移行は、単なるバージョン番号の変更ではありません。コールドスタートがより高速になり、開発体験が向上し、プラグインエコシステムがより成熟しました。チームのビルドインフラストラクチャの技術選定責任者として、Vite 3 の核心的な変更点と移行経験について紹介します。"
+wordCount: 585
 ---
 
-Vite 3 发布了。从 Vite 2 到 3，不只是版本号的变化——冷启动速度更快、开发体验更好、插件生态更成熟。作为团队构建基础设施的技术选型负责人，这篇文章聊聊 Vite 3 的核心变化和我们的迁移经验。
+Vite 3 がリリースされました。Vite 2 から 3 へは、単なるバージョン番号の変更ではありません。コールドスタートがより高速になり、開発体験が向上し、プラグインエコシステムがより成熟しました。チームのビルドインフラストラクチャの技術選定責任者として、Vite 3 の核心的な変更点と移行経験について紹介します。
 
-## 核心改进
+## 主な改善点
 
-### 冷启动优化
+### コールドスタートの最適化
 
-Vite 3 的开发服务器冷启动比 Vite 2 快了不少。主要优化：
+Vite 3 の開発サーバーのコールドスタートは Vite 2 よりも大幅に高速化しました。主な最適化：
 
 ```bash
-# Vite 3 使用 esbuild 做依赖预构建，但优化了缓存策略
-vite --force  # 强制重新预构建（清除缓存）
+# Vite 3 は esbuild で依存関係のプリビルドを行いますが、キャッシュ戦略が最適化されました
+vite --force  # 強制的に再プリビルド（キャッシュをクリア）
 
-# 查看预构建分析
+# プリビルド分析を表示
 DEBUG=vite:deps npx vite
 ```
 
-### 内置的 CSS Modules 支持
+### 組み込みの CSS Modules サポート
 
 ```css
 /* styles.module.css */
@@ -32,18 +32,18 @@ DEBUG=vite:deps npx vite
   background: #f5f5f5;
 }
 
-/* 自动支持 CSS Modules，不需要额外配置 */
+/* CSS Modules を自動サポート、追加設定は不要 */
 ```
 
 ```typescript
-// 直接导入
+// 直接インポート
 import styles from './styles.module.css';
 
-// 带类型支持（配合 vite-plugin-css-modules-types）
+// 型サポート付き（vite-plugin-css-modules-types と併用）
 const cls = styles.container;
 ```
 
-### 构建优化
+### ビルドの最適化
 
 ```typescript
 // vite.config.ts
@@ -53,11 +53,11 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Vite 3 支持 CSS code splitting
+    // Vite 3 は CSS コード分割をサポート
     cssCodeSplit: true,
-    // 更好的 sourcemap 支持
+    // より良い sourcemap サポート
     sourcemap: true,
-    // rollup 打包配置
+    // rollup バンドル設定
     rollupOptions: {
       output: {
         manualChunks: {
@@ -67,9 +67,9 @@ export default defineConfig({
       },
     },
   },
-  // Vite 3 新增：开发服务器配置
+  // Vite 3 新機能：開発サーバー設定
   server: {
-    // 更快的 HMR
+    // より高速な HMR
     hmr: {
       overlay: true,
     },
@@ -77,9 +77,9 @@ export default defineConfig({
 });
 ```
 
-## 插件生态
+## プラグインエコシステム
 
-Vite 3 的插件生态已经成熟。我们常用的核心插件：
+Vite 3 のプラグインエコシステムはすでに成熟しています。私たちがよく使うコアプラグイン：
 
 ```typescript
 // vite.config.ts
@@ -93,7 +93,7 @@ export default defineConfig({
   plugins: [
     react(),
 
-    // TypeScript 类型检查（不阻塞编译）
+    // TypeScript 型チェック（コンパイルをブロックしない）
     checker({
       typescript: true,
       eslint: {
@@ -101,19 +101,19 @@ export default defineConfig({
       },
     }),
 
-    // 图片压缩
+    // 画像圧縮
     ViteImageOptimizer({
       jpeg: { quality: 80 },
       png: { quality: 80 },
     }),
 
-    // 调试插件（查看中间状态）
+    // デバッグプラグイン（中間状態を確認）
     Inspect(),
   ],
 });
 ```
 
-## 从 Webpack 迁移的实战
+## Webpack からの移行実践
 
 ```typescript
 // webpack.config.js → vite.config.ts
@@ -138,7 +138,7 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    svgr(),  // SVG 作为 React 组件导入
+    svgr(),  // SVG を React コンポーネントとしてインポート
   ],
   server: {
     port: 3000,
@@ -163,25 +163,25 @@ export default defineConfig({
 });
 ```
 
-### 环境变量迁移
+### 環境変数の移行
 
 ```bash
-# Webpack: .env 中用 REACT_APP_ 前缀
+# Webpack: .env では REACT_APP_ プレフィックス
 REACT_APP_API_URL=https://api.example.com
 
-# Vite: 改为 VITE_ 前缀
+# Vite: VITE_ プレフィックスに変更
 VITE_API_URL=https://api.example.com
 ```
 
 ```typescript
-// Before
+// 移行前
 const url = process.env.REACT_APP_API_URL;
 
-// After
+// 移行後
 const url = import.meta.env.VITE_API_URL;
 ```
 
-## Monorepo 中的 Vite 配置共享
+## Monorepo での Vite 設定の共有
 
 ```typescript
 // packages/vite-config/index.ts
@@ -218,16 +218,16 @@ export default createViteConfig({
 
 ## パフォーマンス比較
 
-我们一个中型后台项目（200+ 页面组件）的实测数据：
+私たちが担当した中規模バックエンドプロジェクト（200+ ページコンポーネント）の実測データ：
 
-| 指标 | Webpack 5 | Vite 2 | Vite 3 |
+| 指標 | Webpack 5 | Vite 2 | Vite 3 |
 |------|-----------|--------|--------|
-| 冷启动 | 45s | 3.2s | 2.1s |
+| 冷起動 | 45s | 3.2s | 2.1s |
 | HMR | 800ms | 28ms | 18ms |
-| 生产构建 | 120s | 35s | 28s |
+| プロダクションビルド | 120s | 35s | 28s |
 
-冷启动提升最明显，开发体验质的飞跃。
+コールドスタートの改善が最も顕著で、開発体験が質的に向上しました。
 
 ## まとめ
 
-Vite 3 标志着前端构建工具进入新阶段。基于浏览器原生 ESM 的开发模式已经被验证是可行的。对于新项目，没有理由不用 Vite。对于老项目，迁移成本不高，收益明显。接下来我会写 Vitest——Vite 原生的测试框架，配合 Vite 组成完整的工具链。
+Vite 3 はフロントエンドビルドツールが新たな段階に入ったことを示しています。ブラウザネイティブの ESM に基づく開発モードは実現可能であることが実証されました。新規プロジェクトでは Vite を使わない理由はありません。既存プロジェクトでも移行コストは低く、メリットは明らかです。次回は Vitest（Vite ネイティブのテストフレームワーク）について書き、Vite と組み合わせて完全なツールチェーンを構成する予定です。

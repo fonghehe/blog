@@ -1,14 +1,14 @@
 ---
-title: "JavaScript 數組扁平化的幾種寫法"
+title: "JavaScript 數組扁平化的幾種寫法：落地路徑與實戰建議"
 date: 2018-05-12 10:12:05
 tags:
   - JavaScript
 readingTime: 1
-description: "把多層嵌套數組變成一維數組是常見需求。記錄幾種實現方式，並對比適用場景。"
+description: "把多層巢狀數組變成一維數組是常見需求。記錄幾種實現方式，並對比適用場景。"
 wordCount: 211
 ---
 
-把多層嵌套數組變成一維數組是常見需求。記錄幾種實現方式，並對比適用場景。
+把多層巢狀數組變成一維數組是常見需求。記錄幾種實現方式，並對比適用場景。
 
 ## 場景
 
@@ -49,7 +49,7 @@ function flatten(arr) {
 // [1, 2, 3, 4]
 ```
 
-只適合純整數數組，有侷限性。
+隻適合純整數數組，有侷限性。
 
 ## 方法四：Array.flat（ES2019）
 
@@ -69,7 +69,7 @@ function flatten(arr) {
   ].flat(Infinity); // [1, 2, 3, 4]
 ```
 
-最簡潔，2018 年底 Chrome 69+ 支持，需要 polyfill。
+最簡潔，2018 年底 Chrome 69+ 支援，需要 polyfill。
 
 ## 指定深度展開
 
@@ -117,13 +117,13 @@ flattenMenu(menuTree);
 // [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]
 ```
 
-## 性能對比
+## 效能對比
 
 對於大數組，遞歸方式最快；`Array.flat` 內部也是優化的；`toString` 方式創建字符串成本高。
 
 ## 小結
 
 - 日常開發：`flat(Infinity)` 最簡潔（確認目標環境支持）
-- 需要兼容舊瀏覽器：遞歸 reduce 方式
-- 只有整數：`toString().split(',').map(Number)` 也行
+- 需要相容舊瀏覽器：遞歸 reduce 方式
+- 隻有整數：`toString().split(',').map(Number)` 也行
 - 樹形數據到平鋪列表：用遞歸，處理 `children`

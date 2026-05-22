@@ -1,5 +1,5 @@
 ---
-title: "JavaScript 原型鏈圖解"
+title: "JavaScript 原型鏈圖解：落地路徑與實戰建議"
 date: 2018-08-09 15:14:28
 tags:
   - JavaScript
@@ -173,5 +173,5 @@ Object instanceof Function; // true（Object 本身是函數）
 - 每個對象都有 `[[Prototype]]`，屬性查找沿鏈向上
 - 函數有 `prototype` 屬性，實例的 `__proto__` 指向它
 - `new` 創建對象，建立原型鏈，執行構造函數
-- ES6 `class` 是原型繼承的語法糖，底層機制相同
+- ES6 `class` 是原型繼承的語法糖，底層機製相同
 - 鏈的終點是 `Object.prototype.__proto__ === null`

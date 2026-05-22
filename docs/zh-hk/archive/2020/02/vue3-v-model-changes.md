@@ -1,10 +1,10 @@
 ---
-title: "Vue 3 v-model 雙向綁定改進"
+title: "Vue 3 v-model 雙向綁定改進：落地路徑與實戰建議"
 date: 2020-02-04 15:38:30
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 對 `v-model` 做了重大簡化：移除了 `.sync` 修飾符，統一為 `modelValue` + `update:modelValue` 的標準模式。同時支持多個 `v-model` 綁定，解決了 Vue 2 中組件雙向綁定的諸多痛點。"
+description: "Vue 3 對 `v-model` 做了重大簡化：移除了 `.sync` 修飾符，統一為 `modelValue` + `update:modelValue` 的標準模式。同時支援多個 `v-model` 綁定，解決了 Vue 2 中組件雙向綁定的諸多痛點。"
 wordCount: 282
 ---
 

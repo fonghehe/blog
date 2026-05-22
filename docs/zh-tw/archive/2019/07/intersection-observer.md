@@ -341,7 +341,7 @@ class AdTracker {
           if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
             const adId = entry.target.dataset.adId
             this.trackImpression(adId)
-            // 只統計一次，曝光後取消觀察
+            // 隻統計一次，曝光後取消觀察
             this.observer.unobserve(entry.target)
           }
         })
@@ -444,6 +444,6 @@ function createSafeObserver(callback, options) {
 - Intersection Observer 用非同步回撥替代 scroll + getBoundingClientRect，效能好得多
 - 圖片懶載入：`rootMargin` 提前載入，`unobserve` 載入後取消觀察
 - 無限滾動：用哨兵元素 + `isIntersecting` 判斷是否需要載入更多
-- 廣告曝光：用 `threshold: [0.5]` 控制可見比例，`navigator.sendBeacon` 可靠上報
+- 廣告曝光：用 `threshold: [0.5]` 控製可見比例，`navigator.sendBeacon` 可靠上報
 - 注意 `disconnect()` 清理觀察器，避免記憶體洩漏
 - IE 不支援，需要 polyfill 或降級方案

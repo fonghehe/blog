@@ -112,7 +112,7 @@ if ('paintWorklet' in CSS) {
 
 ## 使用 inputProperties 響應 CSS 變數
 
-Paint API 最強大的地方在於它可以讀取 CSS 自定義屬性（CSS Variables），這意味著繪製行為可以完全由 CSS 控制：
+Paint API 最強大的地方在於它可以讀取 CSS 自定義屬性（CSS Variables），這意味著繪製行為可以完全由 CSS 控製：
 
 ```js
 class GradientWavePainter {
@@ -295,7 +295,7 @@ function startSkeletonAnimation() {
 
 - CSS Paint API 是 Houdini 規範中最成熟的模組，Chrome 已完整支援
 - 通過 `registerPaint()` 註冊繪製器，用 Canvas 2D 子集 API 繪製
-- `inputProperties` 可以讀取 CSS 自定義屬性，實現宣告式控制
+- `inputProperties` 可以讀取 CSS 自定義屬性，實現宣告式控製
 - Worklet 執行在獨立執行緒，不會阻塞主執行緒
 - 適合用於背景圖案、邊框裝飾、佔位圖等純視覺效果
 - 動畫需要在主執行緒修改 CSS 變數來觸發重繪

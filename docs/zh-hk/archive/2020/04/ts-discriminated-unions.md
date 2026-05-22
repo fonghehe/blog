@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 可辨識聯合類型"
+title: "TypeScript 可辨識聯合類型：落地路徑與實戰建議"
 date: 2020-04-17 16:27:20
 tags:
   - TypeScript

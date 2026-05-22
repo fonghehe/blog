@@ -1,6 +1,6 @@
 ---
 title: "Edge 渲染策略選型：CDN Worker、ISR 還是 Streaming SSR"
-date: 2024-08-20 10:00:00
+date: 2024-08-20 16:14:51
 tags:
   - 工程化
 readingTime: 2

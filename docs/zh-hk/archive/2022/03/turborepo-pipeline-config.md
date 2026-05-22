@@ -57,7 +57,7 @@ pnpm add -D -w turbo
 # 構建所有包（按拓撲排序 + 並行）
 turbo run build
 
-# 只構建有變更的包
+# 隻構建有變更的包
 turbo run build --filter=...[HEAD]
 
 # 構建 admin 及其所有依賴
@@ -108,7 +108,7 @@ npx turbo link
 
 效果：第一次 CI 構建後，後續的 PR 如果沒改構建源碼，直接命中緩存，構建從 3 分鐘降到 5 秒。
 
-## 實際項目配置
+## 實際項目設定
 
 我們的 monorepo 結構：
 
@@ -117,7 +117,7 @@ frontend-monorepo/
 ├── packages/
 │   ├── ui-components/     # 構建產物 dist/
 │   ├── utils/             # 構建產物 dist/
-│   ├── eslint-config/     # 無構建，只有 lint
+│   ├── eslint-config/     # 無構建，隻有 lint
 │   └── ts-config/         # 無構建
 ├── apps/
 │   ├── admin/             # 構建產物 dist/
@@ -229,4 +229,4 @@ jobs:
 
 ## 小結
 
-Turborepo 是 monorepo 構建編排的輕量級方案。它不做包管理（pnpm 做），只專注於任務編排和緩存。對於中小型 monorepo，pnpm + Turborepo 的組合已經足夠好。如果需要更重的功能（版本管理、changelog 生成），可以再加 Changesets。
+Turborepo 是 monorepo 構建編排的輕量級方案。它不做包管理（pnpm 做），隻專注於任務編排和緩存。對於中小型 monorepo，pnpm + Turborepo 的組合已經足夠好。如果需要更重的功能（版本管理、changelog 生成），可以再加 Changesets。

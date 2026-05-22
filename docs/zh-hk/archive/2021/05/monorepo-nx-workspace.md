@@ -1,5 +1,5 @@
 ---
-title: "Nx Monorepo 管理工具實踐"
+title: "Nx Monorepo 管理工具實踐：實踐方法與治理思路"
 date: 2021-05-19 16:44:43
 tags:
   - 前端工程化
@@ -65,7 +65,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

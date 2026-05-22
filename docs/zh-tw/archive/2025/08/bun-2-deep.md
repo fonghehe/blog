@@ -1,6 +1,6 @@
 ---
-title: "Bun 2.0 新特性深入"
-date: 2025-08-12 10:00:00
+title: "Bun 2.0 深度解析：原生 Windows 支援與 Node 相容性突破"
+date: 2025-08-12 09:46:23
 tags:
   - 前端
 readingTime: 2

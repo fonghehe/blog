@@ -1,15 +1,15 @@
 ---
-title: "Tree Shaking 深度優化指南"
+title: "Tree Shaking 深度優化指南：落地路徑與實戰建議"
 date: 2021-06-25 09:48:25
 tags:
   - 前端
   - 工程化
 readingTime: 2
-description: "關於Tree Shaking 深度優化指南，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於Tree Shaking 深度優化指南，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 297
 ---
 
-關於Tree Shaking 深度優化指南，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於Tree Shaking 深度優化指南，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 
@@ -72,7 +72,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 最佳實踐
 

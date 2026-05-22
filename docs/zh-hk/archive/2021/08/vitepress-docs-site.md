@@ -1,10 +1,10 @@
 ---
-title: "VitePress 搭建技術文檔站"
+title: "VitePress 搭建技術文檔站：落地路徑與實戰建議"
 date: 2021-08-02 09:31:17
 tags:
   - Vite
 readingTime: 2
-description: "給團隊的組件庫搭建文檔站，對比了 VuePress 和 VitePress 後選擇了後者。VitePress 基於 Vite + Vue 3，構建速度快了一個量級，而且配置更簡潔。記錄一下搭建過程和定製化配置。"
+description: "給團隊的組件庫搭建文檔站，對比了 VuePress 和 VitePress 後選擇了後者。VitePress 基於 Vite + Vue 3，構建速度快了一個量級，而且設定更簡潔。記錄一下搭建過程和定製化設定。"
 wordCount: 252
 ---
 
@@ -41,7 +41,7 @@ package.json 中添加腳本：
 }
 ```
 
-## 配置導航和側邊欄
+## 設定導航和側邊欄
 
 ```typescript
 // docs/.vitepress/config.ts
@@ -140,7 +140,7 @@ import '@company/components/dist/style.css'
 
 ## 自定義首頁
 
-VitePress 支持 Hero 風格的首頁：
+VitePress 支援 Hero 風格的首頁：
 
 ```markdown
 ---

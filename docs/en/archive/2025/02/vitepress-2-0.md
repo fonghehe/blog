@@ -1,6 +1,6 @@
 ---
 title: "VitePress 2.0 New Features"
-date: 2025-02-13 10:00:00
+date: 2025-02-13 18:47:24
 tags:
   - Engineering
 readingTime: 1

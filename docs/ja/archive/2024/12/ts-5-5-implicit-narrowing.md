@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 5.5 暗黙的な型絞り込み"
-date: 2024-12-11 10:00:00
+title: "TypeScript 5.5 类型收窄実践：真实项目中的类型改进案例"
+date: 2024-12-11 15:45:22
 tags:
   - TypeScript
 readingTime: 3

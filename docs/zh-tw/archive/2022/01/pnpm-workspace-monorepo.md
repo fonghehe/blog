@@ -48,7 +48,7 @@ frontend-monorepo/
 └── pnpm-lock.yaml
 ```
 
-## pnpm-workspace.yaml 配置
+## pnpm-workspace.yaml 設定
 
 ```yaml
 packages:
@@ -81,7 +81,7 @@ packages:
 # 給 admin 專案安裝 ui-components（workspace 協議）
 pnpm --filter admin add ui-components@workspace:*
 
-# 給 admin 安裝 lodash（只裝在 admin）
+# 給 admin 安裝 lodash（隻裝在 admin）
 pnpm --filter admin add lodash
 
 # 給所有專案安裝 typescript（作為 devDependencies）
@@ -104,7 +104,7 @@ pnpm add -D -w husky lint-staged
 
 `workspace:*` 表示永遠使用本地版本，釋出時 pnpm 會自動替換成真實版本號。
 
-## .npmrc 配置
+## .npmrc 設定
 
 ```ini
 # 使用嚴格模式，不能訪問未宣告的依賴
@@ -130,7 +130,7 @@ auto-install-peers=false
 ## 過濾器的妙用
 
 ```bash
-# 只執行 admin 及其依賴的 build
+# 隻執行 admin 及其依賴的 build
 pnpm --filter admin... build
 
 # 執行 ui-components 被依賴的所有專案
@@ -143,7 +143,7 @@ pnpm --filter '...ui-components' --filter 'admin...' build
 pnpm -r --no-filter docs test
 ```
 
-這在 CI 裡特別有用——只 build 和 test 有變更的專案。
+這在 CI 裡特別有用——隻 build 和 test 有變更的專案。
 
 ## 踩坑記錄
 

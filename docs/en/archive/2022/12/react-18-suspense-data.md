@@ -1,5 +1,5 @@
 ---
-title: "React 18 Suspense Data Fetching"
+title: "React 18 Suspense Data Fetching: 结合 React Query ProductionSolution"
 date: 2022-12-12 16:06:34
 tags:
   - React

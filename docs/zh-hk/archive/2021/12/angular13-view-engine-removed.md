@@ -5,7 +5,7 @@ tags:
   - Angular
   - TypeScript
 readingTime: 2
-description: "Angular 13 於 2021 年 11 月 3 日正式發佈。這個版本最大的意義是**徹底清理歷史包袱**：完全移除 View Engine 相關代碼、廢棄 IE 11 支持、重新設計 Angular Package Format（APF）。對於已經在 Ivy 上穩定運行的項目，這次升級帶來了更小的依賴體積和更快的"
+description: "Angular 13 於 2021 年 11 月 3 日正式發佈。這個版本最大的意義是**徹底清理歷史包袱**：完全移除 View Engine 相關代碼、廢棄 IE 11 支援、重新設計 Angular Package Format（APF）。對於已經在 Ivy 上穩定運行的項目，這次升級帶來了更小的依賴體積和更快的"
 wordCount: 457
 ---
 
@@ -38,7 +38,7 @@ beforeEach(() => {
 
 這讓測試代碼更簡潔，測試套件運行更快。
 
-## 徹底廢棄 IE 11 支持
+## 徹底廢棄 IE 11 支援
 
 Angular 13 不再為 IE 11 構建額外的 polyfill 和兼容代碼：
 
@@ -59,8 +59,8 @@ Firefox ESR
 **影響**：
 
 - 主包體積減少約 4KB（去掉 IE 相關 polyfill）
-- 構建速度提升（不需要生成 ES5 兼容代碼）
-- 如果你仍需支持 IE 11，**不要升級到 Angular 13**
+- 構建速度提升（不需要生成 ES5 相容代碼）
+- 如果你仍需支援 IE 11，**不要升級到 Angular 13**
 
 ## Angular Package Format（APF）重設計
 
@@ -132,7 +132,7 @@ ng update @angular/core@13 @angular/cli@13
 
 ```bash
 ng update --list
-# 確保所有依賴都有 Angular 13 兼容版本
+# 確保所有依賴都有 Angular 13 相容版本
 ```
 
 ## 總結

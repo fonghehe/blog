@@ -1,5 +1,5 @@
 ---
-title: "Frontend Monitoring: Integrating Sentry in Practice"
+title: "Sentry Frontend Monitoring Advanced: Performance追踪 &  Release Management"
 date: 2019-10-24 11:00:27
 tags:
   - Performance Optimization

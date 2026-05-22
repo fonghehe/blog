@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 條件類型深入"
+title: "TypeScript 條件類型深入：落地路徑與實戰建議"
 date: 2019-09-23 11:02:29
 tags:
   - TypeScript
@@ -64,7 +64,7 @@ type Result2 = MyExtract<string | number | boolean, string | number>;
 
 ## infer 關鍵字
 
-`infer` 是條件類型中用於類型推斷的關鍵字，只能在 `extends` 子句中使用：
+`infer` 是條件類型中用於類型推斷的關鍵字，隻能在 `extends` 子句中使用：
 
 ### 推斷函數返回值類型
 
@@ -239,7 +239,7 @@ const newUser = await apiCall('/users', 'POST', {
 // 第三個參數有完整的類型提示，缺少必填字段會報錯
 ```
 
-## 實戰：深度只讀類型
+## 實戰：深度隻讀類型
 
 ```ts
 type DeepReadonly<T> = T extends (infer E)[]

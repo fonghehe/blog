@@ -1,6 +1,6 @@
 ---
 title: "Using AI to Generate Design Systems: From Figma to Code"
-date: 2025-06-08 10:00:00
+date: 2025-06-08 11:22:59
 tags:
   - Engineering
 readingTime: 3

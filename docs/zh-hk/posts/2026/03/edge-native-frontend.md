@@ -1,6 +1,6 @@
 ---
-title: "Edge Native 前端架構"
-date: 2026-03-20 10:00:00
+title: "Edge Native 前端架構：實踐方法與治理思路"
+date: 2026-03-20 18:14:51
 tags:
   - 前端
 readingTime: 2
@@ -93,9 +93,9 @@ function useIntersectionObserver(options = {}) {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
-實際項目中的用法會更復雜一些：
+實際項目中的用法會更複雜一些：
 
 ```javascript
 const fs = require('fs')

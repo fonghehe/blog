@@ -86,7 +86,7 @@ export async function createPost(formData: FormData) {
 }
 ```
 
-`revalidateTag` 的優勢在於：你不需要知道哪些頁面用了這個資料。只要資料帶了標籤，任何頁面的快取都會被正確失效。
+`revalidateTag` 的優勢在於：你不需要知道哪些頁面用了這個資料。隻要資料帶了標籤，任何頁面的快取都會被正確失效。
 
 ## on-demand Revalidation vs 時間驅動 Revalidation
 
@@ -112,7 +112,7 @@ export async function publishPost(postId: string) {
 // 適合：資料變更明確可追蹤的業務場景
 ```
 
-我的建議是：優先用 on-demand revalidation。時間驅動的 revalidate 只用於那些真的沒有變更觸發點的資料（如第三方 API 返回的資料）。
+我的建議是：優先用 on-demand revalidation。時間驅動的 revalidate 隻用於那些真的沒有變更觸發點的資料（如第三方 API 返回的資料）。
 
 ## 非 fetch 資料來源的快取處理
 
@@ -176,7 +176,7 @@ const nextConfig = {
 module.exports = nextConfig
 ```
 
-控制台會輸出每個 `fetch` 的快取命中情況。生產環境可以用 `x-next-cache-tags` 和 `x-next-cache-status` 響應頭來除錯。
+控製臺會輸出每個 `fetch` 的快取命中情況。生產環境可以用 `x-next-cache-tags` 和 `x-next-cache-status` 響應頭來除錯。
 
 ## 小結
 
@@ -184,4 +184,4 @@ module.exports = nextConfig
 - 優先使用 `revalidateTag` + on-demand revalidation，比時間驅動更精確可控
 - 非 fetch 資料來源（資料庫等）用 `unstable_cache` 包裝，否則不會被快取也不會被自動失效
 - 開發時用 `logging.fetches` 配置來觀察快取命中情況，避免快取相關的詭異 bug
-- `revalidatePath` 和 `revalidateTag` 是兩套不同維度的失效機制，根據場景選擇
+- `revalidatePath` 和 `revalidateTag` 是兩套不同維度的失效機製，根據場景選擇

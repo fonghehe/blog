@@ -1,6 +1,6 @@
 ---
 title: "用 AI 生成设计系统：从 Figma 到代码"
-date: 2025-06-08 10:00:00
+date: 2025-06-08 11:22:59
 tags:
   - 工程化
 readingTime: 3

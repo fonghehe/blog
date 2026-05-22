@@ -1,6 +1,6 @@
 ---
-title: "Vue Vapor 稳定版详解"
-date: 2025-12-04 10:00:00
+title: "Vue Vapor 稳定版实践：真实项目切换后的性能对比"
+date: 2025-12-04 17:18:55
 tags:
   - Vue
 readingTime: 2

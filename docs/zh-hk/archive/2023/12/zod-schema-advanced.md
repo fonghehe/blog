@@ -1,5 +1,5 @@
 ---
-title: "Zod Schema 校驗進階"
+title: "Zod Schema 校驗進階：落地路徑與實戰建議"
 date: 2023-12-04 14:50:02
 tags:
   - 前端
@@ -130,7 +130,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 避坑指南
 

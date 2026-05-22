@@ -5,7 +5,7 @@ tags:
   - 效能最佳化
 readingTime: 2
 description: "過了年假回來，接手了一個線上 bug，花了兩天才定位到，根本原因是沒有錯誤監控。這篇文章整理一下前端錯誤監控的方案。"
-wordCount: 422
+wordCount: 423
 ---
 
 過了年假回來，接手了一個線上 bug，花了兩天才定位到，根本原因是沒有錯誤監控。這篇文章整理一下前端錯誤監控的方案。
@@ -38,9 +38,9 @@ window.onerror = function (message, source, lineno, colno, error) {
 
 **侷限性**：
 
-- 只能捕獲全域性執行時錯誤
+- 隻能捕獲全域性執行時錯誤
 - 不能捕獲 Promise 內部的錯誤
-- 跨域指令碼錯誤只顯示 "Script error."（需要 crossorigin 屬性）
+- 跨域指令碼錯誤隻顯示 "Script error."（需要 crossorigin 屬性）
 
 ## 處理 Promise 錯誤
 
@@ -75,7 +75,7 @@ window.addEventListener("unhandledrejection", (event) => {
 
 ## 跨域指令碼錯誤
 
-CDN 託管的指令碼報錯，瀏覽器會隱藏細節（安全策略），只給你 "Script error."。
+CDN 託管的指令碼報錯，瀏覽器會隱藏細節（安全策略），隻給你 "Script error."。
 
 解決方案：
 
@@ -93,7 +93,7 @@ Access-Control-Allow-Origin: *
 
 ## Source Map 與錯誤定位
 
-生產程式碼是壓縮混淆的，錯誤堆疊的行號列號毫無意義。需要 Source Map。
+生產程式碼是壓縮混淆的，錯誤堆積疊的行號列號毫無意義。需要 Source Map。
 
 ### Webpack 生成 Source Map
 
@@ -137,7 +137,7 @@ npm install @sentry/browser
 import * as Sentry from "@sentry/browser";
 
 Sentry.init({
-  dsn: "https://xxx@sentry.io/xxx", // 從 Sentry 控制台獲取
+  dsn: "https://xxx@sentry.io/xxx", // 從 Sentry 控製臺獲取
   environment: process.env.NODE_ENV,
   release: process.env.APP_VERSION,
 });
@@ -208,7 +208,7 @@ module.exports = {
 ## 小結
 
 - `window.onerror` + `unhandledrejection` 是基礎兜底
-- 跨域指令碼需要配置 `crossorigin` + CORS 頭
+- 跨域指令碼需要設定 `crossorigin` + CORS 頭
 - 生產環境必須配置 Source Map，否則錯誤資訊沒有價值
 - 直接用 Sentry 是最省事的方案，功能完整
 - 部署新版本時，記得同步上傳對應的 Source Map

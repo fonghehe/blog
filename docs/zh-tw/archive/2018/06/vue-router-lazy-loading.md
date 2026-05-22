@@ -28,7 +28,7 @@ const routes = [
 ```
 
 ```javascript
-// 懶載入：只有訪問對應路由時才下載該頁面的程式碼
+// 懶載入：隻有訪問對應路由時才下載該頁面的程式碼
 const routes = [
   {
     path: "/",
@@ -144,5 +144,5 @@ const routes = [
 
 - 路由懶載入：`component: () => import('./Page.vue')`
 - 魔法註釋 `webpackChunkName`：把相關頁面打進同一個 chunk
-- 首屏載入最佳化：只加載當前需要的 JS，其他按需載入
+- 首屏載入最佳化：隻加載當前需要的 JS，其他按需載入
 - `webpackPrefetch`：瀏覽器空閒時預載入，進一步改善體驗

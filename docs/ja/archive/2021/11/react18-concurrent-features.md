@@ -6,55 +6,55 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "React 18 Alpha 已经发布，可以试用了。等了两年的 Concurrent 特性终于要正式了。"
-wordCount: 207
+description: "React 18 Alpha がリリースされ、試用できるようになりました。2年間待ち望んだ Concurrent 機能がついに正式版となります。"
+wordCount: 341
 ---
 
-React 18 Alpha 已经发布，可以试用了。等了两年的 Concurrent 特性终于要正式了。
+React 18 Alpha がリリースされ、試用できるようになりました。2年間待ち望んだ Concurrent 機能がついに正式版となります。
 
 ## 並行レンダリング
 
-React 18 的核心变化：渲染变成可以被打断、恢复的过程。
+React 18 の核心的な変更点：レンダリングが中断・再開可能なプロセスになります。
 
 ```javascript
-// React 17：同步渲染
+// React 17：同期レンダリング
 import ReactDOM from "react-dom";
 ReactDOM.render(<App />, document.getElementById("root"));
 
-// React 18：并发渲染
+// React 18：並行レンダリング
 import { createRoot } from "react-dom/client";
 const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
-只是这一行变化，但开启了很多并发特性。
+この1行の変更だけで、多くの並行機能が有効になります。
 
-## Automatic Batching（自动批处理）
+## Automatic Batching（自動バッチ処理）
 
 ```javascript
-// React 17：只有 React 事件处理中才批处理
+// React 17：React のイベントハンドラ内でのみバッチ処理
 function handleClick() {
-  setCount((c) => c + 1); // 单独渲染
-  setName("Alice"); // 单独渲染
-  // 两次 setState → 两次渲染
+  setCount((c) => c + 1); // 個別にレンダリング
+  setName("Alice"); // 個別にレンダリング
+  // 2回の setState → 2回のレンダリング
 }
 
-// Promise/setTimeout 中不批处理
+// Promise/setTimeout 内ではバッチ処理されない
 setTimeout(() => {
-  setCount((c) => c + 1); // 渲染 1 次
-  setName("Alice"); // 渲染 1 次
-  // 两次 setState → 两次渲染！
+  setCount((c) => c + 1); // 1回レンダリング
+  setName("Alice"); // 1回レンダリング
+  // 2回の setState → 2回のレンダリング！
 });
 
-// React 18：所有地方都自动批处理
+// React 18：すべての場所で自動バッチ処理
 setTimeout(() => {
   setCount((c) => c + 1);
   setName("Alice");
-  // 只渲染 1 次！
+  // 1回だけレンダリング！
 });
 ```
 
-不需要任何代码改动，性能自动提升。
+コードの変更は一切不要で、パフォーマンスが自動的に向上します。
 
 ## useTransition
 
@@ -67,10 +67,10 @@ function SearchPage() {
   const [isPending, startTransition] = useTransition();
 
   function handleSearch(e) {
-    // 紧急更新：输入框立即响应
+    // 緊急更新：入力欄が即座に応答
     setQuery(e.target.value);
 
-    // 非紧急（可被打断的）更新
+    // 非緊急（中断可能な）更新
     startTransition(() => {
       const newResults = searchData(e.target.value);
       setResults(newResults);
@@ -87,7 +87,7 @@ function SearchPage() {
 }
 ```
 
-用户输入始终流畅，搜索结果更新不会阻塞输入。
+ユーザーの入力は常にスムーズで、検索結果の更新が入力をブロックすることはありません。
 
 ## useDeferredValue
 
@@ -101,18 +101,18 @@ function App() {
   return (
     <>
       <input value={text} onChange={(e) => setText(e.target.value)} />
-      {/* 使用延迟值，不会阻塞 input 响应 */}
+      {/* 遅延値を使用し、input の応答をブロックしません */}
       <HeavyList text={deferredText} />
     </>
   );
 }
 ```
 
-## Suspense 改进
+## Suspense の改善
 
 ```javascript
-// React 18：Suspense 支持服务端渲染（SSR）
-// 页面可以分段流式渲染，不需要等所有数据准备好
+// React 18：Suspense がサーバーサイドレンダリング（SSR）をサポート
+// ページをセグメントごとにストリーミングレンダリングでき、すべてのデータが準備できるのを待つ必要はありません
 
 function ProfilePage() {
   return (
@@ -122,7 +122,7 @@ function ProfilePage() {
       </Suspense>
 
       <Suspense fallback={<PostsSkeleton />}>
-        <Posts /> {/* 可以独立加载，不需要等 Header */}
+        <Posts /> {/* 独立してロード可能、Header を待つ必要はありません */}
       </Suspense>
 
       <Suspense fallback={<SidebarSkeleton />}>
@@ -131,7 +131,7 @@ function ProfilePage() {
     </div>
   );
 }
-// 流式 SSR：先发送 HTML 骨架，数据准备好了再流式填充
+// ストリーミング SSR：最初に HTML スケルトンを送信し、データの準備ができ次第ストリーミングで埋め込む
 ```
 
 ## useId
@@ -139,7 +139,7 @@ function ProfilePage() {
 ```javascript
 import { useId } from 'react'
 
-// 生成唯一 ID（服务端客户端一致，解决 SSR hydration 不匹配问题）
+// 一意の ID を生成（サーバーとクライアントで一致し、SSR hydration の不一致問題を解決）
 function FormField({ label, type }) {
   const id = useId()
 
@@ -151,26 +151,26 @@ function FormField({ label, type }) {
   )
 }
 
-// ✅ 多次使用同一组件，ID 不会冲突
-<FormField label="姓名" type="text" />    // id: :r0:
-<FormField label="邮箱" type="email" />   // id: :r1:
+// ✅ 同じコンポーネントを複数回使用しても、ID は衝突しない
+<FormField label="名前" type="text" />    // id: :r0:
+<FormField label="メール" type="email" />   // id: :r1:
 ```
 
 ## アップグレード時の注意点
 
 ```javascript
-// createRoot 替换 ReactDOM.render（必须的）
-// 但在 React 18 中，ReactDOM.render 仍然可用（兼容模式，不开启并发特性）
+// createRoot で ReactDOM.render を置き換え（必須）
+// ただし React 18 でも ReactDOM.render は引き続き使用可能（互換モード、並行機能は有効にならない）
 
-// 如果用了 useEffect 的副作用，React 18 StrictMode 会执行两次
-// 用于检测不纯的副作用（开发模式）
-// 生产模式不受影响
+// useEffect の副作用を使用している場合、React 18 の StrictMode では2回実行される
+// 不純な副作用を検出するため（開発モード）
+// 本番モードでは影響なし
 ```
 
 ## まとめ
 
-- Automatic Batching 是 React 18 最实际的改进，不需要改代码
-- useTransition：区分紧急/非紧急更新，保持 UI 响应
-- Suspense SSR：流式渲染，用户更快看到内容
-- useId：SSR 和 CSR 一致的唯一 ID
-- 正式版预计 2022 年初发布
+- Automatic Batching は React 18 の最も実用的な改善で、コードの変更は不要です
+- useTransition：緊急/非緊急の更新を区別し、UI の応答性を維持します
+- Suspense SSR：ストリーミングレンダリングにより、ユーザーはより早くコンテンツを表示できます
+- useId：SSR と CSR で一貫した一意の ID を提供します
+- 正式版は2022年初頭にリリース予定です

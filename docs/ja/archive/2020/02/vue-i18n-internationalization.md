@@ -1,18 +1,18 @@
 ---
-title: "vue-i18n を使ったVueプロジェクトの国際化"
+title: "Vue 3 项目国际化ソリューション：vue-i18n v9 移行ガイド"
 date: 2020-02-18 10:20:42
 tags:
   - Vue
-readingTime: 2
-description: "国际化（i18n）不只是翻译文本那么简单。日期格式、数字格式、复数规则、文本方向（RTL），这些都需要一套完整的解决方案。vue-i18n 是 Vue 生态中最成熟的国际化库，配合 Composition API 可以做到优雅且类型安全的多语言支持。"
-wordCount: 283
+readingTime: 3
+description: "国際化（i18n）は単なるテキストの翻訳だけではありません。日付形式、数値形式、複数形ルール、テキスト方向（RTL）など、これらには完全なソリューションが必要です。vue-i18n は Vue エコシステムで最も成熟した国際化ライブラリであり、Composition API と組み合わせることで、エレガントで型安全な多言語サポートを実現できます。"
+wordCount: 505
 ---
 
-国际化（i18n）不只是翻译文本那么简单。日期格式、数字格式、复数规则、文本方向（RTL），这些都需要一套完整的解决方案。vue-i18n 是 Vue 生态中最成熟的国际化库，配合 Composition API 可以做到优雅且类型安全的多语言支持。
+国際化（i18n）は単なるテキストの翻訳だけではありません。日付形式、数値形式、複数形ルール、テキスト方向（RTL）など、これらには完全なソリューションが必要です。vue-i18n は Vue エコシステムで最も成熟した国際化ライブラリであり、Composition API と組み合わせることで、エレガントで型安全な多言語サポートを実現できます。
 
 ## 基本統合
 
-安装和初始化 vue-i18n。
+vue-i18n のインストールと初期化。
 
 ```javascript
 // i18n/index.js
@@ -21,9 +21,9 @@ import zhCN from './locales/zh-CN'
 import enUS from './locales/en-US'
 
 const i18n = createI18n({
-  legacy: false,           // 启用 Composition API 模式
-  locale: 'zh-CN',         // 默认语言
-  fallbackLocale: 'en-US', // 回退语言
+  legacy: false,           // Composition API モードを有効化
+  locale: 'zh-CN',         // デフォルト言語
+  fallbackLocale: 'en-US', // フォールバック言語
   messages: {
     'zh-CN': zhCN,
     'en-US': enUS
@@ -44,7 +44,7 @@ app.mount('#app')
 
 ## 翻訳ファイルの構造
 
-按功能模块组织翻译文件，避免单文件过大。
+機能モジュールごとに翻訳ファイルを整理し、単一ファイルが大きくなりすぎないようにします。
 
 ```javascript
 // i18n/locales/zh-CN.js
@@ -102,9 +102,9 @@ export default {
 }
 ```
 
-## Composition API 用法
+## Composition API の使い方
 
-在 `<script>` 中使用 `useI18n` 钩子。
+`<script>` 内で `useI18n` フックを使用します。
 
 ```vue
 {% raw %}
@@ -139,15 +139,15 @@ const username = ref('张三')
 const messageCount = ref(5)
 
 const logout = () => {
-  // 退出逻辑
+  // ログアウト処理
 }
 </script>
 {% endraw %}
 ```
 
-## 日期和数字格式化
+## 日付と数字の書式設定
 
-vue-i18n 支持基于 locale 的日期和数字格式化，统一处理本地化差异。
+vue-i18n はロケールに基づいた日付と数字の書式設定をサポートしており、ローカライズの差異を統一して処理します。
 
 ```javascript
 // i18n/index.js
@@ -157,7 +157,7 @@ const i18n = createI18n({
   fallbackLocale: 'en-US',
   messages: { 'zh-CN': zhCN, 'en-US': enUS },
 
-  // 日期格式化预设
+  // 日付書式のプリセット
   datetimeFormats: {
     'zh-CN': {
       short: { year: 'numeric', month: '2-digit', day: '2-digit' },
@@ -175,7 +175,7 @@ const i18n = createI18n({
     }
   },
 
-  // 数字格式化预设
+  // 数値書式のプリセット
   numberFormats: {
     'zh-CN': {
       currency: { style: 'currency', currency: 'CNY' },
@@ -210,9 +210,9 @@ const { t, d, n } = useI18n()
 {% endraw %}
 ```
 
-## 按需加载语言包
+## 言語パックのオンデマンド読み込み
 
-大型项目的翻译文件可能很大，推荐按语言懒加载。
+大規模プロジェクトでは翻訳ファイルが大きくなる可能性があるため、言語ごとに遅延読み込みすることをお勧めします。
 
 ```javascript
 // i18n/index.js
@@ -222,10 +222,10 @@ const i18n = createI18n({
   legacy: false,
   locale: localStorage.getItem('locale') || 'zh-CN',
   fallbackLocale: 'en-US',
-  messages: {} // 初始为空
+  messages: {} // 初期は空
 })
 
-// 动态加载语言包
+// 言語パックを動的に読み込む
 const loadedLanguages = []
 
 async function loadLocaleMessages(locale) {
@@ -246,15 +246,15 @@ async function loadLocaleMessages(locale) {
 
 export { i18n, loadLocaleMessages }
 
-// 切换语言时调用
+// 言語切り替え時に呼び出す
 // await loadLocaleMessages('en-US')
 // localStorage.setItem('locale', 'en-US')
 ```
 
 ## まとめ
 
-- `legacy: false` 启用 Composition API 模式，用 `useI18n()` 获取 `t`、`d`、`n` 方法
-- 翻译文件按功能模块组织，避免单文件膨胀
-- `d()` 和 `n()` 分别处理日期和数字的本地化格式化
-- 按需加载语言包，减少首屏 bundle 体积
-- 语言切换后记得同步 `localStorage`，保持用户偏好
+- `legacy: false` で Composition API モードを有効にし、`useI18n()` で `t`、`d`、`n` メソッドを取得します
+- 翻訳ファイルは機能モジュールごとに整理し、単一ファイルの肥大化を防ぎます
+- `d()` と `n()` はそれぞれ日付と数字のローカライズ書式を処理します
+- 言語パックをオンデマンドで読み込み、初回表示のバンドルサイズを削減します
+- 言語切り替え後は `localStorage` を同期してユーザー設定を保持しましょう

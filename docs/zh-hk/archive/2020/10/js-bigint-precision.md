@@ -1,5 +1,5 @@
 ---
-title: "JavaScript BigInt 高精度計算"
+title: "JavaScript BigInt 高精度計算：落地路徑與實戰建議"
 date: 2020-10-29 11:00:42
 tags:
   - JavaScript

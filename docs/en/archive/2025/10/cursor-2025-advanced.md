@@ -1,6 +1,6 @@
 ---
 title: "Cursor IDE Advanced Tips 2025"
-date: 2025-10-07 10:00:00
+date: 2025-10-07 14:01:38
 tags:
   - Frontend
 readingTime: 2

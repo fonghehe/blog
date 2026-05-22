@@ -1,6 +1,6 @@
 ---
-title: "Deno 2.0 Node 兼容"
-date: 2024-09-25 10:00:00
+title: "Deno 2.0 Node 兼容：从 Deno 1.x 迁移的真实体验"
+date: 2024-09-25 18:59:36
 tags:
   - 前端
 readingTime: 2

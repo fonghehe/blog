@@ -1,5 +1,5 @@
 ---
-title: "Bun 1.0 運行時深入"
+title: "Bun 1.0 運行時深入：落地路徑與實戰建議"
 date: 2023-10-18 11:47:45
 tags:
   - 前端
@@ -94,7 +94,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能對比
+## 效能對比
 
 以下是一個完整的示例：
 

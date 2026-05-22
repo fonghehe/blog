@@ -3,26 +3,26 @@ title: "Rollupによるフロントエンドライブラリのバンドルベス
 date: 2020-04-28 10:29:03
 tags:
   - エンジニアリング
-readingTime: 2
-description: "用 Webpack 打包应用，但打包库的时候 Rollup 更合适。为什么？因为 Rollup 产物更干净、更小。记录一下用 Rollup 打包一个 Vue 组件库的全过程。"
-wordCount: 199
+readingTime: 3
+description: "アプリケーションのバンドルには Webpack、ライブラリのバンドルには Rollup の方が適しています。なぜなら、Rollup の出力はよりクリーンで軽量だからです。Rollup を使って Vue コンポーネントライブラリをバンドルした全プロセスを記録します。"
+wordCount: 372
 ---
 
-用 Webpack 打包应用，但打包库的时候 Rollup 更合适。为什么？因为 Rollup 产物更干净、更小。记录一下用 Rollup 打包一个 Vue 组件库的全过程。
+アプリケーションのバンドルには Webpack、ライブラリのバンドルには Rollup の方が適しています。なぜなら、Rollup の出力はよりクリーンで軽量だからです。Rollup を使って Vue コンポーネントライブラリをバンドルした全プロセスを記録します。
 
 ## ライブラリにWebpackではなくRollupを使う理由
 
 ```markdown
 |          | Webpack          | Rollup           |
 |----------|------------------|------------------|
-| 定位     | 应用打包          | 库打包            |
-| 产物格式 | 自有格式          | ESM / CJS / UMD  |
-| 产物体积 | 较大（运行时多）   | 较小（无运行时）   |
-| Tree Shaking | 支持          | 更彻底           |
-| Code Splitting | 支持         | 有限             |
+| 用途     | アプリケーションのバンドル | ライブラリのバンドル  |
+| 出力形式 | 独自形式          | ESM / CJS / UMD  |
+| 出力サイズ | 大きい（ランタイム含む） | 小さい（ランタイムなし） |
+| Tree Shaking | 対応          | より徹底          |
+| Code Splitting | 対応         | 限定的            |
 ```
 
-简单说：Webpack 管理应用，Rollup 打包库。
+簡単に言うと：Webpack はアプリケーション管理、Rollup はライブラリのバンドルに使用します。
 
 ## プロジェクト構造
 
@@ -38,7 +38,7 @@ my-component-lib/
 │   │       └── index.ts
 │   ├── utils/
 │   │   └── helpers.ts
-│   └── index.ts          # 入口
+│   └── index.ts          # エントリーポイント
 ├── rollup.config.js
 ├── tsconfig.json
 ├── package.json
@@ -89,20 +89,20 @@ export default {
     terser(),
   ],
   output: [
-    // ESM 格式（现代构建工具使用）
+    // ESM 形式（モダンなビルドツール向け）
     {
       file: pkg.module,
       format: 'es',
       sourcemap: true,
     },
-    // CommonJS 格式（Node.js / Webpack 使用）
+    // CommonJS 形式（Node.js / Webpack 向け）
     {
       file: pkg.main,
       format: 'cjs',
       sourcemap: true,
       exports: 'named',
     },
-    // UMD 格式（浏览器直接使用）
+    // UMD 形式（ブラウザで直接使用）
     {
       file: pkg.unpkg,
       format: 'umd',
@@ -150,30 +150,30 @@ export default {
 }
 ```
 
-## 处理样式
+## スタイルの処理
 
 ```javascript
-// rollup.config.js 样式相关配置
+// rollup.config.js スタイル関連の設定
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 
-// CSS 提取为独立文件
+// CSS を独立したファイルとして抽出
 postcss({
-  extract: 'style.css',      // 提取到 style.css
-  minimize: true,             // 压缩
-  plugins: [autoprefixer()],  // 自动加前缀
-  // 支持 CSS Modules
+  extract: 'style.css',      // style.css に抽出
+  minimize: true,             // 圧縮
+  plugins: [autoprefixer()],  // 自動でプレフィックスを付与
+  // CSS Modules をサポート
   modules: true,
 });
 
-// 或者内联到 JS 中（适合 Tree Shaking）
+// または JS にインライン化（Tree Shaking に適している）
 postcss({
-  inject: true,  // 注入到 <style> 标签
+  inject: true,  // <style> タグに注入
   minimize: true,
 });
 ```
 
-## 按需引入配置
+## 必要なものだけをインポートする設定
 
 ```json
 // package.json
@@ -186,15 +186,15 @@ postcss({
 ```
 
 ```javascript
-// 使用方按需引入（配合 Tree Shaking）
+// 必要なものだけをインポート（Tree Shaking 対応）
 import { Button } from '@company/my-ui';
 
-// 而不是
+// ではなく
 import * as MyUI from '@company/my-ui';
 ```
 
 ```javascript
-// babel-plugin-import 方式（额外配置）
+// babel-plugin-import 方式（追加設定）
 // babel.config.js
 module.exports = {
   plugins: [
@@ -207,7 +207,7 @@ module.exports = {
 };
 ```
 
-## TypeScript 类型导出
+## TypeScript 型のエクスポート
 
 ```json
 // tsconfig.json
@@ -224,8 +224,8 @@ module.exports = {
 
 ## まとめ
 
-- Rollup 产物更干净，适合打包库；Webpack 适合打包应用
-- 输出 ESM + CJS + UMD 三种格式，满足不同使用场景
-- `peerDependencies` 声明 Vue 版本，不把 Vue 打包进去
-- `sideEffects` 声明副作用文件，让使用者能按需引入
-- 样式建议提取为独立 CSS 文件，而不是内联到 JS
+- Rollup の出力はよりクリーンで、ライブラリのバンドルに適しています。Webpack はアプリケーションのバンドルに適しています
+- ESM、CJS、UMD の3種類の形式を出力し、さまざまなユースケースに対応
+- `peerDependencies` で Vue のバージョンを宣言し、Vue をバンドルに含めない
+- `sideEffects` で副作用ファイルを宣言し、利用者が必要なものだけをインポート可能に
+- スタイルは JS にインライン化するのではなく、独立した CSS ファイルに抽出することを推奨

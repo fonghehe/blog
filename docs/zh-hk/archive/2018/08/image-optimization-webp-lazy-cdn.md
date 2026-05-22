@@ -57,7 +57,7 @@ checkWebpSupport().then((supported) => {
 
 ## 圖片懶加載
 
-### 原生方案（新瀏覽器支持）
+### 原生方案（新瀏覽器支援）
 
 ```html
 <img loading="lazy" src="/images/photo.jpg" alt="Photo" />
@@ -141,12 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
 />
 ```
 
-## CDN 與緩存控制
+## CDN 與緩存控製
 
 圖片上傳到 CDN，配置合理的緩存策略：
 
 ```nginx
-# Nginx 配置：靜態資源強緩存
+# Nginx 設定：靜態資源強緩存
 location ~* \.(jpg|jpeg|png|gif|webp|svg)$ {
   expires 30d;
   add_header Cache-Control "public, immutable";

@@ -1,6 +1,6 @@
 ---
 title: "Tailwind CSS 4：全新架構解析"
-date: 2025-02-08 10:00:00
+date: 2025-02-08 13:42:19
 tags:
   - CSS
   - 工程化
@@ -18,12 +18,12 @@ v3 → v4 的關鍵變化：
   1. 全新的引擎（Oxide），構建速度提升 10x
   2. CSS-first 配置，告別 tailwind.config.js
   3. 原生 cascade layers 支持
-  4. 自動 content 檢測，不再需要 content 配置
+  4. 自動 content 檢測，不再需要 content 設定
   5. 新的變體語法（@variant）
   6. CSS 變量全面應用
 ```
 
-## CSS-first 配置
+## CSS-first 設定
 
 ```css
 /* v4: app.css — 直接在 CSS 中配置 */
@@ -121,7 +121,7 @@ export default defineConfig({
 # 1. 安裝 v4
 npm install tailwindcss@latest @tailwindcss/vite@latest
 
-# 2. 移除 PostCSS 配置
+# 2. 移除 PostCSS 設定
 rm postcss.config.js
 
 # 3. 更新 CSS 入口
@@ -148,7 +148,7 @@ npx @tailwindcss/upgrade
 }
 ```
 
-shadcn/ui 在 v4 下依然正常工作，只需調整 CSS 變量的聲明方式。
+shadcn/ui 在 v4 下依然正常工作，隻需調整 CSS 變量的聲明方式。
 
 ## 小結
 

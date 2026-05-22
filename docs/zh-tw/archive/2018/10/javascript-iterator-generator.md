@@ -93,7 +93,7 @@ for (const n of range(1, 5)) {
 
 ## yield 雙向通訊
 
-`yield` 不只是返回值，還可以接收值：
+`yield` 不隻是返回值，還可以接收值：
 
 ```javascript
 function* logger() {
@@ -150,7 +150,7 @@ function* fetchUserSaga(action) {
 }
 ```
 
-這讓非同步流程的測試變得很容易（只需要檢查 effect 物件，不需要真的執行非同步操作）。
+這讓非同步流程的測試變得很容易（隻需要檢查 effect 物件，不需要真的執行非同步操作）。
 
 ## 小結
 

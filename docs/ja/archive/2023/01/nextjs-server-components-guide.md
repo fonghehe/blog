@@ -4,12 +4,12 @@ date: 2023-01-04 10:05:17
 tags:
   - Next.js
   - TypeScript
-readingTime: 3
-description: "Server Actions 是 Next.js 14 最核心的特性。它允许你在组件内部定义服务端函数，表单提交、按钮点击直接触发服务端逻辑，不再需要手动写 API 路由。这套机制从根本上改变了前后端数据交互的模式。"
-wordCount: 499
+readingTime: 4
+description: "Server Actions は Next.js 14 の最も核心的な機能です。コンポーネント内部でサーバーサイド関数を定義でき、フォーム送信やボタンクリックで直接サーバーサイドロジックを起動するため、API ルートを手動で書く必要がなくなります。この仕組みは、フロントエンドとバックエンドのデータ連携のパターンを根本的に変えます。"
+wordCount: 820
 ---
 
-Server Actions 是 Next.js 14 最核心的特性。它允许你在组件内部定义服务端函数，表单提交、按钮点击直接触发服务端逻辑，不再需要手动写 API 路由。这套机制从根本上改变了前后端数据交互的模式。
+Server Actions は Next.js 14 の最も核心的な機能です。コンポーネント内部でサーバーサイド関数を定義でき、フォーム送信やボタンクリックで直接サーバーサイドロジックを起動するため、APIルートを手動で書く必要がなくなります。この仕組みは、フロントエンドとバックエンドのデータ連携のパターンを根本的に変えます。
 
 ## 基本的な使い方とフォーム処理
 
@@ -27,7 +27,7 @@ export async function createPost(formData: FormData) {
   const content = formData.get('content') as string
 
   if (!title || title.length < 2) {
-    return { error: '标题至少2个字符' }
+    return { error: 'タイトルは最低2文字必要です' }
   }
 
   await db.post.create({
@@ -46,19 +46,19 @@ import { createPost } from '@/app/actions'
 export default function NewPostPage() {
   return (
     <form action={createPost} className="max-w-xl mx-auto">
-      <input name="title" placeholder="文章标题" required />
-      <textarea name="content" rows={10} placeholder="文章内容" required />
-      <button type="submit">发布文章</button>
+      <input name="title" placeholder="記事のタイトル" required />
+      <textarea name="content" rows={10} placeholder="記事の内容" required />
+      <button type="submit">記事を公開</button>
     </form>
   )
 }
 ```
 
-注意这里没有 `useState` 管理表单状态，没有 `onSubmit` handler，没有 `fetch` 调用。整个数据流由框架处理。
+ここでは `useState` によるフォーム状態管理、`onSubmit` ハンドラ、`fetch` 呼び出しが一切ないことに注意してください。データフローはすべてフレームワークが処理します。
 
 ## useFormState とプログレッシブエンハンスメント
 
-在需要显示表单验证结果或乐观更新的场景，Next.js 14 提供了 `useFormState` hook。
+フォームのバリデーション結果や楽観的更新を表示する必要があるシナリオでは、Next.js 14 は `useFormState` hook を提供しています。
 
 ```tsx
 // app/actions.ts
@@ -72,7 +72,7 @@ export async function login(prevState: any, formData: FormData) {
 
   const user = await authenticate(email, password)
   if (!user) {
-    return { error: '邮箱或密码不正确', email }
+    return { error: 'メールアドレスまたはパスワードが正しくありません', email }
   }
 
   await createSession(user.id)
@@ -96,17 +96,17 @@ export default function LoginPage() {
       <input name="email" type="email" defaultValue={state?.email} required />
       <input name="password" type="password" required />
       {state?.error && <p className="text-red-500">{state.error}</p>}
-      <SubmitButton>登录</SubmitButton>
+      <SubmitButton>ログイン</SubmitButton>
     </form>
   )
 }
 ```
 
-`useFormState` 的第一个参数是 Server Action，第二个参数是初始状态。它会将 action 的返回值作为新的 state。即使 JavaScript 加载失败，表单也能正常提交（渐进式增强）。
+`useFormState` の第一引数は Server Action、第二引数は初期状態です。action の戻り値を新しい state として設定します。JavaScript の読み込みに失敗しても、フォームは正常に送信できます（プログレッシブエンハンスメント）。
 
 ## Server Actions と楽観的更新
 
-`useOptimistic` 是 React 实验性 API，配合 Server Actions 可以实现丝滑的乐观更新体验。
+`useOptimistic` は React の実験的APIで、Server Actions と組み合わせることでスムーズな楽観的更新を実現できます。
 
 ```tsx
 'use client'
@@ -144,14 +144,14 @@ export function LikeButton({ post }: { post: Post }) {
 }
 ```
 
-用户点击后 UI 立即更新，Server Action 在后台执行。如果请求失败，React 会自动回滚到原始状态。这比手动管理 loading state 要简洁得多。
+ユーザーがクリックするとUIが即座に更新され、Server Action がバックグラウンドで実行されます。リクエストが失敗した場合、React は自動的に元の状態にロールバックします。これは手動で loading state を管理するよりもはるかにシンプルです。
 
 ## Server Actions の実践的なアドバイス
 
-在真实项目中，有几个实践值得注意：
+実際のプロジェクトでは、いくつかの実践的なポイントがあります：
 
 ```tsx
-// 1. 使用 zod 做输入校验，不要信任前端
+// 1. zod で入力検証を行う。フロントエンドを信頼しない
 'use server'
 
 import { z } from 'zod'
@@ -176,8 +176,8 @@ export async function createPost(formData: FormData) {
   // ... 存储逻辑
 }
 
-// 2. Server Actions 可以从任何地方调用，不只是表单
-// 适用于按钮点击、定时任务、事件触发等
+// 2. Server Actions はフォームだけでなく、どこからでも呼び出せる
+// ボタンクリック、定期タスク、イベントトリガーなどに適用
 export async function revalidateAll() {
   revalidateTag('posts')
   revalidateTag('users')
@@ -186,8 +186,8 @@ export async function revalidateAll() {
 
 ## まとめ
 
-- Server Actions 用 `"use server"` 声明，可以直接绑定表单的 `action` 属性，省去 API 路由的编写
-- `useFormState` 处理表单状态和错误反馈，支持渐进式增强
-- `useOptimistic` 配合 Server Actions 实现乐观更新，用户体验优于传统 loading 方案
-- 服务端必须做输入校验（推荐 zod），不能信任客户端传来的数据
-- Server Actions 目前适合表单提交、简单 CRUD 场景，复杂实时交互仍需要 API Routes
+- Server Actions は `"use server"` で宣言し、フォームの `action` 属性に直接バインドできるため、APIルートの記述が不要になります
+- `useFormState` でフォームの状態とエラーフィードバックを処理し、プログレッシブエンハンスメントをサポート
+- `useOptimistic` を Server Actions と組み合わせて楽観的更新を実現し、従来の loading 方式よりユーザー体験が向上
+- サーバーサイドで入力検証を行う必要があり（zod推奨）、クライアントから送られたデータを信頼してはいけません
+- Server Actions は現在、フォーム送信や単純なCRUDシナリオに適しており、複雑なリアルタイムインタラクションには引き続き API Routes が必要です

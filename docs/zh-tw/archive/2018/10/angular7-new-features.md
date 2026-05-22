@@ -1,5 +1,5 @@
 ---
-title: "Angular 7 新特性速覽"
+title: "Angular 7 釋出：CLI Prompts、虛擬捲動與效能提升"
 date: 2018-10-05 17:06:11
 tags:
   - Angular

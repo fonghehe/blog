@@ -5,11 +5,11 @@ tags:
   - React
   - 效能最佳化
 readingTime: 2
-description: "關於React 效能分析 Profiler 實戰，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於React 效能分析 Profiler 實戰，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 320
 ---
 
-關於React 效能分析 Profiler 實戰，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於React 效能分析 Profiler 實戰，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 

@@ -17,7 +17,7 @@ Parse HTML/CSS
     ↓
 DOM Tree + CSSOM Tree
     ↓
-Render Tree（只含可見節點）
+Render Tree（隻含可見節點）
     ↓
 Layout（迴流）← 計算位置和尺寸
     ↓
@@ -38,7 +38,7 @@ el.style.fontSize = "16px"; // 字型大小影響佈局
 el.className = "new-class"; // 可能改變佈局
 document.body.appendChild(newEl); // DOM 結構變化
 
-// 讀取以下屬性也會強制觸發迴流（為了獲取準確值）
+// 讀取以下屬性也會強製觸發迴流（為了獲取準確值）
 el.offsetWidth;
 el.clientHeight;
 el.getBoundingClientRect();
@@ -47,10 +47,10 @@ window.getComputedStyle(el);
 
 ## 重繪（Repaint）
 
-視覺屬性變化，不影響佈局，只需重新繪製：
+視覺屬性變化，不影響佈局，隻需重新繪製：
 
 ```javascript
-// 只觸發重繪，不觸發迴流
+// 隻觸發重繪，不觸發迴流
 el.style.color = "red";
 el.style.backgroundColor = "#fff";
 el.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
@@ -76,13 +76,13 @@ el.style.cssText = "width: 100px; height: 200px; left: 50px;";
 // ✅ 先離線修改，再插入
 const fragment = document.createDocumentFragment();
 items.forEach((item) => fragment.appendChild(createEl(item)));
-container.appendChild(fragment); // 只觸發一次迴流
+container.appendChild(fragment); // 隻觸發一次迴流
 ```
 
-## 最佳化：避免強制同步佈局
+## 最佳化：避免強製同步佈局
 
 ```javascript
-// ❌ 讀後寫交叉，每次都強制迴流
+// ❌ 讀後寫交叉，每次都強製迴流
 items.forEach((item) => {
   const height = item.offsetHeight; // 觸發迴流，讀最新值
   item.style.height = height + 10 + "px"; // 寫
@@ -115,7 +115,7 @@ opacity
 el.style.top = y + "px";
 el.style.left = x + "px";
 
-// ✅ 用 transform 做動畫（只觸發合成，GPU 加速）
+// ✅ 用 transform 做動畫（隻觸發合成，GPU 加速）
 el.style.transform = `translate(${x}px, ${y}px)`;
 ```
 
@@ -135,7 +135,7 @@ requestAnimationFrame(animate);
 ## 小結
 
 - 迴流（幾何變化）> 重繪（視覺變化）> 合成（transform/opacity）
-- 批次 DOM 操作，避免讀寫交叉觸發強制同步佈局
+- 批次 DOM 操作，避免讀寫交叉觸發強製同步佈局
 - 動畫用 `transform` 替代 `top/left`，觸發 GPU 合成
 - `will-change: transform` 提前建立合成層
 - 動畫用 `requestAnimationFrame` 而非 `setInterval`

@@ -5,11 +5,11 @@ tags:
   - Vite
   - Vitest
 readingTime: 3
-description: "如果你的專案用 Vite，那 Vitest 就是測試的最優解。和 Vite 共享配置、同一轉換管道、原生 ESM 支援——Jest 需要各種 hack 才能做到的事，Vitest 天然支援。"
+description: "如果你的專案用 Vite，那 Vitest 就是測試的最優解。和 Vite 共享設定、同一轉換管道、原生 ESM 支援——Jest 需要各種 hack 才能做到的事，Vitest 天然支援。"
 wordCount: 380
 ---
 
-如果你的專案用 Vite，那 Vitest 就是測試的最優解。和 Vite 共享配置、同一轉換管道、原生 ESM 支援——Jest 需要各種 hack 才能做到的事，Vitest 天然支援。
+如果你的專案用 Vite，那 Vitest 就是測試的最優解。和 Vite 共享設定、同一轉換管道、原生 ESM 支援——Jest 需要各種 hack 才能做到的事，Vitest 天然支援。
 
 ## 快速上手
 
@@ -92,7 +92,7 @@ describe('with mocks', () => {
 
 大部分 Jest API 可以直接用，遷移成本很低。
 
-## 與 Vite 共享配置
+## 與 Vite 共享設定
 
 ```typescript
 // vite.config.ts
@@ -121,7 +121,7 @@ export default defineConfig({
 });
 ```
 
-路徑別名、外掛、環境變數——全部自動繼承，不需要像 Jest 那樣單獨配置 `moduleNameMapper`。
+路徑別名、外掛、環境變數——全部自動繼承，不需要像 Jest 那樣單獨設定 `moduleNameMapper`。
 
 ## React 元件測試
 

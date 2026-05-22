@@ -23,7 +23,7 @@ wordCount: 743
 
 **Vite 的出現**改變了開發體驗的預期。一旦用過秒級啓動，很難回去接受分鐘級等待。即使你的生產環境還在用 webpack，開發環境也值得考慮遷移。
 
-**Vue 3 的 Composition API** 不只是 Vue 的特性，它和 React Hooks 共同確立了"邏輯複用用 hook/composable"的範式，替代了過去 mixin 和 HOC 的混亂地帶。
+**Vue 3 的 Composition API** 不隻是 Vue 的特性，它和 React Hooks 共同確立了"邏輯複用用 hook/composable"的範式，替代了過去 mixin 和 HOC 的混亂地帶。
 
 **TypeScript 滲透率** 已經到了"新項目不用需要解釋"的程度。2021 年關注點應該從"要不要用"轉向"怎麼用好"。
 

@@ -1,5 +1,5 @@
 ---
-title: "前端架構模式總結"
+title: "前端架構模式總結：實踐方法與治理思路"
 date: 2019-11-27 15:35:01
 tags:
   - 前端
@@ -76,7 +76,7 @@ function Header() {
 ### 容器組件與展示組件
 
 ```tsx
-// 展示組件：只負責渲染，通過 props 接收數據
+// 展示組件：隻負責渲染，通過 props 接收數據
 // UserList.jsx
 function UserList({ users, loading, onEdit, onDelete }) {
   if (loading) return <Spinner />;
@@ -367,7 +367,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    // 上報到監控平台
+    // 上報到監控平臺
     Sentry.captureException(error, { extra: errorInfo });
   }
 

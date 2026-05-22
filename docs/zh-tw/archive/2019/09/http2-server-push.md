@@ -4,7 +4,7 @@ date: 2019-09-12 11:02:48
 tags:
   - 前端
 readingTime: 5
-description: "HTTP/2 帶來了多路複用、頭部壓縮、服務端推送等重大改進。其中 Server Push 允許伺服器在客戶端請求之前主動推送資源，減少請求往返次數，顯著提升頁面載入速度。本文將深入講解 HTTP/2 Server Push 的工作原理，並結合 Node.js 和 Nginx 給出實戰配置。"
+description: "HTTP/2 帶來了多路複用、頭部壓縮、服務端推送等重大改進。其中 Server Push 允許伺服器在客戶端請求之前主動推送資源，減少請求往返次數，顯著提升頁面載入速度。本文將深入講解 HTTP/2 Server Push 的工作原理，並結合 Node.js 和 Nginx 給出實戰設定。"
 wordCount: 887
 ---
 
@@ -54,11 +54,11 @@ Server Push 使用 HTTP/2 的 `PUSH_PROMISE` 幀：
 
 ### 關鍵概念
 
-- **推送快取（Push Cache）** — 推送的資源暫存在一個特殊的 HTTP/2 Push Cache 中，只有當瀏覽器真正需要該資源時才會使用
+- **推送快取（Push Cache）** — 推送的資源暫存在一個特殊的 HTTP/2 Push Cache 中，隻有當瀏覽器真正需要該資源時才會使用
 - **推送可以被拒絕** — 如果客戶端已有快取，可以拒絕伺服器的推送
 - **推送與請求關聯** — 推送的資源關聯到觸發推送的那個請求
 
-## Nginx 配置 Server Push
+## Nginx 設定 Server Push
 
 ```nginx
 server {
@@ -333,14 +333,14 @@ server.on('stream', (stream, headers) => {
 1. **不要過度推送** — 推送太多資源反而會阻塞主響應
 2. **考慮已有快取** — 推送被快取的資源是浪費
 3. **Push Cache 生命週期短** — 未使用的推送資源在連線關閉後就會丟棄
-4. **需要 HTTPS** — HTTP/2 Server Push 只在 HTTPS 下可用
+4. **需要 HTTPS** — HTTP/2 Server Push 隻在 HTTPS 下可用
 5. **測量實際效果** — 不同網路條件下效果不同，需要用 RUM 資料驗證
 
 ## 小結
 
 - HTTP/2 Server Push 通過 `PUSH_PROMISE` 幀在客戶端請求前主動推送資源，減少 RTT
 - 適合推送的資源：關鍵渲染路徑資源、體積小、該頁面一定用到的
-- Nginx 配置簡單（`http2_push`），Node.js 需要使用 http2 模組手動實現
+- Nginx 設定簡單（`http2_push`），Node.js 需要使用 http2 模組手動實現
 - 推送快取（Push Cache）與常規快取獨立，生命週期較短
 - 需要注意避免重複推送已被快取的資源
 - 103 Early Hints 是 Server Push 的輕量替代方案，讓客戶端自主決定是否預載入

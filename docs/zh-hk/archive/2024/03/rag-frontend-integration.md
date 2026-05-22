@@ -4,11 +4,11 @@ date: 2024-03-25 09:48:02
 tags:
   - 前端
 readingTime: 3
-description: "最近團隊在內部知識庫項目中落地了 RAG（Retrieval-Augmented Generation）架構。作為前端平台負責人，整理一下前端側的技術方案。"
+description: "最近團隊在內部知識庫項目中落地了 RAG（Retrieval-Augmented Generation）架構。作為前端平臺負責人，整理一下前端側的技術方案。"
 wordCount: 294
 ---
 
-最近團隊在內部知識庫項目中落地了 RAG（Retrieval-Augmented Generation）架構。作為前端平台負責人，整理一下前端側的技術方案。
+最近團隊在內部知識庫項目中落地了 RAG（Retrieval-Augmented Generation）架構。作為前端平臺負責人，整理一下前端側的技術方案。
 
 ## RAG 基礎架構
 
@@ -203,7 +203,7 @@ function renderContent(content: string, sources: Source[]) {
 }
 ```
 
-## 性能優化
+## 效能優化
 
 1. **消息列表虛擬化**：長對話歷史用 `@tanstack/react-virtual` 渲染
 2. **打字機效果節流**：流式更新用 `requestAnimationFrame` 合併，避免每次 chunk 都觸發重排

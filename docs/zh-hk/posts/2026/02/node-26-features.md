@@ -1,6 +1,6 @@
 ---
-title: "Node.js 26 LTS 新特性"
-date: 2026-02-20 10:00:00
+title: "Node.js 26 LTS 新特性：特性解讀與遷移建議"
+date: 2026-02-20 13:34:11
 tags:
   - Node.js
 readingTime: 2
@@ -36,7 +36,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 進階用法
 
@@ -96,7 +96,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 這段代碼展示了基本的使用方式。實際項目中還需要考慮錯誤處理和邊界條件。
 
-## 性能優化
+## 效能優化
 
 在這個基礎上，我們可以進一步優化：
 

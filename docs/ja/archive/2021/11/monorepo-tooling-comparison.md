@@ -4,40 +4,40 @@ date: 2021-11-08 15:28:08
 tags:
   - エンジニアリング
 
-readingTime: 2
-description: "Vercel 收购了 Turborepo 并开源，这是一个用 Go 写的高性能 Monorepo 构建工具。试用了一周，和 Lerna / pnpm workspace 对比了一下。"
-wordCount: 385
+readingTime: 3
+description: "Vercel が Turborepo を買収しオープンソース化しました。これは Go 言語で書かれた高性能 Monorepo ビルドツールです。1週間試用し、Lerna や pnpm workspace と比較してみました。"
+wordCount: 670
 ---
 
-Vercel 收购了 Turborepo 并开源，这是一个用 Go 写的高性能 Monorepo 构建工具。试用了一周，和 Lerna / pnpm workspace 对比了一下。
+Vercel が Turborepo を買収しオープンソース化しました。これは Go 言語で書かれた高性能 Monorepo ビルドツールです。1週間試用し、Lerna や pnpm workspace と比較してみました。
 
 ## Monorepo の課題
 
-用 pnpm workspace 管理 monorepo 项目，包管理没问题，但构建编排很原始：
+pnpm workspace で monorepo プロジェクトを管理する場合、パッケージ管理に問題はありませんが、ビルドのオーケストレーションが非常に原始的です：
 
 ```bash
-# pnpm workspace 的构建方式
+# pnpm workspace でのビルド方法
 pnpm run build --filter=packages/core
 pnpm run build --filter=packages/utils
 pnpm run build --filter=packages/ui
 pnpm run build --filter=apps/web
 
-# 问题：
-# 1. 手动排构建顺序
-# 2. 没有缓存（每次全量构建）
-# 3. CI 上更慢（没有本地缓存）
+# 問題点：
+# 1. 手動でビルド順序を決める
+# 2. キャッシュなし（毎回フルビルド）
+# 3. CI ではさらに遅い（ローカルキャッシュなし）
 ```
 
 ## Turborepo が解決すること
 
-- **构建缓存**：相同输入不重复构建（本地 + 远程缓存）
-- **并行调度**：自动分析依赖图，并行构建无依赖的包
-- **增量构建**：只构建有变化的包及其下游依赖
+- **ビルドキャッシュ**：同じ入力は再ビルドしない（ローカル＋リモートキャッシュ）
+- **並列スケジューリング**：依存グラフを自動分析し、依存のないパッケージを並列ビルド
+- **インクリメンタルビルド**：変更のあるパッケージとそのダウンストリーム依存のみをビルド
 
 ## 基本設定
 
 ```bash
-# 安装
+# インストール
 npm install -D turbo
 ```
 
@@ -47,11 +47,11 @@ npm install -D turbo
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],       // 先构建依赖的包
-      "outputs": ["dist/**"]          // 缓存这些产物
+      "dependsOn": ["^build"],       // 依存パッケージを先にビルド
+      "outputs": ["dist/**"]          // これらの成果物をキャッシュ
     },
     "dev": {
-      "cache": false,                 // dev 不缓存（持续运行）
+      "cache": false,                 // dev はキャッシュしない（継続実行）
       "persistent": true
     },
     "test": {
@@ -94,60 +94,60 @@ npm install -D turbo
 ## 実行
 
 ```bash
-# 构建所有包（自动分析依赖图，并行执行）
+# すべてのパッケージをビルド（依存グラフを自動分析し、並列実行）
 turbo run build
 
-# 只构建某个包及其依赖
+# 特定のパッケージとその依存のみをビルド
 turbo run build --filter=@myorg/web
 
-# 并行运行所有 dev
+# すべての dev を並列実行
 turbo run dev --parallel
 
-# 运行所有 lint（无依赖，完全并行）
+# すべての lint を実行（依存関係なし、完全並列）
 turbo run lint
 ```
 
 ## キャッシュメカニズム
 
 ```bash
-# 第一次构建
+# 初回ビルド
 turbo run build
 # packages/core:   build (2.3s)
 # packages/utils:  build (1.1s)
 # packages/ui:     build (3.5s)
 # apps/web:        build (5.2s)
 
-# 没有任何改动，第二次构建
+# 変更なし、2回目のビルド
 turbo run build
 # packages/core:   build >>> FULL TURBO (cached, 0.0s)
 # packages/utils:  build >>> FULL TURBO (cached, 0.0s)
 # packages/ui:     build >>> FULL TURBO (cached, 0.0s)
 # apps/web:        build >>> FULL TURBO (cached, 0.0s)
 
-# 只改了 utils，第三次构建
+# utils のみ変更、3回目のビルド
 turbo run build
-# packages/core:   build >>> FULL TURBO (cached, 0.0s)    # 没变
-# packages/utils:  build (1.2s)                             # 重新构建
-# packages/ui:     build (3.4s)                             # 依赖 utils，重新构建
-# apps/web:        build (5.1s)                             # 依赖 ui，重新构建
+# packages/core:   build >>> FULL TURBO (cached, 0.0s)    # 変更なし
+# packages/utils:  build (1.2s)                             # 再ビルド
+# packages/ui:     build (3.4s)                             # utils に依存、再ビルド
+# apps/web:        build (5.1s)                             # ui に依存、再ビルド
 ```
 
-缓存 key 基于：源文件内容 + 环境变量 + lock 文件 + package.json scripts。
+キャッシュキーは以下に基づきます：ソースファイルの内容 + 環境変数 + ロックファイル + package.json scripts。
 
 ## リモートキャッシュ（CIシナリオ）
 
 ```bash
-# 登录 Vercel（免费提供远程缓存）
+# Vercel にログイン（リモートキャッシュは無料）
 npx turbo login
 
-# 链接远程缓存
+# リモートキャッシュにリンク
 npx turbo link
 
-# 之后 turbo run build 自动同步缓存到 Vercel
-# 本地构建一次 → CI 直接用缓存
+# 以後、turbo run build は自動でキャッシュを Vercel に同期
+# ローカルで一度ビルド → CI は直接キャッシュを使用
 ```
 
-CI 配置示例：
+CI 設定例：
 
 ```yaml
 # .github/workflows/ci.yml
@@ -169,8 +169,8 @@ jobs:
 
       - run: pnpm install
 
-      # Turborepo 自动使用远程缓存
-      # 如果本地已经构建过，CI 直接用缓存
+      # Turborepo は自動でリモートキャッシュを使用します
+      # ローカルでビルド済みの場合、CI は直接キャッシュを使用します
       - run: pnpm turbo run build test lint
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -181,19 +181,19 @@ jobs:
 
 | 特性 | Lerna | Turborepo |
 |------|-------|-----------|
-| 构建编排 | 依赖 topo 排序 | 自动依赖图 + 并行 |
-| 缓存 | 无 | 本地 + 远程 |
-| 增量构建 | 无 | 自动 |
-| 包发布 | 有（核心功能） | 无（不管发布） |
-| 配置复杂度 | 中等 | 极简 |
+| ビルドオーケストレーション | topo ソート依存 | 自動依存グラフ＋並列 |
+| キャッシュ | なし | ローカル＋リモート |
+| インクリメンタルビルド | なし | 自動 |
+| パッケージ公開 | あり（コア機能） | なし（公開は対象外） |
+| 設定の複雑さ | 中程度 | 最小限 |
 
-Lerna 管发布，Turborepo 管构建，可以一起用。
+Lerna は公開を担当し、Turborepo はビルドを担当します。併用が可能です。
 
 ## pnpm workspace との連携
 
 ```bash
-# pnpm 管依赖，Turborepo 管构建编排
-# 这是目前最推荐的组合
+# pnpm が依存関係を管理し、Turborepo がビルドのオーケストレーションを担当
+# これは現在最も推奨される組み合わせです
 
 # package.json
 {
@@ -205,15 +205,15 @@ Lerna 管发布，Turborepo 管构建，可以一起用。
   },
   "devDependencies": {
     "turbo": "^1.0.0",
-    "pnpm": "7.x"  // pnpm 用 workspace 协议管理依赖
+    "pnpm": "7.x"  // pnpm は workspace プロトコルで依存関係を管理
   }
 }
 ```
 
 ## まとめ
 
-- Turborepo 解决 Monorepo 的构建编排和缓存问题，不解决包发布问题
-- 本地 + 远程缓存是最大卖点，CI 构建时间可以从分钟级降到秒级
-- 和 pnpm workspace 配合是最优方案：pnpm 管依赖，Turborepo 管构建
-- 配置极简（一个 turbo.json），学习成本低
-- 适合有 3+ 包的 Monorepo 项目；包少的话 pnpm workspace 够用
+- Turborepo は Monorepo のビルドオーケストレーションとキャッシュの問題を解決しますが、パッケージ公開の問題は解決しません
+- ローカル＋リモートキャッシュが最大のセールスポイントで、CI のビルド時間を分単位から秒単位に短縮できます
+- pnpm workspace との連携が最適なソリューションです：pnpm が依存関係を管理し、Turborepo がビルドを管理します
+- 設定は最小限（turbo.json 1つ）で、学習コストが低いです
+- 3つ以上のパッケージがある Monorepo プロジェクトに適しています；パッケージが少ない場合は pnpm workspace で十分です

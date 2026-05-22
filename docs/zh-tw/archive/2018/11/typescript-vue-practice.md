@@ -4,19 +4,19 @@ date: 2018-11-21 11:03:49
 tags:
   - Vue
 readingTime: 3
-description: "在 Vue 專案裡用 TypeScript 其實比想象中麻煩一些。折騰了兩週，總結一下完整的配置流程。"
+description: "在 Vue 專案裡用 TypeScript 其實比想象中麻煩一些。折騰了兩週，總結一下完整的設定流程。"
 wordCount: 413
 ---
 
 在 Vue 專案裡用 TypeScript 其實比想象中麻煩一些。折騰了兩週，總結一下完整的配置流程。
 
-## 為什麼 Vue + TS 配置複雜
+## 為什麼 Vue + TS 設定複雜
 
 Vue 2 的設計是基於選項物件的（Options API），不是 class 風格，對 TypeScript 的型別推斷不太友好。好在 Vue 提供了 `vue-class-component` 和 `vue-property-decorator`，讓 TS 支援好一些。
 
 Vue 3 會在設計上對 TS 友好很多，但現在我們還在用 Vue 2。
 
-## 專案配置
+## 專案設定
 
 ### 1. 初始化（Vue CLI 3）
 

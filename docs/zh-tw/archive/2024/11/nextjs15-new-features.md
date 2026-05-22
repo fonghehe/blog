@@ -1,6 +1,6 @@
 ---
 title: "Next.js 15：Caching 預設關閉、PPR 與 Turbopack 穩定"
-date: 2024-11-25 10:00:00
+date: 2024-11-25 17:19:56
 tags:
   - React
 readingTime: 2
@@ -42,7 +42,7 @@ async function getCachedData() {
 
 Next.js 14 的預設快取導致很多新使用者困惑：資料不更新、除錯困難、開發體驗差。反轉後行為更符合直覺。
 
-我們的專案遷移時，只需要在真正需要快取的地方加 `revalidate` 配置，其他的自動變成不快取。
+我們的專案遷移時，隻需要在真正需要快取的地方加 `revalidate` 設定，其他的自動變成不快取。
 
 ## Partial Prerendering (PPR) 實驗性穩定
 

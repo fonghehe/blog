@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 全局 API 變更與遷移"
+title: "Vue 3 全局 API 變更與遷移：落地路徑與實戰建議"
 date: 2020-01-29 15:44:45
 tags:
   - Vue
@@ -151,7 +151,7 @@ import App from './App.vue'
 const app = createApp(App)
 
 // 以 Vue 2 模式運行，但底層是 Vue 3
-// 控制台會警告哪些 API 即將被移除
+// 控製臺會警告哪些 API 即將被移除
 app.config.compatConfig = {
   MODE: 2 // 完全 Vue 2 兼容
 }

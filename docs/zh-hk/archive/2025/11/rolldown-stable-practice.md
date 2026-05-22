@@ -1,6 +1,6 @@
 ---
-title: "Rolldown 穩定版實戰"
-date: 2025-11-25 10:00:00
+title: "Rolldown 稳定版實戰：Vite 底層切換到 Rolldown 的遷移指南"
+date: 2025-11-25 14:59:36
 tags:
   - 前端
 readingTime: 2
@@ -94,7 +94,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能對比
+## 效能對比
 
 以下是一個完整的示例：
 

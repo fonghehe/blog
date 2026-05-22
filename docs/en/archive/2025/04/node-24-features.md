@@ -1,6 +1,6 @@
 ---
-title: "Node.js 24 LTS New Features"
-date: 2025-04-02 10:00:00
+title: "Node.js 24 LTS New Features Overview: 新增 API  & 运行时Improvements"
+date: 2025-04-02 09:56:33
 tags:
   - Node.js
 readingTime: 2

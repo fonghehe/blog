@@ -1,5 +1,5 @@
 ---
-title: "TypeScript interface 與 type 的區別"
+title: "TypeScript interface 與 type 的區別：落地路徑與實戰建議"
 date: 2018-09-08 10:55:44
 tags:
   - TypeScript
@@ -28,7 +28,7 @@ type User = {
 // 兩者都可以：
 // - 描述對象結構
 // - 可選屬性 ?
-// - 只讀屬性 readonly
+// - 隻讀屬性 readonly
 // - 被 class implements
 // - 互相 extends/交叉
 ```

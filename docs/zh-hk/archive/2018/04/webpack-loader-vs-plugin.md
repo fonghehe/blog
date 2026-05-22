@@ -1,10 +1,10 @@
 ---
-title: "Webpack loader 和 plugin 的區別"
+title: "Webpack loader 和 plugin 的區別：落地路徑與實戰建議"
 date: 2018-04-27 10:45:43
 tags:
   - Webpack
 readingTime: 1
-description: "Webpack 配置裏 `module.rules`（loader）和 `plugins` 是兩個最重要的配置項，但很多人搞不清楚它們的區別。"
+description: "Webpack 設定裏 `module.rules`（loader）和 `plugins` 是兩個最重要的設定項，但很多人搞不清楚它們的區別。"
 wordCount: 143
 ---
 
@@ -24,7 +24,7 @@ Plugin：構建過程擴展
   - 功能更強大，但配置也更復雜
 ```
 
-## Loader：文件轉換
+## Loader：檔案轉換
 
 ```javascript
 module.exports = {
@@ -88,7 +88,7 @@ module.exports = {
       filename: "css/[name].[contenthash:8].css",
     }),
 
-    // 分析 bundle 大小（只在需要時開啓）
+    // 分析 bundle 大小（隻在需要時開啓）
     process.env.ANALYZE && new BundleAnalyzerPlugin(),
 
     // 定義全局常量

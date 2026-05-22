@@ -1,5 +1,5 @@
 ---
-title: "React Suspense 數據獲取新模式"
+title: "React Suspense 數據獲取新模式：落地路徑與實戰建議"
 date: 2020-03-02 09:37:21
 tags:
   - React
@@ -66,7 +66,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

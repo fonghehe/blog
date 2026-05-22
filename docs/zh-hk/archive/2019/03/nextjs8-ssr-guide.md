@@ -154,7 +154,7 @@ next build && next export
 # 生成 out/ 目錄，可以直接部署到 CDN
 ```
 
-## 性能優化
+## 效能優化
 
 ```jsx
 import dynamic from "next/dynamic";
@@ -173,4 +173,4 @@ const HeavyChart = dynamic(() => import("../components/HeavyChart"), {
 - `getInitialProps` 在服務端和客户端都可能運行（注意區分環境）
 - API Routes 讓 Next.js 可以做輕量全棧
 - 沒有 `getInitialProps` 的頁面會自動靜態化，性能最好
-- 項目實踐建議：官網類用靜態導出，後台管理用 CSR，電商用 SSR
+- 項目實踐建議：官網類用靜態導出，後臺管理用 CSR，電商用 SSR

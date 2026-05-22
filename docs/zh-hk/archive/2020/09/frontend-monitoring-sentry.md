@@ -1,5 +1,5 @@
 ---
-title: "前端監控 Sentry 接入實踐"
+title: "Sentry 前端監控進階 2020：效能追蹤與 Release 管理"
 date: 2019-10-24 11:00:27
 tags:
   - 性能優化
@@ -97,7 +97,7 @@ function reducer(state, action) {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能優化
+## 效能優化
 
 關鍵在於理解核心邏輯：
 
@@ -130,7 +130,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 常見陷阱
 

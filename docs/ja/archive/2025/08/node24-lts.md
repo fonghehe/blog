@@ -1,6 +1,6 @@
 ---
-title: "Node.js 24 LTS 新機能"
-date: 2025-08-15 10:00:00
+title: "Node.js 24 LTS 深掘り：新特性詳細解説与移行ガイド"
+date: 2025-08-15 16:49:26
 tags:
   - Node.js
 readingTime: 2

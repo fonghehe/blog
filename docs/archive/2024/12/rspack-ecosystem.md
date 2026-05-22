@@ -1,6 +1,6 @@
 ---
-title: "Rspack 生态完整指南"
-date: 2024-12-23 10:00:00
+title: "Rspack 生态 2024 年末：插件兼容性与生产落地案例"
+date: 2024-12-23 10:57:34
 tags:
   - 前端
 readingTime: 2

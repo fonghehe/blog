@@ -1,15 +1,15 @@
 ---
-title: "Next.js 14 Server Actions 實戰"
+title: "Next.js 14 Server Actions 實戰：落地路徑與實戰建議"
 date: 2023-01-04 10:05:17
 tags:
   - Next.js
   - TypeScript
 readingTime: 3
-description: "Server Actions 是 Next.js 14 最核心的特性。它允許你在組件內部定義服務端函數，表單提交、按鈕點擊直接觸發服務端邏輯，不再需要手動寫 API 路由。這套機制從根本上改變了前後端數據交互的模式。"
+description: "Server Actions 是 Next.js 14 最核心的特性。它允許你在組件內部定義服務端函數，表單提交、按鈕點擊直接觸發服務端邏輯，不再需要手動寫 API 路由。這套機製從根本上改變了前後端數據交互的模式。"
 wordCount: 479
 ---
 
-Server Actions 是 Next.js 14 最核心的特性。它允許你在組件內部定義服務端函數，表單提交、按鈕點擊直接觸發服務端邏輯，不再需要手動寫 API 路由。這套機制從根本上改變了前後端數據交互的模式。
+Server Actions 是 Next.js 14 最核心的特性。它允許你在組件內部定義服務端函數，表單提交、按鈕點擊直接觸發服務端邏輯，不再需要手動寫 API 路由。這套機製從根本上改變了前後端數據交互的模式。
 
 ## 基礎用法與表單處理
 
@@ -144,7 +144,7 @@ export function LikeButton({ post }: { post: Post }) {
 }
 ```
 
-用户點擊後 UI 立即更新，Server Action 在後台執行。如果請求失敗，React 會自動回滾到原始狀態。這比手動管理 loading state 要簡潔得多。
+用户點擊後 UI 立即更新，Server Action 在後臺執行。如果請求失敗，React 會自動回滾到原始狀態。這比手動管理 loading state 要簡潔得多。
 
 ## Server Actions 的實際項目建議
 
@@ -176,7 +176,7 @@ export async function createPost(formData: FormData) {
   // ... 存儲邏輯
 }
 
-// 2. Server Actions 可以從任何地方調用，不只是表單
+// 2. Server Actions 可以從任何地方調用，不隻是表單
 // 適用於按鈕點擊、定時任務、事件觸發等
 export async function revalidateAll() {
   revalidateTag('posts')

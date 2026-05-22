@@ -1,11 +1,11 @@
 ---
-title: "前端性能體系設計：從渲染管線到 Web Vitals 驅動優化"
+title: "前端效能體系設計：從渲染管線到 Web Vitals 驅動優化"
 date: 2026-05-12 09:52:41
 tags:
   - 性能優化
   - 性能
 readingTime: 6
-description: '性能優化在 2026 年早已不是"壓縮圖片、開 CDN"這種操作層面的事情。當應用複雜度達到一定量級，性能問題的根源是**系統性的架構決策失誤**，而非某個資源沒有做好緩存。本文從瀏覽器渲染管線出發，討論組件級優化的系統方法、資源加載的分級策略，以及如何用 Web Vitals 構建可度量、可追蹤、可迴歸檢測的性能治理'
+description: '效能優化在 2026 年早已不是"壓縮圖片、開 CDN"這種操作層面的事情。當應用複雜度達到一定量級，效能問題的根源是**系統性的架構決策失誤**，而非某個資源沒有做好緩存。本文從瀏覽器渲染管線出發，討論組件級優化的系統方法、資源加載的分級策略，以及如何用 Web Vitals 構建可度量、可追蹤、可迴歸檢測的效能治理'
 wordCount: 959
 ---
 
@@ -35,7 +35,7 @@ Network → Parse HTML → DOM
 
 關鍵渲染路徑（Critical Rendering Path, CRP）決定了首屏渲染時間。CRP 的三個核心指標：
 
-1. **關鍵資源數量**：阻塞首次渲染的資源文件數
+1. **關鍵資源數量**：阻塞首次渲染的資源檔案數
 2. **關鍵路徑長度**：獲取所有關鍵資源的最長往返時間
 3. **關鍵字節數**：首次渲染所需的總傳輸字節
 
@@ -54,10 +54,10 @@ interface CRPAudit {
 }
 ```
 
-### Layout Thrashing：最容易被忽視的性能殺手
+### Layout Thrashing：最容易被忽視的效能殺手
 
 ```javascript
-// 反模式：強制同步佈局
+// 反模式：強製同步佈局
 function resizeAllCards(cards: HTMLElement[]) {
   cards.forEach((card) => {
     // 讀取 → 觸發 layout
@@ -73,7 +73,7 @@ function resizeAllCardsOptimized(cards: HTMLElement[]) {
   // 階段一：批量讀取
   const heights = cards.map((card) => card.offsetHeight);
 
-  // 階段二：批量寫入（只觸發一次 layout）
+  // 階段二：批量寫入（隻觸發一次 layout）
   cards.forEach((card, i) => {
     card.style.height = `${heights[i] + 20}px`;
   });
@@ -116,7 +116,7 @@ function App() {
   return (
     <div>
       <ExpensiveTree />
-      <CursorTracker /> {/* 只有這個組件重渲染 */}
+      <CursorTracker /> {/* 隻有這個組件重渲染 */}
     </div>
   );
 }
@@ -162,7 +162,7 @@ function SimpleLabel({ text }: { text: string }) {
 ```tsx
 // useMemo 用於避免昂貴計算的重複執行
 function AnalyticsDashboard({ rawData }: Props) {
-  // 只有 rawData 變化時才重新計算
+  // 隻有 rawData 變化時才重新計算
   const processedMetrics = useMemo(
     () => computeMetrics(rawData), // 假設這是 O(n²) 的計算
     [rawData],
@@ -174,7 +174,7 @@ function AnalyticsDashboard({ rawData }: Props) {
 
 ### Vue：響應式系統的精確更新
 
-Vue 的響應式系統通過依賴追蹤實現**組件級的精確更新**，但仍然有性能陷阱：
+Vue 的響應式系統通過依賴追蹤實現**組件級的精確更新**，但仍然有效能陷阱：
 
 **陷阱一：巨型響應式對象**
 
@@ -190,7 +190,7 @@ const hugeState = reactive({
   })),
 });
 
-// 正確：只對需要響應式的部分做 reactive
+// 正確：隻對需要響應式的部分做 reactive
 const selectedIds = ref<Set<number>>(new Set());
 const items = shallowRef(loadHugeData()); // shallowRef 不遞歸代理
 
@@ -332,7 +332,7 @@ function prefetchOnHover(routePath: string) {
   font-family: "Inter";
   src: url("/fonts/inter-var.woff2") format("woff2");
   font-display: swap;
-  unicode-range: U+0000-00FF; /* 只加載 Latin 子集 */
+  unicode-range: U+0000-00FF; /* 隻加載 Latin 子集 */
 }
 ```
 
@@ -466,14 +466,14 @@ video {
 }
 ```
 
-### 建立性能監控閉環
+### 建立效能監控閉環
 
 ```typescript
 // 使用 web-vitals 庫採集真實用户數據
 import { onLCP, onINP, onCLS } from "web-vitals";
 
 function reportMetric(metric: { name: string; value: number; id: string }) {
-  // 發送到監控後台
+  // 發送到監控後臺
   navigator.sendBeacon(
     "/api/vitals",
     JSON.stringify({
@@ -496,8 +496,8 @@ onCLS(reportMetric);
 前端性能體系設計的核心思路：
 
 1. **理解管線**——所有優化都是在減少瀏覽器渲染管線的工作量或縮短關鍵路徑
-2. **組件級精確控制**——利用框架的響應式機制避免無效渲染，而非事後 profile 和打補丁
+2. **組件級精確控製**——利用框架的響應式機製避免無效渲染，而非事後 profile 和打補丁
 3. **資源分級**——將所有資源分為 Critical / Important / Deferred 三級，每級有不同的加載策略
 4. **度量驅動**——沒有度量就沒有優化。用 Web Vitals 建立基線、設定預算、檢測迴歸
 
-性能不是一次性的"優化任務"，而是需要持續投入的**工程治理能力**。
+效能不是一次性的"優化任務"，而是需要持續投入的**工程治理能力**。

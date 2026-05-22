@@ -4,15 +4,15 @@ date: 2019-08-02 11:07:11
 tags:
   - TypeScript
 readingTime: 2
-description: "最近项目中用到了TypeScript 类型守卫入门，发现比预想的要复杂。分享一下实践过程中总结的经验。"
-wordCount: 254
+description: "最近のプロジェクトで TypeScript の型ガードを使用してみて、思ったより複雑だと感じました。実践で得た経験を共有します。"
+wordCount: 404
 ---
 
-最近项目中用到了TypeScript 类型守卫入门，发现比预想的要复杂。分享一下实践过程中总结的经验。
+最近のプロジェクトで TypeScript の型ガードを使用してみて、予想よりも複雑だと感じました。実践で得た経験を共有します。
 
 ## コア原理
 
-具体实现参考以下代码：
+具体的な実装は以下のコードを参照してください：
 
 ```javascript
 :root {
@@ -34,24 +34,24 @@ body {
 }
 ```
 
-经过线上验证，这套方案运行稳定。
+本番環境での検証を経て、この方式は安定して動作しています。
 
 ## ソースコード解析
 
-先来看基本的用法：
+基本的な使い方を見てみましょう：
 
 ```javascript
 const express = require('express')
 const app = express()
 
-// 中间件
+// ミドルウェア
 app.use(express.json())
 
 function errorHandler(err, req, res, next) {
   console.error(err.stack)
   res.status(500).json({
     error: process.env.NODE_ENV === 'production'
-      ? '服务器错误' : err.message
+      ? 'サーバーエラー' : err.message
   })
 }
 
@@ -67,11 +67,11 @@ app.get('/api/users', async (req, res, next) => {
 app.use(errorHandler)
 ```
 
-这种写法简洁明了，适合大多数场景。
+この書き方は簡潔で明確であり、ほとんどのシーンに適しています。
 
 ## 実践応用
 
-核心代码如下：
+コアコードは以下の通りです：
 
 ```javascript
 const http = require('http')
@@ -80,14 +80,14 @@ const os = require('os')
 
 if (cluster.isMaster) {
   const numWorkers = os.cpus().length
-  console.log(`主进程 ${process.pid}，启动 ${numWorkers} 个 worker`)
+  console.log(`メインプロセス ${process.pid}、${numWorkers} 個のワーカーを起動`)
 
   for (let i = 0; i < numWorkers; i++) {
     cluster.fork()
   }
 
   cluster.on('exit', (worker) => {
-    console.log(`Worker ${worker.process.pid} 退出，重启中`)
+    console.log(`Worker ${worker.process.pid} が終了、再起動中`)
     cluster.fork()
   })
 } else {
@@ -97,11 +97,11 @@ if (cluster.isMaster) {
 }
 ```
 
-实际项目中还需要考虑边界条件和异常处理。
+実際のプロジェクトでは、境界条件と例外処理も考慮する必要があります。
 
 ## ベストプラクティス
 
-下面是一个实际的例子：
+以下は実際の例です：
 
 ```javascript
 const path = require('path')
@@ -145,11 +145,11 @@ module.exports = {
 }
 ```
 
-这种模式在团队中推广后效果很好，维护成本明显降低。
+このパターンをチームで展開したところ効果が良好で、保守コストが明らかに低下しました。
 
 ## まとめ
 
-- 遇到问题多看源码和官方文档
-- TypeScript 类型守卫入门的关键在于理解核心概念，不要停留在表面用法
-- 实际项目中根据场景选择合适的方案
-- 团队中统一约定比追求完美实现更重要
+- 問題に直面したら、ソースコードと公式ドキュメントをよく確認する
+- TypeScript 型ガードの鍵はコアコンセプトを理解することであり、表面的な使い方にとどまらないこと
+- 実際のプロジェクトではシーンに応じて適切な方式を選択する
+- チーム内で統一された约定は、完璧な実装を追求するよりも重要

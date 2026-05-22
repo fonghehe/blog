@@ -18,7 +18,7 @@ npx shadcn-ui@latest add button
 # 這個命令會把 Button 組件的源代碼複製到 src/components/ui/button.tsx
 ```
 
-傳統組件庫（Element UI、Ant Design）：你安裝它，用它，但不能改它（只能用 API 覆蓋）。
+傳統組件庫（Element UI、Ant Design）：你安裝它，用它，但不能改它（隻能用 API 覆蓋）。
 
 shadcn/ui：把組件代碼放到你的項目裏，**你就擁有了這段代碼**，可以隨意修改。
 
@@ -131,7 +131,7 @@ function CreateUserDialog() {
 1. **可訪問性**：基於 Radix UI，鍵盤導航、ARIA 屬性都處理好了
 2. **可定製**：代碼在你項目裏，改樣式、改行為、加功能都隨意
 3. **無版本鎖定**：不依賴上游的版本升級，你就是維護者
-4. **按需複製**：只複製你需要的組件，沒有無用代碼
+4. **按需複製**：隻複製你需要的組件，沒有無用代碼
 
 缺點：不是"安裝就用"，需要理解 Tailwind + Radix 才能定製。
 

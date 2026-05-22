@@ -1,18 +1,18 @@
 ---
-title: "複雜系統的性能治理：RUM、性能預算與自動化迴歸檢測"
+title: "複雜系統的效能治理：RUM、效能預算與自動化迴歸檢測"
 date: 2026-05-15 09:43:12
 tags:
   - 性能優化
   - 性能
   - 工程化
 readingTime: 8
-description: "當你的應用是一個包含 50+ 個頁面、100+ 個圖表、實時數據流刷新的中後台系統時，性能問題不再是\"某個頁面慢\"這麼簡單。它是一個需要持續投入、系統性治理的工程問題。本文討論如何用 RUM（真實用户監控）建立性能基線，如何設計和執行性能預算，如何在 CI 中自動檢測性能迴歸，以及如何優化 Dashboard 類重度 "
+description: "當你的應用是一個包含 50+ 個頁面、100+ 個圖表、實時數據流刷新的中後臺系統時，效能問題不再是\"某個頁面慢\"這麼簡單。它是一個需要持續投入、系統性治理的工程問題。本文討論如何用 RUM（真實用户監控）建立效能基線，如何設計和執行效能預算，如何在 CI 中自動檢測效能迴歸，以及如何優化 Dashboard 類重度 "
 wordCount: 815
 ---
 
-當你的應用是一個包含 50+ 個頁面、100+ 個圖表、實時數據流刷新的中後台系統時，性能問題不再是"某個頁面慢"這麼簡單。它是一個需要持續投入、系統性治理的工程問題。本文討論如何用 RUM（真實用户監控）建立性能基線，如何設計和執行性能預算，如何在 CI 中自動檢測性能迴歸，以及如何優化 Dashboard 類重度 UI 系統。
+當你的應用是一個包含 50+ 個頁面、100+ 個圖表、實時數據流刷新的中後臺系統時，效能問題不再是"某個頁面慢"這麼簡單。它是一個需要持續投入、系統性治理的工程問題。本文討論如何用 RUM（真實用户監控）建立效能基線，如何設計和執行效能預算，如何在 CI 中自動檢測效能迴歸，以及如何優化 Dashboard 類重度 UI 系統。
 
-## RUM：真實用户視角的性能度量
+## RUM：真實用户視角的效能度量
 
 ### 為什麼 Lab 數據不夠
 
@@ -137,7 +137,7 @@ WHERE timestamp > NOW() - INTERVAL '24 hours'
 GROUP BY connection_type;
 ```
 
-### 建立性能基線和告警
+### 建立效能基線和告警
 
 ```typescript
 // 性能告警規則
@@ -171,9 +171,9 @@ const ALERT_RULES: PerformanceAlert[] = [
 ];
 ```
 
-## 性能預算：從目標到執行
+## 效能預算：從目標到執行
 
-### 設計性能預算
+### 設計效能預算
 
 性能預算不是拍腦袋定一個數字，而是基於**用户體驗目標**倒推：
 
@@ -230,9 +230,9 @@ export const budgetConfig: BudgetConfig = {
 };
 ```
 
-### 預算執行機制
+### 預算執行機製
 
-預算如果只是寫在文檔裏等於沒有。必須集成到工程流程中：
+預算如果隻是寫在文檔裏等於沒有。必須集成到工程流程中：
 
 ```typescript
 // scripts/check-performance-budget.ts
@@ -316,7 +316,7 @@ if (violations.some((v) => v.severity === "error")) {
 }
 ```
 
-## 自動化性能迴歸檢測
+## 自動化效能迴歸檢測
 
 ### Lab 環境的迴歸檢測
 
@@ -372,7 +372,7 @@ jobs:
 
 ### RUM 數據的迴歸檢測
 
-Lab 檢測只能發現明顯的迴歸。更精確的方法是對比**發佈前後的 RUM P75**：
+Lab 檢測隻能發現明顯的迴歸。更精確的方法是對比**發佈前後的 RUM P75**：
 
 ```typescript
 // scripts/rum-regression-check.ts
@@ -439,7 +439,7 @@ function exceedsAbsoluteThreshold(metric: string, delta: number): boolean {
 }
 ```
 
-### 自動回滾機制
+### 自動回滾機製
 
 當檢測到嚴重性能迴歸時，觸發自動回滾：
 
@@ -483,7 +483,7 @@ async function monitorCanaryRelease(config: {
 
 ### 問題特徵
 
-中後台 Dashboard 的性能問題與 C 端完全不同：
+中後臺 Dashboard 的效能問題與 C 端完全不同：
 
 - **數據密集**：單頁面可能渲染 20+ 個圖表，每個圖表數據量 1000+
 - **實時更新**：WebSocket 推送每秒可能觸發 10+ 次重渲染
@@ -606,7 +606,7 @@ function useChart(containerRef: Ref<HTMLElement | null>) {
     if (containerRef.value) {
       chartInstance = init(containerRef.value, null, {
         renderer: "canvas",
-        useDirtyRect: true, // 髒矩形渲染，只重繪變化區域
+        useDirtyRect: true, // 髒矩形渲染，隻重繪變化區域
       });
     }
   });

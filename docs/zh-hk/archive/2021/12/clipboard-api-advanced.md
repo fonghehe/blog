@@ -1,5 +1,5 @@
 ---
-title: "Clipboard API 剪貼板高級用法"
+title: "Clipboard API 剪貼板高級用法：落地路徑與實戰建議"
 date: 2021-12-03 14:50:35
 tags:
   - 前端

@@ -1,6 +1,6 @@
 ---
-title: "CSS View Transitions v2"
-date: 2024-10-28 10:00:00
+title: "CSS View Transitions v2: Chrome 实现进展 & 降级Strategy"
+date: 2024-10-28 19:42:19
 tags:
   - CSS
 readingTime: 2

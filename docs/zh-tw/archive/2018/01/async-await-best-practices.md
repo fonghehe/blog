@@ -113,7 +113,7 @@ async function loadDashboard() {
 }
 ```
 
-只有當後一個請求依賴前一個請求的結果時，才需要串行 await。否則優先考慮 `Promise.all`。
+隻有當後一個請求依賴前一個請求的結果時，才需要串行 await。否則優先考慮 `Promise.all`。
 
 ## 迴圈中的 async/await
 
@@ -133,7 +133,7 @@ for (const id of userIds) {
 // 並行處理：同時發出所有請求（適合無相依的場景）
 await Promise.all(userIds.map((id) => processUser(id)));
 
-// 限制並發數（適合批次作業，避免打爆伺服器）
+// 限製並發數（適合批次作業，避免打爆伺服器）
 async function processInBatches(items, batchSize) {
   for (let i = 0; i < items.length; i += batchSize) {
     const batch = items.slice(i, i + batchSize);
@@ -213,7 +213,7 @@ npm install --save-dev babel-preset-env
 }
 ```
 
-`useBuiltIns: "usage"` 只引入實際用到的 polyfill，避免全量引入 babel-polyfill 的體積負擔。
+`useBuiltIns: "usage"` 隻引入實際用到的 polyfill，避免全量引入 babel-polyfill 的體積負擔。
 
 ---
 

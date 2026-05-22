@@ -1,5 +1,5 @@
 ---
-title: "Jest Mock 模塊與函數完整指南"
+title: "Jest Mock 模塊與函數完整指南：落地路徑與實戰建議"
 date: 2019-09-18 16:13:14
 tags:
   - 工程化
@@ -300,7 +300,7 @@ it('應該從 localStorage 讀取 token', () => {
 // src/utils/logger.js
 export function logError(error) {
   console.error('[ERROR]', error);
-  // 上報到監控平台
+  // 上報到監控平臺
 }
 
 export function logInfo(message) {
@@ -312,7 +312,7 @@ export function logInfo(message) {
 // 測試文件中
 import { processData } from '../dataProcessor';
 
-// 部分 mock：只 mock logger，保留其他模塊的真實實現
+// 部分 mock：隻 mock logger，保留其他模塊的真實實現
 jest.mock('../utils/logger', () => ({
   logError: jest.fn(),
   logInfo: jest.fn(),
@@ -422,7 +422,7 @@ beforeEach(() => {
 - `jest.fn()` 創建 mock 函數，支持設置返回值（`mockReturnValue`）、實現（`mockImplementation`）和異步行為（`mockResolvedValue`/`mockRejectedValue`）
 - `jest.mock()` 可以 mock 整個模塊，支持使用 `__mocks__` 目錄定義手動 mock
 - `jest.spyOn()` 追蹤真實函數的調用，也可以替換實現
-- 定時器使用 `jest.useFakeTimers()` + `jest.advanceTimersByTime()` 控制時間
-- localStorage、fetch 等瀏覽器 API 需要在 setup 文件中全局 mock
+- 定時器使用 `jest.useFakeTimers()` + `jest.advanceTimersByTime()` 控製時間
+- localStorage、fetch 等瀏覽器 API 需要在 setup 檔案中全局 mock
 - 始終在測試結束後清理 mock 狀態，避免測試間相互影響
-- 部分 mock 可以只替換模塊中的某些導出，保留其他導出的真實實現
+- 部分 mock 可以隻替換模塊中的某些導出，保留其他導出的真實實現

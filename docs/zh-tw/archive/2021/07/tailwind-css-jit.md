@@ -35,7 +35,7 @@ Tailwind：把樣式寫在 HTML 裡，不需要切換檔案
 
 之前的問題：Tailwind 的 CSS 檔案很大（未使用的類很多），生產要用 PurgeCSS 清理。
 
-JIT：根據原始碼按需生成 CSS，只生成用到的類，任意值也支援。
+JIT：根據原始碼按需生成 CSS，隻生成用到的類，任意值也支援。
 
 ```bash
 # 安裝
@@ -69,7 +69,7 @@ module.exports = {
 ## 任意值（JIT 特有）
 
 ```html
-<!-- 之前：只能用預設的間距值 -->
+<!-- 之前：隻能用預設的間距值 -->
 <div class="mt-4 p-6">...</div>
 
 <!-- JIT：任意值用方括號 -->
@@ -121,7 +121,7 @@ module.exports = {
 
 <!-- ✅ 或者用 safelist -->
 // tailwind.config.js module.exports = { safelist: ['text-red-500',
-'text-blue-500'] // 強制包含 }
+'text-blue-500'] // 強製包含 }
 ```
 
 ## 元件抽象（避免重複）
@@ -185,7 +185,7 @@ const buttonClasses = computed(() => {
 - 學習成本（要記類名）
 - 不適合高度動態的樣式
 
-適合：後臺管理系統、營銷頁、文件站。不適合：需要大量動畫的展示型專案。
+適合：後臺管理系統、營銷頁、檔案站。不適合：需要大量動畫的展示型專案。
 
 ## 小結
 

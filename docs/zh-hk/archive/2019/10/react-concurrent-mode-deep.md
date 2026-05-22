@@ -1,5 +1,5 @@
 ---
-title: "React Concurrent Mode 深入理解"
+title: "React Concurrent Mode 深入理解：落地路徑與實戰建議"
 date: 2019-10-21 10:55:32
 tags:
   - React
@@ -173,7 +173,7 @@ function App() {
 }
 ```
 
-### useTransition 的優先級機制
+### useTransition 的優先級機製
 
 ```
 用户輸入 "react"
@@ -188,7 +188,7 @@ function App() {
 
 ## SuspenseList
 
-`SuspenseList` 控制多個 Suspense 邊界的顯示順序：
+`SuspenseList` 控製多個 Suspense 邊界的顯示順序：
 
 ```jsx
 import React, { Suspense, SuspenseList } from 'react';
@@ -305,7 +305,7 @@ npm install react@experimental react-dom@experimental
 - Concurrent Mode 讓 React 可以中斷渲染，優先處理用户交互
 - `useTransition` 標記低優先級的狀態更新
 - Suspense 統一管理加載狀態，包括數據獲取
-- `SuspenseList` 控制多個異步組件的顯示順序
+- `SuspenseList` 控製多個異步組件的顯示順序
 - 需要使用 `createRoot` API 開啓
 - 目前仍處於實驗階段，API 可能變化
 - 代表了 React 未來的發展方向：聲明式異步 UI

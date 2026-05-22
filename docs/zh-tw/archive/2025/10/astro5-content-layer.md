@@ -1,6 +1,6 @@
 ---
 title: "Astro 5：Content Layer 重新定義內容管理"
-date: 2025-10-28 10:00:00
+date: 2025-10-28 16:22:59
 tags:
   - React
 readingTime: 2
@@ -13,7 +13,7 @@ Astro 5 釋出了，最大的變化是 Content Layer API。對於內容驅動的
 ## Content Layer 是什麼
 
 ```
-之前：Content Collections 只支援本地 Markdown/MDX 檔案
+之前：Content Collections 隻支援本地 Markdown/MDX 檔案
 現在：Content Layer 可以從任何資料來源載入內容
 
 資料來源：
@@ -25,7 +25,7 @@ Astro 5 釋出了，最大的變化是 Content Layer API。對於內容驅動的
   - 自定義資料來源
 ```
 
-## 基礎配置
+## 基礎設定
 
 ```ts
 // src/content.config.ts
@@ -230,7 +230,7 @@ LCP：0.8s
 
 Astro 的島嶼架構：
   - 預設輸出純 HTML
-  - 只有標記為 client:* 的元件才會傳送 JS
+  - 隻有標記為 client:* 的元件才會傳送 JS
   - 內容站幾乎是零 JS
 ```
 

@@ -1,6 +1,6 @@
 ---
-title: "Astro 5 View Transitions"
-date: 2025-12-16 10:00:00
+title: "Astro 5 View Transitions 實踐：真實專案中的頁面過渡最佳化"
+date: 2025-12-16 09:30:07
 tags:
   - React
 readingTime: 2
@@ -93,7 +93,7 @@ function useIntersectionObserver(options = {}) {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能對比
+## 效能對比
 
 實際項目中的用法會更復雜一些：
 

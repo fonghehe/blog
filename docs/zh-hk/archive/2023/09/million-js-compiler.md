@@ -1,5 +1,5 @@
 ---
-title: "Million.js 虛擬 DOM 替代方案"
+title: "Million.js 虛擬 DOM 替代方案：特性解讀與遷移建議"
 date: 2023-09-06 10:05:28
 tags:
   - 前端
@@ -97,7 +97,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能優化
+## 效能優化
 
 關鍵在於理解核心邏輯：
 
@@ -118,7 +118,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 常見陷阱
 

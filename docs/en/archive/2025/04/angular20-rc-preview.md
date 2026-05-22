@@ -1,6 +1,6 @@
 ---
 title: "Angular 20 RC Preview: Stable Zoneless, Signal Forms, and New Router API"
-date: 2025-04-11 10:00:00
+date: 2025-04-11 16:05:42
 tags:
   - Angular
   - CSS

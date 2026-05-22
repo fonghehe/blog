@@ -1,5 +1,5 @@
 ---
-title: "Vue 3 `<script setup>` RFC 解讀"
+title: "Vue 3 `<script setup>` RFC 解讀：落地路徑與實戰建議"
 date: 2021-01-18 17:44:03
 tags:
   - Vue
@@ -63,7 +63,7 @@ function increment() {
   emit('update:count', props.count + 1)
 }
 
-// 不需要 return！頂層綁定自動暴露給模板
+// 不需要 return！頂層綁定自動暴露給範本
 </script>
 ```
 
@@ -71,7 +71,7 @@ function increment() {
 
 **1. 頂層綁定自動暴露**
 
-`<script setup>` 中的頂層 `import`、`ref`、`computed`、函數聲明都會自動暴露給模板，不需要手動 `return`：
+`<script setup>` 中的頂層 `import`、`ref`、`computed`、函數聲明都會自動暴露給範本，不需要手動 `return`：
 
 ```vue
 <script setup>
@@ -130,7 +130,7 @@ const props = defineProps({
   }
 })
 
-// TypeScript 類型聲明（需要開啓類型支持）
+// TypeScript 類型聲明（需要開啓類型支援）
 // const props = defineProps<{
 //   msg: string
 //   items?: string[]
@@ -164,7 +164,7 @@ function reset() {
   count.value = 0
 }
 
-// 只暴露 reset 和 count，不暴露 internalState
+// 隻暴露 reset 和 count，不暴露 internalState
 defineExpose({ reset, count })
 </script>
 ```

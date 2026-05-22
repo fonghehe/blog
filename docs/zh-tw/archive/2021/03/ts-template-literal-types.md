@@ -1,10 +1,10 @@
 ---
-title: "TypeScript 模板字面量型別"
+title: "TypeScript 範本字面量型別"
 date: 2021-03-25 14:31:30
 tags:
   - TypeScript
 readingTime: 2
-description: "在日常開發中，TypeScript 模板字面量型別的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
+description: "在日常開發中，TypeScript 範本字面量型別的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
 wordCount: 302
 ---
 
@@ -141,5 +141,5 @@ class TypedEmitter<T extends Record<string, any>> {
 - 關注社群動態，技術方案需要持續迭代
 - 不要為了用新技術而用新技術
 - 程式碼示例僅供參考，需根據業務場景調整
-- TypeScript 模板字面量型別不是銀彈，需要根據專案規模和技術棧選擇
+- TypeScript 範本字面量型別不是銀彈，需要根據專案規模和技術棧選擇
 - 理解底層原理比記住 API 更重要

@@ -1,5 +1,5 @@
 ---
-title: "View Transitions CSS 頁面轉場"
+title: "View Transitions CSS 頁面轉場：落地路徑與實戰建議"
 date: 2023-03-24 10:22:43
 tags:
   - CSS

@@ -1,10 +1,10 @@
 ---
-title: "React 性能優化新範式"
+title: "React 效能優化新範式：實踐方法與治理思路"
 date: 2023-12-13 16:06:54
 tags:
   - React
 readingTime: 2
-description: "React 性能優化新範式在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
+description: "React 效能優化新範式在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
 wordCount: 278
 ---
 
@@ -94,7 +94,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能優化
+## 效能優化
 
 以下是一個完整的示例：
 
@@ -126,4 +126,4 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 - 不要為了用新技術而用新技術
 - 代碼示例僅供參考，需根據業務場景調整
-- React 性能優化新範式不是銀彈，需要根據項目規模和技術棧選擇
+- React 效能優化新範式不是銀彈，需要根據項目規模和技術棧選擇

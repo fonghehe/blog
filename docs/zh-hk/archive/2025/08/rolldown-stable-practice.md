@@ -1,6 +1,6 @@
 ---
-title: "Rolldown 穩定版實戰"
-date: 2025-08-21 10:00:00
+title: "Rolldown 稳定版釋出：Rollup 相容的 Rust 打包新纪元"
+date: 2025-08-21 19:55:32
 tags:
   - 前端
 readingTime: 2
@@ -63,7 +63,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

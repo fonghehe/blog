@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 4.1 4.2 新特性彙總"
+title: "TypeScript 4.1 4.2 新特性彙總：特性解讀與遷移建議"
 date: 2021-03-23 09:48:28
 tags:
   - TypeScript
@@ -108,7 +108,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能優化
+## 效能優化
 
 關鍵在於理解核心邏輯：
 
@@ -134,7 +134,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 常見陷阱
 

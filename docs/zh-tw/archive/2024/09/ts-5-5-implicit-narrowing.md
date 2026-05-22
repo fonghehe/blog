@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 5.5 隱式型別收窄"
-date: 2024-09-17 10:00:00
+title: "TypeScript 5.5 隱式型別收窄：控製流分析的又一次進化"
+date: 2024-09-17 14:51:28
 tags:
   - TypeScript
 readingTime: 2

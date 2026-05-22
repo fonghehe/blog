@@ -1,5 +1,5 @@
 ---
-title: "Promise 鏈與錯誤處理的正確姿勢"
+title: "Promise 鏈與錯誤處理的正確姿勢：落地路徑與實戰建議"
 date: 2018-02-24 10:00:11
 tags:
   - JavaScript
@@ -83,10 +83,10 @@ fetchUser().catch((error) => {
 ## then 的第二個參數 vs catch
 
 ```javascript
-// 方式一：then 的第二個參數（只捕獲 fetchUser 的錯誤）
+// 方式一：then 的第二個參數（隻捕獲 fetchUser 的錯誤）
 fetchUser().then(
   (user) => processUser(user),
-  (error) => handleFetchError(error), // 只處理 fetchUser 的錯誤
+  (error) => handleFetchError(error), // 隻處理 fetchUser 的錯誤
 );
 
 // 方式二：獨立 catch（捕獲整個鏈的錯誤）
@@ -149,7 +149,7 @@ async function loadUserPage(userId) {
   try {
     user = await fetchUser(userId);
   } catch (error) {
-    // 只處理 fetchUser 的錯誤
+    // 隻處理 fetchUser 的錯誤
     redirectToLogin();
     return;
   }
@@ -196,7 +196,7 @@ Node.js 和瀏覽器都會在未處理的 Promise rejection 時給出警告：
 // 瀏覽器
 window.addEventListener("unhandledrejection", (event) => {
   console.error("未處理的 Promise 錯誤:", event.reason);
-  event.preventDefault(); // 阻止控制台輸出（可選）
+  event.preventDefault(); // 阻止控製臺輸出（可選）
 });
 
 // Node.js

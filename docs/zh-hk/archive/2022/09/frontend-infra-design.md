@@ -39,7 +39,7 @@ wordCount: 179
     └── 部署腳本
 ```
 
-## ESLint 共享配置
+## ESLint 共享設定
 
 ```bash
 packages/
@@ -126,7 +126,7 @@ module.exports = {
 }
 ```
 
-## Vite 預設配置
+## Vite 預設設定
 
 ```typescript
 // packages/vite-config/index.ts
@@ -230,7 +230,7 @@ async function main() {
 main();
 ```
 
-## CI/CD 模板
+## CI/CD 範本
 
 ```yaml
 # templates/.github/workflows/ci.yml
@@ -285,7 +285,7 @@ function createViteConfig(overrides?: Partial<UserConfig>) {
 }
 
 // 2. 漸進式採用
-// 不強制所有項目遷移，新項目用新配置
+// 不強製所有項目遷移，新項目用新設定
 // 老項目在下次大版本升級時遷移
 
 // 3. 版本鎖定策略

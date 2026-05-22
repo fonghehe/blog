@@ -1,6 +1,6 @@
 ---
-title: "Svelte 5 發佈詳解"
-date: 2024-09-23 10:00:00
+title: "Svelte 5 釋出詳解：Runes 帶來的響應式范式轉换"
+date: 2024-09-23 17:57:34
 tags:
   - Svelte
 readingTime: 2
@@ -63,7 +63,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

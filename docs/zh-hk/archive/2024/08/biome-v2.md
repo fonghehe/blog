@@ -1,6 +1,6 @@
 ---
-title: "Biome v2 前端工具鏈新版本"
-date: 2024-08-08 10:00:00
+title: "Biome v2 前端工具鏈新版本：實踐方法與治理思路"
+date: 2024-08-08 10:02:39
 tags:
   - 前端
 readingTime: 2
@@ -37,7 +37,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 進階用法
 
@@ -97,7 +97,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 這段代碼展示了基本的使用方式。實際項目中還需要考慮錯誤處理和邊界條件。
 
-## 性能優化
+## 效能優化
 
 在這個基礎上，我們可以進一步優化：
 

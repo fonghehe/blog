@@ -1,6 +1,6 @@
 ---
-title: "Bun 2.0 新特性深入"
-date: 2025-11-17 10:00:00
+title: "Bun 2.0 生态现状：npm 包兼容性实测与选型建议"
+date: 2025-11-17 10:51:28
 tags:
   - 前端
 readingTime: 2

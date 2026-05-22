@@ -1,15 +1,15 @@
 ---
 title: "CSS View Transitions API：無縫頁面過渡"
-date: 2024-07-20 10:00:00
+date: 2024-07-20 11:34:11
 tags:
   - CSS
   - JavaScript
 readingTime: 2
-description: "View Transitions API 是 Chrome 111 開始支持的新特性，不需要任何 JS 框架就能實現流暢的頁面過渡動畫。"
+description: "View Transitions API 是 Chrome 111 開始支援的新特性，不需要任何 JS 框架就能實現流暢的頁面過渡動畫。"
 wordCount: 231
 ---
 
-View Transitions API 是 Chrome 111 開始支持的新特性，不需要任何 JS 框架就能實現流暢的頁面過渡動畫。
+View Transitions API 是 Chrome 111 開始支援的新特性，不需要任何 JS 框架就能實現流暢的頁面過渡動畫。
 
 ## 最簡單的例子
 
@@ -148,7 +148,7 @@ router.beforeEach(() => {
 });
 ```
 
-## Astro 的內置支持
+## Astro 的內置支援
 
 ```astro
 ---
@@ -169,7 +169,7 @@ import { ViewTransitions } from 'astro:transitions'
 
 Astro 封裝得最好用，MPA 也能有流暢的頁面過渡。
 
-## 瀏覽器支持
+## 瀏覽器支援
 
 ```
 Chrome 111+：✅ 完整支持
@@ -190,5 +190,5 @@ if (document.startViewTransition) {
 - View Transitions API 不需要任何框架，幾行 CSS/JS 就能實現專業動畫
 - Shared Element Transitions 讓頁面間的元素"飛"過去
 - React/Vue/Astro 都有封裝，實際項目容易接入
-- 當前 Firefox 還不支持，需要降級處理
+- 當前 Firefox 還不支援，需要降級處理
 - 2024 年值得加入生產項目，漸進增強

@@ -1,6 +1,6 @@
 ---
-title: "Astro 5 ビュートランジション"
-date: 2025-09-15 10:00:00
+title: "Astro 5 View Transitions：MPA 架构下的 SPA 级过渡体验"
+date: 2025-09-15 10:29:06
 tags:
   - React
 readingTime: 3

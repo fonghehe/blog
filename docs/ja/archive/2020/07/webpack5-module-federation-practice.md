@@ -4,16 +4,16 @@ date: 2020-07-13 10:23:25
 tags:
   - Webpack
   - エンジニアリング
-readingTime: 4
-description: "Webpack 5 还在 beta 阶段，但 Module Federation 这个特性已经让团队非常兴奋了。简单说，它允许独立构建的应用之间在运行时共享模块——这解决的是微前端场景中最头疼的问题：跨应用共享组件和依赖。"
-wordCount: 556
+readingTime: 5
+description: "Webpack 5 はまだベータ版ですが、Module Federation という機能にはチームがすでに非常に興奮しています。簡単に言えば、独立して構築されたアプリケーション間で実行時にモジュールを共有できるようになります。これにより、マイクロフロントエンドのシナリオで最も厄介な問題である、アプリケーション間でのコンポーネントと依存関係の共有が解決されます。"
+wordCount: 971
 ---
 
-Webpack 5 还在 beta 阶段，但 Module Federation 这个特性已经让团队非常兴奋了。简单说，它允许独立构建的应用之间在运行时共享模块——这解决的是微前端场景中最头疼的问题：跨应用共享组件和依赖。
+Webpack 5 はまだベータ版ですが、Module Federation という機能はチームを非常に興奮させています。簡単に言うと、独立して構築されたアプリケーション間で実行時にモジュールを共有できるようになります。これにより、マイクロフロントエンドのシナリオで最も厄介な問題である、アプリケーション間でのコンポーネントと依存関係の共有が解決されます。
 
 ## 従来の手法の課題
 
-之前做微前端，如果多个应用都要用同一个公共组件库，要么每个应用都打包一份（体积爆炸），要么用 externals + CDN（版本管理困难）。Module Federation 从根本上解决了这个问题。
+以前マイクロフロントエンドを構築する際、複数のアプリケーションが同じ共通コンポーネントライブラリを使用する場合、各アプリケーションがそれぞれバンドルするか（サイズが爆発的に増加）、externals + CDN を使用するか（バージョン管理が困難）の選択肢しかありませんでした。Module Federation はこの問題を根本的に解決します。
 
 ## コアコンセプト
 
@@ -38,7 +38,7 @@ module.exports = {
     port: 3001,
     hot: true,
     headers: {
-      'Access-Control-Allow-Origin': '*' // 允许跨域访问
+      'Access-Control-Allow-Origin': '*' // クロスドメインアクセスを許可
     }
   },
   output: {
@@ -50,7 +50,7 @@ module.exports = {
       name: 'product_components',
       filename: 'remoteEntry.js',
       exposes: {
-        // 暴露的模块路径: 源文件路径
+        // 公開するモジュールパス: ソースファイルパス
         './ProductCard': './src/components/ProductCard',
         './PriceTag': './src/components/PriceTag',
         './ProductGallery': './src/components/ProductGallery',
@@ -58,7 +58,7 @@ module.exports = {
       },
       shared: {
         vue: {
-          singleton: true, // 只加载一个实例
+          singleton: true, // インスタンスを1つだけ読み込む
           requiredVersion: '^3.0.0',
           eager: true
         },
@@ -191,7 +191,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'shell',
       remotes: {
-        // 声明远程模块的名称和入口地址
+        // リモートモジュールの名前とエントリURLを宣言
         product_components: 'product_components@http://localhost:3001/remoteEntry.js',
         user_center: 'user_center@http://localhost:3002/remoteEntry.js'
       },
@@ -223,7 +223,7 @@ module.exports = {
 import { defineComponent, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
-// 动态导入远程模块
+// リモートモジュールを動的インポート
 const ProductCard = () => import('product_components/ProductCard')
 const ProductGallery = () => import('product_components/ProductGallery')
 const { useProduct } = await import('product_components/useProduct')
@@ -252,7 +252,7 @@ export default defineComponent({
 
 ### 4. TypeScript 类型声明
 
-远程模块没有本地类型，需要手动声明：
+リモートモジュールにはローカル型定義がありません。手動で宣言する必要があります。
 
 ```typescript
 // shell/src/types/remote-modules.d.ts
@@ -293,7 +293,7 @@ declare module 'user_center/FavoriteButton' {
 
 ## shared 設定のポイント
 
-`shared` 是 Module Federation 最关键的配置之一。如果配不好，要么依赖重复加载，要么出现 Vue 多实例导致响应式系统混乱：
+`shared` は Module Federation の最も重要な設定の1つです。適切に設定しないと、依存関係の重複読み込みや、Vue の複数インスタンスによるリアクティブシステムの混乱が発生する可能性があります。
 
 ```javascript
 shared: {
@@ -306,9 +306,9 @@ shared: {
 }
 ```
 
-- `singleton: true` —— 对 Vue/React 这类有全局状态的库必须开启
-- `eager: true` —— 如果你的入口是同步的且需要立即使用共享库，开启它避免加载顺序问题
-- `strictVersion` —— 生产环境建议开启，开发环境关闭方便调试
+- `singleton: true` —— Vue/React のようなグローバル状態を持つライブラリでは必須です
+- `eager: true` —— エントリが同期的で共有ライブラリを即座に使用する必要がある場合、読み込み順序の問題を避けるために有効にします
+- `strictVersion` —— 本番環境では有効化を推奨、開発環境では無効にしてデバッグを容易にします
 
 ## ランタイム読み込みフロー
 
@@ -320,13 +320,13 @@ shared: {
   -> 按需加载远程模块
 ```
 
-第一次访问会有一定延迟（需要加载 remoteEntry.js 和共享依赖），后续切换页面时远程模块已被缓存，体验很好。
+最初のアクセス時には遅延が発生しますが（remoteEntry.js と共有依存関係の読み込みが必要）、その後のページ遷移ではリモートモジュールがキャッシュされているため、快適な体験が得られます。
 
 ## まとめ
 
-- Module Federation 允许独立构建的应用在运行时共享模块，是微前端的利器
-- Host 消费模块，Remote 提供模块，Shared 管理共享依赖
-- 共享依赖建议开启 `singleton` 避免框架多实例
-- 远程模块的 TypeScript 类型需要手动声明
-- Webpack 5 目前还是 beta，生产使用需要评估稳定性
-- 相比 iframe、qiankun 等方案，Module Federation 粒度更细、性能更好
+- Module Federation は独立して構築されたアプリケーションが実行時にモジュールを共有できるようにする、マイクロフロントエンドの強力なツールです
+- Host はモジュールを消費し、Remote はモジュールを提供し、Shared は共有依存関係を管理します
+- 共有依存関係ではフレームワークの複数インスタンスを避けるため `singleton` の有効化を推奨します
+- リモートモジュールの TypeScript 型定義は手動で宣言する必要があります
+- Webpack 5 は現在ベータ版のため、本番利用には安定性の評価が必要です
+- iframe や qiankun などの方式と比較して、Module Federation はより細かい粒度と優れたパフォーマンスを提供します

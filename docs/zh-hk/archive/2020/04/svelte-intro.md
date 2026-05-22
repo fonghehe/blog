@@ -145,7 +145,7 @@ function increment() {
 - 獨立小組件/Widget 嵌入非 SPA 頁面
 - 快速原型開發（語法簡潔，上手快）
 
-不太適合：超大型團隊項目（TypeScript 支持相比 Angular 較弱）、需要豐富生態（Angular Material、Ant Design 這類成熟 UI 庫目前 Svelte 版本較少）。
+不太適合：超大型團隊項目（TypeScript 支援相比 Angular 較弱）、需要豐富生態（Angular Material、Ant Design 這類成熟 UI 庫目前 Svelte 版本較少）。
 
 ## 總結
 

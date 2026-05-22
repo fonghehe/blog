@@ -1,10 +1,10 @@
 ---
-title: "Deno 2.0 Node 兼容"
-date: 2024-12-19 10:00:00
+title: "Deno 2.0 Node 相容 2024 年末：生態現状與生產評估"
+date: 2024-12-19 19:53:30
 tags:
   - 前端
 readingTime: 2
-description: "在日常開發中，Deno 2.0 Node 兼容的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+description: "在日常開發中，Deno 2.0 Node 相容的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
 wordCount: 260
 ---
 
@@ -94,7 +94,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能對比
+## 效能對比
 
 以下是一個完整的示例：
 

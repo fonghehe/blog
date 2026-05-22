@@ -1,5 +1,5 @@
 ---
-title: "Flutter vs React Native 2021 對比"
+title: "Flutter vs React Native 2021 對比：落地路徑與實戰建議"
 date: 2021-09-01 09:31:27
 tags:
   - React
@@ -69,7 +69,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

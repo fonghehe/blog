@@ -1,5 +1,5 @@
 ---
-title: "JavaScript Symbol 使用場景"
+title: "JavaScript Symbol 使用場景：落地路徑與實戰建議"
 date: 2018-08-28 15:30:12
 tags:
   - JavaScript
@@ -57,7 +57,7 @@ const STATUS = {
 
 let state = STATUS.PENDING;
 if (state === STATUS.PENDING) {
-  /* 只有真正的 PENDING 才匹配 */
+  /* 隻有真正的 PENDING 才匹配 */
 }
 ```
 

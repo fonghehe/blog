@@ -4,15 +4,15 @@ date: 2023-01-11 16:06:36
 tags:
   - 前端
 readingTime: 3
-description: "Server Actions 不只是替代 API 路由的語法糖，它改變了資料流的組織方式。在實際專案中，我們需要一套成熟的設計模式來管理校驗、錯誤處理、許可權控制和狀態同步。這篇文章總結了我在生產環境中驗證過的幾種模式。"
+description: "Server Actions 不隻是替代 API 路由的語法糖，它改變了資料流的組織方式。在實際專案中，我們需要一套成熟的設計模式來管理校驗、錯誤處理、許可權控製和狀態同步。這篇文章總結了我在生產環境中驗證過的幾種模式。"
 wordCount: 438
 ---
 
-Server Actions 不只是替代 API 路由的語法糖，它改變了資料流的組織方式。在實際專案中，我們需要一套成熟的設計模式來管理校驗、錯誤處理、許可權控制和狀態同步。這篇文章總結了我在生產環境中驗證過的幾種模式。
+Server Actions 不隻是替代 API 路由的語法糖，它改變了資料流的組織方式。在實際專案中，我們需要一套成熟的設計模式來管理校驗、錯誤處理、許可權控製和狀態同步。這篇文章總結了我在生產環境中驗證過的幾種模式。
 
 ## 模式一：Command 模式封裝業務邏輯
 
-將 Server Action 按業務領域組織，每個 action 只做一件事。這比把所有 action 塞進一個 `actions.ts` 檔案更可維護。
+將 Server Action 按業務領域組織，每個 action 隻做一件事。這比把所有 action 塞進一個 `actions.ts` 檔案更可維護。
 
 ```tsx
 // actions/post.ts
@@ -236,4 +236,4 @@ export function BookmarkToggle({ postId, initial }: {
 - 封裝 `useAction` hook 減少樣板程式碼，統一 loading/error 處理
 - Server Action 內可以直接用資料庫事務處理批次操作，前端不需要發多次請求
 - 樂觀更新適合低風險操作，`useOptimistic` 框架級支援比手動實現更可靠
-- 每個 action 都要鑑權，不要依賴 middleware 做許可權控制
+- 每個 action 都要鑑權，不要依賴 middleware 做許可權控製

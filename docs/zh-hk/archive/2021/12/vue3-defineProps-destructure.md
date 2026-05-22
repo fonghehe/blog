@@ -1,5 +1,5 @@
 ---
-title: "Vue 3.2 defineProps 解構"
+title: "Vue 3.2 defineProps 解構：落地路徑與實戰建議"
 date: 2021-12-20 11:47:05
 tags:
   - Vue
@@ -98,7 +98,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 性能優化
+## 效能優化
 
 關鍵在於理解核心邏輯：
 
@@ -125,7 +125,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 常見陷阱
 

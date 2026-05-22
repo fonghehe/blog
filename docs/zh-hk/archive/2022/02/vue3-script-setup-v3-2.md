@@ -1,5 +1,5 @@
 ---
-title: "Vue 3.2 script-setup 實踐"
+title: "Vue 3.2 script-setup 實踐：落地路徑與實戰建議"
 date: 2022-02-02 14:50:02
 tags:
   - Vue

@@ -34,7 +34,7 @@ HMR 響應                2-5s         1-3s         <50ms
 配置檔案行數            200+         180+         30-50
 外掛生態                最豐富        最豐富       相容 Rollup
 TypeScript 支援         需要 loader   需要 loader  原生（esbuild）
-CSS Modules             需要配置     需要配置     開箱即用
+CSS Modules             需要設定     需要設定     開箱即用
 Tree Shaking            支援         更好         基於 Rollup
 ```
 

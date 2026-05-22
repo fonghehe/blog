@@ -141,12 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
 />
 ```
 
-## CDN 與快取控制
+## CDN 與快取控製
 
 圖片上傳到 CDN，配置合理的快取策略：
 
 ```nginx
-# Nginx 配置：靜態資源強快取
+# Nginx 設定：靜態資源強快取
 location ~* \.(jpg|jpeg|png|gif|webp|svg)$ {
   expires 30d;
   add_header Cache-Control "public, immutable";

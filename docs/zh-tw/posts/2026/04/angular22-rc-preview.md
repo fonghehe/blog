@@ -1,11 +1,11 @@
 ---
 title: "Angular 22 RC 預覽：全新編譯器與增強 Zoneless 架構"
-date: 2026-04-24 10:00:00
+date: 2026-04-24 14:58:35
 tags:
   - Angular
   - CSS
 readingTime: 3
-description: "Angular 22 Release Candidate 於 2026 年 4 月底釋出，按慣例正式版將在約三週後的 5 月中旬到來。這是繼 Angular 17 引入新模板語法以來最具影響力的版本——全新的 Ivy 第二代編譯器（內部代號 \"Evergreen\"）將大幅縮短構建時間，併為 Signal 模型提供更深層"
+description: "Angular 22 Release Candidate 於 2026 年 4 月底釋出，按慣例正式版將在約三週後的 5 月中旬到來。這是繼 Angular 17 引入新範本語法以來最具影響力的版本——全新的 Ivy 第二代編譯器（內部代號 \"Evergreen\"）將大幅縮短構建時間，併為 Signal 模型提供更深層"
 wordCount: 643
 ---
 
@@ -15,7 +15,7 @@ Angular 22 Release Candidate 於 2026 年 4 月底釋出，按慣例正式版將
 
 Angular 22 的核心是重寫的編譯器。相較於 Ivy，Evergreen 在增量編譯場景下速度提升顯著：
 
-| 專案規模            | Ivy 冷啟動 | Evergreen 冷啟動 | Ivy 熱過載 | Evergreen 熱過載 |
+| 專案規模            | Ivy 冷啟動 | Evergreen 冷啟動 | Ivy 熱重載 | Evergreen 熱重載 |
 | ------------------- | ---------- | ---------------- | ---------- | ---------------- |
 | 小型（< 50 元件）   | 3.2s       | 1.8s             | 280ms      | 120ms            |
 | 中型（50-200 元件） | 12s        | 5.5s             | 650ms      | 210ms            |

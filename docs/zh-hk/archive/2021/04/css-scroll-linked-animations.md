@@ -1,5 +1,5 @@
 ---
-title: "CSS 滾動驅動動畫 Scroll Animations"
+title: "CSS 滾動驅動動畫 Scroll Animations：落地路徑與實戰建議"
 date: 2021-04-21 17:22:10
 tags:
   - CSS
@@ -35,7 +35,7 @@ wordCount: 297
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 深度解析
 

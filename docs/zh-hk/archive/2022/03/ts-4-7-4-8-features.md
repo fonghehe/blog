@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 4.7 4.8 新特性"
+title: "TypeScript 4.7 4.8 新特性：特性解讀與遷移建議"
 date: 2022-03-07 15:28:59
 tags:
   - TypeScript
@@ -36,7 +36,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 內部原理
 
@@ -101,7 +101,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 這段代碼展示了基本的使用方式。實際項目中還需要考慮錯誤處理和邊界條件。
 
-## 性能對比
+## 效能對比
 
 在這個基礎上，我們可以進一步優化：
 

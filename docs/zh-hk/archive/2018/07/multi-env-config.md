@@ -1,10 +1,10 @@
 ---
-title: "前端工程化：多環境配置管理"
+title: "前端工程化：多環境設定管理"
 date: 2018-07-17 15:05:37
 tags:
   - 前端
 readingTime: 2
-description: "項目通常有 development、staging、production 三個環境，各有不同的 API 地址、Feature Flag 等配置。這篇文章整理多環境配置的最佳實踐。"
+description: "項目通常有 development、staging、production 三個環境，各有不同的 API 地址、Feature Flag 等設定。這篇文章整理多環境設定的最佳實踐。"
 wordCount: 291
 ---
 
@@ -63,7 +63,7 @@ const isDebug = process.env.VUE_APP_DEBUG === "true";
 }
 ```
 
-## 多環境的配置結構
+## 多環境的設定結構
 
 ```javascript
 // src/config/index.js
@@ -117,18 +117,18 @@ if (config.features.debugPanel) {
 **永遠不要把密鑰放在客户端代碼裏：**
 
 ```bash
-# ❌ 不要這樣做，即使在 .env 文件裏
+# ❌ 不要這樣做，即使在 .env 檔案裏
 VUE_APP_STRIPE_SECRET_KEY=sk_live_xxxxx  # 會被打包進 JS！
 VUE_APP_DB_PASSWORD=xxxxx
 
-# ✅ 只放公開配置
+# ✅ 隻放公開設定
 VUE_APP_STRIPE_PUBLIC_KEY=pk_live_xxxxx  # publishable key 是可以公開的
 VUE_APP_API_BASE=https://api.example.com
 ```
 
-私密信息（API secret、數據庫密碼）只放在**服務端**的環境變量裏。
+私密信息（API secret、數據庫密碼）隻放在**服務端**的環境變量裏。
 
-## .env 文件的 Git 管理
+## .env 檔案的 Git 管理
 
 ```ini
 # .gitignore
@@ -142,7 +142,7 @@ VUE_APP_API_BASE=https://api.example.com
 # .env.production
 ```
 
-提供示例文件，讓新同學知道需要哪些變量：
+提供示例檔案，讓新同學知道需要哪些變量：
 
 ```bash
 # .env.example（提交到 git）
@@ -151,9 +151,9 @@ VUE_APP_ENV=development
 VUE_APP_SENTRY_DSN=        # 可選：Sentry DSN
 ```
 
-## 構建時配置差異
+## 構建時設定差異
 
-有些配置只在特定環境的構建裏需要：
+有些設定隻在特定環境的構建裏需要：
 
 ```javascript
 // vue.config.js
@@ -187,7 +187,7 @@ module.exports = {
 
 ## CI/CD 裏的環境變量
 
-在 CI/CD 平台（GitLab CI、Jenkins）裏配置敏感變量：
+在 CI/CD 平臺（GitLab CI、Jenkins）裏設定敏感變量：
 
 ```yaml
 # .gitlab-ci.yml
@@ -197,7 +197,7 @@ build_staging:
     - npm ci
     - npm run build:staging
   variables:
-    VUE_APP_SENTRY_DSN: $STAGING_SENTRY_DSN # 引用 CI 平台上的 Secret
+    VUE_APP_SENTRY_DSN: $STAGING_SENTRY_DSN # 引用 CI 平臺上的 Secret
   environment:
     name: staging
 ```
@@ -208,4 +208,4 @@ build_staging:
 - `VUE_APP_` 前綴才會注入客户端
 - 敏感信息（密鑰、密碼）絕對不能出現在客户端 bundle
 - 提供 `.env.example` 供團隊成員參考
-- CI/CD 平台管理生產環境的敏感變量
+- CI/CD 平臺管理生產環境的敏感變量

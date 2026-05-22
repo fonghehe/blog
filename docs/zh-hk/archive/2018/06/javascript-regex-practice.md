@@ -1,5 +1,5 @@
 ---
-title: "JavaScript 正則表達式實踐"
+title: "JavaScript 正則表達式實踐：落地路徑與實戰建議"
 date: 2018-06-16 10:11:40
 tags:
   - JavaScript
@@ -19,7 +19,7 @@ const re2 = new RegExp('pattern', 'flags')  // 動態創建時用
 
 // 常用修飾符
 // i：忽略大小寫
-// g：全局匹配（不加 g 只找第一個）
+// g：全局匹配（不加 g 隻找第一個）
 // m：多行模式（^ $ 匹配行首行尾）
 // s：. 匹配換行符（ES2018）
 ```

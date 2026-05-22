@@ -12,7 +12,7 @@ Astro 3.0 釋出了。從 2.0 的"有趣概念"到 3.0 的"可以認真用在生
 
 ## 核心理念：預設零 JS
 
-Astro 的元件預設在構建時渲染成靜態 HTML，不傳送任何 JavaScript。只有顯式標記的互動元件（"島嶼"）才會載入 JS。
+Astro 的元件預設在構建時渲染成靜態 HTML，不傳送任何 JavaScript。隻有顯式標記的互動元件（"島嶼"）才會載入 JS。
 
 ```astro
 ---
@@ -33,12 +33,12 @@ const posts = await getPosts();
     <PostCard post={post} />
   ))}
 
-  <!-- 互動島嶼：只加載這個元件的 JS -->
+  <!-- 互動島嶼：隻加載這個元件的 JS -->
   <LikeButton client:visible postId={posts[0].id} />
 </Layout>
 ```
 
-`PostCard` 是 Astro 元件，構建時渲染成 HTML。`LikeButton` 是 React 元件，標了 `client:visible`，只有進入視口才載入。
+`PostCard` 是 Astro 元件，構建時渲染成 HTML。`LikeButton` 是 React 元件，標了 `client:visible`，隻有進入視口才載入。
 
 ## 島嶼指令
 
@@ -52,10 +52,10 @@ const posts = await getPosts();
 <!-- 空閒時 hydrate（低優先順序） -->
 <Analytics client:idle />
 
-<!-- 只在特定媒體查詢時 hydrate -->
+<!-- 隻在特定媒體查詢時 hydrate -->
 <Sidebar client:media="(min-width: 768px)" />
 
-<!-- 手動控制 -->
+<!-- 手動控製 -->
 <ExpensiveChart client:only="react" />
 ```
 
@@ -160,7 +160,7 @@ Astro 3.0:
   效能評分: 99
 ```
 
-JS 體積差距巨大，因為 Astro 只加載必要的島嶼 JS。
+JS 體積差距巨大，因為 Astro 隻加載必要的島嶼 JS。
 
 ## 適合的場景
 

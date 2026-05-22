@@ -1,6 +1,6 @@
 ---
-title: "Svelte 6 新一代編譯框架"
-date: 2025-04-10 10:00:00
+title: "Svelte 6 新一代編譯框架：落地路徑與實戰建議"
+date: 2025-04-10 10:04:41
 tags:
   - Svelte
 readingTime: 2
@@ -118,7 +118,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 注意事項
 

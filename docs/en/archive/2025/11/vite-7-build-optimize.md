@@ -1,6 +1,6 @@
 ---
-title: "Vite 7 Build Optimization"
-date: 2025-11-24 10:00:00
+title: "Vite 7 Build Optimization: 大型Project打包速度 & 体积实测对比"
+date: 2025-11-24 19:58:35
 tags:
   - Engineering
   - Performance Optimization

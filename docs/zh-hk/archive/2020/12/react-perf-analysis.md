@@ -1,10 +1,10 @@
 ---
-title: "React 組件性能分析實戰"
+title: "React 組件效能分析實戰：實踐方法與治理思路"
 date: 2020-12-28 10:48:04
 tags:
   - React
 readingTime: 2
-description: "React 組件性能分析實戰在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
+description: "React 組件效能分析實戰在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
 wordCount: 304
 ---
 
@@ -43,7 +43,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 源碼分析
 
@@ -134,7 +134,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ## 小結
 
-- React 組件性能分析實戰不是銀彈，需要根據項目規模和技術棧選擇
+- React 組件效能分析實戰不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要
 - 生產環境使用前務必做好兼容性驗證
 - 團隊協作中約定和文檔比技術本身更重要

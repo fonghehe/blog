@@ -4,12 +4,12 @@ date: 2022-09-23 09:48:47
 tags:
   - Web Components
   - TypeScript
-readingTime: 2
-description: "Lit Web Components 开发实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 448
+readingTime: 3
+description: "Lit Web Components の開発実践についてはコミュニティで何度も議論されてきましたが、バージョンの反復に伴い、多くの結論を更新する必要があります。本記事は最新バージョンに基づいて再整理します。"
+wordCount: 513
 ---
 
-Lit Web Components 开发实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+Lit Web Componentsの開発実践についてはコミュニティで多くの議論が交わされてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。本記事では最新バージョンに基づいて再整理します。
 
 ## 入門ガイド
 
@@ -53,7 +53,7 @@ async function fetchUser(id: string) {
 
 type User = UnwrapPromise<ReturnType<typeof fetchUser>>
 
-// 类型安全的事件系统
+// 型安全なイベントシステム
 interface EventMap {
   login: { userId: string; timestamp: number }
   logout: { userId: string }
@@ -100,7 +100,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使用方法を示しています。実際のプロジェクトでは、エラーハンドリングや境界条件も考慮する必要があります。
 
 ## 最適化テクニック
 
@@ -116,7 +116,7 @@ async function fetchUser(id: string) {
 
 type User = UnwrapPromise<ReturnType<typeof fetchUser>>
 
-// 类型安全的事件系统
+// 型安全なイベントシステム
 interface EventMap {
   login: { userId: string; timestamp: number }
   logout: { userId: string }

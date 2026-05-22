@@ -1,6 +1,6 @@
 ---
-title: "Playwright 2025 新功能"
-date: 2025-12-24 10:00:00
+title: "Playwright 2025 實踐：大型專案的端到端测試策略升级"
+date: 2025-12-24 13:38:15
 tags:
   - 測試
 readingTime: 2
@@ -63,7 +63,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 落地經驗
 

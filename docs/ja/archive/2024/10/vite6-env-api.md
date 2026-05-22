@@ -1,6 +1,6 @@
 ---
-title: "Vite 6 Environment API 実践"
-date: 2024-10-03 10:00:00
+title: "Vite 6 Environment API：统一开发与构建环境的新范式"
+date: 2024-10-03 15:17:54
 tags:
   - JavaScript
   - エンジニアリング

@@ -24,12 +24,12 @@ SWC（Next.js 12）:    初始編譯 ~5s，  HMR ~50ms
 提升約 5-7 倍
 ```
 
-對使用者來說是無感的升級——配置檔案不需要改，但開發體驗肉眼變好了。而且 SWC 還承擔了程式碼壓縮的工作，替代了 Terser：
+對使用者來說是無感的升級——設定檔案不需要改，但開發體驗肉眼變好了。而且 SWC 還承擔了程式碼壓縮的工作，替代了 Terser：
 
 ```javascript
-// next.config.js - 實際上不需要改任何配置
+// next.config.js - 實際上不需要改任何設定
 // SWC 會自動啟用，作為 Babel 和 Terser 的替代
-// 只有需要自定義 Babel 配置時才需要 babel.config.js
+// 隻有需要自定義 Babel 設定時才需要 babel.config.js
 module.exports = {
   // 如果專案有 babel.config.js，SWC 會跳過，建議刪除
   // 讓 Next.js 儘可能使用 SWC

@@ -1,5 +1,5 @@
 ---
-title: "Popover API 實戰應用"
+title: "Popover API 實戰應用：落地路徑與實戰建議"
 date: 2023-09-25 09:48:56
 tags:
   - 前端
@@ -91,9 +91,9 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
-## 性能優化
+## 效能優化
 
 我們可以通過以下方式來改進：
 

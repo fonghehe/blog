@@ -1,6 +1,6 @@
 ---
 title: "TanStack Query v6"
-date: 2025-11-03 10:00:00
+date: 2025-11-03 17:37:14
 tags:
   - Frontend
 readingTime: 2

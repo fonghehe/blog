@@ -1,6 +1,6 @@
 ---
 title: "Zig WebAssembly 前端應用"
-date: 2026-03-03 10:00:00
+date: 2026-03-03 18:57:34
 tags:
   - 前端
 readingTime: 2
@@ -95,7 +95,7 @@ function useIntersectionObserver(options = {}) {
 
 ## 效能最佳化
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 const fs = require('fs')

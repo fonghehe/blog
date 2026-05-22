@@ -163,7 +163,7 @@ export default {
 
 ## onErrorCaptured 錯誤邊界
 
-這個鉤子在 Vue 3 中依然保留，可以用來構建類似 React ErrorBoundary 的錯誤捕獲機制：
+這個鉤子在 Vue 3 中依然保留，可以用來構建類似 React ErrorBoundary 的錯誤捕獲機製：
 
 ```typescript
 import { onErrorCaptured, ref, defineComponent, h } from 'vue'
@@ -225,7 +225,7 @@ export default {
       console.log('watch pre (預設)')
     })
 
-    // post：在元件更新後執行，類似 onUpdated 但只在特定資料變化時觸發
+    // post：在元件更新後執行，類似 onUpdated 但隻在特定資料變化時觸發
     watch(count, () => {
       console.log('watch post')
     }, { flush: 'post' })

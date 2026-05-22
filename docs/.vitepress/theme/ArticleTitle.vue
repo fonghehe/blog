@@ -24,14 +24,16 @@ const wordCount = computed(() => {
 const isOutdated = computed(() => {
   const dateStr = frontmatter.value.date;
   if (!dateStr) return false;
-  const year = new Date(dateStr).getFullYear();
+  // Extract year directly from string to avoid timezone shifts from new Date()
+  const year = parseInt(String(dateStr).slice(0, 4));
   return year <= 2022;
 });
 
 const articleYear = computed(() => {
   const dateStr = frontmatter.value.date;
   if (!dateStr) return "";
-  return new Date(dateStr).getFullYear();
+  // Extract year directly from string to avoid timezone shifts from new Date()
+  return String(dateStr).slice(0, 4);
 });
 </script>
 

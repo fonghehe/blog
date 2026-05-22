@@ -1,6 +1,6 @@
 ---
 title: "Vite PWA Best Practices"
-date: 2024-11-12 10:00:00
+date: 2024-11-12 16:06:43
 tags:
   - PWA
   - Engineering

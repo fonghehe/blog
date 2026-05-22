@@ -1,11 +1,11 @@
 ---
-title: "Vue 3 `<script setup>` 正式發佈"
+title: "Vue 3 `<script setup>` 正式發佈：特性解讀與遷移建議"
 date: 2021-10-11 10:39:37
 tags:
   - Vue
   - TypeScript
 readingTime: 2
-description: "Vue 3.2 正式將 `<script setup>` 標記為穩定特性。用了半年實驗性支持，現在可以放心在生產環境用了。"
+description: "Vue 3.2 正式將 `<script setup>` 標記為穩定特性。用了半年實驗性支援，現在可以放心在生產環境用了。"
 wordCount: 196
 ---
 
@@ -57,7 +57,7 @@ export default {
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-// 自動暴露給模板，不需要 return
+// 自動暴露給範本，不需要 return
 const count = ref(0)
 const increment = () => count.value++
 
@@ -118,7 +118,7 @@ import { ref } from 'vue'
 const count = ref(0)
 const name = ref('hello')
 
-// 只暴露 count，不暴露 name
+// 隻暴露 count，不暴露 name
 defineExpose({ count })
 </script>
 
@@ -264,6 +264,6 @@ function handleSort(key: string) {
 
 - `<script setup>` 是 Vue 3 的推薦寫法，減少模板代碼，邏輯更內聚
 - `defineProps` / `defineEmits` 的 TypeScript 類型聲明方式是重點
-- `defineExpose` 控制組件暴露的屬性，默認全部隱藏
+- `defineExpose` 控製組件暴露的屬性，默認全部隱藏
 - 頂層 await 配合 Suspense 做異步數據加載
 - 從 Options API 遷移的項目可以逐步引入，新項目直接用

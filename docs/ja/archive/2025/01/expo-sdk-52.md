@@ -1,6 +1,6 @@
 ---
 title: "Expo SDK 52：Expo Router v4とモジュールAPIの刷新"
-date: 2025-01-22 10:00:00
+date: 2025-01-22 12:16:53
 tags:
   - フロントエンド
 readingTime: 3

@@ -1,6 +1,6 @@
 ---
-title: "Astro 5 View Transitions"
-date: 2025-09-15 10:00:00
+title: "Astro 5 View Transitions：MPA 架构下的 SPA 级過渡體驗"
+date: 2025-09-15 10:29:06
 tags:
   - React
 readingTime: 2
@@ -93,7 +93,7 @@ const csvToJson = new Transform({
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能優化
+## 效能優化
 
 實際項目中的用法會更復雜一些：
 

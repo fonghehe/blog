@@ -10,9 +10,9 @@ wordCount: 348
 
 Vue CLI 3 剛出 Beta，和之前的 CLI 2 差別很大，試用了一下記錄一下感受。
 
-## 最大變化：零配置
+## 最大變化：零設定
 
-CLI 2 需要手動維護 webpack.config.js，檔案又長又難懂。CLI 3 把 webpack 配置完全封裝起來，開箱即用：
+CLI 2 需要手動維護 webpack.config.js，檔案又長又難懂。CLI 3 把 webpack 設定完全封裝起來，開箱即用：
 
 ```bash
 npm install -g @vue/cli
@@ -21,9 +21,9 @@ cd my-app
 npm run serve
 ```
 
-就這樣，完全不需要動 webpack 配置。
+就這樣，完全不需要動 webpack 設定。
 
-## 配置方式：vue.config.js
+## 設定方式：vue.config.js
 
 如果需要自定義，在專案根目錄建立 `vue.config.js`：
 
@@ -70,7 +70,7 @@ vue add pwa         # 新增 PWA 支援
 vue add typescript  # 新增 TypeScript
 ```
 
-外掛會自動修改專案結構和配置，不需要手動改。
+外掛會自動修改專案結構和設定，不需要手動改。
 
 ## 環境變數
 
@@ -80,7 +80,7 @@ VUE_APP_API_URL=https://api.example.com
 VUE_APP_VERSION=1.0.0
 ```
 
-在程式碼裡用 `process.env.VUE_APP_*` 訪問（只有 `VUE_APP_` 字首的才會暴露給客戶端）。
+在程式碼裡用 `process.env.VUE_APP_*` 訪問（隻有 `VUE_APP_` 字首的才會暴露給客戶端）。
 
 ## GUI 介面
 
@@ -98,7 +98,7 @@ vue ui
 
 ## 小結
 
-- 零配置，webpack 完全封裝，不需要手動維護
+- 零設定，webpack 完全封裝，不需要手動維護
 - `vue.config.js` 提供靈活的配置入口
 - `vue add` 外掛命令一鍵整合功能
 - GUI 介面是亮點，降低了入門門檻

@@ -52,7 +52,7 @@ import { UserList } from './components/UserList'
 export default async function HomePage() {
   return (
     <main className="container mx-auto p-4">
-      <h1>控制台</h1>
+      <h1>控製臺</h1>
       <Suspense fallback={<Skeleton />}>
         <UserList />
       </Suspense>

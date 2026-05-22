@@ -1,6 +1,6 @@
 ---
 title: "CSS :has() Selector Advanced Applications: 2024 Real-World Scenarios"
-date: 2024-10-02 10:00:00
+date: 2024-10-02 09:16:53
 tags:
   - CSS
 readingTime: 2

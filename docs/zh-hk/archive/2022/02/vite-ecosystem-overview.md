@@ -4,11 +4,11 @@ date: 2022-02-08 10:39:57
 tags:
   - Vite
 readingTime: 2
-description: "Vite 3 發佈了。從 Vite 2 到 3，不只是版本號的變化——冷啓動速度更快、開發體驗更好、插件生態更成熟。作為團隊構建基礎設施的技術選型負責人，這篇文章聊聊 Vite 3 的核心變化和我們的遷移經驗。"
+description: "Vite 3 發佈了。從 Vite 2 到 3，不隻是版本號的變化——冷啓動速度更快、開發體驗更好、外掛生態更成熟。作為團隊構建基礎設施的技術選型負責人，這篇文章聊聊 Vite 3 的核心變化和我們的遷移經驗。"
 wordCount: 332
 ---
 
-Vite 3 發佈了。從 Vite 2 到 3，不只是版本號的變化——冷啓動速度更快、開發體驗更好、插件生態更成熟。作為團隊構建基礎設施的技術選型負責人，這篇文章聊聊 Vite 3 的核心變化和我們的遷移經驗。
+Vite 3 發佈了。從 Vite 2 到 3，不隻是版本號的變化——冷啓動速度更快、開發體驗更好、外掛生態更成熟。作為團隊構建基礎設施的技術選型負責人，這篇文章聊聊 Vite 3 的核心變化和我們的遷移經驗。
 
 ## 核心改進
 
@@ -18,13 +18,13 @@ Vite 3 的開發服務器冷啓動比 Vite 2 快了不少。主要優化：
 
 ```bash
 # Vite 3 使用 esbuild 做依賴預構建，但優化了緩存策略
-vite --force  # 強制重新預構建（清除緩存）
+vite --force  # 強製重新預構建（清除緩存）
 
 # 查看預構建分析
 DEBUG=vite:deps npx vite
 ```
 
-### 內置的 CSS Modules 支持
+### 內置的 CSS Modules 支援
 
 ```css
 /* styles.module.css */
@@ -32,7 +32,7 @@ DEBUG=vite:deps npx vite
   background: #f5f5f5;
 }
 
-/* 自動支持 CSS Modules，不需要額外配置 */
+/* 自動支援 CSS Modules，不需要額外設定 */
 ```
 
 ```typescript
@@ -77,7 +77,7 @@ export default defineConfig({
 });
 ```
 
-## 插件生態
+## 外掛生態
 
 Vite 3 的插件生態已經成熟。我們常用的核心插件：
 
@@ -181,7 +181,7 @@ const url = process.env.REACT_APP_API_URL;
 const url = import.meta.env.VITE_API_URL;
 ```
 
-## Monorepo 中的 Vite 配置共享
+## Monorepo 中的 Vite 設定共享
 
 ```typescript
 // packages/vite-config/index.ts
@@ -216,9 +216,9 @@ export default createViteConfig({
 });
 ```
 
-## 性能對比
+## 效能對比
 
-我們一箇中型後台項目（200+ 頁面組件）的實測數據：
+我們一箇中型後臺項目（200+ 頁面組件）的實測數據：
 
 | 指標 | Webpack 5 | Vite 2 | Vite 3 |
 |

@@ -3,19 +3,19 @@ title: "TypeScript 5.4：NoIntrinsic、Object.groupBy と型推論強化"
 date: 2024-02-06 10:05:36
 tags:
   - TypeScript
-readingTime: 2
-description: "TypeScript 5.4 正式发布，带来了一些实用的类型系统改进和对 TC39 新提案的支持。从架构视角看，有几个特性对团队代码质量提升明显。"
-wordCount: 410
+readingTime: 3
+description: "TypeScript 5.4 が正式にリリースされ、実用的な型システムの改善と TC39 の新しい提案への対応がもたらされました。アーキテクチャの観点から、いくつかの機能はチームのコード品質向上に顕著な効果をもたらします。"
+wordCount: 625
 ---
 
-TypeScript 5.4 正式发布，带来了一些实用的类型系统改进和对 TC39 新提案的支持。从架构视角看，有几个特性对团队代码质量提升明显。
+TypeScript 5.4 が正式にリリースされ、実用的な型システムの改善と TC39 の新しいプロポーザルへの対応がもたらされました。アーキテクチャの観点から見ると、いくつかの機能はチームのコード品質向上に顕著な効果があります。
 
 ## Object.groupBy と Map.groupBy
 
-之前分组操作需要写 reduce：
+以前はグループ化操作に reduce を書く必要がありました：
 
 ```typescript
-// 以前：手写 reduce
+// 以前：手書きの reduce
 const grouped = users.reduce((acc, user) => {
   const key = user.role;
   if (!acc[key]) acc[key] = [];
@@ -25,24 +25,24 @@ const grouped = users.reduce((acc, user) => {
 
 // TypeScript 5.4 + ES2024
 const grouped = Object.groupBy(users, (user) => user.role);
-// grouped 的类型是 Partial<Record<string, User[]>>
+// grouped の型は Partial<Record<string, User[]>>
 ```
 
-返回 `Partial` 是合理的，因为分组结果可能不包含所有可能的 key。
+`Partial` を返すのは合理的です。グループ化の結果がすべての可能なキーを含むとは限らないからです。
 
-`Map.groupBy` 则返回 `Map<K, V[]>`，支持任意类型作为 key：
+`Map.groupBy` は `Map<K, V[]>` を返し、任意の型をキーとしてサポートします：
 
 ```typescript
 const byDept = Map.groupBy(users, (u) => departments.get(u.deptId)!);
-// 返回 Map<Department, User[]>
+// Map<Department, User[]> を返す
 ```
 
 ## NoIntrinsic 型安全強化
 
-TypeScript 5.4 引入了 `NoIntrinsic` 类型，这是对模板字面量类型的增强。在处理 HTML 属性映射时更精确：
+TypeScript 5.4 で導入された `NoIntrinsic` 型は、テンプレートリテラル型の拡張です。HTML 属性マッピングをより正確に処理します：
 
 ```typescript
-// 类型推断更精准，条件类型中交叉类型分发更正确
+// 型推論がより正確に、条件型内の交差型の分配がより正確に
 type ExtractId<T> = T extends `${infer Prefix}_${infer Suffix}`
   ? `${Prefix}_id`
   : never;
@@ -53,14 +53,14 @@ type Result = ExtractId<"user_name" | "post_title">;
 
 ## クロージャの型絞り込みの改善
 
-一个很实用的改进：闭包中捕获的变量现在能正确保持类型缩小：
+非常に実用的な改善：クロージャでキャプチャされた変数が正しく型の絞り込みを維持できるようになりました：
 
 ```typescript
 function processValue(input: string | number) {
   if (typeof input === "string") {
-    // TS 5.4 之前：闭包中 input 可能丢失 string 类型
+    // TS 5.4 以前：クロージャ内の input が string 型を失う可能性があった
     const handler = () => {
-      return input.toUpperCase(); // 现在能正确识别为 string
+      return input.toUpperCase(); // 現在は正しく string として認識される
     };
   }
 }
@@ -79,23 +79,23 @@ interface Cat {
 
 function handlePet(pet: Dog | Cat) {
   if ("bark" in pet) {
-    pet.bark(); // TS 5.4 之前这里可能不够精确
+    pet.bark(); // TS 5.4 以前はここで十分に正確ではなかった可能性がある
   }
 }
 ```
 
 ## プロジェクトへの導入
 
-我们团队在升级 TS 5.4 时，重点关注了几个场景：
+私たちのチームが TS 5.4 にアップグレードする際、いくつかのシナリオに注目しました：
 
-1. **数据处理层**：把自定义 groupBy 工具函数替换为原生 `Object.groupBy`，减少约 200 行重复代码
-2. **类型安全**：利用改进的条件类型推断，简化了 API 响应类型的自动推导
-3. **团队规范**：更新 ESLint 规则，检测并标记可以使用原生 API 的地方
+1. **データ処理層**：カスタム groupBy ユーティリティ関数をネイティブの `Object.groupBy` に置き換え、約200行の重複コードを削減
+2. **型安全性**：改善された条件型推論を活用し、API レスポンス型の自動導出を簡略化
+3. **チーム規範**：ESLint ルールを更新し、ネイティブ API を使用できる箇所を検出してマーク
 
 ## まとめ
 
-- `Object.groupBy` / `Map.groupBy`：原生分组 API，减少重复工具函数
-- 闭包类型缩小：闭包中捕获的变量保持类型信息
-- `in` 运算符增强：更精确的类型收窄
-- 条件类型推断改进：交叉类型处理更准确
-- 建议团队统一升级，配合 `target: "ES2024"` 使用
+- `Object.groupBy` / `Map.groupBy`：ネイティブのグループ化 API、重複ユーティリティ関数を削減
+- クロージャの型絞り込み：クロージャでキャプチャされた変数が型情報を保持
+- `in` 演算子の強化：より正確な型の絞り込み
+- 条件型推論の改善：交差型の処理がより正確に
+- チーム全体でのアップグレードを推奨、`target: "ES2024"` と組み合わせて使用

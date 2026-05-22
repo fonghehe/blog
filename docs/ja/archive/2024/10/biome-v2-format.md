@@ -1,6 +1,6 @@
 ---
 title: "Biome v2 高速フォーマット"
-date: 2024-10-24 10:00:00
+date: 2024-10-24 17:38:15
 tags:
   - フロントエンド
 readingTime: 2

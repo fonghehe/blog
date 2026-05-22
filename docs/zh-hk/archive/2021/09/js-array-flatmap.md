@@ -1,5 +1,5 @@
 ---
-title: "JavaScript Array.flatMap 實用技巧"
+title: "JavaScript Array.flatMap 實用技巧：落地路徑與實戰建議"
 date: 2021-09-10 10:39:44
 tags:
   - 前端
@@ -32,7 +32,7 @@ function reducer(state, action) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 源碼分析
 

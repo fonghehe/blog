@@ -1,5 +1,5 @@
 ---
-title: "Angular 依賴注入與服務設計"
+title: "Angular 依賴注入與服務設計：落地路徑與實戰建議"
 date: 2019-03-03 15:35:12
 tags:
   - Angular

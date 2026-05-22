@@ -147,7 +147,7 @@ user.age = 25; // 列印：age 從 0 變為 25
 // tsconfig.json
 {
   "compilerOptions": {
-    // 新裝飾器（Stage 3）：不需要任何額外配置
+    // 新裝飾器（Stage 3）：不需要任何額外設定
     // 舊裝飾器：需要這個選項
     // "experimentalDecorators": true
   }

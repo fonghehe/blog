@@ -1,6 +1,6 @@
 ---
-title: "Node.js 24 LTS 新特性"
-date: 2025-04-02 10:00:00
+title: "Node.js 24 LTS 新特性速覽：新增 API 與運行時改進"
+date: 2025-04-02 09:56:33
 tags:
   - Node.js
 readingTime: 2
@@ -129,7 +129,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 注意事項
 

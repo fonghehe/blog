@@ -1,6 +1,6 @@
 ---
 title: "HTML Popover: Stable Release in Full Production"
-date: 2024-09-03 10:00:00
+date: 2024-09-03 10:37:14
 tags:
   - JavaScript
 readingTime: 2

@@ -39,7 +39,7 @@ esbuild 速度快有三個原因：
 # 全局安裝
 npm install -g esbuild
 
-# 打包單文件
+# 打包單檔案
 esbuild app.ts --bundle --outfile=out.js
 
 # 打包為生產環境
@@ -150,11 +150,11 @@ export default defineConfig({
 
 ## 目前的侷限
 
-esbuild 不是萬能的，有幾個明顯限制：
+esbuild 不是萬能的，有幾個明顯限製：
 
 1. **沒有代碼分割的 IIFE 格式**：ESM 格式支持 `splitting`，但傳統格式不支持
 2. **不支持轉換裝飾器語法**：Angular 項目無法直接用
-3. **不支持 HMR**：自己不會實現 HMR，需要上層框架處理
+3. **不支援 HMR**：自己不會實現 HMR，需要上層框架處理
 4. **插件生態很小**：Webpack 插件不能直接遷移
 5. **CSS 處理有限**：不支持 CSS Modules、PostCSS 等高級功能
 
@@ -163,7 +163,7 @@ esbuild 不是萬能的，有幾個明顯限制：
 @Component({ template: '<div/>' })
 class MyComponent { }
 
-// ❌ 不支持 CSS Modules（需要自行處理）
+// ❌ 不支援 CSS Modules（需要自行處理）
 import styles from './app.module.css'
 ```
 

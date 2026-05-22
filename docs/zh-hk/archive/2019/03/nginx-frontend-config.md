@@ -1,16 +1,16 @@
 ---
-title: "Nginx 前端配置完全指南"
+title: "Nginx 前端設定完全指南：落地路徑與實戰建議"
 date: 2019-03-28 11:14:57
 tags:
   - 工程化
 readingTime: 1
-description: "前端工程師不懂 Nginx 配置，很多部署問題沒法自己解決。整理一份常用配置手冊。"
+description: "前端工程師不懂 Nginx 設定，很多部署問題沒法自己解決。整理一份常用設定手冊。"
 wordCount: 171
 ---
 
 前端工程師不懂 Nginx 配置，很多部署問題沒法自己解決。整理一份常用配置手冊。
 
-## 基礎：SPA 路由支持
+## 基礎：SPA 路由支援
 
 ```nginx
 server {
@@ -28,7 +28,7 @@ server {
 
 不配這個，vue-router history 模式刷新會 404。
 
-## HTTPS 配置
+## HTTPS 設定
 
 ```nginx
 server {
@@ -45,7 +45,7 @@ server {
   ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256;
   ssl_prefer_server_ciphers off;
 
-  # HSTS（讓瀏覽器記住只用 HTTPS）
+  # HSTS（讓瀏覽器記住隻用 HTTPS）
   add_header Strict-Transport-Security "max-age=63072000" always;
 }
 
@@ -142,14 +142,14 @@ add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';" always;
 ```
 
-## 負載均衡
+## 負載平衡
 
 ```nginx
 upstream backend {
   least_conn;  # 最少連接數算法
   server backend1:3000 weight=3;
   server backend2:3000 weight=1;
-  server backend3:3000 backup;  # 備用，只有前兩個都掛了才用
+  server backend3:3000 backup;  # 備用，隻有前兩個都掛了才用
 
   keepalive 32;  # 長連接池
 }

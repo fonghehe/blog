@@ -1,14 +1,14 @@
 ---
-title: "Web Worker 多線程實踐"
+title: "Web Worker 多線程實踐：落地路徑與實戰建議"
 date: 2019-09-30 10:13:44
 tags:
   - 前端
 readingTime: 3
-description: "前端遇到大數據量計算時，頁面會卡死——滾動不了、點擊沒反應、動畫掉幀。根本原因是 JavaScript 單線程，主線程被計算任務佔滿了。Web Worker 允許你在後台線程運行腳本，解放主線程。"
+description: "前端遇到大數據量計算時，頁面會卡死——滾動不了、點擊沒反應、動畫掉幀。根本原因是 JavaScript 單線程，主線程被計算任務佔滿了。Web Worker 允許你在後臺線程運行腳本，解放主線程。"
 wordCount: 348
 ---
 
-前端遇到大數據量計算時，頁面會卡死——滾動不了、點擊沒反應、動畫掉幀。根本原因是 JavaScript 單線程，主線程被計算任務佔滿了。Web Worker 允許你在後台線程運行腳本，解放主線程。
+前端遇到大數據量計算時，頁面會卡死——滾動不了、點擊沒反應、動畫掉幀。根本原因是 JavaScript 單線程，主線程被計算任務佔滿了。Web Worker 允許你在後臺線程運行腳本，解放主線程。
 
 ## 基礎用法
 
@@ -53,9 +53,9 @@ function heavyCalculation(arr) {
 }
 ```
 
-Worker 線程裏不能訪問 DOM、`window`、`document`。能用的 API：`navigator`、`location`（只讀）、`setTimeout`/`setInterval`、`fetch`、`WebSocket` 等。
+Worker 線程裏不能訪問 DOM、`window`、`document`。能用的 API：`navigator`、`location`（隻讀）、`setTimeout`/`setInterval`、`fetch`、`WebSocket` 等。
 
-## 實戰：大文件 CSV 解析
+## 實戰：大檔案 CSV 解析
 
 用户上傳 50MB 的 CSV 文件，主線程解析會卡死：
 
@@ -255,7 +255,7 @@ Chrome DevTools 調試 Worker：
 
 ## 小結
 
-- Web Worker 在後台線程運行 JS，不阻塞主線程，適合大數據計算、文件解析
+- Web Worker 在後臺線程運行 JS，不阻塞主線程，適合大數據計算、檔案解析
 - 主線程和 Worker 通過 `postMessage` / `onmessage` 通信
 - 使用 Transferable 對象（ArrayBuffer）可以零拷貝傳遞大數據
 - Worker 不能訪問 DOM，能用的 API 有限（fetch、WebSocket、定時器等）

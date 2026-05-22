@@ -1,5 +1,5 @@
 ---
-title: "Vue Project Internationalization with vue-i18n"
+title: "Vue 3 i18n with vue-i18n: vue-i18n v9 MigrationGuide"
 date: 2020-02-18 10:20:42
 tags:
   - Vue

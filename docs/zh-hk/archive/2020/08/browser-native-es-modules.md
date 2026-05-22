@@ -1,14 +1,14 @@
 ---
-title: "瀏覽器原生 ES Modules 實踐"
+title: "瀏覽器原生 ES Modules 實踐：落地路徑與實戰建議"
 date: 2020-08-10 10:47:29
 tags:
   - 工程化
 readingTime: 4
-description: "瀏覽器對 ES Modules 的支持已經相當成熟了。現在 Chrome、Firefox、Safari、Edge 都支持 `<script type=\"module\">`，這意味着在開發階段甚至某些簡單項目中，我們可能不再需要打包工具。這篇文章整理一下瀏覽器原生 ESM 的實踐方式和注意點。"
+description: "瀏覽器對 ES Modules 的支援已經相當成熟了。現在 Chrome、Firefox、Safari、Edge 都支援 `<script type=\"module\">`，這意味着在開發階段甚至某些簡單項目中，我們可能不再需要打包工具。這篇文章整理一下瀏覽器原生 ESM 的實踐方式和注意點。"
 wordCount: 585
 ---
 
-瀏覽器對 ES Modules 的支持已經相當成熟了。現在 Chrome、Firefox、Safari、Edge 都支持 `<script type="module">`，這意味着在開發階段甚至某些簡單項目中，我們可能不再需要打包工具。這篇文章整理一下瀏覽器原生 ESM 的實踐方式和注意點。
+瀏覽器對 ES Modules 的支援已經相當成熟了。現在 Chrome、Firefox、Safari、Edge 都支援 `<script type="module">`，這意味着在開發階段甚至某些簡單項目中，我們可能不再需要打包工具。這篇文章整理一下瀏覽器原生 ESM 的實踐方式和注意點。
 
 ## 基本用法
 
@@ -78,7 +78,7 @@ function greet() {
 export { greet }
 ```
 
-### 4. import 必須帶文件擴展名
+### 4. import 必須帶檔案擴展名
 
 這是和打包工具最大的區別 —— 瀏覽器原生 ESM 不會自動補全擴展名：
 
@@ -234,9 +234,9 @@ export default {
 }
 ```
 
-## 本地開發需要靜態文件服務器
+## 本地開發需要靜態檔案服務器
 
-直接用 `file://` 協議打開 HTML 是不行的，因為 ES Module 的 CORS 限制：
+直接用 `file://` 協議打開 HTML 是不行的，因為 ES Module 的 CORS 限製：
 
 ```bash
 # 方案一：Python
@@ -249,7 +249,7 @@ npx serve .
 npx live-server .
 ```
 
-## 性能考量
+## 效能考量
 
 原生 ESM 在開發環境有優勢，但生產環境需要謹慎：
 
@@ -266,7 +266,7 @@ npx live-server .
 
 ## 動態 import
 
-瀏覽器原生支持動態 import，實現按需加載：
+瀏覽器原生支援動態 import，實現按需加載：
 
 ```javascript
 // 點擊按鈕時才加載
@@ -292,6 +292,6 @@ async function loadRoute(routeName) {
 - 瀏覽器原生 ESM 已經得到主流瀏覽器全面支持
 - `type="module"` 默認嚴格模式、延遲加載、作用域隔離
 - import 必須帶完整擴展名，裸模塊説明符需要 import maps 或 URL 映射
-- 本地開發需要靜態文件服務器，不能用 `file://`
+- 本地開發需要靜態檔案服務器，不能用 `file://`
 - 小型項目和原型可以直接用原生 ESM，無需打包工具
 - 生產項目建議用 Vite，開發時用原生 ESM，構建時打包優化

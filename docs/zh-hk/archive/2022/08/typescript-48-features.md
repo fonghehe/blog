@@ -1,18 +1,18 @@
 ---
-title: "TypeScript 4.7-4.8：ESM 支持與類型收窄的進化"
+title: "TypeScript 4.7-4.8：ESM 支援與類型收窄的進化"
 date: 2022-08-09 10:39:03
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 4.7 和 4.8 相繼發佈，帶來了一系列實用改進。4.7 解決了 ESM 模塊支持的老大難問題，4.8 進一步增強了類型收窄。"
+description: "TypeScript 4.7 和 4.8 相繼發佈，帶來了一系列實用改進。4.7 解決了 ESM 模塊支援的老大難問題，4.8 進一步增強了類型收窄。"
 wordCount: 239
 ---
 
 TypeScript 4.7 和 4.8 相繼發佈，帶來了一系列實用改進。4.7 解決了 ESM 模塊支持的老大難問題，4.8 進一步增強了類型收窄。
 
-## TypeScript 4.7：ESM 支持
+## TypeScript 4.7：ESM 支援
 
-### package.json 中的 module 配置
+### package.json 中的 module 設定
 
 ```json
 {
@@ -52,7 +52,7 @@ import { sum } from './math.js';  // 不是 './math.ts'！
 import { config } from './config/index.js';  // 不是 './config'
 ```
 
-### extends 支持數組
+### extends 支援數組
 
 ```json
 // tsconfig.json
@@ -67,7 +67,7 @@ import { config } from './config/index.js';  // 不是 './config'
 }
 ```
 
-不再需要一層套一層，直接組合多個基礎配置。
+不再需要一層套一層，直接組合多個基礎設定。
 
 ## TypeScript 4.8：類型收窄增強
 
@@ -137,7 +137,7 @@ const theme2 = {
 // 同時保證整體符合 Theme 結構
 ```
 
-### 控制流收窄的改進
+### 控製流收窄的改進
 
 ```typescript
 function process(value: string | number | boolean) {

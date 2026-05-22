@@ -231,7 +231,7 @@ define('dynamicModule', ['require', 'exports', 'module'], function(require, expo
 
 AMD 的問題：語法比較繁瑣，依賴前置（所有依賴必須在回調之前聲明），而且隨着構建工具的發展，「先下載再執行」的優勢不再明顯。
 
-## UMD：兼容一切的通用方案
+## UMD：相容一切的通用方案
 
 UMD（Universal Module Definition）不是一種新的模塊規範，而是一種兼容模式——讓同一個模塊在 AMD、CommonJS、瀏覽器全局變量環境下都能工作：
 
@@ -301,7 +301,7 @@ export { multiply, divide };
 ```
 
 ```javascript
-// logger.js —— 默認導出（default export）：每個模塊只能有一個
+// logger.js —— 默認導出（default export）：每個模塊隻能有一個
 export default class Logger {
   constructor(prefix) {
     this.prefix = prefix;
@@ -383,7 +383,7 @@ const routes = [
   },
   {
     path: '/dashboard',
-    // 只有登錄用户才加載 Dashboard
+    // 隻有登錄用户才加載 Dashboard
     component: () => {
       if (isLoggedIn()) {
         return import('./pages/Dashboard.js');
@@ -395,7 +395,7 @@ const routes = [
 
 // 場景二：按需加載大型庫
 async function exportToExcel(data) {
-  // 只在用户點擊「導出」時才加載 xlsx 庫
+  // 隻在用户點擊「導出」時才加載 xlsx 庫
   const XLSX = await import('xlsx');
 
   const worksheet = XLSX.utils.json_to_sheet(data);
@@ -522,7 +522,7 @@ export function multiply(a, b) {
 import { add } from './math';
 // multiply 沒有被導入，webpack 會將它從產物中移除
 
-// 最終產物中只包含 add 函數的代碼
+// 最終產物中隻包含 add 函數的代碼
 // subtract 和 multiply 都不會被打包進來
 ```
 
@@ -561,5 +561,5 @@ ESM        ✅          ✅         ✅         ✅**        ✅***      ✅
 - JavaScript 模塊化經歷了 IIFE → CommonJS → AMD → UMD → ES Modules 的演進，每次演進都是為了解決前一代方案的核心痛點
 - IIFE 用函數作用域隔離變量，但依賴手動管理加載順序；CommonJS 是 Node.js 的同步方案，不適合瀏覽器直接使用
 - AMD 為瀏覽器設計了異步加載，但語法繁瑣；UMD 兼容所有環境但代碼冗餘
-- ES Modules 是語言原生標準，靜態分析友好，支持 tree shaking 和動態 `import()`，是現代前端的首選方案
+- ES Modules 是語言原生標準，靜態分析友好，支援 tree shaking 和動態 `import()`，是現代前端的首選方案
 - 實際項目中通過 Webpack 等構建工具打包，利用動態 `import()` 實現代碼分割，ES Modules 的靜態特性讓 tree shaking 成為可能

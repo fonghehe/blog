@@ -16,7 +16,7 @@ wordCount: 464
 
 ```
 瀏覽器請求頁面
-→ 伺服器返回空 HTML（只有 <div id="app"></div>）
+→ 伺服器返回空 HTML（隻有 <div id="app"></div>）
 → 瀏覽器下載 JS bundle
 → Vue 在客戶端渲染，填充內容
 → 使用者看到頁面
@@ -136,7 +136,7 @@ export default {
 </script>
 ```
 
-## nuxt.config.js 常用配置
+## nuxt.config.js 常用設定
 
 ```javascript
 module.exports = {
@@ -170,7 +170,7 @@ module.exports = {
 
 ## 靜態站點生成（generate）
 
-如果不需要真正的 SSR，只想生成靜態 HTML（部落格場景）：
+如果不需要真正的 SSR，隻想生成靜態 HTML（部落格場景）：
 
 ```bash
 npm run generate
@@ -197,7 +197,7 @@ SSR 環境下（Node.js）沒有 `window` 物件，直接用會報錯：
 ```javascript
 // ❌ 這會在服務端報錯
 mounted() {
-  // mounted 只在客戶端執行，這裡是安全的 ✅
+  // mounted 隻在客戶端執行，這裡是安全的 ✅
   window.addEventListener('resize', this.handleResize)
 }
 
@@ -212,7 +212,7 @@ asyncData() {
 ```javascript
 // nuxt.config.js
 plugins: [
-  { src: "~/plugins/some-plugin", ssr: false }, // 只在客戶端載入
+  { src: "~/plugins/some-plugin", ssr: false }, // 隻在客戶端載入
 ];
 ```
 

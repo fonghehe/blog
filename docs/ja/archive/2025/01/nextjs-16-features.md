@@ -1,6 +1,6 @@
 ---
 title: "Next.js 16の新機能：React 20コンパイラーとRoute Middleware"
-date: 2025-01-09 10:00:00
+date: 2025-01-09 11:03:40
 tags:
   - React
 readingTime: 3

@@ -5,7 +5,7 @@ tags:
   - Webpack
   - 工程化
 readingTime: 4
-description: "Webpack 4 已經相當成熟，但生產環境的最佳化配置依然讓人頭疼。這篇文章整理了我們團隊在實際專案中使用的 Webpack 最佳化清單，覆蓋壓縮、Tree Shaking、程式碼分割、持久快取、體積分析等環節。每個最佳化點都給出可直接使用的配置程式碼。"
+description: "Webpack 4 已經相當成熟，但生產環境的最佳化設定依然讓人頭疼。這篇文章整理了我們團隊在實際專案中使用的 Webpack 最佳化清單，覆蓋壓縮、Tree Shaking、程式碼分割、持久快取、體積分析等環節。每個最佳化點都給出可直接使用的設定程式碼。"
 wordCount: 460
 ---
 
@@ -29,7 +29,7 @@ module.exports = {
       // JS 壓縮
       new TerserPlugin({
         parallel: true,          // 多程序並行壓縮
-        cache: true,             // 開啟快取（Webpack 5 無需此配置）
+        cache: true,             // 開啟快取（Webpack 5 無需此設定）
         terserOptions: {
           compress: {
             drop_console: true,  // 移除 console.log
@@ -299,7 +299,7 @@ ANALYZE=true npx webpack --mode production
 # 3. 檢查是否有重複打包的依賴
 ```
 
-## 完整的生產配置
+## 完整的生產設定
 
 把上面所有最佳化整合到一個配置檔案中：
 

@@ -1,10 +1,10 @@
 ---
-title: "Vue Router 4 新特性預覽"
+title: "Vue Router 4 新特性預覽：特性解讀與遷移建議"
 date: 2019-12-11 15:12:11
 tags:
   - Vue
 readingTime: 3
-description: "隨着 Vue 3 進入 alpha/beta 階段，Vue Router 4 也在同步開發中。Vue Router 4 不僅僅是 Vue 3 的適配版本，它用 TypeScript 完全重寫，API 做了大量簡化，並且原生支持 Composition API。這篇文章基於 Vue Router 4 的 RFC 和早期代"
+description: "隨着 Vue 3 進入 alpha/beta 階段，Vue Router 4 也在同步開發中。Vue Router 4 不僅僅是 Vue 3 的適配版本，它用 TypeScript 完全重寫，API 做了大量簡化，並且原生支援 Composition API。這篇文章基於 Vue Router 4 的 RFC 和早期代"
 wordCount: 385
 ---
 
@@ -112,7 +112,7 @@ app.use(router)
 app.mount('#app')
 ```
 
-## Composition API 支持
+## Composition API 支援
 
 這是 Vue Router 4 最重要的新特性。在 `setup()` 中可以通過 `useRoute` 和 `useRouter` 獲取路由信息和方法，不再需要 `this.$route`：
 
@@ -277,7 +277,7 @@ const routes = [
     path: '/dashboard',
     component: () => import('@/views/Dashboard.vue'),
     beforeEnter: (to, from) => {
-      // 只有從登錄頁來才放行
+      // 隻有從登錄頁來才放行
       if (from.name !== 'Login') {
         return { name: 'Login' }
       }

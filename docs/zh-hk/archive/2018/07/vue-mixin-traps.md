@@ -1,5 +1,5 @@
 ---
-title: "Vue mixin 的使用與陷阱"
+title: "Vue mixin 的使用與陷阱：落地路徑與實戰建議"
 date: 2018-07-19 14:39:52
 tags:
   - Vue

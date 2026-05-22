@@ -1,6 +1,6 @@
 ---
-title: "Svelte 6 コンパイラ改善"
-date: 2025-08-28 10:00:00
+title: "Svelte 6 编译器改进：新的响应式编译策略"
+date: 2025-08-28 17:02:39
 tags:
   - Svelte
 readingTime: 2

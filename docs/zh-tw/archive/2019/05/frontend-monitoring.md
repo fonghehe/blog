@@ -139,7 +139,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ entryTypes: ["paint", "largest-contentful-paint"] });
 ```
 
-## 上報機制
+## 上報機製
 
 ```javascript
 class Monitor {

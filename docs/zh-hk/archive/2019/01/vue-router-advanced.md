@@ -1,14 +1,14 @@
 ---
-title: "Vue Router 進階：導航守衞與權限控制"
+title: "Vue Router 進階：導航守衞與權限控製"
 date: 2019-01-20 16:47:45
 tags:
   - Vue
 readingTime: 2
-description: "Vue Router 的基礎用法很簡單，但權限控制、路由元信息、動態添加路由這些進階用法，很多項目都沒用好。"
+description: "Vue Router 的基礎用法很簡單，但權限控製、路由元信息、動態添加路由這些進階用法，很多項目都沒用好。"
 wordCount: 189
 ---
 
-Vue Router 的基礎用法很簡單，但權限控制、路由元信息、動態添加路由這些進階用法，很多項目都沒用好。
+Vue Router 的基礎用法很簡單，但權限控製、路由元信息、動態添加路由這些進階用法，很多項目都沒用好。
 
 ## 導航守衞執行順序
 
@@ -59,7 +59,7 @@ const routes = [
 ];
 ```
 
-## 角色權限控制
+## 角色權限控製
 
 ```javascript
 router.beforeEach((to, from, next) => {
@@ -82,7 +82,7 @@ router.beforeEach((to, from, next) => {
 });
 ```
 
-## 動態添加路由（後台權限菜單）
+## 動態添加路由（後臺權限菜單）
 
 前端常見的需求：後端返回用户有權限的菜單，前端動態註冊路由。
 
@@ -167,4 +167,4 @@ const router = new VueRouter({
 - 全局守衞處理通用邏輯（登錄驗證、權限檢查）
 - `route.matched` 獲取所有匹配記錄，適合處理嵌套路由權限
 - `addRoute` 動態註冊路由實現後端驅動的權限菜單
-- 路由懶加載 + `webpackChunkName` 控制代碼分割粒度
+- 路由懶加載 + `webpackChunkName` 控製代碼分割粒度

@@ -1,6 +1,6 @@
 ---
 title: "Deno compile 单文件可执行"
-date: 2024-09-02 10:00:00
+date: 2024-09-02 15:36:13
 tags:
   - 前端
 readingTime: 2

@@ -1,5 +1,5 @@
 ---
-title: "深入理解瀏覽器事件機制"
+title: "深入理解瀏覽器事件機製"
 date: 2018-09-05 10:46:42
 tags:
   - 前端
@@ -129,7 +129,7 @@ document.addEventListener("user:login", (e) => {
 
 在 Vue 裡可以用這個方式做跨元件通訊（雖然 Vuex 更適合）。
 
-## 防抖：頻繁觸發只執行最後一次
+## 防抖：頻繁觸發隻執行最後一次
 
 ```javascript
 // scroll/resize/input 等高頻事件需要防抖

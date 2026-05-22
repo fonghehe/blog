@@ -1,5 +1,5 @@
 ---
-title: "CSS aspect-ratio: Native Aspect Ratios"
+title: "CSS aspect-ratio Proposal Explained: 告别 padding-top 黑科技"
 date: 2019-11-11 10:30:38
 tags:
   - CSS

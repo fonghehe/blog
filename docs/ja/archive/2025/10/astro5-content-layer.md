@@ -1,6 +1,6 @@
 ---
 title: "Astro 5：Content Layer がコンテンツ管理を再定義"
-date: 2025-10-28 10:00:00
+date: 2025-10-28 16:22:59
 tags:
   - React
 readingTime: 2

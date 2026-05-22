@@ -1,5 +1,5 @@
 ---
-title: "pnpm 高效包管理器實踐"
+title: "pnpm 高效包管理器實踐：落地路徑與實戰建議"
 date: 2022-07-15 16:44:58
 tags:
   - 前端
@@ -65,7 +65,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 真實場景應用
 

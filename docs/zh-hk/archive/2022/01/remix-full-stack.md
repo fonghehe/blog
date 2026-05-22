@@ -1,5 +1,5 @@
 ---
-title: "Remix 全棧框架實戰"
+title: "Remix 全棧框架實戰：落地路徑與實戰建議"
 date: 2022-01-26 15:09:47
 tags:
   - 前端
@@ -91,7 +91,7 @@ function useIntersectionObserver(options = {}) {
 
 這種模式在大型項目中非常實用，能顯著降低維護成本。
 
-## 性能對比
+## 效能對比
 
 實際項目中的用法會更復雜一些：
 

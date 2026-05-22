@@ -49,10 +49,10 @@ import { readJson } from 'https://deno.land/std@0.50.0/fs/read_json.ts';
 | 語言         | JavaScript           | TypeScript 原生      |
 | 模組系統     | CommonJS + node_modules | ES Modules + URL  |
 | 包管理       | npm / yarn           | URL 直接匯入         |
-| 安全模型     | 無限制               | 沙箱 + 顯式授權       |
+| 安全模型     | 無限製               | 沙箱 + 顯式授權       |
 | 非同步         | Callback → Promise   | 原生 async/await     |
 | 標準庫       | 無（依賴 npm）        | 內建標準庫           |
-| 工具鏈       | 需要額外配置          | 內建 test/lint/format |
+| 工具鏈       | 需要額外設定          | 內建 test/lint/format |
 | TypeScript   | 需要 ts-node         | 原生支援             |
 ```
 
@@ -68,7 +68,7 @@ deno lint
 # 格式化
 deno fmt
 
-# 文件生成
+# 檔案生成
 deno doc
 
 # 依賴樹

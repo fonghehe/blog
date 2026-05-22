@@ -1,6 +1,6 @@
 ---
-title: "Vue 3.6 Reactivity Optimization"
-date: 2025-08-06 10:00:00
+title: "Vue 3.6 Reactivity Optimization: Vapor Mode  & ReactivitySystem重新设计"
+date: 2025-08-06 09:40:17
 tags:
   - Vue
   - Performance Optimization

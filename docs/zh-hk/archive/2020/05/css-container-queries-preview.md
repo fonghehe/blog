@@ -1,5 +1,5 @@
 ---
-title: "CSS Container Queries 容器查詢"
+title: "CSS Container Queries 容器查詢：特性解讀與遷移建議"
 date: 2020-05-18 17:12:15
 tags:
   - CSS
@@ -116,7 +116,7 @@ export async function POST(req) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 避坑指南
 

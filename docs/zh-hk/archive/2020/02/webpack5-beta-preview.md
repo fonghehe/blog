@@ -1,5 +1,5 @@
 ---
-title: "Webpack 5 Beta 新特性預覽"
+title: "Webpack 5 Beta 新特性預覽：特性解讀與遷移建議"
 date: 2020-02-06 11:01:12
 tags:
   - Webpack
@@ -161,7 +161,7 @@ Webpack 5 要求 Node.js >= 10.13.0。在升級前確認 CI 環境。
 # 升級命令
 npm install webpack@next webpack-cli@latest -D
 
-# 需要同步升級的插件
+# 需要同步升級的外掛
 npm install -D webpack-dev-server@latest html-webpack-plugin@next
 
 # 可能需要移除的（已內置）

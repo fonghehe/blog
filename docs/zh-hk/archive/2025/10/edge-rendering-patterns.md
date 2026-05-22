@@ -1,6 +1,6 @@
 ---
 title: "Edge 渲染模式：2025 年的實踐總結"
-date: 2025-10-12 10:00:00
+date: 2025-10-12 19:06:43
 tags:
   - 前端
 readingTime: 2
@@ -126,7 +126,7 @@ async function Recommendations() {
 // Edge 上的多級緩存
 
 interface CacheConfig {
-  staleWhileRevalidate: number; // 後台刷新時間
+  staleWhileRevalidate: number; // 後臺刷新時間
   maxAge: number; // 緩存有效期
   tags: string[]; // 緩存標籤（用於按標籤失效）
 }
@@ -156,7 +156,7 @@ async function getCachedProducts() {
   return products;
 }
 
-// 方案 3：Edge Config（只讀配置，毫秒級讀取）
+// 方案 3：Edge Config（隻讀設定，毫秒級讀取）
 import { get } from "@vercel/edge-config";
 
 async function getFeatureFlags() {
@@ -166,17 +166,17 @@ async function getFeatureFlags() {
 }
 ```
 
-## Edge 的限制和坑
+## Edge 的限製和坑
 
 ```
-Edge Runtime 限制：
-  1. 不支持 Node.js API（fs、crypto 需要 Web Crypto 替代）
-  2. 內存限制（通常 128MB）
-  3. 執行時間限制（通常 30 秒）
+Edge Runtime 限製：
+  1. 不支援 Node.js API（fs、crypto 需要 Web Crypto 替代）
+  2. 內存限製（通常 128MB）
+  3. 執行時間限製（通常 30 秒）
   4. 不支持某些 npm 包（依賴 Node.js 內置模塊的）
 
 踩坑記錄：
-  1. Prisma 在 Edge 上需要特殊配置（driver adapters）
+  1. Prisma 在 Edge 上需要特殊設定（driver adapters）
   2. 某些日期庫（如 moment）不兼容，改用 date-fns 或 Intl
   3. 圖片處理需要調用外部服務，不能用 sharp
   4. 調試困難，日誌不完整
@@ -206,7 +206,7 @@ const prisma = new PrismaClient({ adapter });
   /（首頁）           → Edge SSR + Streaming
   /products（列表）    → Edge SSR + 緩存
   /products/[id]（詳情）→ Edge SSR + ISR（1 小時）
-  /dashboard（後台）   → Client-side（純 SPA）
+  /dashboard（後臺）   → Client-side（純 SPA）
   /blog（博客）        → SSG（構建時生成）
   /api/*（接口）       → Edge Functions
 
@@ -218,5 +218,5 @@ const prisma = new PrismaClient({ adapter });
 - Edge 渲染適合需要低延遲首屏的公開頁面
 - Streaming SSR 是 Edge 渲染的核心模式，讓快的部分先到
 - 緩存策略是 Edge 渲染的關鍵，多級緩存降低源站壓力
-- Edge Runtime 有 Node.js API 限制，選庫時要注意兼容性
+- Edge Runtime 有 Node.js API 限製，選庫時要注意相容性
 - 混合渲染模式是生產環境的最優解，按頁面特性選擇

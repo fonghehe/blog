@@ -4,7 +4,7 @@ date: 2020-08-04 17:33:04
 tags:
   - 前端
 readingTime: 2
-description: "ES2020（ES11）規範已經正式釋出，帶來了幾個非常實用的特性。在日常程式碼中用起來，能明顯減少模板程式碼。"
+description: "ES2020（ES11）規範已經正式釋出，帶來了幾個非常實用的特性。在日常程式碼中用起來，能明顯減少範本程式碼。"
 wordCount: 159
 ---
 
@@ -34,7 +34,7 @@ const result = api?.getData?.();
 // 陣列元素
 const first = arr?.[0];
 
-// 注意：只跳過 null 和 undefined
+// 注意：隻跳過 null 和 undefined
 // 0、''、false 不會被跳過
 const obj = { count: 0 };
 console.log(obj?.count); // 0（正常訪問）
@@ -43,13 +43,13 @@ console.log(obj?.count); // 0（正常訪問）
 ## 空值合併 ??
 
 ```javascript
-// 和 || 的區別：只對 null/undefined 生效
+// 和 || 的區別：隻對 null/undefined 生效
 const value = 0;
 
 // || 會把 0 當假值
 console.log(value || 10);  // 10（不對）
 
-// ?? 只看 null/undefined
+// ?? 隻看 null/undefined
 console.log(value ?? 10);  // 0（正確）
 
 // 典型場景

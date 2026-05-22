@@ -1,10 +1,10 @@
 ---
-title: "Vue 3 Teleport、Fragment、Suspense 新特性"
+title: "Vue 3 Teleport、Fragment、Suspense 新特性：特性解讀與遷移建議"
 date: 2020-01-10 15:48:35
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 引入了三個實用的內置組件：Teleport 將子節點渲染到 DOM 樹的任意位置，Fragment 支持多根節點模板，Suspense 處理異步組件的加載態。這三個特性解決了 Vue 2 中長期存在的痛點。"
+description: "Vue 3 引入了三個實用的內置組件：Teleport 將子節點渲染到 DOM 樹的任意位置，Fragment 支援多根節點範本，Suspense 處理異步組件的加載態。這三個特性解決了 Vue 2 中長期存在的痛點。"
 wordCount: 439
 ---
 
@@ -52,7 +52,7 @@ export default {
 
 ## Fragment：告別多餘包裹節點
 
-Vue 2 要求模板只有一個根節點，這導致大量無意義的 `<div>` 包裹層。Vue 3 支持多根節點。
+Vue 2 要求範本隻有一個根節點，這導致大量無意義的 `<div>` 包裹層。Vue 3 支援多根節點。
 
 ```vue
 <template>
@@ -171,7 +171,7 @@ export default {
 
 ## 小結
 
-- Teleport 解決了 Modal/Tooltip 被父級 CSS 影響的經典問題，組件邏輯不移動，只移動 DOM
+- Teleport 解決了 Modal/Tooltip 被父級 CSS 影響的經典問題，組件邏輯不移動，隻移動 DOM
 - Fragment 消除了無意義的包裹節點，但要注意 `$attrs` 顯式綁定
 - Suspense 統一管理異步組件和異步 setup 的加載態，替代手動 loading 狀態
 - 三個特性可以自由組合，構建更靈活的組件結構

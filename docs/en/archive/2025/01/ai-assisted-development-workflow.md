@@ -1,6 +1,6 @@
 ---
 title: "AI-Assisted Development Workflow: From Copilot to Claude Code in Practice"
-date: 2025-01-25 10:00:00
+date: 2025-01-25 19:19:56
 tags:
   - Engineering
 readingTime: 2

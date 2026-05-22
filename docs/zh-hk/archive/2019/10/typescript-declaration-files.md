@@ -1,18 +1,18 @@
 ---
-title: "TypeScript 聲明文件編寫指南"
+title: "TypeScript 聲明檔案編寫指南：落地路徑與實戰建議"
 date: 2019-10-28 16:19:50
 tags:
   - TypeScript
 readingTime: 4
-description: "在 TypeScript 項目中引入第三方 JavaScript 庫時，聲明文件（`.d.ts`）是連接類型系統和無類型代碼的橋樑。即使庫本身沒有提供類型定義，我們也可以自己編寫聲明文件。本文系統地介紹聲明文件的編寫方法。"
+description: "在 TypeScript 項目中引入第三方 JavaScript 庫時，聲明檔案（`.d.ts`）是連接類型系統和無類型代碼的橋樑。即使庫本身沒有提供類型定義，我們也可以自己編寫聲明檔案。本文系統地介紹聲明檔案的編寫方法。"
 wordCount: 463
 ---
 
 在 TypeScript 項目中引入第三方 JavaScript 庫時，聲明文件（`.d.ts`）是連接類型系統和無類型代碼的橋樑。即使庫本身沒有提供類型定義，我們也可以自己編寫聲明文件。本文系統地介紹聲明文件的編寫方法。
 
-## 聲明文件的作用
+## 聲明檔案的作用
 
-聲明文件（`.d.ts`）只包含類型信息，不包含實現。編譯器使用它來理解 JavaScript 代碼的類型結構：
+聲明檔案（`.d.ts`）隻包含類型信息，不包含實現。編譯器使用它來理解 JavaScript 代碼的類型結構：
 
 ```ts
 // index.d.ts - 聲明文件
@@ -270,7 +270,7 @@ declare module 'some-untyped-library' {
 }
 ```
 
-## 配置 tsconfig.json
+## 設定 tsconfig.json
 
 ```json
 {
@@ -305,10 +305,10 @@ declare module 'some-untyped-library' {
 
 ## 小結
 
-- 聲明文件（`.d.ts`）只包含類型信息，不包含實現代碼
+- 聲明檔案（`.d.ts`）隻包含類型信息，不包含實現代碼
 - `declare module` 用於聲明模塊類型，`declare namespace` 用於聲明全局命名空間
 - 函數重載可以表達同一個函數的不同調用簽名
 - 泛型可以讓類型聲明更加靈活和精確
-- Webpack 中的文件類型（`.png`、`.css` 等）需要特殊聲明
+- Webpack 中的檔案類型（`.png`、`.css` 等）需要特殊聲明
 - 使用 `@types/xxx` 可以獲取社區維護的類型聲明
 - 發佈 npm 包時，`package.json` 的 `types` 字段指向類型入口

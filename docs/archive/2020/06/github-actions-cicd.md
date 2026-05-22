@@ -1,5 +1,5 @@
 ---
-title: "GitHub Actions CI/CD 前端流水线"
+title: "GitHub Actions CI/CD 前端流水线：从零搭建自动化部署"
 date: 2020-06-09 10:54:08
 tags:
   - 工程化

@@ -1,5 +1,5 @@
 ---
-title: "Angular 生命週期鈎子詳解"
+title: "Angular 生命週期鈎子詳解：落地路徑與實戰建議"
 date: 2019-03-25 15:35:11
 tags:
   - Angular

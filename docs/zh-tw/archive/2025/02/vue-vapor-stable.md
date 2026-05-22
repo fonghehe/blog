@@ -1,6 +1,6 @@
 ---
 title: "Vue Vapor Mode 穩定版"
-date: 2025-02-03 10:00:00
+date: 2025-02-03 16:37:14
 tags:
   - Vue
 readingTime: 3
@@ -134,9 +134,9 @@ export default defineConfig({
 
 混合模式下，Vapor 元件和標準 Vue 元件可以無縫巢狀。父元件是 Vapor，子元件是標準模式，反之亦然，都能正常工作。
 
-## Vapor Mode 的限制
+## Vapor Mode 的限製
 
-Vapor Mode 雖然強大，但目前有幾個限制需要了解：
+Vapor Mode 雖然強大，但目前有幾個限製需要了解：
 
 ```vue
 <!-- ❌ Vapor Mode 不支援的功能 -->
@@ -204,5 +204,5 @@ import { ref } from 'vue';
 - Vapor Mode 完全跳過虛擬 DOM，編譯為原生 DOM 操作，記憶體減少 60%、更新速度提升 3-5 倍
 - 支援漸進式遷移，逐個元件通過 `<script setup vapor>` 開啟
 - 與標準 Vue 元件可無縫混合使用，父子元件模式可以不同
-- 當前限制：不支援 Teleport、動態元件和 render 函式元件
+- 當前限製：不支援 Teleport、動態元件和 render 函式元件
 - Vapor Mode 是 Vue 效能的終極方案，建議對資料密集型元件優先採用

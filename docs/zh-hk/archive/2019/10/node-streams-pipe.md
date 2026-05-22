@@ -1,14 +1,14 @@
 ---
-title: "Node.js Stream pipe 機制深入"
+title: "Node.js Stream pipe 機製深入：落地路徑與實戰建議"
 date: 2019-10-15 10:46:45
 tags:
   - Node.js
 readingTime: 4
-description: "Node.js 的 Stream 是處理 I/O 數據流的核心抽象，而 `pipe` 方法是將多個流串聯起來的關鍵 API。理解 pipe 的工作原理和背壓（backpressure）機制，對於編寫高性能的 Node.js 應用至關重要。"
-wordCount: 595
+description: "Node.js 的 Stream 是處理 I/O 數據流的核心抽象，而 `pipe` 方法是將多個流串聯起來的關鍵 API。理解 pipe 的工作原理和背壓（backpressure）機製，對於編寫高效能的 Node.js 應用至關重要。"
+wordCount: 596
 ---
 
-Node.js 的 Stream 是處理 I/O 數據流的核心抽象，而 `pipe` 方法是將多個流串聯起來的關鍵 API。理解 pipe 的工作原理和背壓（backpressure）機制，對於編寫高性能的 Node.js 應用至關重要。
+Node.js 的 Stream 是處理 I/O 數據流的核心抽象，而 `pipe` 方法是將多個流串聯起來的關鍵 API。理解 pipe 的工作原理和背壓（backpressure）機製，對於編寫高效能的 Node.js 應用至關重要。
 
 ## Stream 基礎回顧
 
@@ -74,7 +74,7 @@ fs.createReadStream('input.txt')
   .on('finish', () => console.log('處理完成'));
 ```
 
-## 背壓（Backpressure）機制
+## 背壓（Backpressure）機製
 
 背壓是 Stream 中最重要的概念。當可寫流的寫入速度跟不上可讀流的讀取速度時，就會產生背壓：
 
@@ -104,7 +104,7 @@ const slowWriter = new Writable({
 fastReader.pipe(slowWriter);
 ```
 
-沒有背壓機制的話，快速讀取的數據會在內存中不斷堆積，最終導致 OOM（內存溢出）。`pipe` 會自動處理這個問題：
+沒有背壓機製的話，快速讀取的數據會在內存中不斷堆積積，最終導致 OOM（內存溢出）。`pipe` 會自動處理這個問題：
 
 1. 當 `write()` 返回 `false` 時，`pipe` 暫停可讀流
 2. 當可寫流觸發 `drain` 事件時，`pipe` 恢復可讀流
@@ -320,7 +320,7 @@ server.listen(8080, () => {
 });
 ```
 
-## 實戰：批量文件處理
+## 實戰：批量檔案處理
 
 處理目錄中的所有文件，逐個壓縮：
 
@@ -364,7 +364,7 @@ compressDir('./data').catch(console.error);
 ## 小結
 
 - `pipe` 方法將可讀流的數據導向可寫流，自動處理背壓
-- 背壓機制防止快速生產者壓垮慢速消費者，避免內存溢出
+- 背壓機製防止快速生產者壓垮慢速消費者，避免內存溢出
 - `pipe` 返回目標流，支持鏈式調用
 - Node.js 10+ 推薦使用 `pipeline` 替代 `pipe`，自動處理錯誤和資源清理
 - Transform 流可以對數據進行自定義轉換

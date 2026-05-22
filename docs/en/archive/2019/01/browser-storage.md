@@ -1,5 +1,5 @@
 ---
-title: "Browser Storage Compared: Cookie, localStorage, and IndexedDB"
+title: "Browser Storage Comparison: Cookie、localStorage、IndexedDB"
 date: 2019-01-31 09:50:31
 tags:
   - Frontend

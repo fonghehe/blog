@@ -1,6 +1,6 @@
 ---
-title: "Farm 构建工具深入"
-date: 2025-08-26 10:00:00
+title: "Farm 构建工具深入：Rust 驱动的极致冷启动"
+date: 2025-08-26 16:00:37
 tags:
   - 前端
 readingTime: 2

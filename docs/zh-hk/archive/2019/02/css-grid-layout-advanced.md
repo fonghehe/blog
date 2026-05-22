@@ -1,10 +1,10 @@
 ---
-title: "CSS Grid 佈局進階：命名網格線與模板區域"
+title: "CSS Grid 佈局進階：命名網格線與範本區域"
 date: 2019-02-13 17:08:59
 tags:
   - CSS
 readingTime: 1
-description: "工作中用了 CSS Grid 一段時間，發現大多數人屐5e止於基礎的 `grid-template-columns: repeat(3, 1fr)` 就不用了。Grid 的命名網格線和模板區域才是真正讓它秒殺複雜佈局的功能。"
+description: "工作中用了 CSS Grid 一段時間，發現大多數人屐5e止於基礎的 `grid-template-columns: repeat(3, 1fr)` 就不用了。Grid 的命名網格線和範本區域才是真正讓它秒殺複雜佈局的功能。"
 wordCount: 217
 ---
 
@@ -145,4 +145,4 @@ subgrid 是 2019 年討論熱度很高的提案，允許子網格共享父網格
 
 ## 總結
 
-CSS Grid 的命名網格線和 `grid-template-areas` 讓複雜頁面佈局變得可維護。`auto-fill + minmax` 幾乎是我現在開發卡片網格的首選方案，遠比手崗 Flexbox 嵌套。
+CSS Grid 的命名網格線和 `grid-template-areas` 讓複雜頁面佈局變得可維護。`auto-fill + minmax` 幾乎是我現在開發卡片網格的首選方案，遠比手崗 Flexbox 巢狀。

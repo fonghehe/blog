@@ -4,31 +4,31 @@ date: 2024-01-10 16:06:34
 tags:
   - Angular
   - Esbuild
-readingTime: 2
-description: "Angular 17 于 2023 年 11 月正式发布，其中最直接影响开发体验的改进之一是将 esbuild 设为默认构建器。新项目无需任何配置即可享受大幅加速的构建速度，老项目也只需一个命令完成迁移。年初正好是盘点和升级的好时机，来看看这个改变究竟带来了多大的实质提升。"
-wordCount: 388
+readingTime: 3
+description: "Angular 17 は2023年11月に正式リリースされました。その中でも開発体験に最も直接的な影響を与える改善点の1つは、esbuild をデフォルトビルダーに設定したことです。新しいプロジェクトでは設定不要で大幅に高速化されたビルド速度を享受でき、既存プロジェクトも1つのコマンドで移行が完了します。年始は棚卸しとアップグレードに最適なタイミングですので、この変更がもたらした実際の効果を見てみましょう。"
+wordCount: 635
 ---
 
-Angular 17 于 2023 年 11 月正式发布，其中最直接影响开发体验的改进之一是将 esbuild 设为默认构建器。新项目无需任何配置即可享受大幅加速的构建速度，老项目也只需一个命令完成迁移。年初正好是盘点和升级的好时机，来看看这个改变究竟带来了多大的实质提升。
+Angular 17 は2023年11月に正式リリースされました。その中でも開発体験に最も直接的な影響を与える改善の1つは、esbuild がデフォルトビルダーになったことです。新プロジェクトは設定不要で大幅に高速化されたビルドを利用でき、既存プロジェクトも1つのコマンドで移行できます。年始は棚卸しとアップグレードに最適な時期ですので、この変更がもたらした具体的な効果を見ていきましょう。
 
 ## 新旧ビルドシステムの比較
 
-Angular 17 之前，默认使用基于 webpack 的 `@angular-devkit/build-angular:browser`。Angular 17 起，新项目默认使用 `@angular-devkit/build-angular:application`（内部基于 esbuild + Rollup）：
+Angular 17 より前は、webpack ベースの `@angular-devkit/build-angular:browser` がデフォルトで使用されていました。Angular 17 からは、新規プロジェクトでは `@angular-devkit/build-angular:application`（内部は esbuild + Rollup ベース）がデフォルトになります：
 
 ```
-实测数据（50 个组件的中型项目）：
+実測データ（50コンポーネントの中規模プロジェクト）：
 
-                    首次构建    增量构建（HMR）
+                    初回ビルド    インクリメンタルビルド（HMR）
 webpack（旧）          ~45s         ~2-3s
 esbuild（新）          ~12s        ~200-400ms
 
-提升幅度               3.7x          ~8x
+改善倍率               3.7x          ~8x
 ```
 
 ## angular.json 設定の変更
 
 ```json
-// 新项目默认（Angular 17+）
+// 新プロジェクトのデフォルト（Angular 17+）
 {
   "architect": {
     "build": {
@@ -36,7 +36,7 @@ esbuild（新）          ~12s        ~200-400ms
       "options": {
         "outputPath": "dist/my-app",
         "index": "src/index.html",
-        "browser": "src/main.ts", // 注意：不再是 "main"
+        "browser": "src/main.ts", // 注意：従来の "main" ではありません
         "polyfills": ["zone.js"],
         "assets": ["src/favicon.ico", "src/assets"],
         "styles": ["src/styles.css"],
@@ -45,38 +45,38 @@ esbuild（新）          ~12s        ~200-400ms
     },
     "serve": {
       "builder": "@angular-devkit/build-angular:dev-server"
-      // dev-server 现在自动使用 Vite + esbuild
+      // dev-server は自動的に Vite + esbuild を使用
     }
   }
 }
 ```
 
-注意 `browser` 字段替代了原来的 `main`，这是 Angular 17 新构建系统的命名约定。
+`browser` フィールドが従来の `main` を置き換えていることに注意してください。これは Angular 17 の新しいビルドシステムの命名規則です。
 
 ## 既存プロジェクトの移行
 
 ```bash
-# 使用 ng update 自动迁移
+# ng update を使用して自動移行
 ng update @angular/core@17 @angular/cli@17
 
-# 迁移后，运行构建验证
+# 移行後、ビルドを実行して確認
 ng build
 
-# 手动检查是否已切换到新构建器
+# 新しいビルダーに切り替わったか手動で確認
 grep -A3 '"build"' angular.json | grep builder
-# 应输出："@angular-devkit/build-angular:application"
+# 出力："@angular-devkit/build-angular:application" となるはず
 ```
 
-### 迁移常见问题
+### 移行時のよくある問題
 
-**1. 自定义 webpack 配置不再支持**
+**1. カスタム webpack 設定は非サポート**
 
 ```typescript
-// 旧方式：通过 custom-webpack 插件扩展
-// webpack.config.js 不再适用于新构建器
+// 旧方式：custom-webpack プラグインで拡張
+// webpack.config.js は新しいビルダーでは使用不可
 
-// 新方式：通过 Vite 插件或内置选项
-// angular.json 中配置 define 替代 webpack DefinePlugin
+// 新方式：Vite プラグインまたは内蔵オプションで対応
+// angular.json で define を設定し、webpack DefinePlugin の代わりとする
 {
   "options": {
     "define": {
@@ -86,42 +86,42 @@ grep -A3 '"build"' angular.json | grep builder
 }
 ```
 
-**2. 输出目录结构变化**
+**2. 出力ディレクトリ構造の変化**
 
 ```
-旧输出（webpack）：
+旧出力（webpack）：
 dist/my-app/
   main.js
   polyfills.js
   styles.css
   ...
 
-新输出（esbuild）：
+新出力（esbuild）：
 dist/my-app/
-  browser/           // 新增 browser 子目录
+  browser/           // browser サブディレクトリが追加
     main-HASH.js
     polyfills-HASH.js
     styles-HASH.css
     ...
-  server/            // SSR 文件（如果开启）
+  server/            // SSR ファイル（有効な場合）
 ```
 
-需要更新 Nginx/Caddy 等静态文件服务配置中的根目录路径。
+Nginx/Caddy などの静的ファイルサーバー設定のルートディレクトリパスを更新する必要があります。
 
 ## SSR統合の改善
 
-Angular 17 的新构建系统深度整合了 SSR：
+Angular 17 の新しいビルドシステムは SSR と深く統合されています：
 
 ```bash
-# 创建新项目时直接开启 SSR
+# 新規プロジェクト作成時に直接 SSR を有効化
 ng new my-app --ssr
 
-# 为现有项目添加 SSR
+# 既存プロジェクトに SSR を追加
 ng add @angular/ssr
 ```
 
 ```typescript
-// server.ts（Angular 17 SSR 标准模板）
+// server.ts（Angular 17 SSR 標準テンプレート）
 import { APP_BASE_HREF } from "@angular/common";
 import { CommonEngine } from "@angular/ssr";
 import express from "express";
@@ -155,15 +155,15 @@ export function app(): express.Express {
 
 ## 開発サーバー：Vite駆動のHMR
 
-新的开发服务器基于 Vite，带来了真正的 HMR（热模块替换）：
+新しい開発サーバーは Vite ベースで、真の HMR（ホットモジュールリプレイスメント）を実現します：
 
 ```bash
 ng serve
-# 修改 .ts 文件 → ~200ms 内刷新
-# 修改 .html 模板 → ~150ms 内刷新（Angular 17 开始支持模板 HMR）
-# 修改 .css/.scss → 即时注入，不刷新页面
+# .ts ファイルの変更 → ~200ms で更新
+# .html テンプレートの変更 → ~150ms で更新（Angular 17 からテンプレート HMR をサポート）
+# .css/.scss の変更 → 即時注入、ページ更新なし
 ```
 
 ## まとめ
 
-Angular 17 的 esbuild 默认化是一次实实在在的开发体验升级。对于新项目，无感受益；对于老项目，`ng update` 一键迁移后构建速度提升 3-4 倍。进入 2024 年，如果你还在用 Angular 14/15 的 webpack 构建，升级到 17 是性价比最高的工程效率改进之一。
+Angular 17 の esbuild デフォルト化は、実のある開発体験のアップグレードです。新規プロジェクトでは意識せずに恩恵を受けられ、既存プロジェクトでも `ng update` のワンクリック移行後、ビルド速度が3〜4倍に向上します。2024年に入り、まだ Angular 14/15 の webpack ビルドを使っているなら、17 へのアップグレードは最もコストパフォーマンスの高いエンジニアリング効率の改善の一つです。

@@ -12,10 +12,10 @@ Angular 11 於 2020 年 11 月 11 日正式釋出。相比 Angular 10 的"質量
 
 ## 開箱即用的 HMR
 
-Angular 11 之前，開啟 HMR 需要手動修改 `main.ts`，配置繁瑣。現在只需一個 CLI 引數：
+Angular 11 之前，開啟 HMR 需要手動修改 `main.ts`，設定繁瑣。現在隻需一個 CLI 引數：
 
 ```bash
-# Angular 11 之前的 HMR 配置（繁瑣）
+# Angular 11 之前的 HMR 設定（繁瑣）
 # 1. 修改 angular.json
 # 2. 修改 main.ts 新增 module.hot 判斷
 # 3. 安裝 @angularclass/hmr
@@ -39,7 +39,7 @@ ng serve --hmr
 }
 ```
 
-HMR 開啟後，修改元件的模板或樣式只會更新該元件，而不是重新整理整個頁面，開發體驗大幅提升。
+HMR 開啟後，修改元件的範本或樣式隻會更新該元件，而不是重新整理整個頁面，開發體驗大幅提升。
 
 ## 字型內聯最佳化
 
@@ -141,4 +141,4 @@ function concat<T extends unknown[], U extends unknown[]>(
 
 ## 總結
 
-Angular 11 的 HMR 改進是每天都能感受到的開發體驗提升，而字型內聯則是零配置的效能最佳化。對現有 Angular 10 專案來說，這次升級幾乎沒有 breaking changes，升級成本極低，推薦儘快跟進。
+Angular 11 的 HMR 改進是每天都能感受到的開發體驗提升，而字型內聯則是零設定的效能最佳化。對現有 Angular 10 專案來說，這次升級幾乎沒有 breaking changes，升級成本極低，推薦儘快跟進。

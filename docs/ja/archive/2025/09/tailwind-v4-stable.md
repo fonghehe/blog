@@ -1,6 +1,6 @@
 ---
-title: "Tailwind CSS v4 安定版"
-date: 2025-09-09 10:00:00
+title: "Tailwind CSS v4 生态移行ガイド：从 v3 升级的完全路径"
+date: 2025-09-09 10:23:00
 tags:
   - CSS
   - エンジニアリング

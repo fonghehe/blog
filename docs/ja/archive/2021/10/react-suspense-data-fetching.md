@@ -6,18 +6,18 @@ tags:
   - JavaScript
 
 readingTime: 3
-description: "React 18 即将发布，Suspense 的数据获取模式终于有了官方推荐方案。之前 Suspense 只能做代码分割的 loading 状态，现在可以用于数据获取了。"
-wordCount: 322
+description: "React 18 のリリースが近づき、Suspense のデータフェッチパターンにようやく公式の推奨方式が登場しました。これまで Suspense はコード分割のローディング状態にしか使えませんでしたが、今後はデータフェッチにも使用できるようになります。"
+wordCount: 553
 ---
 
-React 18 即将发布，Suspense 的数据获取模式终于有了官方推荐方案。之前 Suspense 只能做代码分割的 loading 状态，现在可以用于数据获取了。
+React 18 のリリースが近づき、Suspense のデータフェッチパターンにようやく公式の推奨方式が登場しました。これまで Suspense はコード分割のローディング状態にしか使えませんでしたが、今後はデータフェッチにも使用できるようになります。
 
-## Suspense 的核心思路
+## Suspense の核心的な考え方
 
-Suspense 不是"loading 状态管理器"，而是"异步依赖的协调器"。
+Suspense は「loading 状態管理」ではなく、「非同期依存関係のコーディネーター」です。
 
 ```jsx
-// 传统做法：组件自己管理 loading 状态
+// 従来の方法：コンポーネント自身が loading 状態を管理
 function UserProfile({ userId }) {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -33,9 +33,9 @@ function UserProfile({ userId }) {
   return <div>{user.name}</div>
 }
 
-// Suspense 做法：数据源抛出 Promise，Suspense 捕获
+// Suspense の方法：データソースが Promise を投げ、Suspense がキャッチ
 function UserProfile({ userId }) {
-  // read() 会抛出 Promise（pending）或返回数据（resolved）
+  // read() は Promise（pending）を投げるか、データ（resolved）を返す
   const user = userResource.read(userId)
   return <div>{user.name}</div>
 }
@@ -50,7 +50,7 @@ function App() {
 }
 ```
 
-组件不用关心 loading 状态，由 Suspense 统一处理。
+コンポーネントは loading 状態を気にする必要がなく、Suspense が一元的に処理します。
 
 ## シンプルな Suspense データソースの実装
 
@@ -76,9 +76,9 @@ export function createResource<T>(asyncFn: () => Promise<T>) {
     read(): T {
       switch (status) {
         case 'pending':
-          throw suspender  // Suspense 捕获 Promise
+          throw suspender  // Suspense が Promise をキャッチ
         case 'error':
-          throw error      // ErrorBoundary 捕获错误
+          throw error      // ErrorBoundary がエラーをキャッチ
         case 'success':
           return result
       }
@@ -88,14 +88,14 @@ export function createResource<T>(asyncFn: () => Promise<T>) {
 ```
 
 ```jsx
-// 使用
+// 使用例
 import { createResource } from './utils/createResource'
 
-// 创建资源（在组件外部或用 useMemo 缓存）
+// リソースを作成（コンポーネント外部または useMemo でキャッシュ）
 const userResource = createResource(() => fetch('/api/user/1').then(r => r.json()))
 
 function UserProfile() {
-  const user = userResource.read()  // 可能抛出 Promise
+  const user = userResource.read()  // Promise を投げる可能性がある
   return <div>{user.name}</div>
 }
 
@@ -112,7 +112,7 @@ function App() {
 
 ## React Query との組み合わせ（推奨）
 
-React Query 3.25+ 已经支持 Suspense 模式：
+React Query 3.25+ は既に Suspense モードをサポートしています：
 
 ```jsx
 import { useQuery } from 'react-query'
@@ -122,7 +122,7 @@ function UserProfile({ userId }) {
     ['user', userId],
     () => fetchUser(userId),
     {
-      suspense: true,  // 开启 Suspense 模式
+      suspense: true,  // Suspense モードを有効化
     }
   )
 
@@ -154,7 +154,7 @@ function UserPage({ userId }) {
 }
 ```
 
-每个区域独立加载，不互相阻塞。
+各領域が独立して読み込まれ、互いにブロックしません。
 
 ## ネストされた Suspense
 
@@ -178,12 +178,12 @@ function App() {
 }
 ```
 
-外层 Suspense 是兜底，内层 Suspense 处理局部加载。React 18 的流式 SSR 能逐段发送 HTML。
+外側の Suspense はフォールバック、内側の Suspense は部分的なローディングを処理します。React 18 のストリーミング SSR は HTML をセグメントごとに送信できます。
 
 ## React 18 Suspense SSR との連携
 
 ```jsx
-// 服务端：选择性注水（Selective Hydration）
+// サーバー側：選択的ハイドレーション（Selective Hydration）
 import { hydrateRoot } from 'react-dom/client'
 
 function App() {
@@ -202,12 +202,12 @@ function App() {
   )
 }
 
-// 服务端先发送 Header 的 HTML
-// MainContent 的数据准备好后，流式追加
-// 客户端逐段 hydrate，不需要等所有内容
+// サーバー側は最初に Header の HTML を送信
+// MainContent のデータ準備ができたら、ストリーミングで追加送信
+// クライアント側はセグメントごとに hydrate し、すべてのコンテンツを待つ必要はない
 ```
 
-用户更早看到内容，交互也更早可用。
+ユーザーはより早くコンテンツを確認でき、インタラクションもより早く利用可能になります。
 
 ## エラー処理
 
@@ -232,22 +232,22 @@ function App() {
 }
 ```
 
-Suspense 处理 loading，ErrorBoundary 处理错误，职责清晰。
+Suspense が loading を処理し、ErrorBoundary がエラーを処理します。責務が明確に分離されています。
 
 ## 注意事項
 
 ```jsx
-// ❌ Suspense 内不要有条件渲染的数据获取
+// ❌ Suspense 内で条件付きレンダリングのデータ取得をしない
 function Bad({ showProfile }) {
   return (
     <Suspense fallback={<Spinner />}>
-      {/* 条件切换时可能触发意外的 Suspense */}
+      {/* 条件切り替え時に予期しない Suspense が発動する可能性がある */}
       {showProfile ? <UserProfile /> : <GuestView />}
     </Suspense>
   )
 }
 
-// ✅ 用 key 强制重新创建
+// ✅ key を使って強制的に再作成
 function Good({ showProfile, userId }) {
   return (
     <Suspense fallback={<Spinner />}>
@@ -261,8 +261,8 @@ function Good({ showProfile, userId }) {
 
 ## まとめ
 
-- Suspense 数据获取的核心：组件抛出 Promise，Suspense 捕获并显示 fallback
-- 推荐用 React Query / SWR 等库的 Suspense 模式，不用自己实现
-- 嵌套 Suspense 实现逐区域加载，配合 React 18 流式 SSR 效果最佳
-- Suspense + ErrorBoundary：loading 和错误处理职责分离
-- React 18 正式版发布后，这个模式会成为主流
+- Suspense データフェッチの核心：コンポーネントが Promise を投げ、Suspense がキャッチして fallback を表示
+- React Query / SWR などのライブラリの Suspense モードを推奨、自前実装は不要
+- ネストされた Suspense で領域ごとの読み込みを実現、React 18 のストリーミング SSR との組み合わせが最適
+- Suspense + ErrorBoundary：loading とエラー処理の責務分離
+- React 18 正式版リリース後、このパターンが主流になる

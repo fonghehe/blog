@@ -1,6 +1,6 @@
 ---
-title: "TypeScript 6.0 Generics Improvements"
-date: 2025-08-04 10:00:00
+title: "TypeScript 6.0 Generics Improvements: 更高阶Type抽象Capability"
+date: 2025-08-04 19:38:15
 tags:
   - TypeScript
 readingTime: 2

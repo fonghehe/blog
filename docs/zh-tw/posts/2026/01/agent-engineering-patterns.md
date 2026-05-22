@@ -1,6 +1,6 @@
 ---
 title: "前端 Agent 工程化：從工具呼叫到自主決策"
-date: 2026-01-15 10:00:00
+date: 2026-01-15 14:49:26
 tags:
   - 前端
 readingTime: 3
@@ -251,7 +251,7 @@ class AgentContextManager {
 ## 小結
 
 - Agent 工程化的核心是 ReAct 迴圈 + 工具鏈 + 上下文管理
-- 單 Agent 能力有限，多 Agent 協作能處理更復雜的任務
+- 單 Agent 能力有限，多 Agent 協作能處理更複雜的任務
 - 人機協作節點是防止 Agent 失控的關鍵安全機制
 - 上下文工程決定 Agent 的上限，投入精力在這上面回報最高
 - 2026 年，前端 Agent 將從"輔助工具"變成"團隊成員"

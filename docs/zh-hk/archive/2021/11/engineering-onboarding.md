@@ -1,5 +1,5 @@
 ---
-title: "前端工程團隊新人 Onboarding"
+title: "前端工程團隊新人 Onboarding：實踐方法與治理思路"
 date: 2021-11-02 14:50:40
 tags:
   - 前端工程化
@@ -37,7 +37,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 內部原理
 
@@ -97,7 +97,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 這段代碼展示了基本的使用方式。實際項目中還需要考慮錯誤處理和邊界條件。
 
-## 性能對比
+## 效能對比
 
 在這個基礎上，我們可以進一步優化：
 

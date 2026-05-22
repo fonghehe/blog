@@ -1,6 +1,6 @@
 ---
 title: "Svelte 5 安定版：Runesを全面採用"
-date: 2025-11-08 10:00:00
+date: 2025-11-08 14:42:19
 tags:
   - Svelte
 readingTime: 2

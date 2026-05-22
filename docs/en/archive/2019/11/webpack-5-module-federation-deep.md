@@ -1,5 +1,5 @@
 ---
-title: "Webpack 5 Module Federation In Depth"
+title: "Webpack 5 Module Federation Deep Dive: 微前端下一个答案"
 date: 2019-11-06 11:20:08
 tags:
   - Webpack

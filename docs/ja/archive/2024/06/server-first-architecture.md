@@ -1,6 +1,6 @@
 ---
 title: "Server-first フロントエンドアーキテクチャの進化"
-date: 2024-06-24 10:00:00
+date: 2024-06-24 19:58:35
 tags:
   - フロントエンド
 readingTime: 2

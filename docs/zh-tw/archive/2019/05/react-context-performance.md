@@ -4,11 +4,11 @@ date: 2019-05-13 10:48:53
 tags:
   - React
 readingTime: 5
-description: "React 16.3 引入了新的 Context API，16.8 的 Hooks 讓它更好用了。但在實際專案中，很多人發現用了 Context 後元件頻繁重渲染，效能下降。這篇文章深入分析 Context 的渲染機制和最佳化方案。"
+description: "React 16.3 引入了新的 Context API，16.8 的 Hooks 讓它更好用了。但在實際專案中，很多人發現用了 Context 後元件頻繁重渲染，效能下降。這篇文章深入分析 Context 的渲染機製和最佳化方案。"
 wordCount: 644
 ---
 
-React 16.3 引入了新的 Context API，16.8 的 Hooks 讓它更好用了。但在實際專案中，很多人發現用了 Context 後元件頻繁重渲染，效能下降。這篇文章深入分析 Context 的渲染機制和最佳化方案。
+React 16.3 引入了新的 Context API，16.8 的 Hooks 讓它更好用了。但在實際專案中，很多人發現用了 Context 後元件頻繁重渲染，效能下降。這篇文章深入分析 Context 的渲染機製和最佳化方案。
 
 ## Context 的重渲染問題
 
@@ -52,7 +52,7 @@ function ThemeSwitcher() {
 {% endraw %}
 ```
 
-問題來了：點選切換主題時，`UserProfile` 也會重新渲染，儘管它只關心 `user`。因為 `ThemeSwitcher` 呼叫了 `setTheme`，導致 `value` 物件變化，所有 `useContext(UserContext)` 的消費者都會重渲染。
+問題來了：點選切換主題時，`UserProfile` 也會重新渲染，儘管它隻關心 `user`。因為 `ThemeSwitcher` 呼叫了 `setTheme`，導致 `value` 物件變化，所有 `useContext(UserContext)` 的消費者都會重渲染。
 
 **核心原理：Context.Provider 的 value 變化時，所有 useContext 這個 Context 的元件都會重渲染，不管它們實際用了 value 中的哪些欄位。**
 
@@ -135,7 +135,7 @@ function AppProvider({ children }) {
 }
 ```
 
-`setUser` 來自 `useState`，引用本身是穩定的，所以依賴陣列只需要 `[user]`。
+`setUser` 來自 `useState`，引用本身是穩定的，所以依賴陣列隻需要 `[user]`。
 
 ## 方案三：useMemo 和 useCallback
 
@@ -267,7 +267,7 @@ const TodoListView = React.memo(function TodoListView({ todos, onToggle }) {
   )
 })
 
-// 外層：只負責從 Context 取資料
+// 外層：隻負責從 Context 取資料
 function TodoListContainer() {
   const { todos, toggleTodo } = useContext(TodoContext)
   // 每次重渲染時 todos 引用可能變化
@@ -324,7 +324,7 @@ function AppProvider({ children }) {
   const [state, dispatch] = useReducer(appReducer, initialState)
 
   // dispatch 本身是穩定的，不需要 useMemo
-  // 但將它放在獨立 Context 中，狀態變化不會影響只用 dispatch 的元件
+  // 但將它放在獨立 Context 中，狀態變化不會影響隻用 dispatch 的元件
 
   return (
     <AppStateContext.Provider value={state}>
@@ -352,7 +352,7 @@ function useAppDispatch() {
   return context
 }
 
-// 4. 選擇器模式：只訂閱需要的 slice
+// 4. 選擇器模式：隻訂閱需要的 slice
 function useAppSelector(selector) {
   const state = useAppState()
   return selector(state)
@@ -360,8 +360,8 @@ function useAppSelector(selector) {
 
 // 5. 使用示例
 
-// 這個元件只讀取 state，不讀 dispatch
-// 當只有 dispatch 不變時（永遠不會變），不會觸發重新渲染
+// 這個元件隻讀取 state，不讀 dispatch
+// 當隻有 dispatch 不變時（永遠不會變），不會觸發重新渲染
 function Header() {
   const user = useAppSelector(s => s.user)
   const theme = useAppSelector(s => s.theme)
@@ -373,9 +373,9 @@ function Header() {
   )
 }
 
-// 這個元件只用 dispatch，state 變化不影響它
+// 這個元件隻用 dispatch，state 變化不影響它
 function ThemeButton() {
-  console.log('ThemeButton render') // 只在父元件重渲染時才觸發
+  console.log('ThemeButton render') // 隻在父元件重渲染時才觸發
   const dispatch = useAppDispatch()
 
   return (
@@ -386,7 +386,7 @@ function ThemeButton() {
 }
 
 // 使用 useReducer 的好處：dispatch 引用永遠不變
-// 配合拆分的 Context，只用 dispatch 的元件永遠不會因 Context 變化而重渲染
+// 配合拆分的 Context，隻用 dispatch 的元件永遠不會因 Context 變化而重渲染
 ```
 
 ## Context vs Redux：何時用哪個
@@ -415,7 +415,7 @@ function ConfigProvider({ children }) {
 
 // 適合 Redux 的場景：高頻更新的複雜狀態
 // 購物車、即時資料、多模組聯動等
-// - Redux 的 useSelector 有內建的引用比較，只在選擇資料變化時重渲染
+// - Redux 的 useSelector 有內建的引用比較，隻在選擇資料變化時重渲染
 // - Redux DevTools 強大的除錯能力
 // - middleware 生態（thunk、saga、observable）
 // - 更嚴格的單向資料流，團隊協作更易維護

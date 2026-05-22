@@ -1,5 +1,5 @@
 ---
-title: "SSR 懶水合 Lazy Hydration 策略"
+title: "SSR 懶水合 Lazy Hydration 策略：落地路徑與實戰建議"
 date: 2021-06-18 16:44:42
 tags:
   - 前端
@@ -95,7 +95,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 通過這種方式，代碼的可測試性和可擴展性都得到了提升。
 
-## 性能優化
+## 效能優化
 
 以下是一個完整的示例：
 

@@ -1,6 +1,6 @@
 ---
-title: "Deno 2.0 Node.js Compatibility"
-date: 2024-09-25 10:00:00
+title: "Deno 2.0 Node Compatibility:  Deno 1.x MigrationRealExperience"
+date: 2024-09-25 18:59:36
 tags:
   - Frontend
 readingTime: 2

@@ -1,6 +1,6 @@
 ---
-title: "Rspack 2.0 完整指南"
-date: 2025-11-13 10:00:00
+title: "Rspack 2.0 生產落地：大型專案從 Webpack 遷移的完整記錄"
+date: 2025-11-13 19:47:24
 tags:
   - 前端
 readingTime: 2
@@ -65,7 +65,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 真實場景應用
 

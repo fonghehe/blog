@@ -1,6 +1,6 @@
 ---
-title: "GitHub Copilot 下一代特性"
-date: 2025-04-21 10:00:00
+title: "GitHub Copilot 下一代特性：特性解讀與遷移建議"
+date: 2025-04-21 10:15:52
 tags:
   - 工程化
 readingTime: 2
@@ -85,7 +85,7 @@ export async function POST(req) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 

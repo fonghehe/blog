@@ -1,6 +1,6 @@
 ---
 title: "VitePress 2.0 新機能"
-date: 2025-02-13 10:00:00
+date: 2025-02-13 18:47:24
 tags:
   - エンジニアリング
 readingTime: 2

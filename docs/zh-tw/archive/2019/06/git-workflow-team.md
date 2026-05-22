@@ -17,9 +17,9 @@ wordCount: 626
 **Git Flow**——適合有明確釋出週期的專案（如 App 版本釋出）：
 
 ```
-main (master) ← 只有版本釋出時才打 tag
+main (master) ← 隻有版本釋出時才打 tag
   ↑
-release/v1.2.0 ← 釋出前的準備分支，只修 bug
+release/v1.2.0 ← 釋出前的準備分支，隻修 bug
   ↑
 develop ← 日常開發的整合分支
   ↑    ↑
@@ -64,7 +64,7 @@ git checkout -b 0601          # 數字是什麼意思？
 
 ```bash
 #!/bin/sh
-# .git/hooks/pre-push 或通過 husky 配置
+# .git/hooks/pre-push 或通過 husky 設定
 branch=$(git rev-parse --abbrev-ref HEAD)
 valid_pattern="^(feature|fix|hotfix|release|chore)/[a-z0-9._-]+$"
 
@@ -129,7 +129,7 @@ git rebase --continue
 git rebase --abort
 
 # ⚠️ 黃金規則：永遠不要 rebase 已經推送到遠端的公共分支！
-# 只 rebase 你自己獨佔的功能分支。
+# 隻 rebase 你自己獨佔的功能分支。
 # 如果你和同事共享 feature 分支，不要 rebase。
 ```
 
@@ -286,7 +286,7 @@ module.exports = {
 
 ## Code Review 與 Pull Request
 
-PR 不只是「合併程式碼」的工具，更是團隊知識共享和質量把控的關卡：
+PR 不隻是「合併程式碼」的工具，更是團隊知識共享和質量把控的關卡：
 
 ```bash
 # 完整的 PR 流程
@@ -305,7 +305,7 @@ git push -u origin feature/order-export
 
 # 4. 在 GitHub/GitLab 上建立 Pull Request
 # 標題：feat(order): 新增訂單匯出功能
-# 描述模板：
+# 描述範本：
 ```
 
 ```markdown
@@ -366,7 +366,7 @@ coverage/
 *.min.js
 *.min.css
 
-# ===== 環境配置（可能含金鑰）=====
+# ===== 環境設定（可能含金鑰）=====
 .env
 .env.local
 .env.*.local
@@ -410,9 +410,9 @@ echo ".env" >> .gitignore
 git rm --cached .env
 
 # 3. 提交這個變更
-git commit -m "chore: 從版本控制中移除 .env 檔案"
+git commit -m "chore: 從版本控製中移除 .env 檔案"
 
-# ⚠️ 注意：這只是從未來的提交中移除。
+# ⚠️ 注意：這隻是從未來的提交中移除。
 # .env 的內容仍然存在於 Git 歷史中！
 # 如果 .env 含有真實金鑰，需要立即輪換金鑰。
 # 如果必須從歷史中清除，需要使用 git filter-branch 或 BFG Repo-Cleaner。

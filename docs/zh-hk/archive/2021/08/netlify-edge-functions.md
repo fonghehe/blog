@@ -1,5 +1,5 @@
 ---
-title: "Netlify Edge Functions 邊緣計算"
+title: "Netlify Edge Functions 邊緣計算：落地路徑與實戰建議"
 date: 2021-08-10 10:39:48
 tags:
   - 前端
@@ -35,7 +35,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 源碼分析
 

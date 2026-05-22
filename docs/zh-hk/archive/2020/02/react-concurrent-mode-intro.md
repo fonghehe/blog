@@ -1,5 +1,5 @@
 ---
-title: "React Concurrent Mode 初探"
+title: "React Concurrent Mode 2020：從實驗到生產的第一步"
 date: 2020-02-26 17:29:17
 tags:
   - React

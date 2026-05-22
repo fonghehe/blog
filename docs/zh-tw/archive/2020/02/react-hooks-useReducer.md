@@ -1,5 +1,5 @@
 ---
-title: "React useReducer 狀態管理詳解"
+title: "React useReducer 進階：與 Context 组合的企業級實踐"
 date: 2020-02-20 10:12:00
 tags:
   - React

@@ -1,6 +1,6 @@
 ---
-title: "Playwright 2025 New Features"
-date: 2025-09-23 10:00:00
+title: "Playwright 2025 New Features: ComponentTesting增强 & 视觉回归Capability"
+date: 2025-09-23 14:37:14
 tags:
   - Testing
 readingTime: 2

@@ -301,7 +301,7 @@ export { multiply, divide };
 ```
 
 ```javascript
-// logger.js —— 預設匯出（default export）：每個模組只能有一個
+// logger.js —— 預設匯出（default export）：每個模組隻能有一個
 export default class Logger {
   constructor(prefix) {
     this.prefix = prefix;
@@ -383,7 +383,7 @@ const routes = [
   },
   {
     path: '/dashboard',
-    // 只有登入使用者才載入 Dashboard
+    // 隻有登入使用者才載入 Dashboard
     component: () => {
       if (isLoggedIn()) {
         return import('./pages/Dashboard.js');
@@ -395,7 +395,7 @@ const routes = [
 
 // 場景二：按需載入大型庫
 async function exportToExcel(data) {
-  // 只在使用者點選「匯出」時才載入 xlsx 庫
+  // 隻在使用者點選「匯出」時才載入 xlsx 庫
   const XLSX = await import('xlsx');
 
   const worksheet = XLSX.utils.json_to_sheet(data);
@@ -522,7 +522,7 @@ export function multiply(a, b) {
 import { add } from './math';
 // multiply 沒有被匯入，webpack 會將它從產物中移除
 
-// 最終產物中只包含 add 函式的程式碼
+// 最終產物中隻包含 add 函式的程式碼
 // subtract 和 multiply 都不會被打包進來
 ```
 

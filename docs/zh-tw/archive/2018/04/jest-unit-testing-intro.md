@@ -4,13 +4,13 @@ date: 2018-04-02 10:27:58
 tags:
   - 測試
 readingTime: 2
-description: "前端測試一直是個被忽視的領域，但隨著專案規模增長，沒有測試的程式碼越來越難以維護。Jest 是目前最流行的 JavaScript 測試框架，配置簡單，功能全面。"
+description: "前端測試一直是個被忽視的領域，但隨著專案規模增長，沒有測試的程式碼越來越難以維護。Jest 是目前最流行的 JavaScript 測試框架，設定簡單，功能全面。"
 wordCount: 222
 ---
 
 前端測試一直是個被忽視的領域，但隨著專案規模增長，沒有測試的程式碼越來越難以維護。Jest 是目前最流行的 JavaScript 測試框架，配置簡單，功能全面。
 
-## 安裝和配置
+## 安裝和設定
 
 ```bash
 npm install --save-dev jest babel-jest @babel/preset-env

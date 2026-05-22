@@ -19,7 +19,7 @@ Deno 和 Node.js 的設計差異：
 ------|---------|------|
 | 安全模型 | 信任所有代碼 | 默認沙箱，需顯式授權 |
 | 模塊系統 | CommonJS + ESM | 純 ESM（URL 導入） |
-| TypeScript | 需要編譯 | 原生支持 |
+| TypeScript | 需要編譯 | 原生支援 |
 | 標準庫 | 需要 npm 包 | deno.land/std 標準庫 |
 | 工具鏈 | 分散（npm + ts-node + eslint + jest） | 內置（格式化 + lint + 測試） |
 
@@ -84,10 +84,10 @@ deno run --allow-net --allow-read server.ts
 ## 權限系統
 
 ```typescript
-// 讀文件需要 --allow-read
+// 讀檔案需要 --allow-read
 const data = await Deno.readTextFile('./config.json');
 
-// 寫文件需要 --allow-write
+// 寫檔案需要 --allow-write
 await Deno.writeTextFile('./output.txt', data);
 
 // 網絡請求需要 --allow-net
@@ -97,8 +97,8 @@ const res = await fetch('https://api.example.com');
 const port = Deno.env.get('PORT') || '8000';
 
 // 細粒度權限
-// --allow-read=/tmp（只允許讀 /tmp）
-// --allow-net=api.example.com（只允許訪問特定域名）
+// --allow-read=/tmp（隻允許讀 /tmp）
+// --allow-net=api.example.com（隻允許訪問特定域名）
 ```
 
 ## 內置工具

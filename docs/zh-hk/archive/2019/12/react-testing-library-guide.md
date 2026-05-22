@@ -1,5 +1,5 @@
 ---
-title: "React Testing Library 測試指南"
+title: "React Testing Library 測試指南：實踐方法與治理思路"
 date: 2019-12-09 15:47:43
 tags:
   - React
@@ -302,7 +302,7 @@ test('請求失敗時顯示錯誤信息', async () => {
 })
 ```
 
-## jest.config.js 配置
+## jest.config.js 設定
 
 ```javascript
 module.exports = {

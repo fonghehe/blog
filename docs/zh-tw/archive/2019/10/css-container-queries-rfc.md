@@ -15,7 +15,7 @@ wordCount: 515
 假設你有一個卡片元件，在主內容區它應該橫向排列，在側邊欄它應該縱向排列。使用 `@media` 查詢：
 
 ```css
-/* 只能根據視口寬度判斷 */
+/* 隻能根據視口寬度判斷 */
 @media (min-width: 768px) {
   .card {
     flex-direction: row;
@@ -78,7 +78,7 @@ Container Queries（也稱為 Element Queries）的核心思想是讓 CSS 可以
 `container-type` 定義一個元素作為查詢容器，以及它可以被查詢的維度：
 
 ```css
-/* 只查詢 inline-size（水平方向寬度） */
+/* 隻查詢 inline-size（水平方向寬度） */
 .sidebar {
   container-type: inline-size;
 }

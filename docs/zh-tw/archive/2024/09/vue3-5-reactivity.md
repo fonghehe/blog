@@ -1,6 +1,6 @@
 ---
-title: "Vue 3.5 響應式重構"
-date: 2024-09-19 10:00:00
+title: "Vue 3.5 響應式重构：響應式 Props 解构與 useTemplateRef"
+date: 2024-09-19 15:53:30
 tags:
   - Vue
 readingTime: 2

@@ -30,7 +30,7 @@ export class CounterComponent {
 }
 ```
 
-`EventEmitter` 繼承自 RxJS `Subject`，實際上是一個很重的抽象——但 Angular 的 `@Output()` 只用到了它的 `emit()` 方法，整個 Observable 能力都被浪費了。
+`EventEmitter` 繼承自 RxJS `Subject`，實際上是一個很重的抽象——但 Angular 的 `@Output()` 隻用到了它的 `emit()` 方法，整個 Observable 能力都被浪費了。
 
 ## 新的 output() API（Angular 17.3）
 

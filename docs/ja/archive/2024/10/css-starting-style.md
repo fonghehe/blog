@@ -1,6 +1,6 @@
 ---
 title: "CSS @starting-style"
-date: 2024-10-31 10:00:00
+date: 2024-10-31 12:45:22
 tags:
   - CSS
 readingTime: 2

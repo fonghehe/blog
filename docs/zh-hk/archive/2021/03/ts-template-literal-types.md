@@ -1,10 +1,10 @@
 ---
-title: "TypeScript 模板字面量類型"
+title: "TypeScript 範本字面量類型：落地路徑與實戰建議"
 date: 2021-03-25 14:31:30
 tags:
   - TypeScript
 readingTime: 2
-description: "在日常開發中，TypeScript 模板字面量類型的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
+description: "在日常開發中，TypeScript 範本字面量類型的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
 wordCount: 295
 ---
 
@@ -99,9 +99,9 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
-## 性能對比
+## 效能對比
 
 我們可以通過以下方式來改進：
 
@@ -141,5 +141,5 @@ class TypedEmitter<T extends Record<string, any>> {
 - 關注社區動態，技術方案需要持續迭代
 - 不要為了用新技術而用新技術
 - 代碼示例僅供參考，需根據業務場景調整
-- TypeScript 模板字面量類型不是銀彈，需要根據項目規模和技術棧選擇
+- TypeScript 範本字面量類型不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要

@@ -1,5 +1,5 @@
 ---
-title: "CSS aspect-ratio：ネイティブのアスペクト比"
+title: "CSS aspect-ratio 原生宽高比 2020：Chrome 88 正式支持"
 date: 2019-11-11 10:30:38
 tags:
   - CSS

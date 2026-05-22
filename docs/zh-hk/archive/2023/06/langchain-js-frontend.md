@@ -1,5 +1,5 @@
 ---
-title: "LangChain.js 前端 AI 應用"
+title: "LangChain.js 前端 AI 應用：落地路徑與實戰建議"
 date: 2023-06-20 17:22:12
 tags:
   - 前端
@@ -116,7 +116,7 @@ export async function POST(req) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 注意事項
 

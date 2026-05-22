@@ -3,29 +3,29 @@ title: "Astro 1.0：コンテンツファーストのフロントエンドフレ
 date: 2022-06-07 15:28:54
 tags:
   - フロントエンド
-readingTime: 2
-description: "Astro 1.0 正式发布了。它的核心理念很明确：默认输出零 JavaScript，只在需要交互的地方加载 JS。对于内容型网站（博客、文档、营销页），这个方案比 React/Vue 全家桶高效得多。"
-wordCount: 341
+readingTime: 3
+description: "Astro 1.0 が正式にリリースされました。その核となる理念は明確です。デフォルトではゼロ JavaScript を出力し、インタラクションが必要な箇所でのみ JS を読み込みます。コンテンツ型サイト（ブログ、ドキュメント、マーケティングページ）にとって、この方式は React/Vue のオールインワンよりはるかに効率的です。"
+wordCount: 613
 ---
 
-Astro 1.0 正式发布了。它的核心理念很明确：默认输出零 JavaScript，只在需要交互的地方加载 JS。对于内容型网站（博客、文档、营销页），这个方案比 React/Vue 全家桶高效得多。
+Astro 1.0 が正式にリリースされました。その核となる理念は明確です：デフォルトで JavaScript をゼロ出力し、インタラクションが必要な場所でのみ JS を読み込みます。コンテンツ型サイト（ブログ、ドキュメント、マーケティングページ）にとって、このアプローチは React/Vue のオールインワンよりはるかに効率的です。
 
 ## 核心理念：Islands Architecture
 
 ```
 ┌─────────────────────────────┐
-│     静态 HTML（零 JS）        │
+│     静的 HTML（JS ゼロ）      │
 │  ┌─────────┐  ┌──────────┐  │
 │  │ Island  │  │ Island   │  │
 │  │ (React) │  │ (Vue)    │  │
 │  │ client: │  │ client:  │  │
 │  │ load    │  │ visible  │  │
 │  └─────────┘  └──────────┘  │
-│     静态 HTML（零 JS）        │
+│     静的 HTML（JS ゼロ）      │
 └─────────────────────────────┘
 ```
 
-页面大部分是静态 HTML，只有标记为「Island」的组件才会加载 JS 并变成可交互的。
+ページの大部分は静的 HTML で、「Island」としてマークされたコンポーネントのみが JS を読み込み、インタラクティブになります。
 
 ## クイックスタート
 
@@ -36,11 +36,11 @@ pnpm install
 pnpm dev
 ```
 
-## Astro 组件语法
+## Astro コンポーネントの構文
 
 ```astro
 ---
-// --- 之间是服务端代码（构建时执行）
+// --- の間はサーバーサイドコード（ビルド時に実行）
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CommentWidget from '../components/CommentWidget';
@@ -64,12 +64,12 @@ const title = '我的技术博客';
     ))}
   </main>
 
-  <!-- 这个组件会在客户端加载 JS -->
+  <!-- このコンポーネントはクライアント側で JS を読み込みます -->
   <CommentWidget client:load />
 </Layout>
 ```
 
-## Client Directives：控制何时加载 JS
+## Client Directives：JS をいつ読み込むかを制御
 
 ```astro
 ---
@@ -79,25 +79,25 @@ import Video from '../components/Video';
 import Search from '../components/Search';
 ---
 
-<!-- 页面加载后立即 hydrate -->
+<!-- ページ読み込み後すぐに hydrate -->
 <ChatWidget client:load />
 
-<!-- 组件进入视口后才 hydrate（懒加载） -->
+<!-- コンポーネントがビューポートに入ってから hydrate（遅延ロード）-->
 <Sidebar client:visible />
 
-<!-- 空闲时 hydrate（requestIdleCallback） -->
+<!-- アイドル時に hydrate（requestIdleCallback）-->
 <Search client:idle />
 
-<!-- 只在特定媒体查询匹配时 hydrate -->
+<!-- 特定のメディアクエリにマッチした場合のみ hydrate -->
 <Video client:media="(max-width: 768px)" />
 
-<!-- 只在客户端渲染（SSR 时不渲染） -->
+<!-- クライアント側のみレンダリング（SSR 時はレンダリングしない）-->
 <HeavyChart client:only="react" />
 ```
 
-## 混合框架
+## ハイブリッドフレームワーク
 
-Astro 支持在同一个项目中混合使用不同框架：
+Astro は同じプロジェクト内で異なるフレームワークを混在させることをサポートしています：
 
 ```astro
 ---
@@ -126,11 +126,11 @@ export default defineConfig({
 });
 ```
 
-这在微前端场景或渐进式迁移中很有用。
+これはマイクロフロントエンドのシナリオや段階的な移行で役立ちます。
 
-## 内容集合（Content Collections）
+## コンテンツコレクション（Content Collections）
 
-Astro 1.0 的杀手特性：用 TypeScript 类型安全的方式管理 Markdown 内容。
+Astro 1.0 のキラーフィーチャー：TypeScript の型安全な方法で Markdown コンテンツを管理します。
 
 ```typescript
 // src/content/config.ts
@@ -152,12 +152,12 @@ export const collections = { blog };
 ---
 import { getCollection } from 'astro:content';
 
-// 类型安全！如果 frontmatter 不符合 schema，构建时就会报错
+// 型安全！frontmatter がスキーマに一致しない場合、ビルド時にエラー
 const posts = await getCollection('blog', ({ data }) => {
   return !data.draft;
 });
 
-// 按日期排序
+// 日付でソート
 const sorted = posts.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
@@ -171,27 +171,27 @@ const sorted = posts.sort(
 ))}
 ```
 
-## 构建输出
+## ビルド出力
 
 ```typescript
 // astro.config.mjs
 export default defineConfig({
-  // 静态站（默认）
+  // 静的サイト（デフォルト）
   output: 'static',
 
-  // 或 SSR 模式
+  // または SSR モード
   // output: 'server',
   // adapter: vercel(),
 });
 ```
 
-静态构建输出的是纯 HTML + CSS + 极少量 JS。我们博客项目构建后，首页 JS 体积只有 2KB（React 做的搜索组件）。
+静的ビルドの出力は純粋な HTML + CSS + ごくわずかな JS です。私たちのブログプロジェクトでは、ビルド後のトップページの JS サイズはわずか 2KB でした（React 製の検索コンポーネント）。
 
 ## パフォーマンス比較
 
-同一个博客项目用不同方案的 Lighthouse 分数：
+同じブログプロジェクトを異なる構成で Lighthouse スコアを比較：
 
-| 框架 | Performance | JS 体积 |
+| フレームワーク | Performance | JS サイズ |
 |------|-------------|---------|
 | Next.js (SSG) | 78 | 180KB |
 | Gatsby | 72 | 220KB |
@@ -199,4 +199,4 @@ export default defineConfig({
 
 ## まとめ
 
-Astro 不是要替代 React/Vue，而是填补了一个空白：内容型网站不需要 SPA 的复杂度。默认零 JS、Islands Architecture、混合框架支持——这些特性让它成为文档站和博客的最佳选择。
+Astro は React/Vue を置き換えるものではなく、空白を埋めるものです：コンテンツ型サイトには SPA の複雑さは必要ありません。デフォルトで JS ゼロ、Islands Architecture、ハイブリッドフレームワークのサポート——これらの特性により、ドキュメントサイトやブログの最良の選択肢となっています。

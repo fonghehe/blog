@@ -1,5 +1,5 @@
 ---
-title: "GraphQL 客户端 Apollo Client 實戰"
+title: "GraphQL 客户端 Apollo Client 實戰：落地路徑與實戰建議"
 date: 2019-08-12 16:38:12
 tags:
   - GraphQL
@@ -269,7 +269,7 @@ export default CreatePost;
 
 Apollo Client 內置了強大的 Normalized Cache，自動以 `__typename + id` 作為緩存 key。
 
-### 配置 dataIdFromObject
+### 設定 dataIdFromObject
 
 ```js
 import ApolloClient from 'apollo-client';

@@ -109,7 +109,7 @@ const clean = DOMPurify.sanitize(dirtyHTML, {
 
 ### 3. CSP（內容安全策略）
 
-HTTP 響應頭裡告訴瀏覽器只允許載入指定來源的資源：
+HTTP 響應頭裡告訴瀏覽器隻允許載入指定來源的資源：
 
 ```
 Content-Security-Policy:
@@ -120,7 +120,7 @@ Content-Security-Policy:
   connect-src 'self' https://api.example.com
 ```
 
-即使 XSS 程式碼被注入，由於 CSP 限制，惡意指令碼也無法載入和執行。
+即使 XSS 程式碼被注入，由於 CSP 限製，惡意指令碼也無法載入和執行。
 
 Nginx 配置：
 
@@ -140,10 +140,10 @@ Set-Cookie: token=xxx; HttpOnly; Secure; SameSite=Strict
 
 ### 5. 輸入驗證
 
-前端驗證只是輔助，真正的驗證必須在服務端做。但前端也應該：
+前端驗證隻是輔助，真正的驗證必須在服務端做。但前端也應該：
 
 ```javascript
-// 富文本編輯器：限制允許的 HTML 標籤
+// 富文本編輯器：限製允許的 HTML 標籤
 // URL 引數：驗證格式，拒絕 javascript: 協議
 function isSafeURL(url) {
   try {
@@ -193,4 +193,4 @@ function isSafeURL(url) {
 
 ## 小結
 
-XSS 防禦的核心原則：**永遠不信任使用者輸入**，輸出時永遠轉義。CSP 和 HttpOnly 是額外的防禦層，出問題時限制損害。
+XSS 防禦的核心原則：**永遠不信任使用者輸入**，輸出時永遠轉義。CSP 和 HttpOnly 是額外的防禦層，出問題時限製損害。

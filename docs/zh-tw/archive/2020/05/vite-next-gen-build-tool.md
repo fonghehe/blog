@@ -49,7 +49,7 @@ module.exports = {
     "@": "/src",
   },
   optimizeDeps: {
-    // 預最佳化：把 CommonJS 依賴轉為 ESM（只做一次）
+    // 預最佳化：把 CommonJS 依賴轉為 ESM（隻做一次）
     include: ["lodash-es", "axios"],
   },
 };
@@ -58,7 +58,7 @@ module.exports = {
 ## 和 Webpack 的區別
 
 ```javascript
-// Webpack：需要大量配置才能支援 TypeScript
+// Webpack：需要大量設定才能支援 TypeScript
 module.exports = {
   module: {
     rules: [
@@ -70,7 +70,7 @@ module.exports = {
   plugins: [...很多外掛],
 };
 
-// Vite：內建支援，零配置
+// Vite：內建支援，零設定
 // TypeScript、Vue、React、CSS、SCSS... 都開箱即用
 ```
 
@@ -108,7 +108,7 @@ module.exports = {
 
 ## 2020 年 5 月的現狀
 
-- 只支援 Vue 3（當時）
+- 隻支援 Vue 3（當時）
 - API 還不穩定（Vite 1.0 要年底）
 - 部分邊緣情況處理不好
 - SSR 支援還不完善
@@ -118,6 +118,6 @@ module.exports = {
 ## 小結
 
 - Vite 利用原生 ESM，開發伺服器啟動幾乎瞬間
-- 零配置支援 TS、Vue、React、CSS 前處理器
+- 零設定支援 TS、Vue、React、CSS 前處理器
 - 生產構建用 Rollup，輸出 ESM + 傳統格式
 - 2020 年還不成熟，等 2021 年 Vite 2 再評估生產使用

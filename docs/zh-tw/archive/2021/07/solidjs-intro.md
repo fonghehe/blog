@@ -13,7 +13,7 @@ SolidJS 是 2021 年最值得關注的前端框架之一。它的核心主張聽
 
 ## 和 React 的對比：相似的語法，截然不同的原理
 
-SolidJS 的語法刻意向 React 靠攏，但底層機制完全不同：
+SolidJS 的語法刻意向 React 靠攏，但底層機製完全不同：
 
 ```jsx
 // React
@@ -27,8 +27,8 @@ function Counter() {
 // SolidJS
 function Counter() {
   const [count, setCount] = createSignal(0);
-  // 函式只執行一次！
-  // count 變化時，只有用到 count() 的 DOM 節點更新
+  // 函式隻執行一次！
+  // count 變化時，隻有用到 count() 的 DOM 節點更新
   return <button onClick={() => setCount((c) => c + 1)}>{count()}</button>;
 }
 ```
@@ -89,7 +89,7 @@ function List() {
 
   return (
     <ul>
-      {/* For 元件：列表項只在對應資料變化時更新，不重新渲染整個列表 */}
+      {/* For 元件：列表項隻在對應資料變化時更新，不重新渲染整個列表 */}
       <For each={items()}>
         {(item) => (
           <li
@@ -118,7 +118,7 @@ function TodoApp() {
     filter: 'all'
   });
 
-  // 細粒度更新：只更新 id=1 的 done 屬性
+  // 細粒度更新：隻更新 id=1 的 done 屬性
   const toggleTodo = (id) => {
     setState('todos', todo => todo.id === id, 'done', done => !done);
   };
@@ -134,9 +134,9 @@ function TodoApp() {
 }
 ```
 
-## 控制流元件
+## 控製流元件
 
-SolidJS 用元件替代 JSX 裡的 JavaScript 控制流，以確保細粒度追蹤：
+SolidJS 用元件替代 JSX 裡的 JavaScript 控製流，以確保細粒度追蹤：
 
 ```jsx
 // Show：條件渲染（替代 &&）

@@ -1,6 +1,6 @@
 ---
-title: "React 20 新特性彙總"
-date: 2025-11-04 10:00:00
+title: "React 20 半年回顧：新特性在生產中的實際應用"
+date: 2025-11-04 12:38:15
 tags:
   - React
 readingTime: 2

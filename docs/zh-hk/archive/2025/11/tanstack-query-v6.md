@@ -1,6 +1,6 @@
 ---
-title: "TanStack Query v6"
-date: 2025-11-03 10:00:00
+title: "TanStack Query v6：落地路徑與實戰建議"
+date: 2025-11-03 17:37:14
 tags:
   - 前端
 readingTime: 2
@@ -91,7 +91,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 優化技巧
 

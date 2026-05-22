@@ -1,10 +1,10 @@
 ---
-title: "HTTP 緩存機制：強緩存與協商緩存"
+title: "HTTP 緩存機製：強緩存與協商緩存"
 date: 2018-04-25 16:13:17
 tags:
   - 前端
 readingTime: 2
-description: "HTTP 緩存配置正確可以顯著提升頁面加載性能，但配置錯誤會導致用户看不到最新內容。理解原理後才能做出合理決策。"
+description: "HTTP 緩存設定正確可以顯著提升頁面加載效能，但設定錯誤會導致用户看不到最新內容。理解原理後才能做出合理決策。"
 wordCount: 459
 ---
 
@@ -34,7 +34,7 @@ HTTP 緩存配置正確可以顯著提升頁面加載性能，但配置錯誤會
 Cache-Control: max-age=31536000   # 緩存 1 年（秒）
 Cache-Control: no-cache           # 不用強緩存，但可以協商緩存
 Cache-Control: no-store           # 完全不緩存
-Cache-Control: private            # 只能瀏覽器緩存，CDN 不緩存
+Cache-Control: private            # 隻能瀏覽器緩存，CDN 不緩存
 Cache-Control: public             # 瀏覽器和 CDN 都可緩存
 ```
 
@@ -83,11 +83,11 @@ If-None-Match: "abc123"
 HTTP/1.1 304 Not Modified  # 或 200 + 新 ETag
 ```
 
-ETag 是內容摘要，只要內容變了 ETag 就變，更精準。
+ETag 是內容摘要，隻要內容變了 ETag 就變，更精準。
 
 ## 前端資源的最佳緩存策略
 
-### HTML 文件：不緩存或協商緩存
+### HTML 檔案：不緩存或協商緩存
 
 ```nginx
 location ~* \.html$ {
@@ -125,12 +125,12 @@ location ~* \.(jpg|jpeg|png|gif|svg|woff2|ttf)$ {
 }
 ```
 
-## Vue CLI / Webpack 的正確配置
+## Vue CLI / Webpack 的正確設定
 
 ```javascript
 // vue.config.js
 module.exports = {
-  filenameHashing: true, // 默認開啓文件名哈希
+  filenameHashing: true, // 默認開啓檔案名雜湊
 
   chainWebpack: (config) => {
     // 確保 index.html 不緩存

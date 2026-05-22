@@ -106,7 +106,7 @@ Svelte 的響應式宣告通過靜態分析來確定依賴關係：
 <script>
   let items = [1, 2, 3];
 
-  // 只在 items 引用變化時重新計算
+  // 隻在 items 引用變化時重新計算
   $: total = items.reduce((a, b) => a + b, 0);
 
   function addItem() {

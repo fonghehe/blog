@@ -42,13 +42,13 @@ frontend-monorepo/
 │   ├── eslint-config/        # ESLint 共享配置
 │   └── ts-config/            # TypeScript 共享配置
 ├── apps/
-│   ├── admin/                # 後台管理
+│   ├── admin/                # 後臺管理
 │   ├── h5/                   # 移動端 H5
 │   └── docs/                 # 文檔站
 └── pnpm-lock.yaml
 ```
 
-## pnpm-workspace.yaml 配置
+## pnpm-workspace.yaml 設定
 
 ```yaml
 packages:
@@ -81,7 +81,7 @@ packages:
 # 給 admin 項目安裝 ui-components（workspace 協議）
 pnpm --filter admin add ui-components@workspace:*
 
-# 給 admin 安裝 lodash（只裝在 admin）
+# 給 admin 安裝 lodash（隻裝在 admin）
 pnpm --filter admin add lodash
 
 # 給所有項目安裝 typescript（作為 devDependencies）
@@ -104,13 +104,13 @@ pnpm add -D -w husky lint-staged
 
 `workspace:*` 表示永遠使用本地版本，發佈時 pnpm 會自動替換成真實版本號。
 
-## .npmrc 配置
+## .npmrc 設定
 
 ```ini
 # 使用嚴格模式，不能訪問未聲明的依賴
 strict-peer-dependencies=false
 
-# 在項目級別創建 node_modules，保持兼容性
+# 在項目級別創建 node_modules，保持相容性
 node-linker=hoisted
 
 # 使用公共的 lockfile
@@ -121,7 +121,7 @@ auto-install-peers=false
 ```
 
 `node-linker` 有三個選項：
-- `isolated`（默認）：嚴格的符號鏈接結構，兼容性最差但最安全
+- `isolated`（默認）：嚴格的符號鏈接結構，相容性最差但最安全
 - `hoisted`：類似 npm/yarn 的扁平結構，兼容性最好
 - `hoisted`：折中方案
 
@@ -130,7 +130,7 @@ auto-install-peers=false
 ## 過濾器的妙用
 
 ```bash
-# 只執行 admin 及其依賴的 build
+# 隻執行 admin 及其依賴的 build
 pnpm --filter admin... build
 
 # 執行 ui-components 被依賴的所有項目
@@ -143,7 +143,7 @@ pnpm --filter '...ui-components' --filter 'admin...' build
 pnpm -r --no-filter docs test
 ```
 
-這在 CI 裏特別有用——只 build 和 test 有變更的項目。
+這在 CI 裏特別有用——隻 build 和 test 有變更的項目。
 
 ## 踩坑記錄
 
@@ -189,7 +189,7 @@ pnpm -r build
 # 1. 全局安裝 pnpm
 npm install -g pnpm@7
 
-# 2. 刪除舊的 lock 文件和 node_modules
+# 2. 刪除舊的 lock 檔案和 node_modules
 rm -rf node_modules package-lock.json yarn.lock
 
 # 3. 初始化 workspace

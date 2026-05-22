@@ -1,5 +1,5 @@
 ---
-title: "useReducer + useContext 實現輕量狀態管理"
+title: "useReducer + useContext 實現輕量狀態管理：落地路徑與實戰建議"
 date: 2019-02-14 15:47:39
 tags:
   - 前端
@@ -188,5 +188,5 @@ function useUserActions() {
 
 - `useReducer` 適合狀態轉換邏輯複雜的場景（比多個 `useState` 清晰）
 - `useContext` 傳遞 state 和 dispatch，避免 prop drilling
-- state 和 dispatch 分兩個 Context，避免只用 dispatch 的組件因 state 變化重渲染
+- state 和 dispatch 分兩個 Context，避免隻用 dispatch 的組件因 state 變化重渲染
 - 異步邏輯封裝在自定義 Hook 裏，不放在 reducer 中

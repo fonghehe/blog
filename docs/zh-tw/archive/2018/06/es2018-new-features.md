@@ -37,7 +37,7 @@ const { role, ...userWithoutRole } = user;
 // userWithoutRole = { name: 'Alice', age: 25 }
 ```
 
-之前只有陣列支援，物件 spread 是 ES2018 才正式進入標準。
+之前隻有陣列支援，物件 spread 是 ES2018 才正式進入標準。
 
 ## 非同步迭代（for await...of）
 
@@ -76,7 +76,7 @@ const html = '<div>\n  content\n</div>'
 /<div>(.*)<\/div>/s.test(html)  // true（之前需要 [\s\S]）
 
 // 後行斷言
-/(?<=\$)\d+/.exec('$100')  // 匹配 100（之前只有先行斷言）
+/(?<=\$)\d+/.exec('$100')  // 匹配 100（之前隻有先行斷言）
 ```
 
 ## 小結

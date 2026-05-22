@@ -1,6 +1,6 @@
 ---
 title: "ESLint v9 Stable: Migration Guide"
-date: 2024-08-06 10:00:00
+date: 2024-08-06 09:00:37
 tags:
   - Frontend
 readingTime: 2

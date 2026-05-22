@@ -1,5 +1,5 @@
 ---
-title: "Angular 7 New Features at a Glance"
+title: "Angular 7 New Features Overview:  6.x UpgradePracticeGuide"
 date: 2018-10-05 17:06:11
 tags:
   - Angular

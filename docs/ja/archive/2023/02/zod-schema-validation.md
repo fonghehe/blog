@@ -3,29 +3,29 @@ title: "Zod：TypeScript 時代のスキーマバリデーションツール"
 date: 2023-02-08 15:28:32
 tags:
   - フロントエンド
-readingTime: 2
-description: "在全栈 TypeScript 项目里，类型安全应该是从数据库到前端一致的。Zod 是实现这个目标最干净的方案。"
-wordCount: 305
+readingTime: 3
+description: "フルスタック TypeScript プロジェクトでは、型安全性はデータベースからフロントエンドまで一貫しているべきです。Zod はこの目標を達成するための最もクリーンなソリューションです。"
+wordCount: 518
 ---
 
-在全栈 TypeScript 项目里，类型安全应该是从数据库到前端一致的。Zod 是实现这个目标最干净的方案。
+フルスタック TypeScript プロジェクトでは、型安全性はデータベースからフロントエンドまで一貫しているべきです。Zod はこの目標を達成するための最もクリーンなソリューションです。
 
 ## なぜZodを選ぶのか
 
-之前的校验方案各有问题：
+これまでのバリデーションソリューションにはそれぞれ問題がありました：
 
-- **Joi**：运行时校验好用，但没有类型推断，需要额外写 TypeScript 类型
-- **Yup**：有类型推断但 API 繁琐，和 Zod 比起来不够简洁
-- **io-ts**：类型系统强大但学习曲线陡峭，API 不直观
+- **Joi**：ランタイムバリデーションは便利ですが、型推論がなく、別途 TypeScript の型定義が必要でした
+- **Yup**：型推論はあるものの API が煩雑で、Zod と比較すると簡潔さに欠けます
+- **io-ts**：型システムは強力ですが学習曲線が急で、API が直感的ではありません
 
-Zod 的优势：零依赖、API 简洁、类型推断完美、运行时校验合一。
+Zod の優位性：ゼロ依存、API が簡潔、型推論が完璧、ランタイムバリデーションが一体化しています。
 
 ## 基本的な使い方
 
 ```typescript
 import { z } from "zod";
 
-// 定义 schema
+// スキーマを定義
 const UserSchema = z.object({
   id: z.string().uuid(),
   name: z.string().min(2).max(50),
@@ -35,16 +35,16 @@ const UserSchema = z.object({
   createdAt: z.string().datetime(),
 });
 
-// 自动推断出 TypeScript 类型
+// 自動的に TypeScript の型を推論
 type User = z.infer<typeof UserSchema>;
-// 等价于手动写 interface，但不用维护两份定义
+// 手動で interface を書くのと同等ですが、2つの定義を維持する必要はありません
 ```
 
-一份定义同时得到运行时校验和静态类型，这是 Zod 的核心价值。
+1つの定義でランタイムバリデーションと静的型の両方を得られることが、Zod の核となる価値です。
 
 ## フォームバリデーションの実践
 
-配合 React Hook Form 使用非常丝滑：
+React Hook Form との組み合わせは非常にスムーズです：
 
 ```typescript
 import { useForm } from "react-hook-form";
@@ -68,7 +68,7 @@ function LoginForm() {
   });
 
   const onSubmit = (data: LoginForm) => {
-    // data 已经是类型安全的
+    // data は型安全です
     console.log(data.email); // string
   };
 
@@ -102,8 +102,8 @@ const appRouter = t.router({
   createUser: t.procedure
     .input(CreateUserInput)
     .mutation(({ input }) => {
-      // input 的类型自动从 schema 推断
-      // 且会在运行时自动校验
+      // input の型はスキーマから自動的に推論されます
+      // かつランタイムで自動的にバリデーションされます
       return db.user.create({ data: input });
     }),
 });
@@ -111,22 +111,22 @@ const appRouter = t.router({
 
 ## 高度なテクニック
 
-### Schema 复用和组合
+### スキーマの再利用と合成
 
 ```typescript
-// 基础 schema
+// ベーススキーマ
 const BaseUserSchema = z.object({
   name: z.string(),
   email: z.string().email(),
 });
 
-// 继承扩展
+// 継承と拡張
 const AdminUserSchema = BaseUserSchema.extend({
   permissions: z.array(z.string()),
   lastLogin: z.date(),
 });
 
-// 条件校验
+// 条件付きバリデーション
 const PaymentSchema = z.discriminatedUnion("method", [
   z.object({
     method: z.literal("credit_card"),
@@ -140,7 +140,7 @@ const PaymentSchema = z.discriminatedUnion("method", [
 ]);
 ```
 
-### 自定义校验
+### カスタムバリデーション
 
 ```typescript
 const PhoneSchema = z.string().refine(
@@ -148,14 +148,14 @@ const PhoneSchema = z.string().refine(
   { message: "请输入有效的手机号码" }
 );
 
-// transform 做数据转换
+// transform でデータ変換
 const DateSchema = z.string().transform((val) => new Date(val));
 ```
 
 ## まとめ
 
-- Zod 实现了"一个 schema 同时覆盖类型和校验"的目标
-- 与 React Hook Form、tRPC 等工具配合天衣无缝
-- API 简洁直观，学习成本低
-- 零依赖，bundle 体积小
-- 在全栈 TypeScript 项目中强烈推荐作为核心依赖
+- Zod は「1つのスキーマで型とバリデーションの両方をカバーする」目標を実現しました
+- React Hook Form、tRPC などのツールとシームレスに連携します
+- API は簡潔で直感的であり、学習コストが低いです
+- ゼロ依存で、バンドルサイズが小さいです
+- フルスタック TypeScript プロジェクトでは、コア依存関係として強く推奨します

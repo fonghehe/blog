@@ -12,7 +12,7 @@ TypeScript 的泛型一直讓人覺得難，但掌握了之後會發現它非常
 
 ## 為什麼需要泛型
 
-不用泛型，只能用 `any`，失去型別檢查：
+不用泛型，隻能用 `any`，失去型別檢查：
 
 ```typescript
 // 不用泛型：要麼寫死型別，要麼用 any
@@ -115,7 +115,7 @@ userList.items[0].name; // ✅ 型別是 string
 
 ## 泛型約束（extends）
 
-限制泛型必須包含某些屬性：
+限製泛型必須包含某些屬性：
 
 ```typescript
 // T 必須有 length 屬性
@@ -160,7 +160,7 @@ type PartialUser = Partial<User>;
 // Required：所有屬性變為必須
 type RequiredUser = Required<PartialUser>;
 
-// Pick：只保留指定屬性
+// Pick：隻保留指定屬性
 type UserProfile = Pick<User, "id" | "name" | "email">;
 // { id: number; name: string; email: string }
 
@@ -168,7 +168,7 @@ type UserProfile = Pick<User, "id" | "name" | "email">;
 type SafeUser = Omit<User, "password">;
 // { id: number; name: string; email: string }
 
-// Readonly：所有屬性變為只讀
+// Readonly：所有屬性變為隻讀
 type ReadonlyUser = Readonly<User>;
 
 // Record：鍵值對型別
@@ -179,7 +179,7 @@ type UserMap = Record<string, User>;
 實際使用：
 
 ```typescript
-// 更新使用者時只傳變化的欄位
+// 更新使用者時隻傳變化的欄位
 function updateUser(
   id: number,
   updates: Partial<Omit<User, "id">>,
@@ -190,7 +190,7 @@ function updateUser(
   });
 }
 
-updateUser(1, { name: "Bob" }); // ✅ 只更新 name
+updateUser(1, { name: "Bob" }); // ✅ 隻更新 name
 updateUser(1, { id: 2 }); // ❌ id 不能更新（被 Omit 排除了）
 ```
 

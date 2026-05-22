@@ -1,5 +1,5 @@
 ---
-title: "Rspack Rust 前端構建工具"
+title: "Rspack Rust 前端構建工具：實踐方法與治理思路"
 date: 2021-05-10 15:28:18
 tags:
   - Esbuild

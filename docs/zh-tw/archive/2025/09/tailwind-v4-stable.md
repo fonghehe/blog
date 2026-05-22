@@ -1,15 +1,15 @@
 ---
-title: "Tailwind CSS v4 穩定版"
-date: 2025-09-09 10:00:00
+title: "Tailwind CSS v4 生態遷移指南：從 v3 升级的完整路徑"
+date: 2025-09-09 10:23:00
 tags:
   - CSS
   - 工程化
 readingTime: 2
-description: "關於Tailwind CSS v4 穩定版，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+description: "關於Tailwind CSS v4 穩定版，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 361
 ---
 
-關於Tailwind CSS v4 穩定版，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於Tailwind CSS v4 穩定版，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 

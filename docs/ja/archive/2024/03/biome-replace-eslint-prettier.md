@@ -4,15 +4,15 @@ date: 2024-03-08 15:28:27
 tags:
   - ESLint
 readingTime: 2
-description: "Biome 1.0 发布，宣称能替代 ESLint + Prettier。来看看实际体验怎么样。"
-wordCount: 370
+description: "Biome 1.0 がリリースされ、ESLint + Prettier を置き換えると宣言しています。実際の体験を見てみましょう。"
+wordCount: 561
 ---
 
-Biome 1.0 发布，宣称能替代 ESLint + Prettier。来看看实际体验怎么样。
+Biome 1.0 がリリースされ、ESLint + Prettier を置き換えると宣言しています。実際の体験を見てみましょう。
 
 ## まずスピードについて
 
-在一个中等规模项目（约 200 个 TS/TSX 文件）：
+中規模プロジェクト（約 200 の TS/TSX ファイル）での結果：
 
 ```
 ESLint + Prettier（Node.js）：~8s
@@ -21,7 +21,7 @@ Biome（Rust）：~0.4s
 20倍的速度差
 ```
 
-这个差距在 CI 上很明显，本地开发的感受差异没有那么大。
+この差は CI 上で顕著ですが、ローカル開発での体感差はそれほど大きくありません。
 
 ## インストールと設定
 
@@ -82,7 +82,7 @@ npx biome ci .
 
 ## 既存プロジェクトの移行
 
-Biome 提供了迁移命令：
+Biome は移行コマンドを提供しています：
 
 ```bash
 # 从 ESLint 迁移
@@ -92,30 +92,30 @@ npx @biomejs/biome migrate eslint --write
 npx @biomejs/biome migrate prettier --write
 ```
 
-实际迁移体验：大部分规则能自动转换，但有些 ESLint 插件（如 `eslint-plugin-react-hooks`）还没有 Biome 等价实现。
+実際の移行体験：ほとんどのルールは自動変換できますが、一部の ESLint プラグイン（`eslint-plugin-react-hooks` など）には Biome の同等実装がまだありません。
 
 ## 現在の課題
 
-**规则覆盖率不够**：
+**ルールのカバレッジ不足**：
 
-| 场景                | ESLint 插件               | Biome 支持                         |
-| ------------------- | ------------------------- | ---------------------------------- |
-| React Hooks 规则    | eslint-plugin-react-hooks | 部分支持（hooks-of-components 等） |
-| 无障碍检查          | eslint-plugin-jsx-a11y    | 基础支持                           |
-| Import 排序         | eslint-plugin-import      | ✅ 内置                            |
-| TypeScript 类型检查 | @typescript-eslint        | 部分支持                           |
+| シナリオ                  | ESLint プラグイン            | Biome のサポート                           |
+| ------------------------- | ---------------------------- | ----------------------------------------- |
+| React Hooks ルール        | eslint-plugin-react-hooks    | 一部対応（hooks-of-components など）      |
+| アクセシビリティチェック  | eslint-plugin-jsx-a11y       | 基本的な対応                              |
+| Import 並び替え           | eslint-plugin-import         | ✅ 内蔵                                   |
+| TypeScript 型チェック     | @typescript-eslint           | 一部対応                                  |
 
-**生态不成熟**：很多第三方 ESLint 插件没有 Biome 版本。
+**エコシステムの未熟さ**：多くのサードパーティ ESLint プラグインには Biome 版がありません。
 
 ## 私のアドバイス
 
-**新项目**：直接用 Biome，享受开箱即用的速度。
+**新規プロジェクト**：そのまま Biome を使用し、初期状態からの高速動作を実感できます。
 
-**现有项目**：
+**既存プロジェクト**：
 
 ```
-如果你的项目主要用官方规则（无太多第三方插件）→ 值得迁移
-如果严重依赖 @typescript-eslint、react-hooks 等插件 → 等 Biome 生态成熟
+公式ルールを主に使用している場合（サードパーティプラグインが少ない）→ 移行する価値あり
+@typescript-eslint、react-hooks などのプラグインに大きく依存している場合 → Biome のエコシステムが成熟するのを待つ
 ```
 
 **混用方案**（我目前的实践）：
@@ -131,12 +131,12 @@ npx @biomejs/biome migrate prettier --write
 }
 ```
 
-用 Biome 替代 Prettier（格式化），用 ESLint 处理类型相关的 lint。这样速度和覆盖率都能兼顾。
+Biome で Prettier（フォーマット）を代替し、ESLint で型関連の lint を処理します。これにより速度とカバレッジの両方を両立できます。
 
 ## まとめ
 
-- Biome 速度比 ESLint + Prettier 快 20 倍左右
-- 配置比 ESLint + Prettier 简单得多
-- 规则覆盖率还不如 ESLint 生态完整，特别是 react-hooks
-- 新项目推荐，老项目视情况迁移
-- 混用：用 Biome 格式化 + ESLint lint 是个好折中
+- Biome の速度は ESLint + Prettier より約20倍速い
+- 設定は ESLint + Prettier よりはるかにシンプル
+- ルールのカバレッジは ESLint エコシステムほど完全ではない、特に react-hooks
+- 新規プロジェクトには推奨、既存プロジェクトは状況に応じて移行
+- 混用：Biome でフォーマット + ESLint で lint は良い妥協案

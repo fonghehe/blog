@@ -1,6 +1,6 @@
 ---
-title: "Playwright 2025 New Features"
-date: 2025-12-24 10:00:00
+title: "Playwright 2025 Practice: 大型Project端 to 端TestingStrategyUpgrade"
+date: 2025-12-24 13:38:15
 tags:
   - Testing
 readingTime: 2
