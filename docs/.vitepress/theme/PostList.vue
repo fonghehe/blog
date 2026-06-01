@@ -122,6 +122,18 @@ const CATEGORIES: Category[] = [
     desc: "XSS / CSP / CSRF",
     matchTags: ["安全", "Security", "セキュリティ", "XSS", "CSP", "CSRF"],
   },
+  {
+    id: "Web3",
+    label: "Web3",
+    icon: "🌐",
+    desc: "Blockchain / DApp / Smart Contract",
+    matchTags: [
+      "Web3", "Blockchain", "Ethereum", "Solidity", "DApp",
+      "DeFi", "NFT", "Smart Contract",
+      "区块链", "智能合约",
+      "ブロックチェーン", "スマートコントラクト",
+    ],
+  },
 ];
 
 // ── i18n strings ──────────────────────────────────────────────────────────────
