@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -92,6 +92,16 @@ jobs:
 
       - name: 🔀 Merge builds
         run: node docs/.vitepress/merge-builds.js
+
+      - name: 🗑️ Delete old pages artifact
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ids=$(gh api "/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" --jq '.artifacts[] | select(.name == "github-pages") | .id')
+          for id in $ids; do
+            gh api -X DELETE "/repos/${{ github.repository }}/actions/artifacts/$id" || true
+          done
+        continue-on-error: true
 
       - name: 📤 Upload pages artifact
         uses: actions/upload-pages-artifact@v3
