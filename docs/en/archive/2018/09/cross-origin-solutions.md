@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Cross-origin issues are unavoidable in frontend development. Here's an overview of common solutions and when to use each one."
-wordCount: 157
+wordCount: 162
 ---
 
 Cross-origin issues are unavoidable in frontend development. Here's an overview of common solutions and when to use each one.
@@ -82,7 +82,7 @@ module.exports = {
 };
 ```
 
-Frontend requests `/api/users` → proxied to `https://api.example.com/users`. The browser sees same-origin requests (all localhost) — no cross-origin issue.
+A request to `/api/users` is proxied to `https://api.example.com/users`. The browser sees it as same-origin (everything goes through localhost), so there's no cross-origin issue.
 
 ## Solution 3: Nginx Reverse Proxy
 

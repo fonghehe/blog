@@ -5,11 +5,11 @@ tags:
   - React
   - TypeScript
 readingTime: 2
-description: "React Server Components（RSC）不是又一个 SSR 方案。它是 React 团队对\"组件应该在哪里运行\"这个问题的全新回答。"
-wordCount: 384
+description: "React Server Components (RSC) are not yet another SSR solution. They're the React team's new answer to the question of where components should run."
+wordCount: 371
 ---
 
-React Server Components（RSC）不是又一个 SSR 方案。它是 React 团队对"组件应该在哪里运行"这个问题的全新回答。
+React Server Components (RSC) are not yet another SSR solution. They're the React team's new answer to the question of where components should run.
 
 ## SSR vs RSC
 

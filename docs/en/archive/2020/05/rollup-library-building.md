@@ -4,15 +4,15 @@ date: 2020-05-07 11:14:59
 tags:
   - Engineering
 readingTime: 2
-description: "在日常开发中，Rollup 库打包最佳实践的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 310
+description: "In day-to-day development, Rollup library-bundling best practices are adopted more and more frequently. This article systematically covers their usage, underlying principles, and optimization strategies."
+wordCount: 200
 ---
 
-在日常开发中，Rollup 库打包最佳实践的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+In day-to-day development, Rollup library-bundling best practices are being adopted more and more often. This article systematically covers their usage, the underlying principles, and optimization strategies.
 
 ## Quick Start
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 module.exports = {
@@ -33,14 +33,13 @@ module.exports = {
     }
   }
 }
-
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly reduce maintenance cost.
 
 ## Internal Principles
 
-实际项目中的用法会更复杂一些：
+In real projects, the actual usage tends to be a bit more involved:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -65,14 +64,13 @@ export default defineConfig({
     }
   }
 })
-
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and the extensibility of the code.
 
 ## Business Practice
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 module.exports = {
@@ -93,14 +91,13 @@ module.exports = {
     }
   }
 }
-
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge-case handling—this is critical in production.
 
 ## Performance Comparison
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -125,14 +122,13 @@ export default defineConfig({
     }
   }
 })
-
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to fit the actual use case; not every situation calls for over-optimization.
 
 ## Troubleshooting
 
-我们可以通过以下方式来改进：
+We can improve on this in the following ways:
 
 ```javascript
 module.exports = {
@@ -153,14 +149,13 @@ module.exports = {
     }
   }
 }
-
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Rollup 库打包最佳实践不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- Don't adopt new technology just for its own sake.
+- The code examples are for reference only and should be adapted to your specific use case.
+- Rollup library-bundling best practices aren't a silver bullet; choose them based on your project's scale and tech stack.
+- Understanding the underlying principles matters more than memorizing the API.

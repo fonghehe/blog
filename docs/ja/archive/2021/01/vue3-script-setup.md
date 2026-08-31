@@ -8,14 +8,14 @@ tags:
 
 readingTime: 2
 description: "Vue 3 script-setup 语法糖のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 417
+wordCount: 457
 ---
 
-Vue 3 script-setup 语法糖のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
+Vue 3 の script-setup 構文（シンタックスシュガー）は、フロントエンド開発での活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
 
 ## 基本的な使い方
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみましょう：
 
 ```javascript
 import { ref, computed, watch, onMounted } from 'vue'
@@ -64,7 +64,7 @@ function useCounter(initial = 0) {
 
 ## 実践事例
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは、使い方がもう少し複雑になります：
 
 ```javascript
 import { ref, computed, watch, onMounted } from 'vue'
@@ -90,7 +90,7 @@ export default {
 
 ## パフォーマンス最適化
 
-完全な例を以下に示します：
+完全なサンプルを以下に示します：
 
 ```javascript
 import { reactive, toRefs, computed } from 'vue'
@@ -113,6 +113,6 @@ function useCounter(initial = 0) {
 
 ## まとめ
 
-- コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- Vue 3 script-setup 语法糖不是银弹，需要根据项目规模和技术栈选择
+- コードサンプルは参考用のみであり、ビジネスケースに応じて調整が必要です
+- Vue 3 の script-setup 構文は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要があります
 - 基礎的な原理を理解することは、APIを暗記することより重要です

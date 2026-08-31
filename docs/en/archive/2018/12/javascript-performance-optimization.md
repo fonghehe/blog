@@ -22,7 +22,7 @@ One frame (16.7 ms) must accommodate:
 - Paint
 - Composite
 
-If JS execution exceeds 16 ms, the frame is delayed and the user perceives jank
+If JS execution exceeds 16 ms, the frame is delayed and the user notices jank
 ```
 
 ## Breaking Up Long Tasks

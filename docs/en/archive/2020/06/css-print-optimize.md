@@ -4,15 +4,15 @@ date: 2020-06-17 11:16:21
 tags:
   - CSS
 readingTime: 1
-description: "在日常工作中经常用到CSS 打印优化技巧，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。"
-wordCount: 225
+description: "CSS print-optimization techniques come up often in everyday work, so I've put together a structured summary to help everyone understand and apply them better."
+wordCount: 137
 ---
 
-在日常工作中经常用到CSS 打印优化技巧，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。
+CSS print-optimization tricks come up often in everyday work, so I've put together a structured summary to help you understand and apply them more easily.
 
 ## Basic Concepts
 
-下面是一个实际的示例：
+Here is a practical example:
 
 ```css
 :root {
@@ -40,11 +40,11 @@ wordCount: 225
 
 ```
 
-在实际项目中，还需要根据具体需求做适当调整。
+In a real project, you'll need to adjust it to your actual requirements.
 
 ## Core Implementation
 
-核心代码如下：
+The core code looks like this:
 
 ```css
 .grid {
@@ -74,11 +74,11 @@ wordCount: 225
 
 ```
 
-注意处理好边界条件和异常情况。
+Make sure you handle edge cases and exceptions properly.
 
 ## Practical Application
 
-我们可以这样实现：
+Here's how we can implement it:
 
 ```css
 :root {
@@ -106,11 +106,11 @@ wordCount: 225
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+This pattern improves the code's maintainability.
 
 ## Best Practices
 
-具体用法参考以下代码：
+See the code below for the specific usage:
 
 ```css
 .grid {
@@ -140,10 +140,10 @@ wordCount: 225
 
 ```
 
-建议在团队中统一规范，减少不一致的问题。
+I'd recommend standardizing conventions across the team to reduce inconsistencies.
 
 ## Summary
 
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
-- 持续关注社区动态，及时更新技术方案
+- In real projects, picking the right approach matters more than chasing the latest tech.
+- Keep a consistent code style across the team to lower maintenance cost.
+- Keep up with the community and update your technical approach in a timely manner.

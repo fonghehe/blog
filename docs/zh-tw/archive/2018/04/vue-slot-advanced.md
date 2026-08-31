@@ -4,11 +4,11 @@ date: 2018-04-11 14:48:08
 tags:
   - Vue
 readingTime: 1
-description: "slot 是 Vue 元件複用裡最強大的機製之一，但很多人隻用到了最基礎的預設 slot。整理一下實際專案中的用法。"
-wordCount: 209
+description: "slot 是 Vue 元件複用裡最強大的機制之一，但很多人只用了最基礎的預設 slot。整理一下實際專案中的用法。"
+wordCount: 208
 ---
 
-slot 是 Vue 元件複用裡最強大的機製之一，但很多人隻用到了最基礎的預設 slot。整理一下實際專案中的用法。
+slot 是 Vue 元件複用裡最強大的機制之一，但很多人只用了最基礎的預設 slot。整理一下實際專案中的用法。
 
 ## 預設 slot
 
@@ -65,7 +65,7 @@ slot 是 Vue 元件複用裡最強大的機製之一，但很多人隻用到了�
 
 ## 作用域 slot（最有用）
 
-普通 slot 隻能用父元件的資料。作用域 slot 可以把子元件的資料傳給父元件，讓父元件決定如何渲染。
+普通 slot 只能用父元件的資料。作用域 slot 可以把子元件的資料傳給父元件，讓父元件決定如何渲染。
 
 ```html
 <!-- 子元件 DataTable.vue -->
@@ -86,7 +86,7 @@ slot 是 Vue 元件複用裡最強大的機製之一，但很多人隻用到了�
 ```
 
 ```html
-<!-- 父元件：控製每行如何渲染 -->
+<!-- 父元件：控制每行如何渲染 -->
 <DataTable :data="users">
   <template v-slot:default="{ row, index }">
     <td>{{ index + 1 }}</td>

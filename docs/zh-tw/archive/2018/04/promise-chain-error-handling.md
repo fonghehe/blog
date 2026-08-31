@@ -4,11 +4,11 @@ date: 2018-04-24 15:30:06
 tags:
   - JavaScript
 readingTime: 1
-description: "之前寫了 Promise 基礎，這次專門說鏈式呼叫和錯誤處理，這塊容易出細節問題。"
-wordCount: 160
+description: "之前寫了 Promise 基礎，這次專門說鏈式呼叫和錯誤處理，這部分容易出細節問題。"
+wordCount: 161
 ---
 
-之前寫了 Promise 基礎，這次專門說鏈式呼叫和錯誤處理，這塊容易出細節問題。
+之前寫了 Promise 基礎，這次專門說鏈式呼叫和錯誤處理，這部分容易出細節問題。
 
 ## 鏈式呼叫基礎
 
@@ -108,7 +108,7 @@ fetchUser(1)
   });
 ```
 
-**陷阱三：Promise 構造函數里的同步錯誤**
+**陷阱三：Promise 構造函數裡的同步錯誤**
 
 ```javascript
 const p = new Promise((resolve, reject) => {
@@ -118,7 +118,7 @@ const p = new Promise((resolve, reject) => {
 p.catch((err) => console.error(err)); // '同步錯誤'
 ```
 
-## 併發控製
+## 併發控制
 
 ```javascript
 // 全部併發，全部完成才繼續

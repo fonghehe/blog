@@ -7,10 +7,10 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Angular 的路由系統內建了強大的懶載入和預載入機製。合理設定可以讓首屏體積減少 40-60%，同時通過預載入確保後續導航幾乎無等待。"
-wordCount: 376
+wordCount: 374
 ---
 
-Angular 的路由系統內建了強大的懶載入和預載入機製。合理設定可以讓首屏體積減少 40-60%，同時通過預載入確保後續導航幾乎無等待。
+Angular 的路由系統內建了強大的懶載入和預載入機制。合理設定可以讓首屏體積減少 40-60%，同時通過預載入確保後續導航幾乎無等待。
 
 ## 懶載入基礎
 
@@ -39,8 +39,8 @@ const routes: Routes = [
 
 **canLoad vs canActivate 的區別**：
 
-- `canActivate`：導航時檢查許可權，但 JS chunk 已經下載
-- `canLoad`：許可權不足時完全不下載 chunk，更安全也更節省頻寬
+- `canActivate`：導航時檢查權限，但 JS chunk 已經下載
+- `canLoad`：權限不足時完全不下載 chunk，更安全也更節省頻寬
 
 ## 三種預載入策略
 
@@ -68,7 +68,7 @@ RouterModule.forRoot(routes, {
 
 ### 3. 自定義預載入策略（推薦）
 
-隻預載入標記了 `preload: true` 的路由：
+只預載入標記了 `preload: true` 的路由：
 
 ```typescript
 // selective-preload.strategy.ts

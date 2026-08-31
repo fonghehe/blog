@@ -4,11 +4,11 @@ date: 2023-05-02 14:50:55
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3.3 发布了。没有颠覆性新特性，但类型系统和 DX（开发体验）的改进非常实在。"
-wordCount: 324
+description: "Vue 3.3 is out. No earth-shattering features, but the type-system and DX improvements are genuinely solid."
+wordCount: 308
 ---
 
-Vue 3.3 发布了。没有颠覆性新特性，但类型系统和 DX（开发体验）的改进非常实在。
+Vue 3.3 is out. No earth-shattering features, but the type-system and DX improvements are genuinely solid.
 
 ## Generic Components
 

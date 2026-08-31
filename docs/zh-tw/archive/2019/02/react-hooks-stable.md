@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "昨天 React 16.8 正式釋出，Hooks 從提案變成正式 API！這是 React 近年來最重要的更新，認真寫一篇。"
-wordCount: 333
+wordCount: 332
 ---
 
 昨天 React 16.8 正式釋出，Hooks 從提案變成正式 API！這是 React 近年來最重要的更新，認真寫一篇。
@@ -38,9 +38,9 @@ function Counter() {
     return () => {
       document.title = "應用";
     };
-  }, [count]); // 依賴陣列：隻有 count 變化時才重新執行
+  }, [count]); // 依賴陣列：只有 count 變化時才重新執行
 
-  // 第二引數為 []：隻在掛載時執行一次（componentDidMount）
+  // 第二引數為 []：只在掛載時執行一次（componentDidMount）
   useEffect(() => {
     console.log("元件掛載");
     return () => console.log("元件解除安裝");
@@ -115,8 +115,8 @@ function SearchBox() {
 
 必須遵守的兩條規則（eslint-plugin-react-hooks 幫你檢查）：
 
-1. **隻在最頂層呼叫 Hook**：不能在迴圈、條件、巢狀函式中呼叫
-2. **隻在 React 函式中呼叫 Hook**：函式元件 或 自定義 Hook
+1. **只在最頂層呼叫 Hook**：不能在迴圈、條件、巢狀函式中呼叫
+2. **只在 React 函式中呼叫 Hook**：函式元件 或 自定義 Hook
 
 ```javascript
 // ❌ 錯誤：條件中呼叫
@@ -170,8 +170,8 @@ function Timer() {
 ## 團隊遷移建議
 
 - **新元件全用 Hooks**，不用再寫 Class
-- **老元件不強製遷移**，Hooks 和 Class 可以共存
+- **老元件不強制遷移**，Hooks 和 Class 可以共存
 - **裝 eslint-plugin-react-hooks** 自動檢查 Hooks 規則
 - **不要一次性重構**，在修改老元件時順便遷移
 
-這次 Hooks 正式版釋出是個歷史節點，函數語言程式設計在 React 生態算是徹底勝利了。
+這次 Hooks 正式版釋出是個歷史節點，函數式程式設計在 React 生態算是徹底勝利了。

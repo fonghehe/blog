@@ -5,10 +5,10 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 8 正式开放了 **Builders API**，让社区可以为 `ng build`、`ng test`、`ng serve` 等命令提供自定义实现。这也是 `@angular-builders/custom-webpack` 、`@nrwl/workspace` 等不少优秀工具的基础。"
-wordCount: 147
+wordCount: 143
 ---
 
-Angular 8 正式开放了 **Builders API**，让社区可以为 `ng build`、`ng test`、`ng serve` 等命令提供自定义实现。这也是 `@angular-builders/custom-webpack` 、`@nrwl/workspace` 等不少优秀工具的基础。
+Angular 8 正式开放了 **Builders API**，让社区可以为 `ng build`、`ng test`、`ng serve` 等命令提供自定义实现。这也是 `@angular-builders/custom-webpack`、`@nrwl/workspace` 等不少优秀工具的基础。
 
 ## angular.json 中的 architect 配置
 
@@ -131,4 +131,4 @@ ng update @angular/cli @angular/core
 
 ## 总结
 
-Angular Builders API 让 Angular CLI 不再是封闭的黑盒子。社区工具可以通过它的集成自定义构建流程，让 Angular 项目和现有 DevOps 流水线更容易合作。
+Angular Builders API 让 Angular CLI 不再是封闭的黑盒子。社区工具可以借助它自定义构建流程，让 Angular 项目更容易与现有 DevOps 流水线集成。

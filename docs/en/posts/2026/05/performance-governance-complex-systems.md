@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 3
 description: "When your application is a back-office system with 50+ pages, 100+ charts, and real-time data stream refreshes, performance problems are no longer \"one slow pag"
-wordCount: 279
+wordCount: 280
 ---
 
 When your application is a back-office system with 50+ pages, 100+ charts, and real-time data stream refreshes, performance problems are no longer "one slow page." It is an engineering problem requiring continuous investment and systematic governance. This article discusses how to establish performance baselines with RUM (Real User Monitoring), how to design and enforce performance budgets, how to automatically detect performance regressions in CI, and how to optimize heavy dashboard UIs.
@@ -15,7 +15,7 @@ When your application is a back-office system with 50+ pages, 100+ charts, and r
 
 ### Why Lab Data Is Not Enough
 
-The data from Lighthouse and WebPageTest is **lab data** — fixed network speed, fixed device, empty cache. But real users look like:
+The data from Lighthouse and WebPageTest is **lab data** — fixed network speed, fixed device, empty cache. But real users look like this:
 
 - 30% of users are on 3G/4G weak network
 - 15% of users have devices with < 4GB RAM
@@ -187,7 +187,7 @@ export const budgets = [
 
 ## Dashboard Optimization: The Hardest Scenario
 
-Dashboard-class UIs are the most challenging performance scenario — 100+ charts + real-time data streaming push all the bottlenecks at once:
+Dashboard UIs are the most challenging performance scenario — 100+ charts + real-time data streaming push all the bottlenecks at once:
 
 ```typescript
 // Strategy 1: Viewport-based lazy rendering

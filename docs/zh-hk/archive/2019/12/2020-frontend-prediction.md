@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 5
 description: "2019 年即將結束，回顧這一年，前端領域依然保持着高速迭代的節奏。React Hooks 全面鋪開、Vue 3 進入 RFC 階段、TypeScript 成為越來越多團隊的標配。站在 2019 年末，我想對 2020 年的技術趨勢做一些預判，既是給自己定方向，也希望能給大家一些參考。"
-wordCount: 986
+wordCount: 985
 ---
 
 2019 年即將結束，回顧這一年，前端領域依然保持着高速迭代的節奏。React Hooks 全面鋪開、Vue 3 進入 RFC 階段、TypeScript 成為越來越多團隊的標配。站在 2019 年末，我想對 2020 年的技術趨勢做一些預判，既是給自己定方向，也希望能給大家一些參考。
@@ -56,7 +56,7 @@ Composition API 的優勢顯而易見：邏輯複用更清晰、TypeScript 推�
 
 ## React Concurrent Mode 的探索
 
-React 16.8 引入 Hooks 之後，React 團隊將重心轉向了 Concurrent Mode。這是一項根本性的調度機製變革，允許 React 同時準備多個版本的 UI，根據優先級決定哪些更新先渲染。
+React 16.8 引入 Hooks 之後，React 團隊將重心轉向了 Concurrent Mode。這是一項根本性的調度機制變革，允許 React 同時準備多個版本的 UI，根據優先級決定哪些更新先渲染。
 
 ```jsx
 // Concurrent Mode 的核心理念示例
@@ -97,11 +97,11 @@ function SearchResults() {
 }
 ```
 
-Concurrent Mode 目前仍是實驗性特性，2020 年預計會進入穩定階段。它的核心價值在於：用户輸入永遠不會被高開銷的渲染阻塞，體驗將大幅提升。
+Concurrent Mode 目前仍是實驗性特性，2020 年預計會進入穩定階段。它的核心價值在於：用戶輸入永遠不會被高開銷的渲染阻塞，體驗將大幅提升。
 
 ## Vite 的萌芽
 
-Evan You 在開發 Vue 3 的過程中，創造了一個名為 Vite 的開發服務器。Vite 利用瀏覽器原生 ES Module 支援，在開發環境下無需打包，實現秒級啓動和即時熱更新。
+Evan You 在開發 Vue 3 的過程中，創造了一個名為 Vite 的開發伺服器。Vite 利用瀏覽器原生 ES Module 支援，在開發環境下無需打包，實現秒級啓動和即時熱更新。
 
 ```javascript
 // Vite 的核心原理非常簡潔
@@ -134,11 +134,11 @@ export default {
 }
 ```
 
-Vite 在 2019 年還處於非常早期的階段，但它代表的理念——利用瀏覽器原生能力而非重度打包——很可能是 2020 年乃至更遠未來的重要方向。
+Vite 在 2019 年還處於非常早期的階段，但它代表的理念——利用瀏覽器原生能力而非重度打包——很可能是 2020 年乃至更長遠的重要方向。
 
 ## Deno 能否撼動 Node.js
 
-Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上公開了他對 Node.js 的 10 大遺憾，併發布了 Deno 項目。到了 2019 年，Deno 已經具備了不少實用特性：
+Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上公開了他對 Node.js 的 10 大遺憾，並發布了 Deno 項目。到了 2019 年，Deno 已經具備了不少實用特性：
 
 ```typescript
 // Deno 的核心特性對比 Node.js
@@ -243,7 +243,7 @@ function Button({ primary, children }) {
 
 - Vue 3 正式版預計 2020 年上半年發佈，Composition API 將改變 Vue 的代碼組織方式
 - React Concurrent Mode 仍處實驗階段，但 useTransition 等 API 值得提前學習
-- Vite 利用瀏覽器原生 ES Module，可能改變開發服務器的工作方式
+- Vite 利用瀏覽器原生 ES Module，可能改變開發伺服器的工作方式
 - Deno 理念先進但生態薄弱，2020 年適合觀望和內部嘗試
 - pnpm 憑藉嚴格的依賴隔離，在大型項目中優勢明顯
 - CSS-in-JS 和 Utility CSS 各有適用場景，Tailwind CSS 增長勢頭強勁

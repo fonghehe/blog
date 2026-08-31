@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 2 slots are an issue frequently encountered in day-to-day development. This article draws from real-world projects to share concrete implementation approach"
-wordCount: 111
+wordCount: 110
 ---
 
 Vue 2 slots are an issue frequently encountered in day-to-day development. This article draws from real-world projects to share concrete implementation approaches and practical takeaways.
@@ -80,7 +80,7 @@ Here is a practical example:
 }
 ```
 
-After rolling this pattern out across the team, the results were great — maintenance costs dropped noticeably.
+After adopting this pattern across the team, the results were great — maintenance costs dropped noticeably.
 
 ## Notes
 

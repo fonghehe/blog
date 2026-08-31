@@ -160,7 +160,7 @@ module.exports = {
 
 ## 下一步
 
-目前隻是搭了架子，接下來要做：
+目前只是搭了架子，接下來要做：
 
 ```
 - 完善更多組件（Input、Select、Table、Modal）

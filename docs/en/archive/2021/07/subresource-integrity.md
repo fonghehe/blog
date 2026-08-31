@@ -6,15 +6,15 @@ tags:
   - Security
 
 readingTime: 2
-description: "SRI 子资源完整性校验 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on t"
-wordCount: 184
+description: "SRI (subresource integrity verification) has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version."
+wordCount: 173
 ---
 
-SRI 子资源完整性校验 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+SRI (subresource integrity verification) has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more involved:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -64,7 +64,7 @@ Here is a complete example:
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Pay attention to edge case handling, which is critical in production.
 
 ## Real-World Applications
 

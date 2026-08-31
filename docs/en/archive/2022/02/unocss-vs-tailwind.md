@@ -5,21 +5,21 @@ tags:
   - CSS
   - TailwindCSS
 readingTime: 2
-description: "Tailwind CSS 统治了原子化 CSS 领域好几年。但 Ant Fu 的 UnoCSS 出现后，格局变了。UnoCSS 不是一个 CSS 框架，而是一个原子化 CSS 引擎——这个定位差异带来了本质上的不同。"
-wordCount: 385
+description: "Tailwind CSS dominated the atomic CSS space for years. But when Ant Fu's UnoCSS appeared, the landscape changed. UnoCSS is not a CSS framework but an atomic CSS engine — and that positioning difference makes for a fundamental distinction."
+wordCount: 265
 ---
 
-Tailwind CSS 统治了原子化 CSS 领域好几年。但 Ant Fu 的 UnoCSS 出现后，格局变了。UnoCSS 不是一个 CSS 框架，而是一个原子化 CSS 引擎——这个定位差异带来了本质上的不同。
+Tailwind CSS has dominated the atomic CSS space for years. But the arrival of Anthony Fu's UnoCSS has changed the landscape. UnoCSS is not a CSS framework but an atomic CSS engine — and that shift in positioning makes all the difference.
 
-## Tailwind 的痛点
+## Tailwind's Pain Points
 
-Tailwind 有几个实际问题：
+Tailwind has a few real problems:
 
-1. **文件体积**：`tailwind.css` 生成的文件很大，即使用了 purge
-2. **预设不够灵活**：想加自定义规则比较麻烦
-3. **运行时 JIT 有性能开销**
+1. **Bundle size**: even with purge, the generated `tailwind.css` is large.
+2. **Inflexible presets**: adding custom rules is cumbersome.
+3. **Runtime JIT overhead**.
 
-UnoCSS 用「按需生成 + 预设系统」解决了这些问题。
+UnoCSS solves these with on-demand generation plus a preset system.
 
 ## Quick Start
 
@@ -51,7 +51,7 @@ export default defineConfig({
 import 'uno.css';
 ```
 
-## 对比用法
+## Comparing the Syntax
 
 ```html
 <!-- Tailwind 风格（preset-wind 完全兼容） -->
@@ -71,11 +71,11 @@ import 'uno.css';
 </div>
 ```
 
-属性化模式的好处：class 列表不会变得很长，HTML 更干净。
+The advantage of attributify mode is that your class list stays short and your HTML stays clean.
 
-## 自定义规则
+## Custom Rules
 
-这是 UnoCSS 最强大的能力：
+This is where UnoCSS is most powerful:
 
 ```typescript
 // uno.config.ts
@@ -128,7 +128,7 @@ export default defineConfig({
 <button class="btn-danger">危险按钮</button>
 ```
 
-## Icon 预设：图标方案的终结
+## The Icon Preset: The End of Icon Management
 
 ```bash
 pnpm add -D @unocss/preset-icons @iconify-json/mdi
@@ -159,22 +159,22 @@ export default defineConfig({
 <i class="i-mdi-cog text-lg text-gray-500"></i>
 ```
 
-按需打包，只用到的图标才会生成 CSS。再也不用维护图标字体或 SVG sprite 了。
+Icons are bundled on demand — only the ones you actually use get compiled into CSS. You no longer have to maintain an icon font or an SVG sprite.
 
 ## Performance Comparison
 
-我们一个中型项目的实测：
+Here are measurements from a mid-sized project of ours:
 
-| 指标 | Tailwind CSS 3 | UnoCSS |
-|------|----------------|--------|
-| HMR 样式更新 | 120ms | 5ms |
-| 生产 CSS 体积 | 48KB | 12KB |
-| 开发服务器启动 | +1.2s | +0.1s |
-| 构建时 CSS 生成 | 3.8s | 0.3s |
+| Metric | Tailwind CSS 3 | UnoCSS |
+|--------|----------------|--------|
+| HMR style update | 120ms | 5ms |
+| Production CSS size | 48KB | 12KB |
+| Dev server startup | +1.2s | +0.1s |
+| CSS generation at build | 3.8s | 0.3s |
 
-差距非常明显。UnoCSS 是即时生成（基于字符串匹配），不需要解析 AST。
+The gap is striking. UnoCSS generates styles on the fly (by string matching) and never has to parse an AST.
 
-## 与组件库配合
+## Working with Component Libraries
 
 ```typescript
 // uno.config.ts - 为组件库定义规则
@@ -205,4 +205,4 @@ export default defineConfig({
 
 ## Summary
 
-UnoCSS 的定位很巧妙：不和 Tailwind 抢用户，而是提供底层引擎。Tailwind 的规则可以跑在 UnoCSS 上（preset-wind），但 UnoCSS 还有更多可能性——图标、属性化、自定义规则。对于需要高度定制的团队项目，UnoCSS 是更好的选择。
+UnoCSS is cleverly positioned: instead of competing with Tailwind for users, it provides the underlying engine. Tailwind's rules can run on top of UnoCSS (via preset-wind), yet UnoCSS opens up far more — icons, attributify mode, and custom rules. For team projects that need heavy customization, UnoCSS is the better choice.

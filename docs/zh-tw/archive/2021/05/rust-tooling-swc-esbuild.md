@@ -5,7 +5,7 @@ tags:
   - Esbuild
 readingTime: 2
 description: "Rspack Rust 前端構建工具這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 278
+wordCount: 276
 ---
 
 Rspack Rust 前端構建工具這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -100,7 +100,7 @@ export default defineConfig({
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 最佳化技巧
 

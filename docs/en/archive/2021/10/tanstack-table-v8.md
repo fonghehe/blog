@@ -6,15 +6,15 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "关于TanStack Table v8 数据表格，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspecti"
-wordCount: 185
+description: "Many developers only know TanStack Table v8 data tables at the API level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 183
 ---
 
-关于TanStack Table v8 数据表格，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to TanStack Table v8 for data tables, many developers only engage with it at the API-call level. This article looks at the real problems and solutions from a production-environment perspective.
 
 ## Basic Principles
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'

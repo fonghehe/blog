@@ -3,16 +3,16 @@ title: "Deno 2 FFI Interface"
 date: 2024-08-30 18:24:01
 tags:
   - Frontend
-readingTime: 2
+readingTime: 1
 description: "I frequently use Deno 2 FFI Interface in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it better."
-wordCount: 211
+wordCount: 168
 ---
 
 I frequently use Deno 2 FFI Interface in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it better.
 
 ## Basic Concepts
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 使用示例
@@ -33,7 +33,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Core Implementation
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 工具函数封装
@@ -61,7 +61,7 @@ function createHandler(options = {}) {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+With this pattern, the code's maintainability improves.
 
 ## Practical Application
 
@@ -139,7 +139,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Summary
 
-- 团队协作中保持代码风格一致，降低维护成本
-- 持续关注社区动态，及时更新技术方案
-- 性能优化需要基于实际数据，避免过度优化
-- Deno 2 FFI Interface的核心在于理解底层原理，而非仅仅记住 API
+- Keep code style consistent across the team to cut maintenance costs
+- Keep an eye on community developments and update the technical approach in time
+- Base performance optimization on real data and avoid premature optimization
+- The core of the Deno 2 FFI interface is understanding the underlying principles, not just memorizing APIs

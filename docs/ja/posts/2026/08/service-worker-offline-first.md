@@ -4,9 +4,9 @@ date: 2026-08-09 13:11:22
 tags:
   - 工程化
   - PWA
-readingTime: 8
+readingTime: 14
 description: "Service Worker はブラウザにおいてオフラインファーストを実現できる唯一の技術的基盤である。本記事では、ライフサイクル、キャッシュ戦略マトリクス、Workbox のエンジニアリング、プッシュ通知、バックグラウンド同期、更新戦略まで、PWA オフラインファーストアーキテクチャの完全なエンジニアリングソリューションを体系的に整理し、2026 年における PWA の位置づけと適用シーンについても論じる。"
-wordCount: 3800
+wordCount: 3053
 ---
 
 PWA（Progressive Web App）は 2026 年において、「ネイティブアプリを代替できるか」という議論の焦点ではなくなった。App Store と Google Play は依然として強力だが、PWA は独自の位置づけを見出している：配布チャネルの更新が不要、オフラインシーンで利用可能、インストール不要で即利用可能。これらの特性により、PWA は内部ツール、コンテンツ型アプリ、新興市場のシーンで継続的に価値を発揮している。そして PWA の技術的基盤である Service Worker は、依然としてフロントエンドで最も複雑かつ強力な API の一つである。
@@ -401,7 +401,7 @@ async function submitForm(data: FormData) {
     if ('sync' in registration) {
       await registration.sync.register('submit-form');
       // ユーザーに通知：ネットワーク復旧後にデータが同期される
-      showOfflineToast('データは保存されました。ネットワーク復復後に自動的に同期されます');
+      showOfflineToast('データは保存されました。ネットワーク復旧後に自動的に同期されます');
     } else {
       // Background Sync 非対応ブラウザはローカルストレージにフォールバック
       await saveToIndexedDB('pending-submits', data);

@@ -5,9 +5,9 @@ tags:
   - Web3
   - DApp
   - 架构
-readingTime: 12
+readingTime: 9
 description: "Web3 已是多链世界。前端需要同时连接 Ethereum、Polygon、Arbitrum、Optimism、BSC 等多条链。本文系统拆解多链 DApp 的架构设计、状态管理和跨链数据同步方案。"
-wordCount: 3200
+wordCount: 876
 ---
 
 以太坊主网不再是 DApp 的唯一部署目标。Gas 费用高企和扩容需求推动了 Layer 2 和侧链的快速增长。一个典型的 DeFi 协议通常需要同时部署到 Ethereum、Polygon、Arbitrum、Optimism、BSC 等多条链上。多链部署带来的前端架构挑战是根本性的：如何管理不同链上的不同合约地址、如何处理用户的链切换、如何同步跨链状态。

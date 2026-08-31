@@ -97,7 +97,7 @@ Fiber 嘅分階段渲染有個副作用：階段一（協調階段）可能被�
 - `shouldComponentUpdate`
 - `render`
 
-**提交階段（隻調用一次）：**
+**提交階段（只調用一次）：**
 
 - `componentDidMount`
 - `componentDidUpdate`

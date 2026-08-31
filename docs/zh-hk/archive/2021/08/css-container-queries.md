@@ -12,7 +12,7 @@ wordCount: 309
 
 ## 什麼是 Container Queries
 
-Media Queries 根據**視口寬度**響應，Container Queries 根據**父容器寬度**響應。
+Media Queries 根據**視窗寬度**響應，Container Queries 根據**父容器寬度**響應。
 
 這才是組件化開發真正需要的能力。
 
@@ -34,7 +34,7 @@ Media Queries 根據**視口寬度**響應，Container Queries 根據**父容器
 
 ## 為什麼這個特性很重要
 
-現在的痛點：同一個組件放在側邊欄（窄）和主內容區（寬），表現應該不同。但 Media Queries 隻看視口，不看容器。
+現在的痛點：同一個組件放在側邊欄（窄）和主內容區（寬），表現應該不同。但 Media Queries 只看視窗，不看容器。
 
 ```html
 <!-- 同一個 Card 組件 -->
@@ -46,7 +46,7 @@ Media Queries 根據**視口寬度**響應，Container Queries 根據**父容器
   <Card /> <!-- 主內容區寬，應該顯示完整佈局 -->
 </main>
 
-<!-- 兩個 Card 在同一個視口下，Media Queries 無法區分 -->
+<!-- 兩個 Card 在同一個視窗下，Media Queries 無法區分 -->
 ```
 
 ## 語法詳解
@@ -54,7 +54,7 @@ Media Queries 根據**視口寬度**響應，Container Queries 根據**父容器
 ```css
 /* 1. 定義容器 */
 .card-container {
-  container-type: inline-size;  /* 隻監控 inline 方向（水平）的尺寸 */
+  container-type: inline-size;  /* 只監控 inline 方向（水平）的尺寸 */
   container-name: card;          /* 可選：給容器命名 */
 }
 
@@ -138,7 +138,7 @@ Media Queries 根據**視口寬度**響應，Container Queries 根據**父容器
 
 ```javascript
 // 現在的常見做法：用 ResizeObserver 監控容器寬度
-// 不優雅，而且有性能開銷
+// 不優雅，而且有效能開銷
 
 const observer = new ResizeObserver((entries) => {
   for (const entry of entries) {
@@ -158,7 +158,7 @@ document.querySelectorAll('.card-wrapper').forEach((el) => {
 
 ## 配合 Tailwind CSS
 
-Tailwind 3.0 已經實驗性支持 `@container`：
+Tailwind 3.0 已經實驗性支援 `@container`：
 
 ```html
 <!-- 需要在容器上加 container 類 -->
@@ -176,9 +176,9 @@ Tailwind 3.0 已經實驗性支持 `@container`：
 
 截至 2021 年 8 月：
 
-- Chrome Canary：實驗性支援（需要開啓 flag）
-- Chrome 105+：預計默認支援
-- Firefox / Safari：暫無支持時間表
+- Chrome Canary：實驗性支援（需要開啟 flag）
+- Chrome 105+：預計預設支援
+- Firefox / Safari：暫無支援時間表
 
 目前可以用 PostCSS 插件做降級：
 
@@ -191,4 +191,4 @@ npm install -D @csstools/postcss-container-queries
 - Container Queries 讓組件根據父容器寬度響應，解決了 Media Queries 的根本侷限
 - 語法：`container-type` 定義容器，`@container` 查詢
 - 組件化開發的必備能力，Grid + Container Queries = 真正的響應式組件
-- 瀏覽器支持還在早期，但趨勢已定，值得提前瞭解
+- 瀏覽器支援還在早期，但趨勢已定，值得提前瞭解

@@ -5,10 +5,10 @@ tags:
   - Vue
 readingTime: 2
 description: "表单验证是后台系统里最频繁的需求，用 Element UI 做了不少，整理一下最佳实践。"
-wordCount: 145
+wordCount: 152
 ---
 
-表单验证是后台系统里最频繁的需求，用 Element UI 做了不少，整理一下最佳实践。
+表单验证是后台系统里最常见的需求，我用 Element UI 做过不少表单验证，下面整理一下最佳实践。
 
 ## Element UI 的基础验证
 

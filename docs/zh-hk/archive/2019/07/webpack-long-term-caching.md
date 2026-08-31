@@ -5,11 +5,11 @@ tags:
   - Webpack
   - 工程化
 readingTime: 5
-description: "Webpack 項目一大痛點就是構建速度慢。一箇中型項目，`node_modules` 裏幾百個包，每次 `npm run build` 都要等好幾分鐘。`DllPlugin` 是 Webpack 官方提供的構建優化方案之一，核心思路是把不常變化的依賴（如 React、Vue、lodash 等）提前打包成一個獨立的 D"
+description: "Webpack 項目一大痛點就是構建速度慢。一個中型項目，`node_modules` 裏幾百個包，每次 `npm run build` 都要等好幾分鐘。`DllPlugin` 是 Webpack 官方提供的構建優化方案之一，核心思路是把不常變化的依賴（如 React、Vue、lodash 等）提前打包成一個獨立的 D"
 wordCount: 920
 ---
 
-Webpack 項目一大痛點就是構建速度慢。一箇中型項目，`node_modules` 裏幾百個包，每次 `npm run build` 都要等好幾分鐘。`DllPlugin` 是 Webpack 官方提供的構建優化方案之一，核心思路是把不常變化的依賴（如 React、Vue、lodash 等）提前打包成一個獨立的 DLL 文件，主構建時直接引用，不再重複編譯。
+Webpack 項目一大痛點就是構建速度慢。一個中型項目，`node_modules` 裏幾百個包，每次 `npm run build` 都要等好幾分鐘。`DllPlugin` 是 Webpack 官方提供的構建優化方案之一，核心思路是把不常變化的依賴（如 React、Vue、lodash 等）提前打包成一個獨立的 DLL 文件，主構建時直接引用，不再重複編譯。
 
 ## DllPlugin 原理
 
@@ -139,7 +139,7 @@ module.exports = {
 }
 ```
 
-- `npm run dll`：單獨生成 DLL（隻在依賴變化時需要執行）
+- `npm run dll`：單獨生成 DLL（只在依賴變化時需要執行）
 - `npm run build`：先生成 DLL 再構建
 - `npm run build:main`：跳過 DLL 生成，直接主構建（日常開發用這個）
 
@@ -236,9 +236,9 @@ plugins: [
 
 ## 實際效果
 
-在一箇中型 React 項目（約 150 個模塊）上測試：
+在一個中型 React 項目（約 150 個模塊）上測試：
 
-| 場景 | 不優化 | 隻用 DllPlugin | 隻用 HardSource | 兩者都用 |
+| 場景 | 不優化 | 只用 DllPlugin | 只用 HardSource | 兩者都用 |
 |------|--------|--------------|----------------|---------|
 | 冷啓動構建 | 45s | 35s | 45s | 35s |
 | 二次構建 | 45s | 35s | 8s | 6s |
@@ -331,5 +331,5 @@ module.exports = {
 - 配置三步走：創建 DLL 構建配置 -> 主構建用 DllReferencePlugin 引用 -> 用 AddAssetHtmlPlugin 注入 HTML
 - HardSourceWebpackPlugin 通過緩存編譯結果加速，和 DllPlugin 互補
 - 依賴變化後需要重新構建 DLL，可以在 postinstall 中自動處理
-- DLL 檔案體積大，需要決定是否提交到版本控製
+- DLL 檔案體積大，需要決定是否提交到版本控制
 - 現代 Webpack 5 中 DllPlugin 的使用場景減少（因為有更好的持久化緩存方案），但在 Webpack 4 時代是構建加速的重要手段

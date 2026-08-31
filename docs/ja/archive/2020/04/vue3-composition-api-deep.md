@@ -3,16 +3,16 @@ title: "Vue 3 Composition API 実践：setup、ref 与 reactive 完全ガイド"
 date: 2019-05-08 09:40:28
 tags:
   - Vue
-readingTime: 2
+readingTime: 3
 description: "Vue 3 的 Composition API 已经在 RFC 中敲定，虽然正式版还要几个月，但提前深入理解很有必要。这不是 Vue 2 的简单升级，而是组件逻辑组织方式的根本变化。"
-wordCount: 226
+wordCount: 410
 ---
 
-Vue 3 的 Composition API 已经在 RFC 中敲定，虽然正式版还要几个月，但提前深入理解很有必要。这不是 Vue 2 的简单升级，而是组件逻辑组织方式的根本变化。
+Vue 3 の Composition API は RFC で確定済みだ。正式版のリリースはあと数カ月だが、事前に深く理解しておく価値は大きい。これは Vue 2 の単なるアップグレードではなく、コンポーネントのロジックをどう構成するかという根本的な変化だ。
 
-## 为什么需要 Composition API
+## なぜ Composition API が必要なのか
 
-Options API 在简单组件中很好用，但复杂组件有明显痛点：
+Options API はシンプルなコンポーネントでは扱いやすいが、複雑なコンポーネントになると明確な悩みの種（ペインポイント）が出てくる：
 
 ```javascript
 // Options API 的问题：相关逻辑被拆散
@@ -43,7 +43,7 @@ export default {
 };
 ```
 
-## Composition API 的核心
+## Composition API の核心
 
 ```javascript
 import { ref, reactive, computed, watch, onMounted } from 'vue';
@@ -104,7 +104,7 @@ export default {
 };
 ```
 
-## 抽取为可复用的 Composables
+## 再利用可能な Composables への抽出
 
 ```javascript
 // composables/usePagination.js
@@ -176,7 +176,7 @@ export function useUser() {
 }
 ```
 
-## 在组件中使用
+## コンポーネントでの使用
 
 ```vue
 <script>
@@ -203,7 +203,7 @@ export default {
 </script>
 ```
 
-## ref vs reactive 怎么选
+## ref と reactive の使い分け
 
 ```javascript
 // ref：适合原始值和需要替换整个值的场景
@@ -231,7 +231,7 @@ const state = ref({
 state.value.user = { name: 'test' }; // 访问 .value 后就是普通对象
 ```
 
-## 生命周期对应关系
+## ライフサイクルの対応関係
 
 ```javascript
 // Options API  →  Composition API
@@ -248,8 +248,8 @@ state.value.user = { name: 'test' }; // 访问 .value 后就是普通对象
 
 ## まとめ
 
-- Composition API 把相关逻辑集中到一起，解决 Options API 逻辑分散的问题
-- `setup()` 是入口，`ref`/`reactive` 管理状态，`watch`/`onMounted` 处理副作用
-- 逻辑复用从 mixins 变成 composables（函数），更清晰、无命名冲突
-- `ref` 和 `reactive` 选择看场景，建议统一用 `ref` 降低心智负担
-- Options API 在 Vue 3 中仍然支持，简单组件用 Options API 也没问题
+- Composition API は関連するロジックを一箇所にまとめ、Options API が抱えていたロジックの分散という問題を解決する
+- `setup()` がエントリーポイントとなり、`ref`/`reactive` が状態を管理し、`watch`/`onMounted` が副作用を処理する
+- ロジックの再利用は mixins から composables（関数）へと変わり、より明確で命名衝突も起きない
+- `ref` と `reactive` の選択は場面によるが、統一して `ref` を使う方が認知負荷を下げられる（おすすめ）
+- Options API は Vue 3 でも引き続きサポートされている。シンプルなコンポーネントなら Options API を使っても問題ない

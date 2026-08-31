@@ -6,11 +6,11 @@ tags:
   - Webpack
   - TypeScript
 readingTime: 2
-description: "Angular 的路由系統內置了強大的懶加載和預加載機製。合理設定可以讓首屏體積減少 40-60%，同時通過預加載確保後續導航幾乎無等待。"
+description: "Angular 的路由系統內置了強大的懶加載和預加載機制。合理設定可以讓首屏體積減少 40-60%，同時通過預加載確保後續導航幾乎無等待。"
 wordCount: 371
 ---
 
-Angular 的路由系統內置了強大的懶加載和預加載機製。合理設定可以讓首屏體積減少 40-60%，同時通過預加載確保後續導航幾乎無等待。
+Angular 的路由系統內置了強大的懶加載和預加載機制。合理設定可以讓首屏體積減少 40-60%，同時通過預加載確保後續導航幾乎無等待。
 
 ## 懶加載基礎
 
@@ -40,7 +40,7 @@ const routes: Routes = [
 **canLoad vs canActivate 的區別**：
 
 - `canActivate`：導航時檢查權限，但 JS chunk 已經下載
-- `canLoad`：權限不足時完全不下載 chunk，更安全也更節省帶寬
+- `canLoad`：權限不足時完全不下載 chunk，更安全也更節省頻寬
 
 ## 三種預加載策略
 
@@ -48,7 +48,7 @@ const routes: Routes = [
 
 ```typescript
 RouterModule.forRoot(routes, {
-  preloadingStrategy: NoPreloading, // 不預加載，用户導航時才下載
+  preloadingStrategy: NoPreloading, // 不預加載，用戶導航時才下載
 });
 ```
 
@@ -64,11 +64,11 @@ RouterModule.forRoot(routes, {
 });
 ```
 
-適合：應用不大、用户網絡好的場景。
+適合：應用不大、用戶網絡好的場景。
 
 ### 3. 自定義預加載策略（推薦）
 
-隻預加載標記了 `preload: true` 的路由：
+只預加載標記了 `preload: true` 的路由：
 
 ```typescript
 // selective-preload.strategy.ts

@@ -4,9 +4,9 @@ date: 2022-09-19 13:53:40
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 9
 description: "zkSync 2.0 (era) 原生支持账户抽象和 Paymaster，前端集成方式与 EVM Layer1 有显著差异。本文覆盖 zkSync 前端开发的完整链路，从 SDK 使用到 Paymaster 集成。"
-wordCount: 3100
+wordCount: 1213
 ---
 
 zkSync 2.0（后更名为 zkSync Era）是 Matter Labs 开发的 zkRollup 方案。与 Optimistic Rollup 不同，zkSync 使用零知识证明（具体为 PLONK 证明系统）来保证 L2 状态的有效性，提款不需要 7 天挑战期。更重要的是，zkSync 从底层就原生支持账户抽象（Account Abstraction）和 Paymaster（Gas 代付），这使得前端交互模型与传统 EVM 有显著差异。

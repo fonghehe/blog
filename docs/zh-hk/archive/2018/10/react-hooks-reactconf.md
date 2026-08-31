@@ -20,7 +20,7 @@ Ryan 演示了用 Hooks 替換 render props 的場景，現場掌聲不斷。
 
 和 9 月寫的預覽文章比，現在對 Hooks 的理解更深了：
 
-**1. Hooks 不是在函數組件里加了狀態，而是把邏輯和 UI 分離**
+**1. Hooks 不是在函數組件裏加了狀態，而是把邏輯和 UI 分離**
 
 ```javascript
 // 之前的思維方式：組件 = UI + 狀態 + 邏輯，全混在一起
@@ -43,7 +43,7 @@ class UserPage extends React.Component {
   }
 }
 
-// Hooks 的思維方式：邏輯抽離為 Hook，組件隻關注 UI
+// Hooks 的思維方式：邏輯抽離為 Hook，組件只關注 UI
 function useUser(userId) {
   // 所有相關邏輯在一處
   const [user, setUser] = useState(null);
@@ -61,7 +61,7 @@ function useUser(userId) {
   return { user, loading, error };
 }
 
-// 組件隻關注 UI
+// 組件只關注 UI
 function UserPage({ userId }) {
   const { user, loading, error } = useUser(userId);
 
@@ -99,14 +99,14 @@ const inputRef = useRef(null);
 React 要求兩條規則：
 
 ```javascript
-// 規則 1：隻在最頂層調用 Hook（不能在條件/循環裏）
+// 規則 1：只在最頂層調用 Hook（不能在條件/循環裏）
 function BadExample() {
   if (condition) {
     const [x] = useState(0); // ❌ 錯誤！
   }
 }
 
-// 規則 2：隻在 React 函數組件或自定義 Hook 裏調用
+// 規則 2：只在 React 函數組件或自定義 Hook 裏調用
 function notAComponent() {
   const [x] = useState(0); // ❌ 錯誤！
 }
@@ -140,7 +140,7 @@ export default {
 };
 ```
 
-和 React Hooks 相比，Vue 的 `setup` 隻執行一次（不像 hooks 每次渲染都執行），沒有依賴數組的問題，但也失去了一些靈活性。
+和 React Hooks 相比，Vue 的 `setup` 只執行一次（不像 hooks 每次渲染都執行），沒有依賴數組的問題，但也失去了一些靈活性。
 
 ## 什麼時候穩定？
 
@@ -152,6 +152,6 @@ Dan 在 Conf 上説 Hooks 已經在 React 16.7 alpha 中可用，但 API 還可�
 
 - React Conf 2018 正式介紹了 Hooks，社區反響熱烈
 - Hooks 的核心價值：把有狀態的邏輯抽離到可複用的 Hook
-- 兩條規則：隻在頂層調用、隻在函數組件/自定義 Hook 裏調用
+- 兩條規則：只在頂層調用、只在函數組件/自定義 Hook 裏調用
 - Vue 3 Composition API 也在朝類似方向發展
 - 生產項目等 Hooks 穩定版，個人項目現在就可以玩

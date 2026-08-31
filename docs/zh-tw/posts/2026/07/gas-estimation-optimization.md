@@ -5,9 +5,9 @@ tags:
   - Web3
   - Ethereum
   - 性能优化
-readingTime: 7
+readingTime: 8
 description: "深入解析 EIP-1559 Gas 機制、前端 Gas 估算 API、批次交易最佳化策略及 L2 Gas 估算差異"
-wordCount: 3200
+wordCount: 813
 ---
 
 ## Gas 機制解析：EIP-1559 的 base fee + priority fee

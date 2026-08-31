@@ -1,5 +1,5 @@
 ---
-title: "React Concurrent Mode First Look: 时间切片 &  Suspense Experiment"
+title: "React Concurrent Mode First Look: Time Slicing and Suspense Experiments"
 date: 2019-05-27 16:57:55
 tags:
   - React

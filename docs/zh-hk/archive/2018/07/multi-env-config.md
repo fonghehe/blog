@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "項目通常有 development、staging、production 三個環境，各有不同的 API 地址、Feature Flag 等設定。這篇文章整理多環境設定的最佳實踐。"
-wordCount: 291
+wordCount: 292
 ---
 
 項目通常有 development、staging、production 三個環境，各有不同的 API 地址、Feature Flag 等配置。這篇文章整理多環境配置的最佳實踐。
@@ -41,7 +41,7 @@ VUE_APP_ENV=production
 VUE_APP_DEBUG=false
 ```
 
-**注意：以 `VUE_APP_` 開頭的變量才會被注入到客户端代碼。**
+**注意：以 `VUE_APP_` 開頭的變量才會被注入到客戶端代碼。**
 
 ```javascript
 // 在代碼裏使用
@@ -114,19 +114,19 @@ if (config.features.debugPanel) {
 
 ## 敏感信息處理
 
-**永遠不要把密鑰放在客户端代碼裏：**
+**永遠不要把密鑰放在客戶端代碼裏：**
 
 ```bash
 # ❌ 不要這樣做，即使在 .env 檔案裏
 VUE_APP_STRIPE_SECRET_KEY=sk_live_xxxxx  # 會被打包進 JS！
 VUE_APP_DB_PASSWORD=xxxxx
 
-# ✅ 隻放公開設定
+# ✅ 只放公開設定
 VUE_APP_STRIPE_PUBLIC_KEY=pk_live_xxxxx  # publishable key 是可以公開的
 VUE_APP_API_BASE=https://api.example.com
 ```
 
-私密信息（API secret、數據庫密碼）隻放在**服務端**的環境變量裏。
+私密信息（API secret、資料庫密碼）只放在**伺服器端**的環境變量裏。
 
 ## .env 檔案的 Git 管理
 
@@ -153,7 +153,7 @@ VUE_APP_SENTRY_DSN=        # 可選：Sentry DSN
 
 ## 構建時設定差異
 
-有些設定隻在特定環境的構建裏需要：
+有些設定只在特定環境的構建裏需要：
 
 ```javascript
 // vue.config.js
@@ -205,7 +205,7 @@ build_staging:
 ## 小結
 
 - 使用 `.env.*` 文件管理多環境配置
-- `VUE_APP_` 前綴才會注入客户端
-- 敏感信息（密鑰、密碼）絕對不能出現在客户端 bundle
+- `VUE_APP_` 前綴才會注入客戶端
+- 敏感信息（密鑰、密碼）絕對不能出現在客戶端 bundle
 - 提供 `.env.example` 供團隊成員參考
 - CI/CD 平臺管理生產環境的敏感變量

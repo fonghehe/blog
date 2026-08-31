@@ -5,10 +5,10 @@ tags:
   - Engineering
 readingTime: 3
 description: "Technology selection and architecture decisions are the core work of senior engineers — and the hardest part for AI to replace. But AI can be an incredibly powe"
-wordCount: 246
+wordCount: 248
 ---
 
-Technology selection and architecture decisions are the core work of senior engineers — and the hardest part for AI to replace. But AI can be an incredibly powerful decision-support tool: helping you analyze trade-offs, simulate performance characteristics of different approaches, and even surface constraints you missed.
+Technology selection and architecture decisions are the core work of senior engineers — and the hardest part to replace with AI. But AI can be an incredibly powerful decision-support tool: it helps you analyze trade-offs, simulate the performance characteristics of different approaches, and even surface constraints you overlooked.
 
 ## Using AI for Technology Selection Analysis
 
@@ -71,7 +71,7 @@ function calculateWeightedScore(
 
 ## Architecture Impact Analysis: Split or Consolidate?
 
-Questions like "should we go micro-frontend?" or "should we adopt a monorepo?" have no universal answer. AI's value is in helping you quantify the long-term impact of different decisions.
+Questions like "should we adopt micro-frontends?" or "should we adopt a monorepo?" have no universal answer. AI's value is in helping you quantify the long-term impact of different decisions.
 
 ```typescript
 // architecture-analysis.ts

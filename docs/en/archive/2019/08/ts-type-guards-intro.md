@@ -3,16 +3,16 @@ title: "TypeScript Type Guards Introduction"
 date: 2019-08-02 11:07:11
 tags:
   - TypeScript
-readingTime: 2
-description: "最近项目中用到了TypeScript 类型守卫入门，发现比预想的要复杂。分享一下实践过程中总结的经验。"
-wordCount: 236
+readingTime: 1
+description: "I recently used TypeScript type guards on a project and found them more complex than expected. Here are some lessons from practice."
+wordCount: 157
 ---
 
-最近项目中用到了TypeScript 类型守卫入门，发现比预想的要复杂。分享一下实践过程中总结的经验。
+I recently used TypeScript type guards on a project and found them more complex than expected. Here are some lessons from practice.
 
 ## Core Principles
 
-具体实现参考以下代码：
+See the following code for a concrete implementation:
 
 ```javascript
 :root {
@@ -34,11 +34,11 @@ body {
 }
 ```
 
-经过线上验证，这套方案运行稳定。
+This approach has been validated in production and runs stably.
 
 ## Source Code Analysis
 
-先来看基本的用法：
+Let's start with the basic usage:
 
 ```javascript
 const express = require('express')
@@ -67,11 +67,11 @@ app.get('/api/users', async (req, res, next) => {
 app.use(errorHandler)
 ```
 
-这种写法简洁明了，适合大多数场景。
+This style is clear and concise, and fits most scenarios.
 
 ## Practical Application
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 const http = require('http')
@@ -97,11 +97,11 @@ if (cluster.isMaster) {
 }
 ```
 
-实际项目中还需要考虑边界条件和异常处理。
+In real projects you also need to consider edge cases and error handling.
 
 ## Best Practices
 
-下面是一个实际的例子：
+Here is a concrete example:
 
 ```javascript
 const path = require('path')
@@ -145,11 +145,11 @@ module.exports = {
 }
 ```
 
-这种模式在团队中推广后效果很好，维护成本明显降低。
+After this pattern was adopted by the team, results were good and maintenance cost dropped noticeably.
 
 ## Summary
 
-- 遇到问题多看源码和官方文档
-- TypeScript 类型守卫入门的关键在于理解核心概念，不要停留在表面用法
-- 实际项目中根据场景选择合适的方案
-- 团队中统一约定比追求完美实现更重要
+- When you hit a problem, read the source code and official docs.
+- The key to getting started with TypeScript type guards is understanding the core concepts, not just superficial usage.
+- In real projects, pick the right approach for the situation.
+- Agreeing on team-wide conventions matters more than chasing the perfect implementation.

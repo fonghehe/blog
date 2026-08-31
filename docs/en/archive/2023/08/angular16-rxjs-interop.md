@@ -5,11 +5,11 @@ tags:
   - Angular
   - RxJS
 readingTime: 2
-description: "Angular 16 的 `@angular/core/rxjs-interop` 包提供了 `toSignal` 和 `toObservable` 两个工具函数，让 Signal 和 RxJS Observable 能无缝互操作。这解决了 Angular 生态中长期存在的\"两套响应式系统\"问题——现有的 RxJS 代"
-wordCount: 217
+description: "Angular 16's @angular/core/rxjs-interop package provides toSignal and toObservable, letting Signals and RxJS Observables interoperate seamlessly. This resolves the long-standing 'two reactive systems' problem in the Angular ecosystem — existing RxJS code keeps working while new code adopts Signals."
+wordCount: 127
 ---
 
-Angular 16 的 `@angular/core/rxjs-interop` 包提供了 `toSignal` 和 `toObservable` 两个工具函数，让 Signal 和 RxJS Observable 能无缝互操作。这解决了 Angular 生态中长期存在的"两套响应式系统"问题——现有的 RxJS 代码不需要重写，可以逐步向 Signals 迁移。
+Angular 16's @angular/core/rxjs-interop package provides toSignal and toObservable, letting Signals and RxJS Observables interoperate seamlessly. This resolves the long-standing 'two reactive systems' problem in the Angular ecosystem — existing RxJS code keeps working while new code adopts Signals.
 
 ## toSignal: Wrapping Observables as Signals
 
@@ -159,7 +159,7 @@ export class CartComponent {
 
 ## takeUntilDestroyed: Automatic Cleanup
 
-`toSignal` 内部已处理自动Cancel订阅，但对于手动订阅的场景，Angular 16 提供了 `takeUntilDestroyed`：
+`toSignal` handles automatic unsubscription internally, but for manual subscription scenarios Angular 16 provides `takeUntilDestroyed`:
 
 ```typescript
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -179,4 +179,4 @@ export class DataComponent implements OnInit {
 
 ## Summary
 
-`toSignal` 和 `toObservable` 是 Angular 响应式系统迁移的关键桥梁。它们让你可以在不重写现有 RxJS 代码的前提下，逐步享受 Signal 的简洁语法和细粒度追踪优势。在新代码中优先用 Signal，对 HTTP 请求等天然异步场景，`toSignal(observable$)` 是目前最简洁的处理方式。
+`toSignal` and `toObservable` are the key bridges for migrating Angular's reactive system. They let you adopt the concise syntax and fine-grained tracking of Signals step by step without rewriting existing RxJS code. Prefer Signals in new code; for naturally async scenarios like HTTP requests, `toObservable` keeps things consistent.

@@ -4,11 +4,11 @@ date: 2022-01-26 15:09:47
 tags:
   - Frontend
 readingTime: 2
-description: "In daily development, Remix 全栈框架实战 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategi"
-wordCount: 213
+description: "Hands-on work with Remix, the full-stack framework, is showing up in more and more everyday development. This article systematically covers its usage, rationale, and practical strategies."
+wordCount: 207
 ---
 
-In daily development, Remix 全栈框架实战 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In daily development, the Remix full-stack framework is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -150,5 +150,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Remix 全栈框架实战 is not a silver bullet; choose based on your project scale and tech stack
+- The Remix full-stack framework is not a silver bullet; choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

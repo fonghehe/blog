@@ -4,9 +4,9 @@ date: 2026-08-23 11:31:54
 tags:
   - Engineering
   - Security
-readingTime: 9
+readingTime: 7
 description: "Implementing automated dependency upgrades in a pnpm monorepo isn't just about installing Renovate. This article covers grouping strategies, tiered automerge, lockfile-only updates, CI gates (typecheck/tests/bundle size), breaking change codemod integration, and security vulnerability response workflows — with real adoption data from our team."
-wordCount: 3600
+wordCount: 930
 ---
 
 Last year our team's monorepo had 12 packages, 4 apps, and over 300 total dependencies. The state of manual dependency upgrades was: averaging 3 days per month handling upgrade PRs, security vulnerabilities taking an average of 18 days from disclosure to fix, and occasional production incidents caused by missed breaking changes during upgrades. Early this year we systematically built an automated upgrade pipeline. Three months later, upgrade time dropped to half a day per month, and security vulnerability remediation cycles compressed to under 2 days. This article documents the complete configuration approach and pitfalls we encountered.

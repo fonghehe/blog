@@ -4,11 +4,11 @@ date: 2022-08-23 14:31:47
 tags:
   - Frontend
 readingTime: 2
-description: "在 pnpm + Turborepo 的 monorepo 中管理组件库版本是个实际问题。什么时候发 patch、什么时候发 minor、怎么生成 changelog、怎么处理 breaking change？这篇文章讲讲我们团队的实践。"
-wordCount: 293
+description: "Managing component library versions in a pnpm + Turborepo monorepo is a real-world challenge. When should you release a patch, when a minor? How do you generate changelogs and handle breaking changes? This article walks through our team's practices."
+wordCount: 217
 ---
 
-在 pnpm + Turborepo 的 monorepo 中管理组件库版本是个实际问题。什么时候发 patch、什么时候发 minor、怎么生成 changelog、怎么处理 breaking change？这篇文章讲讲我们团队的实践。
+Managing component library versions in a pnpm + Turborepo monorepo is a real-world challenge. When should you release a patch, when a minor? How do you generate changelogs and handle breaking changes? This article walks through our team's practices.
 
 ## Versioning Strategy: SemVer
 
@@ -23,10 +23,10 @@ wordCount: 293
 }
 ```
 
-规则：
-- **patch** (1.5.2 -> 1.5.3)：Bug 修复，不改 API
-- **minor** (1.5.2 -> 1.6.0)：新增功能，向后兼容
-- **major** (1.5.2 -> 2.0.0)：破坏性变更
+Rules:
+- **patch** (1.5.2 -> 1.5.3): Bug fixes, no API changes
+- **minor** (1.5.2 -> 1.6.0): New features, backward compatible
+- **major** (1.5.2 -> 2.0.0): Breaking changes
 
 ## Changesets: Automated Version Management
 
@@ -56,7 +56,7 @@ pnpm changeset init
 }
 ```
 
-`linked` 表示这两个包一起发版——组件库更新时文档站也 bump 版本。
+`linked` means these two packages are versioned together — when the component library updates, the docs site bumps its version too.
 
 ## Daily Development Workflow
 
@@ -81,7 +81,7 @@ pnpm changeset
 # ? Summary: 新增 DatePicker 组件
 ```
 
-生成文件 `.changeset/xxxx-add-date-picker.md`：
+This generates a file `.changeset/xxxx-add-date-picker.md`:
 
 ```markdown
 ---
@@ -91,7 +91,7 @@ pnpm changeset
 新增 DatePicker 组件
 ```
 
-这个文件跟着 PR 一起提交。
+This file is committed along with the PR.
 
 ## CI Auto-Publishing
 
@@ -140,7 +140,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 ```
 
-流程：合并 PR 到 main -> Changesets 检测到有 changeset 文件 -> 自动创建「Version Packages」PR -> 合并后自动发布到 npm。
+Workflow: merge PR to main -> Changesets detects changeset files -> automatically creates a "Version Packages" PR -> auto-publishes to npm after merge.
 
 ## Handling BREAKING CHANGEs
 
@@ -156,7 +156,7 @@ BREAKING CHANGE: Button 组件的 variant 属性值从字符串改为枚举
 - 移除了 `variant="default"`，改用 `variant={ButtonVariant.Outline}`
 ```
 
-升级指南单独写一个迁移文档，changeset 里简要说明。
+Write a separate migration guide for the upgrade; keep the changeset description brief.
 
 ## Version Synchronization in Dependencies
 
@@ -179,7 +179,7 @@ BREAKING CHANGE: Button 组件的 variant 属性值从字符串改为枚举
 }
 ```
 
-`workspace:*` 确保始终用本地版本。发布时 Changesets 自动替换为实际版本号。
+`workspace:*` ensures the local version is always used. At publish time, Changesets automatically replaces it with the actual version number.
 
 ## Changelog Generation
 
@@ -241,4 +241,4 @@ BREAKING CHANGE: Button 组件的 variant 属性值从字符串改为枚举
 
 ## Summary
 
-Changesets 是目前 monorepo 版本管理的最佳方案。它把「什么时候发版」和「发什么版本」的问题自动化了。配合 CI，开发者只需要在 PR 中创建 changeset，剩下的全自动。
+Changesets is currently the best solution for monorepo version management. It automates the questions of "when to release" and "what version to release." Combined with CI, developers only need to create a changeset in their PR — everything else is fully automated.

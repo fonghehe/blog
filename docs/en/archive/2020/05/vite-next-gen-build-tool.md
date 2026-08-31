@@ -4,25 +4,25 @@ date: 2020-05-20 17:39:20
 tags:
   - Engineering
 readingTime: 1
-description: "尤雨溪在直播中介绍了 Vite（法语\"快\"的意思），我立刻拿来试了试。感觉颠覆了我对开发工具的认知。"
-wordCount: 298
+description: "Evan You introduced Vite (French for \"fast\") during a livestream, and I immediately tried it out. It completely changed how I think about development tooling."
+wordCount: 211
 ---
 
-尤雨溪在直播中介绍了 Vite（法语"快"的意思），我立刻拿来试了试。感觉颠覆了我对开发工具的认知。
+Evan You introduced Vite (French for "fast") during a livestream, and I immediately went to try it out. It completely changed how I think about development tooling.
 
 ## Core Idea: Leveraging Native Browser ES Modules
 
-传统开发服务器（Webpack dev server）：
+Traditional dev server (Webpack dev server):
 
-- 启动时打包所有模块
-- 项目大 → 启动时间长（我们项目现在要 60s）
-- 热更新也要重新打包相关模块
+- Bundles all modules at startup
+- Large project → long startup time (our project currently takes 60s)
+- Hot updates also require re-bundling the relevant modules
 
-Vite 的做法：
+Vite's approach:
 
-- 启动时**不打包**，直接利用浏览器原生 ESM
-- 浏览器请求哪个模块，才处理哪个模块
-- 启动时间基本恒定（不管项目多大）
+- Does **not bundle** at startup; uses the browser's native ESM directly
+- Only processes the module the browser actually requests
+- Startup time is basically constant (regardless of project size)
 
 ```
 浏览器请求 /src/main.ts
@@ -55,7 +55,7 @@ module.exports = {
 };
 ```
 
-## 和 Webpack 的区别
+## Differences from Webpack
 
 ```javascript
 // Webpack：需要大量配置才能支持 TypeScript
@@ -74,7 +74,7 @@ module.exports = {
 // TypeScript、Vue、React、CSS、SCSS... 都开箱即用
 ```
 
-## HMR 热更新
+## HMR (Hot Module Replacement)
 
 ```
 Webpack HMR：
@@ -86,7 +86,7 @@ Vite HMR：
   速度快很多，而且和项目大小无关
 ```
 
-## 生产构建：基于 Rollup
+## Production Build: Based on Rollup
 
 ```javascript
 // 生产环境用 Rollup 打包（ESM + Tree Shaking）
@@ -106,18 +106,18 @@ module.exports = {
 };
 ```
 
-## 2020 年 5 月的现状
+## State of Things in May 2020
 
-- 只支持 Vue 3（当时）
-- API 还不稳定（Vite 1.0 要年底）
-- 部分边缘情况处理不好
-- SSR 支持还不完善
+- Only Vue 3 was supported at the time
+- The API wasn't stable yet (Vite 1.0 wouldn't land until the end of the year)
+- Some edge cases weren't handled well
+- SSR support was still incomplete
 
-但这个方向是对的，我很确定。等 1.0 稳定后会在项目中使用。
+But this direction is right—I'm sure of it. Once 1.0 stabilizes I'll use it in my projects.
 
 ## Summary
 
-- Vite 利用原生 ESM，开发服务器启动几乎瞬间
-- 零配置支持 TS、Vue、React、CSS 预处理器
-- 生产构建用 Rollup，输出 ESM + 传统格式
-- 2020 年还不成熟，等 2021 年 Vite 2 再评估生产使用
+- Vite uses native ESM, so the dev server starts almost instantly.
+- Zero-config support for TS, Vue, React, and CSS preprocessors.
+- Production builds use Rollup, outputting ESM plus traditional formats.
+- In 2020 it's still immature; wait for Vite 2 in 2021 before evaluating it for production.

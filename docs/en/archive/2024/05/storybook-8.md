@@ -4,8 +4,8 @@ date: 2024-05-24 14:31:23
 tags:
   - Storybook
 readingTime: 2
-description: "关于Storybook 8 正式发布改进，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspect"
-wordCount: 201
+description: "Many developers only know the Storybook 8 official release improvements at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 175
 ---
 
 关于Storybook 8 正式发布改进，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -112,8 +112,8 @@ This solution has been running stably in production for over six months and has 
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- Understanding the underlying principles matters more than memorizing APIs
+- Always verify compatibility thoroughly before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on community trends; technical approaches need continuous iteration
+- Don't adopt new technology just for the sake of it

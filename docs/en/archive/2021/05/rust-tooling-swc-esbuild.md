@@ -6,11 +6,11 @@ tags:
   - Vite
 
 readingTime: 1
-description: "Rspack Rust 前端构建工具 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic base"
-wordCount: 164
+description: "Rspack and Rust-based frontend build tools have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 157
 ---
 
-Rspack Rust 前端构建工具 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Rspack, a Rust-based frontend build tool, has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -74,7 +74,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Real-World Applications
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 import { defineConfig } from 'vite'

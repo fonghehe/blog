@@ -4,20 +4,20 @@ date: 2019-08-29 09:40:58
 tags:
   - Vue
 readingTime: 2
-description: "做了一个电商官网，要求 SEO 和首屏速度。调研了 Nuxt.js，最终选它做 Vue SSR。"
-wordCount: 198
+description: "We built an e-commerce site that needed good SEO and a fast first paint. After evaluating the options, we chose Nuxt.js for Vue SSR."
+wordCount: 160
 ---
 
-做了一个电商官网，要求 SEO 和首屏速度。调研了 Nuxt.js，最终选它做 Vue SSR。
+We built an e-commerce site that needed good SEO and a fast first paint. After evaluating the options, we chose Nuxt.js for Vue SSR.
 
 ## What Is Nuxt.js
 
-Next.js 对应 React，Nuxt.js 对应 Vue。提供：
+If Next.js is to React, Nuxt.js is to Vue. It provides:
 
-- 约定式路由（文件即路由）
-- 服务端渲染（SSR）
-- 静态生成（SSG）
-- 自动代码分割
+- Convention-based routing (files are routes)
+- Server-side rendering (SSR)
+- Static site generation (SSG)
+- Automatic code splitting
 
 ## Project Structure
 
@@ -170,13 +170,13 @@ CMD ["npm", "start"]
 
 ## Common Pitfalls
 
-1. **window is not defined**：SSR 环境没有 `window`，用 `process.client` 判断
-2. **第三方库不支持 SSR**：用 `mode: 'client'` 插件或动态导入
-3. **cookies**：服务端请求要转发 cookie，用 `@nuxtjs/proxy` 解决跨域
+1. **window is not defined**: the SSR environment has no `window`; guard with `process.client`.
+2. **Third-party libraries that don't support SSR**: load them via a `mode: 'client'` plugin or a dynamic import.
+3. **Cookies**: server-side requests must forward cookies; use `@nuxtjs/proxy` to handle cross-origin requests.
 
 ## Summary
 
-- `asyncData` 在服务端执行，返回的数据合并到 data，直接用于渲染
-- 动态路由 `_id.vue` 对应 `:id` 参数
-- `head()` 方法设置 SEO meta 标签
-- 静态生成适合内容不常变的页面，SSR 适合实时数据
+- `asyncData` runs on the server, and its returned data is merged into `data` and used for rendering directly.
+- The dynamic route `_id.vue` maps to the `:id` parameter.
+- The `head()` method sets SEO-related meta tags.
+- Static generation suits pages whose content rarely changes; SSR suits real-time data.

@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Ionic Vue 跨平臺移動開發在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 348
+wordCount: 344
 ---
 
 Ionic Vue 跨平臺移動開發在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -79,7 +79,7 @@ const ItemList = ({ data, onRefresh }) => {
 
 ## 實戰案例
 
-在這個基礎上，我們可以進一步最佳化：
+在這個基礎上，我們可以進一步優化：
 
 ```javascript
 import React, { useState, useCallback } from 'react'
@@ -110,7 +110,7 @@ const ItemList = ({ data, onRefresh }) => {
 
 這種模式在大型專案中非常實用，能顯著降低維護成本。
 
-## 效能最佳化
+## 效能優化
 
 實際專案中的用法會更復雜一些：
 
@@ -141,7 +141,7 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 常見陷阱
 

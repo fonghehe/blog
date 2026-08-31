@@ -4,11 +4,11 @@ date: 2020-12-10 09:55:21
 tags:
   - Frontend
 readingTime: 3
-description: "做了五年前端，从写页面到写系统，从维护老项目到搭建新架构。今年带团队做了一个大型管理后台项目，沉淀了一些架构设计的思考。"
-wordCount: 188
+description: "Five years into frontend, I've gone from writing pages to designing systems, and from maintaining legacy projects to building new architectures. This year I led a large admin-console project with my team — these are the architecture lessons that stuck."
+wordCount: 133
 ---
 
-做了五年前端，从写页面到写系统，从维护老项目到搭建新架构。今年带团队做了一个大型管理后台项目，沉淀了一些架构设计的思考。
+I've been doing frontend for five years now — from writing pages to writing systems, from maintaining legacy projects to building new architectures. This year I led a team on a large admin dashboard, and I've distilled some thinking on architecture design from it.
 
 ## Core Questions of Architecture
 
@@ -20,7 +20,7 @@ wordCount: 188
 3. 如何保证质量？（类型、测试、规范）
 ```
 
-## 目录结构设计
+## Directory Structure Design
 
 ```
 src/
@@ -303,8 +303,8 @@ export function setupErrorHandler(app) {
 
 ## Summary
 
-- 架构的核心是让代码结构清晰、团队协作高效
-- 分层设计：组件层、业务层、服务层、基础设施层
-- API 服务层统一管理请求，类型定义保证接口契约
-- 状态管理按范围分层，不是所有状态都需要全局管理
-- 权限、路由、错误处理是企业级应用的基础设施，优先设计
+- The core of architecture is a clear code structure and efficient team collaboration
+- Layered design: component layer, business layer, service layer, infrastructure layer
+- The API service layer centralizes requests, and type definitions guarantee the interface contract
+- State management is layered by scope — not every piece of state needs to be global
+- Permissions, routing, and error handling are the infrastructure of enterprise apps — design them first

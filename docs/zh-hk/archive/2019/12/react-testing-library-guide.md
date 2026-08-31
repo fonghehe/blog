@@ -8,7 +8,7 @@ description: "今年團隊在推動單元測試的過程中，我們從 Enzyme �
 wordCount: 361
 ---
 
-今年團隊在推動單元測試的過程中，我們從 Enzyme 遷移到了 React Testing Library（RTL）。Enzyme 雖然功能強大，但它的 API 鼓勵測試實現細節——測試組件內部 state、instance 方法——導致重構時測試頻繁掛掉。React Testing Library 的理念完全不同：**測試用户行為，而不是實現細節**。
+今年團隊在推動單元測試的過程中，我們從 Enzyme 遷移到了 React Testing Library（RTL）。Enzyme 雖然功能強大，但它的 API 鼓勵測試實現細節——測試組件內部 state、instance 方法——導致重構時測試頻繁掛掉。React Testing Library 的理念完全不同：**測試用戶行為，而不是實現細節**。
 
 ## 核心理念
 
@@ -121,7 +121,7 @@ test('異步加載用户信息', async () => {
 
 ## userEvent vs fireEvent
 
-`fireEvent` 是底層的 DOM 事件觸發，而 `userEvent` 更貼近真實用户交互。官方推薦優先使用 `userEvent`：
+`fireEvent` 是底層的 DOM 事件觸發，而 `userEvent` 更貼近真實用戶交互。官方推薦優先使用 `userEvent`：
 
 ```jsx
 import { render, screen } from '@testing-library/react'
@@ -330,9 +330,9 @@ module.exports = {
 
 ## 小結
 
-- React Testing Library 鼓勵測試用户行為而非實現細節，重構時測試更穩定
+- React Testing Library 鼓勵測試用戶行為而非實現細節，重構時測試更穩定
 - 查詢優先級：getByRole > getByLabelText > getByText > getByTestId
 - getBy 用於元素必須存在，queryBy 用於斷言元素不存在，findBy 用於異步等待
-- userEvent 比 fireEvent 更貼近真實用户交互，優先使用 userEvent
+- userEvent 比 fireEvent 更貼近真實用戶交互，優先使用 userEvent
 - 異步測試用 waitFor + findBy，配合 jest.fn() mock 請求
 - 自定義 Hook 用 renderHook + act 測試

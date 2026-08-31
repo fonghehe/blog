@@ -4,20 +4,20 @@ date: 2020-10-20 11:02:59
 tags:
   - React
 readingTime: 2
-description: "React 17 刚发布，官方称之为\"没有新特性\"的版本。听起来无聊，但实际上它为 React 的未来打下了重要基础。梳理一下升级要点。"
-wordCount: 239
+description: "React 17 was just released, and the team calls it the 'no new features' version. That sounds dull, but it actually lays important groundwork for React's future. Here's a rundown of the upgrade essentials."
+wordCount: 183
 ---
 
-React 17 刚发布，官方称之为"没有新特性"的版本。听起来无聊，但实际上它为 React 的未来打下了重要基础。梳理一下升级要点。
+React 17 was just released, and the team calls it the 'no new features' version. That sounds dull, but it actually lays important groundwork for React's future. Here's a rundown of the upgrade essentials.
 
 ## No New APIs, but Important Changes
 
-React 17 的核心变化：
+The core changes in React 17:
 
-1. **事件委托不再绑定到 document**：改绑定到 root DOM 节点
-2. **移除事件池**：SyntheticEvent 不再需要 `event.persist()`
-3. **新的 JSX Transform**：不再需要 `import React`
-4. **渐进式升级**：支持一个页面中同时运行两个版本的 React
+1. **Event delegation no longer binds to document**: now binds to the root DOM node instead
+2. **Event pooling removed**: SyntheticEvent no longer needs `event.persist()`
+3. **New JSX Transform**: no longer requires `import React`
+4. **Gradual upgrades**: supports running two versions of React on the same page
 
 ## Event System Changes
 
@@ -182,8 +182,8 @@ npx react-codemod React-PropTypes-to-prop-types
 
 ## Summary
 
-- React 17 是"桥梁版本"，为未来并发模式等特性打基础
-- 事件委托改绑到 root DOM，解决了多版本共存问题
-- 事件池移除让代码更简洁，不再需要 `persist()`
-- 新 JSX Transform 不再需要 `import React from 'react'`
-- 升级本身影响很小，大部分项目可以平滑升级
+- React 17 is a "bridge release" that lays the groundwork for future features such as Concurrent Mode.
+- Event delegation now binds to the root DOM, which resolves the multi-version coexistence problem.
+- Removing the event pool makes the code cleaner — `persist()` is no longer needed.
+- The new JSX Transform removes the need for `import React from 'react'`.
+- The upgrade itself has minimal impact, and most projects can migrate smoothly.

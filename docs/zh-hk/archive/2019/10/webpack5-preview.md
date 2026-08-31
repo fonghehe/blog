@@ -38,7 +38,7 @@ module.exports = {
 
 ### 持久化緩存
 
-Webpack 5 內置了文件系統緩存，替代了 `hard-source-webpack-plugin`：
+Webpack 5 內置了檔案系統緩存，替代了 `hard-source-webpack-plugin`：
 
 ```js
 module.exports = {
@@ -64,7 +64,7 @@ webpack 5.0.0-beta.16 compiled successfully in 1203ms
 
 ### 更好的 Tree Shaking
 
-Webpack 5 引入了嵌套 Tree Shaking 和內部模塊 Tree Shaking：
+Webpack 5 引入了巢狀 Tree Shaking 和內部模塊 Tree Shaking：
 
 ```js
 // package.json
@@ -187,7 +187,7 @@ export default App;
 
 ### 共享依賴的設定
 
-Shared 設定控製多個構建之間的依賴共享方式：
+Shared 設定控制多個構建之間的依賴共享方式：
 
 ```js
 new ModuleFederationPlugin({
@@ -209,12 +209,12 @@ new ModuleFederationPlugin({
 });
 ```
 
-配置選項説明：
+配置選項說明：
 
-| 選項 | 説明 | 默認值 |
+| 選項 | 說明 | 默認值 |
 |
 ------|------|--------|
-| `singleton` | 隻加載一個實例 | false |
+| `singleton` | 只加載一個實例 | false |
 | `requiredVersion` | 版本要求 | package.json 中的版本 |
 | `eager` | 是否打包到入口 chunk | false |
 | `strictVersion` | 版本不匹配時是否報錯 | true |
@@ -315,8 +315,8 @@ new ModuleFederationPlugin({
 
 - Webpack 5 的核心改進：持久化緩存、確定性模塊 ID、更好的 Tree Shaking
 - Module Federation 允許獨立構建的應用在運行時共享模塊
-- Host 消費遠程模塊，Remote 暴露模塊，Shared 控製依賴共享
-- `singleton: true` 確保共享依賴隻加載一個實例
+- Host 消費遠程模塊，Remote 暴露模塊，Shared 控制依賴共享
+- `singleton: true` 確保共享依賴只加載一個實例
 - 非常適合微前端架構和跨項目組件共享
 - 支持動態加載和多 Remote 配置
 - 預計 Webpack 5 正式版將在近期發佈

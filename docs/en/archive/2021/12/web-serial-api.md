@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "最近在团队中落地Web Serial API 硬件通信， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 177
+description: "I recently used the Web Serial API for hardware communication with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 175
 ---
 
-最近在团队中落地Web Serial API 硬件通信， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently put the Web Serial API (hardware communication) into production in our team, and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 

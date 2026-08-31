@@ -4,15 +4,15 @@ date: 2019-12-13 10:00:24
 tags:
   - TypeScript
 readingTime: 2
-description: "在团队推广TypeScript 装饰器入门的过程中，踩了不少坑。整理出来希望对大家有所帮助。"
-wordCount: 241
+description: "While rolling out a TypeScript decorators primer across the team, I hit quite a few pitfalls. Writing them up in the hope that they'll help others."
+wordCount: 160
 ---
 
-在团队推广TypeScript 装饰器入门的过程中，踩了不少坑。整理出来希望对大家有所帮助。
+While rolling out a TypeScript decorators primer across the team, I hit quite a few pitfalls. I've written them up in the hope that they'll help others.
 
 ## Quick Start
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 .grid {
@@ -36,11 +36,11 @@ wordCount: 241
 }
 ```
 
-实际项目中还需要考虑边界条件和异常处理。
+In real projects you also need to account for edge cases and error handling.
 
 ## Advanced Usage
 
-下面是一个实际的例子：
+Here is a concrete example:
 
 ```javascript
 :root {
@@ -62,11 +62,11 @@ body {
 }
 ```
 
-这种模式在团队中推广后效果很好，维护成本明显降低。
+After rolling this pattern out across the team, the results were strong and maintenance costs dropped noticeably.
 
 ## Business Scenarios
 
-我们可以通过以下方式实现：
+We can implement it in the following way:
 
 ```javascript
 const express = require('express')
@@ -95,11 +95,11 @@ app.get('/api/users', async (req, res, next) => {
 app.use(errorHandler)
 ```
 
-注意上面代码中的性能细节，避免不必要的计算。
+Note the performance details in the code above and avoid unnecessary computation.
 
 ## Pitfall Avoidance Guide
 
-具体实现参考以下代码：
+For a concrete implementation, see the code below:
 
 ```javascript
 const http = require('http')
@@ -125,11 +125,11 @@ if (cluster.isMaster) {
 }
 ```
 
-经过线上验证，这套方案运行稳定。
+Validated in production, this approach has proven stable.
 
 ## Quick Start
 
-先来看基本的用法：
+Let's start with the basic usage:
 
 ```javascript
 const path = require('path')
@@ -173,10 +173,10 @@ module.exports = {
 }
 ```
 
-这种写法简洁明了，适合大多数场景。
+This style is concise and clear, and fits most scenarios.
 
 ## Summary
 
-- 实际项目中根据场景选择合适的方案
-- 团队中统一约定比追求完美实现更重要
-- 持续学习和总结，保持技术敏感度
+- In real projects, choose the right approach for the situation.
+- Team-wide conventions matter more than chasing a perfect implementation.
+- Keep learning and reflecting to stay technically sharp.

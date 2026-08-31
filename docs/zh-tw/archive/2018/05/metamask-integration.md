@@ -1,12 +1,13 @@
 ---
-readingTime: 5
-wordCount: 1065
+readingTime: 8
+wordCount: 1087
 title: "MetaMask 集成實踐：瀏覽器錢包對接"
 date: 2018-05-21 12:08:47
 tags:
   - Web3
   - Ethereum
   - DApp
+description: "MetaMask 是 DApp 生態中最關鍵的基礎設施之一。它既是用戶管理以太坊賬戶的錢包，又是 DApp 前端連接區塊鏈的橋樑。對於前端開發者而言，MetaMask 集成是 DApp 開發的必修課——但集成過程中的坑遠比想象中多：用戶未安裝、網絡不匹配、權限拒絕、交易被取消，每個場景都需要妥善處理。"
 ---
 
 MetaMask 是 DApp 生態中最關鍵的基礎設施之一。它既是用戶管理以太坊賬戶的錢包，又是 DApp 前端連接區塊鏈的橋樑。對於前端開發者而言，MetaMask 集成是 DApp 開發的必修課——但集成過程中的坑遠比想象中多：用戶未安裝、網絡不匹配、權限拒絕、交易被取消，每個場景都需要妥善處理。

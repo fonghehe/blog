@@ -4,15 +4,15 @@ date: 2020-11-04 10:29:10
 tags:
   - JavaScript
 readingTime: 2
-description: "JavaScript globalThis 跨环境统一在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 296
+description: "An exploration of JavaScript globalThis for cross-environment consistency, diving into core principles and best practices from real-world projects."
+wordCount: 178
 ---
 
-JavaScript globalThis 跨环境统一在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+JavaScript's globalThis for cross-environment consistency is seeing wider use in frontend development. Drawing on real projects, this article digs into its core principles and best practices.
 
 ## Basic Usage
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 :root {
@@ -35,11 +35,11 @@ JavaScript globalThis 跨环境统一在前端开发中的应用越来越广泛�
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge-case handling — that is critical in production.
 
 ## Advanced Usage
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -64,11 +64,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance tuning has to fit the actual scenario; not every case needs over-optimization.
 
 ## Practical Cases
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -92,11 +92,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Performance Optimization
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 :root {
@@ -119,11 +119,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project you also need to handle errors and edge cases.
 
 ## Common Traps
 
-在这个基础上，我们可以进一步优化：
+Building on that, we can push the optimization a step further:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -148,10 +148,10 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in larger projects and significantly lowers maintenance cost.
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- Understanding the fundamentals matters more than memorizing APIs.
+- Always verify compatibility before shipping to production.
+- In team collaboration, conventions and documentation matter more than the tech itself.

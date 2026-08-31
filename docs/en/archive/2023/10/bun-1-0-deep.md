@@ -4,7 +4,7 @@ date: 2023-10-18 11:47:45
 tags:
   - Frontend
 readingTime: 1
-description: "在日常开发中，Bun 1.0 运行时深入 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+description: "Going deep on the Bun 1.0 runtime matters more and more in everyday development. This article systematically covers its usage, mechanics, and practical strategies."
 wordCount: 153
 ---
 

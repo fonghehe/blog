@@ -1,19 +1,20 @@
 ---
-readingTime: 6
-wordCount: 1263
+readingTime: 8
+wordCount: 1323
 title: "DeFi 協議前端開發：Uniswap V2 交互實踐"
 date: 2020-01-08 15:14:28
 tags:
   - Web3
   - DeFi
   - Ethereum
+description: "去中心化金融（DeFi）生態由多個協議層組成。MakerDAO 的 DAI 穩定幣、Compound 的借貸協議、Synthetix 的衍生資產——這些協議構成了 DeFi 的基礎設施層。而在所有 DeFi 協議中，Uniswap 作為去中心化交易所（DEX）的代表，憑藉其簡潔的自動做市商（AMM）機制，成為了 DeF"
 ---
 
 ## DeFi 生態與 Uniswap V2 的崛起
 
 去中心化金融（DeFi）生態由多個協議層組成。MakerDAO 的 DAI 穩定幣、Compound 的借貸協議、Synthetix 的衍生資產——這些協議構成了 DeFi 的基礎設施層。而在所有 DeFi 協議中，Uniswap 作為去中心化交易所（DEX）的代表，憑藉其簡潔的自動做市商（AMM）機制，成為了 DeFi 生態中流動性最強的交易協議。本文將介紹如何在前端與 Uniswap V2 交互。
 
-Uniswap V2 於 2019 年 11 月部署到以太坊主網，相比 V1 版本，V2 引入了 ERC-20/ERC-20 交易對（V1 只支持 ETH/ERC-20）、價格預言機、閃電swap 等關鍵特性。對於前端開發者而言，理解 Uniswap V2 的合約結構和交互方式，是構建 DeFi 前端的基礎。
+Uniswap V2 於 2019 年 11 月部署到以太坊主網，相比 V1 版本，V2 引入了 ERC-20/ERC-20 交易對（V1 只支持 ETH/ERC-20）、價格預言機、閃電swap 等關鍵特性。對於前端開發者而言，理解 Uniswap V2 的合約結構和交互方式，是建置 DeFi 前端的基礎。
 
 ## Uniswap V2 核心合約架構
 
@@ -47,7 +48,7 @@ function burn(address to) external returns (uint amount0, uint amount1);
 
 ### Router02 合約
 
-Router02 是面向前端的前端路由合約，封裝了多跳交易、代幣包裝/解包等複雜邏輯。絕大多數前端交互都通過 Router02 完成：
+Router02 是專為前端設計的路由合約，封裝了多跳交易、代幣包裝/解包等複雜邏輯。絕大多數前端交互都通過 Router02 完成：
 
 ```solidity
 // UniswapV2Router02 關鍵方法
@@ -71,9 +72,9 @@ function addLiquidity(
 ) external returns (uint amountA, uint amountB, uint liquidity);
 ```
 
-## 前端讀取流動性池數據
+## 前端讀取流動性池資料
 
-讀取鏈上數據是 DeFi 前端的第一步。以下是通過 ethers.js 讀取 Pair 合約儲備量的實現：
+讀取鏈上資料是 DeFi 前端的第一步。以下是通過 ethers.js 讀取 Pair 合約儲備量的實現：
 
 ```javascript
 import { ethers } from 'ethers';
@@ -395,7 +396,7 @@ DeFi 前端開發中，交易失敗是最常見的用戶體驗問題。以下是
 
 ### 3. Deadline 過期
 
-`deadline` 參數是 Unix 時間戳，如果交易在 deadline 之後才被打包，會自動 revert。網絡擁堵時這個問題尤為突出。建議前端設置至少 20 分鐘的 deadline。
+`deadline` 參數是 Unix 時間戳，如果交易在 deadline 之後才被打包，會自動 revert。網路擁堵時這個問題尤為突出。建議前端設置至少 20 分鐘的 deadline。
 
 ### 4. Gas 估算失敗
 
@@ -422,6 +423,6 @@ async function estimateGasWithFallback(contract, method, args, overrides) {
 
 ## 小結
 
-Uniswap V2 的前端開發涵蓋了 DeFi 交互的核心模式：合約數據讀取、價格計算、交易構造、授權管理和狀態同步。這些模式在幾乎所有 DeFi 協議前端中都會複用。
+Uniswap V2 的前端開發涵蓋了 DeFi 交互的核心模式：合約資料讀取、價格計算、交易構造、授權管理和狀態同步。這些模式在幾乎所有 DeFi 協議前端中都會複用。
 
 DeFi 前端開發最大的挑戰在於**狀態一致性和用戶體驗的平衡**。鏈上狀態隨時變化，前端必須在實時性和準確性之間做權衡——顯示的價格可能在下一秒就不再有效。合理設置滑點容忍度、deadline 和最小輸出量，是保證交易成功率的三個關鍵參數。同時，交易失敗的診斷和用戶反饋設計同樣重要，一個好的 DeFi 前端應該能在交易失敗時給出清晰的原因，而不是一個含糊的 "Transaction Failed" 彈窗。

@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "以前は画像の遅延読み込みや無限スクロールの実装には `scroll` イベントと `getBoundingClientRect()` を組み合わせるのが一般的でした。パフォーマンスが悪いだけでなく、コードも煩雑になります。Intersection Observer API の登場でこの状況は一変しました。"
-wordCount: 277
+wordCount: 283
 ---
 
 以前は画像の遅延読み込みや無限スクロールの実装には `scroll` イベントと `getBoundingClientRect()` を組み合わせるのが一般的でした。パフォーマンスが悪いだけでなく、コードも煩雑になります。Intersection Observer API の登場でこの状況は一変しました。
@@ -143,7 +143,7 @@ document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
 
 ## まとめ
 
-- Intersection Observer は scroll + getBoundingClientRect() を置き換え、パフォーマンスが優れている
-- `rootMargin` でビューポートに入る前の「先読み」が可能
-- `threshold` でコールバックを発火する交差率を制御できる
-- 一回限りの動作の後は `unobserve` でメモリリークを防ぐ
+- Intersection Observer は scroll + getBoundingClientRect() を置き換え、パフォーマンスに優れています
+- `rootMargin` でビューポートに入る前の「先読み」が可能です
+- `threshold` でコールバックを発火する交差率を制御できます
+- 一回限りの動作の後は `unobserve` でメモリリークを防げます

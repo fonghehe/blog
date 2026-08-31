@@ -5,10 +5,10 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript 3.4 new features are topics encountered frequently in day-to-day development. This article draws from real projects to share practical implementation"
-wordCount: 85
+wordCount: 83
 ---
 
-TypeScript 3.4 new features are topics encountered frequently in day-to-day development. This article draws from real projects to share practical implementation approaches and lessons learned.
+TypeScript 3.4's new features come up often in day-to-day development. This article shares practical approaches and lessons learned from real projects.
 
 ## Core Principles
 
@@ -100,4 +100,4 @@ function deepClone(obj, map = new WeakMap()) {
 }
 ```
 
-After promoting this pattern across the team, the results were great and maintenance costs dropped noticeably.
+Once this pattern was rolled out across the team, the results were strong and maintenance costs dropped noticeably.

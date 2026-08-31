@@ -4,8 +4,8 @@ date: 2024-04-10 10:39:55
 tags:
   - Frontend
 readingTime: 2
-description: "关于Rolldown 稳定版 Rust 构建，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspe"
-wordCount: 212
+description: "Many developers only know the Rolldown stable Rust build at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 187
 ---
 
 关于Rolldown 稳定版 Rust 构建，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -130,7 +130,7 @@ export default defineConfig({
 
 Performance optimization should be tailored to specific scenarios; not every situation requires aggressive optimization.
 
-## 踩坑记录
+## Pitfalls Log
 
 We can improve this in the following ways:
 
@@ -160,7 +160,7 @@ This solution has been running stably in production for over six months and has 
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Understanding the underlying principles matters more than memorizing APIs
+- Always verify compatibility thoroughly before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on community trends; technical approaches need continuous iteration

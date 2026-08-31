@@ -23,7 +23,7 @@ Webpack 5 還在 beta 階段，但 Module Federation 這個特性已經讓團隊
 
 ## 實戰：拆分一個商品詳情頁
 
-假設我們有一個主應用 `shell`，需要消費商品組件庫 `product-components` 和用户中心 `user-center`。
+假設我們有一個主應用 `shell`，需要消費商品組件庫 `product-components` 和用戶中心 `user-center`。
 
 ### 1. 商品組件庫（Remote）
 
@@ -58,7 +58,7 @@ module.exports = {
       },
       shared: {
         vue: {
-          singleton: true, // 隻加載一個實例
+          singleton: true, // 只加載一個實例
           requiredVersion: '^3.0.0',
           eager: true
         },
@@ -139,7 +139,7 @@ export function useProduct(productId: Ref<string>) {
 }
 ```
 
-### 2. 用户中心（Remote）
+### 2. 用戶中心（Remote）
 
 ```javascript
 // user-center/webpack.config.js
@@ -298,7 +298,7 @@ declare module 'user_center/FavoriteButton' {
 ```javascript
 shared: {
   vue: {
-    singleton: true,        // 強製隻加載一份 Vue
+    singleton: true,        // 強制只加載一份 Vue
     requiredVersion: '^3.0.0',  // 版本範圍要求
     eager: true,            // 啓動時就加載，不走異步
     strictVersion: false    // 版本不匹配時發警告而非報錯
@@ -316,7 +316,7 @@ shared: {
 瀏覽器訪問 localhost:3000
   -> shell 應用加載
   -> 解析 remoteEntry.js (product_components, user_center)
-  -> 加載共享依賴 (vue 隻加載一份)
+  -> 加載共享依賴 (vue 只加載一份)
   -> 按需加載遠程模塊
 ```
 

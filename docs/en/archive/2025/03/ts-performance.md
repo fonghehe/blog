@@ -1,5 +1,5 @@
 ---
-title: "TypeScript Performance 2025: tsc Compilation速度SystemMethod"
+title: "TypeScript Performance Optimization 2025: A Systematic Approach to tsc Compile Speed"
 date: 2025-03-10 16:24:01
 tags:
   - TypeScript

@@ -4,9 +4,9 @@ date: 2024-11-25 12:42:17
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 9
 description: "對比 OP Stack 與 ZK Stack 的架構差異，深入探討多 Rollup 環境下的前端跨鏈交互、消息傳遞、提現流程及確認時間適配"
-wordCount: 3800
+wordCount: 1051
 ---
 
 ## OP Stack 架構：Optimism 的模塊化 Rollup 框架

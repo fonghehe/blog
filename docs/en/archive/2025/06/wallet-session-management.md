@@ -4,9 +4,9 @@ date: 2025-06-20 19:10:34
 tags:
   - Web3
   - DApp
-readingTime: 12
+readingTime: 9
 description: "A systematic guide to DApp wallet session lifecycle management, covering persistence, auto-reconnection, network switching detection, multi-wallet concurrency, and mobile adaptation"
-wordCount: 3600
+wordCount: 505
 ---
 
 ## Wallet Session Lifecycle

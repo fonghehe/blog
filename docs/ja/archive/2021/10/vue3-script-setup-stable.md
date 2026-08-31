@@ -76,7 +76,7 @@ onMounted(() => {
 
 コード量が半分になり、ロジックがよりコンパクトになりました。
 
-## defineProps 和 defineEmits
+## defineProps と defineEmits
 
 ```vue
 <script setup lang="ts">

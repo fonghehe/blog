@@ -3,16 +3,16 @@ title: "Vue 3 Composition APIリファクタリング実践"
 date: 2019-11-25 10:30:46
 tags:
   - Vue
-readingTime: 5
+readingTime: 6
 description: "Vue 3 的 Composition API 引入了一种全新的组件逻辑组织方式。本文通过一个真实的用户管理页面，演示如何用 Composition API 重构 Vue 2 的 Options API 代码，展示 Composable 函数的抽取和复用。"
-wordCount: 431
+wordCount: 698
 ---
 
-Vue 3 的 Composition API 引入了一种全新的组件逻辑组织方式。本文通过一个真实的用户管理页面，演示如何用 Composition API 重构 Vue 2 的 Options API 代码，展示 Composable 函数的抽取和复用。
+Vue 3 の Composition API は、コンポーネントのロジックを構成するまったく新しい方法を導入しました。本記事では実際のユーザー管理画面を例に、Composition API を使って Vue 2 の Options API のコードをリファクタリングする方法を紹介し、Composable 関数の抽出と再利用を示します。
 
 ## リファクタリング前：Options API
 
-假设有一个用户管理页面，包含搜索、列表展示、分页、编辑弹窗等功能：
+検索、一覧表示、ページネーション、編集ダイアログなどの機能を持つユーザー管理画面があったとします：
 
 ```vue
 {% raw %}
@@ -165,7 +165,7 @@ export default {
 {% endraw %}
 ```
 
-问题：相关逻辑分散在 `data`、`computed`、`watch`、`methods` 中，随着功能增加，文件会变得很长且难以维护。
+問題点：関連するロジックが `data`、`computed`、`watch`、`methods` に分散しており、機能が増えるにつれてファイルが非常に長くなり、保守が難しくなります。
 
 ## リファクタリング後：Composition API
 
@@ -320,7 +320,7 @@ export function useConfirm() {
 }
 ```
 
-### 重构后的组件
+### リファクタリング後のコンポーネント
 
 ```vue
 {% raw %}
@@ -452,12 +452,12 @@ export default {
 
 ## Composableの命名規約
 
-按照 Vue 3 的惯例：
+Vue 3 の慣習に従うと：
 
-1. 文件名和函数名以 `use` 开头
-2. 每个 Composable 只负责一个关注点
-3. 返回的 ref 和 reactive 对象保持响应性
-4. 组合多个 Composable 来构建复杂功能
+1. ファイル名と関数名は `use` で始める
+2. 各 Composable は 1 つの関心事だけを担う
+3. 返される ref や reactive オブジェクトはリアクティブ性を維持する
+4. 複数の Composable を組み合わせて複雑な機能を構築する
 
 ```
 composables/
@@ -475,17 +475,17 @@ composables/
 
 | 特性 | Vue 3 Composable | React Hook |
 |------|-----------------|------------|
-| 响应性 | 自动追踪依赖 | 需要手动指定依赖数组 |
-| 调用顺序 | 无限制 | 必须在顶层调用 |
-| 副作用清理 | onUnmounted | useEffect 返回清理函数 |
-| 复用方式 | 函数调用 | 函数调用 |
-| 状态隔离 | 每次调用创建独立状态 | 每次调用创建独立状态 |
+| 応答性 | 依存関係を自動追跡 | 依存配列を手動で指定する必要がある |
+| 呼び出し順序 | 制限なし | トップレベルでのみ呼び出しが必要 |
+| 副作用のクリーンアップ | onUnmounted | useEffect がクリーンアップ関数を返す |
+| 再利用方法 | 関数呼び出し | 関数呼び出し |
+| 状態の分離 | 呼び出しごとに独立した状態が作成される | 呼び出しごとに独立した状態が作成される |
 
 ## まとめ
 
-- Composition API 通过 `setup()` 函数替代 Options API 的分散写法
-- Composable 函数可以将相关逻辑抽取为可复用的模块
-- `usePagination`、`useSearch`、`useCrud` 等常见的 Composable 可以跨组件复用
-- 命名约定以 `use` 开头，与 React Hooks 一致
-- Composition API 不替代 Options API，两者可以共存
-- 适合在大型项目中组织复杂逻辑，小型项目用 Options API 也完全足够
+- Composition API は `setup()` 関数で Options API の分散した書き方を置き換えます
+- Composable 関数は関連するロジックを再利用可能なモジュールとして抽出できます
+- `usePagination`、`useSearch`、`useCrud` などの一般的な Composable はコンポーネントをまたいで再利用できます
+- 命名規則は `use` で始め、React Hooks と一致しています
+- Composition API は Options API を置き換えるものではなく、両者は共存できます
+- 複雑なロジックを整理するのに大規模なプロジェクトに向いており、小規模なプロジェクトなら Options API で十分な場合もあります

@@ -3,9 +3,9 @@ title: "V8 引擎隱藏類與內聯緩存：JavaScript 性能的底層密碼"
 date: 2026-07-15 10:34:13
 tags:
   - JavaScript
-readingTime: 8
+readingTime: 7
 description: "深入 V8 引擎的 Hidden Class 與 Inline Cache 機制，理解 JavaScript 對象屬性訪問的底層優化原理，寫出性能友好的代碼。"
-wordCount: 3200
+wordCount: 1738
 ---
 
 JavaScript 是一門動態類型語言，對象的屬性可以隨時增刪改查。這種靈活性給開發者帶來了便利，卻給引擎實現者帶來了巨大的挑戰——如何在動態類型的基礎上實現接近靜態語言的屬性訪問速度？V8 引擎通過 Hidden Class（隱藏類）和 Inline Cache（內聯緩存）兩大機制回答了這個問題。

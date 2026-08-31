@@ -4,11 +4,11 @@ date: 2022-12-16 16:44:16
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 枚举 vs 联合类型 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real proj"
-wordCount: 242
+description: "TypeScript enums vs union types is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 217
 ---
 
-TypeScript 枚举 vs 联合类型 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+TypeScript enums vs union types is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
 
 ## Basic Usage
 
@@ -62,7 +62,7 @@ Let's start with the basic implementation:
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Practical Cases
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Optimization
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -152,5 +152,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- TypeScript 枚举 vs 联合类型不是银弹，需要根据项目规模和技术栈选择
+- TypeScript enums vs union types is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

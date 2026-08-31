@@ -6,10 +6,10 @@ tags:
   - 工程化
 readingTime: 2
 description: "在日常开发中，Webpack 5 Module Federation 深入的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 310
+wordCount: 306
 ---
 
-在日常开发中，Webpack 5 Module Federation 深入的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+在日常开发中，Webpack 5 Module Federation 的使用越来越频繁。本文系统地讲解其用法、原理和优化策略。
 
 ## 快速上手
 
@@ -163,4 +163,4 @@ module.exports = {
 
 - 不要为了用新技术而用新技术
 - 代码示例仅供参考，需根据业务场景调整
-- Webpack 5 Module Federation 深入不是银弹，需要根据项目规模和技术栈选择
+- Webpack 5 Module Federation 并不是银弹，需要根据项目规模和技术栈选择

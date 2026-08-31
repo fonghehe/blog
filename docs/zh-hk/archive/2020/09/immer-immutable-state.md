@@ -44,7 +44,7 @@ const nextState = produce(state, (draft) => {
 });
 ```
 
-`produce` 接收當前 state 和一個"recipe 函數"，recipe 裏的 `draft` 是 state 的 Proxy，對 draft 的修改會被 Immer 記錄並生成新的不可變對象。原始 state 不會被改變。
+`produce` 接收當前 state 和一個"recipe 函數"，recipe 裡的 `draft` 是 state 的 Proxy，對 draft 的修改會被 Immer 記錄並生成新的不可變對象。原始 state 不會被改變。
 
 ## 在 React useState 中使用
 
@@ -109,7 +109,7 @@ const [state, dispatch] = useReducer(reducer, initialState);
 
 ## 在 Redux 中使用（配合 RTK）
 
-Redux Toolkit 內置了 Immer，`createSlice` 裏可以直接"修改"state：
+Redux Toolkit 內置了 Immer，`createSlice` 裡可以直接"修改"state：
 
 ```javascript
 import { createSlice } from "@reduxjs/toolkit";
@@ -148,9 +148,9 @@ leaked.items; // 已經失效！
 
 // ⚠️ 大數組（萬級）場景下，考慮用 enableMapSet 插件
 import { enableMapSet } from "immer";
-enableMapSet(); // 支持 Map 和 Set
+enableMapSet(); // 支援 Map 和 Set
 ```
 
 ## 總結
 
-Immer 是 React 狀態管理中性價比最高的工具之一：學習成本極低（就是"在 recipe 裏隨便改"），卻能把複雜嵌套狀態的更新代碼簡化 70% 以上。Redux Toolkit 已內置 Immer，説明這個思路已經被 Redux 官方認可。
+Immer 是 React 狀態管理中性價比最高的工具之一：學習成本極低（就是"在 recipe 裡隨便改"），卻能把複雜嵌套狀態的更新代碼簡化 70% 以上。Redux Toolkit 已內置 Immer，説明這個思路已經被 Redux 官方認可。

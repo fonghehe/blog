@@ -3,9 +3,9 @@ title: "Biome：フロントエンド Linter と Formatter"
 date: 2022-09-01 09:31:07
 tags:
   - フロントエンド
-readingTime: 2
+readingTime: 3
 description: "Biome 前端 linter formatterのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 468
+wordCount: 506
 ---
 
 Biome 前端 linter formatterのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -120,7 +120,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理やエッジケースへの対応も必要になる。
 
 ## よくある落とし穴
 
@@ -151,6 +151,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## まとめ
 
-- Biome 前端 linter formatter不是银弹，需要根据项目规模和技术栈选择
+- Biome 前端 linter formatter は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある
 - 基礎的な原理を理解することは、APIを暗記することより重要です
 - 本番環境で使用する前に必ず互換性を確認してください

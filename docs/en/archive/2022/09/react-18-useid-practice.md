@@ -1,14 +1,14 @@
 ---
-title: "React 18 useId: Solution SSR  hydration ID 不匹配"
+title: "React 18 useId: Solving SSR Hydration ID Mismatches"
 date: 2022-09-29 15:09:14
 tags:
   - React
 readingTime: 2
-description: "关于React 18 useId 实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 226
+description: "When it comes to React 18 useId in practice, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 205
 ---
 
-关于React 18 useId 实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to React 18 useId in practice, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
@@ -64,7 +64,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Project Practice
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Best Practices
 
-实际项目中的用法会更复杂一些：
+Usage in real projects tends to be more complex:
 
 ```javascript
 const fs = require('fs')

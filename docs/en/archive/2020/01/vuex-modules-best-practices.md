@@ -4,15 +4,15 @@ date: 2020-01-17 17:32:42
 tags:
   - Vue
 readingTime: 2
-description: "项目一旦超过中等规模，Vuex 的 `store` 就会变得臃肿。Vuex 4 延续了模块化方案，但对 Composition API 做了适配。本文整理了我在多个中大型 Vue 项目中验证过的模块化实践。"
-wordCount: 303
+description: "Once a project grows beyond medium size, the Vuex store becomes bloated. Vuex 4 continues the modular approach but adapts it for the Composition API. This article collects modularization practices validated across several medium-to-large Vue projects."
+wordCount: 181
 ---
 
-项目一旦超过中等规模，Vuex 的 `store` 就会变得臃肿。Vuex 4 延续了模块化方案，但对 Composition API 做了适配。本文整理了我在多个中大型 Vue 项目中验证过的模块化实践。
+Once a project grows beyond medium size, the Vuex `store` becomes bloated. Vuex 4 continues the modular approach but adapts it for the Composition API. This article collects the modularization practices I've validated across several medium-to-large Vue projects.
 
 ## Directory Structure Design
 
-模块化不只是功能拆分，目录结构决定了可维护性。推荐按业务域组织：
+Modularization isn't just about splitting features—the directory structure determines maintainability. I recommend organizing by business domain:
 
 ```
 store/
@@ -35,7 +35,7 @@ export const ORDER_FETCH_LIST = 'ORDER_FETCH_LIST'
 
 ## Module Definition and Namespacing
 
-每个模块使用独立命名空间，避免状态和方法名冲突。
+Each module uses an independent namespace to avoid conflicts between state and method names.
 
 ```javascript
 // store/modules/auth.js
@@ -106,9 +106,9 @@ export default createStore({
 })
 ```
 
-## 在组件中使用
+## Using Modules in Components
 
-命名空间模块的调用需要带路径前缀。
+Calls to namespaced modules need the path prefix.
 
 ```vue
 {% raw %}
@@ -150,9 +150,9 @@ export default {
 {% endraw %}
 ```
 
-## 跨模块通信
+## Cross-Module Communication
 
-模块之间需要交互时，通过 `rootState` 和 `rootGetters` 访问全局状态，或使用 `dispatch` 触发其他模块的 action。
+When modules need to interact, access global state via `rootState` and `rootGetters`, or use `dispatch` to trigger another module's action.
 
 ```javascript
 // store/modules/order.js
@@ -196,11 +196,11 @@ export default {
 }
 ```
 
-关键细节：`dispatch` 第三个参数 `{ root: true }` 允许在命名空间模块中触发根级别的或其他模块的 action。
+Key detail: the third argument `{ root: true }` to `dispatch` lets a namespaced module trigger a root-level or another module's action.
 
 ## Summary
 
-- 使用 `namespaced: true` 隔离模块状态，避免命名冲突
-- 用常量文件统一管理 mutation 和 action 名称，IDE 友好且可搜索
-- 跨模块通信通过 `rootState` 读取状态，`dispatch` 带 `{ root: true }` 调用其他模块
-- `createNamespacedHelpers` 简化组件中对命名空间模块的映射
+- Use `namespaced: true` to isolate module state and avoid naming conflicts.
+- Manage mutation and action names in a constants file for IDE-friendliness and searchability.
+- For cross-module communication, read state via `rootState` and call other modules with `dispatch` plus `{ root: true }`.
+- `createNamespacedHelpers` simplifies mapping namespaced modules in components.

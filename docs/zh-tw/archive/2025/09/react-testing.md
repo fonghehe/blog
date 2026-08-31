@@ -1,5 +1,5 @@
 ---
-title: "React 测試 2025 指南：RTL + Vitest 的現代测試體系"
+title: "React 測試 2025 指南：RTL + Vitest 的現代測試體系"
 date: 2025-09-01 17:15:52
 tags:
   - React
@@ -12,7 +12,7 @@ React 測試 2025 指南在前端開發中的應用越來越廣泛。本文從�
 
 ## 入門指南
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 const fs = require('fs')

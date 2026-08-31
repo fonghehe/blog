@@ -1,5 +1,5 @@
 ---
-title: "Pinia v3 New Features Overview: TypeSystem增强 &  DevTools Upgrade"
+title: "Pinia v3 New Features at a Glance: Type System Enhancements and DevTools Upgrades"
 date: 2025-09-19 12:33:10
 tags:
   - Vue

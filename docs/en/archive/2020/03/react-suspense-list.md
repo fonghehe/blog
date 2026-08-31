@@ -4,15 +4,15 @@ date: 2020-03-24 16:02:13
 tags:
   - React
 readingTime: 2
-description: "最近在团队中落地React SuspenseList 加载顺序控制，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 318
+description: "Our team recently adopted React SuspenseList for controlling load order and gained valuable experience. I'm writing this up as a reference for anyone doing similar work."
+wordCount: 194
 ---
 
-最近在团队中落地React SuspenseList 加载顺序控制，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+Recently our team got hands-on with React SuspenseList for controlling load order and accumulated quite a bit of experience. I'm writing it up as a reference, hoping it helps others doing similar work.
 
 ## Core Concepts
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -31,11 +31,11 @@ function reducer(state, action) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and significantly cuts maintenance cost.
 
 ## In-Depth Analysis
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets a bit more complex:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -54,11 +54,11 @@ function reducer(state, action) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Implementation Experience
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -77,11 +77,11 @@ function reducer(state, action) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling—it is critical in production.
 
-## 调优策略
+## Tuning Strategies
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -100,11 +100,11 @@ function reducer(state, action) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tuned to the actual scenario—not everything needs over-optimization.
 
 ## Important Notes
 
-我们可以通过以下方式来改进：
+We can improve it in the following ways:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -123,11 +123,11 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- React SuspenseList 加载顺序控制不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- Don't adopt new tech just for its own sake.
+- The code examples are for reference only; adapt them to your use case.
+- React SuspenseList for controlling load order isn't a silver bullet—pick it based on project size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.

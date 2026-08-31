@@ -5,9 +5,12 @@ tags:
   - Web3
   - Ethereum
   - DApp
+readingTime: 8
+wordCount: 1399
+description: "当智能合约从简单的存储示例发展到真实业务逻辑时，Remix 的在线 IDE 很快就显得力不从心。合约之间互相依赖，还要做版本管理、自动化测试和多环境部署——这些需求催生了 Truffle 框架的诞生。Truffle 成为以太坊 DApp 工程化的事实标准，它将合约开发从\"写一个文件、部署一个文件\"的模式带入了一个结构化"
 ---
 
-当智能合约从简单的存储示例发展到真实业务逻辑时，Remix 的在线 IDE 很快就显得力不从心。合约之间互相依赖、需要版本管理、需要自动化测试、需要多环境部署——这些需求催生了 Truffle 框架的诞生。Truffle 成为以太坊 DApp 工程化的事实标准，它将合约开发从"写一个文件、部署一个文件"的模式带入了一个结构化的项目管理体系。
+当智能合约从简单的存储示例发展到真实业务逻辑时，Remix 的在线 IDE 很快就显得力不从心。合约之间互相依赖，还要做版本管理、自动化测试和多环境部署——这些需求催生了 Truffle 框架的诞生。Truffle 成为以太坊 DApp 工程化的事实标准，它将合约开发从"写一个文件、部署一个文件"的模式带入了一个结构化的项目管理体系。
 
 ## Truffle 项目结构
 
@@ -37,7 +40,7 @@ npm install -g truffle
 truffle init
 ```
 
-`contracts/` 目录存放所有 Solidity 源文件，`migrations/` 目录存放部署脚本，`test/` 目录存放测试文件。`build/` 目录在编译后自动生成，包含每个合约的 ABI、bytecode 和 AST 信息。
+三个目录分别存放 Solidity 源文件（`contracts/`）、部署脚本（`migrations/`）和测试文件（`test/`）；`build/` 在编译后自动生成，包含每个合约的 ABI、bytecode 和 AST 信息。
 
 ## 合约编译：truffle compile
 
@@ -222,7 +225,7 @@ module.exports = {
 };
 ```
 
-`HDWalletProvider` 是 Truffle 的关键插件之一，它通过助记词生成签名账户，配合 Infura 节点实现无需本地节点的部署。这是一个巨大的便利——不需要同步整个以太坊区块链就能部署合约。
+`HDWalletProvider` 是 Truffle 的关键插件之一，它通过助记词生成签名账户，配合 Infura 节点实现无需本地节点的部署。这带来很大便利——无需同步整个以太坊区块链就能部署合约。
 
 ## 合约测试
 

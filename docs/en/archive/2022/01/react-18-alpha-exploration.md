@@ -4,11 +4,11 @@ date: 2022-01-03 10:05:10
 tags:
   - React
 readingTime: 2
-description: "We recently implemented React 18 正式发布新特性总览， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 197
+description: "I recently worked through the new features of React 18's official release with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 186
 ---
 
-We recently implemented React 18 正式发布新特性总览， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently explored React 18's official release feature overview, and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 
@@ -123,5 +123,5 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- React 18 正式发布新特性总览 is not a silver bullet; choose based on your project scale and tech stack
+- React 18's official release feature overview is not a silver bullet; choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

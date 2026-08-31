@@ -3,25 +3,25 @@ title: "2020 Frontend Build Tool Roundup: webpack vs Rollup vs esbuild vs Vite"
 date: 2020-12-26 15:43:36
 tags:
   - Node.js
-readingTime: 3
-description: "2020 年前端构建工具领域发生了不小的变化：webpack 5 正式发布，esbuild 凭借 Go 语言实现的极速打包引发关注，Vite 带来了全新的 No-bundle 开发服务器方案。是时候系统地梳理这四个工具的定位和适用场景了。"
-wordCount: 523
+readingTime: 2
+description: "2020 shook up frontend build tooling: webpack 5 shipped, esbuild grabbed attention with its Go-powered bundling speed, and Vite introduced a fresh no-bundle dev server. It's time to systematically compare where each of the four tools fits."
+wordCount: 340
 ---
 
-2020 年前端构建工具领域发生了不小的变化：webpack 5 正式发布，esbuild 凭借 Go 语言实现的极速打包引发关注，Vite 带来了全新的 No-bundle 开发服务器方案。是时候系统地梳理这四个工具的定位和适用场景了。
+The frontend build-tooling space changed quite a bit in 2020: webpack 5 went stable, esbuild drew attention with its Go-based blazing-fast bundling, and Vite introduced a brand-new no-bundle dev server approach. It's time to lay out what each of these four tools is for and where they fit.
 
 ## Core Positioning Comparison
 
-| 工具      | 定位             | 底层语言              | 主要优势                    |
-| --------- | ---------------- | --------------------- | --------------------------- |
-| webpack 5 | 应用打包         | JavaScript            | 生态成熟、功能完整          |
-| Rollup    | 库打包           | JavaScript            | Tree-shaking 极佳、输出干净 |
-| esbuild   | 极速转换/打包    | Go                    | 速度领先 10-100x            |
-| Vite      | 下一代开发服务器 | JS + Rollup + esbuild | 开发极速，生产用 Rollup     |
+| Tool      | Positioning       | Underlying language    | Key strength                          |
+| --------- | ----------------- | ---------------------- | ------------------------------------- |
+| webpack 5 | App bundler       | JavaScript             | Mature ecosystem, full-featured      |
+| Rollup    | Library bundler   | JavaScript             | Best-in-class tree-shaking, clean output |
+| esbuild   | Ultra-fast transform/bundler | Go           | 10–100x faster                        |
+| Vite      | Next-gen dev server | JS + Rollup + esbuild | Extremely fast dev, Rollup for production |
 
 ## webpack 5: Mature Application Bundler
 
-**2020 年 10 月正式发布 webpack 5**，核心改进：
+**webpack 5 was officially released in October 2020**, with these core improvements:
 
 ```javascript
 // webpack.config.js
@@ -56,7 +56,7 @@ module.exports = {
 };
 ```
 
-**适用场景**：大型复杂应用、需要 Module Federation 的微前端、已有 webpack 生态的项目。
+**Best for**: large, complex apps; micro-frontends that need Module Federation; projects already on the webpack ecosystem.
 
 ## Rollup: The Go-To for Library Bundling
 
@@ -74,9 +74,9 @@ export default {
 };
 ```
 
-Rollup 的 tree-shaking 是业界标杆，生成的代码干净简洁，适合发布 npm 包。Vue 3、React 本身都用 Rollup 打包。
+Rollup's tree-shaking is the industry benchmark, and its output is clean and tidy — ideal for publishing npm packages. Vue 3 and React themselves are bundled with Rollup.
 
-**适用场景**：组件库、工具函数库、任何要发布到 npm 的包。
+**Best for**: component libraries, utility libraries, anything you publish to npm.
 
 ## esbuild: The Speed Monster
 
@@ -96,17 +96,17 @@ esbuild
   .catch(() => process.exit(1));
 ```
 
-速度对比（对一个中型项目，含 1000 个模块）：
+Speed comparison (for a mid-sized project with 1,000 modules):
 
-| 工具      | 冷构建时间 |
-| --------- | ---------- |
-| webpack 5 | ~8s        |
-| Rollup    | ~4s        |
-| esbuild   | ~0.3s      |
+| Tool      | Cold build time |
+| --------- | --------------- |
+| webpack 5 | ~8s             |
+| Rollup    | ~4s             |
+| esbuild   | ~0.3s           |
 
-但 esbuild 目前不支持代码分割（code splitting）、不支持 CSS modules 等特性，生态不够完整，适合作为其他工具的底层（Vite 用它预构建依赖）。
+But esbuild doesn't yet support code splitting, CSS modules, and the like, and its ecosystem isn't complete — so it fits best as the engine underneath other tools (Vite uses it to pre-bundle dependencies).
 
-**适用场景**：作为其他工具的底层（Vite、Parcel）、需要极速 TS 转 JS、CI 中的快速构建。
+**Best for**: as the engine under other tools (Vite, Parcel), ultra-fast TS-to-JS, fast CI builds.
 
 ## Vite: A Development Experience Revolution
 
@@ -130,9 +130,9 @@ export default defineConfig({
 });
 ```
 
-Vite 的本质是：**开发时用 esbuild 预处理 + 原生 ESM，生产时用 Rollup 打包**。
+Vite's essence is this: **esbuild pre-processing + native ESM in development, Rollup for the production build**.
 
-**适用场景**：新项目的开发服务器、Vue 3 + Vite 官方搭配、追求极速开发启动。
+**Best for**: dev servers for new projects, the official Vue 3 + Vite pairing, anyone chasing the fastest possible dev startup.
 
 ## Tool Selection Recommendations
 
@@ -153,4 +153,4 @@ Vite 的本质是：**开发时用 esbuild 预处理 + 原生 ESM，生产时用
 
 ## Summary
 
-2020 年构建工具的格局变化预示着一个趋势：**开发体验和构建速度将成为核心竞争力**。esbuild 的速度和 Vite 的理念已经影响了整个生态——webpack 5 的持久化缓存、SWC 的出现，都是对这一趋势的响应。
+The shifts in the build-tool landscape in 2020 point to one trend: **developer experience and build speed are becoming core competitive edges**. esbuild's speed and Vite's philosophy have already reshaped the ecosystem — webpack 5's persistent cache and the arrival of SWC are both responses to that same trend.

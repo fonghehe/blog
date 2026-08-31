@@ -6,15 +6,15 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "Vercel 在 2021 年 10 月发布了 Next.js 12，这是近年来最大的一次版本更新。Rust 编译器、Middleware、React 18 支持，每个特性都很重磅。"
-wordCount: 330
+description: "Vercel released Next.js 12 in October 2021 — the biggest version update in recent years. A Rust compiler, Middleware, React 18 support: every feature is significant."
+wordCount: 231
 ---
 
-Vercel 在 2021 年 10 月发布了 Next.js 12，这是近年来最大的一次版本更新。Rust 编译器、Middleware、React 18 支持，每个特性都很重磅。
+In October 2021, Vercel released Next.js 12 — the biggest release in years. The Rust-based compiler, Middleware, and React 18 support make each of these features a major milestone.
 
-## Rust 编译器
+## Rust Compiler
 
-Next.js 12 用 SWC 替换了 Babel，编译速度提升显著：
+Next.js 12 replaces Babel with SWC, delivering a dramatic improvement in compile speed:
 
 ```
 基准测试（中型项目，约 200 个页面）：
@@ -25,7 +25,7 @@ SWC（Next.js 12）:    初始编译 ~5s，  HMR ~50ms
 提升约 5-7 倍
 ```
 
-对用户来说是无感的升级——配置文件不需要改，但开发体验肉眼变好了。而且 SWC 还承担了代码压缩的工作，替代了 Terser：
+For users, the upgrade is transparent — no config changes are needed, yet the developer experience improves noticeably. On top of that, SWC also takes over minification, replacing Terser:
 
 ```javascript
 // next.config.js - 实际上不需要改任何配置
@@ -39,7 +39,7 @@ module.exports = {
 
 ## Middleware
 
-这是 Next.js 12 最大的新特性——在请求到达页面之前运行代码：
+This is the biggest new feature in Next.js 12 — code that runs before a request reaches your page:
 
 ```typescript
 // pages/_middleware.ts
@@ -78,7 +78,7 @@ export function middleware(request: NextRequest) {
 }
 ```
 
-Middleware 运行在 Edge Runtime 上，比 Node.js 更轻量，响应更快。适合做认证、重定向、A/B 测试这类轻量逻辑。
+Middleware runs on the Edge Runtime, which is lighter than Node.js and responds faster. It's well suited to lightweight logic such as authentication, redirects, and A/B testing.
 
 ## Image Optimization Enhancement
 
@@ -105,9 +105,9 @@ module.exports = {
 }
 ```
 
-## React 18 支持
+## React 18 Support
 
-Next.js 12 开始支持 React 18 的部分特性：
+Next.js 12 begins to support some of React 18's features:
 
 ```jsx
 // pages/index.js
@@ -127,11 +127,11 @@ export default function Home() {
 }
 ```
 
-配合 React 18 的 Streaming SSR，页面可以先渲染骨架屏，再逐步填充内容，减少 TTFB。
+Combined with React 18's streaming SSR, pages can render a skeleton first and progressively fill in content, reducing TTFB.
 
-## URL 导入（实验性）
+## URL Imports (Experimental)
 
-可以直接从 URL 导入模块，不需要 npm 安装：
+You can import modules directly from a URL without installing them via npm:
 
 ```javascript
 // 实验性特性，需要在 next.config.js 中启用
@@ -152,8 +152,8 @@ export default function Page() {
 
 ## Summary
 
-- SWC 编译器让构建速度提升 5-7 倍，无配置升级
-- Middleware 是 Next.js 12 最重要的新特性，运行在 Edge Runtime
-- React 18 的 Suspense SSR 支持让页面加载体验更好
-- Rust 化是前端工具链的趋势（SWC、esbuild、Vite 的 esbuild 预构建）
-- Next.js 正在从 React 框架演进为全栈开发平台
+- The SWC compiler speeds up builds 5–7× with zero-config upgrades
+- Middleware is the most important new feature in Next.js 12, running on the Edge Runtime
+- React 18's Suspense SSR support improves the page-loading experience
+- Rust-ification is a trend in frontend tooling (SWC, esbuild, and Vite's esbuild-based pre-bundling)
+- Next.js is evolving from a React framework into a full-stack development platform

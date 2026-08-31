@@ -4,9 +4,9 @@ date: 2020-07-13 10:23:25
 tags:
   - Webpack
   - エンジニアリング
-readingTime: 5
+readingTime: 6
 description: "Webpack 5 はまだベータ版ですが、Module Federation という機能にはチームがすでに非常に興奮しています。簡単に言えば、独立して構築されたアプリケーション間で実行時にモジュールを共有できるようになります。これにより、マイクロフロントエンドのシナリオで最も厄介な問題である、アプリケーション間でのコンポーネントと依存関係の共有が解決されます。"
-wordCount: 971
+wordCount: 1040
 ---
 
 Webpack 5 はまだベータ版ですが、Module Federation という機能はチームを非常に興奮させています。簡単に言うと、独立して構築されたアプリケーション間で実行時にモジュールを共有できるようになります。これにより、マイクロフロントエンドのシナリオで最も厄介な問題である、アプリケーション間でのコンポーネントと依存関係の共有が解決されます。
@@ -17,15 +17,15 @@ Webpack 5 はまだベータ版ですが、Module Federation という機能は�
 
 ## コアコンセプト
 
-- **Host**：消费远程模块的应用
-- **Remote**：提供模块的应用
-- **Shared**：跨应用共享的依赖（如 vue、react）
+- **Host**：リモートモジュールを消費するアプリ
+- **Remote**：モジュールを提供するアプリ
+- **Shared**：アプリ間で共有する依存関係（vue や react など）
 
-## 实战：拆分一个商品详情页
+## 実践：商品詳細ページの分割
 
-假设我们有一个主应用 `shell`，需要消费商品组件库 `product-components` 和用户中心 `user-center`。
+メインアプリケーション `shell` が、商品コンポーネントライブラリ `product-components` とユーザーセンター `user-center` を消費するケースを考える。
 
-### 1. 商品组件库（Remote）
+### 1. 商品コンポーネントライブラリ（Remote）
 
 ```javascript
 // product-components/webpack.config.js
@@ -139,7 +139,7 @@ export function useProduct(productId: Ref<string>) {
 }
 ```
 
-### 2. 用户中心（Remote）
+### 2. ユーザーセンター（Remote）
 
 ```javascript
 // user-center/webpack.config.js
@@ -172,7 +172,7 @@ module.exports = {
 }
 ```
 
-### 3. 主应用（Host）
+### 3. メインアプリケーション（Host）
 
 ```javascript
 // shell/webpack.config.js
@@ -250,7 +250,7 @@ export default defineComponent({
 </script>
 ```
 
-### 4. TypeScript 类型声明
+### 4. TypeScript の型宣言
 
 リモートモジュールにはローカル型定義がありません。手動で宣言する必要があります。
 
@@ -313,11 +313,11 @@ shared: {
 ## ランタイム読み込みフロー
 
 ```
-浏览器访问 localhost:3000
-  -> shell 应用加载
-  -> 解析 remoteEntry.js (product_components, user_center)
-  -> 加载共享依赖 (vue 只加载一份)
-  -> 按需加载远程模块
+ブラウザが localhost:3000 にアクセス
+  -> shell アプリが読み込まれる
+  -> remoteEntry.js を解析（product_components、user_center）
+  -> 共有依存関係を読み込み（vue は1つだけ）
+  -> 必要に応じてリモートモジュールを読み込む
 ```
 
 最初のアクセス時には遅延が発生しますが（remoteEntry.js と共有依存関係の読み込みが必要）、その後のページ遷移ではリモートモジュールがキャッシュされているため、快適な体験が得られます。

@@ -4,11 +4,11 @@ date: 2024-01-28 15:09:50
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 5.0 发布了正式的装饰器标准（TC39 Stage 3），和之前实验性装饰器（`experimentalDecorators`）有几处重要区别。"
-wordCount: 158
+description: "TypeScript 5.0 released the official decorator standard (TC39 Stage 3), with several important differences from the earlier experimental decorators."
+wordCount: 145
 ---
 
-TypeScript 5.0 发布了正式的装饰器标准（TC39 Stage 3），和之前实验性装饰器（`experimentalDecorators`）有几处重要区别。
+TypeScript 5.0 released the official decorator standard (TC39 Stage 3), with several important differences from the earlier experimental decorators.
 
 ## Old vs New Decorator Comparison
 

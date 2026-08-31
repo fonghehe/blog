@@ -6,14 +6,14 @@ tags:
   - 安全
 readingTime: 2
 description: "SRI 子资源完整性校验这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 294
+wordCount: 293
 ---
 
-SRI 子资源完整性校验这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+SRI 子资源完整性校验这个话题，社区已经讨论过很多次，但随着版本迭代，不少结论需要更新。本文基于当前最新版本重新梳理一遍。
 
 ## 入门指南
 
-实际项目中的用法会更复杂一些：
+实际项目里用起来会更复杂些：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -36,11 +36,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样一来，代码的可测试性和可扩展性都更好了。
 
 ## 源码分析
 
-以下是一个完整的示例：
+下面是一个完整示例：
 
 ```javascript
 .container {
@@ -63,11 +63,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+生产环境里边界情况务必处理好，这点很关键。
 
 ## 真实场景应用
 
-关键在于理解核心逻辑：
+关键还是理解背后的核心逻辑：
 
 ```javascript
 const fs = require('fs')
@@ -92,11 +92,11 @@ const csvToJson = new Transform({
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化得看具体场景，不是所有地方都要过度优化。
 
 ## 优化技巧
 
-我们可以通过以下方式来改进：
+可以试着从下面几个方面改进：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -119,7 +119,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已经在线上稳定运行半年多，是经过实战验证的。
 
 ## 小结
 

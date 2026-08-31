@@ -5,12 +5,12 @@ tags:
   - GraphQL
 readingTime: 2
 description: "最近 GraphQL を研究しています。多くの人が REST の代替と言っています。試してみて、理解をまとめます。"
-wordCount: 389
+wordCount: 386
 ---
 
-最近 GraphQL を研究しています。多くの人が REST の代替と言っています。試してみて、理解をまとめます。
+最近 GraphQL を研究している。多くの人が REST の代替と言っている。試してみて、理解をまとめる。
 
-## REST の痛点
+## REST の悩みの種
 
 ```
 GET /users/1
@@ -45,7 +45,7 @@ query GetUserWithOrders {
 }
 ```
 
-1 リクエストで必要なデータのみを正確に返します。
+1 リクエストで必要なデータのみを正確に返す。
 
 ## 基本概念
 

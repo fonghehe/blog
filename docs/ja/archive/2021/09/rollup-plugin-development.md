@@ -214,7 +214,7 @@ export default function debugPlugin() {
 
 ## まとめ
 
-- Rollup プラグインの核心は transform、resolveId、load の 3 つの hook
+- Rollup プラグインの本質は transform、resolveId、load の 3 つの hook
 - Vite は Rollup プラグイン API と互換性があり、Rollup の理解は Vite の深い活用に重要
 - プラグイン開発では `this.emitFile`、`this.warn` などのコンテキストメソッドが便利
 - コンポーネントライブラリのビルドはカスタムプラグインの典型的なユースケース

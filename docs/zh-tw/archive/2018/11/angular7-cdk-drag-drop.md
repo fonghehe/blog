@@ -124,14 +124,14 @@ export class VirtualUserListComponent {
 {% endraw %}
 ```
 
-**關鍵引數：**
+**關鍵參數：**
 
 - `itemSize`：每項高度（px），固定高度時效能最佳
 - 若高度不固定，使用 `AutoSizeVirtualScrollStrategy`（實驗性）
 
 ## 拖拽 + 虛擬滾動注意事項
 
-兩者結合時有一個限製：`cdkVirtualFor` 生成的 DOM 節點是動態的，直接和 `cdkDrag` 結合會有 offset 計算問題。建議：
+兩者結合時有一個限制：`cdkVirtualFor` 生成的 DOM 節點是動態的，直接和 `cdkDrag` 結合會有 offset 計算問題。建議：
 
 - 資料量 < 500 條：直接 `*ngFor` + `cdkDrag`
 - 資料量 > 500 條：分頁載入，而不是虛擬滾動 + 拖拽混用

@@ -5,12 +5,12 @@ tags:
   - Vue
 readingTime: 3
 description: "待望の Vue 3.0 One Piece が先週正式にリリースされました！約 1 年にわたる alpha/beta を追いかけてきて、ついに正式版が登場しました。この記事は体系的な入門ガイドです。"
-wordCount: 393
+wordCount: 410
 ---
 
 待ちに待った Vue 3.0 "One Piece" が先週正式にリリースされました！約 1 年にわたって alpha/beta を追いかけてきましたが、ついに正式版が登場しました。この記事は体系的な入門ガイドです。
 
-## 安装
+## インストール
 
 ```bash
 npm init @vitejs/app my-vue3-app -- --template vue-ts
@@ -19,7 +19,7 @@ npm init vite-app my-app
 cd my-app && npm install && npm run dev
 ```
 
-## Composition API 实战
+## Composition API 実践
 
 ```vue
 {% raw %}
@@ -91,7 +91,7 @@ onMounted(loadUsers);
 {% endraw %}
 ```
 
-## Composables：逻辑复用
+## Composables：ロジックの再利用
 
 ```typescript
 // composables/useFetch.ts
@@ -125,7 +125,7 @@ const {
 } = useFetch(() => api.getUsers({ page: page.value }));
 ```
 
-## 和 Vue 2 的重大变化
+## Vue 2 からの大きな変更
 
 ```typescript
 // ライフサイクルの改名
@@ -150,7 +150,7 @@ app.config.globalProperties.$http = axios; // Vue.prototype.$http の代替
 app.mount("#app");
 ```
 
-## v-model 的变化
+## v-model の変更点
 
 ```vue
 <!-- Vue 2：v-model = :value + @input -->
@@ -166,7 +166,7 @@ app.mount("#app");
 <UserForm v-model:name="name" v-model:email="email" />
 ```
 
-## Teleport（传送门）
+## Teleport（ポータル）
 
 ```vue
 <!-- コンポーネントを DOM 内の他の場所にレンダリング -->
@@ -185,7 +185,7 @@ app.mount("#app");
 </template>
 ```
 
-## Vue 3 生态现状（2020年9月）
+## Vue 3 エコシステムの現状（2020年9月）
 
 - **Vue Router 4**：RC 版がすでにリリースされており、Vue 3 に対応しています
 - **Vuex 4**：Vue 2/3 の両方をサポート

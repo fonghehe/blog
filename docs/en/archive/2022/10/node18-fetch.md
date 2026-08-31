@@ -4,11 +4,11 @@ date: 2022-10-13 11:13:42
 tags:
   - Node.js
 readingTime: 2
-description: "关于Node.js 18 fetch API，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective"
-wordCount: 232
+description: "When it comes to the Node.js 18 fetch API, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 212
 ---
 
-关于Node.js 18 fetch API，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to the Node.js 18 fetch API, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
@@ -64,7 +64,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates the basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Project Practice
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Best Practices
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage is a bit more complex:
 
 ```javascript
 const fs = require('fs')
@@ -153,6 +153,6 @@ Pay attention to boundary condition handling, which is critical in production.
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Node.js 18 fetch API不是银弹，需要根据项目规模和技术栈选择
+- The Node.js 18 fetch API is not a silver bullet; choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

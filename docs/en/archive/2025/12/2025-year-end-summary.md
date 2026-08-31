@@ -4,7 +4,7 @@ date: 2025-12-28 15:42:19
 tags:
   - Engineering
 readingTime: 2
-description: "第八篇年终总结。今年的主题词是：**平衡**。"
+description: "My eighth annual summary. This year's keyword: balance."
 wordCount: 561
 ---
 

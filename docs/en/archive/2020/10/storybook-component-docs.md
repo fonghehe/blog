@@ -4,15 +4,15 @@ date: 2020-10-16 14:57:24
 tags:
   - Testing
 readingTime: 2
-description: "最近在团队中落地Storybook 组件文档与测试，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 308
+description: "Lessons learned from adopting Storybook for component documentation and testing on a team, shared as a practical reference for similar efforts."
+wordCount: 197
 ---
 
-最近在团队中落地Storybook 组件文档与测试，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+I recently rolled out Storybook for component documentation and testing on my team and picked up a lot of experience. I'm writing it up as a reference, hoping it helps anyone doing similar work.
 
 ## Core Concepts
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -30,11 +30,11 @@ test.describe('用户登录流程', () => {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — it's critical in production.
 
 ## In-Depth Analysis
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -58,11 +58,11 @@ describe('LoginForm', () => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tied to the actual scenario; not every case calls for over-optimizing.
 
 ## Implementation Experience
 
-我们可以通过以下方式来改进：
+Here's how we can improve on it:
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -80,11 +80,11 @@ test.describe('用户登录流程', () => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it's proven in practice.
 
 ## Tuning Strategies
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -108,11 +108,11 @@ describe('LoginForm', () => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll still need to account for error handling and edge cases.
 
 ## Important Notes
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -130,10 +130,10 @@ test.describe('用户登录流程', () => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly cut maintenance cost.
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Storybook 组件文档与测试不是银弹，需要根据项目规模和技术栈选择
+- Don't adopt new tech for its own sake.
+- The code examples are for reference only and should be adapted to your actual use case.
+- Storybook docs and testing are no silver bullet; choose them based on your project's scale and tech stack.

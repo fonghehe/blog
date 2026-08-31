@@ -4,11 +4,11 @@ date: 2022-09-01 09:31:07
 tags:
   - Frontend
 readingTime: 2
-description: "Biome 前端 linter formatter is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
-wordCount: 199
+description: "Biome frontend linter and formatter is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 180
 ---
 
-Biome 前端 linter formatter is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Biome frontend linter and formatter is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -120,7 +120,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Common Traps
 
@@ -151,6 +151,6 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- Biome 前端 linter formatter不是银弹，需要根据项目规模和技术栈选择
+- Biome frontend linter and formatter is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

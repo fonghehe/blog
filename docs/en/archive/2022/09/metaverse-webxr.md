@@ -4,11 +4,11 @@ date: 2022-09-21 17:22:17
 tags:
   - Frontend
 readingTime: 2
-description: "最近在团队中落地WebXR 元宇宙前端技术， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 215
+description: "We recently adopted WebXR metaverse frontend technologies on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 184
 ---
 
-最近在团队中落地WebXR 元宇宙前端技术， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently adopted WebXR metaverse frontend technologies on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 
@@ -95,7 +95,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Optimization Strategies
 
@@ -124,5 +124,5 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- WebXR 元宇宙前端技术不是银弹，需要根据项目规模和技术栈选择
+- WebXR metaverse frontend technologies are not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

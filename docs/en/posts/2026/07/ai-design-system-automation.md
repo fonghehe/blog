@@ -4,12 +4,12 @@ date: 2026-07-18 12:22:00
 tags:
   - AI
   - Design Systems
-readingTime: 7
+readingTime: 8
 description: "Exploring LLM applications across the full design system pipeline: from design Token inference and component code generation to consistency validation, building an AI-assisted design system engineering workflow."
-wordCount: 2200
+wordCount: 835
 ---
 
-Design systems are the infrastructure of frontend engineering, but maintenance costs often grow exponentially with team size. Inconsistent Token naming, components deviating from design specs, Figma and code out of sync — these issues plague nearly every mid-to-large frontend team. Since 2025, LLM code understanding and generation capabilities have crossed the practical threshold, making automated design system maintenance possible.
+Design systems are the infrastructure of frontend engineering, but maintenance costs often grow exponentially with team size. Inconsistent Token naming, components deviating from design specs, Figma and code out of sync — these issues plague nearly every mid-to-large frontend team. Since 2025, LLMs have become capable enough at understanding and generating code that automated design-system maintenance has become practical.
 
 ## Three Layers of AI Application in Design Systems
 
@@ -19,7 +19,7 @@ Integrating AI into design systems isn't simply "using GPT to write components."
 2. **Component layer**: Generate spec-compliant component code based on Tokens and design files
 3. **Validation layer**: AI automatically detects design deviations in code, maintaining consistency between design and implementation
 
-These three layers form a closed loop: Tokens drive component generation, components undergo validation feedback, and validation results in turn correct Tokens and components.
+These three layers form a closed loop: Tokens drive component generation, components are checked through validation, and the validation results then feed back to refine both Tokens and components.
 
 ## LLM-Driven Design Token Inference
 
@@ -102,7 +102,7 @@ const componentTokens = {
 };
 ```
 
-LLMs can automatically generate all three Token layers and maintain reference relationships based on brand guidelines and component requirements. This hierarchical structure means design changes only need to be made at the source, with all components automatically following updates.
+LLMs can automatically generate all three Token layers and maintain the reference relationships based on brand guidelines and component requirements. This hierarchy means a design change only needs to be made at the source, and every component updates automatically.
 
 ## Component Code Auto-Generation: The Figma-to-Code AI Pipeline
 
@@ -218,7 +218,7 @@ class DesignToCodePipeline {
 
 ### AI Detecting Design Deviations
 
-After component code is generated, the biggest challenge is "design drift" during long-term maintenance — developers introduce values outside the Token system during iteration. LLMs can serve as automated design audit tools:
+After component code is generated, the biggest challenge is "design drift" during long-term maintenance — developers introduce values outside the Token system as they iterate. LLMs can serve as automated design audit tools:
 
 ```typescript
 interface DesignViolation {
@@ -304,7 +304,7 @@ jobs:
 
 ## Build Practice: AI-Assisted Token Management System
 
-Here is the core of a complete Token management system integrating AI generation, version management, and CI validation:
+Below is the core of a complete Token management system that combines AI generation, version management, and CI validation:
 
 ```typescript
 // token-manager.ts
@@ -403,7 +403,7 @@ class TokenManager {
 
 ## Quality Assurance for AI-Generated Code
 
-LLM-generated component code cannot be directly merged into the codebase. A manual review process must be established:
+LLM-generated component code cannot be merged into the codebase as-is. You need a human review process:
 
 1. **Auto lint**: ESLint + custom design system rules to block hardcoded values
 2. **Type checking**: TypeScript strict mode + component props type validation
@@ -460,14 +460,14 @@ async function checkNoHardcodedValues(code: string) {
 
 ### Team Collaboration Model
 
-The collaboration model that works well in practice is "AI generation + human review + automated validation":
+A collaboration model that works well in practice is "AI generation + human review + automated validation":
 
 - **Designers**: Define brand direction and key design Tokens, review AI-generated Token systems
 - **AI Pipeline**: Batch-generate Token derivative values and component code skeletons
 - **Senior developers**: Review component API design and architectural soundness
 - **CI system**: Automated design compliance validation, blocking deviations
 
-This model doesn't use AI to replace design systems and frontend engineering, but automates mechanical work so humans can focus on creative design decisions and architectural design.
+This model doesn't use AI to replace design systems and frontend engineering, but automates the mechanical work so people can focus on creative design decisions and architecture.
 
 ## Summary
 

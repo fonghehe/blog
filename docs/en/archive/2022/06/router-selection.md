@@ -3,16 +3,16 @@ title: "Frontend Router Solution Selection Guide"
 date: 2022-06-06 10:05:41
 tags:
   - Frontend
-readingTime: 2
-description: "Frequently used in daily work, 前端路由方案选型，Here is a systematic summary to help everyone better understand and apply it."
-wordCount: 206
+readingTime: 1
+description: "Frontend router solution selection is a frequent topic in daily work. Here is a systematic summary to help everyone better understand and apply it."
+wordCount: 170
 ---
 
-Frequently used in daily work, 前端路由方案选型，Here is a systematic summary to help everyone better understand and apply it.
+Frontend router solution selection is a frequent topic in daily work. Here is a systematic summary to help everyone better understand and apply it.
 
 ## Basic Concepts
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 使用示例
@@ -33,7 +33,7 @@ Through this pattern, the maintainability of the code is improved.
 
 ## Core Implementation
 
-具体用法参考以下代码：
+See the following code for specific usage:
 
 ```javascript
 // 工具函数封装
@@ -139,7 +139,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Summary
 
-- 持续关注社区动态，及时更新技术方案
-- 性能优化需要基于实际数据，避免过度优化
-- 前端路由方案选型的核心在于理解底层原理，而非仅仅记住 API
+- Stay updated with community trends and keep your technical solutions current
+- Performance optimization should be based on real data; avoid over-optimization
+- The key to frontend router selection lies in understanding underlying principles, not just memorizing APIs
 - In real projects, choosing the right solution is more important than chasing the latest technology

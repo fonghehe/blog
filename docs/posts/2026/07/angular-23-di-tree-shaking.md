@@ -3,9 +3,9 @@ title: "Angular 23 依赖注入与 Tree-shaking：编译时优化的新方向"
 date: 2026-07-24 16:38:26
 tags:
   - Angular
-readingTime: 7
+readingTime: 8
 description: "深入 Angular 23 编译时依赖注入系统的工作原理、Tree-shakable providers 的实现机制，以及与 Vue/React 依赖注入方案的对比分析。"
-wordCount: 2900
+wordCount: 1588
 ---
 
 Angular 的依赖注入（DI）系统一直是其核心设计支柱。从 Angular 2 的运行时反射注入，到后来的 `providedIn` tree-shakable providers，再到 Angular 23 的编译时 DI 增强，这个系统的演进方向越来越清晰：将尽可能多的工作从运行时移到编译时，在保持开发体验的同时缩小 bundle 体积。

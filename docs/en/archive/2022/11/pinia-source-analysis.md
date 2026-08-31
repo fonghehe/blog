@@ -4,11 +4,11 @@ date: 2022-11-29 10:22:24
 tags:
   - Pinia
 readingTime: 2
-description: "关于Pinia 源码分析，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 205
+description: "Many developers only know Pinia source-code analysis at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 188
 ---
 
-关于Pinia 源码分析，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Many developers only know Pinia source-code analysis at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -95,7 +95,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Best Practices
 
@@ -125,4 +125,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Pinia 源码分析不是银弹，需要根据项目规模和技术栈选择
+- Pinia source-code analysis is not a silver bullet — choose based on your project scale and tech stack

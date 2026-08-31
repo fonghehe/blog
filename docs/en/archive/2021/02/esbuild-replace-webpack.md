@@ -12,19 +12,19 @@ tags:
   - Node.js
 
 readingTime: 3
-description: "esbuild 是 Evan Wallace 在 2020 年发布的 JavaScript/TypeScript 打包器，用 Go 语言编写。它不是最快的 JS 打包器，它是快到不真实的那种——比 Webpack 快 100 倍，比 Parcel 快 100 倍，比 Rollup 快数倍。Vite 用它做依赖预构建，S"
-wordCount: 581
+description: "esbuild is a JavaScript/TypeScript bundler Evan Wallace released in 2020, written in Go. It's not just the fastest JS bundler — it's unbelievably fast, around 100x faster than Webpack and similarly ahead of Parcel and Rollup."
+wordCount: 421
 ---
 
-esbuild 是 Evan Wallace 在 2020 年发布的 JavaScript/TypeScript 打包器，用 Go 语言编写。它不是最快的 JS 打包器，它是快到不真实的那种——比 Webpack 快 100 倍，比 Parcel 快 100 倍，比 Rollup 快数倍。Vite 用它做依赖预构建，Snowpack 也集成了它。
+esbuild is a JavaScript/TypeScript bundler released by Evan Wallace in 2020, written in Go. It isn't just fast — it's unrealistically fast: roughly 100× faster than Webpack, 100× faster than Parcel, and several times faster than Rollup. Vite uses it for dependency pre-bundling, and Snowpack has integrated it as well.
 
 ## Why It's So Fast
 
-esbuild 速度快有三个原因：
+esbuild's speed comes down to three factors:
 
-1. **Go 语言**：编译型语言，天然比 JS 快。Go 的并发模型（goroutine）也让并行处理更高效
-2. **从零实现**：不用任何现有的 JS 库（如 acorn、babel），全部自己实现 parser 和 bundler
-3. **内存优化**：数据结构尽量紧凑，减少内存分配和 GC 压力
+1. **Go**: As a compiled language, it's inherently faster than JS. Go's concurrency model (goroutines) also makes parallel processing more efficient.
+2. **Built from scratch**: Instead of relying on existing JS libraries (such as acorn or babel), it implements both the parser and the bundler itself.
+3. **Memory optimization**: Its data structures are kept compact, reducing memory allocation and GC pressure.
 
 ```bash
 # 实际测试：打包 10 个 Three.js 拷贝
@@ -50,9 +50,9 @@ esbuild app.ts --bundle --minify --outfile=out.js
 esbuild src/home.ts src/about.ts --bundle --outdir=dist
 ```
 
-## API 使用
+## API Usage
 
-esbuild 有 CLI 和 API 两种使用方式，API 更灵活：
+esbuild offers both a CLI and an API, and the API is the more flexible option:
 
 ```javascript
 const esbuild = require('esbuild')
@@ -102,7 +102,7 @@ async function build() {
 build()
 ```
 
-## Watch 模式
+## Watch Mode
 
 ```javascript
 const ctx = await esbuild.context({
@@ -124,10 +124,10 @@ await ctx.serve({
 
 ## esbuild's Role in Vite
 
-Vite 在两个关键位置使用了 esbuild：
+Vite uses esbuild in two key places:
 
-1. **依赖预构建**：开发阶段，将 CommonJS 依赖转为 ESM，将许多内部模块合并为一个文件
-2. **生产构建的代码压缩**：Vite 2.7+ 支持用 esbuild 做 minify，比 Terser 快很多
+1. **Dependency pre-bundling**: During development, it converts CommonJS dependencies to ESM and merges many internal modules into a single file.
+2. **Production build minification**: Vite 2.7+ can use esbuild for minification, which is much faster than Terser.
 
 ```javascript
 // vite.config.ts
@@ -151,13 +151,13 @@ export default defineConfig({
 
 ## Current Limitations
 
-esbuild 不是万能的，有几个明显限制：
+esbuild isn't a silver bullet; it has a few notable limitations:
 
-1. **没有代码分割的 IIFE 格式**：ESM 格式支持 `splitting`，但传统格式不支持
-2. **不支持转换装饰器语法**：Angular 项目无法直接用
-3. **不支持 HMR**：自己不会实现 HMR，需要上层框架处理
-4. **插件生态很小**：Webpack 插件不能直接迁移
-5. **CSS 处理有限**：不支持 CSS Modules、PostCSS 等高级功能
+1. **No code splitting in the IIFE format**: The ESM format supports `splitting`, but legacy formats do not.
+2. **No decorator transpilation**: Angular projects can't use it directly.
+3. **No HMR**: It doesn't implement HMR itself; an upper-layer framework has to handle that.
+4. **Small plugin ecosystem**: Webpack plugins can't be migrated over directly.
+5. **Limited CSS handling**: It lacks advanced features such as CSS Modules and PostCSS.
 
 ```javascript
 // ❌ 不支持装饰器
@@ -170,11 +170,11 @@ import styles from './app.module.css'
 
 ## Positioning Differences from Webpack
 
-esbuild 不是 Webpack 的替代品，至少目前不是。它的定位更像是：
+esbuild isn't a Webpack replacement — at least not yet. Its role is closer to:
 
-- **构建加速器**：在现有工具链中替代最慢的环节（编译 TS、打包、压缩）
-- **原型工具**：小型项目和库的打包，配置简单
-- **底层基础设施**：Vite、Snowpack 等工具的底层引擎
+- **Build accelerator**: Replacing the slowest steps in an existing toolchain (compiling TS, bundling, minifying).
+- **Prototyping tool**: Bundling small projects and libraries with minimal configuration.
+- **Low-level infrastructure**: The underlying engine for tools like Vite and Snowpack.
 
 ```javascript
 // Webpack 用户的渐进式采用方式
@@ -204,8 +204,8 @@ module.exports = {
 
 ## Summary
 
-- esbuild 用 Go 编写，速度比传统工具快 100 倍，不是营销话术是实测数据
-- 适合用作底层加速工具（Vite、Snowpack 已集成），不适合完全替代 Webpack
-- Webpack 用户可以用 esbuild-loader 做渐进式提速
-- 插件生态、CSS 处理、HMR 还不成熟，关注但不要盲目全面切换
-- 它代表了一个趋势：前端工具链正在从 JS 迁移到编译型语言
+- esbuild is written in Go and runs roughly 100× faster than traditional tools — this isn't marketing spin, it's measured data.
+- It works well as a low-level accelerator (Vite and Snowpack already integrate it), but it isn't suited to fully replacing Webpack.
+- Webpack users can adopt it incrementally via esbuild-loader to speed things up.
+- Its plugin ecosystem, CSS handling, and HMR are still immature — keep an eye on it, but don't blindly switch everything over.
+- It points to a broader trend: the frontend toolchain is shifting away from JS toward compiled languages.

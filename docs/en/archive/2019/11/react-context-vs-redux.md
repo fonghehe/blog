@@ -4,15 +4,15 @@ date: 2019-11-04 15:36:26
 tags:
   - React
 readingTime: 4
-description: "React 16.3 引入了全新的 Context API，让很多开发者开始思考：有了 Context，还需要 Redux 吗？本文将深入对比两者的适用场景，帮助你在实际项目中做出正确的技术选型。"
-wordCount: 568
+description: "React 16.3 introduced a brand-new Context API, making many developers wonder: with Context available, do we still need Redux? This article compares the two in depth so you can make the right architectural choice in your own projects."
+wordCount: 332
 ---
 
-React 16.3 引入了全新的 Context API，让很多开发者开始思考：有了 Context，还需要 Redux 吗？本文将深入对比两者的适用场景，帮助你在实际项目中做出正确的技术选型。
+React 16.3 introduced a brand-new Context API, making many developers wonder: with Context available, do we still need Redux? This article compares the two in depth so you can make the right architectural choice in your own projects.
 
 ## React Context Basics Review
 
-Context 提供了一种在组件树中传递数据的方式，避免了逐层传递 props 的问题：
+Context provides a way to pass data through the component tree without threading props down at every level:
 
 ```jsx
 {% raw %}
@@ -54,7 +54,7 @@ function ThemedButton() {
 
 ## Redux Basics Review
 
-Redux 是一个可预测的状态管理容器，遵循单一数据源、只读状态、纯函数修改的原则：
+Redux is a predictable state container that follows the principles of a single source of truth, read-only state, and changes made by pure functions:
 
 ```jsx
 import { createStore } from 'redux';
@@ -106,9 +106,9 @@ const ConnectedCounter = connect(
 
 ## Core Differences Comparison
 
-### 1. 更新机制
+### 1. Update Mechanism
 
-Context 的更新会导致所有消费该 Context 的组件重新渲染：
+A Context update re-renders every component that consumes that Context:
 
 ```jsx
 {% raw %}
@@ -138,7 +138,7 @@ function ThemeDisplay() {
 {% endraw %}
 ```
 
-Redux 的 `connect` 使用浅比较，只有相关数据变化时才触发重渲染：
+Redux's `connect` uses shallow comparison, so a re-render is triggered only when the relevant data changes:
 
 ```jsx
 // 只有 state.theme 变化时，ThemeDisplay 才会重渲染
@@ -150,9 +150,9 @@ const ThemeDisplay = connect(
 });
 ```
 
-### 2. 中间件与异步
+### 2. Middleware and Async
 
-Context 没有内置的中间件机制，异步处理需要自己实现：
+Context has no built-in middleware mechanism; you have to implement async handling yourself:
 
 ```jsx
 {% raw %}
@@ -185,7 +185,7 @@ function App() {
 {% endraw %}
 ```
 
-Redux 有丰富的中间件生态：
+Redux has a rich middleware ecosystem:
 
 ```jsx
 // redux-thunk
@@ -213,9 +213,9 @@ function* fetchUserSaga(action) {
 }
 ```
 
-### 3. DevTools 支持
+### 3. DevTools Support
 
-Redux 有强大的 DevTools，支持时间旅行调试：
+Redux ships with powerful DevTools that support time-travel debugging:
 
 ```jsx
 // 启用 Redux DevTools
@@ -225,11 +225,11 @@ const store = createStore(
 );
 ```
 
-Context 没有官方的调试工具。每次 Context 值变化都很难追踪是哪里触发的。
+Context has no official debugging tool. Every time a Context value changes, it's hard to trace where the change was triggered.
 
-### 4. 状态持久化
+### 4. State Persistence
 
-Redux 可以轻松实现状态持久化：
+Redux makes state persistence straightforward:
 
 ```jsx
 import { persistStore, persistReducer } from 'redux-persist';
@@ -246,11 +246,11 @@ const store = createStore(persistedReducer);
 const persistor = persistStore(store);
 ```
 
-Context 需要手动实现持久化逻辑。
+With Context you have to implement persistence logic by hand.
 
 ## How to Choose
 
-### 适合使用 Context 的场景
+### When to Use Context
 
 ```jsx
 // 场景1：主题配置（低频变化）
@@ -270,13 +270,13 @@ const ConfigProvider = ({ children, config }) => (
 );
 ```
 
-特征：
-- 数据变化频率低
-- 不需要复杂的更新逻辑
-- 不需要中间件和 DevTools
-- 只在局部组件树中使用
+Characteristics:
+- Data changes infrequently
+- No complex update logic needed
+- No middleware or DevTools required
+- Used only within a local part of the component tree
 
-### 适合使用 Redux 的场景
+### When to Use Redux
 
 ```jsx
 // 场景1：购物车（频繁更新，多个组件读取）
@@ -285,15 +285,15 @@ const ConfigProvider = ({ children, config }) => (
 // 场景4：需要时间旅行调试
 ```
 
-特征：
-- 数据变化频率高
-- 多个不相关的组件需要读取同一份数据
-- 需要中间件（异步、日志、持久化等）
-- 需要强大的调试工具
+Characteristics:
+- Data changes frequently
+- Multiple unrelated components need to read the same data
+- Middleware is needed (async, logging, persistence, etc.)
+- Powerful debugging tools are needed
 
 ## Context + useReducer: Lightweight Alternative
 
-对于中等复杂度的状态管理，Context + useReducer 可以替代 Redux：
+For medium-complexity state management, Context + useReducer can replace Redux:
 
 ```jsx
 import React, { createContext, useContext, useReducer } from 'react';
@@ -372,9 +372,9 @@ function NotificationList() {
 
 ## Summary
 
-- Context 适合传递低频变化的配置类数据（主题、语言、认证）
-- Redux 适合管理频繁变化的全局业务状态
-- Context 没有内置中间件和 DevTools，需要自行处理异步和调试
-- `connect` 使用浅比较避免不必要的重渲染，Context 会触发所有消费者重渲染
-- Context + useReducer 是中等复杂度场景的轻量级替代方案
-- 技术选型应根据项目规模、团队经验和状态复杂度来决定
+- Context suits low-frequency configuration data (theme, locale, auth)
+- Redux suits frequently changing global business state
+- Context has no built-in middleware or DevTools; you handle async and debugging yourself
+- `connect` uses shallow comparison to avoid needless re-renders, whereas Context re-renders all consumers
+- Context + useReducer is a lightweight alternative for medium-complexity scenarios
+- The right choice depends on project size, team experience, and state complexity

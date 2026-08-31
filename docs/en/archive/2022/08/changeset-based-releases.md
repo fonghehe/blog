@@ -4,11 +4,11 @@ date: 2022-08-25 10:22:55
 tags:
   - Frontend
 readingTime: 1
-description: "基于 Changeset 的版本发布 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real project"
-wordCount: 173
+description: "Changeset-based version releases is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 153
 ---
 
-基于 Changeset 的版本发布 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Changeset-based version releases is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
 
 ## Basic Usage
 
@@ -35,7 +35,7 @@ Let's start with the basic implementation:
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Advanced Usage
 
@@ -68,7 +68,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Practical Cases
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T

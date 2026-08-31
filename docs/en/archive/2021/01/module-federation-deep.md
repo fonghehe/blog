@@ -7,11 +7,11 @@ tags:
   - JavaScript
 
 readingTime: 1
-description: "前端模块联邦深入在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 190
+description: "Module federation has evolved quickly in recent years. This article digs into how it works under the hood and how to apply it in practice."
+wordCount: 135
 ---
 
-前端模块联邦深入在近年来发展迅速，本文将深入分析其原理和实践方法。
+Frontend module federation has been advancing rapidly in recent years; this article takes a deep look at its underlying principles and practical approaches.
 
 ## Basic Concepts
 
@@ -68,7 +68,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Practical Application
 
-核心代码如下：
+Here's the core code:
 
 ```javascript
 // 使用示例
@@ -89,7 +89,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Best Practices
 
-我们可以这样实现：
+Here's one way to implement it:
 
 ```javascript
 // 工具函数封装
@@ -117,10 +117,10 @@ function createHandler(options = {}) {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+This pattern improves the code's maintainability.
 
 ## Summary
 
-- 前端模块联邦深入的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
+- The core of diving into frontend module federation is understanding the underlying principles, not just memorizing the API
+- In real projects, choosing the right approach matters more than chasing the latest tech
+- Keep a consistent code style across the team to lower maintenance cost

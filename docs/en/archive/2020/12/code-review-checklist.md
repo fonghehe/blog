@@ -4,15 +4,15 @@ date: 2020-12-16 17:33:20
 tags:
   - Frontend
 readingTime: 2
-description: "关于前端 Code Review 检查清单，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 277
+description: "Many developers treat frontend code review checklists as little more than style rules. This article looks at them from a production perspective, covering the problems that actually surface and how to solve them."
+wordCount: 153
 ---
 
-关于前端 Code Review 检查清单，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+On the frontend code-review checklist: many developers only operate at the API-call level. This post tries to look at the real problems and solutions from a production perspective.
 
 ## Basic Principles
 
-先来看基本的实现方式：
+Let's start with the basic approach:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll also need to handle errors and edge cases.
 
 ## Advanced Features
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can take it further:
 
 ```javascript
 :root {
@@ -63,11 +63,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and noticeably cuts maintenance cost.
 
 ## Project Practice
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets more involved:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -92,11 +92,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This way, both the testability and extensibility of the code improve.
 
 ## Best Practices
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -120,10 +120,10 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind the edge-case handling — that's critical in production.
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- 前端 Code Review 检查清单不是银弹，需要根据项目规模和技术栈选择
+- Don't adopt new tech just for its own sake
+- Code samples are for reference only — adapt them to your use case
+- A frontend code-review checklist isn't a silver bullet; pick what fits your project's size and stack

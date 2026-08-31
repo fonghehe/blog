@@ -66,7 +66,7 @@ const cache = {};
 function handler(req, res) {
   const key = req.url;
 
-  // 如果不限製 cache 大小，會無限增長
+  // 如果不限制 cache 大小，會無限增長
   cache[key] = {
     data: heavyComputation(),
     timestamp: Date.now(),
@@ -135,7 +135,7 @@ function handleConnection(socket) {
 **場景三：全域性變數意外增長**
 
 ```js
-// 洩漏版本：無限製的全域性陣列
+// 洩漏版本：無限制的全域性陣列
 const requestLogs = [];
 
 app.use((req, res, next) => {
@@ -148,7 +148,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// 修復版本：限製大小並定期清理
+// 修復版本：限制大小並定期清理
 const requestLogs = [];
 const MAX_LOGS = 10000;
 

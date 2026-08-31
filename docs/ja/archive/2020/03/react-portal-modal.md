@@ -4,15 +4,15 @@ date: 2020-03-06 14:53:26
 tags:
   - React
 readingTime: 2
-description: "最近在团队中落地React Portal 实现 Modal 组件，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 307
+description: "最近チームでReact Portal による Modal 実装を導入し、かなりの経験を積んだ。同様の作業の参考になれば幸いだ。"
+wordCount: 460
 ---
 
-最近在团队中落地React Portal 实现 Modal 组件，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近チームで React Portal を使った Modal コンポーネントの実装を進め、いくつかの知見が溜まった。似たような取り組みをする人の参考になればとまとめておく。
 
 ## コアコンセプト
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -35,11 +35,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+この方式により、コードのテスト容易性と拡張性の両方が高まる。
 
 ## 深掘り解析
 
-以下是一个完整的示例：
+以下は全体のサンプルだ：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -62,11 +62,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理に注意すること。これは本番環境では極めて重要だ。
 
 ## 実装経験
 
-关键在于理解核心逻辑：
+鍵となるのは中核となるロジックを理解することだ：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -89,11 +89,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能最適化は具体的な場面に合わせる必要があり、すべての場合で過剰な最適化が必要なわけではない。
 
 ## 调优策略
 
-我们可以通过以下方式来改进：
+次の方法で改善できる：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -116,12 +116,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番環境で半年以上安定して稼働しており、実際に検証済みだ。
 
 ## まとめ
 
-- 代码示例仅供参考，需根据业务场景调整
-- React Portal 实现 Modal 组件不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- コード例はあくまで参考であり、業務の場面に合わせて調整する必要がある
+- React Portal での Modal 実装は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶべき
+- API を暗記するより、その背後にある原理を理解するほうが重要
+- 本番環境で使う前には必ず互換性の検証を行う
+- チーム開発では、技術そのものよりも取り決めとドキュメントのほうが重要

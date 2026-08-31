@@ -51,4 +51,4 @@ export class SelectivePreloadingStrategy implements PreloadingStrategy {
 
 ## Results
 
-With proper code splitting, the initial bundle size can be reduced by 40%–60%. Combined with server-side HTTP/2 push, the effect is even better.
+With proper code splitting, the initial bundle size can be reduced by 40%–60%. Combined with server-side HTTP/2 push, the gains are even greater.

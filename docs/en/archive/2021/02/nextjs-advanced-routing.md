@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 1
-description: "Next.js 12 Middleware 中间件 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the top"
-wordCount: 162
+description: "Next.js middleware has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 152
 ---
 
-Next.js 12 Middleware 中间件 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Next.js 12 Middleware has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -60,7 +60,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Real-World Applications
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is somewhat more complex:
 
 ```javascript
 import { NextRequest, NextResponse } from 'next/server'

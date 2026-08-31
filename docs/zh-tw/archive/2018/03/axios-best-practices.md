@@ -4,11 +4,11 @@ date: 2018-03-06 11:23:25
 tags:
   - 前端
 readingTime: 2
-description: "Axios 是目前最主流的 HTTP 客戶端，但很多專案隻是簡單呼叫，沒有做統一封裝，導致請求邏輯散落各處。這篇文章整理一下完整的封裝方案。"
+description: "Axios 是目前最主流的 HTTP 客戶端，但很多專案只是簡單呼叫，沒有做統一封裝，導致請求邏輯散落各處。這篇文章整理一下完整的封裝方案。"
 wordCount: 289
 ---
 
-Axios 是目前最主流的 HTTP 客戶端，但很多專案隻是簡單呼叫，沒有做統一封裝，導致請求邏輯散落各處。這篇文章整理一下完整的封裝方案。
+Axios 是目前最主流的 HTTP 客戶端，但很多專案只是簡單呼叫，沒有做統一封裝，導致請求邏輯散落各處。這篇文章整理一下完整的封裝方案。
 
 ## 為什麼需要封裝
 
@@ -19,7 +19,7 @@ Axios 是目前最主流的 HTTP 客戶端，但很多專案隻是簡單呼叫�
 - Loading 狀態、訊息提示分散
 - 難以統一替換底層庫
 
-## 建立例項
+## 建立實例
 
 ```javascript
 // src/utils/request.js
@@ -95,7 +95,7 @@ service.interceptors.response.use(
     const messageMap = {
       400: "請求引數錯誤",
       401: "未授權，請重新登入",
-      403: "沒有許可權",
+      403: "沒有權限",
       404: "請求地址不存在",
       500: "伺服器內部錯誤",
       502: "閘道器錯誤",
@@ -151,7 +151,7 @@ async function handleLogin(form) {
     const profile = await getProfile();
     this.user = profile;
   } catch (error) {
-    // 全域性錯誤已經在攔截器處理，這裡隻處理特殊邏輯
+    // 全域性錯誤已經在攔截器處理，這裡只處理特殊邏輯
     console.error(error);
   }
 }
@@ -190,7 +190,7 @@ async function searchUsers(keyword) {
 }
 ```
 
-## 重試機製
+## 重試機制
 
 網路不穩定時，自動重試：
 
@@ -201,7 +201,7 @@ axiosRetry(service, {
   retries: 3, // 最多重試 3 次
   retryDelay: (retryCount) => retryCount * 1000, // 1s, 2s, 3s
   retryCondition: (error) => {
-    // 隻重試網路錯誤和 5xx 錯誤
+    // 只重試網路錯誤和 5xx 錯誤
     return axiosRetry.isNetworkOrIdempotentRequestError(error);
   },
 });

@@ -5,10 +5,10 @@ tags:
   - React
 readingTime: 2
 description: "Angular 提供了两种表单方案：Template-driven 和 Reactive Forms。对于需要动态字段、跨字段验证、程序化控制的复杂场景，Reactive Forms 是唯一合适的选择。"
-wordCount: 150
+wordCount: 264
 ---
 
-Angular 提供了两种表单方案：Template-driven 和 Reactive Forms。对于需要动态字段、跨字段验证、程序化控制的复杂场景，Reactive Forms 是唯一合适的选择。
+Angular はフォーム構築のアプローチとして Template-driven と Reactive Forms の 2 つを提供している。動的なフィールドやフィールド横断のバリデーション、プログラムからの制御が必要な複雑なケースでは、Reactive Forms が唯一の適した選択肢となる。
 
 ## 基本構造
 
@@ -69,9 +69,9 @@ export class RegisterComponent {
 }
 ```
 
-## 动态表单：FormArray
+## 動的フォーム：FormArray
 
-常见场景：用户可动态添加/删除联系方式：
+よくあるケース：ユーザーが連絡先を動的に追加・削除できる場面：
 
 ```typescript
 @Component({
@@ -119,7 +119,7 @@ export class ProfileFormComponent {
 }
 ```
 
-## 异步验证器
+## 非同期バリデータ
 
 ```typescript
 // 验证用户名是否被占用（调用后端 API）
@@ -145,7 +145,7 @@ this.fb.control("", {
 });
 ```
 
-## 表单状态监听
+## フォームの状態監視
 
 ```typescript
 ngOnInit() {
@@ -173,4 +173,4 @@ ngOnInit() {
 
 ## まとめ
 
-Angular Reactive Forms 的强大之处在于**表单逻辑完全在 TypeScript 中**，便于测试和复用。核心三件套：`FormGroup`（字段组）、`FormArray`（动态列表）、异步验证器，掌握这三个就能应对 90% 的复杂表单场景。
+Angular Reactive Forms の強みは、**フォームのロジックがすべて TypeScript の中に収まる**ことにあり、テストや再利用がしやすい。中核となる 3 点セット：`FormGroup`（フィールドのグループ）、`FormArray`（動的リスト）、非同期バリデータ。この 3 つを押さえれば、複雑なフォームの 9 割程度は対応できる。

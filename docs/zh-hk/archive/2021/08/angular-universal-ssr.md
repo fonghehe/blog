@@ -17,7 +17,7 @@ Angular Universal 讓 Angular 應用可以在服務端預渲染 HTML，解決兩
 ng add @nguniversal/express-engine
 
 # 生成的檔案：
-# ├── server.ts                  # Express 服務器
+# ├── server.ts                  # Express 伺服器
 # ├── src/app/app.server.module.ts  # 服務端 AppModule
 # └── src/main.server.ts         # 服務端入口
 ```
@@ -58,7 +58,7 @@ export class ThemeService {
     if (isPlatformBrowser(this.platformId)) {
       return localStorage.getItem("theme") || "light";
     }
-    return "light"; // 服務端默認值
+    return "light"; // 服務端預設值
   }
 
   setTheme(theme: string) {
@@ -71,7 +71,7 @@ export class ThemeService {
 
 ## TransferState：避免雙重數據請求
 
-SSR 的典型問題：服務端已經請求了 API 數據，但客户端 hydration 時又請求一次。`TransferState` 解決這個問題：
+SSR 的典型問題：服務端已經請求了 API 數據，但客戶端 hydration 時又請求一次。`TransferState` 解決這個問題：
 
 ```typescript
 import { TransferState, makeStateKey } from "@angular/platform-browser";
@@ -142,22 +142,22 @@ export class PostDetailComponent implements OnInit {
 }
 ```
 
-## 構建和部署
+## 建構和部署
 
 ```bash
-# 構建 SSR 版本
+# 建構 SSR 版本
 npm run build:ssr
 
 # 本地測試
 npm run serve:ssr
 
-# 部署到 Node.js 服務器
+# 部署到 Node.js 伺服器
 # dist/ 目錄包含：
 # ├── browser/   # 客户端靜態資源（CDN 可用）
-# └── server/    # Node.js 服務器代碼
+# └── server/    # Node.js 伺服器代碼
 ```
 
-**性能優化建議**：
+**效能優化建議**：
 
 ```typescript
 // server.ts - 添加頁面緩存
@@ -181,7 +181,7 @@ app.get("*", (req, res) => {
 如果頁面內容是靜態的（博客、文檔），用預渲染（Prerendering）比 SSR 更簡單：
 
 ```bash
-# 構建時預渲染指定路由
+# 建構時預渲染指定路由
 npm run prerender
 
 # angular.json 設定預渲染路由
@@ -192,7 +192,7 @@ npm run prerender
 }
 ```
 
-預渲染產物是純靜態 HTML，可以直接部署到 CDN，無需 Node.js 服務器。
+預渲染產物是純靜態 HTML，可以直接部署到 CDN，無需 Node.js 伺服器。
 
 ## 總結
 

@@ -12,10 +12,10 @@ tags:
   - CSS
 readingTime: 3
 description: "esbuild 是 Evan Wallace 在 2020 年发布的 JavaScript/TypeScript 打包器，用 Go 语言编写。它不是最快的 JS 打包器，它是快到不真实的那种——比 Webpack 快 100 倍，比 Parcel 快 100 倍，比 Rollup 快数倍。Vite 用它做依赖预构建，S"
-wordCount: 595
+wordCount: 597
 ---
 
-esbuild 是 Evan Wallace 在 2020 年发布的 JavaScript/TypeScript 打包器，用 Go 语言编写。它不是最快的 JS 打包器，它是快到不真实的那种——比 Webpack 快 100 倍，比 Parcel 快 100 倍，比 Rollup 快数倍。Vite 用它做依赖预构建，Snowpack 也集成了它。
+esbuild 是 Evan Wallace 在 2020 年发布的 JavaScript/TypeScript 打包器，用 Go 语言编写。它不是最快的 JS 打包器，而是快到不真实的那种——比 Webpack 快 100 倍，比 Parcel 快 100 倍，比 Rollup 快数倍。Vite 用它做依赖预构建，Snowpack 也集成了它。
 
 ## 为什么这么快
 
@@ -203,8 +203,8 @@ module.exports = {
 
 ## 小结
 
-- esbuild 用 Go 编写，速度比传统工具快 100 倍，不是营销话术是实测数据
+- esbuild 用 Go 编写，速度比传统工具快 100 倍，不是营销话术，而是实测数据
 - 适合用作底层加速工具（Vite、Snowpack 已集成），不适合完全替代 Webpack
 - Webpack 用户可以用 esbuild-loader 做渐进式提速
-- 插件生态、CSS 处理、HMR 还不成熟，关注但不要盲目全面切换
+- 插件生态、CSS 处理、HMR 还不成熟，可以关注，但别盲目全面切换
 - 它代表了一个趋势：前端工具链正在从 JS 迁移到编译型语言

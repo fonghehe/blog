@@ -5,9 +5,12 @@ tags:
   - Web3
   - Ethereum
   - DApp
+readingTime: 7
+wordCount: 830
+description: "When smart contracts grow from simple storage examples into real business logic, Remix's online IDE quickly proves inadequate. Contracts depending on each other"
 ---
 
-When smart contracts grow from simple storage examples into real business logic, Remix's online IDE quickly proves inadequate. Contracts depending on each other, the need for version management, automated testing, and multi-environment deployment give rise to the need for a framework. Truffle is a widely used standard for Ethereum DApp engineering: it brings contract development from the "write a file, deploy a file" model into a structured project management system.
+When smart contracts grow from simple storage examples into real business logic, Remix's online IDE quickly proves inadequate. Contracts depending on each other, the need for version management, automated testing, and multi-environment deployment create the need for a framework. Truffle is a widely used standard for Ethereum DApp engineering: it brings contract development from the "write a file, deploy a file" model into a structured project management system.
 
 ## Truffle Project Structure
 
@@ -150,7 +153,7 @@ The execution logic of `truffle migrate`:
 2. Execute migration scripts with numbers greater than that value
 3. After each script completes, update `last_completed_migration`
 
-This mechanism ensures migration scripts are executed only once, avoiding duplicate deployments. However, in actual development, if contract logic changes require redeployment, you need to use the `--reset` flag or add new migration scripts.
+This mechanism ensures migration scripts are executed only once, avoiding duplicate deployments. However, in practice, if contract logic changes require redeployment, you need to use the `--reset` flag or add new migration scripts.
 
 ## Test Network Configuration: truffle-config.js
 
@@ -385,7 +388,7 @@ contract MyToken is ERC20, ERC20Detailed, Ownable {
 Benefits of using OpenZeppelin:
 
 1. **Security audit**: All contracts are community-audited, reducing vulnerability risk
-2. **Standard implementations**: Correct implementations of standard interfaces like ERC20, ERC721
+2. **Standard implementations**: Correct, audited implementations of interfaces like ERC20 and ERC721
 3. **Reusable modules**: Common functionality like Ownable, Pausable, SafeMath
 
 ## Using truffle-contract in the Frontend

@@ -1,5 +1,5 @@
 ---
-title: "Deno 3.0 Full-Stack Solution: 内置Data库 & 原生 React Support"
+title: "Deno 3.0 as a Full-Stack Solution: Built-in Database and Native React Support"
 date: 2025-08-14 10:48:25
 tags:
   - Frontend

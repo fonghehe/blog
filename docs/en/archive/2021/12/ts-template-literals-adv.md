@@ -5,11 +5,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "TypeScript 模板字面量进阶 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real project"
-wordCount: 214
+description: "Advanced TypeScript template literal types are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 196
 ---
 
-TypeScript 模板字面量进阶 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Advanced TypeScript template literal types are becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -42,7 +42,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Usage
 
-实际项目中的用法会更复杂一些：
+Real-world usage gets a bit more complex:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -155,4 +155,4 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- TypeScript 模板字面量进阶不是银弹，需要根据项目规模和技术栈选择
+- Advanced TypeScript template literal types are not a silver bullet; choose them based on your project's scale and tech stack.

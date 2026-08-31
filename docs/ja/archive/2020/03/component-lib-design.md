@@ -5,43 +5,43 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "团队在管理后台项目中积累了几十个业务组件，但散落在各个项目里，复用靠复制粘贴。决定抽离出一个内部组件库，记录一下设计思路。"
-wordCount: 223
+wordCount: 349
 ---
 
-团队在管理后台项目中积累了几十个业务组件，但散落在各个项目里，复用靠复制粘贴。决定抽离出一个内部组件库，记录一下设计思路。
+管理画面のプロジェクトを進める中で数十個の業務コンポーネントが溜まったが、各プロジェクトに散在していて、再利用はコピペに頼っていた。そこで社内用のコンポーネントライブラリとして切り出すことにし、その設計の考え方をまとめておく。
 
 ## コンポーネントの階層化
 
 ```
-组件库
-├── 基础层（primitives）
-│   ├── Button、Input、Select
-│   ├── 不依赖任何业务逻辑
-│   └── 可被任何项目使用
-├── 业务层（business）
-│   ├── UserSelect（用户选择器）
-│   ├── DepartmentTree（部门树）
-│   ├── PermissionGuard（权限守卫）
-│   └── 依赖基础层 + 业务 API
-└── 复合层（composite）
-    ├── SearchForm（搜索表单）
-    ├── DataTable（数据表格 + 分页 + 筛选）
-    └── 由业务层和基础层组合而成
+コンポーネントライブラリ
+├── 基礎層（primitives）
+│   ├── Button・Input・Select
+│   ├── ビジネスロジックに依存しない
+│   └── どのプロジェクトからでも利用可能
+├── 業務層（business）
+│   ├── UserSelect（ユーザー選択）
+│   ├── DepartmentTree（部署ツリー）
+│   ├── PermissionGuard（権限ガード）
+│   └── 基礎層 + 業務 API に依存
+└── 複合層（composite）
+    ├── SearchForm（検索フォーム）
+    ├── DataTable（データテーブル + ページネーション + 絞り込み）
+    └── 業務層と基礎層を組み合わせて構成
 ```
 
 ## コンポーネントAPI設計の原則
 
 ```vue
 {% raw %}
-<!-- 原则 1：props 驱动，slot 扩展 -->
+<!-- 原則 1：props 駆動、slot で拡張 -->
 <template>
   <div class="data-table">
-    <!-- 具名插槽覆盖默认渲染 -->
+    <!-- 名前付きスロットでデフォルトの描画を上書き -->
     <table>
       <thead>
         <tr>
           <th v-for="col in columns" :key="col.key">
-            <!-- 支持自定义表头 -->
+            <!-- ヘッダーのカスタマイズに対応 -->
             <slot :name="`header-${col.key}`" :column="col">
               {{ col.title }}
             </slot>
@@ -51,7 +51,7 @@ wordCount: 223
       <tbody>
         <tr v-for="row in displayData" :key="row[rowKey]">
           <td v-for="col in columns" :key="col.key">
-            <!-- 支持自定义单元格 -->
+            <!-- セルのカスタマイズに対応 -->
             <slot :name="`cell-${col.key}`" :row="row" :column="col">
               {{ row[col.key] }}
             </slot>
@@ -60,9 +60,9 @@ wordCount: 223
       </tbody>
     </table>
 
-    <!-- 作用域插槽：自定义空状态 -->
+    <!-- スコープ付きスロット：空状態のカスタマイズ -->
     <slot name="empty" v-if="!displayData.length">
-      <div class="empty">暂无数据</div>
+      <div class="empty">データがありません</div>
     </slot>
   </div>
 </template>
@@ -71,22 +71,22 @@ wordCount: 223
 export default {
   name: 'DataTable',
   props: {
-    // 必填：列配置
+    // 必須：列の設定
     columns: {
       type: Array,
       required: true,
       validator: (cols) => cols.every(c => c.key && c.title),
     },
-    // 必填：数据
+    // 必須：データ
     data: { type: Array, default: () => [] },
-    // 行唯一标识
+    // 行を一意に識別するキー
     rowKey: { type: String, default: 'id' },
-    // 分页
+    // ページネーション
     pagination: {
       type: [Object, Boolean],
       default: () => ({ page: 1, pageSize: 20, total: 0 }),
     },
-    // 加载状态
+    // ローディング状態
     loading: { type: Boolean, default: false },
   },
   computed: {
@@ -101,26 +101,26 @@ export default {
 {% endraw %}
 ```
 
-## 原则 2：事件统一
+## 原則 2：イベントの統一
 
 ```javascript
-// 统一事件命名：on + 动词 + 名词
-// 好的命名
+// イベント名の統一ルール：on + 動詞 + 名詞
+// 良い命名
 this.$emit('change', value);
 this.$emit('select', row);
 this.$emit('page-change', { page, pageSize });
 this.$emit('search', queryParams);
 
-// 不好的命名
-this.$emit('input', value);        // v-model 专用
-this.$emit('update', value);       // 太模糊
-this.$emit('onPageChange');        // 带 on 前缀多余
+// 悪い命名
+this.$emit('input', value);        // v-model 専用
+this.$emit('update', value);       // 曖昧すぎる
+this.$emit('onPageChange');        // on プレフィックスは冗長
 ```
 
-## 原则 3：样式隔离 + 主题化
+## 原則 3：スタイルの分離 + テーマ化
 
 ```scss
-// 使用 CSS 变量实现主题
+// CSS 変数でテーマを実現
 :root {
   --dt-primary-color: #409eff;
   --dt-border-color: #e4e7ed;
@@ -149,14 +149,14 @@ this.$emit('onPageChange');        // 带 on 前缀多余
   }
 }
 
-// 暗色主题覆盖变量即可
+// ダークテーマは変数を上書きするだけ
 [data-theme='dark'] {
   --dt-border-color: #4c4d4f;
   --dt-bg-header: #2b2b2b;
 }
 ```
 
-## 发布和使用
+## 公開と利用方法
 
 ```json
 // package.json
@@ -172,31 +172,31 @@ this.$emit('onPageChange');        // 带 on 前缀多余
 ```
 
 ```javascript
-// 按需引入
+// 必要なものだけを import
 import { DataTable, SearchForm } from '@company/ui';
 
-// 全量引入
+// 一式まとめて import
 import CompanyUI from '@company/ui';
 Vue.use(CompanyUI);
 ```
 
-## 文档和示例
+## ドキュメントとサンプル
 
 ```markdown
-每个组件需要：
-1. Props 表格（名称、类型、默认值、说明）
-2. Events 表格
-3. Slots 表格
-4. 至少 3 个示例（基础用法、进阶用法、边界情况）
-5. 设计说明（什么时候用、什么时候不用）
+各コンポーネントには以下が必要：
+1. Props 表（名前・型・デフォルト値・説明）
+2. Events 表
+3. Slots 表
+4. 最低 3 つのサンプル（基本・応用・エッジケース）
+5. 設計メモ（使うべき場面・使わない方がよい場面）
 
-推荐用 vuepress 或 storybook 搭建文档站。
+ドキュメントサイトは VuePress か Storybook で構築するのがおすすめ。
 ```
 
 ## まとめ
 
-- 组件分三层：基础组件、业务组件、复合组件，职责清晰
-- API 设计遵循 props 驱动 + slot 扩展，减少使用者的理解成本
-- CSS 变量实现主题化，不用预处理器也能覆盖样式
-- 每个组件都需要完整文档和示例，降低团队学习成本
-- 内部组件库不追求大而全，解决团队实际痛点就好
+- コンポーネントは基礎・業務・複合の 3 層に分かれ、責務が明確。
+- API は props 駆動 + slot 拡張とし、利用者の理解コストを下げる。
+- CSS 変数でテーマ化し、プリプロセッサなしでもスタイルを上書きできる。
+- 各コンポーネントに丁寧なドキュメントとサンプルを用意し、チームの学習コストを下げる。
+- 社内ライブラリは「なんでも揃っていること」を目指さず、チームの実際の悩みを解消できれば十分。

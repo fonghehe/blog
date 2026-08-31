@@ -4,11 +4,11 @@ date: 2018-10-27 14:46:20
 tags:
   - 前端
 readingTime: 2
-description: "每個專案都在用 axios，但很多人還是把請求分散在各個元件裡。統一封裝攔截器，能讓認證、錯誤處理、loading 狀態管理這些事情隻寫一遍。"
-wordCount: 158
+description: "每個專案都在用 axios，但很多人還是把請求分散在各個元件裡。統一封裝攔截器，能讓認證、錯誤處理、loading 狀態管理這些事情只寫一遍。"
+wordCount: 157
 ---
 
-每個專案都在用 axios，但很多人還是把請求分散在各個元件裡。統一封裝攔截器，能讓認證、錯誤處理、loading 狀態管理這些事情隻寫一遍。
+每個專案都在用 axios，但很多人還是把請求分散在各個元件裡。統一封裝攔截器，能讓認證、錯誤處理、loading 狀態管理這些事情只寫一遍。
 
 ## 基礎封裝
 
@@ -74,7 +74,7 @@ service.interceptors.response.use(
         Message.error("登入已過期，請重新登入");
         break;
       case 403:
-        Message.error("沒有許可權執行此操作");
+        Message.error("沒有權限執行此操作");
         break;
       case 404:
         Message.error("請求的資源不存在");
@@ -170,14 +170,14 @@ export default {
 };
 ```
 
-## 全域性 loading 控製
+## 全域 loading 控制
 
 ```javascript
 let requestCount = 0;
 
 function showLoading() {
   if (requestCount === 0) {
-    // 展示全域性 loading
+    // 展示全域 loading
   }
   requestCount++;
 }
@@ -185,7 +185,7 @@ function showLoading() {
 function hideLoading() {
   requestCount--;
   if (requestCount === 0) {
-    // 隱藏全域性 loading
+    // 隱藏全域 loading
   }
 }
 
@@ -215,5 +215,5 @@ service.interceptors.response.use(
 
 - 請求攔截器：統一加 token、處理 GET 快取
 - 響應攔截器：統一處理業務錯誤碼、HTTP 狀態碼
-- API 模組：按業務拆分，元件裡隻調介面不處理 HTTP 細節
+- API 模組：按業務拆分，元件裡只調介面，不處理 HTTP 細節
 - 請求取消：列表頁快速翻頁時避免舊請求覆蓋新資料

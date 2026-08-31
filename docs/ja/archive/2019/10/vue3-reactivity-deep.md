@@ -3,12 +3,12 @@ title: "Vue 3リアクティビティの深掘り：definePropertyからProxyへ
 date: 2019-10-23 17:10:53
 tags:
   - Vue
-readingTime: 1
+readingTime: 2
 description: "Vue 3 将响应式系统从 `Object.defineProperty` 完全重写为 `Proxy`。这不是为了追时髦，而是为了彻底解决 Vue 2 中一些根本性缺陷。"
-wordCount: 209
+wordCount: 332
 ---
 
-Vue 3 将响应式系统从 `Object.defineProperty` 完全重写为 `Proxy`。这不是为了追时髦，而是为了彻底解决 Vue 2 中一些根本性缺陷。
+Vue 3 はレスポンシブシステムを `Object.defineProperty` から `Proxy` へと完全に書き直しました。これは流行りに乗るためではなく、Vue 2 のいくつかの根本的な欠陥を徹底的に解決するためです。
 
 ## Vue 2 の限界
 
@@ -27,11 +27,11 @@ this.$set(this.arr, 0, "new");
 Vue.set(obj, key, value);
 ```
 
-`Object.defineProperty` 在对象创建时遍历属性添加 getter/setter，所以后续新增的属性自然没有拦截。
+`Object.defineProperty` はオブジェクト作成時にプロパティを走査して getter/setter を追加するため、後から追加されたプロパティは当然ながら捕捉されません。
 
 ## Vue 3 の Proxyアプローチ
 
-`Proxy` 可以拦截对象的所有操作，包括属性新增和删除：
+`Proxy` はオブジェクトのすべての操作を捕捉でき、プロパティの追加や削除も含みます：
 
 ```javascript
 function reactive(target) {
@@ -125,4 +125,4 @@ count.value++; // 触发更新
 
 ## まとめ
 
-Vue 3 响应式系统的升级不只是技术选型的迭代，而是对原有设计局限的一次彻底修正。`Proxy` 的全拦截能力 + `WeakMap`索引的依赖图，这套设计已被证明性能和正确性都更好。
+Vue 3 のレスポンシブシステムの刷新は、単なる技術選択のイテレーションではなく、元の設計上の限界に対する徹底的な修正です。`Proxy` の全操作捕捉能力と `WeakMap` でインデックスされた依存関係グラフの組み合わせは、性能と正確性の両面で優れていることが実証されています。

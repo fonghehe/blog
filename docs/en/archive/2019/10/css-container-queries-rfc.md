@@ -4,15 +4,15 @@ date: 2019-10-08 17:48:44
 tags:
   - CSS
 readingTime: 3
-description: "在响应式设计中，我们一直依赖 `@media` 查询根据视口（viewport）大小来调整布局。但这种方式有一个根本性的缺陷：组件的行为取决于视口，而不是组件自身的尺寸。Container Queries 提案试图解决这个问题，让组件可以根据其父容器的尺寸来调整自身样式。"
-wordCount: 497
+description: "In responsive design, we've always relied on `@media` queries to adapt layouts based on the viewport size. But this approach has a fundamental flaw: a component's behavior depends on the viewport rather than on the component's own size. The Container Queries proposal aims to fix this by letting components adjust their styles based on the size of their parent container."
+wordCount: 339
 ---
 
-在响应式设计中，我们一直依赖 `@media` 查询根据视口（viewport）大小来调整布局。但这种方式有一个根本性的缺陷：组件的行为取决于视口，而不是组件自身的尺寸。Container Queries 提案试图解决这个问题，让组件可以根据其父容器的尺寸来调整自身样式。
+In responsive design, we've always relied on `@media` queries to adapt layouts based on the viewport size. But this approach has a fundamental flaw: a component's behavior depends on the viewport rather than on the component's own size. The Container Queries proposal aims to fix this by letting components adjust their styles based on the size of their parent container.
 
 ## Pain Points of Responsive Design
 
-假设你有一个卡片组件，在主内容区它应该横向排列，在侧边栏它应该纵向排列。使用 `@media` 查询：
+Suppose you have a card component that should lay out horizontally in the main content area but stack vertically in a sidebar. Using `@media` queries:
 
 ```css
 /* 只能根据视口宽度判断 */
@@ -29,11 +29,11 @@ wordCount: 497
 }
 ```
 
-问题在于：即使视口很宽，如果卡片被放在窄的侧边栏里，它仍然应该以窄屏模式展示。`@media` 查询无法处理这种场景。
+The problem is that even when the viewport is wide, if the card lives in a narrow sidebar it should still render in its narrow-screen layout. `@media` queries can't handle this scenario.
 
 ## Container Queries Proposal Core Concepts
 
-Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以查询父容器的尺寸，而不是视口的尺寸。提案中的语法大致如下：
+The core idea behind Container Queries (also known as Element Queries) is to let CSS query the size of a parent container instead of the viewport. The proposed syntax looks roughly like this:
 
 ```css
 /* 声明一个查询容器 */
@@ -75,7 +75,7 @@ Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以
 
 ### container-type
 
-`container-type` 定义一个元素作为查询容器，以及它可以被查询的维度：
+`container-type` declares an element as a query container and the dimension(s) that can be queried:
 
 ```css
 /* 只查询 inline-size（水平方向宽度） */
@@ -96,7 +96,7 @@ Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以
 
 ### container-name
 
-`container-name` 给容器命名，这样查询可以精确指向特定容器：
+`container-name` gives a container a name so that queries can target it precisely:
 
 ```css
 .main-content {
@@ -120,7 +120,7 @@ Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以
 }
 ```
 
-### container 简写
+### `container` shorthand
 
 ```css
 /* 等价于 container-type + container-name */
@@ -131,7 +131,7 @@ Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以
 
 ## Real-World Use Cases
 
-### 场景一：组件库中的响应式组件
+### Scenario 1: Responsive Components in a Component Library
 
 ```css
 .card-wrapper {
@@ -169,7 +169,7 @@ Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以
 }
 ```
 
-### 场景二：Dashboard 仪表盘
+### Scenario 2: Dashboards
 
 ```css
 .dashboard-grid {
@@ -203,7 +203,7 @@ Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以
 
 ## Simulating with ResizeObserver
 
-在原生支持到来之前，可以用 JavaScript + ResizeObserver 模拟：
+Until native support arrives, you can simulate this with JavaScript + ResizeObserver:
 
 ```js
 class ContainerQuery {
@@ -308,10 +308,10 @@ function Card() {
 
 ## Container Queries vs @media
 
-两者是互补关系，不是替代关系：
+The two are complementary, not substitutes for each other:
 
-- **@media**：适用于全局布局决策（页面级响应式）
-- **@container**：适用于组件级响应式（组件自适应）
+- **@media**: best for global layout decisions (page-level responsiveness)
+- **@container**: best for component-level responsiveness (a component adapts to its own context)
 
 ```css
 /* 全局布局用 @media */
@@ -331,10 +331,10 @@ function Card() {
 
 ## Summary
 
-- Container Queries 让组件可以根据父容器尺寸调整样式
-- 提案核心语法：`container-type`、`container-name`、`@container`
-- 解决了组件库在不同布局上下文中自适应的痛点
-- 截至 2019 年仍处于提案阶段，尚无浏览器原生支持
-- 可用 ResizeObserver + CSS 类名方式模拟实现
-- React Hook 封装可以简化组件中的使用
-- Container Queries 与 @media 查询是互补关系
+- Container Queries let components adjust their styles based on the size of their parent container
+- Core syntax of the proposal: `container-type`, `container-name`, `@container`
+- Solves the pain point of making component libraries adapt across different layout contexts
+- As of 2019 it is still a proposal, with no native browser support yet
+- Can be emulated with a ResizeObserver + CSS class-name approach
+- A React Hook wrapper can simplify usage inside components
+- Container Queries and `@media` queries are complementary

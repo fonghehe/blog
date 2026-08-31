@@ -4,11 +4,11 @@ date: 2023-05-12 11:13:10
 tags:
   - Frontend
 readingTime: 2
-description: "关于Happy DOM 轻量级测试环境，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 226
+description: "Many developers only know Happy DOM's lightweight test environment at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 219
 ---
 
-关于Happy DOM 轻量级测试环境，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Many developers only know Happy DOM's lightweight test environment at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -154,5 +154,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Happy DOM 轻量级测试环境不是银弹，需要根据项目规模和技术栈选择
+- Happy DOM's lightweight test environment is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

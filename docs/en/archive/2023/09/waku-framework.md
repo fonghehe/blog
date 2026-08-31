@@ -4,7 +4,7 @@ date: 2023-09-04 14:50:41
 tags:
   - Frontend
 readingTime: 2
-description: "We recently implemented Waku 轻量级 React RSC 框架， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar wo"
+description: "I recently explored Waku, the lightweight React RSC framework, with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 199
 ---
 

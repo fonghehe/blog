@@ -4,21 +4,21 @@ date: 2019-10-07 14:56:30
 tags:
   - Testing
 readingTime: 4
-description: "在组件化开发成为主流的今天，如何高效地开发、测试和文档化独立组件是一个重要课题。Storybook 是一个开源的 UI 组件开发环境，它让你可以在隔离环境中构建和展示组件，不依赖业务代码。本文将从零搭建一个完整的 Storybook 开发环境。"
-wordCount: 661
+description: "Now that component-based development is mainstream, efficiently developing, testing, and documenting standalone components has become an important challenge. Storybook is an open-source UI component development environment that lets you build and showcase components in isolation, free from business code. This article walks through setting up a complete Storybook development environment from scratch."
+wordCount: 468
 ---
 
-在组件化开发成为主流的今天，如何高效地开发、测试和文档化独立组件是一个重要课题。Storybook 是一个开源的 UI 组件开发环境，它让你可以在隔离环境中构建和展示组件，不依赖业务代码。本文将从零搭建一个完整的 Storybook 开发环境。
+Now that component-based development is mainstream, efficiently developing, testing, and documenting standalone components has become an important challenge. Storybook is an open-source UI component development environment that lets you build and showcase components in isolation, free from business code. This article walks through setting up a complete Storybook development environment from scratch.
 
 ## Project Initialization
 
-以 React 项目为例，使用 `npx` 初始化 Storybook：
+Taking a React project as an example, initialize Storybook with `npx`:
 
 ```bash
 npx -p @storybook/cli sb init
 ```
 
-初始化完成后，会自动安装依赖并创建 `.storybook` 配置目录和 `stories` 示例目录。项目结构如下：
+Once initialization finishes, the dependencies are installed automatically and a `.storybook` config directory plus a `stories` example directory are created. The project structure looks like this:
 
 ```
 ├── .storybook
@@ -32,7 +32,7 @@ npx -p @storybook/cli sb init
 
 ## Writing Your First Story
 
-一个 Story 就是组件在某种状态下的展示。推荐使用 Component Story Format (CSF)，这是 Storybook 5.2 引入的新格式：
+A Story is a rendering of a component in a particular state. The recommended format is Component Story Format (CSF), a new format introduced in Storybook 5.2:
 
 ```jsx
 import React from 'react';
@@ -53,11 +53,11 @@ export const Disabled = () => <Button disabled>不可点击</Button>;
 export const Loading = () => <Button loading>加载中...</Button>;
 ```
 
-每个导出的函数都是一个独立的 Story，在 Storybook 侧边栏中可以单独查看和交互。
+Each exported function is an independent Story that you can view and interact with individually in the Storybook sidebar.
 
 ## Using the Knobs Plugin for Dynamic Props
 
-`@storybook/addon-knobs` 是最常用的插件之一，可以在 Storybook 面板中动态调整组件的 props：
+`@storybook/addon-knobs` is one of the most commonly used addons—it lets you adjust a component's props dynamically from the Storybook panel:
 
 ```jsx
 import React from 'react';
@@ -89,7 +89,7 @@ export const Playground = () => {
 };
 ```
 
-在 `.storybook/addons.js` 中注册插件：
+Register the addons in `.storybook/addons.js`:
 
 ```js
 import '@storybook/addon-knobs/register';
@@ -99,7 +99,7 @@ import '@storybook/addon-links/register';
 
 ## Using the Actions Plugin to Capture Events
 
-Actions 插件可以在 Storybook 面板中查看组件触发的事件回调，方便调试交互逻辑：
+The Actions addon lets you see the event callbacks a component fires right in the Storybook panel, which makes debugging interactions easier:
 
 ```jsx
 import React from 'react';
@@ -122,7 +122,7 @@ export const WithFormSubmit = () => (
 
 ## Configuring Custom Webpack
 
-项目如果使用了 CSS Modules、TypeScript 等，需要扩展 Storybook 的 Webpack 配置：
+If your project uses CSS Modules, TypeScript, and the like, you'll need to extend Storybook's Webpack configuration:
 
 ```js
 // .storybook/webpack.config.js
@@ -177,7 +177,7 @@ module.exports = ({ config }) => {
 
 ## Adding the Docs Plugin
 
-Storybook 5.2 引入了 `@storybook/addon-docs`，用 MDX 格式编写文档更加直观：
+Storybook 5.2 introduced `@storybook/addon-docs`, which makes writing documentation more intuitive with the MDX format:
 
 ```mdx
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
@@ -210,7 +210,7 @@ import Button from '../components/Button';
 
 ## Global Wrapping with Decorators
 
-Decorators 可以给每个 Story 添加统一的上下文，比如主题 Provider、Redux Store、Router 等：
+Decorators let you wrap every Story with shared context, such as a theme Provider, a Redux store, or a Router:
 
 ```js
 {% raw %}
@@ -239,7 +239,7 @@ configure(loadStories, module);
 {% endraw %}
 ```
 
-也可以在单个 Story 级别添加 Decorator：
+You can also add a Decorator at the individual Story level:
 
 ```jsx
 {% raw %}
@@ -258,7 +258,7 @@ export default {
 
 ## Organizing Story Directory Structure
 
-推荐按照组件的实际目录结构来组织 Story 文件：
+It's recommended to organize Story files to mirror your actual component directory structure:
 
 ```
 src/
@@ -275,7 +275,7 @@ src/
 │   └── index.ts
 ```
 
-在 `.storybook/config.js` 中配置文件匹配规则：
+Configure the file-matching rules in `.storybook/config.js`:
 
 ```js
 const req = require.context('../src', true, /\.stories\.(js|tsx)$/);
@@ -283,7 +283,7 @@ const req = require.context('../src', true, /\.stories\.(js|tsx)$/);
 
 ## Integrating with Accessibility Checks
 
-Storybook 非常适合作为组件库的文档站点。可以结合 `@storybook/addon-a11y` 做无障碍检查：
+Storybook is a great fit as a documentation site for a component library. You can pair it with `@storybook/addon-a11y` to run accessibility checks:
 
 ```js
 // .storybook/config.js
@@ -292,17 +292,17 @@ import { withA11y } from '@storybook/addon-a11y';
 addDecorator(withA11y);
 ```
 
-这样每个 Story 面板都会显示无障碍检查结果，帮助确保组件的可访问性。
+This way every Story panel shows its accessibility check results, helping you keep components accessible.
 
 ## Building Static Sites
 
-Storybook 可以构建为静态 HTML 站点，方便部署到任何静态托管服务：
+Storybook can be built into a static HTML site, which makes it easy to deploy to any static hosting service:
 
 ```bash
 npm run build-storybook
 ```
 
-构建产物在 `storybook-static` 目录中，可以部署到 GitHub Pages、Netlify 或内部服务器。
+The build output lands in the `storybook-static` directory and can be deployed to GitHub Pages, Netlify, or an internal server.
 
 ```json
 {
@@ -316,11 +316,11 @@ npm run build-storybook
 
 ## Summary
 
-- Storybook 提供了隔离的组件开发环境，不依赖业务上下文
-- CSF (Component Story Format) 是推荐的 Story 编写格式
-- Knobs 插件支持动态调整 props，方便交互式调试
-- Actions 插件可以捕获和展示组件的事件回调
-- 自定义 Webpack 配置支持 CSS Modules、TypeScript 等
-- Decorators 可以提供全局或局部的上下文包装
-- addon-docs 支持用 MDX 格式编写组件文档
-- 可以构建为静态站点，方便团队共享和部署
+- Storybook provides an isolated component development environment, independent of business context
+- CSF (Component Story Format) is the recommended way to write stories
+- The Knobs addon supports dynamically adjusting props, making interactive debugging easy
+- The Actions addon can capture and display a component's event callbacks
+- Custom Webpack config supports CSS Modules, TypeScript, and similar tooling
+- Decorators can provide global or local context wrapping
+- addon-docs supports writing component docs in MDX format
+- It can be built into a static site for easy team sharing and deployment

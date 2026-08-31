@@ -327,7 +327,7 @@ const lat =
 
 ## 小結
 
-- 可選鏈 `?.` 安全地訪問深層嵌套屬性，中間層為 null/undefined 時返回 undefined
+- 可選鏈 `?.` 安全地訪問深層巢狀屬性，中間層為 null/undefined 時返回 undefined
 - 支持三種用法：屬性訪問 `?.prop`、數組索引 `?.[index]`、函數調用 `?.()`
 - 與空值合併運算符 `??` 配合使用可以提供默認值
 - TypeScript 3.7+ 原生支持，Babel 也有插件支持

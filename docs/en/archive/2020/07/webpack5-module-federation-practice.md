@@ -5,27 +5,27 @@ tags:
   - Webpack
   - Engineering
 readingTime: 4
-description: "Webpack 5 还在 beta 阶段，但 Module Federation 这个特性已经让团队非常兴奋了。简单说，它允许独立构建的应用之间在运行时共享模块——这解决的是微前端场景中最头疼的问题：跨应用共享组件和依赖。"
-wordCount: 533
+description: "Webpack 5 is still in beta, but the Module Federation feature already has the team excited. In short, it lets independently built applications share modules at runtime — solving the most painful problem in micro-frontends: sharing components and dependencies across apps."
+wordCount: 354
 ---
 
-Webpack 5 还在 beta 阶段，但 Module Federation 这个特性已经让团队非常兴奋了。简单说，它允许独立构建的应用之间在运行时共享模块——这解决的是微前端场景中最头疼的问题：跨应用共享组件和依赖。
+Webpack 5 is still in beta, but the Module Federation feature already has the team excited. In short, it lets independently built applications share modules at runtime — solving the most painful problem in micro-frontends: sharing components and dependencies across apps.
 
 ## Pain Points of Traditional Approaches
 
-之前做微前端，如果多个应用都要用同一个公共组件库，要么每个应用都打包一份（体积爆炸），要么用 externals + CDN（版本管理困难）。Module Federation 从根本上解决了这个问题。
+Before Module Federation, if multiple apps all needed the same shared component library, you either bundled a copy into each app (bloated size) or used externals + CDN (hard version management). Module Federation solves this at the root.
 
 ## Core Concepts
 
-- **Host**：消费远程模块的应用
-- **Remote**：提供模块的应用
-- **Shared**：跨应用共享的依赖（如 vue、react）
+- **Host**: the app that consumes remote modules
+- **Remote**: the app that provides modules
+- **Shared**: cross-app shared dependencies (e.g. vue, react)
 
-## 实战：拆分一个商品详情页
+## Walkthrough: Splitting a Product Detail Page
 
-假设我们有一个主应用 `shell`，需要消费商品组件库 `product-components` 和用户中心 `user-center`。
+Suppose we have a host app `shell` that consumes a product component library `product-components` and a user center `user-center`.
 
-### 1. 商品组件库（Remote）
+### 1. Product Component Library (Remote)
 
 ```javascript
 // product-components/webpack.config.js
@@ -139,7 +139,7 @@ export function useProduct(productId: Ref<string>) {
 }
 ```
 
-### 2. 用户中心（Remote）
+### 2. User Center (Remote)
 
 ```javascript
 // user-center/webpack.config.js
@@ -172,7 +172,7 @@ module.exports = {
 }
 ```
 
-### 3. 主应用（Host）
+### 3. Host App
 
 ```javascript
 // shell/webpack.config.js
@@ -250,9 +250,9 @@ export default defineComponent({
 </script>
 ```
 
-### 4. TypeScript 类型声明
+### 4. TypeScript Type Declarations
 
-远程模块没有本地类型，需要手动声明：
+Remote modules have no local types, so you have to declare them manually:
 
 ```typescript
 // shell/src/types/remote-modules.d.ts
@@ -293,7 +293,7 @@ declare module 'user_center/FavoriteButton' {
 
 ## Key shared Configuration Points
 
-`shared` 是 Module Federation 最关键的配置之一。如果配不好，要么依赖重复加载，要么出现 Vue 多实例导致响应式系统混乱：
+`shared` is one of the most critical Module Federation configurations. If set up poorly, you'll either load dependencies twice or end up with multiple Vue instances that break the reactivity system:
 
 ```javascript
 shared: {
@@ -306,9 +306,9 @@ shared: {
 }
 ```
 
-- `singleton: true` —— 对 Vue/React 这类有全局状态的库必须开启
-- `eager: true` —— 如果你的入口是同步的且需要立即使用共享库，开启它避免加载顺序问题
-- `strictVersion` —— 生产环境建议开启，开发环境关闭方便调试
+- `singleton: true` — must be enabled for libraries with global state like Vue/React
+- `eager: true` — if your entry point is synchronous and needs the shared library immediately, enable this to avoid loading-order issues
+- `strictVersion` — recommended on in production, off in development for easier debugging
 
 ## Runtime Loading Process
 
@@ -320,13 +320,13 @@ shared: {
   -> 按需加载远程模块
 ```
 
-第一次访问会有一定延迟（需要加载 remoteEntry.js 和共享依赖），后续切换页面时远程模块已被缓存，体验很好。
+The first visit incurs some latency (it has to load remoteEntry.js and the shared dependencies), but once you switch pages the remote modules are cached, giving a smooth experience.
 
 ## Summary
 
-- Module Federation 允许独立构建的应用在运行时共享模块，是微前端的利器
-- Host 消费模块，Remote 提供模块，Shared 管理共享依赖
-- 共享依赖建议开启 `singleton` 避免框架多实例
-- 远程模块的 TypeScript 类型需要手动声明
-- Webpack 5 目前还是 beta，生产使用需要评估稳定性
-- 相比 iframe、qiankun 等方案，Module Federation 粒度更细、性能更好
+- Module Federation lets independently built apps share modules at runtime, making it a powerful tool for micro-frontends.
+- The host consumes modules, the remote provides them, and shared manages the shared dependencies.
+- Enable `singleton` for shared dependencies to avoid multiple framework instances.
+- TypeScript types for remote modules must be declared manually.
+- Webpack 5 is still in beta, so evaluate its stability before using it in production.
+- Compared with approaches like iframes and qiankun, Module Federation offers finer granularity and better performance.

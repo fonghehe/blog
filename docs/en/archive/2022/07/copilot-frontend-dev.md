@@ -4,11 +4,11 @@ date: 2022-07-04 14:50:22
 tags:
   - Frontend
 readingTime: 2
-description: "关于GitHub Copilot 前端开发体验，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspectiv"
-wordCount: 199
+description: "Many developers only know the GitHub Copilot frontend development experience at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 188
 ---
 
-关于GitHub Copilot 前端开发体验，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Many developers only know the GitHub Copilot frontend development experience at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -116,7 +116,7 @@ export async function POST(req) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Common Pitfalls
 

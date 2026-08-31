@@ -5,14 +5,14 @@ tags:
   - パフォーマンス最適化
 readingTime: 2
 description: "読み込みパフォーマンスの最適化というテーマはコミュニティで何度も議論されてきたが、バージョンが更新されるたびに多くの結論を見直す必要がある。本記事は最新バージョンをもとに改めて整理したものだ。"
-wordCount: 497
+wordCount: 499
 ---
 
 読み込みパフォーマンスの最適化というテーマはコミュニティで何度も議論されてきたが、バージョンが更新されるたびに多くの結論を見直す必要がある。本記事は最新バージョンをもとに改めて整理したものだ。
 
 ## 入門ガイド
 
-重要なのはコアロジックを理解することだ：
+重要なのはコアとなるロジックを理解することです：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -52,7 +52,7 @@ observer.observe({ entryTypes: ["largest-contentful-paint", "first-input"] });
 
 ## 実際のシナリオへの適用
 
-まず基本的な実装方法を見てみよう：
+基本的な実装方法を見てみよう：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {

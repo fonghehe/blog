@@ -4,11 +4,11 @@ date: 2022-04-20 17:22:27
 tags:
   - Frontend
 readingTime: 2
-description: "关于Turbopack Alpha 版本体验，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 232
+description: "When it comes to the Turbopack Alpha experience, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter."
+wordCount: 210
 ---
 
-关于Turbopack Alpha 版本体验，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to the Turbopack Alpha experience, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter.
 
 ## Basic Principles
 
@@ -160,7 +160,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 ## Summary
 
-- Turbopack Alpha 版本体验 is not a silver bullet; choose based on your project scale and tech stack
+- The Turbopack Alpha experience is not a silver bullet; choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

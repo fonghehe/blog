@@ -5,7 +5,7 @@ tags:
   - セキュリティ
 readingTime: 3
 description: "フロントエンドセキュリティはすべての開発者が重視すべきトピックです。XSS攻撃を防ぐのは難しく、ユーザー入力をフィルタリングするだけでは完璧な防御はできません。CSP（Content Security Policy）はブラウザレベルでリソースの読み込みとスクリプトの実行を制限する仕組みで、XSS防御の重要な補完策となり"
-wordCount: 601
+wordCount: 607
 ---
 
 フロントエンドセキュリティはすべての開発者が重視すべきトピックです。XSS攻撃を防ぐのは難しく、ユーザー入力をフィルタリングするだけでは完璧な防御はできません。CSP（Content Security Policy）はブラウザレベルでリソースの読み込みとスクリプトの実行を制限する仕組みで、XSS防御の重要な補完策となります。
@@ -113,8 +113,8 @@ app.use((req, res, next) => {
 
 ## まとめ
 
-- CSP はスクリプトが注入されても実行を防止できる
-- 本番環境では meta タグではなく HTTP ヘッダーを使用する
-- inline スクリプトには `'unsafe-inline'` の代わりに `nonce` を使用する
-- `report-uri` で違反を監視・デバッグできる
-- 移行時は `Content-Security-Policy-Report-Only` から始めると安全
+- CSP はスクリプトが注入されても実行を防止できます
+- 本番環境では meta タグではなく HTTP ヘッダーを使用します
+- inline スクリプトには `'unsafe-inline'` の代わりに `nonce` を使用します
+- `report-uri` で違反を監視・デバッグできます
+- 移行時は `Content-Security-Policy-Report-Only` から始めると安全です

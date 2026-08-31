@@ -3,30 +3,30 @@ title: "React.lazy + Suspenseによるコード分割実践"
 date: 2019-08-05 11:29:50
 tags:
   - React
-readingTime: 5
-description: "随着单页应用规模不断膨胀，首屏加载的 JS bundle 体积越来越大。React 16.6 引入了 `React.lazy` 和 `Suspense`，让我们可以在不引入额外第三方库（如 react-loadable）的情况下实现代码分割。本文从实战角度出发，详细讲解如何在项目中落地这两个 API。"
-wordCount: 1002
+readingTime: 7
+description: "シングルページアプリケーションの規模が膨らむにつれ、初期ロード時のJSバンドルサイズはますます大きくなっている。React 16.6で導入された `React.lazy` と `Suspense` を使えば、react-loadableなどのサードパーティライブラリを追加せずにコード分割を実現できる。本記事では実践的な観点から、プロジェクトでこれら2つのAPIを活用する方法を詳しく解説する。"
+wordCount: 1597
 ---
 
-随着单页应用规模不断膨胀，首屏加载的 JS bundle 体积越来越大。React 16.6 引入了 `React.lazy` 和 `Suspense`，让我们可以在不引入额外第三方库（如 react-loadable）的情况下实现代码分割。本文从实战角度出发，详细讲解如何在项目中落地这两个 API。
+シングルページアプリケーションの規模が膨らむにつれ、初期ロード時のJSバンドルサイズはますます大きくなっている。React 16.6で導入された `React.lazy` と `Suspense` を使えば、react-loadableなどのサードパーティライブラリを追加せずにコード分割を実現できる。本記事では実践的な観点から、プロジェクトでこれら2つのAPIを活用する方法を詳しく解説する。
 
 ## コード分割が必要な理由
 
-在一个典型的 React SPA 中，所有路由页面的代码最终会被打包成一个巨大的 JS 文件。用户打开首页时，需要下载并解析整个 bundle，包括他根本不会访问的页面代码。这造成了两个问题：
+一般的なReact SPAでは、すべてのルートページのコードが最終的に1つの巨大なJSファイルにバンドルされる。ユーザーがホームページを開く際、アクセスしないページのコードも含めてバンドル全体をダウンロード・パースする必要がある。これにより2つの問題が生じる：
 
-1. **首次加载时间过长** — 用户需要等待整个应用下载完成才能看到内容
-2. **浪费带宽** — 用户可能只访问了 20% 的页面，却下载了 100% 的代码
+1. **初期ロード時間が長い** — アプリ全体のダウンロードが完了するまでコンテンツが表示されない
+2. **帯域幅の無駄** — ユーザーがアクセスするのは20%のページだけなのに、100%のコードをダウンロードする
 
-代码分割的核心思想：将代码按路由或功能拆分成多个 chunk，按需加载。
+コード分割の核心アイデア：コードをルートや機能ごとに複数のチャンクに分割し、必要に応じて読み込むこと。
 
 ## React.lazyの基本的な使い方
 
-`React.lazy` 接受一个函数，该函数需要动态调用 `import()`，返回一个 Promise。它会自动解析为一个可以渲染的 React 组件。
+`React.lazy` は関数を受け取り、その関数は動的に `import()` を呼び出してPromiseを返す必要がある。自動的にレンダリング可能なReactコンポーネントとして解決される。
 
 ```jsx
 import React, { Suspense } from 'react';
 
-// 使用 React.lazy 动态导入组件
+// React.lazyでコンポーネントを動的インポート
 const HomePage = React.lazy(() => import('./pages/Home'));
 const AboutPage = React.lazy(() => import('./pages/About'));
 const DashboardPage = React.lazy(() => import('./pages/Dashboard'));
@@ -46,13 +46,13 @@ function App() {
 }
 ```
 
-Webpack 在构建时会识别 `import()` 语法，自动将这些模块拆分成独立的 chunk 文件。
+Webpackはビルド時に `import()` 構文を認識し、これらのモジュールを自動的に独立したチャンクファイルに分割する。
 
 ## SuspenseのfallbackメカニズM
 
-`Suspense` 组件用于在懒加载组件还未就绪时展示一个 fallback UI。有几个关键点需要注意：
+`Suspense` コンポーネントは、遅延読み込み中のコンポーネントがまだ準備できていない時にフォールバックUIを表示するために使う。いくつか重要なポイントがある：
 
-### fallback 可以是任何 React 元素
+### fallbackには任意のReact要素を使用可能
 
 ```jsx
 <Suspense fallback={<Spinner />}>
@@ -65,7 +65,7 @@ Webpack 在构建时会识别 `import()` 语法，自动将这些模块拆分成
 
 <Suspense fallback={
   <div className="loading-wrapper">
-    <p>页面加载中...</p>
+    <p>ページを読み込み中...</p>
     <ProgressBar />
   </div>
 }>
@@ -73,7 +73,7 @@ Webpack 在构建时会识别 `import()` 语法，自动将这些模块拆分成
 </Suspense>
 ```
 
-### 多个 Suspense 边界可以嵌套
+### 複数のSuspense境界をネスト可能
 
 ```jsx
 function App() {
@@ -83,7 +83,7 @@ function App() {
       <Suspense fallback={<ContentSkeleton />}>
         <MainContent />
       </Suspense>
-      <Suspense fallback={<div>加载评论...</div>}>
+      <Suspense fallback={<div>コメントを読み込み中...</div>}>
         <Comments />
       </Suspense>
     </Suspense>
@@ -91,11 +91,11 @@ function App() {
 }
 ```
 
-外层 Suspense 捕获整个页面级别的加载状态，内层 Suspense 处理局部组件的加载。当内层的懒加载组件正在加载时，内层 fallback 生效，外层组件不受影响。
+外側のSuspenseはページ全体のロード状態をキャプチャし、内側のSuspenseは局所的なコンポーネントのロードを処理する。内側の遅延読み込みコンポーネントがロード中の場合、内側のfallbackが発動し、外側のコンポーネントは影響を受けない。
 
 ## ルートレベルのコード分割
 
-这是最常见的代码分割场景，按路由拆分：
+これは最も一般的なコード分割のシナリオで、ルートごとに分割する：
 
 ```jsx
 import React, { Suspense, lazy } from 'react';
@@ -138,9 +138,9 @@ function App() {
 }
 ```
 
-### 自定义 webpack chunk 名称
+### カスタムwebpackチャンク名
 
-默认的 chunk 名称是一串数字，调试时不够直观。可以通过 magic comment 指定：
+デフォルトのチャンク名は数字の羅列で、デバッグ時に分かりにくい。magic commentで指定できる：
 
 ```jsx
 const HomePage = lazy(() => import(
@@ -154,11 +154,11 @@ const SettingsPage = lazy(() => import(
 ));
 ```
 
-这样打包后会生成 `home.chunk.js`、`settings.chunk.js`，方便排查问题。
+これでバンドル後に `home.chunk.js` や `settings.chunk.js` が生成され、問題の特定が容易になる。
 
 ## コンポーネントレベルのコード分割
 
-除了路由级别，某些重量级组件也可以按需加载。比如一个图表库非常大，只有用户展开某个面板时才需要：
+ルートレベルだけでなく、一部の重いコンポーネントもオンデマンドで読み込める。たとえば、大きなチャートライブラリがあり、ユーザーがパネルを展開した時にだけ必要な場合など：
 
 ```jsx
 import React, { Suspense, useState } from 'react';
@@ -173,13 +173,13 @@ function Dashboard() {
 
   return (
     <div>
-      <h1>仪表盘</h1>
+      <h1>ダッシュボード</h1>
       <button onClick={() => setShowChart(true)}>
-        显示图表
+        チャートを表示
       </button>
 
       {showChart && (
-        <Suspense fallback={<div>图表加载中...</div>}>
+        <Suspense fallback={<div>チャートを読み込み中...</div>}>
           <HeavyChart />
         </Suspense>
       )}
@@ -190,7 +190,7 @@ function Dashboard() {
 
 ## Error Boundaryを使った読み込み失敗の処理
 
-网络请求可能失败，chunk 文件可能加载失败。我们需要一个错误边界来捕获这些异常：
+ネットワークリクエストが失敗したり、チャンクファイルの読み込みに失敗する可能性がある。これらの例外をキャッチするためのエラーバウンダリが必要だ：
 
 ```jsx
 import React, { Component } from 'react';
@@ -206,7 +206,7 @@ class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('组件加载失败:', error, errorInfo);
+    console.error('コンポーネントの読み込み失敗:', error, errorInfo);
   }
 
   handleRetry = () => {
@@ -217,9 +217,9 @@ class ErrorBoundary extends Component {
     if (this.state.hasError) {
       return (
         <div className="error-fallback">
-          <h2>页面加载失败</h2>
+          <h2>ページの読み込みに失敗しました</h2>
           <p>{this.state.error?.message}</p>
-          <button onClick={this.handleRetry}>重试</button>
+          <button onClick={this.handleRetry}>再試行</button>
         </div>
       );
     }
@@ -228,7 +228,7 @@ class ErrorBoundary extends Component {
   }
 }
 
-// 使用方式
+// 使い方
 function App() {
   return (
     <ErrorBoundary>
@@ -242,12 +242,12 @@ function App() {
 
 ## 先読み付きルート方法
 
-用户 hover 到链接时就开始预加载，点击时组件已经就绪，体验更好：
+ユーザーがリンクにホバーした時点でプリロードを開始し、クリック時にはコンポーネントが既に準備できているため、体験が向上する：
 
 ```jsx
 import React, { Suspense, lazy, useState } from 'react';
 
-// 创建一个支持预加载的 lazy 包装函数
+// プリロード対応のlazyラップ関数を作成
 function lazyWithPreload(factory) {
   const Component = lazy(factory);
   Component.preload = factory;
@@ -264,7 +264,7 @@ function NavLink({ to, children, component: LazyComp }) {
     <Link
       to={to}
       onMouseEnter={() => {
-        // 鼠标悬停时预加载
+        // マウスホバー時にプリロード
         if (LazyComp && LazyComp.preload) {
           LazyComp.preload();
         }
@@ -280,7 +280,7 @@ function App() {
     <Router>
       <nav>
         <NavLink to="/dashboard" component={Dashboard}>
-          仪表盘
+          ダッシュボード
         </NavLink>
       </nav>
       <Suspense fallback={<Loading />}>
@@ -295,7 +295,7 @@ function App() {
 
 ## React.lazy向けWebpack設定
 
-为了让代码分割更高效，建议在 Webpack 中配置 `splitChunks`：
+コード分割をより効率的にするため、Webpackで `splitChunks` を設定することを推奨する：
 
 ```js
 // webpack.config.js
@@ -321,33 +321,33 @@ module.exports = {
 };
 ```
 
-这样 vendor（react、react-dom 等）会被提取到单独的 chunk，并利用浏览器缓存。
+これでvendor（react、react-domなど）が個別のチャンクに抽出され、ブラウザキャッシュを活用できる。
 
 ## 分割効果の検証
 
-构建完成后，可以使用 source-map-explorer 或直接查看构建产物：
+ビルド完了後、source-map-explorerを使うか、ビルド成果物を直接確認できる：
 
 ```bash
-# 使用 source-map-explorer 分析
+# source-map-explorerで分析
 npx source-map-explorer build/static/js/*.js
 
-# 或使用 webpack-bundle-analyzer
+# またはwebpack-bundle-analyzerを使用
 npx webpack-bundle-analyzer build/static/js/*.js
 ```
 
-在 Chrome DevTools 的 Network 面板中，切换路由时应该能看到新的 chunk 文件被按需加载。
+Chrome DevToolsのNetworkパネルで、ルート切り替え時に新しいチャンクファイルがオンデマンドで読み込まれるのを確認できるはずだ。
 
 ## 既知の制限
 
-1. **SSR 不支持** — `React.lazy` 不支持服务端渲染，SSR 场景需要使用 `@loadable/component`
-2. **嵌套 lazy 不生效** — 不能在 lazy 组件内部再嵌套 lazy 并期望 Suspense 捕获
-3. **错误处理需要额外代码** — Suspense 本身不处理加载错误，必须配合 Error Boundary
+1. **SSR非対応** — `React.lazy` はサーバーサイドレンダリングをサポートしていない。SSRの場合は `@loadable/component` を使う必要がある
+2. **ネストしたlazyは機能しない** — lazyコンポーネント内でさらにlazyをネストしても、Suspenseでキャッチすることは期待できない
+3. **エラー処理には追加コードが必要** — Suspense自体は読み込みエラーを処理しないため、Error Boundaryとの併用が必須
 
 ## まとめ
 
-- `React.lazy` + `Suspense` 是 React 官方提供的代码分割方案，简单且无需额外依赖
-- 路由级别和组件级别都可以做代码分割，推荐从路由级别开始
-- 必须配合 Error Boundary 处理 chunk 加载失败的场景
-- 可以通过 `preload` 技巧在用户 hover 时提前加载，提升体验
-- SSR 项目暂不适用 React.lazy，需使用 `@loadable/component` 等替代方案
-- 合理配置 Webpack `splitChunks` 可以将公共依赖提取出来，进一步优化加载性能
+- `React.lazy` + `Suspense` はReact公式のコード分割ソリューションで、シンプルかつ追加依存不要
+- ルートレベルとコンポーネントレベルの両方でコード分割が可能だが、まずはルートレベルから始めることを推奨
+- チャンクの読み込み失敗に備えて、Error Boundaryとの併用が必須
+- `preload` のテクニックでユーザーのホバー時に事前読み込みし、体験を向上できる
+- SSRプロジェクトではReact.lazyは使えないため、`@loadable/component` などの代替案が必要
+- Webpackの `splitChunks` を適切に設定することで共通依存を抽出でき、ロードパフォーマンスをさらに最適化できる

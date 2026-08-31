@@ -3,33 +3,33 @@ title: "Browser Rendering Pipeline: From Parsing to Painting"
 date: 2019-11-07 09:32:47
 tags:
   - Performance Optimization
-readingTime: 5
-description: "理解浏览器的渲染流水线是前端性能优化的基础。当我们修改 CSS 属性时，浏览器会经过一系列复杂的处理步骤才能将像素显示到屏幕上。了解每一步做了什么，可以帮助我们做出更明智的性能决策。"
-wordCount: 889
+readingTime: 4
+description: "Understanding the browser's rendering pipeline is the foundation of front-end performance optimization. Whenever we change a CSS property, the browser runs through a series of complex processing steps before pixels reach the screen. Knowing what each step does helps us make smarter performance decisions."
+wordCount: 582
 ---
 
-理解浏览器的渲染流水线是前端性能优化的基础。当我们修改 CSS 属性时，浏览器会经过一系列复杂的处理步骤才能将像素显示到屏幕上。了解每一步做了什么，可以帮助我们做出更明智的性能决策。
+Understanding the browser's rendering pipeline is the foundation of front-end performance optimization. Whenever we change a CSS property, the browser runs through a series of complex processing steps before pixels reach the screen. Knowing what each step does helps us make smarter performance decisions.
 
 ## Rendering Pipeline Overview
 
-浏览器将 HTML 转换为屏幕上像素的过程被称为像素流水线（Pixel Pipeline），主要包含以下步骤：
+The process of turning HTML into on-screen pixels is known as the pixel pipeline. It mainly consists of the following steps:
 
 ```
 JavaScript → Style → Layout → Paint → Composite
              计算样式   布局     绘制    合成
 ```
 
-1. **JavaScript**：执行 JS，修改 DOM 或 CSSOM
-2. **Style（样式计算）**：计算每个元素的最终样式
-3. **Layout（布局）**：计算元素的几何信息（位置和大小）
-4. **Paint（绘制）**：将元素绘制到图层上（边框、背景、文字等）
-5. **Composite（合成）**：将多个图层合成为最终的页面
+1. **JavaScript**: Execute JS, modifying the DOM or CSSOM
+2. **Style**: Compute the final style of each element
+3. **Layout**: Compute the geometry (position and size) of each element
+4. **Paint**: Draw the element onto a layer (border, background, text, etc.)
+5. **Composite**: Merge multiple layers into the final page
 
 ## 1. Parsing Phase
 
-### HTML 解析与 DOM 树
+### HTML Parsing and the DOM Tree
 
-浏览器首先将 HTML 解析为 DOM（Document Object Model）树：
+The browser first parses HTML into a DOM (Document Object Model) tree:
 
 ```html
 <html>
@@ -45,7 +45,7 @@ JavaScript → Style → Layout → Paint → Composite
 </html>
 ```
 
-解析过程：
+The parsing process:
 
 ```
 HTML 文本
@@ -66,9 +66,9 @@ DOM Tree
                         └── p → "段落"
 ```
 
-### CSS 解析与 CSSOM
+### CSS Parsing and CSSOM
 
-CSS 文件被解析为 CSSOM（CSS Object Model）树：
+CSS files are parsed into a CSSOM (CSS Object Model) tree:
 
 ```css
 .container {
@@ -82,9 +82,9 @@ h1 {
 }
 ```
 
-CSSOM 也是一个树形结构，每个节点包含样式规则。CSS 的解析是**渲染阻塞**的，因为浏览器需要完整的样式信息才能进行布局。
+The CSSOM is also a tree structure, where each node holds style rules. CSS parsing is **render-blocking**, because the browser needs the complete style information before it can perform layout.
 
-### 关键渲染路径
+### The Critical Rendering Path
 
 ```
 HTML ──→ DOM ──────┐
@@ -92,15 +92,15 @@ HTML ──→ DOM ──────┐
 CSS  ──→ CSSOM ────┘
 ```
 
-DOM 和 CSSOM 合并为渲染树（Render Tree），只包含可见元素：
+The DOM and CSSOM are merged into the render tree, which contains only the visible elements:
 
-- `<head>` 及其子元素不在渲染树中
-- `display: none` 的元素不在渲染树中
-- `visibility: hidden` 的元素在渲染树中（占用空间）
+- The `<head>` element and its children are not in the render tree
+- Elements with `display: none` are not in the render tree
+- Elements with `visibility: hidden` are in the render tree (they still take up space)
 
 ## 2. Style Calculation
 
-样式计算阶段，浏览器将所有 CSS 规则应用到 DOM 节点上，计算出每个元素的最终样式：
+During the style calculation phase, the browser applies every CSS rule to the DOM nodes and computes the final style of each element:
 
 ```css
 /* 多个规则可能匹配同一个元素 */
@@ -109,7 +109,7 @@ p { color: black; }
 #main p { color: red; }
 ```
 
-浏览器会计算 CSS 优先级（Specificity），确定最终样式。这个过程的结果是一个 `ComputedStyle` 对象，可以通过 `window.getComputedStyle()` 查看：
+The browser computes CSS specificity to determine the final style. The result is a `ComputedStyle` object, which you can inspect via `window.getComputedStyle()`:
 
 ```js
 const el = document.querySelector('.title');
@@ -121,7 +121,7 @@ console.log(styles.display);     // "block"
 
 ## 3. Layout
 
-布局阶段计算每个元素的几何信息：位置、大小。这个过程也叫做 Reflow（回流）：
+The layout phase computes the geometry of each element: its position and size. This process is also known as reflow:
 
 ```js
 // 触发 Layout 的操作
@@ -132,9 +132,9 @@ element.offsetWidth;            // 同上
 element.getBoundingClientRect();
 ```
 
-### 布局的影响范围
+### The Reach of Layout
 
-修改一个元素的布局可能影响其他元素：
+Changing the layout of one element can affect others:
 
 ```
 // 修改一个元素的宽度
@@ -150,7 +150,7 @@ element.getBoundingClientRect();
 
 ## 4. Paint
 
-绘制阶段将元素的视觉效果绘制到图层上。绘制是按图层（Layer）进行的：
+The paint phase draws each element's visual effects onto layers. Painting happens per layer:
 
 ```js
 // 以下 CSS 属性的修改只会触发 Paint，不会触发 Layout
@@ -161,15 +161,15 @@ element.style.borderRadius = '8px';    // 只绘制
 element.style.visibility = 'hidden';   // 只绘制
 ```
 
-### 绘制的类型
+### Types of Painting
 
-- **绘制记录（Paint Records）**：记录了绘制操作的列表
-- **光栅化（Rasterization）**：将绘制记录转换为像素位图
-- 光栅化通常在 GPU 上进行，现代浏览器使用合成器线程来处理
+- **Paint records**: a list of drawing operations
+- **Rasterization**: converts paint records into pixel bitmaps
+- Rasterization usually runs on the GPU; modern browsers handle it with a compositor thread
 
 ## 5. Composite
 
-现代浏览器将页面分为多个图层（Compositing Layers），单独绘制后再合成：
+Modern browsers split the page into multiple compositing layers, which are painted separately and then composited:
 
 ```
 ┌────────────────────────────┐
@@ -183,7 +183,7 @@ element.style.visibility = 'hidden';   // 只绘制
 └────────────────────────────┘
 ```
 
-### 创建新图层的条件
+### Conditions for Creating a New Layer
 
 ```css
 /* 以下属性会创建新的合成层 */
@@ -222,15 +222,15 @@ element.style.visibility = 'hidden';   // 只绘制
 
 ## Impact Range of Different CSS Properties
 
-理解哪些属性变化会触发流水线的哪些步骤，是性能优化的关键：
+Understanding which property changes trigger which pipeline stages is the key to performance optimization:
 
-| 修改的属性 | 触发的阶段 | 性能影响 |
-|-----------|-----------|---------|
-| width, height, margin, padding | Layout → Paint → Composite | 最慢（全流水线） |
-| color, background, box-shadow | Paint → Composite | 较快（跳过 Layout） |
-| transform, opacity | Composite | 最快（只合成） |
+| Property changed | Stages triggered | Performance impact |
+|------------------|------------------|--------------------|
+| width, height, margin, padding | Layout → Paint → Composite | Slowest (full pipeline) |
+| color, background, box-shadow | Paint → Composite | Faster (skips Layout) |
+| transform, opacity | Composite | Fastest (compositing only) |
 
-### 使用 transform 替代 top/left
+### Use `transform` Instead of `top`/`left`
 
 ```css
 /* 差：每次都会触发布局 */
@@ -251,7 +251,7 @@ element.style.visibility = 'hidden';   // 只绘制
 }
 ```
 
-### 使用 opacity 替代 visibility 的动画
+### Use `opacity` Instead of `visibility` for Animations
 
 ```css
 /* opacity 只触发合成 */
@@ -267,7 +267,7 @@ element.style.visibility = 'hidden';   // 只绘制
 
 ## Forced Synchronous Layout
 
-交替读写布局属性会导致浏览器强制同步布局，严重影响性能：
+Alternating reads and writes of layout properties forces the browser into a synchronous layout, which severely hurts performance:
 
 ```js
 // 差：读写交替，每次写都强制布局
@@ -291,9 +291,9 @@ function resizeAllOptimized() {
 }
 ```
 
-## 布局抖动（Layout Thrashing）
+## Layout Thrashing
 
-布局抖动是指在同一帧内反复触发布局的性能问题：
+Layout thrashing is a performance problem caused by repeatedly triggering layout within the same frame:
 
 ```js
 // 差：在循环中读写布局属性
@@ -345,11 +345,11 @@ measureRender('列表渲染', () => {
 
 ## Summary
 
-- 渲染流水线：JavaScript → Style → Layout → Paint → Composite
-- 修改 `width`、`height` 等几何属性触发全流水线（最慢）
-- 修改 `color`、`background` 等属性只触发 Paint（较快）
-- 修改 `transform`、`opacity` 只触发 Composite（最快）
-- 强制同步布局（读写交替）会严重影响性能
-- 使用 `will-change` 提示浏览器提前创建合成层
-- 使用 `requestAnimationFrame` 批量处理 DOM 更新
-- 用 `transform` 替代 `top/left` 做动画
+- Rendering pipeline: JavaScript → Style → Layout → Paint → Composite
+- Changing geometric properties like `width` and `height` triggers the full pipeline (slowest)
+- Changing properties like `color` and `background` triggers only Paint (faster)
+- Changing `transform` and `opacity` triggers only Composite (fastest)
+- Forced synchronous layout (alternating reads and writes) severely hurts performance
+- Use `will-change` to hint the browser to create compositing layers ahead of time
+- Batch DOM updates with `requestAnimationFrame`
+- Use `transform` instead of `top`/`left` for animations

@@ -6,14 +6,14 @@ tags:
   - TypeScript
 readingTime: 2
 description: "React 复合组件模式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 302
+wordCount: 285
 ---
 
-React 复合组件模式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+React 复合组件模式在前端用得越来越普遍。本文结合实际项目，聊聊它的核心思路和落地方式。
 
 ## 基础用法
 
-实际项目中的用法会更复杂一些：
+先看最基础的写法：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -36,11 +36,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+把逻辑抽成 Hook 之后，代码更好测，也更容易扩展。
 
 ## 进阶用法
 
-以下是一个完整的示例：
+再往前一步，看一个更完整的例子：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -63,11 +63,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界情况要处理好，生产环境里这点很关键。
 
 ## 实战案例
 
-关键在于理解核心逻辑：
+理解核心逻辑，剩下的就是怎么用：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -90,11 +90,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化得看具体场景，不是每处都值得过度优化。
 
 ## 性能优化
 
-我们可以通过以下方式来改进：
+可以从这几个角度去改进：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -117,7 +117,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套写法已经在线上稳定跑了半年多，是经过实战检验的。
 
 ## 小结
 

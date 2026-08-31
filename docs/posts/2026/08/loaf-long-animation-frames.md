@@ -5,7 +5,7 @@ tags:
   - 性能优化
 readingTime: 7
 description: "PerformanceObserver long-animation-frame（LoAF）API 解决了 Long Task API 无法归因的核心缺陷。本文详解 LoAF 的字段含义、生产环境采集方案，并通过第三方脚本阻塞、长渲染通道、样式布局抖动三个真实案例展示如何用 LoAF 驱动 INP 优化。"
-wordCount: 3100
+wordCount: 1343
 ---
 
 INP（Interaction to Next Paint）在 2024 年正式取代 FID 成为 Core Web Vitals 指标后，前端团队面临一个尴尬的现实：我们知道页面响应慢，但不知道是谁让它慢的。Long Task API 能告诉你"有一个 300ms 的长任务"，却无法告诉你这 300ms 里到底在执行什么代码。这个归因盲区在 2026 年被 Long Animation Frame API（LoAF）填上了。

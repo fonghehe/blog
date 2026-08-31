@@ -151,7 +151,7 @@ import App from './App.vue'
 const app = createApp(App)
 
 // 以 Vue 2 模式運行，但底層是 Vue 3
-// 控製臺會警告哪些 API 即將被移除
+// 控制臺會警告哪些 API 即將被移除
 app.config.compatConfig = {
   MODE: 2 // 完全 Vue 2 兼容
 }

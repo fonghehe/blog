@@ -32,10 +32,10 @@ TypeScript 的 `strict` 模式啟用了一系列嚴格的型別檢查選項，�
 
 ## noImplicitAny
 
-禁止隱式的 `any` 型別。所有變數、引數都必須有明確的型別：
+禁止隱式的 `any` 型別。所有變數、參數都必須有明確的型別：
 
 ```ts
-// 關閉時（寬鬆模式）：引數隱式為 any
+// 關閉時（寬鬆模式）：參數隱式為 any
 function add(a, b) {
   return a + b;
 }
@@ -45,7 +45,7 @@ function add(a: number, b: number): number {
   return a + b;
 }
 
-// 或者用型別推斷（引數還是需要標註）
+// 或者用型別推斷（參數還是需要標註）
 const multiply = (a: number, b: number) => a * b;
 ```
 
@@ -67,7 +67,7 @@ document.addEventListener('click', (event: MouseEvent) => {
 //   return `Hello, ${name}`;
 // }
 
-// 解決：標註解構引數的型別
+// 解決：標註解構參數的型別
 function greet({ name }: { name: string }) {
   return `Hello, ${name}`;
 }
@@ -128,7 +128,7 @@ function displayUser(user: User | null) {
   }
 
   // 必須處理可能為 null 的屬性
-  const emailDisplay = user.email ?? '未繫結郵箱';
+  const emailDisplay = user.email ?? '未綁定郵箱';
   const avatarUrl = user.avatar ?? '/default-avatar.png';
 
   return `
@@ -156,18 +156,18 @@ const firstUserSafe = users[0]; // 需要檢查
 
 ## strictFunctionTypes
 
-函式引數型別檢查更嚴格，使用逆變（contravariance）檢查：
+函式參數型別檢查更嚴格，使用逆變（contravariance）檢查：
 
 ```ts
-// 關閉時：引數型別是雙向協變的
+// 關閉時：參數型別是雙向協變的
 type Handler = (event: Event) => void;
 type MouseHandler = (event: MouseEvent) => void;
 
 const mouseHandler: MouseHandler = (e) => console.log(e.clientX);
 const handler: Handler = mouseHandler; // 不報錯
 
-// 開啟後：引數型別是逆變的
-// MouseHandler 的引數比 Handler 更具體
+// 開啟後：參數型別是逆變的
+// MouseHandler 的參數比 Handler 更具體
 // 不能將 MouseHandler 賦值給 Handler
 // 因為 Handler 可能被呼叫時傳入非 MouseEvent 的 Event
 ```
@@ -212,7 +212,7 @@ class User {
 }
 ```
 
-處理策略：對確實不知道型別的引數，暫時使用 `any` 或 `unknown`：
+處理策略：對確實不知道型別的參數，暫時使用 `any` 或 `unknown`：
 
 ```ts
 // 對第三方庫的回撥
@@ -271,7 +271,7 @@ function processAny(data: any) {
   data.foo.bar; // 不報錯，但執行時可能出錯
 }
 
-// unknown：強製型別檢查
+// unknown：強制型別檢查
 function processUnknown(data: unknown) {
   // data.foo.bar; // 報錯：'data' is of type 'unknown'
 
@@ -338,7 +338,7 @@ function isApiResponse<T>(value: unknown): value is ApiResponse<T> {
 ## 小結
 
 - `strict: true` 包含 7 個嚴格型別檢查選項
-- `noImplicitAny` 禁止隱式 any，`strictNullChecks` 強製處理 null/undefined
+- `noImplicitAny` 禁止隱式 any，`strictNullChecks` 強制處理 null/undefined
 - 建議漸進式啟用：先 noImplicitAny，再 strictNullChecks，最後全部開啟
 - 使用 `unknown` 替代 `any`，提高型別安全性
 - 型別守衛（type guard）是處理聯合型別的關鍵工具

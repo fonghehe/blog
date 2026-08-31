@@ -3,16 +3,16 @@ title: "React Router v6 新機能プレビュー"
 date: 2020-03-13 09:53:22
 tags:
   - React
-readingTime: 2
-description: "最近在团队中落地React Router v6 新特性预览，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 314
+readingTime: 3
+description: "最近チームでReact Router v6 新機能プレビューを導入し、かなりの経験を積んだ。同様の作業の参考になれば幸いだ。"
+wordCount: 466
 ---
 
-最近在团队中落地React Router v6 新特性预览，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近チームで React Router v6 の新機能プレビューを進め、いくつかの知見が溜まった。似たような取り組みをする人の参考になればとまとめておく。
 
 ## コアコンセプト
 
-以下是一个完整的示例：
+以下は全体のサンプルだ：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -37,11 +37,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理に注意すること。これは本番環境では極めて重要だ。
 
 ## 深掘り解析
 
-关键在于理解核心逻辑：
+鍵となるのは中核となるロジックを理解することだ：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -66,11 +66,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能最適化は具体的な場面に合わせる必要があり、すべての場合で過剰な最適化が必要なわけではない。
 
 ## 実装経験
 
-我们可以通过以下方式来改进：
+次の方法で改善できる：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -95,11 +95,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番環境で半年以上安定して稼働しており、実際に検証済みだ。
 
 ## 调优策略
 
-先来看基本的实现方式：
+基本的な実装のしかたから見ていこう：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -124,11 +124,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理や境界条件も考慮する必要がある。
 
 ## 注意事項
 
-在这个基础上，我们可以进一步优化：
+この上にさらに最適化を重ねられる：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -153,10 +153,10 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模なプロジェクトで非常に実用的であり、保守コストを大きく下げられる。
 
 ## まとめ
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- コミュニティの動向を追い、技術選択は継続的に育てていく必要がある
+- 新しい技術だからといって使うために使ってはならない
+- コード例はあくまで参考であり、業務の場面に合わせて調整する必要がある

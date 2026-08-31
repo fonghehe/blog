@@ -4,7 +4,7 @@ date: 2022-06-23 14:31:55
 tags:
   - Frontend
 readingTime: 2
-description: "Speculation Rules API 预加载规则This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides"
+description: "The Speculation Rules API for preload rules has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
 wordCount: 164
 ---
 

@@ -3,16 +3,16 @@ title: "Vue 3 リアクティブシステムのソースコード解析"
 date: 2020-01-03 16:10:29
 tags:
   - Vue
-readingTime: 2
+readingTime: 3
 description: "Vue 3 的响应式系统基于 ES6 Proxy 重写，彻底告别了 Vue 2 的 `Object.defineProperty` 方案。理解其源码实现，不仅能帮助我们写出更高效的代码，还能避免一些隐蔽的性能陷阱。"
-wordCount: 335
+wordCount: 510
 ---
 
-Vue 3 的响应式系统基于 ES6 Proxy 重写，彻底告别了 Vue 2 的 `Object.defineProperty` 方案。理解其源码实现，不仅能帮助我们写出更高效的代码，还能避免一些隐蔽的性能陷阱。
+Vue 3 のリアクティブシステムは ES6 の Proxy で書き直され、Vue 2 の `Object.defineProperty` 方式は完全に過去のものになった。そのソース実装を理解すれば、より効率的なコードを書けるだけでなく、いくつかの目に見えないパフォーマンスの落とし穴も避けられる。
 
 ## ProxyとReflectの連携
 
-Vue 3 使用 `Proxy` 拦截对象的读写操作，配合 `Reflect` 确保 `this` 指向正确。
+Vue 3 は `Proxy` を使ってオブジェクトの読み書きをフックし、`Reflect` と組み合わせて `this` の向きを正しく保つ。
 
 ```javascript
 function reactive(target) {
@@ -40,11 +40,11 @@ console.log(observed.name)
 observed.version = 3.1
 ```
 
-相比 Vue 2 的 `Object.defineProperty`，Proxy 可以拦截新增属性和删除操作，不需要 `Vue.set` 和 `Vue.delete`。
+Vue 2 の `Object.defineProperty` と異なり、Proxy はプロパティの追加や削除もフックでき、`Vue.set` や `Vue.delete` は不要だ。
 
 ## 依存収集のMap構造
 
-响应式系统用一个三层 Map 结构存储依赖关系：`targetMap -> depsMap -> dep`。
+リアクティブシステムは3階層の Map 構造で依存関係を保持する：`targetMap -> depsMap -> dep`。
 
 ```javascript
 const targetMap = new WeakMap()
@@ -81,11 +81,11 @@ function trigger(target, key) {
 }
 ```
 
-`WeakMap` 确保当 `target` 被垃圾回收时，对应的依赖信息自动清除，避免内存泄漏。
+`WeakMap` により、`target` がガベージコレクションされたときに対応する依存情報も自動的に消去され、メモリリークを防ぐ。
 
 ## refとreactiveの違い
 
-`ref` 本质上是对基本类型的包装，内部用 `reactive` 包裹一个 `{ value: ... }` 对象。
+`ref` は本質的に基本型へのラッパーで、内部では `reactive` で `{ value: ... }` オブジェクトを包んでいる。
 
 ```javascript
 function ref(rawValue) {
@@ -122,9 +122,9 @@ const user = ref({ name: 'test' })
 user.value.name = 'updated' // 这也会触发响应式
 ```
 
-## computed 的惰性求值
+## computed の遅延評価
 
-`computed` 返回一个带有缓存的 ref。只有依赖变化时才会重新计算。
+`computed` はキャッシュ付きの ref を返す。依存が変化したときだけ再計算される。
 
 ```javascript
 function computed(getter) {
@@ -164,8 +164,8 @@ console.log(doubled.value) // 10，重新计算
 
 ## まとめ
 
-- Proxy 替代 defineProperty，解决新增/删除属性无响应式的问题
-- 依赖收集用 WeakMap -> Map -> Set 三层结构，WeakMap 自动处理垃圾回收
-- ref 本质是包了一层 `{ value }` 的 reactive
-- computed 通过 dirty 标记实现惰性求值和缓存
-- 理解底层机制有助于排查响应式不生效的疑难杂症
+- Proxy が defineProperty に代わり、プロパティの追加／削除がリアクティブにならない問題を解決する
+- 依存収集は WeakMap -> Map -> Set の3階層構造で、WeakMap がガベージコレクションを自動処理する
+- ref は本質的に `{ value }` を1層包んだ reactive だ
+- computed は dirty フラグで遅延評価とキャッシュを実現する
+- 背後にある仕組みを理解すれば、リアクティブが効かない難解な不具合の切り分けに役立つ

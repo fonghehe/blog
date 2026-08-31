@@ -4,7 +4,7 @@ date: 2023-11-27 10:22:32
 tags:
   - Frontend
 readingTime: 2
-description: "We recently implemented Hono 全栈框架实战， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+description: "I recently went full-stack with the Hono framework in practice with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 217
 ---
 

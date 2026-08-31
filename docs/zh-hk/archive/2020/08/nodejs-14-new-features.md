@@ -8,7 +8,7 @@ description: "Node.js 14 LTS 在 4 月份發佈，帶來了不少實用特性。
 wordCount: 280
 ---
 
-Node.js 14 LTS 在 4 月份發佈，帶來了不少實用特性。最讓前端工程師開心的是 V8 引擎升級到了 8.1，原生支持了 Optional Chaining（`?.`）和 Nullish Coalescing（`??`）—— 終於不用再在 Node 代碼裏手動轉譯這些語法了。
+Node.js 14 LTS 在 4 月份發佈，帶來了不少實用特性。最讓前端工程師開心的是 V8 引擎升級到了 8.1，原生支持了 Optional Chaining（`?.`）和 Nullish Coalescing（`??`）—— 終於不用再在 Node 代碼裡手動轉譯這些語法了。
 
 ## Optional Chaining（可選鏈）
 
@@ -247,7 +247,7 @@ console.log(currencyNames.of("USD")); // 美元
 ## 小結
 
 - Node.js 14 原生支援 Optional Chaining（`?.`）和 Nullish Coalescing（`??`），不再需要 Babel 轉譯
-- `??` 和 `||` 的區別：`??` 隻處理 null/undefined，`||` 處理所有 falsy 值
+- `??` 和 `||` 的區別：`??` 只處理 null/undefined，`||` 處理所有 falsy 值
 - `Array.flat()` 和 `Array.flatMap()` 原生可用，簡化數組操作
 - `globalThis` 提供了統一的全局對象訪問方式
 - `String.matchAll()` 讓正則批量匹配變得優雅

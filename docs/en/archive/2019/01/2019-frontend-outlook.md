@@ -12,7 +12,7 @@ wordCount: 353
 
 ## React Hooks Will Change the Way We Write Code
 
-React 16.8 is set to officially release Hooks in Q1 2019. This isn't a minor change — it will influence the paradigm of the entire React ecosystem.
+React 16.8 is set to officially release Hooks in Q1 2019. This is no minor change — it will reshape the paradigm of the entire React ecosystem.
 
 ```jsx
 // Before: class components
@@ -31,19 +31,19 @@ function Counter() {
 }
 ```
 
-Prediction: by year's end, most newly written React components will use functions + Hooks.
+Prediction: by year's end, most new React components will be written as function components with Hooks.
 
 ## Vue 3 Composition API Goes Live
 
-The Vue 3 Composition API RFC was published publicly in late 2018. In 2019, it's expected to enter the alpha stage. The core idea is to replace the options object with function-based composition, solving logic reuse problems in large-scale projects.
+The Vue 3 Composition API RFC was published publicly in late 2018. In 2019, it's expected to enter the alpha stage. The core idea is to replace the options object with function-based composition, solving logic-reuse problems in large projects.
 
 ## TypeScript Goes Mainstream
 
-The 2018 State of JS survey showed TypeScript satisfaction at an all-time high. Vue CLI 3 has made TypeScript a first-class option, and Create React App ships with a TypeScript template built-in. The upgrade is no longer a question of "should we use it?" but "when do we migrate?"
+The 2018 State of JS survey showed TypeScript satisfaction at an all-time high. Vue CLI 3 has made TypeScript a first-class option, and Create React App ships with a TypeScript template built-in. The question is no longer whether to adopt it, but when to migrate.
 
 ## WebAssembly Becomes Practical
 
-Figma used WebAssembly to achieve high-performance rendering in the browser. While most frontend engineers won't be writing Wasm directly, understanding its use cases (video encoding, CAD rendering, cryptography libraries) is increasingly important.
+Figma used WebAssembly to deliver high-performance rendering in the browser. While most frontend engineers won't be writing Wasm directly, understanding its use cases (video encoding, CAD rendering, cryptography libraries) is increasingly important.
 
 ## Engineering: The Goal Is to Eliminate Configuration
 
@@ -61,4 +61,4 @@ Create React App, Vue CLI 3, and Angular CLI all point toward the same goal: dev
 
 ## Summary
 
-The theme for 2019 is "better developer experience": Hooks make React components more concise, the Composition API makes Vue logic clearer, and TypeScript makes refactoring safer. Outlooks are outlooks — but first, we need to consolidate the knowledge from 2018 into real skills.
+The theme for 2019 is "better developer experience": Hooks make React components more concise, the Composition API makes Vue logic clearer, and TypeScript makes refactoring safer. Predictions are just predictions — but first, we need to turn the knowledge we gained in 2018 into real skills.

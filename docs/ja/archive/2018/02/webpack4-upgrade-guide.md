@@ -6,28 +6,28 @@ tags:
   - エンジニアリング
 readingTime: 3
 description: "Webpack 4 が 2 月末に正式リリースされました。最大のポイントは**ゼロコンフィグレーション** — 設定ファイルを書かなくても動かせるということです。いくつかのプロジェクトをアップグレードして、実際の体験をまとめます。"
-wordCount: 736
+wordCount: 764
 ---
 
 Webpack 4 が 2 月末に正式リリースされました。最大のポイントは**ゼロコンフィグレーション** — 設定ファイルを書かなくても動かせるということです。いくつかのプロジェクトをアップグレードして、実際の体験をまとめます。
 
 ## 最も目立つ変更：mode
 
-Webpack 4 では `mode` パラメータが導入され、`development` または `production` を取ります：
+Webpack 4 では `mode` パラメータが導入され、`development` または `production` を取ります。
 
 ```bash
 webpack --mode production
 webpack --mode development
 ```
 
-`production` モードで自動的に有効になるもの：
+`production` モードで自動的に有効になるものは以下の通りです。
 
 - `TerserPlugin`（コード圧縮）
 - `ModuleConcatenationPlugin`（スコープホイスティング）
 - `NoEmitOnErrorsPlugin`
 - 各種最適化設定
 
-`development` モードで自動的に有効になるもの：
+`development` モードで自動的に有効になるものは以下の通りです。
 
 - `NamedChunksPlugin`
 - `NamedModulesPlugin`
@@ -39,7 +39,7 @@ webpack --mode development
 
 公式は 98% 高速化と謳っています（極端なテスト条件下）。実際のプロジェクトでは 30%〜60% の向上が見られます — それでもかなり明確です。
 
-主な理由：
+主な理由は以下の通りです。
 
 - 永続的なキャッシュ（`cache` オプション）
 - モジュール解決アルゴリズムの最適化
@@ -69,7 +69,7 @@ npm install webpack@4 webpack-cli@3 webpack-dev-server@3
 
 ### 3. 廃止された設定を削除
 
-Webpack 4 はいくつかの古い API を削除しました：
+Webpack 4 はいくつかの古い API を削除しました。
 
 ```javascript
 // 以前
@@ -96,7 +96,7 @@ module.exports = {
 
 ### 4. mini-css-extract-plugin に更新
 
-古い `extract-text-webpack-plugin` は Webpack 4 との互換性に問題があります。新しいものに切り替えます：
+古い `extract-text-webpack-plugin` は Webpack 4 との互換性に問題があります。新しいものに切り替えます。
 
 ```bash
 npm install mini-css-extract-plugin
@@ -124,7 +124,7 @@ module.exports = {
 
 ## splitChunks：CommonsChunkPlugin の新しい代替
 
-これが最大の変更点です。新しい `optimization.splitChunks` はより柔軟です：
+これが最大の変更点です。新しい `optimization.splitChunks` はより柔軟です。
 
 ```javascript
 module.exports = {
@@ -154,7 +154,7 @@ module.exports = {
 
 **問題 1：ローダーが `this.getOptions is not a function` エラーを出す**
 
-原因：一部の古いローダーが Webpack 4 に対応していません。ローダーのバージョンをアップグレードしてください。
+原因は、一部の古いローダーが Webpack 4 に対応していないことです。ローダーのバージョンをアップグレードしてください。
 
 **問題 2：`vue-loader` のアップグレードが必要**
 
@@ -162,7 +162,7 @@ module.exports = {
 npm install vue-loader@15 vue-template-compiler
 ```
 
-Vue Loader 15 は `VueLoaderPlugin` が必要です：
+Vue Loader 15 は `VueLoaderPlugin` が必要です。
 
 ```javascript
 const { VueLoaderPlugin } = require("vue-loader");

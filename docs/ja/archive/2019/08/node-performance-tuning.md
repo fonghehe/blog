@@ -3,29 +3,29 @@ title: "Node.jsパフォーマンスチューニング実践"
 date: 2019-08-26 09:47:22
 tags:
   - パフォーマンス最適化
-readingTime: 4
-description: "Node.js 作为服务端运行时，性能调优是上线前必不可少的环节。从内存泄漏排查到事件循环监控，从 CPU profiling 到 GC 调参，Node.js 提供了丰富的工具链帮助我们定位性能瓶颈。本文将结合实际案例，系统讲解 Node.js 性能调优的方法论和实践技巧。"
-wordCount: 595
+readingTime: 6
+description: "サーバーサイドランタイムとしてのNode.jsにおいて、パフォーマンステューニングはリリース前に不可欠な工程だ。メモリリークの調査からイベントループの監視、CPUプロファイリングからGCパラメータ調整まで、Node.jsはパフォーマンスボトルネックの特定に役立つ豊富なツールチェーンを提供している。本記事では実際のケースを交え、Node.jsのパフォーマンスチューニングの方法論と実践テクニックを体系的に解説する。"
+wordCount: 955
 ---
 
-Node.js 作为服务端运行时，性能调优是上线前必不可少的环节。从内存泄漏排查到事件循环监控，从 CPU profiling 到 GC 调参，Node.js 提供了丰富的工具链帮助我们定位性能瓶颈。本文将结合实际案例，系统讲解 Node.js 性能调优的方法论和实践技巧。
+サーバーサイドランタイムとしてのNode.jsにおいて、パフォーマンステューニングはリリース前に不可欠な工程だ。メモリリークの調査からイベントループの監視、CPUプロファイリングからGCパラメータ調整まで、Node.jsはパフォーマンスボトルネックの特定に役立つ豊富なツールチェーンを提供している。本記事では実際のケースを交え、Node.jsのパフォーマンスチューニングの方法論と実践テクニックを体系的に解説する。
 
 ## パフォーマンス指標の概要
 
-Node.js 应用需要关注的核心指标：
+Node.jsアプリケーションで注目すべきコア指標：
 
-- **响应时间（RT）** — P50、P95、P99 延迟
-- **吞吐量（QPS）** — 每秒处理的请求数
-- **内存使用** — RSS、堆内存、堆外内存
-- **CPU 使用率** — 单核利用率、事件循环延迟
-- **GC 频率和耗时** — 垃圾回收对响应时间的影响
+- **レスポンスタイム（RT）** — P50、P95、P99 レイテンシ
+- **スループット（QPS）** — 1秒あたりのリクエスト処理数
+- **メモリ使用量** — RSS、ヒープメモリ、ヒープ外メモリ
+- **CPU使用率** — シングルコア利用率、イベントループ遅延
+- **GC頻度と所要時間** — ガベージコレクションがレスポンスタイムに与える影響
 
 ## メモリリークの調査
 
-### 监控内存使用
+### メモリ使用量の監視
 
 ```js
-// 内存监控中间件
+// メモリ監視ミドルウェア
 function memoryMonitor(req, res, next) {
   const mem = process.memoryUsage();
 
@@ -36,37 +36,37 @@ function memoryMonitor(req, res, next) {
     external: `${(mem.external / 1024 / 1024).toFixed(2)} MB`,
   });
 
-  // 内存告警
+  // メモリアラート
   const heapUsedMB = mem.heapUsed / 1024 / 1024;
   if (heapUsedMB > 500) {
-    console.warn(`堆内存超过 500MB: ${heapUsedMB.toFixed(2)} MB`);
+    console.warn(`ヒープメモリが500MB超過: ${heapUsedMB.toFixed(2)} MB`);
   }
 
   next();
 }
 ```
 
-### 使用 --inspect 进行堆分析
+### --inspectを使ったヒープ解析
 
 ```bash
-# 启动时开启 inspector
+# 起動時にインスペクターを有効化
 node --inspect=0.0.0.0:9229 app.js
 
-# 然后在 Chrome 中打开 chrome://inspect
+# その後Chromeで chrome://inspect を開く
 ```
 
-### 常见内存泄漏场景
+### よくあるメモリリークのパターン
 
-**场景一：闭包持有大对象引用**
+**パターン1：クロージャが大きなオブジェクトへの参照を保持**
 
 ```js
-// 泄漏版本
+// リーク版
 const cache = {};
 
 function handler(req, res) {
   const key = req.url;
 
-  // 如果不限制 cache 大小，会无限增长
+  // キャッシュサイズを制限しないと無限に増え続ける
   cache[key] = {
     data: heavyComputation(),
     timestamp: Date.now(),
@@ -75,12 +75,12 @@ function handler(req, res) {
   res.json(cache[key].data);
 }
 
-// 修复版本：使用 LRU 缓存
+// 修正版：LRUキャッシュを使用
 const LRU = require('lru-cache');
 const cache = new LRU({
-  max: 1000,                    // 最大缓存条目数
-  maxAge: 1000 * 60 * 10,      // 10 分钟过期
-  length: (n) => n.data.length, // 计算缓存占用
+  max: 1000,                    // 最大キャッシュエントリ数
+  maxAge: 1000 * 60 * 10,      // 10分で期限切れ
+  length: (n) => n.data.length, // キャッシュ占有量の計算
 });
 
 function handler(req, res) {
@@ -96,24 +96,24 @@ function handler(req, res) {
 }
 ```
 
-**场景二：事件监听器未移除**
+**パターン2：イベントリスナーが削除されていない**
 
 ```js
-// 泄漏版本
+// リーク版
 function handleConnection(socket) {
-  // 每次连接都添加监听器，但从未移除
+  // 接続ごとにリスナーを追加するが、一度も削除しない
   socket.on('data', (data) => {
     processData(data);
   });
 
-  // 更糟糕的是在外部对象上监听
+  // さらに悪いことに、外部オブジェクトにリスナーを登録
   globalEventEmitter.on('global-event', () => {
-    // socket 关闭后这个监听器仍然存在
+    // socketが閉じられた後もこのリスナーは残っている
     socket.write('event happened');
   });
 }
 
-// 修复版本
+// 修正版
 function handleConnection(socket) {
   const onData = (data) => processData(data);
   const onGlobalEvent = () => {
@@ -132,10 +132,10 @@ function handleConnection(socket) {
 }
 ```
 
-**场景三：全局变量意外增长**
+**パターン3：グローバル変数の意図しない増加**
 
 ```js
-// 泄漏版本：无限制的全局数组
+// リーク版：无限制的全局数组
 const requestLogs = [];
 
 app.use((req, res, next) => {
@@ -148,7 +148,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// 修复版本：限制大小并定期清理
+// 修正版：限制大小并定期清理
 const requestLogs = [];
 const MAX_LOGS = 10000;
 
@@ -159,7 +159,7 @@ app.use((req, res, next) => {
     timestamp: Date.now(),
   });
 
-  // 超过上限时移除旧数据
+  // 上限超過時に古いデータを削除
   if (requestLogs.length > MAX_LOGS) {
     requestLogs.splice(0, requestLogs.length - MAX_LOGS);
   }
@@ -167,7 +167,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// 定期清理超过 1 小时的日志
+// 1時間を超えたログを定期的にクリーンアップ
 setInterval(() => {
   const oneHourAgo = Date.now() - 3600000;
   while (requestLogs.length > 0 && requestLogs[0].timestamp < oneHourAgo) {
@@ -178,54 +178,54 @@ setInterval(() => {
 
 ## CPUパフォーマンス分析
 
-### 使用 --prof 生成 V8 profiling 数据
+### --profでV8プロファイリングデータを生成
 
 ```bash
-# 生成日志文件
+# ログファイルを生成
 node --prof app.js
 
-# 处理日志文件
+# ログファイルを処理
 node --prof-process isolate-*.log > processed.txt
 ```
 
-### 使用 Chrome DevTools 进行 CPU Profiling
+### Chrome DevToolsでのCPUプロファイリング
 
 ```bash
 node --inspect app.js
 ```
 
-在 Chrome DevTools 的 Profiler 面板中录制 CPU profile，可以清楚看到每个函数的执行时间。
+Chrome DevToolsのProfilerパネルでCPUプロファイルを記録すると、各関数の実行時間を明確に確認できる。
 
-### 使用 clinic.js 自动诊断
+### clinic.jsを使った自動診断
 
 ```bash
 npm install -g clinic
 
-# CPU 诊断
+# CPU診断
 clinic doctor -- node app.js
 
-# 火焰图分析
+# フレームグラフ解析
 clinic flame -- node app.js
 
-# 内存泄漏检测
+# メモリリーク検出
 clinic heapprofiler -- node app.js
 ```
 
-`clinic doctor` 会自动运行压测并生成诊断报告，指出性能问题的可能原因。
+`clinic doctor` は自動的に負荷テストを実行し診断レポートを生成して、パフォーマンス問題の可能的な原因を指摘する。
 
 ## イベントループの最適化
 
-### 避免阻塞事件循环
+### イベントループのブロック回避
 
 ```js
-// 错误：在主线程同步处理大文件
+// 誤り：メインスレッドで大きなファイルを同期的に処理
 app.post('/upload', (req, res) => {
   const data = fs.readFileSync(req.file.path);
   const processed = heavyProcessing(data); // 阻塞！
   res.json({ result: processed });
 });
 
-// 方案一：使用 setImmediate 分片处理
+// 対策1：setImmediateで分割処理
 app.post('/upload', (req, res) => {
   const data = fs.readFileSync(req.file.path);
   processChunked(data, (err, result) => {
@@ -242,11 +242,11 @@ function processChunked(data, callback) {
     const end = Math.min(index + chunkSize, data.length);
 
     for (; index < end; index++) {
-      results.push(data[index] * 2); // 示例处理逻辑
+      results.push(data[index] * 2); // サンプル処理ロジック
     }
 
     if (index < data.length) {
-      setImmediate(processNextChunk); // 让出事件循环
+      setImmediate(processNextChunk); // イベントループに制御を譲る
     } else {
       callback(null, results);
     }
@@ -255,7 +255,7 @@ function processChunked(data, callback) {
   processNextChunk();
 }
 
-// 方案二：使用 Worker Thread（Node 10+）
+// 対策2：Worker Threadを使用（Node 10+）
 const { Worker } = require('worker_threads');
 
 app.post('/upload', (req, res) => {
@@ -268,12 +268,12 @@ app.post('/upload', (req, res) => {
 });
 ```
 
-### 监控事件循环延迟
+### イベントループ遅延の監視
 
 ```js
 const { monitorEventLoopDelay } = require('perf_hooks');
 
-// Node 11.10+ 支持
+// Node 11.10+ でサポート
 const histogram = monitorEventLoopDelay({ resolution: 20 });
 histogram.enable();
 
@@ -289,20 +289,20 @@ setInterval(() => {
 
 ## GCチューニング
 
-### 调整 V8 堆大小
+### V8ヒープサイズの設定
 
 ```bash
-# 设置最大堆内存
+# 最大ヒープメモリを設定
 node --max-old-space-size=4096 app.js  # 4GB
 
-# 调整新生代大小
+# 新世代領域のサイズ調整
 node --max-semi-space-size=16 app.js   # 16MB
 ```
 
-### 减少 GC 压力
+### GC負荷の軽減
 
 ```js
-// 不好的实践：频繁创建临时对象
+// 悪い例：一時オブジェクトを頻繁に生成
 function processItems(items) {
   return items.map(item => ({
     id: item.id,
@@ -312,7 +312,7 @@ function processItems(items) {
   }));
 }
 
-// 好的实践：复用对象
+// 良い例：オブジェクトを再利用
 function processItemsInPlace(items) {
   for (let i = 0; i < items.length; i++) {
     items[i].processed = true;
@@ -321,7 +321,7 @@ function processItemsInPlace(items) {
   return items;
 }
 
-// 对象池模式
+// オブジェクトプールパターン
 class BufferPool {
   constructor(size) {
     this.pool = [];
@@ -346,12 +346,12 @@ class BufferPool {
 
 ## HTTPパフォーマンス最適化
 
-### 连接池复用
+### コネクションプールの再利用
 
 ```js
 const http = require('http');
 
-// 配置 Agent 复用 TCP 连接
+// Agentを設定してTCP接続を再利用
 const agent = new http.Agent({
   keepAlive: true,
   keepAliveMsecs: 1000,
@@ -359,7 +359,7 @@ const agent = new http.Agent({
   maxFreeSockets: 256,
 });
 
-// 使用 agent
+// agentを使用
 function makeRequest(options) {
   return new Promise((resolve, reject) => {
     http.get({ ...options, agent }, (res) => {
@@ -371,19 +371,19 @@ function makeRequest(options) {
 }
 ```
 
-### 合理设置超时
+### タイムアウトの適切な設定
 
 ```js
 const server = http.createServer(app);
 
-server.timeout = 30000;       // 请求超时 30s
-server.keepAliveTimeout = 65000; // Keep-Alive 超时 65s（应大于 ALB 的值）
-server.headersTimeout = 66000;   // 请求头超时
+server.timeout = 30000;       // リクエストタイムアウト 30s
+server.keepAliveTimeout = 65000; // Keep-Alive タイムアウト 65s（ALBの値より大きくすべき）
+server.headersTimeout = 66000;   // リクエストヘッダータイムアウト
 ```
 
 ## クラスターモード
 
-使用 `cluster` 模块利用多核 CPU：
+`cluster` モジュールを使ってマルチコアCPUを活用する：
 
 ```js
 const cluster = require('cluster');
@@ -392,14 +392,14 @@ const http = require('http');
 
 if (cluster.isMaster) {
   const numCPUs = os.cpus().length;
-  console.log(`主进程 ${process.pid}，启动 ${numCPUs} 个工作进程`);
+  console.log(`マスタープロセス ${process.pid}、${numCPUs} 個のワーカープロセスを起動`);
 
   for (let i = 0; i < numCPUs; i++) {
     cluster.fork();
   }
 
   cluster.on('exit', (worker) => {
-    console.log(`工作进程 ${worker.process.pid} 退出，重新启动`);
+    console.log(`ワーカープロセス ${worker.process.pid} が終了、再起動中`);
     cluster.fork();
   });
 } else {
@@ -407,17 +407,17 @@ if (cluster.isMaster) {
   const server = http.createServer(app);
 
   server.listen(3000, () => {
-    console.log(`工作进程 ${process.pid} 监听端口 3000`);
+    console.log(`ワーカープロセス ${process.pid} がポート3000をリッスン`);
   });
 }
 ```
 
 ## まとめ
 
-- 内存泄漏三大常见原因：无限增长的缓存、未移除的事件监听器、全局变量意外增长
-- 使用 `clinic.js` 可以自动诊断 CPU、内存和事件循环问题
-- 避免阻塞事件循环：大任务分片处理或使用 Worker Thread
-- GC 调优的关键是减少临时对象的创建，合理设置堆大小
-- HTTP 性能优化：使用 Agent 复用连接、合理设置超时参数
-- 生产环境使用 cluster 模式充分利用多核 CPU
-- 定期进行压力测试，使用监控工具持续关注 P95/P99 延迟
+- メモリリークの3大原因：無限に増えるキャッシュ、削除されていないイベントリスナー、グローバル変数の意図しない増加
+- `clinic.js` を使えばCPU・メモリ・イベントループの問題を自動診断できる
+- イベントループのブロックを避ける：大きなタスクは分割処理するかWorker Threadを使う
+- GCチューニングの鍵は一時オブジェクトの生成を減らし、ヒープサイズを適切に設定すること
+- HTTPパフォーマンス最適化：Agentで接続を再利用し、タイムアウトパラメータを適切に設定する
+- 本番環境ではclusterモードを使ってマルチコアCPUを最大限に活用する
+- 定期的に負荷テストを実施し、監視ツールでP95/P99レイテンシを継続的にチェックする

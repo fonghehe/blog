@@ -4,9 +4,9 @@ date: 2025-03-15 19:04:38
 tags:
   - Web3
   - AI
-readingTime: 12
+readingTime: 9
 description: "Exploring the complete architecture of LLM Agents calling smart contracts, covering intent recognition, secure signing, automated transaction pipelines, and multi-step transaction orchestration"
-wordCount: 3700
+wordCount: 492
 ---
 
 ## Architecture of LLM Agents Calling Smart Contracts

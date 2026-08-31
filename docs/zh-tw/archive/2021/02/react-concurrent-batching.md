@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常開發中，React 18 自動批處理的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 332
+wordCount: 330
 ---
 
 在日常開發中，React 18 自動批處理的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
@@ -55,7 +55,7 @@ function reducer(state, action) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 業務實戰
 

@@ -66,7 +66,7 @@ import { createRoot } from 'react-dom'
 const root = createRoot(document.getElementById('app'))
 root.render(<App />)
 
-// 使用 useTransition 标记低优先级更新
+// 使用例 useTransition 标记低优先级更新
 import { useState, useTransition } from 'react'
 
 function SearchResults() {

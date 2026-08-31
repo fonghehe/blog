@@ -10,13 +10,13 @@ description: "Vuex 4 能用，但寫起來總覺得彆扭。Pinia 是 Vue 核心
 wordCount: 323
 ---
 
-Vuex 4 能用，但寫起來總覺得彆扭。Pinia 是 Vue 核心團隊成員開發的新狀態管理庫，API 設計比 Vuex 乾淨很多，已經在 Vue 3 項目裏用了兩個多月，分享一下經驗。
+Vuex 4 能用，但寫起來總覺得彆扭。Pinia 是 Vue 核心團隊成員開發的新狀態管理庫，API 設計比 Vuex 乾淨很多，已經在 Vue 3 項目裡用了兩個多月，分享一下經驗。
 
 ## 為什麼不用 Vuex 4
 
-Vuex 4 能在 Vue 3 裏跑，但核心問題沒解決：
+Vuex 4 能在 Vue 3 裡跑，但核心問題沒解決：
 
-- TypeScript 支持差（要靠一堆類型體操）
+- TypeScript 支援差（要靠一堆類型體操）
 - mutations 和 actions 分開寫，大部分時候 mutation 就是賦值
 - 模塊系統複雜（namespace、modules 嵌套）
 
@@ -165,7 +165,7 @@ export const useCartStore = defineStore('cart', {
 
 ## 開發工具集成
 
-Pinia 自帶 DevTools 支持，Vue DevTools 裏能看到：
+Pinia 自帶 DevTools 支援，Vue DevTools 裡能看到：
 
 - 每個 store 的 state 變化
 - 時間旅行調試
@@ -192,6 +192,6 @@ const themeStore = useThemeStore()
 ## 小結
 
 - Pinia 是 Vue 3 狀態管理的未來，Vuex 5 會基於 Pinia 的設計
-- 砍掉 mutations，TypeScript 原生支持，API 更簡潔
+- 砍掉 mutations，TypeScript 原生支援，API 更簡潔
 - Store 之間直接 import 調用，不需要 Vuex modules 的巢狀
 - 適合新項目直接用；老項目遷移成本不大（狀態邏輯可以逐步遷移）

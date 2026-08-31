@@ -6,7 +6,7 @@ tags:
   - 性能優化
 readingTime: 2
 description: "圖片 CDN 自動最佳化方案在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 368
+wordCount: 366
 ---
 
 圖片 CDN 自動最佳化方案在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -80,7 +80,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ## 效能最佳化
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 FROM node:20-alpine AS deps
@@ -101,7 +101,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 常見陷阱
 

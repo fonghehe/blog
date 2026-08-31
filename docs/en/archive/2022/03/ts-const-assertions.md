@@ -4,7 +4,7 @@ date: 2022-03-16 11:47:21
 tags:
   - TypeScript
 readingTime: 2
-description: "In daily development, TypeScript const 断言最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimizati"
+description: "Best practices for TypeScript const assertions come up more and more in everyday development. This article systematically covers their usage, mechanics, and practical patterns."
 wordCount: 188
 ---
 

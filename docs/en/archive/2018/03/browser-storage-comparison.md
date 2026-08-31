@@ -5,10 +5,10 @@ tags:
   - Frontend
 readingTime: 2
 description: "Frontend has several storage options, but many people haven't systematically thought about which to use for which scenario."
-wordCount: 247
+wordCount: 255
 ---
 
-Frontend has several storage options, but many people haven't systematically thought about which to use for which scenario.
+The browser provides several storage options, but many people haven't systematically thought about which to use for which scenario.
 
 ## Four Storage Options
 
@@ -22,7 +22,7 @@ Frontend has several storage options, but many people haven't systematically tho
 
 ## Cookie
 
-Primary use: server-side reading (authentication). Cookie should not be your first choice for frontend data storage.
+Its main purpose is to be read by the server (for authentication). Cookie should not be your first choice for frontend data storage.
 
 ```javascript
 // Read/write
@@ -46,7 +46,7 @@ function getCookie(name) {
 
 ## localStorage
 
-The most commonly used frontend storage, for persisting user preferences and cached data:
+The most commonly used client-side storage, for persisting user preferences and cached data:
 
 ```javascript
 // Store (only supports strings, objects must be serialized)

@@ -8,7 +8,7 @@ description: "CSS Grid 已经得到主流浏览器的支持有一段时间了。
 wordCount: 904
 ---
 
-CSS Grid 已经得到主流浏览器的支持有一段时间了。基础的 `grid-template-columns` 和 `grid-template-rows` 大家都会用，但 `grid-template-areas`、`auto-fill` vs `auto-fit`、`minmax()` 这些进阶特性才能真正发挥 Grid 的威力。这篇文章通过几个实际布局案例来讲解这些特性。
+CSS Grid 获得主流浏览器的支持已经有一段时间了。基础的 `grid-template-columns` 和 `grid-template-rows` 大家都会用，但 `grid-template-areas`、`auto-fill` vs `auto-fit`、`minmax()` 这些进阶特性才能真正发挥 Grid 的威力。这篇文章通过几个实际布局案例来讲解这些特性。
 
 ## grid-template-areas：用文字画布局
 

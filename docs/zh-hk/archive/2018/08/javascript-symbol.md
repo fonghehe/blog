@@ -57,7 +57,7 @@ const STATUS = {
 
 let state = STATUS.PENDING;
 if (state === STATUS.PENDING) {
-  /* 隻有真正的 PENDING 才匹配 */
+  /* 只有真正的 PENDING 才匹配 */
 }
 ```
 

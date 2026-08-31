@@ -4,11 +4,11 @@ date: 2019-08-15 16:25:16
 tags:
   - React
 readingTime: 2
-description: "用 React Profiler 分析了一个性能有问题的页面，整理出一套优化方法论。"
-wordCount: 169
+description: "We used the React Profiler to analyze a page with performance problems and came away with a set of optimization principles."
+wordCount: 126
 ---
 
-用 React Profiler 分析了一个性能有问题的页面，整理出一套优化方法论。
+We used the React Profiler to analyze a page with performance problems and came away with a set of optimization principles.
 
 ## Analyze First, Then Optimize
 
@@ -171,14 +171,14 @@ function ReportPage() {
 
 ## Optimization Priority
 
-1. **避免不必要渲染**（React.memo + useCallback/useMemo）- 最常见
-2. **代码分割**（lazy + Suspense）- 首屏加载优化
-3. **虚拟列表**（react-window）- 大数据量
-4. **Web Worker**（计算密集型任务）- 不阻塞主线程
+1. **Avoid unnecessary re-renders** (React.memo + useCallback/useMemo) — the most common case
+2. **Code splitting** (lazy + Suspense) — improves initial load
+3. **Virtual lists** (react-window) — for large datasets
+4. **Web Worker** (compute-heavy tasks) — keeps the main thread free
 
 ## Summary
 
-- 先 Profiler 定位问题，再针对性优化，不要盲目优化
-- `React.memo` 配合 `useCallback`/`useMemo` 阻止不必要的重渲染
-- 列表超过 100 条就考虑虚拟列表（react-window）
-- 代码分割是"免费"的优化，路由页面都应该懒加载
+- Profile first to locate the problem, then optimize for it—don't optimize blindly.
+- Combine `React.memo` with `useCallback`/`useMemo` to stop unnecessary re-renders.
+- Once a list exceeds ~100 items, consider a virtual list (react-window).
+- Code splitting is a "free" optimization; route pages should always be lazy-loaded.

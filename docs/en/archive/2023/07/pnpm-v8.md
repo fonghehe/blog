@@ -4,7 +4,7 @@ date: 2023-07-26 14:31:55
 tags:
   - Frontend
 readingTime: 2
-description: "关于pnpm v8 新特性与性能提升，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+description: "Many developers only know pnpm v8's new features and performance gains at the surface level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 203
 ---
 

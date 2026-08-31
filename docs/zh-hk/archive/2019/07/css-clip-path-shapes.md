@@ -5,14 +5,14 @@ tags:
   - CSS
 readingTime: 3
 description: "傳統的 CSS 裁切方式有限——`overflow: hidden` 隻能做矩形裁切，`border-radius` 隻能做圓角。如果你需要做斜邊卡片、圓形頭像裁切、波浪背景等不規則形狀，`clip-path` 是目前最強大的方案。"
-wordCount: 530
+wordCount: 536
 ---
 
-傳統的 CSS 裁切方式有限——`overflow: hidden` 隻能做矩形裁切，`border-radius` 隻能做圓角。如果你需要做斜邊卡片、圓形頭像裁切、波浪背景等不規則形狀，`clip-path` 是目前最強大的方案。
+傳統的 CSS 裁切方式選擇不多——`overflow: hidden` 只能用來做矩形裁切，`border-radius` 只能做圓角。如果你需要做斜邊卡片、圓形頭像裁切、波浪背景等不規則形狀，`clip-path` 是目前最靈活強大的方案。
 
 ## clip-path 基礎
 
-`clip-path` 允許你定義一個裁切區域，隻顯示區域內的內容。它支援五種基本形狀函數：
+`clip-path` 允許你定義一個裁切區域，只顯示區域內的內容。它支援五種基本形狀函數：
 
 ### inset() — 矩形裁切
 
@@ -315,7 +315,7 @@ clip-path: circle(10%) → clip-path: circle(75%)
 
 ## 實戰四：文字沿形狀排列
 
-雖然 `clip-path` 本身不控製文字排列，但配合 `shape-outside` 可以實現文字環繞不規則形狀：
+雖然 `clip-path` 本身不控制文字排列，但配合 `shape-outside` 可以實現文字環繞不規則形狀：
 
 ```css
 .float-shape {

@@ -1,5 +1,5 @@
 ---
-title: "TypeScript Performance 2025: Tool链演进 & 团队经验"
+title: "TypeScript Performance Optimization 2025 Review: Toolchain Evolution and Team Lessons"
 date: 2025-12-08 19:22:59
 tags:
   - TypeScript

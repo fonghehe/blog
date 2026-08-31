@@ -4,11 +4,11 @@ date: 2023-01-25 14:31:47
 tags:
   - Frontend
 readingTime: 2
-description: "pnpm 8 发布了，作为我们团队的默认包管理器，升级后做了全面的性能对比测试。"
-wordCount: 344
+description: "pnpm 8 is out. As our team's default package manager, we ran a full performance comparison after upgrading."
+wordCount: 329
 ---
 
-pnpm 8 发布了，作为我们团队的默认包管理器，升级后做了全面的性能对比测试。
+pnpm 8 is out. As our team's default package manager, we ran a full performance comparison after upgrading.
 
 ## Core Improvements
 

@@ -9,11 +9,11 @@ description: "SolidJS 是 2021 年最值得關注的前端框架之一。它的�
 wordCount: 409
 ---
 
-SolidJS 是 2021 年最值得關注的前端框架之一。它的核心主張聽起來和 Svelte 相似——"不用虛擬 DOM"——但實現原理完全不同。Svelte 是編譯時框架，SolidJS 是運行時細粒度響應式。這篇文章帶你瞭解它為什麼能在性能測試中長期排名第一。
+SolidJS 是 2021 年最值得關注的前端框架之一。它的核心主張聽起來和 Svelte 相似——"不用虛擬 DOM"——但實現原理完全不同。Svelte 是編譯時框架，SolidJS 是運行時細粒度響應式。這篇文章帶你瞭解它為什麼能在效能測試中長期排名第一。
 
 ## 和 React 的對比：相似的語法，截然不同的原理
 
-SolidJS 的語法刻意向 React 靠攏，但底層機製完全不同：
+SolidJS 的語法刻意向 React 靠攏，但底層機制完全不同：
 
 ```jsx
 // React
@@ -134,9 +134,9 @@ function TodoApp() {
 }
 ```
 
-## 控製流組件
+## 控制流組件
 
-SolidJS 用組件替代 JSX 裏的 JavaScript 控製流，以確保細粒度追蹤：
+SolidJS 用組件替代 JSX 裡的 JavaScript 控制流，以確保細粒度追蹤：
 
 ```jsx
 // Show：條件渲染（替代 &&）
@@ -159,7 +159,7 @@ SolidJS 用組件替代 JSX 裏的 JavaScript 控製流，以確保細粒度追�
 
 ## 效能為什麼這麼好
 
-JS 框架性能測試（js-framework-benchmark）中，SolidJS 始終排名前列，接近原生 JavaScript：
+JS 框架效能測試（js-framework-benchmark）中，SolidJS 始終排名前列，接近原生 JavaScript：
 
 | 框架     | 創建1000行 | 替換1000行 | 部分更新 |
 | -------- | ---------- | ---------- | -------- |

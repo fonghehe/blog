@@ -4,15 +4,15 @@ date: 2020-10-21 15:31:04
 tags:
   - Testing
 readingTime: 2
-description: "最近在团队中落地Chromatic 视觉回归测试，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 267
+description: "Lessons learned from rolling out Chromatic visual regression testing on a team, shared as a practical reference for anyone tackling similar work."
+wordCount: 172
 ---
 
-最近在团队中落地Chromatic 视觉回归测试，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+I recently rolled out Chromatic visual regression testing on my team and picked up plenty of hands-on experience along the way. I'm writing it up as a reference, and I hope it helps anyone tackling similar work.
 
 ## Core Concepts
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 :root {
@@ -35,11 +35,11 @@ wordCount: 267
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll still need to account for error handling and edge cases.
 
 ## In-Depth Analysis
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -64,11 +64,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly cut maintenance cost.
 
 ## Implementation Experience
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -92,11 +92,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Tuning Strategies
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 :root {
@@ -119,10 +119,10 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — it's critical in production.
 
 ## Summary
 
-- 代码示例仅供参考，需根据业务场景调整
-- Chromatic 视觉回归测试不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- The code examples are for reference only and should be adapted to your actual use case.
+- Chromatic visual regression testing is no silver bullet; choose it based on your project's scale and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.

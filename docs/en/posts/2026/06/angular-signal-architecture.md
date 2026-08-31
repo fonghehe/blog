@@ -6,7 +6,7 @@ tags:
   - Architecture
 readingTime: 5
 description: "Signals are now central to Angular architecture. This article covers local state, derived state, cross-module data flow, and governance patterns for large Angular applications."
-wordCount: 724
+wordCount: 730
 ---
 
 Angular Signals have moved from a new feature to a core part of application architecture. They change more than state update syntax—they make data dependencies between components, services, and templates easier to see. In large applications, the value of Signals is reducing implicit subscriptions and making state changes traceable.
@@ -16,7 +16,7 @@ Angular Signals have moved from a new feature to a core part of application arch
 Not every state belongs in a global store. The 2026 best practice is to choose state containers based on lifecycle and scope:
 
 **Component Signals**
-For form inputs, dialog visibility, current tab, local filter conditions. Their lifecycle is short and dependency scope is clear—they're easier to maintain inside the component:
+For form inputs, dialog visibility, the current tab, and local filter conditions. Their lifecycle is short and their scope is clear, so they are easier to maintain inside the component:
 
 ```typescript
 @Component({
@@ -176,7 +176,7 @@ Before `linkedSignal`, this pattern required manually watching `categoryId` in a
 
 ## Signal and RxJS Collaboration
 
-A common misconception is "if we use Signals, we don't need RxJS." The actual 2026 best practice: **Signals and RxJS each have their roles—using them together is optimal.**
+A common misconception is "if we use Signals, we don't need RxJS." The actual 2026 best practice: **Signals and RxJS each have their own role—using them together is optimal.**
 
 | Scenario | Recommended Tool | Reason |
 |----------|-----------------|--------|

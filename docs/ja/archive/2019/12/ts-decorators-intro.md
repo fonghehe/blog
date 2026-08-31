@@ -5,14 +5,14 @@ tags:
   - TypeScript
 readingTime: 2
 description: "在团队推广TypeScript 装饰器入门的过程中，踩了不少坑。整理出来希望对大家有所帮助。"
-wordCount: 271
+wordCount: 376
 ---
 
 在团队推广TypeScript 装饰器入门的过程中，踩了不少坑。整理出来希望对大家有所帮助。
 
 ## クイックスタート
 
-核心代码如下：
+コアとなるコードは以下のとおり：
 
 ```javascript
 .grid {
@@ -36,11 +36,11 @@ wordCount: 271
 }
 ```
 
-实际项目中还需要考虑边界条件和异常处理。
+実際のプロジェクトでは、境界条件や例外処理も考慮する必要がある。
 
 ## 高度な使い方
 
-下面是一个实际的例子：
+以下は実際の例である：
 
 ```javascript
 :root {
@@ -62,11 +62,11 @@ body {
 }
 ```
 
-这种模式在团队中推广后效果很好，维护成本明显降低。
+このパターンをチームに導入したところ効果が良く、保守コストが明らかに低下した。
 
 ## ビジネスシナリオ
 
-我们可以通过以下方式实现：
+以下の方法で実現できる：
 
 ```javascript
 const express = require('express')
@@ -79,7 +79,7 @@ function errorHandler(err, req, res, next) {
   console.error(err.stack)
   res.status(500).json({
     error: process.env.NODE_ENV === 'production'
-      ? '服务器错误' : err.message
+      ? 'サーバーエラー' : err.message
   })
 }
 
@@ -95,7 +95,7 @@ app.get('/api/users', async (req, res, next) => {
 app.use(errorHandler)
 ```
 
-注意上面代码中的性能细节，避免不必要的计算。
+上記コードのパフォーマンス上の細部に注意し、不要な計算を避けること。
 
 ## 落とし穴回避ガイド
 
@@ -129,7 +129,7 @@ if (cluster.isMaster) {
 
 ## クイックスタート
 
-先来看基本的用法：
+まずは基本的な使い方から：
 
 ```javascript
 const path = require('path')
@@ -173,10 +173,10 @@ module.exports = {
 }
 ```
 
-这种写法简洁明了，适合大多数场景。
+この書き方は簡潔明快で、ほとんどのシーンに向いている。
 
 ## まとめ
 
-- 实际项目中根据场景选择合适的方案
-- 团队中统一约定比追求完美实现更重要
-- 持续学习和总结，保持技术敏感度
+- 実際のプロジェクトでは、場面に応じて適切なアプローチを選ぶこと
+- チーム内で統一した取り決めを作ることは、完璧な実装を追及するよりも重要だ
+- 継続的に学び、振り返りを行い、技術に対する感度を保つこと

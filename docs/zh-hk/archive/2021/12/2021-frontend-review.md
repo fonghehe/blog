@@ -21,7 +21,7 @@ wordCount: 884
 - 9 月：Vite 團隊發佈 Vitest 設計方案
 - 12 月：Vite 生態插件超過 300 個
 
-Vite 改變了前端對"開發服務器"的認知：不打包也能開發，按需編譯才是正道。
+Vite 改變了前端對"開發伺服器"的認知：不打包也能開發，按需編譯才是正道。
 
 ```bash
 # Webpack 時代的啓動
@@ -47,7 +47,7 @@ Webpack 5 在今年也做了不少優化（持久緩存、Module Federation）�
 - **React 18**：Alpha → Beta，年底進入 RC 階段
 - **Concurrent 特性**：`useTransition`、`useDeferredValue`、Automatic Batching
 - **Suspense SSR**：流式渲染 + 選擇性注水
-- **Next.js 12**：Rust 編譯器（SWC）、Middleware、React 18 支持
+- **Next.js 12**：Rust 編譯器（SWC）、Middleware、React 18 支援
 - **Remix**：11 月開源，挑戰 Next.js
 
 ### 新興框架
@@ -59,13 +59,13 @@ Webpack 5 在今年也做了不少優化（持久緩存、Module Federation）�
 ## CSS 的變化
 
 - **Tailwind CSS 3.0**：JIT 成為默認模式，任意值支援
-- **CSS Container Queries**：Chrome Canary 實驗性支持
+- **CSS Container Queries**：Chrome Canary 實驗性支援
 - **Lightning CSS**：Rust 寫的 CSS 工具鏈（Parcel 2 使用）
 - **UnoCSS**：Anthony Fu 發佈的原子化 CSS 引擎，性能優於 Windi CSS
 
 ## TypeScript
 
-- **TypeScript 4.4**：控製流分析改進、`exactOptionalPropertyTypes`
+- **TypeScript 4.4**：控制流分析改進、`exactOptionalPropertyTypes`
 - **TypeScript 4.5**：`Awaited` 類型、`type` 修飾符導入
 - 類型體操社區活躍：`type-fest`、`ts-toolbelt`
 
@@ -78,14 +78,14 @@ Webpack 5 在今年也做了不少優化（持久緩存、Module Federation）�
 
 ### Monorepo
 
-- **Turborepo**：12 月開源，Vercel 收購併開源，Go 寫的高性能構建編排
-- **Nx**：持續迭代，12.9 版本支持 Vite executor
+- **Turborepo**：12 月開源，Vercel 收購並開源，Go 寫的高性能構建編排
+- **Nx**：持續迭代，12.9 版本支援 Vite executor
 - **pnpm workspace**：成為最輕量的 Monorepo 方案
 
 ### 測試
 
 - **Vitest**：概念形成，年底發佈 beta，基於 Vite 的單元測試框架
-- **Playwright**：E2E 測試的新寵，微軟出品，跨瀏覽器支持好
+- **Playwright**：E2E 測試的新寵，微軟出品，跨瀏覽器支援好
 - **Testing Library**：成為 React 組件測試的主流方案
 
 ## 運行時
@@ -102,7 +102,7 @@ esbuild、SWC、Rome、Lightning CSS……用 Rust 或 Go 重寫 JavaScript 工�
 
 ### 2. ESM First
 
-Vite 推動了 ESM 在開發環境的普及。瀏覽器原生 ESM 支持越來越成熟，打包不再是唯一選擇。
+Vite 推動了 ESM 在開發環境的普及。瀏覽器原生 ESM 支援越來越成熟，打包不再是唯一選擇。
 
 ### 3. 編譯時優化
 
@@ -128,7 +128,7 @@ Monorepo：pnpm workspace + Turborepo
 ## 小結
 
 - 2021 是 Vite 之年，構建工具格局被徹底改變
-- React 18 的併發特性是框架層面最重要的變化
+- React 18 的並發特性是框架層面最重要的變化
 - Rust 重寫工具鏈是趨勢，性能差距讓 JavaScript 工具相形見絀
 - Monorepo 工具鏈成熟：pnpm + Turborepo 是最優組合
 - 2022 年看好：Vitest 正式發佈、React 18 正式版、RSC（React Server Components）落地

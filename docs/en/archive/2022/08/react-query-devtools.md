@@ -4,11 +4,11 @@ date: 2022-08-12 11:13:49
 tags:
   - React
 readingTime: 2
-description: "React Query Devtools 调试工具 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
-wordCount: 192
+description: "React Query Devtools is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 172
 ---
 
-React Query Devtools 调试工具 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+React Query Devtools is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -124,7 +124,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Common Traps
 

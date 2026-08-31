@@ -4,7 +4,7 @@ date: 2023-10-26 15:09:19
 tags:
   - Playwright
 readingTime: 2
-description: "关于Playwright 最佳实践 2023，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective"
+description: "Many write-ups on Playwright best practices for 2023 stay at the API level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 185
 ---
 

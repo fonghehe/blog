@@ -7,23 +7,23 @@ tags:
   - Vite
 
 readingTime: 3
-description: "2021 年快结束了，整理一下这一年前端生态的重要变化。如果用一个词总结 2021 的前端，我会选\"Vite\"。"
-wordCount: 865
+description: "2021 is almost over — here's a roundup of the important changes in the frontend ecosystem this year. If I had to summarize 2021's frontend in one word, I'd pick 'Vite'."
+wordCount: 648
 ---
 
-2021 年快结束了，整理一下这一年前端生态的重要变化。如果用一个词总结 2021 的前端，我会选"Vite"。
+2021 is nearly over, so it's a good time to recap the major shifts in the frontend ecosystem. If I had to sum up frontend in 2021 in a single word, it would be "Vite".
 
 ## Build Tools: Vite Becomes the De Facto Standard
 
-2021 年初，Vite 2.0 发布，年底已经成为 Vue 3 和越来越多 React 项目的默认选择。
+At the start of 2021, Vite 2.0 shipped; by year's end it had become the default choice for Vue 3 and a growing number of React projects.
 
-**关键节点：**
-- 2 月：Vite 2.0 正式发布，采用 ESM + esbuild 预构建的架构
-- 6 月：SvelteKit 默认使用 Vite
-- 9 月：Vite 团队发布 Vitest 设计方案
-- 12 月：Vite 生态插件超过 300 个
+**Key milestones:**
+- February: Vite 2.0 officially released, adopting an ESM + esbuild pre-bundling architecture
+- June: SvelteKit adopts Vite by default
+- September: The Vite team publishes the Vitest design proposal
+- December: The Vite ecosystem surpasses 300 plugins
 
-Vite 改变了前端对"开发服务器"的认知：不打包也能开发，按需编译才是正道。
+Vite reshaped how the frontend world thinks about the "dev server": you can develop without bundling, and on-demand compilation is the right approach.
 
 ```bash
 # Webpack 时代的启动
@@ -33,86 +33,86 @@ npm run dev    # 等待 30s...
 npm run dev    # < 1s
 ```
 
-Webpack 5 在今年也做了不少优化（持久缓存、Module Federation），但开发体验的差距已经拉开。
+Webpack 5 also brought several optimizations this year (persistent caching, Module Federation), but the gap in developer experience has already widened.
 
 ## Framework Landscape
 
-### Vue 生态
+### The Vue Ecosystem
 
-- **Vue 3.2**：`<script setup>` 标记为稳定，编译时宏成为推荐写法
-- **Pinia**：成为 Vue 状态管理的推荐方案，Vuex 5 会基于 Pinia 重新设计
-- **VitePress**：文档站生成器，替代 VuePress
-- **Nuxt 3**：10 月发布 RC，基于 Vite + Nitro 服务引擎
+- **Vue 3.2**: `<script setup>` marked stable; compile-time macros became the recommended style
+- **Pinia**: became the recommended state-management solution for Vue; Vuex 5 will be redesigned on top of Pinia
+- **VitePress**: a docs-site generator, replacing VuePress
+- **Nuxt 3**: released its RC in October, built on the Vite + Nitro server engine
 
-### React 生态
+### The React Ecosystem
 
-- **React 18**：Alpha → Beta，年底进入 RC 阶段
-- **Concurrent 特性**：`useTransition`、`useDeferredValue`、Automatic Batching
-- **Suspense SSR**：流式渲染 + 选择性注水
-- **Next.js 12**：Rust 编译器（SWC）、Middleware、React 18 支持
-- **Remix**：11 月开源，挑战 Next.js
+- **React 18**: Alpha → Beta, reaching RC by year's end
+- **Concurrent features**: `useTransition`, `useDeferredValue`, Automatic Batching
+- **Suspense SSR**: streaming rendering + selective hydration
+- **Next.js 12**: Rust-based compiler (SWC), Middleware, React 18 support
+- **Remix**: open-sourced in November, challenging Next.js
 
-### 新兴框架
+### Emerging Frameworks
 
-- **Solid.js**：类 React 语法，无虚拟 DOM，性能极佳
-- **Qwik**：可恢复性（Resumability）概念，0 JS 的交互性
-- **Astro**：岛屿架构，部分水合
+- **Solid.js**: React-like syntax, no virtual DOM, excellent performance
+- **Qwik**: introduces the concept of Resumability, delivering interactivity with 0 KB of JS
+- **Astro**: islands architecture with partial hydration
 
 ## CSS Changes
 
-- **Tailwind CSS 3.0**：JIT 成为默认模式，任意值支持
-- **CSS Container Queries**：Chrome Canary 实验性支持
-- **Lightning CSS**：Rust 写的 CSS 工具链（Parcel 2 使用）
-- **UnoCSS**：Anthony Fu 发布的原子化 CSS 引擎，性能优于 Windi CSS
+- **Tailwind CSS 3.0**: JIT became the default mode, with arbitrary value support
+- **CSS Container Queries**: experimental support in Chrome Canary
+- **Lightning CSS**: a Rust-based CSS toolchain (used by Parcel 2)
+- **UnoCSS**: an atomic CSS engine released by Anthony Fu, outperforming Windi CSS
 
 ## TypeScript
 
-- **TypeScript 4.4**：控制流分析改进、`exactOptionalPropertyTypes`
-- **TypeScript 4.5**：`Awaited` 类型、`type` 修饰符导入
-- 类型体操社区活跃：`type-fest`、`ts-toolbelt`
+- **TypeScript 4.4**: improved control-flow analysis, `exactOptionalPropertyTypes`
+- **TypeScript 4.5**: the `Awaited` type, `type`-only modifier imports
+- The type-gymnastics community stayed active, with libraries like `type-fest` and `ts-toolbelt`
 
 ## Toolchain
 
-### 包管理
+### Package Management
 
-- **pnpm**：2021 年增长最快的包管理器，节省磁盘空间 + 严格的依赖隔离
-- **Corepack**：Node.js 内置包管理器管理工具
+- **pnpm**: the fastest-growing package manager of 2021, saving disk space plus strict dependency isolation
+- **Corepack**: a package-manager manager built into Node.js
 
 ### Monorepo
 
-- **Turborepo**：12 月开源，Vercel 收购并开源，Go 写的高性能构建编排
-- **Nx**：持续迭代，12.9 版本支持 Vite executor
-- **pnpm workspace**：成为最轻量的 Monorepo 方案
+- **Turborepo**: open-sourced in December after Vercel acquired it; a high-performance build orchestrator written in Go
+- **Nx**: continued iterating; version 12.9 added a Vite executor
+- **pnpm workspace**: became the lightest-weight Monorepo solution
 
-### 测试
+### Testing
 
-- **Vitest**：概念形成，年底发布 beta，基于 Vite 的单元测试框架
-- **Playwright**：E2E 测试的新宠，微软出品，跨浏览器支持好
-- **Testing Library**：成为 React 组件测试的主流方案
+- **Vitest**: the concept formed and a beta shipped by year's end — a Vite-based unit-testing framework
+- **Playwright**: the new favorite for E2E testing, from Microsoft, with solid cross-browser support
+- **Testing Library**: became the mainstream choice for React component testing
 
 ## Runtime
 
-- **Deno 1.15**：兼容性提升，npm 包兼容层改进
-- **Bun**：Jarred Sumner 开始用 Zig 写新的 JS 运行时（年底预告）
-- **Node.js 16 LTS**：10 月成为 LTS 版本
+- **Deno 1.15**: improved compatibility and a better npm-compatibility layer
+- **Bun**: Jarred Sumner began writing a new JS runtime in Zig (teased at year's end)
+- **Node.js 16 LTS**: became an LTS release in October
 
 ## Trends Worth Watching
 
-### 1. Rust 重写前端工具链
+### 1. Rust Rewrites the Frontend Toolchain
 
-esbuild、SWC、Rome、Lightning CSS……用 Rust 或 Go 重写 JavaScript 工具链的趋势不可逆。10 倍以上的性能差距是核心驱动力。
+esbuild, SWC, Rome, Lightning CSS... the trend of rewriting the JavaScript toolchain in Rust or Go is irreversible. A 10x-plus performance gap is the core driver.
 
 ### 2. ESM First
 
-Vite 推动了 ESM 在开发环境的普及。浏览器原生 ESM 支持越来越成熟，打包不再是唯一选择。
+Vite drove the adoption of ESM in development. Native browser ESM support is maturing, and bundling is no longer the only option.
 
-### 3. 编译时优化
+### 3. Compile-Time Optimization
 
-`<script setup>`、Svelte 的编译策略、Solid 的编译时响应性……框架越来越倾向于在编译阶段做优化，而不是运行时。
+`<script setup>`, Svelte's compilation strategy, Solid's compile-time reactivity... frameworks increasingly prefer to optimize at compile time rather than at runtime.
 
 ### 4. Edge Computing
 
-Vercel Edge Functions、Cloudflare Workers、Deno Deploy……边缘计算让前端有了新的部署形态。
+Vercel Edge Functions, Cloudflare Workers, Deno Deploy... edge computing has given the frontend new deployment shapes.
 
 ## My 2021 Toolchain
 
@@ -129,8 +129,8 @@ Monorepo：pnpm workspace + Turborepo
 
 ## Summary
 
-- 2021 是 Vite 之年，构建工具格局被彻底改变
-- React 18 的并发特性是框架层面最重要的变化
-- Rust 重写工具链是趋势，性能差距让 JavaScript 工具相形见绌
-- Monorepo 工具链成熟：pnpm + Turborepo 是最优组合
-- 2022 年看好：Vitest 正式发布、React 18 正式版、RSC（React Server Components）落地
+- 2021 was the year of Vite; the build-tool landscape was fundamentally changed
+- React 18's concurrent features were the most important framework-level change
+- Rust rewrites of the toolchain are a trend, and the performance gap puts JavaScript tools to shame
+- The Monorepo toolchain matured: pnpm + Turborepo is the optimal combination
+- On my radar for 2022: Vitest's official release, React 18 stable, and RSC (React Server Components) landing

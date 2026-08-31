@@ -5,7 +5,7 @@ tags:
   - Vue
   - Pinia
 readingTime: 1
-description: "In daily development, Pinia 插件系统与持久化 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strate"
+description: "Pinia's plugin system and persistence are showing up in more and more everyday code. This article systematically covers their usage, mechanics, and practical strategies."
 wordCount: 156
 ---
 

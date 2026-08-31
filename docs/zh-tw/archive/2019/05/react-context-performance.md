@@ -8,7 +8,7 @@ description: "React 16.3 引入了新的 Context API，16.8 的 Hooks 讓它更�
 wordCount: 644
 ---
 
-React 16.3 引入了新的 Context API，16.8 的 Hooks 讓它更好用了。但在實際專案中，很多人發現用了 Context 後元件頻繁重渲染，效能下降。這篇文章深入分析 Context 的渲染機製和最佳化方案。
+React 16.3 引入了新的 Context API，16.8 的 Hooks 讓它更好用了。但在實際專案中，很多人發現用了 Context 後元件頻繁重渲染，效能下降。這篇文章深入分析 Context 的渲染機制和最佳化方案。
 
 ## Context 的重渲染問題
 
@@ -52,7 +52,7 @@ function ThemeSwitcher() {
 {% endraw %}
 ```
 
-問題來了：點選切換主題時，`UserProfile` 也會重新渲染，儘管它隻關心 `user`。因為 `ThemeSwitcher` 呼叫了 `setTheme`，導致 `value` 物件變化，所有 `useContext(UserContext)` 的消費者都會重渲染。
+問題來了：點選切換主題時，`UserProfile` 也會重新渲染，儘管它只關心 `user`。因為 `ThemeSwitcher` 呼叫了 `setTheme`，導致 `value` 物件變化，所有 `useContext(UserContext)` 的消費者都會重渲染。
 
 **核心原理：Context.Provider 的 value 變化時，所有 useContext 這個 Context 的元件都會重渲染，不管它們實際用了 value 中的哪些欄位。**
 
@@ -135,7 +135,7 @@ function AppProvider({ children }) {
 }
 ```
 
-`setUser` 來自 `useState`，引用本身是穩定的，所以依賴陣列隻需要 `[user]`。
+`setUser` 來自 `useState`，引用本身是穩定的，所以依賴陣列只需要 `[user]`。
 
 ## 方案三：useMemo 和 useCallback
 

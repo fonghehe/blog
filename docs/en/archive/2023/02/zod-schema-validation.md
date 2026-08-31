@@ -4,11 +4,11 @@ date: 2023-02-08 15:28:32
 tags:
   - Frontend
 readingTime: 2
-description: "在全栈 TypeScript 项目里，类型安全应该是从数据库到前端一致的。Zod 是实现这个目标最干净的方案。"
-wordCount: 272
+description: "In a full-stack TypeScript project, type safety should be consistent from the database to the frontend. Zod is the cleanest way to achieve that."
+wordCount: 257
 ---
 
-在全栈 TypeScript 项目里，类型安全应该是从数据库到前端一致的。Zod 是实现这个目标最干净的方案。
+In a full-stack TypeScript project, type safety should be consistent from the database to the frontend. Zod is the cleanest way to achieve that.
 
 ## Why Choose Zod
 

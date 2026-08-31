@@ -4,13 +4,13 @@ date: 2025-10-12 19:06:43
 tags:
   - フロントエンド
 readingTime: 2
-description: "Edge 渲染已经从概念验证走向生产应用。来总结一下我们团队在 Edge 渲染方面的实践和踩坑经验。"
-wordCount: 174
+description: "Edge レンダリングは概念検証の段階を過ぎて、本番応用へと移行した。私たちのチームが Edge レンダリングで得た実践とハマりどころを総括しよう。"
+wordCount: 292
 ---
 
-Edge 渲染已经从概念验证走向生产应用。来总结一下我们团队在 Edge 渲染方面的实践和踩坑经验。
+Edge レンダリングは概念検証の段階を過ぎて、本番応用へと移行した。私たちのチームが Edge レンダリングで得た実践とハマりどころを総括しよう。
 
-## Edge 渲染模式对比
+## Edge レンダリングモードの比較
 
 ```
 模式              首屏速度   动态内容   复杂度   成本
@@ -119,7 +119,7 @@ async function Recommendations() {
 }
 ```
 
-## Edge 数据缓存策略
+## Edge データキャッシュ戦略
 
 ```ts
 // lib/edge-cache.ts
@@ -198,7 +198,7 @@ const adapter = new PrismaNeon({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
 ```
 
-## 混合渲染策略
+## ハイブリッドレンダリング戦略
 
 ```
 我们的渲染策略：
@@ -215,8 +215,8 @@ const prisma = new PrismaClient({ adapter });
 
 ## まとめ
 
-- Edge 渲染适合需要低延迟首屏的公开页面
-- Streaming SSR 是 Edge 渲染的核心模式，让快的部分先到
-- 缓存策略是 Edge 渲染的关键，多级缓存降低源站压力
-- Edge Runtime 有 Node.js API 限制，选库时要注意兼容性
-- 混合渲染模式是生产环境的最优解，按页面特性选择
+- Edge レンダリングは低遅延のファーストビューが必要な公開ページに向いている
+- Streaming SSR は Edge レンダリングの中核モードで、速い部分を先に届けられる
+- キャッシュ戦略が Edge レンダリングの要であり、多段キャッシュでオリジンへの負荷を下げる
+- Edge Runtime には Node.js API の制限があり、ライブラリ選定時は互換性に注意が必要
+- ハイブリッドレンダリングモードが本番環境の最適解で、ページの特性に応じて選ぶ

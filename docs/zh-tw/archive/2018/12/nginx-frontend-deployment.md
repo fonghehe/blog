@@ -8,7 +8,7 @@ description: "前端專案部署到 Nginx 上，每次都要找設定，乾脆�
 wordCount: 124
 ---
 
-前端專案部署到 Nginx 上，每次都要找配置，乾脆整理一份常用配置備查。
+前端專案部署到 Nginx 上，每次都要找設定，乾脆整理一份常用設定備查。
 
 ## 基礎設定：單頁應用
 
@@ -156,5 +156,5 @@ server {
 - SPA：`try_files $uri $uri/ /index.html` 支援 history 路由
 - 快取：JS/CSS 用 hash + 永久快取，HTML 不快取
 - 反向代理：`proxy_pass` 把 `/api` 轉發到後端
-- gzip：`gzip_types` 配置要壓縮的 MIME 型別
+- gzip：`gzip_types` 設定要壓縮的 MIME 型別
 - HTTPS：HTTP 重定向到 HTTPS，加 HSTS 頭

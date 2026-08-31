@@ -7,11 +7,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "Vue 3 + TypeScript 完整开发指南 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
-wordCount: 197
+description: "Vue 3 plus TypeScript is becoming the default for serious projects. This complete guide starts from real projects and digs into the core principles and best practices."
+wordCount: 189
 ---
 
-Vue 3 + TypeScript 完整开发指南 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+The complete Vue 3 + TypeScript development guide is being adopted more and more widely in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -130,4 +130,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vue 3 + TypeScript 完整开发指南不是银弹，需要根据项目规模和技术栈选择
+- The Vue 3 + TypeScript guide isn't a silver bullet; choose it based on your project's size and tech stack

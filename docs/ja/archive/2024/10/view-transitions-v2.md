@@ -1,11 +1,11 @@
 ---
-title: "CSS View Transitions v2 2024：Chrome 实现进展与降级策略"
+title: "CSS View Transitions v2 2024：Chrome 実装の進展とフォールバック戦略"
 date: 2024-10-28 19:42:19
 tags:
   - CSS
 readingTime: 3
 description: "CSS View Transitions v2のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 492
+wordCount: 527
 ---
 
 CSS View Transitions v2のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -41,7 +41,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ## 高度な使い方
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -147,11 +147,11 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+この構成は本番環境で半年以上安定稼働しており、実運用で検証済みだ。
 
 ## まとめ
 
 - 新しい技術を使うためだけに新しい技術を使わないでください
 - コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- CSS View Transitions v2不是银弹，需要根据项目规模和技术栈选择
+- CSS View Transitions v2 は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある
 - 基礎的な原理を理解することは、APIを暗記することより重要です

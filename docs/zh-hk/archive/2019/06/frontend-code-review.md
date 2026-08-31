@@ -5,10 +5,10 @@ tags:
   - 前端
 readingTime: 7
 description: "團隊最近在推 Code Review，整理了一份前端 CR 的檢查清單。實際執行下來，不隻是發現 bug，更是一種知識傳遞的方式。"
-wordCount: 1057
+wordCount: 1049
 ---
 
-團隊最近在推 Code Review，整理了一份前端 CR 的檢查清單。實際執行下來，不隻是發現 bug，更是一種知識傳遞的方式。
+團隊最近在推 Code Review，整理了一份前端 CR 的檢查清單。實際執行下來，不只是發現 bug，更是一種知識傳遞的方式。
 
 ## 代碼風格一致性
 
@@ -77,7 +77,7 @@ module.exports = {
 }
 ```
 
-再加上 `husky` + `lint-staged`，確保提交前強製檢查：
+再加上 `husky` + `lint-staged`，確保提交前強制檢查：
 
 ```json
 // package.json
@@ -100,7 +100,7 @@ module.exports = {
 }
 ```
 
-CR 時如果發現風格問題，第一反應應該是"為什麼 lint 沒攔住"，而不是手動逐個糾正。團隊應該追求的是：**CR 不討論格式，隻討論邏輯**。
+CR 時看到風格問題，要先問「為什麼 lint 沒攔住」，而不是手動逐一糾正。團隊追求的是：**CR 不討論格式，只討論邏輯**。
 
 ## 命名規範
 
@@ -141,7 +141,7 @@ const hasPermission = checkPermission(user, 'admin')
 - 數組用複數形式，`users` 比 `userList` 更自然
 - 事件處理函數用 `handle` 或 `on` 前綴，保持一致
 
-**命名一致性**：同一個概念在項目中應該用同一個詞。比如"用户信息"要麼全叫 `userInfo`，要麼全叫 `userData`，不要混着用。
+**命名一致性**：同一個概念在項目中應該用同一個詞。比如"用戶信息"要麼全叫 `userInfo`，要麼全叫 `userData`，不要混着用。
 
 ## 效能考量
 
@@ -285,7 +285,7 @@ function RichContent({ html }) {
 {% endraw %}
 ```
 
-**2. 避免在 URL 中拼接用户輸入**
+**2. 避免在 URL 中拼接用戶輸入**
 
 ```javascript
 // 反面：用户輸入可能包含惡意字符
@@ -302,7 +302,7 @@ const url = `/api/search?q=${encodeURIComponent(userInput)}`
 document.cookie = 'token=abc123; HttpOnly; Secure; SameSite=Strict'
 ```
 
-`HttpOnly` 阻止 JS 讀取 Cookie，`Secure` 限製隻在 HTTPS 下發送，`SameSite` 防止 CSRF。
+`HttpOnly` 阻止 JS 讀取 Cookie，`Secure` 限制只在 HTTPS 下發送，`SameSite` 防止 CSRF。
 
 **4. Vue 中的 v-html 同樣危險**
 
@@ -343,7 +343,7 @@ document.cookie = 'token=abc123; HttpOnly; Secure; SameSite=Strict'
 - 所有可交互元素能否用鍵盤操作（Tab 切換、Enter/Space 觸發）
 - 圖片是否有 `alt` 屬性（裝飾性圖片用 `alt=""`）
 - 表單控件是否關聯了 `<label>`
-- 顏色對比度是否足夠（不隻是靠顏色區分狀態）
+- 顏色對比度是否足夠（不只是靠顏色區分狀態）
 
 ## 組件設計審查
 
@@ -611,7 +611,7 @@ const activeEditors = filterUsers(users, u => u.role === 'editor')
 - 代碼風格交給 ESLint + Prettier 自動化，CR 不應該花時間在格式問題上
 - 關注命名：變量名是名詞，函數名是動詞開頭，布爾值用 is/has/can/should
 - 性能重點看渲染相關：避免 render 中創建新引用、列表 key 要穩定
-- 安全性第一防線是 XSS，堅決杜絕 dangerouslySetInnerHTML / v-html 插入未經處理的用户輸入
+- 安全性第一防線是 XSS，堅決杜絕 dangerouslySetInnerHTML / v-html 插入未經處理的用戶輸入
 - 組件設計遵循單一職責，數據獲取、業務邏輯、UI 渲染應該分離
 - 錯誤處理不是可選項，每個網絡請求和異步操作都必須有兜底方案
 - 測試覆蓋核心邏輯即可，但邊界情況和異常輸入不能遺漏

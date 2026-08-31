@@ -3,9 +3,9 @@ title: "React エコシステム 2026 完全総覧：実務で使うための導
 date: 2026-02-02 18:16:53
 tags:
   - React
-readingTime: 4
+readingTime: 5
 description: "2026 年の React エコシステムは大きな地殻変動を経験しました。かつての「必須ライブラリ」の多くが淘汰され、新しいツールがその空白を埋めています。本記事では全面的な棚卸しを行います：どのライブラリを使うべきか、どれを捨てるべきか、そしてどの新鋭が注目に値するか。"
-wordCount: 597
+wordCount: 716
 ---
 
 2026 年の React エコシステムは大きな地殻変動を経験しました。かつての「必須ライブラリ」の多くが淘汰され、新しいツールがその空白を埋めています。本記事では全面的な棚卸しを行います：どのライブラリを使うべきか、どれを捨てるべきか、そしてどの新鋭が注目に値するか。
@@ -77,7 +77,7 @@ export const useAppStore = create<AppState>()(
 
 ## データ取得：TanStack Query が不動の首位
 
-TanStack Query v5 はデータ取得の絶対標準となっています。SWR はメンテナンスが続いていますが更新は緩やか。Apollo Client は GraphQL 特化シナリオに退いています。
+TanStack Query v5 はデータ取得の絶対標準となっています。SWR はメンテナンスが続いていますが更新は緩やかです。Apollo Client は GraphQL 特化シナリオに退いています。
 
 ```typescript
 // TanStack Query v5 の 2026 年ベストプラクティス
@@ -303,3 +303,6 @@ const toolchain2026 = {
 
 - 状態管理は Zustand、データ取得は TanStack Query — これが 2026 年における議論の余地のないデフォルトの組み合わせ。
 - CSS-in-JS は死んだ。Tailwind v4 + CSS Modules が現在最も現実的なスタイリング手法。
+- shadcn/ui の「コードを所有する」モデルは、コンポーネントライブラリのこれからの方向性です。
+- ツールチェーンも大刷新：Biome が ESLint を、Vitest が Jest を、Bun が npm を置き換えました。
+- 2026 年の React エコシステムは収束の方向にあり、選択肢が減ったぶん迷いが減る——各分野の勝者が明確だからです。

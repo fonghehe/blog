@@ -4,11 +4,11 @@ date: 2024-10-31 12:45:22
 tags:
   - CSS
 readingTime: 1
-description: "CSS @starting-style是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。"
-wordCount: 191
+description: "CSS @starting-style deserves attention in frontend development. This article draws on real project experience to explore the core concepts and best practices."
+wordCount: 138
 ---
 
-CSS @starting-style是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。
+CSS @starting-style deserves attention in frontend development. This article draws on real project experience to explore the core concepts and best practices.
 
 ## Basic Concepts
 
@@ -78,7 +78,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Practical Application
 
-核心代码如下：
+The core code is as follows:
 
 ```css
 :root {
@@ -110,7 +110,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Best Practices
 
-我们可以这样实现：
+We can implement it like this:
 
 ```css
 .grid {
@@ -140,10 +140,10 @@ Be sure to handle edge cases and exceptions properly.
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+With this pattern, the code's maintainability improves.
 
 ## Summary
 
 - CSS @starting-style的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
+- In real projects, choosing the right solution matters more than chasing the newest technology
+- Keep code style consistent across the team to cut maintenance costs

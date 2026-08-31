@@ -5,12 +5,12 @@ tags:
   - Angular
   - TypeScript
 
-readingTime: 2
+readingTime: 3
 description: "NgRx 是 Angular 生态最主流的状态管理库，基于 Redux 模式 + RxJS。对于中大型 Angular 应用，NgRx 能让状态流转变得可预测、可调试、可测试。这篇文章带你完整走一遍 NgRx 的核心概念和实际用法。"
-wordCount: 258
+wordCount: 416
 ---
 
-NgRx 是 Angular 生态最主流的状态管理库，基于 Redux 模式 + RxJS。对于中大型 Angular 应用，NgRx 能让状态流转变得可预测、可调试、可测试。这篇文章带你完整走一遍 NgRx 的核心概念和实际用法。
+NgRx は Angular エコシステムで最も主流の状態管理ライブラリで、Redux パターン + RxJS をベースとしている。中〜大規模な Angular アプリケーションにおいて、NgRx は状態の流れを予測可能・デバッグ可能・テスト可能にする。この記事では、NgRx のコアコンセプトと実際の使い方を一通り追ってみる。
 
 ## コアコンセプト
 
@@ -192,17 +192,17 @@ export class AppModule {}
 
 ## NgRx を選ぶべき時
 
-**适合**：
+**適している場合：**
 
-- 多个不相关组件共享状态
-- 需要时间旅行调试（Redux DevTools）
-- 复杂异步流程（多个 API 依赖、乐观更新）
+- 互いに関係のない複数のコンポーネント間で状態を共有する場合
+- タイムトラベルデバッグ（Redux DevTools）が必要な場合
+- 複雑な非同期フロー（複数の API 依存、楽観的更新）がある場合
 
-**不适合**：
+**適さない場合：**
 
-- 小型应用（用 BehaviorSubject + Service 就够了）
-- 简单的父子组件通信（用 @Input/@Output）
+- 小規模なアプリケーション（BehaviorSubject + Service で十分な場合）
+- 単純な親子コンポーネント間の通信（@Input/@Output で済む場合）
 
 ## まとめ
 
-NgRx 的学习曲线较陡，但一旦理解了 Action → Reducer → Store → Selector → Effect 这条链路，调试和测试状态逻辑会变得非常顺手。NgRx DevTools 的时间旅行调试是企业级应用排查 bug 的利器。
+NgRx の学習曲線はやや急だが、一度 Action → Reducer → Store → Selector → Effect という一連の流れを理解すれば、状態ロジックのデバッグとテストがとても扱いやすくなる。NgRx DevTools のタイムトラベルデバッグは、エンタープライズ級アプリケーションでバグを探る際の強力な武器だ。

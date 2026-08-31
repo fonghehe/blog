@@ -5,14 +5,14 @@ tags:
   - JavaScript
 readingTime: 1
 description: "函數語言程式設計的核心工具函式在實際專案中並不遠。Redux middleware、Lodash/fp、RxJS 運算子背後都是這些思想。手寫實現能幫你完全吹散它們。"
-wordCount: 144
+wordCount: 141
 ---
 
-函數語言程式設計的核心工具函式在實際專案中並不遠。Redux middleware、Lodash/fp、RxJS 運算子背後都是這些思想。手寫實現能幫你完全吹散它們。
+函數式程式設計的核心工具函式離實際專案並不遠。Redux middleware、Lodash/fp、RxJS 運算子背後都是這些思想。手寫實現能幫你徹底弄懂它們。
 
-## curry 梯度化
+## curry（柯里化）
 
-將一個多引數函式轉成尚可以逐步接收引數的函式：
+將一個多引數函式轉成可以逐步接收引數的函式：
 
 ```javascript
 const curry = (fn) => {
@@ -100,14 +100,14 @@ const memoize = (fn) => {
   };
 };
 
-// 昂貴計算隻執行一次
+// 昂貴計算只執行一次
 const expensiveFn = memoize((n) => {
   // 模擬耗時計算
   return n * n;
 });
 ```
 
-## once 隻執行一次
+## once 只執行一次
 
 ```javascript
 const once = (fn) => {
@@ -122,7 +122,7 @@ const once = (fn) => {
   };
 };
 
-// 載入設定隻初始化一次
+// 載入設定只初始化一次
 const initConfig = once(async () => {
   const config = await fetch("/api/config").then((r) => r.json());
   return config;

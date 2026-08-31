@@ -5,10 +5,10 @@ tags:
   - GraphQL
 readingTime: 5
 description: "REST API 在复杂业务场景下经常遇到 over-fetching 和 under-fetching 的问题。GraphQL 让前端精确声明需要的数据结构，后端按需返回。Apollo Client 是目前最成熟的 GraphQL 客户端，提供了缓存、状态管理、乐观更新等开箱即用的能力。本文将以一个真实的博客管理项目"
-wordCount: 412
+wordCount: 630
 ---
 
-REST API 在复杂业务场景下经常遇到 over-fetching 和 under-fetching 的问题。GraphQL 让前端精确声明需要的数据结构，后端按需返回。Apollo Client 是目前最成熟的 GraphQL 客户端，提供了缓存、状态管理、乐观更新等开箱即用的能力。本文将以一个真实的博客管理项目为例，讲解 Apollo Client 的完整使用流程。
+複雑なビジネスシーンにおいて、REST APIはover-fetchingやunder-fetchingの問題に頻繁に直面する。GraphQLを使えば、フロントエンドが必要なデータ構造を正確に宣言でき、バックエンドは必要に応じてデータを返す。Apollo Clientは現在最も成熟したGraphQLクライアントであり、キャッシュ、状態管理、楽観的更新などの機能をすぐに使える形で提供している。本記事では実際のブログ管理プロジェクトを例に、Apollo Clientの完全な使い方を解説する。
 
 ## Apollo Clientのインストールと初期化
 
@@ -17,7 +17,7 @@ npm install apollo-client apollo-cache-inmemory apollo-link-http graphql graphql
 npm install react-apollo
 ```
 
-### 创建 Apollo Client 实例
+### Apollo Clientインスタンスの作成
 
 ```js
 // src/apollo/client.js
@@ -28,7 +28,7 @@ import { HttpLink } from 'apollo-link-http';
 const httpLink = new HttpLink({
   uri: 'https://your-api.com/graphql',
   headers: {
-    // 在请求头中携带 token
+    // リクエストヘッダーにtokenを含める
     authorization: `Bearer ${localStorage.getItem('token') || ''}`,
   },
 });
@@ -38,14 +38,14 @@ const cache = new InMemoryCache();
 const client = new ApolloClient({
   link: httpLink,
   cache,
-  // 开发环境下开启开发者工具支持
+  // 開発環境でDevToolsサポートを有効化
   connectToDevTools: true,
 });
 
 export default client;
 ```
 
-### 在 React 应用中接入
+### Reactアプリケーションへの導入
 
 ```jsx
 // src/App.jsx
@@ -75,7 +75,7 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
-// 定义 GraphQL 查询
+// GraphQLクエリの定義
 const GET_POSTS = gql`
   query GetPosts($page: Int!, $pageSize: Int!) {
     posts(page: $page, pageSize: $pageSize) {
@@ -100,12 +100,12 @@ function PostList() {
       variables={{ page: 1, pageSize: 10 }}
     >
       {({ loading, error, data, fetchMore }) => {
-        if (loading) return <div className="loading">加载中...</div>;
-        if (error) return <div className="error">出错了: {error.message}</div>;
+        if (loading) return <div className="loading">読み込み中...</div>;
+        if (error) return <div className="error">エラーが発生しました: {error.message}</div>;
 
         return (
           <div>
-            <h2>文章列表 (共 {data.totalPosts} 篇)</h2>
+            <h2>記事一覧（全 {data.totalPosts} 件）</h2>
             {data.posts.map(post => (
               <article key={post.id} className="post-card">
                 <h3>{post.title}</h3>
@@ -124,7 +124,7 @@ function PostList() {
             ))}
 
             <button onClick={() => loadMore(fetchMore, data)}>
-              加载更多
+              もっと読み込む
             </button>
           </div>
         );
@@ -186,7 +186,7 @@ function CreatePost() {
   return (
     <Mutation
       mutation={CREATE_POST}
-      // 乐观更新：立即更新 UI，无需等待服务端响应
+      // 楽観的更新：サーバー応答を待たずにUIを即時更新
       optimisticResponse={{
         createPost: {
           __typename: 'Post',
@@ -195,14 +195,14 @@ function CreatePost() {
           excerpt: content.slice(0, 100),
           author: {
             __typename: 'Author',
-            name: '当前用户',
+            name: '現在のユーザー',
             avatar: '/default-avatar.png',
           },
           createdAt: new Date().toISOString(),
           tags: tags.split(',').map(t => t.trim()),
         },
       }}
-      // 更新缓存中的文章列表
+      // キャッシュ内の記事一覧を更新
       update={(cache, { data: { createPost } }) => {
         const data = cache.readQuery({
           query: GET_POSTS,
@@ -237,22 +237,22 @@ function CreatePost() {
           <input
             value={title}
             onChange={e => setTitle(e.target.value)}
-            placeholder="文章标题"
+            placeholder="記事タイトル"
             required
           />
           <textarea
             value={content}
             onChange={e => setContent(e.target.value)}
-            placeholder="文章内容"
+            placeholder="記事内容"
             required
           />
           <input
             value={tags}
             onChange={e => setTags(e.target.value)}
-            placeholder="标签（用逗号分隔）"
+            placeholder="タグ（カンマ区切り）"
           />
           <button type="submit" disabled={loading}>
-            {loading ? '发布中...' : '发布文章'}
+            {loading ? '公開中...' : '記事を公開'}
           </button>
           {error && <p className="error">{error.message}</p>}
         </form>
@@ -267,9 +267,9 @@ export default CreatePost;
 
 ## キャッシュ管理
 
-Apollo Client 内置了强大的 Normalized Cache，自动以 `__typename + id` 作为缓存 key。
+Apollo Clientには強力なNormalized Cacheが組み込まれており、`__typename + id` をキャッシュキーとして自動的に使用する。
 
-### 配置 dataIdFromObject
+### dataIdFromObjectの設定
 
 ```js
 import ApolloClient from 'apollo-client';
@@ -289,7 +289,7 @@ const cache = new InMemoryCache({
 });
 ```
 
-### 手动操作缓存
+### キャッシュの手動操作
 
 ```js
 import { useApolloClient } from 'react-apollo';
@@ -298,7 +298,7 @@ function useDeletePost() {
   const client = useApolloClient();
 
   const deletePost = (postId) => {
-    // 直接从缓存中删除
+    // キャッシュから直接削除
     client.cache.evict(`Post:${postId}`);
     client.cache.gc();
   };
@@ -307,7 +307,7 @@ function useDeletePost() {
 }
 ```
 
-### refetchQueries 刷新关联查询
+### refetchQueriesで関連クエリを更新
 
 ```jsx
 <Mutation
@@ -318,7 +318,7 @@ function useDeletePost() {
 >
   {(deletePost) => (
     <button onClick={() => deletePost({ variables: { id: post.id } })}>
-      删除
+      削除
     </button>
   )}
 </Mutation>
@@ -326,7 +326,7 @@ function useDeletePost() {
 
 ## Hooksスタイルの使い方（react-apollo 2.1+）
 
-从 react-apollo 2.1 开始，推荐使用 Hooks API：
+react-apollo 2.1以降では、Hooks APIの使用が推奨されている：
 
 ```jsx
 {% raw %}
@@ -367,24 +367,24 @@ function PostDetail({ postId }) {
   });
 
   const [addComment, { loading: submitting }] = useMutation(ADD_COMMENT, {
-    // 发表评论后刷新文章数据
+    // コメント投稿後に記事データを再取得
     refetchQueries: [{ query: GET_POST, variables: { id: postId } }],
   });
 
   const [commentText, setCommentText] = useState('');
 
-  if (loading) return <div>加载中...</div>;
-  if (error) return <div>加载失败: {error.message}</div>;
+  if (loading) return <div>読み込み中...</div>;
+  if (error) return <div>読み込み失敗: {error.message}</div>;
 
   const { post } = data;
 
   return (
     <div>
       <h1>{post.title}</h1>
-      <p>作者: {post.author.name}</p>
+      <p>著者: {post.author.name}</p>
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
 
-      <h3>评论 ({post.comments.length})</h3>
+      <h3>コメント ({post.comments.length})</h3>
       {post.comments.map(comment => (
         <div key={comment.id} className="comment">
           <strong>{comment.author.name}</strong>
@@ -403,10 +403,10 @@ function PostDetail({ postId }) {
         <textarea
           value={commentText}
           onChange={e => setCommentText(e.target.value)}
-          placeholder="写下你的评论..."
+          placeholder="コメントを入力..."
         />
         <button type="submit" disabled={submitting || !commentText.trim()}>
-          {submitting ? '提交中...' : '发表评论'}
+          {submitting ? '送信中...' : 'コメントを投稿'}
         </button>
       </form>
     </div>
@@ -431,7 +431,7 @@ const authLink = new ApolloLink((operation, forward) => {
   });
 
   return forward(operation).map(response => {
-    // 检查响应头中的 token 刷新
+    // レスポンスヘッダーのtokenリフレッシュを確認
     const context = operation.getContext();
     const newToken = context.response?.headers?.get('x-refreshed-token');
 
@@ -447,7 +447,7 @@ export default authLink;
 ```
 
 ```js
-// 更新 client 配置
+// client設定の更新
 import { from } from 'apollo-link';
 import authLink from './authLink';
 
@@ -459,10 +459,10 @@ const client = new ApolloClient({
 
 ## まとめ
 
-- Apollo Client 是 React 生态中最成熟的 GraphQL 客户端，提供了完整的数据获取、缓存、状态管理方案
-- 使用 `Query` 组件（或 `useQuery` Hook）声明式地获取数据，自动处理 loading 和 error 状态
-- `Mutation` 配合 `update` 和 `optimisticResponse` 可以实现乐观更新，提升用户体验
-- Apollo 的 Normalized Cache 自动以 `__typename + id` 管理缓存，数据更新时保持一致性
-- 推荐使用 Hooks 风格的 API（`useQuery`、`useMutation`），代码更简洁
-- 注意配置认证 token 和 token 过期刷新逻辑，保证 API 请求的安全性
-- `refetchQueries` 是最简单的数据同步方式，但性能敏感场景应优先使用手动 cache 操作
+- Apollo ClientはReactエコシステムで最も成熟したGraphQLクライアントであり、データ取得・キャッシュ・状態管理の完全なソリューションを提供する
+- `Query`コンポーネント（または `useQuery` フック）で宣言的にデータを取得し、ローディングとエラー状態を自動処理する
+- `Mutation` と `update`・`optimisticResponse` を組み合わせることで楽観的更新を実現し、ユーザー体験を向上できる
+- ApolloのNormalized Cacheは `__typename + id` でキャッシュを自動管理し、データ更新時の一貫性を保つ
+- HooksスタイルのAPI（`useQuery`・`useMutation`）の使用を推奨する。コードがより簡潔になる
+- 認証tokenとtoken期限切れ時のリフレッシュロジックを設定し、APIリクエストの安全性を確保すること
+- `refetchQueries` は最もシンプルなデータ同期方法だが、パフォーマンスが重要な場面では手動キャッシュ操作を優先すべきである

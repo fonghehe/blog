@@ -1,5 +1,5 @@
 ---
-title: "HTTP 緩存機製：強緩存與協商緩存"
+title: "HTTP 緩存機制：強緩存與協商緩存"
 date: 2018-04-25 16:13:17
 tags:
   - 前端
@@ -34,7 +34,7 @@ HTTP 緩存配置正確可以顯著提升頁面加載性能，但配置錯誤會
 Cache-Control: max-age=31536000   # 緩存 1 年（秒）
 Cache-Control: no-cache           # 不用強緩存，但可以協商緩存
 Cache-Control: no-store           # 完全不緩存
-Cache-Control: private            # 隻能瀏覽器緩存，CDN 不緩存
+Cache-Control: private            # 只能瀏覽器緩存，CDN 不緩存
 Cache-Control: public             # 瀏覽器和 CDN 都可緩存
 ```
 
@@ -83,7 +83,7 @@ If-None-Match: "abc123"
 HTTP/1.1 304 Not Modified  # 或 200 + 新 ETag
 ```
 
-ETag 是內容摘要，隻要內容變了 ETag 就變，更精準。
+ETag 是內容摘要，只要內容變了 ETag 就變，更精準。
 
 ## 前端資源的最佳緩存策略
 

@@ -5,16 +5,16 @@ tags:
   - マイクロフロントエンド
   - エンジニアリング
 
-readingTime: 2
+readingTime: 3
 description: "上一篇聊了微前端架构设计，这篇写具体的技术接入。我们用 qiankun 接入了 6 个子应用，包含 Vue 2、Vue 3 和 React 三种技术栈。记录主应用配置、子应用改造和常见问题。"
-wordCount: 420
+wordCount: 717
 ---
 
-上一篇聊了微前端架构设计，这篇写具体的技术接入。我们用 qiankun 接入了 6 个子应用，包含 Vue 2、Vue 3 和 React 三种技术栈。记录主应用配置、子应用改造和常见问题。
+前回の記事ではマイクロフロントエンドのアーキテクチャ設計について書き、今回は具体的な技術的な組み込みについて書く。私たちは qiankun を使って 6 つのサブアプリケーション（Vue 2、Vue 3、React の 3 つの技術スタックを含む）を組み込んだ。メインアプリの設定、サブアプリの改修、よくある問題を記録する。
 
 ## メインアプリの設定
 
-主应用负责注册子应用和生命周期管理：
+メインアプリはサブアプリの登録とライフサイクル管理を担う：
 
 ```javascript
 // main.js - 主应用（Vue 3）
@@ -68,7 +68,7 @@ start({
 
 ## サブアプリの改造
 
-子应用需要暴露三个生命周期钩子。以 Vue 2 子应用为例：
+サブアプリは3つのライフサイクルフックを公開する必要がある。例として Vue 2 のサブアプリを見てみる：
 
 ```javascript
 // src/main.js
@@ -118,7 +118,7 @@ export async function unmount() {
 
 ## Webpack 設定の調整
 
-子应用需要修改打包配置，暴露 publicPath 和生命周期钩子：
+サブアプリはバンドル設定を変更し、`publicPath` とライフサイクルフックを公開する必要がある：
 
 ```javascript
 // vue.config.js
@@ -140,9 +140,9 @@ module.exports = {
 }
 ```
 
-## CSS分離ソリューション
+## CSS 分離アプローチ
 
-qiankun 提供了两种 CSS 隔离方案：
+qiankun は2つの CSS 分離のアプローチを提供している：
 
 ```javascript
 start({
@@ -159,13 +159,13 @@ start({
 })
 ```
 
-我们最终用的是 `experimentalStyleIsolation`，因为 `strictStyleIsolation` 下弹窗组件的样式会被隔离导致位置异常。
+最終的に私たちが採用したのは `experimentalStyleIsolation` で、理由は `strictStyleIsolation` ではモーダルコンポーネントのスタイルが分離されて位置がおかしくなるためだ。
 
 ## よくある問題
 
-**1. 子应用静态资源 404**
+**1. サブアプリの静的リソース 404**
 
-子应用的 `publicPath` 需要动态设置：
+サブアプリの `publicPath` は動的に設定する必要がある：
 
 ```javascript
 // main.js
@@ -174,9 +174,9 @@ if (window.__POWERED_BY_QIANKUN__) {
 }
 ```
 
-**2. 子应用间路由跳转**
+**2. サブアプリ間のルーティング遷移**
 
-子应用内跳转用自身的 router，跳转到其他子应用需要使用主应用提供的方法：
+サブアプリ内の遷移には自身の router を使い、他のサブアプリへの遷移にはメインアプリが提供するメソッドを使う必要がある：
 
 ```javascript
 // 主应用提供跳转方法
@@ -188,14 +188,14 @@ window.__MAIN_APP_NAVIGATE__ = (path) => {
 window.__MAIN_APP_NAVIGATE__('/user/profile')
 ```
 
-**3. 子应用 keep-alive**
+**3. サブアプリの keep-alive**
 
-qiankun 默认不支持 keep-alive，每次切换都会销毁重建。我们通过缓存 DOM 和状态来模拟，但体验一般。如果你的场景需要频繁切换子应用，建议评估 single-spa 的方案。
+qiankun はデフォルトで keep-alive をサポートしておらず、切り替えのたびに破棄して再構築する。私たちは DOM と状態をキャッシュしてシミュレートしたが、体験はいまいちだ。頻繁にサブアプリを切り替える必要がある場合は、single-spa のアプローチの検討をおすすめする。
 
 ## まとめ
 
-- qiankun 接入的核心是子应用暴露三个生命周期钩子
-- CSS 隔离推荐 `experimentalStyleIsolation`
-- publicPath 动态设置和跨域配置是最常见的接入问题
-- 子应用间通信要克制，优先用主应用中转
-- keep-alive 支持是 qiankun 的短板，需要额外处理
+- qiankun 統合の核心は、サブアプリが3つのライフサイクルフックを公開することだ
+- CSS の分離には `experimentalStyleIsolation` を推奨する
+- `publicPath` の動的設定とクロスオリジン設定が、最も一般的な統合の問題だ
+- サブアプリ間の通信は抑制的に行い、メインアプリの中継を優先する
+- keep-alive のサポートは qiankun の弱点で、追加の対応が必要だ

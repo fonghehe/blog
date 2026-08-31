@@ -4,11 +4,11 @@ date: 2022-08-17 11:47:50
 tags:
   - Angular
 readingTime: 2
-description: "Angular 14 引入的 `inject()` 函数是一个小改动但影响深远的 API。它允许在 injection context（组件初始化期间、工厂函数、路由守卫等）中直接获取服务，不再强制通过构造函数注入。这开启了一种 React Hooks 风格的\"可组合\"Angular 开发模式。"
-wordCount: 256
+description: "The inject() function introduced in Angular 14 is a small change with far-reaching impact. It lets you retrieve services directly inside an injection context (component initialization, factory functions, route guards, and so on) instead of forcing constructor injection. This opens the door to a React Hooks-style 'composable' way of writing Angular."
+wordCount: 155
 ---
 
-Angular 14 引入的 `inject()` 函数是一个小改动但影响深远的 API。它允许在 injection context（组件初始化期间、工厂函数、路由守卫等）中直接获取服务，不再强制通过构造函数注入。这开启了一种 React Hooks 风格的"可组合"Angular 开发模式。
+The inject() function introduced in Angular 14 is a small change with far-reaching impact. It lets you retrieve services directly inside an injection context (component initialization, factory functions, route guards, and so on) instead of forcing constructor injection. This opens the door to a React Hooks-style 'composable' way of writing Angular.
 
 ## Basic Usage
 
@@ -40,7 +40,7 @@ export class UserComponent implements OnInit {
 
 ## Creating Reusable Composable Functions
 
-`inject()` 最大的价值在于允许将服务逻辑封装成可在多个组件间复用的函数：
+The biggest value of `inject()` is that it lets you encapsulate service logic into functions reusable across multiple components:
 
 ```typescript
 // composables/use-auth.ts
@@ -84,7 +84,7 @@ export class NavbarComponent {
 
 ## Functional Route Guards
 
-Angular 14 最重要的应用：函数式守卫取代 class-based 守卫：
+The most important application in Angular 14: functional guards replacing class-based guards:
 
 ```typescript
 // guards/auth.guard.ts（Angular 14+ 推荐方式）
@@ -129,7 +129,7 @@ const routes: Routes = [
 
 ## Functional HTTP Interceptors
 
-Angular 14 同样引入了函数式 HTTP 拦截器：
+Angular 14 also introduced functional HTTP interceptors:
 
 ```typescript
 // interceptors/auth.interceptor.ts
@@ -189,4 +189,4 @@ class MyComponent {
 
 ## Summary
 
-`inject()` 是 Angular 向函数式编程迈出的重要一步。它不只是构造函数注入的语法糖——它真正开启了类似 Vue Composables 的"可组合逻辑"模式，让服务逻辑不再被锁死在 class 的构造函数里。结合 Angular 14 的 Standalone Components，整个开发体验正在变得更轻量、更函数式。
+`inject()` is an important step toward functional programming for Angular. It's more than syntax sugar over constructor injection — it genuinely unlocks a Vue Composables-style 'composable logic' pattern, freeing service logic from being locked into class constructors. Combined with Angular 14's Standalone Components, this makes Angular code lighter and more flexible.

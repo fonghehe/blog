@@ -4,11 +4,11 @@ date: 2022-01-11 16:44:13
 tags:
   - React
 readingTime: 2
-description: "We recently implemented React 18 useDeferredValue 延迟更新， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing s"
-wordCount: 172
+description: "I recently applied React 18 useDeferredValue for deferred updates with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 169
 ---
 
-We recently implemented React 18 useDeferredValue 延迟更新， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently explored React 18 useDeferredValue deferred updates, and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 

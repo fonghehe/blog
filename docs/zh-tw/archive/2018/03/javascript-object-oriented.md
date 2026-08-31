@@ -1,14 +1,14 @@
 ---
-title: "JavaScript 面向物件程式設計：原型鏈與類的設計"
+title: "JavaScript 物件導向程式設計：原型鏈與類的設計"
 date: 2018-03-30 11:27:27
 tags:
   - JavaScript
 readingTime: 1
-description: "ES6 的 `class` 語法讓 JavaScript 的面向物件寫起來更直觀，但底層依然是原型鏈。理解這兩層抽象，能讓你在選擇繼承方式和除錯問題時更有把握。"
+description: "ES6 的 `class` 語法讓 JavaScript 的物件導向寫起來更直觀，但底層依然是原型鏈。理解這兩層抽象，能讓你在選擇繼承方式和除錯問題時更有把握。"
 wordCount: 223
 ---
 
-ES6 的 `class` 語法讓 JavaScript 的面向物件寫起來更直觀，但底層依然是原型鏈。理解這兩層抽象，能讓你在選擇繼承方式和除錯問題時更有把握。
+ES6 的 `class` 語法讓 JavaScript 的物件導向寫起來更直觀，但底層依然是原型鏈。理解這兩層抽象，能讓你在選擇繼承方式和除錯問題時更有把握。
 
 ## 原型鏈基礎
 
@@ -112,7 +112,7 @@ class Timer {
     this.seconds = 0;
   }
   start() {
-    // ❌ setTimeout 裡的 this 不是 Timer 例項
+    // ❌ setTimeout 裡的 this 不是 Timer 實例
     // setTimeout(function() { this.seconds++; }, 1000);
     // ✅ 用箭頭函式
     setTimeout(() => {

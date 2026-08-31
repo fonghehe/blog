@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "最近在團隊中落地JavaScript structuredClone 深複製，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 357
+wordCount: 355
 ---
 
 最近在團隊中落地JavaScript structuredClone 深複製，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -96,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 ## 調優策略
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 const fs = require('fs')
@@ -121,7 +121,7 @@ const csvToJson = new Transform({
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 注意事項
 

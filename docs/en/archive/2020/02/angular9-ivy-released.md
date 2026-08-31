@@ -4,23 +4,23 @@ date: 2020-02-21 15:24:12
 tags:
   - Angular
 readingTime: 2
-description: "Angular 9 于 2020 年 2 月 6 日正式发布，Ivy 渲染引擎成为默认选项。升级了一批内部项目后，来分享真实的体积变化数据和踩坑经验。"
-wordCount: 361
+description: "Angular 9 was officially released on February 6, 2020, with the Ivy rendering engine now enabled by default. After upgrading several of our internal projects, I'd like to share the real bundle-size changes we measured and the pitfalls we ran into."
+wordCount: 249
 ---
 
-Angular 9 于 2020 年 2 月 6 日正式发布，Ivy 渲染引擎成为默认选项。升级了一批内部项目后，来分享真实的体积变化数据和踩坑经验。
+Angular 9 was officially released on February 6, 2020, with the Ivy rendering engine now enabled by default. After upgrading several of our internal projects, I'd like to share the real bundle-size changes we measured and the pitfalls we ran into.
 
 ## Actual Bundle Size Change Data
 
-官方数据有时过于乐观，这是我们内部几个项目升级后的实测结果：
+Official numbers can be a bit optimistic at times, so here are the real measurements from a few of our internal projects after upgrading:
 
-| 项目规模          | 升级前 main.js | 升级后 main.js | 减少 |
+| Project scale          | main.js before | main.js after | Reduction |
 | ----------------- | -------------- | -------------- | ---- |
-| 小型（20 组件）   | 187KB          | 131KB          | 30%  |
-| 中型（80 组件）   | 412KB          | 268KB          | 35%  |
-| 大型（200+ 组件） | 891KB          | 671KB          | 25%  |
+| Small (20 components)   | 187KB          | 131KB          | 30%  |
+| Medium (80 components)   | 412KB          | 268KB          | 35%  |
+| Large (200+ components) | 891KB          | 671KB          | 25%  |
 
-大型项目减少比例相对小，因为业务代码占比更高，框架代码的 tree-shaking 收益被稀释。
+Large projects see a smaller reduction because business code makes up a larger share, which dilutes the tree-shaking gains from the framework code.
 
 ## Upgrade Steps
 
@@ -36,9 +36,9 @@ ng update @angular/core@9 @angular/cli@9
 
 ## Troubleshooting Common Post-Upgrade Issues
 
-**1. ExpressionChangedAfterItHasBeenCheckedError 增多**
+**1. More frequent `ExpressionChangedAfterItHasBeenCheckedError` errors**
 
-Ivy 的变更检测更严格。常见原因是在 `ngAfterViewInit` 里修改了父组件绑定的值：
+Ivy's change detection is stricter. A common cause is mutating a value bound by the parent component inside `ngAfterViewInit`:
 
 ```typescript
 // ❌ 触发错误
@@ -56,9 +56,9 @@ ngAfterViewInit() {
 }
 ```
 
-**2. 第三方组件库样式异常**
+**2. Broken styles in third-party component libraries**
 
-Ivy 改变了组件样式封装的实现方式，某些依赖 `.mat-xxx` 等全局类的样式写法可能失效：
+Ivy changed how component style encapsulation is implemented, so some style rules that relied on global classes like `.mat-xxx` may stop working:
 
 ```scss
 // ❌ 在宿主组件样式里穿透子组件（Ivy 下可能不生效）
@@ -72,7 +72,7 @@ Ivy 改变了组件样式封装的实现方式，某些依赖 `.mat-xxx` 等全�
 }
 ```
 
-**3. 动态组件创建 API 变化**
+**3. Changes to the dynamic component creation API**
 
 ```typescript
 // View Engine 方式（仍兼容但不推荐）
@@ -83,7 +83,7 @@ this.container.createComponent(factory);
 this.container.createComponent(MyComponent);
 ```
 
-## 新增的 providedIn 选项
+## New `providedIn` Options
 
 ```typescript
 // Angular 9 新增 'any' 和 'platform' 选项
@@ -94,9 +94,9 @@ this.container.createComponent(MyComponent);
 // 'platform': 多个 Angular 应用之间共享同一实例（微前端场景）
 ```
 
-## TestBed 性能提升
+## Improved TestBed Performance
 
-Angular 9 的 TestBed 在 Ivy 下不再每次都重新编译组件，测试套件运行速度显著提升：
+Under Ivy, Angular 9's TestBed no longer recompiles components on every run, so test suites run noticeably faster:
 
 ```typescript
 // 不变的测试代码，但执行速度快了 2-3x
@@ -112,4 +112,4 @@ describe("UserComponent", () => {
 
 ## Summary
 
-Angular 9 是近年来对开发者最友好的大版本升级——绝大多数项目可以无痛升级，体积和性能都有实质改善。如果你还在 Angular 8 上，现在就是升级的好时机。
+Angular 9 is the most developer-friendly major upgrade in recent years — most projects can upgrade painlessly, with real improvements to both bundle size and performance. If you're still on Angular 8, now is a great time to upgrade.

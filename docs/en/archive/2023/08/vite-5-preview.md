@@ -4,11 +4,11 @@ date: 2023-08-25 14:31:25
 tags:
   - Vite
 readingTime: 2
-description: "Vite 5 进入 beta 阶段了。这次更新的核心主题是\"清理技术债务\"和\"拥抱现代标准\"。"
-wordCount: 344
+description: "Vite 5 has entered beta. The core themes of this update are clearing technical debt and embracing modern standards."
+wordCount: 331
 ---
 
-Vite 5 进入 beta 阶段了。这次更新的核心主题是"清理技术债务"和"拥抱现代标准"。
+Vite 5 has entered beta. The core themes of this update are clearing technical debt and embracing modern standards.
 
 ## Key Changes
 

@@ -1,14 +1,14 @@
 ---
-title: "React 19 use() Hook Advanced:  & 传统Data获取Mode对比 & 融合"
+title: "React 19 use() Hook in Depth: Comparing and Merging with Traditional Data Fetching"
 date: 2024-12-05 12:39:16
 tags:
   - React
 readingTime: 2
-description: "React 19 use() Hook 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pro"
-wordCount: 213
+description: "The React 19 use() hook in practice is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 202
 ---
 
-React 19 use() Hook 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+the React 19 use() hook in practice is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
 
 ## Getting Started
 
@@ -121,7 +121,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Pitfall Guide
 
@@ -155,4 +155,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- React 19 use() Hook 实战不是银弹，需要根据项目规模和技术栈选择
+- The react 19 use() hook in practice is not a silver bullet — choose based on your project scale and tech stack

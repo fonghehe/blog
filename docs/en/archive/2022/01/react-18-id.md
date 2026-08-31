@@ -4,11 +4,11 @@ date: 2022-01-13 11:47:08
 tags:
   - React
 readingTime: 2
-description: "React 18 useId 唯一 ID 生成 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pr"
-wordCount: 179
+description: "React 18 useId for unique ID generation is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 177
 ---
 
-React 18 useId 唯一 ID 生成 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+React 18 useId unique ID generation is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 

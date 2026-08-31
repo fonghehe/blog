@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Server Actions は React アプリケーションにおけるデータ変異の標準になった。複雑なフォーム処理における Server Actions の応用パターンとベストプラクティスを深く解説する。"
-wordCount: 371
+wordCount: 368
 ---
 
 React 22 の Server Actions は、新機能からモダン React アプリケーションを構築するコア機能に進化した。フロントエンドとバックエンドの対話方法を変え——手動で API エンドポイントと fetch コールを記述する必要がなくなり、Server Actions によりデータ変異がより直感的になった。
@@ -184,4 +184,4 @@ export async function batchUpdateUsers(
 
 ## まとめ
 
-React 22 の Server Actions は、フロントエンドとバックエンドの対話方法を根本的に変えた。`useActionState`、`useOptimistic`、`useTransition` フックを使用することで、応答性が高く、エラーハンドリングが適切なモダンフォームを構ームを構築できる。鍵は Server Actions の適用可能シナリオを理解すること——データ変異操作に適しており、データフェッチは引き続き Server Components とデータフェッチパターンを使用すべきだ。
+React 22 の Server Actions は、フロントエンドとバックエンドの対話方法を根本的に変えた。`useActionState`、`useOptimistic`、`useTransition` フックを使用することで、応答性が高く、エラーハンドリングが適切なモダンなフォームを構築できる。鍵は Server Actions の適用可能シナリオを理解すること——データ変異操作に適しており、データフェッチは引き続き Server Components とデータフェッチパターンを使用すべきだ。

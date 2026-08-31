@@ -47,7 +47,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ## 進階用法
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 const express = require('express')

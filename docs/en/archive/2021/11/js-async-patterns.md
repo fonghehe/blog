@@ -4,16 +4,16 @@ date: 2021-11-30 15:09:28
 tags:
   - JavaScript
 
-readingTime: 2
-description: "在日常工作中经常用到JavaScript 异步模式汇总，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。"
-wordCount: 237
+readingTime: 1
+description: "JavaScript async patterns come up constantly in daily work, so here is a systematic summary to help you understand and apply them better."
+wordCount: 166
 ---
 
-在日常工作中经常用到JavaScript 异步模式汇总，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。
+JavaScript async patterns come up often in daily work, so I've put together a systematic roundup, hoping it helps everyone understand and apply them better.
 
 ## Basic Concepts
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 使用示例
@@ -30,7 +30,7 @@ app.mount('#root')
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+This pattern improves the code's maintainability.
 
 ## Core Implementation
 
@@ -108,7 +108,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Common Issues
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 工具函数封装
@@ -140,7 +140,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Summary
 
-- 持续关注社区动态，及时更新技术方案
-- 性能优化需要基于实际数据，避免过度优化
-- JavaScript 异步模式汇总的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
+- Keep up with community trends and update your technical approach accordingly
+- Performance optimization should be based on real data; avoid over-optimizing
+- The core of JavaScript async patterns is understanding the underlying principles, not just memorizing APIs
+- In real projects, choosing the right approach matters more than chasing the latest technology

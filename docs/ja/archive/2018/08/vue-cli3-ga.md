@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue CLI 3.0正式版（GA）がリリースされ、Betaから正式に卒業しました。Betaより大幅に安定し、プロダクションプロジェクトで使用できます。"
-wordCount: 266
+wordCount: 278
 ---
 
 Vue CLI 3.0正式版（GA）がリリースされ、Betaから正式に卒業しました。Betaより大幅に安定し、プロダクションプロジェクトで使用できます。
@@ -31,7 +31,7 @@ CLI 3のプロジェクト構造：
 
 webpack設定が完全に内部化され、プロジェクトディレクトリがすっきりしました。
 
-## vue.config.jsの完全な例
+## vue.config.jsの全体のサンプル
 
 ```javascript
 const path = require("path");
@@ -150,7 +150,7 @@ module.exports = (api, options) => {
 
 ## まとめ
 
-- CLI 3 GAはプロダクションで安全に使用できる
-- `vue.config.js`ですべての設定を一元管理、webpackファイルの維持より簡単
-- CSS `prependData`で変数をグローバルに注入、各コンポーネントでの手動importが不要
-- マルチページ設定が非常にシンプル
+- CLI 3 GAはプロダクションで安全に使用できます
+- `vue.config.js`ですべての設定を一元管理し、webpackファイルの維持より簡単です
+- CSS `prependData`で変数をグローバルに注入し、各コンポーネントでの手動importが不要です
+- マルチページ設定が非常にシンプルです

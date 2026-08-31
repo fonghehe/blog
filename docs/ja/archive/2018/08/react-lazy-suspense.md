@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 16.6がリリースされ、`React.lazy`と`Suspense`が追加されました。コンポーネントの遅延ロードが非常にシンプルになりました。"
-wordCount: 335
+wordCount: 334
 ---
 
 React 16.6がリリースされ、`React.lazy`と`Suspense`が追加されました。コンポーネントの遅延ロードが非常にシンプルになりました。
@@ -143,7 +143,7 @@ function App() {
 
 ## 現在の制限
 
-16.6版の`Suspense`は現在`lazy`ロードのみをサポートしています。その他のデータ取得シナリオ（APIレスポンスの待機など）はConcurrent Modeの一部として開発中です。
+16.6版の`Suspense`は現在`lazy`ロードのみをサポートしています。その他のデータ取得の場面（APIレスポンスの待機など）はConcurrent Modeの一部として開発中です。
 
 Reactチームはデータ取得領域にもSuspenseを拡張する予定で、将来的には以下のような書き方が可能になります：
 

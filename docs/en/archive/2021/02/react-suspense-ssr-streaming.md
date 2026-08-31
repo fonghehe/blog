@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "在日常开发中，React 18 Suspense SSR 流式渲染 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategie"
-wordCount: 223
+description: "React 18 Suspense SSR streaming rendering is showing up in more and more everyday work. This article systematically covers its usage, internals, and optimization strategies."
+wordCount: 204
 ---
 
-在日常开发中，React 18 Suspense SSR 流式渲染 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In day-to-day development, React 18 Suspense SSR streaming rendering is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Comparison
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is somewhat more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -149,7 +149,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 ## Summary
 
-- React 18 Suspense SSR 流式渲染不是银弹，需要根据项目规模和技术栈选择
+- React 18 Suspense SSR streaming rendering isn't a silver bullet; choose it based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

@@ -5,10 +5,10 @@ tags:
   - パフォーマンス最適化
 readingTime: 2
 description: "監視なしでは本番のバグはサイレントです — ユーザーはただ離れていくだけです。エラー監視の設定はフロントエンドプロジェクトの中で最も ROI の高い投資の一つです。"
-wordCount: 523
+wordCount: 539
 ---
 
-監視なしでは本番のバグはサイレントです — ユーザーはただ離れていくだけです。エラー監視の設定はフロントエンドプロジェクトの中で最も ROI の高い投資の一つです。
+監視なしでは、本番のバグはサイレントのまま放置され、ユーザーはただ離れていきます。エラー監視の設定はフロントエンドプロジェクトの中で最も ROI の高い投資の一つです。
 
 ## エラー監視が必要な理由
 
@@ -45,7 +45,7 @@ window.onerror = function (message, source, lineno, colno, error) {
 
 ## 未処理の Promise 拒否のハンドリング
 
-`window.onerror` は Promise の拒否をキャッチしません：
+`window.onerror` は Promise の拒否をキャッチしません。
 
 ```javascript
 window.addEventListener("unhandledrejection", (event) => {
@@ -62,7 +62,7 @@ window.addEventListener("unhandledrejection", (event) => {
 
 JS ファイルが CDN（別オリジン）にある場合、`window.onerror` はブラウザのセキュリティポリシーにより `"Script error."` しか受け取れません。
 
-修正：スクリプトタグに `crossorigin="anonymous"` を追加し、CDN に適切な CORS ヘッダーを設定：
+修正として、スクリプトタグに `crossorigin="anonymous"` を追加し、CDN に適切な CORS ヘッダーを設定します。
 
 ```html
 <script src="https://cdn.example.com/app.js" crossorigin="anonymous"></script>
@@ -81,7 +81,7 @@ module.exports = {
 
 ## Sentry 統合
 
-手動での報告はすぐに複雑になります。Sentry が全てを自動的に処理します：
+手動での報告はすぐに複雑になります。Sentry が全てを自動的に処理します。
 
 ```bash
 npm install @sentry/vue @sentry/tracing
@@ -106,7 +106,7 @@ Sentry.init({
 });
 ```
 
-Sentry が自動的に行うこと：
+Sentry が自動的に行うことは以下の通りです。
 
 - キャッチされていないエラーと未処理の拒否をキャプチャ
 - 読みやすいスタックトレースのためにソースマップをリンク

@@ -4,9 +4,9 @@ date: 2022-07-11 15:05:35
 tags:
   - Web3
   - Blockchain
-readingTime: 11
+readingTime: 9
 description: "Optimistic Rollup 的 L2→L1 提款涉及 7 天挑战期，这对前端状态管理和用户体验提出了独特挑战。本文拆解提款全流程，给出完整的前端实现方案。"
-wordCount: 2900
+wordCount: 1132
 ---
 
 Optimistic Rollup（OR）是 Ethereum Layer 2 扩容的主流方案之一，代表项目包括 Optimism（OVM）和 Arbitrum（Nitro）。与 zkRollup 不同，OR 采用"乐观执行 + 欺诈证明"的安全模型，这直接导致了 L2 → L1 提款需要经历 7 天的挑战期。对于前端开发者而言，管理这个长达 7 天的异步流程是一个独特的工程挑战。

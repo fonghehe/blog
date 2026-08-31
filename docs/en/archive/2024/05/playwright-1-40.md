@@ -4,8 +4,8 @@ date: 2024-05-20 17:22:16
 tags:
   - Playwright
 readingTime: 2
-description: "关于Playwright 1.40 新功能总结，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment persp"
-wordCount: 210
+description: "Many developers only know Playwright 1.40's new features at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 185
 ---
 
 关于Playwright 1.40 新功能总结，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -112,8 +112,8 @@ This solution has been running stably in production for over six months and has 
 
 ## Summary
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Playwright 1.40 新功能总结不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- Keep an eye on community trends; technical approaches need continuous iteration
+- Don't adopt new technology just for the sake of it
+- Code samples are for reference only and need adjusting to your business scenario
+- Playwright 1.40's new features is not a silver bullet — choose based on your project scale and tech stack
+- Understanding the underlying principles matters more than memorizing APIs

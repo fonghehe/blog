@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "React Server Components changed how data is fetched, letting components directly access databases and APIs on the server. This article discusses RSC's working principles, data fetching patterns, and common architectural decisions."
-wordCount: 135
+wordCount: 138
 ---
 
 React Server Components (RSC) is a major shift in React architecture. It allows components to render on the server, directly accessing backend resources, reducing client-side JavaScript bundle size and data fetching complexity.
@@ -106,7 +106,7 @@ async function Dashboard() {
 }
 ```
 
-Users see page framework and fast content first, slow data fills in progressively.
+Users see the page shell and the fast-loading content first, while slower data streams in progressively.
 
 ## Error Handling
 

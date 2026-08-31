@@ -7,7 +7,7 @@ tags:
 
 readingTime: 4
 description: "React 18 Alpha がリリースされ、Concurrent Mode が実験的な概念から実際に使える機能として本格的に導入されました。最も注目すべき2つの機能は、自動バッチ処理（Automatic Batching）と useTransition です。"
-wordCount: 729
+wordCount: 721
 ---
 
 React 18 Alpha がリリースされ、Concurrent Mode の実践的な導入が実現しました——もはや実験的な概念ではなく、実際に活用できる機能です。最も注目すべき2つの機能は、自動バッチ処理（Automatic Batching）と `useTransition` です。
@@ -42,7 +42,7 @@ async function fetchData() {
 }
 ```
 
-React 18 ではすべてのシナリオで自動バッチ処理が行われます：
+React 18 ではすべての場面で自動バッチ処理が行われる：
 
 ```jsx
 // React 18 —— すべてのシナリオでバッチ処理 ✅
@@ -80,7 +80,7 @@ function handleClick() {
 
 ## useTransition
 
-`useTransition` は React 18 の中核的な新 API であり、優先度の低い状態更新をマークするために使用します：
+`useTransition` は React 18 の中核となる新しい API であり、優先度の低い状態更新をマークするために使用する：
 
 ```jsx
 import { useState, useTransition } from 'react'
@@ -183,9 +183,9 @@ root.render(<App />)
 
 注意：新しい `createRoot` API を使用すると、自動バッチ処理が有効になります。API を変更しない場合はデフォルトで React 17 の動作のままなので、段階的にアップグレードできます。
 
-## 実際のシナリオ比較
+## 実際の場面での比較
 
-テーブルフィルタリングのシナリオを比較します：
+テーブルフィルタリングの場面を比較する：
 
 ```jsx
 // useTransition なし：入力がカクつく
@@ -227,8 +227,8 @@ function FilterTable() {
 
 ## まとめ
 
-- React 18 の自動バッチ処理はコード修正不要で、アップグレード後はすべてのシナリオでデフォルトで更新が統合される
-- `useTransition` は入力のカクつきなどのパフォーマンス問題を解決し、核心は優先度の区別
-- `useDeferredValue` は「空白を表示するより古いデータを表示したほうがよい」シナリオに適している
+- React 18 の自動バッチ処理はコード修正不要で、アップグレード後はすべての場面でデフォルトで更新が統合される
+- `useTransition` は入力のカクつきなどのパフォーマンス問題を解決し、本質は優先度の違い
+- `useDeferredValue` は「空白を表示するより古いデータを表示したほうがよい」場面に適している
 - アップグレードは `createRoot` API を使用し、段階的に移行可能
 - Concurrent Mode がついに概念から実用的なツールへと変わった

@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "SolidJS 是 2021 年最值得关注的前端框架之一。它的核心主张听起来和 Svelte 相似——\"不用虚拟 DOM\"——但实现原理完全不同。Svelte 是编译时框架，SolidJS 是运行时细粒度响应式。这篇文章带你了解它为什么能在性能测试中长期排名第一。"
-wordCount: 409
+wordCount: 403
 ---
 
-SolidJS 是 2021 年最值得关注的前端框架之一。它的核心主张听起来和 Svelte 相似——"不用虚拟 DOM"——但实现原理完全不同。Svelte 是编译时框架，SolidJS 是运行时细粒度响应式。这篇文章带你了解它为什么能在性能测试中长期排名第一。
+SolidJS 是 2021 年最值得关注的前端框架之一，主打"不用虚拟 DOM"，听起来和 Svelte 很像，但实现路径完全不同：Svelte 走编译时，SolidJS 走运行时细粒度响应式。这篇文章就带你看懂，它为什么能在性能测试里长期排第一。
 
 ## 和 React 的对比：相似的语法，截然不同的原理
 

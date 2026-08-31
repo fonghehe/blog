@@ -6,10 +6,10 @@ tags:
   - 工程化
 readingTime: 1
 description: "在团队推广Webpack 4 Tree Shaking 深入的过程中，踩了不少坑。整理出来希望对大家有所帮助。"
-wordCount: 192
+wordCount: 189
 ---
 
-在团队推广Webpack 4 Tree Shaking 深入的过程中，踩了不少坑。整理出来希望对大家有所帮助。
+在团队推广 Webpack 4 Tree Shaking 的过程中踩了不少坑，整理出来希望对大家有帮助。
 
 ## 基础用法
 

@@ -3,12 +3,12 @@ title: "Node.js Event Loop: Deep Analysis"
 date: 2022-04-08 10:39:32
 tags:
   - Node.js
-readingTime: 2
-description: "Node.js 事件循环分析在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 201
+readingTime: 1
+description: "Node.js event loop analysis has evolved rapidly in recent years. This article takes a deep dive into its principles and practical methods."
+wordCount: 170
 ---
 
-Node.js 事件循环分析在近年来发展迅速，本文将深入分析其原理和实践方法。
+Node.js event loop analysis has evolved rapidly in recent years. This article takes a deep dive into its principles and practical methods.
 
 ## Basic Concepts
 
@@ -86,7 +86,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Best Practices
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 工具函数封装
@@ -118,7 +118,7 @@ Through this pattern, the maintainability of the code is improved.
 
 ## Common Issues
 
-具体用法参考以下代码：
+See the following code for specific usage:
 
 ```javascript
 // 核心实现
@@ -139,7 +139,7 @@ It is recommended to unify conventions within the team to reduce inconsistency.
 
 ## Summary
 
-- Node.js 事件循环分析的核心在于理解底层原理，而非仅仅记住 API
+- The key to Node.js event loop analysis is understanding the underlying principles, not just memorizing APIs
 - In real projects, choosing the right solution is more important than chasing the latest technology
 - Maintaining consistent code style in team collaboration reduces maintenance costs
-- 持续关注社区动态，及时更新技术方案
+- Stay updated with community developments and update your technical solutions in time

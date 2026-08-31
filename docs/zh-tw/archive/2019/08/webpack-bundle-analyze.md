@@ -61,7 +61,7 @@ if (process.env.ANALYZE) {
 }
 ```
 
-這樣隻在需要分析時才啟動，不影響日常構建。
+這樣只在需要分析時才啟動，不影響日常構建。
 
 ## 理解視覺化報告
 
@@ -100,7 +100,7 @@ if (process.env.ANALYZE) {
   │   └── (總計約 200KB+)
 ```
 
-解決方案：使用 `IgnorePlugin` 隻保留需要的 locale。
+解決方案：使用 `IgnorePlugin` 只保留需要的 locale。
 
 ```js
 // webpack.config.js
@@ -126,7 +126,7 @@ moment.locale('zh-cn');
 
 ### 案例二：lodash 全量引入
 
-在報告中發現整個 lodash 庫被完整引入，約 70KB。實際專案隻用到了 `debounce`、`get`、`cloneDeep` 幾個方法。
+在報告中發現整個 lodash 庫被完整引入，約 70KB。實際專案只用到了 `debounce`、`get`、`cloneDeep` 幾個方法。
 
 解決方案一：使用 lodash-es 配合 tree shaking
 
@@ -170,7 +170,7 @@ import cloneDeep from 'lodash/cloneDeep';
 }
 ```
 
-在 `package.json` 中使用 `resolutions`（Yarn）強製所有依賴使用同一版本。
+在 `package.json` 中使用 `resolutions`（Yarn）強制所有依賴使用同一版本。
 
 也可以通過 Webpack 的 `resolve.alias` 統一：
 
@@ -207,7 +207,7 @@ module.exports = {
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
-### 2. 設定 splitChunks 精細控製
+### 2. 設定 splitChunks 精細控制
 
 ```js
 module.exports = {
@@ -296,7 +296,7 @@ files.forEach(file => {
   console.log(`${file}: ${sizeKB}KB (gzip)`);
 
   if (file.includes('main') && size > MAX_SIZE_KB * 1024) {
-    console.error(`主 bundle 超過 ${MAX_SIZE_KB}KB 限製！`);
+    console.error(`主 bundle 超過 ${MAX_SIZE_KB}KB 限制！`);
     failed = true;
   }
 });

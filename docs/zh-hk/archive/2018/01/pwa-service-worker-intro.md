@@ -4,18 +4,18 @@ date: 2018-01-16 11:07:28
 tags:
   - PWA
 readingTime: 3
-description: "PWA（Progressive Web App）呢個概念 Google 喺 2015 年提出，到 2018 年技術已經相當成熟，iOS 11.3 都終於加入咗基礎嘅 Service Worker 支援。呢篇文章從實際角度講 PWA 嘅核心機製。"
+description: "PWA（Progressive Web App）呢個概念 Google 喺 2015 年提出，到 2018 年技術已經相當成熟，iOS 11.3 都終於加入咗基礎嘅 Service Worker 支援。呢篇文章從實際角度講 PWA 嘅核心機制。"
 wordCount: 447
 ---
 
-PWA（Progressive Web App）呢個概念 Google 喺 2015 年提出，到 2018 年技術已經相當成熟，iOS 11.3 都終於加入咗基礎嘅 Service Worker 支援。呢篇文章從實際角度講 PWA 嘅核心機製。
+PWA（Progressive Web App）呢個概念 Google 喺 2015 年提出，到 2018 年技術已經相當成熟，iOS 11.3 都終於加入咗基礎嘅 Service Worker 支援。呢篇文章從實際角度講 PWA 嘅核心機制。
 
 ## PWA 唔係一個具體嘅 API
 
 好多人問「PWA 用咩框架」，呢個問題問錯方向喇。PWA 係一組技術嘅集合，包括：
 
 - **Service Worker**：網絡代理，實現離線緩存、推送通知
-- **Web App Manifest**：讓應用程序可以「添加到主屏幕」
+- **Web App Manifest**：讓應用程式可以「添加到主屏幕」
 - **HTTPS**：Service Worker 要求安全上下文
 - **響應式設計**：喺各種屏幕上良好顯示
 
@@ -154,7 +154,7 @@ async function staleWhileRevalidate(request) {
 ```json
 // public/manifest.json
 {
-  "name": "我嘅應用程序",
+  "name": "我嘅應用程式",
   "short_name": "應用",
   "start_url": "/",
   "display": "standalone",

@@ -4,15 +4,15 @@ date: 2020-01-28 10:12:20
 tags:
   - Angular
 readingTime: 2
-description: "Angular 9 的 RC 阶段已进入最后冲刺，正式版预计 2020 年 2 月发布。相比 Angular 8 中 Ivy 只能 opt-in，Angular 9 将 Ivy 作为默认渲染引擎，同时 AOT 编译也将成为默认模式。在 RC 期间我们提前摸清这些变化非常有价值。"
-wordCount: 411
+description: "Angular 9 is in the final stretch of its release candidate (RC) phase, with the stable release expected in February 2020. While Ivy was opt-in in Angular 8, Angular 9 makes it the default rendering engine, and AOT compilation also becomes the default mode. Getting familiar with these changes during the RC phase is well worth the effort."
+wordCount: 302
 ---
 
-Angular 9 的 RC 阶段已进入最后冲刺，正式版预计 2020 年 2 月发布。相比 Angular 8 中 Ivy 只能 opt-in，Angular 9 将 Ivy 作为默认渲染引擎，同时 AOT 编译也将成为默认模式。在 RC 期间我们提前摸清这些变化非常有价值。
+Angular 9 is in the final stretch of its release candidate (RC) phase, with the stable release expected in February 2020. While Ivy was opt-in in Angular 8, Angular 9 makes it the default rendering engine, and AOT compilation also becomes the default mode. Getting familiar with these changes during the RC phase is well worth the effort.
 
 ## Why Ivy Is a Qualitative Leap
 
-传统的 View Engine 生成 `.ngfactory.ts` 文件，编译结果与框架代码强耦合，tree-shaking 效果差。Ivy 的核心思路是**将渲染指令（instructions）直接内嵌到组件类里**：
+The traditional View Engine generates `.ngfactory.ts` files, and its compiled output is tightly coupled to framework code, which hurts tree-shaking. Ivy's core idea is to **embed the rendering instructions directly inside the component class**:
 
 ```typescript
 // View Engine 编译后（简化）
@@ -40,11 +40,11 @@ export class UserComponent {
 }
 ```
 
-结果：未使用的框架功能（如 `@Pipe`、某些 CDK 工具）不会被打包进去。
+The result: unused framework features (such as `@Pipe` and some CDK utilities) are no longer bundled.
 
 ## AOT Becomes the Default for Development Mode
 
-之前开发模式用 JIT（快但不严格），生产用 AOT（慢但正确）。这导致"本地测试通过，上线才报错"的经典问题：
+Previously, development used JIT (fast but lenient) while production used AOT (slow but correct). This led to the classic problem of "it works locally, but fails in production":
 
 ```bash
 # Angular 8：开发用 JIT，只在 build --prod 时用 AOT
@@ -58,7 +58,7 @@ ng build --prod     # AOT
 
 ## strictTemplates: Strict Template Checking
 
-这是 RC 期间最值得提前了解的配置。开启后，模板中的类型错误会在构建时报出：
+This is the configuration most worth understanding ahead of time during the RC phase. Once enabled, type errors in templates are reported at build time:
 
 ```json
 // tsconfig.app.json
@@ -71,7 +71,7 @@ ng build --prod     # AOT
 
 ### Commonly Caught Errors
 
-**1. @Input 类型不匹配**
+**1. @Input type mismatch**
 
 ```typescript
 // 组件定义
@@ -82,7 +82,7 @@ ng build --prod     # AOT
 // strictTemplates: error TS2322: Type 'string' is not assignable to type 'number'
 ```
 
-**2. 访问不存在的属性**
+**2. Accessing a non-existent property**
 
 ```html
 {% raw %}
@@ -92,7 +92,7 @@ ng build --prod     # AOT
 {% endraw %}
 ```
 
-**3. \*ngIf 后类型收窄**
+**3. Type narrowing after \*ngIf**
 
 ```html
 {% raw %}
@@ -104,11 +104,11 @@ ng build --prod     # AOT
 {% endraw %}
 ```
 
-## 迁移中的注意事项
+## Notes on Migration
 
-**ViewChild 需要 static 选项**
+**ViewChild now requires the `static` option**
 
-RC 中 `@ViewChild` 和 `@ContentChild` 必须显式声明 `static`：
+In the RC, `@ViewChild` and `@ContentChild` must explicitly declare `static`:
 
 ```typescript
 // 在 ngOnInit 中使用 → static: true
@@ -118,9 +118,9 @@ RC 中 `@ViewChild` 和 `@ContentChild` 必须显式声明 `static`：
 @ViewChild('myEl', { static: false }) myEl: ElementRef;
 ```
 
-**第三方库兼容性**
+**Third-party library compatibility**
 
-Ivy 使用 `ngcc`（Angular Compatibility Compiler）在安装时自动转换未适配 Ivy 的库。大多数情况自动处理，但如果遇到问题可手动运行：
+Ivy uses `ngcc` (the Angular Compatibility Compiler) to automatically convert libraries that haven't been adapted for Ivy at install time. Most cases are handled automatically, but if you run into issues you can run it manually:
 
 ```bash
 node_modules/.bin/ngcc
@@ -128,4 +128,4 @@ node_modules/.bin/ngcc
 
 ## Summary
 
-Angular 9 的两大核心变化——Ivy 默认启用 + AOT 开发模式默认——让"本地能跑、上线报错"成为历史。现在 RC 阶段就开始熟悉 strictTemplates 的报错，正式发布后升级才能少踩坑。
+Angular 9's two core changes—Ivy enabled by default and AOT as the default development mode—put an end to the "works locally, fails in production" problem. Start getting familiar with strictTemplates errors during the RC phase so you'll run into fewer pitfalls when you upgrade after the stable release.

@@ -4,8 +4,8 @@ date: 2024-06-24 19:58:35
 tags:
   - Frontend
 readingTime: 2
-description: "Server-first 前端架构演进 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real"
-wordCount: 181
+description: "The evolution of server-first frontend architecture is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 168
 ---
 
 Server-first 前端架构演进 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real project experience.
@@ -124,6 +124,6 @@ Pay attention to edge case handling — this is critical in production environme
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Server-first 前端架构演进不是银弹，需要根据项目规模和技术栈选择
+- Don't adopt new technology just for the sake of it
+- Code samples are for reference only and need adjusting to your business scenario
+- The evolution of server-first frontend architecture is not a silver bullet — choose based on your project scale and tech stack

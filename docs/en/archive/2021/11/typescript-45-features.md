@@ -5,15 +5,15 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "TypeScript 从 4.1 到 4.5 每个版本都有实用的改进。整理一下这几个版本中最值得学习的特性，都是日常开发中能用到的。"
-wordCount: 244
+description: "Every TypeScript release from 4.1 to 4.5 brought practical improvements. Here are the features from those versions most worth learning — all usable in day-to-day development."
+wordCount: 159
 ---
 
-TypeScript 从 4.1 到 4.5 每个版本都有实用的改进。整理一下这几个版本中最值得学习的特性，都是日常开发中能用到的。
+From TypeScript 4.1 through 4.5, every release has brought practical improvements. Here's a roundup of the most worthwhile features across these versions—the kind you'll actually use in day-to-day development.
 
-## 4.1：模板字面量类型
+## 4.1: Template Literal Types
 
-让类型系统能操作字符串：
+This lets the type system operate on strings:
 
 ```typescript
 // 事件处理器类型推断
@@ -44,9 +44,9 @@ type CSSClass<B extends string, M extends string> = `${B}--${M}`
 type ButtonClass = CSSClass<'btn', 'primary'>  // 'btn--primary'
 ```
 
-## 4.2：Smarter Type Alias Preservation
+## 4.2: Smarter Type Alias Preservation
 
-TypeScript 在报错信息中保留类型别名，不再展开：
+TypeScript now preserves type aliases in error messages instead of expanding them:
 
 ```typescript
 // 以前的报错会显示展开后的完整类型
@@ -67,7 +67,7 @@ type ApiResponse<T> = {
 // Type 'string' is not assignable to type 'ApiResponse<User>'
 ```
 
-## 4.3：override 关键字
+## 4.3: The `override` Keyword
 
 ```typescript
 class Base {
@@ -90,9 +90,9 @@ class Derived extends Base {
 // { "compilerOptions": { "noImplicitOverride": true } }
 ```
 
-这个特性避免了父类改名后子类方法变成孤立方法的问题。
+This feature prevents a subclass method from becoming orphaned after a parent class renames the method.
 
-## 4.4：Catch 变量类型
+## 4.4: Catch Variable Types
 
 ```typescript
 // 以前 catch 变量默认是 unknown（strict 模式）或 any
@@ -119,7 +119,7 @@ function isNetworkError(err: unknown): err is NetworkError {
 }
 ```
 
-## 4.5：Awaited 类型和 ES Module 支持
+## 4.5: The `Awaited` Type and ES Module Support
 
 ```typescript
 // Awaited 类型 - 递归解包 Promise
@@ -157,8 +157,8 @@ TypeScript 4.5：Awaited 类型，异步工具函数必备
 
 ## Summary
 
-- 模板字面量类型是 4.x 最强大的特性之一，让类型系统能操作字符串
-- `override` 关键字让继承更安全，建议全局开启
-- `Awaited` 类型简化了异步工具函数的类型编写
-- 每个版本的改进都不大，但累积起来让 TypeScript 开发体验显著提升
-- 建议团队跟随最新版本，升级成本低但收益高
+- Template literal types are among the most powerful 4.x features, letting the type system work with strings
+- The `override` keyword makes inheritance safer; consider enabling it project-wide
+- The `Awaited` type simplifies typing async utility functions
+- Each release's improvements are small, but together they significantly improve the TypeScript developer experience
+- I'd recommend teams follow the latest versions—the upgrade cost is low but the payoff is high

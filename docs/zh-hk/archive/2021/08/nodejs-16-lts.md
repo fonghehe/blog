@@ -9,14 +9,14 @@ description: "Node.js 16 在 2021 年 4 月發佈，10 月進入 LTS 階段。�
 wordCount: 265
 ---
 
-Node.js 16 在 2021 年 4 月發佈，10 月進入 LTS 階段。作為前端工具鏈的運行時基礎，Node.js 版本直接影響 Vite、Webpack 5、esbuild 等構建工具的表現。整理一下 v16 中值得關注的特性。
+Node.js 16 在 2021 年 4 月發佈，10 月進入 LTS 階段。作為前端工具鏈的運行時基礎，Node.js 版本直接影響 Vite、Webpack 5、esbuild 等建構工具的表現。整理一下 v16 中值得關注的特性。
 
 ## V8 引擎升級到 9.0
 
 Node.js 16 搭載 V8 9.0，帶來了幾個實用的新 API：
 
 ```javascript
-// Array.prototype.at - 支持負索引
+// Array.prototype.at - 支援負索引
 const arr = [1, 2, 3, 4, 5]
 arr.at(-1)   // 5
 arr.at(-2)   // 4
@@ -30,14 +30,14 @@ Object.hasOwn(obj, 'toString')  // false
 try {
   await fetchUser()
 } catch (err) {
-  throw new Error('獲取用户信息失敗', { cause: err })
+  throw new Error('獲取用戶信息失敗', { cause: err })
 }
 
 // 捕獲時可以追溯原始錯誤
 try {
   main()
 } catch (err) {
-  console.log(err.message)        // '獲取用户信息失敗'
+  console.log(err.message)        // '獲取用戶信息失敗'
   console.log(err.cause.message)  // 原始錯誤信息
 }
 ```
@@ -47,7 +47,7 @@ try {
 Node.js 16 開始實驗性地內置 Fetch API（基於 undici）：
 
 ```javascript
-// 啓用：需要加 --experimental-fetch 標誌
+// 啟用：需要加 --experimental-fetch 標誌
 // node --experimental-fetch app.js
 
 async function getUser(id) {
@@ -58,7 +58,7 @@ async function getUser(id) {
   return response.json()
 }
 
-// 支持 AbortController
+// 支援 AbortController
 const controller = new AbortController()
 setTimeout(() => controller.abort(), 5000)
 
@@ -83,7 +83,7 @@ import { setTimeout, setInterval } from 'timers/promises'
 // 等待 1 秒，不需要 new Promise 包裝
 await setTimeout(1000)
 
-// 帶取消支持
+// 帶取消支援
 const ac = new AbortController()
 setTimeout(1000, null, { signal: ac.signal })
   .catch(err => {
@@ -119,13 +119,13 @@ ac.abort() // 中斷文件讀取
 
 ```bash
 # 1. 檢查 node-sass 依賴
-# node-sass 需要針對 Node 版本編譯二進製檔案
+# node-sass 需要針對 Node 版本編譯二進制檔案
 # 建議遷移到 dart sass（sass 包）
 npm uninstall node-sass
 npm install sass
 
 # 2. OpenSSL 3.0 相容性
-# Node.js 16 使用 OpenSSL 3.0，某些舊的加密算法默認禁用
+# Node.js 16 使用 OpenSSL 3.0，某些舊的加密算法預設禁用
 # 如果遇到 ERR_OSSL_EVP_UNSUPPORTED，可以設置：
 export NODE_OPTIONS=--openssl-legacy-provider
 
@@ -139,5 +139,5 @@ export NODE_OPTIONS=--openssl-legacy-provider
 - `Array.at()`、`Object.hasOwn()`、`Error.cause` 是最實用的新 API
 - Fetch API 內置是趨勢，雖然目前還是實驗性
 - `timers/promises` 終於讓定時器的 Promise 化不再手寫
-- 從 Node 14 遷移要注意 node-sass 和 OpenSSL 3.0 兼容性
+- 從 Node 14 遷移要注意 node-sass 和 OpenSSL 3.0 相容性
 - 建議團隊統一使用 nvm 或 fnm 管理 Node 版本

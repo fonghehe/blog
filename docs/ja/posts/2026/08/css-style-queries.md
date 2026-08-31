@@ -3,9 +3,9 @@ title: "CSS Style Queries 実践：カスタムプロパティで駆動するコ
 date: 2026-08-21 14:06:19
 tags:
   - CSS
-readingTime: 8
+readingTime: 9
 description: "CSS Style Queries（@container style(...)）が Baseline 2026 に到達し、ついにカスタムプロパティの値に基づいてスタイルを適用できるようになった。本記事は実際の使い方に焦点を当てる：class に頼らないテーマ切り替え、custom property で駆動するコンポーネントバリアント、@property との連携、そしてフォールバック戦略。"
-wordCount: 3300
+wordCount: 1996
 ---
 
 Container Queries は「コンテナサイズに応じてレスポンシブにする」という問題を解決したが、一つの盲点があった：コンテナの状態（現在のテーマ、密度モード、ブランドカラーなど）に基づいて子コンポーネントのスタイルを変更できないのだ。これまで我々は大量の class（`.dark`、`.compact`、`.brand-acme`）を追加するか、JS で計算してから props を渡していた。Style Queries はこの隙間を埋める――`@container style(...)` でカスタムプロパティの値を直接クエリし、コンポーネントバリアントの制御権を CSS に戻すことができる。

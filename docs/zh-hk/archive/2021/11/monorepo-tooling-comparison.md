@@ -8,7 +8,7 @@ description: "Vercel 收購了 Turborepo 並開源，這是一個用 Go 寫的�
 wordCount: 367
 ---
 
-Vercel 收購了 Turborepo 並開源，這是一個用 Go 寫的高性能 Monorepo 構建工具。試用了一週，和 Lerna / pnpm workspace 對比了一下。
+Vercel 收購了 Turborepo 並開源，這是一個用 Go 寫的高效能 Monorepo 構建工具。試用了一週，和 Lerna / pnpm workspace 對比了一下。
 
 ## Monorepo 的痛點
 
@@ -31,7 +31,7 @@ pnpm run build --filter=apps/web
 
 - **構建緩存**：相同輸入不重複構建（本地 + 遠程緩存）
 - **並行調度**：自動分析依賴圖，並行構建無依賴的包
-- **增量構建**：隻構建有變化的包及其下游依賴
+- **增量構建**：只構建有變化的包及其下游依賴
 
 ## 基本設定
 
@@ -106,7 +106,7 @@ turbo run dev --parallel
 turbo run lint
 ```
 
-## 緩存機製
+## 緩存機制
 
 ```bash
 # 第一次構建
@@ -131,7 +131,7 @@ turbo run build
 # apps/web:        build (5.1s)                             # 依賴 ui，重新構建
 ```
 
-緩存 key 基於：源文件內容 + 環境變量 + lock 文件 + package.json scripts。
+緩存 key 基於：源檔案內容 + 環境變量 + lock 檔案 + package.json scripts。
 
 ## 遠程緩存（CI 場景）
 

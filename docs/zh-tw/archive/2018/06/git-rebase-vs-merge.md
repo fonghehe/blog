@@ -71,7 +71,7 @@ rebase 把 feature 上的提交"重新應用"到 main 的最新提交上，歷�
 git checkout main
 git rebase feature
 
-# ✅ 安全：隻 rebase 自己的本地 feature 分支
+# ✅ 安全：只 rebase 自己的本地 feature 分支
 git checkout my-feature
 git rebase main
 ```
@@ -136,6 +136,6 @@ git rebase --abort
 ## 小結
 
 - merge 安全、保留歷史；rebase 線性、歷史乾淨
-- 公共分支隻用 merge，本地 feature 分支可以 rebase
+- 公共分支只用 merge，本地 feature 分支可以 rebase
 - 推送前用互動式 rebase 整理零碎 commit
 - 團隊統一一套規範比哪種方式更重要

@@ -13,7 +13,7 @@ description: "在日常开发中，Vue 3 构建 Web Components的使用频率越
 wordCount: 314
 ---
 
-在日常开发中，Vue 3 构建 Web Components的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+在日常开发中，Vue 3 构建 Web Components 的使用频率越来越高。本文系统讲解其用法、原理与优化策略。
 
 ## 快速上手
 

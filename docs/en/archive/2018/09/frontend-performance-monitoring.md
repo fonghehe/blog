@@ -5,7 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "I've been doing performance optimization for a while but never systematically monitored production performance. Here's how to collect performance data."
-wordCount: 100
+wordCount: 102
 ---
 
 I've been doing performance optimization for a while but never systematically monitored production performance. Here's how to collect performance data.
@@ -24,7 +24,7 @@ Only production monitoring reveals what real users actually experience.
 
 ## The Performance API
 
-Browser-built-in performance timestamps:
+The browser's built-in performance timestamps:
 
 ```javascript
 // Get timing for each phase

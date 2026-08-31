@@ -6,10 +6,10 @@ tags:
 
 readingTime: 3
 description: "最近在团队中落地JavaScript structuredClone 深拷贝，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 533
+wordCount: 562
 ---
 
-最近在团队中落地JavaScript structuredClone 深拷贝，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
+最近チーム内で JavaScript の structuredClone（ディープコピー）を実践し、多くの経験を積みました。同じような取り組みをされる方の参考になれば幸いです。
 
 ## コアコンセプト
 
@@ -42,7 +42,7 @@ const csvToJson = new Transform({
 
 ## 詳細分析
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみましょう：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -96,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 ## 最適化戦略
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは使い方がもう少し複雑になります：
 
 ```javascript
 const fs = require('fs')
@@ -125,7 +125,7 @@ const csvToJson = new Transform({
 
 ## 注意事項
 
-完全な例を以下に示します：
+全体のサンプルを以下に示します：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -155,5 +155,5 @@ function useIntersectionObserver(options = {}) {
 - チームコラボレーションでは、規約とドキュメントが技術そのものより重要です
 - コミュニティの動向を注視し、技術的なソリューションは継続的な反復が必要です
 - 新しい技術を使うためだけに新しい技術を使わないでください
-- コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- JavaScript structuredClone 深拷贝不是银弹，需要根据项目规模和技术栈选择
+- コードサンプルは参考用のみであり、実際のユースケースに応じて調整が必要です
+- JavaScript の structuredClone（ディープコピー）は万能薬ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要があります

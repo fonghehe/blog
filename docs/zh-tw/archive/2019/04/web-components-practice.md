@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Web Components 已經是 W3C 標準了，Chrome、Firefox 都支援。不依賴任何框架，原生瀏覽器實現元件化。"
-wordCount: 236
+wordCount: 238
 ---
 
 Web Components 已經是 W3C 標準了，Chrome、Firefox 都支援。不依賴任何框架，原生瀏覽器實現元件化。
@@ -179,7 +179,7 @@ Web Components 的問題：
 
 - Safari 14 才完整支援（2020），現在 iOS 支援不完整
 - 開發體驗比 Vue/React 差得多（沒有完善的狀態管理）
-- Lit-element（Google）、Stencil 等庫在改善開發體驗
+- Lit-element（Google）、Stencil 等函式庫在改善開發體驗
 
 適合場景：設計系統的底層元件（供多個框架使用），不適合直接開發應用。
 

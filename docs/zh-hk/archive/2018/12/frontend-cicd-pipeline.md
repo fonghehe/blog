@@ -176,7 +176,7 @@ VUE_APP_ENV=production
 VUE_APP_API_BASE_URL=https://api.example.com
 ```
 
-真正的密鑰（數據庫連接、第三方 API Key）放在 GitLab 的 CI 變量裏，不提交到代碼庫。
+真正的密鑰（資料庫連接、第三方 API Key）放在 GitLab 的 CI 變量裏，不提交到代碼庫。
 
 ## 部署通知
 

@@ -4,11 +4,11 @@ date: 2023-06-01 09:31:29
 tags:
   - Frontend
 readingTime: 2
-description: "Speculation Rules 预渲染优化这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 201
+description: "Speculation Rules prerendering optimization has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 184
 ---
 
-Speculation Rules 预渲染优化这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+Speculation Rules prerendering optimization has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
 
 ## Getting Started
 

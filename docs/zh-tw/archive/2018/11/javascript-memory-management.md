@@ -4,11 +4,11 @@ date: 2018-11-10 14:30:38
 tags:
   - JavaScript
 readingTime: 2
-description: "前端頁面用久了會越來越卡，通常是記憶體洩漏。瞭解 JavaScript 的記憶體管理機製，能幫助寫出不洩漏的程式碼。"
+description: "前端頁面用久了會越來越卡，通常是記憶體洩漏。瞭解 JavaScript 的記憶體管理機制，能幫助寫出不洩漏的程式碼。"
 wordCount: 336
 ---
 
-前端頁面用久了會越來越卡，通常是記憶體洩漏。瞭解 JavaScript 的記憶體管理機製，能幫助寫出不洩漏的程式碼。
+前端頁面用久了會越來越卡，通常是記憶體洩漏。瞭解 JavaScript 的記憶體管理機制，能幫助寫出不洩漏的程式碼。
 
 ## 記憶體生命週期
 
@@ -64,14 +64,14 @@ function foo() {
 **2. 未清理的定時器**
 
 ```javascript
-// ❌ 元件銷燬後定時器還在跑，持有元件引用
+// ❌ 元件銷毀後定時器還在跑，持有元件引用
 created() {
   this.timer = setInterval(() => {
-    this.data = fetchData()  // 持有 this（元件例項）
+    this.data = fetchData()  // 持有 this（元件實例）
   }, 1000)
 }
 
-// ✅ 元件銷燬時清理
+// ✅ 元件銷毀時清理
 beforeDestroy() {
   clearInterval(this.timer)
 }
@@ -83,7 +83,7 @@ beforeDestroy() {
 // ❌
 mounted() {
   window.addEventListener('resize', this.handleResize)
-  // 元件銷燬後，window 還持有對 handleResize 的引用
+  // 元件銷毀後，window 還持有對 handleResize 的引用
 }
 
 // ✅
@@ -120,7 +120,7 @@ function attachEvent(element) {
 // ✅ 不在閉包裡持有大物件
 function attachEvent(element) {
   element.addEventListener("click", function () {
-    console.log("clicked"); // 隻用什麼就持有什麼
+    console.log("clicked"); // 只用什麼就持有什麼
   });
 }
 ```

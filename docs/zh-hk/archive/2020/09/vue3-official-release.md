@@ -25,7 +25,7 @@ cd my-app && npm install && npm run dev
 {% raw %}
 <template>
   <div class="user-list">
-    <input v-model="searchQuery" placeholder="搜索用户" />
+    <input v-model="searchQuery" placeholder="搜索用戶" />
 
     <div v-if="loading">加載中...</div>
     <div v-else-if="error">{{ error }}</div>
@@ -131,7 +131,7 @@ const {
 // 生命週期重命名
 // beforeDestroy → onBeforeUnmount
 // destroyed → onUnmounted
-// beforeCreate/created → 直接寫在 setup 裏
+// beforeCreate/created → 直接寫在 setup 裡
 
 // 全局 API
 // Vue 2：Vue.use() / Vue.component() / Vue.prototype
@@ -188,7 +188,7 @@ app.mount("#app");
 ## Vue 3 生態現狀（2020年9月）
 
 - **Vue Router 4**：已有 RC 版，和 Vue 3 配套
-- **Vuex 4**：同時支持 Vue 2/3
+- **Vuex 4**：同時支援 Vue 2/3
 - **Element Plus**：Element UI 的 Vue 3 版，還在開發中
 - **Vite**：Vue 3 官方推薦構建工具
 

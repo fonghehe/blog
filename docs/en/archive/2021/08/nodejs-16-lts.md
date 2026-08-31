@@ -6,15 +6,15 @@ tags:
   - Node.js
 
 readingTime: 2
-description: "Node.js 16 在 2021 年 4 月发布，10 月进入 LTS 阶段。作为前端工具链的运行时基础，Node.js 版本直接影响 Vite、Webpack 5、esbuild 等构建工具的表现。整理一下 v16 中值得关注的特性。"
-wordCount: 260
+description: "Node.js 16 shipped in April 2021 and entered LTS in October. As the runtime foundation of the frontend toolchain, the Node.js version directly affects tools like Vite, Webpack 5, and esbuild. Here are the v16 features worth watching."
+wordCount: 205
 ---
 
-Node.js 16 在 2021 年 4 月发布，10 月进入 LTS 阶段。作为前端工具链的运行时基础，Node.js 版本直接影响 Vite、Webpack 5、esbuild 等构建工具的表现。整理一下 v16 中值得关注的特性。
+Node.js 16 was released in April 2021 and entered the LTS stage in October. As the runtime foundation of the frontend toolchain, the Node.js version directly affects how build tools like Vite, Webpack 5, and esbuild perform. Here's a roundup of the notable features in v16.
 
-## V8 引擎升级到 9.0
+## V8 Engine Upgraded to 9.0
 
-Node.js 16 搭载 V8 9.0，带来了几个实用的新 API：
+Node.js 16 ships with V8 9.0, bringing several handy new APIs:
 
 ```javascript
 // Array.prototype.at - 支持负索引
@@ -43,9 +43,9 @@ try {
 }
 ```
 
-## Fetch API 实验性支持
+## Experimental Fetch API Support
 
-Node.js 16 开始实验性地内置 Fetch API（基于 undici）：
+Node.js 16 starts shipping a built-in Fetch API experimentally (based on undici):
 
 ```javascript
 // 启用：需要加 --experimental-fetch 标志
@@ -72,11 +72,11 @@ try {
 }
 ```
 
-虽然还是实验性功能，但意味着以后不用再装 `node-fetch` 或 `axios` 做简单的 HTTP 请求了。
+Although still experimental, this means you no longer need to install `node-fetch` or `axios` for simple HTTP requests going forward.
 
 ## Timers Promises API
 
-`timers/promises` 模块提供了 Promise 版本的定时器：
+The `timers/promises` module provides Promise-based versions of the timers:
 
 ```javascript
 import { setTimeout, setInterval } from 'timers/promises'
@@ -98,9 +98,9 @@ for await (const _ of setInterval(1000)) {
 }
 ```
 
-## AbortController 全局可用
+## AbortController Available Globally
 
-Node.js 16 中 `AbortController` 变成全局可用，不再需要 polyfill：
+In Node.js 16, `AbortController` is available globally, so no polyfill is needed:
 
 ```javascript
 // 全局直接使用，不需要 import
@@ -116,7 +116,7 @@ ac.abort() // 中断文件读取
 
 ## Migration Notes
 
-从 Node.js 14 升级到 16，需要注意：
+When upgrading from Node.js 14 to 16, keep the following in mind:
 
 ```bash
 # 1. 检查 node-sass 依赖
@@ -137,8 +137,8 @@ export NODE_OPTIONS=--openssl-legacy-provider
 
 ## Summary
 
-- `Array.at()`、`Object.hasOwn()`、`Error.cause` 是最实用的新 API
-- Fetch API 内置是趋势，虽然目前还是实验性
-- `timers/promises` 终于让定时器的 Promise 化不再手写
-- 从 Node 14 迁移要注意 node-sass 和 OpenSSL 3.0 兼容性
-- 建议团队统一使用 nvm 或 fnm 管理 Node 版本
+- `Array.at()`, `Object.hasOwn()`, and `Error.cause` are the most practical new APIs
+- A built-in Fetch API is the direction of travel, even though it's still experimental for now
+- `timers/promises` finally removes the need to hand-write Promise-based timers
+- When migrating from Node 14, watch out for node-sass and OpenSSL 3.0 compatibility
+- It's a good idea for teams to standardize on nvm or fnm to manage the Node version

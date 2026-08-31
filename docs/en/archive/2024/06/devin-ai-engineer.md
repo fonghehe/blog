@@ -4,8 +4,8 @@ date: 2024-06-11 18:45:22
 tags:
   - Engineering
 readingTime: 2
-description: "I recently implemented Devin AI 软件工程师分析 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those "
-wordCount: 215
+description: "I recently applied Devin, the AI software engineer with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 190
 ---
 
 I recently implemented Devin AI 软件工程师分析 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those doing similar work.
@@ -120,7 +120,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- Devin AI 软件工程师分析不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- Devin, the AI software engineer is not a silver bullet — choose based on your project scale and tech stack
+- Understanding the underlying principles matters more than memorizing APIs
+- Always verify compatibility thoroughly before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself

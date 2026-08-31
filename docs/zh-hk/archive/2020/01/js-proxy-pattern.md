@@ -5,10 +5,10 @@ tags:
   - JavaScript
 readingTime: 1
 description: "在日常工作中經常用到JavaScript 代理模式實踐，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。"
-wordCount: 242
+wordCount: 244
 ---
 
-在日常工作中經常用到JavaScript 代理模式實踐，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。
+在日常工作中經常會用到 JavaScript 的代理模式，因此整理一篇系統性的總結，希望能幫助大家更好地理解和應用。
 
 ## 基礎概念
 

@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 4
 description: "2018年10月25〜26日、React Conf 2018 がネバダ州ヘンダーソンで開催されました。Dan Abramov と Ryan Florence が Hooks のライブデモを行い、コミュニティ全体が沸きました。"
-wordCount: 850
+wordCount: 848
 ---
 
 2018年10月25〜26日、React Conf 2018 がネバダ州ヘンダーソンで開催されました。Dan Abramov と Ryan Florence が Hooks のライブデモを行い、コミュニティ全体が沸きました。
@@ -14,7 +14,7 @@ wordCount: 850
 
 Dan は複雑なクラスコンポーネントを Hooks を使った関数コンポーネントに書き直す方法を実演しました。特に印象的だったのは、以前は HOC の多重ネストが必要だったコードが、今では数個のカスタム Hook で解決でき、しかもコードがより明確になったことです。
 
-Ryan は render props を Hooks で置き換えるシナリオを実演し、会場では絶え間ない拍手が起きていました。
+Ryan は render props を Hooks で置き換える場面を実演し、会場では絶え間ない拍手が起きていました。
 
 ## Hooks のコアコンセプト（理解の更新）
 

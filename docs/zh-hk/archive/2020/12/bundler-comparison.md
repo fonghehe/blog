@@ -8,7 +8,7 @@ description: "2020 年前端構建工具領域發生了不小的變化：webpack
 wordCount: 537
 ---
 
-2020 年前端構建工具領域發生了不小的變化：webpack 5 正式發佈，esbuild 憑藉 Go 語言實現的極速打包引發關注，Vite 帶來了全新的 No-bundle 開發服務器方案。是時候系統地梳理這四個工具的定位和適用場景了。
+2020 年前端構建工具領域發生了不小的變化：webpack 5 正式發佈，esbuild 憑藉 Go 語言實現的極速打包引發關注，Vite 帶來了全新的 No-bundle 開發伺服器方案。是時候系統地梳理這四個工具的定位和適用場景了。
 
 ## 核心定位對比
 
@@ -18,7 +18,7 @@ wordCount: 537
 | webpack 5 | 應用打包         | JavaScript            | 生態成熟、功能完整          |
 | Rollup    | 庫打包           | JavaScript            | Tree-shaking 極佳、輸出乾淨 |
 | esbuild   | 極速轉換/打包    | Go                    | 速度領先 10-100x            |
-| Vite      | 下一代開發服務器 | JS + Rollup + esbuild | 開發極速，生產用 Rollup     |
+| Vite      | 下一代開發伺服器 | JS + Rollup + esbuild | 開發極速，生產用 Rollup     |
 
 ## webpack 5：成熟的應用打包器
 
@@ -97,7 +97,7 @@ esbuild
   .catch(() => process.exit(1));
 ```
 
-速度對比（對一箇中型項目，含 1000 個模塊）：
+速度對比（對一個中型項目，含 1000 個模塊）：
 
 | 工具      | 冷構建時間 |
 | --------- | ---------- |
@@ -133,7 +133,7 @@ export default defineConfig({
 
 Vite 的本質是：**開發時用 esbuild 預處理 + 原生 ESM，生產時用 Rollup 打包**。
 
-**適用場景**：新項目的開發服務器、Vue 3 + Vite 官方搭配、追求極速開發啓動。
+**適用場景**：新項目的開發伺服器、Vue 3 + Vite 官方搭配、追求極速開發啓動。
 
 ## 選型建議
 

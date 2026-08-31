@@ -4,7 +4,7 @@ date: 2023-11-06 10:05:13
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3.3 泛型组件 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+description: "Generic components in Vue 3.3 are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 198
 ---
 

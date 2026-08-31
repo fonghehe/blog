@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 5
 description: "TC39 委員会は毎年 JavaScript に新機能をもたらしています。ES2020（ES11）は提案プロセスを完了し、2020 年 6 月に正式リリースされる予定です。今回のアップデートにはいくつかの非常に実用的な機能が含まれており、特に Optional Chaining と Nullish Coalescing は日常のコードにおける防御的なチェックを大幅に削減できます。以下で一つずつ紹介します。"
-wordCount: 788
+wordCount: 787
 ---
 
 TC39 委員会は毎年 JavaScript に新機能をもたらしています。ES2020（ES11）は提案プロセスを完了し、2020 年 6 月に正式リリースされる予定です。今回のアップデートにはいくつかの非常に実用的な機能が含まれており、特に Optional Chaining と Nullish Coalescing は、日常のコードにおける防御的なチェックを大幅に削減できます。以下で一つずつ紹介します。
@@ -351,7 +351,7 @@ console.log(import.meta.url)  // 現在のモジュールの URL
 
 - Optional Chaining (?.) は深い階層のプロパティアクセスに階層ごとの判定を不要にし、最も実用的な新機能
 - Nullish Coalescing (??) は || 演算子が falsy な値を誤って置き換える問題を解決
-- BigInt は大きな整数の精度損失問題を解決し、ID、金融などのシーンに適している
+- BigInt は大きな整数の精度損失問題を解決し、ID、金融などの場面に適している
 - Promise.allSettled はバッチ非同期操作の結果処理をより柔軟にし、「1つ失敗ですべて失敗」を解消
 - globalThis は異なる環境でのグローバルオブジェクトへのアクセス方法を統一
 - Dynamic import() はコード分割とオンデマンド読み込みの基盤であり、React.lazy と組み合わせることで最大の効果を発揮

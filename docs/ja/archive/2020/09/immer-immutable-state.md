@@ -5,12 +5,12 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "React 的状态更新要求不可变（immutable）——不能直接修改 state，而是要返回新对象。对于嵌套较深的数据结构，这会带来大量样板代码。Immer 通过 Proxy 魔法让你\"直接修改\"数据，背后帮你生成不可变的新对象。"
-wordCount: 278
+wordCount: 448
 ---
 
-React 的状态更新要求不可变（immutable）——不能直接修改 state，而是要返回新对象。对于嵌套较深的数据结构，这会带来大量样板代码。Immer 通过 Proxy 魔法让你"直接修改"数据，背后帮你生成不可变的新对象。
+React の状態更新は不変（immutable）であることを求められます。state を直接書き換えるのではなく、新しいオブジェクトを返す必要があります。入れ子の深いデータ構造では、これが大量のボイラープレートを生みます。Immer は Proxy の魔法でデータを「直接変更」したように見せつつ、裏で不変な新オブジェクトを生成します。
 
-## 没有 Immer 的痛苦
+## Immer を使わない場合の苦労
 
 ```javascript
 // 更新深层嵌套状态
@@ -33,7 +33,7 @@ const nextState = {
 };
 ```
 
-## 有了 Immer
+## Immer を使う場合
 
 ```javascript
 import produce from "immer";
@@ -44,9 +44,9 @@ const nextState = produce(state, (draft) => {
 });
 ```
 
-`produce` 接收当前 state 和一个"recipe 函数"，recipe 里的 `draft` 是 state 的 Proxy，对 draft 的修改会被 Immer 记录并生成新的不可变对象。原始 state 不会被改变。
+`produce` は現在の state と「recipe 関数」を受け取ります。recipe 内の `draft` は state の Proxy であり、draft への変更は Immer に記録され、新しい不変オブジェクトとして生成されます。元の state は変更されません。
 
-## 在 React useState 中使用
+## React の useState で使う
 
 ```javascript
 import produce from "immer";
@@ -85,7 +85,7 @@ function TodoList() {
 }
 ```
 
-## 在 useReducer 中使用
+## useReducer で使う
 
 ```javascript
 const reducer = produce((draft, action) => {
@@ -107,9 +107,9 @@ const reducer = produce((draft, action) => {
 const [state, dispatch] = useReducer(reducer, initialState);
 ```
 
-## 在 Redux 中使用（配合 RTK）
+## Redux で使う（RTK と組み合わせ）
 
-Redux Toolkit 内置了 Immer，`createSlice` 里可以直接"修改"state：
+Redux Toolkit には Immer が組み込まれており、`createSlice` 内で state を直接「変更」できます：
 
 ```javascript
 import { createSlice } from "@reduxjs/toolkit";
@@ -129,9 +129,9 @@ const todosSlice = createSlice({
 });
 ```
 
-## 性能注意事项
+## パフォーマンス上の注意点
 
-Immer 使用 Proxy，在现代 JS 引擎上性能已经非常好，但有几点需要注意：
+Immer は Proxy を使っており、モダンな JS エンジンではすでに十分な性能ですが、いくつか注意点があります：
 
 ```javascript
 // ✅ 正常使用
@@ -153,4 +153,4 @@ enableMapSet(); // 支持 Map 和 Set
 
 ## まとめ
 
-Immer 是 React 状态管理中性价比最高的工具之一：学习成本极低（就是"在 recipe 里随便改"），却能把复杂嵌套状态的更新代码简化 70% 以上。Redux Toolkit 已内置 Immer，说明这个思路已经被 Redux 官方认可。
+Immer は React の状態管理の中で費用対効果が最も高いツールの一つです。学習コストは極めて低く（recipe 内で好きに変更するだけ）、複雑な入れ子状態の更新コードを 70% 以上削減できます。Redux Toolkit に Immer が組み込まれていることは、このアプローチが Redux 公式にも認められている証拠です。

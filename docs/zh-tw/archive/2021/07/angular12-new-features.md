@@ -7,19 +7,19 @@ tags:
   - 工程化
 readingTime: 2
 description: "Angular 12 於 2021 年 5 月 26 日正式釋出。這是一個里程碑版本：View Engine 正式退場，Ivy 成為唯一渲染引擎；Webpack 5 從實驗性升級為預設構建工具。升級之後我們整理了一份完整的變化記錄。"
-wordCount: 489
+wordCount: 495
 ---
 
 Angular 12 於 2021 年 5 月 26 日正式釋出。這是一個里程碑版本：View Engine 正式退場，Ivy 成為唯一渲染引擎；Webpack 5 從實驗性升級為預設構建工具。升級之後我們整理了一份完整的變化記錄。
 
 ## View Engine 正式停用
 
-Angular 12 中 `@angular/compiler` 不再包含 View Engine，`ngcc` 也不再需要（因為所有庫都已用 Ivy 格式釋出）。
+Angular 12 中 `@angular/compiler` 不再包含 View Engine，`ngcc` 也不再需要（因為所有函式庫都已用 Ivy 格式釋出）。
 
 **對開發者的影響**：
 
 - 升級 Angular 12 後，專案需要所有依賴都是 Ivy 相容版本
-- 使用舊版第三方庫（未更新到 Angular 9+ 的）可能報錯
+- 使用舊版第三方函式庫（未更新到 Angular 9+ 的）可能報錯
 - `enableIvy: false` 配置不再有效
 
 ## Webpack 5 正式成為預設
@@ -139,7 +139,7 @@ ng update @angular/core@12 @angular/cli@12
 # 3. 更新 Sass 相關設定
 ```
 
-**注意**：如果依賴了未升級到 Ivy 的第三方庫，升級可能失敗。先用 `ng update --list` 檢查：
+**注意**：如果依賴了未升級到 Ivy 的第三方函式庫，升級可能失敗。先用 `ng update --list` 檢查：
 
 ```bash
 ng update --list

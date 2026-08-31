@@ -5,10 +5,10 @@ tags:
   - Angular
 readingTime: 2
 description: "AngularはRxJSを生まれながらに深く統合しています。HttpClient、EventEmitter、RouterはすべてObservableに基づいています。RxJSオペレーターをマスターすることで、非同期処理とコンポーネント通信をよりエレガントに実装できます。"
-wordCount: 419
+wordCount: 415
 ---
 
-AngularはRxJSを生まれながらに深く統合しています。HttpClient、EventEmitter、RouterはすべてObservableに基づいています。RxJSオペレーターをマスターすることで、非同期処理とコンポーネント通信をよりエレガントに実装できます。
+AngularはRxJSを誕生時から深く統合しています。HttpClient、EventEmitter、RouterはすべてObservableに基づいています。RxJSオペレーターをマスターすることで、非同期処理とコンポーネント通信をよりエレガントに実装できます。
 
 ## AngularがRxJSを選んだ理由
 
@@ -69,7 +69,7 @@ export class DashboardComponent implements OnInit {
 
 ## コンポーネント間通信にSubjectを使う
 
-`BehaviorSubject`で共有状態サービスを作り、シンプルなシナリオではNgRxの代わりに使えます：
+`BehaviorSubject`で共有状態サービスを作り、シンプルな場面ではNgRxの代わりに使えます：
 
 ```typescript
 @Injectable({ providedIn: "root" })

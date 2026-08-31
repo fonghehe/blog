@@ -74,9 +74,9 @@ server {
 - `expires off` — 不新增快取頭（使用 Nginx 預設）
 - `expires max` — 快取 10 年（等同於 `expires 10y`）
 
-## Cache-Control 精細控製
+## Cache-Control 精細控制
 
-有時候 `expires` 不夠靈活，需要直接用 `add_header` 設定 `Cache-Control` 來做更精細的控製。
+有時候 `expires` 不夠靈活，需要直接用 `add_header` 設定 `Cache-Control` 來做更精細的控制。
 
 ```nginx
 server {
@@ -112,7 +112,7 @@ Cache-Control 常用指令速查：
 |
 ------|------|
 | `public` | 瀏覽器和 CDN 都可以快取 |
-| `private` | 隻有瀏覽器可以快取 |
+| `private` | 只有瀏覽器可以快取 |
 | `no-cache` | 可以快取，但每次必須驗證 |
 | `no-store` | 完全不快取 |
 | `max-age=N` | 快取有效期（秒） |
@@ -269,7 +269,7 @@ server {
 }
 ```
 
-這套策略的核心思路：**hash 控製快取失效**。檔名不變就一直用快取，內容一改檔名就變，瀏覽器自動請求新檔案。
+這套策略的核心思路：**hash 控制快取失效**。檔名不變就一直用快取，內容一改檔名就變，瀏覽器自動請求新檔案。
 
 ## Gzip 壓縮設定
 

@@ -5,10 +5,10 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近在團隊中落地TypeScript 模塊增強與聲明合併，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 273
+wordCount: 274
 ---
 
-最近在團隊中落地TypeScript 模塊增強與聲明合併，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
+最近在團隊中實踐了 TypeScript 模塊增強與聲明合併，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
 
 ## 核心概念
 

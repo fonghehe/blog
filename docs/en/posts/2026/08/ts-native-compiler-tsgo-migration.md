@@ -3,9 +3,9 @@ title: "Migrating to tsgo: A Real-World Monorepo Migration from tsc to the Nativ
 date: 2026-08-11 09:47:12
 tags:
   - TypeScript
-readingTime: 8
+readingTime: 6
 description: "A complete record of migrating a mid-sized monorepo from tsc to the native Go compiler tsgo: what actually got faster, breaking changes in configuration and API surfaces, CI pipeline adjustments, rollback strategies, and a reusable migration checklist."
-wordCount: 3400
+wordCount: 1088
 ---
 
 After the TypeScript 7.x series shipped, the community's hottest topic wasn't new type system features — it was tsgo, the native compiler rewritten in Go. Microsoft officially offered tsgo as an optional compiler backend in TypeScript 7.0, aiming to improve type-checking speed on large projects by an order of magnitude. I completed a migration from tsc to tsgo on one of our team's mid-sized monorepos (~400K lines of TS/TSX, 12 packages). This article documents the real-world wins, blockers, and trade-offs we encountered along the way.

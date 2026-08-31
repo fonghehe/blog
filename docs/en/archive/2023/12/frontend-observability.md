@@ -4,7 +4,7 @@ date: 2023-12-01 09:31:54
 tags:
   - Frontend
 readingTime: 2
-description: "前端可观测性方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+description: "Frontend observability solutions are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 171
 ---
 

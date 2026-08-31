@@ -4,11 +4,11 @@ date: 2023-06-06 15:28:47
 tags:
   - Next.js
 readingTime: 1
-description: "最近在团队中落地INP 交互到下一帧绘制优化， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 200
+description: "I recently applied INP (Interaction to Next Paint) optimization with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 179
 ---
 
-最近在团队中落地INP 交互到下一帧绘制优化， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+I recently applied INP (Interaction to Next Paint) optimization with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
 
 ## Core Concepts
 
@@ -96,7 +96,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- INP 交互到下一帧绘制优化不是银弹，需要根据项目规模和技术栈选择
+- INP (Interaction to Next Paint) optimization is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

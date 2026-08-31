@@ -4,11 +4,11 @@ date: 2022-04-01 09:31:34
 tags:
   - React
 readingTime: 2
-description: "React 18 正式发布了！等了 3 年的 Concurrent 特性终于稳定。和之前的预览版相比，正式版 API 基本没变，但文档和最佳实践更完善了。"
-wordCount: 232
+description: "React 18 is officially released! The Concurrent features we've been waiting three years for are finally stable. Compared to the preview releases, the APIs haven't changed much, but the documentation and best practices are more complete."
+wordCount: 159
 ---
 
-React 18 正式发布了！等了 3 年的 Concurrent 特性终于稳定。和之前的预览版相比，正式版 API 基本没变，但文档和最佳实践更完善了。
+React 18 is officially released! The Concurrent features we've been waiting three years for are finally stable. Compared to the preview releases, the APIs haven't changed much, but the documentation and best practices are more complete.
 
 ## Upgrade Steps
 
@@ -27,9 +27,9 @@ const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
-这一步是必须的，否则并发特性不会开启。
+This step is required; otherwise concurrent features won't be enabled.
 
-## Automatic Batching 的实际效果
+## Automatic Batching in Practice
 
 ```javascript
 // 这个在 React 17 中会触发 3 次渲染，React 18 只触发 1 次
@@ -51,7 +51,7 @@ flushSync(() => setLoading(false)); // 立即渲染
 setData(result); // 再渲染
 ```
 
-## useTransition 生产实践
+## useTransition in Production
 
 ```typescript
 function TabPanel() {
@@ -81,7 +81,7 @@ function TabPanel() {
 }
 ```
 
-## 新的 Strict Mode 行为
+## New Strict Mode Behavior
 
 ```javascript
 // React 18 StrictMode：Effect 会执行两次（mount → unmount → mount）
@@ -98,11 +98,11 @@ useEffect(() => {
 }, []);
 ```
 
-如果发现 Effect 执行了两次，不要加 ref 去绕过，这是 StrictMode 在帮你找 bug。
+If you notice Effects running twice, don't add a ref to work around it — StrictMode is helping you find bugs.
 
-## tRPC：类型安全的 API 层
+## tRPC: Type-Safe API Layer
 
-和 React 18 同期流行起来的库，解决了前后端类型共享的问题：
+A library that gained popularity around the same time as React 18, solving the problem of sharing types between frontend and backend:
 
 ```typescript
 // server/router.ts（后端）
@@ -147,8 +147,8 @@ function UserProfile({ userId }: { userId: number }) {
 
 ## Summary
 
-- `createRoot` 替换 `ReactDOM.render`，开启所有并发特性
-- Automatic Batching 免费获得，减少不必要的渲染
-- useTransition 区分紧急/非紧急更新，保持交互流畅
-- StrictMode 下 Effect 执行两次是故意的，别绕过，修复 bug
-- tRPC 是 2022 年很有价值的技术，全栈 TypeScript 的最佳搭档
+- `createRoot` replaces `ReactDOM.render`, enabling all concurrent features
+- Automatic Batching comes for free, reducing unnecessary re-renders
+- useTransition separates urgent from non-urgent updates, keeping interactions smooth
+- Effects running twice under StrictMode is intentional — don't work around it, fix the bug
+- tRPC was a high-value technology in 2022, the best companion for full-stack TypeScript

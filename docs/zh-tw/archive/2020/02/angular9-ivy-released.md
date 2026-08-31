@@ -21,7 +21,7 @@ Angular 9 於 2020 年 2 月 6 日正式釋出，Ivy 渲染引擎成為預設選
 | 中型（80 元件）   | 412KB          | 268KB          | 35%  |
 | 大型（200+ 元件） | 891KB          | 671KB          | 25%  |
 
-大型專案減少比例相對小，因為業務程式碼佔比更高，框架程式碼的 tree-shaking 收益被稀釋。
+大型專案減少比例相對小，因為業務程式碼佔比更高，框架程式碼的 tree-shaking 效益被稀釋。
 
 ## 升級步驟
 
@@ -39,7 +39,7 @@ ng update @angular/core@9 @angular/cli@9
 
 **1. ExpressionChangedAfterItHasBeenCheckedError 增多**
 
-Ivy 的變更檢測更嚴格。常見原因是在 `ngAfterViewInit` 裡修改了父元件繫結的值：
+Ivy 的變更檢測更嚴格。常見原因是在 `ngAfterViewInit` 裡修改了父元件綁定的值：
 
 ```typescript
 // ❌ 觸發錯誤

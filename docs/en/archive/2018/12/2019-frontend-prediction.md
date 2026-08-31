@@ -5,19 +5,19 @@ tags:
   - Frontend
 readingTime: 2
 description: "2018 is wrapping up. Here are my predictions for where frontend development is headed in 2019."
-wordCount: 434
+wordCount: 432
 ---
 
 2018 is wrapping up. Here are my predictions for where frontend development is headed in 2019.
 
 ## React Hooks Official Release
 
-This is one of the most certain things to happen in 2019. Hooks debuted at React Conf 2018, the API is mostly stable, and the official release (with React 16.8) should land early in 2019.
+This is one of the most certain things to happen in 2019. Hooks debuted at React Conf 2018; the API was mostly stable, and the official release (with React 16.8) should land early in 2019.
 
 Predictions:
 
 - Hooks will rapidly replace HOCs and render props as the mainstream pattern
-- Large numbers of existing libraries will ship Hooks versions (react-query, SWR, etc.)
+- Many existing libraries will ship Hooks versions (react-query, SWR, etc.)
 - Function components will become the default; class components will slowly decline
 
 ## Vue 3.0 Enters Active Development

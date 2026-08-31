@@ -3,16 +3,16 @@ title: "Automating CHANGELOG Generation in Practice"
 date: 2020-12-14 11:02:19
 tags:
   - Frontend
-readingTime: 2
-description: "自动生成 CHANGELOG 实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 260
+readingTime: 1
+description: "Automating CHANGELOG generation has been discussed in the community many times, but tooling has moved on and many conclusions are outdated. This article revisits the topic with the latest versions."
+wordCount: 146
 ---
 
-自动生成 CHANGELOG 实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+Automating CHANGELOG generation has been discussed in the community many times, but as versions iterate, many conclusions need refreshing. This post revisits the topic based on the latest versions.
 
 ## Getting Started
 
-先来看基本的实现方式：
+Let's start with the basic approach:
 
 ```javascript
 :root {
@@ -35,11 +35,11 @@ wordCount: 260
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll also need to handle errors and edge cases.
 
 ## Source Code Analysis
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can take it further:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -64,11 +64,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and noticeably cuts maintenance cost.
 
 ## Real-World Applications
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets more involved:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -92,11 +92,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This way, both the testability and extensibility of the code improve.
 
 ## Optimization Tips
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 :root {
@@ -119,10 +119,10 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind the edge-case handling — that's critical in production.
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- Understanding the underlying principles matters more than memorizing APIs
+- Always validate compatibility before using it in production
+- Conventions and docs matter more than the tech itself in a team

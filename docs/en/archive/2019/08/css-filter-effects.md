@@ -4,13 +4,13 @@ date: 2019-08-28 10:01:02
 tags:
   - CSS
 readingTime: 3
-description: "CSS `filter` 属性让我们可以在不修改图片素材的情况下，对元素应用各种视觉效果：模糊、灰度、对比度调整、阴影等。这个属性在图片处理、UI 动效、暗黑模式适配等场景中非常实用。本文将详细讲解每个 filter 函数的用法，并通过实际案例展示如何组合使用。"
-wordCount: 489
+description: "The CSS `filter` property lets you apply a wide range of visual effects to an element—blur, grayscale, contrast adjustment, drop shadows, and more—without touching the underlying image assets. It comes in handy for image processing, UI animation, dark-mode adaptation, and similar scenarios. This article walks through each `filter` function and shows how to combine them through practical examples."
+wordCount: 313
 ---
 
-CSS `filter` 属性让我们可以在不修改图片素材的情况下，对元素应用各种视觉效果：模糊、灰度、对比度调整、阴影等。这个属性在图片处理、UI 动效、暗黑模式适配等场景中非常实用。本文将详细讲解每个 filter 函数的用法，并通过实际案例展示如何组合使用。
+CSS `filter` lets you apply a wide range of visual effects to an element—blur, grayscale, contrast adjustment, drop shadows, and more—without touching the underlying image assets. It comes in handy for image processing, UI animation, dark-mode adaptation, and similar scenarios. This article walks through each `filter` function and shows how to combine them through practical examples.
 
-## filter Basic Syntax
+## Filter Basic Syntax
 
 ```css
 .element {
@@ -22,7 +22,7 @@ CSS `filter` 属性让我们可以在不修改图片素材的情况下，对元�
 
 ## Filter Function Reference
 
-### blur — 高斯模糊
+### blur — Gaussian Blur
 
 ```css
 /* 值为长度单位，值越大越模糊 */
@@ -38,7 +38,7 @@ CSS `filter` 属性让我们可以在不修改图片素材的情况下，对元�
 }
 ```
 
-### brightness — 亮度
+### brightness — Brightness
 
 ```css
 /* 0 = 全黑, 1 = 原始, >1 = 更亮 */
@@ -52,7 +52,7 @@ CSS `filter` 属性让我们可以在不修改图片素材的情况下，对元�
 }
 ```
 
-### contrast — 对比度
+### contrast — Contrast
 
 ```css
 /* 1 = 原始, <1 降低对比度, >1 增加对比度 */
@@ -65,7 +65,7 @@ CSS `filter` 属性让我们可以在不修改图片素材的情况下，对元�
 }
 ```
 
-### grayscale — 灰度
+### grayscale — Grayscale
 
 ```css
 /* 0 = 彩色, 1 = 完全灰度 */
@@ -88,7 +88,7 @@ body.mourning {
 }
 ```
 
-### sepia — 复古色调
+### sepia — Sepia Tone
 
 ```css
 /* 0 = 原始, 1 = 完全复古 */
@@ -97,7 +97,7 @@ body.mourning {
 }
 ```
 
-### saturate — 饱和度
+### saturate — Saturation
 
 ```css
 /* 0 = 无饱和（灰度）, 1 = 原始, >1 = 过饱和 */
@@ -110,7 +110,7 @@ body.mourning {
 }
 ```
 
-### hue-rotate — 色相旋转
+### hue-rotate — Hue Rotation
 
 ```css
 /* 值为角度，旋转色相 */
@@ -129,7 +129,7 @@ body.mourning {
 }
 ```
 
-### invert — 反色
+### invert — Invert
 
 ```css
 /* 0 = 原始, 1 = 完全反色 */
@@ -144,7 +144,7 @@ body.mourning {
 /* hue-rotate(180deg) 把反色后的颜色再转回来，避免照片看起来奇怪 */
 ```
 
-### opacity — 透明度
+### opacity — Opacity
 
 ```css
 /* 与 CSS opacity 类似，但可以与其他 filter 组合 */
@@ -158,7 +158,7 @@ body.mourning {
 }
 ```
 
-### drop-shadow — 投影
+### drop-shadow — Drop Shadow
 
 ```css
 /* 类似 box-shadow，但可以应用于不规则形状 */
@@ -177,7 +177,7 @@ body.mourning {
 
 ## Practical Cases
 
-### 案例一：图片加载过渡效果
+### Case 1: Image Loading Transition
 
 ```html
 <div class="image-wrapper">
@@ -202,7 +202,7 @@ img.onload = () => img.classList.add('loaded');
 // 或使用 IntersectionObserver 懒加载
 ```
 
-### 案例二：模态框背景模糊
+### Case 2: Modal Background Blur
 
 ```css
 .modal-overlay {
@@ -224,7 +224,7 @@ img.onload = () => img.classList.add('loaded');
 }
 ```
 
-### 案例三：悬停滤镜效果
+### Case 3: Hover Filter Effect
 
 ```css
 .photo-grid {
@@ -252,7 +252,7 @@ img.onload = () => img.classList.add('loaded');
 }
 ```
 
-### 案例四：禁用状态样式
+### Case 4: Disabled State Styling
 
 ```css
 .button {
@@ -279,7 +279,7 @@ img.onload = () => img.classList.add('loaded');
 }
 ```
 
-### 案例五：CSS 变量控制滤镜强度
+### Case 5: Controlling Filter Intensity with CSS Variables
 
 ```css
 :root {
@@ -302,7 +302,7 @@ document.documentElement.style.setProperty('--blur-amount', '5px');
 document.documentElement.style.setProperty('--grayscale-amount', '0.5');
 ```
 
-### 案例六：暗黑模式快速适配
+### Case 6: Quick Dark-Mode Adaptation
 
 ```css
 /* 简单粗暴但有效的方法 */
@@ -318,13 +318,13 @@ document.documentElement.style.setProperty('--grayscale-amount', '0.5');
 }
 ```
 
-这种方法适用于快速原型或过渡期，生产环境建议还是使用 CSS 变量和主题色方案。
+This approach works for quick prototypes or a transition period, but for production you should still use CSS variables and a proper theme-color scheme.
 
-## filter Animation and Performance
+## Filter Animation and Performance
 
-### 使用 GPU 加速
+### Using GPU Acceleration
 
-filter 动画默认会触发 GPU 加速，但 `blur` 动画开销较大：
+Filter animations trigger GPU acceleration by default, but animating `blur` is relatively expensive:
 
 ```css
 /* 推荐的动画属性 */
@@ -359,13 +359,13 @@ filter: blur(20px);           /* 高 */
 
 ## backdrop-filter Compatibility
 
-`backdrop-filter` 的浏览器支持情况（2019 年）：
+Browser support for `backdrop-filter` (as of 2019):
 
-- Chrome 76+ — 支持（需要开启 flag 或使用 `-webkit-` 前缀）
-- Firefox 70+ — 支持
-- Safari 9+ — 支持 `-webkit-backdrop-filter`
-- Edge — 需要 `-webkit-` 前缀
-- IE — 不支持
+- Chrome 76+ — supported (requires enabling a flag or using the `-webkit-` prefix)
+- Firefox 70+ — supported
+- Safari 9+ — supports `-webkit-backdrop-filter`
+- Edge — requires the `-webkit-` prefix
+- IE — not supported
 
 ```css
 /* 渐进增强 */
@@ -384,10 +384,10 @@ filter: blur(20px);           /* 高 */
 
 ## Summary
 
-- CSS `filter` 提供了 blur、brightness、contrast、grayscale、sepia、saturate、hue-rotate、invert、opacity、drop-shadow 共 10 个滤镜函数
-- 多个滤镜可以组合使用，按声明顺序叠加效果
-- `backdrop-filter` 可以对元素背后的内容应用滤镜，实现毛玻璃效果
-- filter 动画性能开销从小到大：opacity < grayscale < brightness < contrast < drop-shadow < blur
-- 使用 CSS 变量可以实现动态滤镜效果的精确控制
-- `drop-shadow` 与 `box-shadow` 不同，它根据元素实际内容（alpha 通道）投射阴影
-- `backdrop-filter` 兼容性需要注意，建议使用 `@supports` 做渐进增强
+- CSS `filter` provides ten filter functions: `blur`, `brightness`, `contrast`, `grayscale`, `sepia`, `saturate`, `hue-rotate`, `invert`, `opacity`, and `drop-shadow`.
+- Multiple filters can be combined; they stack in declaration order.
+- `backdrop-filter` applies a filter to the content behind an element, producing the frosted-glass effect.
+- Filter animation cost, from cheapest to most expensive: opacity < grayscale < brightness < contrast < drop-shadow < blur.
+- CSS variables let you precisely control filter effects dynamically.
+- Unlike `box-shadow`, `drop-shadow` casts a shadow based on the element's actual content (the alpha channel).
+- Watch `backdrop-filter` browser support, and prefer progressive enhancement with `@supports`.

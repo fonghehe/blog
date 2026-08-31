@@ -4,11 +4,11 @@ date: 2019-09-30 10:13:44
 tags:
   - Frontend
 readingTime: 3
-description: "前端遇到大数据量计算时，页面会卡死——滚动不了、点击没反应、动画掉帧。根本原因是 JavaScript 单线程，主线程被计算任务占满了。Web Worker 允许你在后台线程运行脚本，解放主线程。"
-wordCount: 336
+description: "When the frontend hits heavy computation, the page freezes—you can't scroll, clicks don't respond, and animations drop frames. The root cause is JavaScript's single thread: the main thread is saturated by computation tasks. Web Workers let you run scripts on a background thread, freeing up the main thread."
+wordCount: 270
 ---
 
-前端遇到大数据量计算时，页面会卡死——滚动不了、点击没反应、动画掉帧。根本原因是 JavaScript 单线程，主线程被计算任务占满了。Web Worker 允许你在后台线程运行脚本，解放主线程。
+When the frontend hits heavy computation, the page freezes—you can't scroll, clicks don't respond, and animations drop frames. The root cause is JavaScript's single thread: the main thread is saturated by computation tasks. Web Workers let you run scripts on a background thread, freeing up the main thread.
 
 ## Basic Usage
 
@@ -53,11 +53,11 @@ function heavyCalculation(arr) {
 }
 ```
 
-Worker 线程里不能访问 DOM、`window`、`document`。能用的 API：`navigator`、`location`（只读）、`setTimeout`/`setInterval`、`fetch`、`WebSocket` 等。
+A Worker thread can't access the DOM, `window`, or `document`. The APIs it can use include: `navigator`, `location` (read-only), `setTimeout`/`setInterval`, `fetch`, `WebSocket`, and so on.
 
 ## In Practice: Large CSV File Parsing
 
-用户上传 50MB 的 CSV 文件，主线程解析会卡死：
+A user uploads a 50MB CSV file; parsing it on the main thread would freeze the page:
 
 ```javascript
 // csv-worker.js
@@ -122,7 +122,7 @@ function parseCSVInWorker(file) {
 
 ## Wrapping a Worker Pool
 
-每次创建 Worker 有开销，用 Worker Pool 复用：
+Creating a Worker each time has overhead, so a Worker Pool reuses them:
 
 ```javascript
 class WorkerPool {
@@ -196,11 +196,11 @@ self.onmessage = (event) => {
 };
 ```
 
-`importScripts` 是同步阻塞的，加载完成前 Worker 不会处理消息。
+`importScripts` is synchronous and blocking—the Worker won't process messages until loading finishes.
 
 ## Data Transfer Optimization
 
-`postMessage` 传递的数据会被结构化克隆，有性能开销：
+Data passed via `postMessage` is structured-cloned, which has a performance cost:
 
 ```javascript
 // 低效：每次克隆大数据
@@ -212,7 +212,7 @@ worker.postMessage(buffer, [buffer]);
 // buffer 转移后，主线程不能再访问
 ```
 
-Transferable 适用于 `ArrayBuffer`、`MessagePort`、`ImageBitmap`。
+Transferable applies to `ArrayBuffer`, `MessagePort`, and `ImageBitmap`.
 
 ## React Hook Wrapper
 
@@ -248,16 +248,16 @@ function DataProcessor({ data }) {
 
 ## Debugging
 
-Chrome DevTools 调试 Worker：
-1. Sources → 左侧目录找到 Workers 分组
-2. 可以设断点、查看变量
-3. `console.log` 输出在主 Console 中（标记了 `[Worker]`）
+Debugging a Worker in Chrome DevTools:
+1. Sources → find the Workers group in the left sidebar.
+2. You can set breakpoints and inspect variables.
+3. `console.log` output appears in the main Console (tagged with `[Worker]`).
 
 ## Summary
 
-- Web Worker 在后台线程运行 JS，不阻塞主线程，适合大数据计算、文件解析
-- 主线程和 Worker 通过 `postMessage` / `onmessage` 通信
-- 使用 Transferable 对象（ArrayBuffer）可以零拷贝传递大数据
-- Worker 不能访问 DOM，能用的 API 有限（fetch、WebSocket、定时器等）
-- 频繁任务用 Worker Pool 复用线程，避免创建销毁开销
-- 在 React 中封装为 useWorker Hook，使用更简洁
+- Web Workers run JS on a background thread without blocking the main thread—great for heavy computation and file parsing.
+- The main thread and Worker communicate via `postMessage` / `onmessage`.
+- Transferable objects (`ArrayBuffer`) enable zero-copy transfer of large data.
+- Workers can't access the DOM; available APIs are limited (fetch, WebSocket, timers, etc.).
+- Use a Worker Pool for frequent tasks to reuse threads and avoid create/destroy overhead.
+- Wrap it as a `useWorker` Hook in React for cleaner usage.

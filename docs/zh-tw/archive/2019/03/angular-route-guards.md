@@ -8,7 +8,7 @@ description: "Angular Router 提供多種守衛介面，可以精細控製路由
 wordCount: 81
 ---
 
-Angular Router 提供多種守衛介面，可以精細控製路由訪問許可權。
+Angular Router 提供多種守衛介面，可以精細控制路由訪問許可權。
 
 ## CanActivate
 
@@ -24,7 +24,7 @@ export class AuthGuard implements CanActivate {
 }
 ```
 
-路由配置：
+路由設定：
 
 ```typescript
 const routes: Routes = [

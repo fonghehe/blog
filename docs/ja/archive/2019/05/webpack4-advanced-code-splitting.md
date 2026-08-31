@@ -6,7 +6,7 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "Tree ShakingはWebpack 4の重要な最適化機能で、バンドル時に未使用のコードを自動的に除去します。しかし多くの人は`mode: 'production'`を設定すれば完了だと思っています——実際には理解する価値のある原理がたくさんあります。"
-wordCount: 365
+wordCount: 370
 ---
 
 Tree ShakingはWebpack 4の重要な最適化機能で、バンドル時に未使用のコードを自動的に除去します。しかし多くの人は`mode: 'production'`を設定すれば完了だと思っています——実際には理解する価値のある原理がたくさんあります。
@@ -96,7 +96,7 @@ module.exports = {
    // または副作用がある特定のファイルをリスト：
    { "sideEffects": ["./src/polyfills.js", "*.css"] }
    ```
-3. **BabelがESMをCommonJSに変換**：BabelがimportとexportをなくさないようにNode：
+3. **BabelがESMをCommonJSに変換する**：Babelがimportとexportをなくさないようにします：
    ```json
    { "presets": [["@babel/preset-env", { "modules": false }]] }
    ```

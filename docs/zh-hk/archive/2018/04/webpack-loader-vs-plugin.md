@@ -88,7 +88,7 @@ module.exports = {
       filename: "css/[name].[contenthash:8].css",
     }),
 
-    // 分析 bundle 大小（隻在需要時開啓）
+    // 分析 bundle 大小（只在需要時開啓）
     process.env.ANALYZE && new BundleAnalyzerPlugin(),
 
     // 定義全局常量

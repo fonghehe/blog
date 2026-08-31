@@ -114,7 +114,7 @@ Flexbox 一維，Grid 二維。學了 Grid 之後，很多以前用 Flexbox 勉�
 }
 ```
 
-## 對齊控製
+## 對齊控制
 
 ```css
 .grid {
@@ -146,7 +146,7 @@ Flexbox 一維，Grid 二維。學了 Grid 之後，很多以前用 Flexbox 勉�
 | 二維佈局（頁面結構、卡片網格） | Grid           |
 | 不確定個數的元素自動排列       | Grid auto-fill |
 | 內容決定尺寸                   | Flexbox        |
-| 精確控製位置                   | Grid           |
+| 精確控制位置                   | Grid           |
 
 實際項目裏兩者經常混用：Grid 做大框架，Flexbox 做組件內部佈局。
 

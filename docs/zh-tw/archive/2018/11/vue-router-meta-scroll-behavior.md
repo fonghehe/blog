@@ -4,11 +4,11 @@ date: 2018-11-24 11:06:12
 tags:
   - Vue
 readingTime: 2
-description: "專案越做越大，路由許可權控製變得複雜：有的頁面要登入才能訪問，有的頁面隻有管理員能進，有的頁面在離開前要確認是否儲存……導航守衛能統一處理這些。"
-wordCount: 197
+description: "專案越做越大，路由權限控制變得複雜：有的頁面要登入才能訪問，有的頁面只有管理員能進，有的頁面在離開前要確認是否儲存……導航守衛能統一處理這些。"
+wordCount: 193
 ---
 
-專案越做越大，路由許可權控製變得複雜：有的頁面要登入才能訪問，有的頁面隻有管理員能進，有的頁面在離開前要確認是否儲存……導航守衛能統一處理這些。
+專案越做越大，路由權限控制變得複雜：有的頁面要登入才能訪問，有的頁面只有管理員能進，有的頁面在離開前要確認是否儲存……導航守衛能統一處理這些。
 
 ## 全域性前置守衛
 
@@ -38,7 +38,7 @@ router.beforeEach(async (to, from, next) => {
   if (!store.getters.userInfo) {
     try {
       await store.dispatch("user/getUserInfo");
-      // 重新導航（因為許可權資訊剛載入）
+      // 重新導航（因為權限資訊剛載入）
       next({ ...to, replace: true });
     } catch (e) {
       // 獲取使用者資訊失敗（token 可能已失效）
@@ -52,7 +52,7 @@ router.beforeEach(async (to, from, next) => {
 });
 ```
 
-## 基於 meta 的許可權控製
+## 基於 meta 的權限控制
 
 ```javascript
 // router/routes.js
@@ -76,7 +76,7 @@ const routes = [
 ```
 
 ```javascript
-// 在 beforeEach 裡檢查許可權
+// 在 beforeEach 裡檢查權限
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !store.getters.isLoggedIn) {
     next("/login");
@@ -86,7 +86,7 @@ router.beforeEach((to, from, next) => {
   if (to.meta.roles) {
     const userRole = store.getters.userRole;
     if (!to.meta.roles.includes(userRole)) {
-      next("/403"); // 無許可權頁面
+      next("/403"); // 無權限頁面
       return;
     }
   }
@@ -131,7 +131,7 @@ const routes = [
   {
     path: "/pay/:orderId",
     component: PayPage,
-    // 隻在這個路由上的守衛
+    // 只在這個路由上的守衛
     beforeEnter(to, from, next) {
       // 檢查訂單是否可以支付
       const orderId = to.params.orderId;
@@ -171,8 +171,8 @@ this.$router.push(redirect);
 
 ## 小結
 
-- `beforeEach`：全域性前置，處理登入檢查、許可權控製
+- `beforeEach`：全域性前置，處理登入檢查、權限控制
 - `afterEach`：全域性後置，修改標題、上報 PV
 - `beforeRouteLeave`：元件內，處理表單離開確認
 - `beforeEnter`：路由獨享，處理特定路由的進入邏輯
-- 用 `meta` 欄位宣告路由的許可權要求，守衛裡統一處理
+- 用 `meta` 欄位宣告路由的權限要求，守衛裡統一處理

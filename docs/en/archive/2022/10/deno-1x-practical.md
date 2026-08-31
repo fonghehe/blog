@@ -4,11 +4,11 @@ date: 2022-10-25 09:48:31
 tags:
   - Deno
 readingTime: 2
-description: "Deno 从 1.0 发布到现在已经两年了。1.2x 版本的生态逐渐成熟，Deno Deploy 让它有了实际的部署场景。这篇文章讲讲 Deno 的核心理念和实际使用体验。"
-wordCount: 311
+description: "It's been two years since Deno 1.0 shipped. The 1.2x ecosystem has gradually matured, and Deno Deploy has given it real deployment scenarios. This article covers Deno's core philosophy and my hands-on experience with it."
+wordCount: 289
 ---
 
-Deno 从 1.0 发布到现在已经两年了。1.2x 版本的生态逐渐成熟，Deno Deploy 让它有了实际的部署场景。这篇文章讲讲 Deno 的核心理念和实际使用体验。
+It's been two years since Deno 1.0 shipped. The 1.2x ecosystem has gradually matured, and Deno Deploy has given it real deployment scenarios. This article covers Deno's core philosophy and my hands-on experience with it.
 
 ## Core Philosophy
 

@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 3
 description: "Going from a Figma design to working code used to be one of the most time-consuming stages of frontend development. In 2026, LLM-driven UI generation tools have"
-wordCount: 319
+wordCount: 321
 ---
 
 Going from a Figma design to working code used to be one of the most time-consuming stages of frontend development. In 2026, LLM-driven UI generation tools have matured to the point where they can understand design intent, component hierarchy, and even interaction states. But there's still a massive gap between "it works" and "it's production-ready."
@@ -119,7 +119,7 @@ async function generateUI(prompt: string) {
 
 ## Quality Assurance Pipeline After Generation
 
-AI-generated UI code completes at most 60% of the work. The remaining 40% is responsive adaptation, accessibility, edge case handling, and integration with business logic. An automated pipeline helps you quickly identify problems.
+AI-generated UI code only gets you about 60% of the way there. The remaining 40% is responsive adaptation, accessibility, edge case handling, and integration with business logic. An automated pipeline helps you catch problems quickly.
 
 ```typescript
 // ui-quality-pipeline.ts

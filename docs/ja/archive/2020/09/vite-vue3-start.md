@@ -3,26 +3,26 @@ title: "Vite + Vue 3で新プロジェクトを始める完全ガイド"
 date: 2020-09-07 10:27:38
 tags:
   - Vue
-readingTime: 4
+readingTime: 5
 description: "Vue 3 正式 RC 阶段了，Vite 1.0 也已经稳定。团队新起的一个内部工具项目决定直接上 Vite + Vue 3，不再用 Vue CLI + Webpack 了。这篇文章记录一下完整的搭建过程和踩坑点。"
-wordCount: 426
+wordCount: 739
 ---
 
-Vue 3 正式 RC 阶段了，Vite 1.0 也已经稳定。团队新起的一个内部工具项目决定直接上 Vite + Vue 3，不再用 Vue CLI + Webpack 了。这篇文章记录一下完整的搭建过程和踩坑点。
+Vue 3 が正式に RC 段階に入り、Vite 1.0 も安定しました。チームの新規内部ツールプロジェクトは、Vue CLI + Webpack を止めて Vite + Vue 3 に直接乗り換えることにしました。この記事は、その完全な構築手順とつまずきポイントをまとめたものです。
 
-## 为什么选 Vite
+## なぜ Vite なのか
 
-先说结论：开发体验提升太明显了。
+結論から言うと、開発体験の向上があまりにも大きいという点です。
 
 | | Vue CLI + Webpack | Vite |
 |---|---|---|
-| 冷启动 | 30-60s（大项目） | < 1s |
-| HMR | 2-5s | 几乎即时 |
-| 构建 | 1-3min | 20-40s（Rollup） |
+| コールドスタート | 30〜60s（大規模プロジェクト） | < 1s |
+| HMR | 2〜5s | ほぼ即時 |
+| ビルド | 1〜3min | 20〜40s（Rollup） |
 
-Vite 的原理很简单：开发时利用浏览器原生 ESM，不打包，按需编译。构建时用 Rollup 打包。所以开发速度极快，构建产物也很干净。
+Vite の仕組みはシンプルです。開発時はブラウザのネイティブ ESM を活用し、バンドルせずに必要な分だけコンパイルします。本番ビルドでは Rollup でバンドルします。そのため、開発サーバーは極めて高速で、ビルド成果物もきれいなものになります。
 
-## 项目初始化
+## プロジェクトの初期化
 
 ```bash
 # 创建项目
@@ -46,7 +46,7 @@ my-project/
     └── shims-vue.d.ts
 ```
 
-## 项目配置
+## プロジェクトの設定
 
 ### vite.config.ts
 
@@ -145,7 +145,7 @@ declare module '*.vue' {
 }
 ```
 
-## 路由配置
+## ルーティングの設定
 
 ```typescript
 // src/router/index.ts
@@ -188,9 +188,9 @@ const router = createRouter({
 export default router
 ```
 
-## 状态管理：简单场景用 reactive
+## 状態管理：単純なケースは reactive で
 
-对于内部工具，不一定需要 Vuex/Pinia，直接用 Composition API + provide/inject：
+内部ツールであれば、必ずしも Vuex/Pinia は必要ありません。Composition API + provide/inject をそのまま使えば十分です：
 
 ```typescript
 // src/stores/useAppStore.ts
@@ -254,7 +254,7 @@ export const AppStoreKey: InjectionKey<AppStore> = Symbol('AppStore')
 // 组件中通过 inject(AppStoreKey) 使用
 ```
 
-## 组合式函数（Composables）
+## コンポーザブル（Composables）
 
 ```typescript
 // src/composables/useRequest.ts
@@ -303,9 +303,9 @@ export function useRequest<T>(
 // )
 ```
 
-## 环境变量
+## 環境変数
 
-Vite 使用 `.env` 文件管理环境变量，变量必须以 `VITE_` 开头才能在客户端访问：
+Vite は `.env` ファイルで環境変数を管理し、クライアントから参照するには変数名を `VITE_` で始める必要があります：
 
 ```bash
 # .env.development
@@ -336,9 +336,9 @@ interface ImportMeta {
 
 ## よくある質問
 
-### 1. CommonJS 模块兼容
+### 1. CommonJS モジュールの互換性
 
-Vite 基于 ESM，某些旧的 npm 包只提供 CJS 格式会报错：
+Vite は ESM ベースであり、CJS 形式しか提供しない古い npm パッケージではエラーになることがあります：
 
 ```typescript
 // vite.config.ts 中配置 optimizeDeps
@@ -349,7 +349,7 @@ export default defineConfig({
 })
 ```
 
-### 2. 静态资源处理
+### 2. 静的アセットの扱い
 
 ```typescript
 // Vite 中获取静态资源 URL
@@ -364,7 +364,7 @@ function getImageUrl(name: string) {
 }
 ```
 
-### 3. 全局样式变量
+### 3. グローバルなスタイル変数
 
 ```typescript
 // vite.config.ts
@@ -379,9 +379,9 @@ css: {
 
 ## まとめ
 
-- Vite 的开发体验相比 Webpack 有质的飞跃，冷启动和 HMR 快到几乎不需要等待
-- Vue 3 + Composition API 的组合式函数非常适合逻辑复用
-- 项目配置从 vue.config.js 迁移到 vite.config.ts，结构类似但更简洁
-- 环境变量必须以 `VITE_` 开头才能在客户端使用
-- 对于 CJS 兼容和静态资源路径，需要注意 Vite 的特殊要求
-- 内部项目如果不需要太多 Webpack 生态插件，建议直接上 Vite
+- Vite の開発体験は Webpack と比べて飛躍的に向上しており、コールドスタートも HMR も待つほどのものではありません
+- Vue 3 + Composition API のコンポーザブルはロジックの再利用に非常に適しています
+- プロジェクト設定は vue.config.js から vite.config.ts へ移行でき、構造は似ていますがより簡潔です
+- 環境変数はクライアントから参照するために `VITE_` で始める必要があります
+- CJS 互換や静的アセットのパスについては、Vite 特有の要件に注意してください
+- 内部プロジェクトで Webpack エコシステムのプラグインをあまり必要としないなら、Vite に直接乗り換えることをお勧めします

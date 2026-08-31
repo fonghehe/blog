@@ -4,8 +4,8 @@ date: 2024-04-25 09:48:06
 tags:
   - Node.js
 readingTime: 2
-description: "关于Node.js 22 LTS 新特性，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspect"
-wordCount: 209
+description: "Many developers only know Node.js 22 LTS new features at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 194
 ---
 
 关于Node.js 22 LTS 新特性，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -131,7 +131,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 This code demonstrates the basic usage. In real projects, you'll also need to consider error handling and edge cases.
 
-## 踩坑记录
+## Pitfalls Log
 
 Building on this, we can further optimize:
 
@@ -162,6 +162,6 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Node.js 22 LTS 新特性不是银弹，需要根据项目规模和技术栈选择
+- Don't adopt new technology just for the sake of it
+- Code samples are for reference only and need adjusting to your business scenario
+- Node.js 22 LTS new features is not a silver bullet — choose based on your project scale and tech stack

@@ -4,15 +4,15 @@ date: 2020-07-22 09:33:52
 tags:
   - Testing
 readingTime: 2
-description: "在日常开发中，MSW Mock Service Worker 接口模拟的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 286
+description: "A systematic guide to MSW (Mock Service Worker) API mocking, covering usage patterns, internals, and optimization strategies for day-to-day development."
+wordCount: 181
 ---
 
-在日常开发中，MSW Mock Service Worker 接口模拟的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+In day-to-day development, MSW (Mock Service Worker) API mocking is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -36,11 +36,11 @@ describe('LoginForm', () => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to be tied to the specific scenario; not everything needs to be over-optimized.
 
 ## Internal Principles
 
-我们可以通过以下方式来改进：
+We can improve it in the following ways:
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -58,11 +58,11 @@ test.describe('用户登录流程', () => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been validated in practice.
 
 ## Business Practice
 
-先来看基本的实现方式：
+Let's first look at the basic implementation:
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -86,11 +86,11 @@ describe('LoginForm', () => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll also need to consider error handling and edge cases.
 
 ## Performance Comparison
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -108,11 +108,11 @@ test.describe('用户登录流程', () => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and can significantly cut maintenance cost.
 
 ## Summary
 
-- MSW Mock Service Worker 接口模拟不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- MSW API mocking is no silver bullet; choose it based on your project's size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Be sure to verify compatibility before using it in production.
+- On a team, conventions and documentation matter more than the tech itself.

@@ -56,7 +56,7 @@ const diff = new Set([...a].filter((x) => !b.has(x))); // {1}
 
 ## Map：鍵可以是任意類型的鍵值對
 
-普通對象的鍵隻能是字符串或 Symbol，Map 的鍵可以是任何值：
+普通對象的鍵只能是字符串或 Symbol，Map 的鍵可以是任何值：
 
 ```javascript
 const map = new Map();

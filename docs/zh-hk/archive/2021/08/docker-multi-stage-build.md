@@ -9,7 +9,7 @@ description: "在日常開發中，Docker 多階段構建前端應用的使用�
 wordCount: 318
 ---
 
-在日常開發中，Docker 多階段構建前端應用的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
+在日常開發中，Docker 多階段建構前端應用的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
 
 ## 快速上手
 
@@ -109,7 +109,7 @@ export default defineConfig({
 
 ## 效能對比
 
-先來看基本的實現方式：
+先來看基本的實作方式：
 
 ```dockerfile
 import { defineConfig } from 'vite'
@@ -175,4 +175,4 @@ export default defineConfig({
 
 - 不要為了用新技術而用新技術
 - 代碼示例僅供參考，需根據業務場景調整
-- Docker 多階段構建前端應用不是銀彈，需要根據項目規模和技術棧選擇
+- Docker 多階段建構前端應用不是銀彈，需要根據項目規模和技術棧選擇

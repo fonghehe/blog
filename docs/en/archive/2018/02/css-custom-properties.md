@@ -1,5 +1,5 @@
 ---
-title: "CSS Custom Properties Basics: BasicsSyntax & Compatibility性"
+title: "CSS Custom Properties (Variables): Basic Syntax and Compatibility"
 date: 2018-02-27 16:32:20
 tags:
   - CSS

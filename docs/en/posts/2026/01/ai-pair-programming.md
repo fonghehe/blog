@@ -5,14 +5,14 @@ tags:
   - Engineering
 readingTime: 4
 description: "AI pair programming has moved well beyond the simple \"AI writes code, human reviews code\" model. The mature 2026 workflow is a clearly divided collaboration: hu"
-wordCount: 320
+wordCount: 321
 ---
 
-AI pair programming has moved well beyond the simple "AI writes code, human reviews code" model. The mature 2026 workflow is a clearly divided collaboration: humans handle architecture thinking and business logic, while AI takes care of implementation details and repetitive boilerplate. This article shares the AI pair programming workflow I use day to day.
+AI pair programming has moved well beyond the simple "AI writes code, human reviews code" model. The mature 2026 workflow divides the work clearly: humans handle architecture thinking and business logic, while AI takes care of implementation details and repetitive boilerplate. This article shares the AI pair programming workflow I use day to day.
 
 ## Driver and Navigator: Role Assignment
 
-The role-switching between people in traditional pair programming becomes, in human-AI collaboration, "when should I let AI take the wheel?" My rule of thumb: exploratory coding is human-led, implementation coding goes to AI.
+In human-AI collaboration, the role-switching of traditional pair programming turns into the question of when to let AI take the wheel. My rule of thumb: exploratory coding stays human-led, while implementation coding goes to AI.
 
 ```typescript
 // pair-programming-rules.ts

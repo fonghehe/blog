@@ -8,7 +8,7 @@ description: "很多人隻用 npm scripts 跑 `npm start` 和 `npm run build`，
 wordCount: 144
 ---
 
-很多人隻用 npm scripts 跑 `npm start` 和 `npm run build`，其實它能做很多自動化的事情。
+很多人只用 npm scripts 跑 `npm start` 和 `npm run build`，其實它能做很多自動化的事情。
 
 ## 基礎
 
@@ -131,7 +131,7 @@ npm 提供 pre/post 鉤子：
 npm install --save-dev cross-env rimraf
 ```
 
-## 腳本里使用 node
+## 腳本裡使用 node
 
 直接在 scripts 裡寫 node 指令碼：
 

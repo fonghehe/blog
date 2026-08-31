@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 1
-description: "最近在团队中落地Vue 3 Suspense 异步组件加载， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 178
+description: "I recently rolled out Vue 3 Suspense for async component loading with my team and learned quite a bit along the way. Here's a write-up for anyone doing similar work."
+wordCount: 174
 ---
 
-最近在团队中落地Vue 3 Suspense 异步组件加载， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+I recently rolled out Vue 3 Suspense for async component loading on my team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps anyone doing similar work.
 
 ## Core Concepts
 

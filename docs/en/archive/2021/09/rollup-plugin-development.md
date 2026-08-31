@@ -6,15 +6,15 @@ tags:
   - Vite
 
 readingTime: 2
-description: "Vite 底层用 Rollup 做生产构建，理解 Rollup 插件机制对深度使用 Vite 非常重要。今年我们在组件库构建中开发了几个自定义 Rollup 插件，总结一下开发经验。"
-wordCount: 213
+description: "Vite uses Rollup for production builds under the hood, so understanding Rollup's plugin mechanism matters if you use Vite deeply. This year we wrote several custom Rollup plugins for our component library build — here's what we learned."
+wordCount: 164
 ---
 
-Vite 底层用 Rollup 做生产构建，理解 Rollup 插件机制对深度使用 Vite 非常重要。今年我们在组件库构建中开发了几个自定义 Rollup 插件，总结一下开发经验。
+Vite uses Rollup under the hood for production builds, so understanding the Rollup plugin mechanism is essential for using Vite in depth. This year we built a few custom Rollup plugins for our component-library build, and here are some lessons from that work.
 
 ## Plugin Basic Structure
 
-Rollup 插件就是一个返回对象的函数：
+A Rollup plugin is simply a function that returns an object:
 
 ```javascript
 // rollup-plugin-strip-debug.js
@@ -102,7 +102,7 @@ export default function myPlugin() {
 
 ## Practice: Auto Component Registration Plugin
 
-我们写了一个插件，自动把组件库的 `index.ts` 中的手动导出改为自动生成：
+We wrote a plugin that replaces the manual exports in the component library's `index.ts` with auto-generated ones:
 
 ```javascript
 import { readdirSync, statSync } from 'fs'
@@ -162,7 +162,7 @@ export default {
 
 ## Relationship with Vite
 
-Vite 的插件系统兼容 Rollup 插件 API，但有扩展：
+Vite's plugin system is compatible with the Rollup plugin API, but extends it:
 
 ```javascript
 // Vite 独有的 hook
@@ -214,8 +214,8 @@ export default function debugPlugin() {
 
 ## Summary
 
-- Rollup 插件的核心是 transform、resolveId、load 三个 hook
-- Vite 兼容 Rollup 插件 API，理解 Rollup 对 Vite 深度使用很重要
-- 插件开发中 `this.emitFile`、`this.warn` 等上下文方法很实用
-- 组件库构建是自定义插件的典型应用场景
-- 调试时善用 `this.info` 输出中间状态
+- The core of a Rollup plugin is the transform, resolveId, and load hooks.
+- Vite is compatible with the Rollup plugin API, so understanding Rollup matters for using Vite in depth.
+- Context methods like `this.emitFile` and `this.warn` are very handy when developing plugins.
+- Component-library builds are a typical use case for custom plugins.
+- When debugging, make good use of `this.info` to print intermediate state.

@@ -4,15 +4,15 @@ date: 2022-01-25 10:22:21
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 4.6 は2022年2月にリリースされ、最大のハイライトは制御フロー分析の強化です——现在可以在构造函数的 super() 调用之前引用 this。这个看似小的改进，解决了很多实际编码中的烦人问题。"
-wordCount: 377
+description: "TypeScript 4.6 は2022年2月にリリースされ、最大のハイライトは制御フロー分析の強化だ——コンストラクタの super() 呼び出しの前に this を参照できるようになった。この一見小さな改善が、実際のコーディングにおける多くの厄介な問題を解決する。"
+wordCount: 492
 ---
 
-TypeScript 4.6 は2022年2月にリリースされ、最大のハイライトは制御フロー分析の強化です——现在可以在构造函数的 super() 调用之前引用 this。这个看似小的改进，解决了很多实际编码中的烦人问题。
+TypeScript 4.6 は2022年2月にリリースされ、最大のハイライトは制御フロー分析の強化だ——コンストラクタの super() 呼び出しの前に this を参照できるようになった。この一見小さな改善が、実際のコーディングにおける多くの厄介な問題を解決する。
 
 ## コンストラクタの super 前の this
 
-以前这样写会报错：
+以前はこのように書くとエラーが発生した：
 
 ```typescript
 class Base {
@@ -62,7 +62,7 @@ function area(shape: Shape) {
 }
 ```
 
-更好的写法：
+より良い書き方：
 
 ```typescript
 function area(shape: Shape) {
@@ -76,7 +76,7 @@ function area(shape: Shape) {
 }
 ```
 
-现在 TypeScript 能理解 `const { kind } = shape` 之后 shape 的类型仍然有效。
+これで TypeScript は `const { kind } = shape` の後も shape の型が有効であることを理解できる。
 
 ## 再帰型参照の深度制限
 
@@ -98,7 +98,7 @@ type Prev<N extends number> = N extends 1 ? 0
 type Result = DeepNest<string, 20>; // OK
 ```
 
-## ES2022 的 Error Cause
+## ES2022 の Error Cause
 
 ```typescript
 function parseConfig(json: string) {
@@ -117,9 +117,9 @@ try {
 }
 ```
 
-TypeScript 4.6 原生支持 `ErrorOptions.cause`，不需要额外的类型声明。
+TypeScript 4.6 は `ErrorOptions.cause` をネイティブでサポートしており、追加の型宣言は不要だ。
 
-## 类型参数的推断改进
+## 型パラメータの推論改善
 
 ```typescript
 declare function pipe<A, B, C>(
@@ -137,7 +137,7 @@ const result = pipe(
 // result: string ✅
 ```
 
-## 实际项目中的收益
+## 実際のプロジェクトでの恩恵
 
 ```typescript
 // 典型的 Express 中间件模式
@@ -169,4 +169,4 @@ const createUser = validate<{ name: string; email: string }>(
 
 ## まとめ
 
-TypeScript 4.6 的改进虽然不像 4.7 那样带来 ESM 支持的大变革，但控制流分析的增强让日常编码更顺畅。特别是解构不再破坏类型收窄，这个改进每天都能感受到。建议尽快升级，配合 strict 模式使用效果最佳。
+TypeScript 4.6 の改善は 4.7 のような ESM サポートの大変革をもたらすものではないが、制御フロー分析の強化により日常のコーディングがよりスムーズになる。特に分割代入が型の絞り込みを壊さなくなった点は、毎日体感できる改善だ。できるだけ早くアップグレードし、strict モードと併用することをお勧めする。

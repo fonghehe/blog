@@ -2,17 +2,17 @@
 title: "Capacitor Cross-Platform App Development"
 date: 2020-11-18 09:32:57
 tags:
-  - 跨平台
+  - Cross-Platform
 readingTime: 2
-description: "最近在团队中落地Capacitor 跨平台应用开发，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 309
+description: "Lessons learned from rolling out Capacitor for cross-platform app development on a team, shared as a practical reference for similar efforts."
+wordCount: 194
 ---
 
-最近在团队中落地Capacitor 跨平台应用开发，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+I recently rolled out Capacitor for cross-platform app development on my team and learned a lot along the way. I'm writing this up as a reference, hoping it helps anyone doing similar work.
 
 ## Core Concepts
 
-在这个基础上，我们可以进一步优化：
+Building on that, we can push the optimization a step further:
 
 ```javascript
 import React, { useState, useCallback } from 'react'
@@ -41,11 +41,11 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in larger projects and significantly lowers maintenance cost.
 
 ## In-Depth Analysis
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets a bit more involved:
 
 ```javascript
 FROM node:20-alpine AS deps
@@ -66,11 +66,11 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Implementation Experience
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import React, { useState, useCallback } from 'react'
@@ -99,11 +99,11 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge-case handling — that is critical in production.
 
 ## Tuning Strategies
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 FROM node:20-alpine AS deps
@@ -124,11 +124,11 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance tuning has to fit the actual scenario; not every case needs over-optimization.
 
 ## Important Notes
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 import React, { useState, useCallback } from 'react'
@@ -157,11 +157,11 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Understanding the fundamentals matters more than memorizing APIs.
+- Always verify compatibility before shipping to production.
+- In team collaboration, conventions and documentation matter more than the tech itself.
+- Keep an eye on the community — technical solutions need to keep evolving.

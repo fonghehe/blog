@@ -5,10 +5,10 @@ tags:
   - Frontend
 readingTime: 1
 description: "HTTP caching is a key part of frontend performance optimization, but many developers are unclear about the difference between strong caching and negotiated cach"
-wordCount: 72
+wordCount: 69
 ---
 
-HTTP caching is a key part of frontend performance optimization, but many developers are unclear about the difference between strong caching and negotiated caching, leading to caches that either don't take effect or updates that are delayed.
+HTTP caching is a key part of frontend performance optimization, but many developers are unclear about the difference between strong caching and negotiated caching, so caches either fail to take effect or delay updates.
 
 ## Caching Flow
 

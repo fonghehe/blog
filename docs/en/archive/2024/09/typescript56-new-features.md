@@ -4,11 +4,11 @@ date: 2024-09-22 11:56:33
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 5.6 正式发布，带来了一些实用的语言特性和类型检查增强。挑几个对日常开发影响最大的变化。"
-wordCount: 280
+description: "TypeScript 5.6 is officially out, with practical language features and type-checking enhancements. Here are the changes that affect day-to-day development the most."
+wordCount: 261
 ---
 
-TypeScript 5.6 正式发布，带来了一些实用的语言特性和类型检查增强。挑几个对日常开发影响最大的变化。
+TypeScript 5.6 is officially out, with practical language features and type-checking enhancements. Here are the changes that affect day-to-day development the most.
 
 ## Iterator Helpers
 

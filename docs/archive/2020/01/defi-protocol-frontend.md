@@ -5,13 +5,16 @@ tags:
   - Web3
   - DeFi
   - Ethereum
+readingTime: 8
+wordCount: 1288
+description: "去中心化金融（DeFi）生态由一组相互协作的协议构成：MakerDAO 的 DAI 稳定币、Compound 的借贷协议、Synthetix 的衍生资产，它们共同组成了 DeFi 的基础设施层。其中 Uniswap 作为去中心化交易所（DEX）的代表，凭借简洁的自动做市商（AMM）机制，成为 DeFi 生态中流动性最强"
 ---
 
 ## DeFi 生态与 Uniswap V2 交互
 
 去中心化金融（DeFi）生态由一组相互协作的协议构成：MakerDAO 的 DAI 稳定币、Compound 的借贷协议、Synthetix 的衍生资产，它们共同组成了 DeFi 的基础设施层。其中 Uniswap 作为去中心化交易所（DEX）的代表，凭借简洁的自动做市商（AMM）机制，成为 DeFi 生态中流动性最强的交易协议。
 
-Uniswap V2 在 V1 的基础上引入了 ERC-20/ERC-20 交易对（V1 只支持 ETH/ERC-20）、价格预言机、闪电swap 等关键特性。对于前端开发者而言，理解 Uniswap V2 的合约结构和交互方式，是构建 DeFi 前端的基础。
+Uniswap V2 在 V1 的基础上引入了 ERC-20/ERC-20 交易对（V1 只支持 ETH/ERC-20）、价格预言机、闪电兑换等关键特性。对于前端开发者而言，理解 Uniswap V2 的合约结构和交互方式，是构建 DeFi 前端的基础。
 
 ## Uniswap V2 核心合约架构
 
@@ -45,7 +48,7 @@ function burn(address to) external returns (uint amount0, uint amount1);
 
 ### Router02 合约
 
-Router02 是面向前端的前端路由合约，封装了多跳交易、代币包装/解包等复杂逻辑。绝大多数前端交互都通过 Router02 完成：
+Router02 是供前端调用的路由合约，封装了多跳交易、代币包装/解包等复杂逻辑。绝大多数前端交互都通过 Router02 完成：
 
 ```solidity
 // UniswapV2Router02 关键方法

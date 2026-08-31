@@ -4,15 +4,15 @@ date: 2020-07-24 10:29:01
 tags:
   - Performance Optimization
 readingTime: 2
-description: "关于Web Vitals 核心性能指标详解，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 331
+description: "A production-oriented deep dive into Web Vitals core performance metrics, addressing real-world issues developers face beyond basic API usage."
+wordCount: 208
 ---
 
-关于Web Vitals 核心性能指标详解，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to Web Vitals core performance metrics, many developers only stay at the level of API calls. This article tries to discuss the real problems you'll hit and their solutions from a production perspective.
 
 ## Basic Principles
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -29,11 +29,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and can significantly cut maintenance cost.
 
 ## Advanced Features
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -50,11 +50,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Project Practice
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -71,11 +71,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge cases — this is critical in production.
 
 ## Best Practices
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -92,11 +92,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to be tied to the specific scenario; not everything needs to be over-optimized.
 
 ## Common Pitfalls
 
-我们可以通过以下方式来改进：
+We can improve it in the following ways:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -113,11 +113,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been validated in practice.
 
 ## Summary
 
-- Web Vitals 核心性能指标详解不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- A deep dive into Web Vitals core metrics is no silver bullet; choose based on your project's size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Be sure to verify compatibility before using it in production.
+- On a team, conventions and documentation matter more than the tech itself.

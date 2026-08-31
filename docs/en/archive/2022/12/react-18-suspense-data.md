@@ -1,10 +1,10 @@
 ---
-title: "React 18 Suspense Data Fetching: 结合 React Query ProductionSolution"
+title: "React 18 Suspense Data Fetching in Practice: A Production Approach with React Query"
 date: 2022-12-12 16:06:34
 tags:
   - React
 readingTime: 2
-description: "React 18 Suspense 数据获取 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pro"
+description: "Suspense data fetching in React 18 is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 191
 ---
 

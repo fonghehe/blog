@@ -6,7 +6,7 @@ tags:
   - Blockchain
 readingTime: 11
 description: "Optimistic Rollup の L2→L1 出金は 7 日間のチャレンジ期間を伴い、フロントエンドの状態管理とユーザー体験に独自の課題をもたらします。本記事では出金の全フローを分解し、完全なフロントエンド実装方案を提示します。"
-wordCount: 2900
+wordCount: 1911
 ---
 
 Optimistic Rollup（OR）は Ethereum Layer 2 スケーリングの主流方案の一つで、代表プロジェクトには Optimism（OVM）と Arbitrum（Nitro）があります。zkRollup とは異なり、OR は「楽観的実行 + フロードプルーフ」のセキュリティモデルを採用しており、これが L2 → L1 出金に 7 日間のチャレンジ期間が必要となる直接の原因です。フロントエンド開発者にとって、この 7 日間にわたる非同期フローの管理は独自のエンジニアリングチャレンジです。

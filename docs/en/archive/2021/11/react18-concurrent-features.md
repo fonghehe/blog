@@ -6,15 +6,15 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "React 18 Alpha 已经发布，可以试用了。等了两年的 Concurrent 特性终于要正式了。"
-wordCount: 189
+description: "React 18 Alpha is out and ready to try. The Concurrent features we've waited two years for are finally becoming official."
+wordCount: 130
 ---
 
-React 18 Alpha 已经发布，可以试用了。等了两年的 Concurrent 特性终于要正式了。
+React 18 Alpha is out and ready to try. The Concurrent features we've been waiting two years for are finally going stable.
 
 ## Concurrent Rendering
 
-React 18 的核心变化：渲染变成可以被打断、恢复的过程。
+The core change in React 18: rendering becomes a process that can be interrupted and resumed.
 
 ```javascript
 // React 17：同步渲染
@@ -27,9 +27,9 @@ const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
-只是这一行变化，但开启了很多并发特性。
+It's just this one-line change, yet it unlocks many concurrent features.
 
-## Automatic Batching（自动批处理）
+## Automatic Batching
 
 ```javascript
 // React 17：只有 React 事件处理中才批处理
@@ -54,7 +54,7 @@ setTimeout(() => {
 });
 ```
 
-不需要任何代码改动，性能自动提升。
+No code changes are required; performance improves automatically.
 
 ## useTransition
 
@@ -87,7 +87,7 @@ function SearchPage() {
 }
 ```
 
-用户输入始终流畅，搜索结果更新不会阻塞输入。
+User input stays smooth; updating search results never blocks typing.
 
 ## useDeferredValue
 
@@ -108,7 +108,7 @@ function App() {
 }
 ```
 
-## Suspense 改进
+## Suspense Improvements
 
 ```javascript
 // React 18：Suspense 支持服务端渲染（SSR）
@@ -169,8 +169,8 @@ function FormField({ label, type }) {
 
 ## Summary
 
-- Automatic Batching 是 React 18 最实际的改进，不需要改代码
-- useTransition：区分紧急/非紧急更新，保持 UI 响应
-- Suspense SSR：流式渲染，用户更快看到内容
-- useId：SSR 和 CSR 一致的唯一 ID
-- 正式版预计 2022 年初发布
+- Automatic Batching is the most practical improvement in React 18, requiring no code changes
+- useTransition: distinguishes urgent from non-urgent updates to keep the UI responsive
+- Suspense SSR: streaming rendering lets users see content faster
+- useId: generates unique IDs consistent between SSR and CSR
+- The stable release is expected in early 2022

@@ -4,11 +4,11 @@ date: 2022-07-06 10:05:13
 tags:
   - Frontend
 readingTime: 2
-description: "AI 代码生成工具对比这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 218
+description: "The topic of comparing AI code generation tools has been discussed many times in the community, but with version updates, many conclusions need refreshing. This article re-examines the landscape based on the latest versions."
+wordCount: 187
 ---
 
-AI 代码生成工具对比这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+The topic of comparing AI code generation tools has been discussed many times in the community, but with version updates, many conclusions need refreshing. This article re-examines the landscape based on the latest versions.
 
 ## Getting Started
 
@@ -116,7 +116,7 @@ export async function POST(req) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Pitfall Guide
 

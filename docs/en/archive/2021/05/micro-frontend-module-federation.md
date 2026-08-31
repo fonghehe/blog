@@ -6,15 +6,15 @@ tags:
   - Webpack
 
 readingTime: 2
-description: "微前端 Module Federation 落地 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topi"
-wordCount: 201
+description: "Landing micro-frontends with Module Federation has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 182
 ---
 
-微前端 Module Federation 落地 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Micro-frontend Module Federation has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 .container {
@@ -126,6 +126,6 @@ This approach has been running stably in production for over six months and has 
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- 微前端 Module Federation 落地不是银弹，需要根据项目规模和技术栈选择
+- Micro-frontend Module Federation is no silver bullet; choose it based on project scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

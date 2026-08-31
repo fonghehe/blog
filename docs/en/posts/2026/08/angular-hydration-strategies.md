@@ -3,9 +3,9 @@ title: "Angular 23 Hydration Deep Dive: Incremental Hydration and Zoneless in Pr
 date: 2026-08-27 16:48:05
 tags:
   - Angular
-readingTime: 8
+readingTime: 6
 description: "Angular 23 hydration is no longer all-or-nothing activation. This article covers @defer hydrate triggers, selective hydration boundaries, zoneless integration, TBT/INP measurements, and differing strategies for content pages versus dashboards — with real data and pitfalls from a marketing site migration."
-wordCount: 3300
+wordCount: 1173
 ---
 
 Angular 17 introduced SSR hydration, solving the long-standing re-render flicker problem. But default full hydration is too heavy for content pages — a marketing landing page might have 20 components, with only 3 visible above the fold while the remaining 17 silently consume main thread time doing hydration in the background, dragging down TBT and INP. Angular 23's incremental hydration makes fine-grained control possible.

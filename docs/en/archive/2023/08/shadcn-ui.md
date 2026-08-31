@@ -4,7 +4,7 @@ date: 2023-08-07 15:28:52
 tags:
   - Frontend
 readingTime: 2
-description: "shadcn/ui 组件库设计哲学 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
+description: "The design philosophy behind the shadcn/ui component library is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 170
 ---
 

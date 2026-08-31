@@ -4,7 +4,7 @@ date: 2023-08-18 11:47:09
 tags:
   - React
 readingTime: 2
-description: "We recently implemented React Native 新架构全面落地， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar wor"
+description: "I recently completed a full rollout of React Native's new architecture with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 207
 ---
 

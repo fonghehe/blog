@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "The Vue team has published the Composition API RFC, and the community erupted — supporters say it's great, opponents say it looks like React Hooks. I carefully "
-wordCount: 107
+wordCount: 106
 ---
 
 The Vue team has published the Composition API RFC, and the community erupted — supporters say it's great, opponents say it looks like React Hooks. I carefully read the RFC and here is my understanding.
@@ -79,7 +79,7 @@ export default {
 
 ## Logic Reuse with Composables
 
-This is the most important value of the Composition API:
+This is the biggest advantage of the Composition API:
 
 ```javascript
 // useMousePosition.js

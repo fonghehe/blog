@@ -4,16 +4,16 @@ date: 2021-04-26 14:31:03
 tags:
   - Vue
 
-readingTime: 2
+readingTime: 3
 description: "Vue 3 正式发布后，Vuex 4 作为其配套状态管理方案也进入了稳定期。在将一个中型后台管理系统从 Vue 2 + Vuex 3 迁移到 Vue 3 + Vuex 4 的过程中，总结了一些实践经验和注意事项。"
-wordCount: 314
+wordCount: 468
 ---
 
-Vue 3 正式发布后，Vuex 4 作为其配套状态管理方案也进入了稳定期。在将一个中型后台管理系统从 Vue 2 + Vuex 3 迁移到 Vue 3 + Vuex 4 的过程中，总结了一些实践经验和注意事项。
+Vue 3 が正式リリースされた後、それに伴う状態管理ソリューションとしての Vuex 4 も安定版の段階に入った。中規模の管理画面システムを Vue 2＋Vuex 3 から Vue 3＋Vuex 4 へ移行する過程で、いくつかの実践的な経験と注意点をまとめた。
 
 ## インストールと初期化の変更
 
-Vuex 4 最大的变化是初始化方式从 `new Vuex.Store()` 变为 `createStore()`，以及挂载方式的变化：
+Vuex 4 で最も大きく変わったのは、初期化方法が `new Vuex.Store()` から `createStore()` になったことと、マウント方法の変更だ：
 
 ```javascript
 // store/index.ts
@@ -41,7 +41,7 @@ app.mount('#app')
 
 ## Composition API でのStore アクセス
 
-在 setup 中访问 store 的方式和 Options API 不同：
+setup 内で store にアクセスする方法は、Options API とは異なる：
 
 ```vue
 <script setup lang="ts">
@@ -71,7 +71,7 @@ const userName = computed(() => store.state.user.profile.name)
 
 ## モジュール設計
 
-后台管理系统通常按业务域拆分模块：
+管理画面システムでは通常、業務ドメインごとにモジュールを分割する：
 
 ```typescript
 // store/modules/user.ts
@@ -123,7 +123,7 @@ export default userModule
 
 ## 型定義
 
-Vuex 对 TypeScript 的支持一直不太好，建议手动定义类型：
+Vuex の TypeScript サポートはこれまで芳しくないため、型は手動で定義するのがおすすめだ：
 
 ```typescript
 // store/types.ts
@@ -160,7 +160,7 @@ export function useStore() {
 
 ## Pinia との比較
 
-坦白说，Pinia 的开发体验更好。在 Vue 3 项目中如果还没有技术包袱，建议直接用 Pinia：
+率直に言うと、Pinia の方が開発体験は優れている。Vue 3 プロジェクトでまだ既存の技術的負債がなければ、Pinia をそのまま使うのがおすすめだ：
 
 ```
 Vuex 4 的优势：
@@ -177,8 +177,8 @@ Pinia 的优势：
 
 ## まとめ
 
-- Vuex 4 的 API 变化不大，主要是初始化方式和 `useStore()` 的引入
-- 在 Composition API 中用 `useStore()` 代替 `this.$store`
-- TypeScript 类型需要手动定义，这是 Vuex 的短板
-- 如果是全新项目且没有历史包袱，建议评估 Pinia
-- 模块化设计和命名空间是大型项目的必备实践
+- Vuex 4 の API 変更は大きくなく、主な違いは初期化方法と `useStore()` の導入だ
+- Composition API では `this.$store` の代わりに `useStore()` を使う
+- TypeScript の型は手動で定義する必要があり、これが Vuex の弱点だ
+- 完全に新しいプロジェクトで過去の負債がなければ、Pinia の採用を検討するのがよい
+- モジュール化設計と名前空間は、大規模プロジェクトでは必須の実践だ

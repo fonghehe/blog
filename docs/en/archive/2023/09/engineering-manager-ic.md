@@ -4,7 +4,7 @@ date: 2023-09-19 16:44:12
 tags:
   - Frontend Engineering
 readingTime: 2
-description: "从 IC 到 EM 再到 IC 的思考 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projec"
+description: "Reflections on going from IC to EM and back to IC resonate more and more in frontend circles. This article starts from real experience and digs into the core reasoning and lessons."
 wordCount: 186
 ---
 

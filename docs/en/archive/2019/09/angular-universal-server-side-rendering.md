@@ -4,15 +4,15 @@ date: 2019-09-19 16:01:57
 tags:
   - Angular
 readingTime: 3
-description: "写单元测试最头疼的就是依赖问题——你测的是 A 模块，但 A 依赖了 B、C、D，其中 C 还会发网络请求。Mock 解决的就是这个问题：用假的替代品替换真实依赖，让你只关注被测逻辑。"
-wordCount: 426
+description: "The most painful part of writing unit tests is dealing with dependencies—you want to test module A, but A depends on B, C, and D, and C even makes network requests. That's exactly what mocking solves: it swaps real dependencies for fake stand-ins so you can focus on the logic under test."
+wordCount: 308
 ---
 
-写单元测试最头疼的就是依赖问题——你测的是 A 模块，但 A 依赖了 B、C、D，其中 C 还会发网络请求。Mock 解决的就是这个问题：用假的替代品替换真实依赖，让你只关注被测逻辑。
+The most painful part of writing unit tests is dealing with dependencies—you want to test module A, but A depends on B, C, and D, and C even makes network requests. That's exactly what mocking solves: it swaps real dependencies for fake stand-ins so you can focus on the logic under test.
 
-## jest.fn()：Mock 函数
+## jest.fn(): Mock Functions
 
-最基础的 Mock 工具，创建一个可以追踪调用情况的空函数：
+The most basic mocking tool—it creates an empty function that tracks how it was called:
 
 ```javascript
 // 被测函数
@@ -38,7 +38,7 @@ test("forEach 遍历并调用回调", () => {
 });
 ```
 
-### mock.calls 和 mock.results
+### mock.calls and mock.results
 
 ```javascript
 const mockFn = jest.fn((a, b) => a + b);
@@ -56,7 +56,7 @@ expect(mockFn.mock.results).toEqual([
 ]);
 ```
 
-### 链式返回值
+### Chained Return Values
 
 ```javascript
 const mockFn = jest.fn();
@@ -70,7 +70,7 @@ expect(mockFn()).toBe("second call");
 expect(mockFn()).toBe("default");
 ```
 
-### 异步 Mock
+### Async Mocks
 
 ```javascript
 const mockFn = jest.fn();
@@ -84,9 +84,9 @@ mockFn.mockRejectedValue(new Error("network error"));
 await expect(mockFn()).rejects.toThrow("network error");
 ```
 
-## jest.mock()：Mock 整个模块
+## jest.mock(): Mock an Entire Module
 
-当被测代码 import 了外部模块时，用 `jest.mock()` 替换整个模块：
+When the code under test imports an external module, use `jest.mock()` to replace the whole module:
 
 ```javascript
 // api.js
@@ -120,7 +120,7 @@ test("getUserName 返回大写用户名", async () => {
 });
 ```
 
-### Mock 第三方库
+### Mocking a Third-Party Library
 
 ```javascript
 jest.mock("axios");
@@ -137,7 +137,7 @@ test("getUserData 返回用户数据", async () => {
 });
 ```
 
-### Mock 部分模块
+### Mocking Part of a Module
 
 ```javascript
 jest.mock("./utils", () => ({
@@ -146,9 +146,9 @@ jest.mock("./utils", () => ({
 }));
 ```
 
-## jest.spyOn()：监视函数调用
+## jest.spyOn(): Spy on Function Calls
 
-`spyOn` 在保留原始实现的同时，追踪函数调用：
+`jest.spyOn` tracks a function's calls while keeping its original implementation:
 
 ```javascript
 const calculator = {
@@ -167,7 +167,7 @@ test("add 方法正常工作并可被监视", () => {
 });
 ```
 
-### 替换浏览器 API
+### Replacing a Browser API
 
 ```javascript
 test("临时替换 localStorage.setItem", () => {
@@ -180,7 +180,7 @@ test("临时替换 localStorage.setItem", () => {
 });
 ```
 
-## 实战：Mock 完整的 API 请求流程
+## In Practice: Mocking a Complete API Request Flow
 
 ```javascript
 // services/orderService.js
@@ -229,7 +229,7 @@ describe("createOrder", () => {
 });
 ```
 
-## Mock 定时器
+## Mocking Timers
 
 ```javascript
 test("3 秒后执行回调", () => {
@@ -250,13 +250,13 @@ test("3 秒后执行回调", () => {
 
 ## Common Pitfalls
 
-**1. Mock 位置不对**
+**1. Wrong placement of the mock call**
 
-`jest.mock()` 必须在文件顶层调用，不能放在 `beforeEach` 或 `test` 里。Jest 会自动提升 mock 调用到文件顶部。
+`jest.mock()` must be called at the top level of the file—not inside `beforeEach` or `test`. Jest automatically hoists mock calls to the top of the file.
 
-**2. 忘记 mockRestore**
+**2. Forgetting mockRestore**
 
-`jest.spyOn` 不调用 `mockRestore`，后续测试可能受影响。建议放在 `afterEach` 里：
+If you don't call `mockRestore` after `jest.spyOn`, subsequent tests may be affected. It's best to put it in `afterEach`:
 
 ```javascript
 afterEach(() => {
@@ -264,19 +264,19 @@ afterEach(() => {
 });
 ```
 
-**3. Mock 的模块路径不匹配**
+**3. Mismatched module paths**
 
-`jest.mock('./api')` 中的路径必须和被测文件里的 `import` 路径完全一致。
+The path in `jest.mock('./api')` must match the `import` path in the file under test exactly.
 
-**4. 混用 jest.mock 和 require**
+**4. Mixing jest.mock with require**
 
-如果用了 `jest.mock`，在测试文件里用 `import` 而不是 `require`，否则 mock 可能不生效。
+Once you use `jest.mock`, use `import` rather than `require` in your test file, otherwise the mock may not take effect.
 
 ## Summary
 
-- `jest.fn()` 创建可追踪的 mock 函数，可以检查调用次数、参数、返回值
-- `jest.mock()` 替换整个模块，适合 mock 第三方库和内部依赖
-- `jest.spyOn()` 保留原始实现的同时追踪调用，适合监视而非替换
-- Mock 异步操作用 `mockResolvedValue` / `mockRejectedValue`
-- Mock 定时器用 `jest.useFakeTimers()` + `jest.advanceTimersByTime()`
-- 记得在 `afterEach` 中调用 `jest.restoreAllMocks()` 避免测试间互相影响
+- `jest.fn()` creates a trackable mock function; you can inspect call count, arguments, and return values.
+- `jest.mock()` replaces an entire module—ideal for mocking third-party libraries and internal dependencies.
+- `jest.spyOn()` keeps the original implementation while tracking calls—good for spying rather than replacing.
+- Use `mockResolvedValue` / `mockRejectedValue` to mock async operations.
+- Use `jest.useFakeTimers()` + `jest.advanceTimersByTime()` to mock timers.
+- Remember to call `jest.restoreAllMocks()` in `afterEach` to prevent tests from interfering with one another.

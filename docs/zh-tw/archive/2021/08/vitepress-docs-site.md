@@ -8,7 +8,7 @@ description: "給團隊的元件庫搭建檔案站，對比了 VuePress 和 Vite
 wordCount: 253
 ---
 
-給團隊的元件庫搭建文件站，對比了 VuePress 和 VitePress 後選擇了後者。VitePress 基於 Vite + Vue 3，構建速度快了一個量級，而且配置更簡潔。記錄一下搭建過程和定製化配置。
+給團隊的元件庫搭建文件站，對比了 VuePress 和 VitePress 後選擇了後者。VitePress 基於 Vite + Vue 3，構建速度快了一個量級，而且設定更簡潔。記錄一下搭建過程和客製化設定。
 
 ## 快速上手
 
@@ -190,5 +190,5 @@ pages:
 
 - VitePress 構建速度比 VuePress 快很多，開發體驗更好
 - 在 Markdown 中直接嵌入 Vue 元件是做元件文件的核心能力
-- 配置簡潔，上手門檻低，適合團隊快速搭建
+- 設定簡潔，上手門檻低，適合團隊快速搭建
 - 目前 VitePress 還在 0.x 階段，API 可能有變動，但已足夠穩定用於內部文件

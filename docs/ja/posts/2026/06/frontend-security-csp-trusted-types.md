@@ -5,7 +5,7 @@ tags:
   - セキュリティ
 readingTime: 3
 description: "XSS 攻撃は依然としてフロントエンドセキュリティに対する最大の脅威だ。CSP Level 3 と Trusted Types の実践プロジェクトでの応用を体系的に解説し、より安全なフロントエンドアプリケーションの構築を支援する。"
-wordCount: 560
+wordCount: 561
 ---
 
 XSS（クロスサイトスクリプティング）は OWASP Top 10 に長年存在し続けているセキュリティ脅威だ。2026 年、CSP Level 3 と Trusted Types は XSS 防御のコア技術となっている。その原理と実践方法を理解することは、すべてのフロントエンド開発者の必須スキルだ。
@@ -157,4 +157,4 @@ const scriptURLPolicy = trustedTypes.createPolicy('scriptURLPolicy', {
 
 ## まとめ
 
-CSP Level 3 と Trusted Types はモダンフロントエンドセキュリティの礎だ。CSP はリソースソースを制限することで XSS を防御し、Trusted Types は型安全な API により DOM インジェクション攻撃を防止する。実際のプロジェクトでは、段階的な移行が推奨される——まず違反をレポートし、次に严格的なポリシーを段階的に有効化する。Nonce、Hash、DOMPurify と組み合わせることで、真に安全なフロントエンドアプリケーションを構築できる。
+CSP Level 3 と Trusted Types は、モダンなフロントエンドセキュリティの基盤だ。CSP はリソースソースを制限することで XSS を防御し、Trusted Types は型安全な API により DOM インジェクション攻撃を防止する。実際のプロジェクトでは、段階的な移行が推奨される——まず違反をレポートし、次に厳格なポリシーを段階的に有効化する。Nonce、Hash、DOMPurify と組み合わせることで、真に安全なフロントエンドアプリケーションを構築できる。

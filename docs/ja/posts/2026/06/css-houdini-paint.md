@@ -5,10 +5,10 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS Houdini Paint API は開発者が JavaScript を使ってカスタム CSS 描画関数を定義できるようにし、従来の CSS では実現不可能な効果を実現する。Paint API の動作原理、実際の用法、パフォーマンス最適化を議論する。"
-wordCount: 296
+wordCount: 308
 ---
 
-CSS Houdini Paint API は Web プラットフォームの大きな拡張だ。開発者が JavaScript を使ってカスタム CSS 描画関数を定義でき、従来の CSS の能力制限を突破する。
+CSS Houdini Paint API は Web プラットフォームの大きな拡張だ。開発者が JavaScript を使ってカスタム CSS 描画関数を定義でき、従来の CSS では不可能だった表現を可能にする。
 
 ## Paint API の基礎
 
@@ -122,4 +122,4 @@ ctx.fill();
 
 ## まとめ
 
-CSS Houdini Paint API は開発者が JavaScript を使ってカスタム CSS 描画関数を定義できるようにする。従来の CSS の能力制限を突破し、動的背景、装飾パターンなどの効果を実現する。2026 年の Paint API は成熟しており、ブラウザサポートも良好、本番環境に使用するのに十分なパフォーマンスを備えている。
+CSS Houdini Paint API は開発者が JavaScript を使ってカスタム CSS 描画関数を定義できるようにする。従来の CSS では不可能だった表現を可能にし、動的背景、装飾パターンなどの効果を実現する。2026 年の Paint API は成熟しており、ブラウザサポートも良好、本番環境に使用するのに十分なパフォーマンスを備えている。

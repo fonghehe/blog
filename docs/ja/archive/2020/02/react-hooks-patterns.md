@@ -3,12 +3,12 @@ title: "実プロジェクトにおけるReact Hooksパターンまとめ"
 date: 2020-02-27 15:48:54
 tags:
   - React
-readingTime: 2
-description: "React Hooks 发布一年多了，从最初的不适应到现在的离不开，总结一些项目中高频使用的自定义 Hook 模式。"
-wordCount: 165
+readingTime: 3
+description: "React Hooks のリリースから1年以上が経ち、当初の違和感から今では手放せない存在になった。プロジェクトで高頻度に使っているカスタムフックのパターンをいくつかまとめる。"
+wordCount: 279
 ---
 
-React Hooks 发布一年多了，从最初的不适应到现在的离不开，总结一些项目中高频使用的自定义 Hook 模式。
+React Hooks がリリースされてから 1 年以上が経ち、当初の違和感から今では手放せない存在になった。プロジェクトで高頻度で使っているカスタムフックパターンをいくつかまとめる。
 
 ## useRequest：統一データフェッチング
 
@@ -114,7 +114,7 @@ function SearchBox() {
 }
 ```
 
-## useLocalStorage：持久化状态
+## useLocalStorage：状態の永続化
 
 ```javascript
 import { useState, useCallback } from 'react';
@@ -160,7 +160,7 @@ function App() {
 }
 ```
 
-## usePrevious：获取上一次的值
+## usePrevious：直前の値を取得する
 
 ```javascript
 import { useRef, useEffect } from 'react';
@@ -187,7 +187,7 @@ function Counter() {
 }
 ```
 
-## Hooks 使用注意事项
+## Hooks を使う際の注意点
 
 ```javascript
 // 1. 闭包陷阱：useRef 获取最新值
@@ -237,7 +237,7 @@ function Parent() {
 
 ## まとめ
 
-- 自定义 Hook 是复用逻辑的核心手段，比 HOC 和 render props 更直观
-- `useRef` 解决闭包陷阱，存储不需要触发渲染的值
-- `useMemo` 和 `useCallback` 配合 `React.memo` 减少不必要的重渲染
-- 实际项目中，数据请求、防抖节流、本地存储是最高频的三个 Hook 场景
+- カスタムフックはロジック再利用の核心的な手段であり、HOC や render props よりも直感的だ
+- `useRef` はクロージャの罠を解決し、レンダリングをトリガーする必要のない値を保存する
+- `useMemo` と `useCallback` を `React.memo` と組み合わせて、不要な再レンダリングを減らす
+- 実際のプロジェクトでは、データリクエスト、デバウンス・スロットル、ローカルストレージが最も高頻度な3つのフック使用場面だ

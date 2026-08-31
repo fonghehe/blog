@@ -3,16 +3,16 @@ title: "Web Font Loading Optimization Strategies"
 date: 2020-08-12 10:22:29
 tags:
   - Performance Optimization
-readingTime: 2
-description: "在日常开发中，Web 字体加载优化策略的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 288
+readingTime: 1
+description: "A systematic guide to web font loading optimization strategies, covering usage patterns, principles, and techniques for improving font performance."
+wordCount: 180
 ---
 
-在日常开发中，Web 字体加载优化策略的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+In day-to-day development, web font loading optimization strategies are being used more and more often. This article systematically explains their usage, principles, and optimization strategies.
 
 ## Quick Start
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -29,11 +29,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Internal Principles
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -50,11 +50,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — this is critical in production.
 
 ## Business Practice
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -71,11 +71,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to fit the specific scenario; not every case calls for over-optimization.
 
 ## Performance Comparison
 
-我们可以通过以下方式来改进：
+We can improve things in the following ways:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -92,12 +92,12 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Summary
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Web 字体加载优化策略不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- Keep an eye on the community; technical solutions need continuous iteration
+- Don't adopt new technology just for its own sake
+- The code examples are for reference only and should be adapted to your business scenario
+- Web font loading optimization is not a silver bullet; choose based on project scale and tech stack
+- Understanding the underlying principles matters more than memorizing APIs

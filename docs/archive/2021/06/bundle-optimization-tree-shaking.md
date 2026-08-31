@@ -4,12 +4,12 @@ date: 2021-06-25 09:48:25
 tags:
   - 前端
   - 工程化
-readingTime: 2
+readingTime: 1
 description: "关于Tree Shaking 深度优化指南，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 297
+wordCount: 280
 ---
 
-关于Tree Shaking 深度优化指南，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+很多开发者对 Tree Shaking 的理解还停留在 API 调用层面。本文尝试从生产环境出发，聊聊实际落地时遇到的问题和对应的解法。
 
 ## 基本原理
 
@@ -30,7 +30,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样既提升了可测试性，也方便后续扩展。
 
 ## 高级特性
 
@@ -72,7 +72,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要结合具体场景，并非处处都值得做。
 
 ## 最佳实践
 

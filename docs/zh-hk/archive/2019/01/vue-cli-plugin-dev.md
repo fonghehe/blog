@@ -25,7 +25,7 @@ vue-cli-plugin-company-preset/
 └── package.json
 ```
 
-## prompts.js：問用户要什麼
+## prompts.js：問用戶要什麼
 
 ```javascript
 // prompts.js

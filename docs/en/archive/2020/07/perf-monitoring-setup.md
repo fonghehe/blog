@@ -4,11 +4,11 @@ date: 2020-07-21 09:55:46
 tags:
   - Performance Optimization
 readingTime: 2
-description: "上线后用户反馈\"页面很慢\"，但我们没有任何数据佐证。搭建了一套前端性能监控体系，终于能用数据说话了。"
-wordCount: 144
+description: "Users told us 'the page feels slow' after launch, but we had no data to prove anything. We built a frontend performance monitoring system — now the data does the talking."
+wordCount: 113
 ---
 
-上线后用户反馈"页面很慢"，但我们没有任何数据佐证。搭建了一套前端性能监控体系，终于能用数据说话了。
+After launch, users kept telling us the "page is slow," but we had no data to back that up. We built a frontend performance monitoring system, and now we can finally let the data speak.
 
 ## Core Metrics
 
@@ -245,8 +245,8 @@ const alerts = [
 
 ## Summary
 
-- Web Vitals 三个核心指标：LCP（加载）、FID（交互）、CLS（稳定）
-- 用 PerformanceObserver API 采集，sendBeacon 保证上报成功
-- 按页面、网络类型、浏览器等维度分析性能数据
-- 设置告警规则，性能劣化及时发现
-- 性能数据是优化的前提，没有数据的优化是盲目的
+- The three core Web Vitals: LCP (loading), FID (interaction), CLS (visual stability).
+- Collect them with the PerformanceObserver API, and use sendBeacon to guarantee the report is delivered.
+- Analyze performance data across dimensions such as page, network type, and browser.
+- Set up alerting rules so performance regressions are caught early.
+- Performance data is the prerequisite for optimization — optimizing without data is flying blind.

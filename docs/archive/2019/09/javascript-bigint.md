@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 3
 description: "JavaScript 的 `Number` 类型基于 IEEE 754 双精度浮点数，安全整数范围为 `-(2^53 - 1)` 到 `2^53 - 1`（即 `Number.MAX_SAFE_INTEGER` 和 `Number.MIN_SAFE_INTEGER`）。超过这个范围的整数运算就会出现精度丢失。ES202"
-wordCount: 396
+wordCount: 397
 ---
 
 JavaScript 的 `Number` 类型基于 IEEE 754 双精度浮点数，安全整数范围为 `-(2^53 - 1)` 到 `2^53 - 1`（即 `Number.MAX_SAFE_INTEGER` 和 `Number.MIN_SAFE_INTEGER`）。超过这个范围的整数运算就会出现精度丢失。ES2020 引入的 `BigInt` 类型让我们可以表示任意精度的整数。本文将深入讲解 BigInt 的使用场景、语法和注意事项。
@@ -260,4 +260,4 @@ console.log(b.toString()); // "9007199254740994"
 - BigInt 和 Number 不能混合运算，需要显式转换
 - 实际场景：数据库 64 位 ID、金融金额计算、位运算权限系统
 - BigInt 不支持 `Math` 对象的方法，JSON 序列化需要自定义处理
-- 2019 年主流浏览器和 Node.js 10.4+ 已支持，IE 不支持需使用 polyfill
+- 2019 年主流浏览器和 Node.js 10.4+ 已支持；IE 不支持，需使用 polyfill

@@ -5,10 +5,10 @@ tags:
   - Vue
 readingTime: 2
 description: "EC サイトを構築するにあたり、SEO と初回表示速度が要求されました。Nuxt.js を調査した結果、Vue SSR として採用することにしました。"
-wordCount: 406
+wordCount: 408
 ---
 
-EC サイトを構築し、SEO と初回表示速度が要求されました。Nuxt.js を調査した結果、最終的に Vue SSR として採用しました。
+EC サイトを構築する際、SEO と初回表示速度が求められました。Nuxt.js を調査した結果、最終的に Vue SSR として採用しました。
 
 ## Nuxt.jsとは
 

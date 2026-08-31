@@ -6,11 +6,11 @@ tags:
   - Engineering
 
 readingTime: 2
-description: "最近在团队中落地前端事件驱动架构设计， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 201
+description: "I recently applied event-driven architecture design in a frontend team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 181
 ---
 
-最近在团队中落地前端事件驱动架构设计， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently adopted an event-driven architecture on the frontend at our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 
@@ -125,6 +125,6 @@ This pattern is very practical in large projects and can significantly reduce ma
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- 前端事件驱动架构设计不是银弹，需要根据项目规模和技术栈选择
+- Frontend event-driven architecture is no silver bullet; choose it based on project scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

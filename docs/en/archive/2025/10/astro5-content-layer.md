@@ -4,7 +4,7 @@ date: 2025-10-28 16:22:59
 tags:
   - React
 readingTime: 2
-description: "Astro 5 发布了，最大的变化是 Content Layer API。对于内容驱动的网站来说，这是一个很有意义的升级。"
+description: "Astro 5 is out, and the biggest change is the Content Layer API. For content-driven websites, this is a meaningful upgrade."
 wordCount: 164
 ---
 

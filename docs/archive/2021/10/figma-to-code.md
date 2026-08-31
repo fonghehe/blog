@@ -9,7 +9,7 @@ description: "最近在团队中落地Figma to Code 设计稿转代码，积累�
 wordCount: 280
 ---
 
-最近在团队中落地Figma to Code 设计稿转代码，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近在团队里落地 Figma to Code（设计稿转代码），攒下了不少实战经验。整理出来供大家参考，希望对正在做类似工作的同学有帮助。
 
 ## 核心概念
 
@@ -37,7 +37,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+上面只是最基础的写法，真正上线还得补上错误处理和边界情况。
 
 ## 深度解析
 
@@ -64,7 +64,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种模式在大型项目里很实用，能明显省下后续的维护成本。
 
 ## 落地经验
 
@@ -93,7 +93,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样改完，代码的可测试性和可扩展性都上去了。
 
 ## 调优策略
 
@@ -121,7 +121,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界条件处理一定要上心，生产环境里它最容易出问题。
 
 ## 小结
 

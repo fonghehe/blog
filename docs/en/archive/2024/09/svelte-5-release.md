@@ -1,5 +1,5 @@
 ---
-title: "Svelte 5 Release Explained: Runes 带来Reactivity范式转换"
+title: "Svelte 5 Release Explained: The Reactive Paradigm Shift Brought by Runes"
 date: 2024-09-23 17:57:34
 tags:
   - Svelte

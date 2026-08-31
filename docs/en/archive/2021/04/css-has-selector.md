@@ -5,11 +5,11 @@ tags:
   - CSS
 
 readingTime: 2
-description: "关于CSS :has() 选择器父元素选择，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 186
+description: "Many developers only know the CSS :has() parent selector at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 185
 ---
 
-关于CSS :has() 选择器父元素选择，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to CSS `:has()` and selecting parent elements, many developers only stay at the API surface. This article looks at the real-world problems you'll encounter and how to solve them.
 
 ## Basic Principles
 

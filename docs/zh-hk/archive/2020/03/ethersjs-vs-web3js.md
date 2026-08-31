@@ -1,12 +1,13 @@
 ---
-readingTime: 7
-wordCount: 1514
+readingTime: 8
+wordCount: 1487
 title: "Ethers.js vs Web3.js：DApp 前端庫選型"
 date: 2020-03-22 18:17:51
 tags:
   - Web3
   - Ethereum
   - DApp
+description: "web3.js 是以太坊生態最早的 JavaScript SDK，由以太坊基金會支持開發，從 2015 年的 0.x 版本一路演進到 2019 年的 1.x 穩定版。web3.js 1.x 奠定了 DApp 前端開發的基礎範式：全局 Provider 實例、Contract 對象、事件訂閲、交易簽名。"
 ---
 
 ## 兩個庫的歷史與設計哲學
@@ -45,7 +46,7 @@ const balance = await contract.methods.balanceOf(userAddress).call();
 await contract.methods.transfer(to, amount).send({ from: userAddress });
 ```
 
-web3.js 的 `Contract` 對象既負責讀取（`call`）又負責寫（`send`），通過 `from` 參數指定發送者。這種設計簡單直接，但存在一個根本問題：**讀取和寫入耦合在同一個對象上**，無法在架構層面區分只讀操作和需要用户簽名的操作。
+web3.js 的 `Contract` 對象既負責讀取（`call`）又負責寫（`send`），通過 `from` 參數指定發送者。這種設計簡單直接，但存在一個根本問題：**讀取和寫入耦合在同一個對象上**，無法在架構層面區分只讀操作和需要用戶簽名的操作。
 
 ### ethers.js 的方式
 
@@ -77,7 +78,7 @@ const balance = await readOnlyContract.balanceOf(userAddress);
 await writableContract.transfer(to, amount);
 ```
 
-這種分離在實際開發中的優勢非常明顯：你可以用一個公共 RPC 節點創建 Provider 來讀取鏈上數據（不需要用户連接錢包），只在用户發起交易時才請求 Signer。這意味着 DApp 首屏可以展示鏈上數據（代幣價格、流動性池信息），而無需用户先連接錢包。
+這種分離在實際開發中的優勢非常明顯：你可以用一個公共 RPC 節點創建 Provider 來讀取鏈上數據（不需要用戶連接錢包），只在用戶發起交易時才請求 Signer。這意味着 DApp 首屏可以展示鏈上數據（代幣價格、流動性池信息），而無需用戶先連接錢包。
 
 ## 合約交互 API 對比
 

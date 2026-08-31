@@ -8,13 +8,13 @@ description: "Google 一直在推動 Web 效能的標準化，提出了一系列
 wordCount: 706
 ---
 
-Google 一直在推動 Web 性能的標準化，提出了一系列核心性能指標來衡量用户體驗。這些指標關注加載速度、交互性和視覺穩定性三個維度。本文將介紹這些指標的含義和測量方法。
+Google 一直在推動 Web 效能的標準化，提出了一系列核心效能指標來衡量用戶體驗。這些指標關注加載速度、交互性和視覺穩定性三個維度。本文將介紹這些指標的含義和測量方法。
 
 ## 效能指標概覽
 
-Google 提出的核心性能指標主要包括：
+Google 提出的核心效能指標主要包括：
 
-- **LCP（Largest Contentful Paint）**：最大內容繪製，衡量加載性能
+- **LCP（Largest Contentful Paint）**：最大內容繪製，衡量加載效能
 - **FID（First Input Delay）**：首次輸入延遲，衡量交互性
 - **CLS（Cumulative Layout Shift）**：累積佈局偏移，衡量視覺穩定性
 
@@ -55,7 +55,7 @@ FCP 評級標準：
 
 ## LCP - 最大內容繪製
 
-LCP 測量視口內最大內容元素（圖片、視頻、文本塊）的繪製時間。它比 FCP 更能反映用户感知的加載速度：
+LCP 測量視口內最大內容元素（圖片、視頻、文本塊）的繪製時間。它比 FCP 更能反映用戶感知的加載速度：
 
 ```js
 // 測量 LCP
@@ -111,7 +111,7 @@ document.head.appendChild(nonCriticalCSS);
 
 ## FID - 首次輸入延遲
 
-FID 測量用户第一次與頁面交互（點擊、輸入等）到瀏覽器實際開始處理該交互的時間差：
+FID 測量用戶第一次與頁面交互（點擊、輸入等）到瀏覽器實際開始處理該交互的時間差：
 
 ```js
 // 測量 FID
@@ -121,7 +121,7 @@ const fidObserver = new PerformanceObserver((list) => {
     const delay = entry.processingStart - entry.startTime;
     console.log('FID:', delay);
     console.log('事件類型:', entry.name);
-    fidObserver.disconnect(); // FID 隻記錄第一次交互
+    fidObserver.disconnect(); // FID 只記錄第一次交互
   }
 });
 
@@ -187,7 +187,7 @@ let sessionEntries = [];
 
 const clsObserver = new PerformanceObserver((list) => {
   for (const entry of list.getEntries()) {
-    // 隻有沒有 recentInput（用户最近輸入）的偏移才計入
+    // 只有沒有 recentInput（用戶最近輸入）的偏移才計入
     if (!entry.hadRecentInput) {
       const firstSessionEntry = sessionEntries[0];
       const lastSessionEntry = sessionEntries[sessionEntries.length - 1];
@@ -241,7 +241,7 @@ CLS 評級標準：
 <!-- 差：動態插入 banner 導致下方內容下移 -->
 <!-- 好：使用固定高度的預留區域 -->
 
-<!-- 4. 使用 CSS contain 屬性限製影響範圍 -->
+<!-- 4. 使用 CSS contain 屬性限制影響範圍 -->
 <style>
 .ad-container {
   contain: layout;
@@ -310,9 +310,9 @@ console.log('耗時:', measures[0].duration.toFixed(2), 'ms');
 ## 小結
 
 - FCP 測量首次內容出現的時間，反映初始加載速度
-- LCP 測量最大內容元素的繪製時間，更接近用户感知
+- LCP 測量最大內容元素的繪製時間，更接近用戶感知
 - FID 測量首次交互的延遲，反映頁面響應性
 - CLS 測量佈局偏移的累積程度，反映視覺穩定性
-- 長任務拆分、圖片尺寸預設、字體優化是常見的性能手段
+- 長任務拆分、圖片尺寸預設、字體優化是常見的效能手段
 - `web-vitals` 庫可以方便地收集和上報所有核心指標
-- DevTools 的 Performance 面板和 Lighthouse 是調試性能的主要工具
+- DevTools 的 Performance 面板和 Lighthouse 是調試效能的主要工具

@@ -4,8 +4,8 @@ date: 2024-05-30 10:56:33
 tags:
   - Frontend
 readingTime: 1
-description: "关于Cursor IDE 高级使用技巧，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspecti"
-wordCount: 207
+description: "Many developers only know advanced Cursor IDE techniques at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 183
 ---
 
 关于Cursor IDE 高级使用技巧，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -120,7 +120,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- 代码示例仅供参考，需根据业务场景调整
-- Cursor IDE 高级使用技巧不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
+- Code samples are for reference only and need adjusting to your business scenario
+- Advanced cursor ide techniques is not a silver bullet — choose based on your project scale and tech stack
+- Understanding the underlying principles matters more than memorizing APIs
+- Always verify compatibility thoroughly before using it in production

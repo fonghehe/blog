@@ -3,27 +3,27 @@ title: "React Error Boundary実践"
 date: 2019-09-16 10:46:28
 tags:
   - React
-readingTime: 5
-description: "在生产环境中，一个组件的 JavaScript 错误不应该导致整个应用崩溃。React 16 引入的 Error Boundary 机制让我们可以优雅地捕获和处理组件树中的错误，展示降级 UI 而非白屏。本文将深入讲解 Error Boundary 的原理、用法和最佳实践。"
-wordCount: 556
+readingTime: 6
+description: "本番環境では、1つのコンポーネントのJavaScriptエラーがアプリ全体をクラッシュさせてはならない。React 16で導入されたError Boundaryの仕組みを使えば、コンポーネントツリー内のエラーを適切に捕捉・処理し、白画面ではなくフォールバックUIを表示できる。本記事ではError Boundaryの原理・使い方・ベストプラクティスを深掘りする。"
+wordCount: 881
 ---
 
-在生产环境中，一个组件的 JavaScript 错误不应该导致整个应用崩溃。React 16 引入的 Error Boundary 机制让我们可以优雅地捕获和处理组件树中的错误，展示降级 UI 而非白屏。本文将深入讲解 Error Boundary 的原理、用法和最佳实践。
+本番環境では、1つのコンポーネントで起きた JavaScript エラーがアプリ全体をクラッシュさせてはならない。React 16 で導入された Error Boundary の仕組みを使えば、コンポーネントツリー内のエラーを適切に捕捉・処理し、白画面ではなくフォールバック UI を表示できる。本記事では Error Boundary の原理・使い方・ベストプラクティスを深掘りする。
 
 ## Error Boundaryとは
 
-Error Boundary 是 React 组件，用于捕获其子组件树中任何位置的 JavaScript 错误，记录错误并展示降级 UI。
+Error Boundary は React コンポーネントであり、配下のコンポーネントツリーのどこかで発生した JavaScript エラーを捕捉し、エラーを記録するとともにフォールバック UI を表示する。
 
-Error Boundary 可以捕获的错误：
-- 渲染期间的错误
-- 生命周期方法中的错误
-- 构造函数中的错误
+Error Boundary が捕捉できるエラー：
+- レンダリング中のエラー
+- ライフサイクルメソッド内のエラー
+- コンストラクタ内のエラー
 
-Error Boundary 不能捕获的错误：
-- 事件处理函数中的错误（因为没有在渲染期间发生）
-- 异步代码（setTimeout、requestAnimationFrame）
-- 服务端渲染
-- Error Boundary 自身的错误
+Error Boundary が捕捉できないエラー：
+- イベントハンドラ内のエラー（レンダリング中に発生しないため）
+- 非同期コード（setTimeout、requestAnimationFrame）
+- サーバーサイドレンダリング
+- Error Boundary 自身のエラー
 
 ## 基本実装
 
@@ -41,14 +41,14 @@ class ErrorBoundary extends Component {
     };
   }
 
-  // 从错误中派生出新的 state
+  // エラーから新しいstateを導出
   static getDerivedStateFromError(error) {
     return { hasError: true, error };
   }
 
-  // 记录错误信息
+  // エラー情報を記録
   componentDidCatch(error, errorInfo) {
-    // 错误上报
+    // エラー送信
     this.reportError(error, errorInfo);
     this.setState({ errorInfo });
 
@@ -59,10 +59,10 @@ class ErrorBoundary extends Component {
 
   reportError(error, errorInfo) {
     // 上报到错误监控平台
-    console.error('组件错误:', error);
-    console.error('组件堆栈:', errorInfo.componentStack);
+    console.error('コンポーネントエラー:', error);
+    console.error('コンポーネントスタック:', errorInfo.componentStack);
 
-    // 实际项目中可以接入 Sentry 等
+    // 実際のプロジェクトではSentryなどを連携可能
     // Sentry.captureException(error, {
     //   extra: { componentStack: errorInfo.componentStack },
     // });
@@ -78,7 +78,7 @@ class ErrorBoundary extends Component {
 
   render() {
     if (this.state.hasError) {
-      // 使用自定义 fallback 或默认 UI
+      // カスタムfallbackまたはデフォルトUIを使用
       if (this.props.fallback) {
         return this.props.fallback({
           error: this.state.error,
@@ -89,12 +89,12 @@ class ErrorBoundary extends Component {
 
       return (
         <div className="error-boundary">
-          <h2>出错了</h2>
+          <h2>エラーが発生しました</h2>
           <p>{this.state.error?.message}</p>
-          <button onClick={this.handleRetry}>重试</button>
+          <button onClick={this.handleRetry}>再試行</button>
           {process.env.NODE_ENV === 'development' && (
             <details style={{ whiteSpace: 'pre-wrap', marginTop: 16 }}>
-              <summary>错误详情</summary>
+              <summary>エラー詳細</summary>
               {this.state.error?.stack}
               {this.state.errorInfo?.componentStack}
             </details>
@@ -128,27 +128,27 @@ function App() {
 }
 ```
 
-### 多级 Error Boundary
+### 階層化された Error Boundary
 
 ```jsx
 function App() {
   return (
     <ErrorBoundary fallback={({ retry }) => (
       <div>
-        <h1>应用发生错误</h1>
-        <button onClick={retry}>刷新页面</button>
+        <h1>アプリケーションでエラーが発生しました</h1>
+        <button onClick={retry}>ページを更新</button>
       </div>
     )}>
       <Header />
 
       <ErrorBoundary fallback={({ retry }) => (
-        <div>侧边栏加载失败 <button onClick={retry}>重试</button></div>
+        <div>サイドバーの読み込みに失敗しました <button onClick={retry}>再試行</button></div>
       )}>
         <Sidebar />
       </ErrorBoundary>
 
       <ErrorBoundary fallback={({ retry }) => (
-        <div>内容区域加载失败 <button onClick={retry}>重试</button></div>
+        <div>コンテンツエリアの読み込みに失敗しました <button onClick={retry}>再試行</button></div>
       )}>
         <MainContent />
       </ErrorBoundary>
@@ -159,9 +159,9 @@ function App() {
 }
 ```
 
-外层 Error Boundary 兜底整个应用的未捕获错误，内层 Error Boundary 保护独立的功能模块。这样某个模块出错时，其他部分仍然可以正常工作。
+外側の Error Boundary がアプリ全体の未捕捉エラーを兜底（フォールバック）し、内側の Error Boundary が独立した機能モジュールを保護する。これにより、あるモジュールでエラーが起きても他の部分はそのまま動作し続ける。
 
-### 配合 React.lazy 使用
+### React.lazy との併用
 
 ```jsx
 import React, { Suspense, lazy } from 'react';
@@ -173,11 +173,11 @@ function App() {
   return (
     <ErrorBoundary fallback={({ retry }) => (
       <div>
-        <p>页面加载失败</p>
-        <button onClick={retry}>重新加载</button>
+        <p>ページの読み込みに失敗しました</p>
+        <button onClick={retry}>再読み込み</button>
       </div>
     )}>
-      <Suspense fallback={<div>加载中...</div>}>
+      <Suspense fallback={<div>読み込み中...</div>}>
         <LazyDashboard />
       </Suspense>
     </ErrorBoundary>
@@ -187,7 +187,7 @@ function App() {
 
 ## イベントハンドラーのエラー処理
 
-Error Boundary 不能捕获事件处理器中的错误，需要手动 try/catch：
+Error Boundaryはイベントハンドラ内のエラーを捕捉できないため、手動でtry/catchする必要がある：
 
 ```jsx
 import React, { Component } from 'react';
@@ -198,15 +198,15 @@ class DataForm extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
 
-    // 事件处理器需要手动处理错误
+    // イベントハンドラーは手動でエラー処理が必要
     try {
       this.setState({ error: null });
       await api.submitData(this.state.formData);
-      // 提交成功
+      // 送信成功
     } catch (error) {
-      // 更新 state 展示错误
+      // stateを更新してエラーを表示
       this.setState({ error: error.message });
-      // 也可以抛出让 Error Boundary 捕获
+      // throwしてError Boundaryにキャッチさせることも可能
       // throw error;
     }
   };
@@ -217,7 +217,7 @@ class DataForm extends Component {
         {this.state.error && (
           <div className="error-message">{this.state.error}</div>
         )}
-        <button type="submit">提交</button>
+        <button type="submit">送信</button>
       </form>
     );
   }
@@ -226,7 +226,7 @@ class DataForm extends Component {
 
 ## 関数コンポーネント + Hooks のエラー処理
 
-虽然 Error Boundary 必须是类组件（因为需要 `getDerivedStateFromError` 和 `componentDidCatch`），但我们可以封装一个 Hook 处理事件错误：
+Error Boundary はクラスコンポーネントでなければならない（`getDerivedStateFromError` と `componentDidCatch` が必要なため）が、イベントエラーを扱う Hook を自作することはできる：
 
 ```jsx
 import { useState, useCallback } from 'react';
@@ -236,8 +236,8 @@ function useErrorHandler() {
 
   const handleError = useCallback((err) => {
     setError(err);
-    // 同时抛出让 Error Boundary 能够捕获
-    // 使用 setTimeout 确保 state 已更新
+    // 同時にthrowしてError Boundaryでもキャッチできるようにする
+    // setTimeoutでstateが更新済みであることを保証
     setTimeout(() => {
       throw err;
     }, 0);
@@ -248,7 +248,7 @@ function useErrorHandler() {
   return { error, handleError, clearError, setError };
 }
 
-// 使用
+// 使用例
 function UserProfile({ userId }) {
   const { error, handleError } = useErrorHandler();
 
@@ -261,12 +261,12 @@ function UserProfile({ userId }) {
   };
 
   if (error) {
-    return <div className="error">操作失败: {error.message}</div>;
+    return <div className="error">操作に失敗しました: {error.message}</div>;
   }
 
   return (
     <div>
-      <button onClick={handleDelete}>删除用户</button>
+      <button onClick={handleDelete}>削除用户</button>
     </div>
   );
 }
@@ -304,7 +304,7 @@ class ErrorBoundary extends Component {
   componentDidCatch(error, errorInfo) {
     this.setState({ errorInfo });
 
-    // 错误监控上报
+    // エラー監視への送信
     this.reportToErrorService(error, errorInfo);
   }
 
@@ -319,18 +319,18 @@ class ErrorBoundary extends Component {
       retryCount: this.state.retryCount,
     };
 
-    // 发送到错误监控服务
+    // エラー監視サービスに送信
     if (typeof fetch === 'function') {
       fetch('/api/errors', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(errorData),
       }).catch(() => {
-        // 上报失败不处理
+        // 送信失敗は無視
       });
     }
 
-    // 也调用外部传入的回调
+    // 外部から渡されたコールバックも呼び出す
     if (this.props.onError) {
       this.props.onError(error, errorInfo);
     }
@@ -341,7 +341,7 @@ class ErrorBoundary extends Component {
     const { retryCount } = this.state;
 
     if (retryCount >= maxRetries) {
-      console.warn(`已重试 ${maxRetries} 次，不再重试`);
+      console.warn(`${maxRetries}回再試行済み、これ以上再試行しない`);
       return;
     }
 
@@ -376,9 +376,9 @@ class ErrorBoundary extends Component {
       return (
         <div className="error-boundary" role="alert">
           <div className="error-boundary-content">
-            <h2>页面出了点问题</h2>
+            <h2>ページで問題が発生しました</h2>
             <p className="error-message">
-              {error?.message || '未知错误'}
+              {error?.message || '不明なエラー'}
             </p>
 
             <div className="error-actions">
@@ -387,10 +387,10 @@ class ErrorBoundary extends Component {
                   onClick={this.handleRetry}
                   className="btn btn-primary"
                 >
-                  重试 ({retryCount}/{maxRetries})
+                  再試行 ({retryCount}/{maxRetries})
                 </button>
               ) : (
-                <p className="text-muted">重试次数已用完</p>
+                <p className="text-muted">再試行回数の上限に達しました</p>
               )}
 
               <button
@@ -403,7 +403,7 @@ class ErrorBoundary extends Component {
 
             {process.env.NODE_ENV === 'development' && (
               <details className="error-details">
-                <summary>技术详情（仅开发环境可见）</summary>
+                <summary>技術詳細（開発環境のみ表示）</summary>
                 <pre>{error?.stack}</pre>
                 <pre>{errorInfo?.componentStack}</pre>
               </details>
@@ -422,10 +422,10 @@ export default ErrorBoundary;
 
 ## まとめ
 
-- Error Boundary 是 React 组件，用于捕获子组件树中的渲染错误并展示降级 UI
-- 必须实现 `getDerivedStateFromError`（更新 state）和 `componentDidCatch`（记录/上报错误）两个生命周期方法
-- Error Boundary 不能捕获事件处理器、异步代码和服务端渲染中的错误
-- 使用多级 Error Boundary 实现错误隔离，某个模块出错不影响其他模块
-- 事件处理器中的错误需要手动 try/catch，或使用自定义 Hook 间接抛出
-- 生产环境需要将错误信息上报到监控平台（如 Sentry）
-- 建议设置重试次数限制，防止无限重试循环
+- Error Boundary は React コンポーネントで、配下コンポーネントツリーのレンダリングエラーを捕捉してフォールバック UI を表示する
+- 実装必須のライフサイクルメソッドは `getDerivedStateFromError`（state の更新）と `componentDidCatch`（エラーの記録・上报）の2つだ
+- Error Boundary はイベントハンドラ・非同期コード・サーバーサイドレンダリング内のエラーを捕捉できない
+- 階層化された Error Boundary でエラーを分離し、あるモジュールでエラーが起きても他のモジュールに影響しないようにする
+- イベントハンドラ内のエラーは手動で try/catch するか、自作 Hook で間接的にスローする
+- 本番環境ではエラー情報を監視プラットフォーム（Sentryなど）に送信する必要がある
+- 無限リトライループを防ぐため、リトライ回数の上限を設けることを推奨する

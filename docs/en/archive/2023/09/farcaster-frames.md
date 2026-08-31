@@ -4,7 +4,7 @@ date: 2023-09-01 09:31:39
 tags:
   - Frontend
 readingTime: 2
-description: "We recently implemented Farcaster Frames 去中心化社交， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar "
+description: "I recently explored Farcaster Frames and decentralized social with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 187
 ---
 

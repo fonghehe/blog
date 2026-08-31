@@ -44,7 +44,7 @@ const greet = user.greet;
 greet(); // 'こんにちは、undefined'（this が window になる）
 ```
 
-この「消失」が最も一般的なバグの原因です：
+この「消失」が最も一般的なバグの原因です。
 
 ```javascript
 // 非同期コールバックで this が消える

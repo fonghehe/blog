@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常开发中，File System Access API 文件操作的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 326
+wordCount: 323
 ---
 
-在日常开发中，File System Access API 文件操作的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+在日常开发中，File System Access API（文件操作）的使用频率越来越高。本文系统讲解它的用法、原理与优化策略。
 
 ## 快速上手
 
@@ -96,7 +96,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界情况的处理要格外留意，生产环境里这很关键。
 
 ## 性能对比
 
@@ -119,7 +119,7 @@ function reducer(state, action) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要结合具体场景，没必要处处都过度优化。
 
 ## 问题排查
 

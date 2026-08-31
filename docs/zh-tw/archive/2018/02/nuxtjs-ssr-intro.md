@@ -170,7 +170,7 @@ module.exports = {
 
 ## 靜態站點生成（generate）
 
-如果不需要真正的 SSR，隻想生成靜態 HTML（部落格場景）：
+如果不需要真正的 SSR，只想生成靜態 HTML（部落格場景）：
 
 ```bash
 npm run generate

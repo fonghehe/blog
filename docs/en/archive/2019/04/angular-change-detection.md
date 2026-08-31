@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular's default change detection checks all components. The OnPush strategy can significantly reduce unnecessary checks."
-wordCount: 52
+wordCount: 50
 ---
 
 Angular's default change detection checks all components. The OnPush strategy can significantly reduce unnecessary checks.
@@ -50,4 +50,4 @@ refresh() {
 }
 ```
 
-Using OnPush together with immutable data (Immutable.js or Immer) can bring Angular application rendering performance close to that of React.
+Using OnPush together with immutable data (Immutable.js or Immer) brings an Angular app's rendering performance close to React's.

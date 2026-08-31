@@ -5,14 +5,14 @@ tags:
   - Vue
 readingTime: 2
 description: "ほとんどの場合テンプレートで十分ですが、render 関数がより柔軟な場面があります。"
-wordCount: 374
+wordCount: 365
 ---
 
-ほとんどの場合テンプレートで十分ですが、render 関数がより柔軟な場面があります。
+ほとんどの場合テンプレートで十分だが、render 関数がより柔軟な場面がある。
 
 ## render 関数が必要な理由
 
-テンプレートには限界があります—props に応じて動的に異なるタグを生成できません：
+テンプレートには限界がある—props に応じて動的に異なるタグを生成できない：
 
 ```javascript
 // ❌ テンプレートではできない（prop に応じて動的にタグ名を指定できない）
@@ -94,7 +94,7 @@ const FormField = {
 
 ## JSX：より読みやすい render 関数
 
-Babel JSX プラグインを設定すると、h 呼び出しの代わりに JSX を使用できます：
+Babel JSX プラグインを設定すると、h 呼び出しの代わりに JSX を使用できる：
 
 ```bash
 npm install --save-dev @vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props
@@ -142,4 +142,4 @@ export default {
 - `render` 関数は `h`（createElement）を受け取り、VNode を返す
 - テンプレートは最終的にも render 関数にコンパイルされる
 - JSX は render 関数のシンタックスシュガーで、Babel プラグインが必要
-- まずテンプレートを使い、動的性が必要な時だけ render/JSX を使う
+- テンプレートを使い、動的性が必要な時だけ render/JSX を使う

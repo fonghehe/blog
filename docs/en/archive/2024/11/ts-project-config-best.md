@@ -4,11 +4,11 @@ date: 2024-11-15 12:09:46
 tags:
   - TypeScript
 readingTime: 2
-description: "最近在团队中落地TypeScript 项目配置最佳， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 248
+description: "I recently applied TypeScript project configuration best practices with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 213
 ---
 
-最近在团队中落地TypeScript 项目配置最佳， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+I recently applied TypeScript project configuration best practices with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
 
 ## Core Concepts
 
@@ -64,7 +64,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Implementation Experience
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Optimization Strategies
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 const fs = require('fs')
@@ -154,5 +154,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- TypeScript 项目配置最佳不是银弹，需要根据项目规模和技术栈选择
+- TypeScript project configuration best practices is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

@@ -8,15 +8,15 @@ tags:
   - Performance
 
 readingTime: 3
-description: "最近几个项目陆续从 Webpack 迁移到了 Vite，构建速度的差距比想象中大。这篇整理一下构建性能优化的思路，从 Webpack 调优到直接换 Vite 的决策过程。"
-wordCount: 487
+description: "Recently several projects migrated from Webpack to Vite, and the gap in build speed was bigger than I expected. This post walks through my thinking on build-performance optimization—from tuning Webpack all the way to the decision to switch to Vite."
+wordCount: 358
 ---
 
-最近几个项目陆续从 Webpack 迁移到了 Vite，构建速度的差距比想象中大。这篇整理一下构建性能优化的思路，从 Webpack 调优到直接换 Vite 的决策过程。
+Recently several projects migrated from Webpack to Vite, and the gap in build speed was bigger than I expected. This post walks through my thinking on build-performance optimization—from tuning Webpack all the way to the decision to switch to Vite.
 
 ## Where Webpack Bottlenecks
 
-Webpack 之所以慢，核心原因：**一切皆模块，模块必须先打包再启动**。
+Why Webpack is slow comes down to one core reason: everything is a module, and modules must be bundled before the dev server can start.
 
 ```
 启动 dev server：
@@ -31,7 +31,7 @@ Webpack 之所以慢，核心原因：**一切皆模块，模块必须先打包�
 
 ## Webpack Tuning (How Much More Performance Can We Get)
 
-### 1. 缩小搜索范围
+### 1. Narrow the Search Scope
 
 ```javascript
 // webpack.config.js
@@ -57,7 +57,7 @@ module.exports = {
 }
 ```
 
-### 2. 缓存
+### 2. Caching
 
 ```javascript
 module.exports = {
@@ -88,7 +88,7 @@ module.exports = {
 }
 ```
 
-### 3. 多线程
+### 3. Multithreading
 
 ```javascript
 const TerserPlugin = require('terser-webpack-plugin')
@@ -116,30 +116,30 @@ module.exports = {
 }
 ```
 
-### 4. DLL（老方案，Webpack 5 不需要了）
+### 4. DLL (Legacy approach, no longer needed in Webpack 5)
 
 ```javascript
 // Webpack 4 时代的方案：预打包不变的依赖
 // Webpack 5 用 cache.type: 'filesystem' 替代
 ```
 
-### Webpack 调优的天花板
+### The Ceiling of Webpack Tuning
 
-实测一个中型项目（200+ 模块）：
+Measured on a medium-sized project (200+ modules):
 
-| 优化项 | 时间 |
+| Optimization | Time |
 |--------|------|
-| 无优化 | 45s |
+| No optimization | 45s |
 | ts-loader transpileOnly | 28s |
-| filesystem cache（二次启动） | 8s |
+| filesystem cache (warm restart) | 8s |
 | thread-loader | 22s |
-| 全部优化 | 6s（二次启动） |
+| All optimizations combined | 6s (warm restart) |
 
-二次启动 6s 已经是 Webpack 的极限了，首次启动还是要 20s+。
+Six seconds on a warm restart is already Webpack's ceiling; the first cold start still takes 20s+.
 
 ## Vite: A Different Approach
 
-Vite 的核心想法：**开发环境不打包，生产环境用 Rollup**。
+Vite's core idea: no bundling in development, Rollup for production.
 
 ```
 启动 dev server：
@@ -171,23 +171,23 @@ import { createApp } from '/node_modules/.vite/deps/vue.js?v=abc123'
 // 只有你访问到的模块才会被编译
 ```
 
-- 依赖预构建：esbuild（Go 语言写的，比 JS 快 10-100 倍）
-- 源码按需编译：ESM + 浏览器原生导入
-- HMR：只编译修改的文件，和依赖图大小无关
+- Dependency pre-bundling: esbuild (written in Go, 10–100x faster than JS)
+- On-demand source compilation: ESM + native browser imports
+- HMR: only the changed file is compiled, independent of the dependency graph size
 
 ## Performance Benchmark
 
-同一个项目（Vue 3 + TypeScript，200+ 组件）：
+Same project (Vue 3 + TypeScript, 200+ components):
 
-| 指标 | Webpack 5（优化后） | Vite 2.x |
+| Metric | Webpack 5 (optimized) | Vite 2.x |
 |------|---------------------|----------|
-| 首次启动 | 22s | 0.8s |
-| 二次启动（缓存） | 6s | 0.3s |
+| First startup | 22s | 0.8s |
+| Warm restart (cached) | 6s | 0.3s |
 | HMR | 2-5s | < 100ms |
-| 生产构建 | 45s | 30s |
-| 包体积（gzip） | 186KB | 178KB |
+| Production build | 45s | 30s |
+| Bundle size (gzip) | 186KB | 178KB |
 
-生产构建差距不大（Vite 用 Rollup，Rollup 的 tree-shaking 更好），开发体验差距巨大。
+The production-build gap is small (Vite uses Rollup, whose tree-shaking is better), but the development experience is drastically different.
 
 ## Migration Notes
 
@@ -219,14 +219,14 @@ import styles from './index.module.css'  // ✅ Vite 推荐
 
 ## Projects Not Suitable for Migration
 
-- 高度依赖 Webpack 插件生态的（Module Federation、特殊 loader）
-- 遗留的 CommonJS 项目（Vite 开发环境用 ESM）
-- 需要兼容 IE11 的项目（Vite 不支持）
+- Projects heavily dependent on the Webpack plugin ecosystem (Module Federation, special loaders)
+- Legacy CommonJS projects (Vite's dev environment uses ESM)
+- Projects that need IE11 support (Vite doesn't support it)
 
 ## Summary
 
-- Webpack 调优能从 45s 降到 6s，但有天花板
-- Vite 从根本上改变了开发体验：按需编译 + esbuild 预构建
-- 新项目直接用 Vite，老项目评估 Webpack 插件依赖后决定是否迁移
-- 生产构建两者差距不大，Vite 的 Rollup tree-shaking 略有优势
-- 2021 年，Vite 已经是 Vue 3 项目的事实标准
+- Webpack tuning can bring startup from 45s down to 6s, but there's a ceiling.
+- Vite fundamentally changes the dev experience: on-demand compilation plus esbuild pre-bundling.
+- Use Vite directly for new projects; for legacy ones, evaluate Webpack plugin dependencies before deciding whether to migrate.
+- The production-build difference is small, with Vite's Rollup tree-shaking having a slight edge.
+- In 2021, Vite is already the de facto standard for Vue 3 projects.

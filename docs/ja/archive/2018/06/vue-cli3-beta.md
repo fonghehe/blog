@@ -5,14 +5,14 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue CLI 3がBetaをリリースしました。以前のCLI 2とは大きく異なります。試用した感想を記録します。"
-wordCount: 621
+wordCount: 615
 ---
 
 Vue CLI 3がBetaをリリースしました。以前のCLI 2とは大きく異なります。試用した感想を記録します。
 
 ## 最大の変化：ゼロ設定
 
-CLI 2では`webpack.config.js`を手動でメンテナンスする必要がありましたが、ファイルが長くて分かりにくいものでした。CLI 3ではwebpackの設定を完全にカプセル化し、すぐに使える状態で提供しています：
+CLI 2では`webpack.config.js`を手動でメンテナンスする必要がありましたが、ファイルが長くて複雑でした。CLI 3ではwebpackの設定を完全にカプセル化し、すぐに使える状態で提供しています：
 
 ```bash
 npm install -g @vue/cli

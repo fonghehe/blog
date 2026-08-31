@@ -4,11 +4,11 @@ date: 2019-08-09 09:44:05
 tags:
   - Testing
 readingTime: 4
-description: "前端自动化测试一直是团队落地的难点。单元测试覆盖不到用户真实操作流程，Selenium 又配置复杂、运行不稳定。Cypress 是一个专门为现代前端应用设计的 E2E 测试框架，开箱即用、API 简洁、自带自动重试机制，是目前社区中非常受欢迎的选择。本文将从零搭建 Cypress 测试环境，逐步覆盖核心功能。"
-wordCount: 499
+description: "Front-end automated testing has always been a pain point for teams to adopt. Unit tests don't cover real user flows, while Selenium is complex to configure and flaky to run. Cypress is an end-to-end testing framework built specifically for modern front-end apps: it works out of the box, has a clean API, and retries automatically—which is why it's so popular in the community. This article sets up a Cypress environment from scratch and works through its core features step by step."
+wordCount: 327
 ---
 
-前端自动化测试一直是团队落地的难点。单元测试覆盖不到用户真实操作流程，Selenium 又配置复杂、运行不稳定。Cypress 是一个专门为现代前端应用设计的 E2E 测试框架，开箱即用、API 简洁、自带自动重试机制，是目前社区中非常受欢迎的选择。本文将从零搭建 Cypress 测试环境，逐步覆盖核心功能。
+Front-end automated testing has always been a pain point for teams to adopt. Unit tests don't cover real user flows, while Selenium is complex to configure and flaky to run. Cypress is an end-to-end testing framework built specifically for modern front-end apps: it works out of the box, has a clean API, and retries automatically—which is why it's so popular in the community. This article sets up a Cypress environment from scratch and works through its core features step by step.
 
 ## Installation and Initialization
 
@@ -16,7 +16,7 @@ wordCount: 499
 npm install --save-dev cypress
 ```
 
-在 `package.json` 中添加脚本：
+Add the following scripts to `package.json`:
 
 ```json
 {
@@ -27,7 +27,7 @@ npm install --save-dev cypress
 }
 ```
 
-首次运行 `npx cypress open` 会自动创建以下目录结构：
+Running `npx cypress open` for the first time creates the following directory structure:
 
 ```
 cypress/
@@ -39,7 +39,7 @@ cypress/
 
 ## First Test Case
 
-创建 `cypress/integration/home.spec.js`：
+Create `cypress/integration/home.spec.js`:
 
 ```js
 describe('首页测试', () => {
@@ -71,9 +71,9 @@ describe('首页测试', () => {
 
 ## Core API Reference
 
-### 元素选择
+### Selecting Elements
 
-Cypress 使用 jQuery 选择器语法，推荐使用 `data-testid` 作为选择器：
+Cypress uses jQuery-style selector syntax; the recommended approach is to select by `data-testid`:
 
 ```js
 // 推荐：使用 data-testid，不受样式或结构调整影响
@@ -89,9 +89,9 @@ cy.contains('提交')
 cy.contains('button', '登录')
 ```
 
-### 断言
+### Assertions
 
-Cypress 内置了 Chai 断言库，支持 BDD 风格的 `should` 和 `expect`：
+Cypress bundles the Chai assertion library and supports the BDD-style `should` and `expect`:
 
 ```js
 // 元素存在性
@@ -119,7 +119,7 @@ cy.get('.hidden-element').should('not.be.visible');
 cy.get('.btn').should('have.css', 'color', 'rgb(0, 123, 255)');
 ```
 
-### 交互操作
+### Interactions
 
 ```js
 // 点击
@@ -144,9 +144,9 @@ cy.scrollTo(0, 500);
 
 ## Handling Async Operations
 
-Cypress 的核心设计理念之一是自动重试，大多数命令都会自动重试直到断言通过或超时。
+One of Cypress's core design principles is automatic retry: most commands keep retrying until their assertion passes or they time out.
 
-### 网络请求
+### Network Requests
 
 ```js
 // 拦截 API 请求
@@ -182,9 +182,9 @@ describe('用户列表', () => {
 });
 ```
 
-### 使用 fixtures 模拟数据
+### Mocking Data with Fixtures
 
-创建 `cypress/fixtures/users.json`：
+Create `cypress/fixtures/users.json`:
 
 ```json
 [
@@ -208,7 +208,7 @@ it('应该显示 fixture 数据', () => {
 
 ## Custom Commands
 
-在 `cypress/support/commands.js` 中定义自定义命令，封装重复操作：
+Define custom commands in `cypress/support/commands.js` to wrap repetitive actions:
 
 ```js
 // 登录命令
@@ -235,7 +235,7 @@ Cypress.Commands.add('waitForElement', (selector, timeout = 10000) => {
 });
 ```
 
-使用自定义命令：
+Using the custom commands:
 
 ```js
 describe('需要登录的页面', () => {
@@ -261,7 +261,7 @@ describe('需要登录的页面', () => {
 
 ## Page Object Pattern
 
-当测试用例增多时，可以使用页面对象模式组织代码：
+As test cases grow, you can organize them with the page object pattern:
 
 ```js
 // cypress/pages/LoginPage.js
@@ -319,7 +319,7 @@ describe('登录功能', () => {
 
 ## Configuration File
 
-`cypress.json` 常用配置：
+Common `cypress.json` settings:
 
 ```json
 {
@@ -339,7 +339,7 @@ describe('登录功能', () => {
 
 ## Integrating with CI/CD
 
-在 CI 环境中使用 `cypress run` 而非 `cypress open`：
+In CI, use `cypress run` rather than `cypress open`:
 
 ```yaml
 # .github/workflows/e2e.yml
@@ -372,10 +372,10 @@ jobs:
 
 ## Summary
 
-- Cypress 是一个专为前端设计的 E2E 测试框架，开箱即用，无需 WebDriver
-- 自动重试机制让测试更稳定，不需要手动添加 `sleep` 或 `wait`
-- 推荐使用 `data-testid` 作为选择器，避免测试因样式变化而失败
-- 使用 fixtures 模拟 API 数据，让测试不依赖后端环境
-- 自定义命令和页面对象模式可以有效组织测试代码，减少重复
-- CI 集成时使用 `cypress run`（无头模式），配合 `wait-on` 确保应用就绪后再执行测试
-- 注意合理设置超时时间和 viewport 大小，适应不同场景
+- Cypress is a front-end-focused E2E testing framework that works out of the box and needs no WebDriver.
+- Its automatic retry mechanism makes tests more stable, removing the need for manual `sleep` or `wait` calls.
+- Prefer `data-testid` as your selector strategy to keep tests from breaking when styles change.
+- Use fixtures to mock API data so tests don't depend on the back-end environment.
+- Custom commands and the page object pattern keep test code organized and reduce duplication.
+- In CI, use `cypress run` (headless) together with `wait-on` to make sure the app is ready before tests run.
+- Set sensible timeouts and viewport sizes to fit different scenarios.

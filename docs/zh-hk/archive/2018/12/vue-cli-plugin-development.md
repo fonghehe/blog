@@ -8,7 +8,7 @@ description: "Vue CLI 3 發佈後，項目腳手架的靈活性大大提高。CL
 wordCount: 173
 ---
 
-Vue CLI 3 發佈後，項目腳手架的靈活性大大提高。CLI 插件可以給項目添加功能、修改 webpack 配置。最近給團隊內部工具寫了一個 CLI 插件，記錄一下過程。
+Vue CLI 3 發佈後，項目腳手架的靈活性大大提高。CLI 外掛可以給項目添加功能、修改 webpack 設定。最近給團隊內部工具寫了一個 CLI 外掛，記錄一下過程。
 
 ## CLI 外掛的結構
 
@@ -171,5 +171,5 @@ vue add my-company-xxx
 - `generator.js`：安裝依賴、渲染模板、修改 main.js
 - `index.js`：修改 webpack 配置、註冊 CLI 命令
 - `prompts.js`：交互式創建選項
-- CLI 插件適合把團隊內部的最佳實踐標準化
+- CLI 外掛適合把團隊內部的最佳實踐標準化
 - 減少每個項目的重複配置工作

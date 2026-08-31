@@ -5,7 +5,7 @@ tags:
   - Vite
   - Vitest
 readingTime: 2
-description: "在日常开发中，Vitest 1.0 稳定版全面体验 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+description: "The full Vitest 1.0 stable experience matters more and more in everyday development. This article systematically covers its usage, mechanics, and practical strategies."
 wordCount: 208
 ---
 

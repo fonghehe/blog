@@ -4,11 +4,11 @@ date: 2021-04-26 14:31:03
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 正式發佈後，Vuex 4 作為其配套狀態管理方案也進入了穩定期。在將一箇中型後臺管理系統從 Vue 2 + Vuex 3 遷移到 Vue 3 + Vuex 4 的過程中，總結了一些實踐經驗和注意事項。"
+description: "Vue 3 正式發佈後，Vuex 4 作為其配套狀態管理方案也進入了穩定期。在將一個中型後臺管理系統從 Vue 2 + Vuex 3 遷移到 Vue 3 + Vuex 4 的過程中，總結了一些實踐經驗和注意事項。"
 wordCount: 305
 ---
 
-Vue 3 正式發佈後，Vuex 4 作為其配套狀態管理方案也進入了穩定期。在將一箇中型後臺管理系統從 Vue 2 + Vuex 3 遷移到 Vue 3 + Vuex 4 的過程中，總結了一些實踐經驗和注意事項。
+Vue 3 正式發佈後，Vuex 4 作為其配套狀態管理方案也進入了穩定期。在將一個中型後臺管理系統從 Vue 2 + Vuex 3 遷移到 Vue 3 + Vuex 4 的過程中，總結了一些實踐經驗和注意事項。
 
 ## 安裝和初始化變化
 
@@ -169,7 +169,7 @@ Vuex 4 的優勢：
 
 Pinia 的優勢：
 - 完整的 TypeScript 支持
-- 去掉 mutation，隻有 state + actions
+- 去掉 mutation，只有 state + actions
 - 更簡潔的 API
 - 組合式風格，更 Vue 3
 ```

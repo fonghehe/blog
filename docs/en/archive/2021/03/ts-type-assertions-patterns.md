@@ -5,11 +5,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "关于TypeScript satisfies 操作符预览，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production persp"
-wordCount: 211
+description: "Many developers only know the TypeScript satisfies operator at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 194
 ---
 
-关于TypeScript satisfies 操作符预览，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+On the TypeScript `satisfies` operator preview, many developers only stay at the API-call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
@@ -48,7 +48,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Features
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more involved:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -175,6 +175,6 @@ This approach has been running stably in production for over six months and has 
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- TypeScript satisfies 操作符预览不是银弹，需要根据项目规模和技术栈选择
+- The TypeScript `satisfies` operator preview is not a silver bullet; choose it based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

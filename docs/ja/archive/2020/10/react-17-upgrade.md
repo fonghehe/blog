@@ -5,19 +5,19 @@ tags:
   - React
 readingTime: 2
 description: "React 17 刚发布，官方称之为\"没有新特性\"的版本。听起来无聊，但实际上它为 React 的未来打下了重要基础。梳理一下升级要点。"
-wordCount: 311
+wordCount: 431
 ---
 
-React 17 刚发布，官方称之为"没有新特性"的版本。听起来无聊，但实际上它为 React 的未来打下了重要基础。梳理一下升级要点。
+React 17 がリリースされた。公式には「新機能のない」バージョンと呼ばれている。地味に聞こえるが、実際には React の将来のための重要な基盤を築いている。アップグレードの要点を整理する。
 
 ## 新しいAPIはないが、重要な変更あり
 
-React 17 的核心变化：
+React 17 の中心的な変更：
 
-1. **事件委托不再绑定到 document**：改绑定到 root DOM 节点
-2. **移除事件池**：SyntheticEvent 不再需要 `event.persist()`
-3. **新的 JSX Transform**：不再需要 `import React`
-4. **渐进式升级**：支持一个页面中同时运行两个版本的 React
+1. **イベント委譲が document に紐付かなくなる**：代わりに root DOM ノードに紐付く
+2. **イベントプールの廃止**：SyntheticEvent で `event.persist()` が不要に
+3. **新しい JSX Transform**：`import React` が不要に
+4. **段階的なアップグレード**：1 つのページ内で 2 つの React バージョンを同時に動かせる
 
 ## イベントシステムの変更
 
@@ -182,8 +182,8 @@ npx react-codemod React-PropTypes-to-prop-types
 
 ## まとめ
 
-- React 17 是"桥梁版本"，为未来并发模式等特性打基础
-- 事件委托改绑到 root DOM，解决了多版本共存问题
-- 事件池移除让代码更简洁，不再需要 `persist()`
-- 新 JSX Transform 不再需要 `import React from 'react'`
-- 升级本身影响很小，大部分项目可以平滑升级
+- React 17 は「橋渡しバージョン」であり、将来の Concurrency モードなどの機能の基盤となる
+- イベント委譲が root DOM に変わり、複数バージョン共存の問題を解決した
+- イベントプールの廃止でコードが簡潔になり、`persist()` が不要になった
+- 新しい JSX Transform では `import React from 'react'` が不要になった
+- アップグレード自体の影響は小さく、大半のプロジェクトは円滑に移行できる

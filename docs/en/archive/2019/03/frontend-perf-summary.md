@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Promoting frontend performance optimization techniques within the team came with plenty of pitfalls. Documenting them here in the hope it helps others."
-wordCount: 89
+wordCount: 85
 ---
 
 Promoting frontend performance optimization techniques within the team came with plenty of pitfalls. Documenting them here in the hope it helps others.
@@ -39,7 +39,7 @@ function pLimit(concurrency) {
 }
 ```
 
-In real projects, you also need to consider edge cases and error handling.
+In real projects, you'll also need to handle edge cases and errors.
 
 ## Advanced Usage
 
@@ -74,11 +74,11 @@ class EventEmitter {
 }
 ```
 
-After promoting this pattern across the team, the results were great and maintenance costs dropped noticeably.
+Rolling this pattern out across the team worked well and noticeably cut maintenance costs.
 
 ## Business Scenarios
 
-This can be achieved with the following approach:
+Here's one way to implement it:
 
 ```javascript
 interface User {
@@ -100,4 +100,4 @@ function createUser(data: Partial<User>): User {
 type UserKeys = keyof User  // 'id' | 'name' | 'email' | 'role'
 ```
 
-Pay attention to the performance details in the code above and avoid unnecessary computation.
+Keep an eye on the performance characteristics in the code above, and avoid needless computation.

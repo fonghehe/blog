@@ -4,11 +4,11 @@ date: 2023-06-27 10:22:57
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，View Transitions API v2 跨文档 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategi"
-wordCount: 201
+description: "View Transitions API v2 cross-document transitions is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 191
 ---
 
-在日常开发中，View Transitions API v2 跨文档 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+View Transitions API v2 cross-document transitions is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
 
 ## Quick Start
 
@@ -153,4 +153,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- View Transitions API v2 跨文档不是银弹，需要根据项目规模和技术栈选择
+- View Transitions API v2 cross-document transitions is not a silver bullet — choose based on your project scale and tech stack

@@ -5,14 +5,14 @@ tags:
   - Frontend
 readingTime: 2
 description: "Edge-native frontend architecture is seeing growing adoption in frontend development. This article starts from real-world projects and dives deep into its core "
-wordCount: 202
+wordCount: 189
 ---
 
 Edge-native frontend architecture is seeing growing adoption in frontend development. This article starts from real-world projects and dives deep into its core principles and best practices.
 
 ## Basic Usage
 
-We can improve things with the following approach:
+Here's a practical approach:
 
 ```javascript
 const fs = require("fs");
@@ -67,11 +67,11 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-This snippet demonstrates the fundamental usage. In real projects you'll also need to account for error handling and edge cases.
+This snippet shows the basic usage; in real projects you'll also need to handle errors and edge cases.
 
 ## Case Study
 
-Building on this foundation, we can take things further:
+From here, you can take it further:
 
 ```javascript
 .container {
@@ -98,7 +98,7 @@ This pattern is extremely practical in large-scale projects and can significantl
 
 ## Performance Optimization
 
-Usage in real projects tends to be more involved:
+Real-world usage is usually more involved:
 
 ```javascript
 const fs = require("fs");
@@ -153,7 +153,7 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-Pay close attention to edge-case handling — it is critical in production environments.
+Pay close attention to edge cases — they're critical in production.
 
 ## Summary
 

@@ -1,11 +1,11 @@
 ---
-title: "Next.js 15 Turbopack 稳定版実践：从 Webpack 移行的真实数据"
+title: "Next.js 15 Turbopack 安定版実践：Webpack から移行した実測データ"
 date: 2024-12-09 14:43:20
 tags:
   - React
 readingTime: 3
 description: "Next.js 15 Turbopack 默认のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 520
+wordCount: 555
 ---
 
 Next.js 15 Turbopack 默认のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -35,7 +35,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+この構成は本番環境で半年以上安定稼働しており、実運用で検証済みだ。
 
 ## ソースコード分析
 
@@ -62,7 +62,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理やエッジケースへの対応も必要になる。
 
 ## 実際のシナリオへの応用
 
@@ -95,7 +95,7 @@ const csvToJson = new Transform({
 
 ## 最適化テクニック
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'

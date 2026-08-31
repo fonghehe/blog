@@ -5,11 +5,11 @@ tags:
   - Vue
   - React
 readingTime: 1
-description: "Frequently used in daily work, Vue 3.2 浅层响应式，Here is a systematic summary to help everyone better understand and apply it."
-wordCount: 153
+description: "Frequently used in daily work, Vue 3.2 shallow reactivity deserves a systematic summary to help everyone better understand and apply it."
+wordCount: 136
 ---
 
-Frequently used in daily work, Vue 3.2 浅层响应式，Here is a systematic summary to help everyone better understand and apply it.
+Frequently used in daily work, Vue 3.2 shallow reactivity deserves a systematic summary to help everyone better understand and apply it.
 
 ## Basic Concepts
 
@@ -87,7 +87,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Best Practices
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 使用示例
@@ -108,6 +108,6 @@ Through this pattern, the maintainability of the code is improved.
 
 ## Summary
 
-- Vue 3.2 浅层响应式的核心在于理解底层原理，而非仅仅记住 API
+- The key to Vue 3.2 shallow reactivity is understanding the underlying principles, not just memorizing APIs
 - In real projects, choosing the right solution is more important than chasing the latest technology
 - Maintaining consistent code style in team collaboration reduces maintenance costs

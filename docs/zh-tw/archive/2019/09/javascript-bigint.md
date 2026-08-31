@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 3
 description: "JavaScript 的 `Number` 型別基於 IEEE 754 雙精度浮點數，安全整數範圍為 `-(2^53 - 1)` 到 `2^53 - 1`（即 `Number.MAX_SAFE_INTEGER` 和 `Number.MIN_SAFE_INTEGER`）。超過這個範圍的整數運算就會出現精度丟失。ES202"
-wordCount: 397
+wordCount: 396
 ---
 
 JavaScript 的 `Number` 型別基於 IEEE 754 雙精度浮點數，安全整數範圍為 `-(2^53 - 1)` 到 `2^53 - 1`（即 `Number.MAX_SAFE_INTEGER` 和 `Number.MIN_SAFE_INTEGER`）。超過這個範圍的整數運算就會出現精度丟失。ES2020 引入的 `BigInt` 型別讓我們可以表示任意精度的整數。本文將深入講解 BigInt 的使用場景、語法和注意事項。
@@ -193,7 +193,7 @@ console.log(hasPermission(userPermissions, READ));   // true
 console.log(hasPermission(userPermissions, DELETE)); // false
 ```
 
-## BigInt 在 Math 物件中的限製
+## BigInt 在 Math 物件中的限制
 
 `Math` 物件的方法不支援 BigInt：
 
@@ -255,9 +255,9 @@ console.log(b.toString()); // "9007199254740994"
 
 ## 小結
 
-- BigInt 解決了 Number 型別的安全整數範圍限製，可以表示任意精度的整數
+- BigInt 解決了 Number 型別的安全整數範圍限制，可以表示任意精度的整數
 - 使用 `數字後加 n` 或 `BigInt()` 建構函式建立 BigInt 值
 - BigInt 和 Number 不能混合運算，需要顯式轉換
-- 實際場景：資料庫 64 位 ID、金融金額計算、位運算許可權系統
+- 實際場景：資料庫 64 位 ID、金融金額計算、位運算權限系統
 - BigInt 不支援 `Math` 物件的方法，JSON 序列化需要自定義處理
 - 2019 年主流瀏覽器和 Node.js 10.4+ 已支援，IE 不支援需使用 polyfill

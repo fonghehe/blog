@@ -94,7 +94,7 @@ export function useInfiniteProducts() {
 
 ## Deep Integration of AI in the Build Toolchain
 
-Bun 3.x ships a built-in AI plugin interface; Vite 7 supports AI-driven HMR optimization. Build tools are no longer just bundlers — they actively analyze the dependency graph, predictively prefetch, and even auto-split chunks.
+Bun 3.x ships a built-in AI plugin interface; Vite 7 supports AI-driven HMR optimization. Build tools are no longer just bundlers — they actively analyze the dependency graph, proactively prefetch, and even auto-split chunks.
 
 ```typescript
 // vite.config.ts — AI-driven smart chunk splitting
@@ -124,7 +124,7 @@ export default defineConfig({
 
 ## Security Boundaries: What AI Should Never Touch
 
-AI is not omnipotent. My firm rules: authentication/authorization logic must be human-reviewed; AI-generated code that handles sensitive data is forbidden; production infrastructure config requires human sign-off. AI-generated code must pass static analysis and security scanning before merging.
+AI is not omnipotent. My firm rules: authentication/authorization logic must be human-reviewed; AI-generated code that touches sensitive data is off-limits; production infrastructure config requires human sign-off. AI-generated code must pass static analysis and security scanning before merging.
 
 ```typescript
 // ai-guard.config.ts — define AI's operational boundaries
@@ -153,6 +153,6 @@ export default {
 
 - The core shift in AI Native development is from "code completion" to "Agent-driven end-to-end collaboration"
 - Natural-language-driven feature development is mature, but security boundaries must be explicit
-- The build toolchain is deeply integrating AI; smart chunk splitting and predictive prefetch are the trend
+- The build toolchain is deeply integrating AI; smart chunk splitting and proactive prefetching are the trend
 - Human review remains irreplaceable in security-sensitive areas
 - The core competency of a 2026 frontend engineer: defining problems, evaluating solutions, and holding the quality line

@@ -4,12 +4,12 @@ date: 2026-08-09 13:11:22
 tags:
   - Engineering
   - PWA
-readingTime: 8
+readingTime: 9
 description: "Service Worker is the only technology in the browser that can truly enable offline-first functionality. This article systematically covers the complete engineering approach to PWA offline-first architecture—from lifecycle, caching strategy matrix, Workbox engineering, push notifications, and background sync to update strategies—and discusses PWA's positioning and applicable scenarios in 2026."
-wordCount: 2900
+wordCount: 1046
 ---
 
-PWA (Progressive Web App) in 2026 is no longer the focus of "can it replace native apps" debates. App Store and Google Play remain dominant, but PWA has found its niche: no distribution channel updates needed, functional offline, and install-and-use. These characteristics keep PWA relevant in internal tools, content-focused applications, and emerging market scenarios. And PWA's technical foundation—the Service Worker—remains one of the most complex yet powerful APIs in the frontend.
+PWA (Progressive Web App) in 2026 is no longer the focus of "can it replace native apps" debates. App Store and Google Play remain dominant, but PWA has found its niche: no app-store updates required, works offline, and is instantly usable once installed. These characteristics keep PWA relevant in internal tools, content-focused applications, and emerging market scenarios. And PWA's technical foundation—the Service Worker—remains one of the most complex yet powerful APIs in the frontend.
 
 ## Service Worker Lifecycle and Event Model
 

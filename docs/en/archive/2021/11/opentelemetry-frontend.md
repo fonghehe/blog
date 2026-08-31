@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "在日常开发中，OpenTelemetry 前端可观测性 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 227
+description: "Frontend observability with OpenTelemetry is showing up in more and more everyday work. This article systematically covers its usage, rationale, and practical strategies."
+wordCount: 204
 ---
 
-在日常开发中，OpenTelemetry 前端可观测性 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+OpenTelemetry frontend observability is being used more and more frequently in day-to-day development. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -97,7 +97,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Comparison
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more involved:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -154,5 +154,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- OpenTelemetry 前端可观测性不是银弹，需要根据项目规模和技术栈选择
+- OpenTelemetry frontend observability is not a silver bullet; choose it based on your project's scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

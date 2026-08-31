@@ -8,7 +8,7 @@ description: "Vue 自定義指令可以直接操作 DOM，適合封裝那些需�
 wordCount: 269
 ---
 
-Vue 自定義指令可以直接操作 DOM，適合封裝那些需要直接訪問 DOM 元素的邏輯。比如自動聚焦、權限控製、圖片懶加載等。
+Vue 自定義指令可以直接操作 DOM，適合封裝那些需要直接訪問 DOM 元素的邏輯。比如自動聚焦、權限控制、圖片懶加載等。
 
 ## 指令的生命週期鈎子
 
@@ -56,9 +56,9 @@ Vue.directive("focus", {
 <el-input v-focus placeholder="搜索" />
 ```
 
-## 實戰 2：權限控製
+## 實戰 2：權限控制
 
-根據用户權限決定是否渲染元素：
+根據用戶權限決定是否渲染元素：
 
 ```javascript
 // src/directives/permission.js
@@ -214,4 +214,4 @@ export default {
 
 - 記得在 `unbind` 裏清理事件監聽器、IntersectionObserver 等資源
 - 優先考慮用組件或 mixin 實現功能，指令是補充手段
-- 好用的指令：權限控製、懶加載、防重複點擊、點擊外部關閉
+- 好用的指令：權限控制、懶加載、防重複點擊、點擊外部關閉

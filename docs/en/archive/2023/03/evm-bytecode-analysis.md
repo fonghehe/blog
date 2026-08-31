@@ -5,9 +5,9 @@ tags:
   - Web3
   - Ethereum
   - Smart Contract
-readingTime: 13
+readingTime: 9
 description: "Smart contracts ultimately run as EVM bytecode. Understanding bytecode and opcodes is essential for gas optimization, security auditing, and debugging. This article systematically breaks down the contract execution model from EVM architecture to bytecode decompilation."
-wordCount: 3300
+wordCount: 705
 ---
 
 Before Solidity code is deployed to Ethereum, it is compiled into EVM bytecode. What runs on-chain is not Solidity source code, but this bytecode. Understanding bytecode and the EVM execution model is crucial for gas optimization, security auditing, contract debugging, and frontend interactions. This article starts from EVM architecture and progressively breaks down the complete pipeline from Solidity to bytecode to opcodes.

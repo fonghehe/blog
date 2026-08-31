@@ -5,41 +5,41 @@ tags:
   - エンジニアリング
 readingTime: 4
 description: "单元测试中经常需要隔离被测代码的依赖：替换 API 调用、模拟定时器、mock 第三方库。Jest 提供了一套完整的 mock 工具链，从简单的函数 mock 到模块级别的替换，覆盖了绝大多数测试场景。本文将系统讲解 Jest 中各种 mock 的用法和最佳实践。"
-wordCount: 322
+wordCount: 530
 ---
 
-单元测试中经常需要隔离被测代码的依赖：替换 API 调用、模拟定时器、mock 第三方库。Jest 提供了一套完整的 mock 工具链，从简单的函数 mock 到模块级别的替换，覆盖了绝大多数测试场景。本文将系统讲解 Jest 中各种 mock 的用法和最佳实践。
+ユニットテストでは、テスト対象のコードが依存するものを分離する必要がたびたび生じる。API 呼び出しの置き換え、タイマーのシミュレーション、サードパーティライブラリの mock などだ。Jest は、単純な関数の mock からモジュールレベルの置き換えまでをカバーする、一連の mock ツールチェーンを提供している。本記事では Jest における各種 mock の使い方とベストプラクティスを系統的に解説する。
 
-## Mock 函数基础
+## Mock 関数の基本
 
-### jest.fn() 创建 mock 函数
+### jest.fn() で mock 関数を作成する
 
 ```js
-// 创建一个 mock 函数
+// mock関数を作成
 const mockFn = jest.fn();
 
-// 调用
+// 呼び出し
 mockFn();
 mockFn('hello', 'world');
 mockFn(42);
 
-// 断言
+// アサーション
 expect(mockFn).toHaveBeenCalled();
 expect(mockFn).toHaveBeenCalledTimes(3);
 expect(mockFn).toHaveBeenCalledWith('hello', 'world');
 expect(mockFn).toHaveBeenLastCalledWith(42);
 ```
 
-### 设置返回值
+### 戻り値の設定
 
 ```js
 const mockFn = jest.fn();
 
-// 固定返回值
+// 固定戻り値
 mockFn.mockReturnValue(42);
 expect(mockFn()).toBe(42);
 
-// 每次调用返回不同值
+// 呼び出しごとに異なる値を返す
 mockFn
   .mockReturnValueOnce('first')
   .mockReturnValueOnce('second')
@@ -50,29 +50,29 @@ expect(mockFn()).toBe('second');
 expect(mockFn()).toBe('default');
 expect(mockFn()).toBe('default');
 
-// 异步返回值
+// 非同期戻り値
 const asyncMock = jest.fn();
 asyncMock.mockResolvedValue({ data: 'success' });
-// 或 mockResolvedValueOnce
+// またはmockResolvedValueOnce
 
 const result = await asyncMock();
 expect(result).toEqual({ data: 'success' });
 
-// 异步拒绝
-asyncMock.mockRejectedValue(new Error('网络错误'));
-await expect(asyncMock()).rejects.toThrow('网络错误');
+// 非同期リジェクション
+asyncMock.mockRejectedValue(new Error('ネットワークエラー'));
+await expect(asyncMock()).rejects.toThrow('ネットワークエラー');
 ```
 
-### 设置实现
+### 実装の設定
 
 ```js
 const mockFn = jest.fn();
 
-// 自定义实现
+// カスタム実装
 mockFn.mockImplementation((a, b) => a + b);
 expect(mockFn(1, 2)).toBe(3);
 
-// 每次调用不同的实现
+// 呼び出しごとに異なる実装
 mockFn
   .mockImplementationOnce(() => 'first')
   .mockImplementationOnce(() => 'second');
@@ -80,7 +80,7 @@ mockFn
 expect(mockFn()).toBe('first');
 expect(mockFn()).toBe('second');
 
-// 异步实现
+// 非同期実装
 const asyncMock = jest.fn();
 asyncMock.mockImplementation(async () => {
   const result = await someAsyncOperation();
@@ -88,12 +88,12 @@ asyncMock.mockImplementation(async () => {
 });
 ```
 
-## Mock 整个模块
+## モジュール全体の mock
 
-### Mock 第三方库
+### サードパーティライブラリの mock
 
 ```js
-// __mocks__/axios.js（放在与 node_modules 同级的 __mocks__ 目录）
+// __mocks__/axios.js（node_modulesと同階層の__mocks__ディレクトリに配置）
 export default {
   get: jest.fn(() => Promise.resolve({ data: {} })),
   post: jest.fn(() => Promise.resolve({ data: {} })),
@@ -105,23 +105,23 @@ export default {
 };
 ```
 
-在测试文件中：
+テストファイル内で：
 
 ```js
 import axios from 'axios';
 import { fetchUsers } from './userService';
 
-// 自动使用 __mocks__/axios.js
+// 自動的に__mocks__/axios.jsを使用
 jest.mock('axios');
 
 describe('userService', () => {
   beforeEach(() => {
-    jest.clearAllMocks(); // 每次测试前清除 mock 状态
+    jest.clearAllMocks(); // 各テスト前にmockの状態をクリア
   });
 
-  it('应该正确获取用户列表', async () => {
+  it('ユーザー一覧を正しく取得できること', async () => {
     const mockUsers = [
-      { id: 1, name: '张三' },
+      { id: 1, name: '張三' },
       { id: 2, name: '李四' },
     ];
 
@@ -133,15 +133,15 @@ describe('userService', () => {
     expect(users).toEqual(mockUsers);
   });
 
-  it('应该处理请求失败', async () => {
-    axios.get.mockRejectedValue(new Error('网络错误'));
+  it('リクエスト失敗を処理すること', async () => {
+    axios.get.mockRejectedValue(new Error('ネットワークエラー'));
 
-    await expect(fetchUsers()).rejects.toThrow('网络错误');
+    await expect(fetchUsers()).rejects.toThrow('ネットワークエラー');
   });
 });
 ```
 
-### Mock 项目内的模块
+### プロジェクト内モジュールの mock
 
 ```js
 // src/services/userService.js
@@ -160,7 +160,7 @@ export function createUser(data) {
 // src/services/__tests__/userService.test.js
 import { getUser, createUser } from '../userService';
 
-// Mock 整个 api 模块
+// apiモジュール全体をモック
 jest.mock('../api', () => ({
   get: jest.fn(),
   post: jest.fn(),
@@ -174,8 +174,8 @@ describe('userService', () => {
   });
 
   describe('getUser', () => {
-    it('应该调用正确的 URL', async () => {
-      const mockUser = { id: 1, name: '张三' };
+    it('正しいURLを呼び出すこと', async () => {
+      const mockUser = { id: 1, name: '張三' };
       api.get.mockResolvedValue({ data: mockUser });
 
       const result = await getUser(1);
@@ -186,7 +186,7 @@ describe('userService', () => {
   });
 
   describe('createUser', () => {
-    it('应该发送正确的数据', async () => {
+    it('正しいデータを送信すること', async () => {
       const newUser = { name: '王五', email: 'wangwu@example.com' };
       api.post.mockResolvedValue({ data: { id: 3, ...newUser } });
 
@@ -199,21 +199,21 @@ describe('userService', () => {
 });
 ```
 
-## Mock 日期和定时器
+## 日付とタイマーの mock
 
 ### Mock Date
 
 ```js
-// 固定时间
+// 時刻を固定
 const mockDate = new Date('2019-09-18T10:00:00Z');
 jest.spyOn(global, 'Date').mockImplementation(() => mockDate);
 
-// 或使用 jest.setSystemTime（Jest 26+）
+// またはjest.setSystemTimeを使用（Jest 26+）
 // jest.useFakeTimers('modern');
 // jest.setSystemTime(new Date('2019-09-18'));
 
-// 测试中
-it('应该显示正确的创建时间', () => {
+// テスト内
+it('正しい作成日時が表示されること', () => {
   jest.spyOn(global, 'Date').mockImplementation(() => new Date('2019-09-18'));
 
   const component = render(<PostCard post={mockPost} />);
@@ -225,7 +225,7 @@ afterEach(() => {
 });
 ```
 
-### Mock 定时器
+### タイマーの mock
 
 ```js
 beforeEach(() => {
@@ -236,18 +236,18 @@ afterEach(() => {
   jest.useRealTimers();
 });
 
-it('应该在 3 秒后显示提示', () => {
+it('3秒後にトーストが表示されること', () => {
   render(<AutoHideToast message="成功" duration={3000} />);
 
   expect(screen.getByText('成功')).toBeInTheDocument();
 
-  // 快进 3 秒
+  // 3秒進める
   jest.advanceTimersByTime(3000);
 
   expect(screen.queryByText('成功')).not.toBeInTheDocument();
 });
 
-it('setInterval 应该每秒触发', () => {
+it('setIntervalが毎秒発火すること', () => {
   const callback = jest.fn();
 
   setInterval(callback, 1000);
@@ -261,7 +261,7 @@ it('setInterval 应该每秒触发', () => {
 ## Mock localStorage
 
 ```js
-// 创建 localStorage mock
+// localStorageのモックを作成
 const localStorageMock = (() => {
   let store = {};
   return {
@@ -282,25 +282,25 @@ Object.defineProperty(window, 'localStorage', {
   value: localStorageMock,
 });
 
-// 测试
-it('应该保存 token 到 localStorage', () => {
+// テスト
+it('tokenをlocalStorageに保存できること', () => {
   saveToken('abc123');
   expect(localStorage.setItem).toHaveBeenCalledWith('token', 'abc123');
 });
 
-it('应该从 localStorage 读取 token', () => {
+it('localStorageからtokenを読み取れること', () => {
   localStorage.getItem.mockReturnValue('abc123');
   expect(getToken()).toBe('abc123');
 });
 ```
 
-## Mock 项目中的工具函数
+## プロジェクト内ユーティリティ関数の mock
 
 ```js
 // src/utils/logger.js
 export function logError(error) {
   console.error('[ERROR]', error);
-  // 上报到监控平台
+  // 監視プラットフォームに送信
 }
 
 export function logInfo(message) {
@@ -309,10 +309,10 @@ export function logInfo(message) {
 ```
 
 ```js
-// 测试文件中
+// テスト文件中
 import { processData } from '../dataProcessor';
 
-// 部分 mock：只 mock logger，保留其他模块的真实实现
+// 部分モック：loggerのみモックし、他のモジュールの実装は保持
 jest.mock('../utils/logger', () => ({
   logError: jest.fn(),
   logInfo: jest.fn(),
@@ -321,17 +321,17 @@ jest.mock('../utils/logger', () => ({
 import { logError, logInfo } from '../utils/logger';
 
 describe('dataProcessor', () => {
-  it('处理失败时应该记录错误', () => {
+  it('処理失敗時にエラーを記録すること', () => {
     processData(null);
     expect(logError).toHaveBeenCalledWith(
-      expect.stringContaining('数据为空')
+      expect.stringContaining('データが空です')
     );
   });
 
-  it('处理成功时应该记录信息', () => {
+  it('処理成功時に情報を記録すること', () => {
     processData({ id: 1 });
     expect(logInfo).toHaveBeenCalledWith(
-      expect.stringContaining('处理完成')
+      expect.stringContaining('処理完了')
     );
   });
 });
@@ -354,7 +354,7 @@ export class ApiService {
 ```
 
 ```js
-// 测试中 mock 整个类
+// テスト内 mock 整个类
 jest.mock('../services/ApiService', () => {
   return {
     ApiService: jest.fn().mockImplementation(() => ({
@@ -365,11 +365,11 @@ jest.mock('../services/ApiService', () => {
 
 import { ApiService } from '../services/ApiService';
 
-it('应该使用 ApiService 获取数据', async () => {
+it('ApiServiceを使ってデータを取得できること', async () => {
   const mockInstance = new ApiService();
   mockInstance.fetch.mockResolvedValue({ id: 1, name: 'test' });
 
-  // 被测代码会创建 ApiService 实例并调用 fetch
+  // テスト対象コードがApiServiceインスタンスを作成しfetchを呼び出す
   const result = await someFunctionThatUsesApi();
 
   expect(ApiService).toHaveBeenCalledWith('https://api.example.com');
@@ -377,52 +377,52 @@ it('应该使用 ApiService 获取数据', async () => {
 });
 ```
 
-## jest.spyOn 追踪真实函数调用
+## jest.spyOn で実際の関数呼び出しを追跡する
 
 ```js
 import { formatDate } from '../utils/date';
 
-it('应该格式化日期', () => {
+it('日付をフォーマットできること', () => {
   const spy = jest.spyOn(console, 'log');
 
   someFunction('2019-09-18');
 
-  expect(spy).toHaveBeenCalledWith('格式化后的日期:', '2019年09月18日');
+  expect(spy).toHaveBeenCalledWith('フォーマット後の日付:', '2019年09月18日');
 
-  spy.mockRestore(); // 恢复原始实现
+  spy.mockRestore(); // 元の実装を復元
 });
 
-// spyOn 也可以替换实现
+// spyOnで実装を置き換えることも可能
 const mathSpy = jest.spyOn(Math, 'random').mockReturnValue(0.5);
 expect(Math.random()).toBe(0.5);
 mathSpy.mockRestore();
 ```
 
-## Mock 清理策略
+## mock のクリーンアップ戦略
 
 ```js
 // jest.config.js
 module.exports = {
-  // 每个测试文件运行前自动清除 mock
+  // 各テストファイル実行前に自動でmockをクリア
   clearMocks: true,
-  // 自动恢复 mock（对 spyOn 有效）
+  // 自動でmockを復元（spyOnに有効）
   restoreMocks: true,
 };
 
-// 或手动清理
+// または手動でクリーンアップ
 beforeEach(() => {
-  jest.clearAllMocks();  // 清除调用记录、返回值等
-  jest.restoreAllMocks(); // 恢复 spyOn 的原始实现
-  jest.resetModules();    // 重置模块缓存
+  jest.clearAllMocks();  // 呼び出し履歴、戻り値などをクリア
+  jest.restoreAllMocks(); // spyOnの元の実装を復元
+  jest.resetModules();    // モジュールキャッシュをリセット
 });
 ```
 
 ## まとめ
 
-- `jest.fn()` 创建 mock 函数，支持设置返回值（`mockReturnValue`）、实现（`mockImplementation`）和异步行为（`mockResolvedValue`/`mockRejectedValue`）
-- `jest.mock()` 可以 mock 整个模块，支持使用 `__mocks__` 目录定义手动 mock
-- `jest.spyOn()` 追踪真实函数的调用，也可以替换实现
-- 定时器使用 `jest.useFakeTimers()` + `jest.advanceTimersByTime()` 控制时间
-- localStorage、fetch 等浏览器 API 需要在 setup 文件中全局 mock
-- 始终在测试结束后清理 mock 状态，避免测试间相互影响
-- 部分 mock 可以只替换模块中的某些导出，保留其他导出的真实实现
+- `jest.fn()` でmock関数を作成し、戻り値（`mockReturnValue`）・実装（`mockImplementation`）・非同期動作（`mockResolvedValue`/`mockRejectedValue`）を設定できる
+- `jest.mock()` でモジュール全体をモックでき、`__mocks__` ディレクトリで手動モックを定義できる
+- `jest.spyOn()` で実際の関数呼び出しを追跡でき、実装の置き換えも可能
+- タイマーは `jest.useFakeTimers()` + `jest.advanceTimersByTime()` で時間を制御する
+- localStorageやfetchなどのブラウザAPIは、setupファイルでグローバルにモックする必要がある
+- テスト終了後は必ずmockの状態をクリーンアップし、テスト間の相互影響を防ぐ
+- 部分モックでモジュール内の一部のエクスポートのみを置き換え、他のエクスポートの実装は保持できる

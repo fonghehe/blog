@@ -6,14 +6,14 @@ tags:
 
 readingTime: 2
 description: "TypeScript 从 4.1 到 4.5 每个版本都有实用的改进。整理一下这几个版本中最值得学习的特性，都是日常开发中能用到的。"
-wordCount: 253
+wordCount: 390
 ---
 
-TypeScript 从 4.1 到 4.5 每个版本都有实用的改进。整理一下这几个版本中最值得学习的特性，都是日常开发中能用到的。
+TypeScript は 4.1 から 4.5 にかけて、どのバージョンも実用的な改善が入っている。日常の開発でそのまま使える、特に押さえておくべき機能をいくつか整理する。
 
 ## 4.1：模板字面量类型
 
-让类型系统能操作字符串：
+型システムで文字列を操作できるようにする：
 
 ```typescript
 // 事件处理器类型推断
@@ -46,7 +46,7 @@ type ButtonClass = CSSClass<'btn', 'primary'>  // 'btn--primary'
 
 ## 4.2：Smarter Type Alias Preservation
 
-TypeScript 在报错信息中保留类型别名，不再展开：
+TypeScript はエラーメッセージに型のエイリアスをそのまま保持し、展開しなくなった：
 
 ```typescript
 // 以前的报错会显示展开后的完整类型
@@ -67,7 +67,7 @@ type ApiResponse<T> = {
 // Type 'string' is not assignable to type 'ApiResponse<User>'
 ```
 
-## 4.3：override 关键字
+## 4.3：override キーワード
 
 ```typescript
 class Base {
@@ -90,9 +90,9 @@ class Derived extends Base {
 // { "compilerOptions": { "noImplicitOverride": true } }
 ```
 
-这个特性避免了父类改名后子类方法变成孤立方法的问题。
+この機能は、親クラスで名前を変えた際に子クラスのメソッドが孤立してしまう問題を防ぐ。
 
-## 4.4：Catch 变量类型
+## 4.4：catch 節の変数の型
 
 ```typescript
 // 以前 catch 变量默认是 unknown（strict 模式）或 any
@@ -119,7 +119,7 @@ function isNetworkError(err: unknown): err is NetworkError {
 }
 ```
 
-## 4.5：Awaited 类型和 ES Module 支持
+## 4.5：Awaited 型と ES Module サポート
 
 ```typescript
 // Awaited 类型 - 递归解包 Promise
@@ -157,8 +157,8 @@ TypeScript 4.5：Awaited 类型，异步工具函数必备
 
 ## まとめ
 
-- 模板字面量类型是 4.x 最强大的特性之一，让类型系统能操作字符串
-- `override` 关键字让继承更安全，建议全局开启
-- `Awaited` 类型简化了异步工具函数的类型编写
-- 每个版本的改进都不大，但累积起来让 TypeScript 开发体验显著提升
-- 建议团队跟随最新版本，升级成本低但收益高
+- テンプレートリテラル型は 4.x で最も強力な機能の一つで、型システムで文字列を操作できるようにする
+- `override` キーワードにより継承が安全になり、全体での有効化を推奨する
+- `Awaited` 型は非同期ユーティリティ関数の型定義を簡潔にする
+- 各バージョンの改善は小さいが、蓄積することで TypeScript の開発体験を大きく向上させる
+- チームでの最新バージョン追従を推奨する。アップグレードコストは低く、得られる利益は大きい

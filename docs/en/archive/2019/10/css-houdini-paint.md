@@ -4,15 +4,15 @@ date: 2019-10-03 15:32:59
 tags:
   - CSS
 readingTime: 4
-description: "CSS Houdini 是 W3C 提出的一组底层 CSS API，它让开发者可以直接接入 CSS 渲染引擎的各个阶段。其中 Paint API 是目前浏览器支持度最好的一个，它允许我们用 JavaScript 绘制自定义的 CSS 图案，替代传统的背景图方案。"
-wordCount: 663
+description: "CSS Houdini is a set of low-level CSS APIs proposed by the W3C that let developers hook directly into the various stages of the CSS rendering engine. Among them, the Paint API currently has the widest browser support—it lets us draw custom CSS patterns in JavaScript instead of relying on traditional background images."
+wordCount: 459
 ---
 
-CSS Houdini 是 W3C 提出的一组底层 CSS API，它让开发者可以直接接入 CSS 渲染引擎的各个阶段。其中 Paint API 是目前浏览器支持度最好的一个，它允许我们用 JavaScript 绘制自定义的 CSS 图案，替代传统的背景图方案。
+CSS Houdini is a set of low-level CSS APIs proposed by the W3C that let developers hook directly into the various stages of the CSS rendering engine. Among them, the Paint API currently has the widest browser support—it lets us draw custom CSS patterns in JavaScript instead of relying on traditional background images.
 
 ## What Is the CSS Paint API
 
-传统方式下，如果我们想实现一个复杂的背景效果（比如渐变网格、波浪线、动态斑点），要么用 CSS 渐变拼凑，要么用图片，要么用 SVG。CSS Paint API 提供了第四种方案：用 JavaScript 编写绘制逻辑，然后像 CSS 函数一样直接调用。
+Traditionally, if you wanted a complex background effect (say, a gradient mesh, wavy lines, or animated dots), you'd cobble something together with CSS gradients, reach for an image, or use SVG. The CSS Paint API offers a fourth option: write the drawing logic in JavaScript and then call it just like a CSS function.
 
 ```css
 /* 传统方式 */
@@ -26,15 +26,15 @@ CSS Houdini 是 W3C 提出的一组底层 CSS API，它让开发者可以直接�
 }
 ```
 
-核心概念包括：
+The core concepts are:
 
-- **Worklet**：运行在独立线程中的轻量级 JS 模块
-- **registerPaint()**：注册一个绘制处理器
-- **paint()**：实际的绘制回调函数
+- **Worklet**: a lightweight JS module that runs on a separate thread
+- **registerPaint()**: registers a paint handler
+- **paint()**: the actual paint callback
 
 ## Browser Support and Detection
 
-截至目前，Chrome 65+ 已经完整支持 Paint API，Edge 基于 Chromium 也支持，Firefox 和 Safari 暂未默认开启。
+As of now, Chrome 65+ fully supports the Paint API, and Chromium-based Edge does too, while Firefox and Safari don't enable it by default.
 
 ```js
 // 检测浏览器支持
@@ -45,7 +45,7 @@ if ('paintWorklet' in CSS) {
 }
 ```
 
-可以使用 [css-paint-polyfill](https://github.com/GoogleChromeLabs/css-paint-polyfill) 做兼容：
+You can use [css-paint-polyfill](https://github.com/GoogleChromeLabs/css-paint-polyfill) for compatibility:
 
 ```html
 <script src="https://unpkg.com/css-paint-polyfill"></script>
@@ -53,7 +53,7 @@ if ('paintWorklet' in CSS) {
 
 ## Registering Your First Paint Worklet
 
-创建一个独立的 JS 文件作为 Worklet，在其中使用 `registerPaint` 注册绘制器。Worklet 中可以使用的绘图 API 是 Canvas 2D API 的一个子集：
+Create a standalone JS file as a Worklet and register the painter with `registerPaint`. The drawing API available inside a Worklet is a subset of the Canvas 2D API:
 
 ```js
 // worklets/dots.js
@@ -88,7 +88,7 @@ class DotsPainter {
 registerPaint('dots', DotsPainter);
 ```
 
-在页面中加载 Worklet：
+Load the Worklet in the page:
 
 ```js
 // 主线程中注册
@@ -97,7 +97,7 @@ if ('paintWorklet' in CSS) {
 }
 ```
 
-然后就可以在 CSS 中使用了：
+You can then use it in CSS:
 
 ```css
 .dot-box {
@@ -112,7 +112,7 @@ if ('paintWorklet' in CSS) {
 
 ## Using inputProperties to React to CSS Variables
 
-Paint API 最强大的地方在于它可以读取 CSS 自定义属性（CSS Variables），这意味着绘制行为可以完全由 CSS 控制：
+The most powerful part of the Paint API is that it can read CSS custom properties (CSS Variables), which means the drawing behavior can be fully controlled from CSS:
 
 ```js
 class GradientWavePainter {
@@ -149,7 +149,7 @@ class GradientWavePainter {
 registerPaint('wave', GradientWavePainter);
 ```
 
-CSS 部分：
+The CSS side:
 
 ```css
 .wave-section {
@@ -163,7 +163,7 @@ CSS 部分：
 
 ## In Practice: Custom Border Painter
 
-一个常见的需求是自定义边框样式，比如锯齿边框：
+A common need is custom border styles, such as a zigzag edge:
 
 ```js
 class ZigzagPainter {
@@ -205,7 +205,7 @@ registerPaint('zigzag', ZigzagPainter);
 
 ## Implementing Animation Effects
 
-Worklet 运行在独立线程，不能直接访问 DOM 或使用 `requestAnimationFrame`。动画需要在主线程中通过修改 CSS 变量来触发重绘：
+A Worklet runs on a separate thread, so it can't directly access the DOM or use `requestAnimationFrame`. Animations need to be driven from the main thread by mutating a CSS variable to trigger a repaint:
 
 ```js
 // 主线程代码
@@ -261,7 +261,7 @@ class SkeletonPainter {
 registerPaint('skeleton', SkeletonPainter);
 ```
 
-配合主线程动画：
+Together with the main-thread animation:
 
 ```js
 CSS.paintWorklet.addModule('/worklets/skeleton.js');
@@ -282,20 +282,20 @@ function startSkeletonAnimation() {
 
 ## Comparison with Canvas
 
-| 特性 | Paint API | Canvas |
-|------|-----------|--------|
-| 运行线程 | Worklet 线程 | 主线程 |
-| 与 CSS 集成 | 天然集成，可直接用作 background | 需要手动设置 |
-| 响应式 | 自动随元素尺寸变化 | 需要手动监听 resize |
-| DOM 访问 | 不可访问 | 可访问 |
-| 事件处理 | 不支持 | 支持 |
+| Feature | Paint API | Canvas |
+|---------|-----------|--------|
+| Thread | Worklet thread | Main thread |
+| CSS integration | Built-in—can be used directly as a `background` | Requires manual setup |
+| Responsive | Automatically follows the element's size | Requires manually listening for `resize` |
+| DOM access | Not accessible | Accessible |
+| Event handling | Not supported | Supported |
 
 ## Summary
 
-- CSS Paint API 是 Houdini 规范中最成熟的模块，Chrome 已完整支持
-- 通过 `registerPaint()` 注册绘制器，用 Canvas 2D 子集 API 绘制
-- `inputProperties` 可以读取 CSS 自定义属性，实现声明式控制
-- Worklet 运行在独立线程，不会阻塞主线程
-- 适合用于背景图案、边框装饰、占位图等纯视觉效果
-- 动画需要在主线程修改 CSS 变量来触发重绘
-- 可以通过 css-paint-polyfill 做降级兼容
+- The CSS Paint API is the most mature module in the Houdini spec, and Chrome already supports it fully
+- Register a painter via `registerPaint()` and draw with the Canvas 2D subset API
+- `inputProperties` can read CSS custom properties for declarative control
+- A Worklet runs on a separate thread, so it won't block the main thread
+- Well suited to purely visual effects like background patterns, border decorations, and placeholders
+- Animations need to mutate a CSS variable on the main thread to trigger a repaint
+- You can fall back gracefully with css-paint-polyfill

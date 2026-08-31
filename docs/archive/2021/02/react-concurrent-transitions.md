@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "React 18 useTransition 非阻塞更新这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 280
+wordCount: 283
 ---
 
-React 18 useTransition 非阻塞更新这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+React 18 useTransition 的非阻塞更新这个话题，社区已经讨论过很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
 
 ## 入门指南
 

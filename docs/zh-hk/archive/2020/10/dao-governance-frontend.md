@@ -1,17 +1,18 @@
 ---
-readingTime: 2
-wordCount: 551
+readingTime: 8
+wordCount: 560
 title: "DAO 治理前端：投票界面與提案系統"
 date: 2020-10-30 14:17:09
 tags:
   - Web3
   - Blockchain
   - DApp
+description: "DAO（Decentralized Autonomous Organization，去中心化自治組織）是通過智能合約實現治理規則的鏈上組織。Compound 的治理系統（GovernorAlpha）發佈後，DAO 治理界面成為 DeFi 前端的一個重要細分領域。與交易或借貸界面不同，治理前端需要處理複雜的提案生命週期、"
 ---
 
 ## DAO 與鏈上治理
 
-DAO（Decentralized Autonomous Organization，去中心化自治組織）是通過智能合約實現治理規則的鏈上組織。Compound 的治理系統發佈後，DAO 治理界面成為 DeFi 前端的一個重要細分領域。與交易或借貸界面不同，治理前端需要處理複雜的提案生命週期、投票權計算和執行流程。
+DAO（Decentralized Autonomous Organization，去中心化自治組織）是通過智能合約實現治理規則的鏈上組織。Compound 的治理系統（GovernorAlpha）發佈後，DAO 治理界面成為 DeFi 前端的一個重要細分領域。與交易或借貸界面不同，治理前端需要處理複雜的提案生命週期、投票權計算和執行流程。
 
 Compound 治理系統（GovernorAlpha）成為了 DAO 治理合約的事實標準，後續的 Uniswap 治理、Gitcoin 治理等都在其基礎上擴展。理解 GovernorAlpha 的接口和數據結構，是構建 DAO 治理前端的基礎。
 
@@ -204,7 +205,7 @@ function getProposalStatusInfo(proposal, quorumVotes) {
 
 ### 投票權檢查
 
-用户投票前，前端需要檢查其投票權。投票權基於提案 `startBlock` 時的代幣餘額快照：
+用戶投票前，前端需要檢查其投票權。投票權基於提案 `startBlock` 時的代幣餘額快照：
 
 ```javascript
 const COMP_ABI = [
@@ -649,6 +650,6 @@ function ProposalVotePanel({ provider, governanceAddress, tokenAddress, proposal
 
 ## 小結
 
-DAO 治理前端的核心在於**將複雜的鏈上治理流程轉化為可理解、可操作的界面**。提案的完整生命週期（創建→投票→排隊→執行）涉及多個狀態和條件判斷，前端需要準確同步這些狀態並及時反饋給用户。
+DAO 治理前端的核心在於**將複雜的鏈上治理流程轉化為可理解、可操作的界面**。提案的完整生命週期（創建→投票→排隊→執行）涉及多個狀態和條件判斷，前端需要準確同步這些狀態並及時反饋給用戶。
 
-治理前端面臨的最大挑戰是信息密度的平衡——投票權、法定人數、投票週期、執行延遲等參數對用户決策至關重要，但大多數用户並不理解這些概念。優秀的治理前端應該通過可視化和漸進式信息展示，讓普通用户也能做出知情投票決策。同時，實時狀態同步（通過事件監聽或輪詢）確保了投票數據的準確性，這對治理公平性至關重要。
+治理前端面臨的最大挑戰是信息密度的平衡——投票權、法定人數、投票週期、執行延遲等參數對用戶決策至關重要，但大多數用戶並不理解這些概念。優秀的治理前端應該通過可視化和漸進式信息展示，讓普通用戶也能做出知情投票決策。同時，實時狀態同步（通過事件監聽或輪詢）確保了投票數據的準確性，這對治理公平性至關重要。

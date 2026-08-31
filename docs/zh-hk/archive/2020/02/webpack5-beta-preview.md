@@ -161,7 +161,7 @@ Webpack 5 要求 Node.js >= 10.13.0。在升級前確認 CI 環境。
 # 升級命令
 npm install webpack@next webpack-cli@latest -D
 
-# 需要同步升級的外掛
+# 需要同步升級的插件
 npm install -D webpack-dev-server@latest html-webpack-plugin@next
 
 # 可能需要移除的（已內置）

@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "JavaScript 異步編程經歷了從回調到 Promise、從 Generator 到 Async/Await 的演進。本文梳理 2026 年的異步模式全景，包括 AsyncIterator、Observable proposal 和異步資源管理。"
-wordCount: 311
+wordCount: 312
 ---
 
 JavaScript 的異步編程模型一直在進化。從最早的回調地獄，到 Promise 的鏈式調用，再到 Async/Await 的同步寫法，每一步都在降低異步代碼的心智負擔。2026 年，異步模式的邊界已經擴展到流式數據、資源管理和跨線程通信。
@@ -32,7 +32,7 @@ Promise.all([
 ]).then(([a, b, c]) => console.log(a, b, c));
 ```
 
-Promise 的核心價值不只是語法改進，而是提供了標準化的錯誤處理和組合能力。
+Promise 的核心價值不止於語法改進，更在於提供了標準化的錯誤處理和組合能力。
 
 ## Async/Await 的同步錯覺
 

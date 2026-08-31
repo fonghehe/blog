@@ -4,15 +4,15 @@ date: 2019-10-17 11:29:40
 tags:
   - JavaScript
 readingTime: 3
-description: "可选链操作符（Optional Chaining）`?.` 是 TC39 Stage 3 提案，预计将成为 ES2020 标准的一部分。它允许安全地访问深层嵌套的对象属性，而不需要在每一层都做空值检查。"
-wordCount: 395
+description: "The optional chaining operator (`?.`) was a TC39 Stage 3 proposal and was expected to become part of ES2020. It lets you safely access deeply nested object properties without performing a null check at every level."
+wordCount: 264
 ---
 
-可选链操作符（Optional Chaining）`?.` 是 TC39 Stage 3 提案，预计将成为 ES2020 标准的一部分。它允许安全地访问深层嵌套的对象属性，而不需要在每一层都做空值检查。
+The optional chaining operator (`?.`) was a TC39 Stage 3 proposal and was expected to become part of ES2020. It lets you safely access deeply nested object properties without performing a null check at every level.
 
 ## Problem Background
 
-在日常开发中，我们经常需要访问深层嵌套的对象属性：
+In day-to-day development, we often need to access deeply nested object properties:
 
 ```js
 // 从 API 返回的用户数据
@@ -32,7 +32,7 @@ const lat = user.address.geo.lat; // OK
 const lat2 = user.company.geo.lat; // TypeError: Cannot read property 'geo' of undefined
 ```
 
-传统的解决方式是逐层检查：
+The traditional approach is to check each level manually:
 
 ```js
 // 方式一：if 判断
@@ -54,7 +54,7 @@ const lat = user
 const lat = user && user.company && user.company.geo && user.company.geo.lat;
 ```
 
-这些写法都非常冗长，可选链操作符解决了这个问题。
+All of these approaches are very verbose, and the optional chaining operator solves exactly this problem.
 
 ## Optional Chaining Basic Syntax
 
@@ -70,7 +70,7 @@ const zipCode = user?.address?.zipCode; // undefined（安全，不报错）
 
 ## Three Usages of Optional Chaining
 
-### 1. 对象属性访问
+### 1. Accessing Object Properties
 
 ```js
 const user = {
@@ -90,7 +90,7 @@ const company = user?.company?.name;
 const companyOld = user && user.company && user.company.name;
 ```
 
-### 2. 数组元素访问
+### 2. Accessing Array Elements
 
 ```js
 const users = [
@@ -116,7 +116,7 @@ const firstTitle = response?.data?.items?.[0]?.title;
 // '文章一'
 ```
 
-### 3. 函数调用
+### 3. Function Calls
 
 ```js
 const api = {
@@ -142,7 +142,7 @@ processData(input, console.log);  // 传回调，正常调用
 
 ## Using with Nullish Coalescing Operator
 
-可选链经常与 `??` 运算符配合，提供默认值：
+Optional chaining is often paired with the `??` operator to provide default values:
 
 ```js
 const user = {
@@ -168,7 +168,7 @@ const count2 = user?.profile?.age ?? 18;
 
 ## Usage in React Projects
 
-### 安全访问 props 和 state
+### Safely Accessing Props and State
 
 ```jsx
 function UserProfile({ user }) {
@@ -186,7 +186,7 @@ function UserProfile({ user }) {
 }
 ```
 
-### 安全调用事件处理器
+### Safely Calling Event Handlers
 
 ```jsx
 function Button({ onClick, onMouseEnter }) {
@@ -201,7 +201,7 @@ function Button({ onClick, onMouseEnter }) {
 }
 ```
 
-### Redux 中的安全访问
+### Safe Access in Redux
 
 ```jsx
 function mapStateToProps(state) {
@@ -215,7 +215,7 @@ function mapStateToProps(state) {
 
 ## Configuration in Node.js
 
-### 使用 Babel
+### Using Babel
 
 ```bash
 npm install --save-dev @babel/plugin-proposal-optional-chaining
@@ -228,9 +228,9 @@ npm install --save-dev @babel/plugin-proposal-optional-chaining
 }
 ```
 
-### 使用 TypeScript 3.7+
+### Using TypeScript 3.7+
 
-TypeScript 3.7 原生支持可选链：
+TypeScript 3.7 supports optional chaining natively:
 
 ```json
 // tsconfig.json
@@ -261,7 +261,7 @@ function getLatitude(user: User): number | undefined {
 
 ## Important Notes
 
-### 不能用于赋值
+### Can't Be Used on the Left Side of an Assignment
 
 ```js
 const obj = {};
@@ -275,7 +275,7 @@ if (obj?.a) {
 }
 ```
 
-### 与 delete 配合使用
+### Using with `delete`
 
 ```js
 const obj = { a: { b: 1 } };
@@ -289,7 +289,7 @@ if (obj?.a) {
 }
 ```
 
-### 不要滥用
+### Don't Overuse It
 
 ```js
 // 不要对确定存在的属性使用可选链
@@ -304,7 +304,7 @@ const name = user.name;
 
 ## Compiled Output Comparison
 
-Babel 编译可选链的产物：
+Here's what Babel compiles optional chaining into:
 
 ```js
 // 输入
@@ -323,13 +323,13 @@ const lat =
         : _user$address$geo.lat;
 ```
 
-可以看到编译后的代码确实比手写 `&&` 要长一些，但可读性在源码层面大大提升。
+As you can see, the compiled output is indeed longer than hand-written `&&` checks, but source-level readability improves dramatically.
 
 ## Summary
 
-- 可选链 `?.` 安全地访问深层嵌套属性，中间层为 null/undefined 时返回 undefined
-- 支持三种用法：属性访问 `?.prop`、数组索引 `?.[index]`、函数调用 `?.()`
-- 与空值合并运算符 `??` 配合使用可以提供默认值
-- TypeScript 3.7+ 原生支持，Babel 也有插件支持
-- 不能用于赋值操作左侧
-- 不要滥用，确定存在的属性不需要使用可选链
+- The `?.` operator safely accesses deeply nested properties, returning `undefined` when any intermediate level is `null`/`undefined`
+- It supports three forms: property access (`?.prop`), array indexing (`?.[index]`), and function calls (`?.()`)
+- Pair it with the nullish coalescing operator `??` to provide default values
+- Supported natively in TypeScript 3.7+ and via a Babel plugin
+- Can't be used on the left side of an assignment
+- Don't overuse it—properties you know exist don't need optional chaining

@@ -413,7 +413,7 @@ data.name = 'Vue 2.6'; // name 从 "Vue" 变成了 "Vue 2.6"
 
 ## 策略模式（Strategy）
 
-定义一系列算法，把它们封装起来，使它们可以互相替换。避免大量的 `if-else` 或 `switch-case`。
+定义一系列算法并封装起来，使它们可以互相替换，从而避免大量的 `if-else` 或 `switch-case`。
 
 ```javascript
 // 表单验证策略

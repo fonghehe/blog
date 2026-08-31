@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "The topic of Tailwind CSS v5's new features has been discussed many times in the community, but with each new iteration, many prior conclusions need updating. T"
-wordCount: 193
+wordCount: 188
 ---
 
 The topic of Tailwind CSS v5's new features has been discussed many times in the community, but with each new iteration, many prior conclusions need updating. This article provides a fresh take based on the latest version.
@@ -44,7 +44,7 @@ Performance optimization must be approached in context — not every situation c
 
 ## Source Analysis
 
-We can improve on this in the following way:
+Here's a practical way to build on this:
 
 ```css
 'use client'
@@ -94,11 +94,11 @@ export async function POST(req) {
 
 ```
 
-This code demonstrates the basic usage. In real projects, you'll also need to account for error handling and edge cases.
+This code shows the basic usage; in real projects you'll also need to handle errors and edge cases.
 
 ## Optimization Tips
 
-Building on this foundation, we can optimize further:
+From here, you can optimize further:
 
 ```css
 :root {

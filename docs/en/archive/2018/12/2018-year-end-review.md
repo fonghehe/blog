@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 6
 description: "Looking back at 2018, if I had to sum it up in one word, I'd choose \"systematization.\" At the start of the year I was still reinventing the wheel across project"
-wordCount: 1160
+wordCount: 1165
 ---
 
 Looking back at 2018, if I had to sum it up in one word, I'd choose "systematization." At the start of the year I was still reinventing the wheel across projects. By year-end I had a reusable engineering system: a unified build pipeline, a cross-project component library, and team-level code quality standards. A good chunk of technical debt has been paid off, and the groundwork is mostly laid. Time for a retrospective.
@@ -16,7 +16,7 @@ Looking back at 2018, if I had to sum it up in one word, I'd choose "systematiza
 
 Early in the year I decided to introduce TypeScript to our main back-office projects. There was considerable pushback from the team — "What's the point of writing all those types?" was the most common complaint.
 
-My strategy was incremental: start with new modules, then gradually refactor existing code. Two months in, a refactor changed an API signature and the editor immediately highlighted every affected call site. The team's attitude shifted from skepticism to dependency. By year-end, TypeScript coverage exceeded 70%, with complete coverage for core business modules.
+My strategy was incremental: start with new modules, then gradually refactor existing code. Two months in, a refactor changed an API signature and the editor immediately highlighted every affected call site. The team's attitude shifted from skepticism to reliance. By year-end, TypeScript coverage exceeded 70%, with complete coverage for core business modules.
 
 ### Webpack 4 Migration
 
@@ -24,11 +24,11 @@ Upgrading from Webpack 3 to 4 was more than just changing config. Average build 
 
 ### Deeper Vue Understanding and React Exploration
 
-On the Vue side, I dug deep into reactivity internals and component design patterns, and I led the internal component library from design to publication. I also started learning React systematically — not to replace Vue, but to make technology selection more rational. At year-end, a data-visualization project called for a React + D3 approach that turned out smoother than Vue, validating the real-world value of knowing both frameworks.
+On the Vue side, I dug deep into reactivity internals and component design patterns, and I led the internal component library from design to publication. I also started learning React systematically — not to replace Vue, but to make technology selection more rational. At year-end, a data-visualization project was a better fit for a React + D3 approach than for Vue, which confirmed the real-world value of being fluent in both frameworks.
 
 ### Node.js BFF Layer
 
-Toward year-end I started building a BFF (Backend for Frontend) middleware layer in Koa for API aggregation and data transformation. Although it's not yet in production, the full chain is working, and the feasibility of decoupling frontend from backend with a dedicated data layer is proven.
+Toward year-end I started building a BFF (Backend for Frontend) middleware layer in Koa for API aggregation and data transformation. Although it's not yet in production, the full pipeline works end to end, and the feasibility of decoupling frontend from backend with a dedicated data layer is proven.
 
 ## II. Engineering Achievements
 
@@ -118,9 +118,9 @@ Gave 4 internal tech talks: TypeScript in Practice, Webpack Optimization, Compon
 
 ## V. Unfinished Items
 
-**Test coverage** is still low. I wrote unit tests for some core logic, but it's far from routine. Component library tests are fairly complete; business code has almost none. This isn't laziness — it's a prioritization call. This year I tackled "zero-to-one" engineering infrastructure; testing is "one-to-ten" quality assurance, scheduled for 2019.
+**Test coverage** is still low. I wrote unit tests for some core logic, but it's far from routine. Component library tests are fairly complete; business code has almost none. This isn't laziness — it was a prioritization decision. This year I tackled "zero-to-one" engineering infrastructure; testing is "one-to-ten" quality assurance, scheduled for 2019.
 
-**CI/CD pipeline** is still maintained by the ops team. My understanding of Jenkins is stuck at "can change config and make it run." I haven't systematically grasped automated deployment, environment management, and release rollback. This is a capability an architect must develop.
+**CI/CD pipeline** is still maintained by the ops team. My grasp of Jenkins is limited to "edit the config and it runs." I haven't systematically grasped automated deployment, environment management, and release rollback. This is a capability an architect must develop.
 
 **Documentation** is incomplete. The component library has READMEs but no full usage docs or API references, and design decisions aren't recorded. Onboarding a new hire made the importance of docs painfully clear — a lot of "why we did it this way" only lives in the heads of the original authors.
 

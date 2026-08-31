@@ -5,10 +5,10 @@ tags:
   - TypeScript
 readingTime: 2
 description: "关于TypeScript 递归类型实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 316
+wordCount: 314
 ---
 
-关于TypeScript 递归类型实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+很多开发者对 TypeScript 递归类型的理解只停留在 API 调用层面。本文从生产环境的角度出发，讨论实际中遇到的问题与解决方案。
 
 ## 基本原理
 

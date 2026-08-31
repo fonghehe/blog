@@ -4,9 +4,9 @@ date: 2025-03-15 19:04:38
 tags:
   - Web3
   - AI
-readingTime: 12
+readingTime: 8
 description: "探索 LLM Agent 調用智能合約的完整架構，涵蓋意圖識別、安全簽名、自動化交易管道及多步交易編排"
-wordCount: 3700
+wordCount: 772
 ---
 
 ## LLM Agent 調用智能合約的架構
@@ -17,7 +17,7 @@ AI Agent 與 Web3 的結合是一個具前景的技術方向。核心思路是�
 
 ```
 ┌──────────────────────────────────────────────────┐
-│                  用户層 (User Layer)               │
+│                  用戶層 (User Layer)               │
 │    "幫我用 100 USDC 換 ETH，如果 Gas < 20 gwei"    │
 └──────────────────────┬───────────────────────────┘
                        ▼
@@ -38,7 +38,7 @@ Agent 不是直接調用 LLM 的 API 來簽發交易——那樣太危險了。�
 
 ## 意圖識別：從自然語言到合約調用
 
-意圖識別是將用户的自然語言指令轉換為結構化的交易參數：
+意圖識別是將用戶的自然語言指令轉換為結構化的交易參數：
 
 ```typescript
 // 交易意圖數據結構
@@ -308,10 +308,10 @@ class AutomatedTradingPipeline {
 
       if (receipt.status === 'success') {
         console.log(`Intent executed: ${intent.action}, tx: ${hash}`)
-        // 可選：通過通知系統告知用户
+        // 可選：通過通知系統告知用戶
       } else {
         console.error(`Intent failed: ${hash}`)
-        // 重試或通知用户
+        // 重試或通知用戶
       }
     } catch (error) {
       console.error(`Intent execution error: ${error}`)
@@ -385,9 +385,9 @@ Agent 與錢包的交互有兩種模式：
 
 Agent 持有一個受限的 Session Key，可以自主簽名交易。安全性依賴 Session Key 的權限控制——限制可調用的合約、金額上限和有效期。
 
-**模式二：Agent 構造交易，用户審批簽名（半自動）**
+**模式二：Agent 構造交易，用戶審批簽名（半自動）**
 
-Agent 負責構造交易數據和模擬執行，但最終簽名由用户完成。適用於高價值交易或敏感操作。
+Agent 負責構造交易數據和模擬執行，但最終簽名由用戶完成。適用於高價值交易或敏感操作。
 
 ```typescript
 // 模式二：半自動模式
@@ -400,7 +400,7 @@ async function semiAutoExecute(
   // Agent 構造交易
   const txPlan = await agent.planTransaction(intent, publicClient)
 
-  // 向用户展示交易計劃
+  // 向用戶展示交易計劃
   const userApproved = await presentToUser({
     action: intent.action,
     contract: txPlan.contractName,
@@ -416,7 +416,7 @@ async function semiAutoExecute(
     throw new Error('User rejected the transaction plan')
   }
 
-  // 用户簽名
+  // 用戶簽名
   const hash = await userWallet.writeContract({
     address: txPlan.contractAddress,
     abi: txPlan.abi,
@@ -538,7 +538,7 @@ async function orchestrateDefiStrategy(
   orchestrator: TransactionOrchestrator,
   agent: AIAgent,
 ) {
-  // 用户説："把我的 ETH 存入 Lido，然後用 stETH 在 Aave 借 USDC"
+  // 用戶説："把我的 ETH 存入 Lido，然後用 stETH 在 Aave 借 USDC"
   const plan = await agent.planMultiStep({
     instruction: 'Deposit ETH to Lido, then use stETH as collateral to borrow USDC on Aave',
   })
@@ -574,7 +574,7 @@ class AgentErrorHandler {
   getFallbackStrategy(errorType: ErrorType): FallbackStrategy {
     switch (errorType) {
       case 'security':
-        // 安全錯誤：立即停止，通知用户
+        // 安全錯誤：立即停止，通知用戶
         return { action: 'stop', notify: true, autoRetry: false }
 
       case 'condition':
@@ -694,4 +694,4 @@ class RateLimiter {
 
 ## 小結
 
-AI Agent 與 Web3 的結合正在創造全新的交互範式。用户不再需要理解 ABI、Gas、Nonce 等概念——他們只需要用自然語言描述意圖，Agent 負責將其轉化為鏈上交易。這種便利性的代價是更高的安全風險。LLM 的不可預測性意味着 Agent 可能做出錯誤決策，而 Web3 的不可逆性使得錯誤的後果是永久的。安全邊界設計是整個架構的核心——合約白名單、金額限制、人工審批和頻率控制構成了多層防禦。從長期來看，AI + Web3 的最大機遇是降低用户門檻：讓數十億不懂得 Gas 和私鑰的用户也能使用鏈上服務。但這個願景的前提是安全架構足夠成熟，能將 Agent 的風險限制在可控範圍內。
+AI Agent 與 Web3 的結合正在創造全新的交互範式。用戶不再需要理解 ABI、Gas、Nonce 等概念——他們只需要用自然語言描述意圖，Agent 負責將其轉化為鏈上交易。這種便利性的代價是更高的安全風險。LLM 的不可預測性意味着 Agent 可能做出錯誤決策，而 Web3 的不可逆性使得錯誤的後果是永久的。安全邊界設計是整個架構的核心——合約白名單、金額限制、人工審批和頻率控制構成了多層防禦。從長期來看，AI + Web3 的最大機遇是降低用戶門檻：讓數十億不懂得 Gas 和私鑰的用戶也能使用鏈上服務。但這個願景的前提是安全架構足夠成熟，能將 Agent 的風險限制在可控範圍內。

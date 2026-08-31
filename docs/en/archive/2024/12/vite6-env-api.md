@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Vite 6 Environment API 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
-wordCount: 204
+wordCount: 186
 ---
 
 Vite 6 Environment API 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -96,7 +96,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Performance Optimization
 
@@ -132,4 +132,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vite 6 Environment API 实战不是银弹，需要根据项目规模和技术栈选择
+- Vite 6 Environment API 实战 is not a silver bullet — choose based on your project scale and tech stack

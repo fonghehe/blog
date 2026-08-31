@@ -4,11 +4,11 @@ date: 2023-01-10 10:39:48
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 5.0 正式支持了 TC39 Stage 3 提案的装饰器语法。这是一个等了好几年的改动，终于可以告别 `experimentalDecorators` 了。"
-wordCount: 408
+description: "TypeScript 5.0 officially supports the decorator syntax from the TC39 Stage 3 proposal. This is a change we waited years for — we can finally say goodbye to experimentalDecorators."
+wordCount: 397
 ---
 
-TypeScript 5.0 正式支持了 TC39 Stage 3 提案的装饰器语法。这是一个等了好几年的改动，终于可以告别 `experimentalDecorators` 了。
+TypeScript 5.0 officially supports the decorator syntax from the TC39 Stage 3 proposal. This is a change we waited years for — we can finally say goodbye to experimentalDecorators.
 
 ## Differences Between Old and New Decorators
 

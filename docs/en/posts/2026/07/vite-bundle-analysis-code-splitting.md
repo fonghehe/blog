@@ -4,9 +4,9 @@ date: 2026-07-12 11:15:41
 tags:
   - Vite
   - Engineering
-readingTime: 7
+readingTime: 8
 description: "Vite's production build is powered by Rollup/Rolldown. Code splitting strategy directly impacts first-screen performance. This article covers manualChunks configuration, dynamic imports, modulepreload, Tree Shaking pitfalls, and CSS splitting — demonstrating the complete process of optimizing a 500KB initial bundle down to 80KB."
-wordCount: 2300
+wordCount: 943
 ---
 
 Vite's development experience has become the benchmark for frontend tooling, but production build performance optimization remains a blind spot for many teams. The on-demand ESM modules in dev mode are bundled into static assets in production, and the code splitting strategy, preload mechanisms, and Tree Shaking effectiveness in this process directly determine the user's first-screen experience.

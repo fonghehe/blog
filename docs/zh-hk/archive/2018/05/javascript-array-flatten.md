@@ -49,7 +49,7 @@ function flatten(arr) {
 // [1, 2, 3, 4]
 ```
 
-隻適合純整數數組，有侷限性。
+只適合純整數數組，有侷限性。
 
 ## 方法四：Array.flat（ES2019）
 
@@ -95,9 +95,9 @@ const menuTree = [
   { id: 1, name: "首頁" },
   {
     id: 2,
-    name: "用户管理",
+    name: "用戶管理",
     children: [
-      { id: 3, name: "用户列表" },
+      { id: 3, name: "用戶列表" },
       { id: 4, name: "角色管理" },
     ],
   },
@@ -125,5 +125,5 @@ flattenMenu(menuTree);
 
 - 日常開發：`flat(Infinity)` 最簡潔（確認目標環境支持）
 - 需要相容舊瀏覽器：遞歸 reduce 方式
-- 隻有整數：`toString().split(',').map(Number)` 也行
+- 只有整數：`toString().split(',').map(Number)` 也行
 - 樹形數據到平鋪列表：用遞歸，處理 `children`

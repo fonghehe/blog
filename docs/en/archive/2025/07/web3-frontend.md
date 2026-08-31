@@ -2,10 +2,10 @@
 title: "Web3 Frontend in 2025: Current State and Trends"
 date: 2025-07-22 09:16:53
 tags:
-  - 前端
+  - Frontend
 readingTime: 2
 description: "The topic of Web3 frontend in 2025 — its current state and trends — has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article re-examines the landscape based on the latest versions."
-wordCount: 351
+wordCount: 202
 ---
 
 Web3 frontend development spans tooling, rendering patterns, and data-handling practices. This article walks through practical, production-proven approaches to building and optimizing Web3 frontends.

@@ -5,10 +5,10 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 9 的 RC 阶段已进入最后冲刺，正式版预计 2020 年 2 月发布。相比 Angular 8 中 Ivy 只能 opt-in，Angular 9 将 Ivy 作为默认渲染引擎，同时 AOT 编译也将成为默认模式。在 RC 期间我们提前摸清这些变化非常有价值。"
-wordCount: 428
+wordCount: 433
 ---
 
-Angular 9 的 RC 阶段已进入最后冲刺，正式版预计 2020 年 2 月发布。相比 Angular 8 中 Ivy 只能 opt-in，Angular 9 将 Ivy 作为默认渲染引擎，同时 AOT 编译也将成为默认模式。在 RC 期间我们提前摸清这些变化非常有价值。
+Angular 9 的 RC 阶段已进入最后冲刺，正式版预计 2020 年 2 月发布。相比 Angular 8 中 Ivy 只能 opt-in，Angular 9 将 Ivy 作为默认渲染引擎，同时 AOT 编译也将成为默认模式。趁 RC 阶段提前摸清这些变化，正式升级时会顺利很多。
 
 ## 为什么 Ivy 是一次质的飞跃
 
@@ -120,7 +120,7 @@ RC 中 `@ViewChild` 和 `@ContentChild` 必须显式声明 `static`：
 
 **第三方库兼容性**
 
-Ivy 使用 `ngcc`（Angular Compatibility Compiler）在安装时自动转换未适配 Ivy 的库。大多数情况自动处理，但如果遇到问题可手动运行：
+Ivy 使用 `ngcc`（Angular Compatibility Compiler）在安装时自动转换未适配 Ivy 的库。大多数情况下能自动处理，但如果遇到问题可手动运行：
 
 ```bash
 node_modules/.bin/ngcc

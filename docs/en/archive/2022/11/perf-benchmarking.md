@@ -4,11 +4,11 @@ date: 2022-11-17 11:47:33
 tags:
   - Frontend
 readingTime: 2
-description: "前端性能基准测试 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 214
+description: "Frontend performance benchmarking is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 199
 ---
 
-前端性能基准测试 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Frontend performance benchmarking is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
 
 ## Basic Usage
 
@@ -41,7 +41,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Usage
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -154,4 +154,4 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- 前端性能基准测试不是银弹，需要根据项目规模和技术栈选择
+- Frontend performance benchmarking is not a silver bullet — choose based on your project scale and tech stack

@@ -5,10 +5,10 @@ tags:
   - 测试
 readingTime: 2
 description: "在日常开发中，MSW Mock Service Worker 接口模拟的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 295
+wordCount: 275
 ---
 
-在日常开发中，MSW Mock Service Worker 接口模拟的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+在日常开发中，用 MSW（Mock Service Worker）做接口模拟的频率越来越高。本文系统地讲解其用法、原理和优化策略。
 
 ## 快速上手
 
@@ -36,11 +36,11 @@ describe('LoginForm', () => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要看具体场景，不是所有情况都值得过度优化。
 
 ## 内部原理
 
-我们可以通过以下方式来改进：
+我们可以用下面的方式改进：
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -58,11 +58,11 @@ test.describe('用户登录流程', () => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已在线上稳定运行半年多，经过了实战验证。
 
 ## 业务实战
 
-先来看基本的实现方式：
+先看看基础实现：
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -86,11 +86,11 @@ describe('LoginForm', () => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+这段代码是基础用法。真实项目里还要考虑错误处理和边界条件。
 
 ## 性能对比
 
-在这个基础上，我们可以进一步优化：
+在此基础上，还能进一步优化：
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -108,7 +108,7 @@ test.describe('用户登录流程', () => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种模式在大型项目里很实用，能明显降低维护成本。
 
 ## 小结
 

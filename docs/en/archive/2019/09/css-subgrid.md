@@ -1,18 +1,18 @@
 ---
-title: "CSS Subgrid Layout: 规范解读 & 早期Experiment"
+title: "CSS Subgrid Layout: Spec Walkthrough and Early Experiments"
 date: 2019-09-25 16:21:47
 tags:
   - CSS
-readingTime: 2
-description: "关于CSS Subgrid 子网格布局，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 297
+readingTime: 1
+description: "When it comes to CSS Subgrid, many developers only operate at the API-call level. This article tries to look at the practical problems and solutions you'll actually run into from a production-environment perspective."
+wordCount: 185
 ---
 
-关于CSS Subgrid 子网格布局，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to CSS Subgrid, many developers only operate at the API-call level. This article tries to look at the practical problems and solutions you'll actually run into from a production-environment perspective.
 
 ## Basic Principles
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```css
 .container {
@@ -35,11 +35,11 @@ wordCount: 297
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to be tailored to the specific scenario—not every case calls for over-optimization.
 
 ## Advanced Features
 
-我们可以通过以下方式来改进：
+We can improve things in the following ways:
 
 ```css
 :root {
@@ -62,11 +62,11 @@ wordCount: 297
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been proven in real use.
 
 ## Project Practice
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```css
 .container {
@@ -89,11 +89,11 @@ wordCount: 297
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you also need to account for error handling and edge cases.
 
 ## Best Practices
 
-在这个基础上，我们可以进一步优化：
+Building on that, we can optimize further:
 
 ```css
 :root {
@@ -116,11 +116,11 @@ wordCount: 297
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and can significantly reduce maintenance costs.
 
 ## Summary
 
-- CSS Subgrid 子网格布局不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- CSS Subgrid is not a silver bullet; choose it based on project scale and tech stack.
+- Understanding the underlying principles matters more than memorizing the API.
+- Always validate compatibility before using it in production.
+- In team collaboration, conventions and documentation matter more than the technology itself.

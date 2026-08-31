@@ -4,15 +4,15 @@ date: 2022-01-25 10:22:21
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 4.6 was released in February 2022, with the biggest highlight being enhanced control flow analysis——现在可以在构造函数的 super() 调用之前引用 this。这个看似小的改进，解决了很多实际编码"
-wordCount: 274
+description: "TypeScript 4.6 shipped in February 2022, and its highlight is improved control flow analysis — you can now reference this before the super() call in constructors. This seemingly small improvement fixes a lot of annoying problems in real code."
+wordCount: 199
 ---
 
-TypeScript 4.6 was released in February 2022, with the biggest highlight being enhanced control flow analysis——现在可以在构造函数的 super() 调用之前引用 this。这个看似小的改进，解决了很多实际编码中的烦人问题。
+TypeScript 4.6 was released in February 2022, and its biggest highlight is enhanced control flow analysis—you can now reference `this` before the `super()` call in a constructor. This seemingly small improvement resolves many annoying issues in everyday coding.
 
 ## this Before super in Constructor
 
-以前这样写会报错：
+Previously, this would throw an error:
 
 ```typescript
 class Base {
@@ -62,7 +62,7 @@ function area(shape: Shape) {
 }
 ```
 
-更好的写法：
+A better approach:
 
 ```typescript
 function area(shape: Shape) {
@@ -76,7 +76,7 @@ function area(shape: Shape) {
 }
 ```
 
-现在 TypeScript 能理解 `const { kind } = shape` 之后 shape 的类型仍然有效。
+TypeScript now understands that the type of `shape` remains valid after `const { kind } = shape`.
 
 ## Depth Limit for Recursive Type References
 
@@ -98,7 +98,7 @@ type Prev<N extends number> = N extends 1 ? 0
 type Result = DeepNest<string, 20>; // OK
 ```
 
-## ES2022 的 Error Cause
+## ES2022 Error Cause
 
 ```typescript
 function parseConfig(json: string) {
@@ -117,9 +117,9 @@ try {
 }
 ```
 
-TypeScript 4.6 原生支持 `ErrorOptions.cause`，不需要额外的类型声明。
+TypeScript 4.6 natively supports `ErrorOptions.cause`, with no extra type declarations needed.
 
-## 类型参数的推断改进
+## Improved Type Parameter Inference
 
 ```typescript
 declare function pipe<A, B, C>(
@@ -137,7 +137,7 @@ const result = pipe(
 // result: string ✅
 ```
 
-## 实际项目中的收益
+## Benefits in Real Projects
 
 ```typescript
 // 典型的 Express 中间件模式
@@ -169,4 +169,4 @@ const createUser = validate<{ name: string; email: string }>(
 
 ## Summary
 
-TypeScript 4.6 的改进虽然不像 4.7 那样带来 ESM 支持的大变革，但控制流分析的增强让日常编码更顺畅。特别是解构不再破坏类型收窄，这个改进每天都能感受到。建议尽快升级，配合 strict 模式使用效果最佳。
+Although TypeScript 4.6's improvements don't bring the kind of major shift that ESM support did in 4.7, the enhanced control flow analysis makes everyday coding smoother. In particular, destructuring no longer breaks type narrowing—a fix you'll feel every day. It's worth upgrading soon; using it together with strict mode yields the best results.

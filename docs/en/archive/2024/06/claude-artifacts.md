@@ -4,8 +4,8 @@ date: 2024-06-03 14:37:14
 tags:
   - Engineering
 readingTime: 2
-description: "Claude Artifacts 开发工作流 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on r"
-wordCount: 231
+description: "The Claude Artifacts development workflow is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 203
 ---
 
 Claude Artifacts 开发工作流 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real project experience.
@@ -127,7 +127,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 This approach improves both testability and scalability of the code.
 
-## 常见陷阱
+## Common Pitfalls
 
 Here is a complete example:
 
@@ -160,8 +160,8 @@ Pay attention to edge case handling — this is critical in production environme
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- Understanding the underlying principles matters more than memorizing APIs
+- Always verify compatibility thoroughly before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on community trends; technical approaches need continuous iteration
+- Don't adopt new technology just for the sake of it

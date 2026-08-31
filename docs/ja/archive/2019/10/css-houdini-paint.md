@@ -3,16 +3,16 @@ title: "CSS Houdini Paint API の探索"
 date: 2019-10-03 15:32:59
 tags:
   - CSS
-readingTime: 4
+readingTime: 6
 description: "CSS Houdini 是 W3C 提出的一组底层 CSS API，它让开发者可以直接接入 CSS 渲染引擎的各个阶段。其中 Paint API 是目前浏览器支持度最好的一个，它允许我们用 JavaScript 绘制自定义的 CSS 图案，替代传统的背景图方案。"
-wordCount: 713
+wordCount: 1126
 ---
 
-CSS Houdini 是 W3C 提出的一组底层 CSS API，它让开发者可以直接接入 CSS 渲染引擎的各个阶段。其中 Paint API 是目前浏览器支持度最好的一个，它允许我们用 JavaScript 绘制自定义的 CSS 图案，替代传统的背景图方案。
+CSS Houdini は W3C が提案した一連の低レベル CSS API であり、開発者が CSS レンダリングエンジンの各段階に直接介入できるようにします。中でも Paint API は現在ブラウザでの対応が最も進んでおり、JavaScript を用いて独自の CSS パターンを描画し、従来の背景画像を置き換えることができます。
 
 ## CSS Paint APIとは何か
 
-传统方式下，如果我们想实现一个复杂的背景效果（比如渐变网格、波浪线、动态斑点），要么用 CSS 渐变拼凑，要么用图片，要么用 SVG。CSS Paint API 提供了第四种方案：用 JavaScript 编写绘制逻辑，然后像 CSS 函数一样直接调用。
+従来、複雑な背景エフェクト（グラデーションの格子模様、波線、動的な斑点など）を実現するには、CSS のグラデーションを組み合わせるか、画像を使うか、SVG を使うかのいずれかでした。CSS Paint API は第 4 のアプローチを提供します。JavaScript で描画ロジックを記述し、あたかも CSS の関数のように直接呼び出せるようになるのです。
 
 ```css
 /* 传统方式 */
@@ -26,15 +26,15 @@ CSS Houdini 是 W3C 提出的一组底层 CSS API，它让开发者可以直接�
 }
 ```
 
-核心概念包括：
+中心的な概念は以下のとおりです：
 
-- **Worklet**：运行在独立线程中的轻量级 JS 模块
-- **registerPaint()**：注册一个绘制处理器
-- **paint()**：实际的绘制回调函数
+- **Worklet**：独立したスレッドで動作する軽量な JS モジュール
+- **registerPaint()**：描画ハンドラを登録する
+- **paint()**：実際の描画コールバック関数
 
 ## ブラウザサポートと検出
 
-截至目前，Chrome 65+ 已经完整支持 Paint API，Edge 基于 Chromium 也支持，Firefox 和 Safari 暂未默认开启。
+現時点では、Chrome 65 以降で Paint API が完全にサポートされており、Chromium ベースの Edge でも利用できます。Firefox と Safari はまだデフォルトでは有効になっていません。
 
 ```js
 // 检测浏览器支持
@@ -45,7 +45,7 @@ if ('paintWorklet' in CSS) {
 }
 ```
 
-可以使用 [css-paint-polyfill](https://github.com/GoogleChromeLabs/css-paint-polyfill) 做兼容：
+互換性のために [css-paint-polyfill](https://github.com/GoogleChromeLabs/css-paint-polyfill) を利用できます：
 
 ```html
 <script src="https://unpkg.com/css-paint-polyfill"></script>
@@ -53,7 +53,7 @@ if ('paintWorklet' in CSS) {
 
 ## 最初のPaint Workletを登録する
 
-创建一个独立的 JS 文件作为 Worklet，在其中使用 `registerPaint` 注册绘制器。Worklet 中可以使用的绘图 API 是 Canvas 2D API 的一个子集：
+独立した JS ファイルを Worklet として作成し、その中で `registerPaint` を使って描画器を登録します。Worklet 内で使用できる描画 API は、Canvas 2D API のサブセットです：
 
 ```js
 // worklets/dots.js
@@ -88,7 +88,7 @@ class DotsPainter {
 registerPaint('dots', DotsPainter);
 ```
 
-在页面中加载 Worklet：
+ページに Worklet を読み込みます：
 
 ```js
 // 主线程中注册
@@ -97,7 +97,7 @@ if ('paintWorklet' in CSS) {
 }
 ```
 
-然后就可以在 CSS 中使用了：
+これで CSS から利用できるようになります：
 
 ```css
 .dot-box {
@@ -112,7 +112,7 @@ if ('paintWorklet' in CSS) {
 
 ## inputPropertiesでCSS変数に反応する
 
-Paint API 最强大的地方在于它可以读取 CSS 自定义属性（CSS Variables），这意味着绘制行为可以完全由 CSS 控制：
+Paint API の最も強力な点は、CSS カスタムプロパティ（CSS Variables）を読み取れることです。つまり、描画の振る舞いを CSS だけで完全に制御できるようになります：
 
 ```js
 class GradientWavePainter {
@@ -149,7 +149,7 @@ class GradientWavePainter {
 registerPaint('wave', GradientWavePainter);
 ```
 
-CSS 部分：
+CSS の部分は以下のようになります：
 
 ```css
 .wave-section {
@@ -163,7 +163,7 @@ CSS 部分：
 
 ## 実践：カスタム枠線描画器
 
-一个常见的需求是自定义边框样式，比如锯齿边框：
+よくある要望の一つが、ジグザグのようなカスタム枠線スタイルです：
 
 ```js
 class ZigzagPainter {
@@ -205,7 +205,7 @@ registerPaint('zigzag', ZigzagPainter);
 
 ## アニメーション効果の実装
 
-Worklet 运行在独立线程，不能直接访问 DOM 或使用 `requestAnimationFrame`。动画需要在主线程中通过修改 CSS 变量来触发重绘：
+Worklet は独立したスレッドで動作しており、DOM に直接アクセスしたり `requestAnimationFrame` を使ったりすることはできません。アニメーションを行うには、メインスレッド側で CSS 変数を変更して再描画を引き起こす必要があります：
 
 ```js
 // 主线程代码
@@ -261,7 +261,7 @@ class SkeletonPainter {
 registerPaint('skeleton', SkeletonPainter);
 ```
 
-配合主线程动画：
+メインスレッドのアニメーションと組み合わせます：
 
 ```js
 CSS.paintWorklet.addModule('/worklets/skeleton.js');
@@ -284,18 +284,18 @@ function startSkeletonAnimation() {
 
 | 特性 | Paint API | Canvas |
 |------|-----------|--------|
-| 运行线程 | Worklet 线程 | 主线程 |
-| 与 CSS 集成 | 天然集成，可直接用作 background | 需要手动设置 |
-| 响应式 | 自动随元素尺寸变化 | 需要手动监听 resize |
-| DOM 访问 | 不可访问 | 可访问 |
-| 事件处理 | 不支持 | 支持 |
+| 実行スレッド | Worklet スレッド | メインスレッド |
+| CSS との統合 | CSS に自然に統合され、background として直接利用可能 | 手動での設定が必要 |
+| レスポンシブ | 要素のサイズ変化に自動追従 | resize の手動監視が必要 |
+| DOM アクセス | 不可 | 可 |
+| イベント処理 | 非対応 | 対応 |
 
 ## まとめ
 
-- CSS Paint API 是 Houdini 规范中最成熟的模块，Chrome 已完整支持
-- 通过 `registerPaint()` 注册绘制器，用 Canvas 2D 子集 API 绘制
-- `inputProperties` 可以读取 CSS 自定义属性，实现声明式控制
-- Worklet 运行在独立线程，不会阻塞主线程
-- 适合用于背景图案、边框装饰、占位图等纯视觉效果
-- 动画需要在主线程修改 CSS 变量来触发重绘
-- 可以通过 css-paint-polyfill 做降级兼容
+- CSS Paint API は Houdini 仕様の中で最も成熟したモジュールであり、Chrome ですでに完全サポートされている
+- `registerPaint()` で描画器を登録し、Canvas 2D のサブセット API で描画する
+- `inputProperties` で CSS カスタムプロパティを読み取り、宣言的な制御を実現できる
+- Worklet は独立したスレッドで動作するため、メインスレッドをブロックしない
+- 背景パターン、枠線装飾、プレースホルダーなどの純粋な視覚効果に適している
+- アニメーションはメインスレッドで CSS 変数を変更して再描画をトリガーする必要がある
+- css-paint-polyfill を使ってフォールバック互換に対応できる

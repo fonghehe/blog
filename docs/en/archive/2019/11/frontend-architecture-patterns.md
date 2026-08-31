@@ -4,17 +4,17 @@ date: 2019-11-27 15:35:01
 tags:
   - Frontend
 readingTime: 4
-description: "随着前端项目的复杂度不断增长，架构设计变得越来越重要。本文总结了前端开发中常见的架构模式，包括组件架构、状态管理、数据流、目录组织等方面的最佳实践，帮助开发者在项目初期做出更好的技术决策。"
-wordCount: 513
+description: "As front-end projects grow in complexity, architecture design becomes increasingly important. This article summarizes common architectural patterns in front-end development—covering component architecture, state management, data flow, and directory organization—to help you make better technical decisions early in a project."
+wordCount: 271
 ---
 
-随着前端项目的复杂度不断增长，架构设计变得越来越重要。本文总结了前端开发中常见的架构模式，包括组件架构、状态管理、数据流、目录组织等方面的最佳实践，帮助开发者在项目初期做出更好的技术决策。
+As front-end projects grow in complexity, architecture design becomes increasingly important. This article summarizes common architectural patterns in front-end development—covering component architecture, state management, data flow, and directory organization—to help you make better technical decisions early in a project.
 
 ## Component Architecture
 
-### 原子设计（Atomic Design）
+### Atomic Design
 
-原子设计将 UI 组件分为五个层级：
+Atomic design divides UI components into five levels:
 
 ```
 Atoms（原子） → Molecules（分子） → Organisms（有机体） → Templates（模板） → Pages（页面）
@@ -73,7 +73,7 @@ function Header() {
 }
 ```
 
-### 容器组件与展示组件
+### Container and Presentational Components
 
 ```tsx
 // 展示组件：只负责渲染，通过 props 接收数据
@@ -125,9 +125,9 @@ function UserListContainer() {
 
 ## State Management Architecture
 
-### 单一数据源
+### Single Source of Truth
 
-所有应用状态集中在一个 Store 中：
+All application state lives in a single store:
 
 ```js
 // Redux 风格
@@ -148,9 +148,9 @@ const store = {
 };
 ```
 
-### 状态分层
+### Layered State
 
-将状态按作用域分层：
+Layered state by scope:
 
 ```
 ┌─────────────────────────────────────────┐
@@ -182,7 +182,7 @@ const [inputValue, setInputValue] = useState('');
 
 ## Directory Organization Patterns
 
-### 按功能组织（Feature-based）
+### Feature-Based Organization
 
 ```
 src/
@@ -226,12 +226,12 @@ src/
 └── index.js
 ```
 
-优点：
-- 相关代码集中在一起，修改某个功能时不需要在多个目录间跳转
-- 功能模块边界清晰，方便做代码分割
-- 新人容易理解功能的范围
+Advantages:
+- Related code lives together, so you don't jump between directories to change a feature
+- Clear module boundaries make code splitting easy
+- Newcomers can quickly grasp the scope of a feature
 
-### 按类型组织（Type-based）
+### Type-Based Organization
 
 ```
 src/
@@ -250,13 +250,13 @@ src/
 └── styles/
 ```
 
-优点：
-- 目录结构简单，适合小型项目
-- 通用组件一目了然
+Advantages:
+- Simple structure, suited to small projects
+- Shared components are easy to find at a glance
 
 ## Data Flow Patterns
 
-### Flux 单向数据流
+### Flux Unidirectional Data Flow
 
 ```
 Action → Dispatcher → Store → View
@@ -264,7 +264,7 @@ Action → Dispatcher → Store → View
   └──────── 用户交互触发 ─────────┘
 ```
 
-在 React + Redux 中：
+In React + Redux:
 
 ```jsx
 // View 触发 Action
@@ -287,9 +287,9 @@ function ItemList() {
 }
 ```
 
-### CQRS 模式（命令查询分离）
+### CQRS (Command Query Responsibility Segregation)
 
-将读操作和写操作分离：
+Separate read operations from write operations:
 
 ```js
 // 查询（Query）：获取数据
@@ -314,7 +314,7 @@ const commands = {
 
 ## Modularization and Code Splitting
 
-### 路由级分割
+### Route-Level Splitting
 
 ```jsx
 import React, { lazy, Suspense } from 'react';
@@ -336,7 +336,7 @@ function App() {
 }
 ```
 
-### 组件级分割
+### Component-Level Splitting
 
 ```jsx
 // 按需加载重型组件
@@ -356,7 +356,7 @@ function ArticleEditor() {
 
 ## Error Handling Architecture
 
-### 错误边界
+### Error Boundaries
 
 ```jsx
 class ErrorBoundary extends React.Component {
@@ -385,7 +385,7 @@ class ErrorBoundary extends React.Component {
 </ErrorBoundary>
 ```
 
-### 全局错误处理
+### Global Error Handling
 
 ```js
 // 未捕获的异常
@@ -456,11 +456,11 @@ describe('用户登录', () => {
 
 ## Summary
 
-- 组件架构采用原子设计或容器/展示组件分离，提高复用性和可维护性
-- 状态管理按作用域分层：全局状态用 Redux/Context，页面状态用 URL，组件状态用 useState
-- 目录组织推荐按功能（feature-based）划分，相关代码集中管理
-- 数据流遵循单向流动，Flux 模式是主流方案
-- 代码分割按路由和组件粒度进行，减少首屏加载体积
-- 错误处理需要多层防护：错误边界、全局捕获、API 拦截
-- 测试策略遵循金字塔模型：单元测试为主，E2E 测试覆盖关键路径
-- 没有一成不变的架构，应根据项目规模和团队情况选择合适的模式
+- Use atomic design or container/presentational separation to improve reuse and maintainability
+- Layer state by scope: global state with Redux/Context, page state with the URL, component state with useState
+- Organize directories by feature so related code stays together
+- Keep data flow unidirectional; the Flux pattern is the mainstream approach
+- Split code at the route and component level to shrink the initial load
+- Defend errors on multiple layers: error boundaries, global capture, and API interception
+- Follow the testing pyramid: mostly unit tests, with E2E covering critical paths
+- There is no one-size-fits-all architecture; pick a pattern based on project size and team context

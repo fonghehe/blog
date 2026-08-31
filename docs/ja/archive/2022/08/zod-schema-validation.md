@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "Zod TypeScript Schema 校验のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 395
+wordCount: 442
 ---
 
 Zod TypeScript Schema 校验のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -36,7 +36,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理やエッジケースへの対応も必要になる。
 
 ## 高度な使い方
 
@@ -75,7 +75,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ## 実践事例
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -140,4 +140,4 @@ class TypedEmitter<T extends Record<string, any>> {
 
 - 新しい技術を使うためだけに新しい技術を使わないでください
 - コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- Zod TypeScript Schema 校验不是银弹，需要根据项目规模和技术栈选择
+- Zod TypeScript Schema 校验 は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある

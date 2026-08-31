@@ -5,9 +5,10 @@ tags:
   - React
   - 設計模式
   - TypeScript
+  - JavaScript
 readingTime: 2
 description: "React 常用設計模式彙總這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 366
+wordCount: 364
 ---
 
 React 常用設計模式彙總這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -118,7 +119,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 避坑指南
 

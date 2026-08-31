@@ -4,7 +4,7 @@ date: 2023-07-17 11:13:50
 tags:
   - Frontend
 readingTime: 1
-description: "在日常开发中，Passkeys 无密码认证推广实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+description: "Rolling out passwordless authentication with passkeys is showing up in more and more everyday work. This article systematically covers the practice, rationale, and strategies."
 wordCount: 184
 ---
 

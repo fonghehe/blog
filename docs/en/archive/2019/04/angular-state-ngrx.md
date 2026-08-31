@@ -66,4 +66,4 @@ export const selectUsers = createSelector(
 this.users$ = this.store.select(selectUsers);
 ```
 
-NgRx has a steep learning curve, but in large team collaboration projects it significantly improves code maintainability.
+NgRx has a steep learning curve, but in large, collaborative team projects it significantly improves code maintainability.

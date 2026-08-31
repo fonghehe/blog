@@ -5,9 +5,9 @@ tags:
   - Web3
   - Ethereum
   - DeFi
-readingTime: 15
+readingTime: 8
 description: "From balance queries to approval transfers, a comprehensive guide to ERC-20 token frontend interaction patterns and engineering practices"
-wordCount: 4200
+wordCount: 478
 ---
 
 ## ERC-20 Standard Interface Review

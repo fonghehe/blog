@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "在日常开发中，React Query 服务端状态管理 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 205
+description: "React Query for server-state management is showing up in more and more everyday code. This article systematically covers its usage, internals, and optimization strategies."
+wordCount: 187
 ---
 
-在日常开发中，React Query 服务端状态管理 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In day-to-day development, React Query's server-state management is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -161,4 +161,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- React Query 服务端状态管理不是银弹，需要根据项目规模和技术栈选择
+- React Query's server-state management isn't a silver bullet; choose it based on your project's scale and tech stack.

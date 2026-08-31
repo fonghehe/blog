@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "隨着 Angular 應用複雜度提升，如何合理劃分組件職責變得越來越重要。Smart/Dumb（也叫 Container/Presentational）組件模式是目前最主流的 Angular 組件設計思路。"
-wordCount: 332
+wordCount: 331
 ---
 
 隨着 Angular 應用複雜度提升，如何合理劃分組件職責變得越來越重要。Smart/Dumb（也叫 Container/Presentational）組件模式是目前最主流的 Angular 組件設計思路。
@@ -21,12 +21,12 @@ wordCount: 332
 
 **Dumb 組件（展示組件）**
 
-- 隻負責渲染 UI
+- 只負責渲染 UI
 - 數據全來自 `@Input`
 - 通過 `@Output` 向上通知事件
 - 可複用、易測試
 
-## 示例：用户列表
+## 示例：用戶列表
 
 **Smart 組件：UserListContainerComponent**
 
@@ -86,7 +86,7 @@ export class UserListComponent {
 
 ## OnPush 策略的收益
 
-Dumb 組件使用 `ChangeDetectionStrategy.OnPush` 是標配。由於數據隻來自 `@Input`，Angular 隻需在輸入引用變化時才檢測變更，大幅減少不必要的重渲染：
+Dumb 組件使用 `ChangeDetectionStrategy.OnPush` 是標配。由於數據只來自 `@Input`，Angular 只在輸入引用變化時才檢測變更，大幅減少不必要的重渲染：
 
 ```typescript
 // 性能對比（100個列表項場景）

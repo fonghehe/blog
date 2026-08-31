@@ -7,21 +7,21 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "Angular 12 于 2021 年 5 月 26 日正式发布。这是一个里程碑版本：View Engine 正式退场，Ivy 成为唯一渲染引擎；Webpack 5 从实验性升级为默认构建工具。升级之后我们整理了一份完整的变化记录。"
-wordCount: 483
+description: "Angular 12 was officially released on May 26, 2021. It's a milestone release: View Engine is retired for good and Ivy becomes the only rendering engine, while Webpack 5 moves from experimental to the default build tool. After upgrading, we put together a complete rundown of what changed."
+wordCount: 351
 ---
 
-Angular 12 于 2021 年 5 月 26 日正式发布。这是一个里程碑版本：View Engine 正式退场，Ivy 成为唯一渲染引擎；Webpack 5 从实验性升级为默认构建工具。升级之后我们整理了一份完整的变化记录。
+Angular 12 was officially released on May 26, 2021. It's a milestone release: View Engine is retired for good and Ivy becomes the only rendering engine, while Webpack 5 moves from experimental to the default build tool. After upgrading, we put together a complete rundown of what changed.
 
-## View Engine 正式停用
+## View Engine Is Officially Retired
 
-Angular 12 中 `@angular/compiler` 不再包含 View Engine，`ngcc` 也不再需要（因为所有库都已用 Ivy 格式发布）。
+In Angular 12, `@angular/compiler` no longer includes View Engine, and `ngcc` is no longer needed (every library is now published in the Ivy format).
 
-**对开发者的影响**：
+**Impact on developers:**
 
-- 升级 Angular 12 后，项目需要所有依赖都是 Ivy 兼容版本
-- 使用旧版第三方库（未更新到 Angular 9+ 的）可能报错
-- `enableIvy: false` 配置不再有效
+- After upgrading to Angular 12, all of your project's dependencies must be Ivy-compatible.
+- Using older third-party libraries (those not yet updated to Angular 9+) may throw errors.
+- The `enableIvy: false` configuration is no longer valid.
 
 ## Webpack 5 Officially Becomes Default
 
@@ -33,7 +33,7 @@ ng new my-app  # 使用 Webpack 4
 ng new my-app  # 使用 Webpack 5（持久化缓存默认开启）
 ```
 
-**持久化缓存的实际效果**（中型项目测试）：
+**Real-world effect of the persistent cache** (tested on a medium-sized project):
 
 ```
 首次 ng serve：28s
@@ -41,15 +41,15 @@ ng new my-app  # 使用 Webpack 5（持久化缓存默认开启）
 修改一个组件后 ng serve：6s  ← 增量重建
 ```
 
-持久化缓存存储在 `.angular/cache` 目录，建议加入 `.gitignore`：
+The persistent cache is stored in the `.angular/cache` directory, so it's a good idea to add it to `.gitignore`:
 
 ```bash
 echo ".angular/cache" >> .gitignore
 ```
 
-## strictTemplates 成为新项目默认
+## strictTemplates Is Now the Default for New Projects
 
-Angular 12 开始，所有新项目默认启用 `strictTemplates`，无需 `--strict` flag：
+Starting with Angular 12, every new project enables `strictTemplates` by default — no `--strict` flag required:
 
 ```json
 // tsconfig.json（Angular 12 新项目默认配置）
@@ -62,9 +62,9 @@ Angular 12 开始，所有新项目默认启用 `strictTemplates`，无需 `--st
 }
 ```
 
-## Sass API 更新（重要！）
+## Sass API Update (Important!)
 
-Angular 12 升级了对 Sass 的支持，废弃旧版 Node Sass API，改用 Dart Sass 的现代 API：
+Angular 12 upgraded its Sass support, deprecating the legacy Node Sass API in favor of Dart Sass's modern API:
 
 ```bash
 # 之前：需要 node-sass（C++ 依赖，安装麻烦）
@@ -74,7 +74,7 @@ npm install node-sass
 npm install sass
 ```
 
-**迁移旧的 Sass 写法**：
+**Migrating old Sass syntax:**
 
 ```scss
 // ❌ 旧 API（已废弃）
@@ -90,11 +90,11 @@ npm install sass
 }
 ```
 
-`@use` 替代 `@import` 的好处：避免全局作用域污染，每个文件明确声明依赖。
+The benefit of `@use` over `@import`: it avoids polluting the global scope, since each file declares its dependencies explicitly.
 
-## Inline Sass（内联样式支持）
+## Inline Sass Support
 
-Angular 12 的 CLI 支持在组件里用 Sass 语法写内联样式：
+The Angular 12 CLI lets you write inline styles using Sass syntax inside components:
 
 ```typescript
 @Component({
@@ -115,7 +115,7 @@ Angular 12 的 CLI 支持在组件里用 Sass 语法写内联样式：
 export class ButtonComponent {}
 ```
 
-## ng build 默认生产模式
+## ng build Defaults to Production Mode
 
 ```bash
 # Angular 12 之前
@@ -127,7 +127,7 @@ ng build           # 生产模式（默认！）
 ng build --configuration development  # 开发模式
 ```
 
-这个改变防止了"忘记加 `--prod` 就发布了开发版本"的事故。
+This change prevents the common accident of shipping a development build because you forgot to pass `--prod`.
 
 ## Upgrading to Angular 12
 
@@ -140,7 +140,7 @@ ng update @angular/core@12 @angular/cli@12
 # 3. 更新 Sass 相关配置
 ```
 
-**注意**：如果依赖了未升级到 Ivy 的第三方库，升级可能失败。先用 `ng update --list` 检查：
+**Note**: if you depend on a third-party library that hasn't moved to Ivy yet, the upgrade may fail. Check first with `ng update --list`:
 
 ```bash
 ng update --list
@@ -149,4 +149,4 @@ ng update --list
 
 ## Summary
 
-Angular 12 的变化里，View Engine 退场是最有象征意义的——Ivy 时代正式开始。Webpack 5 默认开启让增量构建速度翻倍，`ng build` 默认生产模式则消除了一类常见的部署事故。这次升级对绝大多数项目来说是低风险的，推荐尽快跟进。
+Of all the Angular 12 changes, retiring View Engine is the most symbolic — the Ivy era has officially begun. Making Webpack 5 the default roughly doubles incremental build speed, and having `ng build` default to production mode eliminates a whole class of common deployment accidents. For the vast majority of projects this upgrade is low-risk, so we recommend adopting it soon.

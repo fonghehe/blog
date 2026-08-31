@@ -4,15 +4,15 @@ date: 2019-12-24 14:43:16
 tags:
   - JavaScript
 readingTime: 1
-description: "JavaScript 模块化演进史是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。"
-wordCount: 250
+description: "The evolution of JavaScript modules is something we run into constantly in day-to-day development. Drawing on real projects, this post shares concrete implementation approaches and lessons learned."
+wordCount: 164
 ---
 
-JavaScript 模块化演进史是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。
+The evolution of JavaScript modules is something we run into constantly in day-to-day development. Drawing on real projects, this post shares concrete implementation approaches and lessons learned.
 
 ## Basic Concepts
 
-先来看基本的用法：
+Let's start with the basic usage:
 
 ```javascript
 export default {
@@ -33,11 +33,11 @@ export default {
 }
 ```
 
-这种写法简洁明了，适合大多数场景。
+This style is concise and clear, and fits most scenarios.
 
 ## Deep Dive
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 export default {
@@ -61,11 +61,11 @@ export default {
 }
 ```
 
-实际项目中还需要考虑边界条件和异常处理。
+In real projects you also need to account for edge cases and error handling.
 
 ## Project Application
 
-下面是一个实际的例子：
+Here is a concrete example:
 
 ```javascript
 import React, { Component } from 'react'
@@ -93,11 +93,11 @@ class DataList extends Component {
 }
 ```
 
-这种模式在团队中推广后效果很好，维护成本明显降低。
+After this pattern was rolled out across the team, the results were very good and maintenance cost dropped noticeably.
 
 ## Common Issues
 
-我们可以通过以下方式实现：
+We can implement it in the following way:
 
 ```javascript
 import React, { Component } from 'react'
@@ -132,11 +132,11 @@ class Form extends Component {
 }
 ```
 
-注意上面代码中的性能细节，避免不必要的计算。
+Pay attention to the performance details in the code above and avoid unnecessary computation.
 
 ## Summary
 
-- JavaScript 模块化演进史的关键在于理解核心概念，不要停留在表面用法
-- 实际项目中根据场景选择合适的方案
-- 团队中统一约定比追求完美实现更重要
-- 持续学习和总结，保持技术敏感度
+- The key to JavaScript module evolution is understanding the core concepts, not stopping at surface-level usage
+- In real projects, choose the right approach for the situation
+- Consistent conventions across the team matter more than pursuing a perfect implementation
+- Keep learning and summarizing, and stay technically aware

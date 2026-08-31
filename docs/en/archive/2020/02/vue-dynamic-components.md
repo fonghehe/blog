@@ -4,15 +4,15 @@ date: 2020-02-07 17:08:14
 tags:
   - Vue
 readingTime: 3
-description: "动态组件和异步组件是构建复杂前端应用的两把利器。动态组件解决\"运行时决定渲染哪个组件\"的问题，异步组件解决\"按需加载组件代码\"的问题。两者结合使用，可以实现高度灵活的页面架构。"
-wordCount: 396
+description: "Dynamic components and async components are two powerful tools for building complex frontend applications. Dynamic components handle deciding which component to render at runtime, while async components handle loading component code on demand. Combined, they enable a highly flexible page architecture."
+wordCount: 245
 ---
 
-动态组件和异步组件是构建复杂前端应用的两把利器。动态组件解决"运行时决定渲染哪个组件"的问题，异步组件解决"按需加载组件代码"的问题。两者结合使用，可以实现高度灵活的页面架构。
+Dynamic components and async components are two powerful tools for building complex front-end applications. Dynamic components solve the problem of deciding which component to render at runtime, while async components solve the problem of loading component code on demand. Combined, they enable a highly flexible page architecture.
 
 ## Basic Usage of the component Tag
 
-`<component :is="...">` 允许根据数据动态切换渲染的组件。
+`<component :is="...">` lets you swap the rendered component dynamically based on data.
 
 ```vue
 {% raw %}
@@ -68,11 +68,11 @@ export default {
 {% endraw %}
 ```
 
-注意这里用 `shallowRef` 而非 `ref`。组件对象本身不需要深度响应式，用 `shallowRef` 可以避免对组件定义对象做不必要的 Proxy 包裹，性能更好。
+Note that we use `shallowRef` instead of `ref` here. A component object doesn't need deep reactivity, so `shallowRef` avoids wrapping the component definition in an unnecessary Proxy, which is better for performance.
 
 ## Caching State with keep-alive
 
-动态切换组件会导致状态丢失。用 `<keep-alive>` 缓存组件实例。
+Switching components dynamically causes state to be lost. Use `<keep-alive>` to cache component instances.
 
 ```vue
 <template>
@@ -109,11 +109,11 @@ export default {
 </script>
 ```
 
-`keep-alive` 的 `include` 接受组件名称数组或正则，`max` 限制最大缓存数量，防止内存泄漏。
+`keep-alive`'s `include` accepts an array of component names or a regex, and `max` caps the number of cached instances to prevent memory leaks.
 
-## 异步组件与 defineAsyncComponent
+## Async Components and `defineAsyncComponent`
 
-对于大型组件（富文本编辑器、地图、图表库），只在需要时加载可以显著减小首屏 bundle。
+For large components (rich-text editors, maps, chart libraries), loading them only when needed can significantly shrink the initial bundle.
 
 ```vue
 <template>
@@ -148,9 +148,9 @@ export default {
 </script>
 ```
 
-## 高级配置：超时与错误处理
+## Advanced Configuration: Timeout and Error Handling
 
-`defineAsyncComponent` 支持完整的加载生命周期控制。
+`defineAsyncComponent` supports full control over the loading lifecycle.
 
 ```javascript
 import { defineAsyncComponent, h } from 'vue'
@@ -195,9 +195,9 @@ const HeavyChart = defineAsyncComponent({
 })
 ```
 
-## 动态组件 + 异步组件：权限驱动的页面渲染
+## Dynamic + Async Components: Permission-Driven Page Rendering
 
-在后台管理系统中，不同角色看到的页面模块不同。
+In an admin dashboard, different roles see different page modules.
 
 ```javascript
 // utils/componentMap.js
@@ -233,7 +233,7 @@ export default {
 
 ## Summary
 
-- `<component :is>` 是动态渲染的核心，`shallowRef` 避免不必要的 Proxy 开销
-- `<keep-alive>` 缓存组件实例，`include` 和 `max` 控制缓存范围
-- `defineAsyncComponent` 实现组件级代码拆分，配合 `Suspense` 管理加载态
-- 生产环境中务必配置 `errorComponent` 和 `onError`，给用户优雅的降级体验
+- `<component :is>` is the core of dynamic rendering, and `shallowRef` avoids unnecessary Proxy overhead
+- `<keep-alive>` caches component instances, while `include` and `max` control the cache scope
+- `defineAsyncComponent` enables component-level code splitting, and pairs with `Suspense` to manage loading states
+- In production, always configure `errorComponent` and `onError` so users get a graceful fallback

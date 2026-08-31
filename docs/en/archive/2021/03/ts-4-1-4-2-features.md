@@ -5,11 +5,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "TypeScript 4.1 4.2 新特性汇总 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real p"
-wordCount: 213
+description: "A roundup of the new features in TypeScript 4.1 and 4.2, starting from real projects and digging into how they change daily development."
+wordCount: 206
 ---
 
-TypeScript 4.1 4.2 新特性汇总 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+A roundup of the new features in TypeScript 4.1 and 4.2 is becoming increasingly common in frontend development. This article dives into their core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -48,7 +48,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Usage
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more involved:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -176,5 +176,5 @@ This approach has been running stably in production for over six months and has 
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- TypeScript 4.1 4.2 新特性汇总不是银弹，需要根据项目规模和技术栈选择
+- A roundup of TypeScript 4.1 and 4.2's new features is not a silver bullet; choose based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs

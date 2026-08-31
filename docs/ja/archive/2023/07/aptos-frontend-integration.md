@@ -6,7 +6,7 @@ tags:
   - Blockchain
 readingTime: 12
 description: "Aptos は Diem の Move の血統を引き継ぎ、リソースモデルと並列実行に独自の設計を持っています。本記事では @aptos-labs/ts-sdk、Petra Wallet の統合と Move コントラクトのフロントエンドインタラクションの完全な方案を網羅します。"
-wordCount: 3000
+wordCount: 2104
 ---
 
 Aptos は元 Meta（Facebook）Diem プロジェクトのコアメンバーが設立した Layer 1 ブロックチェーンで、2022年10月にメインネットがローンチされました。Sui と同様に Aptos も Move 言語を使用しますが、両者の Move 実装には顕著な違いがあります。Aptos は Diem の Move 標準実装を保持し、Sui の Object モデルではなくリソース（Resource）モデルを採用しています。フロントエンド開発者にとって、Aptos の SDK 設計とウォレット統合方式も独自の体系を持っています。

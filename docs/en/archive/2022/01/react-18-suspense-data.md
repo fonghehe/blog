@@ -1,14 +1,14 @@
 ---
-title: "React 18 Suspense Data Fetching: Render-as-You-Fetch Mode初探"
+title: "React 18 Suspense Data Fetching: First Look at Render-as-You-Fetch"
 date: 2022-01-06 16:06:50
 tags:
   - React
 readingTime: 2
-description: "React 18 Suspense 数据获取This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fr"
-wordCount: 206
+description: "Suspense data fetching in React 18 has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 202
 ---
 
-React 18 Suspense 数据获取This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
+React 18 Suspense data fetching has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
 
 ## Getting Started
 

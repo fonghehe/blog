@@ -3,12 +3,12 @@ title: "GitHub Copilot Workspace: New Experience"
 date: 2023-06-12 16:06:08
 tags:
   - Frontend
-readingTime: 2
-description: "GitHub Copilot Workspace 新体验这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 203
+readingTime: 1
+description: "GitHub Copilot Workspace has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 179
 ---
 
-GitHub Copilot Workspace 新体验这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+GitHub Copilot Workspace has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
 
 ## Getting Started
 
@@ -120,7 +120,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- GitHub Copilot Workspace 新体验不是银弹，需要根据项目规模和技术栈选择
+- GitHub Copilot Workspace is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

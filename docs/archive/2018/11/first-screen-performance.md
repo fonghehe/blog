@@ -5,7 +5,7 @@ tags:
   - 性能优化
 readingTime: 2
 description: "首屏加载速度直接影响用户体验，公司项目优化了一轮，记录一下有效的手段。"
-wordCount: 284
+wordCount: 289
 ---
 
 首屏加载速度直接影响用户体验，公司项目优化了一轮，记录一下有效的手段。
@@ -18,7 +18,7 @@ wordCount: 284
 lighthouse https://yourdomain.com --output html --output-path ./report.html
 ```
 
-我们项目的主要问题：FCP 4.2s（应该 < 1.8s），主要原因：
+我们项目的主要问题在于：FCP 4.2s（达标值应 < 1.8s），具体表现在：
 
 - JS bundle 太大：main.js 2.4MB
 - 没有路由懒加载

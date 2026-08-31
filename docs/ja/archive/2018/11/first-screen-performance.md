@@ -5,14 +5,14 @@ tags:
   - パフォーマンス最適化
 readingTime: 2
 description: "初期表示の読み込み速度はユーザー体験に直接影響します。社内プロジェクトを一度最適化し、有効な手段を記録します。"
-wordCount: 461
+wordCount: 463
 ---
 
-初期表示の読み込み速度はユーザー体験に直接影響します。社内プロジェクトを一度最適化し、有効な手段を記録します。
+初期表示の読み込み速度はユーザー体験に直接影響する。社内プロジェクトを一度最適化し、有効な手段を記録する。
 
 ## 問題の診断
 
-最適化前に Lighthouse でスコアを確認してボトルネックを見つけます：
+最適化前に Lighthouse でスコアを確認してボトルネックを見つける：
 
 ```bash
 lighthouse https://yourdomain.com --output html --output-path ./report.html
@@ -38,7 +38,7 @@ const routes = [
 ];
 ```
 
-効果：main.js が 2.4MB から 380KB に削減、FCP が最大改善。
+効果：main.js が 2.4MB から 380KB に削減され、FCP が最大限に改善された。
 
 ## 最適化 2：gzip/Brotli 圧縮
 
@@ -55,7 +55,7 @@ brotli_comp_level 6;
 brotli_types text/plain text/css application/javascript;
 ```
 
-ビルド時に圧縮ファイルを事前生成することもできます：
+ビルド時に圧縮ファイルを事前生成することもできる：
 
 ```javascript
 // webpack：compression-webpack-plugin
@@ -103,7 +103,7 @@ module.exports = {
 <link rel="prefetch" href="/js/dashboard.js" />
 ```
 
-Vue CLI 3 は遅延読み込みチャンクに対して自動的に prefetch タグを生成します。
+Vue CLI 3 は遅延読み込みチャンクに対して自動的に prefetch タグを生成する。
 
 ## 最適化 5：レンダリングブロッキングの削減
 

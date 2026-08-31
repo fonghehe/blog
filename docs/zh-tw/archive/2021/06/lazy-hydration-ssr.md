@@ -6,7 +6,7 @@ tags:
   - 性能優化
 readingTime: 2
 description: "SSR 懶水合 Lazy Hydration 策略在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 273
+wordCount: 271
 ---
 
 SSR 懶水合 Lazy Hydration 策略在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -70,7 +70,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## 實戰案例
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 :root {
@@ -93,7 +93,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 效能最佳化
 

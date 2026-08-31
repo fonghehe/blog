@@ -4,15 +4,15 @@ date: 2022-12-05 10:05:08
 tags:
   - Frontend
 readingTime: 2
-description: "前端 A/B 测试框架 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 198
+description: "Frontend A/B testing frameworks is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 187
 ---
 
-前端 A/B 测试框架 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Frontend A/B testing frameworks is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
 
 ## Getting Started
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -123,7 +123,7 @@ This approach has been running stably in production for over six months and has 
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- 前端 A/B 测试框架不是银弹，需要根据项目规模和技术栈选择
+- Frontend a/b testing frameworks is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

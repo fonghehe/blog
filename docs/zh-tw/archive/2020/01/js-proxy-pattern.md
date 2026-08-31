@@ -8,7 +8,7 @@ description: "在日常工作中經常用到JavaScript 代理模式實踐，整�
 wordCount: 246
 ---
 
-在日常工作中經常用到JavaScript 代理模式實踐，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。
+JavaScript 代理模式在日常開發中很常用，這裡整理成一篇系統性的總結，希望能幫助大家更好地理解與運用。
 
 ## 基礎概念
 
@@ -65,7 +65,7 @@ function createHandler(options = {}) {
 
 ## 實戰應用
 
-下面是一個實際的示例：
+下面是一個實際的範例：
 
 ```javascript
 // 核心實現

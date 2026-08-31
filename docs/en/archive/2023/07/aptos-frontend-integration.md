@@ -4,9 +4,9 @@ date: 2023-07-22 13:05:54
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 9
 description: "Aptos inherits Diem's Move lineage, with unique designs in resource models and parallel execution. This article covers the complete solution for @aptos-labs/ts-sdk, Petra Wallet integration, and Move contract frontend interactions."
-wordCount: 3000
+wordCount: 781
 ---
 
 Aptos is a Layer 1 blockchain founded by core members of Meta's (Facebook) former Diem project, which launched on mainnet. Like Sui, Aptos uses the Move language, but the two have significant differences in their Move implementations. Aptos retains Diem's standard Move implementation, adopting a Resource model rather than Sui's Object model. For frontend developers, Aptos's SDK design and wallet integration approach form a system of their own.

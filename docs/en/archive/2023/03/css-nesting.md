@@ -4,11 +4,11 @@ date: 2023-03-16 11:47:17
 tags:
   - CSS
 readingTime: 1
-description: "在日常开发中，CSS 原生嵌套浏览器支持 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 200
+description: "Browser support for native CSS nesting is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 184
 ---
 
-在日常开发中，CSS 原生嵌套浏览器支持 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+Browser support for native CSS nesting is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
 
 ## Quick Start
 
@@ -123,4 +123,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- CSS 原生嵌套浏览器支持不是银弹，需要根据项目规模和技术栈选择
+- Browser support for native css nesting is not a silver bullet — choose based on your project scale and tech stack

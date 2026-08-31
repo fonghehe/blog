@@ -4,11 +4,11 @@ date: 2025-11-22 18:56:33
 tags:
   - Frontend
 readingTime: 3
-description: "2025 年，\"前端平台工程\" 不再是大厂的专利。来聊聊中小团队如何建设自己的前端平台。"
-wordCount: 164
+description: "In 2025, frontend platform engineering is no longer the exclusive domain of big companies. Let's talk about how small and mid-sized teams can build their own frontend platforms."
+wordCount: 156
 ---
 
-2025 年，"前端平台工程" 不再是大厂的专利。来聊聊中小团队如何建设自己的前端平台。
+In 2025, frontend platform engineering is no longer the exclusive domain of big companies. Let's talk about how small and mid-sized teams can build their own frontend platforms.
 
 ## 什么是前端平台工程
 

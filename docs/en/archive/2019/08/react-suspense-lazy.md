@@ -4,24 +4,24 @@ date: 2019-08-05 11:29:50
 tags:
   - React
 readingTime: 5
-description: "随着单页应用规模不断膨胀，首屏加载的 JS bundle 体积越来越大。React 16.6 引入了 `React.lazy` 和 `Suspense`，让我们可以在不引入额外第三方库（如 react-loadable）的情况下实现代码分割。本文从实战角度出发，详细讲解如何在项目中落地这两个 API。"
-wordCount: 940
+description: "As single-page apps keep growing, the JavaScript bundle downloaded on first paint keeps getting bigger. React 16.6 introduced `React.lazy` and `Suspense`, letting us code-split without pulling in an extra third-party library like react-loadable. Taking a practical angle, this article explains how to put these two APIs to work in a real project."
+wordCount: 595
 ---
 
-随着单页应用规模不断膨胀，首屏加载的 JS bundle 体积越来越大。React 16.6 引入了 `React.lazy` 和 `Suspense`，让我们可以在不引入额外第三方库（如 react-loadable）的情况下实现代码分割。本文从实战角度出发，详细讲解如何在项目中落地这两个 API。
+As single-page apps keep growing, the JavaScript bundle downloaded on first paint keeps getting bigger. React 16.6 introduced `React.lazy` and `Suspense`, letting us code-split without pulling in an extra third-party library like react-loadable. Taking a practical angle, this article explains how to put these two APIs to work in a real project.
 
 ## Why Code Splitting Is Needed
 
-在一个典型的 React SPA 中，所有路由页面的代码最终会被打包成一个巨大的 JS 文件。用户打开首页时，需要下载并解析整个 bundle，包括他根本不会访问的页面代码。这造成了两个问题：
+In a typical React SPA, every route's code ends up bundled into one giant JS file. When a user opens the home page, they have to download and parse the entire bundle—including pages they'll never visit. That creates two problems:
 
-1. **首次加载时间过长** — 用户需要等待整个应用下载完成才能看到内容
-2. **浪费带宽** — 用户可能只访问了 20% 的页面，却下载了 100% 的代码
+1. **Longer initial load** — users wait for the whole app to download before they see anything.
+2. **Wasted bandwidth** — a user might visit only 20% of the pages but downloads 100% of the code.
 
-代码分割的核心思想：将代码按路由或功能拆分成多个 chunk，按需加载。
+The core idea of code splitting is to break the code into multiple chunks by route or feature, and load them on demand.
 
 ## React.lazy Basic Usage
 
-`React.lazy` 接受一个函数，该函数需要动态调用 `import()`，返回一个 Promise。它会自动解析为一个可以渲染的 React 组件。
+`React.lazy` takes a function that dynamically calls `import()` and returns a Promise. It resolves automatically into a renderable React component.
 
 ```jsx
 import React, { Suspense } from 'react';
@@ -46,13 +46,13 @@ function App() {
 }
 ```
 
-Webpack 在构建时会识别 `import()` 语法，自动将这些模块拆分成独立的 chunk 文件。
+At build time, Webpack recognizes the `import()` syntax and automatically splits these modules into separate chunk files.
 
 ## Suspense's fallback Mechanism
 
-`Suspense` 组件用于在懒加载组件还未就绪时展示一个 fallback UI。有几个关键点需要注意：
+The `Suspense` component shows a fallback UI while a lazily loaded component isn't ready yet. A few key points to note:
 
-### fallback 可以是任何 React 元素
+### The fallback Can Be Any React Element
 
 ```jsx
 <Suspense fallback={<Spinner />}>
@@ -73,7 +73,7 @@ Webpack 在构建时会识别 `import()` 语法，自动将这些模块拆分成
 </Suspense>
 ```
 
-### 多个 Suspense 边界可以嵌套
+### Multiple Suspense Boundaries Can Be Nested
 
 ```jsx
 function App() {
@@ -91,11 +91,11 @@ function App() {
 }
 ```
 
-外层 Suspense 捕获整个页面级别的加载状态，内层 Suspense 处理局部组件的加载。当内层的懒加载组件正在加载时，内层 fallback 生效，外层组件不受影响。
+The outer Suspense captures page-level loading state, while the inner Suspense handles local component loading. When an inner lazy component is loading, only the inner fallback shows; the outer component is unaffected.
 
 ## Route-Level Code Splitting
 
-这是最常见的代码分割场景，按路由拆分：
+This is the most common code-splitting scenario: splitting by route:
 
 ```jsx
 import React, { Suspense, lazy } from 'react';
@@ -138,9 +138,9 @@ function App() {
 }
 ```
 
-### 自定义 webpack chunk 名称
+### Customizing Webpack Chunk Names
 
-默认的 chunk 名称是一串数字，调试时不够直观。可以通过 magic comment 指定：
+By default, chunk names are a string of numbers, which isn't very readable when debugging. You can name them with a magic comment:
 
 ```jsx
 const HomePage = lazy(() => import(
@@ -154,11 +154,11 @@ const SettingsPage = lazy(() => import(
 ));
 ```
 
-这样打包后会生成 `home.chunk.js`、`settings.chunk.js`，方便排查问题。
+The build then produces `home.chunk.js` and `settings.chunk.js`, which makes debugging much easier.
 
 ## Component-Level Code Splitting
 
-除了路由级别，某些重量级组件也可以按需加载。比如一个图表库非常大，只有用户展开某个面板时才需要：
+Beyond route level, some heavy components can also be loaded on demand—for example, a large charting library that's only needed when the user expands a certain panel:
 
 ```jsx
 import React, { Suspense, useState } from 'react';
@@ -190,7 +190,7 @@ function Dashboard() {
 
 ## Handling Load Failures with Error Boundary
 
-网络请求可能失败，chunk 文件可能加载失败。我们需要一个错误边界来捕获这些异常：
+Network requests can fail, and chunk files can fail to load. We need an error boundary to catch these exceptions:
 
 ```jsx
 import React, { Component } from 'react';
@@ -242,7 +242,7 @@ function App() {
 
 ## Route Solution with Preloading
 
-用户 hover 到链接时就开始预加载，点击时组件已经就绪，体验更好：
+Start preloading when the user hovers a link, so the component is already ready by the time they click—a much smoother experience:
 
 ```jsx
 import React, { Suspense, lazy, useState } from 'react';
@@ -295,7 +295,7 @@ function App() {
 
 ## Webpack Configuration for React.lazy
 
-为了让代码分割更高效，建议在 Webpack 中配置 `splitChunks`：
+To make code splitting more effective, configure `splitChunks` in Webpack:
 
 ```js
 // webpack.config.js
@@ -321,11 +321,11 @@ module.exports = {
 };
 ```
 
-这样 vendor（react、react-dom 等）会被提取到单独的 chunk，并利用浏览器缓存。
+That extracts the vendor code (react, react-dom, etc.) into a separate chunk, which the browser can then cache.
 
 ## Verifying Split Results
 
-构建完成后，可以使用 source-map-explorer 或直接查看构建产物：
+After building, you can use source-map-explorer or inspect the build output directly:
 
 ```bash
 # 使用 source-map-explorer 分析
@@ -335,19 +335,19 @@ npx source-map-explorer build/static/js/*.js
 npx webpack-bundle-analyzer build/static/js/*.js
 ```
 
-在 Chrome DevTools 的 Network 面板中，切换路由时应该能看到新的 chunk 文件被按需加载。
+In the Chrome DevTools Network panel, switching routes should show new chunk files loaded on demand.
 
 ## Known Limitations
 
-1. **SSR 不支持** — `React.lazy` 不支持服务端渲染，SSR 场景需要使用 `@loadable/component`
-2. **嵌套 lazy 不生效** — 不能在 lazy 组件内部再嵌套 lazy 并期望 Suspense 捕获
-3. **错误处理需要额外代码** — Suspense 本身不处理加载错误，必须配合 Error Boundary
+1. **No SSR support** — `React.lazy` doesn't support server-side rendering; for SSR use `@loadable/component`.
+2. **Nested lazy doesn't work** — you can't nest a lazy component inside another lazy component and expect Suspense to catch it.
+3. **Error handling needs extra code** — Suspense itself doesn't handle load errors; you must pair it with an Error Boundary.
 
 ## Summary
 
-- `React.lazy` + `Suspense` 是 React 官方提供的代码分割方案，简单且无需额外依赖
-- 路由级别和组件级别都可以做代码分割，推荐从路由级别开始
-- 必须配合 Error Boundary 处理 chunk 加载失败的场景
-- 可以通过 `preload` 技巧在用户 hover 时提前加载，提升体验
-- SSR 项目暂不适用 React.lazy，需使用 `@loadable/component` 等替代方案
-- 合理配置 Webpack `splitChunks` 可以将公共依赖提取出来，进一步优化加载性能
+- `React.lazy` + `Suspense` is React's official, dependency-free code-splitting solution—simple to use.
+- You can split both by route and by component; start with route-level splitting.
+- Always pair it with an Error Boundary to handle failed chunk loads.
+- Use the `preload` trick to load early on hover and improve perceived performance.
+- React.lazy isn't suitable for SSR projects yet; use an alternative like `@loadable/component`.
+- A sensible Webpack `splitChunks` config extracts shared dependencies, further improving load performance.

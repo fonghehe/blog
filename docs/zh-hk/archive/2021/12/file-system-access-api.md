@@ -9,7 +9,7 @@ description: "在日常開發中，File System Access API 檔案操作的使用�
 wordCount: 326
 ---
 
-在日常開發中，File System Access API 文件操作的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
+在日常開發中，File System Access API 檔案操作的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
 
 ## 快速上手
 

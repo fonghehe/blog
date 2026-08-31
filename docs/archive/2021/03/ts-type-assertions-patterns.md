@@ -5,14 +5,14 @@ tags:
   - TypeScript
 readingTime: 2
 description: "关于TypeScript satisfies 操作符预览，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 336
+wordCount: 329
 ---
 
-关于TypeScript satisfies 操作符预览，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+关于 TypeScript 的 satisfies 操作符（目前还是预览特性），很多开发者还停留在简单调用的层面。本文试着从生产环境的角度，聊聊落地时可能遇到的问题和应对思路。
 
 ## 基本原理
 
-在这个基础上，我们可以进一步优化：
+在这个基础上继续优化：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -43,11 +43,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种写法在大型项目里很实用，能明显压低维护成本。
 
 ## 高级特性
 
-实际项目中的用法会更复杂一些：
+真实项目里的用法会更复杂一些：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -71,11 +71,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样抽一层之后，代码更好测，也更好扩展。
 
 ## 项目实践
 
-以下是一个完整的示例：
+看一个相对完整的例子：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -106,11 +106,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界情况要处理好，生产环境里这点很关键。
 
 ## 最佳实践
 
-关键在于理解核心逻辑：
+理解核心逻辑，剩下的就是怎么用：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -134,11 +134,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化得看具体场景，不是每处都值得过度优化。
 
 ## 踩坑记录
 
-我们可以通过以下方式来改进：
+可以从这几个角度入手改进：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -169,7 +169,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套写法已经在线上稳定跑了半年多，是经过实战检验的。
 
 ## 小结
 

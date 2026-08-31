@@ -5,24 +5,24 @@ tags:
   - Web3
   - Solidity
   - Smart Contract
-readingTime: 16
+readingTime: 8
 description: "從項目結構到 CI/CD 集成，構建生產級智能合約的 Hardhat 工程化實踐"
-wordCount: 4500
+wordCount: 768
 ---
 
 ## Hardhat vs Truffle：為什麼遷移
 
-Truffle 曾是以太坊開發工具的事實標準，但它在編譯速度、測試框架和 TypeScript 支持等方面顯現出明顯的侷限性。Truffle 的編譯速度慢、測試框架基於 web3.js（缺乏類型安全）、插件系統不夠靈活，且對 TypeScript 的支持不完善。
+Truffle 曾是以太坊開發工具的事實標準，但它在編譯速度、測試框架和 TypeScript 支援等方面顯現出明顯的侷限性。Truffle 的編譯速度慢、測試框架基於 web3.js（缺乏類型安全）、插件系統不夠靈活，且對 TypeScript 的支援不完善。
 
 Hardhat 在這幾個方面都做出了實質性改進：
 
 - **編譯速度**：Hardhat 使用 Rust 編寫的 solc 編譯器綁定，編譯速度比 Truffle 快 2-5 倍
-- **TypeScript 優先**：配置文件、測試腳本、部署腳本均原生支持 TypeScript
+- **TypeScript 優先**：配置文件、測試腳本、部署腳本均原生支援 TypeScript
 - **基於 ethers.js**：測試和腳本使用 ethers.js，類型安全且 API 更現代
-- **內置 Hardhat Network**：一個可調試的本地 EVM，支持 Solidity 堆棧跟蹤和 console.log
+- **內置 Hardhat Network**：一個可調試的本地 EVM，支援 Solidity 堆疊跟蹤和 console.log
 - **靈活的任務系統**：所有功能都是可組合的任務，插件可以擴展任務系統
 
-遷移決策的核心驅動力是開發效率。一個典型的 DeFi 項目有 20-50 個合約文件、上百個測試用例，編譯和測試的執行速度直接影響開發節奏。
+遷移決策的核心驅動力是開發效率。一個典型的 DeFi 項目有 20-50 個合約檔案、上百個測試用例，編譯和測試的執行速度直接影響開發節奏。
 
 ## Hardhat 項目結構
 
@@ -192,7 +192,7 @@ export class MyContract extends ethers.Contract {
 
 ### 部署腳本
 
-使用 hardhat-deploy 插件管理部署流程，支持部署順序控制和部署記錄：
+使用 hardhat-deploy 插件管理部署流程，支援部署順序控制和部署記錄：
 
 ```typescript
 // scripts/deploy/01_deploy_token.ts
@@ -470,7 +470,7 @@ describe('Exchange with Mock Token', () => {
 
 ### hardhat-deploy
 
-管理部署腳本和部署記錄，支持確定性部署（CREATE2）和多鏈部署管理：
+管理部署腳本和部署記錄，支援確定性部署（CREATE2）和多鏈部署管理：
 
 ```typescript
 // 確定性部署（跨鏈地址一致）
@@ -505,7 +505,7 @@ const deployResult = await deploy('MyContract', {
 npx hardhat coverage
 ```
 
-輸出 HTML 報告，顯示每個合約文件的行覆蓋率和分支覆蓋率。
+輸出 HTML 報告，顯示每個合約檔案的行覆蓋率和分支覆蓋率。
 
 ## 與前端項目的工程化集成
 

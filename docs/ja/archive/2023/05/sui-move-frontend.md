@@ -4,9 +4,9 @@ date: 2023-05-11 19:14:49
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 11
 description: "Sui は EVM の Account モデルではなく Object モデルを採用しており、フロントエンドのインタラクション方式が全く異なります。本記事では @mysten/sui.js SDK、ウォレット接続、Object 読み取りとトランザクション構築の完全なフローを網羅します。"
-wordCount: 3100
+wordCount: 1711
 ---
 
 Sui は Mysten Labs が開発した Layer 1 ブロックチェーンで、Move 言語と Object ベースのデータモデルを使用します。EVM チェーンの Account モデルとは異なり、Sui の各資産は独立した Object で、独自の ID と所有権を持ちます。このアーキテクチャの違いはフロントエンド開発の方法に直接的な影響を与えます——データの読み取りからトランザクションの構築まで、すべてを再理解する必要があります。

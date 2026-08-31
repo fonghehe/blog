@@ -4,11 +4,11 @@ date: 2020-08-04 17:33:04
 tags:
   - Frontend
 readingTime: 2
-description: "ES2020（ES11）规范已经正式发布，带来了几个非常实用的特性。在日常代码中用起来，能明显减少模板代码。"
-wordCount: 150
+description: "The ES2020 (ES11) specification brings several practical new features that noticeably reduce boilerplate in everyday JavaScript code."
+wordCount: 101
 ---
 
-ES2020（ES11）规范已经正式发布，带来了几个非常实用的特性。在日常代码中用起来，能明显减少模板代码。
+The ES2020 (ES11) specification has been officially released, bringing several very practical features. Using them in everyday code can noticeably reduce boilerplate.
 
 ## Optional Chaining (?. )
 
@@ -228,8 +228,8 @@ async function loadChart(type) {
 
 ## Summary
 
-- 可选链和空值合并是最实用的特性，日常代码每天都会用到
-- BigInt 处理大整数，适合数据库 ID、金融计算等场景
-- Promise.allSettled 解决批量请求中部分失败的需求
-- globalThis 统一了全局对象的访问方式
-- 这些特性在现代浏览器中都已支持，老项目可用 Babel 降级
+- Optional chaining and nullish coalescing are the most practical features — you'll reach for them every day
+- BigInt handles large integers, ideal for database IDs, financial calculations, and similar cases
+- Promise.allSettled addresses the need to handle partial failures across batch requests
+- globalThis unifies how the global object is accessed
+- These features are supported in all modern browsers; for legacy projects you can transpile down with Babel

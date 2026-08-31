@@ -5,7 +5,7 @@ tags:
   - ESLint
 readingTime: 2
 description: "ESLint Flat Config 新配置格式のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 411
+wordCount: 440
 ---
 
 ESLint Flat Config 新配置格式のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -36,7 +36,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理やエッジケースへの対応も必要になる。
 
 ## 高度な使い方
 
@@ -67,7 +67,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## 実践事例
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'

@@ -8,7 +8,7 @@ description: "上線後用户反饋\"頁面很慢\"，但我們沒有任何數�
 wordCount: 159
 ---
 
-上線後用户反饋"頁面很慢"，但我們沒有任何數據佐證。搭建了一套前端性能監控體系，終於能用數據説話了。
+上線後用戶反饋"頁面很慢"，但我們沒有任何數據佐證。搭建了一套前端效能監控體系，終於能用數據説話了。
 
 ## 核心指標
 
@@ -107,7 +107,7 @@ export class PerformanceMonitor {
       type: r.initiatorType,
       size: r.transferSize,
       duration: r.duration,
-    })).filter(r => r.duration > 100); // 隻記錄慢資源
+    })).filter(r => r.duration > 100); // 只記錄慢資源
   }
 
   // 上報數據
@@ -213,7 +213,7 @@ const reportHandler = async (req, res) => {
 ## 監控面板
 
 ```javascript
-// 簡單的性能概覽數據
+// 簡單的效能概覽數據
 const dashboard = {
   // 每日概覽
   overview: {
@@ -247,6 +247,6 @@ const alerts = [
 
 - Web Vitals 三個核心指標：LCP（加載）、FID（交互）、CLS（穩定）
 - 用 PerformanceObserver API 採集，sendBeacon 保證上報成功
-- 按頁面、網絡類型、瀏覽器等維度分析性能數據
-- 設置告警規則，性能劣化及時發現
-- 性能數據是優化的前提，沒有數據的優化是盲目的
+- 按頁面、網絡類型、瀏覽器等維度分析效能數據
+- 設置告警規則，效能劣化及時發現
+- 效能數據是優化的前提，沒有數據的優化是盲目的

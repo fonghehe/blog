@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular Material 是 Angular 官方出品的 Material Design UI 组件库，开箱即用、可访问性良好，适合快速构建企业管理系统。"
-wordCount: 170
+wordCount: 171
 ---
 
 Angular Material 是 Angular 官方出品的 Material Design UI 组件库，开箱即用、可访问性良好，适合快速构建企业管理系统。
@@ -155,4 +155,4 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 ## 总结
 
-Angular Material 覆盖了企业应用 90% 的 UI 需求，搭配 Angular CDK 能处理更复杂的交互场景。关键是建立一个共享的 `MaterialModule`，避免在各个 feature module 里重复引入。
+Angular Material 覆盖了企业应用 90% 的 UI 需求，搭配 Angular CDK 能处理更复杂的交互场景。关键是建立一个共享的 `MaterialModule`，避免在各个功能模块里重复引入。

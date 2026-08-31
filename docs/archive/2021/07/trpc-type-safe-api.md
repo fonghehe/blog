@@ -7,14 +7,14 @@ tags:
   - TypeScript
 readingTime: 2
 description: "tRPC 类型安全的 API 层这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 334
+wordCount: 328
 ---
 
-tRPC 类型安全的 API 层这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+tRPC 类型安全的 API 层这个话题，社区已经讨论过很多次，但随着版本迭代，不少结论需要更新。本文基于当前最新版本重新梳理一遍。
 
 ## 入门指南
 
-在这个基础上，我们可以进一步优化：
+在此基础上还能继续优化：
 
 ```javascript
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
@@ -41,11 +41,11 @@ const client = new ApolloClient({
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种写法在大型项目里很实用，能明显省下维护成本。
 
 ## 源码分析
 
-实际项目中的用法会更复杂一些：
+实际项目里用起来会更复杂些：
 
 ```javascript
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
@@ -72,11 +72,11 @@ const client = new ApolloClient({
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样一来，代码的可测试性和可扩展性都更好了。
 
 ## 真实场景应用
 
-以下是一个完整的示例：
+下面是一个完整示例：
 
 ```javascript
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
@@ -103,11 +103,11 @@ const client = new ApolloClient({
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+生产环境里边界情况务必处理好，这点很关键。
 
 ## 优化技巧
 
-关键在于理解核心逻辑：
+关键还是理解背后的核心逻辑：
 
 ```javascript
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
@@ -134,11 +134,11 @@ const client = new ApolloClient({
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化得看具体场景，不是所有地方都要过度优化。
 
 ## 避坑指南
 
-我们可以通过以下方式来改进：
+可以试着从下面几个方面改进：
 
 ```javascript
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
@@ -165,7 +165,7 @@ const client = new ApolloClient({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已经在线上稳定运行半年多，是经过实战验证的。
 
 ## 小结
 

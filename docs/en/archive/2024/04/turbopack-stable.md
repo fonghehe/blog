@@ -4,8 +4,8 @@ date: 2024-04-04 10:05:43
 tags:
   - Frontend
 readingTime: 1
-description: "Turbopack 稳定版性能对比 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real p"
-wordCount: 176
+description: "Turbopack stable performance comparisons is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 157
 ---
 
 Turbopack 稳定版性能对比 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real project experience.
@@ -140,6 +140,6 @@ Pay attention to edge case handling — this is critical in production environme
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Always verify compatibility thoroughly before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on community trends; technical approaches need continuous iteration

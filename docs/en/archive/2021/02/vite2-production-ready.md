@@ -9,15 +9,15 @@ tags:
   - TypeScript
 
 readingTime: 1
-description: "Vite 2.0 正式发布！和 1.0 相比几乎是重写，最重要的变化是框架无关（不再绑定 Vue）。"
-wordCount: 208
+description: "Vite 2.0 is officially out! Compared with 1.0 it is almost a full rewrite, and the most important change is that it is framework-agnostic — no longer tied to Vue."
+wordCount: 177
 ---
 
-Vite 2.0 正式发布！和 1.0 相比几乎是重写，最重要的变化是框架无关（不再绑定 Vue）。
+Vite 2.0 is officially released! Compared to 1.0 it's almost a complete rewrite, and the biggest change is that it's now framework-agnostic (no longer tied to Vue).
 
 ## Core Improvements
 
-**框架无关**
+**Framework-agnostic**
 
 ```bash
 # Vue 3
@@ -30,7 +30,7 @@ npm init vite@latest my-app -- --template react-ts
 npm init vite@latest my-app -- --template svelte-ts
 ```
 
-**插件 API 兼容 Rollup**
+**Plugin API Compatible with Rollup**
 
 ```javascript
 // vite.config.ts
@@ -92,7 +92,7 @@ npm install -D vite @vitejs/plugin-vue
 }
 ```
 
-**踩坑：process.env 不可用**
+**Gotcha: `process.env` Is Unavailable**
 
 ```javascript
 // Vue CLI（Webpack）：使用 process.env
@@ -106,7 +106,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 // Vite：VITE_*
 ```
 
-**踩坑：require() 不可用**
+**Gotcha: `require()` Is Unavailable**
 
 ```javascript
 // ❌ Vite 不支持 CommonJS require
@@ -129,9 +129,9 @@ const img = new URL("./image.png", import.meta.url).href;
 | 生产构建   | ~80s                | ~30s（Rollup） |
 | 配置复杂度 | 高                  | 低             |
 
-冷启动的差距在大项目里特别明显。
+The cold-start gap is especially noticeable in large projects.
 
-## SSR 支持
+## SSR Support
 
 ```javascript
 // vite.config.ts
@@ -145,11 +145,11 @@ export default defineConfig({
 });
 ```
 
-Vite 2 的 SSR 支持虽然还不够完善（和 Nuxt 比），但为 Nuxt 3 奠定了基础。
+Vite 2's SSR support is still incomplete (compared to Nuxt), but it laid the groundwork for Nuxt 3.
 
 ## Summary
 
-- Vite 2 最大变化：框架无关，Vue/React/Svelte 都支持
-- 迁移要注意：`process.env` → `import.meta.env`，`require` → `import`
-- 开发体验提升显著，新项目推荐用 Vite 替代 Vue CLI / Create React App
-- SSR 还不完善，需要 Nuxt 3 / Remix 等上层框架
+- The biggest change in Vite 2 is that it's framework-agnostic: Vue, React, and Svelte are all supported.
+- When migrating, watch out for: `process.env` → `import.meta.env`, and `require` → `import`.
+- The developer experience improves significantly — for new projects, Vite is the recommended replacement for Vue CLI / Create React App.
+- SSR is still incomplete and relies on an upper-layer framework such as Nuxt 3 / Remix.

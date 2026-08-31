@@ -47,7 +47,7 @@ window.getComputedStyle(el);
 
 ## 重繪（Repaint）
 
-視覺屬性變化，不影響佈局，隻需重新繪製：
+視覺屬性變化，不影響佈局，只需重新繪製：
 
 ```javascript
 // 隻觸發重繪，不觸發迴流
@@ -79,7 +79,7 @@ items.forEach((item) => fragment.appendChild(createEl(item)));
 container.appendChild(fragment); // 隻觸發一次迴流
 ```
 
-## 最佳化：避免強製同步佈局
+## 最佳化：避免強制同步佈局
 
 ```javascript
 // ❌ 讀後寫交叉，每次都強製迴流
@@ -135,7 +135,7 @@ requestAnimationFrame(animate);
 ## 小結
 
 - 迴流（幾何變化）> 重繪（視覺變化）> 合成（transform/opacity）
-- 批次 DOM 操作，避免讀寫交叉觸發強製同步佈局
+- 批次 DOM 操作，避免讀寫交叉觸發強制同步佈局
 - 動畫用 `transform` 替代 `top/left`，觸發 GPU 合成
 - `will-change: transform` 提前建立合成層
 - 動畫用 `requestAnimationFrame` 而非 `setInterval`

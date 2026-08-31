@@ -4,15 +4,15 @@ date: 2020-12-05 10:59:50
 tags:
   - Angular
 readingTime: 2
-description: "Angular 11 于 2020 年 11 月 11 日正式发布。相比 Angular 10 的\"质量版本\"，Angular 11 带来了更多开发体验方面的实质改进，其中 HMR 支持和字体内联是最值得关注的两个特性。"
-wordCount: 307
+description: "Angular 11 shipped on November 11, 2020. Compared with Angular 10's 'quality release,' Angular 11 delivers more substantive developer-experience improvements — HMR support and font inlining are the two features most worth watching."
+wordCount: 203
 ---
 
-Angular 11 于 2020 年 11 月 11 日正式发布。相比 Angular 10 的"质量版本"，Angular 11 带来了更多开发体验方面的实质改进，其中 HMR 支持和字体内联是最值得关注的两个特性。
+Angular 11 was officially released on November 11, 2020. Compared to Angular 10's "quality release," Angular 11 brings more substantial developer-experience improvements, with HMR support and font inlining being the two most notable.
 
 ## Out-of-the-Box HMR
 
-Angular 11 之前，开启 HMR 需要手动修改 `main.ts`，配置繁琐。现在只需一个 CLI 参数：
+Before Angular 11, enabling HMR meant manually editing `main.ts` — a fiddly setup. Now it takes just a single CLI flag:
 
 ```bash
 # Angular 11 之前的 HMR 配置（繁琐）
@@ -39,11 +39,11 @@ ng serve --hmr
 }
 ```
 
-HMR 开启后，修改组件的模板或样式只会更新该组件，而不是刷新整个页面，开发体验大幅提升。
+With HMR on, editing a component's template or styles updates just that component instead of reloading the whole page — a big lift to the developer experience.
 
 ## Font Inlining Optimization
 
-Angular 11 CLI 默认会将 Google Fonts 的 CSS 内联到 HTML 中，避免额外的网络请求：
+The Angular 11 CLI inlines Google Fonts CSS into the HTML by default, avoiding an extra network request:
 
 ```html
 <!-- 之前：需要一次额外的 HTTP 请求 -->
@@ -62,7 +62,7 @@ Angular 11 CLI 默认会将 Google Fonts 的 CSS 内联到 HTML 中，避免额�
 </style>
 ```
 
-这个优化对 Lighthouse 的 LCP（最大内容绘制）分数有正向影响。
+This optimization has a positive effect on Lighthouse's LCP (Largest Contentful Paint) score.
 
 ## Stricter NgModule Type Checking
 
@@ -103,7 +103,7 @@ ng update @angular/core@11 @angular/cli@11
 # 3. IE 9/10 支持正式移除
 ```
 
-**Webpack 5 实验性支持**（Angular 11 中仍是实验性）：
+**Experimental Webpack 5 support** (still experimental in Angular 11):
 
 ```javascript
 // angular.json（开启 Webpack 5 实验性支持）
@@ -122,7 +122,7 @@ ng update @angular/core@11 @angular/cli@11
 
 ## TypeScript 4.0 New Feature Support
 
-Angular 11 完整支持 TypeScript 4.0，可以使用新的可变元组类型：
+Angular 11 fully supports TypeScript 4.0, so you can use the new variadic tuple types:
 
 ```typescript
 // TypeScript 4.0 可变元组类型
@@ -141,4 +141,4 @@ function concat<T extends unknown[], U extends unknown[]>(
 
 ## Summary
 
-Angular 11 的 HMR 改进是每天都能感受到的开发体验提升，而字体内联则是零配置的性能优化。对现有 Angular 10 项目来说，这次升级几乎没有 breaking changes，升级成本极低，推荐尽快跟进。
+Angular 11's HMR improvement is a developer-experience win you feel every day, while font inlining is a zero-config performance optimization. For existing Angular 10 projects, this upgrade introduces almost no breaking changes, so the cost is minimal — I'd recommend moving to it soon.

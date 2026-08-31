@@ -3,16 +3,16 @@ title: "TypeScript Enum Usage Recommendations"
 date: 2022-10-05 10:05:45
 tags:
   - TypeScript
-readingTime: 2
-description: "TypeScript 枚举使用建议在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 221
+readingTime: 1
+description: "TypeScript enum usage recommendations have evolved rapidly in recent years. This article provides an in-depth analysis of their principles and practical approaches."
+wordCount: 166
 ---
 
-TypeScript 枚举使用建议在近年来发展迅速，本文将深入分析其原理和实践方法。
+TypeScript enum usage recommendations have evolved rapidly in recent years. This article provides an in-depth analysis of their principles and practical approaches.
 
 ## Basic Concepts
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 工具函数封装
@@ -44,7 +44,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Core Implementation
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 核心实现
@@ -61,7 +61,7 @@ const processData = (input) => {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+Through this pattern, the maintainability of the code is improved.
 
 ## Practical Application
 
@@ -139,7 +139,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Summary
 
-- 团队协作中保持代码风格一致，降低维护成本
-- 持续关注社区动态，及时更新技术方案
-- 性能优化需要基于实际数据，避免过度优化
-- TypeScript 枚举使用建议的核心在于理解底层原理，而非仅仅记住 API
+- Keep code style consistent across the team to reduce maintenance costs
+- Stay updated with community trends and update technical solutions in time
+- Performance optimization should be based on real data; avoid premature optimization
+- The key to TypeScript enum usage recommendations is understanding the underlying principles, not just memorizing APIs

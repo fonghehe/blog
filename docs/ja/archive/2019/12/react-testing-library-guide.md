@@ -5,12 +5,12 @@ tags:
   - React
 readingTime: 5
 description: "今年チームでユニットテストを推進する中で、Enzyme から React Testing Library（RTL）に移行しました。Enzyme は強力ですが、その API は実装の詳細をテストすることを促進します——コンポーネント内部の state や instance メソッドをテストする——そのためリファクタリング時にテストが頻繁に失敗します。React Testing Library の理念はまったく異なります：テスト対象の実装詳細ではなく、ユーザーの行動に焦点を当てます。"
-wordCount: 643
+wordCount: 645
 ---
 
 今年、チームでユニットテストを推進する中で、私たちは Enzyme から React Testing Library（RTL）に移行しました。Enzyme は強力ですが、その API は実装の詳細をテストすることを促進します——コンポーネント内部の state やインスタンスメソッドをテストする——そのためリファクタリング時にテストが頻繁に失敗します。React Testing Library の理念はまったく異なります：**ユーザーの行動をテストするのであって、実装の詳細ではありません**。
 
-## コア哲学
+## 中核となる理念
 
 React Testing Library の設計哲学は一言で要約できます：**テストがソフトウェアの使われ方に近ければ近いほど、そのテストはより自信を与えてくれます。**
 
@@ -40,7 +40,7 @@ test('クリックでカウントが増える', () => {
 
 ## クエリ優先度：getBy / queryBy / findBy
 
-RTL は3種類のクエリメソッドを提供しており、それぞれに適したシナリオがあります。公式が推奨する優先順位は次のとおりです：
+RTL は3種類のクエリメソッドを提供しており、それぞれに適した場面があります。公式が推奨する優先順位は次のとおりです：
 
 ```jsx
 import { render, screen, waitFor } from '@testing-library/react'
@@ -218,7 +218,7 @@ test('useCounter の基本機能', () => {
 
 ## 非同期リクエストのテスト
 
-実際のプロジェクトでは非同期リクエストのシナリオが多く、MSW（Mock Service Worker）や Jest のモックと組み合わせる必要があります：
+実際のプロジェクトでは非同期リクエストを伴うケースが多く、MSW（Mock Service Worker）や Jest のモックと組み合わせる必要があります：
 
 ```jsx
 import { render, screen, waitFor } from '@testing-library/react'

@@ -6,12 +6,12 @@ tags:
   - TailwindCSS
 readingTime: 3
 description: "Tailwind CSS は長年にわたりアトミック CSS の領域を支配してきました。しかし、Ant Fu の UnoCSS が登場してから状況は変わりました。UnoCSS は CSS フレームワークではなく、アトミック CSS エンジンです——このポジショニングの違いが本質的に異なるものをもたらしています。"
-wordCount: 646
+wordCount: 648
 ---
 
 Tailwind CSS は長年にわたりアトミック CSS の領域を支配してきました。しかし、Ant Fu の UnoCSS が登場してから状況は変わりました。UnoCSS は CSS フレームワークではなく、アトミック CSS エンジンです——このポジショニングの違いが本質的に異なるものをもたらしています。
 
-## Tailwind 的痛点
+## Tailwind が抱える課題
 
 Tailwind にはいくつかの実際的な問題があります：
 
@@ -51,7 +51,7 @@ export default defineConfig({
 import 'uno.css';
 ```
 
-## 对比用法
+## 使い方の比較
 
 ```html
 <!-- Tailwind 风格（preset-wind 完全兼容） -->
@@ -73,7 +73,7 @@ import 'uno.css';
 
 属性化モードの利点：class リストが長くなりすぎず、HTML がよりクリーンになります。
 
-## 自定义规则
+## カスタムルール
 
 これが UnoCSS の最も強力な能力です：
 
@@ -128,7 +128,7 @@ export default defineConfig({
 <button class="btn-danger">危险按钮</button>
 ```
 
-## Icon プリセット：アイコンソリューションの終着点
+## Icon プリセット：アイコン問題の決定打
 
 ```bash
 pnpm add -D @unocss/preset-icons @iconify-json/mdi

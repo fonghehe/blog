@@ -6,7 +6,7 @@ tags:
   - 工程化
 readingTime: 6
 description: "我们的后台管理系统是三年前用 Vue 2 搭的，最开始只有几个页面，体验很好。但三年过去，它已经变成了一个庞然大物："
-wordCount: 1561
+wordCount: 1559
 ---
 
 ## 问题背景
@@ -25,7 +25,7 @@ wordCount: 1561
 
 ## 什么是微前端
 
-微前端这个概念，本质上是把后端微服务的思想搬到前端。
+微前端本质上就是把后端微服务的思想搬到前端。
 
 后端早就经历了从单体到微服务的拆分——把一个大的 Java 应用拆成多个独立部署的服务，每个服务有自己的数据库、自己的发布节奏。前端现在也走到了这一步。
 
@@ -98,7 +98,7 @@ location /order/ {
 
 ### 方案四：single-spa
 
-最近关注到的一个项目叫 [single-spa](https://single-spa.js.org/)，它提供了一个运行时框架，让多个前端应用可以在同一个页面共存，通过生命周期管理来协调挂载和卸载：
+最近关注到一个叫 [single-spa](https://single-spa.js.org/) 的项目，它提供了一个运行时框架，让多个前端应用可以在同一个页面共存，通过生命周期管理来协调挂载和卸载：
 
 ```javascript
 import { registerApplication, start } from "single-spa";

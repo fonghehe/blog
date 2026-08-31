@@ -5,7 +5,7 @@ tags:
   - Vite
 readingTime: 1
 description: "Vite 環境變數管理在近年來發展迅速，本文將深入分析其原理和實踐方法。"
-wordCount: 233
+wordCount: 231
 ---
 
 Vite 環境變數管理在近年來發展迅速，本文將深入分析其原理和實踐方法。
@@ -119,5 +119,5 @@ function createHandler(options = {}) {
 ## 小結
 
 - 持續關注社群動態，及時更新技術方案
-- 效能最佳化需要基於實際資料，避免過度最佳化
+- 效能優化需要基於實際資料，避免過度優化
 - Vite 環境變數管理的核心在於理解底層原理，而非僅僅記住 API

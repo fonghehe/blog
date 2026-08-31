@@ -5,10 +5,10 @@ tags:
   - Engineering
 readingTime: 2
 description: "I recently rolled out the Monorepo 2026 toolchain in my team and picked up quite a bit of hands-on experience. Writing it all down here in case it's useful for others doing similar work."
-wordCount: 185
+wordCount: 186
 ---
 
-I recently rolled out the Monorepo 2026 toolchain in my team and picked up quite a bit of hands-on experience. Writing it all down here in case it's useful for others doing similar work.
+I recently put the Monorepo 2026 toolchain into practice on my team and picked up quite a bit of hands-on experience. Writing it all down here in case it's useful for others doing similar work.
 
 ## Core Concepts
 

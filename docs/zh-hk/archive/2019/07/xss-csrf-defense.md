@@ -12,7 +12,7 @@ wordCount: 198
 
 ## XSS（跨站腳本攻擊）
 
-攻擊者在頁面注入惡意腳本，在用户瀏覽器執行。
+攻擊者在頁面注入惡意腳本，在用戶瀏覽器執行。
 
 ### 類型
 
@@ -81,7 +81,7 @@ add_header Content-Security-Policy "
 
 ## CSRF（跨站請求偽造）
 
-攻擊者讓已登錄用户在不知情的情況下發起惡意請求。
+攻擊者讓已登錄用戶在不知情的情況下發起惡意請求。
 
 ```html
 <!-- 攻擊頁面（evil.com）：用户訪問這個頁面就自動發起轉賬請求 -->
@@ -137,8 +137,8 @@ add_header Content-Security-Policy "frame-ancestors 'none';" always;
 ## 安全檢查清單
 
 ```
-□ 不直接 innerHTML 用户輸入，用 DOMPurify 過濾富文本
-□ v-html / dangerouslySetInnerHTML 隻用於可信內容
+□ 不直接 innerHTML 用戶輸入，用 DOMPurify 過濾富文本
+□ v-html / dangerouslySetInnerHTML 只用於可信內容
 □ API 請求添加 CSRF Token 或依賴 SameSite Cookie
 □ 設置 CSP 響應頭
 □ 設置 X-Frame-Options 防止點擊劫持

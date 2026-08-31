@@ -5,7 +5,7 @@ tags:
   - マイクロフロントエンド
 readingTime: 3
 description: "マイクロフロントエンドのアーキテクチャというテーマはコミュニティで何度も議論されてきたが、バージョンが更新されるたびに多くの結論を見直す必要がある。本記事は最新バージョンをもとに改めて整理したものだ。"
-wordCount: 581
+wordCount: 580
 ---
 
 マイクロフロントエンドのアーキテクチャというテーマはコミュニティで何度も議論されてきたが、バージョンが更新されるたびに多くの結論を見直す必要がある。本記事は最新バージョンをもとに改めて整理したものだ。
@@ -40,7 +40,7 @@ const csvToJson = new Transform({
 
 ## ソースコード分析
 
-まず基本的な実装方法を見てみよう：
+基本的な実装方法を見てみよう：
 
 ```javascript
 import { useRef, useEffect, useState } from "react";
@@ -126,7 +126,7 @@ const csvToJson = new Transform({
 
 ## 落とし穴を避けるために
 
-以下は完全なサンプルだ：
+以下にサンプルを示します：
 
 ```javascript
 import { useRef, useEffect, useState } from "react";

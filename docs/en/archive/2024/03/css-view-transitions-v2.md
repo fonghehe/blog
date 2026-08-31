@@ -1,5 +1,5 @@
 ---
-title: "CSS View Transitions v2 Proposal: 跨DocumentationAnimationStandard化之路"
+title: "CSS View Transitions v2 Proposal: The Road to Standardizing Cross-Document Animations"
 date: 2024-03-19 16:44:55
 tags:
   - CSS

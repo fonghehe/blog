@@ -5,7 +5,7 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "2018年現在、CommonJS、AMD、ES Module という複数のモジュールシステムが共存しています。それぞれの違いを理解することで、webpack や Babel といったツールが存在する理由が分かります。"
-wordCount: 484
+wordCount: 502
 ---
 
 2018年現在、CommonJS、AMD、ES Module という複数のモジュールシステムが共存しています。それぞれの違いを理解することで、webpack や Babel といったツールが存在する理由が分かります。
@@ -21,7 +21,7 @@ wordCount: 484
 <script src="app.js"></script>
 ```
 
-問題点：命名の衝突、依存関係の順序を手動管理、ファイルの依存関係を把握できない。
+問題点：名前が衝突する、依存関係の順序を手動で管理する必要がある、ファイル間の依存関係を把握できない、といった点です。
 
 ## CommonJS（Node.js）
 

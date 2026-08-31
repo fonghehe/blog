@@ -7,11 +7,11 @@ tags:
   - JavaScript
 
 readingTime: 1
-description: "关于Vue Test Utils v2 测试指南，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspecti"
-wordCount: 174
+description: "Many developers only know the Vue Test Utils v2 testing guide at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 159
 ---
 
-关于Vue Test Utils v2 测试指南，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to the Vue Test Utils v2 testing guide, many developers only stay at the API-call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
@@ -66,7 +66,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Project Practice
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is somewhat more complex:
 
 ```javascript
 import { ref, computed, watch, onMounted } from 'vue'
@@ -114,6 +114,6 @@ Pay attention to boundary condition handling, which is critical in production.
 
 ## Summary
 
-- Vue Test Utils v2 测试指南不是银弹，需要根据项目规模和技术栈选择
+- The Vue Test Utils v2 testing guide isn't a silver bullet; choose based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

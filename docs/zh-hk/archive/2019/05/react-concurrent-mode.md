@@ -12,7 +12,7 @@ React 團隊在 React Conf 2019 上展示了 Concurrent Mode 的更多細節。�
 
 ## Concurrent Mode 解決什麼問題
 
-同步渲染的問題：React 開始渲染就不能被打斷，渲染大型組件樹時主線程被阻塞，用户交互無響應。
+同步渲染的問題：React 開始渲染就不能被打斷，渲染大型組件樹時主線程被阻塞，用戶交互無響應。
 
 ```javascript
 // 傳統同步渲染
@@ -116,7 +116,7 @@ function App() {
 Concurrent Mode 在 2019 年還在實驗階段：
 
 - 不穩定的 API（正式版 API 可能會變）
-- 隻在 `ReactDOM.createRoot` 中啓用
+- 只在 `ReactDOM.createRoot` 中啓用
 - 依賴 Suspense 的數據獲取庫還不成熟（relay、swr 在跟進）
 
 預計 2020-2021 年才會穩定。現在瞭解概念，為以後做準備。

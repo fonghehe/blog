@@ -6,10 +6,10 @@ tags:
   - 工程化
 readingTime: 1
 description: "包体积是前端性能的重要指标。没有限制的项目往往会渐渐膀起来——加个库、唐唐就进得 100KB。性能预算的思路是：像财务预算一样，把体积就是预算，超过就是超支。"
-wordCount: 303
+wordCount: 301
 ---
 
-包体积是前端性能的重要指标。没有限制的项目往往会渐渐膀起来——加个库、唐唐就进得 100KB。性能预算的思路是：像财务预算一样，把体积就是预算，超过就是超支。
+包体积是前端性能的重要指标。没有限制的项目往往会渐渐胀起来——加个库、常常就突破 100KB。性能预算的思路是：像财务预算一样，把体积就是预算，超过就是超支。
 
 ## 包体积对加载性能的影响
 
@@ -88,10 +88,10 @@ npx source-map-explorer dist/main.*.js
 常见的超出原因：
 
 1. `moment.js` 打包了全部 locale（用 `date-fns` 或 `dayjs` 替代）
-2. `lodash` 运用了全量引入（诅 `import _ from 'lodash'`）
+2. `lodash` 用了全量引入（注：`import _ from 'lodash'`）
 3. 第三方 CSS 库进了 index bundle（应动态引入）
 4. 图片/字体进了 JS bundle（应配置单独输出）
 
 ## 总结
 
-性能预算的核心是建立指标并自动化守护。`webpack performance hints` + `bundlesize` + CI 集成〔—这三层防线能确保包体积不会在不知不觉中腰脰变粗。
+性能预算的核心是建立指标并自动化守护。`webpack performance hints` + `bundlesize` + CI 集成——这三层防线能确保包体积不会在不知不觉中腰围变粗。

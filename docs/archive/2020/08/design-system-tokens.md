@@ -5,10 +5,10 @@ tags:
   - 工程化
 readingTime: 2
 description: "最近在团队中落地Design System 设计令牌 Design Tokens，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 299
+wordCount: 300
 ---
 
-最近在团队中落地Design System 设计令牌 Design Tokens，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近在团队里落地了 Design Token（设计令牌）体系，积累了一些经验。整理出来供大家参考，希望能对做类似工作的同学有帮助。
 
 ## 核心概念
 
@@ -131,4 +131,4 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 - 关注社区动态，技术方案需要持续迭代
 - 不要为了用新技术而用新技术
 - 代码示例仅供参考，需根据业务场景调整
-- Design System 设计令牌 Design Tokens不是银弹，需要根据项目规模和技术栈选择
+- Design Token（设计令牌）不是银弹，需要根据项目规模和技术栈选择

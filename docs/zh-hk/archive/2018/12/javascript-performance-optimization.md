@@ -186,6 +186,6 @@ console.log(`耗時: ${measure.duration.toFixed(2)}ms`);
 
 - 長任務分批處理（`requestAnimationFrame` 或 `requestIdleCallback`）
 - scroll/resize 事件用節流，input 搜索用防抖
-- 批量讀寫 DOM，避免交替讀寫導致強製同步佈局
+- 批量讀寫 DOM，避免交替讀寫導致強制同步佈局
 - 耗時運算用 Web Worker 移出主線程
 - 用 `performance.mark/measure` 精確測量關鍵路徑耗時

@@ -5,10 +5,10 @@ tags:
   - TypeScript
 readingTime: 1
 description: "TypeScript enums are a must-have for developers coming from Java or C#, but there are some important nuances in TS. Namespaces are used less often but still hav"
-wordCount: 150
+wordCount: 149
 ---
 
-TypeScript enums are a must-have for developers coming from Java or C#, but there are some important nuances in TS. Namespaces are used less often but still have the right use cases.
+TypeScript enums are a must-have for developers coming from Java or C#, but there are some important nuances in TS. Namespaces are used less often but still have valid use cases.
 
 ## Numeric Enums
 

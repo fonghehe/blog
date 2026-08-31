@@ -5,11 +5,11 @@ tags:
   - CSS
   - Engineering
 readingTime: 2
-description: "Tailwind CSS 4.0 Beta 开放测试了，最大变化是用 Rust 重写了底层引擎（Oxide），以及把配置从 JS 文件迁移到 CSS 文件。"
-wordCount: 305
+description: "Tailwind CSS 4.0 Beta is open for testing. The biggest changes are a Rust-rewritten engine (Oxide) and moving configuration from a JS file into CSS."
+wordCount: 289
 ---
 
-Tailwind CSS 4.0 Beta 开放测试了，最大变化是用 Rust 重写了底层引擎（Oxide），以及把配置从 JS 文件迁移到 CSS 文件。
+Tailwind CSS 4.0 Beta is open for testing. The biggest changes are a Rust-rewritten engine (Oxide) and moving configuration from a JS file into CSS.
 
 ## Speed Improvements
 

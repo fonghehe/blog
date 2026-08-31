@@ -3,9 +3,9 @@ title: "React 22 Compiler コンパイル最適化の原理：自動 Memoization
 date: 2026-07-10 21:37:01
 tags:
   - React
-readingTime: 7
+readingTime: 14
 description: "React Compiler はコンパイル時の静的解析で自動的に memoization ロジックを挿入し、手動 useMemo/useCallback の負担を排除する。本記事ではコンパイラの動作原理、出力コード構造、制約条件を分析し、Vue Vapor Mode とのコンパイル戦略比較を行う。"
-wordCount: 3000
+wordCount: 3501
 ---
 
 React コミュニティは長らく一つのジレンマに直面してきた：`useMemo`、`useCallback`、`React.memo` これらの最適化手段は「正しいが煩雑」である。開発者は多大な労力を手動最適化に費やすか、不必要な再レンダリングを耐えるかの選択を迫られる。React Compiler の目標は、この意思決定を開発者からコンパイラへ移すことである——機械に何を memoize すべきかを決定させる。
@@ -251,7 +251,7 @@ const TodoList = React.memo(({ todos, onToggle }) => {
 })
 ```
 
-| 次元 | 手動最適化 | React Compiler |
+| 観点 | 手動最適化 | React Compiler |
 |------|----------|----------------|
 | 開発負担 | 高い、各依存関係を手動分析 | ゼロ、コンパイラが自動処理 |
 | 正確性リスク | 高い、依存関係の書き漏らし/書き間違いがよくあるバグ | 低い、コンパイラの静的解析がより精密 |
@@ -341,7 +341,7 @@ module.exports = {
         sources: (filename) => {
           return filename.includes('/src/optimized/')
         },
-        // セーフモード：不確実なコードに遭遇したらエラー而非スキップ
+        // セーフモード：不確実なコードに遭遇したらエラーとし、スキップはしない
         panicThreshold: 'ALL_ERRORS',
       },
     ],
@@ -401,7 +401,7 @@ function ProductGrid({ products, categoryId }) {
 
 React Compiler と Vue Vapor Mode はどちらもコンパイラ最適化ソリューションだが、戦略が異なる。
 
-| 次元 | React Compiler | Vue Vapor Mode |
+| 観点 | React Compiler | Vue Vapor Mode |
 |------|---------------|----------------|
 | 最適化目標 | 自動 memoization | Virtual DOM の排除 |
 | 実行時モデル | Virtual DOM + Fiber を保持 | 直接 DOM 操作 |
@@ -452,7 +452,7 @@ React Compiler は React チームが下した現実的な選択である。Vue 
 
 1. **マイグレーションコストが最低**：既存のコードはほぼ変更不要で、コンパイラを有効化するだけ
 2. **能力の上限が限定的**：自動 memoization は Virtual DOM diff のオーバーヘッドを排除できず、diff のトリガー頻度を減らすだけ
-3. **デバッグの複雑さが増大**：コンパイル後のコードはソースコードではなく、性能問題の排查にはコンパイラの挙動の理解が必要
+3. **デバッグの複雑さが増大**：コンパイル後のコードはソースコードではなく、性能問題の切り分けにはコンパイラの挙動を理解する必要がある
 
 実践では、新プロジェクトはコンパイラを直接有効化し、手動 memo コードをすべて削除することをお勧めする。既存プロジェクトでは段階的マイグレーションを採用する——まず高頻度更新のコンポーネントで有効化し、効果を検証してから段階的に拡大する。重要なのは、コンパイラを「銀の弾丸」として扱わないことである：コンポーネント自体の設計に問題がある場合（props drilling が深すぎる、状態の粒度が粗すぎるなど）、コンパイラでは根本的に性能問題を解決できない。
 

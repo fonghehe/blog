@@ -4,11 +4,11 @@ date: 2022-02-11 11:13:59
 tags:
   - Vite
 readingTime: 1
-description: "关于VitePress 文档站搭建实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 196
+description: "When it comes to building a documentation site with VitePress, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter."
+wordCount: 174
 ---
 
-关于VitePress 文档站搭建实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to building a documentation site with VitePress, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter.
 
 ## Basic Principles
 
@@ -123,4 +123,4 @@ Pay attention to boundary condition handling, which is critical in production.
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- VitePress 文档站搭建实践 is not a silver bullet; choose based on your project scale and tech stack
+- Building a documentation site with VitePress is not a silver bullet; choose based on your project scale and tech stack

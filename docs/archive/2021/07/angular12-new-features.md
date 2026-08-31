@@ -7,10 +7,10 @@ tags:
   - 工程化
 readingTime: 2
 description: "Angular 12 于 2021 年 5 月 26 日正式发布。这是一个里程碑版本：View Engine 正式退场，Ivy 成为唯一渲染引擎；Webpack 5 从实验性升级为默认构建工具。升级之后我们整理了一份完整的变化记录。"
-wordCount: 488
+wordCount: 491
 ---
 
-Angular 12 于 2021 年 5 月 26 日正式发布。这是一个里程碑版本：View Engine 正式退场，Ivy 成为唯一渲染引擎；Webpack 5 从实验性升级为默认构建工具。升级之后我们整理了一份完整的变化记录。
+Angular 12 在 2021 年 5 月 26 日正式发布，是个里程碑式的版本：View Engine 正式退场，Ivy 成了唯一的渲染引擎，Webpack 5 也从实验特性升级为默认构建工具。升级之后，我们整理了一份完整的变化清单。
 
 ## View Engine 正式停用
 

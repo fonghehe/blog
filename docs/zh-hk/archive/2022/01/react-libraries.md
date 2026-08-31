@@ -70,7 +70,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ## 落地經驗
 
-實際項目中的用法會更復雜一些：
+實際項目中的用法會更複雜一些：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'

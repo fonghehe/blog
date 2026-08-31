@@ -5,9 +5,9 @@ tags:
   - Web3
   - React
   - DApp
-readingTime: 11
+readingTime: 9
 description: "钱包连接是 DApp 用户体验的第一道门槛。RainbowKit 基于 wagmi 构建，提供开箱即用的连接组件和优雅的 UX 设计。本文覆盖从基础集成到深度定制的完整方案。"
-wordCount: 2900
+wordCount: 1178
 ---
 
 钱包连接是每个 DApp 的入口体验。在当前的 Web3 生态中，用户可能使用 MetaMask、WalletConnect、Coinbase Wallet、Rainbow、Phantom 等多种钱包。为每种钱包单独实现连接逻辑既繁琐又容易出错。RainbowKit 由 Rainbow Wallet 团队开源，基于 wagmi 和 viem 构建，提供了一套完整的、可定制的钱包连接解决方案。

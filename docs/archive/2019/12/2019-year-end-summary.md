@@ -5,14 +5,14 @@ tags:
   - 前端
 readingTime: 7
 description: "2019 年是技术深度和广度都有明显成长的一年。年初定下的几个目标——React Hooks 全面落地、TypeScript 成为日常、微前端从零到一——基本都完成了。当然也有遗憾：测试覆盖率没有达到预期、Node.js BFF 的探索还停留在方案阶段。这篇总结尽量用数据说话，同时诚实地记录不足。"
-wordCount: 1403
+wordCount: 1398
 ---
 
 2019 年是技术深度和广度都有明显成长的一年。年初定下的几个目标——React Hooks 全面落地、TypeScript 成为日常、微前端从零到一——基本都完成了。当然也有遗憾：测试覆盖率没有达到预期、Node.js BFF 的探索还停留在方案阶段。这篇总结尽量用数据说话，同时诚实地记录不足。
 
 ## React Hooks 全面落地
 
-2 月 React 16.8 发布 Hooks 正式版后，我花了一个月深入学习，然后在团队推广。到年底，所有新项目都采用函数组件 + Hooks，class 组件不再出现在新代码中。
+2 月 React 16.8 发布 Hooks 正式版后，我花了一个月深入学习，随后在团队推广。到年底，所有新项目都采用函数组件 + Hooks，class 组件不再出现在新代码中。
 
 自定义 Hook 是今年最大的技术收获。团队内部沉淀了 12 个通用 Hook：
 
@@ -301,7 +301,7 @@ function log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
 
 ## Vue 3 前瞻
 
-虽然主力是 React，但对 Vue 3 的关注一直没有落下。从 Composition API RFC 阶段就开始学习，主要收获：
+虽然主力是 React，但我一直关注 Vue 3。从 Composition API RFC 阶段就开始学习，主要收获：
 
 ```javascript
 // Vue 3 Composition API 对比 React Hooks 的思考
@@ -384,7 +384,7 @@ Sentry.init({
 
 诚实地说，有几个目标没有完成：
 
-1. **测试覆盖率未达标**：目标 80%，实际 72%。原因是在项目进度压力下，测试被优先级挤压了。2020 年需要在 CI 中强制覆盖率门禁。
+1. **测试覆盖率未达标**：目标 80%，实际 72%。原因是项目进度紧张，测试被排到了较低的优先级。2020 年需要在 CI 中强制覆盖率门禁。
 2. **Node.js BFF 停留在方案阶段**：年初计划用 Koa 搭建 BFF 层，但由于团队 Node.js 经验不足，最终只完成了技术预研。2020 年需要找一个合适的项目切入。
 3. **文档不够系统**：虽然写了博客，但团队内部的规范文档还不够完善，新人上手还是靠口头传帮带。
 

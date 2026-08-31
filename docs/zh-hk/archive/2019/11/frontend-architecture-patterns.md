@@ -76,7 +76,7 @@ function Header() {
 ### 容器組件與展示組件
 
 ```tsx
-// 展示組件：隻負責渲染，通過 props 接收數據
+// 展示組件：只負責渲染，通過 props 接收數據
 // UserList.jsx
 function UserList({ users, loading, onEdit, onDelete }) {
   if (loading) return <Spinner />;
@@ -155,7 +155,7 @@ const store = {
 ```
 ┌─────────────────────────────────────────┐
 │           Global State (Redux/Context)    │
-│  用户信息、權限、主題、全局配置            │
+│  用戶信息、權限、主題、全局配置            │
 ├─────────────────────────────────────────┤
 │           Page State (URL/Local)          │
 │  頁面級數據、篩選條件、分頁狀態            │
@@ -261,7 +261,7 @@ src/
 ```
 Action → Dispatcher → Store → View
   │                              │
-  └──────── 用户交互觸發 ─────────┘
+  └──────── 用戶交互觸發 ─────────┘
 ```
 
 在 React + Redux 中：
@@ -416,7 +416,7 @@ axios.interceptors.response.use(
 
 ```
         E2E 測試（少）
-       ╱  用户關鍵路徑
+       ╱  用戶關鍵路徑
       ╱
 集成測試（適量）
       ╲  組件交互
@@ -443,7 +443,7 @@ describe('UserCard', () => {
 });
 
 // E2E 測試
-describe('用户登錄', () => {
+describe('用戶登錄', () => {
   it('應該成功登錄並跳轉到首頁', () => {
     cy.visit('/login');
     cy.get('[data-testid="email"]').type('test@example.com');

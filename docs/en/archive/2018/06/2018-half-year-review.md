@@ -5,10 +5,10 @@ tags:
   - Frontend
 readingTime: 5
 description: "The core work in the first half of 2018 revolved around three things: upgrading the architecture of back-office systems, building an internal component library "
-wordCount: 890
+wordCount: 899
 ---
 
-The core work in the first half of 2018 revolved around three things: upgrading the architecture of back-office systems, building an internal component library from scratch, and improving the engineering pipeline. Here is a systematic retrospective recording the thinking behind technology choices and the real pitfalls we encountered.
+The core work in the first half of 2018 revolved around three things: upgrading the architecture of back-office systems, building an internal component library from scratch, and improving the engineering pipeline. This is a systematic retrospective on the reasoning behind our technology choices and the real pitfalls we ran into.
 
 ## H1 Key Project Review
 
@@ -16,7 +16,7 @@ The core work in the first half of 2018 revolved around three things: upgrading 
 
 At the start of the year I took over a two-year-old back-office system running Webpack 3 + Vue 2.3, with a stable build time of around 45 seconds. I faced two choices: patch it and keep going, or do a thorough engineering upgrade. Considering the team would need to maintain multiple back-office projects in parallel, I chose the latter.
 
-The core win from **upgrading to Webpack 4** wasn't the version number itself — it was the `mode` mechanism and improved Tree Shaking. The biggest resistance during migration came from plugin ecosystem compatibility: several Webpack 3 plugins hadn't caught up to 4.x yet, requiring replacements or custom adapters. Build time ultimately dropped from 45s to 12s, with two main contributors:
+The core win from **upgrading to Webpack 4** wasn't the version number itself — it was the `mode` mechanism and improved Tree Shaking. The biggest hurdle during the migration was plugin-ecosystem compatibility: several Webpack 3 plugins hadn't caught up to 4.x yet, requiring replacements or custom adapters. Build time ultimately dropped from 45s to 12s, driven mainly by two changes:
 
 ```js
 // webpack.config.js key config
@@ -39,11 +39,11 @@ module.exports = {
 
 Adding `HardSourceWebpackPlugin` for persistent caching and route lazy-loading made the hot-reload experience in development much better.
 
-**Incremental TypeScript migration** was a longer-term investment. The legacy code was full of `any` types — there was no way to fix everything at once. The strategy: enforce TS on new modules, gradually cover old modules via `allowJs`. By end of June, core module coverage was around 60%. The biggest takeaway from this process was understanding that the type system isn't a "constraint" — it's a compile-time contract and documentation, especially valuable in multi-person collaboration where type definitions are the best interface specification.
+**Incremental TypeScript migration** was a longer-term investment. The legacy code was full of `any` types — there was no way to fix everything at once. The strategy: enforce TS on new modules, gradually cover old modules via `allowJs`. By end of June, core module coverage was around 60%. The biggest takeaway from this process was realizing the type system isn't a "constraint" — it's a compile-time contract and form of documentation, especially valuable when several people collaborate, since type definitions serve as the best interface spec.
 
 ## Component Library Construction
 
-The first half of the year saw us kick off an internal shared component library. The goal wasn't to build a new UI framework, but to wrap business-layer common components on top of Element UI: permission buttons, data dictionary selectors, complex search forms, general CRUD tables, etc.
+The first half of the year saw us kick off an internal shared component library. The goal wasn't to build a new UI framework, but to wrap common business-layer components on top of Element UI: permission buttons, data dictionary selectors, complex search forms, general CRUD tables, etc.
 
 Several key design decisions were made:
 
@@ -61,7 +61,7 @@ export interface CrudTableProps {
 }
 ```
 
-By end of June, the component library covered 70% of common use cases across 3 back-office projects, reducing new project initialization time by about 40%.
+By end of June, the component library covered 70% of common use cases across 3 back-office projects, cutting new-project setup time by about 40%.
 
 ## Engineering Improvements
 
@@ -92,11 +92,11 @@ build:
       - dist/
 ```
 
-The deploy step sends DingTalk notifications — failed builds automatically @ the relevant developers. Incident tracing changed from "who deployed it?" to "which MR introduced it?".
+The deploy step sends DingTalk notifications — failed builds automatically @-mention the relevant developers. Tracing production incidents shifted from "who deployed it?" to "which MR introduced it?".
 
 ### Code Quality Toolchain
 
-Rolling out ESLint + Prettier took longer than expected — the core conflict wasn't the rules themselves, but the cost of reformatting legacy code. The final strategy: enable `lint-staged` to only check changed files; handle legacy code with a one-off bulk-format PR. Pairing with `commitlint` to standardize commit messages noticeably improved code review efficiency.
+Rolling out ESLint + Prettier took longer than expected — the real friction wasn't the rules themselves, but the cost of reformatting the existing code. The final strategy: enable `lint-staged` to only check changed files; handle legacy code with a one-off bulk-format PR. Pairing with `commitlint` to standardize commit messages noticeably improved code review efficiency.
 
 ## Pitfalls We Hit
 
@@ -110,7 +110,7 @@ Debugging why Tree Shaking wasn't working took half a day. The root cause: `side
 
 **3. Nuxt.js SSR Pitfalls**
 
-When using Nuxt for a content site's SEO, `window is not defined` kept appearing. The root cause was third-party libraries accessing browser APIs at the module's top level. The solution: use `process.client` guards, or dynamically `require` them in the `mounted` hook. This taught me: SSR isn't just swapping frameworks — your entire dependency chain needs to be adapted.
+When we used Nuxt to handle SEO for a content site, `window is not defined` kept appearing. The root cause was third-party libraries accessing browser APIs at the module's top level. The solution: use `process.client` guards, or dynamically `require` them in the `mounted` hook. This taught me: SSR isn't just swapping frameworks — your entire dependency chain needs to be adapted.
 
 ## H2 Plans
 

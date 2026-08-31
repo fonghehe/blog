@@ -5,10 +5,10 @@ tags:
   - React
 readingTime: 2
 description: "在日常工作中經常用到React Context 使用指南，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。"
-wordCount: 294
+wordCount: 292
 ---
 
-在日常工作中經常用到React Context 使用指南，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。
+在日常工作中 React Context 用得很多，於是整理一篇系統性的總結，希望能幫助大家更好地理解和應用。
 
 ## 基礎概念
 

@@ -6,11 +6,11 @@ tags:
   - Engineering
 
 readingTime: 2
-description: "关于前端测试策略金字塔，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 162
+description: "When it comes to the frontend testing strategy pyramid, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 153
 ---
 
-关于前端测试策略金字塔，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to the frontend testing strategy pyramid, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
@@ -69,7 +69,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Project Practice
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more involved:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -122,7 +122,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Pay attention to edge case handling, which is critical in production.
 
 ## Summary
 

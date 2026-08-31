@@ -3,12 +3,12 @@ title: "Nuxt DevTools: Your Development Debugging Companion"
 date: 2023-02-15 16:44:57
 tags:
   - Nuxt.js
-readingTime: 2
-description: "Nuxt DevTools 开发调试利器这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 205
+readingTime: 1
+description: "Nuxt DevTools has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 185
 ---
 
-Nuxt DevTools 开发调试利器这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+Nuxt DevTools has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
 
 ## Getting Started
 

@@ -3,16 +3,16 @@ title: "TypeScript条件型の深掘り解析"
 date: 2020-04-08 09:30:34
 tags:
   - TypeScript
-readingTime: 2
-description: "关于TypeScript 条件类型深度解析，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 310
+readingTime: 3
+description: "TypeScript の条件型について、多くの開発者は API 呼び出しのレベルにとどまっている。本稿では本番環境の観点から、実際に遭遇する問題とその解決策について掘り下げる。"
+wordCount: 471
 ---
 
-关于TypeScript 条件类型深度解析，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+TypeScript の条件型について、多くの開発者は API の呼び出しレベルにとどまっている。本稿では本番環境の観点から、実際に遭遇する問題とその解決策について掘り下げる。
 
 ## 基本原理
 
-关键在于理解核心逻辑：
+肝心なのは、中核となるロジックを理解することだ：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+パフォーマンス最適化は具体的な場面に合わせる必要があり、すべてのケースで過度な最適化が必要なわけではない。
 
 ## 高度な機能
 
-我们可以通过以下方式来改进：
+次のような方法で改善できる：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -71,11 +71,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番環境で半年以上安定して稼働しており、実際に検証済みだ。
 
 ## プロジェクト実践
 
-先来看基本的实现方式：
+まずは基本的な実装の仕方を見てみよう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -99,11 +99,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトでは、エラー処理や境界条件も考慮する必要がある。
 
 ## ベストプラクティス
 
-在这个基础上，我们可以进一步优化：
+この上にさらに、次のように最適化できる：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -134,11 +134,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模なプロジェクトで非常に実用的で、保守コストを大きく下げられる。
 
 ## まとめ
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- 基礎となる原理を理解することは、API を覚えるよりも重要だ
+- 本番環境での使用前に、必ず互換性の検証を行うこと
+- チーム開発では、技術そのものよりも取り決めとドキュメントの方が重要だ
+- コミュニティの動向を継続的に注視し、技術アプローチを適時更新する

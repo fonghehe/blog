@@ -4,7 +4,7 @@ date: 2023-11-29 15:09:38
 tags:
   - Frontend
 readingTime: 2
-description: "Drizzle ORM 实战指南 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+description: "Hands-on guides to Drizzle ORM are increasingly relevant in frontend development. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 185
 ---
 

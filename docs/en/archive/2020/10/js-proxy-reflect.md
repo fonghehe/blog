@@ -4,15 +4,15 @@ date: 2020-10-27 15:50:08
 tags:
   - JavaScript
 readingTime: 2
-description: "JavaScript Proxy Reflect 元编程在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 284
+description: "A deep dive into metaprogramming with JavaScript Proxy and Reflect, exploring core principles and best practices from real-world frontend projects."
+wordCount: 190
 ---
 
-JavaScript Proxy Reflect 元编程在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Metaprogramming with JavaScript's Proxy and Reflect is being used more and more widely in frontend development. Starting from real projects, this article takes a deep look at its core principles and best practices.
 
 ## Basic Usage
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 const express = require('express')
@@ -37,11 +37,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tied to the actual scenario; not every case calls for over-optimizing.
 
 ## Advanced Usage
 
-我们可以通过以下方式来改进：
+Here's how we can improve on it:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -60,11 +60,11 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it's proven in practice.
 
 ## Practical Cases
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -95,11 +95,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll still need to account for error handling and edge cases.
 
 ## Performance Optimization
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 const express = require('express')
@@ -124,11 +124,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly cut maintenance cost.
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- JavaScript Proxy Reflect 元编程不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- Don't adopt new tech for its own sake.
+- The code examples are for reference only and should be adapted to your actual use case.
+- Metaprogramming with JavaScript's Proxy and Reflect is no silver bullet; choose it based on your project's scale and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.

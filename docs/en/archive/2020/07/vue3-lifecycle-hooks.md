@@ -4,18 +4,18 @@ date: 2020-07-06 15:09:20
 tags:
   - Vue
 readingTime: 3
-description: "Vue 3 Composition API 对生命周期钩子做了重新设计。过去我们在 Options API 中使用 `mounted`、`created` 这些选项，现在在 `setup()` 函数中，需要改用对应的 `onXxx` 形式。这段时间在把内部组件库往 Composition API 迁移的过程中，踩了一些"
-wordCount: 473
+description: "A guide to Vue 3 Composition API lifecycle hooks, covering the migration from Options API options to onXxx functions and common pitfalls encountered along the way."
+wordCount: 333
 ---
 
-Vue 3 Composition API 对生命周期钩子做了重新设计。过去我们在 Options API 中使用 `mounted`、`created` 这些选项，现在在 `setup()` 函数中，需要改用对应的 `onXxx` 形式。这段时间在把内部组件库往 Composition API 迁移的过程中，踩了一些坑，整理一下。
+Vue 3's Composition API redesigns lifecycle hooks. In the past we used options like `mounted` and `created` in the Options API; now, inside the `setup()` function, we use the corresponding `onXxx` form instead. While migrating our internal component library to the Composition API recently, I hit a few pitfalls and want to write them down.
 
 ## Options API vs Composition API Hook Comparison
 
 | Options API | Composition API |
 |---|---|
-| beforeCreate | (不需要，setup 本身就是) |
-| created | (不需要，setup 本身就是) |
+| beforeCreate | (not needed — `setup()` itself covers this) |
+| created | (not needed — `setup()` itself covers this) |
 | beforeMount | onBeforeMount |
 | mounted | onMounted |
 | beforeUpdate | onBeforeUpdate |
@@ -24,7 +24,7 @@ Vue 3 Composition API 对生命周期钩子做了重新设计。过去我们在 
 | unmounted | onUnmounted |
 | errorCaptured | onErrorCaptured |
 
-`beforeCreate` 和 `created` 在 Composition API 中不需要了，因为 `setup()` 的执行时机本身就在这两者之间。
+`beforeCreate` and `created` are no longer needed in the Composition API, because `setup()` runs exactly during that window.
 
 ## Basic Usage
 
@@ -106,7 +106,7 @@ export default {
 
 ## Registering the Same Hook Multiple Times
 
-这是 Composition API 相比 Options API 的一个重要优势——同一个生命周期钩子可以注册多次，它们会按照注册顺序依次执行：
+This is a key advantage of the Composition API over the Options API — the same lifecycle hook can be registered multiple times, and they run in registration order:
 
 ```typescript
 import { onMounted, onUnmounted } from 'vue'
@@ -162,7 +162,7 @@ export default {
 
 ## onErrorCaptured Error Boundary
 
-这个钩子在 Vue 3 中依然保留，可以用来构建类似 React ErrorBoundary 的错误捕获机制：
+This hook is still available in Vue 3 and can be used to build an error-capturing mechanism similar to React's ErrorBoundary:
 
 ```typescript
 import { onErrorCaptured, ref, defineComponent, h } from 'vue'
@@ -210,7 +210,7 @@ const ErrorBoundary = defineComponent({
 
 ## Execution Order with watch
 
-一个容易忽略的点：在 `setup()` 中注册的 `watch`（非 `watchEffect`）默认是在组件更新**之前**执行的，而 `onMounted` 中发起的副作用也会正确触发 `watch`。但要注意 `watch` 的 flush 选项：
+An easily overlooked point: a `watch` registered in `setup()` (not `watchEffect`) runs **before** the component updates by default, and side effects kicked off in `onMounted` also correctly trigger `watch`. But pay attention to `watch`'s flush option:
 
 ```typescript
 import { ref, watch, onUpdated } from 'vue'
@@ -246,13 +246,13 @@ export default {
 }
 ```
 
-实际输出顺序比较复杂，但核心原则是：`sync` 最先（数据变化时立即执行），然后是 `pre`（DOM 更新前），然后是 `onUpdated`（DOM 更新后），最后是 `post` 的 watch。
+The actual output order is fairly complex, but the core principle is: `sync` runs first (immediately when the data changes), then `pre` (before the DOM updates), then `onUpdated` (after the DOM updates), and finally the `post` watch.
 
 ## Summary
 
-- Composition API 的生命周期钩子以 `onXxx` 函数形式在 `setup()` 中调用
-- `beforeCreate` 和 `created` 不再需要，`setup()` 本身就覆盖了这个阶段
-- 每个钩子可以注册多次，按注册顺序执行，非常适合逻辑复用
-- `onErrorCaptured` 可以实现类似 React ErrorBoundary 的错误边界
-- 注意 `watch` 的 `flush` 选项和生命周期钩子的执行顺序关系
-- 在 `onUnmounted` 中务必清理事件监听、定时器、Observer 等副作用
+- Composition API lifecycle hooks are called as `onXxx` functions inside `setup()`.
+- `beforeCreate` and `created` are no longer needed — `setup()` itself covers that phase.
+- Each hook can be registered multiple times and runs in registration order, which is great for logic reuse.
+- `onErrorCaptured` can implement an error boundary similar to React's ErrorBoundary.
+- Mind the relationship between `watch`'s `flush` option and the lifecycle hook execution order.
+- Always clean up side effects in `onUnmounted` — event listeners, timers, observers, and the like.

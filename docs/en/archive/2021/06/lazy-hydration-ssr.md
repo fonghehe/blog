@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 1
-description: "SSR 懒水合 Lazy Hydration 策略 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
-wordCount: 157
+description: "Lazy hydration strategies for SSR are being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 146
 ---
 
-SSR 懒水合 Lazy Hydration 策略 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+SSR lazy hydration is being adopted more and more widely in frontend development. This article digs into its core principles and best practices, drawn from real projects.
 
 ## Basic Usage
 
@@ -71,7 +71,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Practical Cases
 
-实际项目中的用法会更复杂一些：
+In real projects, usage gets a bit more involved:
 
 ```javascript
 :root {
@@ -94,7 +94,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ```
 
-Through this approach, both the testability and scalability of the code are improved.
+This makes the code both more testable and more scalable.
 
 ## Performance Optimization
 
@@ -123,7 +123,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Handle edge cases carefully — they are critical in production.
 
 ## Summary
 

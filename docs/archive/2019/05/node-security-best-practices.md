@@ -5,12 +5,12 @@ tags:
   - Node.js
 readingTime: 1
 description: "Node.js 工程师很容易掉入安全陷阱——不是因为能力不够，而是没关注。本文整理了开发过程中常被忽视的安全日常实践。"
-wordCount: 163
+wordCount: 161
 ---
 
 Node.js 工程师很容易掉入安全陷阱——不是因为能力不够，而是没关注。本文整理了开发过程中常被忽视的安全日常实践。
 
-## Helmet ：HTTP 头安全加固
+## Helmet：HTTP 头安全加固
 
 ```javascript
 const express = require("express");
@@ -77,13 +77,13 @@ const user = await User.findOne({
 });
 ```
 
-## 璯境变量和密锻管理
+## 环境变量和密钥管理
 
 ```javascript
-// ❌ 将密锻硬编码在代码里
+// ❌ 将密钥硬编码在代码里
 const JWT_SECRET = "my-super-secret-key"; // 绝对禁止
 
-// ✅ 璯境变量
+// ✅ 环境变量
 require("dotenv").config();
 const JWT_SECRET = process.env.JWT_SECRET;
 if (!JWT_SECRET) throw new Error("JWT_SECRET is required");
@@ -139,4 +139,4 @@ app.post(
 
 ## 总结
 
-安全没有附加操作，它是基础工程体系的一部分。Helmet + 限流 + 参数化查询 + 密锻璯境变量 这四项是每个 Node.js 服务的标配，旨在拦截 80% 的常见攻击。
+安全不是附加项，而是基础工程体系的一部分。Helmet + 限流 + 参数化查询 + 密钥环境变量 这四项是每个 Node.js 服务的标配，旨在拦截 80% 的常见攻击。

@@ -5,10 +5,10 @@ tags:
   - Frontend
 readingTime: 2
 description: "Rust-driven frontend tooling is becoming an increasingly common sight in day-to-day development. This article systematically covers its usage, underlying princi"
-wordCount: 172
+wordCount: 170
 ---
 
-Rust-driven frontend tooling is becoming an increasingly common sight in day-to-day development. This article systematically covers its usage, underlying principles, and optimization strategies as the landscape stands in 2026.
+Rust-driven frontend tooling is becoming increasingly common in everyday development. This article systematically covers its usage, underlying principles, and optimization strategies as the landscape stands in 2026.
 
 ## Quick Start
 

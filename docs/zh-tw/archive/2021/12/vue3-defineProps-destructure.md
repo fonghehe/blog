@@ -6,7 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Vue 3.2 defineProps 解構在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 329
+wordCount: 327
 ---
 
 Vue 3.2 defineProps 解構在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -61,7 +61,7 @@ function reducer(state, action) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 實戰案例
 

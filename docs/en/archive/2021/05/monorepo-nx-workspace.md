@@ -5,11 +5,11 @@ tags:
   - Engineering
 
 readingTime: 2
-description: "最近在团队中落地Nx Monorepo 管理工具实践， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 189
+description: "I recently adopted Nx as a monorepo management tool with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 183
 ---
 
-最近在团队中落地Nx Monorepo 管理工具实践， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently adopted the Nx monorepo management tool on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 

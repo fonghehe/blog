@@ -4,15 +4,15 @@ date: 2020-10-21 15:31:04
 tags:
   - 测试
 readingTime: 2
-description: "最近在团队中落地Chromatic 视觉回归测试，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 285
+description: "最近チームでChromatic ビジュアルリグレッションテストを導入し、かなりの経験を積んだ。同様の作業の参考になれば幸いだ。"
+wordCount: 379
 ---
 
-最近在团队中落地Chromatic 视觉回归测试，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近チームで Chromatic のビジュアルリグレッションテストを導入し、いくつかの経験を蓄積した。参考になれば幸いだ。
 
 ## コアコンセプト
 
-先来看基本的实现方式：
+まずは基本的な実装方法を見てみよう：
 
 ```javascript
 :root {
@@ -35,11 +35,11 @@ wordCount: 285
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示す。実際のプロジェクトではエラー処理と境界条件も考慮が必要だ。
 
 ## 深掘り解析
 
-在这个基础上，我们可以进一步优化：
+この基盤の上でさらに最適化できる：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -64,11 +64,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模プロジェクトで実用的で、保守コストを大幅に削減できる。
 
 ## 実装経験
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは使い方はもう少し複雑になる：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -92,11 +92,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+この方法によりコードのテスト容易性と拡張性が向上した。
 
 ## チューニング戦略
 
-以下是一个完整的示例：
+以下は全体のサンプルだ：
 
 ```javascript
 :root {
@@ -119,10 +119,10 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理に注意せよ。本番環境で極めて重要だ。
 
 ## まとめ
 
-- 代码示例仅供参考，需根据业务场景调整
-- Chromatic 视觉回归测试不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- コード例は参考用。実際のビジネス場面に合わせ調整せよ
+- Chromatic のビジュアルリグレッションテストは銀の弾丸ではない。プロジェクト規模と技術スタックに応じて選ぶべきだ
+- API を暗記するより基礎原理を理解する方が重要だ

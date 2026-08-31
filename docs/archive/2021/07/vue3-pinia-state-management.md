@@ -7,10 +7,10 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Vuex 4 能用，但写起来总觉得别扭。Pinia 是 Vue 核心团队成员开发的新状态管理库，API 设计比 Vuex 干净很多，已经在 Vue 3 项目里用了两个多月，分享一下经验。"
-wordCount: 323
+wordCount: 326
 ---
 
-Vuex 4 能用，但写起来总觉得别扭。Pinia 是 Vue 核心团队成员开发的新状态管理库，API 设计比 Vuex 干净很多，已经在 Vue 3 项目里用了两个多月，分享一下经验。
+Vuex 4 能用，但写起来总觉得别扭。Pinia 是 Vue 核心团队成员开发的新状态管理库，API 设计比 Vuex 干净很多——我已经在 Vue 3 项目里用了两个多月，这里分享一些经验。
 
 ## 为什么不用 Vuex 4
 

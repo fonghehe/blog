@@ -4,15 +4,15 @@ date: 2020-11-02 17:40:17
 tags:
   - JavaScript
 readingTime: 2
-description: "可选链与空值合并最佳实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 343
+description: "A refreshed look at optional chaining and nullish coalescing best practices, revisiting earlier conclusions in light of updated language support."
+wordCount: 212
 ---
 
-可选链与空值合并最佳实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+Optional chaining and nullish coalescing have been discussed in the community many times, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest versions.
 
 ## Getting Started
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 const fs = require('fs')
@@ -37,11 +37,11 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Source Code Analysis
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -64,11 +64,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project you also need to handle errors and edge cases.
 
 ## Real-World Applications
 
-在这个基础上，我们可以进一步优化：
+Building on that, we can push the optimization a step further:
 
 ```javascript
 .container {
@@ -91,11 +91,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in larger projects and significantly lowers maintenance cost.
 
 ## Optimization Tips
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets a bit more involved:
 
 ```javascript
 const fs = require('fs')
@@ -120,11 +120,11 @@ const csvToJson = new Transform({
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Pitfall Avoidance Guide
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -147,12 +147,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge-case handling — that is critical in production.
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- Always verify compatibility before shipping to production.
+- In team collaboration, conventions and documentation matter more than the tech itself.
+- Keep an eye on the community — technical solutions need to keep evolving.
+- Don't adopt new tech just for its own sake.
+- The code samples are for reference only; adapt them to your use case.

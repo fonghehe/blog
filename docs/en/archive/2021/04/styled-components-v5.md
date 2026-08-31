@@ -7,15 +7,15 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "关于Styled Components v5 最佳实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspe"
-wordCount: 204
+description: "Many developers only know styled-components v5 best practices at the API level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 191
 ---
 
-关于Styled Components v5 最佳实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to Styled Components v5 best practices, many developers only stay at the API surface. This article looks at the real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -145,4 +145,4 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Styled Components v5 最佳实践不是银弹，需要根据项目规模和技术栈选择
+- Styled Components v5 best practices are no silver bullet—adopt them based on your project's size and tech stack.

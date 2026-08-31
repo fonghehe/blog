@@ -4,12 +4,12 @@ date: 2021-06-14 16:06:33
 tags:
   - Webpack
   - 性能优化
-readingTime: 2
+readingTime: 1
 description: "Module Federation 性能优化策略在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 290
+wordCount: 276
 ---
 
-Module Federation 性能优化策略在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Module Federation 的性能优化策略在前端用得越来越普遍。本文从实际项目出发，拆解它的核心原理和落地实践。
 
 ## 基础用法
 
@@ -30,7 +30,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要结合具体场景，并非处处都值得做。
 
 ## 进阶用法
 
@@ -72,7 +72,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+这段代码演示了基本用法，实际项目里还得补上错误处理和边界情况。
 
 ## 性能优化
 

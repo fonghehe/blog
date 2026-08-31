@@ -5,7 +5,7 @@ tags:
   - Performance
 readingTime: 7
 description: "The PerformanceObserver long-animation-frame (LoAF) API solves the core attribution gap in the Long Task API. This article explains LoAF's fields, production collection strategies, and demonstrates how to drive INP optimization through three real-world cases: third-party script blocking, long render pipelines, and style/layout thrashing."
-wordCount: 3100
+wordCount: 841
 ---
 
 After INP (Interaction to Next Paint) officially replaced FID as a Core Web Vitals metric in 2024, frontend teams faced an awkward reality: we know the page is slow to respond, but we don't know what's making it slow. The Long Task API can tell you "there was a 300ms long task," but it can't tell you what code was actually executing during those 300ms. That attribution blind spot was filled in 2026 by the Long Animation Frame API (LoAF).

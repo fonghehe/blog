@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "在日常开发中，Vue 3 Teleport 实现全局 Modal is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies"
-wordCount: 201
+description: "Using Vue 3 Teleport to implement global modals is increasingly common in everyday work. This article systematically covers usage, internals, and optimization strategies."
+wordCount: 193
 ---
 
-在日常开发中，Vue 3 Teleport 实现全局 Modal is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In day-to-day development, using Vue 3 Teleport to implement a global Modal is becoming more and more common. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -136,5 +136,5 @@ This pattern is very practical in large projects and can significantly reduce ma
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vue 3 Teleport 实现全局 Modal不是银弹，需要根据项目规模和技术栈选择
+- Vue 3 Teleport for a global Modal isn't a silver bullet; choose it based on your project's size and tech stack
 - Understanding underlying principles is more important than memorizing APIs

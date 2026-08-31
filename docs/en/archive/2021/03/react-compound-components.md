@@ -6,15 +6,15 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "React 复合组件模式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 197
+description: "The React compound components pattern is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 183
 ---
 
-React 复合组件模式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+The React compound component pattern is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more involved:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -123,7 +123,7 @@ This approach has been running stably in production for over six months and has 
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- React 复合组件模式不是银弹，需要根据项目规模和技术栈选择
+- The React compound component pattern is not a silver bullet; choose it based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

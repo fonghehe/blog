@@ -5,16 +5,16 @@ tags:
   - React
   - JavaScript
 
-readingTime: 2
+readingTime: 3
 description: "React 18 在 2021 年进入 Beta 阶段，Concurrent 模式的核心 API 逐步稳定。`useTransition` 是其中最值得提前了解的 Hook——它解决了一个长期困扰 React 开发者的问题：大列表渲染导致的界面卡顿。"
-wordCount: 455
+wordCount: 703
 ---
 
-React 18 在 2021 年进入 Beta 阶段，Concurrent 模式的核心 API 逐步稳定。`useTransition` 是其中最值得提前了解的 Hook——它解决了一个长期困扰 React 开发者的问题：大列表渲染导致的界面卡顿。
+React 18 は 2021 年に Beta 段階に入り、Concurrent モードの中核となる API が徐々に安定してきた。`useTransition` は事前に知っておく価値がある Hook の一つだ。これは React 開発者を長年悩ませてきた問題、つまり大量のリストを描画する際の UI のカクつきを解決する。
 
 ## 問題の背景
 
-假设你有一个搜索组件，用户输入后过滤一个上万条数据的列表：
+検索コンポーネントがあり、ユーザーが入力すると数万件のデータを含むリストを絞り込むと仮定しよう：
 
 ```jsx
 function SearchableList({ items }) {
@@ -37,7 +37,7 @@ function SearchableList({ items }) {
 }
 ```
 
-当数据量大时，每次按键都会触发一次重量级的渲染，输入框会明显卡顿。
+データ量が多い場合、キー入力のたびに負荷の大きい描画が発生し、入力欄が明らかにカクつく。
 
 ## useTransition 的解决方案
 
@@ -69,24 +69,24 @@ function SearchableList({ items }) {
 }
 ```
 
-核心思路是把状态更新分成两个优先级：
-- `setQuery` 是紧急更新，立即执行，保证输入框响应
-- `startTransition` 包裹的更新是过渡更新，可以被中断，不阻塞用户交互
+本質的な考え方は、状態更新を 2 つの優先度に分けることだ：
+- `setQuery` は緊急更新で、即座に実行され、入力欄の応答性を保証する
+- `startTransition` で囲んだ更新はトランジション更新となり、中断可能でユーザーの操作をブロックしない
 
 ## デバウンスとの違い
 
-很多人第一反应是"这不就是防抖吗"，但本质不同：
+多くの人は最初「これはただのデバウンスだろう」と思うが、本質は異なる：
 
 ```
 防抖：延迟执行，用户停止输入后才触发过滤
 useTransition：立即执行但可中断，保证紧急更新优先
 ```
 
-防抖牺牲了实时性，`useTransition` 保持了实时性的同时不阻塞交互。
+デバウンスはリアルタイム性を犠牲にするが、`useTransition` はリアルタイム性を保ちつつ、操作をブロックしない。
 
 ## Suspense と組み合わせて使う
 
-在 React 18 中，`useTransition` 和 `Suspense` 配合效果更好：
+React 18 では、`useTransition` と `Suspense` を組み合わせるとさらに効果的だ：
 
 ```jsx
 function App() {
@@ -111,18 +111,18 @@ function App() {
 }
 ```
 
-当用户快速切换用户时，旧内容会保持显示，直到新内容加载完成，避免了白屏闪烁。
+ユーザーが素早く切り替わると、新しいコンテンツの読み込みが終わるまで古い内容が表示されたままになり、白い画面のちらつきを防げる。
 
 ## 注意事項
 
-1. `startTransition` 回调里的更新必须是同步的，不能包裹异步操作
-2. Transition 不能用于受控输入框的值更新
-3. 目前 `useTransition` 只在 Concurrent 模式下生效，Legacy 模式下会退化为同步更新
+1. `startTransition` のコールバック内の更新は同期でなければならず、非同期処理を囲んではいけない
+2. Transition は制御された入力欄の値の更新には使えない
+3. 現時点では `useTransition` は Concurrent モードでのみ有効で、Legacy モードでは同期更新に退行する
 
 ## まとめ
 
-- `useTransition` 是 React 18 Concurrent 模式的核心 API
-- 它区分了紧急更新和过渡更新，让渲染可被中断
-- 解决了大列表过滤、Tab 切换等场景的卡顿问题
-- 和防抖不同，不牺牲实时性
-- 建议在 React 18 Beta 期间就开始学习和试验
+- `useTransition` は React 18 の Concurrent モードの中核となる API だ
+- 緊急更新とトランジション更新を分け、描画を中断可能にする
+- 大量リストの絞り込みやタブ切り替えなどの場面でのカクつきを解決する
+- デバウンスと異なり、リアルタイム性を犠牲にしない
+- React 18 Beta の段階から学び、試してみることを推奨する

@@ -4,11 +4,11 @@ date: 2022-12-06 15:28:52
 tags:
   - Frontend
 readingTime: 2
-description: "ES2022（ES13）已经全面落地了。TypeScript 4.7+、Node.js 18、主流浏览器全部支持。这篇文章整理了 ES2022 的核心特性，每个都附上实际应用场景。"
-wordCount: 204
+description: "ES2022 (ES13) has fully landed: TypeScript 4.7+, Node.js 18, and all major browsers support it. This article rounds up the core ES2022 features, each with a real-world use case."
+wordCount: 189
 ---
 
-ES2022（ES13）已经全面落地了。TypeScript 4.7+、Node.js 18、主流浏览器全部支持。这篇文章整理了 ES2022 的核心特性，每个都附上实际应用场景。
+ES2022 (ES13) has fully landed: TypeScript 4.7+, Node.js 18, and all major browsers support it. This article rounds up the core ES2022 features, each with a real-world use case.
 
 ## Top-Level Await
 

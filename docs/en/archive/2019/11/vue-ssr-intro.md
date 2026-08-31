@@ -4,15 +4,15 @@ date: 2019-11-08 10:44:30
 tags:
   - Vue
 readingTime: 1
-description: "最近项目中用到了Vue 2 SSR 服务端渲染入门，发现比预想的要复杂。分享一下实践过程中总结的经验。"
-wordCount: 204
+description: "I recently got started with Vue 2 SSR (server-side rendering) on a project and found it more involved than I expected. Here are some lessons from the experience."
+wordCount: 141
 ---
 
-最近项目中用到了Vue 2 SSR 服务端渲染入门，发现比预想的要复杂。分享一下实践过程中总结的经验。
+I recently got started with Vue 2 SSR (server-side rendering) on a project and found it more involved than I expected. Here are some lessons from the experience.
 
 ## Basic Concepts
 
-具体实现参考以下代码：
+Here's a concrete implementation to refer to:
 
 ```javascript
 const http = require('http')
@@ -38,11 +38,11 @@ if (cluster.isMaster) {
 }
 ```
 
-经过线上验证，这套方案运行稳定。
+This approach has been validated in production and runs stably.
 
 ## Deep Dive
 
-先来看基本的用法：
+Let's start with the basic usage:
 
 ```javascript
 const path = require('path')
@@ -86,11 +86,11 @@ module.exports = {
 }
 ```
 
-这种写法简洁明了，适合大多数场景。
+This style is clear and concise, and fits most scenarios.
 
 ## Project Application
 
-核心代码如下：
+The core code looks like this:
 
 ```javascript
 const { sum, debounce } = require('./utils')
@@ -117,11 +117,11 @@ describe('utils', () => {
 })
 ```
 
-实际项目中还需要考虑边界条件和异常处理。
+In a real project you'll also need to account for edge cases and error handling.
 
 ## Summary
 
-- 遇到问题多看源码和官方文档
-- Vue 2 SSR 服务端渲染入门的关键在于理解核心概念，不要停留在表面用法
-- 实际项目中根据场景选择合适的方案
-- 团队中统一约定比追求完美实现更重要
+- When you hit a problem, read the source code and the official docs
+- The key to getting started with Vue 2 SSR is understanding the core concepts, not just the surface-level API
+- In real projects, pick the right approach for your scenario
+- Shared team conventions matter more than chasing a perfect implementation

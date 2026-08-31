@@ -1,5 +1,5 @@
 ---
-title: "Pinia v3 Migration Practice:  v2 Upgrade平滑Path & 注意事项"
+title: "Pinia v3 Migration in Practice: A Smooth Path from v2 and What to Watch For"
 date: 2025-12-22 12:36:13
 tags:
   - Vue

@@ -3,16 +3,16 @@ title: "TypeScript inferキーワードの活用法"
 date: 2020-04-14 16:47:07
 tags:
   - TypeScript
-readingTime: 2
-description: "最近在团队中落地TypeScript infer 关键字妙用，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 316
+readingTime: 3
+description: "最近チームでTypeScript infer キーワードの活用を導入し、かなりの経験を積んだ。同様の作業の参考になれば幸いだ。"
+wordCount: 470
 ---
 
-最近在团队中落地TypeScript infer 关键字妙用，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近チームで TypeScript の infer キーワードの活用法を実践し、いくつかの経験を積んだ。参考になればとまとめておく。同じような取り組みをしている人の役に立てば幸いだ。
 
 ## コアコンセプト
 
-以下是一个完整的示例：
+以下は完全なサンプルだ：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -43,11 +43,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理には注意が必要だ。これは本番環境で極めて重要になる。
 
 ## 深掘り解析
 
-关键在于理解核心逻辑：
+肝心なのは、中核となるロジックを理解することだ：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -71,11 +71,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+パフォーマンス最適化は具体的な場面に合わせる必要があり、すべてのケースで過度な最適化が必要なわけではない。
 
 ## 実装経験
 
-我们可以通过以下方式来改进：
+次のような方法で改善できる：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -106,11 +106,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番環境で半年以上安定して稼働しており、実際に検証済みだ。
 
 ## 调优策略
 
-先来看基本的实现方式：
+まずは基本的な実装の仕方を見てみよう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -134,11 +134,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトでは、エラー処理や境界条件も考慮する必要がある。
 
 ## 注意事項
 
-在这个基础上，我们可以进一步优化：
+この上にさらに、次のように最適化できる：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -169,10 +169,10 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模なプロジェクトで非常に実用的で、保守コストを大きく下げられる。
 
 ## まとめ
 
-- 生产环境使用前务必做好兼容性验证
+- 本番環境での使用前に、必ず互換性の検証を行うこと
 - 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- コミュニティの動向を継続的に注視し、技術アプローチを適時更新する

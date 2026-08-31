@@ -5,7 +5,7 @@ tags:
   - PWA
 readingTime: 2
 description: "PWA（Progressive Web App）は、Web アプリをネイティブアプリのように感じさせる技術セットです：オフラインサポート、プッシュ通知、ホーム画面へのインストール。コアとなる技術は Service Worker です。"
-wordCount: 464
+wordCount: 467
 ---
 
 PWA（Progressive Web App）は、Web アプリをネイティブアプリのように感じさせる技術セットです：オフラインサポート、プッシュ通知、ホーム画面へのインストール。コアとなる技術は Service Worker です。
@@ -130,7 +130,7 @@ return cached || fetchPromise;
 
 ## 実際のプロジェクトでは Workbox を使用
 
-SW を一から書くのはエラーが発生しやすいです。Google の [Workbox](https://developers.google.com/web/tools/workbox) が一般的な戦略をカプセル化しています：
+SW を一から書くのはエラーが発生しやすいです。Google の [Workbox](https://developers.google.com/web/tools/workbox) がよく使われる戦略をまとめて提供しています：
 
 ```javascript
 import { precacheAndRoute } from "workbox-precaching";

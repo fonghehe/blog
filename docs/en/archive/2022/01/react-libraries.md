@@ -4,11 +4,11 @@ date: 2022-01-28 10:56:21
 tags:
   - React
 readingTime: 2
-description: "We recently implemented React 2022 工具库推荐清单， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 155
+description: "I recently put together a recommended React utility library list for 2022 with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 151
 ---
 
-We recently implemented React 2022 工具库推荐清单， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently compiled a recommended React 2022 library list, and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 

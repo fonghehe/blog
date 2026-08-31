@@ -5,11 +5,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "JavaScript Array.flatMap 实用技巧 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the"
-wordCount: 175
+description: "Practical tricks with JavaScript Array.flatMap have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 172
 ---
 
-JavaScript Array.flatMap 实用技巧 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+JavaScript Array.flatMap tips have been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 

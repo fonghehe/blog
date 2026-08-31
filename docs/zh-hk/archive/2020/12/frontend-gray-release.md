@@ -35,7 +35,7 @@ function reducer(state, action) {
 
 ## 源碼分析
 
-實際項目中的用法會更復雜一些：
+實際項目中的用法會更複雜一些：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T

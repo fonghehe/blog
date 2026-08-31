@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Year-end is a good time to round up the frontend tools I used this year, along with their positioning and selection rationale."
-wordCount: 356
+wordCount: 357
 ---
 
 Year-end is a good time to round up the frontend tools I used this year, along with their positioning and selection rationale.
@@ -39,7 +39,7 @@ Year-end is a good time to round up the frontend tools I used this year, along w
 
 **npm 6** (also in use)
 
-- Speed much improved after this year's updates
+- Install speed improved significantly after this year's updates
 - `package-lock.json` more solid now
 
 ## Code Quality

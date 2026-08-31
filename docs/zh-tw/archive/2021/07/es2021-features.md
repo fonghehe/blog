@@ -56,7 +56,7 @@ try {
 }
 ```
 
-和 `Promise.race` 的區別：`race` 是第一個 settled（不管成功失敗）就返回，`any` 是第一個 fulfilled（隻看成功）才返回。
+和 `Promise.race` 的區別：`race` 是第一個 settled（不管成功失敗）就返回，`any` 是第一個 fulfilled（只看成功）才返回。
 
 實際場景：多 CDN 源競爭、多資料來源降級。
 

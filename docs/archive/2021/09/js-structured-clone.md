@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "最近在团队中落地JavaScript structuredClone 深拷贝，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 351
+wordCount: 353
 ---
 
-最近在团队中落地JavaScript structuredClone 深拷贝，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近在团队里落地了 JavaScript structuredClone 深拷贝方案，积累了不少经验。整理出来供参考，希望对做类似工作的同学有帮助。
 
 ## 核心概念
 

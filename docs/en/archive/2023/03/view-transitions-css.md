@@ -4,11 +4,11 @@ date: 2023-03-24 10:22:43
 tags:
   - CSS
 readingTime: 1
-description: "View Transitions CSS 页面转场这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 175
+description: "CSS View Transitions page transitions has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 159
 ---
 
-View Transitions CSS 页面转场这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+CSS View Transitions page transitions has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
 
 ## Getting Started
 

@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 1
-description: "Valtio Proxy 状态管理 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based"
-wordCount: 183
+description: "Valtio's Proxy-based state management has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 165
 ---
 
-Valtio Proxy 状态管理 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Valtio's proxy-based state management has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -70,7 +70,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Real-World Applications
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more complex:
 
 ```javascript
 import { create } from 'zustand'
@@ -127,5 +127,5 @@ Pay attention to boundary condition handling, which is critical in production.
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Valtio Proxy 状态管理不是银弹，需要根据项目规模和技术栈选择
+- Valtio's proxy-based state management is no silver bullet; choose it based on project size and tech stack.
 - Understanding underlying principles is more important than memorizing APIs

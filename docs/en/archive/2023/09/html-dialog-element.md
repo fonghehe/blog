@@ -4,7 +4,7 @@ date: 2023-09-21 11:47:37
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，HTML dialog 元素原生弹窗 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+description: "Native modals with the HTML dialog element are showing up in more and more everyday work. This article systematically covers their usage, mechanics, and practical strategies."
 wordCount: 198
 ---
 

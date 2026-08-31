@@ -4,15 +4,15 @@ date: 2020-04-13 10:06:41
 tags:
   - Vue
 readingTime: 2
-description: "Vue 动画过渡方案在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 269
+description: "Vue's animation and transition solutions have evolved rapidly in recent years. This article takes a deep look at their underlying principles and practical usage."
+wordCount: 174
 ---
 
-Vue 动画过渡方案在近年来发展迅速，本文将深入分析其原理和实践方法。
+Vue's animation and transition solutions have evolved rapidly in recent years. This article takes a deep look at their principles and practical usage.
 
 ## Basic Concepts
 
-来看具体的实现方式：
+Here's a concrete implementation:
 
 ```css
 .grid {
@@ -42,11 +42,11 @@ Vue 动画过渡方案在近年来发展迅速，本文将深入分析其原理�
 
 ```
 
-这种实现方式简洁高效，适合大多数场景。
+This approach is concise and efficient, suitable for most scenarios.
 
 ## Core Implementation
 
-下面是一个实际的示例：
+Here is a real-world example:
 
 ```css
 :root {
@@ -74,11 +74,11 @@ Vue 动画过渡方案在近年来发展迅速，本文将深入分析其原理�
 
 ```
 
-在实际项目中，还需要根据具体需求做适当调整。
+In real projects, you'll still need to adapt it to your specific requirements.
 
 ## Practical Application
 
-核心代码如下：
+The core code is as follows:
 
 ```css
 .grid {
@@ -108,11 +108,11 @@ Vue 动画过渡方案在近年来发展迅速，本文将深入分析其原理�
 
 ```
 
-注意处理好边界条件和异常情况。
+Be sure to handle edge cases and error conditions properly.
 
 ## Best Practices
 
-我们可以这样实现：
+Here's how we can implement it:
 
 ```css
 :root {
@@ -140,11 +140,11 @@ Vue 动画过渡方案在近年来发展迅速，本文将深入分析其原理�
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+This pattern improves the maintainability of the code.
 
 ## Common Issues
 
-具体用法参考以下代码：
+Refer to the code below for the specific usage:
 
 ```css
 .grid {
@@ -174,11 +174,11 @@ Vue 动画过渡方案在近年来发展迅速，本文将深入分析其原理�
 
 ```
 
-建议在团队中统一规范，减少不一致的问题。
+It's best to standardize conventions across the team to reduce inconsistencies.
 
 ## Summary
 
-- Vue 动画过渡方案的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
-- 持续关注社区动态，及时更新技术方案
+- The core of Vue's animation and transition solutions is understanding the underlying principles, not just memorizing the APIs.
+- In real projects, picking the right solution matters more than chasing the newest technology.
+- Keeping a consistent code style across the team lowers maintenance cost.
+- Keep an eye on the community and update your technical approach in a timely manner.

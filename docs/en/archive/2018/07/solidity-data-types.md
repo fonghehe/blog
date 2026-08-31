@@ -5,6 +5,9 @@ tags:
   - Web3
   - Solidity
   - Smart Contract
+readingTime: 7
+wordCount: 1039
+description: "Solidity's data type system may superficially resemble a hybrid of JavaScript and C++, but its storage model is fundamentally different from both. Every state w"
 ---
 
 Solidity's data type system may superficially resemble a hybrid of JavaScript and C++, but its storage model is fundamentally different from both. Every state write in a smart contract consumes gas, and gas consumption directly depends on how data is laid out in storage. Understanding Solidity's data types and storage model is not only a prerequisite for writing correct contracts, but also the key to writing economical ones.
@@ -37,7 +40,7 @@ uint8 public smallNumber = 255;         // 最大 255
 int256 public signedNumber = -100;
 ```
 
-Solidity provides unsigned integer types ranging from `uint8` to `uint256` (in steps of 8). Choosing the appropriate size can save storage space—but only makes sense when multiple small-type variables can be packed into the same slot.
+Solidity provides unsigned integer types ranging from `uint8` to `uint256` (in steps of 8). Choosing a narrower type can save storage space—but only when several small integer types can be packed into the same slot.
 
 ### address
 
@@ -174,7 +177,7 @@ function processArray(uint[] memory arr) public pure returns (uint) {
 
 ### calldata
 
-`calldata` is a read-only, non-modifiable function input data area, similar to `memory` but more gas-efficient:
+`calldata` is a read-only region for function arguments, similar to `memory` but more gas-efficient:
 
 ```solidity
 function externalFunc(uint[] calldata arr) external pure returns (uint) {
@@ -325,7 +328,7 @@ contract FixedArray {
 }
 ```
 
-Note: Fixed-size arrays in storage are **not** packed—each element occupies its own slot (unless the element type itself is smaller than 32 bytes and other variables can share the slot—but array elements do not share slots with each other).
+Note: fixed-size arrays in storage are **not** packed—each element occupies its own slot. (An element under 32 bytes may still be packed with *other* adjacent variables, but array elements are never packed with one another.)
 
 ### Dynamic Arrays
 
@@ -356,7 +359,7 @@ This is why random access in dynamic arrays has higher gas consumption—a kecca
 
 ## bytes32 vs string: Making the Right Choice
 
-`bytes32` and `string` can be interchangeable in some scenarios, but their storage models are completely different:
+`bytes32` and `string` can be used interchangeably in some scenarios, but their storage models are completely different:
 
 ```solidity
 contract BytesVsString {

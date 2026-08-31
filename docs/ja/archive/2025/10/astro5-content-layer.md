@@ -4,11 +4,11 @@ date: 2025-10-28 16:22:59
 tags:
   - React
 readingTime: 2
-description: "Astro 5 发布了，最大的变化是 Content Layer API。对于内容驱动的网站来说，这是一个很有意义的升级。"
-wordCount: 166
+description: "Astro 5 がリリースされた。最大の変化は Content Layer API だ。コンテンツ駆動のサイトにとって、これは意義深いアップグレードだ。"
+wordCount: 282
 ---
 
-Astro 5 发布了，最大的变化是 Content Layer API。对于内容驱动的网站来说，这是一个很有意义的升级。
+Astro 5 がリリースされた。最大の変化は Content Layer API だ。コンテンツ駆動のサイトにとって、これは意義深いアップグレードだ。
 
 ## Content Layer 是什么
 
@@ -140,7 +140,7 @@ const relatedPosts = await getCollection("blog", ({ data, id }) => {
 </article>
 ```
 
-## 自定义数据源插件
+## カスタムデータソースプラグイン
 
 ```ts
 // src/loaders/notion-loader.ts
@@ -236,9 +236,9 @@ Astro 的岛屿架构：
 
 ## まとめ
 
-- Astro 5 的 Content Layer 让数据源不再局限于本地文件
-- 自定义 Loader 可以对接任何数据源（CMS、数据库、API）
-- 查询 API 简洁强大，支持过滤和关联
-- 零 JS 默认输出，内容站性能极致
-- View Transitions 提供了丝滑的页面切换体验
-- 适合文档站、博客、营销页等内容驱动的项目
+- Astro 5 の Content Layer により、データソースはローカルファイルに限定されなくなった
+- カスタム Loader はあらゆるデータソース（CMS・データベース・API）に接続可能
+- クエリ API は簡潔かつ強力で、絞り込みと関連付けに対応
+- デフォルトで JS ゼロの出力を実現し、コンテンツサイトのパフォーマンスを極限まで引き出す
+- View Transitions が滑らかなページ遷移体験を提供
+- ドキュメントサイト・ブログ・マーケティングページなどコンテンツ駆動のプロジェクトに最適

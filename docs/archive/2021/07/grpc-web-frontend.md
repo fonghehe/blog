@@ -6,14 +6,14 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近在团队中落地gRPC Web 前端通信实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 297
+wordCount: 285
 ---
 
-最近在团队中落地gRPC Web 前端通信实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近在团队里落地了 gRPC Web 前端通信方案，积累了一些经验。整理出来供参考，希望能帮到做类似工作的同学。
 
 ## 核心概念
 
-关键在于理解核心逻辑：
+关键还是理解背后的核心逻辑：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -48,7 +48,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ## 深度解析
 
-我们可以通过以下方式来改进：
+可以试着从下面几个方面改进：
 
 ```javascript
 const express = require('express')
@@ -73,11 +73,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已经在线上稳定运行半年多，是经过实战验证的。
 
 ## 落地经验
 
-先来看基本的实现方式：
+先从基础实现看起：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -96,11 +96,11 @@ function reducer(state, action) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+上面是最基础的用法，实际项目里还得补上错误处理和边界情况。
 
 ## 调优策略
 
-在这个基础上，我们可以进一步优化：
+在此基础上还能继续优化：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -131,7 +131,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种写法在大型项目里很实用，能明显省下维护成本。
 
 ## 小结
 

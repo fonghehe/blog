@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "TC39 在 2021 年 6 月正式发布了 ES2021 标准。和 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 这种重磅特性相比，ES2021 的更新更偏向实用主义——每个特性都不大，但写代码时确实用得上。"
-wordCount: 348
+wordCount: 345
 ---
 
-TC39 在 2021 年 6 月正式发布了 ES2021 标准。和 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 这种重磅特性相比，ES2021 的更新更偏向实用主义——每个特性都不大，但写代码时确实用得上。
+TC39 在 2021 年 6 月正式发布 ES2021 标准。相比 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 这类重磅特性，这版更新更偏实用主义——单个特性都不大，但写代码时确实用得上。
 
 ## String.prototype.replaceAll
 

@@ -4,7 +4,7 @@ date: 2023-09-06 10:05:28
 tags:
   - Frontend
 readingTime: 2
-description: "Million.js 虚拟 DOM 替代方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pro"
+description: "Million.js as a virtual DOM alternative is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 194
 ---
 

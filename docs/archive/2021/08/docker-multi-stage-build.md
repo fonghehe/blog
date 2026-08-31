@@ -6,14 +6,14 @@ tags:
   - 工程化
 readingTime: 2
 description: "在日常开发中，Docker 多阶段构建前端应用的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 318
+wordCount: 279
 ---
 
-在日常开发中，Docker 多阶段构建前端应用的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+Docker 多阶段构建在前端项目里用得越来越多，本文系统讲解它的用法、原理和优化策略。
 
 ## 快速上手
 
-以下是一个完整的示例：
+下面看一个完整示例：
 
 ```dockerfile
 import { defineConfig } from 'vite'
@@ -41,11 +41,11 @@ export default defineConfig({
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界条件一定要处理好，生产环境里这点很关键。
 
 ## 内部原理
 
-关键在于理解核心逻辑：
+关键在于吃透它的核心逻辑：
 
 ```dockerfile
 import { defineConfig } from 'vite'
@@ -73,11 +73,11 @@ export default defineConfig({
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要看场景，不必处处都做过度优化。
 
 ## 业务实战
 
-我们可以通过以下方式来改进：
+看看可以从哪些角度改进：
 
 ```dockerfile
 import { defineConfig } from 'vite'
@@ -105,11 +105,11 @@ export default defineConfig({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已在线上稳定运行半年多，经过了实战检验。
 
 ## 性能对比
 
-先来看基本的实现方式：
+先看一下基本实现：
 
 ```dockerfile
 import { defineConfig } from 'vite'
@@ -137,11 +137,11 @@ export default defineConfig({
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+上面是基本用法，真实项目还得补上错误处理和边界情况。
 
 ## 问题排查
 
-在这个基础上，我们可以进一步优化：
+在此基础上还能进一步优化：
 
 ```dockerfile
 import { defineConfig } from 'vite'
@@ -169,10 +169,10 @@ export default defineConfig({
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种模式在大型项目里很实用，能明显降低维护成本。
 
 ## 小结
 
 - 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Docker 多阶段构建前端应用不是银弹，需要根据项目规模和技术栈选择
+- 代码示例仅供参考，要按业务场景调整
+- Docker 多阶段构建不是银弹，得按项目规模和技术栈来选

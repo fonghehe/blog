@@ -5,10 +5,10 @@ tags:
   - 前端
 readingTime: 2
 description: "前端特性开关 Feature Flags这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 319
+wordCount: 324
 ---
 
-前端特性开关 Feature Flags这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+前端特性开关 Feature Flags 这个话题社区已经讨论过很多次，但随着版本迭代，不少结论需要更新。下面基于当前最新版本重新梳理一遍。
 
 ## 入门指南
 
@@ -63,7 +63,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要结合具体场景，千万别为了优化而过度优化。
 
 ## 真实场景应用
 

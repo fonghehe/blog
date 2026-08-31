@@ -4,9 +4,9 @@ date: 2023-07-22 13:05:54
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 9
 description: "Aptos 繼承了 Diem 的 Move 血統，在資源模型和並行執行上有獨到設計。本文覆蓋 @aptos-labs/ts-sdk、Petra Wallet 集成和 Move 合約前端交互的完整方案。"
-wordCount: 3000
+wordCount: 1255
 ---
 
 Aptos 是由前 Meta（Facebook）Diem 項目核心成員創立的 Layer 1 區塊鏈，目前已主網上線。與 Sui 類似，Aptos 也使用 Move 語言，但兩者的 Move 實現有顯著差異。Aptos 保留了 Diem 的 Move 標準實現，採用資源（Resource）模型而非 Sui 的 Object 模型。對前端開發者而言，Aptos 的 SDK 設計和錢包集成方式也自成一套體系。
@@ -25,7 +25,7 @@ Diem（原 Libra）項目被 Meta 出售後解散，其核心技術團隊創立�
 
 - **並行執行**：Block-STM（Block Software Transactional Memory）並行執行引擎
 - **Move 語言**：資源導向，強類型安全
-- **賬户模型**：與 EVM 類似的賬户模型，但資源存儲在賬户下
+- **賬戶模型**：與 EVM 類似的賬戶模型，但資源存儲在賬戶下
 - **Gas 代幣**：APT
 - **高 TPS**：理論可達 10 萬+ TPS（並行執行場景）
 
@@ -62,9 +62,9 @@ const APTOS_NETWORKS = {
 
 | 維度 | Aptos Move | Sui Move |
 |------|-----------|----------|
-| 資源存儲 | 賬户的 resource space | 獨立 Object |
+| 資源存儲 | 賬戶的 resource space | 獨立 Object |
 | 數據模型 | Account-based | Object-based |
-| 所有權 | 資源存儲在賬户地址下 | Object 有獨立的 owner |
+| 所有權 | 資源存儲在賬戶地址下 | Object 有獨立的 owner |
 | 轉賬 | move_to / move_from | transfer Object |
 | 全局存儲 | 全局可訪問 | 按 Object 隔離 |
 
@@ -82,7 +82,7 @@ module my_app::token {
         balance: Coin<AptosCoin>,
     }
 
-    // 初始化 Vault（存儲在調用者賬户下）
+    // 初始化 Vault（存儲在調用者賬戶下）
     public entry fun initialize(account: &signer, amount: Coin<AptosCoin>) {
         let vault = Vault { balance: amount };
         move_to(account, vault);
@@ -106,7 +106,7 @@ module my_app::token {
 }
 ```
 
-關鍵區別：Aptos 使用 `move_to` 將資源存儲在賬户地址下，`borrow_global` 從任意地址讀取資源。這是全局存儲模型，而 Sui 的 Object 是獨立尋址的。
+關鍵區別：Aptos 使用 `move_to` 將資源存儲在賬戶地址下，`borrow_global` 從任意地址讀取資源。這是全局存儲模型，而 Sui 的 Object 是獨立尋址的。
 
 ## @aptos-labs/ts-sdk 使用
 
@@ -138,7 +138,7 @@ const customAptos = new Aptos(customConfig)
 ### 查詢鏈上數據
 
 ```typescript
-// 獲取賬户信息
+// 獲取賬戶信息
 const accountInfo = await aptos.getAccountInfo({
   accountAddress: '0xUserAddress...',
 })
@@ -147,11 +147,11 @@ const accountInfo = await aptos.getAccountInfo({
 //   authentication_key: '0x...',
 // }
 
-// 獲取賬户資源
+// 獲取賬戶資源
 const resources = await aptos.getAccountResources({
   accountAddress: '0xUserAddress...',
 })
-// 返回賬户下所有資源
+// 返回賬戶下所有資源
 // [
 //   { type: '0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>', data: { coin: { value: '100000000' } } },
 //   { type: '0x1::account::Account', data: { ... } },
@@ -174,7 +174,7 @@ async function getAptBalance(address: string): Promise<number> {
     })
     return parseInt(resource.coin.value) / 1e8 // APT 有 8 位小數
   } catch {
-    return 0 // 賬户可能沒有 CoinStore 資源
+    return 0 // 賬戶可能沒有 CoinStore 資源
   }
 }
 
@@ -253,7 +253,7 @@ export function usePetraWallet() {
       })
     }
 
-    // 監聽賬户變化
+    // 監聽賬戶變化
     window.aptos?.onAccountChange((account: any) => {
       setAccount(account?.address || null)
     })
@@ -295,12 +295,12 @@ export function usePetraWallet() {
 
 ## 資源（Resource）模型與前端讀取
 
-Aptos 的資源存儲在賬户地址下，前端的讀取方式與 EVM 有本質差異。
+Aptos 的資源存儲在賬戶地址下，前端的讀取方式與 EVM 有本質差異。
 
-### 讀取賬户資源
+### 讀取賬戶資源
 
 ```typescript
-// 讀取用户在某個模塊下的資源
+// 讀取用戶在某個模塊下的資源
 async function getUserVault(address: string) {
   try {
     const resource = await aptos.getAccountResource({
@@ -313,7 +313,7 @@ async function getUserVault(address: string) {
       balance: resource.balance, // Coin 對象的值
     }
   } catch (error: any) {
-    // 404 表示賬户沒有這個資源
+    // 404 表示賬戶沒有這個資源
     if (error.status === 404) {
       return null
     }
@@ -361,7 +361,7 @@ async function getTableValue(
   })
 }
 
-// 示例：讀取用户的信用評分
+// 示例：讀取用戶的信用評分
 // Move: struct CreditScore has key { scores: Table<address, u64> }
 async function getCreditScore(
   contractAddress: string,
@@ -647,18 +647,18 @@ export class AptosDApp {
 ### 資源存儲方式
 
 ```typescript
-// Aptos：資源存儲在賬户下
+// Aptos：資源存儲在賬戶下
 // 讀取方式：getAccountResource(address, resourceType)
 const vault = await aptos.getAccountResource({
   accountAddress: userAddress,
   resourceType: '0xPackage::module::Vault',
 })
-// Vault 資源存儲在 userAddress 賬户下
+// Vault 資源存儲在 userAddress 賬戶下
 
 // Sui：資源是獨立 Object
 // 讀取方式：getObject(objectId)
 const object = await provider.getObject(objectId)
-// Object 有獨立 ID，不屬於任何賬户
+// Object 有獨立 ID，不屬於任何賬戶
 ```
 
 ### 交易模型
@@ -701,7 +701,7 @@ tx.setGasBudget(50000000)
 
 | 維度 | Aptos | EVM |
 |------|-------|-----|
-| 賬户模型 | 賬户存儲資源 | 賬户存儲餘額 |
+| 賬戶模型 | 賬戶存儲資源 | 賬戶存儲餘額 |
 | 數據查詢 | getAccountResource | eth_call |
 | 交易構建 | entry function payload | ABI calldata |
 | 類型系統 | Move 強類型 | ABI + 手動類型 |
@@ -751,7 +751,7 @@ Aptos 生態工具鏈的發展狀況：
 
 Aptos 繼承了 Diem 的技術積累，在 Move 語言和並行執行方面有紮實的基礎。資源導向編程提供了比 Solidity 更強的類型安全保證——資源不能被複制或丟棄，這在資產管理場景中尤為重要。
 
-與 Sui 相比，Aptos 的賬户模型更接近 EVM 的思維模式——資源存儲在賬户地址下，而不是作為獨立 Object 存在。這使得從 EVM 遷移到 Aptos 的學習曲線比遷移到 Sui 更平緩。但 Aptos 的 Table 查詢和事件系統在實時性方面不如 EVM 的 WebSocket 事件監聽。
+與 Sui 相比，Aptos 的賬戶模型更接近 EVM 的思維模式——資源存儲在賬戶地址下，而不是作為獨立 Object 存在。這使得從 EVM 遷移到 Aptos 的學習曲線比遷移到 Sui 更平緩。但 Aptos 的 Table 查詢和事件系統在實時性方面不如 EVM 的 WebSocket 事件監聽。
 
 前端開發體驗上，`@aptos-labs/ts-sdk` 的 API 設計清晰但仍在快速迭代中。Petra Wallet 的集成方式比早期的 Sui Wallet 更成熟，但與 MetaMask 的生態成熟度仍有差距。交易確認速度快（~1 秒）是 Aptos 的顯著優勢，這讓前端的狀態管理比 EVM 的多區塊等待更簡單。
 

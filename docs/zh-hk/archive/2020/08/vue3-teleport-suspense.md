@@ -229,7 +229,7 @@ const user = await res.json()
 
 ### 巢狀 Suspense
 
-可以巢狀 Suspense 實現更細粒度的加載控製：
+可以巢狀 Suspense 實現更細粒度的加載控制：
 
 ```vue
 <template>
@@ -339,6 +339,6 @@ function retry() {
 - Teleport 將子組件的 DOM 渲染到指定位置，解決模態框/Toast 等浮層的 z-index 和 overflow 問題
 - Teleport 支持動態目標、多個 Teleport 到同一目標、以及禁用模式
 - Suspense 聲明式處理異步組件的加載和錯誤狀態
-- Suspense 支援巢狀，可以實現更細粒度的加載控製
+- Suspense 支援巢狀，可以實現更細粒度的加載控制
 - Suspense 目前仍是實驗性特性，生產使用要關注 API 變化
 - Teleport + Suspense 組合是處理異步彈窗內容的最佳實踐

@@ -6,15 +6,15 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "React 18 在 2021 年进入 Beta 阶段，Concurrent 模式的核心 API 逐步稳定。`useTransition` 是其中最值得提前了解的 Hook——它解决了一个长期困扰 React 开发者的问题：大列表渲染导致的界面卡顿。"
-wordCount: 435
+description: "React 18 entered beta in 2021, and the core Concurrent APIs are stabilizing step by step. useTransition is the hook most worth learning early — it solves a problem that has plagued React developers for years: UI jank caused by rendering large lists."
+wordCount: 302
 ---
 
-React 18 在 2021 年进入 Beta 阶段，Concurrent 模式的核心 API 逐步稳定。`useTransition` 是其中最值得提前了解的 Hook——它解决了一个长期困扰 React 开发者的问题：大列表渲染导致的界面卡顿。
+React 18 entered its Beta stage in 2021, and the core APIs of Concurrent Mode gradually stabilized. `useTransition` is one of the hooks most worth learning ahead of time — it solves a long-standing pain point for React developers: UI jank caused by rendering very large lists.
 
 ## Problem Background
 
-假设你有一个搜索组件，用户输入后过滤一个上万条数据的列表：
+Suppose you have a search component that filters a list of tens of thousands of items as the user types:
 
 ```jsx
 function SearchableList({ items }) {
@@ -37,9 +37,9 @@ function SearchableList({ items }) {
 }
 ```
 
-当数据量大时，每次按键都会触发一次重量级的渲染，输入框会明显卡顿。
+With a large dataset, every keystroke triggers an expensive render, and the input visibly stutters.
 
-## useTransition 的解决方案
+## The `useTransition` Solution
 
 ```jsx
 import { useState, useTransition } from 'react'
@@ -69,24 +69,24 @@ function SearchableList({ items }) {
 }
 ```
 
-核心思路是把状态更新分成两个优先级：
-- `setQuery` 是紧急更新，立即执行，保证输入框响应
-- `startTransition` 包裹的更新是过渡更新，可以被中断，不阻塞用户交互
+The core idea is to split state updates into two priority levels:
+- `setQuery` is an urgent update — it runs immediately so the input stays responsive
+- The update wrapped in `startTransition` is a transition update — it can be interrupted and won't block user interaction
 
 ## Difference from Debounce
 
-很多人第一反应是"这不就是防抖吗"，但本质不同：
+Many people's first reaction is "isn't this just debounce?" — but the nature is different:
 
 ```
 防抖：延迟执行，用户停止输入后才触发过滤
 useTransition：立即执行但可中断，保证紧急更新优先
 ```
 
-防抖牺牲了实时性，`useTransition` 保持了实时性的同时不阻塞交互。
+Debounce sacrifices responsiveness, whereas `useTransition` stays real-time while not blocking interaction.
 
 ## Using with Suspense
 
-在 React 18 中，`useTransition` 和 `Suspense` 配合效果更好：
+In React 18, `useTransition` works even better paired with `Suspense`:
 
 ```jsx
 function App() {
@@ -111,18 +111,18 @@ function App() {
 }
 ```
 
-当用户快速切换用户时，旧内容会保持显示，直到新内容加载完成，避免了白屏闪烁。
+When the user switches quickly between users, the old content stays on screen until the new content loads, avoiding a white-screen flash.
 
 ## Important Notes
 
-1. `startTransition` 回调里的更新必须是同步的，不能包裹异步操作
-2. Transition 不能用于受控输入框的值更新
-3. 目前 `useTransition` 只在 Concurrent 模式下生效，Legacy 模式下会退化为同步更新
+1. The update inside a `startTransition` callback must be synchronous — you can't wrap async operations in it
+2. A transition can't be used to update the value of a controlled input
+3. Currently `useTransition` only takes effect in Concurrent Mode; under Legacy Mode it degrades to a synchronous update
 
 ## Summary
 
-- `useTransition` 是 React 18 Concurrent 模式的核心 API
-- 它区分了紧急更新和过渡更新，让渲染可被中断
-- 解决了大列表过滤、Tab 切换等场景的卡顿问题
-- 和防抖不同，不牺牲实时性
-- 建议在 React 18 Beta 期间就开始学习和试验
+- `useTransition` is a core API of React 18's Concurrent Mode
+- It distinguishes urgent updates from transition updates, making rendering interruptible
+- It solves jank in scenarios like filtering large lists and switching tabs
+- Unlike debounce, it doesn't sacrifice real-time responsiveness
+- It's worth starting to learn and experiment with it during the React 18 Beta

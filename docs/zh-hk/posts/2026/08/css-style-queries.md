@@ -3,9 +3,9 @@ title: "CSS Style Queries 實戰：用自定義屬性驅動組件變體"
 date: 2026-08-21 14:06:19
 tags:
   - CSS
-readingTime: 8
+readingTime: 6
 description: "CSS Style Queries（@container style(...)）進入 Baseline 2026，終於可以根據自定義屬性的值來應用樣式。本文聚焦實際用法：主題切換不靠 class、組件變體由 custom property 驅動、與 @property 的配合，以及降級策略。"
-wordCount: 3300
+wordCount: 1221
 ---
 
 Container Queries 解決了「根據容器尺寸響應」的問題，但它有一個盲區：你無法根據容器的狀態（比如當前主題、密度模式、品牌色）來改變子組件樣式。過去我們要麼加一堆 class（`.dark`、`.compact`、`.brand-acme`），要麼在 JS 裡算好再傳 props。Style Queries 補上了這塊——它讓你直接用 `@container style(...)` 查詢自定義屬性的值，把組件變體的控制權交還給 CSS。

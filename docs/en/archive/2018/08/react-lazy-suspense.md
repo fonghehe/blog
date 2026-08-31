@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 16.6 ships `React.lazy` and `Suspense`, making component lazy loading extremely simple."
-wordCount: 119
+wordCount: 120
 ---
 
 React 16.6 ships `React.lazy` and `Suspense`, making component lazy loading extremely simple.
@@ -161,7 +161,7 @@ function UserList() {
 }
 ```
 
-## vs Vue's Async Components
+## Compared with Vue's Async Components
 
 A comparison with Vue's lazy loading approach:
 

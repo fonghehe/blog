@@ -4,15 +4,15 @@ date: 2019-08-16 14:59:05
 tags:
   - Frontend
 readingTime: 4
-description: "Redux 在大型 React 项目中几乎是默认选择，但其 boilerplate 多、学习曲线陡峭的问题一直被开发者诟病。MobX 基于响应式编程范式，提供了更直观、更少样板代码的状态管理方案。本文将深入 MobX 的核心概念，并与 Redux 做详细对比，帮助你在技术选型时做出更好的决策。"
-wordCount: 558
+description: "Redux is almost the default choice for large React projects, but developers have long complained about its heavy boilerplate and steep learning curve. MobX is built on the reactive programming paradigm and offers a more intuitive, less boilerplate-heavy approach to state management. This article digs into MobX's core concepts and compares it in detail with Redux, to help you make a better choice when picking your stack."
+wordCount: 351
 ---
 
-Redux 在大型 React 项目中几乎是默认选择，但其 boilerplate 多、学习曲线陡峭的问题一直被开发者诟病。MobX 基于响应式编程范式，提供了更直观、更少样板代码的状态管理方案。本文将深入 MobX 的核心概念，并与 Redux 做详细对比，帮助你在技术选型时做出更好的决策。
+Redux is almost the default choice for large React projects, but developers have long complained about its heavy boilerplate and steep learning curve. MobX is built on the reactive programming paradigm and offers a more intuitive, less boilerplate-heavy approach to state management. This article digs into MobX's core concepts and compares it in detail with Redux, to help you make a better choice when picking your stack.
 
 ## MobX Core Concepts
 
-MobX 围绕三个核心概念构建：**Observable（可观察状态）**、**Computed（计算值）**、**Action（动作）**。
+MobX is built around three core concepts: **Observable** (observable state), **Computed** (derived values), and **Action** (mutations).
 
 ```js
 import { observable, computed, action, autorun } from 'mobx';
@@ -86,7 +86,7 @@ store.toggleTodo(store.todos[0].id); // 输出: 待办总数: 1, 已完成: 1
 
 ## MobX Without Decorators
 
-如果你不想配置装饰器语法，也可以使用函数式 API：
+If you'd rather not configure decorator syntax, you can use the functional API:
 
 ```js
 import { observable, computed, action, makeObservable } from 'mobx';
@@ -124,7 +124,7 @@ class CounterStore {
 npm install mobx mobx-react
 ```
 
-### 使用 observer 高阶组件
+### Using the observer Higher-Order Component
 
 ```jsx
 {% raw %}
@@ -166,7 +166,7 @@ export default TodoList;
 {% endraw %}
 ```
 
-### 使用 inject 注入 Store
+### Injecting the Store with inject
 
 ```jsx
 import React from 'react';
@@ -217,9 +217,9 @@ function App() {
 
 ## Async Action Handling
 
-MobX 本身没有内置异步处理方案，但可以通过 `runInAction` 或 `flow` 来处理：
+MobX doesn't ship a built-in async solution, but you can handle async work with `runInAction` or `flow`:
 
-### 方式一：runInAction
+### Approach 1: runInAction
 
 ```js
 import { observable, action, runInAction } from 'mobx';
@@ -253,7 +253,7 @@ class UserStore {
 }
 ```
 
-### 方式二：flow + generator
+### Approach 2: flow + generator
 
 ```js
 import { observable, action, flow } from 'mobx';
@@ -280,9 +280,9 @@ class UserStore {
 
 ## MobX vs Redux Comparison
 
-### 代码量对比：实现相同的 Todo 功能
+### Comparing Code Volume: Implementing the Same Todo Feature
 
-**Redux 方式：**
+**Redux approach:**
 
 ```js
 // actions.js
@@ -330,7 +330,7 @@ function TodoList() {
 }
 ```
 
-**MobX 方式：**
+**MobX approach:**
 
 ```js
 class TodoStore {
@@ -349,20 +349,20 @@ class TodoStore {
 }
 ```
 
-MobX 代码量约为 Redux 的 1/3。
+MobX takes roughly one-third of the code Redux needs.
 
-### 架构对比
+### Architecture Comparison
 
-| 维度 | Redux | MobX |
+| Dimension | Redux | MobX |
 |------|-------|------|
-| 编程范式 | 函数式 | 面向对象/响应式 |
-| 状态结构 | 单一 Store，不可变数据 | 多个 Store，可变数据 |
-| 更新方式 | dispatch action → pure reducer | 直接修改 observable |
-| 学习曲线 | 陡峭（action、reducer、middleware） | 平缓（observable、computed、action） |
-| 调试工具 | Redux DevTools，支持时间旅行 | MobX DevTools，功能稍弱 |
-| 不可变性 | 强制不可变（方便追踪变化） | 自动追踪（直接修改） |
-| 代码量 | 多（action、reducer、selector） | 少（直接修改属性） |
-| 适用场景 | 大型团队，需要严格规范 | 中小型团队，追求开发效率 |
+| Programming paradigm | Functional | OOP / Reactive |
+| State structure | Single store, immutable data | Multiple stores, mutable data |
+| Update mechanism | dispatch action → pure reducer | Directly mutate observables |
+| Learning curve | Steep (actions, reducers, middleware) | Gentle (observable, computed, action) |
+| Dev tools | Redux DevTools, time-travel support | MobX DevTools, slightly weaker |
+| Immutability | Enforced (easy to track changes) | Auto-tracking (direct mutation) |
+| Code volume | More (actions, reducers, selectors) | Less (direct property mutation) |
+| Best for | Large teams needing strict conventions | Small/mid teams prioritizing dev efficiency |
 
 ## Using runInAction and Strict Mode
 
@@ -389,10 +389,10 @@ class CounterStore {
 
 ## Summary
 
-- MobX 基于响应式编程，使用 `observable`、`computed`、`action` 三个核心概念管理状态
-- 相比 Redux，MobX 代码量更少、学习成本更低、开发体验更流畅
-- `observer` 会自动追踪组件中使用的所有 observable，实现精准的细粒度更新
-- 异步操作可以使用 `runInAction` 或 `flow` + generator 来处理
-- 推荐开启 `enforceActions` 严格模式，保证状态修改的可追溯性
-- Redux 适合大型团队需要严格规范的场景，MobX 适合追求开发效率的中小型项目
-- MobX 的调试能力相对 Redux 稍弱，时间旅行调试支持有限
+- MobX is based on reactive programming and manages state with three core concepts: `observable`, `computed`, and `action`.
+- Compared with Redux, MobX has less code, a lower learning curve, and a smoother dev experience.
+- `observer` automatically tracks every observable used in a component, enabling precise, fine-grained updates.
+- Async operations can be handled with `runInAction` or `flow` + generators.
+- Enable `enforceActions` strict mode to keep state mutations traceable.
+- Redux suits large teams that need strict conventions; MobX suits small/mid projects that prioritize dev efficiency.
+- MobX's debugging capabilities are a bit weaker than Redux's, with limited time-travel support.

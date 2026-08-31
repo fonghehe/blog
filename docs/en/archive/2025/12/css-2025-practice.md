@@ -1,5 +1,5 @@
 ---
-title: "CSS 2025 Year-End Review: 今年可以放心使用新特性"
+title: "CSS 2025 Year-End Review: The New Features You Can Safely Use This Year"
 date: 2025-12-12 18:26:03
 tags:
   - CSS

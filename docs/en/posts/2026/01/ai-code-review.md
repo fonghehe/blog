@@ -5,10 +5,10 @@ tags:
   - Engineering
 readingTime: 3
 description: "AI code review has gone from \"nice to have\" to standard practice. But many teams use it wrong — either over-relying on AI so engineers stop thinking, or treatin"
-wordCount: 279
+wordCount: 289
 ---
 
-AI code review has gone from "nice to have" to standard practice. But many teams use it wrong — either over-relying on AI so engineers stop thinking, or treating it as nothing more than an upgraded linter. This post shares lessons from deploying AI code review across three large projects.
+AI code review has gone from "nice to have" to standard practice. But many teams get it wrong — either leaning on AI so heavily that engineers stop thinking for themselves, or treating it as nothing more than a smarter linter. This post shares lessons from deploying AI code review across three large projects.
 
 ## Choosing the Right Review Mode
 
@@ -147,7 +147,7 @@ async function runReview(prNumber: number) {
 
 ## Avoiding Common Pitfalls
 
-The biggest trap is "AI says OK therefore it is OK." AI will miss business-logic errors, context-dependent issues, and implicit team conventions. My approach: AI handles mechanical checks (type safety, performance patterns, common bug patterns); humans handle business correctness and architectural consistency.
+The biggest trap is assuming that because the AI signed off, the code must be correct. AI will miss business-logic errors, context-dependent issues, and implicit team conventions. My approach: AI handles mechanical checks (type safety, performance patterns, common bug patterns), while humans own business correctness and architectural consistency.
 
 ```typescript
 // Anti-pattern: auto-applying AI suggestions without human judgment

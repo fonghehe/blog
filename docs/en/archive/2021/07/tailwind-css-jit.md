@@ -5,17 +5,17 @@ tags:
   - CSS
 
 readingTime: 2
-description: "Tailwind CSS 2.x 开始流行，3.0 的 JIT（Just-in-Time）模式彻底改变了使用体验。"
-wordCount: 306
+description: "Tailwind CSS 2.x started gaining popularity, and the 3.0 JIT (Just-in-Time) mode completely changed the experience."
+wordCount: 255
 ---
 
-Tailwind CSS 2.x 开始流行，3.0 的 JIT（Just-in-Time）模式彻底改变了使用体验。
+Tailwind CSS 2.x started gaining popularity, and the 3.0 JIT (Just-in-Time) mode completely changed the experience.
 
 ## Why Tailwind CSS Is Growing in Popularity
 
-以前的前端：写 HTML → 写 CSS 类 → 写 CSS 规则（来回切换文件）
+The old front-end workflow: write HTML → write a CSS class → write the CSS rule (jumping back and forth between files)
 
-Tailwind：把样式写在 HTML 里，不需要切换文件
+Tailwind: you write styles right in the HTML, with no file switching
 
 ```html
 <!-- 传统方式 -->
@@ -31,11 +31,11 @@ Tailwind：把样式写在 HTML 里，不需要切换文件
 <!-- 直接看 HTML 就知道样式 -->
 ```
 
-## JIT 模式（3.0 核心特性）
+## JIT Mode (the Core 3.0 Feature)
 
-之前的问题：Tailwind 的 CSS 文件很大（未使用的类很多），生产要用 PurgeCSS 清理。
+The old problem: Tailwind's CSS file was huge (it contained many unused classes), so you had to clean it up with PurgeCSS for production.
 
-JIT：根据源码按需生成 CSS，只生成用到的类，任意值也支持。
+JIT: it generates CSS on demand from your source code, emitting only the classes you actually use, and it also supports arbitrary values.
 
 ```bash
 # 安装
@@ -171,24 +171,24 @@ const buttonClasses = computed(() => {
 
 ## My Experience
 
-用了 3 个月 Tailwind，优缺点都很明显：
+I've used Tailwind for three months now, and both the pros and cons are clear:
 
-**优点：**
+**Pros:**
 
-- 不用起类名（最省脑力的点）
-- 响应式/hover/dark mode 极其方便
-- 团队统一：不会有人写"野生"CSS
+- No need to come up with class names (the biggest mental relief)
+- Responsive, hover, and dark mode are extremely convenient
+- Consistent across the team: nobody writes "wild" CSS
 
-**缺点：**
+**Cons:**
 
-- HTML 很长（class 一大串）
-- 学习成本（要记类名）
-- 不适合高度动态的样式
+- HTML gets long (a huge string of classes)
+- Learning curve (you have to memorize class names)
+- Not great for highly dynamic styles
 
-适合：后台管理系统、营销页、文档站。不适合：需要大量动画的展示型项目。
+Best for: admin dashboards, marketing pages, and documentation sites. Not ideal for: showcase projects that need lots of animation.
 
 ## Summary
 
-- Tailwind 3.0 JIT：按需生成 CSS，支持任意值，无需 PurgeCSS
-- 动态类名要用完整字符串，否则 JIT 扫描不到
-- 组件封装 + Tailwind：复用靠组件，而不是靠 `@apply`
+- Tailwind 3.0 JIT: generates CSS on demand, supports arbitrary values, and removes the need for PurgeCSS
+- Use complete strings for dynamic class names, or JIT won't be able to detect them
+- Component wrapping + Tailwind: reuse through components, not through `@apply`

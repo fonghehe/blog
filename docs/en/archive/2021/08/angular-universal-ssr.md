@@ -6,11 +6,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "Angular Universal 让 Angular 应用可以在服务端预渲染 HTML，解决两个核心问题：SEO（搜索引擎抓取 SPA 困难）和首屏性能（FCP 指标优化）。Angular 12 的 Universal 已经相当成熟，这篇文章覆盖从集成到优化的完整流程。"
-wordCount: 315
+description: "Angular Universal lets Angular apps pre-render HTML on the server, solving two core problems: SEO (crawlers struggle with SPAs) and first-paint performance (FCP). Universal in Angular 12 is quite mature — this article covers the full flow from integration to optimization."
+wordCount: 219
 ---
 
-Angular Universal 让 Angular 应用可以在服务端预渲染 HTML，解决两个核心问题：SEO（搜索引擎抓取 SPA 困难）和首屏性能（FCP 指标优化）。Angular 12 的 Universal 已经相当成熟，这篇文章覆盖从集成到优化的完整流程。
+Angular Universal lets Angular apps pre-render their HTML on the server, tackling two core problems: SEO (search engines struggle to crawl SPAs) and first-paint performance (improving the FCP metric). Universal in Angular 12 is already quite mature, and this article walks through the full workflow from integration to optimization.
 
 ## Quick Integration
 
@@ -23,7 +23,7 @@ ng add @nguniversal/express-engine
 # └── src/main.server.ts         # 服务端入口
 ```
 
-生成的 `server.ts` 开箱即用，无需大量配置：
+The generated `server.ts` works out of the box and needs little configuration:
 
 ```typescript
 // server.ts（简化版）
@@ -45,7 +45,7 @@ app.get("*", (req, res) => res.render("index", { req }));
 
 ## Server vs Browser Environment Differences
 
-SSR 最大的坑是：服务端没有 `window`、`document`、`localStorage` 等浏览器 API。
+The biggest pitfall with SSR is that the server has no browser APIs such as `window`, `document`, or `localStorage`.
 
 ```typescript
 import { isPlatformBrowser, isPlatformServer } from "@angular/common";
@@ -70,9 +70,9 @@ export class ThemeService {
 }
 ```
 
-## TransferState：避免双重数据请求
+## TransferState: Avoiding Duplicate Data Fetching
 
-SSR 的典型问题：服务端已经请求了 API 数据，但客户端 hydration 时又请求一次。`TransferState` 解决这个问题：
+A classic SSR problem: the server has already fetched the API data, but the client fetches it again during hydration. `TransferState` solves this:
 
 ```typescript
 import { TransferState, makeStateKey } from "@angular/platform-browser";
@@ -109,7 +109,7 @@ export class UserService {
 }
 ```
 
-## Meta 标签动态设置（SEO 关键）
+## Setting Meta Tags Dynamically (Critical for SEO)
 
 ```typescript
 @Component({
@@ -158,7 +158,7 @@ npm run serve:ssr
 # └── server/    # Node.js 服务器代码
 ```
 
-**性能优化建议**：
+**Performance optimization tips:**
 
 ```typescript
 // server.ts - 添加页面缓存
@@ -177,9 +177,9 @@ app.get("*", (req, res) => {
 });
 ```
 
-## SSR vs 预渲染
+## SSR vs Prerendering
 
-如果页面内容是静态的（博客、文档），用预渲染（Prerendering）比 SSR 更简单：
+If a page's content is static (a blog or documentation), prerendering is simpler than SSR:
 
 ```bash
 # 构建时预渲染指定路由
@@ -193,8 +193,8 @@ npm run prerender
 }
 ```
 
-预渲染产物是纯静态 HTML，可以直接部署到 CDN，无需 Node.js 服务器。
+A prerendered output is plain static HTML that can be deployed straight to a CDN without needing a Node.js server.
 
 ## Summary
 
-Angular Universal 的集成成本在 Angular 12 已经相当低——`ng add` 一行命令就能搭好骨架。关键是要处理好平台差异（`isPlatformBrowser`）和 `TransferState` 数据传递。对内容型页面（博客、商品详情）来说，SSR 或预渲染带来的 SEO 和首屏性能提升非常可观。
+The integration cost of Angular Universal in Angular 12 is already quite low — a single `ng add` command scaffolds the skeleton. The key is handling the platform differences (`isPlatformBrowser`) and passing data via `TransferState`. For content-heavy pages (blogs, product details), the SEO and first-paint gains from SSR or prerendering are substantial.

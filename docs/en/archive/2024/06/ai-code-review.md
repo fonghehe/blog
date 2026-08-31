@@ -4,8 +4,8 @@ date: 2024-06-06 10:40:17
 tags:
   - Engineering
 readingTime: 2
-description: "In daily development, AI 代码审查工具对比 is used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 211
+description: "AI code review tool comparison is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 185
 ---
 
 In daily development, AI 代码审查工具对比 is used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -118,7 +118,7 @@ export async function POST(req) {
 
 Performance optimization should be tailored to specific scenarios; not every situation requires aggressive optimization.
 
-## 问题排查
+## Troubleshooting
 
 We can improve this in the following ways:
 
@@ -151,7 +151,7 @@ This solution has been running stably in production for over six months and has 
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Understanding the underlying principles matters more than memorizing APIs
+- Always verify compatibility thoroughly before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on community trends; technical approaches need continuous iteration

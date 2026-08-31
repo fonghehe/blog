@@ -1,5 +1,5 @@
 ---
-title: "Next.js 16 Compiler Optimization: Rust Compiler 全面接管 Babel"
+title: "Next.js 16 Compiler Optimization: The Rust Compiler Fully Takes Over from Babel"
 date: 2025-08-01 12:35:12
 tags:
   - React

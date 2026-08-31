@@ -5,16 +5,16 @@ tags:
   - React
   - JavaScript
 
-readingTime: 2
-description: "React 18 即将发布，Suspense 的数据获取模式终于有了官方推荐方案。之前 Suspense 只能做代码分割的 loading 状态，现在可以用于数据获取了。"
-wordCount: 292
+readingTime: 3
+description: "React 18 is around the corner, and Suspense for data fetching finally has an officially recommended approach. Previously Suspense could only handle loading states for code splitting — now it can be used for data fetching too."
+wordCount: 231
 ---
 
-React 18 即将发布，Suspense 的数据获取模式终于有了官方推荐方案。之前 Suspense 只能做代码分割的 loading 状态，现在可以用于数据获取了。
+With React 18 on the horizon, Suspense finally has an officially recommended approach to data fetching. Previously, Suspense could only handle the loading state for code splitting; now it can be used for data fetching as well.
 
-## Suspense 的核心思路
+## The Core Idea Behind Suspense
 
-Suspense 不是"loading 状态管理器"，而是"异步依赖的协调器"。
+Suspense isn't a "loading-state manager" — it's a "coordinator for asynchronous dependencies."
 
 ```jsx
 // 传统做法：组件自己管理 loading 状态
@@ -50,7 +50,7 @@ function App() {
 }
 ```
 
-组件不用关心 loading 状态，由 Suspense 统一处理。
+Components no longer have to manage their own loading state — Suspense handles it centrally.
 
 ## Implementing a Simple Suspense Data Source
 
@@ -154,7 +154,7 @@ function UserPage({ userId }) {
 }
 ```
 
-每个区域独立加载，不互相阻塞。
+Each region loads independently and doesn't block the others.
 
 ## Nested Suspense
 
@@ -178,7 +178,7 @@ function App() {
 }
 ```
 
-外层 Suspense 是兜底，内层 Suspense 处理局部加载。React 18 的流式 SSR 能逐段发送 HTML。
+The outer Suspense acts as a fallback, while the inner Suspense handles local loading. React 18's streaming SSR can send HTML segment by segment.
 
 ## Working with React 18 Suspense SSR
 
@@ -207,7 +207,7 @@ function App() {
 // 客户端逐段 hydrate，不需要等所有内容
 ```
 
-用户更早看到内容，交互也更早可用。
+Users see content earlier, and interactions become available sooner.
 
 ## Error Handling
 
@@ -232,7 +232,7 @@ function App() {
 }
 ```
 
-Suspense 处理 loading，ErrorBoundary 处理错误，职责清晰。
+Suspense handles loading and ErrorBoundary handles errors — the responsibilities are clearly separated.
 
 ## Important Notes
 
@@ -261,8 +261,8 @@ function Good({ showProfile, userId }) {
 
 ## Summary
 
-- Suspense 数据获取的核心：组件抛出 Promise，Suspense 捕获并显示 fallback
-- 推荐用 React Query / SWR 等库的 Suspense 模式，不用自己实现
-- 嵌套 Suspense 实现逐区域加载，配合 React 18 流式 SSR 效果最佳
-- Suspense + ErrorBoundary：loading 和错误处理职责分离
-- React 18 正式版发布后，这个模式会成为主流
+- The core of Suspense data fetching: a component throws a Promise, and Suspense catches it and shows the fallback
+- Prefer the Suspense mode offered by libraries like React Query or SWR instead of rolling your own
+- Nested Suspense enables region-by-region loading, which works best combined with React 18's streaming SSR
+- Suspense + ErrorBoundary: loading and error handling responsibilities are separated
+- Once the React 18 stable release ships, this pattern will become mainstream

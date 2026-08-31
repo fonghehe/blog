@@ -4,7 +4,7 @@ date: 2022-05-11 16:06:14
 tags:
   - Node.js
 readingTime: 2
-description: "We recently implemented Node.js 内置测试运行器， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+description: "I recently adopted Node.js's built-in test runner with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 184
 ---
 

@@ -4,15 +4,15 @@ date: 2022-08-09 10:39:03
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 4.7 和 4.8 相继发布，带来了一系列实用改进。4.7 解决了 ESM 模块支持的老大难问题，4.8 进一步增强了类型收窄。"
-wordCount: 231
+description: "TypeScript 4.7 and 4.8 were released one after another, bringing a series of practical improvements. 4.7 finally solved the long-standing ESM module support issue, and 4.8 further enhanced type narrowing."
+wordCount: 153
 ---
 
-TypeScript 4.7 和 4.8 相继发布，带来了一系列实用改进。4.7 解决了 ESM 模块支持的老大难问题，4.8 进一步增强了类型收窄。
+TypeScript 4.7 and 4.8 were released one after another, bringing a series of practical improvements. 4.7 finally solved the long-standing ESM module support issue, and 4.8 further enhanced type narrowing.
 
 ## TypeScript 4.7: ESM Support
 
-### package.json 中的 module 配置
+### Module Configuration in package.json
 
 ```json
 {
@@ -28,7 +28,7 @@ TypeScript 4.7 和 4.8 相继发布，带来了一系列实用改进。4.7 解�
 }
 ```
 
-TypeScript 4.7 终于正确理解 `type: "module"` 和 `exports` 字段了。
+TypeScript 4.7 finally properly understands the `type: "module"` and `exports` fields.
 
 ```json
 // tsconfig.json
@@ -40,9 +40,9 @@ TypeScript 4.7 终于正确理解 `type: "module"` 和 `exports` 字段了。
 }
 ```
 
-`module: "NodeNext"` 让 TypeScript 按照 Node.js 的 ESM 解析规则来处理模块。
+`module: "NodeNext"` makes TypeScript follow Node.js ESM resolution rules for modules.
 
-### ESM 中的导入规则
+### Import Rules in ESM
 
 ```typescript
 // ESM 必须带扩展名
@@ -52,7 +52,7 @@ import { sum } from './math.js';  // 不是 './math.ts'！
 import { config } from './config/index.js';  // 不是 './config'
 ```
 
-### extends 支持数组
+### extends Supports Arrays
 
 ```json
 // tsconfig.json
@@ -67,11 +67,11 @@ import { config } from './config/index.js';  // 不是 './config'
 }
 ```
 
-不再需要一层套一层，直接组合多个基础配置。
+No more nesting one layer inside another — just combine multiple base configs directly.
 
 ## TypeScript 4.8: Enhanced Type Narrowing
 
-### 交叉类型与可辨识联合
+### Intersection Types and Discriminated Unions
 
 ```typescript
 type Circle = { kind: 'circle'; radius: number };
@@ -93,7 +93,7 @@ function getArea(shape: Shape & { label: string }) {
 }
 ```
 
-### in 操作符的收窄
+### Narrowing with the in Operator
 
 ```typescript
 type Admin = { role: 'admin'; permissions: string[] };
@@ -111,7 +111,7 @@ function greet(person: Person) {
 }
 ```
 
-### satisfies 的预览（4.9 正式）
+### Preview of satisfies (Official in 4.9)
 
 ```typescript
 // TypeScript 4.9 的 satisfies 在 4.8 开始预览
@@ -137,7 +137,7 @@ const theme2 = {
 // 同时保证整体符合 Theme 结构
 ```
 
-### 控制流收窄的改进
+### Control Flow Narrowing Improvements
 
 ```typescript
 function process(value: string | number | boolean) {
@@ -161,7 +161,7 @@ function process(value: string | number | boolean) {
 
 ## Benefits in Real Projects
 
-### 构建 ESM 包
+### Building ESM Packages
 
 ```typescript
 // packages/utils/package.json
@@ -191,7 +191,7 @@ export { sum } from './math.js';  // 必须 .js
 export { formatDate } from './date.js';
 ```
 
-### API 响应类型守卫
+### API Response Type Guards
 
 ```typescript
 interface ApiResponse<T> {
@@ -232,4 +232,4 @@ async function fetchAndProcess(id: number) {
 
 ## Summary
 
-TypeScript 4.7 的 ESM 支持让双包（CJS + ESM）发布变得可行。4.8 的类型收窄改进减少了类型断言的使用。建议在新项目中使用 `module: "NodeNext"`，为 ESM 迁移做准备。
+TypeScript 4.7's ESM support makes dual-package (CJS + ESM) publishing viable. 4.8's type narrowing improvements reduce the need for type assertions. It's recommended to use `module: "NodeNext"` in new projects to prepare for ESM migration.

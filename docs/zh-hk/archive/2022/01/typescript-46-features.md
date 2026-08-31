@@ -34,9 +34,9 @@ class Derived extends Base {
 }
 ```
 
-4.6 之後不再報錯。關鍵規則：你在 super() 之前訪問的 this 不是真正的 this，隻是參數傳遞——不能讀寫實例屬性，但可以調用方法做計算。
+4.6 之後不再報錯。關鍵規則：你在 super() 之前訪問的 this 不是真正的 this，只是參數傳遞——不能讀寫實例屬性，但可以調用方法做計算。
 
-## 解構的控製流分析
+## 解構的控制流分析
 
 ```typescript
 type Shape =
@@ -78,7 +78,7 @@ function area(shape: Shape) {
 
 現在 TypeScript 能理解 `const { kind } = shape` 之後 shape 的類型仍然有效。
 
-## 遞歸類型引用的深度限製
+## 遞歸類型引用的深度限制
 
 ```typescript
 // 以前：深度超過 50 就報錯
@@ -169,4 +169,4 @@ const createUser = validate<{ name: string; email: string }>(
 
 ## 小結
 
-TypeScript 4.6 的改進雖然不像 4.7 那樣帶來 ESM 支援的大變革，但控製流分析的增強讓日常編碼更順暢。特別是解構不再破壞類型收窄，這個改進每天都能感受到。建議儘快升級，配合 strict 模式使用效果最佳。
+TypeScript 4.6 的改進雖然不像 4.7 那樣帶來 ESM 支援的大變革，但控制流分析的增強讓日常編碼更順暢。特別是解構不再破壞類型收窄，這個改進每天都能感受到。建議儘快升級，配合 strict 模式使用效果最佳。

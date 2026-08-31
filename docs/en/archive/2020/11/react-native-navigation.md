@@ -4,15 +4,15 @@ date: 2020-11-10 11:20:14
 tags:
   - React
 readingTime: 2
-description: "在日常开发中，React Native 导航方案对比的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 275
+description: "A systematic comparison of React Native navigation solutions, covering usage patterns, internals, and optimization strategies for day-to-day development."
+wordCount: 169
 ---
 
-在日常开发中，React Native 导航方案对比的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+In day-to-day development, comparing React Native navigation solutions comes up more and more often. This article systematically walks through their usage, internals, and optimization strategies.
 
 ## Quick Start
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets a bit more involved:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -35,11 +35,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Internal Principles
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -58,11 +58,11 @@ function reducer(state, action) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge-case handling — that is critical in production.
 
 ## Business Practice
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -87,11 +87,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance tuning has to fit the actual scenario; not every case needs over-optimization.
 
 ## Performance Comparison
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 import React, { useState, useCallback } from 'react'
@@ -120,12 +120,12 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- Understanding the fundamentals matters more than memorizing APIs.
+- Always verify compatibility before shipping to production.
+- In team collaboration, conventions and documentation matter more than the tech itself.
+- Keep an eye on the community — technical solutions need to keep evolving.
+- Don't adopt new tech just for its own sake.

@@ -6,14 +6,14 @@ tags:
   - 工程化
 readingTime: 2
 description: "关于Playwright E2E 跨浏览器测试，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 312
+wordCount: 306
 ---
 
-关于Playwright E2E 跨浏览器测试，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+很多开发者对 Playwright E2E 跨浏览器测试的理解，还停留在 API 调用层面。本文尝试从生产环境的角度，聊聊实际会遇到的问题和对应解法。
 
 ## 基本原理
 
-实际项目中的用法会更复杂一些：
+实际项目里用起来会更复杂些：
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -37,11 +37,11 @@ describe('LoginForm', () => {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样一来，代码的可测试性和可扩展性都更好了。
 
 ## 高级特性
 
-以下是一个完整的示例：
+下面是一个完整示例：
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -59,11 +59,11 @@ test.describe('用户登录流程', () => {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+生产环境里边界情况务必处理好，这点很关键。
 
 ## 项目实践
 
-关键在于理解核心逻辑：
+关键还是理解背后的核心逻辑：
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -87,11 +87,11 @@ describe('LoginForm', () => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化得看具体场景，不是所有地方都要过度优化。
 
 ## 最佳实践
 
-我们可以通过以下方式来改进：
+可以试着从下面几个方面改进：
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -109,7 +109,7 @@ test.describe('用户登录流程', () => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已经在线上稳定运行半年多，是经过实战验证的。
 
 ## 小结
 

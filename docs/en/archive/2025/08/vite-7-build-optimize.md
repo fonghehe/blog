@@ -1,5 +1,5 @@
 ---
-title: "Vite 7 Build Optimization: 全新打包Strategy &  Tree Shaking 增强"
+title: "Vite 7 Build Optimization: A New Bundling Strategy and Enhanced Tree Shaking"
 date: 2025-08-19 18:53:30
 tags:
   - Engineering

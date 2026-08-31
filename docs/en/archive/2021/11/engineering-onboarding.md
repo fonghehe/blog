@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "在日常开发中，前端工程团队新人 Onboarding is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 184
+description: "Onboarding new engineers to a frontend team is increasingly worth doing systematically. This article covers the process, the reasoning, and practical optimization strategies."
+wordCount: 178
 ---
 
-在日常开发中，前端工程团队新人 Onboarding is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+Onboarding new members to the frontend engineering team comes up more and more often in day-to-day development. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 

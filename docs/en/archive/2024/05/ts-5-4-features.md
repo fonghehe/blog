@@ -4,11 +4,11 @@ date: 2024-05-03 10:05:58
 tags:
   - TypeScript
 readingTime: 1
-description: "TypeScript 5.7 新特性在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 185
+description: "TypeScript 5.7 new features has evolved quickly in recent years. This article digs into how it works and how to apply it in practice."
+wordCount: 149
 ---
 
-TypeScript 5.7 新特性在近年来发展迅速，本文将深入分析其原理和实践方法。
+TypeScript 5.7 new features has evolved quickly in recent years. This article digs into how it works and how to apply it in practice.
 
 ## 基础概念
 
@@ -114,10 +114,10 @@ function createHandler(options = {}) {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+With this pattern, the code's maintainability improves.
 
 ## Summary
 
 - TypeScript 5.7 新特性的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
+- In real projects, choosing the right solution matters more than chasing the newest technology
+- Keep code style consistent across the team to cut maintenance costs

@@ -181,5 +181,5 @@ pnpm workspace 的依賴管理尤其需要注意：
 - Lockfile 衝突不要手動解決，重新生成是更好的做法
 - `npm audit` 要集成到 CI，高危漏洞阻止發佈
 - 定期用 depcheck 清理未使用的依賴
-- Monorepo 中依賴管理更復雜，需要用 pnpm 的 overrides 和 peerDependencies
+- Monorepo 中依賴管理更複雜，需要用 pnpm 的 overrides 和 peerDependencies
 - 依賴管理的核心原則：可重複構建、安全、不過時

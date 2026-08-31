@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 4
 description: "React Nativeがついに1.0正式版をリリースしました。2015年の0.xから2026年の1.0まで、この道のりは11年かかりました。新アーキテクチャ（New Architecture）が完全にデフォルト有効化され、HermesエンジンがサポートされるJS唯一のエンジンとなり、Fabricレンダラーが全面展開さ"
-wordCount: 642
+wordCount: 648
 ---
 
 React Nativeがついに1.0正式版をリリースしました。2015年の0.xから2026年の1.0まで、この道のりは11年かかりました。新アーキテクチャ（New Architecture）が完全にデフォルト有効化され、HermesエンジンがサポートされるJS唯一のエンジンとなり、Fabricレンダラーが全面展開されたことは、React Nativeが「使えるもの」から「本当に良いもの」へと進化したことを示しています。
@@ -76,7 +76,7 @@ function DeviceDashboard() {
 
 ## Fabricレンダラーのパフォーマンス向上
 
-Fabricは新しいレンダリングアーキテクチャです。核心的な改善は同期的なレイアウト測定と並行レンダリングのサポートです。複雑なリストとアニメーションのシナリオでのパフォーマンス改善は非常に顕著です。
+Fabricは新しいレンダリングアーキテクチャです。中核となる改善は、同期的なレイアウト測定と並行レンダリングのサポートです。複雑なリストやアニメーションの場面でのパフォーマンス改善は非常に顕著です。
 
 ```tsx
 // Fabricが提供する能力：同期的なレイアウト測定
@@ -135,7 +135,7 @@ function ProductScreen() {
 
 ## Hermesエンジンの深い最適化
 
-HermesはサポートされるJS唯一のエンジンになりました。React Native 1.0のHermesバージョンはES2024のすべての機能、BigInt、WeakRef、そして新しいバイトコードフォーマットをサポートします。
+Hermes は、サポートされる JS エンジンとして唯一のものになりました。React Native 1.0のHermesバージョンはES2024のすべての機能、BigInt、WeakRef、そして新しいバイトコードフォーマットをサポートします。
 
 ```typescript
 // hermes.config.js
@@ -238,5 +238,5 @@ const styles = StyleSheet.create({
 - React Native 1.0の最大の意義：安定性の約束——APIのbreaking changeはもうない
 - New Architectureが完全にデフォルト有効化され、TurboModulesとFabricが質的なパフォーマンス向上をもたらす
 - Hermesが唯一のエンジンになり、バイトコード事前コンパイルで起動時間が40%削減される
-- Fabricの同期レイアウト測定と並行レンダリングで複雑なUIシナリオでのカクつきがなくなる
+- Fabricの同期レイアウト測定と並行レンダリングで複雑なUIの場面でのカクつきがなくなる
 - クロスプラットフォームの一貫性が1.0でついにプロダクション投入可能な基準に達した

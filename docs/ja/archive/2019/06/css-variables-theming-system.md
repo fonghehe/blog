@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSSカスタムプロパティ（CSS変数とも呼ばれます）は主要ブラウザでサポートされています。Sass変数より柔軟で、ランタイムに更新できます。"
-wordCount: 164
+wordCount: 167
 ---
 
 CSSカスタムプロパティ（CSS変数とも呼ばれます）は主要ブラウザでサポートされています。Sass変数より柔軟で、ランタイムに更新できます。
@@ -104,4 +104,4 @@ const primary = getComputedStyle(document.documentElement)
   .trim();
 ```
 
-CSSカスタムプロパティはCSSとJavaScriptを真に橋渡しできる数少ないCSS機能の一つです——動的テーミング、コンポーネントのカスタマイズ、ランタイムでのデザイントークン更新に活用しましょう。
+CSSカスタムプロパティはCSSとJavaScriptを真に橋渡しできる数少ないCSS機能の一つです——動的なテーマ切り替え、コンポーネントのカスタマイズ、ランタイムでのデザイントークン更新に活用しましょう。

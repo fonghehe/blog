@@ -5,15 +5,15 @@ tags:
   - 前端
   - 工程化
 readingTime: 2
-description: "在日常開發中，技術雷達 Tech Radar 選型的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 331
+description: "在日常開發中，技術雷達 Tech Radar 選型越來越常被運用。本文系統性地說明它的用法、原理與優化策略。"
+wordCount: 325
 ---
 
-在日常開發中，技術雷達 Tech Radar 選型的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
+在日常開發中，技術雷達 Tech Radar 選型越來越常被運用。本文系統性地說明它的用法、原理與優化策略。
 
 ## 快速上手
 
-在這個基礎上，我們可以進一步最佳化：
+在這個基礎上，我們可以進一步優化：
 
 ```javascript
 const express = require('express')
@@ -61,7 +61,7 @@ function reducer(state, action) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+透過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 業務實戰
 
@@ -125,11 +125,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-效能最佳化需要結合具體場景，不是所有情況都需要過度最佳化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 問題排查
 
-我們可以通過以下方式來改進：
+我們可以透過以下方式來改進：
 
 ```javascript
 import { useReducer, useCallback } from 'react'

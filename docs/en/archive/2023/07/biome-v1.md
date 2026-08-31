@@ -4,7 +4,7 @@ date: 2023-07-28 10:22:49
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，Biome v1 Rust 前端工具链 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+description: "Biome v1, the Rust frontend toolchain, is showing up in more and more everyday development. This article systematically covers its usage, rationale, and practical strategies."
 wordCount: 173
 ---
 

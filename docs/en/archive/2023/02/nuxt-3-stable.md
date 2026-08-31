@@ -4,11 +4,11 @@ date: 2023-02-01 09:31:40
 tags:
   - Nuxt.js
 readingTime: 3
-description: "Nuxt 3 基于 Vue 3 + Nitro 服务引擎 + Vite，提供了全栈 Vue 开发的最佳实践。相比 Nuxt 2，它在类型安全、性能、部署灵活性方面都有质的提升。本文从实际项目出发，介绍 Nuxt 3 的核心特性。"
-wordCount: 439
+description: "Nuxt 3, built on Vue 3 plus the Nitro server engine and Vite, delivers best practices for full-stack Vue development. Compared with Nuxt 2, it's a qualitative leap in type safety, performance, and deployment flexibility. This article introduces Nuxt 3's core features from a real project perspective."
+wordCount: 414
 ---
 
-Nuxt 3 基于 Vue 3 + Nitro 服务引擎 + Vite，提供了全栈 Vue 开发的最佳实践。相比 Nuxt 2，它在类型安全、性能、部署灵活性方面都有质的提升。本文从实际项目出发，介绍 Nuxt 3 的核心特性。
+Nuxt 3, built on Vue 3 plus the Nitro server engine and Vite, delivers best practices for full-stack Vue development. Compared with Nuxt 2, it's a qualitative leap in type safety, performance, and deployment flexibility. This article introduces Nuxt 3's core features from a real project perspective.
 
 ## Directory Structure and Auto-Import
 

@@ -127,14 +127,14 @@ const city = user?.address?.city;
 callback?.();
 arr?.[0];
 
-// 空值合併 (??)：區別於 ||（隻處理 null/undefined，不處理 0 和 ''）
+// 空值合併 (??)：區別於 ||（只處理 null/undefined，不處理 0 和 ''）
 const count = response.count ?? 0;
 // response.count = 0 → 0（不會被 ?? 替換）
 // response.count = null → 0（會被 ?? 替換）
 
 // 和 || 的區別
 const name = user.name || "匿名"; // '' 也會被替換
-const name = user.name ?? "匿名"; // 隻有 null/undefined 才替換
+const name = user.name ?? "匿名"; // 只有 null/undefined 才替換
 ```
 
 ## useBuiltIns：更智能的 polyfill
@@ -172,7 +172,7 @@ npm install core-js@3
 npx babel-upgrade --write
 ```
 
-但不是所有設定都能自動處理，跑完後還需要手動檢查。
+但不是所有配置都能自動處理，跑完後還需要手動檢查。
 
 **坑 3：webpack 的 `babel-loader` 版本**
 

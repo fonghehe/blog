@@ -145,4 +145,4 @@ subgrid 是 2019 年討論熱度很高的提案，允許子網格共享父網格
 
 ## 總結
 
-CSS Grid 的命名網格線和 `grid-template-areas` 讓複雜頁面佈局變得可維護。`auto-fill + minmax` 幾乎是我現在開發卡片網格的首選方案，遠比手崗 Flexbox 巢狀。
+CSS Grid 的命名網格線和 `grid-template-areas` 讓複雜頁面佈局變得可維護。`auto-fill + minmax` 幾乎是我現在開發卡片網格的首選方案，遠比手寫 Flexbox 巢狀。

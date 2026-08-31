@@ -21,7 +21,7 @@ esbuild 是 Evan Wallace 在 2020 年釋出的 JavaScript/TypeScript 打包器�
 
 esbuild 速度快有三個原因：
 
-1. **Go 語言**：編譯型語言，天然比 JS 快。Go 的併發模型（goroutine）也讓並行處理更高效
+1. **Go 語言**：編譯型語言，天然比 JS 快。Go 的並發模型（goroutine）也讓並行處理更高效
 2. **從零實現**：不用任何現有的 JS 庫（如 acorn、babel），全部自己實現 parser 和 bundler
 3. **記憶體最佳化**：資料結構儘量緊湊，減少記憶體分配和 GC 壓力
 
@@ -150,13 +150,13 @@ export default defineConfig({
 
 ## 目前的侷限
 
-esbuild 不是萬能的，有幾個明顯限製：
+esbuild 不是萬能的，有幾個明顯限制：
 
 1. **沒有程式碼分割的 IIFE 格式**：ESM 格式支援 `splitting`，但傳統格式不支援
 2. **不支援轉換裝飾器語法**：Angular 專案無法直接用
 3. **不支援 HMR**：自己不會實現 HMR，需要上層框架處理
 4. **外掛生態很小**：Webpack 外掛不能直接遷移
-5. **CSS 處理有限**：不支援 CSS Modules、PostCSS 等高階功能
+5. **CSS 處理有限**：不支援 CSS Modules、PostCSS 等進階功能
 
 ```javascript
 // ❌ 不支援裝飾器

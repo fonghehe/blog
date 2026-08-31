@@ -4,9 +4,9 @@ date: 2024-03-22 19:53:23
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 11
 description: "モジュラーブロックチェーンアーキテクチャにおけるフロントエンドデータ読み取りの変化を探求し、Celestia DA レイヤーインタラクション、EigenLayer AVS 統合、多層データソース管理をカバー"
-wordCount: 3600
+wordCount: 1933
 ---
 
 ## モジュラーブロックチェーンの概念：DA 層、決済層、実行層

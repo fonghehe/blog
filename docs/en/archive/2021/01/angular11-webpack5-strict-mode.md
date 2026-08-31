@@ -8,15 +8,15 @@ tags:
   - CSS
 
 readingTime: 2
-description: "Angular 11 于 2020 年 11 月发布，进入新的一年，这里系统总结升级后最值得深入使用的两个特性：Webpack 5 实验性支持和严格模式。前者大幅提升构建速度，后者帮你从根源消灭一类 bug。"
-wordCount: 397
+description: "Angular 11 shipped in November 2020. Entering the new year, this article sums up the two post-upgrade features most worth going deep on: experimental Webpack 5 support and full strict mode. The first speeds up builds significantly; the second eliminates a whole class of bugs at the root."
+wordCount: 279
 ---
 
-Angular 11 于 2020 年 11 月发布，进入新的一年，这里系统总结升级后最值得深入使用的两个特性：Webpack 5 实验性支持和严格模式。前者大幅提升构建速度，后者帮你从根源消灭一类 bug。
+Angular 11 was released in November 2020. As we step into the new year, here's a systematic look at the two features most worth adopting after upgrading: experimental Webpack 5 support and strict mode. The former dramatically speeds up builds; the latter helps you eliminate an entire class of bugs at the source.
 
 ## Enabling Webpack 5 Experimental Support
 
-Angular 11 将 Webpack 5 列为实验性功能，正式稳定要等 Angular 12。但现在就可以体验它的持久化缓存：
+Angular 11 ships Webpack 5 as an experimental feature; it won't be stable until Angular 12. But you can already try out its persistent cache:
 
 ```bash
 # 1. 使用 yarn（Webpack 5 需要 yarn resolutions）
@@ -49,18 +49,18 @@ yarn install
 }
 ```
 
-**构建速度对比**（中型项目，约 150 个组件）：
+**Build speed comparison** (medium project, ~150 components):
 
-|           | 首次构建 | 增量构建（持久化缓存后） |
+|           | First build | Incremental build (with persistent cache) |
 | --------- | -------- | ------------------------ |
 | Webpack 4 | 45s      | 18s                      |
 | Webpack 5 | 38s      | **4s**                   |
 
-持久化缓存带来的 4s 增量构建是最大收益——日常开发中几乎感觉不到等待。
+The 4-second incremental builds enabled by persistent caching are the biggest win — in day-to-day development you barely notice any wait.
 
 ## Strict Mode: All at Once
 
-新项目用 `ng new --strict` 默认开启。老项目需要手动启用：
+New projects get it by default with `ng new --strict`. Existing projects need to enable it manually:
 
 ```json
 // tsconfig.json
@@ -80,9 +80,9 @@ yarn install
 }
 ```
 
-### strictTemplates 捕获的典型错误
+### Typical errors caught by strictTemplates
 
-**1. 可选链问题**
+**1. Optional chaining issues**
 
 ```html
 <!-- ❌ user 可能是 null，严格模式会报错 -->
@@ -95,7 +95,7 @@ yarn install
 <p>{{ user?.name }}</p>
 ```
 
-**2. EventEmitter 类型推断**
+**2. EventEmitter type inference**
 
 ```typescript
 // ❌ 没有类型参数，严格模式下 $event 为 any
@@ -105,7 +105,7 @@ yarn install
 @Output() selected = new EventEmitter<User>();
 ```
 
-**3. ngFor 的 trackBy 类型**
+**3. trackBy typing in ngFor**
 
 ```typescript
 // ❌ 严格模式下，trackBy 函数参数类型必须匹配
@@ -119,7 +119,7 @@ trackByUser(index: number, user: User): number {
 
 ## Font Inlining
 
-Angular 11 默认在构建时将 Google Fonts 的 CSS 内联，减少一次网络往返：
+Angular 11 inlines the Google Fonts CSS at build time by default, removing one network round trip:
 
 ```json
 // angular.json - 默认已开启，如需关闭：
@@ -134,11 +134,11 @@ Angular 11 默认在构建时将 Google Fonts 的 CSS 内联，减少一次网�
 }
 ```
 
-对 LCP（最大内容绘制）指标有正向影响，推荐保持开启。
+This has a positive effect on LCP (Largest Contentful Paint), so I'd keep it on.
 
 ## strictInputAccessModifiers
 
-这是 Angular 11 新增的编译器选项，防止从模板访问 private/protected 属性：
+This is a new compiler option in Angular 11 that prevents templates from accessing private/protected properties:
 
 ```typescript
 @Component({
@@ -150,7 +150,7 @@ export class MyComponent {
 }
 ```
 
-这个规则强制模板只使用 public API，有助于组件封装。
+This rule forces templates to use only the public API, which helps with component encapsulation.
 
 ## Upgrade Steps
 
@@ -164,4 +164,4 @@ ng update --list
 
 ## Summary
 
-Angular 11 对现有项目来说是低风险高收益的升级。严格模式值得在年初规划一次全面开启——配合 TypeScript 4.1 的模板字面量类型，2021 年 Angular 项目的类型安全会上一个台阶。
+For existing projects, Angular 11 is a low-risk, high-reward upgrade. Strict mode is worth planning a full rollout for early in the year — combined with TypeScript 4.1's template literal types, the type safety of Angular projects in 2021 takes a real step up.

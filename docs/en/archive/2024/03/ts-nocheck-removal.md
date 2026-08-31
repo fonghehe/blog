@@ -1,10 +1,10 @@
 ---
-title: "TypeScript 渐进式迁移策略"
+title: "TypeScript Incremental Migration Strategy"
 date: 2024-03-04 14:50:59
 tags:
   - TypeScript
 readingTime: 2
-description: "Recently implemented TypeScript 渐进式迁移策略 in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing simil"
+description: "I recently applied a TypeScript incremental migration strategy with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 186
 ---
 

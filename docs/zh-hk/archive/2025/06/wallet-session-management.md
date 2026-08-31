@@ -4,9 +4,9 @@ date: 2025-06-20 19:10:34
 tags:
   - Web3
   - DApp
-readingTime: 12
+readingTime: 9
 description: "系統性講解 DApp 錢包會話的生命週期管理，涵蓋持久化、自動重連、網絡切換檢測、多錢包併發及移動端適配"
-wordCount: 3600
+wordCount: 902
 ---
 
 ## 錢包會話的生命週期
@@ -170,7 +170,7 @@ class WalletReconnector {
         return session
       } catch (error: any) {
         if (error.code === 4001) {
-          // 用户拒絕了連接
+          // 用戶拒絕了連接
           SessionStorage.clear()
           return null
         }
@@ -204,7 +204,7 @@ class WalletReconnector {
   }
 
   private getWalletConnectClient() {
-    // 返回 WalletConnect 客户端實例
+    // 返回 WalletConnect 客戶端實例
     return null
   }
 }
@@ -212,7 +212,7 @@ class WalletReconnector {
 
 ## 網絡切換檢測與狀態同步
 
-用户可能隨時在錢包中切換網絡。前端必須監聽 `chainChanged` 事件並同步狀態：
+用戶可能隨時在錢包中切換網絡。前端必須監聽 `chainChanged` 事件並同步狀態：
 
 ```typescript
 class NetworkManager {
@@ -242,7 +242,7 @@ class NetworkManager {
     // 賬號切換
     this.provider.on('accountsChanged', (accounts: string[]) => {
       if (accounts.length === 0) {
-        // 用户斷開了連接
+        // 用戶斷開了連接
         this.handleDisconnect()
       } else {
         this.handleAccountChange(accounts[0] as Address)
@@ -270,7 +270,7 @@ class NetworkManager {
     this.listeners.forEach((listener) => listener(newChainId))
 
     if (!supported) {
-      // 提示用户切換到支持的鏈
+      // 提示用戶切換到支持的鏈
       this.promptSwitchNetwork()
     }
   }
@@ -333,14 +333,14 @@ class NetworkManager {
   }
 
   private clearUserSpecificCache() {
-    // 清除用户相關的緩存
+    // 清除用戶相關的緩存
   }
 }
 ```
 
 ## 多錢包併發管理
 
-用户可能同時連接多個錢包。DApp 需要管理多個 provider 並選擇活躍錢包：
+用戶可能同時連接多個錢包。DApp 需要管理多個 provider 並選擇活躍錢包：
 
 ```typescript
 class MultiWalletManager {
@@ -507,7 +507,7 @@ class SessionManager {
     // 4. 清理網絡監聽器
     this.networkManager?.destroy()
 
-    // 5. 清理用户相關緩存
+    // 5. 清理用戶相關緩存
     this.clearUserCache()
 
     // 6. 重置狀態
@@ -516,7 +516,7 @@ class SessionManager {
 
   private clearUserCache() {
     // 清除 SWR/React Query 緩存
-    // 清除 localStorage 中的用户偏好
+    // 清除 localStorage 中的用戶偏好
     // 清除 sessionStorage
     const keysToKeep = ['theme', 'language']
     const allKeys = Object.keys(localStorage)
@@ -774,12 +774,12 @@ class MobileAdapter {
 ## 最佳實踐：統一的連接狀態管理
 
 1. **單一數據源**：所有組件從同一個 SessionManager 獲取狀態，避免多個組件各自管理連接
-2. **樂觀更新**：用户點擊連接後立即顯示連接中狀態，不要等待 RPC 響應
+2. **樂觀更新**：用戶點擊連接後立即顯示連接中狀態，不要等待 RPC 響應
 3. **優雅降級**：錢包不可用時提供 WalletConnect 回退方案
-4. **會話過期提示**：在會話即將過期時提示用户續期
+4. **會話過期提示**：在會話即將過期時提示用戶續期
 5. **多鏈感知**：網絡切換時自動清理舊鏈的數據緩存
 6. **移動端適配**：檢測運行環境，調整會話策略
 
 ## 小結
 
-錢包會話管理是 DApp 前端的基礎設施。一個健壯的會話系統需要在連接、重連、網絡切換、多錢包併發和安全斷開等環節都做到正確處理。localStorage 持久化 + 自動重連是恢復用户體驗的關鍵。網絡切換檢測和狀態同步是避免數據不一致的保障。移動端 DApp 瀏覽器的特殊性要求適配策略。將所有邏輯封裝在一個統一的 SessionManager 中，通過訂閲模式暴露狀態，是當前最佳實踐。隨着 EIP-6963（多注入錢包發現）的普及，多錢包併發管理將成為標配，前端的會話架構應為此做好準備。
+錢包會話管理是 DApp 前端的基礎設施。一個健壯的會話系統需要在連接、重連、網絡切換、多錢包併發和安全斷開等環節都做到正確處理。localStorage 持久化 + 自動重連是恢復用戶體驗的關鍵。網絡切換檢測和狀態同步是避免數據不一致的保障。移動端 DApp 瀏覽器的特殊性要求適配策略。將所有邏輯封裝在一個統一的 SessionManager 中，通過訂閲模式暴露狀態，是當前最佳實踐。隨着 EIP-6963（多注入錢包發現）的普及，多錢包併發管理將成為標配，前端的會話架構應為此做好準備。

@@ -6,7 +6,7 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "開発中にコードを変更するとページが自動更新される、これがHMR（Hot Module Replacement）です。当たり前のように使っていますが、今日その原理を調べてみました。"
-wordCount: 319
+wordCount: 336
 ---
 
 開発中にコードを変更するとページが自動更新される、これがHMR（Hot Module Replacement）です。当たり前のように使っていますが、今日その原理を調べてみました。
@@ -125,8 +125,8 @@ if (module.hot) {
 
 ## まとめ
 
-- HMRはWebSocketで更新通知をプッシュし、HTTPで新しいモジュールを取得
-- モジュール置換は`__webpack_modules__`内の対応する関数を更新すること
-- `module.hot.accept`でホット更新の受け入れを宣言、vue-loader/react-refreshが自動注入
-- CSSのホット更新はstyleタグを直接置換、状態の問題なし
-- 置換失敗時はフォールバックとしてページ全体をリロード
+- HMRはWebSocketで更新通知をプッシュし、HTTPで新しいモジュールを取得します
+- モジュール置換は`__webpack_modules__`内の対応する関数を更新することです
+- `module.hot.accept`でホット更新の受け入れを宣言し、vue-loader/react-refreshが自動注入します
+- CSSのホット更新はstyleタグを直接置換し、状態の問題はありません
+- 置換失敗時はフォールバックとしてページ全体をリロードします

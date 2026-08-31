@@ -1,16 +1,16 @@
 ---
-title: "Vue 全域性過濾器和混入"
+title: "Vue 全域過濾器和混入"
 date: 2018-10-18 15:24:55
 tags:
   - Vue
 readingTime: 2
-description: "專案裡有很多跨元件用的功能：日期格式化、金額顯示、許可權判斷……Vue 的全域性過濾器和 Mixin 可以讓這些邏輯集中管理。"
-wordCount: 240
+description: "專案裡有很多跨元件用的功能：日期格式化、金額顯示、權限判斷……Vue 的全域過濾器和 Mixin 可以讓這些邏輯集中管理。"
+wordCount: 228
 ---
 
-專案裡有很多跨元件用的功能：日期格式化、金額顯示、許可權判斷……Vue 的全域性過濾器和 Mixin 可以讓這些邏輯集中管理。
+專案裡有很多跨元件用的功能：日期格式化、金額顯示、權限判斷……Vue 的全域過濾器和 Mixin 可以讓這些邏輯集中管理。
 
-## 全域性過濾器
+## 全域過濾器
 
 ```javascript
 // main.js
@@ -40,7 +40,7 @@ Vue.filter("fileSize", (bytes) => {
 });
 
 // 列舉值翻譯
-const STATUS_MAP = { 1: "正常", 2: "停用", 3: "待稽核" };
+const STATUS_MAP = { 1: "正常", 2: "停用", 3: "待審核" };
 Vue.filter("status", (value) => STATUS_MAP[value] || "未知");
 ```
 
@@ -55,12 +55,12 @@ Vue.filter("status", (value) => STATUS_MAP[value] || "未知");
 {% endraw %}
 ```
 
-## 區域性過濾器（元件內）
+## 局部過濾器（元件內）
 
 ```javascript
 export default {
   filters: {
-    // 隻在這個元件裡用
+    // 只在這個元件裡用
     truncate(value, length = 20) {
       if (!value) return "";
       return value.length > length ? value.slice(0, length) + "..." : value;
@@ -69,16 +69,16 @@ export default {
 };
 ```
 
-## 全域性混入
+## 全域混入
 
-**慎用全域性混入**，因為它影響所有元件，容易產生意外副作用：
+**慎用全域混入**，因為它影響所有元件，容易產生意外副作用：
 
 ```javascript
 // main.js
 Vue.mixin({
   // 所有元件都會有這個方法
   methods: {
-    // 全域性的許可權判斷方法
+    // 全域的權限判斷方法
     $hasPermission(permission) {
       const userPermissions = this.$store.getters.permissions;
       return userPermissions.includes(permission);
@@ -94,7 +94,7 @@ Vue.mixin({
 </el-button>
 ```
 
-## 區域性混入（更推薦）
+## 局部混入（更推薦）
 
 ```javascript
 // mixins/tableOperations.js
@@ -152,6 +152,6 @@ Vue 3 的 Composition API（`setup`）徹底解決了這個問題，混入已經
 
 ## 小結
 
-- 全域性過濾器：日期、金額等格式化，在模板裡用 `|` 呼叫
-- 全域性混入：謹慎使用，適合許可權判斷等真正全域性的功能
-- 區域性混入：複用元件邏輯，但來源不透明，Vue 3 用 Composable 替代
+- 全域過濾器：日期、金額等格式化，在模板裡用 `|` 呼叫
+- 全域混入：謹慎使用，適合權限判斷等真正全域的功能
+- 局部混入：複用元件邏輯，但來源不透明，Vue 3 用 Composable 替代

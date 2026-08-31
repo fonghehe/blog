@@ -6,10 +6,10 @@ tags:
   - 架構
 readingTime: 6
 description: "Signal 已經成為 Angular 新架構的關鍵能力。本文討論如何用 Signal 建模局部狀態、派生狀態和跨模塊數據流，並給出大型應用中的治理建議。"
-wordCount: 1307
+wordCount: 1318
 ---
 
-Angular 的 Signal 體系已經從新特性變成架構設計的一部分。它改變的不隻是狀態更新語法，更重要的是讓組件、服務和範本之間的數據依賴變得更清晰。對於大型應用來說，Signal 的價值在於減少隱式訂閱，讓狀態變化更可追蹤。
+Angular 的 Signal 體系已經從新特性變成架構設計的一部分。它改變的不只是狀態更新語法，更重要的是讓組件、服務和範本之間的數據依賴變得更清晰。對於大型應用來說，Signal 的價值在於減少隱式訂閱，讓狀態變化更可追蹤。
 
 ## 從局部狀態開始
 
@@ -48,11 +48,11 @@ export class ProductFilterComponent {
 }
 ```
 
-判斷標準很明確：**當一個狀態隻被當前組件及其直接子組件使用時，它就應該留在組件裡。**
+判斷標準很明確：**當一個狀態只被當前組件及其直接子組件使用時，它就應該留在組件裡。**
 
 ## 服務層 Signal：領域狀態的管理
 
-當狀態需要跨越多個組件時，提升到服務層。但要注意服務層 Signal 的暴露方式：
+當狀態需要在多個組件之間共用時，便應提升到服務層。不過要注意服務層 Signal 該如何暴露：
 
 ```typescript
 @Injectable({ providedIn: 'root' })
@@ -60,7 +60,7 @@ export class CartService {
   // 內部可寫
   private items = signal<CartItem[]>([]);
 
-  // 外部隻讀——防止外部直接修改
+  // 外部只讀——防止外部直接修改
   readonly itemCount = computed(() =>
     this.items().reduce((sum, item) => sum + item.quantity, 0)
   );
@@ -95,9 +95,9 @@ export class CartService {
 ```
 
 這個模式的關鍵設計決策：
-- **私有 Signal + 公開 computed**：外部隻能讀取派生數據
+- **私有 Signal + 公開 computed**：外部只能讀取派生數據
 - **命令方法作為修改入口**：所有修改都有明確的調用來源，方便追蹤和除錯
-- **不可變更新**：使用 `update()` 配合不可變操作，確保 Angular 變更檢測正確工作
+- **不可變更新**：透過 `update()` 做不可變操作，確保 Angular 變更偵測能正確運作
 
 ## 派生狀態要保持純粹
 
@@ -173,7 +173,7 @@ export class ProductListComponent {
 }
 ```
 
-在 `linkedSignal` 出現之前，這種模式需要手動在 `effect` 裡監聽 `categoryId` 的變化來重置頁碼——容易遺漏且難以維護。`linkedSignal` 把「A 變化則 B 重置」這個關係顯式化，程式碼意圖清晰得多。
+在 `linkedSignal` 出現之前，這種模式需要手動在 `effect` 裡監聽 `categoryId` 的變化來重置頁碼——容易遺漏且難以維護。`linkedSignal` 將「A 變化則 B 重置」的關係明確表達出來，程式碼意圖清晰得多。
 
 ## Signal 與 RxJS 的協作
 
@@ -198,7 +198,7 @@ const data = toSignal(this.dataService.getData$(), { initialValue: [] });
 const data$ = toObservable(this.mySignal);
 ```
 
-推薦的架構模式：**服務層用 RxJS 處理複雜非同步編排，組件層用 Signal 消費——`toSignal()` 作為兩者之間的橋。** 這不是甚麼哲學偏好，而是純粹的工程合理性：每個層使用最適合的工具。
+推薦的架構模式：**服務層用 RxJS 處理複雜非同步編排，組件層用 Signal 消費——`toSignal()` 作為兩者之間的橋。** 這並非出於甚麼理念偏好，純粹是工程上的合理取捨：每一層都用最合適的工具。
 
 ## 大型應用中的 Signal 治理
 
@@ -207,11 +207,11 @@ const data$ = toObservable(this.mySignal);
 **原則 1：明確所有權**
 - 組件擁有 UI 狀態 Signal（表單值、展開/折疊、當前選中項）
 - 領域服務擁有業務狀態 Signal（購物車、用戶權限、當前訂單）
-- 基礎設施服務不擁有狀態，隻暴露方法和 Observable
+- 基礎設施服務不擁有狀態，只暴露方法和 Observable
 
-**原則 2：控製寫入入口**
+**原則 2：控制寫入入口**
 不要讓任何組件都能直接修改共享 Signal。遵循 CQRS 思想：
-- 讀取通過 `computed` 或隻讀 Signal 暴露
+- 讀取通過 `computed` 或只讀 Signal 暴露
 - 修改通過明確命名的方法（`addItem`、`removeItem`、`updateQuantity`）
 - 日誌和埋點在方法裡集中處理
 
@@ -222,8 +222,8 @@ const data$ = toObservable(this.mySignal);
 - 使用 Angular ESLint 外掛禁止在 computed 裡執行副作用
 
 **原則 4：避免 Signal 地獄**
-不要因為 Signal 好用就把所有數據都變成 Signal。靜態設定數據（如國家列表、省市區數據）用普通常數更好。隻會在一個地方用到的派生數據，直接用函式計算可能比 computed 更簡單。
+不要因為 Signal 好用就把所有數據都變成 Signal。靜態設定數據（如國家列表、省市區數據）用普通常數更好。只會在一個地方用到的派生數據，直接用函式計算可能比 computed 更簡單。
 
 ## 小結
 
-Angular Signal 架構的關鍵不是把 RxJS 全部替換掉，而是把不同類型的響應式問題放到合適的位置。Signal 負責清晰的同步狀態和簡單的派生關係，RxJS 繼續處理複雜非同步流和即時數據編排。`linkedSignal` 讓「源-目標重置」模式變得更安全。對於大型應用來說，Signal 治理的核心是：明確所有權、控製寫入入口、保持派生純粹——這些原則和大規模軟件工程的基本原則完全一致。2026 年的 Angular 開發者需要同時掌握 Signal 和 RxJS，知道在甚麼場景下用哪個，才是真正的工程成熟度。
+Angular Signal 架構的關鍵不是把 RxJS 全部替換掉，而是把不同類型的響應式問題放到合適的位置。Signal 負責清晰的同步狀態和簡單的派生關係，RxJS 繼續處理複雜非同步流和即時數據編排。`linkedSignal` 讓「源-目標重置」模式變得更安全。對於大型應用來說，Signal 治理的核心是：明確所有權、控制寫入入口、保持派生純粹——這些原則和大規模軟件工程的基本原則完全一致。2026 年的 Angular 開發者需要同時掌握 Signal 和 RxJS，知道在甚麼場景下用哪個，才是真正的工程成熟度。

@@ -5,14 +5,14 @@ tags:
   - 前端
 readingTime: 2
 description: "最近在團隊中落地前端架構 2026 最佳實踐，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 306
+wordCount: 289
 ---
 
 最近在團隊中落地前端架構 2026 最佳實踐，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
 
 ## 核心概念
 
-實際項目中的用法會更複雜一些：
+實際項目中的用法會更複雜：
 
 ```javascript
 const fs = require('fs')
@@ -37,7 +37,7 @@ const csvToJson = new Transform({
 
 ```
 
-通過這種方式，代碼的可測試性和可擴展性都得到了提升。
+這樣做能提升代碼的可測試性和可擴展性。
 
 ## 深度解析
 
@@ -64,11 +64,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-注意邊界條件處理，這在生產環境中至關重要。
+要注意邊界條件處理，這在生產環境中至關重要。
 
 ## 落地經驗
 
-關鍵在於理解核心邏輯：
+重點在於理解核心邏輯：
 
 ```javascript
 .container {
@@ -91,11 +91,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-效能優化需要結合具體場景，不是所有情況都需要過度優化。
+效能優化要視場景而定，不必每個情況都過度優化。
 
 ## 調優策略
 
-我們可以通過以下方式來改進：
+可參考以下做法來改進：
 
 ```javascript
 const fs = require('fs')
@@ -120,7 +120,7 @@ const csvToJson = new Transform({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
+這套方案已在線上穩定運行超過半年，並經實際驗證。
 
 ## 小結
 

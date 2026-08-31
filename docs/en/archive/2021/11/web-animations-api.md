@@ -6,15 +6,15 @@ tags:
   - CSS
 
 readingTime: 1
-description: "Web Animations API 原生动画 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pr"
-wordCount: 194
+description: "Native animation with the Web Animations API is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 181
 ---
 
-Web Animations API 原生动画 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Native animations built with the Web Animations API are becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more involved:
 
 ```css
 .container {
@@ -124,6 +124,6 @@ This approach has been running stably in production for over six months and has 
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Web Animations API 原生动画不是银弹，需要根据项目规模和技术栈选择
+- Native Web Animations API animations are not a silver bullet; choose them based on your project's scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

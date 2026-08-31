@@ -4,7 +4,7 @@ date: 2022-02-23 14:31:47
 tags:
   - Vue
 readingTime: 1
-description: "We recently implemented VueDemi Vue 2/3 通用库开发， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar wo"
+description: "I recently used Vue Demi for Vue 2/3 universal library development with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 172
 ---
 

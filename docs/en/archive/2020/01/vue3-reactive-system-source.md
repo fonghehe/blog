@@ -4,15 +4,15 @@ date: 2020-01-03 16:10:29
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 的响应式系统基于 ES6 Proxy 重写，彻底告别了 Vue 2 的 `Object.defineProperty` 方案。理解其源码实现，不仅能帮助我们写出更高效的代码，还能避免一些隐蔽的性能陷阱。"
-wordCount: 330
+description: "Vue 3's reactivity system was rewritten on top of ES6 Proxy, completely replacing Vue 2's `Object.defineProperty` approach. Understanding its source implementation helps us write more efficient code and avoid subtle performance pitfalls."
+wordCount: 227
 ---
 
-Vue 3 的响应式系统基于 ES6 Proxy 重写，彻底告别了 Vue 2 的 `Object.defineProperty` 方案。理解其源码实现，不仅能帮助我们写出更高效的代码，还能避免一些隐蔽的性能陷阱。
+Vue 3's reactivity system was rewritten on top of ES6 Proxy, completely leaving behind Vue 2's `Object.defineProperty` approach. Understanding its source implementation not only helps us write more efficient code, but also lets us avoid some hidden performance pitfalls.
 
 ## Proxy and Reflect Working Together
 
-Vue 3 使用 `Proxy` 拦截对象的读写操作，配合 `Reflect` 确保 `this` 指向正确。
+Vue 3 uses `Proxy` to intercept an object's read and write operations, and pairs it with `Reflect` to keep `this` pointing correctly.
 
 ```javascript
 function reactive(target) {
@@ -40,11 +40,11 @@ console.log(observed.name)
 observed.version = 3.1
 ```
 
-相比 Vue 2 的 `Object.defineProperty`，Proxy 可以拦截新增属性和删除操作，不需要 `Vue.set` 和 `Vue.delete`。
+Compared with Vue 2's `Object.defineProperty`, Proxy can intercept property addition and deletion, so `Vue.set` and `Vue.delete` are no longer needed.
 
 ## Map Structure for Dependency Tracking
 
-响应式系统用一个三层 Map 结构存储依赖关系：`targetMap -> depsMap -> dep`。
+The reactivity system stores dependencies in a three-level Map structure: `targetMap -> depsMap -> dep`.
 
 ```javascript
 const targetMap = new WeakMap()
@@ -81,11 +81,11 @@ function trigger(target, key) {
 }
 ```
 
-`WeakMap` 确保当 `target` 被垃圾回收时，对应的依赖信息自动清除，避免内存泄漏。
+The `WeakMap` ensures that when a `target` is garbage-collected, its dependency info is cleared automatically, avoiding memory leaks.
 
 ## Difference Between ref and reactive
 
-`ref` 本质上是对基本类型的包装，内部用 `reactive` 包裹一个 `{ value: ... }` 对象。
+A `ref` is essentially a wrapper around a primitive, internally wrapping a `{ value: ... }` object with `reactive`.
 
 ```javascript
 function ref(rawValue) {
@@ -122,9 +122,9 @@ const user = ref({ name: 'test' })
 user.value.name = 'updated' // 这也会触发响应式
 ```
 
-## computed 的惰性求值
+## Lazy Evaluation in computed
 
-`computed` 返回一个带有缓存的 ref。只有依赖变化时才会重新计算。
+A `computed` returns a cached `ref`. It only recomputes when a dependency changes.
 
 ```javascript
 function computed(getter) {
@@ -164,8 +164,8 @@ console.log(doubled.value) // 10，重新计算
 
 ## Summary
 
-- Proxy 替代 defineProperty，解决新增/删除属性无响应式的问题
-- 依赖收集用 WeakMap -> Map -> Set 三层结构，WeakMap 自动处理垃圾回收
-- ref 本质是包了一层 `{ value }` 的 reactive
-- computed 通过 dirty 标记实现惰性求值和缓存
-- 理解底层机制有助于排查响应式不生效的疑难杂症
+- Proxy replaces defineProperty, fixing the problem where adding/deleting properties wasn't reactive.
+- Dependency tracking uses a WeakMap -> Map -> Set three-level structure, with WeakMap handling garbage collection automatically.
+- A `ref` is essentially a `reactive` wrapped in a `{ value }` object.
+- `computed` uses a `dirty` flag to achieve lazy evaluation and caching.
+- Understanding the underlying mechanism helps debug tricky cases where reactivity doesn't kick in.

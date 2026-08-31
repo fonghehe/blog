@@ -4,15 +4,15 @@ date: 2020-10-01 10:58:45
 tags:
   - Security
 readingTime: 2
-description: "CORS 跨域资源共享深入理解这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 305
+description: "A refreshed deep dive into CORS (Cross-Origin Resource Sharing), re-examining earlier community conclusions in light of updated browser behavior."
+wordCount: 200
 ---
 
-CORS 跨域资源共享深入理解这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+The topic of CORS (Cross-Origin Resource Sharing) has been discussed in the community many times, but with each version iteration a lot of the old conclusions need updating. This article re-examines it based on the latest version.
 
 ## Getting Started
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -30,11 +30,11 @@ function setCSP(req, res, next) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Source Code Analysis
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -52,11 +52,11 @@ function setCSP(req, res, next) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — it's critical in production.
 
 ## Real-World Applications
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -74,11 +74,11 @@ function setCSP(req, res, next) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tied to the actual scenario; not every case calls for over-optimizing.
 
 ## Optimization Tips
 
-我们可以通过以下方式来改进：
+Here's how we can improve on it:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -96,12 +96,12 @@ function setCSP(req, res, next) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it's proven in practice.
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- CORS 跨域资源共享深入理解不是银弹，需要根据项目规模和技术栈选择
+- In team collaboration, conventions and documentation matter more than the technology itself.
+- Keep an eye on community developments; technical solutions need continuous iteration.
+- Don't adopt new tech for its own sake.
+- The code examples are for reference only and should be adapted to your actual use case.
+- A deep dive into CORS (Cross-Origin Resource Sharing) is no silver bullet; choose it based on your project's scale and tech stack.

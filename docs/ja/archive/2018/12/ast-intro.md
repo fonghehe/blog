@@ -5,14 +5,14 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "Babel、ESLint、Prettier はすべて AST に基づいて動いています。AST の原理を理解することで、これらのツールをより上手く使えるようになり、独自のプラグインを書くことさえできます。"
-wordCount: 314
+wordCount: 312
 ---
 
-Babel、ESLint、Prettier はすべて AST に基づいて動いています。AST の原理を理解することで、これらのツールをより上手く使えるようになり、独自のプラグインを書くことさえできます。
+Babel、ESLint、Prettier はすべて AST に基づいて動いている。AST の原理を理解することで、これらのツールをより上手く使えるようになり、独自のプラグインを書くことさえできる。
 
 ## AST とは
 
-AST（Abstract Syntax Tree、抽象構文木）はコードをツリー構造で表現したものです。
+AST（Abstract Syntax Tree、抽象構文木）はコードをツリー構造で表現したものだ。
 
 ```javascript
 // ソースコード
@@ -138,7 +138,7 @@ module.exports = {
 ## オンラインツール
 
 - **AST Explorer**（astexplorer.net）：コードに対応する AST をリアルタイムで確認できる。プラグインのデバッグに必須
-- **Babel Plugin Handbook**：Babel プラグイン開発の完全ドキュメント
+- **Babel Plugin Handbook**：Babel プラグイン開発の完全なドキュメント
 
 ## まとめ
 

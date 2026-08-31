@@ -3,16 +3,16 @@ title: "TypeScript 4.0 タプル型と可変長タプル"
 date: 2020-07-20 10:53:30
 tags:
   - TypeScript
-readingTime: 3
-description: "TypeScript 4.0 beta 刚发布，这次最让我兴奋的是元组类型（Tuple Types）的大幅增强，特别是可变参数元组（Variadic Tuple Types）。以前处理函数参数组合、rest 参数拼接时，类型系统完全帮不上忙，现在终于可以优雅地表达了。"
-wordCount: 417
+readingTime: 4
+description: "TypeScript 4.0 beta がリリースされたばかりだが、今回最も興奮したのはタプル型（Tuple Types）の大幅な強化、特に可変長タプル（Variadic Tuple Types）だ。以前は関数の引数の組み合わせや rest 引数の結合において型システムがまったく役に立たなかったが、ようやく美しく表現できるようになった。"
+wordCount: 595
 ---
 
-TypeScript 4.0 beta 刚发布，这次最让我兴奋的是元组类型（Tuple Types）的大幅增强，特别是可变参数元组（Variadic Tuple Types）。以前处理函数参数组合、rest 参数拼接时，类型系统完全帮不上忙，现在终于可以优雅地表达了。
+TypeScript 4.0 beta がリリースされたばかりだが、今回私がもっとも興奮したのはタプル型（Tuple Types）の大幅な強化、特に可変長タプル（Variadic Tuple Types）だ。以前は関数の引数の組み合わせや rest 引数の結合において、型システムがまったく役に立たなかったが、ようやく美しく表現できるようになった。
 
 ## おさらい：固定長タプル
 
-以前 TypeScript 的元组类型是这样的：
+以前の TypeScript のタプル型は次のようなものだった：
 
 ```typescript
 // 固定长度、固定类型的元组
@@ -26,7 +26,7 @@ const bad2: Coordinate = [10, 20, 30] // Error
 
 ## 新機能：オプションと残余要素
 
-TypeScript 4.0 允许在元组中标记可选元素和剩余元素：
+TypeScript 4.0 では、タプル内で省略可能な要素と残余（rest）要素をマークできるようになった：
 
 ```typescript
 // 可选元素
@@ -51,7 +51,7 @@ const g: NamedArgs = ['config', 42, 'extra1', 'extra2']
 
 ## 先頭・中間への残余要素
 
-TypeScript 4.0 还支持把剩余元素放在开头或中间，而不只是末尾：
+TypeScript 4.0 は、残余要素を末尾だけでなく先頭や中間にも配置できることもサポートしている：
 
 ```typescript
 // 剩余元素在开头
@@ -71,7 +71,7 @@ const m3: Middle = ['hello', 1, 2]         // OK
 
 ## 可変長タプル：型安全な引数スプレッド
 
-这是 TypeScript 4.0 最重要的特性。用泛型来表达元组的拼接、合并等操作：
+これは TypeScript 4.0 でもっとも重要な特性だ。ジェネリクスを使ってタプルの連結やマージなどの操作を表現できる：
 
 ```typescript
 // 类型安全的 concat
@@ -227,7 +227,7 @@ const validate: Middleware<Ctx, object, object> = (_ctx, body) => {
 
 ## ラベル付きタプル要素
 
-TypeScript 4.0 允许给元组元素加标签，提高可读性：
+TypeScript 4.0 では、タプル要素にラベルを付けて可読性を高められる：
 
 ```typescript
 // 没有标签 —— 靠注释才能理解
@@ -247,9 +247,9 @@ const [start, end] = getPageBounds(2, 10) // 智能提示会显示标签名
 
 ## まとめ
 
-- TypeScript 4.0 元组支持可选元素（`T?`）和剩余元素（`...T[]`）
-- 剩余元素可以出现在元组的任意位置，不局限于末尾
-- 可变参数元组允许在泛型中拼接、操作元组类型
-- Labeled Tuple Elements 提高了元组的可读性
-- 这些特性让函数式编程、中间件管道等模式的类型推断变得可能
-- 对于需要处理动态参数组合的库作者来说，这是质的飞跃
+- TypeScript 4.0 のタプルは省略可能要素（`T?`）と残余要素（`...T[]`）をサポートする
+- 残余要素はタプルの任意の位置に配置でき、末尾に限らない
+- 可変長タプルにより、ジェネリクス内でタプル型の結合や操作が可能になった
+- Labeled Tuple Elements によりタプルの可読性が向上した
+- これらの機能により、関数型プログラミングやミドルウェアパイプラインなどのパターンの型推論が可能になった
+- 動的な引数の組み合わせを扱うライブラリ作者にとって、これは質的な飛躍である

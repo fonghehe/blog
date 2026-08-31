@@ -4,15 +4,15 @@ date: 2019-09-06 10:53:29
 tags:
   - Vue
 readingTime: 1
-description: "最近项目中用到了Vue 2 过渡与动画系统，发现比预想的要复杂。分享一下实践过程中总结的经验。"
-wordCount: 223
+description: "I recently used the Vue 2 transition and animation system in a project and found it more complex than expected. Here are some lessons from putting it into practice."
+wordCount: 161
 ---
 
-最近项目中用到了Vue 2 过渡与动画系统，发现比预想的要复杂。分享一下实践过程中总结的经验。
+I recently used the Vue 2 transition and animation system in a project and found it more complex than expected. Here are some lessons from putting it into practice.
 
 ## Quick Start
 
-具体实现参考以下代码：
+For a concrete implementation, see the following code:
 
 ```css
 function pLimit(concurrency) {
@@ -36,11 +36,11 @@ function pLimit(concurrency) {
 }
 ```
 
-经过线上验证，这套方案运行稳定。
+This approach has been validated in production and runs stably.
 
 ## Advanced Usage
 
-先来看基本的用法：
+Let's start with the basic usage:
 
 ```css
 class EventEmitter {
@@ -71,11 +71,11 @@ class EventEmitter {
 }
 ```
 
-这种写法简洁明了，适合大多数场景。
+This approach is concise and clear, and works for most scenarios.
 
 ## Business Scenarios
 
-核心代码如下：
+The core code looks like this:
 
 ```css
 interface User {
@@ -97,11 +97,11 @@ function createUser(data: Partial<User>): User {
 type UserKeys = keyof User  // 'id' | 'name' | 'email' | 'role'
 ```
 
-实际项目中还需要考虑边界条件和异常处理。
+In real projects you also need to account for edge cases and exception handling.
 
 ## Pitfall Avoidance Guide
 
-下面是一个实际的例子：
+Here is a concrete example:
 
 ```css
 function pluck<T, K extends keyof T>(obj: T, key: K): T[K] {
@@ -113,10 +113,10 @@ const name = pluck(user, 'name')   // string
 const role = pluck(user, 'role')   // 'admin' | 'user' | 'guest'
 ```
 
-这种模式在团队中推广后效果很好，维护成本明显降低。
+After this pattern was rolled out across the team, the results were good and maintenance costs dropped noticeably.
 
 ## Summary
 
-- 遇到问题多看源码和官方文档
-- Vue 2 过渡与动画系统的关键在于理解核心概念，不要停留在表面用法
-- 实际项目中根据场景选择合适的方案
+- When you hit a problem, read the source code and the official docs more often.
+- The key to the Vue 2 transition and animation system is understanding the core concepts, not just surface-level usage.
+- Choose the right approach for the scenario in real projects.

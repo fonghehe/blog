@@ -4,11 +4,11 @@ date: 2022-09-12 16:06:21
 tags:
   - Frontend
 readingTime: 2
-description: "最近在团队中落地Scheduler API 调度优先级， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 198
+description: "We recently adopted the Scheduler API for scheduling priorities on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 188
 ---
 
-最近在团队中落地Scheduler API 调度优先级， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently adopted the Scheduler API for scheduling priorities on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 
@@ -47,7 +47,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## In-Depth Analysis
 
-实际项目中的用法会更复杂一些：
+Usage in real projects tends to be more complex:
 
 ```javascript
 const express = require('express')

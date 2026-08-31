@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Bun 1.0 is officially released! It's a JavaScript runtime written in Zig, claiming to be much faster than Node.js. Let's see if it's worth switching."
-wordCount: 286
+wordCount: 285
 ---
 
 Bun 1.0 is officially released! It's a JavaScript runtime written in Zig, claiming to be much faster than Node.js. Let's see if it's worth switching.
@@ -106,7 +106,7 @@ app.listen(3000);
 
 ## Should You Switch? (Verdict: September 2023)
 
-**可以用 Bun 的场景：**
+**Scenarios where Bun is a good fit:**
 
 - 个人项目、脚本、工具
 - 用 `bun install` 替代 npm（向下兼容，风险低）

@@ -5,10 +5,10 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular CLI 生成项目时默认配好了 Jasmine + Karma 测试环境。很多人跳过了测试，其实 Angular 的测试工具链与业务代码结合得非常居家。"
-wordCount: 138
+wordCount: 137
 ---
 
-Angular CLI 生成项目时默认配好了 Jasmine + Karma 测试环境。很多人跳过了测试，其实 Angular 的测试工具链与业务代码结合得非常居家。
+Angular CLI 生成项目时默认配好了 Jasmine + Karma 测试环境。很多人跳过了测试，其实 Angular 的测试工具链与业务代码结合得非常自然。
 
 ## 测试组件：TestBed 基础
 
@@ -139,4 +139,4 @@ ng test --code-coverage
 
 ## 总结
 
-Angular 的测试工具链设计就是为了让依赖注入和单元测试自然配合。`HttpClientTestingModule` + `RouterTestingModule` + `SpyOn` 三个工具能解决给大多数测试场景。
+Angular 的测试工具链设计就是为了让依赖注入和单元测试自然配合。`HttpClientTestingModule` + `RouterTestingModule` + `SpyOn` 三个工具能覆盖大多数测试场景。

@@ -3,9 +3,9 @@ title: "React Router 7 Framework Mode 移行記録：SPA + API からフルス�
 date: 2026-08-16 10:58:26
 tags:
   - React
-readingTime: 8
+readingTime: 11
 description: "内部ダッシュボードを従来の SPA + Express API アーキテクチャから React Router 7 framework mode に移行した全過程を記録。routes.ts 設定、loader/action のデータフロー設計、single-fetch と typegen、hydration の罠、Error Boundary UX、そして declarative mode を使い続けるべきタイミングについても論じる。"
-wordCount: 3300
+wordCount: 2769
 ---
 
 我々のチームが保守する内部運用ダッシュボードは、3 年間でシンプルな React SPA からフロントエンド・バックエンド分離の 2 つのコードベースに膨れ上がった：フロントエンドは Vite + React Router v6、バックエンドは Express + Prisma。新しいページを追加するたびに、ルート設定の変更、API エンドポイントの記述、フロントエンドの fetch 呼び出し追加、loading/error 状態の処理――4 つの変更が 2 つのリポジトリに分散する。React Router 7 の framework mode はこれらを一つのプロジェクトに統合することを約束する。筆者は 2 週間かけて移行を完了した。本記事では実際の移行過程での収穫と落とし穴を記録する。

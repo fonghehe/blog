@@ -52,7 +52,7 @@ function Animal(name) {
 }
 
 function Dog(name, breed) {
-  Animal.call(this, name); // 在子類構造函數里呼叫父類
+  Animal.call(this, name); // 在子類建構函式裡呼叫父類
   this.breed = breed;
 }
 

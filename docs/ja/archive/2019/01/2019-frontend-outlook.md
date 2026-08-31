@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "2018年は充実した年だった。React HooksがReact Confでデビューし、Vue 3 RFCが公開レビューを開始し、TypeScriptの大規模プロジェクトへの浸透率は上昇し続けた。2019年を展望すると、特に注目すべきいくつかの方向性がある。"
-wordCount: 837
+wordCount: 829
 ---
 
 2018年は充実した年だった。React HooksがReact Confでデビューし、Vue 3 RFCが公開レビューを開始し、TypeScriptの大規模プロジェクトへの浸透率は上昇し続けた。2019年を展望すると、特に注目すべきいくつかの方向性がある。
@@ -61,4 +61,4 @@ Create React App、Vue CLI 3、Angular CLIはすべて同じ目標を目指し�
 
 ## まとめ
 
-2019年のテーマは「より良い開発体験」だ：Hooksによりレアクトコンポーネントがよりシンプルになり、Composition APIによりVueのロジックが明確になり、TypeScriptによりリファクタリングがより安全になる。展望は展望に過ぎない——まず2018年の知識を真の実力に転化させることが重要だ。
+2019年のテーマは「より良い開発体験」だ：HooksによりReactコンポーネントがよりシンプルになり、Composition APIによりVueのロジックが明確になり、TypeScriptによりリファクタリングがより安全になる。展望は展望に過ぎない——2018年の知識を真の実力に変えることが重要だ。

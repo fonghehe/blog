@@ -5,9 +5,9 @@ tags:
   - Web3
   - Blockchain
   - DApp
-readingTime: 12
+readingTime: 9
 description: "直接读取链上事件日志无法满足 DApp 的复杂查询需求。The Graph 通过 Subgraph 提供去中心化的索引服务，支持 GraphQL 查询。本文覆盖从 Subgraph 定义到前端集成的完整方案。"
-wordCount: 3100
+wordCount: 880
 ---
 
 DApp 前端需要展示大量链上数据：用户的历史交易、持仓变化、协议统计等。这些数据分散在无数区块的事件日志中，直接通过 RPC 读取不仅效率低下，而且无法支持复杂查询（如分页、过滤、聚合）。The Graph 协议通过 Subgraph 索引机制解决了这个问题，让前端可以用 GraphQL 高效查询链上数据。

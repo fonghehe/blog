@@ -8,16 +8,16 @@ tags:
   - Vue
   - Vite
 
-readingTime: 3
-description: "2021 年是前端生态加速重组的一年：Vue 3 完成生态建设、Angular 12/13 完成 Ivy 迁移、Vite 从新兴工具变成主流选择。站在 2021 年年末，我们来预判 2022 年会发生什么。"
-wordCount: 547
+readingTime: 2
+description: "2021 was the year the frontend ecosystem accelerated its restructuring: Vue 3 completed its ecosystem build-out, Angular 12/13 completed the Ivy migration, and Vite went from emerging tool to mainstream choice. Standing at the end of 2021, let's predict what happens in 2022."
+wordCount: 384
 ---
 
-2021 年是前端生态加速重组的一年：Vue 3 完成生态建设、Angular 12/13 完成 Ivy 迁移、Vite 从新兴工具变成主流选择。站在 2021 年年末，我们来预判 2022 年会发生什么。
+2021 was a year of accelerated restructuring across the frontend ecosystem: Vue 3 completed its ecosystem, Angular 12/13 finished the Ivy migration, and Vite went from an emerging tool to a mainstream choice. Standing at the end of 2021, let's predict what will happen in 2022.
 
 ## React 18: Concurrent Rendering Is Here
 
-React 18 在 2021 年 6 月发布 Alpha，正式版预计在 2022 年初发布。最重要的变化是**并发渲染**——React 可以在渲染过程中被中断，优先处理更紧急的更新：
+React 18 released its Alpha in June 2021, and the stable version is expected in early 2022. The most important change is **concurrent rendering** — React can interrupt rendering to prioritize more urgent updates:
 
 ```jsx
 // React 18 新特性：useTransition
@@ -45,16 +45,16 @@ function SearchPage() {
 }
 ```
 
-**其他 React 18 新 API**：
+**Other new React 18 APIs**:
 
-- `useDeferredValue`：类似 `startTransition`，但用于值而非函数
-- `useId`：生成稳定的唯一 ID（SSR 水合安全）
-- `Suspense` 列表排序（`SuspenseList`）
-- Streaming SSR（`renderToPipeableStream`）
+- `useDeferredValue`: like `startTransition`, but for values rather than functions
+- `useId`: generates a stable unique ID (SSR-hydration safe)
+- `Suspense` list ordering (`SuspenseList`)
+- Streaming SSR (`renderToPipeableStream`)
 
 ## Vue 3 Becomes the Default
 
-2022 年 Q1，Vue 3 将成为 `npm install vue` 安装的默认版本（目前还是 Vue 2）。这意味着：
+In Q1 2022, Vue 3 will become the default version installed by `npm install vue` (today it's still Vue 2). This means:
 
 ```bash
 # 2022 年之后
@@ -62,15 +62,15 @@ npm install vue   # 安装 Vue 3（目前会安装 Vue 2）
 npm install vue@2  # 明确指定 Vue 2
 ```
 
-Vue 3 生态在 2021 年补完了最后几块拼图：
+Vue 3's ecosystem filled in its last few missing pieces in 2021:
 
-- `Pinia` 成为推荐的状态管理方案（替代 Vuex）
-- `Vue Router 4` 稳定
-- `Nuxt 3` Beta 发布（基于 Vue 3 + Vite）
+- `Pinia` became the recommended state-management solution (replacing Vuex)
+- `Vue Router 4` stabilized
+- `Nuxt 3` Beta released (built on Vue 3 + Vite)
 
 ## Vite Becomes the Go-To Build Tool
 
-Vite 2 在 2021 年发布后，采用率急剧上升。2022 年预计成为新项目的首选：
+After Vite 2 shipped in 2021, adoption rose sharply. In 2022 it is expected to become the first choice for new projects:
 
 ```javascript
 // vite.config.ts
@@ -93,7 +93,7 @@ export default defineConfig({
 });
 ```
 
-**Vite vs Webpack 冷启动对比**（中型项目）：
+**Vite vs Webpack cold-start comparison** (medium project):
 
 ```
 Webpack 5（with cache）：~6s
@@ -104,17 +104,17 @@ Vite：~300ms
 
 ## Rise of Meta-Frameworks
 
-2022 年会是元框架（Meta-Framework）爆发的一年：
+2022 will be the breakout year for meta-frameworks:
 
-| 框架       | 基于         | 状态（2022 年初）        |
-| ---------- | ------------ | ------------------------ |
-| Next.js 12 | React        | 生产稳定，市场占有率第一 |
-| Nuxt 3     | Vue 3 + Vite | RC 阶段                  |
-| SvelteKit  | Svelte       | Beta                     |
-| Remix      | React        | 2021 年 11 月开源        |
-| Astro      | 框架无关     | Beta                     |
+| Framework  | Based on     | Status (early 2022)        |
+| ---------- | ------------ | -------------------------- |
+| Next.js 12 | React        | Production-stable, #1 market share |
+| Nuxt 3     | Vue 3 + Vite | RC stage                   |
+| SvelteKit  | Svelte       | Beta                       |
+| Remix      | React        | Open-sourced Nov 2021      |
+| Astro      | Framework-agnostic | Beta                 |
 
-**Remix 值得特别关注**——它重新思考了数据加载方式：
+**Remix deserves special attention** — it rethinks how data loading works:
 
 ```typescript
 // Remix 的 loader 函数：在服务端运行，数据直接注入组件
@@ -131,12 +131,12 @@ export default function Post() {
 
 ## TypeScript Continues to Penetrate Deeper
 
-TypeScript 2021 年的下载量同比增长了约 60%，2022 年预计：
+TypeScript's downloads grew about 60% year over year in 2021; for 2022 we expect:
 
-- Vue 3 官方文档全面 TypeScript 化
-- `satisfies` 运算符（TS 4.9 草案，更精准的类型检查）
-- 更多框架把 TypeScript 作为一等公民
+- Vue 3's official docs to go fully TypeScript
+- the `satisfies` operator (TS 4.9 draft, for more precise type checking)
+- more frameworks to treat TypeScript as a first-class citizen
 
 ## Summary
 
-2022 年前端的主旋律是：**成熟**——React 18 并发渲染、Vue 3 生态完善、Vite 成为标配、元框架分化格局。2021 年种下的种子（Vite、SolidJS、Remix）会在 2022 年开始结果。对前端开发者来说，最值得投入的是：深入理解并发渲染、熟悉 Vite 生态、以及认真对待 TypeScript 类型设计。祝 2022 年写出更好的代码。
+The main theme of frontend in 2022 is **maturity** — React 18's concurrent rendering, Vue 3's complete ecosystem, Vite becoming standard, and the divergence of meta-frameworks. The seeds planted in 2021 (Vite, SolidJS, Remix) will bear fruit in 2022. For frontend developers, the most worthwhile investments are: a deep understanding of concurrent rendering, familiarity with the Vite ecosystem, and taking TypeScript type design seriously. Here's to writing better code in 2022.

@@ -121,7 +121,7 @@ export default {
 };
 ```
 
-Many people don't know about this guard, which causes data to not refresh when dynamic route params change.
+Many people don't know about this guard, which causes data not to refresh when dynamic route parameters change.
 
 ### beforeRouteLeave
 

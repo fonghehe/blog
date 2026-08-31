@@ -4,11 +4,11 @@ date: 2023-06-23 14:31:43
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，AI 结对编程最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 211
+description: "AI pair programming best practices is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 195
 ---
 
-在日常开发中，AI 结对编程最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+AI pair programming best practices is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
 
 ## Quick Start
 
@@ -153,5 +153,5 @@ This approach has been running stably in production for over six months and has 
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- AI 结对编程最佳实践不是银弹，需要根据项目规模和技术栈选择
+- AI pair programming best practices is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

@@ -1,18 +1,18 @@
 ---
-title: "Vue 3 i18n with vue-i18n: vue-i18n v9 MigrationGuide"
+title: "Vue 3 i18n with vue-i18n: v9 Migration Guide"
 date: 2020-02-18 10:20:42
 tags:
   - Vue
 readingTime: 2
-description: "国际化（i18n）不只是翻译文本那么简单。日期格式、数字格式、复数规则、文本方向（RTL），这些都需要一套完整的解决方案。vue-i18n 是 Vue 生态中最成熟的国际化库，配合 Composition API 可以做到优雅且类型安全的多语言支持。"
-wordCount: 273
+description: "Internationalization (i18n) is more than just translating text—date formats, number formats, pluralization rules, and RTL direction all require a complete solution. vue-i18n is the most mature i18n library in the Vue ecosystem, and paired with the Composition API it delivers elegant, type-safe multilingual support."
+wordCount: 180
 ---
 
-国际化（i18n）不只是翻译文本那么简单。日期格式、数字格式、复数规则、文本方向（RTL），这些都需要一套完整的解决方案。vue-i18n 是 Vue 生态中最成熟的国际化库，配合 Composition API 可以做到优雅且类型安全的多语言支持。
+Internationalization (i18n) is more than just translating text. Date formats, number formats, pluralization rules, and text direction (RTL) all call for a complete solution. vue-i18n is the most mature i18n library in the Vue ecosystem, and paired with the Composition API it delivers elegant, type-safe multi-language support.
 
 ## Basic Integration
 
-安装和初始化 vue-i18n。
+Install and initialize vue-i18n.
 
 ```javascript
 // i18n/index.js
@@ -44,7 +44,7 @@ app.mount('#app')
 
 ## Translation File Structure
 
-按功能模块组织翻译文件，避免单文件过大。
+Organize translation files by feature module to keep any single file from getting too large.
 
 ```javascript
 // i18n/locales/zh-CN.js
@@ -102,9 +102,9 @@ export default {
 }
 ```
 
-## Composition API 用法
+## Composition API Usage
 
-在 `<script>` 中使用 `useI18n` 钩子。
+Use the `useI18n` hook inside `<script>`.
 
 ```vue
 {% raw %}
@@ -145,9 +145,9 @@ const logout = () => {
 {% endraw %}
 ```
 
-## 日期和数字格式化
+## Date and Number Formatting
 
-vue-i18n 支持基于 locale 的日期和数字格式化，统一处理本地化差异。
+vue-i18n supports locale-based date and number formatting, handling localization differences in one place.
 
 ```javascript
 // i18n/index.js
@@ -210,9 +210,9 @@ const { t, d, n } = useI18n()
 {% endraw %}
 ```
 
-## 按需加载语言包
+## Loading Locale Bundles on Demand
 
-大型项目的翻译文件可能很大，推荐按语言懒加载。
+In large projects the translation files can get big, so it's worth lazy-loading them per language.
 
 ```javascript
 // i18n/index.js
@@ -253,8 +253,8 @@ export { i18n, loadLocaleMessages }
 
 ## Summary
 
-- `legacy: false` 启用 Composition API 模式，用 `useI18n()` 获取 `t`、`d`、`n` 方法
-- 翻译文件按功能模块组织，避免单文件膨胀
-- `d()` 和 `n()` 分别处理日期和数字的本地化格式化
-- 按需加载语言包，减少首屏 bundle 体积
-- 语言切换后记得同步 `localStorage`，保持用户偏好
+- `legacy: false` enables the Composition API mode; use `useI18n()` to get the `t`, `d`, and `n` methods
+- Organize translation files by feature module to avoid a single bloated file
+- `d()` and `n()` handle locale-aware formatting for dates and numbers respectively
+- Lazy-load locale bundles to shrink the initial bundle size
+- After switching languages, remember to sync `localStorage` to preserve the user's preference

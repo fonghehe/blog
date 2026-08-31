@@ -8,14 +8,14 @@ tags:
 
 readingTime: 3
 description: "Vue 3 defineComponent 与 TypeScriptのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 516
+wordCount: 515
 ---
 
-Vue 3 defineComponent 与 TypeScriptのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
+Vue 3 の defineComponent と TypeScript は、フロントエンド開発での活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
 
 ## 基本的な使い方
 
-完全な例を以下に示します：
+完全なサンプルを以下に示します：
 
 ```javascript
 import { reactive, toRefs, computed } from 'vue'
@@ -60,7 +60,7 @@ export default {
 
 ```
 
-パフォーマンスの最適化は具体的なシナリオに合わせる必要があり、すべてのケースで過度な最適化が必要というわけではありません。
+パフォーマンスの最適化は具体的なケースに合わせる必要があり、すべてのケースで過度な最適化が必要というわけではありません。
 
 ## 実践事例
 
@@ -99,7 +99,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ## パフォーマンス最適化
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみましょう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -152,4 +152,4 @@ function useCounter(initial = 0) {
 
 - コミュニティの動向を注視し、技術的なソリューションは継続的な反復が必要です
 - 新しい技術を使うためだけに新しい技術を使わないでください
-- コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
+- コードサンプルは参考用のみであり、ビジネスケースに応じて調整が必要です

@@ -1,18 +1,18 @@
 ---
-title: "Angular 7 Release: CLI Prompts、虚拟滚动 & Performance提升"
+title: "Angular 7 Release: CLI Prompts, Virtual Scrolling, and Performance Improvements"
 date: 2018-10-05 17:06:11
 tags:
   - Angular
 readingTime: 1
-description: "Angular 7が2018年10月に正式リリースされ、仮想スクロール、ドラッグ＆ドロップCDK、パフォーマンス改善などの重要な改良が加わりました。注目すべき新機能をまとめます。"
-wordCount: 273
+description: "Angular 7 was officially released in October 2018, bringing important improvements such as virtual scrolling, a drag-and-drop CDK, and performance enhancements. Here are the new features worth highlighting."
+wordCount: 105
 ---
 
-Angular 7が2018年10月に正式リリースされ、仮想スクロール、ドラッグ＆ドロップCDK、パフォーマンス改善などの重要な改良が加わりました。注目すべき新機能をまとめます。
+Angular 7 was officially released in October 2018, bringing important improvements such as virtual scrolling, a drag-and-drop CDK, and performance enhancements. Here are the new features worth highlighting.
 
-## 仮想スクロール Virtual Scrolling
+## Virtual Scrolling
 
-`@angular/cdk/scrolling`が提供する仮想スクロールは、表示領域のリストアイテムのみをレンダリングし、大きなリストのパフォーマンスを大幅に向上させます：
+`@angular/cdk/scrolling` provides virtual scrolling, which renders only the list items in the visible area and significantly improves the performance of large lists:
 
 ```typescript
 {% raw %}
@@ -31,7 +31,7 @@ export class AppComponent {
 {% endraw %}
 ```
 
-## ドラッグ＆ドロップ CDK DragDrop
+## Drag and Drop CDK
 
 ```typescript
 {% raw %}
@@ -53,12 +53,12 @@ export class DragListComponent {
 {% endraw %}
 ```
 
-## パフォーマンス改善
+## Performance Improvements
 
-- アプリのバンドルサイズが平均30〜40%削減
-- CLIのヒントとエラーメッセージがより分かりやすく
-- 依存関係のアップグレード：TypeScript 3.1+、RxJS 6.3+
+- App bundle size reduced by an average of 30–40%
+- CLI prompts and error messages are more helpful
+- Dependency upgrades: TypeScript 3.1+, RxJS 6.3+
 
-## まとめ
+## Summary
 
-Angular 7は安定したアップデートで、仮想スクロールとドラッグ＆ドロップCDKがすぐに使えるハイライトです。大規模企業アプリに適しています。
+Angular 7 is a stable update; virtual scrolling and the drag-and-drop CDK are ready-to-use highlights. It is well suited to large enterprise applications.

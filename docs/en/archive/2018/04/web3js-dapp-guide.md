@@ -5,6 +5,9 @@ tags:
   - Web3
   - Ethereum
   - DApp
+readingTime: 6
+wordCount: 667
+description: "web3.js is the official JavaScript SDK maintained by Ethereum, and it is the first hurdle for frontend engineers entering DApp development. It spans two major A"
 ---
 
 web3.js is the official JavaScript SDK maintained by Ethereum, and it is the first hurdle for frontend engineers entering DApp development. It spans two major API generations: 0.20.x, which uses callback functions, and the 1.0 line, which introduced Promises and event emitters. Understanding how both styles work—and how to bridge them—matters whenever you maintain or integrate with existing DApp code.

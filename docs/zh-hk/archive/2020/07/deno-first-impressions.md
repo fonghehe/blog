@@ -8,7 +8,7 @@ description: "關於Deno 1.0 正式發佈初體驗，很多開發者隻停留在
 wordCount: 327
 ---
 
-關於Deno 1.0 正式發佈初體驗，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於Deno 1.0 正式發佈初體驗，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 
@@ -60,7 +60,7 @@ const asyncHandler = (fn) => (req, res, next) =>
 
 app.get('/api/users/:id', asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id)
-  if (!user) throw new AppError(404, '用户不存在')
+  if (!user) throw new AppError(404, '用戶不存在')
   res.json({ data: user })
 }))
 
@@ -118,7 +118,7 @@ const asyncHandler = (fn) => (req, res, next) =>
 
 app.get('/api/users/:id', asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id)
-  if (!user) throw new AppError(404, '用户不存在')
+  if (!user) throw new AppError(404, '用戶不存在')
   res.json({ data: user })
 }))
 

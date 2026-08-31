@@ -4,14 +4,14 @@ date: 2022-04-27 10:22:33
 tags:
   - Angular
   - フロントエンドエンジニアリング
-readingTime: 2
-description: "Nx 是专为 Monorepo 设计的构建系统，对 Angular 有一流支持。它解决了大型前端项目的两个核心问题：**代码共享**（多个应用共用同一套组件/工具库）和**构建速度**（只重新构建受影响的部分）。这篇文章介绍 Nx + Angular 的实践方案。"
-wordCount: 341
+readingTime: 3
+description: "Nx は Monorepo 向けに設計されたビルドシステムで、Angular を第一級にサポートしています。大規模フロントエンドプロジェクトの二つの核心的な課題、**コード共有**（複数のアプリが同一のコンポーネント・ユーティリティライブラリを共用）と**ビルド速度**（影響を受けた部分のみ再ビルド）を解決します。この記事では Nx + Angular の実践的なアプローチを紹介します。"
+wordCount: 577
 ---
 
-Nx 是专为 Monorepo 设计的构建系统，对 Angular 有一流支持。它解决了大型前端项目的两个核心问题：**代码共享**（多个应用共用同一套组件/工具库）和**构建速度**（只重新构建受影响的部分）。这篇文章介绍 Nx + Angular 的实践方案。
+Nx は Monorepo 向けに設計されたビルドシステムで、Angular を第一級にサポートしています。大規模フロントエンドプロジェクトの二つの核心的な課題、**コード共有**（複数のアプリが同一のコンポーネント・ユーティリティライブラリを共用）と**ビルド速度**（影響を受けた部分のみ再ビルド）を解決します。この記事では Nx + Angular の実践的なアプローチを紹介します。
 
-## 创建 Nx Angular 工作区
+## Nx Angular ワークスペースの作成
 
 ```bash
 # 创建新的 Nx + Angular 工作区
@@ -39,7 +39,7 @@ my-org/
 └── workspace.json
 ```
 
-## 创建共享库
+## 共有ライブラリの作成
 
 ```bash
 # 创建 Angular 组件库
@@ -52,7 +52,7 @@ nx generate @nrwl/angular:library shared/data-access --no-module
 nx generate @nrwl/js:library shared/util
 ```
 
-在应用中使用共享库（通过 TypeScript path alias）：
+アプリ内で共有ライブラリを使う方法（TypeScript の path alias 経由）：
 
 ```typescript
 // apps/admin/src/app/app.module.ts
@@ -67,7 +67,7 @@ import { formatDate } from "@my-org/shared/util";
 export class AppModule {}
 ```
 
-`tsconfig.base.json` 中的路径映射（Nx 自动管理）：
+`tsconfig.base.json` のパスマッピング（Nx が自動管理）：
 
 ```json
 {
@@ -81,7 +81,7 @@ export class AppModule {}
 }
 ```
 
-## Affected 命令：只构建受影响的项目
+## Affected コマンド：影響を受けたプロジェクトのみビルド
 
 ```bash
 # 只测试受当前变更影响的项目（对比 main 分支）
@@ -97,9 +97,9 @@ nx affected:lint --base=main
 nx graph
 ```
 
-## 构建缓存
+## ビルドキャッシュ
 
-Nx 的分布式缓存让重复构建几乎是即时的：
+Nx の分散キャッシュにより、繰り返しのビルドがほぼ即時に完了します：
 
 ```bash
 # 第一次构建
@@ -125,9 +125,9 @@ nx build admin  # 立即完成（命中缓存）
 }
 ```
 
-## 代码生成器统一规范
+## コードジェネレーターによる規約の統一
 
-Nx 允许自定义代码生成器，确保团队代码风格一致：
+Nx ではカスタムコードジェネレーターを定義でき、チームのコードスタイルを一貫して保てます：
 
 ```bash
 # 生成标准功能模块（内含 component, service, routing）
@@ -141,9 +141,9 @@ export default async function(tree: Tree, options: FeatureGeneratorSchema) {
 }
 ```
 
-## 模块边界约束
+## モジュール境界の制約
 
-Nx 可以通过 ESLint 规则强制库的依赖方向：
+Nx は ESLint ルールを通じてライブラリの依存方向を強制できます：
 
 ```json
 // .eslintrc.json
@@ -178,4 +178,4 @@ Nx 可以通过 ESLint 规则强制库的依赖方向：
 
 ## まとめ
 
-Nx + Angular 的组合在大型项目中优势明显：`affected` 命令让 CI 时间随项目增长保持线性而非指数级增长；共享库通过 TypeScript path alias 实现零配置复用；模块边界约束防止循环依赖和架构腐化。如果你的团队维护 2 个以上 Angular 应用并有共享代码的需求，Nx Monorepo 是值得投入的选项。
+Nx + Angular の組み合わせは大規模プロジェクトで明確な優位性があります。`affected` コマンドにより CI 時間はプロジェクトの成長に対して線形に保たれ、指数的には増加しません。共有ライブラリは TypeScript path alias を通じてゼロ設定で再利用できます。モジュール境界の制約は循環依存やアーキテクチャの劣化を防ぎます。チームが2つ以上の Angular アプリケーションを保守し、コード共有のニーズがあるなら、Nx Monorepo は投資する価値のある選択肢です。

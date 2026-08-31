@@ -8,7 +8,7 @@ description: "Angular 9 目前处于 Beta 阶段，预计 2020 年初正式发�
 wordCount: 367
 ---
 
-Angular 9 目前处于 Beta 阶段，预计 2020 年初正式发布。最大的变化是 Ivy 渲染引擎将成为默认，连带着 AOT 也将默认开启。这两个变化对包体积和模板类型安全都有显著影响。
+Angular 9 目前处于 Beta 阶段，预计 2020 年初正式发布。最大的变化是 Ivy 渲染引擎将成为默认，随之 AOT 也默认开启。这两个变化对包体积和模板类型安全都有显著影响。
 
 ## AOT vs JIT 回顾
 
@@ -21,7 +21,7 @@ Angular 9 目前处于 Beta 阶段，预计 2020 年初正式发布。最大的�
 | 模板错误检测        | 运行时                     | 构建时            |
 | Tree-shaking 效果   | 差                         | 好                |
 
-在 Angular 8 中，dev 模式默认是 JIT，production 才用 AOT。Angular 9 将两种模式都切成 AOT。
+在 Angular 8 中，dev 模式默认是 JIT，production 才用 AOT。Angular 9 将两种模式都切换为 AOT。
 
 ## Ivy + AOT 带来的体积收益
 
@@ -92,4 +92,4 @@ ng update @angular/core @angular/cli
 
 ## 总结
 
-Angular 9 的核心是“默认更好”——AOT 默认开启让开发模式与生产模式一致，消除了“本地正常上线打破”的经典问题。Ivy 的体积收益将让 Angular 应用在性能指标上更具竞争力。
+Angular 9 的核心是“默认更好”——AOT 默认开启让开发模式与生产模式一致，消除了"本地正常、上线却报错"的经典问题。Ivy 的体积收益将让 Angular 应用在性能指标上更具竞争力。

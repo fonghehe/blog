@@ -3,9 +3,9 @@ title: "TypeScript ジェネリクス入門"
 date: 2018-08-23 15:14:48
 tags:
   - TypeScript
-readingTime: 2
+readingTime: 3
 description: "TypeScriptのジェネリクスはずっと難しいと感じられていますが、マスターすれば非常に実用的だと分かります。この記事では基礎からジェネリクスを説明します。"
-wordCount: 374
+wordCount: 392
 ---
 
 TypeScriptのジェネリクスはずっと難しいと感じられていますが、マスターすれば非常に実用的だと分かります。この記事では基礎からジェネリクスを説明します。
@@ -25,7 +25,7 @@ const result = identity("hello");
 result.toUpperCase(); // エラーにならない（resultがstringでない可能性があっても）
 ```
 
-ジェネリクスを使えば、型安全かつ柔軟に：
+ジェネリクスを使えば、型安全かつ柔軟に使えます：
 
 ```typescript
 // ジェネリクス：Tは型パラメータ、呼び出し時に指定
@@ -115,7 +115,7 @@ userList.items[0].name; // ✅ 型はstring
 
 ## ジェネリクス制約（extends）
 
-ジェネリクスが特定のプロパティを持つことを制約：
+ジェネリクスが特定のプロパティを持つことを制約できます：
 
 ```typescript
 // TはlengthプロパティをもつことをT extends { length: number }で制約
@@ -194,7 +194,7 @@ updateUser(1, { name: "Bob" }); // ✅ nameだけ更新
 updateUser(1, { id: 2 }); // ❌ idは更新できない（Omitで除外されている）
 ```
 
-## VueコンポーネントでのジェネリクスIの使用
+## Vueコンポーネントでのジェネリクスの使用
 
 ```typescript
 // 汎用リストコンポーネント
@@ -223,7 +223,7 @@ export default Vue.extend({
 
 ## まとめ
 
-- ジェネリクスにより、関数/クラス/インターフェースが複数の型に対応しつつ型安全を保てる
-- `<T extends SomeType>`でジェネリクスが特定の条件を満たすよう制約できる
-- `keyof T`で型のすべてのキーを取得、`T[K]`で特定のプロパティの型を取得
-- `Partial`、`Pick`、`Omit`などのユーティリティ型は実際の開発で非常に役立つ
+- ジェネリクスにより、関数/クラス/インターフェースが複数の型に対応しつつ型安全を保てます
+- `<T extends SomeType>`でジェネリクスが特定の条件を満たすよう制約できます
+- `keyof T`で型のすべてのキーを取得でき、`T[K]`で特定のプロパティの型を取得できます
+- `Partial`、`Pick`、`Omit`などのユーティリティ型は実際の開発で非常に役立ちます

@@ -4,11 +4,11 @@ date: 2019-07-04 14:30:53
 tags:
   - 安全
 readingTime: 4
-description: "前端安全是每個開發者都應該重視的話題。XSS 攻擊防不勝防，單純靠過濾使用者輸入很難做到萬無一失。CSP（Content Security Policy）提供了一種從瀏覽器層面限製資源載入和指令碼執行的機製，是 XSS 防禦的重要補充。"
+description: "前端安全是每個開發者都應該重視的話題。XSS 攻擊防不勝防，單純靠過濾使用者輸入很難做到萬無一失。CSP（Content Security Policy）提供了一種從瀏覽器層面限制資源載入和指令碼執行的機制，是 XSS 防禦的重要補充。"
 wordCount: 874
 ---
 
-前端安全是每個開發者都應該重視的話題。XSS 攻擊防不勝防，單純靠過濾使用者輸入很難做到萬無一失。CSP（Content Security Policy）提供了一種從瀏覽器層面限製資源載入和指令碼執行的機製，是 XSS 防禦的重要補充。
+前端安全是每個開發者都應該重視的話題。XSS 攻擊防不勝防，單純靠過濾使用者輸入很難做到萬無一失。CSP（Content Security Policy）提供了一種從瀏覽器層面限制資源載入和指令碼執行的機制，是 XSS 防禦的重要補充。
 
 ## CSP 是什麼
 
@@ -20,7 +20,7 @@ CSP 是一個 HTTP 響應頭，告訴瀏覽器哪些資源可以載入、哪些�
 Content-Security-Policy: default-src 'self'
 ```
 
-這行設定意味著：所有資源（指令碼、樣式、圖片、字型等）隻能從同源載入。
+這行設定意味著：所有資源（指令碼、樣式、圖片、字型等）只能從同源載入。
 
 ## 設定方式
 
@@ -230,7 +230,7 @@ app.post(
 }
 ```
 
-還有 `Content-Security-Policy-Report-Only` 頭，隻上報不阻止，適合上線前的灰度測試：
+還有 `Content-Security-Policy-Report-Only` 頭，只上報不阻止，適合上線前的灰度測試：
 
 ```
 Content-Security-Policy-Report-Only: default-src 'self'; report-uri /csp-report
@@ -266,7 +266,7 @@ script-src https://trusted.com/api/safe-endpoint
 <script src="/steal-cookies.js"></script>
 ```
 
-防禦：限製 `base-uri`：
+防禦：限制 `base-uri`：
 
 ```
 base-uri 'self'

@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "关于Pattern Flyweight 表单优化，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 391
+wordCount: 420
 ---
 
 关于Pattern Flyweight 表单优化，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -29,7 +29,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理やエッジケースへの対応も必要になる。
 
 ## 高度な機能
 
@@ -54,7 +54,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ## プロジェクト実践
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {

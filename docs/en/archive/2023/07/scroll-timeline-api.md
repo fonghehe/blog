@@ -4,7 +4,7 @@ date: 2023-07-03 09:31:09
 tags:
   - Frontend
 readingTime: 2
-description: "ScrollTimeline API 滚动时间线This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a "
+description: "The ScrollTimeline API and scroll timelines have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
 wordCount: 206
 ---
 

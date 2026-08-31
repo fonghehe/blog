@@ -5,12 +5,12 @@ tags:
   - Web3
   - React
   - DApp
-readingTime: 11
-description: "錢包連接是 DApp 用户體驗的第一道門檻。RainbowKit 基於 wagmi 構建，提供開箱即用的連接組件和優雅的 UX 設計。本文覆蓋從基礎集成到深度定製的完整方案。"
-wordCount: 2900
+readingTime: 9
+description: "錢包連接是 DApp 用戶體驗的第一道門檻。RainbowKit 基於 wagmi 構建，提供開箱即用的連接組件和優雅的 UX 設計。本文覆蓋從基礎集成到深度定製的完整方案。"
+wordCount: 1178
 ---
 
-錢包連接是每個 DApp 的入口體驗。在 Web3 生態中，用户可能使用 MetaMask、WalletConnect、Coinbase Wallet、Rainbow、Phantom 等多種錢包。為每種錢包單獨實現連接邏輯既繁瑣又容易出錯。RainbowKit 由 Rainbow Wallet 團隊開源，基於 wagmi 和 viem 構建，提供了一套完整的、可定製的錢包連接解決方案。
+錢包連接是每個 DApp 的入口體驗。在 Web3 生態中，用戶可能使用 MetaMask、WalletConnect、Coinbase Wallet、Rainbow、Phantom 等多種錢包。為每種錢包單獨實現連接邏輯既繁瑣又容易出錯。RainbowKit 由 Rainbow Wallet 團隊開源，基於 wagmi 和 viem 構建，提供了一套完整的、可定製的錢包連接解決方案。
 
 ## RainbowKit 概述
 
@@ -235,7 +235,7 @@ RainbowKit 的連接模態框分為幾個階段：
 
 1. **錢包選擇**：展示可用錢包列表
 2. **連接中**：顯示連接狀態和加載動畫
-3. **已連接**：顯示賬户信息
+3. **已連接**：顯示賬戶信息
 
 ```tsx
 // 自定義連接狀態展示
@@ -297,7 +297,7 @@ function CustomConnectButton() {
                     {chain.name}
                   </button>
 
-                  {/* 賬户按鈕 */}
+                  {/* 賬戶按鈕 */}
                   <button
                     onClick={openAccountModal}
                     className="account-button"
@@ -566,7 +566,7 @@ export default function Home() {
 
       {isConnected && (
         <section className="dashboard">
-          <h2>賬户信息</h2>
+          <h2>賬戶信息</h2>
           <p>地址: {address}</p>
           <p>餘額: {balance?.formatted} {balance?.symbol}</p>
 
@@ -643,7 +643,7 @@ function useMetaMask() {
         if (accounts.length > 0) setAccount(accounts[0])
       })
 
-    // 監聽賬户變化
+    // 監聽賬戶變化
     window.ethereum.on('accountsChanged', (accounts: string[]) => {
       setAccount(accounts[0] || null)
     })
@@ -667,7 +667,7 @@ function useMetaMask() {
       setAccount(accounts[0])
     } catch (err: any) {
       if (err.code === 4001) {
-        setError('用户拒絕了連接請求')
+        setError('用戶拒絕了連接請求')
       } else {
         setError(err.message)
       }
@@ -685,7 +685,7 @@ function useMetaMask() {
       if (err.code === 4902) {
         // 鏈未添加
       } else if (err.code === 4001) {
-        // 用户拒絕
+        // 用戶拒絕
       }
     }
   }
@@ -718,7 +718,7 @@ function useMetaMask() {
 
 ## 移動端深度鏈接
 
-移動端用户沒有瀏覽器擴展，需要通過深度鏈接跳轉到錢包 App：
+移動端用戶沒有瀏覽器擴展，需要通過深度鏈接跳轉到錢包 App：
 
 ```tsx
 import {
@@ -727,7 +727,7 @@ import {
 } from '@rainbow-me/rainbowkit'
 
 // RainbowKit 自動處理移動端深度鏈接
-// 當移動端用户點擊連接時：
+// 當移動端用戶點擊連接時：
 // 1. 檢測是否安裝了對應錢包 App
 // 2. 如果安裝了，直接跳轉到 App
 // 3. 如果沒安裝，跳轉到應用商店下載
@@ -839,14 +839,14 @@ function AppWithAuth({ children }: { children: React.ReactNode }) {
 
 綜合多個項目的實踐經驗，錢包連接 UX 有以下幾條最佳實踐：
 
-**連接入口要顯眼但不過於強勢**。ConnectButton 應放在頁面的固定位置（通常是右上角），不要用全屏彈窗強制要求連接。用户應該能先瀏覽 DApp 內容，再決定是否連接。對於必須連接才能使用的功能，在交互點附近顯示"連接錢包"提示即可。
+**連接入口要顯眼但不過於強勢**。ConnectButton 應放在頁面的固定位置（通常是右上角），不要用全屏彈窗強制要求連接。用戶應該能先瀏覽 DApp 內容，再決定是否連接。對於必須連接才能使用的功能，在交互點附近顯示"連接錢包"提示即可。
 
-**鏈切換是最容易被忽略的體驗斷點**。用户經常在錯誤的鏈上操作，導致交易失敗或資金丟失。RainbowKit 的鏈切換按鈕需要足夠顯眼，並且在用户嘗試操作不支持的鏈時主動提示切換。
+**鏈切換是最容易被忽略的體驗斷點**。用戶經常在錯誤的鏈上操作，導致交易失敗或資金丟失。RainbowKit 的鏈切換按鈕需要足夠顯眼，並且在用戶嘗試操作不支持的鏈時主動提示切換。
 
-**移動端體驗決定了用户留存率**。桌面端用户有瀏覽器擴展錢包，連接體驗相對順暢。但移動端用户需要通過 WalletConnect 或深度鏈接跳轉到錢包 App，這個流程的流失率很高。RainbowKit 的移動端適配已經做得很好，但仍需要測試各種錢包 App 的實際兼容性。
+**移動端體驗決定了用戶留存率**。桌面端用戶有瀏覽器擴展錢包，連接體驗相對順暢。但移動端用戶需要通過 WalletConnect 或深度鏈接跳轉到錢包 App，這個流程的流失率很高。RainbowKit 的移動端適配已經做得很好，但仍需要測試各種錢包 App 的實際兼容性。
 
-**自動重連是必要功能**。用户刷新頁面或重新打開標籤頁後不應該需要重新連接。`autoConnect: true` 配置確保了這一點，但需要注意安全提示——自動重連不應該觸發任何交易操作。
+**自動重連是必要功能**。用戶刷新頁面或重新打開標籤頁後不應該需要重新連接。`autoConnect: true` 配置確保了這一點，但需要注意安全提示——自動重連不應該觸發任何交易操作。
 
-**Transaction 狀態展示是加分項**。RainbowKit 的 `showRecentTransactions` 功能讓用户可以在錢包模態框中看到最近的交易記錄，這對交易追蹤很有幫助。但更復雜的交易狀態（如跨鏈交易、多步交易）仍需要 DApp 自行處理。
+**Transaction 狀態展示是加分項**。RainbowKit 的 `showRecentTransactions` 功能讓用戶可以在錢包模態框中看到最近的交易記錄，這對交易追蹤很有幫助。但更復雜的交易狀態（如跨鏈交易、多步交易）仍需要 DApp 自行處理。
 
-RainbowKit 的設計哲學是"約定優於配置"——它做出了合理默認選擇，讓開發者能快速上手，同時保留了足夠的定製空間。對於 95% 的 DApp 來説，RainbowKit 的默認配置已經足夠好，不需要深度定製。把精力放在 DApp 核心功能的用户體驗上，而不是錢包連接的 UI 細節上。
+RainbowKit 的設計哲學是"約定優於配置"——它做出了合理默認選擇，讓開發者能快速上手，同時保留了足夠的定製空間。對於 95% 的 DApp 來説，RainbowKit 的默認配置已經足夠好，不需要深度定製。把精力放在 DApp 核心功能的用戶體驗上，而不是錢包連接的 UI 細節上。

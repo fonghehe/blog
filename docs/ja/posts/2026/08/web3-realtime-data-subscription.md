@@ -3,9 +3,9 @@ title: "DApp フロントエンドリアルタイムデータ購読アーキテ�
 date: 2026-08-29 13:19:38
 tags:
   - Web3
-readingTime: 9
+readingTime: 11
 description: "dApp フロントエンドのリアルタイムデータは WebSocket を繋ぐだけでは済まない。本記事では WS provider 購読 vs ポーリング vs indexing service の選定、切断再接続・再購読戦略、チェーン上の reorg の UI 状態での処理、BroadcastChannel によるマルチタブ同期、そして TanStack Query による購読と REST スナップショットの統合パターンを網羅する。"
-wordCount: 3500
+wordCount: 2480
 ---
 
 DeFi ダッシュボードのフロントエンド開発で最も頭を悩ませるのは UI の複雑さではなく、データのリアルタイム性と一貫性だ。ユーザーの保有資産、未確認トランザクション、プールの TVL はすべて絶えず変化しており、REST ポーリングに頼ると遅延が大きすぎるかリクエスト量が爆発するかのどちらかだ。WebSocket 購読が答えのように見えるが、実際に導入すると切断再接続、チェーン上の reorg による状態巻き戻り、ユーザーが 3 つのタブを開いてそれぞれ独立した状態を維持しているといった問題に直面する。

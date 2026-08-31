@@ -1,12 +1,13 @@
 ---
-readingTime: 6
-wordCount: 1263
+readingTime: 8
+wordCount: 1288
 title: "DeFi 協議前端開發：Uniswap V2 交互實踐"
 date: 2020-01-08 15:14:28
 tags:
   - Web3
   - DeFi
   - Ethereum
+description: "去中心化金融（DeFi）生態由多種協議構成基礎設施層：MakerDAO 的 DAI 穩定幣、Compound 的借貸協議、Synthetix 的衍生資產等。其中，Uniswap 作為去中心化交易所（DEX）的代表，憑藉其簡潔的自動做市商（AMM）機制，成為 DeFi 生態中流動性最強的交易協議。"
 ---
 
 ## DeFi 生態與 Uniswap V2 的崛起
@@ -47,7 +48,7 @@ function burn(address to) external returns (uint amount0, uint amount1);
 
 ### Router02 合約
 
-Router02 是面向前端的前端路由合約，封裝了多跳交易、代幣包裝/解包等複雜邏輯。絕大多數前端交互都通過 Router02 完成：
+Router02 是供前端使用的路由合約，封裝了多跳交易、代幣包裝/解包等複雜邏輯。絕大多數前端交互都通過 Router02 完成：
 
 ```solidity
 // UniswapV2Router02 關鍵方法
@@ -336,7 +337,7 @@ async function addLiquidity(
 }
 ```
 
-移除流動性時，前端需要先獲取用户持有的 LP Token 餘額，然後調用 `removeLiquidity`：
+移除流動性時，前端需要先獲取用戶持有的 LP Token 餘額，然後調用 `removeLiquidity`：
 
 ```javascript
 async function removeLiquidity(provider, signer, tokenA, tokenB, liquidity) {
@@ -383,7 +384,7 @@ async function removeLiquidity(provider, signer, tokenA, tokenB, liquidity) {
 
 ## 交易失敗常見原因分析
 
-DeFi 前端開發中，交易失敗是最常見的用户體驗問題。以下是幾種典型場景：
+DeFi 前端開發中，交易失敗是最常見的用戶體驗問題。以下是幾種典型場景：
 
 ### 1. Slippage 超出容忍範圍
 
@@ -391,7 +392,7 @@ DeFi 前端開發中，交易失敗是最常見的用户體驗問題。以下是
 
 ### 2. 授權額度不足
 
-用户之前授權的額度已被消耗或授權給了舊版 Router。前端必須每次檢查 `allowance`，並在不足時發起 `approve` 交易。
+用戶之前授權的額度已被消耗或授權給了舊版 Router。前端必須每次檢查 `allowance`，並在不足時發起 `approve` 交易。
 
 ### 3. Deadline 過期
 
@@ -424,4 +425,4 @@ async function estimateGasWithFallback(contract, method, args, overrides) {
 
 Uniswap V2 的前端開發涵蓋了 DeFi 交互的核心模式：合約數據讀取、價格計算、交易構造、授權管理和狀態同步。這些模式在幾乎所有 DeFi 協議前端中都會複用。
 
-DeFi 前端開發最大的挑戰在於**狀態一致性和用户體驗的平衡**。鏈上狀態隨時變化，前端必須在實時性和準確性之間做權衡——顯示的價格可能在下一秒就不再有效。合理設置滑點容忍度、deadline 和最小輸出量，是保證交易成功率的三個關鍵參數。同時，交易失敗的診斷和用户反饋設計同樣重要，一個好的 DeFi 前端應該能在交易失敗時給出清晰的原因，而不是一個含糊的 "Transaction Failed" 彈窗。
+DeFi 前端開發最大的挑戰在於**狀態一致性和用戶體驗的平衡**。鏈上狀態隨時變化，前端必須在實時性和準確性之間做權衡——顯示的價格可能在下一秒就不再有效。合理設置滑點容忍度、deadline 和最小輸出量，是保證交易成功率的三個關鍵參數。同時，交易失敗的診斷和用戶反饋設計同樣重要，一個好的 DeFi 前端應該能在交易失敗時給出清晰的原因，而不是一個含糊的 "Transaction Failed" 彈窗。

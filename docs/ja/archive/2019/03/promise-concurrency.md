@@ -5,14 +5,14 @@ tags:
   - JavaScript
 readingTime: 1
 description: "JavaScriptのPromise並行制御は、日常の開発でよく遭遇する問題だ。実際のプロジェクトから出発して、具体的な実装方法と経験をまとめる。"
-wordCount: 118
+wordCount: 112
 ---
 
-JavaScriptのPromise並行制御は、日常の開発でよく遭遇する問題だ。実際のプロジェクトから出発して、具体的な実装方法と経験をまとめる。
+JavaScriptのPromise並行制御は、日常の開発でよく遭遇する問題だ。実際のプロジェクトを起点に、具体的な実装方法と経験をまとめる。
 
 ## 基本概念
 
-まず基本的な使い方を見てみよう：
+基本的な使い方を見てみよう：
 
 ```javascript
 const http = require("http");
@@ -40,7 +40,7 @@ if (cluster.isMaster) {
 }
 ```
 
-この書き方はシンプルで明快で、ほとんどのシナリオに適している。
+この書き方はシンプルで明快で、ほとんどの場面に適している。
 
 ## 深掘り
 

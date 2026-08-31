@@ -5,14 +5,14 @@ tags:
   - Web3
   - Blockchain
   - DApp
-readingTime: 15
+readingTime: 9
 description: "Arbitrum One 與 Optimism 的前端適配差異、跨鏈交互與多 L2 網絡管理實踐"
-wordCount: 4300
+wordCount: 774
 ---
 
 ## Layer2 生態格局
 
-以太坊 Layer2 生態中，Optimistic Rollup 是主流擴展方案之一。Arbitrum One 和 Optimism 是兩個已上線主網的 Optimistic Rollup 網絡，兩者在架構實現和前端適配細節上存在顯著差異。
+以太坊 Layer2 生態中，Optimistic Rollup 是主流擴展方案之一。Arbitrum One 和 Optimism 是兩個已上線主網的 Optimistic Rollup 網路，兩者在架構實現和前端適配細節上存在顯著差異。
 
 ### Arbitrum One vs Optimism
 
@@ -115,7 +115,7 @@ function estimateCalldataGas(data) {
 
 ## RPC 端點與 Chain ID 配置
 
-### 網絡參數
+### 網路參數
 
 ```javascript
 const L2_NETWORKS = {
@@ -162,7 +162,7 @@ const L2_NETWORKS = {
 };
 ```
 
-### MetaMask 網絡添加
+### MetaMask 網路添加
 
 ```javascript
 class L2NetworkManager {
@@ -492,7 +492,7 @@ class WithdrawalTracker {
 }
 ```
 
-## 多 Layer2 網絡管理器
+## 多 Layer2 網路管理器
 
 ```javascript
 class MultiL2Manager {
@@ -690,6 +690,6 @@ async function compareGasAcrossNetworks() {
 
 ## 小結
 
-Arbitrum 和 Optimism 的前端適配核心在於網絡切換、地址映射和橋接交互。兩者的 EVM 兼容性使得合約代碼幾乎無需修改，但 Optimistic Rollup 的 7 天挑戰期給提款流程帶來了獨特的 UX 挑戰——前端需要清晰地傳達"快速存款、延遲提款"的不對稱體驗。
+Arbitrum 和 Optimism 的前端適配核心在於網路切換、地址映射和橋接交互。兩者的 EVM 兼容性使得合約代碼幾乎無需修改，但 Optimistic Rollup 的 7 天挑戰期給提款流程帶來了獨特的 UX 挑戰——前端需要清晰地傳達"快速存款、延遲提款"的不對稱體驗。
 
-多 L2 網絡管理是 DApp 前端的重要課題。用戶可能在 Ethereum、Arbitrum、Optimism 之間頻繁切換，前端需要優雅地處理網絡檢測、自動切換和資產映射。一個良好的實踐是維護一個統一的網絡配置中心，將鏈 ID、RPC、合約地址、橋接邏輯集中管理，避免分散在各處的硬編碼。
+多 L2 網路管理是 DApp 前端的重要課題。用戶可能在 Ethereum、Arbitrum、Optimism 之間頻繁切換，前端需要優雅地處理網路檢測、自動切換和資產映射。一個良好的實踐是維護一個統一的網絡配置中心，將鏈 ID、RPC、合約地址、橋接邏輯集中管理，避免分散在各處的硬編碼。

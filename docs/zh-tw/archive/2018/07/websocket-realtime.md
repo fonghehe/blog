@@ -8,7 +8,7 @@ description: "專案里加了即時訊息通知功能，研究了一下 WebSocke
 wordCount: 204
 ---
 
-專案里加了即時訊息通知功能，研究了一下 WebSocket，記錄一下。
+專案裡加了即時訊息通知功能，研究了一下 WebSocket，記錄一下。
 
 ## WebSocket vs HTTP 輪詢
 

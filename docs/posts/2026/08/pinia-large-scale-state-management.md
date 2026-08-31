@@ -3,9 +3,9 @@ title: "Pinia 大型项目状态管理：模块化设计与持久化策略"
 date: 2026-08-02 16:27:05
 tags:
   - Vue
-readingTime: 7
+readingTime: 10
 description: "Pinia 在大型项目中面临的挑战不是 API 用法，而是架构设计：Store 如何按功能域拆分、跨 Store 依赖如何管理、状态持久化如何兼顾性能与一致性、SSR 场景下的 hydration 如何处理。本文从实际项目经验出发，系统梳理 Pinia 大型项目的状态管理架构。"
-wordCount: 3400
+wordCount: 1973
 ---
 
 Pinia 作为 Vue 官方推荐的状态管理库，API 简洁、TypeScript 友好、Devtools 集成完善。在中小型项目中，几乎不需要太多架构思考就能用好。但当项目规模增长到几十个页面、上百个 API 接口、多个业务团队并行开发时，Pinia 的使用方式需要从"写 Store"升级到"设计 Store 架构"。
@@ -417,4 +417,4 @@ async function fetchOrders() {
 
 ## 小结
 
-Pinia 在大型项目中的架构设计核心是：按功能域拆分 Store、用组合模式管理跨 Store 依赖、根据数据特性选择持久化方案（localStorage for 小数据、IndexedDB for 大数据、BroadcastChannel for 跨 Tab）、SSR 场景注意 hydration 一致性、用 shallowRef 和合理 computed 优化性能。状态管理没有银弹——关键是理解每个状态的生命周期和访问模式，让架构服务于业务而非反之。从 Vuex 迁移时分步进行，新功能先行，老功能按域逐步切换，降低风险的同时让团队逐步适应新的架构模式。
+Pinia 在大型项目中的架构设计核心是：按功能域拆分 Store、用组合模式管理跨 Store 依赖、根据数据特性选择持久化方案（小数据用 localStorage、大数据用 IndexedDB、跨 Tab 用 BroadcastChannel）、SSR 场景注意 hydration 一致性、用 shallowRef 和合理 computed 优化性能。状态管理没有银弹——关键是理解每个状态的生命周期和访问模式，让架构服务于业务而非反之。从 Vuex 迁移时分步进行，新功能先行，老功能按域逐步切换，降低风险的同时让团队逐步适应新的架构模式。

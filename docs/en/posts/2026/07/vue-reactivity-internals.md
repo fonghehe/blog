@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 8
 description: "Vue 3.6's reactivity system is built on Proxy and dependency tracking. This article analyzes the implementation differences between ref and reactive at the source code level, including the track/trigger flow, effect schedulers, batching mechanisms, and a hand-written simplified reactivity system."
-wordCount: 2500
+wordCount: 833
 ---
 
 Vue 3's reactivity system is a complete architectural rewrite. From Vue 2's `Object.defineProperty` to Vue 3's `Proxy`, it's not just an API change — it's a paradigm shift from "property hijacking" to "object proxying" in the reactivity model. Vue 3.6 further optimizes effect scheduling and memory management on top of this foundation. This article dissects the implementation differences between `ref` and `reactive` at the source code level.

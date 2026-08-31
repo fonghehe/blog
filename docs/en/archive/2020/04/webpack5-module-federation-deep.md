@@ -1,19 +1,19 @@
 ---
-title: "Webpack 5 Module Federation in Practice: 跨ApplicationsComponentSharingGuide"
+title: "Webpack 5 Module Federation in Practice: Cross-Application Component Sharing Guide"
 date: 2020-04-23 11:28:49
 tags:
   - Webpack
   - Engineering
 readingTime: 2
-description: "在日常开发中，Webpack 5 Module Federation 深入的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 298
+description: "In day-to-day development, Webpack 5 Module Federation is being used more and more frequently. This article systematically covers its usage, underlying principles, and optimization strategies."
+wordCount: 189
 ---
 
-在日常开发中，Webpack 5 Module Federation 深入的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+In day-to-day development, Webpack 5 Module Federation is being used more and more frequently. This article systematically covers its usage, underlying principles, and optimization strategies.
 
 ## Quick Start
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 module.exports = {
@@ -37,11 +37,11 @@ module.exports = {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — that is critical in production.
 
 ## Internal Principles
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -69,11 +69,11 @@ export default defineConfig({
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tied to the specific scenario; not every case needs over-optimization.
 
 ## Business Practice
 
-我们可以通过以下方式来改进：
+Here are some ways we can improve on this:
 
 ```javascript
 module.exports = {
@@ -97,11 +97,11 @@ module.exports = {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Performance Comparison
 
-先来看基本的实现方式：
+Let's start with a basic implementation:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -129,11 +129,11 @@ export default defineConfig({
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll also need to account for error handling and edge cases.
 
 ## Troubleshooting
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 module.exports = {
@@ -157,10 +157,10 @@ module.exports = {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly lower maintenance cost.
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Webpack 5 Module Federation 深入不是银弹，需要根据项目规模和技术栈选择
+- Don't adopt new tech just for the sake of using it.
+- Code examples are for reference only; adapt them to your business scenarios.
+- Webpack 5 Module Federation is no silver bullet; choose it based on your project's scale and tech stack.

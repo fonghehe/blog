@@ -5,6 +5,9 @@ tags:
   - Web3
   - Solidity
   - Smart Contract
+readingTime: 9
+wordCount: 1094
+description: "Smart contract security is not a \"might happen\" risk but a \"has happened and continues to happen\" reality. The DAO lost $60 million to a reentrancy attack in 20"
 ---
 
 Smart contract security is not a "might happen" risk but a "has happened and continues to happen" reality. The DAO lost $60 million to a reentrancy attack in 2016, Parity wallets froze $150 million and permanently locked $280 million due to a `delegatecall` vulnerability, and multiple ERC20 tokens went to zero due to integer overflows. Once deployed, a smart contract is immutable (unless using a proxy pattern)—a single security vulnerability can lead to irrecoverable financial losses. Security is not a patch applied after the fact but a constraint that must be incorporated from the design phase.

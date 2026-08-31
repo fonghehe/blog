@@ -7,11 +7,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "React Hook Form 表单方案对比 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic "
-wordCount: 223
+description: "Form-solution comparisons around React Hook Form have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 212
 ---
 
-React Hook Form 表单方案对比 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+A comparison of React Hook Form and other form solutions has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -38,7 +38,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Source Code Analysis
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is somewhat more complex:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -133,4 +133,4 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- React Hook Form 表单方案对比不是银弹，需要根据项目规模和技术栈选择
+- A comparison of React Hook Form and other form solutions isn't a silver bullet; choose based on your project's scale and tech stack.

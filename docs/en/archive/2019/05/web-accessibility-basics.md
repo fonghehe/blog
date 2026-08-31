@@ -5,10 +5,10 @@ tags:
   - Frontend
 readingTime: 1
 description: "Accessibility (a11y) is often overlooked in frontend development, but it's not just \"for blind people.\" Keyboard users, users with color blindness, and users wi"
-wordCount: 197
+wordCount: 200
 ---
 
-Accessibility (a11y) is often overlooked in frontend development, but it's not just "for blind people." Keyboard users, users with color blindness, and users with temporary impairments (such as operating one-handed with a broken arm) all benefit from accessibility. As frontend developers, knowing the basics of a11y is part of professional competence.
+Accessibility (a11y) is often overlooked in frontend development, but it's not just "for blind people." Keyboard users, users with color blindness, and users with temporary impairments (such as operating one-handed with a broken arm) all benefit from accessibility. As frontend developers, knowing the basics of a11y is simply part of the job.
 
 ## Why Frontend Developers Should Care About Accessibility
 
@@ -61,7 +61,7 @@ Doing accessibility well not only serves these users but also improves the overa
 </footer>
 ```
 
-Screen readers can use `<header>`, `<nav>`, `<main>`, `<article>`, `<footer>` to quickly navigate page structure.
+Screen readers can use `<header>`, `<nav>`, `<main>`, `<article>`, and `<footer>` to navigate a page's structure quickly.
 
 ## ARIA Attributes
 

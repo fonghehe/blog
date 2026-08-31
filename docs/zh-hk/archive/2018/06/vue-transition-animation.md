@@ -159,7 +159,7 @@ Vue 2 的 class 名稍有不同：`v-enter`（不是 `v-enter-from`），Vue 3 �
 
 ## JavaScript 鈎子
 
-需要精細控製時用 JS 鈎子（結合 GSAP 等庫）：
+需要精細控制時用 JS 鈎子（結合 GSAP 等庫）：
 
 ```html
 <transition @enter="onEnter" @leave="onLeave" :css="false">

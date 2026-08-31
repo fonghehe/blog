@@ -1,5 +1,5 @@
 ---
-title: "Rolldown Stable Practice: Vite 底层Switching to  Rolldown MigrationGuide"
+title: "Rolldown Stable in Practice: A Migration Guide for Vite's Switch to Rolldown Under the Hood"
 date: 2025-11-25 14:59:36
 tags:
   - Frontend

@@ -4,15 +4,15 @@ date: 2020-11-12 16:52:14
 tags:
   - PWA
 readingTime: 2
-description: "关于PWA 离线优先架构设计，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 294
+description: "A production-focused guide to offline-first PWA architecture, addressing real-world problems developers encounter beyond basic API usage."
+wordCount: 180
 ---
 
-关于PWA 离线优先架构设计，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to offline-first PWA architecture, many developers stop at the API-call level. This article looks at the real-world problems you run into in production, and how to solve them.
 
 ## Basic Principles
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets a bit more involved:
 
 ```javascript
 const fs = require('fs')
@@ -37,11 +37,11 @@ const csvToJson = new Transform({
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Advanced Features
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -64,11 +64,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge-case handling — that is critical in production.
 
 ## Project Practice
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 .container {
@@ -91,11 +91,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance tuning has to fit the actual scenario; not every case needs over-optimization.
 
 ## Best Practices
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 const fs = require('fs')
@@ -120,12 +120,12 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- Always verify compatibility before shipping to production.
+- In team collaboration, conventions and documentation matter more than the tech itself.
+- Keep an eye on the community — technical solutions need to keep evolving.
+- Don't adopt new tech just for its own sake.
+- The code samples are for reference only; adapt them to your use case.

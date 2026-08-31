@@ -1,5 +1,5 @@
 ---
-title: "Node.js 24 LTS Production Practice: Upgrade后Performance对比 & 踩坑Record"
+title: "Node.js 24 LTS in Production: Post-Upgrade Performance Comparison and Pitfall Notes"
 date: 2025-11-20 17:54:31
 tags:
   - Node.js

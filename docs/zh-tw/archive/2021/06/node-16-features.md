@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常開發中，Node.js 16 新特性與變更的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 342
+wordCount: 340
 ---
 
-在日常開發中，Node.js 16 新特性與變更的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
+Node.js 16 的新特性與變更，在日常開發中出現的頻率越來越高。本文系統說明其用法、原理與最佳化策略。
 
 ## 快速上手
 
@@ -100,7 +100,7 @@ const csvToJson = new Transform({
 
 ## 效能對比
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 const express = require('express')
@@ -125,7 +125,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 問題排查
 

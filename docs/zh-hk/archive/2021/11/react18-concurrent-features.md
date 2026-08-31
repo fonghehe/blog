@@ -6,12 +6,12 @@ tags:
   - JavaScript
 readingTime: 2
 description: "React 18 Alpha 已經發布，可以試用了。等了兩年的 Concurrent 特性終於要正式了。"
-wordCount: 198
+wordCount: 200
 ---
 
-React 18 Alpha 已經發布，可以試用了。等了兩年的 Concurrent 特性終於要正式了。
+React 18 Alpha 已經發布，可以試用了。等了兩年的 Concurrent 特性終於要正式登場了。
 
-## 併發渲染（Concurrent Rendering）
+## 並發渲染（Concurrent Rendering）
 
 React 18 的核心變化：渲染變成可以被打斷、恢復的過程。
 
@@ -26,7 +26,7 @@ const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
-隻是這一行變化，但開啓了很多併發特性。
+只是這一行變化，但開啟了很多並發特性。
 
 ## Automatic Batching（自動批處理）
 
@@ -86,7 +86,7 @@ function SearchPage() {
 }
 ```
 
-用户輸入始終流暢，搜索結果更新不會阻塞輸入。
+用戶輸入始終流暢，搜索結果更新不會阻塞輸入。
 
 ## useDeferredValue
 
@@ -170,6 +170,6 @@ function FormField({ label, type }) {
 
 - Automatic Batching 是 React 18 最實際的改進，不需要改代碼
 - useTransition：區分緊急/非緊急更新，保持 UI 響應
-- Suspense SSR：流式渲染，用户更快看到內容
+- Suspense SSR：流式渲染，用戶更快看到內容
 - useId：SSR 和 CSR 一致的唯一 ID
 - 正式版預計 2022 年初發布

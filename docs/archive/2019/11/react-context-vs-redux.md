@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 4
 description: "React 16.3 引入了全新的 Context API，让很多开发者开始思考：有了 Context，还需要 Redux 吗？本文将深入对比两者的适用场景，帮助你在实际项目中做出正确的技术选型。"
-wordCount: 582
+wordCount: 577
 ---
 
 React 16.3 引入了全新的 Context API，让很多开发者开始思考：有了 Context，还需要 Redux 吗？本文将深入对比两者的适用场景，帮助你在实际项目中做出正确的技术选型。
@@ -225,7 +225,7 @@ const store = createStore(
 );
 ```
 
-Context 没有官方的调试工具。每次 Context 值变化都很难追踪是哪里触发的。
+Context 没有官方调试工具，每次值变化都很难追踪触发来源。
 
 ### 4. 状态持久化
 

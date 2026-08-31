@@ -6,14 +6,14 @@ tags:
 
 readingTime: 3
 description: "关于JavaScript Error cause 错误链，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 500
+wordCount: 533
 ---
 
-关于JavaScript Error cause 错误链，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
+JavaScript の Error cause（エラーチェーン）について、多くの開発者は API の呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
 
 ## 基本原理
 
-完全な例を以下に示します：
+全体のサンプルを以下に示します：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -41,7 +41,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## 高度な機能
 
-コアロジックを理解することが重要です：
+中心的なロジックを理解することが重要です：
 
 ```javascript
 :root {
@@ -64,7 +64,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-パフォーマンスの最適化は具体的なシナリオに合わせる必要があり、すべてのケースで過度な最適化が必要というわけではありません。
+パフォーマンスの最適化は具体的な場面に合わせる必要があり、すべてのケースで過度な最適化が必要というわけではありません。
 
 ## プロジェクト実践
 
@@ -97,7 +97,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ## ベストプラクティス
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみましょう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -152,6 +152,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## まとめ
 
-- コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- JavaScript Error cause 错误链不是银弹，需要根据项目规模和技术栈选择
+- コードサンプルは参考用のみであり、実際のユースケースに応じて調整が必要です
+- JavaScript の Error cause（エラーチェーン）は万能薬ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要があります
 - 基礎的な原理を理解することは、APIを暗記することより重要です

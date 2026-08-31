@@ -4,11 +4,11 @@ date: 2022-01-17 17:22:05
 tags:
   - React
 readingTime: 2
-description: "In daily development, React 18 flushSync 同步更新 is being used more and more frequently. This article systematically explains its usage, principles, and optimizati"
-wordCount: 157
+description: "React 18 flushSync for synchronous updates is showing up in more and more everyday code. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 155
 ---
 
-In daily development, React 18 flushSync 同步更新 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In daily development, React 18 flushSync synchronous updates are being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 

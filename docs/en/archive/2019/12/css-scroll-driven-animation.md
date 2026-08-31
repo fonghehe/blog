@@ -3,16 +3,16 @@ title: "Exploring CSS Scroll-Driven Animations"
 date: 2019-12-16 11:28:52
 tags:
   - CSS
-readingTime: 5
-description: "滚动驱动动画是近年来 Web 动画领域的一个重要方向。CSS Scroll-linked Animations 规范虽然还在草案阶段，但它的理念已经可以通过 Intersection Observer API 和 scroll 事件在生产环境中实现。这篇文章从规范草案出发，结合实际案例，探讨如何实现滚动驱动的动画效果。"
-wordCount: 390
+readingTime: 4
+description: "Scroll-driven animation has become an important direction in web animation in recent years. Although the CSS Scroll-linked Animations spec is still a draft, its ideas can already be implemented in production via the Intersection Observer API and the scroll event. Starting from the draft spec and backed by real examples, this article explores how to achieve scroll-driven animation effects."
+wordCount: 265
 ---
 
-滚动驱动动画是近年来 Web 动画领域的一个重要方向。CSS Scroll-linked Animations 规范虽然还在草案阶段，但它的理念已经可以通过 Intersection Observer API 和 scroll 事件在生产环境中实现。这篇文章从规范草案出发，结合实际案例，探讨如何实现滚动驱动的动画效果。
+Scroll-driven animation has become an important direction in web animation in recent years. Although the CSS Scroll-linked Animations spec is still a draft, its ideas can already be implemented in production via the Intersection Observer API and the scroll event. Starting from the draft spec and backed by real examples, this article explores how to achieve scroll-driven animation effects.
 
 ## scroll-timeline Specification Draft
 
-CSS Scroll-linked Animations 规范定义了 `scroll-timeline` 和 `animation-timeline`，让动画与滚动位置绑定而非时间：
+The CSS Scroll-linked Animations spec defines `scroll-timeline` and `animation-timeline`, binding an animation to scroll position rather than time:
 
 ```css
 /* 规范草案语法（浏览器尚未原生支持） */
@@ -36,11 +36,11 @@ CSS Scroll-linked Animations 规范定义了 `scroll-timeline` 和 `animation-ti
 }
 ```
 
-虽然原生支持还远，但我们可以用 JavaScript 实现相同效果。以下是两种主流方案。
+Native support is still a long way off, but we can achieve the same effect with JavaScript. Here are two mainstream approaches.
 
 ## Option 1: Intersection Observer
 
-Intersection Observer 可以高效检测元素进入/离开视口，非常适合实现"滚入动画"：
+Intersection Observer efficiently detects when an element enters or leaves the viewport, making it ideal for "scroll-in" animations:
 
 ```html
 <!-- 典型场景：元素滚入视口时播放入场动画 -->
@@ -139,7 +139,7 @@ animator.observe('.animate-item')
 
 ## Option 2: Scroll-Position Progress Animation
 
-对于进度条、视差滚动等需要与滚动位置精确绑定的动画，需要监听 scroll 事件：
+For progress bars, parallax scrolling, and other animations that must be precisely bound to scroll position, you need to listen to the scroll event:
 
 ```css
 /* 进度条 */
@@ -246,7 +246,7 @@ scrollProgress.addCallback((progress) => {
 
 ## Wrapping in React
 
-在 React 项目中，我们将滚动动画封装为 Hook：
+In a React project, we wrap scroll animations into Hooks:
 
 ```jsx
 {% raw %}
@@ -418,7 +418,7 @@ function ParallaxImage({ src, speed = 0.3 }) {
 
 ## Performance Considerations
 
-滚动事件处理不当会严重影响性能，以下是关键要点：
+Poorly handled scroll events can seriously hurt performance. Here are the key points:
 
 ```javascript
 // 错误做法：直接在 scroll 事件中执行 DOM 操作
@@ -464,9 +464,9 @@ window.addEventListener('scroll', () => {
 
 ## Summary
 
-- CSS Scroll-linked Animations 规范还在草案阶段，但理念先进，值得持续关注
-- Intersection Observer 是实现"滚入动画"的最佳方案，性能优于 scroll 事件
-- 基于滚动位置的进度动画需要 scroll 事件 + requestAnimationFrame 节流
-- React 中封装为 useInView、useScrollProgress、useParallax 等 Hook，复用性好
-- 性能关键：passive 事件监听、requestAnimationFrame 节流、transform 代替 top/left、will-change 提示
-- 能用 Intersection Observer 解决的就不用 scroll 事件，能用 CSS transform 的就不用 layout 属性
+- The CSS Scroll-linked Animations spec is still a draft, but its ideas are advanced and worth following
+- Intersection Observer is the best tool for "scroll-in" animations, outperforming the scroll event
+- Scroll-position-based progress animations need the scroll event + requestAnimationFrame throttling
+- In React, wrap them into Hooks like useInView, useScrollProgress, and useParallax for strong reusability
+- Performance keys: passive event listeners, requestAnimationFrame throttling, transform instead of top/left, and will-change hints
+- Prefer Intersection Observer over the scroll event when possible, and CSS transform over layout properties

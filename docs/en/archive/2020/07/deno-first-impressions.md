@@ -4,15 +4,15 @@ date: 2020-07-01 14:39:04
 tags:
   - Node.js
 readingTime: 2
-description: "关于Deno 1.0 正式发布初体验，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 316
+description: "First impressions of the Deno 1.0 release from a production perspective, discussing the real problems you'll encounter and how to solve them."
+wordCount: 201
 ---
 
-关于Deno 1.0 正式发布初体验，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to first impressions of the Deno 1.0 release, many developers only stay at the level of API calls. This article tries to discuss the real problems you'll hit and their solutions from a production perspective.
 
 ## Basic Principles
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 const fs = require('fs')
@@ -37,11 +37,11 @@ const csvToJson = new Transform({
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge cases — this is critical in production.
 
 ## Advanced Features
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 const express = require('express')
@@ -66,11 +66,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to be tied to the specific scenario; not everything needs to be over-optimized.
 
 ## Project Practice
 
-我们可以通过以下方式来改进：
+We can improve it in the following ways:
 
 ```javascript
 const fs = require('fs')
@@ -95,11 +95,11 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been validated in practice.
 
 ## Best Practices
 
-先来看基本的实现方式：
+Let's first look at the basic implementation:
 
 ```javascript
 const express = require('express')
@@ -124,11 +124,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you also need to consider error handling and edge cases.
 
 ## Common Pitfalls
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 const fs = require('fs')
@@ -153,10 +153,10 @@ const csvToJson = new Transform({
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and can significantly reduce maintenance cost.
 
 ## Summary
 
-- Deno 1.0 正式发布初体验不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
+- First impressions of Deno 1.0 are no silver bullet; choose based on your project's size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Be sure to verify compatibility before using it in production.

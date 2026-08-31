@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 6.0 Generics Practice: RealProject中TypeSystem简化 & 增强"
+title: "TypeScript 6.0 Generics in Practice: Simplifying and Strengthening the Type System in Real Projects"
 date: 2025-11-10 15:44:21
 tags:
   - TypeScript

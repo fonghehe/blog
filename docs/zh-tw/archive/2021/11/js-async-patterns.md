@@ -5,15 +5,15 @@ tags:
   - 前端
   - JavaScript
 readingTime: 2
-description: "在日常工作中經常用到JavaScript 非同步模式彙總，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。"
-wordCount: 298
+description: "JavaScript 的非同步模式在日常工作中經常用到，因此整理這篇系統性的總結，希望能幫助大家更好地理解與運用。"
+wordCount: 297
 ---
 
-在日常工作中經常用到JavaScript 非同步模式彙總，整理一篇系統性的總結，希望能幫助大家更好地理解和應用。
+JavaScript 的非同步模式在日常工作中經常用到，因此整理這篇系統性的總結，希望能幫助大家更好地理解與運用。
 
 ## 基礎概念
 
-我們可以這樣實現：
+我們可以這樣實作：
 
 ```javascript
 // 使用示例
@@ -30,9 +30,9 @@ app.mount('#root')
 
 ```
 
-通過這種模式，程式碼的可維護性得到了提升。
+透過這種模式，程式碼的可維護性得到了提升。
 
-## 核心實現
+## 核心實作
 
 具體用法參考以下程式碼：
 
@@ -66,10 +66,10 @@ function createHandler(options = {}) {
 
 ## 實戰應用
 
-來看具體的實現方式：
+來看具體的實作方式：
 
 ```javascript
-// 核心實現
+// 核心實作
 const processData = (input) => {
   return input
     .filter(item => item.active)
@@ -83,7 +83,7 @@ const processData = (input) => {
 
 ```
 
-這種實現方式簡潔高效，適合大多數場景。
+這種實作方式簡潔高效，適合大多數場景。
 
 ## 最佳實踐
 
@@ -141,6 +141,6 @@ function createHandler(options = {}) {
 ## 小結
 
 - 持續關注社群動態，及時更新技術方案
-- 效能最佳化需要基於實際資料，避免過度最佳化
+- 效能優化需要基於實際資料，避免過度優化
 - JavaScript 非同步模式彙總的核心在於理解底層原理，而非僅僅記住 API
 - 在實際專案中，選擇合適的方案比追求最新技術更重要

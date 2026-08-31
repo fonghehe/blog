@@ -3,11 +3,11 @@ title: "Smart Contract Frontend Testing Strategy: From Mock to Fork"
 date: 2026-06-15 20:15:10
 tags:
   - Web3
-  - 测试
+  - Testing
   - Smart Contract
 readingTime: 7
 description: "A systematic guide to Web3 frontend testing layers, covering contract mocking, mainnet forking, testnets, event assertions, and CI integration"
-wordCount: 3200
+wordCount: 466
 ---
 
 ## Unique Challenges of Web3 Frontend Testing

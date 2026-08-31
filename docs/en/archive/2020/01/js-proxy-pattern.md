@@ -4,15 +4,15 @@ date: 2020-01-02 15:34:20
 tags:
   - JavaScript
 readingTime: 1
-description: "在日常工作中经常用到JavaScript 代理模式实践，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。"
-wordCount: 233
+description: "The JavaScript Proxy pattern comes up often in day-to-day work, so I've put together a systematic summary to help everyone understand and apply it better."
+wordCount: 147
 ---
 
-在日常工作中经常用到JavaScript 代理模式实践，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。
+I use the JavaScript Proxy pattern frequently in daily work, so I've put together a systematic summary, hoping it helps everyone understand and apply it better.
 
 ## Basic Concepts
 
-具体用法参考以下代码：
+Refer to the following code for the specific usage:
 
 ```javascript
 // 使用示例
@@ -29,11 +29,11 @@ app.mount('#root')
 
 ```
 
-建议在团队中统一规范，减少不一致的问题。
+It's a good idea to standardize the convention across the team to reduce inconsistencies.
 
 ## Core Implementation
 
-来看具体的实现方式：
+Here is a concrete implementation:
 
 ```javascript
 // 工具函数封装
@@ -61,11 +61,11 @@ function createHandler(options = {}) {
 
 ```
 
-这种实现方式简洁高效，适合大多数场景。
+This approach is concise and efficient, and fits most scenarios.
 
 ## Practical Application
 
-下面是一个实际的示例：
+Here is a practical example:
 
 ```javascript
 // 核心实现
@@ -82,11 +82,11 @@ const processData = (input) => {
 
 ```
 
-在实际项目中，还需要根据具体需求做适当调整。
+In real projects, you'll still need to adapt it to your specific requirements.
 
 ## Best Practices
 
-核心代码如下：
+The core code looks like this:
 
 ```javascript
 // 使用示例
@@ -103,10 +103,10 @@ app.mount('#root')
 
 ```
 
-注意处理好边界条件和异常情况。
+Be sure to handle edge cases and exceptions properly.
 
 ## Summary
 
-- 性能优化需要基于实际数据，避免过度优化
-- JavaScript 代理模式实践的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
+- Performance optimization should be based on real data—avoid premature optimization.
+- The core of practicing the JavaScript Proxy pattern is understanding the underlying principles, not just memorizing APIs.
+- In real projects, choosing the right approach matters more than chasing the latest technology.

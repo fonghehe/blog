@@ -1,5 +1,5 @@
 ---
-title: "Farm Bundler Deep Dive: Rust 驱动极致冷启动"
+title: "Farm Build Tool In Depth: Rust-Driven, Ultra-Fast Cold Starts"
 date: 2025-08-26 16:00:37
 tags:
   - Frontend

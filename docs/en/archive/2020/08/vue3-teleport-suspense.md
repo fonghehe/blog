@@ -4,19 +4,19 @@ date: 2020-08-03 14:49:22
 tags:
   - Vue
 readingTime: 4
-description: "Vue 3 新增了两个内置组件：Teleport 和 Suspense。一个解决 DOM 结构嵌套问题，一个解决异步组件加载状态问题。这两个在实际项目中用得非常频繁，特别是 Teleport，几乎是模态框组件的标配了。"
-wordCount: 614
+description: "A guide to Vue 3's Teleport and Suspense built-in components, solving DOM nesting and async loading state problems that arise frequently in real projects."
+wordCount: 438
 ---
 
-Vue 3 新增了两个内置组件：Teleport 和 Suspense。一个解决 DOM 结构嵌套问题，一个解决异步组件加载状态问题。这两个在实际项目中用得非常频繁，特别是 Teleport，几乎是模态框组件的标配了。
+Vue 3 introduced two built-in components: Teleport and Suspense. One solves the problem of nested DOM structure, and the other handles the loading state of async components. Both are used very frequently in real projects — Teleport in particular is practically standard for modal components.
 
 ## Teleport: Rendering Components Anywhere in the DOM
 
 ### Why Teleport Is Needed
 
-做弹窗、Toast、Drawer 这类浮层组件时，我们经常遇到一个问题：组件的 DOM 结构嵌套在父组件里，但我们需要它渲染到 body 下面，否则会被 `overflow: hidden` 或 `z-index` 影响。
+When building overlay components like modals, toasts, and drawers, we often run into a problem: the component's DOM is nested inside its parent, but we need it to render under `body`, otherwise it gets affected by `overflow: hidden` or `z-index`.
 
-以前的解决方案是：手动操作 DOM，或者用 Portal 库。Vue 3 的 Teleport 是原生方案。
+The traditional solutions were to manipulate the DOM manually or use a Portal library. Vue 3's Teleport is the native solution.
 
 ```vue
 <template>
@@ -79,7 +79,7 @@ function moveToFooter() {
 
 ### Multiple Teleports to the Same Target
 
-多个 Teleport 可以渲染到同一个目标元素，它们按声明顺序追加：
+Multiple Teleports can render to the same target element; they are appended in declaration order:
 
 ```vue
 <template>
@@ -97,7 +97,7 @@ function moveToFooter() {
 
 ### Disabling Teleport
 
-有时候在某些条件下需要禁用 Teleport（比如单元测试时）：
+Sometimes you need to disable Teleport under certain conditions (for example, during unit testing):
 
 ```vue
 <template>
@@ -174,7 +174,7 @@ export function useToast() {
 
 ### Basic Usage
 
-Suspense 让我们可以声明式地处理异步组件的加载状态。当子组件（或子组件内的 setup 函数）返回 Promise 时，Suspense 会等待 Promise 完成：
+Suspense lets us handle the loading state of async components declaratively. When a child component (or the `setup` function inside it) returns a Promise, Suspense waits for that Promise to resolve:
 
 ```vue
 <template>
@@ -260,9 +260,9 @@ const user = await res.json()
 </template>
 ```
 
-### 配合 Teleport + Suspense
+### Combining Teleport + Suspense
 
-一个常见的场景：弹窗内有异步数据加载。Teleport 负责渲染位置，Suspense 负责加载状态：
+A common scenario: a modal that loads async data inside it. Teleport handles the render location, while Suspense handles the loading state:
 
 ```vue
 <template>
@@ -286,9 +286,9 @@ const user = await res.json()
 </template>
 ```
 
-### 错误处理
+### Error Handling
 
-Suspense 目前没有专门的 error 插槽（这还在 RFC 讨论中），需要配合 `onErrorCaptured` 处理错误：
+Suspense doesn't yet have a dedicated error slot (this is still under RFC discussion), so you need to handle errors with `onErrorCaptured`:
 
 ```vue
 {% raw %}
@@ -330,15 +330,15 @@ function retry() {
 
 ## Important Notes
 
-1. **Suspense 仍然是实验性特性** —— Vue 3 正式发布时 Suspense 还是 experimental 状态，API 可能会变，生产环境慎用
-2. **Teleport 的组件实例关系不变** —— 虽然 DOM 渲染到了别处，但 Vue 组件树中的父子关系不变，provide/inject 照常工作
-3. **Suspense 要求 setup 是 async 的或使用了 defineAsyncComponent** —— 普通的 setup 函数不会触发 Suspense
+1. **Suspense is still an experimental feature** — at the time of Vue 3's official release, Suspense was still in experimental status, and its API may change, so use it with caution in production
+2. **Teleport preserves component instance relationships** — although the DOM is rendered elsewhere, the parent-child relationship in the Vue component tree stays the same, and provide/inject continues to work as usual
+3. **Suspense requires an async `setup` or `defineAsyncComponent`** — a normal `setup` function won't trigger Suspense
 
 ## Summary
 
-- Teleport 将子组件的 DOM 渲染到指定位置，解决模态框/Toast 等浮层的 z-index 和 overflow 问题
-- Teleport 支持动态目标、多个 Teleport 到同一目标、以及禁用模式
-- Suspense 声明式处理异步组件的加载和错误状态
-- Suspense 支持嵌套，可以实现更细粒度的加载控制
-- Suspense 目前仍是实验性特性，生产使用要关注 API 变化
-- Teleport + Suspense 组合是处理异步弹窗内容的最佳实践
+- Teleport renders a child component's DOM to a specified location, solving the z-index and overflow issues of overlays like modals and toasts
+- Teleport supports dynamic targets, multiple Teleports to the same target, and a disabled mode
+- Suspense declaratively handles the loading and error states of async components
+- Suspense supports nesting, enabling finer-grained loading control
+- Suspense is still experimental, so watch for API changes if you use it in production
+- Combining Teleport + Suspense is the best practice for handling async modal content

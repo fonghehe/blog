@@ -64,7 +64,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ## 真實場景應用
 
-先來看基本的實現方式：
+先來看基本的實作方式：
 
 ```javascript
 FROM node:20-alpine AS deps

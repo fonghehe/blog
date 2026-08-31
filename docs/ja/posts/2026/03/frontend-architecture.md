@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "最近、チームにフロントエンドアーキテクチャ 2026 のベストプラクティスを導入し、多くの知見を得ました。同様の取り組みをしている方の参考になればと思い、まとめておきます。"
-wordCount: 492
+wordCount: 498
 ---
 
 最近、チームにフロントエンドアーキテクチャ 2026 のベストプラクティスを導入し、多くの知見を得ました。同様の取り組みをしている方の参考になればと思い、まとめておきます。
@@ -40,7 +40,7 @@ const csvToJson = new Transform({
 
 ## 詳細解説
 
-完全な例を示します。
+以下にサンプルを示します。
 
 ```javascript
 import { useRef, useEffect, useState } from "react";
@@ -71,7 +71,7 @@ function useIntersectionObserver(options = {}) {
 
 ## 導入経験
 
-コアロジックを理解することが重要です。
+コアとなるロジックを理解することが重要です。
 
 ```javascript
 .container {

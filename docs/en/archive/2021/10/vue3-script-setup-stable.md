@@ -6,11 +6,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "Vue 3.2 正式将 `<script setup>` 标记为稳定特性。用了半年实验性支持，现在可以放心在生产环境用了。"
-wordCount: 186
+description: "Vue 3.2 officially marks script setup as stable. After six months on experimental support, it's now safe to use in production."
+wordCount: 158
 ---
 
-Vue 3.2 正式将 `<script setup>` 标记为稳定特性。用了半年实验性支持，现在可以放心在生产环境用了。
+Vue 3.2 has officially marked `<script setup>` as a stable feature. After half a year of experimental support, it's now safe to use in production.
 
 ## Previous Pain Points
 
@@ -52,7 +52,7 @@ export default {
 </script>
 ```
 
-## `<script setup>` 的改进
+## Improvements in `<script setup>`
 
 ```vue
 <script setup lang="ts">
@@ -74,9 +74,9 @@ onMounted(() => {
 </template>
 ```
 
-代码量减半，逻辑更紧凑。
+The amount of code is cut roughly in half, and the logic is more compact.
 
-## defineProps 和 defineEmits
+## defineProps and defineEmits
 
 ```vue
 <script setup lang="ts">
@@ -110,7 +110,7 @@ function handleUpdate(val: string) {
 
 ## defineExpose
 
-`<script setup>` 默认不暴露任何属性给父组件（`ref` 访问不到）。需要显式暴露：
+By default, `<script setup>` exposes no properties to the parent component (they can't be accessed via `ref`). You need to expose them explicitly:
 
 ```vue
 <script setup lang="ts">
@@ -134,7 +134,7 @@ onMounted(() => {
 </script>
 ```
 
-## useSlots 和 useAttrs
+## useSlots and useAttrs
 
 ```vue
 <script setup lang="ts">
@@ -263,8 +263,8 @@ function handleSort(key: string) {
 
 ## Summary
 
-- `<script setup>` 是 Vue 3 的推荐写法，减少模板代码，逻辑更内聚
-- `defineProps` / `defineEmits` 的 TypeScript 类型声明方式是重点
-- `defineExpose` 控制组件暴露的属性，默认全部隐藏
-- 顶层 await 配合 Suspense 做异步数据加载
-- 从 Options API 迁移的项目可以逐步引入，新项目直接用
+- `<script setup>` is the recommended way to write Vue 3 — it reduces boilerplate and keeps logic more cohesive
+- The TypeScript type-declaration style of `defineProps` / `defineEmits` is the key part
+- `defineExpose` controls which properties a component exposes; by default they are all hidden
+- Top-level await works with Suspense for asynchronous data loading
+- Projects migrating from the Options API can adopt it gradually, while new projects can use it from the start

@@ -109,11 +109,11 @@ server {
 }
 ```
 
-前端隻需要請求同域的 `/api`，Nginx 負責轉發。
+前端只需要請求同域的 `/api`，Nginx 負責轉發。
 
 ## 方案四：JSONP（已過時）
 
-隻支援 GET 請求，利用 script 標籤不受同源策略限製：
+只支援 GET 請求，利用 script 標籤不受同源策略限制：
 
 ```javascript
 // 前端
@@ -167,7 +167,7 @@ window.addEventListener("message", (e) => {
 
 ## 方案六：document.domain（同主域不同子域）
 
-隻適用於同主域（如 `a.example.com` 和 `b.example.com`）：
+只適用於同主域（如 `a.example.com` 和 `b.example.com`）：
 
 ```javascript
 // a.example.com 和 b.example.com 都設置：
@@ -185,8 +185,8 @@ document.domain = "example.com";
 | CORS        | 所有場景        | 標準方案，支援所有請求類型 | 需要服務端配合         |
 | 開發代理    | 僅開發環境      | 配置簡單                   | 生產環境無效           |
 | Nginx 代理  | 生產環境        | 前端無感知                 | 需要運維配合           |
-| JSONP       | 歷史遺留        | 相容老瀏覽器               | 隻支援 GET，有安全風險 |
-| postMessage | iframe/窗口通信 | 跨域通信的標準方式         | 隻適合特定場景         |
+| JSONP       | 歷史遺留        | 相容老瀏覽器               | 只支援 GET，有安全風險 |
+| postMessage | iframe/窗口通信 | 跨域通信的標準方式         | 只適合特定場景         |
 
 ## 小結
 

@@ -1,5 +1,5 @@
 ---
-title: "Vue 3.5 Reactivity Rework: Reactivity Props 解构 &  useTemplateRef"
+title: "Vue 3.5 Reactivity Overhaul: Reactive Props Destructuring and useTemplateRef"
 date: 2024-09-19 15:53:30
 tags:
   - Vue

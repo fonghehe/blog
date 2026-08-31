@@ -5,6 +5,9 @@ tags:
   - Web3
   - DeFi
   - Ethereum
+readingTime: 11
+wordCount: 2234
+description: "分散型金融（DeFi）エコシステムでは、MakerDAO の DAI ステーブルコイン、Compound の貸借プロトコル、Synthetix の派生アセットなどがインフラストラクチャ層を構成しています。その中でも Uniswap は分散型取引所（DEX）の代表として、シンプルな自動マーケットメーカー（AMM）メカニズ"
 ---
 
 ## DeFi エコシステムと Uniswap V2 の台頭
@@ -15,7 +18,7 @@ Uniswap V2 は V1 と比較して、ERC-20/ERC-20 取引ペア（V1 は ETH/ERC-
 
 ## Uniswap V2 コアコントラクトアーキテクチャ
 
-Uniswap V2 のコントラクト体系は3つの核心部分で構成されています：
+Uniswap V2 のコントラクト体系は3つの中心的な部分で構成されています：
 
 ### Factory コントラクト
 
@@ -381,7 +384,7 @@ async function removeLiquidity(provider, signer, tokenA, tokenB, liquidity) {
 
 ## トランザクション失敗の一般的な原因分析
 
-DeFi フロントエンド開発において、トランザクション失敗は最も一般的なユーザー体験の問題です。以下は典型的なシナリオです：
+DeFi フロントエンド開発において、トランザクション失敗は最も一般的なユーザー体験の問題です。以下は典型的なケースです：
 
 ### 1. スリッページが許容範囲を超過
 

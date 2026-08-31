@@ -5,10 +5,10 @@ tags:
   - TypeScript
 readingTime: 2
 description: "关于TypeScript 7.0 新特性展望，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 301
+wordCount: 287
 ---
 
-关于TypeScript 7.0 新特性展望，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+很多开发者对 TypeScript 7.0 新特性的认知，仍停留在调用 API 的层面。本文从生产环境出发，谈谈实际落地时的问题与解法。
 
 ## 基本原理
 
@@ -36,7 +36,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样做代码更好测，也更容易扩展。
 
 ## 高级特性
 
@@ -71,7 +71,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界条件一定要处理好，生产环境下这点尤其关键。
 
 ## 项目实践
 
@@ -134,7 +134,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已在线上稳定运行半年以上，并经受了实际检验。
 
 ## 小结
 

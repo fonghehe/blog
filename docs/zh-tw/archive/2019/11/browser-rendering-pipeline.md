@@ -5,14 +5,14 @@ tags:
   - 效能最佳化
 readingTime: 5
 description: "理解瀏覽器的渲染流水線是前端效能最佳化的基礎。當我們修改 CSS 屬性時，瀏覽器會經過一系列複雜的處理步驟才能將畫素顯示到螢幕上。瞭解每一步做了什麼，可以幫助我們做出更明智的效能決策。"
-wordCount: 919
+wordCount: 917
 ---
 
 理解瀏覽器的渲染流水線是前端效能最佳化的基礎。當我們修改 CSS 屬性時，瀏覽器會經過一系列複雜的處理步驟才能將畫素顯示到螢幕上。瞭解每一步做了什麼，可以幫助我們做出更明智的效能決策。
 
 ## 渲染流水線總覽
 
-瀏覽器將 HTML 轉換為螢幕上畫素的過程被稱為畫素流水線（Pixel Pipeline），主要包含以下步驟：
+瀏覽器把 HTML 轉換成螢幕上畫素的過程，稱為像素流水線（Pixel Pipeline），主要包含以下步驟：
 
 ```
 JavaScript → Style → Layout → Paint → Composite
@@ -82,7 +82,7 @@ h1 {
 }
 ```
 
-CSSOM 也是一個樹形結構，每個節點包含樣式規則。CSS 的解析是**渲染阻塞**的，因為瀏覽器需要完整的樣式資訊才能進行佈局。
+CSSOM 也是一個樹形結構，每個節點包含樣式規則。CSS 的解析會**阻塞渲染**，因為瀏覽器需要完整的樣式資訊才能進行佈局。
 
 ### 關鍵渲染路徑
 
@@ -92,7 +92,7 @@ HTML ──→ DOM ──────┐
 CSS  ──→ CSSOM ────┘
 ```
 
-DOM 和 CSSOM 合併為渲染樹（Render Tree），隻包含可見元素：
+DOM 和 CSSOM 合併為渲染樹（Render Tree），只包含可見元素：
 
 - `<head>` 及其子元素不在渲染樹中
 - `display: none` 的元素不在渲染樹中
@@ -127,7 +127,7 @@ console.log(styles.display);     // "block"
 // 觸發 Layout 的操作
 element.style.width = '200px';  // 修改尺寸
 element.style.left = '10px';    // 修改位置
-window.innerWidth;              // 讀取佈局資訊也會觸發強製 Layout
+window.innerWidth;              // 讀取佈局資訊也會觸發強制 Layout
 element.offsetWidth;            // 同上
 element.getBoundingClientRect();
 ```
@@ -153,12 +153,12 @@ element.getBoundingClientRect();
 繪製階段將元素的視覺效果繪製到圖層上。繪製是按圖層（Layer）進行的：
 
 ```js
-// 以下 CSS 屬性的修改隻會觸發 Paint，不會觸發 Layout
-element.style.color = 'red';          // 隻繪製
-element.style.backgroundColor = '#f00'; // 隻繪製
-element.style.boxShadow = '0 0 10px rgba(0,0,0,0.5)'; // 隻繪製
-element.style.borderRadius = '8px';    // 隻繪製
-element.style.visibility = 'hidden';   // 隻繪製
+// 以下 CSS 屬性的修改只會觸發 Paint，不會觸發 Layout
+element.style.color = 'red';          // 只繪製
+element.style.backgroundColor = '#f00'; // 只繪製
+element.style.boxShadow = '0 0 10px rgba(0,0,0,0.5)'; // 只繪製
+element.style.borderRadius = '8px';    // 只繪製
+element.style.visibility = 'hidden';   // 只繪製
 ```
 
 ### 繪製的型別
@@ -229,7 +229,7 @@ element.style.visibility = 'hidden';   // 隻繪製
 -----------|-----------|---------|
 | width, height, margin, padding | Layout → Paint → Composite | 最慢（全流水線） |
 | color, background, box-shadow | Paint → Composite | 較快（跳過 Layout） |
-| transform, opacity | Composite | 最快（隻合成） |
+| transform, opacity | Composite | 最快（只合成） |
 
 ### 使用 transform 替代 top/left
 
@@ -243,7 +243,7 @@ element.style.visibility = 'hidden';   // 隻繪製
   left: 100px;
 }
 
-/* 好：隻觸發合成 */
+/* 好：只觸發合成 */
 .moving-good {
   transition: transform 0.3s;
 }
@@ -255,7 +255,7 @@ element.style.visibility = 'hidden';   // 隻繪製
 ### 使用 opacity 替代 visibility 的動畫
 
 ```css
-/* opacity 隻觸發合成 */
+/* opacity 只觸發合成 */
 .fade-in {
   animation: fadeIn 0.3s;
 }
@@ -266,16 +266,16 @@ element.style.visibility = 'hidden';   // 隻繪製
 }
 ```
 
-## 強製同步佈局（Forced Synchronous Layout）
+## 強制同步佈局（Forced Synchronous Layout）
 
-交替讀寫佈局屬性會導致瀏覽器強製同步佈局，嚴重影響效能：
+交替讀寫佈局屬性會導致瀏覽器強制同步佈局，嚴重影響效能：
 
 ```js
-// 差：讀寫交替，每次寫都強製佈局
+// 差：讀寫交替，每次寫都強制佈局
 function resizeAll() {
   const boxes = document.querySelectorAll('.box');
   boxes.forEach(box => {
-    const width = box.offsetWidth;     // 讀（強製佈局）
+    const width = box.offsetWidth;     // 讀（強制佈局）
     box.style.width = (width + 10) + 'px'; // 寫（使佈局失效）
   });
 }
@@ -348,9 +348,9 @@ measureRender('列表渲染', () => {
 
 - 渲染流水線：JavaScript → Style → Layout → Paint → Composite
 - 修改 `width`、`height` 等幾何屬性觸發全流水線（最慢）
-- 修改 `color`、`background` 等屬性隻觸發 Paint（較快）
-- 修改 `transform`、`opacity` 隻觸發 Composite（最快）
-- 強製同步佈局（讀寫交替）會嚴重影響效能
+- 修改 `color`、`background` 等屬性只觸發 Paint（較快）
+- 修改 `transform`、`opacity` 只觸發 Composite（最快）
+- 強制同步佈局（讀寫交替）會嚴重影響效能
 - 使用 `will-change` 提示瀏覽器提前建立合成層
 - 使用 `requestAnimationFrame` 批次處理 DOM 更新
 - 用 `transform` 替代 `top/left` 做動畫

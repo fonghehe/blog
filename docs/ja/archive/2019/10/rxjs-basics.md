@@ -3,16 +3,16 @@ title: "RxJS基礎：Observable入門"
 date: 2019-10-31 14:32:13
 tags:
   - Angular
-readingTime: 3
+readingTime: 4
 description: "RxJS 是 JavaScript 的响应式编程库，它基于 Observable 模式，提供了一套强大的异步数据流处理工具。Angular 生态深度依赖 RxJS，即使在 React 项目中，RxJS 也能优雅地处理复杂的异步场景。本文从 Observable 的基本概念入手，系统介绍 RxJS 的核心用法。"
-wordCount: 366
+wordCount: 563
 ---
 
-RxJS 是 JavaScript 的响应式编程库，它基于 Observable 模式，提供了一套强大的异步数据流处理工具。Angular 生态深度依赖 RxJS，即使在 React 项目中，RxJS 也能优雅地处理复杂的异步场景。本文从 Observable 的基本概念入手，系统介绍 RxJS 的核心用法。
+RxJS は JavaScript のリアクティブプログラミングライブラリであり、Observable パターンを基盤として、強力な非同期データストリーム処理の仕組みを提供します。Angular エコシステムは RxJS に深く依存しており、React プロジェクトであっても RxJS は複雑な非同期の場面を優雅に扱えます。本記事では Observable の基本概念から入り、RxJS の中心的な使い方を体系的に紹介します。
 
 ## Observableとは
 
-Observable 代表一个可被订阅的数据流。与 Promise 只能 resolve 一次不同，Observable 可以发出多个值：
+Observable は購読可能なデータストリームを表します。Promise が一度しか resolve できないのに対し、Observable は複数の値を発行できます：
 
 ```js
 import { Observable } from 'rxjs';
@@ -49,7 +49,7 @@ observable.subscribe({
 
 ## Observableの生成ファクトリー関数
 
-RxJS 提供了丰富的创建函数，不需要手动 `new Observable`：
+RxJS は豊富な作成関数を提供しており、わざわざ `new Observable` を書く必要はありません：
 
 ```js
 import {
@@ -102,7 +102,7 @@ throwError('出错了').subscribe({
 
 ## オペレーター
 
-操作符是 RxJS 的核心，它们对 Observable 进行变换、过滤、组合：
+オペレーターは RxJS の核であり、Observable に対して変換・フィルタ・結合を行います：
 
 ```js
 import { of, interval } from 'rxjs';
@@ -148,12 +148,12 @@ of(1, 2, 3).pipe(
 
 // pluck: 提取嵌套属性
 from([
-  { user: { name: '张三' } },
+  { user: { name: '張三' } },
   { user: { name: '李四' } }
 ]).pipe(
   pluck('user', 'name')
 ).subscribe(console.log);
-// '张三', '李四'
+// '張三', '李四'
 
 // scan: 累加器（类似 reduce，但每个中间值都会发出）
 of(1, 2, 3, 4).pipe(
@@ -212,7 +212,7 @@ fromEvent(document, 'scroll').pipe(
 
 ## 高階オペレーター
 
-高阶操作符处理的是"Observable 的 Observable"：
+高階オペレーターが扱うのは「Observable の Observable」です：
 
 ```js
 import { interval, of, timer } from 'rxjs';
@@ -264,13 +264,13 @@ fromEvent(submitBtn, 'click').pipe(
     from(fetch('/api/submit', { method: 'POST' }))
   )
 ).subscribe(response => {
-  console.log('提交成功');
+  console.log('送信成功');
 });
 ```
 
 ## Subject
 
-Subject 既是 Observable 也是 Observer，用于在多个订阅者之间共享数据：
+Subject は Observable であり同時に Observer でもあり、複数の購読者の間でデータを共有するために使います：
 
 ```js
 import { Subject, BehaviorSubject, ReplaySubject } from 'rxjs';
@@ -363,10 +363,10 @@ subs.unsubscribe();
 
 ## まとめ
 
-- Observable 代表可被订阅的数据流，可以发出多个值
-- `of`、`from`、`interval`、`fromEvent` 是最常用的创建函数
-- 操作符通过 `pipe` 链式调用，分为转换、过滤、组合等类型
-- `switchMap` 用于搜索场景，`mergeMap` 用于并行请求，`concatMap` 用于有序执行
-- Subject 是多播的核心，BehaviorSubject 保存最新值，ReplaySubject 重放历史值
-- `catchError` 和 `retry` 用于错误处理
-- 及时取消订阅避免内存泄漏
+- Observable は購読可能なデータストリームを表し、複数の値を発行できる
+- `of`、`from`、`interval`、`fromEvent` は最もよく使われる作成関数です
+- オペレーターは `pipe` でチェーン呼び出しされ、変換・フィルタ・結合などの種類があります
+- `switchMap` は検索、`mergeMap` は並行リクエスト、`concatMap` は順次実行に使います
+- Subject はマルチキャストの核であり、BehaviorSubject は最新値を保持し、ReplaySubject は過去の値を再生します
+- `catchError` と `retry` はエラー処理に使います
+- 購読は適時に解除し、メモリリークを避けましょう

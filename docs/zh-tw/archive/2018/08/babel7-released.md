@@ -127,14 +127,14 @@ const city = user?.address?.city;
 callback?.();
 arr?.[0];
 
-// 空值合併 (??)：區別於 ||（隻處理 null/undefined，不處理 0 和 ''）
+// 空值合併 (??)：區別於 ||（只處理 null/undefined，不處理 0 和 ''）
 const count = response.count ?? 0;
 // response.count = 0 → 0（不會被 ?? 替換）
 // response.count = null → 0（會被 ?? 替換）
 
 // 和 || 的區別
 const name = user.name || "匿名"; // '' 也會被替換
-const name = user.name ?? "匿名"; // 隻有 null/undefined 才替換
+const name = user.name ?? "匿名"; // 只有 null/undefined 才替換
 ```
 
 ## useBuiltIns：更智慧的 polyfill

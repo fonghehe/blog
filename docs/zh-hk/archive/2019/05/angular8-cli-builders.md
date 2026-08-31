@@ -109,7 +109,7 @@ export function ngAdd(): Rule {
 }
 ```
 
-這樣用户隻需要：
+這樣用戶只需要：
 
 ```bash
 ng add @my-org/my-library
@@ -131,4 +131,4 @@ ng update @angular/cli @angular/core
 
 ## 總結
 
-Angular Builders API 讓 Angular CLI 不再是封閉的黑盒子。社區工具可以通過它的集成自定義構建流程，讓 Angular 項目和現有 DevOps 流水線更容易合作。
+Angular Builders API 讓 Angular CLI 不再是封閉的黑盒子。社區工具可以通過它的集成自定義構建流程，讓 Angular 項目和現有 DevOps 流水線更容易銜接。

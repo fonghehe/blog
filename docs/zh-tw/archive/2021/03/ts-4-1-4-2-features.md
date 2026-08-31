@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.1 4.2 新特性彙總在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 335
+wordCount: 333
 ---
 
 TypeScript 4.1 4.2 新特性彙總在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -71,7 +71,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 實戰案例
 

@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "RxJS 6はAngularと深く統合されている。コアオペレーターをマスターすることが、堅牢なリアクティブコードを書く基礎となる。"
-wordCount: 149
+wordCount: 152
 ---
 
 RxJS 6はAngularと深く統合されている。コアオペレーターをマスターすることが、堅牢なリアクティブコードを書く基礎となる。
@@ -54,4 +54,4 @@ export class MyComponent implements OnDestroy {
 
 ## まとめ
 
-`switchMap`、`combineLatest`、`takeUntil`はAngular開発で最もよく使われる3つのオペレーターだ。その意味を理解することで、非同期シナリオの90%を解決できる。
+`switchMap`、`combineLatest`、`takeUntil`はAngular開発で最もよく使われる3つのオペレーターだ。その意味を理解することで、非同期のユースケースの90%に対応できる。

@@ -3,9 +3,9 @@ title: "Pinia 大型專案狀態管理：模組化設計與持久化策略"
 date: 2026-08-02 16:27:05
 tags:
   - Vue
-readingTime: 7
+readingTime: 10
 description: "Pinia 在大型專案中面臨的挑戰不是 API 用法，而是架構設計：Store 如何按功能域拆分、跨 Store 相依如何管理、狀態持久化如何兼顧效能與一致性、SSR 場景下的 hydration 如何處理。本文從實際專案經驗出發，系統梳理 Pinia 大型專案的狀態管理架構。"
-wordCount: 3400
+wordCount: 1987
 ---
 
 Pinia 作為 Vue 官方推薦的狀態管理庫，API 簡潔、TypeScript 友善、Devtools 整合完善。在中小型專案中，幾乎不需要太多架構思考就能用好。但當專案規模增長到幾十個頁面、上百個 API 介面、多個業務團隊平行開發時，Pinia 的使用方式需要從「寫 Store」升級到「設計 Store 架構」。

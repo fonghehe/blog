@@ -33,7 +33,7 @@ module.exports = {
 };
 ```
 
-為了不影響日常開發，隻在需要分析時啓用：
+為了不影響日常開發，只在需要分析時啓用：
 
 ```json
 {
@@ -86,7 +86,7 @@ import { chunk } from "lodash-es";
 
 ### 2. moment.js 的語言包
 
-moment.js 默認會打包所有語言包（約 160KB），實際項目通常隻用中文：
+moment.js 默認會打包所有語言包（約 160KB），實際項目通常只用中文：
 
 ```javascript
 // webpack.config.js
@@ -100,7 +100,7 @@ module.exports = {
 };
 ```
 
-或者直接換成 `day.js`（隻有 2KB，API 基本相容）。
+或者直接換成 `day.js`（只有 2KB，API 基本相容）。
 
 ### 3. Element UI 按需加載
 

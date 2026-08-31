@@ -6,11 +6,11 @@ tags:
   - Node.js
 
 readingTime: 1
-description: "Node.js 缓存策略是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。"
-wordCount: 199
+description: "Caching strategies in Node.js deserve serious attention in frontend development. This article draws on real project experience to explore the core concepts and best practices."
+wordCount: 139
 ---
 
-Node.js 缓存策略是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。
+Node.js caching strategies are a topic worth paying attention to in frontend development. Drawing on real project experience, this article explores their core concepts and best practices.
 
 ## Basic Concepts
 
@@ -56,7 +56,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Practical Application
 
-核心代码如下：
+The core code looks like this:
 
 ```javascript
 // 工具函数封装
@@ -88,7 +88,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Best Practices
 
-我们可以这样实现：
+Here's how we can implement it:
 
 ```javascript
 // 核心实现
@@ -105,10 +105,10 @@ const processData = (input) => {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+This approach improves the maintainability of the code.
 
 ## Summary
 
-- Node.js 缓存策略的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
+- The core of Node.js caching strategies is understanding the underlying principles, not just memorizing APIs.
+- In real projects, picking the right approach matters more than chasing the latest tech.
+- On a team, keeping a consistent code style lowers maintenance cost.

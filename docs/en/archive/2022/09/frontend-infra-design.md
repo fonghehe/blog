@@ -4,11 +4,11 @@ date: 2022-09-20 11:47:55
 tags:
   - Frontend
 readingTime: 2
-description: "作为团队技术负责人，今年最重要的工作之一就是搭建前端基础设施。不是写业务代码，而是让写业务代码的人更高效。这篇文章讲讲我们的设计思路和落地过程。"
-wordCount: 161
+description: "As the team's tech lead, one of the most important tasks this year was building frontend infrastructure. Not writing business code, but making those who write it more efficient. This article covers our design approach and implementation process."
+wordCount: 107
 ---
 
-作为团队技术负责人，今年最重要的工作之一就是搭建前端基础设施。不是写业务代码，而是让写业务代码的人更高效。这篇文章讲讲我们的设计思路和落地过程。
+As the team's tech lead, one of the most important tasks this year was building frontend infrastructure. Not writing business code, but making those who write it more efficient. This article covers our design approach and implementation process.
 
 ## Infrastructure Overview
 
@@ -296,4 +296,4 @@ function createViteConfig(overrides?: Partial<UserConfig>) {
 
 ## Summary
 
-前端基础设施的核心价值是：让团队从「重复造轮子」中解放出来，把精力放在业务上。ESLint 配置、Vite 预设、脚手架 CLI——每个都不大，但组合起来就是显著的效率提升。关键是保持轻量，不要过度设计。
+The core value of frontend infrastructure is freeing the team from reinventing the wheel so they can focus on business logic. ESLint configs, Vite presets, scaffolding CLI — each one is small on its own, but together they deliver a significant efficiency boost. The key is to keep it lightweight and avoid over-engineering.

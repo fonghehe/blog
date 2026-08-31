@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 8
 description: "Vue 3.6 的響應式系統基於 Proxy 和依賴追蹤實現。本文從源碼層面分析 ref 和 reactive 的實現差異，包括 track/trigger 流程、effect 調度器、批處理機制，並手寫一個簡化版響應式系統。"
-wordCount: 3200
+wordCount: 1378
 ---
 
 Vue 3 的響應式系統是一次徹底的架構重寫。從 Vue 2 的 `Object.defineProperty` 到 Vue 3 的 `Proxy`，不僅是 API 的變化，更是響應式模型從"屬性劫持"到"對象代理"的範式轉變。Vue 3.6 在此基礎上進一步優化了 effect 調度和內存管理。本文從源碼層面剖析 `ref` 和 `reactive` 的實現差異。

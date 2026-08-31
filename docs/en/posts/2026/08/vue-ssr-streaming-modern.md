@@ -3,9 +3,9 @@ title: "Vue SSR Streaming Rendering: Stream Architecture and Selective Hydration
 date: 2026-08-19 20:12:33
 tags:
   - Vue
-readingTime: 9
+readingTime: 7
 description: "Vue SSR has evolved from vue-server-renderer to renderToStream + selective hydration in the Vapor era. Drawing on real-world experience migrating an internal management system from CSR to a public-facing SSR site, this article covers streaming rendering, hydration mismatch debugging, and CDN edge streaming integration."
-wordCount: 3500
+wordCount: 1028
 ---
 
 Back in 2018 I wrote a deep dive on Vue SSR using `vue-server-renderer`, where the entire rendering pipeline was synchronous and blocking — the server had to assemble the complete HTML before sending anything to the client, and a single slow API call could tank TTFB. Eight years later, Vue 5's SSR is an entirely different beast: `renderToStream` supports sending chunks as they render, Vapor Mode components can skip hydration entirely, and CDN Edge nodes can perform stream splicing at the edge. This article documents our team's full journey converting a CSR internal management system into a public-facing SSR site.

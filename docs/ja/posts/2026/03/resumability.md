@@ -5,14 +5,14 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "Resumabilityはフロントエンド開発においてますます広く活用されている。本記事は実際のプロジェクトの観点から、そのコア原理とベストプラクティスを深く分析する。"
-wordCount: 418
+wordCount: 417
 ---
 
 Resumabilityはフロントエンド開発においてますます広く活用されている。本記事は実際のプロジェクトの観点から、そのコア原理とベストプラクティスを深く分析する。
 
 ## 基本的な使い方
 
-まず基本的な実装方法を見てみよう：
+基本的な実装方法を見てみよう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -99,7 +99,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ## パフォーマンスの最適化
 
-以下は完全なサンプルだ：
+以下にサンプルを示します：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T

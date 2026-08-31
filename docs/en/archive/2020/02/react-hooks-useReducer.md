@@ -1,18 +1,18 @@
 ---
-title: "React useReducer Advanced:  &  Context CompositionEnterprise级Practice"
+title: "Advanced React useReducer and Context Composition Patterns"
 date: 2020-02-20 10:12:00
 tags:
   - React
 readingTime: 2
-description: "在日常开发中，React useReducer 状态管理详解的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 290
+description: "In day-to-day development, useReducer for state management is used more and more frequently. This article systematically covers its usage, internals, and optimization strategies."
+wordCount: 184
 ---
 
-在日常开发中，React useReducer 状态管理详解的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+In day-to-day development, `useReducer` for state management is being used more and more often. This article systematically explains its usage, internals, and optimization strategies.
 
 ## Quick Start
 
-实际项目中的用法会更复杂一些：
+In real projects, usage gets a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -35,11 +35,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This way, both the testability and extensibility of the code improve.
 
 ## Internal Principles
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -62,11 +62,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — it's critical in production.
 
 ## Business Practice
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -89,11 +89,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tied to the specific scenario — not every case calls for over-optimizing.
 
 ## Performance Comparison
 
-我们可以通过以下方式来改进：
+Here's one way we can improve on this:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -116,12 +116,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Summary
 
-- 代码示例仅供参考，需根据业务场景调整
-- React useReducer 状态管理详解不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- The code examples are for reference only and should be adapted to your actual use case
+- `useReducer` for state management isn't a silver bullet — choose based on your project's scale and tech stack
+- Understanding the underlying principles matters more than memorizing APIs
+- Be sure to validate compatibility before using it in production
+- In team collaboration, conventions and documentation matter more than the tech itself

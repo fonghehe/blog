@@ -5,15 +5,15 @@ tags:
   - JavaScript
 
 readingTime: 1
-description: "关于Fastify 高性能 API 服务端，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 186
+description: "Many developers only know Fastify, the high-performance API server, at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 181
 ---
 
-关于Fastify 高性能 API 服务端，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+This is a guide to Fastify as a high-performance API server. Many developers only scratch the surface at the API level. This article looks at the real problems you hit in production and how to solve them.
 
 ## Basic Principles
 
-实际项目中的用法会更复杂一些：
+In real projects, usage gets a bit more involved:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -30,7 +30,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-Through this approach, both the testability and scalability of the code are improved.
+This makes the code both more testable and more scalable.
 
 ## Advanced Features
 
@@ -51,11 +51,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Handle edge cases carefully — they are critical in production.
 
 ## Project Practice
 
-The key lies in understanding the core logic:
+The key is understanding the core logic:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -76,7 +76,7 @@ Performance optimization should be tailored to specific scenarios; not all cases
 
 ## Best Practices
 
-We can improve it in the following ways:
+Here are a few ways to take this further:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -93,7 +93,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
+This approach has run stably in production for over six months, so it's proven in practice.
 
 ## Summary
 

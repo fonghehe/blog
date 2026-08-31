@@ -5,9 +5,9 @@ tags:
   - Web3
   - TypeScript
   - Ethereum
-readingTime: 13
+readingTime: 8
 description: "深入解析 viem 的設計哲學、核心概念、Actions 模式及 ABI 類型推導，附完整 DApp 交互層實現與 ethers.js 遷移策略"
-wordCount: 3900
+wordCount: 1324
 ---
 
 ## viem 設計哲學：tree-shakable + 類型安全 + 無依賴

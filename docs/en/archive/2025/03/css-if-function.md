@@ -1,5 +1,5 @@
 ---
-title: "CSS if() Function Proposal: 浏览器实现进展 & Syntax更新"
+title: "CSS if() Function Proposal 2025: Browser Implementation Progress and Syntax Updates"
 date: 2025-03-17 14:31:08
 tags:
   - CSS

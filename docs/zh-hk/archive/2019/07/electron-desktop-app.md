@@ -15,7 +15,7 @@ wordCount: 658
 Electron = Chromium + Node.js。一個 Electron 應用有兩種進程：
 
 **主進程（Main Process）**：
-- 隻有一個
+- 只有一個
 - 管理應用生命週期
 - 創建窗口（BrowserWindow）
 - 訪問系統原生 API（菜單、托盤、對話框等）
@@ -436,7 +436,7 @@ macOS 上未簽名的應用會被 Gatekeeper 阻止。開發階段可以右鍵�
 
 Electron 應用內存佔用普遍較高。優化方向：
 - 避免在渲染進程加載大量數據
-- 用 `webFrame.setZoomLevelLimits(1, 1)` 限製縮放範圍
+- 用 `webFrame.setZoomLevelLimits(1, 1)` 限制縮放範圍
 - 窗口隱藏時釋放不必要的資源
 - 考慮用 `BrowserView` 代替多窗口
 
@@ -453,5 +453,5 @@ Electron 應用內存佔用普遍較高。優化方向：
 - IPC 通信是核心，推薦 `invoke/handle` 模式（請求-響應）和 `send/on` 模式（單向通知）
 - 生產環境務必關閉 `nodeIntegration`，用 `preload` + `contextBridge` 安全暴露 API
 - `electron-builder` 負責打包，支援 macOS/Windows/Linux 多平臺
-- `electron-updater` 實現自動更新，需要搭配靜態檔案服務器或 GitHub Releases
+- `electron-updater` 實現自動更新，需要搭配靜態檔案伺服器或 GitHub Releases
 - 注意內存佔用和安全問題，不要在 Electron 中加載不受信任的外部頁面

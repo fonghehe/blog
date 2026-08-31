@@ -4,15 +4,15 @@ date: 2020-10-27 15:50:08
 tags:
   - JavaScript
 readingTime: 2
-description: "JavaScript Proxy Reflect 元编程在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 306
+description: "JavaScript Proxy/Reflect メタプログラミングはフロントエンド開発でますます広く使われている。本記事では実際のプロジェクトから出発し、その原理とベストプラクティスを掘り下げる。"
+wordCount: 459
 ---
 
-JavaScript Proxy Reflect 元编程在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+JavaScript の Proxy と Reflect によるメタプログラミングはフロントエンド開発での応用が広がっている。本記事では実際のプロジェクトに基づき、中核となる原理とベストプラクティスを分析する。
 
 ## 基本的な使い方
 
-关键在于理解核心逻辑：
+重要なのは中核となるロジックを理解することだ：
 
 ```javascript
 const express = require('express')
@@ -37,11 +37,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+パフォーマンス最適化は具体的な場面に応じる必要があり、すべてのケースで過度な最適化が必要なわけではない。
 
 ## 応用的な使い方
 
-我们可以通过以下方式来改进：
+以下の方法で改善できる：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -60,11 +60,11 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番で半年以上安定稼働し、実際に検証済みだ。
 
 ## 実践事例
 
-先来看基本的实现方式：
+まずは基本的な実装方法を見てみよう：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -95,11 +95,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示す。実際のプロジェクトではエラー処理と境界条件も考慮が必要だ。
 
 ## パフォーマンス最適化
 
-在这个基础上，我们可以进一步优化：
+この基盤の上でさらに最適化できる：
 
 ```javascript
 const express = require('express')
@@ -124,11 +124,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模プロジェクトで実用的で、保守コストを大幅に削減できる。
 
 ## まとめ
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- JavaScript Proxy Reflect 元编程不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- 新技術のために新技術を使ってはならない
+- コード例は参考用。実際のビジネス場面に合わせ調整せよ
+- JavaScript の Proxy と Reflect によるメタプログラミングは銀の弾丸ではない。プロジェクト規模と技術スタックに応じて選ぶべきだ
+- API を暗記するより基礎原理を理解する方が重要だ

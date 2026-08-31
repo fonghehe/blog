@@ -3,9 +3,9 @@ title: "CSS Anchor Positioning in Practice: A New Paradigm for Declarative Posit
 date: 2026-07-08 14:50:02
 tags:
   - CSS
-readingTime: 6
+readingTime: 7
 description: "The CSS Anchor Positioning API brings floating element positioning back from JavaScript to CSS. This article covers anchor-name, position-anchor, position-try, and other core properties, demonstrating declarative positioning through pure CSS implementations of Tooltips, Popovers, and Dropdowns."
-wordCount: 2000
+wordCount: 992
 ---
 
 In frontend development, positioning floating elements has always been a headache. Tooltips, Popovers, and Dropdowns share a simple core requirement — "display next to a specific element" — but implementing them requires handling boundary detection, flipping, offsets, scroll-following, and a whole set of logic. The existence of libraries like Floating UI and Popper.js is itself proof of this complexity. The CSS Anchor Positioning API brings all of this back to CSS's declarative paradigm.

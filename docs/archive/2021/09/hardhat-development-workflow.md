@@ -5,14 +5,14 @@ tags:
   - Web3
   - Solidity
   - Smart Contract
-readingTime: 16
+readingTime: 8
 description: "从项目结构到 CI/CD 集成，构建生产级智能合约的 Hardhat 工程化实践"
-wordCount: 4500
+wordCount: 750
 ---
 
 ## Hardhat vs Truffle：为什么迁移
 
-Truffle 曾是以太坊开发工具的事实标准，但在编译速度、测试框架和插件系统等方面存在明显局限。Truffle 的编译速度慢、测试框架基于 web3.js（缺乏类型安全）、插件系统不够灵活，且对 TypeScript 的支持不完善。
+Truffle 曾是以太坊开发的事实标准，但在编译速度、测试框架、插件系统和 TypeScript 支持上都有明显短板：编译慢、测试框架基于 web3.js（缺乏类型安全）、插件系统不够灵活。
 
 Hardhat 在这几个方面都做出了实质性改进：
 

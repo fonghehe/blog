@@ -11,20 +11,20 @@ tags:
   - CSS
   - Node.js
 
-readingTime: 3
+readingTime: 4
 description: "esbuild 是 Evan Wallace 在 2020 年发布的 JavaScript/TypeScript 打包器，用 Go 语言编写。它不是最快的 JS 打包器，它是快到不真实的那种——比 Webpack 快 100 倍，比 Parcel 快 100 倍，比 Rollup 快数倍。Vite 用它做依赖预构建，S"
-wordCount: 611
+wordCount: 1017
 ---
 
-esbuild 是 Evan Wallace 在 2020 年发布的 JavaScript/TypeScript 打包器，用 Go 语言编写。它不是最快的 JS 打包器，它是快到不真实的那种——比 Webpack 快 100 倍，比 Parcel 快 100 倍，比 Rollup 快数倍。Vite 用它做依赖预构建，Snowpack 也集成了它。
+esbuild は Evan Wallace が 2020 年に公開した JavaScript/TypeScript 向けのバンドラーで、Go 言語で書かれている。最速の JS バンドラーというわけではないが、その速さは信じられないほどだ。Webpack の約 100 倍、Parcel の約 100 倍、Rollup の数倍の速さである。Vite は依存関係のプリビルドに esbuild を使い、Snowpack も esbuild を統合している。
 
 ## なぜこんなに速いのか
 
-esbuild 速度快有三个原因：
+esbuild がこれほど速い理由は 3 つある：
 
-1. **Go 语言**：编译型语言，天然比 JS 快。Go 的并发模型（goroutine）也让并行处理更高效
-2. **从零实现**：不用任何现有的 JS 库（如 acorn、babel），全部自己实现 parser 和 bundler
-3. **内存优化**：数据结构尽量紧凑，减少内存分配和 GC 压力
+1. **Go 言語**：コンパイル言語であり、元々 JS より速い。Go の並行モデル（goroutine）も並列処理をより効率的にする。
+2. **ゼロからの実装**：acorn や babel といった既存の JS ライブラリを一切使わず、parser と bundler をすべて自前で実装している。
+3. **メモリ最適化**：データ構造を可能な限りコンパクトにし、メモリ割り当てと GC の負荷を減らしている。
 
 ```bash
 # 实际测试：打包 10 个 Three.js 拷贝
@@ -52,7 +52,7 @@ esbuild src/home.ts src/about.ts --bundle --outdir=dist
 
 ## API 使用
 
-esbuild 有 CLI 和 API 两种使用方式，API 更灵活：
+esbuild には CLI と API の 2 つの使い方があり、API の方が柔軟だ：
 
 ```javascript
 const esbuild = require('esbuild')
@@ -102,7 +102,7 @@ async function build() {
 build()
 ```
 
-## Watch 模式
+## Watch モード
 
 ```javascript
 const ctx = await esbuild.context({
@@ -124,10 +124,10 @@ await ctx.serve({
 
 ## Vite における esbuild の役割
 
-Vite 在两个关键位置使用了 esbuild：
+Vite は次の 2 つの重要な箇所で esbuild を使っている：
 
-1. **依赖预构建**：开发阶段，将 CommonJS 依赖转为 ESM，将许多内部模块合并为一个文件
-2. **生产构建的代码压缩**：Vite 2.7+ 支持用 esbuild 做 minify，比 Terser 快很多
+1. **依存関係のプリビルド**：開発段階で、CommonJS の依存を ESM に変換し、多くの内部モジュールを 1 つのファイルにまとめる。
+2. **本番ビルドのコード圧縮**：Vite 2.7 以降は esbuild による minify に対応しており、Terser よりずっと速い。
 
 ```javascript
 // vite.config.ts
@@ -151,13 +151,13 @@ export default defineConfig({
 
 ## 現在の限界
 
-esbuild 不是万能的，有几个明显限制：
+esbuild は万能ではなく、明確な制限がいくつかある：
 
-1. **没有代码分割的 IIFE 格式**：ESM 格式支持 `splitting`，但传统格式不支持
-2. **不支持转换装饰器语法**：Angular 项目无法直接用
-3. **不支持 HMR**：自己不会实现 HMR，需要上层框架处理
-4. **插件生态很小**：Webpack 插件不能直接迁移
-5. **CSS 处理有限**：不支持 CSS Modules、PostCSS 等高级功能
+1. **コード分割を持たない IIFE 形式**：ESM 形式は `splitting` に対応するが、従来の形式は対応していない。
+2. **デコレータ構文の変換に非対応**：Angular プロジェクトではそのまま使えない。
+3. **HMR に非対応**：HMR は自前で実装せず、上位フレームワークでの対応が必要だ。
+4. **プラグインエコシステムが小さい**：Webpack のプラグインはそのまま移行できない。
+5. **CSS の処理が限定的**：CSS Modules や PostCSS などの高度な機能には対応していない。
 
 ```javascript
 // ❌ 不支持装饰器
@@ -170,11 +170,11 @@ import styles from './app.module.css'
 
 ## Webpack とのポジショニングの違い
 
-esbuild 不是 Webpack 的替代品，至少目前不是。它的定位更像是：
+esbuild は Webpack の代替ではない。少なくとも現時点ではそうだ。esbuild の位置づけはむしろ次のようなものだ：
 
-- **构建加速器**：在现有工具链中替代最慢的环节（编译 TS、打包、压缩）
-- **原型工具**：小型项目和库的打包，配置简单
-- **底层基础设施**：Vite、Snowpack 等工具的底层引擎
+- **ビルドの高速化ツール**：既存のツールチェーンで最も遅い箇所（TS のコンパイル、バンドル、圧縮）を置き換える。
+- **プロトタイピングツール**：小規模なプロジェクトやライブラリのバンドルに向き、設定がシンプルだ。
+- **基盤となるインフラ**：Vite や Snowpack などのツールの内部エンジンだ。
 
 ```javascript
 // Webpack 用户的渐进式采用方式
@@ -204,8 +204,8 @@ module.exports = {
 
 ## まとめ
 
-- esbuild 用 Go 编写，速度比传统工具快 100 倍，不是营销话术是实测数据
-- 适合用作底层加速工具（Vite、Snowpack 已集成），不适合完全替代 Webpack
-- Webpack 用户可以用 esbuild-loader 做渐进式提速
-- 插件生态、CSS 处理、HMR 还不成熟，关注但不要盲目全面切换
-- 它代表了一个趋势：前端工具链正在从 JS 迁移到编译型语言
+- esbuild は Go で書かれており、従来のツールの約 100 倍の速さを出す。これはマーケティングの言葉ではなく、実測の数値だ。
+- 基盤となる高速化ツールとして適しており（Vite、Snowpack はすでに統合済み）、Webpack の完全な代替としては向かない。
+- Webpack ユーザーは esbuild-loader で段階的に高速化できる。
+- プラグインエコシステム、CSS 処理、HMR はまだ成熟していないため、注視しつつも安易に全面移行すべきではない。
+- これは一つの潮流を示している。フロントエンドのツールチェーンは JS からコンパイル言語へ移りつつある。

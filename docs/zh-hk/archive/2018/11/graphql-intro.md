@@ -15,9 +15,9 @@ wordCount: 242
 ```
 GET /users/1
 → { id: 1, name, email, avatar, phone, address, preferences... }
-// 返回了 50 個字段，但頁面隻需要 name 和 avatar（Over-fetching）
+// 返回了 50 個字段，但頁面只需要 name 和 avatar（Over-fetching）
 
-GET /users/1  → 用户信息
+GET /users/1  → 用戶信息
 GET /users/1/orders → 訂單列表
 GET /users/1/orders/100/items → 訂單詳情
 // 一個頁面需要 3 個請求（Under-fetching）
@@ -31,8 +31,8 @@ GET /users/1/orders/100/items → 訂單詳情
 # 查詢
 query GetUserWithOrders {
   user(id: 1) {
-    name # 隻要 name
-    avatar # 隻要 avatar
+    name # 只要 name
+    avatar # 只要 avatar
     orders(limit: 5) {
       id
       total

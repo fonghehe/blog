@@ -6,7 +6,7 @@ tags:
   - エンジニアリング
 readingTime: 3
 description: "Babel 7が8月に正式リリースされました（非常に長いベータ期間を経て）。いくつかのプロジェクトをアップグレードしたので、主な変更点と踏んだ落とし穴をまとめます。"
-wordCount: 521
+wordCount: 528
 ---
 
 Babel 7が8月に正式リリースされました（非常に長いベータ期間を経て）。いくつかのプロジェクトをアップグレードしたので、主な変更点と踏んだ落とし穴をまとめます。
@@ -42,7 +42,7 @@ npm install @babel/preset-env
 
 ### 3. 設定ファイルの形式
 
-新しい`babel.config.js`（プロジェクトレベル）をサポート。より柔軟です：
+新しい`babel.config.js`（プロジェクトレベル）をサポートし、より柔軟に設定できます：
 
 ```javascript
 // babel.config.js（新しい推奨方式）
@@ -187,5 +187,5 @@ npm install --save-dev babel-loader@8
 - Babel 7のパッケージ名は`@babel/*`名前空間に全面移行
 - `babel.config.js`が新しい推奨設定方式
 - `useBuiltIns: 'usage'`でポリフィルをオンデマンドで自動読み込み
-- オプショナルチェーン`?.`とNullish合体演算子`??`はとても実用的
-- アップグレード前に`babel-upgrade`ツールで依存関係名を自動処理する
+- オプショナルチェーン`?.`とNullish合体演算子`??`は非常に実用的な機能
+- アップグレード前に`babel-upgrade`ツールで依存関係名の自動処理

@@ -5,11 +5,11 @@ tags:
   - CSS
 
 readingTime: 2
-description: "最近在团队中落地Windi CSS 与 Tailwind 对比， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 235
+description: "I recently compared Windi CSS with Tailwind in a real team setting and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 219
 ---
 
-最近在团队中落地Windi CSS 与 Tailwind 对比， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently adopted Windi CSS and compared it with Tailwind on our team, and gained quite a bit of experience. Here's a summary in case it helps anyone doing similar work.
 
 ## Core Concepts
 
@@ -98,7 +98,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Optimization Strategies
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```css
 import { openai } from '@ai-sdk/openai'
@@ -152,4 +152,4 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Windi CSS 与 Tailwind 对比不是银弹，需要根据项目规模和技术栈选择
+- Comparing Windi CSS with Tailwind is no silver bullet—choose based on your project's size and tech stack.

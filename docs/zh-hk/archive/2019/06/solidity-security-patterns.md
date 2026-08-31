@@ -1,12 +1,13 @@
 ---
-readingTime: 8
-wordCount: 1764
+readingTime: 10
+wordCount: 1833
 title: "Solidity 安全實踐：常見漏洞與防禦模式"
 date: 2019-06-22 17:12:45
 tags:
   - Web3
   - Solidity
   - Smart Contract
+description: "智能合約的安全問題不是\"可能發生\"的風險，而是\"已經發生且持續發生\"的現實。The DAO 在 2016 年因重入攻擊損失 6000 萬美元，Parity 錢包因 delegatecall 漏洞先後凍結 1.5 億美元和永久鎖定 2.8 億美元，多個 ERC20 代幣因整數溢出而歸零。智能合約一旦部署就不可修改（除非使"
 ---
 
 智能合約的安全問題不是"可能發生"的風險，而是"已經發生且持續發生"的現實。The DAO 在 2016 年因重入攻擊損失 6000 萬美元，Parity 錢包因 `delegatecall` 漏洞先後凍結 1.5 億美元和永久鎖定 2.8 億美元，多個 ERC20 代幣因整數溢出而歸零。智能合約一旦部署就不可修改（除非使用代理模式），一個安全漏洞可能導致不可挽回的資金損失。安全不是事後的修補，而是從設計階段就必須融入的約束。
@@ -102,7 +103,7 @@ contract SafeContract {
 
 ### Pull over Push 模式
 
-另一種防禦策略是"拉取而非推送"——讓用户主動提取資金，而非合約主動推送：
+另一種防禦策略是"拉取而非推送"——讓用戶主動提取資金，而非合約主動推送：
 
 ```solidity
 // Push（危險）：合約主動轉賬
@@ -219,7 +220,7 @@ contract ModernToken {
 
 ## tx.origin vs msg.sender
 
-`tx.origin` 是交易的最初發起者（用户地址），`msg.sender` 是直接調用者。當合約 A 調用合約 B 時，在 B 中 `msg.sender` 是 A 的地址，但 `tx.origin` 仍然是用户地址。
+`tx.origin` 是交易的最初發起者（用戶地址），`msg.sender` 是直接調用者。當合約 A 調用合約 B 時，在 B 中 `msg.sender` 是 A 的地址，但 `tx.origin` 仍然是用戶地址。
 
 ```solidity
 // 漏洞合約：使用 tx.origin 做權限檢查
@@ -241,9 +242,9 @@ contract Phishable {
 
 攻擊流程：
 
-1. 用户被誘導調用攻擊合約的 `attack()` 函數
+1. 用戶被誘導調用攻擊合約的 `attack()` 函數
 2. 攻擊合約調用 `Phishable.withdraw()`
-3. `Phishable` 檢查 `tx.origin == owner`——通過，因為交易最初由用户發起
+3. `Phishable` 檢查 `tx.origin == owner`——通過，因為交易最初由用戶發起
 4. 資金被轉走
 
 修復：始終使用 `msg.sender` 做權限檢查：
@@ -361,7 +362,7 @@ OpenZeppelin 的 `AccessControl` 提供了更完善的角色管理實現，支�
 
 ## 閃電貸攻擊原理與防禦
 
-閃電貸（Flash Loan）允許用户在同一筆交易中借款並還款，無需任何抵押。攻擊者利用閃電貸借入大量資金，操縱去中心化交易所的價格，然後在同一筆交易中獲利還款。
+閃電貸（Flash Loan）允許用戶在同一筆交易中借款並還款，無需任何抵押。攻擊者利用閃電貸借入大量資金，操縱去中心化交易所的價格，然後在同一筆交易中獲利還款。
 
 ```
 閃電貸攻擊流程：

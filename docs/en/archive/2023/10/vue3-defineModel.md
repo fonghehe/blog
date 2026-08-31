@@ -4,7 +4,7 @@ date: 2023-10-12 16:06:21
 tags:
   - Vue
 readingTime: 2
-description: "关于Vue 3.4 defineModel，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+description: "Many developers only know Vue 3.4 defineModel at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 212
 ---
 

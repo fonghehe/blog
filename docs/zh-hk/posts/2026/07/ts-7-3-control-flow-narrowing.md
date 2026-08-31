@@ -3,9 +3,9 @@ title: "TypeScript 7.3 類型窄化與控制流分析：編譯器如何理解你
 date: 2026-07-02 21:40:27
 tags:
   - TypeScript
-readingTime: 7
+readingTime: 9
 description: "TypeScript 7.3 在控制流分析方面帶來了多項增強。本文從編譯器視角分析類型窄化的實現機制，包括 instanceof、in 操作符、自定義類型守衛的改進，以及 discriminated union 和 const type parameters 的影響。"
-wordCount: 2800
+wordCount: 1794
 ---
 
 TypeScript 的類型系統之所以強大，不在於它能定義多複雜的類型，而在於編譯器能在代碼的不同執行路徑中自動收窄類型。這個過程叫做 control flow analysis（控制流分析），它是 TS 類型安全的核心保障。7.3 版本在窄化能力上做了多項增強，本文從編譯器行爲出發，深入分析這些改進如何影響日常開發。

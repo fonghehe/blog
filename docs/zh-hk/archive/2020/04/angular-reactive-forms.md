@@ -8,7 +8,7 @@ description: "Angular 提供了兩種表單方案：Template-driven 和 Reactive
 wordCount: 149
 ---
 
-Angular 提供了兩種表單方案：Template-driven 和 Reactive Forms。對於需要動態字段、跨字段驗證、程序化控製的複雜場景，Reactive Forms 是唯一合適的選擇。
+Angular 提供了兩種表單方案：Template-driven 和 Reactive Forms。對於需要動態字段、跨字段驗證、程序化控制的複雜場景，Reactive Forms 是唯一合適的選擇。
 
 ## 基礎結構
 
@@ -71,7 +71,7 @@ export class RegisterComponent {
 
 ## 動態表單：FormArray
 
-常見場景：用户可動態添加/刪除聯繫方式：
+常見場景：用戶可動態添加/刪除聯繫方式：
 
 ```typescript
 @Component({

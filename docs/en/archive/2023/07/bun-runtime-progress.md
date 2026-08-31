@@ -4,7 +4,7 @@ date: 2023-07-06 10:05:30
 tags:
   - Frontend
 readingTime: 2
-description: "关于Bun 1.0 运行时发布完整体验，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+description: "Many write-ups on the Bun 1.0 runtime release stay at the surface level. This article looks at the full experience from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 196
 ---
 

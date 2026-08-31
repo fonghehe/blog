@@ -10,7 +10,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "Vite 2.0 正式釋出！和 1.0 相比幾乎是重寫，最重要的變化是框架無關（不再繫結 Vue）。"
-wordCount: 218
+wordCount: 219
 ---
 
 Vite 2.0 正式釋出！和 1.0 相比幾乎是重寫，最重要的變化是框架無關（不再繫結 Vue）。
@@ -130,7 +130,7 @@ const img = new URL("./image.png", import.meta.url).href;
 | 生產構建   | ~80s                | ~30s（Rollup） |
 | 配置複雜度 | 高                  | 低             |
 
-冷啟動的差距在大專案裡特別明顯。
+冷啟動的差距在大型專案裡特別明顯。
 
 ## SSR 支援
 

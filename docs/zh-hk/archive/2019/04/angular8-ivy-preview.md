@@ -4,20 +4,20 @@ date: 2019-04-11 16:09:56
 tags:
   - Angular
 readingTime: 2
-description: "Angular 8 第一個 RC 版本已發佈，帶來了兩個備受期待的特性：可選的 Ivy 編譯器預覽和 `import()` 想式加載語法。"
+description: "Angular 8 第一個 RC 版本已發佈，帶來了兩個備受期待的特性：可選的 Ivy 編譯器預覽和 `import()` 惰性加載語法。"
 wordCount: 425
 ---
 
-Angular 8 第一個 RC 版本已發佈，帶來了兩個備受期待的特性：可選的 Ivy 編譯器預覽和 `import()` 想式加載語法。
+Angular 8 第一個 RC 版本已發佈，帶來了兩個備受期待的特性：可選的 Ivy 編譯器預覽和 `import()` 惰性加載語法。
 
 ## Ivy 是什麼
 
 Ivy 是 Angular 的下一代渲染引擎。它重寫了編譯器和運行時，目標是：
 
-- **更小的包體積**：tree-shaking 友好，隻打包實際使用的框架功能
+- **更小的包體積**：tree-shaking 友好，只打包實際使用的框架功能
 - **更快的重新構建**：增量編譯，修改一個檔案不需重新編譯全項目
 - **更好的調試體驗**：渲染器代碼可讀性更強
-- **未來支撐**：Server-Side Rendering、Higher-order components 等高級功能
+- **未來支援**：Server-Side Rendering、Higher-order components 等高級功能
 
 ## 開啓 Ivy 預覽
 
@@ -30,9 +30,9 @@ Ivy 是 Angular 的下一代渲染引擎。它重寫了編譯器和運行時，�
 }
 ```
 
-注意：Angular 8 中 Ivy 僅是 **opt-in** 預覽，不推薦生產測試。完全默認開啓要等 Angular 9。
+注意：Angular 8 中 Ivy 僅是 **opt-in** 預覽，不推薦用於生產環境。完全默認開啓要等 Angular 9。
 
-## 想性加載語法變化
+## 惰性加載語法變化
 
 這是 Angular 8 **非常實用**的變化。之前用字符串加載模塊路徑沒有類型檢查，現在用原生 ES `import()` 語法，編譯器可以檢查路徑正確性：
 
@@ -59,7 +59,7 @@ const routes: Routes = [
 
 1. IDE 跟蹤路徑，重命名自動更新
 2. TypeScript 編譯時檢查路徑是否存在
-3. 更建議人讀——清楚地看到對應關係
+3. 更易讀——能清楚看到對應關係
 
 ## Web Worker 支援
 
@@ -98,7 +98,7 @@ Angular 8 默認開啓：現代瀏覽器加載 ES2015+ 包，老瀏覽器加載 
 <!-- 老瀏覽器備用 -->
 ```
 
-現代瀏覽器用户可獲得 **20-30% 體積減少**（無需 polyfill 和 ES5 transpile 開銷）。
+現代瀏覽器用戶可獲得 **20-30% 體積減少**（無需 polyfill 和 ES5 transpile 開銷）。
 
 ## 總結
 

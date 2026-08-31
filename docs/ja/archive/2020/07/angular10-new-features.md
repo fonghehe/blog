@@ -5,20 +5,20 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 10 于 2020 年 6 月 24 日正式发布，距离 Angular 9 仅约 4 个月。这次版本主要聚焦于**质量和生态健康**：更严格的 TypeScript 配置、废弃旧版依赖、修复大量 bug。"
-wordCount: 358
+wordCount: 530
 ---
 
-Angular 10 于 2020 年 6 月 24 日正式发布，距离 Angular 9 仅约 4 个月。这次版本主要聚焦于**质量和生态健康**：更严格的 TypeScript 配置、废弃旧版依赖、修复大量 bug。
+Angular 10 は 2020 年 6 月 24 日に正式リリースされ、Angular 9 からわずか約 4 ヶ月後のリリースとなった。今回のバージョンは主に**品質とエコシステムの健全性**に焦点を当てている。より厳格な TypeScript 設定、旧来の依存関係の廃止、そして多数のバグ修正だ。
 
 ## 新規プロジェクトでストリクトモードがデフォルトに
 
-Angular 10 CLI 创建新项目时提供严格模式选项：
+Angular 10 CLI は新規プロジェクト作成時に strict モードのオプションを提供する：
 
 ```bash
 ng new my-app --strict
 ```
 
-严格模式会在 `tsconfig.json` 和 `angular.json` 中启用一系列配置：
+strict モードは `tsconfig.json` と `angular.json` で一連の設定を有効化する：
 
 ```json
 // tsconfig.json（strict 模式）
@@ -51,7 +51,7 @@ ng new my-app --strict
 
 ## TypeScript 3.9 サポート
 
-Angular 10 要求 TypeScript 3.9，带来了一些实用改进：
+Angular 10 は TypeScript 3.9 を要件としており、いくつかの実用的な改善がもたらされた：
 
 **`// @ts-expect-error` 注释**
 
@@ -79,7 +79,7 @@ type Test = IsString<string | number>;
 
 ## レガシー依存関係の非推奨化
 
-Angular 10 开始**废弃**以下内容（Angular 12 会删除）：
+Angular 10 では以下の内容が**非推奨**（Angular 12 で削除予定）となった：
 
 - `ViewEncapsulation.Native` → 使用 `ViewEncapsulation.ShadowDom`
 - `ModuleWithProviders` 的非泛型形式
@@ -100,7 +100,7 @@ Angular 10 开始**废弃**以下内容（Angular 12 会删除）：
 
 ## 日付範囲ピッカー (Material UI)
 
-Angular 10 在 Angular Material 中新增了日期范围选择器：
+Angular 10 は Angular Material に日付範囲選択（date range picker）を新たに追加した：
 
 ```html
 <mat-date-range-input [rangePicker]="picker">
@@ -128,12 +128,12 @@ ng update @angular/core@10 @angular/cli@10
 ng update @angular/material@10
 ```
 
-主要迁移内容：
+主なマイグレーションの内容は以下の通り：
 
-1. 修复 `ViewEncapsulation.Native` → `ShadowDom` 的警告
-2. `ModuleWithProviders<T>` 泛型参数补全（CLI 会自动处理）
-3. 更新 TypeScript 到 3.9
+1. `ViewEncapsulation.Native` → `ShadowDom` の警告を修正する
+2. `ModuleWithProviders<T>` のジェネリック引数を補完する（CLI が自動で処理する）
+3. TypeScript を 3.9 に更新する
 
 ## まとめ
 
-Angular 10 不是功能驱动的大版本，而是**工程质量驱动**的版本。严格模式默认开启对新项目来说是非常好的实践——从一开始就建立正确的类型习惯，比后期迁移成本低得多。
+Angular 10 は機能主導のメジャーバージョンではなく、**エンジニアリング品質主導**のバージョンだ。strict モードがデフォルトで有効になるのは新規プロジェクトにとって非常に良い実践だ。最初から正しい型の習慣を身につけるほうが、後から移行するよりもコストがずっと低い。

@@ -4,11 +4,11 @@ date: 2025-11-08 14:42:19
 tags:
   - Svelte
 readingTime: 2
-description: "Svelte 5 稳定版已经发布一段时间了，Runes 系统是最大的变化。来对比一下 Svelte 4 和 Svelte 5 的写法差异。"
-wordCount: 171
+description: "Svelte 5 の安定版がリリースされてしばらく経つ。最大の変化は Runes システムだ。Svelte 4 と Svelte 5 の書き方の違いを比較してみよう。"
+wordCount: 267
 ---
 
-Svelte 5 稳定版已经发布一段时间了，Runes 系统是最大的变化。来对比一下 Svelte 4 和 Svelte 5 的写法差异。
+Svelte 5 の安定版がリリースされてしばらく経つ。最大の変化は Runes システムだ。Svelte 4 と Svelte 5 の書き方の違いを比較してみよう。
 
 ## Runes 是什么
 
@@ -175,7 +175,7 @@ Runes = Svelte 5 的响应式原语
 <p>搜索：{searchQuery}</p>
 ```
 
-## 组件事件 vs 回调
+## コンポーネントイベント vs コールバック
 
 ```svelte
 <!-- Svelte 4：使用 createEventDispatcher -->
@@ -241,9 +241,9 @@ Svelte 4 → 5 迁移：
 
 ## まとめ
 
-- Svelte 5 的 Runes 系统让响应式更显式、更可预测
-- $state、$derived、$effect 三件套覆盖了大部分场景
-- $props 替代 export let，类型安全更好
-- 回调替代 createEventDispatcher，API 更简洁
-- Svelte 5 向后兼容，可以渐进式迁移
-- 对于小型项目和性能敏感场景，Svelte 依然是好选择
+- Svelte 5 の Runes システムによりリアクティビティがより明示的・予測可能になった
+- $state・$derived・$effect の 3 点セットでほとんどのシーンをカバー
+- $props が export let に取って代わり、型安全性が向上
+- コールバックが createEventDispatcher に取って代わり、API がより簡潔に
+- Svelte 5 は後方互換で、段階的な移行が可能
+- 小規模プロジェクトやパフォーマンスがシビアなシーンでは、Svelte は依然として良い選択だ

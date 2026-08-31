@@ -4,15 +4,15 @@ date: 2020-06-25 16:44:04
 tags:
   - Node.js
 readingTime: 2
-description: "在日常开发中，Node.js Cluster 多进程性能优化的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 293
+description: "A systematic guide to Node.js Cluster multi-process performance optimization, covering usage patterns, internals, and tuning strategies for production workloads."
+wordCount: 177
 ---
 
-在日常开发中，Node.js Cluster 多进程性能优化的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+In everyday development, Node.js Cluster multi-process performance optimization is being used more and more. This article walks through its usage, internals, and optimization strategies in a structured way.
 
 ## Quick Start
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 const express = require('express')
@@ -37,11 +37,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind the edge-case handling—that's critical in production.
 
 ## Internal Principles
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 const express = require('express')
@@ -66,11 +66,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance tuning should fit the specific scenario—you don't need to over-optimize every case.
 
 ## Business Practice
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 const express = require('express')
@@ -95,11 +95,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Performance Comparison
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 const express = require('express')
@@ -124,11 +124,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project, you'll also need to handle errors and edge cases.
 
 ## Troubleshooting
 
-在这个基础上，我们可以进一步优化：
+Building on that, we can optimize further:
 
 ```javascript
 const express = require('express')
@@ -153,10 +153,10 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is especially handy in large projects, and it noticeably cuts maintenance cost.
 
 ## Summary
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- Keep an eye on the community—your technical approach needs to keep iterating.
+- Don't adopt new tech just for its own sake.
+- The code examples are for reference only—adapt them to your own use case.

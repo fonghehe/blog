@@ -4,9 +4,9 @@ date: 2025-01-08 20:59:43
 tags:
   - Web3
   - DApp
-readingTime: 11
+readingTime: 9
 description: "系統性分析 Web3 交易生命週期的各階段，提供完整的前端狀態機設計與交易追蹤方案"
-wordCount: 3400
+wordCount: 1042
 ---
 
 ## Web3 交易生命週期的完整階段

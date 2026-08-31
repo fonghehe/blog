@@ -161,7 +161,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    // Vite 支持動態 import 進行代碼分割
+    // Vite 支援動態 import 進行代碼分割
     component: () => import('@/views/Dashboard.vue'),
     children: [
       {
@@ -235,7 +235,7 @@ export function createAppStore() {
     if (n) n.read = true
   }
 
-  // 暴露隻讀狀態 + 可修改的 action
+  // 暴露只讀狀態 + 可修改的 action
   return {
     state: readonly(state),
     toggleSidebar,
@@ -339,7 +339,7 @@ interface ImportMeta {
 
 ### 1. CommonJS 模塊相容
 
-Vite 基於 ESM，某些舊的 npm 包隻提供 CJS 格式會報錯：
+Vite 基於 ESM，某些舊的 npm 包只提供 CJS 格式會報錯：
 
 ```typescript
 // vite.config.ts 中配置 optimizeDeps

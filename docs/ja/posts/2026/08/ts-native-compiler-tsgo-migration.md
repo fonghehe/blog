@@ -3,9 +3,9 @@ title: "ネイティブ TypeScript コンパイラ tsgo 移行実践：Monorepo 
 date: 2026-08-11 09:47:12
 tags:
   - TypeScript
-readingTime: 8
+readingTime: 11
 description: "中規模 Monorepo を tsc から Go ネイティブコンパイラ tsgo に移行した全過程を記録。実際に高速化した場面、設定・API 層の破壊的変更、CI パイプラインの調整、ロールバック戦略、そしてそのまま再利用できる移行チェックリストを提供する。"
-wordCount: 3400
+wordCount: 2813
 ---
 
 TypeScript 7.x シリーズがリリースされた後、コミュニティで最も議論されたのは型システムの新機能ではなく、Go で書き直されたネイティブコンパイラ tsgo だった。Microsoft は TypeScript 7.0 で tsgo をオプションのコンパイラバックエンドとして正式に提供し、大規模プロジェクトの型チェック速度を一桁向上させることを目指している。筆者はチームの中規模 Monorepo（約 40 万行の TS/TSX、12 個の packages）で tsc から tsgo への移行を完了した。本記事では実際の移行プロセスで直面した高速化、障害、トレードオフを記録する。

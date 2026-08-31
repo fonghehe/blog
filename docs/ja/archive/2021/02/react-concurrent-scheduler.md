@@ -7,14 +7,14 @@ tags:
 
 readingTime: 2
 description: "最近在团队中落地React 18 startTransition 使用场景，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 418
+wordCount: 415
 ---
 
-最近在团队中落地React 18 startTransition 使用场景，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
+最近チームで React 18 の startTransition のユースケースを実践に導入し、多くの経験を積んだ。参考になればとまとめたので、同様の取り組みをする方の役に立てば幸いだ。
 
 ## コアコンセプト
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみよう：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -39,11 +39,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-このコードは基本的な使い方を示しています。実際のプロジェクトではエラー処理と境界条件も考慮する必要があります。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理と境界条件も考慮する必要がある。
 
 ## 詳細分析
 
-この基盤の上でさらに最適化できます：
+この基礎の上でさらに最適化できる：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -68,11 +68,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-このパターンは大規模プロジェクトで非常に実用的で、保守コストを大幅に削減できます。
+このパターンは大規模プロジェクトで非常に実用的で、保守コストを大幅に削減できる。
 
 ## 実装経験
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは使い方がより複雑になる：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -97,11 +97,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-このアプローチにより、コードのテスト可能性とスケーラビリティが向上します。
+このアプローチにより、コードのテスト可能性とスケーラビリティが向上する。
 
 ## 最適化戦略
 
-完全な例を以下に示します：
+全体のサンプルを以下に示す：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -130,6 +130,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ## まとめ
 
-- コミュニティの動向を注視し、技術的なソリューションは継続的な反復が必要です
+- コミュニティの動向を注視し、技術的なソリューションは継続的な反復が必要だ
 - 新しい技術を使うためだけに新しい技術を使わないでください
-- コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
+- コードサンプルは参考用に過ぎず、実際のプロジェクトに応じて調整が必要だ

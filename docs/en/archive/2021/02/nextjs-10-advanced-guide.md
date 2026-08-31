@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "Next.js 11 新特性 Image Optimization is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices fr"
-wordCount: 197
+description: "An advanced guide to Next.js 10 — from its headline features to the real-world patterns that hold up in production."
+wordCount: 192
 ---
 
-Next.js 11 新特性 Image Optimization is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Next.js 11's new Image Optimization feature is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices drawn from real projects.
 
 ## Basic Usage
 
@@ -145,5 +145,5 @@ This pattern is very practical in large projects and can significantly reduce ma
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Next.js 11 新特性 Image Optimization不是银弹，需要根据项目规模和技术栈选择
+- Next.js 11's new Image Optimization feature isn't a silver bullet; choose it based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs

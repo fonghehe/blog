@@ -4,7 +4,7 @@ date: 2022-02-18 17:22:35
 tags:
   - Frontend
 readingTime: 1
-description: "Quasar Framework v2 全栈 UI 框架This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provide"
+description: "Quasar Framework v2, the full-stack UI framework, has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
 wordCount: 179
 ---
 

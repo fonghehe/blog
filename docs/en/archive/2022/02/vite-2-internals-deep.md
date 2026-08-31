@@ -4,11 +4,11 @@ date: 2022-02-25 10:22:43
 tags:
   - Vite
 readingTime: 2
-description: "关于Vite 3.0 发布新特性，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 240
+description: "When it comes to the new features in Vite 3.0, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter."
+wordCount: 220
 ---
 
-关于Vite 3.0 发布新特性，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to the new features in Vite 3.0, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter.
 
 ## Basic Principles
 
@@ -163,5 +163,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vite 3.0 发布新特性 is not a silver bullet; choose based on your project scale and tech stack
+- The new features in Vite 3.0 are not a silver bullet; choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

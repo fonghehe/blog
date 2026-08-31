@@ -4,9 +4,9 @@ date: 2022-07-11 15:05:35
 tags:
   - Web3
   - Blockchain
-readingTime: 11
-description: "Optimistic Rollup 的 L2→L1 提款涉及 7 天挑戰期，這對前端狀態管理和用户體驗提出了獨特挑戰。本文拆解提款全流程，給出完整的前端實現方案。"
-wordCount: 2900
+readingTime: 9
+description: "Optimistic Rollup 的 L2→L1 提款涉及 7 天挑戰期，這對前端狀態管理和用戶體驗提出了獨特挑戰。本文拆解提款全流程，給出完整的前端實現方案。"
+wordCount: 1132
 ---
 
 Optimistic Rollup（OR）是 Ethereum Layer 2 擴容的主流方案之一，代表項目包括 Optimism（OVM）和 Arbitrum（Nitro）。與 zkRollup 不同，OR 採用"樂觀執行 + 欺詐證明"的安全模型，這直接導致了 L2 → L1 提款需要經歷 7 天的挑戰期。對於前端開發者而言，管理這個長達 7 天的異步流程是一個獨特的工程挑戰。
@@ -30,11 +30,11 @@ L2 發起提款 → L2 exit 交易確認 → 等待 7 天 → L1 finalize 提款
 
 以 Optimism 為例，標準提款流程包括以下步驟：
 
-1. **L2 上發起提款**：用户在 L2 上調用 `withdraw` 或通過橋合約發起提款
+1. **L2 上發起提款**：用戶在 L2 上調用 `withdraw` 或通過橋合約發起提款
 2. **L2 交易確認**：等待 L2 區塊確認（通常幾分鐘）
 3. **狀態根發佈到 L1**：排序器將 L2 狀態根提交到 L1（有延遲）
 4. **等待挑戰期**：7 天的欺詐證明窗口
-5. **L1 上 finalize**：用户在 L1 上調用 `finalizeWithdrawal` 完成提款
+5. **L1 上 finalize**：用戶在 L1 上調用 `finalizeWithdrawal` 完成提款
 
 Arbitrum 的流程類似，但接口和合約地址不同。
 
@@ -427,7 +427,7 @@ export function useWithdrawalTracking(
 
 ## Fast Bridge / Liquidity Bridge 的前端適配
 
-7 天的等待期對於用户體驗是致命的。因此出現了多種"快速橋"方案，通過流動性提供者（LP）預先墊付資金來縮短提款時間。
+7 天的等待期對於用戶體驗是致命的。因此出現了多種"快速橋"方案，通過流動性提供者（LP）預先墊付資金來縮短提款時間。
 
 ```typescript
 // hooks/useFastBridge.ts
@@ -486,9 +486,9 @@ async function queryAcrossBridge(
 }
 ```
 
-前端需要同時展示標準提款（慢但便宜）和快速橋（快但有手續費）兩種選擇，讓用户自行權衡。
+前端需要同時展示標準提款（慢但便宜）和快速橋（快但有手續費）兩種選擇，讓用戶自行權衡。
 
-## 用户體驗設計
+## 用戶體驗設計
 
 ### 長等待期的 UX 處理
 
@@ -542,7 +542,7 @@ function WithdrawalStatusCard({ record }: { record: WithdrawalRecord }) {
       </div>
       <p>剩餘約 {remainingDays} 天</p>
       <p className="hint">
-        這是 Optimistic Rollup 的安全機制，7 天后可在 L1 上完成提款
+        這是 Optimistic Rollup 的安全機制，7 天後可在 L1 上完成提款
       </p>
       <p className="l2-tx">L2 交易: {record.l2TxHash}</p>
     </div>
@@ -663,7 +663,7 @@ export function handleWithdrawalError(error: unknown): WithdrawalError {
 | 安全模型 | 欺詐證明 | 有效性證明 |
 | 前端複雜度 | 高（多步驟狀態機） | 低（接近即時） |
 | 快速橋需求 | 強需求 | 弱需求 |
-| Finalize 步驟 | 需要用户手動觸發 | 自動完成 |
+| Finalize 步驟 | 需要用戶手動觸發 | 自動完成 |
 
 zkRollup（如 zkSync、StarkNet）通過數學證明保證 L2 狀態的有效性，不需要挑戰期。從前端角度看，zkRollup 的提款體驗更接近原生跨鏈轉賬，狀態管理簡單很多。但 OR 方案由於技術實現更簡單、EVM 兼容性更好，仍是主流選擇之一。
 
@@ -671,8 +671,8 @@ zkRollup（如 zkSync、StarkNet）通過數學證明保證 L2 狀態的有效�
 
 Optimistic Rollup 的提款流程是 Web3 前端開發中最複雜的交互場景之一。7 天的挑戰期把一個看似簡單的"轉賬"操作變成了一個跨越兩條鏈、持續數天的異步流程。
 
-核心挑戰在於狀態管理：前端需要同時追蹤 L2 和 L1 上的交易狀態、管理時間相關的狀態轉換、處理各種異常情況。使用官方 SDK（如 `@eth-optimism/sdk`）可以顯著簡化跨鏈交互的複雜度，但狀態管理和用户體驗仍需大量定製開發。
+核心挑戰在於狀態管理：前端需要同時追蹤 L2 和 L1 上的交易狀態、管理時間相關的狀態轉換、處理各種異常情況。使用官方 SDK（如 `@eth-optimism/sdk`）可以顯著簡化跨鏈交互的複雜度，但狀態管理和用戶體驗仍需大量定製開發。
 
-快速橋（Across、Hop、Celer 等）通過流動性墊付解決了等待期問題，但引入了額外的信任假設和費用。前端應該同時提供標準提款和快速橋選項，讓用户根據自身需求選擇。
+快速橋（Across、Hop、Celer 等）通過流動性墊付解決了等待期問題，但引入了額外的信任假設和費用。前端應該同時提供標準提款和快速橋選項，讓用戶根據自身需求選擇。
 
 在 zkRollup 生態日益成熟的背景下，OR 提款的 7 天等待期是一個明顯的體驗短板。但在 EVM 等效性和開發者生態方面，OR 仍有其優勢。前端開發者需要為兩種方案都做好適配準備。

@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 5
 description: "隨著單頁應用規模不斷膨脹，首屏載入的 JS bundle 體積越來越大。React 16.6 引入了 `React.lazy` 和 `Suspense`，讓我們可以在不引入額外第三方庫（如 react-loadable）的情況下實現程式碼分割。本文從實戰角度出發，詳細講解如何在專案中落地這兩個 API。"
-wordCount: 999
+wordCount: 998
 ---
 
 隨著單頁應用規模不斷膨脹，首屏載入的 JS bundle 體積越來越大。React 16.6 引入了 `React.lazy` 和 `Suspense`，讓我們可以在不引入額外第三方庫（如 react-loadable）的情況下實現程式碼分割。本文從實戰角度出發，詳細講解如何在專案中落地這兩個 API。
@@ -15,7 +15,7 @@ wordCount: 999
 在一個典型的 React SPA 中，所有路由頁面的程式碼最終會被打包成一個巨大的 JS 檔案。使用者開啟首頁時，需要下載並解析整個 bundle，包括他根本不會訪問的頁面程式碼。這造成了兩個問題：
 
 1. **首次載入時間過長** — 使用者需要等待整個應用下載完成才能看到內容
-2. **浪費頻寬** — 使用者可能隻訪問了 20% 的頁面，卻下載了 100% 的程式碼
+2. **浪費頻寬** — 使用者可能只訪問了 20% 的頁面，卻下載了 100% 的程式碼
 
 程式碼分割的核心思想：將程式碼按路由或功能拆分成多個 chunk，按需載入。
 
@@ -48,7 +48,7 @@ function App() {
 
 Webpack 在構建時會識別 `import()` 語法，自動將這些模組拆分成獨立的 chunk 檔案。
 
-## Suspense 的 fallback 機製
+## Suspense 的 fallback 機制
 
 `Suspense` 元件用於在懶載入元件還未就緒時展示一個 fallback UI。有幾個關鍵點需要注意：
 
@@ -91,7 +91,7 @@ function App() {
 }
 ```
 
-外層 Suspense 捕獲整個頁面級別的載入狀態，內層 Suspense 處理區域性元件的載入。當內層的懶載入元件正在載入時，內層 fallback 生效，外層元件不受影響。
+外層 Suspense 捕獲整個頁面級別的載入狀態，內層 Suspense 處理局部元件的載入。當內層的懶載入元件正在載入時，內層 fallback 生效，外層元件不受影響。
 
 ## 路由級別程式碼分割
 
@@ -158,7 +158,7 @@ const SettingsPage = lazy(() => import(
 
 ## 元件級別程式碼分割
 
-除了路由級別，某些重量級元件也可以按需載入。比如一個圖表庫非常大，隻有使用者展開某個面板時才需要：
+除了路由級別，某些重量級元件也可以按需載入。比如一個圖表庫非常大，只有使用者展開某個面板時才需要：
 
 ```jsx
 import React, { Suspense, useState } from 'react';
@@ -337,7 +337,7 @@ npx webpack-bundle-analyzer build/static/js/*.js
 
 在 Chrome DevTools 的 Network 面板中，切換路由時應該能看到新的 chunk 檔案被按需載入。
 
-## 已知限製
+## 已知限制
 
 1. **SSR 不支援** — `React.lazy` 不支援服務端渲染，SSR 場景需要使用 `@loadable/component`
 2. **巢狀 lazy 不生效** — 不能在 lazy 元件內部再巢狀 lazy 並期望 Suspense 捕獲

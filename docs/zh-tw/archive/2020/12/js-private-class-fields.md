@@ -5,10 +5,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "關於JavaScript 私有類欄位，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 332
+wordCount: 336
 ---
 
-關於JavaScript 私有類欄位，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於 JavaScript 私有類欄位，很多開發者只停留在 API 呼叫層面。本文從生產環境的角度出發，探討實際開發中常見的問題與對應的解決方案。
 
 ## 基本原理
 

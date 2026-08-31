@@ -7,11 +7,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "Vue 3.0 正式版发布全面解析 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
-wordCount: 230
+description: "A complete walkthrough of the Vue 3.0 official release — what changed, why it matters, and how it affects real projects."
+wordCount: 217
 ---
 
-Vue 3.0 正式版发布全面解析 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+A full breakdown of the Vue 3.0 stable release is being referenced more and more in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -87,7 +87,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Optimization
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets a bit more complex:
 
 ```javascript
 import { ref, computed, watch, onMounted } from 'vue'
@@ -138,6 +138,6 @@ Pay attention to boundary condition handling, which is critical in production.
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vue 3.0 正式版发布全面解析不是银弹，需要根据项目规模和技术栈选择
+- A full breakdown of the Vue 3.0 release isn't a silver bullet; choose it based on your project's size and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

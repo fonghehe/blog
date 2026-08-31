@@ -56,7 +56,7 @@ Angular 10 要求 TypeScript 3.9，帶來了一些實用改進：
 **`// @ts-expect-error` 註釋**
 
 ```typescript
-// 之前：用 @ts-ignore 壓製錯誤（即使代碼後來修好了，ignore 還在）
+// 之前：用 @ts-ignore 壓制錯誤（即使代碼後來修好了，ignore 還在）
 // @ts-ignore
 const x: number = "hello";
 

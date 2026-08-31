@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "今年处理了好几次因为依赖问题导致的线上事故：版本升级导致的兼容性问题、lockfile 冲突导致的构建差异、依赖安全漏洞。总结一下在团队中管理前端依赖的经验。"
-wordCount: 259
+description: "This year I handled several production incidents caused by dependencies: compatibility breaks from version upgrades, build discrepancies from lockfile conflicts, and dependency security vulnerabilities. Here's a summary of how our team manages frontend dependencies."
+wordCount: 170
 ---
 
-今年处理了好几次因为依赖问题导致的线上事故：版本升级导致的兼容性问题、lockfile 冲突导致的构建差异、依赖安全漏洞。总结一下在团队中管理前端依赖的经验。
+This year we've dealt with several production incidents caused by dependency issues: compatibility problems from version upgrades, build differences from lockfile conflicts, and vulnerable dependencies. Here's a summary of our experience managing frontend dependencies on the team.
 
 ## Version Locking Strategy
 
@@ -29,7 +29,7 @@ wordCount: 259
 }
 ```
 
-我们的策略：
+Our strategy:
 
 ```
 核心依赖（Vue、React、TypeScript）：^ 精确到 major.minor
@@ -37,9 +37,9 @@ wordCount: 259
 有兼容性风险的库：~ 或精确版本
 ```
 
-## Lockfile 管理
+## Lockfile Management
 
-Lockfile 冲突是团队协作中最常见的问题：
+Lockfile conflicts are the most common issue in team collaboration:
 
 ```bash
 # 原则一：lockfile 必须提交到 Git
@@ -83,7 +83,7 @@ security-audit:
 
 ## Dependency Cleanup
 
-项目依赖会随时间膨胀，需要定期清理：
+Project dependencies tend to bloat over time and need periodic cleanup:
 
 ```bash
 # 找出未使用的依赖
@@ -101,7 +101,7 @@ npx depcheck
 pnpm uninstall lodash-es moment
 ```
 
-更严格的方案是在 CI 中集成检查：
+A stricter approach is to add the check to CI:
 
 ```javascript
 // scripts/check-deps.js
@@ -123,7 +123,7 @@ depcheck(process.cwd(), {
 
 ## Dependency Management in Monorepo
 
-pnpm workspace 的依赖管理尤其需要注意：
+Dependency management in a pnpm workspace deserves special attention:
 
 ```json
 // 根目录 package.json
@@ -178,9 +178,9 @@ pnpm workspace 的依赖管理尤其需要注意：
 
 ## Summary
 
-- 版本号策略要团队统一，核心依赖用 `^` 精确到 minor
-- Lockfile 冲突不要手动解决，重新生成是更好的做法
-- `npm audit` 要集成到 CI，高危漏洞阻止发布
-- 定期用 depcheck 清理未使用的依赖
-- Monorepo 中依赖管理更复杂，需要用 pnpm 的 overrides 和 peerDependencies
-- 依赖管理的核心原则：可重复构建、安全、不过时
+- Agree on a versioning policy as a team; pin core dependencies with `^` down to the minor version
+- Don't resolve lockfile conflicts by hand; regenerating it is the better approach
+- Wire `npm audit` into CI and block releases on high-severity vulnerabilities
+- Periodically clean up unused dependencies with depcheck
+- Dependency management in a monorepo is more complex; you'll need pnpm's overrides and peerDependencies
+- The core principles of dependency management: reproducible builds, security, and staying current

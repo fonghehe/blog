@@ -4,11 +4,11 @@ date: 2024-06-17 10:51:28
 tags:
   - Engineering
 readingTime: 2
-description: "关于AI 提示工程编程技巧，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective."
-wordCount: 217
+description: "Many developers only know prompt engineering techniques for AI coding at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 190
 ---
 
-关于AI 提示工程编程技巧，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
+Many developers only know prompt engineering techniques for AI coding at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -120,8 +120,8 @@ This solution has been running stably in production for over six months and has 
 
 ## Summary
 
-- AI 提示工程编程技巧不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Prompt engineering techniques for ai coding is not a silver bullet — choose based on your project scale and tech stack
+- Understanding the underlying principles matters more than memorizing APIs
+- Always verify compatibility thoroughly before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on community trends; technical approaches need continuous iteration

@@ -1,5 +1,5 @@
 ---
-title: "Vue Vapor Stable Explained: 无虚拟 DOM CompilationStrategy"
+title: "Vue Vapor Stable Explained: A Compilation Strategy Without the Virtual DOM"
 date: 2025-09-02 12:16:53
 tags:
   - Vue

@@ -4,11 +4,11 @@ date: 2024-10-02 09:16:53
 tags:
   - CSS
 readingTime: 2
-description: "`:has()` 伪类选择器自 2023 年底在主流浏览器全面落地后，2024 年已经完全可以投入生产使用（Chrome 105+、Firefox 121+、Safari 15.4+，全球支持率超过 92%）。它被称为\"父选择器\"，但实际上远比这强大——它可以根据**任意后代或兄弟**的状态来匹配元素。本文整理了 20"
-wordCount: 267
+description: "Since the :has() pseudo-class fully landed in mainstream browsers at the end of 2023, it has been production-ready throughout 2024 (Chrome 105+, Firefox 121+, Safari 15.4+, over 92% global support). It's called the 'parent selector,' but it's far more powerful than that — it can match elements based on the state of any descendant or sibling. This article rounds up 2024's practical patterns."
+wordCount: 175
 ---
 
-`:has()` 伪类选择器自 2023 年底在主流浏览器全面落地后，2024 年已经完全可以投入生产使用（Chrome 105+、Firefox 121+、Safari 15.4+，全球支持率超过 92%）。它被称为"父选择器"，但实际上远比这强大——它可以根据**任意后代或兄弟**的状态来匹配元素。本文整理了 2024 年最有价值的实战场景。
+Since the :has() pseudo-class fully landed in mainstream browsers at the end of 2023, it has been production-ready throughout 2024 (Chrome 105+, Firefox 121+, Safari 15.4+, over 92% global support). It's called the 'parent selector,' but it's far more powerful than that — it can match elements based on the state of any descendant or sibling. This article rounds up 2024's practical patterns.
 
 ## Basics: The Semantics of :has()
 
@@ -157,7 +157,7 @@ body:has(.overlay.visible) main {
 
 ## Performance Notes
 
-`:has()` 的计算比普通选择器更昂贵，因为需要检查后代：
+`:has()` is more expensive to evaluate than ordinary selectors because it must inspect descendants:
 
 ```css
 /* ✅ 性能较好：限制了查询范围 */
@@ -176,4 +176,4 @@ body:has(.overlay.visible) main {
 
 ## Summary
 
-`:has()` 是 CSS 历史上少数几个真正改变编程模型的特性之一。2024 年浏览器支持率已超过 92%，可以放心用于生产（渐进增强方式降级也很简单）。本文列举的表单状态、卡片布局、导航菜单、Modal 锁定等场景，每一个都曾经需要 JavaScript 来实现，现在纯 CSS 即可搞定。
+`:has()` is one of the few CSS features that genuinely changes the programming model. Browser support passed 92% in 2024, so it's safe for production (and progressive-enhancement fallbacks are simple). Every scenario in this article — form states, card layouts, navigation menus, modal locking — used to require JavaScript; now pure CSS handles it.

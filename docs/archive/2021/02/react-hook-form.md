@@ -7,10 +7,10 @@ tags:
   - TypeScript
 readingTime: 2
 description: "React Hook Form 表单方案对比这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 337
+wordCount: 340
 ---
 
-React Hook Form 表单方案对比这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+React Hook Form 的表单方案对比这个话题，社区已经讨论过很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
 
 ## 入门指南
 

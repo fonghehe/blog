@@ -5,24 +5,24 @@ tags:
   - Vue
 readingTime: 2
 description: "发布于 2020-11-15"
-wordCount: 255
+wordCount: 401
 ---
 
-发布于 2020-11-15
+2020-11-15 に公開
 
-> 注：Pinia 在 2020 年处于早期开发阶段，2021 年成为 Vue 官方状态管理方案。本文基于早期版本撰写。
+> 注：Pinia は 2020 年時点では開発の初期段階にあり、2021 年に Vue の公式状態管理ソリューションとなった。本記事は初期バージョンに基づいて書かれている。
 
 ---
 
-用了一段时间 Pinia（尤雨溪推荐的 Vuex 替代品），感觉比 Vuex 简单多了。
+Pinia（尤雨渓が推奨する Vuex の代替）をしばらく使ってみたが、Vuex よりずっとシンプルだと感じる。
 
 ## なぜVuex 4を使わないのか
 
-Vuex 4 虽然支持 Vue 3，但 API 几乎没变，还是 mutations/actions 那套。问题：
+Vuex 4 は Vue 3 をサポートしているものの、API はほとんど変わらず、相変わらず mutations/actions の構成だ。問題点は次のとおり：
 
-1. mutations 和 actions 功能重叠（异步都用 actions，为啥还要 mutations？）
-2. 对 TypeScript 支持不好（需要复杂的类型声明）
-3. 命名空间模块（namespaced modules）太繁琐
+1. mutations と actions の役割が重複している（非同期はどちらも actions を使うのに、なぜ mutations が必要なのか）
+2. TypeScript のサポートが不十分（複雑な型宣言が必要）
+3. 名前空間モジュール（namespaced modules）が煩雑すぎる
 
 ## Piniaの基本
 
@@ -152,8 +152,8 @@ const name = userStore.displayName; // 类型正确
 
 ## まとめ
 
-- Pinia 去掉了 mutations，直接在 actions 里改 state，更简单
-- 对 TypeScript 友好，类型自动推导
-- Store 间引用直接 use 对方的 store，不需要 rootGetters
-- Setup Store 语法和 Composition API 完全一致
-- 尤雨溪已经表示 Pinia 将成为 Vue 的官方状态管理，Vuex 5 直接就是 Pinia
+- Pinia は mutations を廃し、actions 内で直接 state を変更するため、よりシンプルだ
+- TypeScript に親和性があり、型が自動推論される
+- ストア間の参照は他のストアを直接 use するだけで済み、rootGetters は不要だ
+- Setup Store の記法は Composition API と完全に一致する
+- 尤雨渓はすでに、Pinia が Vue の公式状態管理となり、Vuex 5 は実質的に Pinia になると表明している

@@ -4,11 +4,11 @@ date: 2022-07-15 16:44:58
 tags:
   - Frontend
 readingTime: 2
-description: "pnpm 高效包管理器实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 214
+description: "pnpm efficient package manager practices has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 182
 ---
 
-pnpm 高效包管理器实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+pnpm efficient package manager practices has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
 
 ## Getting Started
 
@@ -121,7 +121,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Pitfall Guide
 

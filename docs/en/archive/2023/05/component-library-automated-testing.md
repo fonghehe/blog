@@ -4,11 +4,11 @@ date: 2023-05-15 16:44:21
 tags:
   - Frontend
 readingTime: 2
-description: "作为组件系统 owner，测试覆盖率只是起点。真正重要的是测试能拦住多少线上问题。分享一下我们组件库的测试体系设计。"
-wordCount: 296
+description: "As the owner of our component system, I know test coverage is only the starting point. What really matters is how many production issues your tests catch. Here's how we designed the testing system for our component library."
+wordCount: 285
 ---
 
-作为组件系统 owner，测试覆盖率只是起点。真正重要的是测试能拦住多少线上问题。分享一下我们组件库的测试体系设计。
+As the owner of our component system, I know test coverage is only the starting point. What really matters is how many production issues your tests catch. Here's how we designed the testing system for our component library.
 
 ## Test Layering
 

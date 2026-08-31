@@ -3,12 +3,12 @@ title: "ブラウザネイティブES Modules 実践ガイド"
 date: 2020-08-10 10:47:29
 tags:
   - エンジニアリング
-readingTime: 4
+readingTime: 5
 description: "浏览器对 ES Modules 的支持已经相当成熟了。现在 Chrome、Firefox、Safari、Edge 都支持 `<script type=\"module\">`，这意味着在开发阶段甚至某些简单项目中，我们可能不再需要打包工具。这篇文章整理一下浏览器原生 ESM 的实践方式和注意点。"
-wordCount: 607
+wordCount: 939
 ---
 
-浏览器对 ES Modules 的支持已经相当成熟了。现在 Chrome、Firefox、Safari、Edge 都支持 `<script type="module">`，这意味着在开发阶段甚至某些简单项目中，我们可能不再需要打包工具。这篇文章整理一下浏览器原生 ESM 的实践方式和注意点。
+ブラウザの ES Modules 対応はすでに十分に成熟している。現在は Chrome、Firefox、Safari、Edge のすべてが `<script type="module">` をサポートしており、開発時や単純なプロジェクトによってはバンドラが不要になる。この記事ではブラウザネイティブな ESM の実践方法と注意点を整理する。
 
 ## 基本的な使い方
 
@@ -27,9 +27,9 @@ wordCount: 607
 
 ## 主要な特徴
 
-### 1. 自动延迟加载
+### 1. 自動遅延読み込み
 
-`<script type="module">` 默认是 defer 的，不需要手动加 `defer`：
+`<script type="module">` はデフォルトで defer 扱いになるため、手動で `defer` を付ける必要はない：
 
 ```html
 <!-- 这两个效果一样 -->
@@ -40,11 +40,11 @@ wordCount: 607
 <script src="legacy.js" defer></script>
 ```
 
-多个 module script 按照在 HTML 中的声明顺序执行。
+複数の module スクリプトは、HTML 上の記述順に従って実行される。
 
-### 2. 严格模式
+### 2. 厳格モード
 
-ES Module 默认运行在严格模式下，不需要手动写 `'use strict'`：
+ES Module はデフォルトで strict モード（厳格モード）で実行され、`'use strict'` を明示的に書く必要はない：
 
 ```javascript
 // module.js — 自动严格模式
@@ -57,9 +57,9 @@ console.log(this) // undefined（非严格模式下是 window）
 undeclaredVar = 42 // ReferenceError: undeclaredVar is not defined
 ```
 
-### 3. 作用域隔离
+### 3. スコープの分離
 
-每个模块有独立的作用域，不会污染全局：
+各モジュールは独立したスコープを持ち、グローバルを汚染しない：
 
 ```javascript
 // module-a.js
@@ -78,9 +78,9 @@ function greet() {
 export { greet }
 ```
 
-### 4. import 必须带文件扩展名
+### 4. import には拡張子が必要
 
-这是和打包工具最大的区别 —— 浏览器原生 ESM 不会自动补全扩展名：
+これがバンドラとの最大の違いだ。ブラウザネイティブな ESM は拡張子を自動補完しない：
 
 ```javascript
 // 正确 — 必须写完整的 .js 扩展名
@@ -93,11 +93,11 @@ import { sum } from './utils'
 import App from './App'
 ```
 
-这在实际开发中需要特别注意，Node.js 也同样如此。
+実際の開発では特に注意が必要だ。Node.js でも同様である。
 
-### 5. bare module specifier 问题
+### 5. bare module specifier の問題
 
-裸模块说明符（bare specifier）如 `import { ref } from 'vue'` 在浏览器中无法直接工作，因为浏览器不知道 `vue` 对应哪个 URL。解决方法：
+ベアモジュール指定子（bare specifier）――たとえば `import { ref } from 'vue'` のように書くと、ブラウザは `vue` がどの URL に対応するか分からないため、そのままでは動作しない。解決策は以下の通り：
 
 ```html
 <!-- 方案一：使用 Import Maps（Chrome 89+） -->
@@ -131,7 +131,7 @@ import App from './App'
 
 ## 実践：純粋なESM Vue 3プロジェクトの構築
 
-不使用 Vite、不使用 Webpack，纯原生 ESM + Vue 3：
+Vite も Webpack も使わず、純粋なネイティブ ESM + Vue 3 で構築する：
 
 ```html
 <!-- index.html -->
@@ -236,7 +236,7 @@ export default {
 
 ## ローカル開発には静的ファイルサーバーが必要
 
-直接用 `file://` 协议打开 HTML 是不行的，因为 ES Module 的 CORS 限制：
+HTML を `file://` プロトコルで直接開くことはできない。ES Module には CORS の制約があるためだ：
 
 ```bash
 # 方案一：Python
@@ -251,7 +251,7 @@ npx live-server .
 
 ## パフォーマンスの考慮
 
-原生 ESM 在开发环境有优势，但生产环境需要谨慎：
+ネイティブ ESM は開発環境では有利だが、本番環境では慎重な検討が必要だ：
 
 ```html
 <!-- 问题：每个 import 都是一个独立的 HTTP 请求 -->
@@ -262,11 +262,11 @@ npx live-server .
      ... 可能产生几十甚至上百个请求 -->
 ```
 
-对于小型项目、原型、演示页面，原生 ESM 完全够用。对于生产项目，目前还是建议用 Vite 或 Webpack 打包 —— Vite 在开发时用原生 ESM，构建时用 Rollup 打包，是目前最好的折中方案。
+小規模なプロジェクトやプロトタイプ、デモページであればネイティブ ESM で十分だ。本番プロジェクトであれば、現時点では Vite や Webpack でバンドルすることを推奨する。Vite は開発時にはネイティブ ESM を使い、ビルド時には Rollup でバンドルするため、現在のところ最良の妥協案と言える。
 
-## 动态 import
+## 動的 import
 
-浏览器原生支持动态 import，实现按需加载：
+ブラウザは動的 import をネイティブにサポートしており、必要に応じた遅延ロードが実現できる：
 
 ```javascript
 // 点击按钮时才加载
@@ -289,9 +289,9 @@ async function loadRoute(routeName) {
 
 ## まとめ
 
-- 浏览器原生 ESM 已经得到主流浏览器全面支持
-- `type="module"` 默认严格模式、延迟加载、作用域隔离
-- import 必须带完整扩展名，裸模块说明符需要 import maps 或 URL 映射
-- 本地开发需要静态文件服务器，不能用 `file://`
-- 小型项目和原型可以直接用原生 ESM，无需打包工具
-- 生产项目建议用 Vite，开发时用原生 ESM，构建时打包优化
+- ブラウザネイティブな ESM は主要ブラウザですべてサポートされている
+- `<script type="module">` はデフォルトで strict モード・遅延ロード・スコープ分離となる
+- import には完全な拡張子が必要で、ベアモジュール指定子には import maps や URL マッピングが必要
+- ローカル開発には静的ファイルサーバーが必要で、`file://` は利用できない
+- 小規模なプロジェクトやプロトタイプはバンドラなしでネイティブ ESM を直接使える
+- 本番プロジェクトでは Vite の利用を推奨。開発時はネイティブ ESM、ビルド時はバンドル最適化を行う

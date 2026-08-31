@@ -4,11 +4,11 @@ date: 2022-07-08 10:39:00
 tags:
   - Frontend
 readingTime: 2
-description: "关于WebAssembly Rust 前端应用，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspectiv"
-wordCount: 180
+description: "Many developers only know WebAssembly Rust frontend applications at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 163
 ---
 
-关于WebAssembly Rust 前端应用，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Many developers only know WebAssembly Rust frontend applications at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -37,7 +37,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Advanced Features
 
@@ -69,7 +69,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Project Practice
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 :root {

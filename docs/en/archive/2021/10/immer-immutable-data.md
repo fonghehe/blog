@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "关于Immer 不可变数据实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 182
+description: "Many developers only know Immer's immutable data workflow at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 184
 ---
 
-关于Immer 不可变数据实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to Immer and immutable data in practice, many developers only engage with it at the API-call level. This article looks at the real problems and solutions from a production-environment perspective.
 
 ## Basic Principles
 

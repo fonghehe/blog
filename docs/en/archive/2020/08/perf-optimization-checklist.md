@@ -4,11 +4,11 @@ date: 2020-08-18 15:34:32
 tags:
   - Frontend
 readingTime: 2
-description: "整理了一份前端性能优化清单，从网络、资源、渲染、运行时四个维度系统梳理。有了监控数据后，按清单逐项优化效果显著。"
-wordCount: 159
+description: "A comprehensive frontend performance optimization checklist organized by network, resources, rendering, and runtime dimensions for systematic, data-driven improvements."
+wordCount: 107
 ---
 
-整理了一份前端性能优化清单，从网络、资源、渲染、运行时四个维度系统梳理。有了监控数据后，按清单逐项优化效果显著。
+I've put together a frontend performance optimization checklist, organized systematically across four dimensions: network, resources, rendering, and runtime. Once you have monitoring data, working through the checklist item by item yields significant results.
 
 ## Network Optimization
 
@@ -216,8 +216,8 @@ computed: {
 
 ## Summary
 
-- 性能优化要系统化：网络、资源、渲染、运行时四个维度
-- 先测量再优化，用 Web Vitals 和 Performance API 量化效果
-- 压缩和缓存是投入产出比最高的优化
-- 代码分割和懒加载是现代前端应用的标配
-- 运行时优化关注虚拟列表和避免不必要的重渲染
+- Performance optimization should be systematic: the four dimensions of network, resources, rendering, and runtime
+- Measure before optimizing; quantify the impact with Web Vitals and the Performance API
+- Compression and caching offer the highest return on investment
+- Code splitting and lazy loading are standard practice for modern frontend apps
+- For runtime optimization, focus on virtual lists and avoiding unnecessary re-renders

@@ -6,14 +6,14 @@ tags:
   - 工程化
 readingTime: 2
 description: "Webpack 4 用 `splitChunks` 替代了之前的 `CommonsChunkPlugin`，配置更简单。记录一下实际项目里的配置。"
-wordCount: 269
+wordCount: 270
 ---
 
 Webpack 4 用 `splitChunks` 替代了之前的 `CommonsChunkPlugin`，配置更简单。记录一下实际项目里的配置。
 
 ## 为什么要代码分割
 
-不分割的情况下，所有代码打成一个 `main.js`，用户每次访问都需要加载整个文件，即使大部分页面他用不到。
+不分割的情况下，所有代码打成一个 `main.js`，用户每次访问都需要加载整个文件，即使大部分页面用户用不到。
 
 代码分割后：
 

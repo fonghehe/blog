@@ -5,14 +5,14 @@ tags:
   - 前端
 readingTime: 5
 description: "2019 年即將結束，回顧這一年，前端領域依然保持著高速迭代的節奏。React Hooks 全面鋪開、Vue 3 進入 RFC 階段、TypeScript 成為越來越多團隊的標配。站在 2019 年末，我想對 2020 年的技術趨勢做一些預判，既是給自己定方向，也希望能給大家一些參考。"
-wordCount: 991
+wordCount: 992
 ---
 
 2019 年即將結束，回顧這一年，前端領域依然保持著高速迭代的節奏。React Hooks 全面鋪開、Vue 3 進入 RFC 階段、TypeScript 成為越來越多團隊的標配。站在 2019 年末，我想對 2020 年的技術趨勢做一些預判，既是給自己定方向，也希望能給大家一些參考。
 
 ## Vue 3 正式版即將到來
 
-Vue 3 從 2018 年底宣佈重寫，到 2019 年陸續公開 RFC，核心團隊在 Composition API、響應式系統、TypeScript 重寫等方面做了大量工作。從 Evan You 和核心團隊的動態來看，Vue 3.0 正式版大機率會在 2020 年 Q1-Q2 釋出。
+Vue 3 從 2018 年底宣佈重寫，到 2019 年陸續公開 RFC，核心團隊在 Composition API、響應式系統、TypeScript 重寫等方面做了大量工作。從 Evan You 和核心團隊的動向來看，Vue 3.0 正式版極大機率會在 2020 年 Q1–Q2 釋出。
 
 Composition API 是最受關注的變更，它讓邏輯複用不再依賴 mixins：
 
@@ -56,7 +56,7 @@ Composition API 的優勢顯而易見：邏輯複用更清晰、TypeScript 推�
 
 ## React Concurrent Mode 的探索
 
-React 16.8 引入 Hooks 之後，React 團隊將重心轉向了 Concurrent Mode。這是一項根本性的排程機製變革，允許 React 同時準備多個版本的 UI，根據優先順序決定哪些更新先渲染。
+React 16.8 引入 Hooks 之後，React 團隊將重心轉向了 Concurrent Mode。這是一項根本性的排程機制變革，允許 React 同時準備多個版本的 UI，根據優先順序決定哪些更新先渲染。
 
 ```jsx
 // Concurrent Mode 的核心理念示例
@@ -138,7 +138,7 @@ Vite 在 2019 年還處於非常早期的階段，但它代表的理念——利
 
 ## Deno 能否撼動 Node.js
 
-Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上公開了他對 Node.js 的 10 大遺憾，併發布了 Deno 專案。到了 2019 年，Deno 已經具備了不少實用特性：
+Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上公開了他對 Node.js 的 10 大遺憾，並發布了 Deno 專案。到了 2019 年，Deno 已經具備了不少實用特性：
 
 ```typescript
 // Deno 的核心特性對比 Node.js

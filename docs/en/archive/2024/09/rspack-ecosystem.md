@@ -1,5 +1,5 @@
 ---
-title: "Rspack Ecosystem Guide: Compatibility Webpack  Rust Build新选择"
+title: "The Rspack Ecosystem Guide: A Rust-Powered Build Option Compatible with Webpack"
 date: 2024-09-27 19:01:38
 tags:
   - Frontend

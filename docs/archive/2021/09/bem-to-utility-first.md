@@ -6,14 +6,14 @@ tags:
   - CSS
 readingTime: 2
 description: "今年在团队内推动了一次 CSS 架构的升级——从 BEM 命名规范逐步迁移到 Utility-First 方案。过程中有争论、有妥协，最终找到了一个平衡点。"
-wordCount: 421
+wordCount: 422
 ---
 
 今年在团队内推动了一次 CSS 架构的升级——从 BEM 命名规范逐步迁移到 Utility-First 方案。过程中有争论、有妥协，最终找到了一个平衡点。
 
 ## BEM 的痛点
 
-BEM（Block-Element-Modifier）我们用了 4 年，解决了命名冲突问题，但随着项目变大，新问题逐渐暴露：
+我们用了 BEM（Block-Element-Modifier）4 年，它解决了命名冲突问题，但随着项目变大，新问题逐渐暴露：
 
 ```css
 /* BEM 的典型代码 */
@@ -146,7 +146,7 @@ export default {
 }
 ```
 
-Windi CSS 的按需生成特性让最终 CSS 体积很小，而且 JIT 模式下所有 utility 都是按需编译的。
+Windi CSS 按需生成样式，最终 CSS 体积很小；而在 JIT 模式下，所有 utility 也都是按需编译的。
 
 ## 小结
 

@@ -4,30 +4,30 @@ date: 2019-11-14 16:51:28
 tags:
   - Performance Optimization
 readingTime: 4
-description: "Google 一直在推动 Web 性能的标准化，提出了一系列核心性能指标来衡量用户体验。这些指标关注加载速度、交互性和视觉稳定性三个维度。本文将介绍这些指标的含义和测量方法。"
-wordCount: 685
+description: "Google has been pushing to standardize web performance, proposing a set of core metrics to measure user experience. These metrics focus on three dimensions: loading speed, interactivity, and visual stability. This article explains what each metric means and how to measure it."
+wordCount: 439
 ---
 
-Google 一直在推动 Web 性能的标准化，提出了一系列核心性能指标来衡量用户体验。这些指标关注加载速度、交互性和视觉稳定性三个维度。本文将介绍这些指标的含义和测量方法。
+Google has been pushing to standardize web performance, proposing a set of core metrics to measure user experience. These metrics focus on three dimensions: loading speed, interactivity, and visual stability. This article explains what each metric means and how to measure it.
 
 ## Performance Metrics Overview
 
-Google 提出的核心性能指标主要包括：
+Google's core performance metrics mainly include:
 
-- **LCP（Largest Contentful Paint）**：最大内容绘制，衡量加载性能
-- **FID（First Input Delay）**：首次输入延迟，衡量交互性
-- **CLS（Cumulative Layout Shift）**：累积布局偏移，衡量视觉稳定性
+- **LCP (Largest Contentful Paint)**: measures loading performance
+- **FID (First Input Delay)**: measures interactivity
+- **CLS (Cumulative Layout Shift)**: measures visual stability
 
-以及一些辅助指标：
+Along with some supporting metrics:
 
-- **FCP（First Contentful Paint）**：首次内容绘制
-- **TTI（Time to Interactive）**：可交互时间
-- **TBT（Total Blocking Time）**：总阻塞时间
-- **TTFB（Time to First Byte）**：首字节时间
+- **FCP (First Contentful Paint)**: first content paint
+- **TTI (Time to Interactive)**: time to interactive
+- **TBT (Total Blocking Time)**: total blocking time
+- **TTFB (Time to First Byte)**: time to first byte
 
 ## FCP - First Contentful Paint
 
-FCP 测量页面从开始加载到第一个内容（文字、图片、SVG）出现在屏幕上的时间：
+FCP measures the time from when the page starts loading until the first piece of content (text, image, or SVG) appears on screen:
 
 ```js
 // 使用 Performance API 测量 FCP
@@ -48,14 +48,14 @@ const fcp = paintEntries.find(e => e.name === 'first-contentful-paint');
 console.log('FCP:', fcp.startTime);
 ```
 
-FCP 评级标准：
-- 好：<= 1.8 秒
-- 需要改进：1.8 - 3 秒
-- 差：> 3 秒
+FCP rating thresholds:
+- Good: <= 1.8 s
+- Needs improvement: 1.8 - 3 s
+- Poor: > 3 s
 
 ## LCP - Largest Contentful Paint
 
-LCP 测量视口内最大内容元素（图片、视频、文本块）的绘制时间。它比 FCP 更能反映用户感知的加载速度：
+LCP measures when the largest content element (image, video, or text block) within the viewport is painted. It reflects perceived loading speed better than FCP:
 
 ```js
 // 测量 LCP
@@ -76,12 +76,12 @@ window.addEventListener('load', () => {
 });
 ```
 
-LCP 评级标准：
-- 好：<= 2.5 秒
-- 需要改进：2.5 - 4 秒
-- 差：> 4 秒
+LCP rating thresholds:
+- Good: <= 2.5 s
+- Needs improvement: 2.5 - 4 s
+- Poor: > 4 s
 
-影响 LCP 的因素和优化策略：
+Factors affecting LCP and optimization strategies:
 
 ```html
 <!-- 1. 优化关键资源加载 -->
@@ -111,7 +111,7 @@ document.head.appendChild(nonCriticalCSS);
 
 ## FID - First Input Delay
 
-FID 测量用户第一次与页面交互（点击、输入等）到浏览器实际开始处理该交互的时间差：
+FID measures the gap between a user's first interaction with the page (click, input, etc.) and the browser actually starting to process that interaction:
 
 ```js
 // 测量 FID
@@ -128,12 +128,12 @@ const fidObserver = new PerformanceObserver((list) => {
 fidObserver.observe({ type: 'first-input', buffered: true });
 ```
 
-FID 评级标准：
-- 好：<= 100ms
-- 需要改进：100 - 300ms
-- 差：> 300ms
+FID rating thresholds:
+- Good: <= 100 ms
+- Needs improvement: 100 - 300 ms
+- Poor: > 300 ms
 
-影响 FID 的主要原因是主线程被长任务阻塞：
+The main cause of poor FID is the main thread being blocked by long tasks:
 
 ```js
 // 优化长任务：拆分为多个小任务
@@ -176,7 +176,7 @@ function processOnIdle(items) {
 
 ## CLS - Cumulative Layout Shift
 
-CLS 测量页面可见内容在加载过程中意外移动的程度。它是唯一没有时间单位的指标：
+CLS measures how much the visible content shifts unexpectedly while the page loads. It is the only metric without a time unit:
 
 ```js
 // 测量 CLS
@@ -217,12 +217,12 @@ const clsObserver = new PerformanceObserver((list) => {
 clsObserver.observe({ type: 'layout-shift', buffered: true });
 ```
 
-CLS 评级标准：
-- 好：<= 0.1
-- 需要改进：0.1 - 0.25
-- 差：> 0.25
+CLS rating thresholds:
+- Good: <= 0.1
+- Needs improvement: 0.1 - 0.25
+- Poor: > 0.25
 
-常见的布局偏移原因和解决方案：
+Common causes of layout shift and how to fix them:
 
 ```html
 <!-- 1. 为图片设置宽高 -->
@@ -252,7 +252,7 @@ CLS 评级标准：
 
 ## Comprehensive Measurement Solution
 
-使用 `web-vitals` 库可以方便地收集所有核心指标：
+The `web-vitals` library makes it easy to collect all the core metrics:
 
 ```bash
 npm install web-vitals
@@ -290,11 +290,11 @@ getTTFB(sendToAnalytics);
 
 ## Measuring in DevTools
 
-Chrome DevTools 提供了多种测量工具：
+Chrome DevTools provides several measurement tools:
 
-1. **Lighthouse**：Performance 面板直接运行 Lighthouse 审计
-2. **Performance 面板**：录制页面加载过程，查看 FCP、LCP 等标记
-3. **Performance Monitor**：实时监控 CPU、内存、布局等指标
+1. **Lighthouse**: run a Lighthouse audit directly from the Performance panel
+2. **Performance panel**: record the page load and inspect markers like FCP and LCP
+3. **Performance Monitor**: live-monitor metrics like CPU, memory, and layout
 
 ```js
 // 在代码中标记自定义性能点
@@ -309,10 +309,10 @@ console.log('耗时:', measures[0].duration.toFixed(2), 'ms');
 
 ## Summary
 
-- FCP 测量首次内容出现的时间，反映初始加载速度
-- LCP 测量最大内容元素的绘制时间，更接近用户感知
-- FID 测量首次交互的延迟，反映页面响应性
-- CLS 测量布局偏移的累积程度，反映视觉稳定性
-- 长任务拆分、图片尺寸预设、字体优化是常见的性能手段
-- `web-vitals` 库可以方便地收集和上报所有核心指标
-- DevTools 的 Performance 面板和 Lighthouse 是调试性能的主要工具
+- FCP measures when the first content appears, reflecting initial load speed
+- LCP measures the largest content element's paint time, closer to user perception
+- FID measures first-interaction delay, reflecting responsiveness
+- CLS measures accumulated layout shift, reflecting visual stability
+- Splitting long tasks, reserving image dimensions, and font optimization are common performance techniques
+- The `web-vitals` library makes collecting and reporting all core metrics easy
+- The Performance panel and Lighthouse in DevTools are the main tools for debugging performance

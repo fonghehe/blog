@@ -4,11 +4,11 @@ date: 2022-07-25 14:31:36
 tags:
   - Frontend
 readingTime: 1
-description: "最近在团队中落地CI/CD 缓存策略优化， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 179
+description: "Recently implemented CI/CD cache strategy optimization in our team, and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 150
 ---
 
-最近在团队中落地CI/CD 缓存策略优化， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+Recently implemented CI/CD cache strategy optimization in our team, and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 
@@ -33,7 +33,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## In-Depth Analysis
 
@@ -58,7 +58,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Implementation Experience
 
-实际项目中的用法会更复杂一些：
+Usage in real projects tends to be more complex:
 
 ```javascript
 FROM node:20-alpine AS deps

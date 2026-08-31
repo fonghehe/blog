@@ -5,11 +5,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "最近在团队中落地JavaScript structuredClone 深拷贝， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 233
+description: "I recently adopted JavaScript structuredClone for deep copying with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 214
 ---
 
-最近在团队中落地JavaScript structuredClone 深拷贝， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently rolled out JavaScript's structuredClone for deep copying in our team and gained a lot of experience. Shared here for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 
@@ -96,7 +96,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Optimization Strategies
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more complex:
 
 ```javascript
 const fs = require('fs')
@@ -156,4 +156,4 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- JavaScript structuredClone 深拷贝不是银弹，需要根据项目规模和技术栈选择
+- JavaScript's structuredClone (deep copy) is no silver bullet; choose it based on project size and tech stack.

@@ -4,11 +4,11 @@ date: 2022-09-06 15:28:09
 tags:
   - Svelte
 readingTime: 2
-description: "Svelte 本身已经很出色了——编译时框架、零运行时开销、简洁的语法。SvelteKit 给了 Svelte 一个类似 Next.js 的全栈框架：文件路由、SSR/SSG、API routes。是时候体验一下了。"
-wordCount: 189
+description: "Svelte itself is already impressive — a compile-time framework with zero runtime overhead and clean syntax. SvelteKit gives Svelte a Next.js-like full-stack framework: file-based routing, SSR/SSG, and API routes. Time to give it a try."
+wordCount: 128
 ---
 
-Svelte 本身已经很出色了——编译时框架、零运行时开销、简洁的语法。SvelteKit 给了 Svelte 一个类似 Next.js 的全栈框架：文件路由、SSR/SSG、API routes。是时候体验一下了。
+Svelte itself is already impressive — a compile-time framework with zero runtime overhead and clean syntax. SvelteKit gives Svelte a Next.js-like full-stack framework: file-based routing, SSR/SSG, and API routes. Time to give it a try.
 
 ## Basic Structure
 
@@ -19,7 +19,7 @@ pnpm install
 pnpm dev
 ```
 
-项目结构：
+Project structure:
 
 ```
 my-app/
@@ -191,7 +191,7 @@ export const actions: Actions = {
 
 ## Reactivity
 
-Svelte 的响应式是编译时的：
+Svelte's reactivity is compile-time:
 
 ```svelte
 <script lang="ts">
@@ -219,12 +219,12 @@ Svelte 的响应式是编译时的：
 
 ## Compiled Output Comparison
 
-| 框架 | Hello World 体积 | 运行时 |
+| Framework | Hello World size | Runtime |
 |------|------------------|--------|
 | React 18 | 42KB | 有虚拟 DOM |
-| Vue 3 | 33KB | 有响应式运行时 |
-| Svelte | 2KB | 零运行时 |
+| Vue 3 | 33KB | Reactive runtime |
+| Svelte | 2KB | Zero runtime |
 
 ## Summary
 
-SvelteKit 适合内容型网站和中小型应用。Svelte 的编译时优势在 bundle size 上非常明显。全栈能力、文件路由、表单 Actions 都很实用。但生态和社区远不如 React/Next.js，大型项目需要评估第三方库的可用性。
+SvelteKit is well-suited for content-driven websites and small-to-medium applications. Svelte's compile-time advantages are clearly reflected in bundle size. Its full-stack capabilities, file-based routing, and form Actions are all very practical. However, its ecosystem and community are far behind React/Next.js, so for larger projects you'll need to evaluate third-party library availability.

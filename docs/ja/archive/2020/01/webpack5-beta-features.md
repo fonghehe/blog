@@ -4,16 +4,16 @@ date: 2020-01-20 16:34:10
 tags:
   - Webpack
   - エンジニアリング
-readingTime: 3
+readingTime: 4
 description: "Webpack 5 还在 Beta 阶段，但社区讨论已经很热了。花了一周时间试了两个最重要的新特性：Module Federation 和持久缓存。记录一下心得。"
-wordCount: 377
+wordCount: 596
 ---
 
-Webpack 5 还在 Beta 阶段，但社区讨论已经很热了。花了一周时间试了两个最重要的新特性：Module Federation 和持久缓存。记录一下心得。
+Webpack 5 はまだ Beta 段階だが、コミュニティでの議論はすでに盛んだ。一週間かけてもっとも重要な2つの新機能——Module Federation と永続キャッシュ——を試したので、所見を記しておく。
 
 ## 永続キャッシュ
 
-这是最让我兴奋的特性。目前我们项目冷启动 Webpack 要 60 秒以上，用上持久缓存后体验完全不同。
+これが一番興奮した機能だ。今のプロジェクトでは Webpack のコールドスタートに 60 秒以上かかるが、永続キャッシュを使うと体感がまったく変わる。
 
 ```javascript
 // webpack.config.js
@@ -42,7 +42,7 @@ module.exports = {
 };
 ```
 
-**实测效果：**
+**実測の効果：**
 
 ```
 第一次构建（冷启动）:  58s   ← 和以前一样
@@ -67,7 +67,7 @@ Webpack 5 的做法：
   - 增量构建时，只重新编译变化的模块
 ```
 
-**注意事项：**
+**注意点：**
 
 ```javascript
 // 1. loader 必须支持缓存
@@ -92,9 +92,9 @@ module.exports = function(source) {
 
 ## Module Federation
 
-这个特性是 Zack Jackson 提出的，核心思路是：**让不同的 Webpack 构建产物可以互相引用模块**。
+この機能は Zack Jackson が提案したもので、核心となる考え方は：**異なる Webpack のビルド成果物同士がモジュールを相互に参照できるようにする**ことだ。
 
-通俗地说：你可以让一个应用在运行时，去加载另一个应用的代码，就像加载本地模块一样。
+噛み砕いて言えば：あるアプリが実行時に別のアプリのコードを、まるでローカルモジュールを読み込むように取得できる。
 
 ### 基本概念
 
@@ -109,7 +109,7 @@ Module Federation 的做法：
   - 共享依赖（React/Vue 只加载一份）
 ```
 
-### 配置示例
+### 設定例
 
 ```javascript
 // app-shell/webpack.config.js  （主应用）
@@ -170,7 +170,7 @@ module.exports = {
 };
 ```
 
-### 在主应用中使用远程模块
+### メインアプリでのリモートモジュールの利用
 
 ```vue
 <!-- app-shell/src/views/Dashboard.vue -->
@@ -210,7 +210,7 @@ const routes = [
 ];
 ```
 
-### 共享依赖的策略
+### 依存関係の共有戦略
 
 ```javascript
 shared: {
@@ -230,9 +230,9 @@ shared: {
 }
 ```
 
-## Asset Modules（替代 file-loader/url-loader）
+## Asset Modules（file-loader/url-loader の代替）
 
-Webpack 5 内置了资源处理，不再需要安装额外的 loader。
+Webpack 5 はリソース処理を組み込みで持ち、追加の loader をインストールする必要がなくなった。
 
 ```javascript
 // webpack.config.js
@@ -271,7 +271,7 @@ module.exports = {
 };
 ```
 
-## 其他值得注意的变更
+## その他の注目すべき変更
 
 ```javascript
 // 1. 最低 Node.js 版本：10.13.0
@@ -291,9 +291,9 @@ resolve: {
 }
 ```
 
-## 升级计划
+## アップグレード計画
 
-我们目前的策略是：**不急着升**。
+現時点での戦略は：**急いで上げない**ことだ。
 
 ```
 原因：
@@ -309,8 +309,8 @@ resolve: {
 
 ## まとめ
 
-- 持久缓存是 Webpack 5 最实用的特性，能将二次构建时间降低一个数量级
-- Module Federation 是微前端的新思路，运行时模块共享比 iframe 和 single-spa 更优雅
-- Asset Modules 简化了资源配置，不再需要 file-loader / url-loader
-- Webpack 5 目前还是 Beta，生产项目建议等正式版再升级
-- 配合 Vite 等新工具的出现，2020 年构建工具领域会有很大变化
+- 永続キャッシュは Webpack 5 でもっとも実用的な特性で、2回目以降のビルド時間を一桁減らせる
+- Module Federation はマイクロフロントエンドの新しい考え方で、実行時のモジュール共有は iframe や single-spa より洗練されている
+- Asset Modules はリソース設定を簡略化し、file-loader / url-loader が不要になる
+- Webpack 5 は現時点でもまだ Beta なので、本番プロジェクトは正式版を待ってからアップグレードすることを推奨する
+- Vite などの新しいツールの登場とともに、2020 年はビルドツールの分野で大きな変化があるだろう

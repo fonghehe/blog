@@ -4,20 +4,20 @@ date: 2020-01-21 17:09:50
 tags:
   - Engineering
 readingTime: 2
-description: "新项目代码风格五花八门，PR review 光讨论格式就浪费大量时间。花了一天把 ESLint + Prettier + Git Hooks 全套配好，团队效率直接提升。"
-wordCount: 235
+description: "In a new project the code style was all over the place, and PR reviews wasted time just debating formatting. Spending a day to set up the full ESLint + Prettier + Git Hooks stack directly boosted the team's efficiency."
+wordCount: 179
 ---
 
-新项目代码风格五花八门，PR review 光讨论格式就浪费大量时间。花了一天把 ESLint + Prettier + Git Hooks 全套配好，团队效率直接提升。
+In a new project the code style was all over the place, and PR reviews wasted a lot of time just discussing formatting. Spending a day to set up the full ESLint + Prettier + Git Hooks stack directly improved the team's efficiency.
 
 ## Why Not Just Use ESLint
 
-ESLint 关注代码质量（潜在 bug），Prettier 关注代码格式（风格统一）。两者职责不同：
+ESLint focuses on code quality (potential bugs), while Prettier focuses on code formatting (style consistency). Their responsibilities differ:
 
-- ESLint：`no-unused-vars`、`no-undef`、`eqeqeq` 这些是质量问题
-- Prettier：缩进、分号、引号、换行这些是格式问题
+- ESLint: `no-unused-vars`, `no-undef`, `eqeqeq` are quality issues
+- Prettier: indentation, semicolons, quotes, line breaks are formatting issues
 
-用 Prettier 管格式，ESLint 管质量，互不干扰。
+Let Prettier handle formatting and ESLint handle quality, so they don't step on each other's toes.
 
 ## Installation and Configuration
 
@@ -111,7 +111,7 @@ npm install -D husky lint-staged
 }
 ```
 
-## VSCode 配置共享
+## Sharing VSCode Configuration
 
 ```json
 // .vscode/settings.json
@@ -131,7 +131,7 @@ npm install -D husky lint-staged
 }
 ```
 
-加上 `.vscode/extensions.json` 推荐插件：
+Add a `.vscode/extensions.json` to recommend extensions:
 
 ```json
 {
@@ -158,8 +158,8 @@ npm install -D husky lint-staged
 
 ## Summary
 
-- ESLint 管代码质量，Prettier 管代码格式，各司其职
-- `eslint-config-prettier` 解决两者规则冲突
-- `husky` + `lint-staged` 在提交时自动修复，保证主分支代码风格一致
-- VSCode 配置共享确保每个成员格式化结果一致
-- 旧项目渐进式引入，避免一次性改动太多导致冲突
+- ESLint handles code quality and Prettier handles code formatting, each doing its own job.
+- `eslint-config-prettier` resolves rule conflicts between the two.
+- `husky` + `lint-staged` auto-fixes on commit, keeping the main branch's code style consistent.
+- Sharing the VSCode config ensures every member gets consistent formatting results.
+- For legacy projects, adopt it incrementally to avoid conflicts caused by a large one-time change.

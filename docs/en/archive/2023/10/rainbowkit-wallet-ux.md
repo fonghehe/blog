@@ -5,9 +5,9 @@ tags:
   - Web3
   - React
   - DApp
-readingTime: 11
+readingTime: 9
 description: "Wallet connection is the first hurdle of DApp user experience. RainbowKit is built on wagmi, providing out-of-the-box connection components and elegant UX design. This article covers the complete solution from basic integration to deep customization."
-wordCount: 2900
+wordCount: 692
 ---
 
 Wallet connection is the entry experience for every DApp. In the Web3 ecosystem, users might use MetaMask, WalletConnect, Coinbase Wallet, Rainbow, Phantom, and various other wallets. Implementing connection logic separately for each wallet is both tedious and error-prone. RainbowKit, open-sourced by the Rainbow Wallet team and built on wagmi and viem, provides a complete, customizable wallet connection solution.

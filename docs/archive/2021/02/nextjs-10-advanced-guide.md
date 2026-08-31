@@ -7,10 +7,10 @@ tags:
   - Next.js
 readingTime: 2
 description: "Next.js 11 新特性 Image Optimization在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 315
+wordCount: 319
 ---
 
-Next.js 11 新特性 Image Optimization在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Next.js 11 的 Image Optimization 新特性在前端开发中应用得越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
 
 ## 基础用法
 
@@ -145,5 +145,5 @@ function useIntersectionObserver(options = {}) {
 ## 小结
 
 - 代码示例仅供参考，需根据业务场景调整
-- Next.js 11 新特性 Image Optimization不是银弹，需要根据项目规模和技术栈选择
+- Next.js 11 的 Image Optimization 新特性不是银弹，需结合项目规模和技术栈来选择
 - 理解底层原理比记住 API 更重要

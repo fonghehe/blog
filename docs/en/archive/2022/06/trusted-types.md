@@ -4,7 +4,7 @@ date: 2022-06-29 15:09:11
 tags:
   - Frontend
 readingTime: 1
-description: "Trusted Types 防 XSS 攻击This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fr"
+description: "Trusted Types for XSS defense has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
 wordCount: 186
 ---
 

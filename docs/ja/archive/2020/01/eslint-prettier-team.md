@@ -5,19 +5,19 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "新项目代码风格五花八门，PR review 光讨论格式就浪费大量时间。花了一天把 ESLint + Prettier + Git Hooks 全套配好，团队效率直接提升。"
-wordCount: 261
+wordCount: 430
 ---
 
-新项目代码风格五花八门，PR review 光讨论格式就浪费大量时间。花了一天把 ESLint + Prettier + Git Hooks 全套配好，团队效率直接提升。
+新規プロジェクトではコードスタイルがまちまちで、PR レビューでフォーマットの議論だけで多くの時間を無駄にしていた。ESLint + Prettier + Git Hooks を一式そろえて設定し、チームの効率は一気に上がった。
 
 ## なぜESLintだけではないのか
 
-ESLint 关注代码质量（潜在 bug），Prettier 关注代码格式（风格统一）。两者职责不同：
+ESLint はコードの品質（潜在的なバグ）を、Prettier はコードのフォーマット（スタイルの統一）を担当する。両者の役割は異なる。
 
-- ESLint：`no-unused-vars`、`no-undef`、`eqeqeq` 这些是质量问题
-- Prettier：缩进、分号、引号、换行这些是格式问题
+- ESLint：`no-unused-vars`、`no-undef`、`eqeqeq` といったものは品質の問題だ
+- Prettier：インデント、セミコロン、引用符、改行といったものはフォーマットの問題だ
 
-用 Prettier 管格式，ESLint 管质量，互不干扰。
+フォーマットは Prettier に、品質は ESLint に任せれば、互いに干渉しない。
 
 ## インストールと設定
 
@@ -131,7 +131,7 @@ npm install -D husky lint-staged
 }
 ```
 
-加上 `.vscode/extensions.json` 推荐插件：
+さらに `.vscode/extensions.json` でプラグインを推奨設定に追加する：
 
 ```json
 {
@@ -158,8 +158,8 @@ npm install -D husky lint-staged
 
 ## まとめ
 
-- ESLint 管代码质量，Prettier 管代码格式，各司其职
-- `eslint-config-prettier` 解决两者规则冲突
-- `husky` + `lint-staged` 在提交时自动修复，保证主分支代码风格一致
-- VSCode 配置共享确保每个成员格式化结果一致
-- 旧项目渐进式引入，避免一次性改动太多导致冲突
+- ESLint はコードの品質を、Prettier はコードのフォーマットを担当し、役割を分担する
+- `eslint-config-prettier` が両者のルールの衝突を解決する
+- `husky` + `lint-staged` がコミット時に自動修正し、main ブランチのコードスタイルの統一を保証する
+- VSCode の設定共有により、全メンバーのフォーマット結果を一致させる
+- 既存プロジェクトには段階的に導入し、一度に多くを変更して衝突するのを避ける

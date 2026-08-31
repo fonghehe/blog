@@ -4,7 +4,7 @@ date: 2023-12-22 17:22:31
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 测试最佳实践 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+description: "Vue 3 testing best practices are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 213
 ---
 

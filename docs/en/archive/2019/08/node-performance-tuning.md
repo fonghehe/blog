@@ -4,25 +4,25 @@ date: 2019-08-26 09:47:22
 tags:
   - Performance Optimization
 readingTime: 4
-description: "Node.js 作为服务端运行时，性能调优是上线前必不可少的环节。从内存泄漏排查到事件循环监控，从 CPU profiling 到 GC 调参，Node.js 提供了丰富的工具链帮助我们定位性能瓶颈。本文将结合实际案例，系统讲解 Node.js 性能调优的方法论和实践技巧。"
-wordCount: 544
+description: "As a server-side runtime, performance tuning is an essential step before shipping Node.js apps. From tracking down memory leaks to monitoring the event loop, from CPU profiling to GC tuning, Node.js offers a rich toolchain for pinpointing performance bottlenecks. Using real examples, this article systematically covers the methodology and practical techniques of Node.js performance tuning."
+wordCount: 333
 ---
 
-Node.js 作为服务端运行时，性能调优是上线前必不可少的环节。从内存泄漏排查到事件循环监控，从 CPU profiling 到 GC 调参，Node.js 提供了丰富的工具链帮助我们定位性能瓶颈。本文将结合实际案例，系统讲解 Node.js 性能调优的方法论和实践技巧。
+As a server-side runtime, performance tuning is an essential step before shipping Node.js apps. From tracking down memory leaks to monitoring the event loop, from CPU profiling to GC tuning, Node.js offers a rich toolchain for pinpointing performance bottlenecks. Using real examples, this article systematically covers the methodology and practical techniques of Node.js performance tuning.
 
 ## Performance Metrics Overview
 
-Node.js 应用需要关注的核心指标：
+The core metrics a Node.js app should track:
 
-- **响应时间（RT）** — P50、P95、P99 延迟
-- **吞吐量（QPS）** — 每秒处理的请求数
-- **内存使用** — RSS、堆内存、堆外内存
-- **CPU 使用率** — 单核利用率、事件循环延迟
-- **GC 频率和耗时** — 垃圾回收对响应时间的影响
+- **Response time (RT)** — P50, P95, P99 latency
+- **Throughput (QPS)** — requests handled per second
+- **Memory usage** — RSS, heap, and off-heap memory
+- **CPU usage** — per-core utilization and event-loop latency
+- **GC frequency and cost** — how garbage collection affects response time
 
 ## Memory Leak Investigation
 
-### 监控内存使用
+### Monitoring Memory Usage
 
 ```js
 // 内存监控中间件
@@ -46,7 +46,7 @@ function memoryMonitor(req, res, next) {
 }
 ```
 
-### 使用 --inspect 进行堆分析
+### Heap Analysis with --inspect
 
 ```bash
 # 启动时开启 inspector
@@ -55,9 +55,9 @@ node --inspect=0.0.0.0:9229 app.js
 # 然后在 Chrome 中打开 chrome://inspect
 ```
 
-### 常见内存泄漏场景
+### Common Memory Leak Scenarios
 
-**场景一：闭包持有大对象引用**
+**Scenario 1: Closures Holding Large Object References**
 
 ```js
 // 泄漏版本
@@ -96,7 +96,7 @@ function handler(req, res) {
 }
 ```
 
-**场景二：事件监听器未移除**
+**Scenario 2: Event Listeners Not Removed**
 
 ```js
 // 泄漏版本
@@ -132,7 +132,7 @@ function handleConnection(socket) {
 }
 ```
 
-**场景三：全局变量意外增长**
+**Scenario 3: Unexpected Global Variable Growth**
 
 ```js
 // 泄漏版本：无限制的全局数组
@@ -178,7 +178,7 @@ setInterval(() => {
 
 ## CPU Performance Analysis
 
-### 使用 --prof 生成 V8 profiling 数据
+### Generating V8 Profiling Data with --prof
 
 ```bash
 # 生成日志文件
@@ -188,15 +188,15 @@ node --prof app.js
 node --prof-process isolate-*.log > processed.txt
 ```
 
-### 使用 Chrome DevTools 进行 CPU Profiling
+### CPU Profiling with Chrome DevTools
 
 ```bash
 node --inspect app.js
 ```
 
-在 Chrome DevTools 的 Profiler 面板中录制 CPU profile，可以清楚看到每个函数的执行时间。
+Record a CPU profile in the Chrome DevTools Profiler panel to see exactly how long each function takes to execute.
 
-### 使用 clinic.js 自动诊断
+### Automatic Diagnosis with clinic.js
 
 ```bash
 npm install -g clinic
@@ -211,11 +211,11 @@ clinic flame -- node app.js
 clinic heapprofiler -- node app.js
 ```
 
-`clinic doctor` 会自动运行压测并生成诊断报告，指出性能问题的可能原因。
+`clinic doctor` automatically runs a load test and produces a diagnostic report pointing at the likely causes of performance problems.
 
 ## Event Loop Optimization
 
-### 避免阻塞事件循环
+### Avoiding Event Loop Blockage
 
 ```js
 // 错误：在主线程同步处理大文件
@@ -268,7 +268,7 @@ app.post('/upload', (req, res) => {
 });
 ```
 
-### 监控事件循环延迟
+### Monitoring Event Loop Latency
 
 ```js
 const { monitorEventLoopDelay } = require('perf_hooks');
@@ -289,7 +289,7 @@ setInterval(() => {
 
 ## GC Tuning
 
-### 调整 V8 堆大小
+### Adjusting V8 Heap Size
 
 ```bash
 # 设置最大堆内存
@@ -299,7 +299,7 @@ node --max-old-space-size=4096 app.js  # 4GB
 node --max-semi-space-size=16 app.js   # 16MB
 ```
 
-### 减少 GC 压力
+### Reducing GC Pressure
 
 ```js
 // 不好的实践：频繁创建临时对象
@@ -346,7 +346,7 @@ class BufferPool {
 
 ## HTTP Performance Optimization
 
-### 连接池复用
+### Connection Pool Reuse
 
 ```js
 const http = require('http');
@@ -371,7 +371,7 @@ function makeRequest(options) {
 }
 ```
 
-### 合理设置超时
+### Setting Reasonable Timeouts
 
 ```js
 const server = http.createServer(app);
@@ -383,7 +383,7 @@ server.headersTimeout = 66000;   // 请求头超时
 
 ## Cluster Mode
 
-使用 `cluster` 模块利用多核 CPU：
+Use the `cluster` module to take advantage of multiple CPU cores:
 
 ```js
 const cluster = require('cluster');
@@ -414,10 +414,10 @@ if (cluster.isMaster) {
 
 ## Summary
 
-- 内存泄漏三大常见原因：无限增长的缓存、未移除的事件监听器、全局变量意外增长
-- 使用 `clinic.js` 可以自动诊断 CPU、内存和事件循环问题
-- 避免阻塞事件循环：大任务分片处理或使用 Worker Thread
-- GC 调优的关键是减少临时对象的创建，合理设置堆大小
-- HTTP 性能优化：使用 Agent 复用连接、合理设置超时参数
-- 生产环境使用 cluster 模式充分利用多核 CPU
-- 定期进行压力测试，使用监控工具持续关注 P95/P99 延迟
+- Three common causes of memory leaks: unbounded caches, event listeners that are never removed, and unexpectedly growing globals.
+- `clinic.js` can automatically diagnose CPU, memory, and event-loop problems.
+- Avoid blocking the event loop: chunk large tasks or offload them to a Worker Thread.
+- The key to GC tuning is reducing temporary-object creation and sizing the heap sensibly.
+- HTTP optimization: reuse connections with an Agent and set sensible timeouts.
+- Use cluster mode in production to fully use multi-core CPUs.
+- Run load tests regularly and keep an eye on P95/P99 latency with monitoring tools.

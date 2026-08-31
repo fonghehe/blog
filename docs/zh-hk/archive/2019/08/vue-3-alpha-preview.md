@@ -321,7 +321,7 @@ const { count, doubled, increment } = useCounter();
 
 - Vue 3 使用 `Proxy` 替代 `Object.defineProperty`，從根本上解決了 Vue 2 響應式的侷限
 - Proxy 可以攔截屬性的添加、刪除、數組索引修改等操作，無需特殊 API
-- 惰性代理機製：隻有訪問到的深層屬性才會被代理，初始化效能更好
+- 惰性代理機制：只有訪問到的深層屬性才會被代理，初始化效能更好
 - Composition API（`reactive`、`ref`、`computed`、`watch`）提供了更靈活的邏輯組織方式
 - `ref` 用於基本類型，`reactive` 用於對象類型，`toRefs` 解決解構丟失響應式的問題
 - Proxy 不支持 IE，Vue 3 正式放棄了 IE11 以下的支持

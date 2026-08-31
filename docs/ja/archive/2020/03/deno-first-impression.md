@@ -5,32 +5,32 @@ tags:
   - Node.js
 readingTime: 2
 description: "Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上批评了 Node.js 的十大设计遗憾，随后宣布了 Deno 项目。现在 Deno 已经进入候选版本阶段，是时候体验一下了。"
-wordCount: 302
+wordCount: 504
 ---
 
-Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上批评了 Node.js 的十大设计遗憾，随后宣布了 Deno 项目。现在 Deno 已经进入候选版本阶段，是时候体验一下了。
+Node.js の生みの親 Ryan Dahl は 2018 年の JSConf で Node.js の「十大設計上の後悔」を批判し、その直後に Deno プロジェクトを発表した。現在 Deno はリリース候補（RC）段階に入っており、そろそろ触れておく頃合いだ。
 
 ## DenoがNode.jsのどの問題を解決するか
 
-Ryan Dahl 总结的 Node.js 十大遗憾中，Deno 重点解决：
+Ryan Dahl がまとめた Node.js の「十大後悔」のうち、Deno が特に解消しようとしているのは以下の点だ：
 
-1. **安全性**：Node.js 默认可以访问所有系统资源，Deno 默认沙箱隔离
-2. **模块系统**：不使用 `node_modules`，直接通过 URL 导入
-3. **TypeScript 支持**：内置 TypeScript 编译器
-4. **去中心化**：不需要 npm registry
+1. **セキュリティ**：Node.js はデフォルトですべてのシステムリソースへアクセスできるが、Deno はデフォルトでサンドボックス隔離される
+2. **モジュールシステム**：`node_modules` を使わず、直接 URL からインポートする
+3. **TypeScript サポート**：TypeScript コンパイラを内蔵
+4. **非中央集権**：npm registry を必要としない
 
 ## クイックスタート
 
 ```bash
-# 安装（macOS）
+# インストール（macOS）
 curl -fsSL https://deno.land/x/install/install.sh | sh
 
-# 验证
+# 確認
 deno --version
 ```
 
 ```typescript
-// hello.ts —— 直接写 TypeScript
+// hello.ts —— TypeScript をそのまま書ける
 function greet(name: string): string {
   return `Hello, ${name}!`;
 }
@@ -39,13 +39,13 @@ console.log(greet('Deno'));
 ```
 
 ```bash
-# 直接运行，不需要编译步骤
+# コンパイル不要でそのまま実行
 deno run hello.ts
 ```
 
 ## 権限システム
 
-这是 Deno 最大的安全创新：
+これは Deno 最大のセキュリティ上の工夫だ：
 
 ```typescript
 // file.ts
@@ -54,27 +54,27 @@ console.log(new TextDecoder().decode(data));
 ```
 
 ```bash
-# 默认拒绝访问！必须显式授权
+# デフォルトで拒否される！明示的な許可が必要
 deno run file.ts
 # error: Uncaught PermissionDenied: read access to "/etc/hosts"
 
-# 授权读取
+# 読み取りを許可
 deno run --allow-read file.ts
 
-# 只授权读取特定目录
+# 特定ディレクトリの読み取りのみ許可
 deno run --allow-read=/tmp file.ts
 
-# 网络权限
+# ネットワーク権限
 deno run --allow-net=api.example.com server.ts
 
-# 完全权限（不推荐）
+# 全権限（非推奨）
 deno run --allow-all file.ts
 ```
 
-## URL 导入模块
+## URL からのモジュールインポート
 
 ```typescript
-// 不需要 npm install，直接导入
+// npm install 不要、そのままインポート
 import { serve } from 'https://deno.land/std@0.50.0/http/server.ts';
 
 const server = serve({ port: 8000 });
@@ -86,16 +86,16 @@ for await (const req of server) {
 ```
 
 ```bash
-# 运行需要网络权限
+# 実行にはネットワーク権限が必要
 deno run --allow-net server.ts
 
-# 第一次运行时下载依赖，之后有缓存
+# 初回実行時に依存をダウンロード、以降はキャッシュされる
 ```
 
-## 与 Node.js 的 API 对比
+## Node.js との API 比較
 
 ```typescript
-// 文件操作
+// ファイル操作
 // Node.js
 import { readFile } from 'fs/promises';
 const content = await readFile('data.txt', 'utf-8');
@@ -103,14 +103,14 @@ const content = await readFile('data.txt', 'utf-8');
 // Deno
 const content = await Deno.readTextFile('data.txt');
 
-// HTTP 服务器
-// Node.js (Express)
+// HTTP サーバー
+// Node.js（Express）
 import express from 'express';
 const app = express();
 app.get('/', (req, res) => res.send('Hello'));
 app.listen(3000);
 
-// Deno (Oak，类似 Koa)
+// Deno（Oak、Koa に似たもの）
 import { Application } from 'https://deno.land/x/oak/mod.ts';
 const app = new Application();
 app.use(ctx => {
@@ -119,36 +119,36 @@ app.use(ctx => {
 await app.listen({ port: 3000 });
 ```
 
-## 现阶段的局限
+## 現段階の限界
 
 ```typescript
-// 1. 生态系统：npm 有 100 万+ 包，Deno 还很少
-// 2. 兼容层尚不成熟
+// 1. エコシステム：npm には 100 万以上のパッケージがあるが、Deno はまだ少ない
+// 2. 互換レイヤーはまだ発展途上
 import * as path from 'https://deno.land/std/path/mod.ts';
 
-// 3. 企业采用：几乎没有生产案例
-// 4. 工具链：调试、IDE 支持不如 Node.js
-// 5. 原生模块：C++ addon 不支持
+// 3. 企業採用：本番事例はほとんどない
+// 4. ツールチェーン：デバッグや IDE サポートが Node.js に劣る
+// 5. ネイティブモジュール：C++ アドオンは非対応
 ```
 
-## 适合什么场景
+## どんな場面に向いているか
 
 ```markdown
-现在适合：
-- 脚本和工具（替代 shell 脚本）
-- 小型 API 服务
-- 技术探索和学习
+今のところ向いている：
+- スクリプト・ツール（shell スクリプトの代替）
+- 小規模な API サービス
+- 技術調査・学習
 
-暂时不适合：
-- 企业级生产项目
-- 需要大量 npm 包的项目
-- 性能关键的后端服务
+今のところ向いていない：
+- 企業向け本番プロジェクト
+- 多数の npm パッケージを必要とするプロジェクト
+- 性能がクリティカルなバックエンドサービス
 ```
 
 ## まとめ
 
-- Deno 在安全性、TypeScript 支持、模块系统上确实改进了 Node.js 的痛点
-- 权限系统是最大亮点，默认最小权限原则
-- URL 导入省去了 node_modules，但也带来了网络依赖问题
-- 目前生态和工具链还不成熟，适合尝鲜和工具脚本，不适合生产项目
-- 持续关注，1.0 正式发布后再评估是否引入
+- Deno はセキュリティ・TypeScript サポート・モジュールシステムで、Node.js の悩みの種を確かに改善している
+- 権限システムが最大の目玉で、デフォルトは最小権限の原則
+- URL インポートで node_modules が不要になる一方、ネットワーク依存という問題も生む
+- 現時点ではエコシステムもツールチェーンも未成熟で、お試しやツール系スクリプトには向くが本番プロジェクトには不向き
+- 継続的にウォッチし、1.0 の正式リリース後に導入するか再検討する

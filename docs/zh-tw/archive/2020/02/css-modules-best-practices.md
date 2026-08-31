@@ -207,7 +207,7 @@ module.exports = {
 ## 小結
 
 - CSS Modules 通過雜湊類名徹底解決全域性汙染問題
-- 在 Vue 中通過 `$style` 物件訪問，模板中繫結 `:class`
+- 在 Vue 中通過 `$style` 物件訪問，模板中綁定 `:class`
 - 元件庫專案推薦 BEM 命名 + CSS Modules 結合
 - 開發環境保留可讀類名，生產環境用短雜湊
 - CSS-in-JS 方案在 Vue 生態不如 CSS Modules 自然

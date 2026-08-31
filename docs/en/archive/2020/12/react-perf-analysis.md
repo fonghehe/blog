@@ -4,15 +4,15 @@ date: 2020-12-28 10:48:04
 tags:
   - React
 readingTime: 2
-description: "React 组件性能分析实战在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 294
+description: "Profiling React component performance is a skill more and more teams need. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 172
 ---
 
-React 组件性能分析实战在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+React component performance analysis is being used more and more widely in frontend development. Starting from real projects, this post digs into the core principles and best practices.
 
 ## Getting Started
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -43,11 +43,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to fit the context; not every case needs over-optimization.
 
 ## Source Code Analysis
 
-我们可以通过以下方式来改进：
+Here's how we can improve it:
 
 ```javascript
 const express = require('express')
@@ -72,11 +72,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Real-World Applications
 
-先来看基本的实现方式：
+Let's start with the basic approach:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -95,11 +95,11 @@ function reducer(state, action) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll also need to handle errors and edge cases.
 
 ## Optimization Tips
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can take it further:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -130,11 +130,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and noticeably cuts maintenance cost.
 
 ## Summary
 
-- React 组件性能分析实战不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- React component performance analysis isn't a silver bullet — pick what fits your project's size and stack
+- Understanding the underlying principles matters more than memorizing APIs
+- Always validate compatibility before using it in production
+- In a team, conventions and docs matter more than the tech itself

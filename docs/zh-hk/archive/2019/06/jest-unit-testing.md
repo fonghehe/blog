@@ -686,6 +686,6 @@ describe('定時器測試', () => {
 - **先寫核心邏輯的單元測試**，覆蓋正常流程和異常情況，`toBe` / `toEqual` / `toThrow` 是最常用的匹配器
 - **異步測試用 async/await**，配合 `resolves` / `rejects` 更簡潔
 - **jest.fn() 和 jest.mock()** 是 mock 的兩大利器，前者模擬函數，後者模擬整個模塊
-- **React 組件測試用 @testing-library/react**，優先通過用户行為（點擊、輸入）來測試，而不是測試實現細節
+- **React 組件測試用 @testing-library/react**，優先通過用戶行為（點擊、輸入）來測試，而不是測試實現細節
 - **快照測試適合穩定的 UI 組件**，不適合頻繁變動的組件
 - **代碼覆蓋率是參考指標**，不是目標，100% 覆蓋率不等於沒有 bug

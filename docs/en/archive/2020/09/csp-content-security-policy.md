@@ -3,16 +3,16 @@ title: "CSP: Content Security Policy Explained"
 date: 2020-09-25 10:24:54
 tags:
   - Security
-readingTime: 2
-description: "CSP 内容安全策略详解这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 299
+readingTime: 1
+description: "A refreshed deep dive into Content Security Policy (CSP), revisiting earlier community conclusions in light of evolving browser support and standards."
+wordCount: 180
 ---
 
-CSP 内容安全策略详解这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+Content Security Policy (CSP) has been discussed many times in the community, but as versions have evolved, many earlier conclusions need revisiting. This article revisits it based on the latest version.
 
 ## Getting Started
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more involved:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -27,14 +27,13 @@ function setCSP(req, res, next) {
   ].join('; '))
   next()
 }
-
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This improves both the testability and extensibility of the code.
 
 ## Source Code Analysis
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -49,14 +48,13 @@ function setCSP(req, res, next) {
   ].join('; '))
   next()
 }
-
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind edge-case handling — it is critical in production.
 
 ## Real-World Applications
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -71,14 +69,13 @@ function setCSP(req, res, next) {
   ].join('; '))
   next()
 }
-
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization always depends on the specific context — not every case calls for aggressive tuning.
 
 ## Optimization Tips
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -93,15 +90,14 @@ function setCSP(req, res, next) {
   ].join('; '))
   next()
 }
-
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Summary
 
-- CSP 内容安全策略详解不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- CSP is no silver bullet; choose it based on your project's size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Always verify compatibility before shipping to production.
+- In team collaboration, conventions and documentation matter more than the technology itself.
+- Keep an eye on the community — technical solutions need to keep iterating.

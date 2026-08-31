@@ -3,11 +3,11 @@ title: "Web3 DApp 性能優化：RPC 請求與鏈上數據緩存"
 date: 2026-08-07 19:44:35
 tags:
   - Web3
-  - 性能优化
+  - 性能優化
   - DApp
-readingTime: 8
+readingTime: 9
 description: "系統性分析 DApp 性能瓶頸，涵蓋 RPC 批量請求、多節點輪詢、SWR 緩存策略、索引服務對比及 bundle 優化"
-wordCount: 3600
+wordCount: 1208
 ---
 
 ## DApp 性能瓶頸分析：RPC 延遲是最大問題

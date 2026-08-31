@@ -5,15 +5,15 @@ tags:
   - CSS
 
 readingTime: 1
-description: "关于CSS 原生嵌套语法提案，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 187
+description: "Many developers only know the native CSS nesting proposal at the syntax level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 180
 ---
 
-关于CSS 原生嵌套语法提案，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to the native CSS nesting proposal, many developers only stay at the API surface. This article looks at the real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```css
 .container {
@@ -67,7 +67,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 ## Project Practice
 
-The key lies in understanding the core logic:
+The key is to understand the underlying logic:
 
 ```css
 .container {

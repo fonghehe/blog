@@ -1,5 +1,5 @@
 ---
-title: "Svelte 6 Compiler Practice: Migration后Performance & DevelopmentExperienceReal反馈"
+title: "Svelte 6 Compiler in Practice: Real Feedback on Performance and DX After Migration"
 date: 2025-12-01 10:15:52
 tags:
   - Svelte

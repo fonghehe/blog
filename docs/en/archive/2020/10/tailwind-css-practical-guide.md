@@ -4,11 +4,11 @@ date: 2020-10-06 14:38:55
 tags:
   - CSS
 readingTime: 2
-description: "Tailwind CSS 这两年越来越火，最近在一个内部工具项目中试用了一下。从\"这写法太奇怪了\"到\"真香\"，记录一下实际体验。"
-wordCount: 165
+description: "Tailwind CSS has kept gaining momentum over the past two years, so I tried it on a recent internal-tool project. From 'this syntax is weird' to 'okay, this is actually great' — here is how it really felt."
+wordCount: 141
 ---
 
-Tailwind CSS 这两年越来越火，最近在一个内部工具项目中试用了一下。从"这写法太奇怪了"到"真香"，记录一下实际体验。
+Tailwind CSS has been getting more and more popular over the past couple of years. I recently tried it out on an internal tool project. My take went from "this syntax is way too weird" to "actually, I love it" — here are my real-world impressions.
 
 ## Say Goodbye to Jumping Between CSS Files
 
@@ -211,8 +211,8 @@ module.exports = {
 
 ## Summary
 
-- Tailwind 用原子类替代自定义 CSS，开发效率显著提升
-- 响应式设计用前缀实现，比写 media query 更直观
-- `@layer components` 提取可复用组件样式，平衡原子和复用
-- 生产环境务必开启 PurgeCSS，否则体积巨大
-- 适合内部工具和快速原型，品牌化项目需要设计系统配合
+- Tailwind replaces hand-written CSS with atomic utility classes, which noticeably boosts development speed.
+- Responsive design is done with prefixes, which is more intuitive than writing media queries.
+- Use `@layer components` to extract reusable component styles, balancing atomic utilities with reuse.
+- Make sure to enable PurgeCSS in production, otherwise the bundle size balloons.
+- It's a great fit for internal tools and rapid prototyping; branded projects need a design system to go with it.

@@ -4,9 +4,9 @@ date: 2025-06-20 19:10:34
 tags:
   - Web3
   - DApp
-readingTime: 12
+readingTime: 11
 description: "DApp ウォレットセッションのライフサイクル管理を体系的に解説し、永続化、自動再接続、ネットワーク切り替え検出、マルチウォレット同時接続、モバイル対応をカバー"
-wordCount: 3600
+wordCount: 1607
 ---
 
 ## ウォレットセッションのライフサイクル

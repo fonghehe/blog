@@ -4,11 +4,11 @@ date: 2023-09-15 11:13:09
 tags:
   - Frontend Engineering
 readingTime: 2
-description: "技术写作工程师的表达力This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overvie"
-wordCount: 202
+description: "Writing skills for technical engineers has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 188
 ---
 
-技术写作工程师的表达力This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
+Writing skills for technical engineers has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
 
 ## Getting Started
 
@@ -124,5 +124,5 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- 技术写作工程师的表达力 is not a silver bullet; choose based on your project scale and tech stack
+- Writing skills for technical engineers is not a silver bullet; choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

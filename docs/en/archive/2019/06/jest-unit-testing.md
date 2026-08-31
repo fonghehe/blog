@@ -8,7 +8,7 @@ description: "Unit testing is known to be valuable, but many frontend projects s
 wordCount: 72
 ---
 
-Unit testing is known to be valuable, but many frontend projects skip it due to the overhead of getting started. This article covers the complete setup workflow and practical testing examples, covering the scenarios you'll encounter in real projects.
+Unit testing is widely known to be valuable, but many frontend projects skip it due to the upfront setup cost. This article walks through the complete setup workflow and practical examples for the scenarios you'll encounter in real projects.
 
 ## Installation and Configuration
 

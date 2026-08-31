@@ -94,7 +94,7 @@ Vue 2's list diff uses a **double-end comparison**: it simultaneously compares f
 
 ## Vue 3 Diff Improvements
 
-Vue 3 introduces a **longest increasing subsequence** (LIS) algorithm to minimise DOM moves:
+Vue 3 introduces a **longest increasing subsequence** (LIS) algorithm to minimize DOM moves:
 
 ```javascript
 // Old: [1, 2, 3, 4, 5]

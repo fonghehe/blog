@@ -4,11 +4,11 @@ date: 2022-07-28 15:09:19
 tags:
   - React
 readingTime: 2
-description: "关于React Native 0.70 新架构，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspectiv"
-wordCount: 245
+description: "Many developers only know the React Native 0.70 new architecture at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 226
 ---
 
-关于React Native 0.70 新架构，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Many developers only know the React Native 0.70 new architecture at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -60,7 +60,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Project Practice
 
@@ -97,7 +97,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Best Practices
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -151,4 +151,4 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- React Native 0.70 新架构不是银弹，需要根据项目规模和技术栈选择
+- React Native 0.70 新架构 is not a silver bullet — choose based on your project scale and tech stack

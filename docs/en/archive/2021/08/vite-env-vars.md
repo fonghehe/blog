@@ -6,15 +6,15 @@ tags:
   - Engineering
 
 readingTime: 1
-description: "Vite 环境变量管理在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 183
+description: "Environment variable management in Vite has evolved quickly in recent years. This article digs into how it works and how to handle it in practice."
+wordCount: 138
 ---
 
-Vite 环境变量管理在近年来发展迅速，本文将深入分析其原理和实践方法。
+Vite environment variable management has evolved rapidly in recent years. This article takes an in-depth look at its principles and practical approaches.
 
 ## Basic Concepts
 
-我们可以这样实现：
+Here is one way to implement it:
 
 ```javascript
 // 工具函数封装
@@ -42,7 +42,7 @@ function createHandler(options = {}) {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+This pattern improves the code's maintainability.
 
 ## Core Implementation
 
@@ -120,6 +120,6 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Summary
 
-- 持续关注社区动态，及时更新技术方案
-- 性能优化需要基于实际数据，避免过度优化
-- Vite 环境变量管理的核心在于理解底层原理，而非仅仅记住 API
+- Keep an eye on community developments and update your approach in a timely manner
+- Performance optimization should be grounded in real data; avoid over-optimizing
+- The core of Vite environment variable management is understanding the underlying principles, not just memorizing the API

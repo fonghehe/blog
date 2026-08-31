@@ -19,7 +19,7 @@ Vue 3 引入的 Composition API 是繼 React Hooks 之後又一個重要的函�
 export default {
   data() {
     return {
-      // 用户搜索相關
+      // 用戶搜索相關
       searchQuery: '',
       searchResults: [],
       isSearching: false,
@@ -296,12 +296,12 @@ import { usePagination } from './composables/usePagination';
 
 export default {
   setup() {
-    // 每次調用創建獨立實例，互不幹擾
+    // 每次調用創建獨立實例，互不干擾
     const userSearch = useSearch('/api/users');
     const postSearch = useSearch('/api/posts');
     const pagination = usePagination();
 
-    // 命名完全由開發者控製，不會衝突
+    // 命名完全由開發者控制，不會衝突
     return {
       userQuery: userSearch.query,
       userResults: userSearch.results,
@@ -418,6 +418,6 @@ export default {
 - Composition API 通過 `setup()` 函數和組合式函數組織邏輯，解決了 Options API 中邏輯分散的問題
 - Composable 函數（類似 React Hooks）提供了比 Mixins 更好的邏輯複用方式
 - Composition API 天然支持 TypeScript，類型推導完整
-- 兩種 API 可以在同一項目中共存，不需要強製遷移
+- 兩種 API 可以在同一項目中共存，不需要強制遷移
 - 簡單組件使用 Options API，複雜/需要複用的組件使用 Composition API
 - Vue 3 的 Composition API 設計借鑑了 React Hooks，但基於響應式系統而非閉包，避免了 hooks 的一些陷阱（如 stale closure）

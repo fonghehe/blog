@@ -6,14 +6,14 @@ tags:
   - JavaScript
 readingTime: 2
 description: "React Native 0.64 Hermes 引擎在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 325
+wordCount: 319
 ---
 
 React Native 0.64 Hermes 引擎在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
 
 ## 基礎用法
 
-在這個基礎上，我們可以進一步最佳化：
+在這個基礎上，我們可以進一步優化：
 
 ```javascript
 import React, { useState, useCallback } from 'react'
@@ -69,7 +69,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 實戰案例
 
@@ -94,7 +94,7 @@ function reducer(state, action) {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 效能最佳化
+## 效能優化
 
 關鍵在於理解核心邏輯：
 
@@ -121,7 +121,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-效能最佳化需要結合具體場景，不是所有情況都需要過度最佳化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 常見陷阱
 

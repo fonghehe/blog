@@ -1,5 +1,5 @@
 ---
-title: "Astro 5 View Transitions：MPA 架构下的 SPA 级過渡體驗"
+title: "Astro 5 View Transitions：MPA 架構下的 SPA 級過渡體驗"
 date: 2025-09-15 10:29:06
 tags:
   - React
@@ -95,7 +95,7 @@ const csvToJson = new Transform({
 
 ## 效能最佳化
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'

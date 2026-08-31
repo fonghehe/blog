@@ -6,14 +6,14 @@ tags:
 
 readingTime: 3
 description: "TypeScript 4.1 4.2 新特性汇总のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 516
+wordCount: 521
 ---
 
-TypeScript 4.1 4.2 新特性汇总のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
+TypeScript 4.1 / 4.2 の新機能はフロントエンド開発での活用が広まっている。本記事では実際のプロジェクトをベースに、コアとなる原理とベストプラクティスを掘り下げる。
 
 ## 基本的な使い方
 
-この基盤の上でさらに最適化できます：
+この基盤の上でさらに最適化できる：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -44,11 +44,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このパターンは大規模プロジェクトで非常に実用的で、保守コストを大幅に削減できます。
+このパターンは大規模プロジェクトで非常に実用的で、保守コストを大幅に削減できる。
 
 ## 高度な使い方
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは、使い方がもう少し複雑になる：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -72,11 +72,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このアプローチにより、コードのテスト可能性とスケーラビリティが向上します。
+このアプローチにより、コードのテスト可能性とスケーラビリティが向上する。
 
 ## 実践事例
 
-完全な例を以下に示します：
+全体のサンプルを以下に示す：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -107,11 +107,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-境界条件の処理に注意してください。これは本番環境で非常に重要です。
+境界条件の処理には注意する。これは本番環境で非常に重要だ。
 
 ## パフォーマンス最適化
 
-コアロジックを理解することが重要です：
+コアロジックを理解することが重要だ：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -135,11 +135,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-パフォーマンスの最適化は具体的なシナリオに合わせる必要があり、すべてのケースで過度な最適化が必要というわけではありません。
+パフォーマンスの最適化は具体的な場面に合わせる必要があり、すべてのケースで過度な最適化が必要というわけではない。
 
 ## よくある落とし穴
 
-以下の方法で改善できます：
+以下の方法で改善できる：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -170,11 +170,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
+このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## まとめ
 
-- 新しい技術を使うためだけに新しい技術を使わないでください
-- コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- TypeScript 4.1 4.2 新特性汇总不是银弹，需要根据项目规模和技术栈选择
-- 基礎的な原理を理解することは、APIを暗記することより重要です
+- 新しい技術を使うためだけに新しい技術を使わないこと
+- コードサンプルは参考用のみであり、ビジネスの場面に応じて調整が必要だ
+- TypeScript 4.1 / 4.2 の新機能は万能ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある
+- 基礎的な原理を理解することは、APIを暗記することより重要だ

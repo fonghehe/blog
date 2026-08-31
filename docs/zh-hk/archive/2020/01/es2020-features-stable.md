@@ -66,7 +66,7 @@ const pageSize = config.pageSize || 20;
 
 // ES2020
 const pageSize = config.pageSize ?? 20;
-// 隻有 undefined 和 null 才用默認值
+// 只有 undefined 和 null 才用默認值
 // 0、''、false 都保留
 ```
 
@@ -255,7 +255,7 @@ const result = userId + 1n;     // OK
 ## 小結
 
 - Optional Chaining 和 Nullish Coalescing 是最實用的兩個特性，直接減少防禦性代碼
-- `??` 替代 `||` 做默認值要注意區分場景：需要跳過 falsy 用 `||`，隻跳過 nullish 用 `??`
+- `??` 替代 `||` 做默認值要注意區分場景：需要跳過 falsy 用 `||`，只跳過 nullish 用 `??`
 - `Promise.allSettled` 解決了批量請求的部分失敗問題，比 `Promise.all` 更安全
 - 動態 import 是代碼拆分的標準方式，配合路由懶加載效果好
 - `globalThis` 統一了全局對象獲取，寫跨平臺工具庫時有用

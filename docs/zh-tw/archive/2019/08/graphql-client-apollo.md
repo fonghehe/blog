@@ -17,7 +17,7 @@ npm install apollo-client apollo-cache-inmemory apollo-link-http graphql graphql
 npm install react-apollo
 ```
 
-### 建立 Apollo Client 例項
+### 建立 Apollo Client 實例
 
 ```js
 // src/apollo/client.js

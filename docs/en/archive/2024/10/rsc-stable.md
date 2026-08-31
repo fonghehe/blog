@@ -1,14 +1,14 @@
 ---
-title: "React Server Components 2024: Experiment to 稳定关键时刻"
+title: "React Server Components 2024: From Experiment to Stabilization"
 date: 2024-10-01 14:15:52
 tags:
   - React
 readingTime: 2
-description: "关于React 19 Server Components 稳定，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production pe"
-wordCount: 245
+description: "Many developers only know React 19 Server Components stabilization at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 224
 ---
 
-关于React 19 Server Components 稳定，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Many developers only know React 19 Server Components stabilization at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -62,7 +62,7 @@ Let's start with the basic implementation:
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Project Practice
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Best Practices
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -153,4 +153,4 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- React 19 Server Components 稳定不是银弹，需要根据项目规模和技术栈选择
+- React 19 Server Components stabilization is not a silver bullet — choose based on your project scale and tech stack

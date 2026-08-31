@@ -72,7 +72,7 @@ export default {
 
 ## 結合 keep-alive 快取狀態
 
-動態切換元件會導致狀態丟失。用 `<keep-alive>` 快取元件例項。
+動態切換元件會導致狀態丟失。用 `<keep-alive>` 快取元件實例。
 
 ```vue
 <template>
@@ -109,11 +109,11 @@ export default {
 </script>
 ```
 
-`keep-alive` 的 `include` 接受元件名稱陣列或正則，`max` 限製最大快取數量，防止記憶體洩漏。
+`keep-alive` 的 `include` 接受元件名稱陣列或正則，`max` 限制最大快取數量，防止記憶體洩漏。
 
 ## 非同步元件與 defineAsyncComponent
 
-對於大型元件（富文本編輯器、地圖、圖表庫），隻在需要時載入可以顯著減小首屏 bundle。
+對於大型元件（富文本編輯器、地圖、圖表庫），只在需要時載入可以顯著減小首屏 bundle。
 
 ```vue
 <template>
@@ -150,7 +150,7 @@ export default {
 
 ## 高階設定：超時與錯誤處理
 
-`defineAsyncComponent` 支援完整的載入生命週期控製。
+`defineAsyncComponent` 支援完整的載入生命週期控制。
 
 ```javascript
 import { defineAsyncComponent, h } from 'vue'
@@ -234,6 +234,6 @@ export default {
 ## 小結
 
 - `<component :is>` 是動態渲染的核心，`shallowRef` 避免不必要的 Proxy 開銷
-- `<keep-alive>` 快取元件例項，`include` 和 `max` 控製快取範圍
+- `<keep-alive>` 快取元件實例，`include` 和 `max` 控制快取範圍
 - `defineAsyncComponent` 實現元件級程式碼拆分，配合 `Suspense` 管理載入態
 - 生產環境中務必配置 `errorComponent` 和 `onError`，給使用者優雅的降級體驗

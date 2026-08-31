@@ -12,7 +12,7 @@ wordCount: 420
 
 ## クイックスタート
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法から見ていきましょう：
 
 ```javascript
 import { ref, computed, watch, onMounted } from "vue";
@@ -39,7 +39,7 @@ export default {
 
 ## 内部原理
 
-この基礎の上でさらに最適化できます：
+ここからさらに最適化を進めていきます：
 
 ```javascript
 import { reactive, toRefs, computed } from "vue";
@@ -88,7 +88,7 @@ export default {
 
 ## パフォーマンス比較
 
-以下は完全なサンプルです：
+以下に全体のサンプルを示します：
 
 ```javascript
 import { reactive, toRefs, computed } from "vue";
@@ -110,6 +110,6 @@ function useCounter(initial = 0) {
 
 ## まとめ
 
-- コミュニティの動向に目を向け、技術的な解決策は継続的に反復する必要がある
-- 新しい技術を使うために新しい技術を使わない
+- コミュニティの動向を追い、技術選択を見直し続ける必要があります
+- 新しさだけで新しい技術を採用してはいけません
 - コードサンプルはあくまで参考であり、ビジネスシナリオに合わせて調整が必要

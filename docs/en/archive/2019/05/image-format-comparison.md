@@ -5,10 +5,10 @@ tags:
   - Frontend
 readingTime: 1
 description: "Choosing the right image format is a frequently encountered issue in frontend development. This article draws from real-world projects to share concrete impleme"
-wordCount: 115
+wordCount: 111
 ---
 
-Choosing the right image format is a frequently encountered issue in frontend development. This article draws from real-world projects to share concrete implementation approaches and practical takeaways.
+Choosing the right image format is a common challenge in frontend development. This article shares practical approaches and lessons learned from real-world projects.
 
 ## Format Overview
 

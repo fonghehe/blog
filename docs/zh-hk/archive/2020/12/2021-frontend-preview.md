@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "2020 年是前端歷史上變化最密集的年份之一：Vue 3 正式發佈、React 17 升級鋪路、Angular 保持季度發版節奏、Vite 顛覆開發體驗、webpack 5 發佈 Module Federation。站在 2020 年末，來聊聊 2021 年值得關注的方向。"
-wordCount: 641
+wordCount: 643
 ---
 
 2020 年是前端歷史上變化最密集的年份之一：Vue 3 正式發佈、React 17 升級鋪路、Angular 保持季度發版節奏、Vite 顛覆開發體驗、webpack 5 發佈 Module Federation。站在 2020 年末，來聊聊 2021 年值得關注的方向。
@@ -22,7 +22,7 @@ Vue 3 於 2020 年 9 月發佈，但生態還不完整。2021 年預期：
 
 ### React Server Components
 
-React 團隊在 2020 年底預覽了 Server Components——在服務端渲染組件，零客户端 JS。這可能是 React 近年來最大的架構變化：
+React 團隊在 2020 年底預覽了 Server Components——在伺服器端渲染組件，零客戶端 JS。這可能是 React 近年來最大的架構變化：
 
 ```jsx
 // Server Component（文件名 .server.js）
@@ -64,7 +64,7 @@ esbuild、SWC（Rust 寫的 JS 編譯器，Next.js 12 將採用）的出現預�
 
 - 大型團隊新項目 100% TypeScript
 - TypeScript 4.x 持續改進類型推斷和性能
-- `ts-node` 與 Deno 讓服務端 TS 更主流
+- `ts-node` 與 Deno 讓伺服器端 TS 更主流
 
 ## 效能指標標準化
 

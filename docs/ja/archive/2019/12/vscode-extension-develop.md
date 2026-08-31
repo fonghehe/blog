@@ -344,7 +344,7 @@ class TodoTreeProvider implements vscode.TreeDataProvider<TodoTreeItem> {
         treeItem.tooltip = `${item.file}:${item.line}`
         treeItem.description = `第 ${item.line} 行`
 
-        // 点击跳转到对应行
+        // クリック跳转到对应行
         treeItem.command = {
           command: 'vscode.open',
           title: '打开文件',
@@ -415,7 +415,7 @@ import * as vscode from 'vscode'
 function createWebviewPanel(context: vscode.ExtensionContext) {
   const panel = vscode.window.createWebviewPanel(
     'todoDashboard',
-    'TODO 仪表盘',
+    'TODO ダッシュボード',
     vscode.ViewColumn.One,
     {
       // 启用脚本
@@ -488,7 +488,7 @@ function getWebviewContent(webview: vscode.Webview, extensionUri: vscode.Uri): s
     style-src ${webview.cspSource};
     script-src 'nonce-${nonce}';">
   <link href="${styleUri}" rel="stylesheet">
-  <title>TODO 仪表盘</title>
+  <title>TODO ダッシュボード</title>
 </head>
 <body>
   <div id="app">

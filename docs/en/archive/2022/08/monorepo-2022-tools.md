@@ -4,11 +4,11 @@ date: 2022-08-22 09:48:46
 tags:
   - Frontend Engineering
 readingTime: 2
-description: "关于Monorepo 2022 工具链对比，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 237
+description: "When it comes to Monorepo 2022 toolchain comparison, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 205
 ---
 
-关于Monorepo 2022 工具链对比，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to Monorepo 2022 toolchain comparison, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
@@ -64,7 +64,7 @@ const csvToJson = new Transform({
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Project Practice
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Best Practices
 
-实际项目中的用法会更复杂一些：
+Usage in real projects tends to be more complex:
 
 ```javascript
 .container {
@@ -151,7 +151,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 ## Summary
 
-- Monorepo 2022 工具链对比不是银弹，需要根据项目规模和技术栈选择
+- Monorepo 2022 toolchains are not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

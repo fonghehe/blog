@@ -15,7 +15,7 @@ wordCount: 669
 Electron = Chromium + Node.js。一個 Electron 應用有兩種程序：
 
 **主程序（Main Process）**：
-- 隻有一個
+- 只有一個
 - 管理應用生命週期
 - 建立視窗（BrowserWindow）
 - 訪問系統原生 API（選單、托盤、對話方塊等）
@@ -436,7 +436,7 @@ macOS 上未簽名的應用會被 Gatekeeper 阻止。開發階段可以右鍵�
 
 Electron 應用記憶體佔用普遍較高。最佳化方向：
 - 避免在渲染程序載入大量資料
-- 用 `webFrame.setZoomLevelLimits(1, 1)` 限製縮放範圍
+- 用 `webFrame.setZoomLevelLimits(1, 1)` 限制縮放範圍
 - 視窗隱藏時釋放不必要的資源
 - 考慮用 `BrowserView` 代替多視窗
 

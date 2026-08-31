@@ -4,11 +4,11 @@ date: 2022-11-23 09:48:47
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，CSS View Transitions 实战 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 190
+description: "CSS View Transitions in practice is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 180
 ---
 
-在日常开发中，CSS View Transitions 实战 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+CSS View Transitions in practice is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
 
 ## Quick Start
 
@@ -41,7 +41,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Internal Principles
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useReducer, useCallback } from 'react'

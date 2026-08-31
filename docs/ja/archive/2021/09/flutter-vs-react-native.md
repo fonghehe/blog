@@ -7,14 +7,14 @@ tags:
 
 readingTime: 3
 description: "最近在团队中落地Flutter vs React Native 2021 对比，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 503
+wordCount: 497
 ---
 
-最近在团队中落地Flutter vs React Native 2021 对比，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
+最近チーム内で Flutter と React Native の 2021 年の比較検証を実践し、多くの経験を積みました。同じような取り組みをされる方の参考になれば幸いです。
 
 ## コアコンセプト
 
-完全な例を以下に示します：
+全体のサンプルを以下に示します：
 
 ```javascript
 import React, { useState, useCallback } from 'react'
@@ -47,7 +47,7 @@ const ItemList = ({ data, onRefresh }) => {
 
 ## 詳細分析
 
-コアロジックを理解することが重要です：
+中心的なロジックを理解することが重要です：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-パフォーマンスの最適化は具体的なシナリオに合わせる必要があり、すべてのケースで過度な最適化が必要というわけではありません。
+パフォーマンスの最適化は具体的な場面に合わせる必要があり、すべてのケースで過度な最適化が必要というわけではありません。
 
 ## 実装経験
 
@@ -97,7 +97,7 @@ function reducer(state, action) {
 
 ## 最適化戦略
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみましょう：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'

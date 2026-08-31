@@ -4,19 +4,19 @@ date: 2019-09-23 11:02:29
 tags:
   - TypeScript
 readingTime: 4
-description: "TypeScript 的条件类型（Conditional Types）是类型系统中最强大的特性之一。它让我们可以根据类型的条件分支来动态生成新的类型，类似于 JavaScript 中的三元表达式。配合泛型和 `infer` 关键字，条件类型可以实现极其灵活的类型推导。本文将从基础语法到高级用法，深入讲解条件类型。"
-wordCount: 423
+description: "TypeScriptの条件型（Conditional Types）は、型システムの中で最も強力な特性の一つだ。型の条件分岐に応じて動的に新しい型を生成でき、JavaScriptの三項演算子に似ている。ジェネリクスと `infer` キーワードを組み合わせれば、極めて柔軟な型推論を実現できる。本記事では基本構文から応用まで、条件型を深く掘り下げる。"
+wordCount: 543
 ---
 
-TypeScript 的条件类型（Conditional Types）是类型系统中最强大的特性之一。它让我们可以根据类型的条件分支来动态生成新的类型，类似于 JavaScript 中的三元表达式。配合泛型和 `infer` 关键字，条件类型可以实现极其灵活的类型推导。本文将从基础语法到高级用法，深入讲解条件类型。
+TypeScript の条件型（Conditional Types）は、型システムの中で最も強力な特性の一つだ。型の条件分岐に応じて動的に新しい型を生成でき、JavaScript の三項演算子に似ている。ジェネリクスと `infer` キーワードを組み合わせれば、極めて柔軟な型推論を実現できる。本記事では基本構文から応用まで、条件型を深く掘り下げる。
 
 ## 条件型の基本構文
 
-条件类型使用 `extends` 关键字进行类型判断：
+条件型は `extends` キーワードを使って型の判定を行う：
 
 ```ts
-// 基本语法：T extends U ? X : Y
-// 如果 T 可以赋值给 U，结果是 X，否则是 Y
+// 基本構文：T extends U ? X : Y
+// TがUに代入可能なら結果はX、そうでなければY
 
 type IsString<T> = T extends string ? true : false;
 
@@ -27,46 +27,46 @@ type C = IsString<'hello'>; // true (字面量类型是 string 的子类型)
 
 ## 分散条件型
 
-当条件类型的参数是联合类型时，条件类型会自动分发（distribute）：
+条件型の引数がユニオン型のとき、条件型は自動的に分配（distribute）される：
 
 ```ts
 type ToArray<T> = T extends any ? T[] : never;
 
 type Result = ToArray<string | number>;
-// 结果：string[] | number[]（不是 (string | number)[]）
+// 結果：string[] | number[]（(string | number)[]ではない）
 
-// 如果不想分发，用方括号包裹
+// 分配したくない場合は角括弧で囲む
 type ToArrayNoDistribute<T> = [T] extends [any] ? T[] : never;
 
 type Result2 = ToArrayNoDistribute<string | number>;
-// 结果：(string | number)[]
+// 結果：(string | number)[]
 ```
 
-### 实用示例：排除特定类型
+### 実用例：特定の型を除外する
 
 ```ts
-// 实现 Exclude
+// Excludeの実装
 type MyExclude<T, U> = T extends U ? never : T;
 
 type Result = MyExclude<string | number | boolean, string>;
-// 分发过程：
+// 分配プロセス：
 // string extends string ? never : string  => never
 // number extends string ? never : number  => number
 // boolean extends string ? never : boolean => boolean
-// 结果：number | boolean
+// 結果：number | boolean
 
-// 实现 Extract
+// Extractの実装
 type MyExtract<T, U> = T extends U ? T : never;
 
 type Result2 = MyExtract<string | number | boolean, string | number>;
-// 结果：string | number
+// 結果：string | number
 ```
 
 ## inferキーワード
 
-`infer` 是条件类型中用于类型推断的关键字，只能在 `extends` 子句中使用：
+`infer` は条件型において型推論に用いるキーワードで、`extends` 句の中でのみ使用できる：
 
-### 推断函数返回值类型
+### 関数の戻り値の型を推論する
 
 ```ts
 type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
@@ -75,16 +75,16 @@ type A = ReturnType<() => string>;           // string
 type B = ReturnType<(x: number) => boolean>; // boolean
 type C = ReturnType<string>;                  // never
 
-// 实际使用
+// 実際の使用例
 function getUser() {
-  return { id: 1, name: '张三', age: 25 };
+  return { id: 1, name: '張三', age: 25 };
 }
 
 type User = ReturnType<typeof getUser>;
 // { id: number; name: string; age: number }
 ```
 
-### 推断函数参数类型
+### 関数の引数の型を推論する
 
 ```ts
 type Parameters<T> = T extends (...args: infer P) => any ? P : never;
@@ -95,7 +95,7 @@ type A = Parameters<(a: string, b: number) => void>;
 type B = Parameters<() => void>;
 // []
 
-// 实际使用
+// 実際の使用例
 function createUser(name: string, age: number, email: string) {
   return { name, age, email };
 }
@@ -104,7 +104,7 @@ type CreateUserParams = Parameters<typeof createUser>;
 // [string, number, string]
 ```
 
-### 推断 Promise 内部类型
+### Promise の中の型を推論する
 
 ```ts
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
@@ -113,14 +113,14 @@ type A = UnwrapPromise<Promise<string>>; // string
 type B = UnwrapPromise<Promise<number[]>>; // number[]
 type C = UnwrapPromise<boolean>; // boolean
 
-// 递归解包
+// 再帰的にアンラップ
 type DeepUnwrapPromise<T> = T extends Promise<infer U>
   ? DeepUnwrapPromise<U>
   : T;
 
 type D = DeepUnwrapPromise<Promise<Promise<string>>>; // string
 
-// 实际使用
+// 実際の使用例
 async function fetchData() {
   const response = await fetch('/api/data');
   return response.json() as Promise<{ id: number; name: string }>;
@@ -130,7 +130,7 @@ type FetchResult = DeepUnwrapPromise<ReturnType<typeof fetchData>>;
 // { id: number; name: string }
 ```
 
-### 推断数组元素类型
+### 配列の要素の型を推論する
 
 ```ts
 type ElementOf<T> = T extends (infer E)[] ? E : never;
@@ -140,19 +140,19 @@ type B = ElementOf<number[]>;      // number
 type C = ElementOf<[string, number]>; // string | number
 type D = ElementOf<string>;        // never
 
-// 推断元组第一个元素
+// タプルの最初の要素を推論
 type First<T> = T extends [infer F, ...any[]] ? F : never;
 
 type E = First<[string, number, boolean]>; // string
 type F = First<[]>; // never
 
-// 推断元组最后一个元素
+// タプルの最後の要素を推論
 type Last<T> = T extends [...any[], infer L] ? L : never;
 
 type G = Last<[string, number, boolean]>; // boolean
 ```
 
-### 推断对象属性类型
+### オブジェクトのプロパティの型を推論する
 
 ```ts
 type ValueType<T> = T extends { value: infer V } ? V : never;
@@ -165,7 +165,7 @@ type C = ValueType<{ name: string }>;    // never
 ## 実践：APIレスポンス型の推論
 
 ```ts
-// 定义 API 接口映射
+// APIエンドポイントマッピングの定義
 interface ApiEndpoints {
   '/users': {
     GET: { response: { id: number; name: string }[] };
@@ -184,7 +184,7 @@ interface ApiEndpoints {
   };
 }
 
-// 根据路径和方法提取请求/响应类型
+// パスとメソッドに基づいてリクエスト/レスポンス型を抽出
 type ApiResponse<
   Endpoints extends Record<string, any>,
   Path extends keyof Endpoints,
@@ -197,7 +197,7 @@ type ApiBody<
   Method extends keyof Endpoints[Path]
 > = Endpoints[Path][Method] extends { body: infer B } ? B : never;
 
-// 使用
+// 使用例
 type UsersResponse = ApiResponse<ApiEndpoints, '/users', 'GET'>;
 // { id: number; name: string }[]
 
@@ -207,7 +207,7 @@ type CreateUserBody = ApiBody<ApiEndpoints, '/users', 'POST'>;
 type CreateUserResponse = ApiResponse<ApiEndpoints, '/users', 'POST'>;
 // { id: number }
 
-// 类型安全的 API 客户端
+// 型安全なAPIクライアント
 async function apiCall<
   Path extends keyof ApiEndpoints,
   Method extends keyof ApiEndpoints[Path] & string
@@ -227,16 +227,16 @@ async function apiCall<
   return response.json();
 }
 
-// 使用 —— 完整的类型提示
+// 使用例 —— 完整的类型提示
 const users = await apiCall('/users', 'GET');
 // users: { id: number; name: string }[]
 
 const newUser = await apiCall('/users', 'POST', {
-  name: '张三',
+  name: '張三',
   email: 'zhangsan@example.com',
 });
 // newUser: { id: number }
-// 第三个参数有完整的类型提示，缺少必填字段会报错
+// 第3引数には完全な型ヒントがあり、必須フィールドが欠けているとエラーになる
 ```
 
 ## 実践：深い読み取り専用型
@@ -300,23 +300,23 @@ class TypedEmitter<T extends Record<string, any>> {
   }
 }
 
-// 使用
+// 使用例
 const emitter = new TypedEmitter<EventMap>();
 
 emitter.on('login', (data) => {
-  console.log(data.userId);   // 类型提示：string
-  console.log(data.timestamp); // 类型提示：number
+  console.log(data.userId);   // 型ヒント：string
+  console.log(data.timestamp); // 型ヒント：number
 });
 
-emitter.emit('login', { userId: '123', timestamp: Date.now() }); // 正确
-// emitter.emit('login', { userId: 123 }); // 类型错误！
+emitter.emit('login', { userId: '123', timestamp: Date.now() }); // 正しい
+// emitter.emit('login', { userId: 123 }); // 型エラー！
 ```
 
 ## まとめ
 
-- 条件类型使用 `T extends U ? X : Y` 语法，根据类型关系进行分支判断
-- 联合类型在条件类型中会自动分发（distribute），包裹 `[T]` 可以阻止分发
-- `infer` 关键字可以在条件类型中推断和提取子类型，是类型推导的核心工具
-- 常用内置条件类型：`ReturnType`、`Parameters`、`Exclude`、`Extract`、`NonNullable`
-- 条件类型可以递归使用，实现 `DeepReadonly`、`DeepUnwrapPromise` 等深层类型操作
-- 实际项目中常用于：API 类型推导、事件系统类型安全、状态管理类型定义
+- 条件型は `T extends U ? X : Y` 構文を使い、型の関係に基づいて分岐判定を行う
+- ユニオン型は条件型内で自動的に分配（distribute）される。`[T]` で囲むことで分配を阻止できる
+- `infer` キーワードは条件型内でサブタイプを推論・抽出でき、型推論の核心的なツールである
+- よく使われる組み込み条件型：`ReturnType`・`Parameters`・`Exclude`・`Extract`・`NonNullable`
+- 条件型は再帰的に使用でき、`DeepReadonly`・`DeepUnwrapPromise` などの深い型操作を実現できる
+- 実際のプロジェクトでは、API型推論・イベントシステムの型安全性・状態管理の型定義などでよく使われる

@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Promoting Webpack 4 Tree Shaking within the team came with plenty of pitfalls. Documenting them here in the hope it helps others."
-wordCount: 117
+wordCount: 113
 ---
 
 Promoting Webpack 4 Tree Shaking within the team came with plenty of pitfalls. Documenting them here in the hope it helps others.
@@ -48,7 +48,7 @@ class Form extends Component {
 }
 ```
 
-In real projects, you also need to consider edge cases and error handling.
+In real projects, you'll also need to handle edge cases and errors.
 
 ## Advanced Techniques
 
@@ -69,11 +69,11 @@ function deepClone(obj, map = new WeakMap()) {
 }
 ```
 
-After promoting this pattern across the team, the results were great and maintenance costs dropped noticeably.
+Rolling this pattern out across the team worked well and noticeably cut maintenance costs.
 
 ## Practical Case
 
-This can be achieved with the following approach:
+Here's one way to implement it:
 
 ```javascript
 function pLimit(concurrency) {
@@ -100,10 +100,10 @@ function pLimit(concurrency) {
 }
 ```
 
-Pay attention to the performance details in the code above and avoid unnecessary computation.
+Keep an eye on the performance characteristics in the code above, and avoid needless computation.
 
 ## Summary
 
 - Choose the right approach for each scenario in real projects
 - Team-wide conventions are more important than chasing perfect implementations
-- Keep learning and summarizing to maintain technical awareness
+- Keep learning and summarizing to stay technically current

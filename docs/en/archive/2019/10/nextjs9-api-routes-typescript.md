@@ -3,12 +3,12 @@ title: "Next.js 9 New Features: API Routes and TypeScript Support"
 date: 2019-10-18 14:35:07
 tags:
   - TypeScript
-readingTime: 2
-description: "Next.js 9 在 9 月底发布，带来了两个重要特性：内置 TypeScript 支持和更完善的 API Routes。"
-wordCount: 165
+readingTime: 1
+description: "Next.js 9 was released at the end of September and brought two notable features: built-in TypeScript support and more complete API Routes."
+wordCount: 121
 ---
 
-Next.js 9 在 9 月底发布，带来了两个重要特性：内置 TypeScript 支持和更完善的 API Routes。
+Next.js 9 was released at the end of September and brought two notable features: built-in TypeScript support and more complete API Routes.
 
 ## Built-in TypeScript
 
@@ -137,7 +137,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 ## Improved Automatic Static Optimization
 
-Next.js 9 改进了自动静态优化的判断：
+Next.js 9 improved how it decides whether a page can be statically optimized:
 
 ```typescript
 // 这个页面会被静态优化（没有 getServerSideProps / getInitialProps）
@@ -149,17 +149,17 @@ export default AboutPage
 
 ## Comparison with Nuxt.js
 
-| 特性       | Next.js 9 | Nuxt.js 2                   |
-| ---------- | --------- | --------------------------- |
-| 框架       | React     | Vue                         |
-| TypeScript | 内置支持  | 需要配置                    |
-| API Routes | ✅ 内置   | ❌（需要 serverMiddleware） |
-| 静态生成   | 路由级别  | 整站                        |
-| 社区规模   | 大        | 中                          |
+| Feature           | Next.js 9 | Nuxt.js 2                   |
+| ----------------- | --------- | --------------------------- |
+| Framework         | React     | Vue                         |
+| TypeScript        | Built-in  | Requires configuration      |
+| API Routes        | ✅ Built-in | ❌ (needs serverMiddleware) |
+| Static generation | Per-route | Whole site                  |
+| Community size    | Large     | Medium                      |
 
 ## Summary
 
-- Next.js 9 内置 TypeScript，零配置开箱即用
-- API Routes 让 Next.js 成为真正的全栈框架
-- Catch-all Routes `[...slug]` 处理嵌套动态路径
-- 静态优化继续完善，没有数据获取的页面自动预渲染
+- Next.js 9 ships TypeScript built in—zero-config and ready to use out of the box
+- API Routes turn Next.js into a genuine full-stack framework
+- Catch-all Routes `[...slug]` handle nested dynamic paths
+- Static optimization keeps improving: pages without data fetching are pre-rendered automatically

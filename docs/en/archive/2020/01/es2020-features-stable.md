@@ -4,15 +4,15 @@ date: 2020-01-06 11:24:24
 tags:
   - Frontend
 readingTime: 3
-description: "2020 年了，ES2020 的特性已经进入 Stage 4，主流浏览器和 Node 14 都支持了。趁着年初，把项目里能用的新特性梳理一遍，顺便统一团队的编码风格。"
-wordCount: 444
+description: "It's 2020, and ES2020 features have reached Stage 4 with support across major browsers and Node 14. Early in the year is a good time to review the new features we can adopt and unify the team's coding style."
+wordCount: 311
 ---
 
-2020 年了，ES2020 的特性已经进入 Stage 4，主流浏览器和 Node 14 都支持了。趁着年初，把项目里能用的新特性梳理一遍，顺便统一团队的编码风格。
+It's 2020, and ES2020 features have reached Stage 4, with support in major browsers and Node 14. Early in the year is a good time to review the new features we can use in our projects and unify the team's coding style.
 
 ## Optional Chaining (?.)
 
-之前写过好几篇关于防御性编程的文章，现在终于有了语言层面的支持。
+I've written several articles on defensive programming before, and now we finally have language-level support for it.
 
 ```javascript
 // 老写法：层层判断
@@ -28,7 +28,7 @@ const result = api?.getUserInfo?.();
 const firstItem = arr?.[0];
 ```
 
-**在我们项目里的实际应用：**
+**How we apply it in our project:**
 
 ```javascript
 // API 响应处理 —— 以前最容易出 TypeError 的地方
@@ -44,7 +44,7 @@ function formatOrder(order) {
 }
 ```
 
-**一个踩坑点：** `?.` 和函数调用结合时要注意：
+**One gotcha:** watch out when combining `?.` with function calls:
 
 ```javascript
 // 这样写有问题：如果 obj.method 不存在，后面的 () 还是会执行
@@ -57,7 +57,7 @@ obj.method?.(arg);  // 如果 method 存在但不是函数，?.(arg) 返回 unde
 
 ## Nullish Coalescing (??)
 
-以前用 `||` 做默认值，但 `0`、`''`、`false` 都会被吃掉。
+Previously, `||` was used for defaults, but `0`, `''`, and `false` would all be swallowed.
 
 ```javascript
 // 老写法的坑
@@ -70,7 +70,7 @@ const pageSize = config.pageSize ?? 20;
 // 0、''、false 都保留
 ```
 
-**团队规范：什么时候用 `??` 什么时候用 `||`？**
+**Team convention: when to use `??` vs. `||`:**
 
 ```javascript
 // 明确规则：
@@ -89,7 +89,7 @@ const x = (a ?? b) || c;  // OK
 
 ## Promise.allSettled
 
-这个特性我们团队盼了很久。之前做批量请求，`Promise.all` 一个失败全部失败太坑了。
+Our team has been waiting for this feature for a long time. When we did batch requests before, a single failure in `Promise.all` would fail everything—a real pain.
 
 ```javascript
 // 老写法：要自己包一层
@@ -119,7 +119,7 @@ results.forEach(result => {
 });
 ```
 
-**实际场景：批量导出报表**
+**Real-world scenario: batch report export**
 
 ```javascript
 async function exportReports(reportIds) {
@@ -146,9 +146,9 @@ async function exportReports(reportIds) {
 }
 ```
 
-## 动态 import()
+## Dynamic import()
 
-之前用 Webpack 的 code splitting，动态 import 已经在用了。但作为语言标准，现在更规范。
+We were already using dynamic `import()` for Webpack code splitting. But now that it's a language standard, it's more standardized.
 
 ```javascript
 // 路由懒加载（Vue 项目）
@@ -189,7 +189,7 @@ async function loadChartModule() {
 
 ## globalThis
 
-终于不用写这种恶心的兼容代码了：
+We can finally stop writing this nasty compatibility code:
 
 ```javascript
 // 老写法：判断环境
@@ -203,7 +203,7 @@ const globalObj =
 const globalObj = globalThis;
 ```
 
-在工具库中很有用：
+It's useful in utility libraries:
 
 ```javascript
 // polyfill 注册
@@ -218,9 +218,9 @@ globalThis.__APP_CONFIG__ = {
 };
 ```
 
-## BigInt（了解即可）
+## BigInt (For Reference)
 
-前端用到大整数的场景不多，但在处理后端 ID 时可能会遇到。
+Frontend code rarely deals with very large integers, but you might encounter them when handling backend IDs.
 
 ```javascript
 // 超过 Number.MAX_SAFE_INTEGER 的 ID
@@ -234,9 +234,9 @@ const bigId = BigInt('9007199254740993');
 const result = userId + 1n;     // OK
 ```
 
-我们目前后端 ID 还在安全范围内，暂时不需要，但作为知识储备要知道。
+For now our backend IDs are still within the safe range, so we don't need it yet—but it's worth knowing about as background knowledge.
 
-## 项目落地计划
+## Rollout Plan
 
 ```
 1. Babel 配置升级
@@ -254,8 +254,8 @@ const result = userId + 1n;     // OK
 
 ## Summary
 
-- Optional Chaining 和 Nullish Coalescing 是最实用的两个特性，直接减少防御性代码
-- `??` 替代 `||` 做默认值要注意区分场景：需要跳过 falsy 用 `||`，只跳过 nullish 用 `??`
-- `Promise.allSettled` 解决了批量请求的部分失败问题，比 `Promise.all` 更安全
-- 动态 import 是代码拆分的标准方式，配合路由懒加载效果好
-- `globalThis` 统一了全局对象获取，写跨平台工具库时有用
+- Optional chaining and nullish coalescing are the two most practical features, directly cutting down on defensive code.
+- When replacing `||` with `??` for defaults, distinguish the scenarios: use `||` when you want to skip falsy values, and `??` when you only want to skip nullish ones.
+- `Promise.allSettled` solves the partial-failure problem in batch requests, making it safer than `Promise.all`.
+- Dynamic `import()` is the standard way to split code, and it works great with route-based lazy loading.
+- `globalThis` unifies access to the global object and is handy when writing cross-platform utility libraries.

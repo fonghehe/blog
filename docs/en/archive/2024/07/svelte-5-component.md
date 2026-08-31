@@ -5,14 +5,14 @@ tags:
   - Svelte
 readingTime: 1
 description: "I frequently use Svelte 5 Component Model in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it better."
-wordCount: 173
+wordCount: 140
 ---
 
 I frequently use Svelte 5 Component Model in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it better.
 
 ## Basic Concepts
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 使用示例
@@ -29,7 +29,7 @@ app.mount('#root')
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+With this pattern, the code's maintainability improves.
 
 ## Core Implementation
 
@@ -107,6 +107,6 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Summary
 
-- 持续关注社区动态，及时更新技术方案
-- 性能优化需要基于实际数据，避免过度优化
-- Svelte 5 Component Model的核心在于理解底层原理，而非仅仅记住 API
+- Keep an eye on community developments and update the technical approach in time
+- Base performance optimization on real data and avoid premature optimization
+- The core of the Svelte 5 component model is understanding the underlying principles, not just memorizing APIs

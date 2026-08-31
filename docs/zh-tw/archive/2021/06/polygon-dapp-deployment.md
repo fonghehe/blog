@@ -5,9 +5,9 @@ tags:
   - Web3
   - Blockchain
   - DApp
-readingTime: 14
+readingTime: 8
 description: "從合約部署到前端網絡切換，完整解析 Polygon Layer2 的 DApp 適配流程"
-wordCount: 3800
+wordCount: 881
 ---
 
 ## Polygon 網絡概述

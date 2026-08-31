@@ -4,11 +4,11 @@ date: 2023-06-14 16:44:34
 tags:
   - Frontend
 readingTime: 2
-description: "关于Cursor AI IDE 开发体验，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 222
+description: "Many developers only know the Cursor AI IDE development experience at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 221
 ---
 
-关于Cursor AI IDE 开发体验，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Many developers only know the Cursor AI IDE development experience at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -154,5 +154,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Cursor AI IDE 开发体验不是银弹，需要根据项目规模和技术栈选择
+- The cursor ai ide development experience is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

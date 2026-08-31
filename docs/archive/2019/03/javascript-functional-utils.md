@@ -5,14 +5,14 @@ tags:
   - JavaScript
 readingTime: 1
 description: "函数式编程的核心工具函数在实际项目中并不远。Redux middleware、Lodash/fp、RxJS 操作符背后都是这些思想。手写实现能帮你完全吹散它们。"
-wordCount: 141
+wordCount: 139
 ---
 
-函数式编程的核心工具函数在实际项目中并不远。Redux middleware、Lodash/fp、RxJS 操作符背后都是这些思想。手写实现能帮你完全吹散它们。
+函数式编程的核心工具函数离实际项目并不远。Redux middleware、Lodash/fp、RxJS 操作符背后都是这些思想。手写实现能帮你彻底弄懂它们。
 
-## curry 梯度化
+## curry（柯里化）
 
-将一个多参数函数转成尚可以逐步接收参数的函数：
+把一个多参数函数转成可以逐步接收参数的函数：
 
 ```javascript
 const curry = (fn) => {

@@ -5,10 +5,10 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 9 的 RC 階段已進入最後衝刺，正式版預計 2020 年 2 月釋出。相比 Angular 8 中 Ivy 隻能 opt-in，Angular 9 將 Ivy 作為預設渲染引擎，同時 AOT 編譯也將成為預設模式。在 RC 期間我們提前摸清這些變化非常有價值。"
-wordCount: 429
+wordCount: 433
 ---
 
-Angular 9 的 RC 階段已進入最後衝刺，正式版預計 2020 年 2 月釋出。相比 Angular 8 中 Ivy 隻能 opt-in，Angular 9 將 Ivy 作為預設渲染引擎，同時 AOT 編譯也將成為預設模式。在 RC 期間我們提前摸清這些變化非常有價值。
+Angular 9 的 RC 階段已進入最後衝刺，正式版預計 2020 年 2 月釋出。相比 Angular 8 中 Ivy 只能 opt-in，Angular 9 將 Ivy 作為預設渲染引擎，同時 AOT 編譯也將成為預設模式。在 RC 期間我們提前摸清這些變化非常有價值。
 
 ## 為什麼 Ivy 是一次質的飛躍
 
@@ -58,7 +58,7 @@ ng build --prod     # AOT
 
 ## strictTemplates 範本嚴格檢查
 
-這是 RC 期間最值得提前瞭解的配置。開啟後，模板中的型別錯誤會在構建時報出：
+這是 RC 期間最值得提前瞭解的配置。開啟後，模板中的型別錯誤會在建置時報出：
 
 ```json
 // tsconfig.app.json
@@ -118,9 +118,9 @@ RC 中 `@ViewChild` 和 `@ContentChild` 必須顯式宣告 `static`：
 @ViewChild('myEl', { static: false }) myEl: ElementRef;
 ```
 
-**第三方庫相容性**
+**第三方函式庫相容性**
 
-Ivy 使用 `ngcc`（Angular Compatibility Compiler）在安裝時自動轉換未適配 Ivy 的庫。大多數情況自動處理，但如果遇到問題可手動執行：
+Ivy 使用 `ngcc`（Angular Compatibility Compiler）在安裝時自動轉換未適配 Ivy 的函式庫。大多數情況自動處理，但如果遇到問題可手動執行：
 
 ```bash
 node_modules/.bin/ngcc

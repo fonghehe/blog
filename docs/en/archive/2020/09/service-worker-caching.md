@@ -4,15 +4,15 @@ date: 2020-09-23 10:28:56
 tags:
   - PWA
 readingTime: 2
-description: "Service Worker 缓存策略详解在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 344
+description: "A deep dive into Service Worker caching strategies, exploring core principles and best practices drawn from real-world frontend projects."
+wordCount: 208
 ---
 
-Service Worker 缓存策略详解在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Service Worker caching strategies are being adopted more and more widely in frontend development. Drawing on real-world projects, this article takes a deep dive into their core principles and best practices.
 
 ## Basic Usage
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 const fs = require('fs')
@@ -34,14 +34,13 @@ const csvToJson = new Transform({
     callback()
   }
 })
-
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Advanced Usage
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -61,14 +60,13 @@ function useIntersectionObserver(options = {}) {
 
   return [ref, isVisible]
 }
-
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project you'll also need to account for error handling and edge cases.
 
 ## Practical Cases
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 .container {
@@ -88,14 +86,13 @@ function useIntersectionObserver(options = {}) {
 @container (min-width: 400px) {
   .card__content { display: grid; grid-template-columns: 200px 1fr; }
 }
-
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is especially useful in large projects and can significantly lower maintenance costs.
 
 ## Performance Optimization
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more involved:
 
 ```javascript
 const fs = require('fs')
@@ -117,14 +114,13 @@ const csvToJson = new Transform({
     callback()
   }
 })
-
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This improves both the testability and extensibility of the code.
 
 ## Common Traps
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -144,15 +140,14 @@ function useIntersectionObserver(options = {}) {
 
   return [ref, isVisible]
 }
-
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind edge-case handling — it is critical in production.
 
 ## Summary
 
-- Service Worker 缓存策略详解不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Service Worker caching is no silver bullet; choose it based on your project's size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Always verify compatibility before shipping to production.
+- In team collaboration, conventions and documentation matter more than the technology itself.
+- Keep an eye on the community — technical solutions need to keep iterating.

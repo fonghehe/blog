@@ -4,15 +4,15 @@ date: 2020-05-11 09:46:15
 tags:
   - Engineering
 readingTime: 2
-description: "关于Snowpack 原生 ESM 开发体验，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 300
+description: "When it comes to Snowpack's native ESM development experience, many developers only operate at the API level. This article looks at it from a production perspective, discussing the problems you'll actually encounter and how to solve them."
+wordCount: 204
 ---
 
-关于Snowpack 原生 ESM 开发体验，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to Snowpack's native ESM development experience, many developers only operate at the API-call level. This article looks at it from a production perspective, discussing the problems you'll actually run into and how to solve them.
 
 ## Basic Principles
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -31,11 +31,11 @@ function reducer(state, action) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to fit the actual use case; not every situation calls for over-optimization.
 
 ## Advanced Features
 
-我们可以通过以下方式来改进：
+We can improve on this in the following ways:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -66,11 +66,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Project Practice
 
-先来看基本的实现方式：
+Let's first look at the basic implementation:
 
 ```javascript
 const express = require('express')
@@ -95,11 +95,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project you'd also need to account for error handling and edge cases.
 
 ## Best Practices
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -118,11 +118,11 @@ function reducer(state, action) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly reduce maintenance cost.
 
 ## Summary
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Snowpack 原生 ESM 开发体验不是银弹，需要根据项目规模和技术栈选择
+- Keep an eye on what's happening in the community—technical solutions need to keep iterating.
+- Don't adopt new technology just for its own sake.
+- The code examples are for reference only and should be adapted to your specific use case.
+- Snowpack's native ESM development experience isn't a silver bullet; choose it based on your project's scale and tech stack.

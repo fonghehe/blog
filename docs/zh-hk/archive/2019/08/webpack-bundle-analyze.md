@@ -9,7 +9,7 @@ description: "項目上線後用户反饋首屏加載慢？打包產物體積過
 wordCount: 848
 ---
 
-項目上線後用户反饋首屏加載慢？打包產物體積過大是前端效能優化中最常見的瓶頸之一。`webpack-bundle-analyzer` 是一個可視化分析工具，能夠以直觀的樹狀圖展示打包結果，幫助我們精準定位體積問題。本文將深入講解如何使用它進行打包分析與優化。
+項目上線後用戶反饋首屏加載慢？打包產物體積過大是前端效能優化中最常見的瓶頸之一。`webpack-bundle-analyzer` 是一個可視化分析工具，能夠以直觀的樹狀圖展示打包結果，幫助我們精準定位體積問題。本文將深入講解如何使用它進行打包分析與優化。
 
 ## 安裝與基本設定
 
@@ -61,7 +61,7 @@ if (process.env.ANALYZE) {
 }
 ```
 
-這樣隻在需要分析時才啓動，不影響日常構建。
+這樣只在需要分析時才啓動，不影響日常構建。
 
 ## 理解可視化報告
 
@@ -71,7 +71,7 @@ if (process.env.ANALYZE) {
 
 - **Stat size** — 文件在磁盤上的原始大小（未經任何處理）
 - **Parsed size** — 經過 Webpack 處理後的大小（包含 uglify/terser 壓縮）
-- **Gzip size** — 經過 gzip 壓縮後的大小（更接近用户實際下載大小）
+- **Gzip size** — 經過 gzip 壓縮後的大小（更接近用戶實際下載大小）
 
 在實際優化中，我們應以 **Gzip size** 為基準衡量優化效果。
 
@@ -100,7 +100,7 @@ if (process.env.ANALYZE) {
   │   └── (總計約 200KB+)
 ```
 
-解決方案：使用 `IgnorePlugin` 隻保留需要的 locale。
+解決方案：使用 `IgnorePlugin` 只保留需要的 locale。
 
 ```js
 // webpack.config.js
@@ -126,7 +126,7 @@ moment.locale('zh-cn');
 
 ### 案例二：lodash 全量引入
 
-在報告中發現整個 lodash 庫被完整引入，約 70KB。實際項目隻用到了 `debounce`、`get`、`cloneDeep` 幾個方法。
+在報告中發現整個 lodash 庫被完整引入，約 70KB。實際項目只用到了 `debounce`、`get`、`cloneDeep` 幾個方法。
 
 解決方案一：使用 lodash-es 配合 tree shaking
 
@@ -170,7 +170,7 @@ import cloneDeep from 'lodash/cloneDeep';
 }
 ```
 
-在 `package.json` 中使用 `resolutions`（Yarn）強製所有依賴使用同一版本。
+在 `package.json` 中使用 `resolutions`（Yarn）強制所有依賴使用同一版本。
 
 也可以通過 Webpack 的 `resolve.alias` 統一：
 
@@ -207,7 +207,7 @@ module.exports = {
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
-### 2. 設定 splitChunks 精細控製
+### 2. 設定 splitChunks 精細控制
 
 ```js
 module.exports = {
@@ -319,7 +319,7 @@ if (failed) {
 ## 小結
 
 - `webpack-bundle-analyzer` 以可視化方式展示打包產物，是定位體積問題的首選工具
-- 關注 Gzip size 而非 Stat size，它更接近用户實際下載量
+- 關注 Gzip size 而非 Stat size，它更接近用戶實際下載量
 - 常見體積問題：moment locale 全量打包、lodash 全量引入、重複依賴
 - 使用 `IgnorePlugin`、`externals`、`splitChunks` 等手段可以顯著降低 bundle 體積
 - 建議在 CI 流程中加入體積監控，防止優化成果回退

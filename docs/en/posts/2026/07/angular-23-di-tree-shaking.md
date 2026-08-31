@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 7
 description: "Deep dive into Angular 23's compile-time dependency injection system, the implementation of tree-shakable providers, and a comparative analysis with Vue/React dependency injection solutions."
-wordCount: 2200
+wordCount: 902
 ---
 
 Angular's dependency injection (DI) system has always been a core design pillar. From Angular 2's runtime reflection-based injection, to the later `providedIn` tree-shakable providers, to Angular 23's compile-time DI enhancements, the evolution direction is increasingly clear: move as much work as possible from runtime to compile time, reducing bundle size while maintaining the development experience.

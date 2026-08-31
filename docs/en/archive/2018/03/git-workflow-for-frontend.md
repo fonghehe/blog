@@ -12,7 +12,7 @@ Git workflow is an often-overlooked piece of infrastructure in team collaboratio
 
 ## Git Flow Basics
 
-The mainstream Git Flow uses these branches:
+The standard Git Flow uses these branches:
 
 ```
 main          Production environment, always stable and releasable

@@ -4,24 +4,24 @@ date: 2019-11-06 11:20:08
 tags:
   - Webpack
   - エンジニアリング
-readingTime: 5
+readingTime: 6
 description: "在上一篇文章中我们预览了 Webpack 5 的新特性，其中 Module Federation 是最具革命性的功能。本文将深入探讨 Module Federation 的架构设计、配置细节和在微前端场景中的实战应用。"
-wordCount: 694
+wordCount: 1149
 ---
 
-在上一篇文章中我们预览了 Webpack 5 的新特性，其中 Module Federation 是最具革命性的功能。本文将深入探讨 Module Federation 的架构设计、配置细节和在微前端场景中的实战应用。
+前回の記事では Webpack 5 の新機能を紹介しましたが、その中でも Module Federation は最も革新的な機能です。本記事では Module Federation のアーキテクチャ設計、設定の詳細、そしてマイクロフロントエンドの実践的な活用について深く掘り下げます。
 
 ## Module Federationのコアアイデア
 
-Module Federation 允许一个 JavaScript 应用在运行时动态加载另一个应用暴露的模块，而不需要在构建时就确定依赖关系。这意味着：
+Module Federation を使うと、ある JavaScript アプリケーションが、ビルド時に依存関係を決めておかずに、実行時に別のアプリケーションが公開したモジュールを動的に読み込めるようになります。つまり：
 
-1. 每个应用独立构建、独立部署
-2. 共享代码不需要发布为 npm 包
-3. 依赖可以跨应用共享，避免重复加载
+1. 各アプリケーションは独立してビルド・デプロイされる
+2. 共有コードを npm パッケージとして公開する必要がない
+3. 依存関係をアプリケーション間で共有でき、重複した読み込みを避けられる
 
 ## コアコンセプトの詳解
 
-### Host 与 Remote
+### Host と Remote
 
 ```
 ┌──────────────────┐         ┌──────────────────┐
@@ -33,13 +33,13 @@ Module Federation 允许一个 JavaScript 应用在运行时动态加载另一�
 └──────────────────┘         └──────────────────┘
 ```
 
-- **Host**：消费远程模块的应用，通过 `remotes` 配置指定远程模块来源
-- **Remote**：暴露模块供其他应用使用，通过 `exposes` 配置暴露哪些模块
-- 一个应用可以同时是 Host 和 Remote
+- **Host**：リモートモジュールを消費するアプリケーションで、`remotes` 設定でリモートモジュールの取得元を指定します
+- **Remote**：他のアプリケーションが使うモジュールを公開し、`exposes` 設定でどのモジュールを公開するかを指定します
+- 1 つのアプリケーションが同時に Host にも Remote にもなれます
 
-### 容器（Container）与入口（Entry）
+### コンテナ（Container）とエントリ（Entry）
 
-每个配置了 ModuleFederationPlugin 的应用构建后会产生一个 `remoteEntry.js` 文件，它是远程容器的入口：
+ModuleFederationPlugin を設定した各アプリケーションをビルドすると `remoteEntry.js` というファイルが生成され、それがリモートコンテナのエントリーになります：
 
 ```
 dashboard/
@@ -49,11 +49,11 @@ dashboard/
 │   └── vendors.js
 ```
 
-Host 应用通过加载这个 `remoteEntry.js` 来初始化远程容器。
+Host アプリケーションはこの `remoteEntry.js` を読み込むことで、リモートコンテナを初期化します。
 
 ## 詳細設定
 
-### Remote 端配置
+### Remote 側の設定
 
 ```js
 // dashboard/webpack.config.js
@@ -105,7 +105,7 @@ module.exports = {
 };
 ```
 
-### Host 端配置
+### Host 側の設定
 
 ```js
 // main-app/webpack.config.js
@@ -132,7 +132,7 @@ module.exports = {
 };
 ```
 
-### 在 Host 中使用 Remote 模块
+### Host で Remote モジュールを使う
 
 ```jsx
 // main-app/src/App.jsx
@@ -171,7 +171,7 @@ function App() {
 
 ## 共有依存関係の詳解
 
-Shared 配置控制依赖如何在 Host 和 Remote 之间共享：
+`shared` の設定は、依存関係を Host と Remote の間でどう共有するかを制御します：
 
 ```js
 shared: {
@@ -195,7 +195,7 @@ shared: {
 
 ### 版本协商机制
 
-当 Host 和 Remote 共享同一个依赖时，Webpack 会进行版本协商：
+Host と Remote が同じ依存関係を共有する場合、Webpack はバージョンの調整（ネゴシエーション）を行います：
 
 ```
 Host: react@16.12.0
@@ -207,7 +207,7 @@ requiredVersion: ^16.8.0
 - 如果 singleton: false → 各自使用各自的版本
 ```
 
-如果版本不兼容：
+バージョンに互換性がない場合：
 
 ```
 Host: react@16.12.0
@@ -221,7 +221,7 @@ Remote 的 react@17.0.0 不满足 ^16.8.0：
 
 ## Remoteの動的読み込み
 
-在某些场景下，Remote 地址是动态的（比如从配置中心获取）：
+一部のケースでは、Remote のアドレスが動的です（たとえば設定センターから取得する場合など）：
 
 ```js
 // remote-loader.js
@@ -287,7 +287,7 @@ micro-frontend/
 └── package.json
 ```
 
-### Shell 主应用
+### Shell（メインアプリケーション）
 
 ```js
 // shell/webpack.config.js
@@ -306,7 +306,7 @@ new ModuleFederationPlugin({
 });
 ```
 
-### Products 应用（既是 Remote 又是 Host）
+### Products アプリ（Remote かつ Host）
 
 ```js
 // products/webpack.config.js
@@ -328,7 +328,7 @@ new ModuleFederationPlugin({
 });
 ```
 
-### 路由整合
+### ルーティングの統合
 
 ```jsx
 // shell/src/App.jsx
@@ -366,18 +366,18 @@ function App() {
 
 | 特性 | Module Federation | qiankun | single-spa |
 |------|------------------|---------|------------|
-| 隔离级别 | CSS 共享作用域 | JS/CSS 沙箱 | JS 沙箱 |
-| 通信方式 | 直接 import | 全局状态 | 自定义 |
-| 依赖共享 | 内置版本协商 | 需要配置 | 需要 import maps |
-| 构建要求 | 必须 Webpack 5 | 无要求 | 无要求 |
-| 子应用加载 | 模块级别 | 应用级别 | 应用级别 |
+| 隔離レベル | CSS 共有スコープ | JS/CSS サンドボックス | JS サンドボックス |
+| 通信方式 | 直接 import | グローバル状態 | カスタム |
+| 依存共有 | 組み込みのバージョン調整 | 設定が必要 | import maps が必要 |
+| ビルド要件 | Webpack 5 が必須 | 要件なし | 要件なし |
+| 子アプリの読み込み | モジュール単位 | アプリ単位 | アプリ単位 |
 
 ## まとめ
 
-- Module Federation 允许独立构建的应用在运行时共享模块
-- Host 通过 `remotes` 配置消费远程模块，Remote 通过 `exposes` 暴露模块
-- `remoteEntry.js` 是远程容器的入口文件
-- `shared` 配置实现依赖共享，`singleton: true` 确保只加载一个实例
-- 支持动态加载，适用于配置驱动的微前端架构
-- 一个应用可以同时是 Host 和 Remote
-- 与 qiankun 等方案相比，Module Federation 的优势在于模块级别的共享和内置的依赖协商
+- Module Federation は、独立してビルドされたアプリケーション同士が実行時にモジュールを共有できるようにします
+- Host は `remotes` 設定でリモートモジュールを消費し、Remote は `exposes` でモジュールを公開します
+- `remoteEntry.js` はリモートコンテナのエントリーファイルです
+- `shared` 設定で依存関係の共有を実現し、`singleton: true` によって 1 つのインスタンスのみが読み込まれることを保証します
+- 動的な読み込みに対応しており、設定駆動のマイクロフロントエンドアーキテクチャに適しています
+- 1 つのアプリケーションが同時に Host にも Remote にもなれます
+- qiankun などの手法と比べ、Module Federation の強みはモジュール単位の共有と組み込みの依存関係調整にあります

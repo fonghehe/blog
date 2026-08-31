@@ -4,15 +4,15 @@ date: 2019-12-26 17:41:13
 tags:
   - Frontend
 readingTime: 4
-description: "临近年底，整理了一份 2020 年前端工程师的技能图谱。这份图谱不是面面俱到的\"技能清单\"，而是根据我自己的经验，梳理出从初级到高级前端工程师应该掌握的核心能力。我将它分为四层：基础层、框架层、工程层、架构层，每层都有具体的技术点和学习建议。"
-wordCount: 430
+description: "Toward the end of the year, I put together a skill map for frontend engineers in 2020. Rather than an all-encompassing skill checklist, it draws on my own experience to lay out the core abilities a frontend engineer should master from junior to senior level. I divided it into four layers—foundation, framework, engineering, and architecture—each with concrete technical points and learning suggestions."
+wordCount: 311
 ---
 
-临近年底，整理了一份 2020 年前端工程师的技能图谱。这份图谱不是面面俱到的"技能清单"，而是根据我自己的经验，梳理出从初级到高级前端工程师应该掌握的核心能力。我将它分为四层：基础层、框架层、工程层、架构层，每层都有具体的技术点和学习建议。
+Toward the end of the year, I put together a skill map for frontend engineers in 2020. Rather than an all-encompassing "skill checklist," it draws on my own experience to lay out the core abilities a frontend engineer should master from junior to senior level. I divided it into four layers—foundation, framework, engineering, and architecture—each with concrete technical points and learning suggestions.
 
 ## Foundation: JavaScript / CSS / HTML
 
-基础层是一切的根基。2020 年，基础层的要求比以前更高了——不是说会写 DOM 操作就够了，你需要深入理解语言机制。
+The foundation layer is the root of everything. In 2020 the bar for this layer is higher than before—knowing how to write DOM manipulations is no longer enough; you need a deep understanding of how the language actually works.
 
 ```javascript
 // JavaScript 核心：闭包、原型链、异步模型
@@ -180,7 +180,7 @@ class MyPromise {
 
 ## Framework Layer: React / Vue
 
-2020 年，React 和 Vue 都进入了新阶段。React Hooks 已经成熟，Vue 3 即将发布。
+In 2020 both React and Vue entered a new stage. React Hooks have matured, and Vue 3 is about to ship.
 
 ```typescript
 // React：Hooks 模式已经是标准
@@ -288,7 +288,7 @@ export function useUserList() {
 
 ## Engineering Layer: Build / Testing / CI/CD
 
-工程化能力是中高级前端的核心竞争力。构建工具、测试体系、CI/CD 流程缺一不可。
+Engineering capability is the core competitiveness of mid-to-senior frontend engineers. Build tooling, a testing system, and a CI/CD pipeline are all indispensable.
 
 ```javascript
 // Webpack 关键配置
@@ -374,7 +374,7 @@ jobs:
 
 ## Architecture Layer: Micro-Frontend / SSR / Performance
 
-架构层是从"会写代码"到"会做系统"的跨越。2020 年微前端和 SSR 是最值得关注的方向。
+The architecture layer is the leap from "knowing how to write code" to "knowing how to build systems." In 2020, micro-frontends and SSR are the directions most worth watching.
 
 ```javascript
 // 微前端：single-spa 基础配置
@@ -447,9 +447,9 @@ observer.observe({ entryTypes: ['paint', 'largest-contentful-paint', 'first-inpu
 
 ## Summary
 
-- 基础层是根本：深入 JavaScript（闭包、原型、异步）、掌握 CSS 布局（Flexbox、Grid）
-- 框架层要精通至少一个：React Hooks 模式、Vue Composition API 是 2020 年的主流方向
-- 工程化是核心竞争力：构建优化、测试体系、CI/CD 是从初级到高级的分水岭
-- 架构层决定天花板：微前端、SSR、性能优化需要项目经验积累
-- TypeScript 在四层中都有应用，2020 年应该成为前端工程师的标配技能
-- 学习要分优先级，不要试图同时掌握所有东西，根据自己的阶段选择重点
+- The foundation layer is fundamental: go deep on JavaScript (closures, prototypes, async) and master CSS layout (Flexbox, Grid)
+- For the framework layer, master at least one: React Hooks patterns and the Vue Composition API are the mainstream directions in 2020
+- Engineering is the core differentiator: build optimization, a testing system, and CI/CD are the watershed from junior to senior
+- The architecture layer sets the ceiling: micro-frontends, SSR, and performance optimization require accumulated project experience
+- TypeScript applies across all four layers and should become a standard skill for frontend engineers in 2020
+- Prioritize your learning; don't try to master everything at once—pick focus areas that match your current stage

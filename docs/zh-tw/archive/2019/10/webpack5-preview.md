@@ -187,7 +187,7 @@ export default App;
 
 ### 共享依賴的設定
 
-Shared 設定控製多個構建之間的依賴共享方式：
+Shared 設定控制多個構建之間的依賴共享方式：
 
 ```js
 new ModuleFederationPlugin({
@@ -214,7 +214,7 @@ new ModuleFederationPlugin({
 | 選項 | 說明 | 預設值 |
 |
 ------|------|--------|
-| `singleton` | 隻加載一個例項 | false |
+| `singleton` | 只加載一個實例 | false |
 | `requiredVersion` | 版本要求 | package.json 中的版本 |
 | `eager` | 是否打包到入口 chunk | false |
 | `strictVersion` | 版本不匹配時是否報錯 | true |
@@ -315,8 +315,8 @@ new ModuleFederationPlugin({
 
 - Webpack 5 的核心改進：持久化快取、確定性模組 ID、更好的 Tree Shaking
 - Module Federation 允許獨立構建的應用在執行時共享模組
-- Host 消費遠端模組，Remote 暴露模組，Shared 控製依賴共享
-- `singleton: true` 確保共享依賴隻加載一個例項
+- Host 消費遠端模組，Remote 暴露模組，Shared 控制依賴共享
+- `singleton: true` 確保共享依賴只加載一個實例
 - 非常適合微前端架構和跨專案元件共享
 - 支援動態載入和多 Remote 配置
 - 預計 Webpack 5 正式版將在近期釋出

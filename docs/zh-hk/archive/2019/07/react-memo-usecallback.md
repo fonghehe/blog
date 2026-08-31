@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 5
 description: "React 16.6 引入了 `React.memo`，加上 Hooks 中的 `useCallback` 和 `useMemo`，給了開發者更多效能優化的手段。但我在實際項目中發現，很多人（包括之前的我）陷入了\"到處包 memo\"的誤區。這篇文章聊聊這幾個 API 的正確使用姿勢。"
-wordCount: 734
+wordCount: 739
 ---
 
 React 16.6 引入了 `React.memo`，加上 Hooks 中的 `useCallback` 和 `useMemo`，給了開發者更多效能優化的手段。但我在實際項目中發現，很多人（包括之前的我）陷入了"到處包 memo"的誤區。這篇文章聊聊這幾個 API 的正確使用姿勢。
@@ -184,7 +184,7 @@ const OrderRow = React.memo(function OrderRow({ order, onStatusChange }) {
 })
 ```
 
-問題：`handleStatusChange` 沒有用 `useCallback` 包裹，所以每次 `OrderList` 渲染（用户輸入搜索時），所有 `OrderRow` 都會重新渲染。
+問題：`handleStatusChange` 沒有用 `useCallback` 包裹，所以每次 `OrderList` 渲染（用戶輸入搜尋時），所有 `OrderRow` 都會重新渲染。
 
 ```jsx
 // 優化後：加入 useCallback
@@ -226,7 +226,7 @@ function OrderList() {
 }
 ```
 
-優化效果：輸入搜尋時，隻有搜尋過濾結果變化的行會重新渲染，其餘行被 `memo` 攔截。
+優化效果：輸入搜尋時，只有搜尋過濾結果有變動的資料列會重新渲染，其餘列被 `memo` 擋了下來。
 
 ## 什麼時候不要用 React.memo
 
@@ -243,7 +243,7 @@ function Parent() {
 
 ### 2. 組件本身渲染成本很低
 
-如果組件隻渲染幾個 DOM 元素，`memo` 的淺比較開銷可能比重新渲染還大。React 官方建議：**先測量，再優化**。
+如果組件只渲染幾個 DOM 元素，`memo` 的淺比較開銷可能比重新渲染還大。React 官方建議：**先測量，再優化**。
 
 ### 3. props 經常變化
 
@@ -338,7 +338,7 @@ const onClick = useCallback(() => doSomething(id), [id])
 - 包裹 `memo` 本身有開銷
 - 代碼可讀性下降
 
-後來隻優化了列表項組件和渲染成本高的組件，效果反而更好。
+後來只優化了列表項組件和渲染成本高的組件，效果反而更好。
 
 ## 小結
 

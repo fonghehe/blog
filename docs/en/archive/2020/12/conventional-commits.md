@@ -3,16 +3,16 @@ title: "Conventional Commits: A Structured Commit Message Specification"
 date: 2020-12-09 09:41:13
 tags:
   - Frontend
-readingTime: 2
-description: "关于约定式提交 Conventional Commits，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 268
+readingTime: 1
+description: "Many developers only know Conventional Commits at the format level. This article examines them from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 144
 ---
 
-关于约定式提交 Conventional Commits，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+On Conventional Commits: many developers only operate at the API-call level. This post tries to look at the real problems and solutions from a production perspective.
 
 ## Basic Principles
 
-先来看基本的实现方式：
+Let's start with the basic approach:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll also need to handle errors and edge cases.
 
 ## Advanced Features
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can take it further:
 
 ```javascript
 :root {
@@ -63,11 +63,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and noticeably cuts maintenance cost.
 
 ## Project Practice
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets more involved:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -92,11 +92,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This way, both the testability and extensibility of the code improve.
 
 ## Best Practices
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -120,10 +120,10 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind the edge-case handling — that's critical in production.
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Always validate compatibility before using it in production
+- Conventions and docs matter more than the tech itself in a team
+- Keep an eye on the community; technical approaches need continuous iteration

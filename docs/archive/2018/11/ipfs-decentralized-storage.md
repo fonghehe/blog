@@ -4,6 +4,9 @@ date: 2018-11-18 15:02:01
 tags:
   - Web3
   - Blockchain
+readingTime: 9
+wordCount: 1688
+description: "区块链的存储成本是前端工程师进入 Web3 领域后最先感受到的震撼之一。在以太坊上存储 1 MB 数据的 Gas 费用可能高达数千美元——这让图片、视频、JSON 文件等内容的链上存储完全不可行。IPFS（InterPlanetary File System）作为去中心化存储方案，成为了解决这一矛盾的关键基础设施。它的"
 ---
 
 区块链的存储成本是前端工程师进入 Web3 领域后最先感受到的震撼之一。在以太坊上存储 1 MB 数据的 Gas 费用可能高达数千美元——这让图片、视频、JSON 文件等内容的链上存储完全不可行。IPFS（InterPlanetary File System）作为去中心化存储方案，成为了解决这一矛盾的关键基础设施。它的定位很明确：链上存储哈希，链下存储内容。

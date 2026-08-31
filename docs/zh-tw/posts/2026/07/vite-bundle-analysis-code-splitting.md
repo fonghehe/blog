@@ -4,9 +4,9 @@ date: 2026-07-12 11:15:41
 tags:
   - Vite
   - 工程化
-readingTime: 7
+readingTime: 9
 description: "Vite 生產建置基於 Rollup/Rolldown 打包，程式碼分割策略直接影響首屏效能。本文詳解 manualChunks 組態、動態 import、modulepreload 預載入、Tree Shaking 陷阱和 CSS 分割，展示將 500KB 首屏 bundle 最佳化到 80KB 的完整過程。"
-wordCount: 3000
+wordCount: 1623
 ---
 
 Vite 的開發體驗已經成為前端工具鏈的標竿，但生產建置的效能最佳化仍然是很多團隊的盲區。dev 模式下按需載入的 ESM 模組在生產環境會被打包成靜態資源，這個過程中的程式碼分割策略、預載入機制和 Tree Shaking 效果直接決定了使用者的首屏體驗。

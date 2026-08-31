@@ -6,11 +6,11 @@ tags:
   - Engineering
 
 readingTime: 2
-description: "在日常开发中，Vite 生产构建 Rollup 深度定制 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 197
+description: "Deep Rollup customization for Vite production builds is increasingly common. This article systematically covers the usage, internals, and optimization strategies."
+wordCount: 184
 ---
 
-在日常开发中，Vite 生产构建 Rollup 深度定制 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+Deep Rollup customization for Vite production builds is being used more and more frequently in day-to-day development. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -162,6 +162,6 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- Vite 生产构建 Rollup 深度定制不是银弹，需要根据项目规模和技术栈选择
+- Deep Rollup customization for Vite production builds is not a silver bullet; choose it based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

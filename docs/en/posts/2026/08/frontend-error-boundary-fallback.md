@@ -3,9 +3,9 @@ title: "Frontend Error Boundaries and Fallback Strategies: Building Resilient Ap
 date: 2026-08-05 19:30:18
 tags:
   - Architecture
-readingTime: 7
+readingTime: 8
 description: "Frontend application resilience is not just about catching errors—it's about ensuring users can still complete their tasks after errors occur. This article systematically covers the complete engineering approach to building resilient frontend applications: error classification, framework-level error boundaries, global capture, fallback strategy design, error reporting, and release circuit breakers."
-wordCount: 2700
+wordCount: 942
 ---
 
 Frontend application stability cannot be guaranteed solely by "not writing bugs." As application complexity grows—dynamic loading, async interactions, third-party dependencies, diverse user environments—runtime errors are inevitable. The goal of a resilient architecture is not to eliminate all errors, but to ensure that when errors occur, users can still complete their tasks, or at least experience graceful degradation rather than a white screen.
@@ -468,7 +468,7 @@ The `hidden` mode generates Source Maps but doesn't add `//# sourceMappingURL=` 
 
 1. **Failure is the norm**—design assuming any component can fail: API timeouts, component crashes, resource loading failures. Every failure point should have a corresponding fallback plan.
 2. **Minimize blast radius**—isolate failure regions with fine-grained Error Boundaries. A component crash shouldn't affect other areas. Three-level nesting: route-level, region-level, component-level.
-3. **Degradation over errors**—users seeing a degraded UI has a better experience than seeing an error popup. Use cached data rather than blank space when possible; show simplified UI rather than error messages when possible.
+3. **Degradation over errors**—users have a better experience with a degraded UI than with an error popup. Use cached data rather than blank space when possible; show simplified UI rather than error messages when possible.
 4. **Observability**—every error should be reported, aggregated, and categorized. Error handling without observability is equivalent to no handling.
 5. **Progressive recovery**—provide a "Retry" button for users to actively recover, rather than requiring a full page refresh.
 

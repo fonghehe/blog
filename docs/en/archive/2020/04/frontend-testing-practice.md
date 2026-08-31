@@ -4,11 +4,11 @@ date: 2020-04-16 10:21:07
 tags:
   - Testing
 readingTime: 2
-description: "项目迭代越来越快，回归测试却全靠人肉点。终于下决心把自动化测试搞起来，先从最实用的部分开始。"
-wordCount: 220
+description: "Project iterations keep speeding up, yet regression testing is still done entirely by hand. I finally committed to setting up automated testing, starting with the most practical parts."
+wordCount: 152
 ---
 
-项目迭代越来越快，回归测试却全靠人肉点。终于下决心把自动化测试搞起来，先从最实用的部分开始。
+Our project's iteration cadence keeps speeding up, yet regression testing is still done entirely by hand. I finally decided to get automated testing in place, starting with the most practical parts.
 
 ## Testing Pyramid
 
@@ -18,9 +18,9 @@ wordCount: 220
       / 单元测试       \      大量：验证逻辑正确
 ```
 
-- **单元测试**：函数、组件的独立测试，快、稳
-- **集成测试**：多个模块组合测试，验证交互
-- **E2E 测试**：模拟真实用户操作，最慢但最真实
+- **Unit tests**: isolated tests for functions and components — fast and stable.
+- **Integration tests**: testing several modules together to verify how they interact.
+- **E2E tests**: simulate real user interactions — the slowest, but the most realistic.
 
 ## Tool Selection
 
@@ -112,7 +112,7 @@ describe('formatPhone', () => {
 });
 ```
 
-## 组件测试
+## Component Testing
 
 ```typescript
 // __tests__/Button.test.ts
@@ -151,7 +151,7 @@ describe('Button', () => {
 });
 ```
 
-## Mock API 请求
+## Mocking API Requests
 
 ```typescript
 // __tests__/UserList.test.ts
@@ -202,7 +202,7 @@ describe('UserList', () => {
 });
 ```
 
-## Cypress E2E 测试
+## Cypress E2E Tests
 
 ```javascript
 // cypress/integration/login.spec.js
@@ -231,7 +231,7 @@ describe('登录流程', () => {
 });
 ```
 
-## package.json 配置
+## package.json Configuration
 
 ```json
 {
@@ -247,8 +247,8 @@ describe('登录流程', () => {
 
 ## Summary
 
-- 先从工具函数的单元测试开始，投入产出比最高
-- 组件测试关注行为（事件、渲染）而不是实现细节
-- Mock 外部依赖（API、定时器），让测试结果可预测
-- E2E 测试覆盖核心流程（登录、下单），不需要覆盖所有页面
-- 测试覆盖率达到 60-70% 就已经很好了，不需要追求 100%
+- Start with unit tests for utility functions — that's where you get the highest return on effort.
+- Component tests should focus on behavior (events, rendering) rather than implementation details.
+- Mock external dependencies (APIs, timers) so test results are predictable.
+- E2E tests should cover core flows (login, checkout) rather than every single page.
+- A coverage rate of 60–70% is already good; there's no need to chase 100%.

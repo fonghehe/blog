@@ -4,9 +4,9 @@ date: 2025-01-08 20:59:43
 tags:
   - Web3
   - DApp
-readingTime: 11
+readingTime: 9
 description: "A systematic analysis of each stage in the Web3 transaction lifecycle, providing a complete frontend state machine design and transaction tracking solution"
-wordCount: 3400
+wordCount: 655
 ---
 
 ## Complete Stages of the Web3 Transaction Lifecycle

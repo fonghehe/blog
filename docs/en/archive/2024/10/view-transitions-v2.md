@@ -1,11 +1,11 @@
 ---
-title: "CSS View Transitions v2: Chrome 实现进展 & 降级Strategy"
+title: "CSS View Transitions v2: Chrome Implementation Progress and Fallback Strategy"
 date: 2024-10-28 19:42:19
 tags:
   - CSS
 readingTime: 2
 description: "CSS View Transitions v2 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pr"
-wordCount: 204
+wordCount: 195
 ---
 
 CSS View Transitions v2 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -41,7 +41,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Usage
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -153,5 +153,5 @@ This approach has been running stably in production for over six months and has 
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- CSS View Transitions v2不是银弹，需要根据项目规模和技术栈选择
+- CSS View Transitions v2 is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

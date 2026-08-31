@@ -5,11 +5,11 @@ tags:
   - JavaScript
   - React
 readingTime: 2
-description: "Server Components 进入稳定期，我们团队在一个中等复杂度的项目中落地了 RSC 架构。总结一下实际项目中验证过的模式和踩坑经验。"
-wordCount: 313
+description: "Server Components have entered their stable period, and my team adopted the RSC architecture in a medium-complexity project. Here are the patterns we validated in practice and the pitfalls we hit."
+wordCount: 293
 ---
 
-Server Components 进入稳定期，我们团队在一个中等复杂度的项目中落地了 RSC 架构。总结一下实际项目中验证过的模式和踩坑经验。
+Server Components have entered their stable period, and my team adopted the RSC architecture in a medium-complexity project. Here are the patterns we validated in practice and the pitfalls we hit.
 
 ## Pattern 1: Data Fetching Push-Down
 

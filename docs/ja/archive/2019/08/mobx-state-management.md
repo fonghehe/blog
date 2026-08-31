@@ -3,16 +3,16 @@ title: "MobX状態管理の実践とReduxとの比較"
 date: 2019-08-16 14:59:05
 tags:
   - フロントエンド
-readingTime: 4
-description: "Redux 在大型 React 项目中几乎是默认选择，但其 boilerplate 多、学习曲线陡峭的问题一直被开发者诟病。MobX 基于响应式编程范式，提供了更直观、更少样板代码的状态管理方案。本文将深入 MobX 的核心概念，并与 Redux 做详细对比，帮助你在技术选型时做出更好的决策。"
-wordCount: 591
+readingTime: 5
+description: "大規模なReactプロジェクトではReduxがほぼデフォルトの選択肢だが、ボイラープレートが多く学習曲線が急という問題は常に開発者を悩ませてきた。MobXはリアクティブプログラミングパラダイムに基づき、より直感的でボイラープレートの少ない状態管理ソリューションを提供する。本記事ではMobXのコアコンセプトを深掘りし、Reduxとの詳細な比較を通じて、技術選定のより良い判断を支援する。"
+wordCount: 826
 ---
 
-Redux 在大型 React 项目中几乎是默认选择，但其 boilerplate 多、学习曲线陡峭的问题一直被开发者诟病。MobX 基于响应式编程范式，提供了更直观、更少样板代码的状态管理方案。本文将深入 MobX 的核心概念，并与 Redux 做详细对比，帮助你在技术选型时做出更好的决策。
+大規模なReactプロジェクトではReduxがほぼデフォルトの選択肢だが、ボイラープレートが多く学習曲線が急という問題は常に開発者を悩ませてきた。MobXはリアクティブプログラミングパラダイムに基づき、より直感的でボイラープレートの少ない状態管理ソリューションを提供する。本記事ではMobXのコアコンセプトを深掘りし、Reduxとの詳細な比較を通じて、技術選定のより良い判断を支援する。
 
 ## MobXのコアコンセプト
 
-MobX 围绕三个核心概念构建：**Observable（可观察状态）**、**Computed（计算值）**、**Action（动作）**。
+MobXは3つのコアコンセプトを中心に構築されている：**Observable（観察可能な状態）**、**Computed（算出値）**、**Action（アクション）**。
 
 ```js
 import { observable, computed, action, autorun } from 'mobx';
@@ -75,18 +75,18 @@ class TodoStore {
 
 const store = new TodoStore();
 
-// autorun 自动追踪依赖并执行
+// autorunは依存関係を自動追跡して実行する
 autorun(() => {
-  console.log(`待办总数: ${store.stats.total}, 已完成: ${store.stats.done}`);
+  console.log(`ToDo総数: ${store.stats.total}, 完了: ${store.stats.done}`);
 });
 
-store.addTodo('学习 MobX');  // 输出: 待办总数: 1, 已完成: 0
-store.toggleTodo(store.todos[0].id); // 输出: 待办总数: 1, 已完成: 1
+store.addTodo('MobXを学ぶ');  // 出力: ToDo総数: 1, 完了: 0
+store.toggleTodo(store.todos[0].id); // 出力: ToDo総数: 1, 完了: 1
 ```
 
 ## デコレーターなしのMobX
 
-如果你不想配置装饰器语法，也可以使用函数式 API：
+デコレータ構文の設定が不要なら、関数型APIも使える：
 
 ```js
 import { observable, computed, action, makeObservable } from 'mobx';
@@ -95,7 +95,7 @@ class CounterStore {
   count = 0;
 
   constructor() {
-    // 在构造函数中声明每个属性的类型
+    // コンストラクタで各プロパティの型を宣言する
     makeObservable(this, {
       count: observable,
       doubled: computed,
@@ -124,7 +124,7 @@ class CounterStore {
 npm install mobx mobx-react
 ```
 
-### 使用 observer 高阶组件
+### observer高階コンポーネントの使用
 
 ```jsx
 {% raw %}
@@ -135,12 +135,12 @@ import todoStore from '../stores/TodoStore';
 const TodoList = observer(() => {
   return (
     <div>
-      <h2>待办列表 ({todoStore.stats.done}/{todoStore.stats.total})</h2>
+      <h2>ToDo一覧 ({todoStore.stats.done}/{todoStore.stats.total})</h2>
 
       <div className="filters">
-        <button onClick={() => todoStore.setFilter('all')}>全部</button>
-        <button onClick={() => todoStore.setFilter('pending')}>未完成</button>
-        <button onClick={() => todoStore.setFilter('done')}>已完成</button>
+        <button onClick={() => todoStore.setFilter('all')}>すべて</button>
+        <button onClick={() => todoStore.setFilter('pending')}>未完了</button>
+        <button onClick={() => todoStore.setFilter('done')}>完了済み</button>
       </div>
 
       <ul>
@@ -154,7 +154,7 @@ const TodoList = observer(() => {
             <span style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>
               {todo.title}
             </span>
-            <button onClick={() => todoStore.removeTodo(todo.id)}>删除</button>
+            <button onClick={() => todoStore.removeTodo(todo.id)}>削除</button>
           </li>
         ))}
       </ul>
@@ -166,7 +166,7 @@ export default TodoList;
 {% endraw %}
 ```
 
-### 使用 inject 注入 Store
+### injectを使ったStoreの注入
 
 ```jsx
 import React from 'react';
@@ -188,9 +188,9 @@ const TodoForm = inject('todoStore')(observer(({ todoStore }) => {
       <input
         value={input}
         onChange={e => setInput(e.target.value)}
-        placeholder="添加新的待办..."
+        placeholder="新しいToDoを追加..."
       />
-      <button type="submit">添加</button>
+      <button type="submit">追加</button>
     </form>
   );
 }));
@@ -199,7 +199,7 @@ export default TodoForm;
 ```
 
 ```jsx
-// Provider 包裹
+// Providerでラップ
 import { Provider } from 'mobx-react';
 import TodoList from './TodoList';
 import TodoForm from './TodoForm';
@@ -217,9 +217,9 @@ function App() {
 
 ## 非同期アクション処理
 
-MobX 本身没有内置异步处理方案，但可以通过 `runInAction` 或 `flow` 来处理：
+MobX自体には非同期処理の仕組みは組み込まれていないが、`runInAction` や `flow` を使って対応できる：
 
-### 方式一：runInAction
+### 方法1：runInAction
 
 ```js
 import { observable, action, runInAction } from 'mobx';
@@ -238,7 +238,7 @@ class UserStore {
       const response = await fetch('/api/users');
       const data = await response.json();
 
-      // 异步回调中修改状态需要包裹在 runInAction 中
+      // 非同期コールバックでの状態変更はrunInActionで囲む必要がある
       runInAction(() => {
         this.users = data;
         this.loading = false;
@@ -253,7 +253,7 @@ class UserStore {
 }
 ```
 
-### 方式二：flow + generator
+### 方法2：flow + generator
 
 ```js
 import { observable, action, flow } from 'mobx';
@@ -274,15 +274,15 @@ class UserStore {
       this.loading = false;
     }
   });
-  // flow 生成的函数自动就是 action，不需要 @action 装饰器
+  // flowが生成する関数は自動的にactionになるため、@actionデコレータは不要
 }
 ```
 
 ## MobX vs Redux 比較
 
-### 代码量对比：实现相同的 Todo 功能
+### コード量の比較：同じToDo機能の実装
 
-**Redux 方式：**
+**Redux方式：**
 
 ```js
 // actions.js
@@ -330,7 +330,7 @@ function TodoList() {
 }
 ```
 
-**MobX 方式：**
+**MobX方式：**
 
 ```js
 class TodoStore {
@@ -349,27 +349,27 @@ class TodoStore {
 }
 ```
 
-MobX 代码量约为 Redux 的 1/3。
+MobXのコード量はReduxの約1/3である。
 
-### 架构对比
+### アーキテクチャ比較
 
-| 维度 | Redux | MobX |
+| 観点 | Redux | MobX |
 |------|-------|------|
-| 编程范式 | 函数式 | 面向对象/响应式 |
-| 状态结构 | 单一 Store，不可变数据 | 多个 Store，可变数据 |
-| 更新方式 | dispatch action → pure reducer | 直接修改 observable |
-| 学习曲线 | 陡峭（action、reducer、middleware） | 平缓（observable、computed、action） |
-| 调试工具 | Redux DevTools，支持时间旅行 | MobX DevTools，功能稍弱 |
-| 不可变性 | 强制不可变（方便追踪变化） | 自动追踪（直接修改） |
-| 代码量 | 多（action、reducer、selector） | 少（直接修改属性） |
-| 适用场景 | 大型团队，需要严格规范 | 中小型团队，追求开发效率 |
+| プログラミングパラダイム | 関数型 | オブジェクト指向/リアクティブ |
+| 状態構造 | 単一Store、不変データ | 複数Store、可変データ |
+| 更新方法 | dispatch action → pure reducer | observableを直接変更 |
+| 学習曲線 | 急（action、reducer、middleware） | 緩やか（observable、computed、action） |
+| デバッグツール | Redux DevTools、タイムトラベル対応 | MobX DevTools、機能はやや弱い |
+| 不変性 | 強制不変（変更追跡が容易） | 自動追跡（直接変更） |
+| コード量 | 多い（action、reducer、selector） | 少ない（プロパティを直接変更） |
+| 適用場面 | 大規模チーム、厳格な規約が必要 | 中小規模チーム、開発効率を重視 |
 
 ## runInActionとストリクトモードの使用
 
 ```js
 import { configure } from 'mobx';
 
-// 开启严格模式：只允许在 action 中修改状态
+// 厳格モードの有効化：action内でのみ状態変更を許可
 configure({ enforceActions: 'always' });
 
 class CounterStore {
@@ -380,19 +380,19 @@ class CounterStore {
     this.count++; // OK
   }
 
-  // 如果不在 action 中修改，严格模式下会报错
+  // action外で変更すると、厳格モードではエラーになる
   badIncrement() {
-    // this.count++; // Error: 改变 observable 的值必须在 action 中
+    // this.count++; // Error: observableの値の変更はaction内で行う必要がある
   }
 }
 ```
 
 ## まとめ
 
-- MobX 基于响应式编程，使用 `observable`、`computed`、`action` 三个核心概念管理状态
-- 相比 Redux，MobX 代码量更少、学习成本更低、开发体验更流畅
-- `observer` 会自动追踪组件中使用的所有 observable，实现精准的细粒度更新
-- 异步操作可以使用 `runInAction` 或 `flow` + generator 来处理
-- 推荐开启 `enforceActions` 严格模式，保证状态修改的可追溯性
-- Redux 适合大型团队需要严格规范的场景，MobX 适合追求开发效率的中小型项目
-- MobX 的调试能力相对 Redux 稍弱，时间旅行调试支持有限
+- MobXはリアクティブプログラミングに基づき、`observable`・`computed`・`action` の3つのコアコンセプトで状態を管理する
+- Reduxと比較して、MobXはコード量が少なく、学習コストが低く、開発体験がスムーズである
+- `observer` はコンポーネントで使用されるすべてのobservableを自動追跡し、精密な粒度の更新を実現する
+- 非同期操作は `runInAction` または `flow` + generator で処理できる
+- `enforceActions` 厳格モードの有効化を推奨する。状態変更の追跡可能性を保証できる
+- Reduxは大規模チームで厳格な規約が必要な場面に適し、MobXは開発効率を重視する中小規模プロジェクトに適している
+- MobXのデバッグ機能はReduxに比べてやや弱く、タイムトラベルデバッグのサポートも限定的である

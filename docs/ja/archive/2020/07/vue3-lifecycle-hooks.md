@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 4
 description: "Vue 3 の Composition API ではライフサイクルフックが再設計されました。従来の Options API では mounted や created といったオプションを使用していましたが、setup() 関数内では対応する onXxx 形式を使用する必要があります。社内コンポーネントライブラリを Composition API に移行する過程で、いくつかの課題に直面しました。"
-wordCount: 709
+wordCount: 715
 ---
 
 Vue 3 の Composition API ではライフサイクルフックが再設計されました。以前は Options API で `mounted` や `created` といったオプションを使用していましたが、現在は `setup()` 関数内で対応する `onXxx` 形式を使用する必要があります。社内コンポーネントライブラリを Composition API に移行する過程でいくつかの問題に直面したため、それらを整理しました。
@@ -14,8 +14,8 @@ Vue 3 の Composition API ではライフサイクルフックが再設計され
 
 | Options API | Composition API |
 |---|---|
-| beforeCreate | (不需要，setup 本身就是) |
-| created | (不需要，setup 本身就是) |
+| beforeCreate | （不要，setup そのものが該当） |
+| created | （不要，setup そのものが該当） |
 | beforeMount | onBeforeMount |
 | mounted | onMounted |
 | beforeUpdate | onBeforeUpdate |

@@ -4,11 +4,11 @@ date: 2023-03-13 11:13:48
 tags:
   - TypeScript
 readingTime: 2
-description: "最近在团队中落地TypeScript 装饰器元数据， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 224
+description: "I recently applied TypeScript decorator metadata with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 205
 ---
 
-最近在团队中落地TypeScript 装饰器元数据， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+I recently applied TypeScript decorator metadata with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
 
 ## Core Concepts
 
@@ -175,6 +175,6 @@ Pay attention to boundary condition handling, which is critical in production.
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- TypeScript 装饰器元数据不是银弹，需要根据项目规模和技术栈选择
+- TypeScript decorator metadata is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

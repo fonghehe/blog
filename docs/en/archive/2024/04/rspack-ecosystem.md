@@ -4,8 +4,8 @@ date: 2024-04-02 14:50:43
 tags:
   - Frontend
 readingTime: 2
-description: "关于Rspack 1.0 稳定版发布，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspectiv"
-wordCount: 202
+description: "Many developers only know the Rspack 1.0 stable release at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 184
 ---
 
 关于Rspack 1.0 稳定版发布，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -132,7 +132,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Rspack 1.0 稳定版发布不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- Don't adopt new technology just for the sake of it
+- Code samples are for reference only and need adjusting to your business scenario
+- The rspack 1.0 stable release is not a silver bullet — choose based on your project scale and tech stack
+- Understanding the underlying principles matters more than memorizing APIs

@@ -44,7 +44,7 @@ webpack 在啟動時必須**先打包再服務**：
 <script type="module" src="/src/main.ts"></script>
 ```
 
-瀏覽器看到 `type="module"` 後，會自行解析 `import` 語句併發起請求。Vite 隻需要在服務端轉換被請求的檔案：
+瀏覽器看到 `type="module"` 後，會自行解析 `import` 語句併發起請求。Vite 只需要在服務端轉換被請求的檔案：
 
 ```javascript
 // 瀏覽器請求 /src/App.vue

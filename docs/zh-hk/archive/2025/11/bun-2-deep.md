@@ -1,5 +1,5 @@
 ---
-title: "Bun 2.0 生態現状：npm 包相容性實测與選型建議"
+title: "Bun 2.0 生態現狀：npm 包相容性實測與選型建議"
 date: 2025-11-17 10:51:28
 tags:
   - 前端
@@ -95,7 +95,7 @@ const csvToJson = new Transform({
 
 ## 優化技巧
 
-實際項目中的用法會更復雜一些：
+實際項目中的用法會更複雜一些：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'

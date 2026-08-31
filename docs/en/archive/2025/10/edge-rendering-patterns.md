@@ -4,11 +4,11 @@ date: 2025-10-12 19:06:43
 tags:
   - Frontend
 readingTime: 2
-description: "Edge 渲染已经从概念验证走向生产应用。来总结一下我们团队在 Edge 渲染方面的实践和踩坑经验。"
-wordCount: 172
+description: "Edge rendering has moved from proof-of-concept to production. Here's a summary of my team's hands-on experience and pitfalls with edge rendering."
+wordCount: 152
 ---
 
-Edge 渲染已经从概念验证走向生产应用。来总结一下我们团队在 Edge 渲染方面的实践和踩坑经验。
+Edge rendering has moved from proof-of-concept to production. Here's a summary of my team's hands-on experience and pitfalls with edge rendering.
 
 ## Edge 渲染模式对比
 

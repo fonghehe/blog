@@ -4,7 +4,7 @@ date: 2023-07-24 17:22:08
 tags:
   - Frontend
 readingTime: 2
-description: "关于CSP v3 内容安全策略新指令，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+description: "Many developers only know the new CSP v3 content security directives at the syntax level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 190
 ---
 

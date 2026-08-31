@@ -4,6 +4,9 @@ date: 2020-08-15 11:44:27
 tags:
   - Web3
   - DApp
+readingTime: 9
+wordCount: 1164
+description: "MetaMask 浏览器扩展在桌面端为 DApp 提供了便捷的连接方式，但它有一个根本局限：用户必须在桌面浏览器中安装 MetaMask 插件。移动端浏览器无法安装扩展，这意味着移动端用户无法直接使用 MetaMask 与 DApp 交互。"
 ---
 
 ## 为什么需要 WalletConnect

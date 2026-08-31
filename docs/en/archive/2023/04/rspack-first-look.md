@@ -4,11 +4,11 @@ date: 2023-04-11 10:39:30
 tags:
   - Frontend
 readingTime: 2
-description: "最近在团队中落地Rspack 1.0 Rust 构建工具稳定版， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 201
+description: "I recently applied Rspack 1.0, the stable Rust build tool with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 184
 ---
 
-最近在团队中落地Rspack 1.0 Rust 构建工具稳定版， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+I recently applied Rspack 1.0, the stable Rust build tool with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
 
 ## Core Concepts
 
@@ -133,6 +133,6 @@ This pattern is very practical in large projects and can significantly reduce ma
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Rspack 1.0 Rust 构建工具稳定版不是银弹，需要根据项目规模和技术栈选择
+- Rspack 1.0, the stable Rust build tool is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

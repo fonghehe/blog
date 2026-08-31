@@ -4,11 +4,11 @@ date: 2024-10-15 18:29:06
 tags:
   - Frontend
 readingTime: 2
-description: "关于Bun 1.1 跨平台运行时，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 194
+description: "Many developers only know the Bun 1.1 cross-platform runtime at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 190
 ---
 
-关于Bun 1.1 跨平台运行时，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Many developers only know the Bun 1.1 cross-platform runtime at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -35,7 +35,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Features
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T

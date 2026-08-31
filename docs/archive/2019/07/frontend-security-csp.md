@@ -274,7 +274,7 @@ base-uri 'self'
 
 ### Angular 模板注入
 
-如果页面用了 AngularJS 1.x，`&#123;&#123;constructor.constructor('alert(1)')()&#125;&#125;`这样的表达式可以绕过某些 CSP 配置。
+如果页面用了 AngularJS 1.x，`&#123;&#123;constructor.constructor('alert(1)')()&#125;&#125;` 这样的表达式可以绕过某些 CSP 配置。
 
 防御：`script-src` 中使用 nonce，不要使用 `'unsafe-inline'` 或 `'unsafe-eval'`。
 

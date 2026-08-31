@@ -5,10 +5,10 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 2.8 で条件型が、TypeScript 2.1 でマップ型が導入されました。この 2 つの機能で非常に強力な型ツールを構築できます。"
-wordCount: 249
+wordCount: 246
 ---
 
-TypeScript 2.8 で条件型が、TypeScript 2.1 でマップ型が導入されました。この 2 つの機能で非常に強力な型ツールを構築できます。
+TypeScript 2.8 で条件型が、TypeScript 2.1 でマップ型が導入された。この 2 つの機能で非常に強力な型ツールを構築できる。
 
 ## マップ型
 

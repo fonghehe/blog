@@ -12,7 +12,7 @@ CSS Houdini 是一組底層 CSS API，讓開發者可以介入瀏覽器的 CSS �
 
 ## 什麼是 CSS Houdini
 
-傳統 CSS 的問題：如果你想實現一個瀏覽器不支援的樣式效果（比如自定義的 border-image 或背景圖案），隻能用圖片或 JavaScript hack。
+傳統 CSS 的問題：如果你想實現一個瀏覽器不支援的樣式效果（比如自定義的 border-image 或背景圖案），只能用圖片或 JavaScript hack。
 
 Houdini 讓你可以用 JavaScript **擴展 CSS**：
 
@@ -99,7 +99,7 @@ CSS.registerProperty({
 }
 ```
 
-沒有 `CSS.registerProperty`，`--gradient-angle` 隻是個字符串，無法參與 `transition`。註冊類型後，瀏覽器知道如何在 `0deg` 和 `135deg` 之間插值。
+沒有 `CSS.registerProperty`，`--gradient-angle` 只是個字符串，無法參與 `transition`。註冊類型後，瀏覽器知道如何在 `0deg` 和 `135deg` 之間插值。
 
 ## 實用案例：波浪線下劃線
 
@@ -152,4 +152,4 @@ if ("paintWorklet" in CSS) {
 
 ## 總結
 
-CSS Houdini 中的 Paint Worklet 已經在 Chrome 中可以用於生產。它的意義不隻是"畫幾個好看的背景"，而是開創了**瀏覽器渲染擴展點**的先例——未來或許連 CSS 佈局引擎也能由社區擴展。現在學習是投資未來。
+CSS Houdini 中的 Paint Worklet 已經在 Chrome 中可以用於生產。它的意義不只是"畫幾個好看的背景"，而是開創了**瀏覽器渲染擴展點**的先例——未來或許連 CSS 佈局引擎也能由社區擴展。現在學習是投資未來。

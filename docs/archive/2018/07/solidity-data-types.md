@@ -5,6 +5,9 @@ tags:
   - Web3
   - Solidity
   - Smart Contract
+readingTime: 8
+wordCount: 1671
+description: "Solidity 的数据类型系统表面上看起来像 JavaScript 和 C++ 的混合体，但其存储模型却与两者截然不同。智能合约的每次状态写入都需要消耗 Gas，而 Gas 消耗直接取决于数据在 storage 中的布局方式。理解 Solidity 的数据类型与存储模型，不仅是写出正确合约的前提，更是写出经济合约的关"
 ---
 
 Solidity 的数据类型系统表面上看起来像 JavaScript 和 C++ 的混合体，但其存储模型却与两者截然不同。智能合约的每次状态写入都需要消耗 Gas，而 Gas 消耗直接取决于数据在 storage 中的布局方式。理解 Solidity 的数据类型与存储模型，不仅是写出正确合约的前提，更是写出经济合约的关键。
@@ -47,7 +50,7 @@ address public owner = msg.sender;
 address payable public treasury = msg.sender;
 ```
 
-`address` 占 20 字节，存储以太坊地址。`address payable` 是 0.5.0 引入的区分，只有 `payable` 地址才能接收 Ether 和调用转账方法。
+`address` 占 20 字节，存储以太坊地址。`address payable` 是 0.5.0 才引入的类型，只有 `payable` 地址才能接收 Ether 和调用转账方法。
 
 ### bytes
 
@@ -211,7 +214,7 @@ EVM 的 storage 由 2^256 个 32 字节的槽位组成，初始全为零。Solid
 
 1. **顺序排列**：状态变量按声明顺序从槽位 0 开始排列
 2. **打包优化**：如果多个变量的大小之和 ≤ 32 字节，它们会被打包到同一个槽位
-3. **动态类型占独立槽位**：动态数组、mapping、string 等动态类型单独占用一个槽位，该槽位存储的不是数据本身，而是数据的引用位置
+3. **动态类型占独立槽位**：动态数组、mapping、string 等单独占用一个槽位，其中存放的不是数据本身，而是指向数据的引用位置
 
 ```solidity
 contract LayoutExample {

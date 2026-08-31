@@ -5,11 +5,11 @@ tags:
   - 前端
   - JavaScript
 readingTime: 2
-description: "在日常開發中，Mapbox GL JS 前端地圖開發的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 322
+description: "在日常開發中，Mapbox GL JS 前端地圖開發越來越常被運用。本文系統性地說明它的用法、原理與優化策略。"
+wordCount: 318
 ---
 
-在日常開發中，Mapbox GL JS 前端地圖開發的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
+在日常開發中，Mapbox GL JS 前端地圖開發越來越常被運用。本文系統性地說明它的用法、原理與優化策略。
 
 ## 快速上手
 
@@ -65,11 +65,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-效能最佳化需要結合具體場景，不是所有情況都需要過度最佳化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 業務實戰
 
-我們可以通過以下方式來改進：
+我們可以透過以下方式來改進：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -97,7 +97,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## 效能對比
 
-先來看基本的實現方式：
+先來看基本的實作方式：
 
 ```javascript
 :root {
@@ -124,7 +124,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## 問題排查
 
-在這個基礎上，我們可以進一步最佳化：
+在這個基礎上，我們可以進一步優化：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'

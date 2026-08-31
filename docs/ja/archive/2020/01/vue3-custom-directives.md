@@ -3,16 +3,16 @@ title: "Vue 3 カスタムディレクティブ開発"
 date: 2020-01-24 09:35:33
 tags:
   - Vue
-readingTime: 2
+readingTime: 3
 description: "自定义指令在 Vue 3 中经过了重设计，生命周期钩子和 Composition API 保持了一致的命名风格。对于需要直接操作 DOM 的场景——拖拽、防抖点击、权限控制——自定义指令仍然是最干净的抽象方式。"
-wordCount: 355
+wordCount: 549
 ---
 
-自定义指令在 Vue 3 中经过了重设计，生命周期钩子和 Composition API 保持了一致的命名风格。对于需要直接操作 DOM 的场景——拖拽、防抖点击、权限控制——自定义指令仍然是最干净的抽象方式。
+カスタムディレクティブは Vue 3 で再設計され、ライフサイクルフックと Composition API は一貫した命名スタイルを保っている。DOM を直接操作する必要がある場面——ドラッグ、クリックのデバウンス、権限制御——では、カスタムディレクティブがいまだに最もすっきりした抽象だ。
 
 ## ディレクティブライフサイクルフックの変更
 
-Vue 3 将 Vue 2 的 `bind`、`inserted`、`update` 等统一为更语义化的命名：
+Vue 3 は Vue 2 の `bind`、`inserted`、`update` などをより意味的な命名に統一した：
 
 | Vue 2 | Vue 3 |
 |-------|-------|
@@ -48,7 +48,7 @@ const vDirective = {
 
 ## 実践：デバウンスディレクティブ
 
-最常用的场景之一，点击防抖避免重复提交。
+最もよく使う場面の一つが、クリックのデバウンスで重複送信を防ぐことだ。
 
 ```javascript
 // directives/v-debounce.js
@@ -87,7 +87,7 @@ app.directive('debounce', vDebounce)
 
 ## 実践：権限制御ディレクティブ
 
-后端返回用户权限列表，前端通过指令控制按钮显隐。
+バックエンドがユーザーの権限リストを返し、フロントエンドはディレクティブでボタンの表示／非表示を制御する。
 
 ```javascript
 // directives/v-permission.js
@@ -123,9 +123,9 @@ app.directive('permission', vPermission)
 // <button v-permission="['order:export', 'admin:export']">导出数据</button>
 ```
 
-## 实战：点击外部关闭
+## 実践：外側クリックで閉じる
 
-Dropdown 和 Popover 组件经常需要这个功能。
+Dropdown や Popover コンポーネントはこの機能をよく必要とする。
 
 ```javascript
 // directives/v-click-outside.js
@@ -153,9 +153,9 @@ export default {
 // </div>
 ```
 
-## 局部注册与全局注册
+## ローカル登録とグローバル登録
 
-除了全局注册，指令也可以在组件内局部注册。
+グローバル登録以外に、ディレクティブはコンポーネント内でローカルにも登録できる。
 
 ```vue
 <script>
@@ -177,8 +177,8 @@ export default {
 
 ## まとめ
 
-- Vue 3 指令钩子命名更语义化，与组件生命周期一致
-- 指令适合处理纯 DOM 操作：防抖、权限控制、点击外部等
-- `binding.value` 是指令绑定值，`binding.arg` 是参数（`v-debounce:500` 中的 500）
-- 在 `unmounted` 中清理事件监听，防止内存泄漏
-- 局部注册指令适合只在特定组件使用的场景，减少全局污染
+- Vue 3 のディレクティブフックの命名はより意味的で、コンポーネントのライフサイクルと一致する
+- ディレクティブは純粋な DOM 操作に向く：デバウンス、権限制御、外側クリックなど
+- `binding.value` はディレクティブのバインド値、`binding.arg` は引数（`v-debounce:500` の 500）
+- `unmounted` でイベントリスナーを片付け、メモリリークを防ぐ
+- ローカル登録は特定のコンポーネントだけで使うディレクティブに向き、グローバルな汚染を減らす

@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Node.js 內建 fetch API 預覽這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 278
+wordCount: 276
 ---
 
-Node.js 內建 fetch API 預覽這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
+社群針對 Node.js 內建 fetch API 預覽已討論過許多次，但隨著版本迭代，不少舊結論需要更新。本文基於最新版本重新梳理。
 
 ## 入門指南
 
@@ -71,7 +71,7 @@ const csvToJson = new Transform({
 
 ## 真實場景應用
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 const express = require('express')
@@ -96,7 +96,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 最佳化技巧
 

@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "The React team proposed the Hooks RFC last month. I tried it out yesterday and it feels like one of the biggest changes in the React ecosystem."
-wordCount: 174
+wordCount: 176
 ---
 
 The React team proposed the Hooks RFC last month. I tried it out yesterday and it feels like one of the biggest changes in the React ecosystem.
@@ -48,7 +48,7 @@ function Counter() {
 }
 ```
 
-`useState` returns `[currentValue, updaterFunction]` — destructure to receive them.
+`useState` returns `[currentValue, updaterFunction]` — destructure it to get both values.
 
 ```javascript
 // Multiple state values

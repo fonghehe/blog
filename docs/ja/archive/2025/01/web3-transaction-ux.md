@@ -6,7 +6,7 @@ tags:
   - DApp
 readingTime: 11
 description: "Web3 取引ライフサイクルの各段階を体系的に分析し、完全なフロントエンド状態機械設計と取引追跡ソリューションを提供"
-wordCount: 3400
+wordCount: 1692
 ---
 
 ## Web3 取引ライフサイクルの完全な段階

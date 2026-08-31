@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 3
 description: "Node.js 14 LTS は 4 月にリリースされ、多くの便利な機能をもたらしました。フロントエンドエンジニアにとって最も嬉しいのは、V8 エンジンが 8.1 にアップグレードされ、Optional Chaining（?.）と Nullish Coalescing（??）をネイティブサポートしたことです。Node コードでこれらの構文を手動でトランスパイルする必要がなくなりました。"
-wordCount: 515
+wordCount: 514
 ---
 
 Node.js 14 LTS は 4 月にリリースされ、多くの便利な機能をもたらしました。フロントエンドエンジニアにとって最も嬉しいのは、V8 エンジンが 8.1 にアップグレードされ、Optional Chaining（`?.`）と Nullish Coalescing（`??`）をネイティブサポートしたことです。Node コードでこれらの構文を手動でトランスパイルする必要がなくなりました。
@@ -50,7 +50,7 @@ const nested = matrix?.[row]?.[col];
 const firstItem = arr && arr[0];
 ```
 
-### 実践シナリオ
+### 実践の場面
 
 ```javascript
 // API レスポンス処理 —— 非常に一般的なシナリオ
@@ -210,7 +210,7 @@ function parseLogErrors(log: string) {
 }
 ```
 
-## Intl.DisplayNames —— 国际化名称
+## Intl.DisplayNames —— 国際化された名称
 
 ```javascript
 // 言語、地域、通貨のローカライズ表示名を取得
@@ -251,5 +251,5 @@ TypeScript を使用するプロジェクトでは、これらの新機能を利
 - `Array.flat()` と `Array.flatMap()` がネイティブで使用可能になり、配列操作が簡素化されました
 - `globalThis` は統一されたグローバルオブジェクトへのアクセス方法を提供します
 - `String.matchAll()` により正規表現の一括マッチングがエレガントになりました
-- `Intl.DisplayNames` は国際化のシナリオに便利です
+- `Intl.DisplayNames` は国際化の場面に便利だ
 - tsconfig の target を ES2020 に設定することでこれらの機能を利用できます

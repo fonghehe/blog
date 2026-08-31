@@ -44,7 +44,7 @@ function TextInputWithFocus() {
 
 關鍵點：`useRef` 返回一個帶有 `current` 屬性的可變物件，將它傳給 JSX 的 `ref` 屬性後，React 會在 DOM 渲染完成後把真實節點賦值給 `current`。
 
-## useRef 作為例項變數
+## useRef 作為實例變數
 
 這是 `useRef` 最容易被忽視、但最有價值的用途之一。在 class 元件中我們有 `this.xxx` 來儲存不觸發重新渲染的變數，函式元件中 `useRef` 就是等價方案。
 
@@ -142,7 +142,7 @@ function ProfileChangeTracker({ userId }) {
 }
 ```
 
-為什麼不用 state 存上一次的值？因為 state 變化會觸發重新渲染，而我們隻是想「記錄」一下，並不需要因為記錄本身觸發渲染。這就是 ref 和 state 的本質區別。
+為什麼不用 state 存上一次的值？因為 state 變化會觸發重新渲染，而我們只是想「記錄」一下，並不需要因為記錄本身觸發渲染。這就是 ref 和 state 的本質區別。
 
 ## ref 與 state 的區別和選擇
 
@@ -248,7 +248,7 @@ function Form() {
 }
 ```
 
-`useImperativeHandle` 的核心價值是**控製暴露的介面**。如果不使用它，父元件通過 ref 拿到的是整個 DOM 節點，父元件可以隨意操作——比如 `fancyInputRef.current.style.display = 'none'`。這種直接操作破壞了元件的封裝性。通過 `useImperativeHandle` 我們隻暴露有限的、安全的方法。
+`useImperativeHandle` 的核心價值是**控制暴露的介面**。如果不使用它，父元件透過 ref 拿到的是整個 DOM 節點，父元件可以隨意操作——比如 `fancyInputRef.current.style.display = 'none'`。這種直接操作破壞了元件的封裝性。透過 `useImperativeHandle` 我們只暴露有限的、安全的方法。
 
 ## 在 setInterval 中正確使用 ref
 
@@ -360,7 +360,7 @@ function DebouncedSearch({ onSearch }) {
 ## 小結
 
 - `useRef` 的本質是提供一個在元件整個生命週期內持久存在的可變容器，`.current` 的修改不會觸發重新渲染
-- 不隻是獲取 DOM——儲存定時器 ID、上一次的值、防抖/節流標記、訂閱控製代碼等都是常見用途
+- 不只是獲取 DOM——儲存定時器 ID、上一次的值、防抖/節流標記、訂閱控制代碼等都是常見用途
 - 選擇 ref 還是 state 的核心標準：這個值的變化是否需要反映到 UI 上
-- `forwardRef` + `useImperativeHandle` 可以精確控製子元件暴露給父元件的介面
+- `forwardRef` + `useImperativeHandle` 可以精確控制子元件暴露給父元件的介面
 - 在非同步回撥（`setInterval`、`setTimeout`、事件監聽）中，ref 是拿到最新值的可靠手段

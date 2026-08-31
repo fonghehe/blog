@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "JavaScript async programming has evolved from callbacks to Promises, from Generators to Async/Await. This article covers the 2026 async pattern landscape, including AsyncIterator, Observable proposal, and async resource management."
-wordCount: 307
+wordCount: 309
 ---
 
 JavaScript's async programming model has been constantly evolving. From the earliest callback hell, to Promise chaining, to Async/Await's synchronous writing style, each step has reduced the mental burden of async code. In 2026, async pattern boundaries have expanded to streaming data, resource management, and cross-thread communication.
@@ -139,4 +139,4 @@ Structured concurrency's core principle: **async operation creation and cancella
 
 ## Summary
 
-JavaScript async patterns are evolving toward: more declarative, more composable, easier to cancel. AsyncIterator handles streaming data, AbortController handles cancellation, structured concurrency manages lifecycle. 2026's async code should achieve: parallel when possible not sequential, streaming when possible not batched, cancelable when possible not wasting resources. Understanding these patterns' applicable scenarios is more important than memorizing syntax.
+JavaScript async patterns are evolving toward: more declarative, more composable, easier to cancel. AsyncIterator handles streaming data, AbortController handles cancellation, structured concurrency manages lifecycle. 2026's async code should: run in parallel rather than sequentially where possible, stream instead of batching, and stay cancelable to avoid wasting resources. Understanding when to use each pattern matters more than memorizing syntax.

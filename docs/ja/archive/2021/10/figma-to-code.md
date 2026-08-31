@@ -7,14 +7,14 @@ tags:
 
 readingTime: 2
 description: "最近在团队中落地Figma to Code 设计稿转代码，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 411
+wordCount: 428
 ---
 
-最近在团队中落地Figma to Code 设计稿转代码，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
+最近チーム内で Figma to Code（デザインからコードへの変換）を実践し、多くの経験を積んだ。参考になればとまとめたので、同じ取り組みをする方の役に立てば幸いだ。
 
 ## コアコンセプト
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみよう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -38,11 +38,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このコードは基本的な使い方を示しています。実際のプロジェクトではエラー処理と境界条件も考慮する必要があります。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理や境界条件も考慮する必要がある。
 
 ## 詳細分析
 
-この基盤の上でさらに最適化できます：
+この基盤の上にさらに最適化を重ねられる：
 
 ```javascript
 :root {
@@ -65,11 +65,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このパターンは大規模プロジェクトで非常に実用的で、保守コストを大幅に削減できます。
+このパターンは大規模プロジェクトで非常に実用的であり、保守コストを大幅に削減できる。
 
 ## 実装経験
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは、もう少し複雑な使い方になる：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -94,11 +94,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-このアプローチにより、コードのテスト可能性とスケーラビリティが向上します。
+このアプローチにより、コードのテスト性と拡張性が向上する。
 
 ## 最適化戦略
 
-完全な例を以下に示します：
+全体のサンプルを以下に示す：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -122,10 +122,10 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-境界条件の処理に注意してください。これは本番環境で非常に重要です。
+境界条件の処理には注意が必要だ。これは本番環境において非常に重要である。
 
 ## まとめ
 
-- 新しい技術を使うためだけに新しい技術を使わないでください
-- コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- Figma to Code 设计稿转代码不是银弹，需要根据项目规模和技术栈选择
+- 新しい技術を使うためだけに新しい技術を使うべきではない
+- コードサンプルは参考用に過ぎず、ビジネスの場面に応じた調整が必要だ
+- Figma to Code（デザインからコードへの変換）は万能ではなく、プロジェクトの規模や技術スタックに応じて選ぶべきだ

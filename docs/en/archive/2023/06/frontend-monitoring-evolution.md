@@ -4,11 +4,11 @@ date: 2023-06-05 10:05:29
 tags:
   - Frontend
 readingTime: 2
-description: "前端监控不只是\"报个错\"。随着项目复杂度增长，我们需要的是一个完整的可观测性体系。"
-wordCount: 175
+description: "Frontend monitoring isn't just about reporting errors. As project complexity grows, you need a complete observability system."
+wordCount: 155
 ---
 
-前端监控不只是"报个错"。随着项目复杂度增长，我们需要的是一个完整的可观测性体系。
+Frontend monitoring isn't just about reporting errors. As project complexity grows, you need a complete observability system.
 
 ## Three Levels of Monitoring
 

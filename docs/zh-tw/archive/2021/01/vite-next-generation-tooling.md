@@ -12,10 +12,10 @@ tags:
   - HTML
 readingTime: 3
 description: "Evan You 在 2021 年 1 月釋出了 Vite 2.0 正式版。和 1.0 相比，這幾乎是一次完全重寫——最大的變化是框架無關，不再隻服務 Vue 生態。作為一個從 Webpack 1 時代一路用過來的前端，Vite 給我的感受不隻是\"快\"，而是開發體驗的全面升級。"
-wordCount: 724
+wordCount: 722
 ---
 
-Evan You 在 2021 年 1 月釋出了 Vite 2.0 正式版。和 1.0 相比，這幾乎是一次完全重寫——最大的變化是框架無關，不再隻服務 Vue 生態。作為一個從 Webpack 1 時代一路用過來的前端，Vite 給我的感受不隻是"快"，而是開發體驗的全面升級。
+Evan You 在 2021 年 1 月釋出了 Vite 2.0 正式版。和 1.0 相比，這幾乎是一次完全重寫——最大的變化是框架無關，不再只服務 Vue 生態。作為一個從 Webpack 1 時代一路用過來的前端，Vite 給我的感受不只是"快"，而是開發體驗的全面升級。
 
 ## 為什麼 Vite 這麼快
 
@@ -26,7 +26,7 @@ Webpack: 原始碼 → 打包成 bundle → 啟動 dev server → 瀏覽器載�
 Vite:    啟動 dev server → 瀏覽器按需請求模組 → 逐個編譯
 ```
 
-核心原理是利用瀏覽器原生 ES Module 支援。開發時不打包，隻在瀏覽器請求時按需編譯：
+核心原理是利用瀏覽器原生 ES Module 支援。開發時不打包，只在瀏覽器請求時按需編譯：
 
 ```javascript
 // 瀏覽器請求這個檔案時，Vite 才做編譯
@@ -61,7 +61,7 @@ npm init vite@latest my-svelte-app -- --template svelte
 
 ## 外掛系統
 
-Vite 2.0 的外掛 API 基於 Rollup 外掛介面擴充套件，寫過 Rollup 外掛的前端幾乎沒有學習成本：
+Vite 2.0 的外掛 API 基於 Rollup 外掛介面擴展，寫過 Rollup 外掛的前端幾乎沒有學習成本：
 
 ```javascript
 // vite-plugin-my-feature.js
@@ -118,7 +118,7 @@ export default defineConfig({
 | 開發構建 | 全量打包 | 按需編譯 |
 | 生產構建 | webpack | Rollup |
 | 冷啟動 | 慢（和專案大小正相關） | 快（幾乎無關） |
-| HMR | 需重新構建受影響的模組鏈 | 精確更新，隻處理變更的模組 |
+| HMR | 需重新構建受影響的模組鏈 | 精確更新，只處理變更的模組 |
 | 配置 | 複雜，loader + plugin | 簡潔，Rollup 相容外掛 |
 
 一個容易忽略的點：Vite 生產構建用的是 Rollup，Rollup 在 tree-shaking 和程式碼最佳化上本來就是業界最好的選擇。等於開發用 Vite 的按需策略，生產用 Rollup 的成熟打包，兩頭都最優。
@@ -179,11 +179,11 @@ npm install -D sass
 1. **CommonJS 依賴**：開發階段需要預構建（esbuild），偶爾遇到相容問題
 2. **SSR 支援**：基礎框架有了，但還不像 Nuxt 那樣開箱即用
 3. **生態**：外掛數量和 Webpack 比還有差距，但核心場景覆蓋得差不多了
-4. **老舊瀏覽器**：預設隻支援原生 ESM 的瀏覽器，需要相容 IE 的專案暫時不適合
+4. **老舊瀏覽器**：預設只支援原生 ESM 的瀏覽器，需要相容 IE 的專案暫時不適合
 
 ## 小結
 
-- Vite 2.0 不隻是"快"，是從架構層面改變了前端構建工具的範式
+- Vite 2.0 不只是"快"，是從架構層面改變了前端構建工具的範式
 - 框架無關，Vue/React/Svelte 都能用，Rollup 外掛相容降低了遷移成本
 - 遷移注意 `process.env` → `import.meta.env`、`require` → `import`
 - 新專案建議直接用 Vite；老專案可以評估遷移成本

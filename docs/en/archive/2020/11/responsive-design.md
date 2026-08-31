@@ -4,15 +4,15 @@ date: 2020-11-16 17:34:26
 tags:
   - CSS
 readingTime: 2
-description: "最近在团队中落地2020 响应式设计最佳实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 264
+description: "Lessons learned from implementing 2020 responsive design best practices on a team, shared as a practical reference for similar efforts."
+wordCount: 158
 ---
 
-最近在团队中落地2020 响应式设计最佳实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+I recently rolled out the 2020 responsive-design best practices on my team and picked up plenty of experience. I'm sharing it here in case it helps anyone doing similar work.
 
 ## Core Concepts
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project you also need to handle errors and edge cases.
 
 ## In-Depth Analysis
 
-在这个基础上，我们可以进一步优化：
+Building on that, we can push the optimization a step further:
 
 ```javascript
 :root {
@@ -63,11 +63,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in larger projects and significantly lowers maintenance cost.
 
 ## Implementation Experience
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets a bit more involved:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -92,11 +92,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Tuning Strategies
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -120,10 +120,10 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge-case handling — that is critical in production.
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Always verify compatibility before shipping to production.
+- In team collaboration, conventions and documentation matter more than the tech itself.
+- Keep an eye on the community — technical solutions need to keep evolving.

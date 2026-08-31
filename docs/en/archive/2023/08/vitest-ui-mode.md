@@ -5,11 +5,11 @@ tags:
   - Vite
   - Vitest
 readingTime: 1
-description: "在日常工作中经常用到Vitest UI 模式，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。"
-wordCount: 184
+description: "Vitest UI mode comes up constantly in daily work, so here is a systematic summary to help you understand and apply it better."
+wordCount: 139
 ---
 
-在日常工作中经常用到Vitest UI 模式，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。
+Vitest UI mode comes up constantly in daily work, so here is a systematic summary to help you understand and apply it better.
 
 ## Basic Concepts
 
@@ -87,7 +87,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Best Practices
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 使用示例
@@ -108,6 +108,6 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Summary
 
-- 性能优化需要基于实际数据，避免过度优化
-- Vitest UI 模式的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
+- Base performance optimization on real data and avoid premature optimization
+- The core of Vitest UI mode is understanding the underlying principles, not just memorizing APIs
+- In real projects, choosing the right solution matters more than chasing the newest technology

@@ -4,23 +4,23 @@ date: 2022-03-30 10:56:22
 tags:
   - Angular
 readingTime: 2
-description: "Angular Material 13 随 Angular 13 一起发布，带来了基于 Material Design Components for Web（MDC）重新实现的组件。这次重构不只是样式调整——组件的 DOM 结构和 CSS 类名都发生了变化，因此迁移需要一定的关注。"
-wordCount: 445
+description: "Angular Material 13 shipped alongside Angular 13, bringing components reimplemented on top of Material Design Components for Web (MDC). This refactor is more than a style refresh — the DOM structure and CSS class names have changed, so migration requires some attention."
+wordCount: 296
 ---
 
-Angular Material 13 随 Angular 13 一起发布，带来了基于 Material Design Components for Web（MDC）重新实现的组件。这次重构不只是样式调整——组件的 DOM 结构和 CSS 类名都发生了变化，因此迁移需要一定的关注。
+Angular Material 13 shipped alongside Angular 13, bringing components reimplemented on top of Material Design Components for Web (MDC). This refactor is more than a style refresh — the DOM structure and CSS class names have changed, so migration requires some attention.
 
-## 什么是 MDC-Based Components
+## What Are MDC-Based Components
 
-Angular Material 原先的组件是自行实现的，与 Google 维护的 `material-components-web` 库是两套代码。Angular Material 13 开始，官方用 MDC 库重写所有组件，好处是：
+Angular Material's original components were implemented independently from Google's `material-components-web` library. Starting with Angular Material 13, the team rewrote all components using the MDC library. The benefits are:
 
-- 与 Material Design 规范保持更紧密的同步
-- 组件行为与其他平台（Android、iOS Web）一致
-- 无障碍访问（A11y）改进
+- Stays more closely in sync with the Material Design spec
+- Component behavior is consistent across platforms (Android, iOS Web)
+- Improved accessibility (A11y)
 
-## 新旧组件共存
+## Legacy and New Components Coexist
 
-Angular Material 13 提供了**两套组件**并行，通过不同的模块导入：
+Angular Material 13 provides **two sets of components** side by side, imported through different modules:
 
 ```typescript
 // 旧实现（Legacy）：mat-button 等继续可用
@@ -30,9 +30,9 @@ import { MatButtonModule } from "@angular/material/button"; // 仍是旧实现
 // Angular Material 13 的迁移策略：逐步替换
 ```
 
-注意：Angular Material 13 的大多数组件默认已切换到 MDC 实现，但会提供 Legacy 模块作为兼容过渡期。
+Note: Most components in Angular Material 13 have switched to the MDC implementation by default, but Legacy modules are provided as a compatibility bridge.
 
-## 主要变化：Button
+## Key Changes: Button
 
 ```html
 <!-- 旧版 DOM 结构 -->
@@ -48,7 +48,7 @@ import { MatButtonModule } from "@angular/material/button"; // 仍是旧实现
 </button>
 ```
 
-**CSS 自定义迁移**：
+**CSS customization migration**:
 
 ```scss
 // ❌ 旧的 CSS 覆盖（不再有效）
@@ -63,9 +63,9 @@ import { MatButtonModule } from "@angular/material/button"; // 仍是旧实现
 }
 ```
 
-## 主题系统变化
+## Theming System Changes
 
-Angular Material 13 引入了新的 M3-ready 主题 API 预备：
+Angular Material 13 introduces a new M3-ready theming API:
 
 ```scss
 // angular-theme.scss
@@ -92,7 +92,7 @@ $theme: mat.define-light-theme(
 @include mat.all-component-themes($theme);
 ```
 
-**Density**（密度）是 Angular Material 13 新概念，用于控制组件紧凑程度：
+**Density** is a new concept in Angular Material 13 that controls how compact components are:
 
 ```scss
 // density: 0  → 标准大小（默认）
@@ -109,9 +109,9 @@ $compact-theme: mat.define-light-theme(
 );
 ```
 
-## Form Field 变化
+## Form Field Changes
 
-Form Field 是变化最大的组件之一：
+Form Field is one of the most changed components:
 
 ```html
 <!-- 使用 appearance="fill"（MDC 默认） -->
@@ -130,11 +130,11 @@ Form Field 是变化最大的组件之一：
 </mat-form-field>
 ```
 
-注意：`appearance="legacy"` 和 `appearance="standard"` 在 MDC 版本中被废弃，推荐使用 `fill` 或 `outline`。
+Note: `appearance="legacy"` and `appearance="standard"` are deprecated in the MDC version; use `fill` or `outline` instead.
 
-## 迁移工具
+## Migration Tools
 
-Angular Material 提供了自动迁移 schematic：
+Angular Material provides an automatic migration schematic:
 
 ```bash
 ng update @angular/material@13
@@ -145,7 +145,7 @@ ng update @angular/material@13
 # 3. 生成迁移报告
 ```
 
-对于 CSS 自定义覆盖，需要手动检查并改用 CSS 变量：
+For custom CSS overrides, you need to manually review them and switch to CSS variables:
 
 ```bash
 # 检查项目中可能受影响的 CSS
@@ -154,4 +154,4 @@ grep -r "mat-button-wrapper\|mat-form-field-wrapper" src/
 
 ## Summary
 
-Angular Material 13 的 MDC 迁移是一次"有痛苦但值得"的升级。如果项目有大量 CSS 自定义覆盖，需要逐个检查。但迁移之后，组件的 A11y 支持更完善，主题系统更灵活，与 Material Design 规范的对齐度也更高。建议在 13→14 升级前先完成 MDC 迁移，避免双重变更的复杂度。
+The MDC migration in Angular Material 13 is a "painful but worthwhile" upgrade. If your project has lots of custom CSS overrides, you'll need to review them one by one. But after migrating, components have better A11y support, a more flexible theming system, and closer alignment with the Material Design spec. It's best to complete the MDC migration before upgrading from 13 to 14, to avoid the complexity of double changes.

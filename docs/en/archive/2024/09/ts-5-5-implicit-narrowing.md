@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 5.5 Implicit Type Narrowing: 控制流分析又一次进化"
+title: "TypeScript 5.5 Implicit Type Narrowing: Another Evolution in Control Flow Analysis"
 date: 2024-09-17 14:51:28
 tags:
   - TypeScript

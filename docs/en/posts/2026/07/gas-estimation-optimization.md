@@ -4,17 +4,17 @@ date: 2026-07-20 16:24:17
 tags:
   - Web3
   - Ethereum
-  - 性能优化
-readingTime: 7
+  - Performance
+readingTime: 8
 description: "Deep dive into EIP-1559 gas mechanics, frontend gas estimation APIs, batch transaction optimization, and L2 gas estimation differences"
-wordCount: 3200
+wordCount: 502
 ---
 
 ## Gas Mechanism Review: EIP-1559's Base Fee + Priority Fee
 
 EIP-1559 reshaped Ethereum's fee market. Each transaction's cost consists of two parts:
 
-- **base fee**: Dynamically adjusted by the protocol based on block congestion; burned rather than paid to miners
+- **base fee**: Dynamically adjusted by the protocol based on block congestion; burned rather than paid to validators
 - **priority fee (tip)**: A voluntary tip paid to validators that influences transaction inclusion priority
 
 Transactions control gas price through two parameters:

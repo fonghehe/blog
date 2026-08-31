@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 21.2 於 2026 年 2 月末釋出，這個版本將 Signal Forms 的多項細節打磨至生產級別。自 Angular 20 引入 Signal Forms 草案、20.2 完成穩定化以來，實際專案中積累了大量反饋。21.2 集中回應了這些反饋，帶來了更完善的表單驗證體驗、與後端 API 的整合模"
-wordCount: 455
+wordCount: 457
 ---
 
 Angular 21.2 於 2026 年 2 月末釋出，這個版本將 Signal Forms 的多項細節打磨至生產級別。自 Angular 20 引入 Signal Forms 草案、20.2 完成穩定化以來，實際專案中積累了大量反饋。21.2 集中回應了這些反饋，帶來了更完善的表單驗證體驗、與後端 API 的整合模式，以及大型表單的效能最佳化。
@@ -50,7 +50,7 @@ export class RegistrationFormComponent {
 
 ## 非同步驗證器的 Signal 化
 
-21.2 對非同步驗證器做了徹底重設計，集成了 `httpResource` 的取消機製：
+21.2 對非同步驗證器做了徹底重設計，集成了 `httpResource` 的取消機制：
 
 ```typescript
 import { signalAsyncValidator } from "@angular/forms";
@@ -84,7 +84,7 @@ form = signalForm({
 
 ## 大型表單的效能最佳化
 
-21.2 引入了"懶求值"表單組，僅在使用者實際互動時才計算驗證狀態：
+21.2 引入了"懶求值"表單群組，僅在使用者實際互動時才計算驗證狀態：
 
 ```typescript
 form = signalForm({
@@ -153,4 +153,4 @@ ng update @angular/core@21.2 @angular/cli@21.2 @angular/forms@21.2
 
 ## 總結
 
-Angular 21.2 將 Signal Forms 從"可用"推進到"好用"。動態驗證器、懶求值組和與 httpResource 深度融合，讓複雜表單場景的開發體驗有了質的提升。2026 年中的 Angular 22 將是下一個里程碑版本，屆時編譯器架構會有重大升級。
+Angular 21.2 將 Signal Forms 從"可用"推進到"好用"。動態驗證器、懶求值群組和與 httpResource 深度融合，讓複雜表單場景的開發體驗有了質的提升。2026 年中的 Angular 22 將是下一個里程碑版本，屆時編譯器架構會有重大升級。

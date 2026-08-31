@@ -10,14 +10,14 @@ wordCount: 244
 
 新項目代碼風格五花八門，PR review 光討論格式就浪費大量時間。花了一天把 ESLint + Prettier + Git Hooks 全套配好，團隊效率直接提升。
 
-## 為什麼不是隻用 ESLint
+## 為什麼不是只用 ESLint
 
 ESLint 關注代碼質量（潛在 bug），Prettier 關注代碼格式（風格統一）。兩者職責不同：
 
 - ESLint：`no-unused-vars`、`no-undef`、`eqeqeq` 這些是質量問題
 - Prettier：縮進、分號、引號、換行這些是格式問題
 
-用 Prettier 管格式，ESLint 管質量，互不幹擾。
+用 Prettier 管格式，ESLint 管質量，互不干擾。
 
 ## 安裝設定
 
@@ -84,7 +84,7 @@ module.exports = {
 }
 ```
 
-## Git Hooks 強製執行
+## Git Hooks 強制執行
 
 ```bash
 npm install -D husky lint-staged

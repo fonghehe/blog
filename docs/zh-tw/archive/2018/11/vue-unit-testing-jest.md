@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "一直覺得寫測試是\"有時間再寫\"的事，但元件越來越多之後，每次改程式碼都提心吊膽。終於花時間搭了測試環境，現在覺得早該寫了。"
-wordCount: 151
+wordCount: 150
 ---
 
 一直覺得寫測試是"有時間再寫"的事，但元件越來越多之後，每次改程式碼都提心吊膽。終於花時間搭了測試環境，現在覺得早該寫了。
@@ -110,7 +110,7 @@ export default {
 import { shallowMount } from "@vue/test-utils";
 import UserList from "@/components/UserList.vue";
 
-it("成功載入使用者列表", async () => {
+it("成功載入用戶列表", async () => {
   const mockUsers = [
     { id: 1, name: "張三" },
     { id: 2, name: "李四" },
@@ -143,7 +143,7 @@ it("搜尋時觸發 search 事件", async () => {
   await wrapper.find("input").setValue("vue");
   await wrapper.find("form").trigger("submit");
 
-  // 檢查觸發的事件和引數
+  // 檢查觸發的事件和參數
   expect(wrapper.emitted("search")).toBeTruthy();
   expect(wrapper.emitted("search")[0]).toEqual(["vue"]);
 });
@@ -166,7 +166,7 @@ expect(mockFn).toHaveBeenCalledTimes(3);
 ## 小結
 
 - `shallowMount`：淺渲染（子元件變成 stub），比 `mount` 快
-- `propsData`/`data`/`mocks`：控製組件初始狀態
-- `wrapper.find().trigger()`：模擬使用者互動
+- `propsData`/`data`/`mocks`：控制組件初始狀態
+- `wrapper.find().trigger()`：模擬用戶互動
 - `wrapper.emitted()`：檢查元件觸發的事件
 - 先從關鍵邏輯開始寫測試，不要一開始就追求 100% 覆蓋率

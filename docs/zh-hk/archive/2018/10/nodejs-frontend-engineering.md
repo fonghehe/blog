@@ -8,7 +8,7 @@ description: "前端項目裏有很多可以用 Node.js 腳本自動化的事情
 wordCount: 158
 ---
 
-前端項目裏有很多可以用 Node.js 腳本自動化的事情：代碼生成、文件處理、構建輔助等。
+前端項目裏有很多可以用 Node.js 腳本自動化的事情：代碼生成、檔案處理、構建輔助等。
 
 ## 檔案系統操作
 
@@ -26,7 +26,7 @@ fs.writeFileSync("dist/config.json", JSON.stringify(config, null, 2));
 // 遞歸創建目錄
 fs.mkdirSync("dist/assets/images", { recursive: true });
 
-// 異步版本（推薦在腳本里用 fs/promises）
+// 異步版本（推薦在腳本裡用 fs/promises）
 const { readFile, writeFile } = require("fs/promises");
 
 async function processConfig() {
@@ -151,7 +151,7 @@ console.log("✓ 環境變量檢查通過");
 
 ## 小結
 
-- `fs` 模塊：文件讀寫、目錄操作
+- `fs` 模塊：檔案讀寫、目錄操作
 - `path` 模塊：路徑處理（跨平臺）
 - 代碼生成：根據配置自動生成重複性代碼
 - 環境檢查：構建前驗證必要變量，CI 失敗比運行時錯誤容易發現

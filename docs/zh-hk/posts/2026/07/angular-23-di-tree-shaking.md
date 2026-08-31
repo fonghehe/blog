@@ -3,9 +3,9 @@ title: "Angular 23 依賴注入與 Tree-shaking：編譯時優化的新方向"
 date: 2026-07-24 16:38:26
 tags:
   - Angular
-readingTime: 7
+readingTime: 8
 description: "深入 Angular 23 編譯時依賴注入系統的工作原理、Tree-shakable providers 的實現機制，以及與 Vue/React 依賴注入方案的對比分析。"
-wordCount: 2900
+wordCount: 1587
 ---
 
 Angular 的依賴注入（DI）系統一直是其核心設計支柱。從 Angular 2 的運行時反射注入，到後來的 `providedIn` tree-shakable providers，再到 Angular 23 的編譯時 DI 增強，這個系統的演進方向越來越清晰：將儘可能多的工作從運行時移到編譯時，在保持開發體驗的同時縮小 bundle 體積。

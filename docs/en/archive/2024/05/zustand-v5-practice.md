@@ -4,8 +4,8 @@ date: 2024-05-10 16:06:27
 tags:
   - Frontend
 readingTime: 2
-description: "I recently implemented Zustand v5 实战应用 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those d"
-wordCount: 215
+description: "I recently applied Zustand v5 in practice with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 201
 ---
 
 I recently implemented Zustand v5 实战应用 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those doing similar work.
@@ -147,6 +147,6 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Zustand v5 实战应用不是银弹，需要根据项目规模和技术栈选择
+- Don't adopt new technology just for the sake of it
+- Code samples are for reference only and need adjusting to your business scenario
+- Zustand v5 in practice is not a silver bullet — choose based on your project scale and tech stack

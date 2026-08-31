@@ -4,9 +4,9 @@ date: 2024-03-22 19:53:23
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 8
 description: "Exploring changes in frontend data reading under modular blockchain architecture, covering Celestia DA layer interaction, EigenLayer AVS integration, and multi-layer data source management"
-wordCount: 3600
+wordCount: 631
 ---
 
 ## Modular Blockchain Concepts: DA Layer, Settlement Layer, Execution Layer

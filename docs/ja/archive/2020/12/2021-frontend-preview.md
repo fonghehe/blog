@@ -3,26 +3,26 @@ title: "2021年 フロントエンド技術展望：フレームワーク成熟�
 date: 2020-12-31 09:35:56
 tags:
   - フロントエンド
-readingTime: 3
-description: "2020 年是前端历史上变化最密集的年份之一：Vue 3 正式发布、React 17 升级铺路、Angular 保持季度发版节奏、Vite 颠覆开发体验、webpack 5 发布 Module Federation。站在 2020 年末，来聊聊 2021 年值得关注的方向。"
-wordCount: 665
+readingTime: 4
+description: "2020 年はフロントエンドの歴史の中で変化が最も密集した年のひとつだった。Vue 3 の正式リリース、React 17 が次への布石を打ち、Angular は四半期ごとのリリースペースを維持し、Vite が開発体験を覆し、webpack 5 が Module Federation を登場させた。2020 年末に立って、2021 年に注目すべき方向を語る。"
+wordCount: 1137
 ---
 
-2020 年是前端历史上变化最密集的年份之一：Vue 3 正式发布、React 17 升级铺路、Angular 保持季度发版节奏、Vite 颠覆开发体验、webpack 5 发布 Module Federation。站在 2020 年末，来聊聊 2021 年值得关注的方向。
+2020 年はフロントエンドの歴史のなかで、変化の最も密度が高かった年のひとつです。Vue 3 が正式リリースされ、React 17 が次への布石を打ち、Angular は四半期ごとのリリースペースを維持し、Vite が開発体験をひっくり返し、webpack 5 が Module Federation を登場させました。2020 年の末に立って、2021 年に注目すべき方向を語ります。
 
 ## フレームワークが安定・成熟期に
 
-### Vue 3 生态补全
+### Vue 3 エコシステムの補完
 
-Vue 3 于 2020 年 9 月发布，但生态还不完整。2021 年预期：
+Vue 3 は 2020 年 9 月にリリースされましたが、エコシステムはまだ十分ではありません。2021 年の見通し：
 
-- Vue Router 4 和 Pinia（Vuex 5）趋于稳定
-- Nuxt 3（基于 Vue 3）发布
-- UI 库（Element Plus、Ant Design Vue 3.x）相继完善
+- Vue Router 4 と Pinia（Vuex 5）が安定化に向かう
+- Nuxt 3（Vue 3 ベース）がリリースされる
+- UI ライブラリ（Element Plus、Ant Design Vue 3.x）が順次充実する
 
 ### React Server Components
 
-React 团队在 2020 年底预览了 Server Components——在服务端渲染组件，零客户端 JS。这可能是 React 近年来最大的架构变化：
+React チームは 2020 年末に Server Components をプレビューしました。それはサーバー側でコンポーネントをレンダリングし、クライアント側への JS はゼロです。これはおそらく、近年の React における最大のアーキテクチャ変更です：
 
 ```jsx
 // Server Component（文件名 .server.js）
@@ -35,61 +35,61 @@ async function Notes() {
 }
 ```
 
-### Angular 12 预告
+### Angular 12 の予告
 
-Angular 12 预计 2021 年 Q2 发布，将正式删除 View Engine，Ivy 成为唯一渲染引擎。Webpack 5 也会从实验性转为默认。
+Angular 12 は 2021 年 Q2 のリリースが見込まれ、View Engine が正式に削除され、Ivy が唯一のレンダリングエンジンになります。Webpack 5 も実験的からデフォルトに移行します。
 
 ## エンジニアリングが深化する
 
-### 微前端从概念落地
+### マイクロフロントエンドが概念から実装へ
 
-Module Federation（webpack 5）让微前端从"需要框架支持"变成了"内置于构建工具"：
+Module Federation（webpack 5）のおかげで、マイクロフロントエンドは「フレームワークの支援が必要」なものから「ビルドツールに組み込まれた」ものへと変わりました：
 
 ```javascript
 // 2021 年微前端的标准方案将更清晰
 // qiankun（基于 single-spa）vs Module Federation 的边界会越来越明确
 ```
 
-### Monorepo 工具成熟
+### Monorepo ツールの成熟
 
-Nx、Turborepo（Vercel，2020 年底发布）的出现让 Monorepo 管理更简单。2021 年大型团队采用 Monorepo 的比例将显著上升。
+Nx や Turborepo（Vercel、2020 年末リリース）の登場により、Monorepo の管理がより簡単になりました。2021 年には、大規模チームによる Monorepo の採用率が显著に上昇するでしょう。
 
-### 构建速度军备竞赛
+### ビルド速度の軍備競争
 
-esbuild、SWC（Rust 写的 JS 编译器，Next.js 12 将采用）的出现预示着：**用系统语言（Go/Rust）重写 JS 工具链**是 2021 年的主旋律。
+esbuild や SWC（Rust で書かれた JS コンパイラで、Next.js 12 が採用予定）の登場は、**システム言語（Go/Rust）で JS ツールチェーンを書き直す**ことが 2021 年の主旋律であることを示しています。
 
 ## TypeScriptの全面普及
 
-2020 年 State of JS 调查：TypeScript 满意度 93%，使用率首次超过纯 JavaScript。2021 年预期：
+2020 年の State of JS 調査では、TypeScript の満足度は 93%、純粋な JavaScript を初めて上回る使用率でした。2021 年の見通し：
 
-- 大型团队新项目 100% TypeScript
-- TypeScript 4.x 持续改进类型推断和性能
-- `ts-node` 与 Deno 让服务端 TS 更主流
+- 大規模チームの新プロジェクトは 100% TypeScript に
+- TypeScript 4.x は型推論とパフォーマンスの改善を継続する
+- `ts-node` と Deno によりサーバーサイドの TS がより主流に
 
 ## パフォーマンス指標の標準化
 
-Google 的 Core Web Vitals（LCP、FID、CLS）将在 2021 年 5 月正式纳入 Google 搜索排名算法。这意味着性能优化从"加分项"变成了"必选项"：
+Google の Core Web Vitals（LCP、FID、CLS）は 2021 年 5 月に Google の検索ランキングアルゴリズムに正式に組み込まれます。これは、パフォーマンス最適化が「おまけ」から「必須項目」へと変わることを意味します：
 
-| 指标 | 含义         | Good 标准 |
+| 指標 | 意味         | Good 基準 |
 | ---- | ------------ | --------- |
-| LCP  | 最大内容绘制 | ≤ 2.5s    |
-| FID  | 首次输入延迟 | ≤ 100ms   |
-| CLS  | 累计布局偏移 | ≤ 0.1     |
+| LCP  | 最大コンテンツ描画 | ≤ 2.5s    |
+| FID  | 初回入力遅延 | ≤ 100ms   |
+| CLS  | 累積レイアウト偏移 | ≤ 0.1     |
 
 ## 個人学習ロードマップの提案
 
-**深耕方向**（选一个）：
+**深掘りする方向**（どれかひとつを選ぶ）：
 
-- Vue 3 + Composition API + Pinia（全套 Vue 生态）
-- React + React Query + Zustand/Jotai（现代 React 状态管理）
-- Angular + RxJS + NgRx（企业级方向）
+- Vue 3 + Composition API + Pinia（Vue エコシステム一式）
+- React + React Query + Zustand/Jotai（モダンな React 状態管理）
+- Angular + RxJS + NgRx（エンタープライズ向け）
 
-**横向能力**：
+**横断的な能力**：
 
-- TypeScript 泛型和高级类型
-- webpack 5 / Vite 配置调优
-- 性能优化：Core Web Vitals 指标体系
+- TypeScript のジェネリクスと高度な型
+- webpack 5 / Vite の設定チューニング
+- パフォーマンス最適化：Core Web Vitals 指標体系
 
 ## まとめ
 
-2021 年前端的关键词是**成熟与深化**——框架本身不会有颠覆性变化，但工程化、性能、TypeScript 这几个方向会持续深入。与其追新框架，不如把现有技术栈用到极致。
+2021 年のフロントエンドのキーワードは**成熟と深化**です。フレームワークそのものに破壊的な変化はありませんが、エンジニアリング、パフォーマンス、TypeScript という方向は引き続き深まります。新しいフレームワークを追いかけるより、既存の技術スタックを極めきるほうがよいでしょう。

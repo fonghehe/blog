@@ -4,11 +4,11 @@ date: 2020-05-28 16:10:29
 tags:
   - Vue
 readingTime: 3
-description: "之前写了一篇测试实践指南，这篇专门针对 Vue 组件的单元测试深入展开。管理后台项目里有 200+ 组件，要保证重构时不 break，测试必须跟上。"
-wordCount: 167
+description: "I wrote a testing practices guide earlier; this piece goes deeper specifically on unit testing Vue components. Our admin dashboard has 200+ components, and to ensure refactoring doesn't break anything, tests must keep up."
+wordCount: 107
 ---
 
-之前写了一篇测试实践指南，这篇专门针对 Vue 组件的单元测试深入展开。管理后台项目里有 200+ 组件，要保证重构时不 break，测试必须跟上。
+I wrote a testing practices guide earlier; this piece goes deeper specifically on unit testing for Vue components. Our admin dashboard project has 200+ components, and to make sure refactoring doesn't break things, the tests have to keep up.
 
 ## Environment Setup
 
@@ -43,7 +43,7 @@ module.exports = {
 };
 ```
 
-## 测试纯展示组件
+## Testing Pure Presentational Components
 
 ```vue
 <!-- Tag.vue -->
@@ -109,7 +109,7 @@ describe('Tag', () => {
 });
 ```
 
-## 测试表单组件
+## Testing Form Components
 
 ```typescript
 // __tests__/SearchForm.test.ts
@@ -157,7 +157,7 @@ describe('SearchForm', () => {
 });
 ```
 
-## 测试异步数据组件
+## Testing Components with Async Data
 
 ```typescript
 // __tests__/UserList.test.ts
@@ -226,7 +226,7 @@ describe('UserList', () => {
 });
 ```
 
-## 测试 Vuex 集成
+## Testing Vuex Integration
 
 ```typescript
 import { mount, createLocalVue } from '@vue/test-utils';
@@ -265,7 +265,7 @@ describe('UserCard 与 Vuex', () => {
 });
 ```
 
-## 测试技巧
+## Testing Tips
 
 ```typescript
 // 1. 测试双向绑定 v-model
@@ -305,8 +305,8 @@ it('防抖后才触发搜索', async () => {
 
 ## Summary
 
-- Vue 组件测试用 `@vue/test-utils`，和 Jest 配合很好
-- 测试行为（渲染、事件、交互），不要测试实现细节
-- 异步组件用 `flushPromises()` 等待更新
-- Mock API 和定时器，让测试结果确定可控
-- 不需要 100% 覆盖，核心交互和边界情况优先
+- For Vue component testing, `@vue/test-utils` pairs well with Jest.
+- Test behavior (rendering, events, interactions), not implementation details.
+- For async components, use `flushPromises()` to wait for updates.
+- Mock the API and timers so test results are deterministic and controllable.
+- You don't need 100% coverage—prioritize core interactions and edge cases.

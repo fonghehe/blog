@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 15 は2022年11月16日に正式リリースされました。このバージョンでは Standalone APIs が安定状態（developer preview ではなくなり）、同時に Directive Composition API と NgOptimizedImage という2つの重要な新機能がもたらされました。"
-wordCount: 423
+wordCount: 448
 ---
 
 Angular 15は2022年11月16日に正式リリースされました。このバージョンではStandalone APIsが安定状態になり（developer previewではなくなり）、同時にDirective Composition APIとNgOptimizedImageという2つの重要な新機能がもたらされました。
@@ -121,11 +121,11 @@ export class HeroComponent {}
 
 - 自动生成 `srcset` 和 `sizes`
 - 对 `priority` 图片添加 `<link rel="preload">`
-- 防止布局偏移（CLS）：强制要求设置 `width` 和 `height`
-- 懒加载非关键图片（自动添加 `loading="lazy"`）
+- レイアウトシフト（CLS）の防止：`width` と `height` の指定を必須化
+- 非クリティカルな画像の遅延読み込み（`loading="lazy"` を自動付与）
 - 支持 CDN loader（Imgix、Cloudinary、Cloudflare Images）
 
-## 更好的错误栈信息
+## より良いエラースタック情報
 
 Angular 15ではエラー情報が大幅に改善されました。特にテンプレート内のエラーがわかりやすくなりました：
 
@@ -143,7 +143,7 @@ ERROR Error: Cannot read property 'name' of undefined
 
 ## 非推奨 API の削除
 
-Angular 15 清理了一批长期废弃的 API：
+Angular 15 は長年非推奨だった API を一掃した：
 
 ```typescript
 // ❌ 削除済み：ComponentFactoryResolver（Angular 13で非推奨）

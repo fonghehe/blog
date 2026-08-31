@@ -54,4 +54,4 @@ export class MyComponent implements OnDestroy {
 
 ## Summary
 
-`switchMap`, `combineLatest`, and `takeUntil` are the three most-used operators in Angular development. Understanding their semantics solves 90% of async scenarios.
+`switchMap`, `combineLatest`, and `takeUntil` are the three most-used operators in Angular development. Understanding their semantics covers 90% of async scenarios.

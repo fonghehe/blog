@@ -1,18 +1,18 @@
 ---
-title: "CSS aspect-ratio Proposal Explained: 告别 padding-top 黑科技"
+title: "CSS aspect-ratio Proposal Explained: Saying Goodbye to the padding-top Hack"
 date: 2019-11-11 10:30:38
 tags:
   - CSS
 readingTime: 1
-description: "最近在团队中落地CSS aspect-ratio 原生宽高比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 282
+description: "We recently rolled out native `aspect-ratio` in our team and learned a lot along the way. Writing this up in case it helps anyone doing similar work."
+wordCount: 184
 ---
 
-最近在团队中落地CSS aspect-ratio 原生宽高比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+We recently rolled out native `aspect-ratio` in our team and learned a lot along the way. I'm writing this up in case it helps anyone doing similar work.
 
 ## Core Concepts
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```css
 .container {
@@ -35,11 +35,11 @@ wordCount: 282
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tied to the specific scenario—you don't need to over-optimize everything.
 
 ## In-Depth Analysis
 
-我们可以通过以下方式来改进：
+We can improve things in the following ways:
 
 ```css
 :root {
@@ -62,11 +62,11 @@ wordCount: 282
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has stood up to real-world use.
 
 ## Implementation Experience
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```css
 .container {
@@ -89,11 +89,11 @@ wordCount: 282
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project you'll also need to think about error handling and edge cases.
 
 ## Optimization Strategies
 
-在这个基础上，我们可以进一步优化：
+On top of this, we can optimize further:
 
 ```css
 :root {
@@ -116,11 +116,11 @@ wordCount: 282
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and noticeably lowers maintenance cost.
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on the community; technical solutions need continuous iteration
+- Don't adopt new tech just for the sake of using it
+- The code examples are for reference only; adapt them to your own use case

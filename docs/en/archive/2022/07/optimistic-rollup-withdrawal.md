@@ -4,9 +4,9 @@ date: 2022-07-11 15:05:35
 tags:
   - Web3
   - Blockchain
-readingTime: 11
+readingTime: 9
 description: "Optimistic Rollup's L2-to-L1 withdrawal involves a 7-day challenge period, which poses unique challenges for frontend state management and user experience. This article breaks down the complete withdrawal flow and provides a full frontend implementation solution."
-wordCount: 2900
+wordCount: 714
 ---
 
 Optimistic Rollup (OR) is one of the mainstream Ethereum Layer 2 scaling solutions, with representative projects including Optimism (OVM) and Arbitrum (Nitro). Unlike zkRollup, OR adopts an "optimistic execution + fraud proof" security model, which directly causes L2 → L1 withdrawals to require a 7-day challenge period. For frontend developers, managing this 7-day asynchronous flow is a unique engineering challenge.

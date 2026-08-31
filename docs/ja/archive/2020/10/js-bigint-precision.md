@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "JavaScript BigInt による高精度演算についてはコミュニティで何度も議論されてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。この記事では最新バージョンに基づいて再整理します。"
-wordCount: 464
+wordCount: 462
 ---
 
 JavaScript BigInt による高精度演算については、コミュニティで何度も議論されてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。本記事では最新バージョンに基づいて再整理します。
@@ -65,7 +65,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 このパターンは大規模プロジェクトで非常に有用であり、保守コストを大幅に削減できます。
 
-## 実際のシナリオへの応用
+## 実際の場面への応用
 
 実際のプロジェクトでの使用方法はもう少し複雑です：
 

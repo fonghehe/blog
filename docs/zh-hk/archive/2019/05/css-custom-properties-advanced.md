@@ -8,7 +8,7 @@ description: "CSS Custom Properties（也叫 CSS Variables）已經得到現代�
 wordCount: 378
 ---
 
-CSS Custom Properties（也叫 CSS Variables）已經得到現代瀏覽器的全面支援。很多人隻知道它能定義顏色變量，但它的能力遠不止於此。這篇文章介紹 CSS Custom Properties 的高級用法和實戰技巧。
+CSS Custom Properties（也叫 CSS Variables）已經得到現代瀏覽器的全面支援。很多人只知道它能定義顏色變量，但它的能力遠不止於此。這篇文章介紹 CSS Custom Properties 的高級用法和實戰技巧。
 
 ## 基礎回顧
 
@@ -412,7 +412,7 @@ CSS Custom Properties 遵循 CSS 的級聯和繼承規則，這是它的獨特�
 }
 ```
 
-### 動畫控製
+### 動畫控制
 
 ```css
 :root {

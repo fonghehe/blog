@@ -5,14 +5,14 @@ tags:
   - React
 readingTime: 1
 description: "React 16.3 introduced the new Context API, and 16.8 Hooks made it even more ergonomic. But in real projects, many people find that using Context causes frequent"
-wordCount: 148
+wordCount: 144
 ---
 
 React 16.3 introduced the new Context API, and 16.8 Hooks made it even more ergonomic. But in real projects, many people find that using Context causes frequent component re-renders and performance degradation. This article dives deep into Context's rendering mechanics and optimization strategies.
 
 ## The Re-render Problem with Context
 
-Let's look at a classic "falling into the trap" example:
+Let's look at a classic pitfall:
 
 ```jsx
 {% raw %}

@@ -4,7 +4,7 @@ date: 2023-10-20 17:22:46
 tags:
   - Svelte
 readingTime: 2
-description: "关于Svelte 5 Runes 详解，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+description: "Many developers only know Svelte 5 Runes at the API level. This detailed guide looks at them from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 177
 ---
 

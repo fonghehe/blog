@@ -6,7 +6,7 @@ tags:
   - Performance
 readingTime: 5
 description: "React concurrency is now part of everyday engineering. This article explains how render priority, Suspense boundaries, transitions, and profiling help build stable complex interactions."
-wordCount: 891
+wordCount: 902
 ---
 
 React concurrency is no longer only an internal implementation detail. It is a core tool for complex interaction design. Search, filters, drag and drop, rich forms, and data panels can all trigger large updates at the same time. Teams need to decide which updates must complete immediately and which can be deferred. In 2026, concurrent mode has evolved from an "optional experimental feature" into the default behavior of React applications.
@@ -46,7 +46,7 @@ A practical rule: **If you're unsure whether an update should be deferred, wrap 
 Suspense makes loading states more controllable, but boundary placement directly impacts user experience.
 
 **Boundaries shouldn't be too granular:**
-If every small component is its own Suspense boundary, the page will show numerous localized loading spinners. Users see flickering fragments rather than a coherent whole—this is more uncomfortable than one complete load.
+If every small component is its own Suspense boundary, the page will show numerous localized loading spinners. Users see flickering fragments rather than a coherent whole — which feels more jarring than waiting for a single full-page load.
 
 **Boundaries shouldn't be too coarse:**
 If the entire page has only one Suspense boundary, slow components block fast ones—one slow data fetch makes the whole page load.
@@ -57,7 +57,7 @@ If the entire page has only one Suspense boundary, slow components block fast on
 - **Feature area layer**: Set Suspense boundaries for independent user task areas. On a Dashboard page, the "filter panel," "data table," "chart area," and "recommendation sidebar" are each independent Suspense boundaries—users can configure filters first while waiting for data to load.
 - **Component level**: Only when truly necessary. A reference criterion: when a component's load time exceeds 2 seconds and users may interact with other areas during loading, it's worth giving it a dedicated Suspense boundary.
 
-An easily overlooked detail: the `fallback` design. A good fallback should be a structural placeholder for the area, not a spinning circle. Using skeleton screens instead of spinners significantly reduces user waiting anxiety.
+An easily overlooked detail: the `fallback` design. A good fallback should be a structural placeholder for the area, not a spinning circle. Using skeleton screens instead of spinners significantly reduces users' anxiety while waiting.
 
 ## Choosing Between useTransition and useDeferredValue
 
@@ -123,7 +123,7 @@ React 2026 performance diagnostics have evolved from "counting renders" to "anal
 - P75 and P95 data grouped by page, device, and region
 - Before/after deployment comparison data
 
-These three data sources must be viewed together: Profiler tells you "this component rendered 5 times," Performance panel tells you "those 5 renders occupied 200ms of main thread," and RUM tells you "this page's P95 INP is 180ms." Only combined can you judge whether optimization is worthwhile.
+These three data sources must be viewed together: Profiler tells you "this component rendered 5 times," Performance panel tells you "those 5 renders occupied 200ms of main thread," and RUM tells you "this page's P95 INP is 180ms." Only by combining all three can you judge whether the optimization is worthwhile.
 
 ## Common Anti-Patterns
 
@@ -138,4 +138,4 @@ Concurrent mode addresses the question of "when rendering happens"; memoization 
 
 ## Summary
 
-React concurrency in 2026 is about reallocating computational resources in complex interfaces. Protect high-priority interactions (what the user is actively operating) and schedule low-priority rendering (what the user can wait for) during browser idle time. The key is understanding the division of labor among three tools: `useTransition` for user-triggered deferred updates, `useDeferredValue` for externally-driven deferred rendering, and `Suspense` for dividing loading boundaries by user task. Master these three, and complex React applications will transform their interaction experience.
+React concurrency in 2026 is about reallocating computational resources in complex interfaces. Protect high-priority interactions (what the user is actively operating) and schedule low-priority rendering (what the user can wait for) during browser idle time. The key is understanding the division of labor among three tools: `useTransition` for user-triggered deferred updates, `useDeferredValue` for externally-driven deferred rendering, and `Suspense` for dividing loading boundaries by user task. Master these three, and complex React applications will transform how their interactions feel.

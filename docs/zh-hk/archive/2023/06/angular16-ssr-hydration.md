@@ -4,11 +4,11 @@ date: 2023-06-02 14:50:22
 tags:
   - Angular
 readingTime: 2
-description: "Angular 16 帶來了**非破壞性水合（Non-Destructive Hydration）**，這是 Angular Universal SSR 的一次重大進化。以前 Angular 的水合會先銷燬服務端渲染的 HTML，再重新渲染客户端版本（\"破壞性\"水合），導致白屏閃爍和 CLS 指標惡化。新方式會直接複用"
+description: "Angular 16 帶來了**非破壞性水合（Non-Destructive Hydration）**，這是 Angular Universal SSR 的一次重大進化。以前 Angular 的水合會先銷燬服務端渲染的 HTML，再重新渲染客戶端版本（\"破壞性\"水合），導致白屏閃爍和 CLS 指標惡化。新方式會直接複用"
 wordCount: 371
 ---
 
-Angular 16 帶來了**非破壞性水合（Non-Destructive Hydration）**，這是 Angular Universal SSR 的一次重大進化。以前 Angular 的水合會先銷燬服務端渲染的 HTML，再重新渲染客户端版本（"破壞性"水合），導致白屏閃爍和 CLS 指標惡化。新方式會直接複用服務端 DOM，客户端隻綁定事件，不重建 DOM 結構。
+Angular 16 帶來了**非破壞性水合（Non-Destructive Hydration）**，這是 Angular Universal SSR 的一次重大進化。以前 Angular 的水合會先銷燬服務端渲染的 HTML，再重新渲染客戶端版本（"破壞性"水合），導致白屏閃爍和 CLS 指標惡化。新方式會直接複用服務端 DOM，客戶端隻綁定事件，不重建 DOM 結構。
 
 ## 啓用非破壞性水合
 
@@ -33,7 +33,7 @@ export const appConfig: ApplicationConfig = {
 ```
 破壞性水合（Angular 15 及之前）：
 1. 服務端渲染 HTML → 發送給瀏覽器
-2. 瀏覽器展示 SSR HTML（用户可見）
+2. 瀏覽器展示 SSR HTML（用戶可見）
 3. Angular 下載、解析 JS bundle
 4. Angular 銷燬所有服務端 HTML ← 白屏！
 5. Angular 重新渲染整個頁面
@@ -41,7 +41,7 @@ export const appConfig: ApplicationConfig = {
 
 非破壞性水合（Angular 16）：
 1. 服務端渲染 HTML → 發送給瀏覽器
-2. 瀏覽器展示 SSR HTML（用户可見）
+2. 瀏覽器展示 SSR HTML（用戶可見）
 3. Angular 下載、解析 JS bundle
 4. Angular 遍歷現有 DOM，匹配 Component 樹 ← 不銷燬！
 5. 僅綁定事件監聽
@@ -71,7 +71,7 @@ import {
 } from "@angular/platform-browser";
 
 // 默認（推薦）：啓用 HTTP Transfer State
-// 服務端的 HTTP 請求結果會傳遞給客户端，避免重複請求
+// 服務端的 HTTP 請求結果會傳遞給客戶端，避免重複請求
 provideClientHydration();
 
 // 如果不需要 HTTP Transfer State
@@ -80,18 +80,18 @@ provideClientHydration(withNoHttpTransferCache());
 
 ## HTTP Transfer State 集成
 
-Angular 16 的水合默認與 `HttpClient` 集成——服務端已經完成的 HTTP 請求結果會通過內嵌 JSON 傳給客户端，客户端不需要重複請求：
+Angular 16 的水合默認與 `HttpClient` 集成——服務端已經完成的 HTTP 請求結果會通過內嵌 JSON 傳給客戶端，客戶端不需要重複請求：
 
 ```typescript
 // 這個 API 請求在服務端執行
-// 水合後，客户端的同一請求會直接從 Transfer State 獲取，不發 HTTP
+// 水合後，客戶端的同一請求會直接從 Transfer State 獲取，不發 HTTP
 @Injectable({ providedIn: "root" })
 export class ProductService {
   private http = inject(HttpClient);
 
   getProducts(): Observable<Product[]> {
     // SSR：發起真實 HTTP 請求
-    // 客户端水合階段：從 Transfer State 獲取，不重複請求
+    // 客戶端水合階段：從 Transfer State 獲取，不重複請求
     return this.http.get<Product[]>("/api/products");
   }
 }
@@ -107,7 +107,7 @@ export class ProductService {
   selector: 'app-chart',
   template: `
     <div ngSkipHydration>
-      <!-- 圖表組件：依賴客户端 DOM API，不能水合 -->
+      <!-- 圖表組件：依賴客戶端 DOM API，不能水合 -->
       <canvas id="myChart"></canvas>
     </div>
   `
@@ -123,7 +123,7 @@ export class ChartComponent implements AfterViewInit {
 常見需要跳過水合的場景：
 
 - 使用 `document`、`window`、`localStorage` 的組件
-- 依賴客户端測量（getBoundingClientRect）的組件
+- 依賴客戶端測量（getBoundingClientRect）的組件
 - 畫布/WebGL 組件
 
 ## 升級到 Angular 16 啓用水合
@@ -139,4 +139,4 @@ ng update @angular/core@16 @angular/cli@16 @angular/ssr@16
 
 ## 總結
 
-非破壞性水合是 Angular Universal 從"可用"變成"高性能"的關鍵一步。一行 `provideClientHydration()` 就能消除 SSR 應用最讓人頭疼的 DOM 重建白屏問題。結合 HTTP Transfer State，服務端完成的工作不會在客户端重做。對於已有 Angular Universal 項目，升級到 16 並啓用新水合是投入產出比最高的優化項。
+非破壞性水合是 Angular Universal 從"可用"變成"高性能"的關鍵一步。一行 `provideClientHydration()` 就能消除 SSR 應用最讓人頭疼的 DOM 重建白屏問題。結合 HTTP Transfer State，服務端完成的工作不會在客戶端重做。對於已有 Angular Universal 項目，升級到 16 並啓用新水合是投入產出比最高的優化項。

@@ -5,14 +5,14 @@ tags:
   - React
 readingTime: 3
 description: "10月25-26日，React Conf 2018 在美國內華達州舉行。Dan Abramov 和 Ryan Florence 現場演示了 Hooks，整個社群都炸了。"
-wordCount: 509
+wordCount: 510
 ---
 
 10月25-26日，React Conf 2018 在美國內華達州舉行。Dan Abramov 和 Ryan Florence 現場演示了 Hooks，整個社群都炸了。
 
 ## React Conf 上的 Hooks 演示
 
-Dan 演示瞭如何把一個複雜的 class 元件改寫成使用 Hooks 的函式元件。最讓我印象深刻的是，之前需要 HOC 層層巢狀的程式碼，現在用幾個自定義 Hook 就解決了，而且程式碼更清晰。
+Dan 現場示範如何把一個複雜的 class 元件改寫成使用 Hooks 的函式元件。最讓我印象深刻的是，之前需要 HOC 層層巢狀的程式碼，現在用幾個自定義 Hook 就解決了，而且程式碼更清晰。
 
 Ryan 演示了用 Hooks 替換 render props 的場景，現場掌聲不斷。
 
@@ -43,7 +43,7 @@ class UserPage extends React.Component {
   }
 }
 
-// Hooks 的思維方式：邏輯抽離為 Hook，元件隻關注 UI
+// Hooks 的思維方式：邏輯抽離為 Hook，元件只關注 UI
 function useUser(userId) {
   // 所有相關邏輯在一處
   const [user, setUser] = useState(null);
@@ -61,7 +61,7 @@ function useUser(userId) {
   return { user, loading, error };
 }
 
-// 元件隻關注 UI
+// 元件只關注 UI
 function UserPage({ userId }) {
   const { user, loading, error } = useUser(userId);
 
@@ -99,14 +99,14 @@ const inputRef = useRef(null);
 React 要求兩條規則：
 
 ```javascript
-// 規則 1：隻在最頂層呼叫 Hook（不能在條件/迴圈裡）
+// 規則 1：只在最頂層呼叫 Hook（不能在條件/迴圈裡）
 function BadExample() {
   if (condition) {
     const [x] = useState(0); // ❌ 錯誤！
   }
 }
 
-// 規則 2：隻在 React 函式元件或自定義 Hook 裡呼叫
+// 規則 2：只在 React 函式元件或自定義 Hook 裡呼叫
 function notAComponent() {
   const [x] = useState(0); // ❌ 錯誤！
 }
@@ -140,7 +140,7 @@ export default {
 };
 ```
 
-和 React Hooks 相比，Vue 的 `setup` 隻執行一次（不像 hooks 每次渲染都執行），沒有依賴陣列的問題，但也失去了一些靈活性。
+和 React Hooks 相比，Vue 的 `setup` 只執行一次（不像 hooks 每次渲染都執行），沒有依賴陣列的問題，但也失去了一些靈活性。
 
 ## 什麼時候穩定？
 
@@ -152,6 +152,6 @@ Dan 在 Conf 上說 Hooks 已經在 React 16.7 alpha 中可用，但 API 還可�
 
 - React Conf 2018 正式介紹了 Hooks，社群反響熱烈
 - Hooks 的核心價值：把有狀態的邏輯抽離到可複用的 Hook
-- 兩條規則：隻在頂層呼叫、隻在函式元件/自定義 Hook 裡呼叫
+- 兩條規則：只在頂層呼叫、只在函式元件/自定義 Hook 裡呼叫
 - Vue 3 Composition API 也在朝類似方向發展
 - 生產專案等 Hooks 穩定版，個人專案現在就可以玩

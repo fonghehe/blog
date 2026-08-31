@@ -5,10 +5,10 @@ tags:
   - Frontend
 readingTime: 1
 description: "I recently rolled out the 3D Web 2026 technology trends in my team and picked up quite a bit of hands-on experience. Writing it all down here in case it's useful for others doing similar work."
-wordCount: 155
+wordCount: 156
 ---
 
-I recently rolled out the 3D Web 2026 technology trends in my team and picked up quite a bit of hands-on experience. Writing it all down here in case it's useful for others doing similar work.
+I recently put the 3D Web 2026 technology trends into practice on my team and picked up quite a bit of hands-on experience. Writing it all down here in case it's useful for others doing similar work.
 
 ## Core Concepts
 

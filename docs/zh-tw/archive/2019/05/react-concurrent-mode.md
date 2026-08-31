@@ -116,7 +116,7 @@ function App() {
 Concurrent Mode 在 2019 年還在實驗階段：
 
 - 不穩定的 API（正式版 API 可能會變）
-- 隻在 `ReactDOM.createRoot` 中啟用
+- 只在 `ReactDOM.createRoot` 中啟用
 - 依賴 Suspense 的資料獲取庫還不成熟（relay、swr 在跟進）
 
 預計 2020-2021 年才會穩定。現在瞭解概念，為以後做準備。

@@ -4,12 +4,12 @@ date: 2026-08-09 13:11:22
 tags:
   - 工程化
   - PWA
-readingTime: 8
+readingTime: 10
 description: "Service Worker 是瀏覽器中唯一能實現離線優先的技術基石。本文從生命週期、快取策略矩陣、Workbox 工程化、訊息推送、背景同步到更新策略，系統梳理 PWA 離線優先架構的完整工程方案，並討論 PWA 在 2026 年的定位和適用場景。"
-wordCount: 3800
+wordCount: 1734
 ---
 
-PWA（Progressive Web App）在 2026 年已經不再是「能不能替代原生 App」的討論焦點。App Store 和 Google Play 依然強勢，但 PWA 找到了自己的定位：不需要分发管道更新、離線場景可用、安裝即用。這些特性讓 PWA 在內部工具、內容型應用、新興市場場景中持續發揮作用。而 PWA 的技術基石——Service Worker——依然是前端最複雜也最強大的 API 之一。
+PWA（Progressive Web App）在 2026 年已經不再是「能不能替代原生 App」的討論焦點。App Store 和 Google Play 依然強勢，但 PWA 找到了自己的定位：不需要分發管道更新、離線場景可用、安裝即用。這些特性讓 PWA 在內部工具、內容型應用、新興市場場景中持續發揮作用。而 PWA 的技術基石——Service Worker——依然是前端最複雜也最強大的 API 之一。
 
 ## Service Worker 的生命週期和事件模型
 

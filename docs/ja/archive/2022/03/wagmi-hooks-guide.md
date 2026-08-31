@@ -5,9 +5,9 @@ tags:
   - Web3
   - React
   - DApp
-readingTime: 15
+readingTime: 10
 description: "wagmi Hooks で React DApp を構築、ウォレット接続からコントラクト連携までの完全な状態管理ソリューション"
-wordCount: 4200
+wordCount: 1055
 ---
 
 ## Wagmi の設計哲学

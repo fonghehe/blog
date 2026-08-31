@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Next.js 15 Turbopack 默认 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pr"
-wordCount: 224
+wordCount: 204
 ---
 
 Next.js 15 Turbopack 默认 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -62,7 +62,7 @@ Let's start with the basic implementation:
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Real-World Applications
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Optimization Tips
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'

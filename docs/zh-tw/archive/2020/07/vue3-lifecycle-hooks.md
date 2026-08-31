@@ -163,7 +163,7 @@ export default {
 
 ## onErrorCaptured 錯誤邊界
 
-這個鉤子在 Vue 3 中依然保留，可以用來構建類似 React ErrorBoundary 的錯誤捕獲機製：
+這個鉤子在 Vue 3 中依然保留，可以用來構建類似 React ErrorBoundary 的錯誤捕獲機制：
 
 ```typescript
 import { onErrorCaptured, ref, defineComponent, h } from 'vue'

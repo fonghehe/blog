@@ -92,7 +92,7 @@ module.exports = function(source) {
 
 ## Module Federation
 
-這個特性是 Zack Jackson 提出的，核心思路是：**讓不同的 Webpack 構建產物可以互相引用模組**。
+這個特性是 Zack Jackson 提出的，核心思路是：**讓不同的 Webpack 建置產物可以互相引用模組**。
 
 通俗地說：你可以讓一個應用在執行時，去載入另一個應用的程式碼，就像載入本地模組一樣。
 
@@ -109,7 +109,7 @@ Module Federation 的做法：
   - 共享依賴（React/Vue 隻加載一份）
 ```
 
-### 設定示例
+### 設定範例
 
 ```javascript
 // app-shell/webpack.config.js  （主應用）
@@ -309,8 +309,8 @@ resolve: {
 
 ## 小結
 
-- 持久快取是 Webpack 5 最實用的特性，能將二次構建時間降低一個數量級
+- 持久快取是 Webpack 5 最實用的特性，能將二次建置時間降低一個數量級
 - Module Federation 是微前端的新思路，執行時模組共享比 iframe 和 single-spa 更優雅
 - Asset Modules 簡化了資源設定，不再需要 file-loader / url-loader
 - Webpack 5 目前還是 Beta，生產專案建議等正式版再升級
-- 配合 Vite 等新工具的出現，2020 年構建工具領域會有很大變化
+- 配合 Vite 等新工具的出現，2020 年建置工具領域會有很大變化

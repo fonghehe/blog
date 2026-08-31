@@ -4,11 +4,11 @@ date: 2020-02-13 10:38:48
 tags:
   - CSS
 readingTime: 2
-description: "多人协作的大项目，CSS 全局污染是个老大难问题。对比了 Scoped CSS、CSS Modules 和 CSS-in-JS 后，最终在组件库项目中选择了 CSS Modules，记录一下实践方案。"
-wordCount: 228
+description: "In large multi-contributor projects, global CSS pollution is a persistent headache. After comparing Scoped CSS, CSS Modules, and CSS-in-JS, I chose CSS Modules for our component library and document the approach here."
+wordCount: 167
 ---
 
-多人协作的大项目，CSS 全局污染是个老大难问题。对比了 Scoped CSS、CSS Modules 和 CSS-in-JS 后，最终在组件库项目中选择了 CSS Modules，记录一下实践方案。
+In large projects with many contributors, global CSS pollution is a long-standing headache. After comparing Scoped CSS, CSS Modules, and CSS-in-JS, I ended up going with CSS Modules for our component library and want to document the approach here.
 
 ## Scoped CSS vs CSS Modules
 
@@ -27,10 +27,10 @@ wordCount: 228
 <!-- 选择器变成 .button[data-v-f3f3eg9] -->
 ```
 
-Scoped CSS 的问题：
-- 属性选择器性能比类选择器差（虽然差距很小）
-- 子组件根元素会同时有 scoped 和非 scoped 样式
-- 深度选择器（`/deep/`、`::v-deep`）容易被滥用
+The problems with Scoped CSS:
+- Attribute selectors are slightly slower than class selectors (though the gap is tiny)
+- A child component's root element can receive both scoped and non-scoped styles
+- Deep selectors (`/deep/`, `::v-deep`) are easy to misuse
 
 ## CSS Modules Basic Configuration
 
@@ -64,7 +64,7 @@ Scoped CSS 的问题：
 </style>
 ```
 
-编译后类名变成哈希值，天然无冲突：`container_x7f2a`、`btn_k9m3z`。
+After compilation, class names become hashed values, which are collision-free by design: `container_x7f2a`, `btn_k9m3z`.
 
 ## Usage in Component Libraries
 
@@ -131,7 +131,7 @@ export default {
 </style>
 ```
 
-## 动态类名
+## Dynamic Class Names
 
 ```vue
 <template>
@@ -168,7 +168,7 @@ export default {
 </script>
 ```
 
-## 全局样式变量
+## Global Style Variables
 
 ```javascript
 // vue.config.js
@@ -206,8 +206,8 @@ module.exports = {
 
 ## Summary
 
-- CSS Modules 通过哈希类名彻底解决全局污染问题
-- 在 Vue 中通过 `$style` 对象访问，模板中绑定 `:class`
-- 组件库项目推荐 BEM 命名 + CSS Modules 结合
-- 开发环境保留可读类名，生产环境用短哈希
-- CSS-in-JS 方案在 Vue 生态不如 CSS Modules 自然
+- CSS Modules eliminate global pollution entirely through hashed class names
+- In Vue, access them via the `$style` object and bind with `:class` in templates
+- For component libraries, combine BEM naming with CSS Modules
+- Keep readable class names in development and use short hashes in production
+- CSS-in-JS feels less natural than CSS Modules within the Vue ecosystem

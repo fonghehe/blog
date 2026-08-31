@@ -4,7 +4,7 @@ date: 2022-04-22 09:48:37
 tags:
   - Frontend
 readingTime: 2
-description: "In daily development, Module Federation 2022 最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimi"
+description: "Module Federation best practices for 2022 matter more and more in everyday development. This article systematically covers their usage, rationale, and optimization strategies."
 wordCount: 179
 ---
 

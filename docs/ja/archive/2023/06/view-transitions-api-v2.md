@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "在日常开发中，View Transitions API v2 跨文档の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 495
+wordCount: 513
 ---
 
 在日常开发中，View Transitions API v2 跨文档の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -153,4 +153,4 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 - 新しい技術を使うためだけに新しい技術を使わないでください
 - コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整する必要があります
-- View Transitions API v2 跨文档不是银弹，需要根据项目规模和技术栈选择
+- View Transitions API v2 跨文档 は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある

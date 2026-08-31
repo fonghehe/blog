@@ -3,9 +3,9 @@ title: "Svelte 5 Runes リアクティビティの刷新"
 date: 2024-05-06 15:28:52
 tags:
   - Svelte
-readingTime: 2
+readingTime: 3
 description: "Svelte 5 Runes 响应式重构はフロントエンド開発においてますます広く応用されています。本記事では実際のプロジェクトからそのコア原理とベストプラクティスを深く分析します。"
-wordCount: 476
+wordCount: 497
 ---
 
 Svelte 5 Runes 响应式重构はフロントエンド開発においてますます広く応用されています。本記事では実際のプロジェクトからそのコア原理とベストプラクティスを深く分析します。
@@ -151,6 +151,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## まとめ
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- 本番投入前には必ず互換性を検証する
+- チーム開発では技術そのものより規約とドキュメントが重要だ
+- コミュニティの動向を追い続け、技術方針は継続的に見直す

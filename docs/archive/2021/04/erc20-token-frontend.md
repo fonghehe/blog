@@ -5,9 +5,9 @@ tags:
   - Web3
   - Ethereum
   - DeFi
-readingTime: 15
+readingTime: 9
 description: "从余额查询到授权转账，全面解析 ERC-20 代币的前端交互模式与工程实践"
-wordCount: 4200
+wordCount: 798
 ---
 
 ## ERC-20 标准接口

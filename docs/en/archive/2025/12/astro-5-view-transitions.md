@@ -1,5 +1,5 @@
 ---
-title: "Astro 5 View Transitions: RealProject中页面过渡Optimization"
+title: "Astro 5 View Transitions in Practice: Page Transition Optimization in a Real Project"
 date: 2025-12-16 09:30:07
 tags:
   - React

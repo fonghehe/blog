@@ -7,14 +7,14 @@ tags:
   - 测试
 readingTime: 2
 description: "在日常开发中，Storybook 6.3 新特性交互测试的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 305
+wordCount: 289
 ---
 
-在日常开发中，Storybook 6.3 新特性交互测试的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+日常开发中，Storybook 6.3 的交互测试新特性用得越来越频繁。本文系统讲解它的用法、原理和优化策略。
 
 ## 快速上手
 
-以下是一个完整的示例：
+下面是一个完整示例：
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -32,11 +32,11 @@ test.describe('用户登录流程', () => {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+生产环境里边界情况务必处理好，这点很关键。
 
 ## 内部原理
 
-关键在于理解核心逻辑：
+关键还是理解背后的核心逻辑：
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -60,11 +60,11 @@ describe('LoginForm', () => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化得看具体场景，不是所有地方都要过度优化。
 
 ## 业务实战
 
-我们可以通过以下方式来改进：
+可以试着从下面几个方面改进：
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -86,7 +86,7 @@ test.describe('用户登录流程', () => {
 
 ## 性能对比
 
-先来看基本的实现方式：
+先从基础实现看起：
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -110,11 +110,11 @@ describe('LoginForm', () => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+上面是最基础的用法，实际项目里还得补上错误处理和边界情况。
 
 ## 问题排查
 
-在这个基础上，我们可以进一步优化：
+在此基础上还能继续优化：
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -132,7 +132,7 @@ test.describe('用户登录流程', () => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种写法在大型项目里很实用，能明显省下维护成本。
 
 ## 小结
 

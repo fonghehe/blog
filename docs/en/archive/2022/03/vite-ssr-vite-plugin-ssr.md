@@ -4,7 +4,7 @@ date: 2022-03-01 09:31:26
 tags:
   - Vite
 readingTime: 2
-description: "vite-plugin-ssr SSR 方案This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fr"
+description: "The vite-plugin-ssr SSR solution has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
 wordCount: 189
 ---
 

@@ -6,7 +6,7 @@ tags:
   - 工程化
 readingTime: 3
 description: "最近几个项目陆续从 Webpack 迁移到了 Vite，构建速度的差距比想象中大。这篇整理一下构建性能优化的思路，从 Webpack 调优到直接换 Vite 的决策过程。"
-wordCount: 508
+wordCount: 511
 ---
 
 最近几个项目陆续从 Webpack 迁移到了 Vite，构建速度的差距比想象中大。这篇整理一下构建性能优化的思路，从 Webpack 调优到直接换 Vite 的决策过程。
@@ -184,7 +184,7 @@ import { createApp } from '/node_modules/.vite/deps/vue.js?v=abc123'
 | 生产构建 | 45s | 30s |
 | 包体积（gzip） | 186KB | 178KB |
 
-生产构建差距不大（Vite 用 Rollup，Rollup 的 tree-shaking 更好），开发体验差距巨大。
+生产构建差距不大（Vite 底层也是 Rollup，tree-shaking 更彻底），但开发体验差距巨大。
 
 ## 迁移注意事项
 

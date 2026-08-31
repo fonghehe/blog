@@ -5,15 +5,15 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "TypeScript 4.2 在 2 月底发布，带来了一些实用的类型系统改进。挑几个对日常开发影响最大的特性说说。"
-wordCount: 352
+description: "TypeScript 4.2 shipped at the end of February with a set of practical type-system improvements. Here are the features that affect daily development the most."
+wordCount: 204
 ---
 
-TypeScript 4.2 在 2 月底发布，带来了一些实用的类型系统改进。挑几个对日常开发影响最大的特性说说。
+TypeScript 4.2 was released at the end of February, bringing several practical type-system improvements. Let's look at the features that have the biggest impact on day-to-day development.
 
-## Rest 元组类型中的命名元素
+## Named Tuple Elements
 
-之前元组类型只能这样写：
+Previously, tuple types could only be written like this:
 
 ```typescript
 // 以前：只能用位置来理解含义
@@ -27,7 +27,7 @@ function processArgs(...args: [string, number, boolean]) {
 }
 ```
 
-4.2 支持给元组元素命名：
+TypeScript 4.2 lets you name tuple elements:
 
 ```typescript
 // 4.2：元组元素可以命名
@@ -39,7 +39,7 @@ function processArgs(...args: [name: string, count: number, flag: boolean]) {
 }
 ```
 
-对于库作者来说，API 签名的可读性提升很明显：
+For library authors, this noticeably improves the readability of API signatures:
 
 ```typescript
 // 实际场景：事件处理函数的参数
@@ -58,7 +58,7 @@ function handleMouseEvent(...[event, data, callback]: EventHandler) {
 
 ## Smarter Type Alias Expansion
 
-以前某些情况下 TypeScript 展开类型别名时会显示中间的引用名称，现在能正确展开为最终类型了：
+Previously, TypeScript sometimes displayed the intermediate alias name when expanding a type alias; now it expands correctly to the final type:
 
 ```typescript
 type ApiSuccess<T> = {
@@ -79,9 +79,9 @@ type ApiResponse<T> = ApiSuccess<T> | ApiError
 // 更清晰
 ```
 
-## `abstract` 构造签名
+## `abstract` Construct Signatures
 
-TypeScript 4.2 支持 `abstract` 构造签名，可以在类型约束中指定必须是抽象类：
+TypeScript 4.2 supports `abstract` construct signatures, letting you constrain a type to require an abstract class:
 
 ```typescript
 abstract class Animal {
@@ -113,7 +113,7 @@ function createAnimal(ctor: abstract new () => Animal) {
 // ✅ createAnimal(Cat)    // OK
 ```
 
-在框架设计中，这个特性可以帮助强制要求传入的具体实现类：
+In framework design, this feature helps enforce that a concrete implementation class is passed in:
 
 ```typescript
 // DI 容器的场景
@@ -133,7 +133,7 @@ class Container {
 
 ## `--noPropertyAccessFromIndexSignature`
 
-这个编译选项解决了 TypeScript 一个长期的"太宽松"问题：
+This compiler option fixes a long-standing 'too lenient' problem in TypeScript:
 
 ```typescript
 interface Config {
@@ -156,7 +156,7 @@ config.timeout     // ❌ 报错！不是显式声明的属性
 config['timeout']  // ✅ OK，用方括号明确表示你知道这是索引签名
 ```
 
-实际项目中这个选项非常有用——能发现拼写错误，同时不丧失索引签名的灵活性：
+In real projects this option is very useful—it catches typos without losing the flexibility of index signatures:
 
 ```typescript
 // 拼写错误会被捕获
@@ -168,7 +168,7 @@ config[dynamicKey] // ✅ OK
 
 ## Improvements to Type Inference
 
-4.2 在条件类型中的推断更准确了：
+TypeScript 4.2 infers more accurately in conditional types:
 
 ```typescript
 // 更精确的元组类型推断
@@ -182,7 +182,7 @@ const result = tail([1, 'hello', true])
 
 ## Summary
 
-- 元组元素命名让 API 签名更可读，库作者尤其受益
-- `abstract` 构造签名在框架和 DI 场景中有实际用途
-- `--noPropertyAccessFromIndexSignature` 建议在新项目中开启，能捕获拼写错误
-- TypeScript 每个版本都在让类型系统更精确，保持跟进是值得的
+- Naming tuple elements makes API signatures more readable, and library authors benefit the most
+- `abstract` construct signatures have real use in frameworks and DI scenarios
+- Enable `--noPropertyAccessFromIndexSignature` in new projects to catch typos
+- Every TypeScript release makes the type system more precise; it's worth keeping up

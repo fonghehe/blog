@@ -4,15 +4,15 @@ date: 2020-01-29 15:44:45
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 将全局 API 从构造函数模式改为工厂函数模式，所有操作都通过 `createApp` 返回的应用实例进行。这意味着 Vue 2 中常见的 `Vue.use`、`Vue.component`、`Vue.directive` 全部需要调整。本文梳理这些变更并给出迁移方案。"
-wordCount: 320
+description: "Vue 3 changed the global API from a constructor pattern to a factory-function pattern; all operations go through the app instance returned by `createApp`. This means familiar Vue 2 calls like `Vue.use`, `Vue.component`, and `Vue.directive` all need adjustment. This article covers these changes and provides a migration plan."
+wordCount: 215
 ---
 
-Vue 3 将全局 API 从构造函数模式改为工厂函数模式，所有操作都通过 `createApp` 返回的应用实例进行。这意味着 Vue 2 中常见的 `Vue.use`、`Vue.component`、`Vue.directive` 全部需要调整。本文梳理这些变更并给出迁移方案。
+Vue 3 changed the global API from a constructor pattern to a factory-function pattern; all operations go through the app instance returned by `createApp`. This means the familiar Vue 2 calls—`Vue.use`, `Vue.component`, `Vue.directive`—all need to be adjusted. This article goes through these changes and offers a migration plan.
 
 ## createApp Replaces new Vue
 
-Vue 2 通过构造函数创建实例，Vue 3 通过工厂函数创建应用。
+Vue 2 creates an instance through a constructor, while Vue 3 creates an app through a factory function.
 
 ```javascript
 // Vue 2
@@ -61,7 +61,7 @@ app.mount('#app')
 
 ## Changes to Global Registration
 
-组件、指令、混入的注册方式都移到了 app 实例上。
+The registration of components, directives, and mixins all moved onto the app instance.
 
 ```javascript
 // Vue 2
@@ -79,11 +79,11 @@ app.directive('focus', {
 app.mixin({ created() { console.log('mixin') } })
 ```
 
-关键区别：每个 `createApp` 实例拥有独立的全局注册空间。一个应用注册的组件不会污染另一个应用。
+Key difference: every `createApp` instance has its own isolated global registration space. Components registered by one app won't pollute another.
 
 ## Removed or Adjusted APIs
 
-Vue 3 移除了一批低频或有问题的 API。
+Vue 3 removed a batch of low-frequency or problematic APIs.
 
 ```javascript
 {% raw %}
@@ -118,9 +118,9 @@ delete state.items[0]        // 删除也会被 Proxy 拦截
 {% endraw %}
 ```
 
-## 迁移策略与渐进升级
+## Migration Strategy and Incremental Upgrade
 
-对于大型项目，不必一次性迁移所有代码。
+For large projects, you don't have to migrate all the code at once.
 
 ```javascript
 // 兼容层写法：同时支持 Vue 2 和 Vue 3
@@ -141,7 +141,7 @@ const install = (appOrVue) => {
 export default { install }
 ```
 
-使用 `@vue/compat` 兼容层可以在 Vue 3 中继续运行 Vue 2 代码，逐步迁移。
+Using the `@vue/compat` compatibility layer lets you keep running Vue 2 code inside Vue 3 and migrate gradually.
 
 ```javascript
 // main.js - 使用兼容模式
@@ -161,7 +161,7 @@ app.mount('#app')
 
 ## Summary
 
-- `createApp` 替代 `new Vue`，所有全局 API 挂载到 app 实例上
-- 每个 app 实例拥有独立的全局注册空间，支持多应用隔离
-- 事件总线 `$on/$off`、过滤器、`$set/$delete` 已移除，需要寻找替代方案
-- 使用 `@vue/compat` 兼容层可以渐进式迁移，不必一步到位
+- `createApp` replaces `new Vue`, and all global APIs are mounted on the app instance.
+- Each app instance has its own isolated global registration space, supporting multi-app isolation.
+- The event bus (`$on/$off`), filters, and `$set/$delete` have been removed and need alternatives.
+- The `@vue/compat` compatibility layer enables incremental migration, so you don't have to do it all at once.

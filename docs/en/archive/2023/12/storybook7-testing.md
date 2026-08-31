@@ -4,7 +4,7 @@ date: 2023-12-07 15:28:56
 tags:
   - Storybook
 readingTime: 2
-description: "在日常开发中，Storybook 7 组件测试 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+description: "Component testing with Storybook 7 is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
 wordCount: 214
 ---
 

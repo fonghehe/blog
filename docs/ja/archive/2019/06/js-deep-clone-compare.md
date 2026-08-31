@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "深いコピーはJavaScriptの面接やプロジェクトで常に話題になるトピックです。多くの方法があり、それぞれトレードオフがあります。"
-wordCount: 200
+wordCount: 198
 ---
 
 深いコピーはJavaScriptの面接やプロジェクトで常に話題になるトピックです。多くの方法があり、それぞれトレードオフがあります。
@@ -85,7 +85,7 @@ function deepClone(obj, map = new WeakMap()) {
 
 ## 選び方
 
-| シナリオ                           | 推奨                              |
+| 場面                               | 推奨                              |
 | ---------------------------------- | --------------------------------- |
 | プレーンなJSONデータ、特殊な型なし | `JSON.parse(JSON.stringify(...))` |
 | モダン環境、Date/Map/Setが必要     | `structuredClone`                 |

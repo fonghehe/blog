@@ -4,15 +4,15 @@ date: 2019-08-20 11:02:36
 tags:
   - JavaScript
 readingTime: 1
-description: "在团队推广JavaScript 数组高级方法的过程中，踩了不少坑。整理出来希望对大家有所帮助。"
-wordCount: 199
+description: "While rolling out advanced JavaScript array methods across the team, we hit quite a few pitfalls. Sharing them here in the hope they help others."
+wordCount: 134
 ---
 
-在团队推广JavaScript 数组高级方法的过程中，踩了不少坑。整理出来希望对大家有所帮助。
+While rolling out advanced JavaScript array methods across the team, we hit quite a few pitfalls. I'm sharing them here in the hope they help others.
 
 ## Basic Concepts
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 function deepClone(obj, map = new WeakMap()) {
@@ -29,11 +29,11 @@ function deepClone(obj, map = new WeakMap()) {
 }
 ```
 
-实际项目中还需要考虑边界条件和异常处理。
+In real projects you also need to consider edge cases and error handling.
 
 ## Deep Dive
 
-下面是一个实际的例子：
+Here is a concrete example:
 
 ```javascript
 function pLimit(concurrency) {
@@ -57,11 +57,11 @@ function pLimit(concurrency) {
 }
 ```
 
-这种模式在团队中推广后效果很好，维护成本明显降低。
+After this pattern was adopted by the team, results were good and maintenance cost dropped noticeably.
 
 ## Project Application
 
-我们可以通过以下方式实现：
+We can implement it as follows:
 
 ```javascript
 class EventEmitter {
@@ -92,11 +92,11 @@ class EventEmitter {
 }
 ```
 
-注意上面代码中的性能细节，避免不必要的计算。
+Note the performance details in the code above and avoid unnecessary computation.
 
 ## Summary
 
-- 实际项目中根据场景选择合适的方案
-- 团队中统一约定比追求完美实现更重要
-- 持续学习和总结，保持技术敏感度
-- 遇到问题多看源码和官方文档
+- In real projects, pick the right approach for the situation.
+- Agreeing on team-wide conventions matters more than chasing the perfect implementation.
+- Keep learning and summarizing to stay sensitive to new techniques.
+- When you hit a problem, read the source code and official docs.

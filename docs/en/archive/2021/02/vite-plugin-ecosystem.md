@@ -10,15 +10,15 @@ tags:
   - Node.js
 
 readingTime: 2
-description: "在日常开发中，Vite 插件生态与开发 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 199
+description: "The Vite plugin ecosystem plays an ever bigger role in everyday development. This article systematically covers plugin usage, internals, and how to get the most out of them."
+wordCount: 181
 ---
 
-在日常开发中，Vite 插件生态与开发 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In day-to-day development, the Vite plugin ecosystem and plugin development are being used more and more frequently. This article systematically explains their usage, principles, and optimization strategies.
 
 ## Quick Start
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is somewhat more complex:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -140,6 +140,6 @@ This approach has been running stably in production for over six months and has 
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vite 插件生态与开发不是银弹，需要根据项目规模和技术栈选择
+- The Vite plugin ecosystem and plugin development aren't a silver bullet; choose based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

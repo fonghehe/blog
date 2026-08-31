@@ -4,11 +4,11 @@ date: 2024-02-06 10:05:36
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 5.4 正式发布，带来了一些实用的类型系统改进和对 TC39 新提案的支持。从架构视角看，有几个特性对团队代码质量提升明显。"
-wordCount: 380
+description: "TypeScript 5.4 is officially out, with practical type-system improvements and support for new TC39 proposals. From an architecture perspective, several features clearly improve team code quality."
+wordCount: 353
 ---
 
-TypeScript 5.4 正式发布，带来了一些实用的类型系统改进和对 TC39 新提案的支持。从架构视角看，有几个特性对团队代码质量提升明显。
+TypeScript 5.4 is officially out, with practical type-system improvements and support for new TC39 proposals. From an architecture perspective, several features clearly improve team code quality.
 
 ## Object.groupBy and Map.groupBy
 

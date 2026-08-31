@@ -4,15 +4,15 @@ date: 2020-02-14 10:26:37
 tags:
   - Vue
 readingTime: 2
-description: "Nuxt.js 作为 Vue 的元框架，在 SSR 生态中占据主导地位。Nuxt 3 基于 Vue 3 全面重构，引入了 Composition API 驱动的数据获取方案和新的目录约定。本文介绍 Nuxt 3 中路由系统和数据获取的核心变化。"
-wordCount: 386
+description: "Nuxt.js is the dominant meta-framework for Vue in the SSR ecosystem. Nuxt 3 is a complete rewrite on Vue 3, introducing Composition API-driven data fetching and new directory conventions. This article covers the core changes to routing and data fetching in Nuxt 3."
+wordCount: 269
 ---
 
-Nuxt.js 作为 Vue 的元框架，在 SSR 生态中占据主导地位。Nuxt 3 基于 Vue 3 全面重构，引入了 Composition API 驱动的数据获取方案和新的目录约定。本文介绍 Nuxt 3 中路由系统和数据获取的核心变化。
+Nuxt.js is the dominant metaframework for Vue in the SSR ecosystem. Nuxt 3 is a complete rewrite on top of Vue 3, introducing a Composition API-driven approach to data fetching and new directory conventions. This article walks through the core changes to Nuxt 3's routing system and data fetching.
 
 ## File-Based Routing System
 
-Nuxt 3 延续了文件即路由的约定，但路由参数的语法有所调整。
+Nuxt 3 keeps the file-as-route convention, but the syntax for route parameters has changed.
 
 ```
 pages/
@@ -47,11 +47,11 @@ const { data: post } = await useFetch(`/api/blog/${route.params.slug}`)
 {% endraw %}
 ```
 
-注意 `[slug]` 用方括号包裹参数。`[...all]` 是 catch-all 路由，`[[optional]]` 是可选参数。
+Note that `[slug]` wraps the parameter in square brackets. `[...all]` is the catch-all route, and `[[optional]]` is an optional parameter.
 
 ## useFetch: Composition API-Driven Data Fetching
 
-Nuxt 3 用 `useFetch` 取代了 Options API 风格的 `asyncData` 和 `fetch`。
+Nuxt 3 replaces the Options API-style `asyncData` and `fetch` with `useFetch`.
 
 ```vue
 <script>
@@ -83,11 +83,11 @@ const { data: result } = await useFetch('/api/posts', {
 </script>
 ```
 
-`useFetch` 在 SSR 时会在服务端执行，自动将数据注入到客户端 hydration 中，不会产生二次请求。
+During SSR, `useFetch` runs on the server and automatically injects the data into the client-side hydration, so there's no second request.
 
-## useAsyncData：更灵活的数据获取
+## useAsyncData: More Flexible Data Fetching
 
-`useFetch` 是 `useAsyncData` 的封装。当需要调用外部 SDK 或执行复杂逻辑时，用 `useAsyncData` 更合适。
+`useFetch` is a wrapper around `useAsyncData`. When you need to call an external SDK or run more complex logic, `useAsyncData` is the better fit.
 
 ```vue
 <script>
@@ -113,9 +113,9 @@ const { data: products, pending } = await useAsyncData(
 </script>
 ```
 
-## 自定义 composable：封装数据层
+## Custom Composables: Encapsulating the Data Layer
 
-实际项目中，不应该在组件里直接写 API 调用。推荐封装数据层 composable。
+In real projects, you shouldn't put API calls directly inside components. It's better to wrap them in a data-layer composable.
 
 ```javascript
 // composables/useArticle.js
@@ -157,9 +157,9 @@ export default defineNuxtConfig({
 })
 ```
 
-## 数据获取的 SSR 行为控制
+## Controlling SSR Behavior for Data Fetching
 
-Nuxt 3 默认在服务端执行所有 `useFetch`/`useAsyncData`。可以通过选项精确控制。
+By default, Nuxt 3 runs every `useFetch`/`useAsyncData` on the server. You can fine-tune this with the options.
 
 ```vue
 <script>
@@ -183,8 +183,8 @@ const { data: list } = await useFetch(() => `/api/posts?page=${page.value}`, {
 
 ## Summary
 
-- `[slug]` 路由参数语法替代了 Vue Router 的 `:slug`，catch-all 用 `[...all]`
-- `useFetch` 自动处理 SSR/CSR 数据获取，避免重复请求
-- `useAsyncData` 适合封装复杂业务逻辑，支持 `watch` 响应式依赖
-- 数据层用 composables 封装，组件只关心"用什么数据"而不关心"怎么拿"
-- `server: false` 和 `lazy: true` 精确控制 SSR 行为和加载策略
+- `[slug]` replaces Vue Router's `:slug` for route parameters; catch-alls use `[...all]`
+- `useFetch` handles SSR/CSR data fetching automatically and avoids duplicate requests
+- `useAsyncData` is ideal for wrapping complex business logic and supports reactive `watch` dependencies
+- Wrap the data layer in composables so components care about *what* data they need, not *how* it's fetched
+- `server: false` and `lazy: true` give you precise control over SSR behavior and loading strategy

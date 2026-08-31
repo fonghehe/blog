@@ -6,7 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "React 複合元件模式在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 309
+wordCount: 307
 ---
 
 React 複合元件模式在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -36,7 +36,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 進階用法
 

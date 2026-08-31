@@ -4,13 +4,13 @@ date: 2022-03-22 09:48:38
 tags:
   - CSS
 readingTime: 2
-description: "等了好几年，CSS Container Queries 终于在主流浏览器落地了。传统媒体查询基于视口宽度，但组件化开发需要的是基于容器宽度的响应式。这才是组件真正需要的能力。"
-wordCount: 318
+description: "After years of waiting, CSS Container Queries have finally landed in mainstream browsers. Traditional media queries are based on viewport width, but component-based development needs responsiveness based on container width. This is the capability components truly need."
+wordCount: 198
 ---
 
-等了好几年，CSS Container Queries 终于在主流浏览器落地了。传统媒体查询基于视口宽度，但组件化开发需要的是基于容器宽度的响应式。这才是组件真正需要的能力。
+After years of waiting, CSS Container Queries have finally landed in mainstream browsers. Traditional media queries are based on viewport width, but component-based development needs responsiveness based on container width. This is the capability components truly need.
 
-## 为什么需要 Container Queries
+## Why Container Queries
 
 ```html
 <!-- 同一个卡片组件，在侧边栏和主内容区需要不同的样式 -->
@@ -39,9 +39,9 @@ wordCount: 318
 </main>
 ```
 
-以前用媒体查询，只能根据浏览器视口来决定样式——但这里的卡片组件需要根据父容器宽度来决定布局。
+With media queries, you could only decide styles based on the browser viewport — but here the card component needs to adjust its layout based on the parent container's width.
 
-## 基本用法
+## Basic Usage
 
 ```css
 /* 1. 定义容器 */
@@ -88,11 +88,11 @@ wordCount: 318
 }
 ```
 
-`container-type: inline-size` 告诉浏览器：这个元素是一个容器，需要监控它的行内方向（水平）尺寸变化。
+`container-type: inline-size` tells the browser: this element is a container, and its inline (horizontal) size changes should be monitored.
 
-## 容器查询单位
+## Container Query Units
 
-和视口单位类似，Container Queries 也引入了容器相对单位：
+Similar to viewport units, Container Queries introduce container-relative units:
 
 ```css
 /* cqw = 容器宽度的 1% */
@@ -111,7 +111,7 @@ wordCount: 318
 }
 ```
 
-## 组件库中的实际应用
+## Practical Use in Component Libraries
 
 ```css
 /* Button 组件的响应式 */
@@ -172,7 +172,7 @@ wordCount: 318
 }
 ```
 
-## Container Name 的作用
+## The Role of Container Name
 
 ```css
 /* 页面有多种容器，用 container-name 区分 */
@@ -196,7 +196,7 @@ wordCount: 318
 @container (min-width: 400px) { ... }
 ```
 
-## 与 CSS 变量结合
+## Combining with CSS Variables
 
 ```css
 .card-container {
@@ -227,9 +227,9 @@ wordCount: 318
 }
 ```
 
-## 浏览器支持（2022 年中）
+## Browser Support (mid-2022)
 
-Chrome 105+、Edge 105+、Safari 16+、Firefox 110+。对于不支持的浏览器，可以用 PostCSS 插件降级：
+Chrome 105+, Edge 105+, Safari 16+, Firefox 110+. For unsupported browsers, you can use a PostCSS plugin as a fallback:
 
 ```javascript
 // postcss.config.js
@@ -246,4 +246,4 @@ module.exports = {
 
 ## Summary
 
-Container Queries 解决了组件化开发中最基本的需求：让组件根据自己的容器响应式调整布局，而不是依赖全局视口。这是 CSS 响应式设计从「页面级」到「组件级」的进化。现在主流浏览器都已支持，是时候在组件库中用起来了。
+Container Queries solve the most fundamental need in component-based development: letting components responsively adjust their layout based on their own container, rather than relying on the global viewport. This is the evolution of CSS responsive design from "page-level" to "component-level." All mainstream browsers now support it — it's time to start using it in your component libraries.

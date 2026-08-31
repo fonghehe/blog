@@ -5,7 +5,7 @@ tags:
   - 效能最佳化
 readingTime: 2
 description: "過了年假回來，接手了一個線上 bug，花了兩天才定位到，根本原因是沒有錯誤監控。這篇文章整理一下前端錯誤監控的方案。"
-wordCount: 423
+wordCount: 422
 ---
 
 過了年假回來，接手了一個線上 bug，花了兩天才定位到，根本原因是沒有錯誤監控。這篇文章整理一下前端錯誤監控的方案。
@@ -38,9 +38,9 @@ window.onerror = function (message, source, lineno, colno, error) {
 
 **侷限性**：
 
-- 隻能捕獲全域性執行時錯誤
+- 只能捕獲全域性執行時錯誤
 - 不能捕獲 Promise 內部的錯誤
-- 跨域指令碼錯誤隻顯示 "Script error."（需要 crossorigin 屬性）
+- 跨域指令碼錯誤只顯示 "Script error."（需要 crossorigin 屬性）
 
 ## 處理 Promise 錯誤
 
@@ -75,7 +75,7 @@ window.addEventListener("unhandledrejection", (event) => {
 
 ## 跨域指令碼錯誤
 
-CDN 託管的指令碼報錯，瀏覽器會隱藏細節（安全策略），隻給你 "Script error."。
+CDN 託管的指令碼報錯，瀏覽器會隱藏細節（安全策略），只給你 "Script error."。
 
 解決方案：
 
@@ -93,7 +93,7 @@ Access-Control-Allow-Origin: *
 
 ## Source Map 與錯誤定位
 
-生產程式碼是壓縮混淆的，錯誤堆積疊的行號列號毫無意義。需要 Source Map。
+生產程式碼是壓縮混淆的，錯誤堆疊的行號列號毫無意義。需要 Source Map。
 
 ### Webpack 生成 Source Map
 

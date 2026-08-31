@@ -41,10 +41,10 @@ font-src 'self' https://fonts.gstatic.com
 # AJAX/WebSocket 請求
 connect-src 'self' https://api.example.com wss://ws.example.com
 
-# 不允許在 iframe 中被嵌入（防止點選劫持）
+# 不允許在 iframe 中被嵌入（防止點擊劫持）
 frame-ancestors 'none'
 
-# 上報違規（不攔截，隻上報）
+# 上報違規（不攔截，只上報）
 report-uri /csp-violation-report
 ```
 
@@ -73,7 +73,7 @@ add_header Content-Security-Policy "script-src 'self' 'nonce-$nonce'";
 ```
 
 ```html
-<!-- 隻有帶正確 nonce 的內聯指令碼才會執行 -->
+<!-- 只有帶正確 nonce 的內聯指令碼才會執行 -->
 <script nonce="xK2TnVqD8sP3mR7">
   // 這段指令碼可以執行
   var config = { apiUrl: "..." };
@@ -93,7 +93,7 @@ add_header Content-Security-Policy "script-src 'self' 'nonce-$nonce'";
 Content-Security-Policy-Report-Only: default-src 'self'; report-uri /csp-report
 ```
 
-不攔截，隻把違規報告發到 `/csp-report`，方便除錯。
+不攔截，只把違規報告發到 `/csp-report`，方便除錯。
 
 ```javascript
 // 接收 CSP 違規報告
@@ -110,13 +110,13 @@ app.post(
 
 ## 常見的 CSP 相容問題
 
-- `eval()`：被 `script-src` 的 `unsafe-eval` 控製，webpack 的某些用法會用到
+- `eval()`：被 `script-src` 的 `unsafe-eval` 控制，webpack 的某些用法會用到
 - 內聯事件處理：`<button onclick="...">` 被阻止，改成 addEventListener
-- `<base>` 標籤：影響相對 URL 解析，受 `base-uri` 控製
+- `<base>` 標籤：影響相對 URL 解析，受 `base-uri` 控制
 
 ## 小結
 
 - CSP 是防禦 XSS 的最後一道防線，即使注入了指令碼也無法執行
 - 先用 `Report-Only` 模式，收集違規後再正式開啟
 - nonce 比 `unsafe-inline` 更安全
-- `frame-ancestors: none` 同時防止點選劫持
+- `frame-ancestors: none` 同時防止點擊劫持

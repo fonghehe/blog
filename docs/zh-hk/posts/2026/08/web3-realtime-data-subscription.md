@@ -3,9 +3,9 @@ title: "DApp 前端實時數據訂閱架構：WebSocket、Reorg 與多標籤同�
 date: 2026-08-29 13:19:38
 tags:
   - Web3
-readingTime: 9
+readingTime: 8
 description: "dApp 前端的實時數據不只是接個 WebSocket。本文覆蓋 WS provider 訂閱 vs 輪詢 vs indexing service 的選型、斷線重連與重訂閱策略、鏈上 reorg 在 UI 狀態中的處理、BroadcastChannel 多標籤同步，以及 TanStack Query 融合訂閱與 REST 快照的集成模式。"
-wordCount: 3500
+wordCount: 1565
 ---
 
 做 DeFi dashboard 的前端，最讓人頭疼的不是 UI 複雜度，而是數據的實時性和一致性。用戶的持倉、待確認交易、池子 TVL 都在不斷變化，靠 REST 輪詢要麼延遲太高，要麼請求量爆炸。WebSocket 訂閱看起來是答案，但實際落地後會遇到斷線重連、鏈上 reorg 導致狀態回退、用戶開了三個標籤頁各自維護獨立狀態等一系列問題。

@@ -1,5 +1,5 @@
 ---
-title: "Next.js 14 Partial Prerendering: ConceptVerification to Experiment性Support"
+title: "Next.js 14 Partial Prerendering: From Concept to Experimental Support"
 date: 2023-12-28 14:31:32
 tags:
   - Next.js

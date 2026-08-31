@@ -6,14 +6,14 @@ tags:
   - CSS
 readingTime: 2
 description: "关于Styled Components v5 最佳实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 311
+wordCount: 312
 ---
 
-关于Styled Components v5 最佳实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+关于 Styled Components v5 的最佳实践，多数开发者还停留在单纯调用 API 的层面。本文从生产环境出发，聊聊落地时真正会遇到的坑和对应的解法。
 
 ## 基本原理
 
-实际项目中的用法会更复杂一些：
+真实业务里的用法往往更复杂一些：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -37,11 +37,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+用这种方式，代码的可测试性和可扩展性都上去了。
 
 ## 高级特性
 
-以下是一个完整的示例：
+下面是一段完整示例：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -72,11 +72,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界条件的处理很关键，生产环境尤其不能马虎。
 
 ## 项目实践
 
-关键在于理解核心逻辑：
+关键是理解背后的核心逻辑：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -100,11 +100,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要结合具体场景，并非所有情况都值得专门去做。
 
 ## 最佳实践
 
-我们可以通过以下方式来改进：
+我们可以用下面这种方式来改进：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -135,7 +135,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已经在线上稳定运行半年多，经受过实际验证。
 
 ## 小结
 

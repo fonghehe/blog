@@ -7,11 +7,11 @@ tags:
   - React
 
 readingTime: 2
-description: "最近把一个内部运营平台从 CSR 迁移到了 Vite SSR，记录一下踩坑和经验。Vite 2.x 的 SSR 支持已经比较成熟了，但文档偏少，实际用起来还是有一些要注意的。"
-wordCount: 260
+description: "I recently migrated an internal operations platform from CSR to Vite SSR — here are the pitfalls and lessons. Vite 2.x SSR support is fairly mature, but documentation is thin, and there are still things to watch out for in practice."
+wordCount: 206
 ---
 
-最近把一个内部运营平台从 CSR 迁移到了 Vite SSR，记录一下踩坑和经验。Vite 2.x 的 SSR 支持已经比较成熟了，但文档偏少，实际用起来还是有一些要注意的。
+I recently migrated an internal operations platform from CSR to Vite SSR, and I'm noting down the pitfalls and lessons learned. SSR support in Vite 2.x is already fairly mature, but documentation is sparse, so there are still a few things to watch out for in practice.
 
 ## Basic Architecture
 
@@ -122,7 +122,7 @@ startServer()
 
 ## Pitfall 1: CSS Handling
 
-Vite SSR 默认不提取 CSS，需要手动处理：
+Vite SSR doesn't extract CSS by default, so you need to handle it manually:
 
 ```typescript
 // 在渲染前收集样式
@@ -135,7 +135,7 @@ const html = await renderToString(app)
 // 生产环境需要读取 manifest.json
 ```
 
-生产构建需要 `ssrManifest`：
+Production builds require `ssrManifest`:
 
 ```bash
 # 构建客户端（生成 ssr-manifest.json）
@@ -247,17 +247,17 @@ export function useAsyncData<T>(key: string, fetcher: () => Promise<T>) {
 
 ## Performance Comparison
 
-| 指标 | CSR | SSR |
+| Metric | CSR | SSR |
 |------|-----|-----|
 | 首字节时间 | ~200ms | ~50ms |
 | 首屏可见 | ~1.5s | ~0.3s |
 | 可交互时间 | ~2s | ~1s |
 
-内部运营平台对 SEO 没需求，但首屏速度提升明显，特别是弱网环境。
+Our internal operations platform has no SEO needs, but the first-paint speed improvement is obvious, especially on weak networks.
 
 ## Summary
 
-- Vite SSR 开发体验很好（HMR、实时编译），但生产部署要注意 CSS 和静态资源处理
-- 浏览器 API 的兼容是最大的坑，`import.meta.env.SSR` 是核心判断依据
-- 数据预取需要额外设计（不像 Next.js 有完整的约定）
-- 适合对首屏速度有要求的 Vue 3 项目；SEO 场景也可以用，但维护成本比 Nuxt 高
+- Vite SSR has a great dev experience (HMR and on-the-fly compilation), but production deployment requires care with CSS and static assets
+- Browser API compatibility is the biggest pitfall, and `import.meta.env.SSR` is the key thing to check
+- Data prefetching needs extra design (unlike Next.js, which has full conventions for it)
+- It suits Vue 3 projects that care about first-paint speed; it can also work for SEO, but the maintenance cost is higher than Nuxt

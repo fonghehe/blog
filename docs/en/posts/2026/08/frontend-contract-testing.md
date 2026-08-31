@@ -3,9 +3,9 @@ title: "Frontend Contract Testing: Ending API Drift with Consumer-Driven Contrac
 date: 2026-08-25 09:26:47
 tags:
   - Testing
-readingTime: 8
+readingTime: 7
 description: "When mock-based unit tests and manual integration testing repeatedly miss backend API changes, Consumer-Driven Contract Testing puts contract definition in frontend hands. This article covers both Pact and OpenAPI approaches, documenting the rollout process, pitfalls, and gains from a team with 4 frontends sharing a single BFF."
-wordCount: 3400
+wordCount: 1163
 ---
 
 Our team has four frontend applications (admin dashboard, consumer H5, mini-program, operations tool) sharing one BFF. Over the past two years, roughly a third of our production incidents were caused by "the frontend assumed a field still existed, but the backend had already changed it." Mock data hardcoded in unit tests passed; integration testing relied on people manually checking API docs, also passed; then we'd see white screens after deployment. The problem wasn't insufficient testing — it was that tests validated something different from the actual contract.

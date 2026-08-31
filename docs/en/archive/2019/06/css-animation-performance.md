@@ -5,10 +5,10 @@ tags:
   - CSS
 readingTime: 1
 description: "After working with frontend animations for a while, you realize the challenge isn't writing animations — it's that too many animations cause jank. Especially on"
-wordCount: 177
+wordCount: 187
 ---
 
-After working with frontend animations for a while, you realize the challenge isn't writing animations — it's that too many animations cause jank. Especially on mobile, 60 fps smooth animation is the baseline for user experience. This article starts from browser rendering principles to understand where CSS animations get slow and how to optimize them.
+After working with frontend animations for a while, you realize the real challenge isn't writing animations — it's that animating too many things at once causes jank. On mobile especially, hitting 60 fps is the baseline for a smooth user experience. This article starts with the browser's rendering pipeline to show where CSS animations slow down and how to optimize them.
 
 ## The Browser Rendering Pipeline
 
@@ -25,7 +25,7 @@ What each stage does:
 - **Paint** (repaint): fill in pixels — colors, borders, shadows, text
 - **Composite**: merge multiple layers into the final page
 
-Key insight: **the later the stage, the cheaper the property changes**. Properties handled at the Composite stage don't trigger Layout or Paint.
+Key insight: **the further down the pipeline a property change is handled, the cheaper it is**. Properties handled at the Composite stage don't trigger Layout or Paint.
 
 ## Which CSS Properties Trigger Which Stages
 
@@ -104,4 +104,4 @@ Core principle in one sentence: **use only `transform` and `opacity` for animati
 }
 ```
 
-Always profile with DevTools' Performance panel before optimizing — measure first, then optimize the actual bottleneck.
+Always profile with the DevTools Performance panel first — measure the actual bottleneck before optimizing.

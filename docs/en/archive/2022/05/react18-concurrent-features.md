@@ -4,15 +4,15 @@ date: 2022-05-10 10:39:10
 tags:
   - React
 readingTime: 3
-description: "React 18 正式版发布两个月了，并发特性不再是实验室里的概念。这篇深入两个核心 API——`useTransition` 和 `useDeferredValue`，用真实场景讲解怎么在项目中落地。"
-wordCount: 464
+description: "React 18 has been officially released for two months now, and concurrent features are no longer just lab concepts. This article dives into two core APIs — `useTransition` and `useDeferredValue` — with real-world scenarios showing how to use them in practice."
+wordCount: 310
 ---
 
-React 18 正式版发布两个月了，并发特性不再是实验室里的概念。这篇深入两个核心 API——`useTransition` 和 `useDeferredValue`，用真实场景讲解怎么在项目中落地。
+React 18 has been officially released for two months now, and concurrent features are no longer just lab concepts. This article dives into two core APIs — `useTransition` and `useDeferredValue` — with real-world scenarios showing how to use them in practice.
 
-## useTransition：标记低优先级更新
+## useTransition: Marking Low-Priority Updates
 
-核心思想：不是所有状态更新都一样紧急。用户输入是紧急的，搜索结果更新是不紧急的。
+The core idea: not all state updates are equally urgent. User input is urgent; search result updates are not.
 
 ```tsx
 import { useState, useTransition } from 'react';
@@ -45,11 +45,11 @@ function SearchPage() {
 }
 ```
 
-`isPending` 告诉你 transition 还在进行中——可以用来显示加载状态，但输入框不会卡顿。
+`isPending` tells you the transition is still in progress — you can use it to show a loading state, while the input stays responsive.
 
-## useTransition 的真实场景
+## Real-World useTransition Scenarios
 
-### 场景一：Tab 切换加载大量内容
+### Scenario 1: Tab Switching with Heavy Content Loading
 
 ```tsx
 function Dashboard() {
@@ -82,9 +82,9 @@ function Dashboard() {
 }
 ```
 
-点 Tab 时，按钮立即高亮（紧急更新），内容区域可以稍后更新（低优先级）。如果没有 transition，500ms 的渲染会让 Tab 点击延迟响应。
+When clicking a tab, the button highlights immediately (urgent update), while the content area can update later (low priority). Without transitions, a 500ms render would cause delayed feedback on tab clicks.
 
-### 场景二：列表排序/过滤
+### Scenario 2: List Sorting/Filtering
 
 ```tsx
 function DataTable({ data }: { data: DataRow[] }) {
@@ -113,9 +113,9 @@ function DataTable({ data }: { data: DataRow[] }) {
 }
 ```
 
-## useDeferredValue：为已有状态加延迟
+## useDeferredValue: Deferring an Existing State
 
-当你不能控制更新来源（比如 props 来自父组件），用 `useDeferredValue`：
+When you can't control the source of updates (e.g., props from a parent component), use `useDeferredValue`:
 
 ```tsx
 import { useState, useDeferredValue, useMemo } from 'react';
@@ -151,7 +151,7 @@ function ProductList({ products }: { products: Product[] }) {
 }
 ```
 
-`isStale` 的判断技巧：当原始值和延迟值不一致，说明延迟更新还在进行中，可以用视觉降级（降低透明度）提示用户。
+The `isStale` trick: when the original value and deferred value differ, it means the deferred update is still in progress. You can use visual degradation (reduced opacity) to hint this to the user.
 
 ## useTransition vs useDeferredValue
 
@@ -173,18 +173,18 @@ function B({ data }) {
 }
 ```
 
-| 特性 | useTransition | useDeferredValue |
+| Feature | useTransition | useDeferredValue |
 |------|--------------|-----------------|
-| 控制权 | 包裹更新逻辑 | 延迟某个值 |
-| 适用场景 | 事件处理中的状态更新 | props 或外部状态 |
-| 返回值 | [isPending, startTransition] | deferredValue |
-| 使用方式 | 嵌套 setState | 替代原始值 |
+| Control | Wraps update logic | Defers a value |
+| Use case | State updates in event handlers | Props or external state |
+| Return value | [isPending, startTransition] | deferredValue |
+| Usage | Nest setState calls | Replace the original value |
 
 ## Important Notes
 
-1. **不是所有场景都需要 transition**：如果你的渲染很快（<16ms），不需要
-2. **Suspense 配合**：transition 可以避免 Suspense fallback 闪烁
-3. **不能用于受控输入**：输入框的 value 不应该用 deferredValue
+1. **Not every scenario needs transitions**: if your renders are fast (<16ms), you don't need them
+2. **Works with Suspense**: transitions can prevent Suspense fallback flickering
+3. **Don't use on controlled inputs**: an input's value should not use deferredValue
 
 ```tsx
 // 错误：输入框会卡顿
@@ -210,4 +210,4 @@ function Good() {
 
 ## Summary
 
-useTransition 和 useDeferredValue 是 React 18 并发特性的实际落地方式。它们的核心思想很简单：区分紧急更新和非紧急更新，让浏览器优先处理用户交互。不需要全面改造代码，在关键路径上用就行。
+useTransition and useDeferredValue are the practical implementation of React 18's concurrent features. The core idea is simple: distinguish between urgent and non-urgent updates, letting the browser prioritize user interactions. You don't need to overhaul your codebase — just apply them on critical paths.

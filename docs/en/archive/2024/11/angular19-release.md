@@ -6,7 +6,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Angular 19 officially launched on November 19, 2024. This is one of the most significant Angular releases in recent years for SSR capabilities and the reactive "
-wordCount: 281
+wordCount: 259
 ---
 
 Angular 19 officially launched on November 19, 2024. This is one of the most significant Angular releases in recent years for SSR capabilities and the reactive model. Key highlights: Incremental Hydration is officially available, route-level rendering modes are stable, Zoneless has been promoted to developer preview, and template HMR is officially supported.
@@ -65,7 +65,7 @@ export const appConfig: ApplicationConfig = {
 
 ## Route-Level Rendering Modes (Officially Stable)
 
-每条路由可以独立选择 SSR、预渲染或 CSR：
+Each route can independently choose SSR, prerendering, or CSR:
 
 ```typescript
 // app.routes.server.ts（Angular 19 稳定 API）
@@ -123,7 +123,7 @@ export class ListWithSelectionComponent {
 
 ## Signal-based Components: OnPush Will Become Default
 
-Angular 19 发布了 RFC，计划在未来版本将 `OnPush` 作为新项目的默认变更检测策略（配合 Signals 使用）。现在可以在新组件中主动采用：
+Angular 19 published an RFC planning to make `OnPush` the default change detection strategy for new projects in a future release (used together with Signals). You can adopt it proactively in new components now:
 
 ```typescript
 @Component({

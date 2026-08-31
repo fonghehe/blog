@@ -4,15 +4,15 @@ date: 2020-12-09 09:41:13
 tags:
   - フロントエンド
 readingTime: 2
-description: "关于约定式提交 Conventional Commits，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 288
+description: "多くの開発者はConventional Commits（約束されたコミット規約）について、API を呼ぶレベルでしか理解していない。本記事では本番環境の視点から、実際に直面する問題とその解決策を議論する。"
+wordCount: 450
 ---
 
-关于约定式提交 Conventional Commits，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+Conventional Commits（約束されたコミット）について、多くの開発者は API 呼び出しの層にとどまっています。本稿では本番環境の観点から、実際に直面する問題とその解決策を議論します。
 
 ## 基本原理
 
-先来看基本的实现方式：
+まずは基本的な実装方法を見てみましょう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示しています。実際のプロジェクトでは、エラー処理や境界条件も考慮する必要があります。
 
 ## 高度な機能
 
-在这个基础上，我们可以进一步优化：
+これを踏まえて、さらに最適化できます：
 
 ```javascript
 :root {
@@ -63,11 +63,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模なプロジェクトで非常に実用的で、保守コストを大幅に下げられます。
 
 ## プロジェクト実践
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは、もう少し複雑に使うことになります：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -92,11 +92,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+このアプローチにより、コードのテスト容易性と拡張性の両方が向上します。
 
 ## ベストプラクティス
 
-以下是一个完整的示例：
+以下は完全なサンプルです：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -120,10 +120,10 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理に注意してください。これは本番環境では極めて重要です。
 
 ## まとめ
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- 本番環境で使う前に、必ず互換性の検証を行ってください
+- チームでの協業において、約束事とドキュメントは技術そのものよりも重要です
+- コミュニティの動向に注目してください。技術ソリューションは継続的にイテレーションが必要です

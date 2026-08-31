@@ -3,9 +3,9 @@ title: "Vue SSR Streaming 渲染：2026 年的流式架構與選擇性 Hydration
 date: 2026-08-19 20:12:33
 tags:
   - Vue
-readingTime: 9
+readingTime: 7
 description: "Vue SSR 在 Vapor 時代已經從 vue-server-renderer 演進到 renderToStream + 選擇性 Hydration。本文從內部管理系統 CSR 遷移到公開站點 SSR 的實戰經驗出發，覆蓋流式渲染、hydration mismatch 調試、CDN edge streaming 集成等核心問題。"
-wordCount: 3500
+wordCount: 1647
 ---
 
 2018 年我寫過一篇 Vue SSR 深度解析，那時候用的是 `vue-server-renderer`，整個渲染流程是同步阻塞的——伺服器必須把完整 HTML 拼好才能發給客戶端，一個慢接口就能拖垮 TTFB。八年過去，Vue 5 的 SSR 已經是完全不同的東西：`renderToStream` 支持邊渲染邊發送，Vapor Mode 組件可以跳過 hydration，CDN Edge 能在邊緣節點做流式拼接。這篇文章記錄我們團隊把一個 CSR 內部管理系統改造成 SSR 公開站點的完整過程。

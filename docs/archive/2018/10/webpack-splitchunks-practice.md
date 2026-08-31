@@ -163,7 +163,7 @@ module.exports = {
   common.js：100KB
   各页面 chunk：30-80KB
 
-首次总量差不多，但后续页面跳转只需要下载 page chunk
+首次加载总体积差不多，但后续页面跳转只需下载 page chunk
 ```
 
 ## 小结

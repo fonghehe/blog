@@ -6,10 +6,10 @@ tags:
   - 工程化
 readingTime: 2
 description: "在日常開發中，Docker 多階段構建前端應用的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 324
+wordCount: 320
 ---
 
-在日常開發中，Docker 多階段構建前端應用的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
+在日常開發中，Docker 多階段構建前端應用的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
 
 ## 快速上手
 
@@ -73,7 +73,7 @@ export default defineConfig({
 
 ```
 
-效能最佳化需要結合具體場景，不是所有情況都需要過度最佳化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 業務實戰
 
@@ -141,7 +141,7 @@ export default defineConfig({
 
 ## 問題排查
 
-在這個基礎上，我們可以進一步最佳化：
+在這個基礎上，我們可以進一步優化：
 
 ```dockerfile
 import { defineConfig } from 'vite'

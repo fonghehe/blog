@@ -6,15 +6,15 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "最近在团队中落地GraphQL Code Generator 代码生成，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 406
+description: "最近在团队中落地GraphQL Code Generator 代码生成，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てば幸いです。"
+wordCount: 411
 ---
 
-最近在团队中落地GraphQL Code Generator 代码生成，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
+最近チーム内で GraphQL Code Generator によるコード生成を導入し、多くの経験を積みました。同じような取り組みをされる方の参考になれば幸いです。
 
 ## コアコンセプト
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみましょう：
 
 ```graphql
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
@@ -76,7 +76,7 @@ const client = new ApolloClient({
 
 ## 実装経験
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは、使い方はもう少し複雑になります：
 
 ```graphql
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
@@ -107,7 +107,7 @@ const client = new ApolloClient({
 
 ## 最適化戦略
 
-完全な例を以下に示します：
+全体のサンプルを以下に示します：
 
 ```graphql
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'

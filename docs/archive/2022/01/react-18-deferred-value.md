@@ -5,10 +5,10 @@ tags:
   - React
 readingTime: 2
 description: "最近在团队中落地React 18 useDeferredValue 延迟更新，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 289
+wordCount: 290
 ---
 
-最近在团队中落地React 18 useDeferredValue 延迟更新，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近在团队里落地了 React 18 useDeferredValue 延迟更新，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
 
 ## 核心概念
 

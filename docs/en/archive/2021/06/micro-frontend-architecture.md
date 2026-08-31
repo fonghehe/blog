@@ -6,15 +6,15 @@ tags:
   - Engineering
 
 readingTime: 2
-description: "今年团队在推进一个大型 B 端平台的微前端改造，从最初的单体 Vue 应用拆分成 6 个子应用。技术选型用了 qiankun，但真正让我学到东西的不是接入过程，而是架构设计阶段的决策。"
-wordCount: 456
+description: "This year my team drove a micro-frontend transformation of a large B-side platform, splitting a monolithic Vue app into six sub-applications. We chose qiankun, but what really taught me something wasn't the integration process — it was the decisions made during architecture design."
+wordCount: 299
 ---
 
-今年团队在推进一个大型 B 端平台的微前端改造，从最初的单体 Vue 应用拆分成 6 个子应用。技术选型用了 qiankun，但真正让我学到东西的不是接入过程，而是架构设计阶段的决策。
+This year our team undertook a micro-frontend overhaul of a large B2B platform, splitting the original monolithic Vue app into six sub-applications. We chose qiankun as the framework, but what taught me the most wasn't the integration process — it was the decisions made during the architecture-design phase.
 
 ## When to Adopt Micro Frontends
 
-微前端不是银弹。见过太多团队为了微前端而微前端，最后反而增加了复杂度。我们判断是否需要微前端的标准：
+Micro frontends aren't a silver bullet. I've seen too many teams adopt them just for the sake of it, only to end up with more complexity. Here are the criteria we use to decide whether we actually need them:
 
 ```
 需要微前端的信号：
@@ -29,11 +29,11 @@ wordCount: 456
 - 纯前端路由的单体应用，用代码分割就够了
 ```
 
-我们的情况是：3 个团队维护 6 个子系统，发布频率从每周到每月不等，必须拆分。
+Our situation: three teams maintaining six subsystems, with release cadences ranging from weekly to monthly — so a split was unavoidable.
 
 ## Application Split Strategy
 
-一开始我们按业务域拆分，效果不好。后来总结出的经验是按两个维度考虑：
+We first split by business domain, but it didn't work well. What we eventually learned was to think in two dimensions:
 
 ```javascript
 // 拆分粒度参考
@@ -49,11 +49,11 @@ const splitStrategy = {
 }
 ```
 
-最终我们按业务域 + 团队边界拆分：用户中心、订单系统、数据看板、运营后台、客服工具、基础组件。
+In the end we split by business domain plus team boundaries: a user center, an order system, a data dashboard, an operations admin, a support tool, and a base-component library.
 
 ## Shared Layer Design
 
-这是最容易踩坑的地方。子应用之间有很多共享的东西：用户信息、权限数据、公共组件、工具函数。我们的方案是分层设计：
+This is where it's easiest to trip up. The sub-applications share a lot: user info, permission data, common components, utility functions. Our approach was a layered design:
 
 ```javascript
 // shared/ 是所有子应用的公共依赖层
@@ -79,11 +79,11 @@ export { PageContainer } from './PageContainer'
 }
 ```
 
-关键决策：共享层版本用 `workspace:*` 固定在最新，所有子应用统一发布，避免版本碎片化。
+Key decision: we pin the shared layer to the latest version with `workspace:*` and release all sub-applications together, avoiding version fragmentation.
 
 ## State Communication Solution
 
-子应用之间的通信是最需要克制的地方。我们的原则是：能不通信就不通信，必须通信走主应用：
+Communication between sub-applications is where restraint matters most. Our principle: don't communicate unless you have to, and when you must, route it through the host app:
 
 ```javascript
 // 主应用：全局状态中心
@@ -121,8 +121,8 @@ store.on('currentUser', (user) => {
 
 ## Summary
 
-- 微前端的价值不在技术，在于团队协作效率的提升
-- 拆分粒度按团队边界而非页面粒度
-- 共享层设计决定后续维护成本，需要严格管控
-- 状态通信要克制，优先通过 URL 和共享存储同步
-- 渐进式迁移比一步到位更安全
+- The value of micro frontends isn't technical — it's the boost in team collaboration efficiency.
+- Split by team boundaries, not by page.
+- Shared-layer design determines future maintenance cost and needs strict governance.
+- Keep inter-app communication restrained; prefer syncing via URL and shared storage.
+- Incremental migration is safer than a big-bang rewrite.

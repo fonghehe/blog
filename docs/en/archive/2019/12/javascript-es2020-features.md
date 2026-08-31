@@ -4,15 +4,15 @@ date: 2019-12-23 10:28:36
 tags:
   - JavaScript
 readingTime: 4
-description: "TC-39 委员会每年都会给 JavaScript 带来新特性。ES2020（ES11）已经走完了提案流程，预计 2020 年 6 月正式发布。这次更新中有几个非常实用的特性，特别是 Optional Chaining 和 Nullish Coalescing，能显著减少我们日常代码中的防御性判断。下面逐一介绍。"
-wordCount: 485
+description: "The TC-39 committee adds new features to JavaScript every year. ES2020 (ES11) has finished the proposal process and is expected to ship officially in June 2020. This update brings several very practical features—especially Optional Chaining and Nullish Coalescing, which can significantly cut down the defensive checks in our everyday code. Let's go through them one by one."
+wordCount: 329
 ---
 
-TC-39 委员会每年都会给 JavaScript 带来新特性。ES2020（ES11）已经走完了提案流程，预计 2020 年 6 月正式发布。这次更新中有几个非常实用的特性，特别是 Optional Chaining 和 Nullish Coalescing，能显著减少我们日常代码中的防御性判断。下面逐一介绍。
+The TC-39 committee adds new features to JavaScript every year. ES2020 (ES11) has finished the proposal process and is expected to ship officially in June 2020. This update brings several very practical features—especially Optional Chaining and Nullish Coalescing, which can significantly cut down the defensive checks in our everyday code. Let's go through them one by one.
 
 ## Optional Chaining (?.)
 
-Optional Chaining 可能是 ES2020 中最常用的特性。它允许在访问深层嵌套对象属性时，如果中间某个属性为 `null` 或 `undefined`，直接返回 `undefined` 而不是报错。
+Optional Chaining is probably the most-used feature in ES2020. When you access deeply nested object properties, if any intermediate property is `null` or `undefined`, it returns `undefined` directly instead of throwing.
 
 ```javascript
 // 以前的写法：层层判断
@@ -70,7 +70,7 @@ async function fetchUser(id) {
 
 ## Nullish Coalescing (??)
 
-Nullish Coalescing 运算符 `??` 与 `||` 类似，但只在左侧为 `null` 或 `undefined` 时才返回右侧值。这个区别在处理 `0`、`''`、`false` 等 falsy 值时非常重要：
+The Nullish Coalescing operator `??` is similar to `||`, but it only returns the right-hand value when the left side is `null` or `undefined`. This distinction matters a lot when dealing with falsy values like `0`, `''`, and `false`:
 
 ```javascript
 // || 的问题：会把所有 falsy 值都替换掉
@@ -117,7 +117,7 @@ function getFormValues(formData) {
 
 ## BigInt
 
-BigInt 是 JavaScript 新增的基本数据类型，用于表示任意精度的整数。它解决了 `Number.MAX_SAFE_INTEGER` (2^53 - 1) 的限制：
+BigInt is a new primitive type in JavaScript for representing integers of arbitrary precision. It removes the limit of `Number.MAX_SAFE_INTEGER` (2^53 - 1):
 
 ```javascript
 // Number 的精度限制
@@ -155,7 +155,7 @@ const transactionId = 2019122300000000001n
 
 ## Promise.allSettled
 
-`Promise.all` 在任何一个 Promise reject 时就会立即 reject。`Promise.allSettled` 则会等待所有 Promise 完成（无论成功还是失败），返回每个 Promise 的结果状态：
+`Promise.all` rejects immediately as soon as any one Promise rejects. `Promise.allSettled`, by contrast, waits for all Promises to finish (whether they succeed or fail) and returns the result status of each one:
 
 ```javascript
 // Promise.all 的问题：一个失败就全部失败
@@ -221,7 +221,7 @@ async function batchDelete(ids) {
 
 ## globalThis
 
-不同 JavaScript 环境中，全局对象的名称不同。`globalThis` 提供了一个统一的方式访问全局对象：
+In different JavaScript environments the global object has different names. `globalThis` provides a unified way to access the global object:
 
 ```javascript
 // 以前：需要判断环境
@@ -260,7 +260,7 @@ if (typeof globalThis === 'undefined') {
 
 ## Dynamic Import
 
-动态 `import()` 允许在运行时按需加载模块，是代码分割的基础：
+Dynamic `import()` lets you load modules on demand at runtime and is the foundation of code splitting:
 
 ```javascript
 // 静态导入：在文件顶部，编译时确定
@@ -349,10 +349,10 @@ console.log(import.meta.url)  // 当前模块的 URL
 
 ## Summary
 
-- Optional Chaining (?.) 让深层属性访问不再需要层层判断，是最实用的新特性
-- Nullish Coalescing (??) 解决了 || 运算符误替换 falsy 值的问题
-- BigInt 解决了大整数精度丢失的问题，适用于 ID、金融等场景
-- Promise.allSettled 让批量异步操作的结果处理更灵活，不再"一个失败全挂"
-- globalThis 统一了不同环境的全局对象访问方式
-- Dynamic import() 是代码分割和按需加载的基础，配合 React.lazy 使用效果最佳
-- 这些特性在 TypeScript 3.7+ 中已经得到支持，可以提前使用
+- Optional Chaining (?.) makes deep property access free of nested checks and is the most practical new feature
+- Nullish Coalescing (??) fixes the problem of `||` wrongly replacing falsy values
+- BigInt solves the precision loss of large integers and fits IDs, finance, and similar scenarios
+- Promise.allSettled makes handling batch async results more flexible—no more "one fails, all fail"
+- globalThis unifies access to the global object across environments
+- Dynamic import() is the basis for code splitting and on-demand loading; it works best with React.lazy
+- These features are already supported in TypeScript 3.7+, so you can adopt them early

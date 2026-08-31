@@ -106,7 +106,7 @@ Svelte 的響應式聲明通過靜態分析來確定依賴關係：
 <script>
   let items = [1, 2, 3];
 
-  // 隻在 items 引用變化時重新計算
+  // 只在 items 引用變化時重新計算
   $: total = items.reduce((a, b) => a + b, 0);
 
   function addItem() {
@@ -214,7 +214,7 @@ export const counter = createCounter();
   import { count, doubled, message, counter } from './stores/counter.js';
 </script>
 
-<!-- 使用 $ 前綴自動訂閲和取消訂閲 -->
+<!-- 使用 $ 前綴自動訂閱和取消訂閱 -->
 <p>計數: {$count}</p>
 <p>雙倍: {$doubled}</p>
 <p>{$message}</p>
@@ -227,7 +227,7 @@ export const counter = createCounter();
 <button on:click={counter.reset}>重置</button>
 ```
 
-`$count` 是 Svelte 的語法糖，等價於手動訂閲：
+`$count` 是 Svelte 的語法糖，等價於手動訂閱：
 
 ```svelte
 <script>
@@ -235,7 +235,7 @@ export const counter = createCounter();
 
   let countValue;
   count.subscribe(value => countValue = value);
-  // $count 自動完成這個過程並在組件銷燬時取消訂閲
+  // $count 自動完成這個過程並在組件銷毀時取消訂閱
 </script>
 ```
 
@@ -292,7 +292,7 @@ Svelte 內置了簡潔的雙向綁定語法：
   });
 
   onDestroy(() => {
-    console.log('組件即將銷燬');
+    console.log('組件即將銷毀');
   });
 
   beforeUpdate(() => {
@@ -324,6 +324,6 @@ Svelte 內置了簡潔的雙向綁定語法：
 - `$:` 標記響應式聲明，自動追蹤依賴的變量
 - 數組和對象的修改需要重新賦值才能觸發響應式更新，或者使用 `obj = obj` 技巧
 - `writable` 和 `derived` store 提供了跨組件狀態管理方案
-- `$store` 語法糖自動處理訂閲和取消訂閲
+- `$store` 語法糖自動處理訂閱和取消訂閱
 - `bind:` 提供了簡潔的雙向綁定語法
 - Svelte 適合追求極致性能和最小包體積的場景，但生態不如 React 和 Vue 成熟

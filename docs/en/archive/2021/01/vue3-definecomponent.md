@@ -7,11 +7,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "Vue 3 defineComponent 与 TypeScript is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices f"
-wordCount: 181
+description: "Vue 3's defineComponent with TypeScript is becoming standard in frontend work. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 185
 ---
 
-Vue 3 defineComponent 与 TypeScript is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Vue 3's defineComponent with TypeScript is being adopted more and more widely in frontend development. This article dives into its core principles and best practices drawn from real projects.
 
 ## Basic Usage
 

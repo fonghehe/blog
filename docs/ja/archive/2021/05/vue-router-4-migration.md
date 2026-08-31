@@ -4,16 +4,16 @@ date: 2021-05-03 09:31:43
 tags:
   - Vue
 
-readingTime: 2
+readingTime: 3
 description: "Vue 3 生态在 2021 年逐步成熟，Vue Router 4 也随之进入稳定期。年初我主导了一个中型后台管理系统的 Vue Router 3 → 4 迁移，踩了不少坑，总结一下核心变化和迁移策略。"
-wordCount: 412
+wordCount: 644
 ---
 
-Vue 3 生态在 2021 年逐步成熟，Vue Router 4 也随之进入稳定期。年初我主导了一个中型后台管理系统的 Vue Router 3 → 4 迁移，踩了不少坑，总结一下核心变化和迁移策略。
+Vue 3 のエコシステムは 2021 年に徐々に成熟し、Vue Router 4 も安定版の段階に入った。年初に、中規模の管理画面システムの Vue Router 3 → 4 への移行を主導し、いくつものつまずきを経験したので、核心的な変化と移行の戦略をまとめておく。
 
 ## ルート定義方法の変更
 
-Vue Router 4 最直观的变化是创建实例的 API 从构造函数变成了函数调用：
+Vue Router 4 で最も直感的な変化は、インスタンスを作る API がコンストラクタ呼び出しから関数呼び出しになったことだ：
 
 ```javascript
 // Vue Router 3
@@ -32,11 +32,11 @@ const router = createRouter({
 })
 ```
 
-注意 `mode: 'history'` 被替换成了 `history` 参数，需要显式调用 `createWebHistory()`、`createWebHashHistory()` 或 `createMemoryHistory()`。
+`mode: 'history'` が `history` 引数に置き換わる点に注意し、`createWebHistory()`、`createWebHashHistory()`、`createMemoryHistory()` のいずれかを明示的に呼ぶ必要がある。
 
 ## ルートガードの調整
 
-`beforeRouteEnter`、`beforeRouteUpdate`、`beforeRouteLeave` 在组合式 API 中的写法有变化：
+`beforeRouteEnter`、`beforeRouteUpdate`、`beforeRouteLeave` のコンポジション API での書き方が変化している：
 
 ```javascript
 import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'
@@ -62,9 +62,9 @@ export default {
 
 ## よくある落とし穴
 
-**1. `*` 通配路由不再支持**
+**1. `*` ワイルドカードルートはサポートされなくなった**
 
-Vue Router 4 移除了 `*` 通配符，改用 `/:pathMatch(.*)*`：
+Vue Router 4 は `*` ワイルドカードを削除し、代わりに `/:pathMatch(.*)*` を使う：
 
 ```javascript
 // Vue Router 3
@@ -78,7 +78,7 @@ Vue Router 4 移除了 `*` 通配符，改用 `/:pathMatch(.*)*`：
 
 **2. `$router` 和 `$route` 类型变化**
 
-在 TypeScript 项目中，需要使用 `useRouter()` 和 `useRoute()` 获取类型安全的实例：
+TypeScript プロジェクトでは、型安全なインスタンスを得るために `useRouter()` と `useRoute()` を使う：
 
 ```typescript
 import { useRouter, useRoute } from 'vue-router'
@@ -96,7 +96,7 @@ export default {
 
 **3. 移除了 `router.match`**
 
-用 `router.resolve()` 替代：
+`router.resolve()` で代用する：
 
 ```javascript
 // Vue Router 3
@@ -108,18 +108,18 @@ const resolved = router.resolve('/path')
 
 ## 移行戦略
 
-我们采用的是渐进式迁移：
+我々が採用したのは段階的な移行だ：
 
-1. 先升级 Vue Router 包，不改业务代码，利用兼容层先跑起来
-2. 逐个文件替换 API，优先处理路由定义和守卫
-3. 最后统一处理 TypeScript 类型问题
-4. 充分测试动态路由和嵌套路由场景
+1. まず Vue Router パッケージをアップグレードし、ビジネスコードは変更せず、互換レイヤーを使って動かす
+2. ファイルごとに API を置き換え、ルート定義とガードを優先的に処理する
+3. 最後に TypeScript の型の問題をまとめて処理する
+4. 動的ルートとネストしたルートの場面を十分にテストする
 
-整个迁移过程大约花了 2 周，主要时间花在类型修复和边界用例测试上。
+移行全体のプロセスには約 2 週間かかり、主な時間は型の修正と境界ケースのテストに費やした。
 
 ## まとめ
 
-- Vue Router 4 的 API 设计更加函数化，和 Vue 3 的组合式 API 风格一致
-- 通配路由、路由守卫写法变化是主要的 breaking change
-- TypeScript 支持显著增强，`useRouter`/`useRoute` 是推荐方式
-- 渐进式迁移策略能有效降低风险
+- Vue Router 4 の API 設計はより関数指向になり、Vue 3 のコンポジション API のスタイルと一致している
+- ワイルドカードルートやルートガードの書き方の変化が、主な breaking change だ
+- TypeScript のサポートが顕著に強化され、`useRouter`/`useRoute` が推奨される手段だ
+- 段階的な移行戦略はリスクを効果的に下げられる

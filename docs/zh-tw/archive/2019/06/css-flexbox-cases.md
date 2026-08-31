@@ -5,10 +5,10 @@ tags:
   - CSS
 readingTime: 1
 description: "關於CSS Flexbox 複雜佈局案例，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。"
-wordCount: 228
+wordCount: 230
 ---
 
-關於CSS Flexbox 複雜佈局案例，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。
+關於CSS Flexbox 複雜佈局案例，網路上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。
 
 ## 核心原理
 
@@ -43,7 +43,7 @@ describe('utils', () => {
 
 ## 原始碼分析
 
-我們可以通過以下方式實現：
+我們可以透過以下方式實作：
 
 ```css
 {% raw %}
@@ -73,7 +73,7 @@ export default {
 
 ## 實際應用
 
-具體實現參考以下程式碼：
+具體實作請參考以下程式碼：
 
 ```css
 export default {

@@ -5,14 +5,14 @@ tags:
   - 前端工程化
 readingTime: 2
 description: "最近在团队中落地Nx Monorepo 管理工具实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 309
+wordCount: 280
 ---
 
-最近在团队中落地Nx Monorepo 管理工具实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近团队在落地 Nx Monorepo 管理实践，积累了一些经验。整理出来供参考，希望对做类似工作的同学有帮助。
 
 ## 核心概念
 
-以下是一个完整的示例：
+下面给出一个完整示例：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -37,11 +37,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+注意处理边界条件，在生产环境里这点尤为关键。
 
 ## 深度解析
 
-关键在于理解核心逻辑：
+关键要理解背后的核心逻辑：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -65,11 +65,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要结合具体场景，不必处处都做。
 
 ## 落地经验
 
-我们可以通过以下方式来改进：
+可以用下面这些方式来改进：
 
 ```javascript
 :root {
@@ -92,11 +92,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已在线上稳定运行半年多，经过真实业务验证。
 
 ## 调优策略
 
-先来看基本的实现方式：
+先看基础用法：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -121,11 +121,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+以上只是最小示例，实际项目里还要处理错误与边界条件。
 
 ## 注意事项
 
-在这个基础上，我们可以进一步优化：
+在此基础上还可以继续优化：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -149,7 +149,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+在大型项目里这套模式很实用，能明显降低维护成本。
 
 ## 小结
 

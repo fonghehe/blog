@@ -5,9 +5,9 @@ tags:
   - Web3
   - Blockchain
   - DApp
-readingTime: 14
+readingTime: 8
 description: "從合約部署到前端網絡切換，完整解析 Polygon Layer2 的 DApp 適配流程"
-wordCount: 3800
+wordCount: 891
 ---
 
 ## Polygon 網絡概述
@@ -674,6 +674,6 @@ Polygon 的區塊時間約 2 秒，事件過濾的 `fromBlock` 和 `toBlock` 參
 
 ## 小結
 
-Polygon 作為 Layer2 擴展方案，其 EVM 兼容性使得以太坊 DApp 的遷移成本極低——主要工作集中在網絡配置、合約地址映射和前端網絡切換。從用户體驗角度看，Polygon 幾乎消除了 Gas 費和確認時間兩個最大痛點，使得鏈上交互體驗接近傳統 Web 應用。
+Polygon 作為 Layer2 擴展方案，其 EVM 兼容性使得以太坊 DApp 的遷移成本極低——主要工作集中在網絡配置、合約地址映射和前端網絡切換。從用戶體驗角度看，Polygon 幾乎消除了 Gas 費和確認時間兩個最大痛點，使得鏈上交互體驗接近傳統 Web 應用。
 
-但 Polygon 本質上是一條側鏈而非真正的 Layer2——它不繼承以太坊 L1 的安全性，而是依賴自身的 PoS 共識。對於高價值資產場景，這個安全假設需要謹慎評估。在實際項目中，推薦同時支持以太坊主網和 Polygon，讓用户根據自身需求選擇合適的網絡。
+但 Polygon 本質上是一條側鏈而非真正的 Layer2——它不繼承以太坊 L1 的安全性，而是依賴自身的 PoS 共識。對於高價值資產場景，這個安全假設需要謹慎評估。在實際項目中，推薦同時支持以太坊主網和 Polygon，讓用戶根據自身需求選擇合適的網絡。

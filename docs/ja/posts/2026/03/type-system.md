@@ -5,14 +5,14 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "日常開発において、型システムに関するフロントエンドのトレンドはますます活用される頻度が高くなっている。本記事はその使い方・原理・最適化戦略について体系的に解説する。"
-wordCount: 522
+wordCount: 528
 ---
 
 日常開発において、型システムに関するフロントエンドのトレンドはますます活用される頻度が高くなっている。本記事はその使い方・原理・最適化戦略について体系的に解説する。
 
 ## クイックスタート
 
-以下は完全なサンプルだ：
+以下にサンプルを示します：
 
 ```javascript
 import { useState, useEffect, useCallback } from "react";
@@ -44,7 +44,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ## 内部の仕組み
 
-重要なのはコアロジックを理解することだ：
+重要なのはコアとなるロジックを理解することです：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -99,7 +99,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## パフォーマンスの比較
 
-まず基本的な実装方法を見てみよう：
+基本的な実装方法を見てみよう：
 
 ```javascript
 import { useState, useEffect, useCallback } from "react";
@@ -161,4 +161,4 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 - コード例はあくまで参考であり、ビジネスの要件に合わせて調整が必要
 - 型システムは銀の弾丸ではない。プロジェクトの規模とスタックに合わせて選択すること
-- APIを覚えることよりも、底層の原理を理解することが重要
+- API を覚えることよりも、基礎となる原理を理解することが重要

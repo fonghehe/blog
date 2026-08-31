@@ -5,10 +5,10 @@ tags:
   - TypeScript
 readingTime: 2
 description: "關於TypeScript 條件類型深度解析，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 299
+wordCount: 295
 ---
 
-關於TypeScript 條件類型深度解析，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+很多開發者對 TypeScript 條件類型的理解只停留在 API 調用層面。本文從生產環境的角度出發，討論實際會遇到的問題與解決方案。
 
 ## 基本原理
 

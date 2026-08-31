@@ -5,9 +5,9 @@ tags:
   - Web3
   - Blockchain
   - DApp
-readingTime: 12
+readingTime: 9
 description: "Directly reading on-chain event logs cannot meet the complex query needs of DApps. The Graph provides decentralized indexing services through Subgraphs, supporting GraphQL queries. This article covers the complete solution from Subgraph definition to frontend integration."
-wordCount: 3100
+wordCount: 530
 ---
 
 DApp frontends need to display large amounts of on-chain data: users' transaction history, position changes, protocol statistics, and more. This data is scattered across event logs in countless blocks. Reading it directly via RPC is not only inefficient but also unable to support complex queries (such as pagination, filtering, and aggregation). The Graph protocol solves this problem through its Subgraph indexing mechanism, enabling frontends to efficiently query on-chain data using GraphQL.

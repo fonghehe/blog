@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "关于文档驱动开发实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 203
+description: "Many developers only know documentation-driven development as a slogan. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 196
 ---
 
-关于文档驱动开发实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to documentation-driven development, many developers only engage with it at the API-call level. This article looks at the real problems and solutions from a production-environment perspective.
 
 ## Basic Principles
 
@@ -43,7 +43,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Features
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 import { useReducer, useCallback } from 'react'

@@ -4,25 +4,25 @@ date: 2020-12-31 09:35:56
 tags:
   - Frontend
 readingTime: 2
-description: "2020 年是前端历史上变化最密集的年份之一：Vue 3 正式发布、React 17 升级铺路、Angular 保持季度发版节奏、Vite 颠覆开发体验、webpack 5 发布 Module Federation。站在 2020 年末，来聊聊 2021 年值得关注的方向。"
-wordCount: 625
+description: "A forward-looking overview of frontend directions worth watching in 2021, following a year of rapid change including Vue 3, React 17, Vite, and webpack 5 Module Federation."
+wordCount: 465
 ---
 
-2020 年是前端历史上变化最密集的年份之一：Vue 3 正式发布、React 17 升级铺路、Angular 保持季度发版节奏、Vite 颠覆开发体验、webpack 5 发布 Module Federation。站在 2020 年末，来聊聊 2021 年值得关注的方向。
+2020 was one of the most fast-changing years in frontend history: Vue 3 went stable, React 17 paved the way, Angular kept its quarterly release cadence, Vite reshaped the dev experience, and webpack 5 shipped Module Federation. As 2020 comes to a close, here are the directions worth watching in 2021.
 
 ## Frameworks Enter a Stable and Mature Phase
 
-### Vue 3 生态补全
+### Vue 3 Ecosystem Matures
 
-Vue 3 于 2020 年 9 月发布，但生态还不完整。2021 年预期：
+Vue 3 shipped in September 2020, but its ecosystem isn't complete yet. Expectations for 2021:
 
-- Vue Router 4 和 Pinia（Vuex 5）趋于稳定
-- Nuxt 3（基于 Vue 3）发布
-- UI 库（Element Plus、Ant Design Vue 3.x）相继完善
+- Vue Router 4 and Pinia (Vuex 5) will stabilize
+- Nuxt 3 (built on Vue 3) will ship
+- UI libraries (Element Plus, Ant Design Vue 3.x) will mature one after another
 
 ### React Server Components
 
-React 团队在 2020 年底预览了 Server Components——在服务端渲染组件，零客户端 JS。这可能是 React 近年来最大的架构变化：
+Late in 2020 the React team previewed Server Components — components rendered on the server with zero client-side JS. This could be React's biggest architectural shift in years:
 
 ```jsx
 // Server Component（文件名 .server.js）
@@ -35,61 +35,61 @@ async function Notes() {
 }
 ```
 
-### Angular 12 预告
+### Angular 12 Preview
 
-Angular 12 预计 2021 年 Q2 发布，将正式删除 View Engine，Ivy 成为唯一渲染引擎。Webpack 5 也会从实验性转为默认。
+Angular 12 is expected in Q2 2021 and will formally drop View Engine, leaving Ivy as the only rendering engine. Webpack 5 will also move from experimental to default.
 
 ## Engineering Tooling Enters Deep Waters
 
-### 微前端从概念落地
+### Micro-Frontends Move from Concept to Practice
 
-Module Federation（webpack 5）让微前端从"需要框架支持"变成了"内置于构建工具"：
+Module Federation (webpack 5) turned micro-frontends from "needs a framework" into "built into the build tool":
 
 ```javascript
 // 2021 年微前端的标准方案将更清晰
 // qiankun（基于 single-spa）vs Module Federation 的边界会越来越明确
 ```
 
-### Monorepo 工具成熟
+### Monorepo Tooling Matures
 
-Nx、Turborepo（Vercel，2020 年底发布）的出现让 Monorepo 管理更简单。2021 年大型团队采用 Monorepo 的比例将显著上升。
+The arrival of Nx and Turborepo (Vercel, released late 2020) makes Monorepo management simpler. In 2021, adoption among large teams will rise significantly.
 
-### 构建速度军备竞赛
+### The Build-Speed Arms Race
 
-esbuild、SWC（Rust 写的 JS 编译器，Next.js 12 将采用）的出现预示着：**用系统语言（Go/Rust）重写 JS 工具链**是 2021 年的主旋律。
+The appearance of esbuild and SWC (a Rust-based JS compiler that Next.js 12 will adopt) signals that **rewriting the JS toolchain in systems languages (Go/Rust)** is the main theme of 2021.
 
 ## TypeScript Permeates Everything
 
-2020 年 State of JS 调查：TypeScript 满意度 93%，使用率首次超过纯 JavaScript。2021 年预期：
+The 2020 State of JS survey: TypeScript hit 93% satisfaction, and its usage surpassed plain JavaScript for the first time. Expectations for 2021:
 
-- 大型团队新项目 100% TypeScript
-- TypeScript 4.x 持续改进类型推断和性能
-- `ts-node` 与 Deno 让服务端 TS 更主流
+- New projects at large teams will be 100% TypeScript
+- TypeScript 4.x will keep improving type inference and performance
+- `ts-node` and Deno will make server-side TS more mainstream
 
 ## Performance Metrics Standardization
 
-Google 的 Core Web Vitals（LCP、FID、CLS）将在 2021 年 5 月正式纳入 Google 搜索排名算法。这意味着性能优化从"加分项"变成了"必选项"：
+Google's Core Web Vitals (LCP, FID, CLS) will officially become part of Google's search ranking algorithm in May 2021. That means performance optimization shifts from a "nice to have" to a "must have":
 
-| 指标 | 含义         | Good 标准 |
-| ---- | ------------ | --------- |
-| LCP  | 最大内容绘制 | ≤ 2.5s    |
-| FID  | 首次输入延迟 | ≤ 100ms   |
-| CLS  | 累计布局偏移 | ≤ 0.1     |
+| Metric | Meaning               | Good threshold |
+| ------ | --------------------- | -------------- |
+| LCP    | Largest Contentful Paint | ≤ 2.5s    |
+| FID    | First Input Delay        | ≤ 100ms   |
+| CLS    | Cumulative Layout Shift  | ≤ 0.1     |
 
 ## Personal Learning Path Suggestions
 
-**深耕方向**（选一个）：
+**Go deep (pick one):**
 
-- Vue 3 + Composition API + Pinia（全套 Vue 生态）
-- React + React Query + Zustand/Jotai（现代 React 状态管理）
-- Angular + RxJS + NgRx（企业级方向）
+- Vue 3 + Composition API + Pinia (full Vue stack)
+- React + React Query + Zustand/Jotai (modern React state management)
+- Angular + RxJS + NgRx (enterprise direction)
 
-**横向能力**：
+**Cross-cutting skills:**
 
-- TypeScript 泛型和高级类型
-- webpack 5 / Vite 配置调优
-- 性能优化：Core Web Vitals 指标体系
+- TypeScript generics and advanced types
+- webpack 5 / Vite config tuning
+- Performance: the Core Web Vitals metrics system
 
 ## Summary
 
-2021 年前端的关键词是**成熟与深化**——框架本身不会有颠覆性变化，但工程化、性能、TypeScript 这几个方向会持续深入。与其追新框架，不如把现有技术栈用到极致。
+The keyword for frontend in 2021 is **maturity and deepening** — frameworks themselves won't see disruptive change, but engineering, performance, and TypeScript will keep going deeper. Rather than chasing new frameworks, push the stack you already use to its limit.

@@ -3,12 +3,12 @@ title: "Web Workerマルチスレッド実践"
 date: 2019-09-30 10:13:44
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 4
 description: "前端遇到大数据量计算时，页面会卡死——滚动不了、点击没反应、动画掉帧。根本原因是 JavaScript 单线程，主线程被计算任务占满了。Web Worker 允许你在后台线程运行脚本，解放主线程。"
-wordCount: 375
+wordCount: 679
 ---
 
-前端遇到大数据量计算时，页面会卡死——滚动不了、点击没反应、动画掉帧。根本原因是 JavaScript 单线程，主线程被计算任务占满了。Web Worker 允许你在后台线程运行脚本，解放主线程。
+フロントエンドで大量のデータ計算に直面すると、ページがフリーズする——スクロールも効かず、クリックに反応せず、アニメーションもコマ落ちする。根本原因は JavaScript がシングルスレッドであり、メインスレッドが計算タスクで埋め尽くされることだ。Web Worker を使えば、バックグラウンドスレッドでスクリプトを実行し、メインスレッドを解放できる。
 
 ## 基本的な使い方
 
@@ -53,11 +53,11 @@ function heavyCalculation(arr) {
 }
 ```
 
-Worker 线程里不能访问 DOM、`window`、`document`。能用的 API：`navigator`、`location`（只读）、`setTimeout`/`setInterval`、`fetch`、`WebSocket` 等。
+Worker スレッドからは DOM・`window`・`document` にアクセスできない。利用できる API は `navigator`、`location`（読み取り専用）、`setTimeout`/`setInterval`、`fetch`、`WebSocket` などだ。
 
 ## 実践：大容量CSVファイルの解析
 
-用户上传 50MB 的 CSV 文件，主线程解析会卡死：
+ユーザーが 50MB の CSV ファイルをアップロードすると、メインスレッドでの解析はフリーズする：
 
 ```javascript
 // csv-worker.js
@@ -122,7 +122,7 @@ function parseCSVInWorker(file) {
 
 ## Worker Poolのラッピング
 
-每次创建 Worker 有开销，用 Worker Pool 复用：
+Worker の生成には毎回オーバーヘッドがあるため、Worker Pool で使い回す：
 
 ```javascript
 class WorkerPool {
@@ -196,11 +196,11 @@ self.onmessage = (event) => {
 };
 ```
 
-`importScripts` 是同步阻塞的，加载完成前 Worker 不会处理消息。
+`importScripts` は同期的にブロックし、読み込みが完了するまで Worker はメッセージを処理しない。
 
 ## データ転送の最適化
 
-`postMessage` 传递的数据会被结构化克隆，有性能开销：
+`postMessage` で渡すデータは構造化クローンされるため、パフォーマンス上のオーバーヘッドがある：
 
 ```javascript
 // 低效：每次克隆大数据
@@ -212,7 +212,7 @@ worker.postMessage(buffer, [buffer]);
 // buffer 转移后，主线程不能再访问
 ```
 
-Transferable 适用于 `ArrayBuffer`、`MessagePort`、`ImageBitmap`。
+Transferable は `ArrayBuffer`・`MessagePort`・`ImageBitmap` に適用できる。
 
 ## React Hookラッパー
 
@@ -248,16 +248,16 @@ function DataProcessor({ data }) {
 
 ## デバッグ
 
-Chrome DevTools 调试 Worker：
-1. Sources → 左侧目录找到 Workers 分组
-2. 可以设断点、查看变量
-3. `console.log` 输出在主 Console 中（标记了 `[Worker]`）
+Chrome DevTools での Worker のデバッグ：
+1. Sources → 左側のツリーで Workers グループを探す
+2. ブレークポイントの設定や変数の確認が可能
+3. `console.log` の出力はメインの Console に（ `[Worker]` と标记）表示される
 
 ## まとめ
 
-- Web Worker 在后台线程运行 JS，不阻塞主线程，适合大数据计算、文件解析
-- 主线程和 Worker 通过 `postMessage` / `onmessage` 通信
-- 使用 Transferable 对象（ArrayBuffer）可以零拷贝传递大数据
-- Worker 不能访问 DOM，能用的 API 有限（fetch、WebSocket、定时器等）
-- 频繁任务用 Worker Pool 复用线程，避免创建销毁开销
-- 在 React 中封装为 useWorker Hook，使用更简洁
+- Web Worker はバックグラウンドスレッドで JS を実行し、メインスレッドをブロックしない。大規模データの計算やファイル解析に向いている
+- メインスレッドと Worker は `postMessage` / `onmessage` で通信する
+- Transferable オブジェクト（ArrayBuffer）を使えば、ゼロコピーで大規模データを渡せる
+- Worker は DOM にアクセスできず、利用できる API は限られる（fetch・WebSocket・タイマーなど）
+- 頻繁なタスクには Worker Pool でスレッドを使い回し、生成・破棄のオーバーヘッドを避ける
+- React では useWorker Hook にラップすると、より簡潔に使える

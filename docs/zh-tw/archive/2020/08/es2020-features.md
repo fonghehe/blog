@@ -34,7 +34,7 @@ const result = api?.getData?.();
 // 陣列元素
 const first = arr?.[0];
 
-// 注意：隻跳過 null 和 undefined
+// 注意：只跳過 null 和 undefined
 // 0、''、false 不會被跳過
 const obj = { count: 0 };
 console.log(obj?.count); // 0（正常訪問）
@@ -43,13 +43,13 @@ console.log(obj?.count); // 0（正常訪問）
 ## 空值合併 ??
 
 ```javascript
-// 和 || 的區別：隻對 null/undefined 生效
+// 和 || 的區別：只對 null/undefined 生效
 const value = 0;
 
 // || 會把 0 當假值
 console.log(value || 10);  // 10（不對）
 
-// ?? 隻看 null/undefined
+// ?? 只看 null/undefined
 console.log(value ?? 10);  // 0（正確）
 
 // 典型場景

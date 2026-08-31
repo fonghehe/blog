@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Three.js 3D Web 可视化入门这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 324
+wordCount: 311
 ---
 
-Three.js 3D Web 可视化入门这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+Three.js 3D Web 可视化入门这个话题社区反复讨论过，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
 
 ## 入门指南
 
@@ -44,7 +44,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种模式在大型项目里很实用，能明显压低维护成本。
 
 ## 源码分析
 
@@ -73,7 +73,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样处理，代码的可测试性和可扩展性都更好了。
 
 ## 真实场景应用
 
@@ -96,7 +96,7 @@ function reducer(state, action) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界条件一定要处理到位，生产环境里这是关键。
 
 ## 优化技巧
 
@@ -131,7 +131,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要因地制宜，别为了优化而优化。
 
 ## 避坑指南
 
@@ -160,7 +160,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已在线上稳定运行半年多，经受过真实流量的检验。
 
 ## 小结
 

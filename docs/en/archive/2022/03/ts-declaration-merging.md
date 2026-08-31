@@ -4,11 +4,11 @@ date: 2022-03-09 16:06:02
 tags:
   - TypeScript
 readingTime: 1
-description: "Frequently used in daily work, TypeScript 声明合并，Here is a systematic summary to help everyone better understand and apply it."
-wordCount: 191
+description: "Frequently used in daily work, TypeScript declaration merging deserves a systematic summary to help everyone better understand and apply it."
+wordCount: 167
 ---
 
-Frequently used in daily work, TypeScript 声明合并，Here is a systematic summary to help everyone better understand and apply it.
+Frequently used in daily work, TypeScript declaration merging deserves a systematic summary to help everyone better understand and apply it.
 
 ## Basic Concepts
 
@@ -86,7 +86,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Best Practices
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 使用示例
@@ -107,7 +107,7 @@ Through this pattern, the maintainability of the code is improved.
 
 ## Common Issues
 
-具体用法参考以下代码：
+See the following code for specific usage:
 
 ```javascript
 // 工具函数封装
@@ -139,7 +139,7 @@ It is recommended to unify conventions within the team to reduce inconsistency.
 
 ## Summary
 
-- TypeScript 声明合并的核心在于理解底层原理，而非仅仅记住 API
+- The key to TypeScript declaration merging is understanding the underlying principles, not just memorizing APIs
 - In real projects, choosing the right solution is more important than chasing the latest technology
 - Maintaining consistent code style in team collaboration reduces maintenance costs
-- 持续关注社区动态，及时更新技术方案
+- Stay updated with community developments and update your technical solutions in time

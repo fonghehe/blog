@@ -37,7 +37,7 @@ const routes: Routes = [
 })
 ```
 
-自定義策略：隻預載入標記了 `preload: true` 的模組：
+自定義策略：只預載入標記了 `preload: true` 的模組：
 
 ```typescript
 @Injectable({ providedIn: 'root' })

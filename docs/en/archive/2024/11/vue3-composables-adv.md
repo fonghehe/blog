@@ -4,7 +4,7 @@ date: 2024-11-21 15:15:52
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 Composables 进阶 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real proje"
+description: "Advanced Vue 3 composables are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 174
 ---
 

@@ -4,31 +4,31 @@ date: 2019-08-15 16:25:16
 tags:
   - React
 readingTime: 2
-description: "用 React Profiler 分析了一个性能有问题的页面，整理出一套优化方法论。"
-wordCount: 202
+description: "React Profilerを使ってパフォーマンスに問題のあるページを分析し、最適化の方法論を整理した。"
+wordCount: 287
 ---
 
-用 React Profiler 分析了一个性能有问题的页面，整理出一套优化方法论。
+React Profilerを使ってパフォーマンスに問題のあるページを分析し、最適化の方法論を整理した。
 
 ## まず分析、それから最適化
 
 ```jsx
-// 开启 React DevTools Profiler
-// Chrome 安装 React DevTools 扩展，切到 Profiler 标签
-// 点 Record，操作页面，Stop，看哪些组件渲染耗时
+// React DevTools Profilerを有効化
+// ChromeにReact DevTools拡張機能をインストールし、Profilerタブに切り替え
+// Recordをクリック、ページを操作、Stop、どのコンポーネントのレンダリングに時間がかかっているか確認
 
-// 代码层面：使用 Profiler 组件
+// コードレベル：Profilerコンポーネントの使用
 import { Profiler } from "react";
 
 function onRenderCallback(id, phase, actualDuration, baseDuration) {
-  // id：Profiler 的 id
-  // phase：mount 或 update
-  // actualDuration：实际渲染时间
-  // baseDuration：不缓存时的预估时间
+  // id：Profilerのid
+  // phase：mountまたはupdate
+  // actualDuration：実際のレンダリング時間
+  // baseDuration：キャッシュなしの推定時間
 
   if (actualDuration > 16) {
-    // 超过 16ms（60fps 的一帧）
-    console.warn(`${id} 渲染太慢: ${actualDuration}ms`);
+    // 16ms超過（60fpsの1フレーム分）
+    console.warn(`${id} のレンダリングが遅すぎる: ${actualDuration}ms`);
   }
 }
 
@@ -44,23 +44,23 @@ function App() {
 ## React.memo：不要な再レンダリングを防ぐ
 
 ```jsx
-// 问题：父组件更新，子组件不管有没有变化都重渲染
+// 問題：親コンポーネントが更新されると、子コンポーネントも変化に関係なく再レンダリングされる
 function Parent() {
   const [count, setCount] = useState(0)
   return (
     <div>
       <button onClick={() => setCount(c => c + 1)}>{count}</button>
-      <ExpensiveChild />  {/* 每次都重渲染！ */}
+      <ExpensiveChild />  {/* 毎回再レンダリングされる！ */}
     </div>
   )
 }
 
-// 解决：React.memo 包裹，props 不变就跳过渲染
+// 解決：React.memoでラップし、propsが変わらなければレンダリングをスキップ
 const ExpensiveChild = React.memo(function ExpensiveChild({ data }) {
   return <div>{/* 复杂渲染 */}</div>
 })
 
-// 自定义比较函数（默认浅比较）
+// カスタム比較関数（デフォルトは浅い比較）
 const MemoizedList = React.memo(
   function List({ items, onSelect }) { ... },
   (prevProps, nextProps) => {
@@ -76,20 +76,20 @@ const MemoizedList = React.memo(
 function ProductList({ category }) {
   const [items, setItems] = useState([]);
 
-  // ❌ 每次渲染都创建新函数，导致子组件重渲染
+  // ❌ レンダリングごとに新しい関数を作成し、子コンポーネントの再レンダリングを引き起こす
   const handleSelect = (id) => {
     setSelectedId(id);
   };
 
-  // ✅ 函数引用稳定
+  // ✅ 関数参照が安定
   const handleSelect = useCallback((id) => {
     setSelectedId(id);
-  }, []); // 没有依赖，始终是同一个函数
+  }, []); // 依存なし、常に同じ関数
 
-  // ❌ 每次渲染都重新过滤
+  // ❌ レンダリングごとに再フィルタリング
   const filtered = items.filter((item) => item.category === category);
 
-  // ✅ 只有依赖变化时才重新计算
+  // ✅ 依存が変化した時のみ再計算
   const filtered = useMemo(
     () => items.filter((item) => item.category === category),
     [items, category],
@@ -98,7 +98,7 @@ function ProductList({ category }) {
   return (
     <ItemList
       items={filtered}
-      onSelect={handleSelect} // 稳定的引用，ItemList 不会无端重渲染
+      onSelect={handleSelect} // 安定した参照により、ItemListは無駄に再レンダリングされない
     />
   );
 }
@@ -107,7 +107,7 @@ function ProductList({ category }) {
 ## 仮想リスト（大量データ）
 
 ```jsx
-// 只渲染可视区域内的 item
+// 表示領域内のitemのみをレンダリング
 import { FixedSizeList } from "react-window";
 
 function VirtualProductList({ products }) {
@@ -119,16 +119,16 @@ function VirtualProductList({ products }) {
 
   return (
     <FixedSizeList
-      height={600} // 容器高度
+      height={600} // コンテナの高さ
       itemCount={products.length}
-      itemSize={100} // 每行高度
+      itemSize={100} // 各行の高さ
       width="100%"
     >
       {Row}
     </FixedSizeList>
   );
 }
-// 10000 条数据也只渲染 ~6 个 DOM 节点
+// 10000件のデータでも約6個のDOMノードのみレンダリング
 ```
 
 ## コード分割
@@ -136,7 +136,7 @@ function VirtualProductList({ products }) {
 ```jsx
 import { lazy, Suspense } from "react";
 
-// 路由级别懒加载
+// ルートレベルの遅延読み込み
 const Dashboard = lazy(() => import("./Dashboard"));
 const Analytics = lazy(() => import("./Analytics"));
 
@@ -151,14 +151,14 @@ function App() {
   );
 }
 
-// 条件加载（只有用到时才下载）
+// 条件付き読み込み（使う時だけダウンロード）
 function ReportPage() {
   const [showChart, setShowChart] = useState(false);
   const Chart = lazy(() => import("./HeavyChart"));
 
   return (
     <div>
-      <button onClick={() => setShowChart(true)}>显示图表</button>
+      <button onClick={() => setShowChart(true)}>チャートを表示</button>
       {showChart && (
         <Suspense fallback={<Spinner />}>
           <Chart data={data} />
@@ -171,14 +171,14 @@ function ReportPage() {
 
 ## 最適化の優先度
 
-1. **避免不必要渲染**（React.memo + useCallback/useMemo）- 最常见
-2. **代码分割**（lazy + Suspense）- 首屏加载优化
-3. **虚拟列表**（react-window）- 大数据量
-4. **Web Worker**（计算密集型任务）- 不阻塞主线程
+1. **不要なレンダリングの回避**（React.memo + useCallback/useMemo）- 最も一般的
+2. **コード分割**（lazy + Suspense）- 初期ロード最適化
+3. **仮想リスト**（react-window）- 大量データ対応
+4. **Web Worker**（計算集約型タスク）- メインスレッドをブロックしない
 
 ## まとめ
 
-- 先 Profiler 定位问题，再针对性优化，不要盲目优化
-- `React.memo` 配合 `useCallback`/`useMemo` 阻止不必要的重渲染
-- 列表超过 100 条就考虑虚拟列表（react-window）
-- 代码分割是"免费"的优化，路由页面都应该懒加载
+- まずProfilerで問題を特定し、それから対象を絞って最適化する。闇雲な最適化は避ける
+- `React.memo` と `useCallback`/`useMemo` を組み合わせて不要な再レンダリングを防ぐ
+- リストが100件を超える場合は仮想リスト（react-window）を検討する
+- コード分割は「無料」の最適化であり、ルートページはすべて遅延読み込みにすべき

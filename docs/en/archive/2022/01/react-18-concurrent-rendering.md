@@ -4,11 +4,11 @@ date: 2022-01-04 15:28:25
 tags:
   - React
 readingTime: 2
-description: "React 18 并发渲染原理This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh ove"
-wordCount: 229
+description: "React 18 concurrent rendering internals have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 219
 ---
 
-React 18 并发渲染原理This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
+React 18 concurrent rendering has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
 
 ## Getting Started
 
@@ -151,4 +151,4 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- React 18 并发渲染原理 is not a silver bullet; choose based on your project scale and tech stack
+- React 18 concurrent rendering is not a silver bullet; choose based on your project scale and tech stack

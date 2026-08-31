@@ -3,14 +3,14 @@ title: "Angular Router 高度な活用：遅延ロード、ガード、モジュ
 date: 2022-03-02 14:50:11
 tags:
   - Angular
-readingTime: 2
-description: "Angular Router 是 Angular 生态中最成熟的路由方案之一。这篇文章深入讲解懒加载配置、路由守卫的各种形式以及大型应用的路由组织模式，适合已经熟悉基础 Angular 路由的开发者。"
-wordCount: 240
+readingTime: 3
+description: "Angular Router は Angular エコシステムで最も成熟したルーティングソリューションの一つです。この記事では遅延ロードの設定、ルートガードのさまざまな形式、大規模アプリケーションのルーティング構成パターンを詳しく解説します。基礎的な Angular ルーティングに慣れた開発者向けです。"
+wordCount: 473
 ---
 
-Angular Router 是 Angular 生态中最成熟的路由方案之一。这篇文章深入讲解懒加载配置、路由守卫的各种形式以及大型应用的路由组织模式，适合已经熟悉基础 Angular 路由的开发者。
+Angular Router は Angular エコシステムで最も成熟したルーティングソリューションの一つです。この記事では遅延ロードの設定、ルートガードのさまざまな形式、大規模アプリケーションのルーティング構成パターンを詳しく解説します。基礎的な Angular ルーティングに慣れた開発者向けです。
 
-## 懒加载配置
+## 遅延ロードの設定
 
 ```typescript
 // app-routing.module.ts
@@ -35,12 +35,12 @@ const routes: Routes = [
 ];
 ```
 
-**canLoad vs canActivate 的区别**：
+**canLoad と canActivate の違い**：
 
-- `canActivate`：每次访问路由时检查，但代码已下载
-- `canLoad`：阻止懒加载模块的代码**下载**，更彻底的权限控制
+- `canActivate`：ルートにアクセスするたびにチェックされるが、コードはすでにダウンロード済み
+- `canLoad`：遅延ロードモジュールのコード**ダウンロード自体**をブロックするため、より徹底した権限制御が可能
 
-## 路由守卫类型
+## ルートガードの種類
 
 ```typescript
 // auth.guard.ts
@@ -76,7 +76,7 @@ export class AuthGuard implements CanActivate, CanLoad, CanActivateChild {
 }
 ```
 
-## 数据预加载（Resolver）
+## データ事前読み込み（Resolver）
 
 ```typescript
 // product.resolver.ts
@@ -111,7 +111,7 @@ export class ProductDetailComponent {
 }
 ```
 
-## 路由预加载策略
+## ルーティング事前読み込み戦略
 
 ```typescript
 // app.module.ts - 路由模块配置
@@ -145,7 +145,7 @@ export class SelectivePreloadingStrategy implements PreloadingStrategy {
 { path: 'products', data: { preload: true }, loadChildren: () => ... }
 ```
 
-## 大型应用路由组织
+## 大規模アプリケーションのルーティング構成
 
 ```typescript
 // 按功能模块组织路由
@@ -169,7 +169,7 @@ const dashboardRoutes: Routes = [
 ];
 ```
 
-## 路由动画
+## ルーティングアニメーション
 
 ```typescript
 @Component({
@@ -200,4 +200,4 @@ export class AppComponent {
 
 ## まとめ
 
-Angular Router 的功能远不止基础路由配置。`canLoad` 在权限控制上比 `canActivate` 更彻底；`Resolve` 守卫确保组件渲染时数据已就绪；自定义预加载策略能精确控制模块下载时机。合理使用这些特性，可以让大型 Angular 应用的路由层既安全又高效。
+Angular Router の機能は基本的なルーティング設定だけにとどまりません。`canLoad` は `canActivate` よりも徹底した権限制御が可能です。`Resolve` ガードはコンポーネントのレンダリング時にデータが準備できていることを保証します。カスタム事前読み込み戦略を使えば、モジュールのダウンロードタイミングを精密に制御できます。これらの機能を適切に活用することで、大規模 Angular アプリケーションのルーティング層を安全かつ効率的に保つことができます。

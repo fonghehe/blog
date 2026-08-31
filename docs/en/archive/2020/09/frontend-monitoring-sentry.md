@@ -1,18 +1,18 @@
 ---
-title: "Sentry Frontend Monitoring Advanced: Performance追踪 &  Release Management"
+title: "Sentry Frontend Monitoring Advanced: Performance Tracing and Release Management"
 date: 2019-10-24 11:00:27
 tags:
   - Performance Optimization
 readingTime: 2
-description: "前端监控 Sentry 接入实践在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 310
+description: "A practical guide to integrating Sentry for frontend monitoring, analyzing core principles and best practices drawn from real-world projects."
+wordCount: 187
 ---
 
-前端监控 Sentry 接入实践在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Sentry adoption for frontend monitoring is becoming increasingly common in frontend development. Drawing on real-world projects, this article takes a deep dive into its core principles and best practices.
 
 ## Basic Usage
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -40,14 +40,13 @@ class TypedEmitter<T extends Record<string, any>> {
     this.handlers.get(event)?.forEach(h => h(payload))
   }
 }
-
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is especially useful in large projects and can significantly lower maintenance costs.
 
 ## Advanced Usage
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more involved:
 
 ```javascript
 const express = require('express')
@@ -69,14 +68,13 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
   if (!user) throw new AppError(404, '用户不存在')
   res.json({ data: user })
 }))
-
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This improves both the testability and extensibility of the code.
 
 ## Practical Cases
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -92,14 +90,13 @@ function reducer(state, action) {
     default: throw new Error(`Unknown: ${action.type}`)
   }
 }
-
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind edge-case handling — it is critical in production.
 
 ## Performance Optimization
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -127,14 +124,13 @@ class TypedEmitter<T extends Record<string, any>> {
     this.handlers.get(event)?.forEach(h => h(payload))
   }
 }
-
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization always depends on the specific context — not every case calls for aggressive tuning.
 
 ## Common Traps
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 const express = require('express')
@@ -156,14 +152,13 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
   if (!user) throw new AppError(404, '用户不存在')
   res.json({ data: user })
 }))
-
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- Always verify compatibility before shipping to production.
+- In team collaboration, conventions and documentation matter more than the technology itself.
+- Keep an eye on the community — technical solutions need to keep iterating.
+- Don't adopt new tech just for the sake of using it.

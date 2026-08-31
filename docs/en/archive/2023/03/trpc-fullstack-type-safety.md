@@ -4,11 +4,11 @@ date: 2023-03-05 10:05:05
 tags:
   - Frontend
 readingTime: 2
-description: "用了 tRPC 半年，说说它到底解决了什么问题。"
-wordCount: 402
+description: "I've used tRPC for six months. Here's what problem it actually solves."
+wordCount: 396
 ---
 
-用了 tRPC 半年，说说它到底解决了什么问题。
+I've used tRPC for six months. Here's what problem it actually solves.
 
 ## Problem Background
 

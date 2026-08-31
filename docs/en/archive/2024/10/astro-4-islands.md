@@ -4,7 +4,7 @@ date: 2024-10-30 17:44:21
 tags:
   - React
 readingTime: 2
-description: "Astro 4 岛屿架构深入 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+description: "Going deep with Astro 4's islands architecture is increasingly relevant in frontend development. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 200
 ---
 

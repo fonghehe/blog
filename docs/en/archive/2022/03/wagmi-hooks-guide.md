@@ -5,9 +5,9 @@ tags:
   - Web3
   - React
   - DApp
-readingTime: 15
+readingTime: 9
 description: "Building React DApps with wagmi Hooks: a complete state management solution from wallet connection to contract interaction"
-wordCount: 4200
+wordCount: 381
 ---
 
 ## Wagmi Design Philosophy

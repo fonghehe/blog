@@ -8,7 +8,7 @@ description: "Streams are one of the most core modules in Node.js, but many deve
 wordCount: 101
 ---
 
-Streams are one of the most core modules in Node.js, but many developers only use `fs.readFile` for file processing on a daily basis. When you need to process large files, build pipeline-style data processing, or implement efficient I/O, Streams are an indispensable tool.
+Streams are among the most fundamental modules in Node.js, yet many developers only reach for `fs.readFile` when handling files in their day-to-day work. When you need to process large files, build pipeline-based data flows, or handle I/O efficiently, streams are an indispensable tool.
 
 ## Why You Need Streams
 

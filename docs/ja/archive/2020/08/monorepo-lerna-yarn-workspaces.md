@@ -4,15 +4,15 @@ date: 2020-08-25 15:12:48
 tags:
   - Node.js
 readingTime: 2
-description: "Monorepo 管理 Lerna 与 Yarn Workspaces在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 301
+description: "Lerna と Yarn Workspaces による Monorepo 管理はフロントエンド開発でますます広く使われている。本記事では実際のプロジェクトから出発し、その原理とベストプラクティスを掘り下げる。"
+wordCount: 474
 ---
 
-Monorepo 管理 Lerna 与 Yarn Workspaces在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Monorepo 管理に Lerna と Yarn Workspaces を使う事例はフロントエンド開発でますます増えている。本記事では実際のプロジェクトを起点に、その中核となる原理とベストプラクティスを深掘りする。
 
 ## 基本的な使い方
 
-关键在于理解核心逻辑：
+肝心なのはコアとなるロジックを理解することだ：
 
 ```javascript
 const express = require('express')
@@ -37,11 +37,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+パフォーマンス最適化は具体的な状況に合わせる必要があり、すべてのケースで過度な最適化が必要なわけではない。
 
 ## 応用的な使い方
 
-我们可以通过以下方式来改进：
+次の方法で改善できる：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -60,11 +60,11 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番環境で半年以上安定して動いており、実際に検証済みだ。
 
 ## 実践事例
 
-先来看基本的实现方式：
+基本的な実装方法を見てみよう：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -95,11 +95,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラーハンドリングや境界条件も考慮する必要がある。
 
 ## パフォーマンス最適化
 
-在这个基础上，我们可以进一步优化：
+これをベースに、さらに最適化できる：
 
 ```javascript
 const express = require('express')
@@ -124,11 +124,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模なプロジェクトで非常に実用的で、保守コストを大きく下げられる。
 
 ## まとめ
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- API を丸暗記するよりも、その背後にある原理を理解する方が重要だ
+- 本番環境で使う前に、必ず互換性の検証を行うこと
+- チーム開発では、技術そのものよりも取り決めとドキュメントの方が重要だ
+- コミュニティの動向を追い、技術的なアプローチは継続的に磨き込む

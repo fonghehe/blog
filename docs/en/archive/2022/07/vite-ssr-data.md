@@ -3,16 +3,16 @@ title: "Vite SSR Data Fetching"
 date: 2022-07-07 15:28:44
 tags:
   - Vite
-readingTime: 2
-description: "Vite SSR 数据获取在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 223
+readingTime: 1
+description: "Vite SSR data fetching has evolved quickly in recent years. This article digs into how it works and how to apply it in practice."
+wordCount: 169
 ---
 
-Vite SSR 数据获取在近年来发展迅速，本文将深入分析其原理和实践方法。
+Vite SSR data fetching has evolved quickly in recent years. This article digs into how it works and how to apply it in practice.
 
 ## Basic Concepts
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 工具函数封装
@@ -40,7 +40,7 @@ function createHandler(options = {}) {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+With this pattern, the code's maintainability improves.
 
 ## Core Implementation
 
@@ -118,7 +118,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Common Issues
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 核心实现
@@ -139,7 +139,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Summary
 
-- 持续关注社区动态，及时更新技术方案
-- 性能优化需要基于实际数据，避免过度优化
-- Vite SSR 数据获取的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
+- Keep an eye on community developments and update the technical approach in time
+- Base performance optimization on real data and avoid premature optimization
+- The core of Vite SSR data fetching is understanding the underlying principles, not just memorizing APIs
+- In real projects, choosing the right solution matters more than chasing the newest technology

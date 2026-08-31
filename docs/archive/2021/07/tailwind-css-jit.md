@@ -6,10 +6,10 @@ tags:
   - TailwindCSS
 readingTime: 2
 description: "Tailwind CSS 2.x 开始流行，3.0 的 JIT（Just-in-Time）模式彻底改变了使用体验。"
-wordCount: 327
+wordCount: 334
 ---
 
-Tailwind CSS 2.x 开始流行，3.0 的 JIT（Just-in-Time）模式彻底改变了使用体验。
+Tailwind CSS 在 2.x 阶段逐渐流行起来，真正改写使用体验的，是 3.0 的 JIT（Just-in-Time）模式。
 
 ## 为什么 Tailwind CSS 越来越流行
 

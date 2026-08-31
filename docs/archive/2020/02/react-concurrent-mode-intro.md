@@ -5,10 +5,10 @@ tags:
   - React
 readingTime: 2
 description: "最近在团队中落地React Concurrent Mode 初探，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 350
+wordCount: 355
 ---
 
-最近在团队中落地React Concurrent Mode 初探，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近在团队里落地 React Concurrent Mode，做了一些初步尝试，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
 
 ## 核心概念
 

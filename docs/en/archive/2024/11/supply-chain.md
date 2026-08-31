@@ -4,15 +4,15 @@ date: 2024-11-19 14:13:50
 tags:
   - Security
 readingTime: 2
-description: "前端供应链安全 2024 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 199
+description: "Frontend supply chain security in 2024 is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 191
 ---
 
-前端供应链安全 2024 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Frontend supply chain security in 2024 is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
 
 ## Getting Started
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -123,7 +123,7 @@ This approach has been running stably in production for over six months and has 
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- 前端供应链安全 2024不是银弹，需要根据项目规模和技术栈选择
+- Frontend supply chain security in 2024 is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

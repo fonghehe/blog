@@ -4,7 +4,7 @@ date: 2023-08-29 10:22:23
 tags:
   - Frontend
 readingTime: 2
-description: "关于Ionic 7 新特性与改进，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+description: "Many developers only know Ionic 7's new features and improvements at the surface level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 173
 ---
 

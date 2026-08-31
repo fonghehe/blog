@@ -4,15 +4,15 @@ date: 2019-12-11 15:12:11
 tags:
   - Vue
 readingTime: 3
-description: "随着 Vue 3 进入 alpha/beta 阶段，Vue Router 4 也在同步开发中。Vue Router 4 不仅仅是 Vue 3 的适配版本，它用 TypeScript 完全重写，API 做了大量简化，并且原生支持 Composition API。这篇文章基于 Vue Router 4 的 RFC 和早期代"
-wordCount: 374
+description: "As Vue 3 enters its alpha/beta stage, Vue Router 4 is being developed in parallel. Vue Router 4 is more than just an adaptation for Vue 3—it is fully rewritten in TypeScript, its API is greatly simplified, and it supports the Composition API natively. Based on the Vue Router 4 RFC and early code, this article walks through the major changes."
+wordCount: 275
 ---
 
-随着 Vue 3 进入 alpha/beta 阶段，Vue Router 4 也在同步开发中。Vue Router 4 不仅仅是 Vue 3 的适配版本，它用 TypeScript 完全重写，API 做了大量简化，并且原生支持 Composition API。这篇文章基于 Vue Router 4 的 RFC 和早期代码，梳理主要变化。
+As Vue 3 enters its alpha/beta stage, Vue Router 4 is being developed in parallel. Vue Router 4 is more than just an adaptation for Vue 3—it is fully rewritten in TypeScript, its API is greatly simplified, and it supports the Composition API natively. Based on the Vue Router 4 RFC and early code, this article walks through the major changes.
 
 ## Rewritten in TypeScript
 
-Vue Router 3 的类型定义是后期补上的（`@types/vue-router`），类型推导经常出问题。Vue Router 4 从源码开始就用 TypeScript 编写，类型定义与代码同步：
+Vue Router 3's type definitions were bolted on later (`@types/vue-router`), and type inference was often unreliable. Vue Router 4 is written in TypeScript from the source up, so the type definitions stay in sync with the code:
 
 ```typescript
 // Vue Router 3 的类型推导（不完整）
@@ -66,7 +66,7 @@ const guard = (
 
 ## createRouter Replaces new VueRouter
 
-Vue Router 4 采用了 Vue 3 的函数式风格，不再通过 `new` 创建实例：
+Vue Router 4 adopts Vue 3's functional style and no longer creates an instance via `new`:
 
 ```typescript
 // Vue Router 3
@@ -114,7 +114,7 @@ app.mount('#app')
 
 ## Composition API Support
 
-这是 Vue Router 4 最重要的新特性。在 `setup()` 中可以通过 `useRoute` 和 `useRouter` 获取路由信息和方法，不再需要 `this.$route`：
+This is the most important new feature in Vue Router 4. Inside `setup()` you get route info and methods through `useRoute` and `useRouter`, with no need for `this.$route`:
 
 ```typescript
 import { defineComponent, ref, watch, computed } from 'vue'
@@ -171,7 +171,7 @@ export default defineComponent({
 
 ## Dynamic Route Changes
 
-Vue Router 4 对动态路由的 API 做了简化：
+Vue Router 4 simplifies the dynamic-route API:
 
 ```typescript
 import { createRouter } from 'vue-router'
@@ -241,7 +241,7 @@ async function setupRoutesByPermission(userRole) {
 
 ## Route Guard Changes
 
-路由守卫的 API 基本保持不变，但类型更完善，`next` 函数不再是必须的：
+The route-guard API is essentially unchanged, but the types are more complete and the `next` function is no longer required:
 
 ```typescript
 // Vue Router 3：必须调用 next()
@@ -311,10 +311,10 @@ export default {
 
 ## Summary
 
-- Vue Router 4 用 TypeScript 完全重写，类型推导完整，告别 `@types/vue-router`
-- `createRouter` + `createWebHistory` 替代 `new VueRouter`，与 Vue 3 函数式风格统一
-- `useRoute` / `useRouter` 让 Composition API 中获取路由信息不再依赖 `this`
-- `addRoute` 替代 `addRoutes`，动态路由管理更灵活
-- 路由守卫支持返回值代替 `next()` 调用，代码更简洁
-- 组件内守卫通过 `onBeforeRouteLeave` / `onBeforeRouteUpdate` 在 `setup` 中使用
-- Vue Router 4 与 Vue 3 同步发布，建议提前学习，为迁移做准备
+- Vue Router 4 is fully rewritten in TypeScript with complete type inference—farewell to `@types/vue-router`
+- `createRouter` + `createWebHistory` replace `new VueRouter`, unifying with Vue 3's functional style
+- `useRoute` / `useRouter` let the Composition API access route info without relying on `this`
+- `addRoute` replaces `addRoutes`, making dynamic-route management more flexible
+- Route guards can return a value instead of calling `next()`, making the code cleaner
+- In-component guards are used in `setup` via `onBeforeRouteLeave` / `onBeforeRouteUpdate`
+- Vue Router 4 ships alongside Vue 3; it's wise to learn it early to prepare for migration

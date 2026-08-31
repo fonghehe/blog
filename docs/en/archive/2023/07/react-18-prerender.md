@@ -4,8 +4,8 @@ date: 2023-07-25 09:48:01
 tags:
   - React
 readingTime: 1
-description: "React 18 预渲染策略 is a topic worth paying attention to in frontend development. This article explores its core concepts and best practices from real project experi"
-wordCount: 218
+description: "React 18 prerendering strategies deserves attention in frontend development. This article draws on real project experience to explore the core concepts and best practices."
+wordCount: 170
 ---
 
 React 18 预渲染策略 is a topic worth paying attention to in frontend development. This article explores its core concepts and best practices from real project experience.
@@ -33,7 +33,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Core Implementation
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 使用示例
@@ -54,7 +54,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Practical Application
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 工具函数封装
@@ -82,7 +82,7 @@ function createHandler(options = {}) {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+With this pattern, the code's maintainability improves.
 
 ## Best Practices
 
@@ -128,7 +128,7 @@ This implementation is concise and efficient, suitable for most scenarios.
 
 ## Summary
 
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
-- 持续关注社区动态，及时更新技术方案
-- 性能优化需要基于实际数据，避免过度优化
+- In real projects, choosing the right solution matters more than chasing the newest technology
+- Keep code style consistent across the team to cut maintenance costs
+- Keep an eye on community developments and update the technical approach in time
+- Base performance optimization on real data and avoid premature optimization

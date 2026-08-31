@@ -4,15 +4,15 @@ date: 2019-11-22 10:26:45
 tags:
   - React
 readingTime: 2
-description: "很多同学在React 错误边界 ErrorBoundary上存在理解偏差，本文系统地梳理核心要点和常见误区。"
-wordCount: 247
+description: "Many developers misunderstand React error boundaries. This article systematically lays out the key points and common pitfalls."
+wordCount: 163
 ---
 
-很多同学在React 错误边界 ErrorBoundary上存在理解偏差，本文系统地梳理核心要点和常见误区。
+Many developers misunderstand React error boundaries (ErrorBoundary). This article systematically lays out the key points and common pitfalls.
 
 ## Quick Start
 
-我们可以通过以下方式实现：
+We can implement it as follows:
 
 ```javascript
 const path = require('path')
@@ -56,11 +56,11 @@ module.exports = {
 }
 ```
 
-注意上面代码中的性能细节，避免不必要的计算。
+Note the performance details in the code above, and avoid unnecessary computation.
 
 ## Advanced Usage
 
-具体实现参考以下代码：
+Here's a concrete implementation to refer to:
 
 ```javascript
 const { sum, debounce } = require('./utils')
@@ -87,11 +87,11 @@ describe('utils', () => {
 })
 ```
 
-经过线上验证，这套方案运行稳定。
+This approach has been validated in production and runs stably.
 
 ## Business Scenarios
 
-先来看基本的用法：
+Let's start with the basic usage:
 
 ```javascript
 {% raw %}
@@ -117,11 +117,11 @@ export default {
 {% endraw %}
 ```
 
-这种写法简洁明了，适合大多数场景。
+This style is clear and concise, and fits most scenarios.
 
 ## Pitfall Avoidance Guide
 
-核心代码如下：
+The core code looks like this:
 
 ```javascript
 export default {
@@ -142,11 +142,11 @@ export default {
 }
 ```
 
-实际项目中还需要考虑边界条件和异常处理。
+In a real project you'll also need to account for edge cases and error handling.
 
 ## Quick Start
 
-下面是一个实际的例子：
+Here is a concrete example:
 
 ```javascript
 export default {
@@ -170,10 +170,10 @@ export default {
 }
 ```
 
-这种模式在团队中推广后效果很好，维护成本明显降低。
+After rolling this pattern out across the team, the results were great and maintenance cost dropped noticeably.
 
 ## Summary
 
-- 持续学习和总结，保持技术敏感度
-- 遇到问题多看源码和官方文档
-- React 错误边界 ErrorBoundary的关键在于理解核心概念，不要停留在表面用法
+- Keep learning and reviewing to stay sharp on technology
+- When you hit a problem, read the source code and the official docs
+- The key to React error boundaries (ErrorBoundary) is understanding the core concepts, not just the surface-level API

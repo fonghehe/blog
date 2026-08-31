@@ -5,9 +5,9 @@ tags:
   - Web3
   - Ethereum
   - Smart Contract
-readingTime: 13
+readingTime: 9
 description: "智能合約最終以 EVM 字節碼運行，理解字節碼和操作碼對於 gas 優化、安全審計和調試至關重要。本文從 EVM 架構到字節碼反編譯，系統拆解合約執行模型。"
-wordCount: 3300
+wordCount: 1229
 ---
 
 Solidity 代碼在部署到以太坊之前，會編譯為 EVM 字節碼。鏈上運行的不是 Solidity 源碼，而是這些字節碼。理解字節碼和 EVM 執行模型，對於 gas 優化、安全審計、合約調試和前端交互都至關重要。本文從 EVM 架構入手，逐步拆解從 Solidity 到字節碼到操作碼的完整鏈路。

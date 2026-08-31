@@ -4,11 +4,11 @@ date: 2023-02-23 14:31:37
 tags:
   - Vite
 readingTime: 1
-description: "最近在团队中落地Vite Environment API 多环境， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 169
+description: "I recently applied the Vite Environment API for multiple environments with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 160
 ---
 
-最近在团队中落地Vite Environment API 多环境， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+I recently applied the Vite Environment API for multiple environments with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
 
 ## Core Concepts
 
@@ -132,6 +132,6 @@ Pay attention to boundary condition handling, which is critical in production.
 
 ## Summary
 
-- Vite Environment API 多环境不是银弹，需要根据项目规模和技术栈选择
+- The vite environment api for multiple environments is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

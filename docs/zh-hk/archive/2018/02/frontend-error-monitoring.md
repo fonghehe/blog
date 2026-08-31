@@ -12,7 +12,7 @@ wordCount: 416
 
 ## 為什麼需要前端錯誤監控
 
-用户不會告訴你報錯了。他們會默默關掉頁面，或者直接流失。
+用戶不會告訴你報錯了。他們會默默關掉頁面，或者直接流失。
 沒有監控 = 不知道線上有多少錯誤 = 無法量化質量。
 
 ## 基礎：window.onerror
@@ -38,9 +38,9 @@ window.onerror = function (message, source, lineno, colno, error) {
 
 **侷限性**：
 
-- 隻能捕獲全局運行時錯誤
+- 只能捕獲全局運行時錯誤
 - 不能捕獲 Promise 內部的錯誤
-- 跨域腳本錯誤隻顯示 "Script error."（需要 crossorigin 屬性）
+- 跨域腳本錯誤只顯示 "Script error."（需要 crossorigin 屬性）
 
 ## 處理 Promise 錯誤
 
@@ -75,7 +75,7 @@ window.addEventListener("unhandledrejection", (event) => {
 
 ## 跨域腳本錯誤
 
-CDN 託管的腳本報錯，瀏覽器會隱藏細節（安全策略），隻給你 "Script error."。
+CDN 託管的腳本報錯，瀏覽器會隱藏細節（安全策略），只給你 "Script error."。
 
 解決方案：
 
@@ -137,7 +137,7 @@ npm install @sentry/browser
 import * as Sentry from "@sentry/browser";
 
 Sentry.init({
-  dsn: "https://xxx@sentry.io/xxx", // 從 Sentry 控製臺獲取
+  dsn: "https://xxx@sentry.io/xxx", // 從 Sentry 控制臺獲取
   environment: process.env.NODE_ENV,
   release: process.env.APP_VERSION,
 });
@@ -169,7 +169,7 @@ try {
 // 添加上下文（幫助排查）
 Sentry.setUser({ id: "123", email: "user@example.com" });
 Sentry.setTag("page", "checkout");
-Sentry.addBreadcrumb({ message: "用户點擊了提交按鈕", level: "info" });
+Sentry.addBreadcrumb({ message: "用戶點擊了提交按鈕", level: "info" });
 ```
 
 ## Sentry + Source Map 上傳

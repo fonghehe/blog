@@ -4,11 +4,11 @@ date: 2022-05-23 09:48:09
 tags:
   - Frontend
 readingTime: 2
-description: "关于Testing Library 最佳实践 2022，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 243
+description: "Regarding Testing Library best practices in 2022, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective."
+wordCount: 221
 ---
 
-关于Testing Library 最佳实践 2022，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+Regarding Testing Library best practices in 2022, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective.
 
 ## Basic Principles
 
@@ -138,4 +138,4 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Testing Library 最佳实践 2022 is not a silver bullet; choose based on your project scale and tech stack
+- Testing Library best practices 2022 are not a silver bullet; choose based on your project scale and tech stack

@@ -3,9 +3,9 @@ title: "前端錯誤邊界與降級策略：建構彈性應用"
 date: 2026-08-05 19:30:18
 tags:
   - 架構
-readingTime: 7
+readingTime: 8
 description: "前端應用的彈性不只是捕獲錯誤，更是在錯誤發生後讓使用者依然能完成任務。本文從錯誤分類、框架級錯誤邊界、全域捕獲、降級策略設計、錯誤上報到灰度熔斷，系統梳理建構彈性前端應用的完整工程方案。"
-wordCount: 3500
+wordCount: 1536
 ---
 
 前端應用的穩定性不能只靠「不寫 Bug」來保證。隨著應用複雜度增長——動態載入、非同步互動、第三方相依、使用者環境多樣性——執行時錯誤不可避免。彈性架構的目標不是消滅所有錯誤，而是讓錯誤發生後使用者依然能完成任務，或者至少優雅地降級而非白屏。
@@ -16,7 +16,7 @@ wordCount: 3500
 
 **JS 執行時錯誤**：型別錯誤、空參考、範圍錯誤等。這類錯誤是同步拋出的，`try-catch` 和 Error Boundary 都能捕獲。
 
-**非同步錯誤**：`setTimeout`、`setInterval`、事件回呼中拋出的錯誤。它們不會冒泡到外層 `try-catch`，需要全域 `window.onerror` 捕獲。
+**非同步錯誤**：`setTimeout`、`setInterval`、事件回呼中拋出的錯誤。它們不會冒泡到外層 `try-catch`，需仰賴全域 `window.onerror` 才能捕獲。
 
 **Promise rejection**：Promise 鏈中未被 `catch` 的 rejection。透過 `unhandledrejection` 事件捕獲。
 

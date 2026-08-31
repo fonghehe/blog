@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 2.5 では TypeScript サポートの大幅な改善と新しいエラーハンドリングフックが追加されました。"
-wordCount: 284
+wordCount: 285
 ---
 
 Vue 2.5 では TypeScript サポートの大幅な改善と新しいエラーハンドリングフックが追加されました。
@@ -113,4 +113,4 @@ export default {
 <input v-on="{ focus: onFocus, blur: onBlur, input: onInput }" />
 ```
 
-これは全てのイベントリスナーをスルーする必要がある高階コンポーネントを構築する際に特に便利です。
+これは全てのイベントリスナーをそのまま通す必要がある高階コンポーネントを構築する際に特に便利です。

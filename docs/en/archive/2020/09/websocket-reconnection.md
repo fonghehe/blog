@@ -4,15 +4,15 @@ date: 2020-09-17 17:43:16
 tags:
   - Frontend
 readingTime: 2
-description: "WebSocket 断线重连与心跳机制在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 299
+description: "A deep dive into WebSocket reconnection and heartbeat mechanisms, exploring core principles and best practices from real-world frontend projects."
+wordCount: 185
 ---
 
-WebSocket 断线重连与心跳机制在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+WebSocket reconnection and heartbeat mechanisms are being adopted more and more widely in frontend development. Drawing on real-world projects, this article takes a deep dive into their core principles and best practices.
 
 ## Basic Usage
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -34,14 +34,13 @@ function DataList({ endpoint, pageSize = 20 }) {
 
   return <div>{loading ? <Spinner /> : <List items={data} />}</div>
 }
-
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind edge-case handling — it is critical in production.
 
 ## Advanced Usage
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -62,14 +61,13 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
   }
   return result
 }
-
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization always depends on the specific context — not every case calls for aggressive tuning.
 
 ## Practical Cases
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 :root {
@@ -89,14 +87,13 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
   flex: 0 0 80%; scroll-snap-align: start;
   border-radius: 12px; transition: scale 0.3s ease;
 }
-
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Performance Optimization
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -118,14 +115,13 @@ function DataList({ endpoint, pageSize = 20 }) {
 
   return <div>{loading ? <Spinner /> : <List items={data} />}</div>
 }
-
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project you'll also need to account for error handling and edge cases.
 
 ## Common Traps
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -146,13 +142,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
   }
   return result
 }
-
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is especially useful in large projects and can significantly lower maintenance costs.
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- Understanding the underlying principles matters more than memorizing APIs.
+- Always verify compatibility before shipping to production.
+- In team collaboration, conventions and documentation matter more than the technology itself.

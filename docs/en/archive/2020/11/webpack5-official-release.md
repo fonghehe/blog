@@ -5,11 +5,11 @@ tags:
   - Webpack
   - Engineering
 readingTime: 2
-description: "Webpack 5 正式版发布了。之前在 Beta 阶段预览过新特性，现在正式版出来后，做一次完整的升级实战。"
-wordCount: 164
+description: "A complete upgrade walkthrough for the stable release of Webpack 5, following up on the earlier beta preview with production-ready guidance."
+wordCount: 119
 ---
 
-Webpack 5 正式版发布了。之前在 Beta 阶段预览过新特性，现在正式版出来后，做一次完整的升级实战。
+The stable release of Webpack 5 is out. We previewed the new features during the beta; now that the stable version is here, let's do a complete upgrade walkthrough.
 
 ## Overview of Major New Features
 
@@ -233,8 +233,8 @@ plugins: [
 
 ## Summary
 
-- 持久化缓存是升级的最大动力，二次构建速度提升显著
-- Asset Modules 简化了资源处理配置，可以移除 file/url-loader
-- Module Federation 是微前端的官方方案，值得深入研究
-- 移除了自动 polyfill，需要手动配置，增加了心智负担
-- 建议在新项目中使用，老项目评估迁移成本后再决定
+- Persistent caching is the biggest motivation to upgrade — the rebuild speedup is significant.
+- Asset Modules simplify asset handling configuration, letting you drop file-loader and url-loader.
+- Module Federation is the official approach to micro-frontends and worth studying in depth.
+- Removing the automatic polyfills means manual configuration, which adds cognitive overhead.
+- I'd recommend using it in new projects; for legacy projects, weigh the migration cost first before deciding.

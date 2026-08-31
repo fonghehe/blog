@@ -4,11 +4,11 @@ date: 2025-12-31 11:45:22
 tags:
   - Frontend
 readingTime: 2
-description: "2025 年是前端技术\"从实验到成熟\"的一年。React 20 Compiler 稳定、Angular 21 完成 Signal 化转型、Vue Vapor Mode 落地、Rolldown 稳定进入生产、AI 编程工具从辅助变成协同开发的核心。站在 2025 年最后一天，来做一个全面的年度盘点。"
-wordCount: 280
+description: "2025 was the year frontend technology went from experimental to mature: React 20 Compiler stabilized, Angular 21 completed its Signals transition, Vue Vapor Mode landed, Rolldown reached stable production use, and AI programming tools moved from assistants to core collaborators. On the last day of 2025, here's a complete annual roundup."
+wordCount: 252
 ---
 
-2025 年是前端技术"从实验到成熟"的一年。React 20 Compiler 稳定、Angular 21 完成 Signal 化转型、Vue Vapor Mode 落地、Rolldown 稳定进入生产、AI 编程工具从辅助变成协同开发的核心。站在 2025 年最后一天，来做一个全面的年度盘点。
+2025 was the year frontend technology went from experimental to mature: React 20 Compiler stabilized, Angular 21 completed its Signals transition, Vue Vapor Mode landed, Rolldown reached stable production use, and AI programming tools moved from assistants to core collaborators. On the last day of 2025, here's a complete annual roundup.
 
 ## 年度关键词：Signal 统治响应式
 

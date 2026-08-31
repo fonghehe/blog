@@ -7,11 +7,11 @@ tags:
   - CSS
 
 readingTime: 2
-description: "Headless UI 无头组件库 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based"
-wordCount: 226
+description: "Headless UI component libraries have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 209
 ---
 
-Headless UI 无头组件库 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Headless UI component libraries have been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -98,7 +98,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Optimization Tips
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 .container {
@@ -154,7 +154,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 ## Summary
 
-- Headless UI 无头组件库不是银弹，需要根据项目规模和技术栈选择
+- Headless UI component libraries are not a silver bullet; choose based on project size and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

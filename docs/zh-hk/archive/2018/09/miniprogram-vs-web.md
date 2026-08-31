@@ -100,7 +100,7 @@ onPullDownRefresh(); // 下拉刷新
 onReachBottom(); // 觸底加載更多
 ```
 
-### 4. 樣式限製
+### 4. 樣式限制
 
 ```css
 /* 小程序用 rpx（responsive pixel）作為單位 */
@@ -141,7 +141,7 @@ module.exports = { formatDate: formatDate };
 - **Taro**：類 React 語法，編譯到各端
 - **WePY**：類 Vue 語法的小程序框架
 
-如果項目隻針對微信小程序，原生開發就夠用。如果需要多端，uni-app 或 Taro 值得考慮。
+如果項目只針對微信小程序，原生開發就夠用。如果需要多端，uni-app 或 Taro 值得考慮。
 
 ## 小結
 

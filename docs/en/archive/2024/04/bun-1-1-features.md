@@ -4,8 +4,8 @@ date: 2024-04-19 11:47:43
 tags:
   - Frontend
 readingTime: 1
-description: "关于Bun 1.1 新特性与改进，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective."
-wordCount: 169
+description: "Many developers only know Bun 1.1 new features and improvements at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 152
 ---
 
 关于Bun 1.1 新特性与改进，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -128,6 +128,6 @@ Pay attention to edge case handling — this is critical in production environme
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- Understanding the underlying principles matters more than memorizing APIs
+- Always verify compatibility thoroughly before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself

@@ -16,7 +16,7 @@ wordCount: 348
 一開始想全量重寫，後來發現不現實。我們的策略是分三步：
 
 ```
-第一步：搭建 Vue 3 + Vite + TypeScript 構建環境
+第一步：搭建 Vue 3 + Vite + TypeScript 建構環境
 第二步：先遷移簡單元件（Button、Tag、Icon），建立模式
 第三步：按優先順序逐步遷移複雜元件（Table、Form、Select）
 ```
@@ -51,7 +51,7 @@ export interface ButtonEmits {
   (e: 'click', event: MouseEvent): void
 }
 
-// 元件例項型別
+// 元件實例型別
 export interface ButtonInstance {
   focus: () => void
   blur: () => void
@@ -80,7 +80,7 @@ const handleClick = (e: MouseEvent) => {
   }
 }
 
-// 暴露例項方法
+// 暴露實例方法
 defineExpose({
   focus: () => buttonRef.value?.focus(),
   blur: () => buttonRef.value?.blur()
@@ -132,9 +132,9 @@ defineSlots<{
 </script>
 ```
 
-## 構建設定
+## 建構設定
 
-用 Vite Library Mode 構建元件庫：
+用 Vite Library Mode 建構元件庫：
 
 ```typescript
 // vite.config.ts
@@ -193,6 +193,6 @@ Vue 3 的 `v-model` 語義和 Vue 2 不同，這是遷移中改程式碼最多�
 
 - 漸進式遷移比全量重寫更現實，先遷移簡單元件建立模式
 - TypeScript 型別定義體系是元件庫的核心資產，值得花時間
-- Vite Library Mode 簡化了構建配置
+- Vite Library Mode 簡化了建構配置
 - `v-model` 語義變化是最大的 breaking change，需要系統性處理
 - Vue 3.2+ 的 `defineSlots` 和 `defineExpose` 讓元件 API 更完整

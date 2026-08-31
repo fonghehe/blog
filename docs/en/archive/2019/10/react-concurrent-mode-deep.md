@@ -3,16 +3,16 @@ title: "React Concurrent Mode: A Deep Dive"
 date: 2019-10-21 10:55:32
 tags:
   - React
-readingTime: 4
-description: "React 在 16.3 版本引入了 Fiber 架构，为并发渲染打下了基础。Concurrent Mode 是 React 团队正在开发的一项实验性功能，它让 React 可以同时准备多个版本的 UI，从根本上改善用户体验。本文将深入探讨 Concurrent Mode 的工作原理和使用方式。"
-wordCount: 593
+readingTime: 3
+description: "React introduced the Fiber architecture in version 16.3, laying the groundwork for concurrent rendering. Concurrent Mode is an experimental feature the React team is still developing; it lets React prepare multiple versions of the UI at once, fundamentally improving the user experience. This article takes a deep look at how Concurrent Mode works and how to use it."
+wordCount: 371
 ---
 
-React 在 16.3 版本引入了 Fiber 架构，为并发渲染打下了基础。Concurrent Mode 是 React 团队正在开发的一项实验性功能，它让 React 可以同时准备多个版本的 UI，从根本上改善用户体验。本文将深入探讨 Concurrent Mode 的工作原理和使用方式。
+React introduced the Fiber architecture in version 16.3, laying the groundwork for concurrent rendering. Concurrent Mode is an experimental feature the React team is still developing; it lets React prepare multiple versions of the UI at once, fundamentally improving the user experience. This article takes a deep look at how Concurrent Mode works and how to use it.
 
 ## Why Concurrent Mode Is Needed
 
-在传统的 React 渲染模式下，一旦开始渲染，就会同步地完成整棵组件树的渲染。对于大型应用，这个过程可能会阻塞主线程几十甚至几百毫秒，导致用户交互无响应：
+In traditional React rendering, once rendering starts it synchronously renders the entire component tree. For large apps, this can block the main thread for tens or even hundreds of milliseconds, leaving user interactions unresponsive:
 
 ```jsx
 // 传统模式下的问题
@@ -49,11 +49,11 @@ function App() {
 }
 ```
 
-Concurrent Mode 允许 React 中断耗时的渲染，优先处理用户交互。
+Concurrent Mode lets React interrupt expensive rendering work to prioritize user interactions.
 
 ## Enabling Concurrent Mode
 
-Concurrent Mode 目前是实验性功能，需要使用特殊的 API 创建 Root：
+Concurrent Mode is currently experimental and requires a special API to create the root:
 
 ```jsx
 import React from 'react';
@@ -72,7 +72,7 @@ root.render(<App />);
 
 ## Suspense for Data Fetching
 
-Concurrent Mode 最重要的配套功能是 Suspense，它不仅可以处理代码分割，还可以处理数据加载：
+The most important companion feature of Concurrent Mode is Suspense, which can handle not only code splitting but also data loading:
 
 ```jsx
 import React, { Suspense } from 'react';
@@ -132,7 +132,7 @@ function App() {
 
 ## useTransition
 
-`useTransition` 是 Concurrent Mode 提供的最核心 Hook，它可以将某些状态更新标记为"过渡"（transition），这些更新可以被中断：
+`useTransition` is the most central Hook that Concurrent Mode provides. It lets you mark certain state updates as "transitions" (transition), which can then be interrupted:
 
 ```jsx
 import React, { useState, useTransition, Suspense } from 'react';
@@ -173,7 +173,7 @@ function App() {
 }
 ```
 
-### useTransition 的优先级机制
+### How `useTransition` Prioritizes Updates
 
 ```
 用户输入 "react"
@@ -188,7 +188,7 @@ function App() {
 
 ## SuspenseList
 
-`SuspenseList` 控制多个 Suspense 边界的显示顺序：
+`SuspenseList` controls the display order of multiple Suspense boundaries:
 
 ```jsx
 import React, { Suspense, SuspenseList } from 'react';
@@ -210,15 +210,15 @@ function App() {
 }
 ```
 
-`revealOrder` 的可选值：
+The possible values for `revealOrder`:
 
-- `'forwards'`：按顺序显示，前面的加载完才显示后面的
-- `'backwards'`：反向顺序
-- `'together'`：全部加载完一起显示
+- `'forwards'`: show in order—each one appears only after the previous finishes loading
+- `'backwards'`: reverse order
+- `'together'`: show all together once everything has loaded
 
 ## Data Fetching Pattern with Cache
 
-结合 Suspense 可以实现优雅的数据缓存：
+Combined with Suspense, this enables elegant data caching:
 
 ```js
 // cache.js
@@ -278,22 +278,22 @@ function UserCard({ userId }) {
 
 ## Comparison with Traditional Mode
 
-| 特性 | 传统模式 | Concurrent Mode |
-|------|---------|----------------|
-| 渲染方式 | 同步、不可中断 | 异步、可中断 |
-| 用户交互 | 渲染期间阻塞 | 优先响应交互 |
-| 加载状态 | 各组件自行管理 | Suspense 统一管理 |
-| 代码分割 | React.lazy | React.lazy + Suspense |
-| 数据获取 | useEffect + setState | Suspense + 资源读取 |
+| Aspect | Traditional Mode | Concurrent Mode |
+|--------|-----------------|----------------|
+| Rendering | Synchronous, non-interruptible | Asynchronous, interruptible |
+| User interaction | Blocked during rendering | Interactions are prioritized |
+| Loading state | Each component manages its own | Unified via Suspense |
+| Code splitting | React.lazy | React.lazy + Suspense |
+| Data fetching | useEffect + setState | Suspense + resource reading |
 
 ## Current Status and Notes
 
-Concurrent Mode 目前仍是实验性功能：
+Concurrent Mode is still experimental:
 
-1. API 可能会有变化
-2. 不建议在生产环境使用
-3. 需要 `react@experimental` 版本
-4. 部分第三方库可能不兼容
+1. The API may still change
+2. It's not recommended for production use
+3. It requires the `react@experimental` build
+4. Some third-party libraries may be incompatible
 
 ```bash
 npm install react@experimental react-dom@experimental
@@ -301,10 +301,10 @@ npm install react@experimental react-dom@experimental
 
 ## Summary
 
-- Concurrent Mode 让 React 可以中断渲染，优先处理用户交互
-- `useTransition` 标记低优先级的状态更新
-- Suspense 统一管理加载状态，包括数据获取
-- `SuspenseList` 控制多个异步组件的显示顺序
-- 需要使用 `createRoot` API 开启
-- 目前仍处于实验阶段，API 可能变化
-- 代表了 React 未来的发展方向：声明式异步 UI
+- Concurrent Mode lets React interrupt rendering to prioritize user interactions
+- `useTransition` marks low-priority state updates
+- Suspense centrally manages loading states, including data fetching
+- `SuspenseList` controls the display order of multiple async components
+- You enable it with the `createRoot` API
+- It's still experimental, and the API may change
+- It points to React's future direction: declarative, asynchronous UI

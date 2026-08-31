@@ -73,7 +73,7 @@ module.exports = {
 
 ## 業務實戰
 
-實際項目中的用法會更復雜一些：
+實際項目中的用法會更複雜一些：
 
 ```javascript
 import { defineConfig } from 'vite'

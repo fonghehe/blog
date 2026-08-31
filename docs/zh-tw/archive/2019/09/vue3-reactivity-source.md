@@ -176,4 +176,4 @@ function computed(getter) {
 - Proxy 比 defineProperty 更強大：攔截新增、刪除、陣列索引操作
 - 懶遞迴代理（訪問時才 reactive）比 Vue 2 初始化時全量遞迴更高效
 - `track` 收集依賴，`trigger` 觸發更新，是整個響應式的核心
-- `computed` 用髒標記實現懶求值，隻有訪問時才重新計算
+- `computed` 用髒標記實現懶求值，只有訪問時才重新計算

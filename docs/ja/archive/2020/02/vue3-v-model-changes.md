@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "Vue 3 では v-model が大幅に簡素化されました：.sync 修飾子が削除され、modelValue + update:modelValue の標準パターンに統一されました。同時に複数の v-model バインディングをサポートし、Vue 2 におけるコンポーネントの双方向バインディングの多くの問題点を解決しています。"
-wordCount: 514
+wordCount: 512
 ---
 
 Vue 3 は `v-model` を大幅に簡素化しました：`.sync` 修飾子を削除し、`modelValue` + `update:modelValue` の標準パターンに統一しました。同時に複数の `v-model` バインディングをサポートし、Vue 2 におけるコンポーネントの双方向バインディングの多くの問題点を解決しています。
@@ -174,7 +174,7 @@ export default {
 
 ## v-model を使ったフォームコンポーネントのカプセル化
 
-実際のプロジェクトで最も一般的なシナリオ：Select、DatePicker などのフォームコンポーネントのカプセル化です。
+実際のプロジェクトで最も一般的な場面：Select、DatePicker などのフォームコンポーネントのカプセル化です。
 
 ```vue
 {% raw %}

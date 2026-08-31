@@ -4,15 +4,15 @@ date: 2020-01-10 15:48:35
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 引入了三个实用的内置组件：Teleport 将子节点渲染到 DOM 树的任意位置，Fragment 支持多根节点模板，Suspense 处理异步组件的加载态。这三个特性解决了 Vue 2 中长期存在的痛点。"
-wordCount: 432
+description: "Vue 3 introduced three useful built-in components: Teleport renders children anywhere in the DOM tree, Fragment supports multi-root templates, and Suspense handles async component loading states. These features resolve long-standing pain points from Vue 2."
+wordCount: 282
 ---
 
-Vue 3 引入了三个实用的内置组件：Teleport 将子节点渲染到 DOM 树的任意位置，Fragment 支持多根节点模板，Suspense 处理异步组件的加载态。这三个特性解决了 Vue 2 中长期存在的痛点。
+Vue 3 introduced three handy built-in components: Teleport renders child nodes to any position in the DOM tree, Fragment supports multi-root-node templates, and Suspense handles the loading state of async components. These three features resolve long-standing pain points in Vue 2.
 
 ## Teleport: Breaking Out of the Component Tree
 
-Modal、Tooltip、全屏 Loading 这类组件经常因为父级的 `overflow: hidden` 或 `z-index` 被遮挡。Teleport 可以将 DOM 移动到指定位置，同时保持组件的逻辑归属不变。
+Components like modals, tooltips, and full-screen loading are often clipped by a parent's `overflow: hidden` or `z-index`. Teleport can move the DOM to a specified location while keeping the component's logical ownership intact.
 
 ```vue
 <template>
@@ -48,11 +48,11 @@ export default {
 </script>
 ```
 
-关键点：Teleport 的 `to` 接受任何 CSS 选择器。组件卸载时，Teleport 的内容也会自动移除。
+Key point: Teleport's `to` accepts any CSS selector. When the component unmounts, Teleport's content is removed automatically too.
 
 ## Fragment: No More Unnecessary Wrapper Nodes
 
-Vue 2 要求模板只有一个根节点，这导致大量无意义的 `<div>` 包裹层。Vue 3 支持多根节点。
+Vue 2 required a template to have a single root node, which led to lots of meaningless `<div>` wrapper layers. Vue 3 supports multiple root nodes.
 
 ```vue
 <template>
@@ -79,11 +79,11 @@ export default {
 </script>
 ```
 
-注意：使用多根节点时，不能通过 `$attrs` 直接透传属性到根元素，需要显式绑定 `v-bind="$attrs"` 到某个具体元素上。
+Note: with multiple root nodes you can't pass `$attrs` straight through to a root element; you must explicitly bind `v-bind="$attrs"` to a specific element.
 
 ## Suspense: Loading State for Async Components
 
-Suspense 可以等待嵌套的异步依赖（异步组件或组件内的异步 setup）全部就绪后再渲染。
+Suspense can wait until nested async dependencies (async components or an async `setup` inside a component) are all ready before rendering.
 
 ```vue
 <template>
@@ -119,7 +119,7 @@ export default {
 </script>
 ```
 
-配合 setup 中的异步操作，Suspense 可以等待 `setup` 函数返回 Promise。
+Combined with async operations in `setup`, Suspense can wait for the `setup` function to return a Promise.
 
 ```vue
 <script>
@@ -137,9 +137,9 @@ export default {
 </script>
 ```
 
-## 三个特性的组合使用
+## Combining the Three Features
 
-实际项目中这三个特性经常配合使用。比如一个异步加载的全局 Dialog：
+In real projects these three features are often used together. For example, an asynchronously loaded global dialog:
 
 ```vue
 <template>
@@ -171,7 +171,7 @@ export default {
 
 ## Summary
 
-- Teleport 解决了 Modal/Tooltip 被父级 CSS 影响的经典问题，组件逻辑不移动，只移动 DOM
-- Fragment 消除了无意义的包裹节点，但要注意 `$attrs` 显式绑定
-- Suspense 统一管理异步组件和异步 setup 的加载态，替代手动 loading 状态
-- 三个特性可以自由组合，构建更灵活的组件结构
+- Teleport solves the classic problem of modals/tooltips being affected by parent CSS—the component logic stays put, only the DOM moves.
+- Fragment eliminates meaningless wrapper nodes, but watch out for the explicit `$attrs` binding.
+- Suspense unifies the loading state for async components and async `setup`, replacing manual loading states.
+- The three features can be combined freely to build more flexible component structures.

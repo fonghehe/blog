@@ -5,15 +5,15 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "在日常开发中，JavaScript 逻辑赋值运算符 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 202
+description: "JavaScript's logical assignment operators are showing up in more and more everyday code. This article systematically covers their usage, mechanics, and practical patterns."
+wordCount: 177
 ---
 
-在日常开发中，JavaScript 逻辑赋值运算符 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+JavaScript's logical assignment operators are being used more and more frequently in daily development. This article systematically explains their usage, principles, and optimization strategies.
 
 ## Quick Start
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more complex:
 
 ```javascript
 .container {
@@ -126,5 +126,5 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- JavaScript 逻辑赋值运算符不是银弹，需要根据项目规模和技术栈选择
+- JavaScript's logical assignment operators are no silver bullet; choose them based on project size and tech stack.
 - Understanding underlying principles is more important than memorizing APIs

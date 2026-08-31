@@ -5,7 +5,7 @@ tags:
   - Git
 readingTime: 2
 description: "コミット前に毎回手動でlintやテストを実行するのは忘れやすいです。Git Hooksを使ってこれらのチェックを自動化し、コミット時に自動実行させましょう。"
-wordCount: 492
+wordCount: 508
 ---
 
 コミット前に毎回手動でlintやテストを実行するのは忘れやすいです。Git Hooksを使ってこれらのチェックを自動化し、コミット時に自動実行させましょう。
@@ -66,10 +66,10 @@ npm install lint-staged --save-dev
 
 実行フロー：
 
-1. `git commit`が`pre-commit`フックをトリガー
+1. `git commit`が`pre-commit`フックをトリガーする
 2. `lint-staged`がステージングエリアのファイルを見つける
-3. それらのファイルにのみESLintとPrettierを実行
-4. エラーがあればコミット失敗。自動修正された場合は修正後のファイルを再追加
+3. それらのファイルに対してのみESLintとPrettierを実行する
+4. エラーがあればコミットに失敗する。自動修正された場合は、修正後のファイルを再追加する
 
 ## commit-msg：コミットメッセージの標準化
 
@@ -90,7 +90,7 @@ if (!commitReg.test(msg)) {
 }
 ```
 
-または`commitlint`を使う（より成熟したソリューション）：
+または`commitlint`を使いましょう（より成熟したソリューション）：
 
 ```bash
 npm install @commitlint/cli @commitlint/config-conventional --save-dev

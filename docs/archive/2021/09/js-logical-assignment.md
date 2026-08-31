@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常开发中，JavaScript 逻辑赋值运算符的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 295
+wordCount: 292
 ---
 
-在日常开发中，JavaScript 逻辑赋值运算符的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+日常开发中，JavaScript 逻辑赋值运算符用得越来越频繁。本文系统讲解它的用法、原理和优化策略。
 
 ## 快速上手
 

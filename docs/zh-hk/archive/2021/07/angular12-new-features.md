@@ -18,7 +18,7 @@ Angular 12 中 `@angular/compiler` 不再包含 View Engine，`ngcc` 也不再�
 
 **對開發者的影響**：
 
-- 升級 Angular 12 後，項目需要所有依賴都是 Ivy 相容版本
+- 升級 Angular 12 後，項目需要所有依賴都是 Ivy 兼容版本
 - 使用舊版第三方庫（未更新到 Angular 9+ 的）可能報錯
 - `enableIvy: false` 配置不再有效
 
@@ -32,15 +32,15 @@ ng new my-app  # 使用 Webpack 4
 ng new my-app  # 使用 Webpack 5（持久化緩存默認開啓）
 ```
 
-**持久化緩存的實際效果**（中型項目測試）：
+**持久化快取的實際效果**（中型項目測試）：
 
 ```
 首次 ng serve：28s
-第二次 ng serve（無代碼變化）：4s  ← 持久化緩存命中
+第二次 ng serve（無代碼變化）：4s  ← 持久化快取命中
 修改一個組件後 ng serve：6s  ← 增量重建
 ```
 
-持久化緩存存儲在 `.angular/cache` 目錄，建議加入 `.gitignore`：
+持久化快取存儲在 `.angular/cache` 目錄，建議加入 `.gitignore`：
 
 ```bash
 echo ".angular/cache" >> .gitignore
@@ -63,7 +63,7 @@ Angular 12 開始，所有新項目默認啓用 `strictTemplates`，無需 `--st
 
 ## Sass API 更新（重要！）
 
-Angular 12 升級了對 Sass 的支持，廢棄舊版 Node Sass API，改用 Dart Sass 的現代 API：
+Angular 12 升級了對 Sass 的支援，廢棄舊版 Node Sass API，改用 Dart Sass 的現代 API：
 
 ```bash
 # 之前：需要 node-sass（C++ 依賴，安裝麻煩）
@@ -93,7 +93,7 @@ npm install sass
 
 ## Inline Sass（內聯樣式支援）
 
-Angular 12 的 CLI 支持在組件裏用 Sass 語法寫內聯樣式：
+Angular 12 的 CLI 支援在組件裡用 Sass 語法寫內聯樣式：
 
 ```typescript
 @Component({
@@ -148,4 +148,4 @@ ng update --list
 
 ## 總結
 
-Angular 12 的變化裏，View Engine 退場是最有象徵意義的——Ivy 時代正式開始。Webpack 5 默認開啓讓增量構建速度翻倍，`ng build` 默認生產模式則消除了一類常見的部署事故。這次升級對絕大多數項目來説是低風險的，推薦儘快跟進。
+Angular 12 的變化裡，View Engine 退場是最有象徵意義的——Ivy 時代正式開始。Webpack 5 默認開啓讓增量構建速度翻倍，`ng build` 默認生產模式則消除了一類常見的部署事故。這次升級對絕大多數項目來説是低風險的，推薦儘快跟進。

@@ -6,7 +6,7 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "Tailwind CSS 4.0 Beta のテストが開始されました。最大の変更点は、基盤エンジンを Rust で書き直したこと（Oxide）と、設定を JS ファイルから CSS ファイルに移行したことです。"
-wordCount: 493
+wordCount: 508
 ---
 
 Tailwind CSS 4.0 Beta のテストが開始されました。最大の変更点は、基盤エンジンを Rust で書き直したこと（Oxide）と、設定を JS ファイルから CSS ファイルに移行したことです。
@@ -73,7 +73,7 @@ module.exports = {
 }
 ```
 
-然后就可以用这些自定义变量：
+あとはこれらのカスタム変数を使える：
 
 ```html
 <button class="bg-primary hover:bg-primary-dark text-white px-6 py-spacing-18">
@@ -143,7 +143,7 @@ module.exports = {
 </div>
 ```
 
-官方提供了升级工具：
+公式がアップグレードツールを提供している：
 
 ```bash
 npx @tailwindcss/upgrade@next

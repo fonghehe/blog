@@ -5,14 +5,14 @@ tags:
   - パフォーマンス最適化
 readingTime: 2
 description: "Web パフォーマンスの最適化について、多くの開発者はAPI呼び出しのレベルにとどまっている。本記事は本番環境の視点から、実際に直面する問題とその解決策を議論する。"
-wordCount: 472
+wordCount: 477
 ---
 
 Web パフォーマンスの最適化について、多くの開発者はAPI呼び出しのレベルにとどまっている。本記事は本番環境の視点から、実際に直面する問題とその解決策を議論する。
 
 ## 基本原理
 
-重要なのはコアロジックを理解することだ：
+重要なのはコアとなるロジックを理解することです：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -52,7 +52,7 @@ observer.observe({ entryTypes: ["largest-contentful-paint", "first-input"] });
 
 ## プロジェクトへの実践
 
-まず基本的な実装方法を見てみよう：
+基本的な実装方法を見てみよう：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -92,7 +92,7 @@ observer.observe({ entryTypes: ["largest-contentful-paint", "first-input"] });
 
 ## まとめ
 
-- APIを覚えることよりも、底層の原理を理解することが重要
+- API を覚えることよりも、基礎となる原理を理解することが重要
 - 本番環境で使用する前に必ず互換性の検証を行うこと
 - チームの協力においては、規約とドキュメントが技術そのものより重要
 - コミュニティの動向に注目し、技術的なアプローチは継続的に改善する

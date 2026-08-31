@@ -3,9 +3,9 @@ title: "React 22 Compiler 编译优化原理：自动 Memoization 如何工作"
 date: 2026-07-10 21:37:01
 tags:
   - React
-readingTime: 7
+readingTime: 10
 description: "React Compiler 通过编译期静态分析自动插入 memoization 逻辑，消除手动 useMemo/useCallback 的负担。本文分析编译器的工作原理、输出代码结构、限制条件，并与 Vue Vapor Mode 做编译策略对比。"
-wordCount: 3000
+wordCount: 2236
 ---
 
 React 社区长期面临一个困境：`useMemo`、`useCallback`、`React.memo` 这些优化手段是"正确但繁琐"的。开发者要么花大量精力手动优化，要么承受不必要的重渲染。React Compiler 的目标是将这个决策从开发者转移到编译器——让机器来决定什么需要被 memoize。

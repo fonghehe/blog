@@ -7,14 +7,14 @@ tags:
 
 readingTime: 2
 description: "关于前端测试策略金字塔，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 423
+wordCount: 449
 ---
 
-关于前端测试策略金字塔，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
+フロントエンドのテスト戦略ピラミッドについて、多くの開発者は API の呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
 
 ## 基本原理
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみましょう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -35,7 +35,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
   }
   return result
 }
-
 ```
 
 このコードは基本的な使い方を示しています。実際のプロジェクトではエラー処理と境界条件も考慮する必要があります。
@@ -69,7 +68,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## プロジェクト実践
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは、使い方はもう少し複雑になります：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -91,14 +90,13 @@ function DataList({ endpoint, pageSize = 20 }) {
 
   return <div>{loading ? <Spinner /> : <List items={data} />}</div>
 }
-
 ```
 
 このアプローチにより、コードのテスト可能性とスケーラビリティが向上します。
 
 ## ベストプラクティス
 
-完全な例を以下に示します：
+全体のサンプルを以下に示します：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -119,7 +117,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
   }
   return result
 }
-
 ```
 
 境界条件の処理に注意してください。これは本番環境で非常に重要です。

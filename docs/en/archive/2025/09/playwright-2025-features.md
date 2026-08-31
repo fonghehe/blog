@@ -1,5 +1,5 @@
 ---
-title: "Playwright 2025 New Features: ComponentTesting增强 & 视觉回归Capability"
+title: "Playwright 2025 New Features: Component Testing Enhancements and Visual Regression"
 date: 2025-09-23 14:37:14
 tags:
   - Testing

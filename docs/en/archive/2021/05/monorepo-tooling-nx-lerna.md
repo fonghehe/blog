@@ -5,15 +5,15 @@ tags:
   - Engineering
 
 readingTime: 1
-description: "Turborepo 高性能 Monorepo has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic "
-wordCount: 199
+description: "Turborepo's high-performance take on monorepos has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 185
 ---
 
-Turborepo 高性能 Monorepo has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Turborepo, a high-performance monorepo tool, has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -98,7 +98,7 @@ This approach has been running stably in production for over six months and has 
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Turborepo 高性能 Monorepo不是银弹，需要根据项目规模和技术栈选择
+- Turborepo is no silver bullet; choose it based on project scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

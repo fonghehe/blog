@@ -7,11 +7,11 @@ tags:
   - TypeScript
 
 readingTime: 1
-description: "在日常开发中，前端密钥安全管理方案 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 164
+description: "Managing secrets safely in frontends is increasingly important in everyday work. This article systematically covers the options, their rationale, and practical strategies."
+wordCount: 146
 ---
 
-在日常开发中，前端密钥安全管理方案 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In day-to-day development, frontend secret-key management solutions are being used more and more frequently. This article systematically explains their usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -71,7 +71,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Business Practice
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more complex:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T

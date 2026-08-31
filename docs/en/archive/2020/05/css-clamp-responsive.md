@@ -4,15 +4,15 @@ date: 2020-05-25 11:09:36
 tags:
   - CSS
 readingTime: 2
-description: "CSS clamp() 响应式排版这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 296
+description: "CSS `clamp()` for responsive typography has been debated many times in the community, but as the spec and browser support evolve, much earlier advice needs revisiting. This article re-examines the topic based on the current state."
+wordCount: 207
 ---
 
-CSS clamp() 响应式排版这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+CSS `clamp()` for responsive typography has been debated plenty in the community, but as the feature and browser support keep evolving, much of the earlier advice needs revisiting. This article re-examines the topic based on the current state of the spec.
 
 ## Getting Started
 
-实际项目中的用法会更复杂一些：
+In real projects, the actual usage tends to be a bit more involved:
 
 ```css
 .container {
@@ -35,11 +35,11 @@ CSS clamp() 响应式排版这个话题社区讨论了很多次，但随着版�
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and the extensibility of the code.
 
 ## Source Code Analysis
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```css
 :root {
@@ -62,11 +62,11 @@ CSS clamp() 响应式排版这个话题社区讨论了很多次，但随着版�
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge-case handling—this is critical in production.
 
 ## Real-World Applications
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```css
 .container {
@@ -89,11 +89,11 @@ CSS clamp() 响应式排版这个话题社区讨论了很多次，但随着版�
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to fit the actual use case; not every situation calls for over-optimization.
 
 ## Optimization Tips
 
-我们可以通过以下方式来改进：
+We can improve on this in the following ways:
 
 ```css
 :root {
@@ -116,12 +116,12 @@ CSS clamp() 响应式排版这个话题社区讨论了很多次，但随着版�
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Summary
 
-- 代码示例仅供参考，需根据业务场景调整
-- CSS clamp() 响应式排版不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- The code examples are for reference only and should be adapted to your specific use case.
+- CSS `clamp()` for responsive typography isn't a silver bullet; pick it based on your project's scale and tech stack.
+- Understanding the underlying principles matters more than memorizing the API.
+- Always verify browser compatibility before using it in production.
+- In team collaboration, conventions and documentation matter more than the technology itself.

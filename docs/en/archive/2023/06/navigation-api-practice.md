@@ -4,11 +4,11 @@ date: 2023-06-08 10:39:02
 tags:
   - Frontend
 readingTime: 2
-description: "最近在团队中落地Navigation API 实践指南， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 196
+description: "I recently applied the Navigation API practice guide with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 183
 ---
 
-最近在团队中落地Navigation API 实践指南， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+I recently applied the Navigation API practice guide with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
 
 ## Core Concepts
 
@@ -130,5 +130,5 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Navigation API 实践指南不是银弹，需要根据项目规模和技术栈选择
+- The navigation api practice guide is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "従来のCSSのクリッピング方法には限界があります。`overflow: hidden` は矩形のクリッピングしかできず、`border-radius` は角丸にしかなりません。斜めエッジのカード、円形のアバタークロッピング、ウェーブ背景などの不規則な形状が必要な場合、`clip-path` が現在最も強力なソリューショ"
-wordCount: 397
+wordCount: 405
 ---
 
 従来のCSSのクリッピング方法には限界があります。`overflow: hidden` は矩形のクリッピングしかできず、`border-radius` は角丸にしかなりません。斜めエッジのカード、円形のアバタークロッピング、ウェーブ背景などの不規則な形状が必要な場合、`clip-path` が現在最も強力なソリューションです。
@@ -200,7 +200,7 @@ wordCount: 397
 
 ## まとめ
 
-- `clip-path` は `inset()`、`circle()`、`ellipse()`、`polygon()`、`url()` をサポート
-- `polygon()` が最も強力で、ほぼ任意の形状を作れる
-- CSSトランジションに対応しており、スムーズなアニメーションも可能
-- [Clippy](https://bennettfeely.com/clippy/) などのオンラインツールを使うと clip-path 値の生成が楽になる
+- `clip-path` は `inset()`、`circle()`、`ellipse()`、`polygon()`、`url()` をサポートします
+- `polygon()` が最も強力で、ほぼ任意の形状を作れます
+- CSSトランジションに対応しており、スムーズなアニメーションも可能です
+- [Clippy](https://bennettfeely.com/clippy/) などのオンラインツールを使うと clip-path 値の生成が楽になります

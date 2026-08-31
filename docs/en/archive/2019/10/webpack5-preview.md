@@ -5,19 +5,19 @@ tags:
   - Webpack
   - Engineering
 readingTime: 4
-description: "Webpack 5 目前仍处于 Beta 阶段，但它带来了许多令人兴奋的改进。其中最值得关注的是 Module Federation——它彻底改变了前端微服务的实现方式。本文将介绍 Webpack 5 的核心新特性，并重点探讨 Module Federation 的工作原理。"
-wordCount: 715
+description: "Webpack 5 is still in Beta, but it brings many exciting improvements. The most noteworthy is Module Federation—which fundamentally changes how frontend microservices are implemented. This article introduces Webpack 5's core new features, with a focus on how Module Federation works."
+wordCount: 459
 ---
 
-Webpack 5 目前仍处于 Beta 阶段，但它带来了许多令人兴奋的改进。其中最值得关注的是 Module Federation——它彻底改变了前端微服务的实现方式。本文将介绍 Webpack 5 的核心新特性，并重点探讨 Module Federation 的工作原理。
+Webpack 5 is still in Beta, but it brings many exciting improvements. The most noteworthy is Module Federation—which fundamentally changes how frontend microservices are implemented. This article introduces Webpack 5's core new features, with a focus on how Module Federation works.
 
 ## Webpack 5 Overall Improvements Overview
 
-Webpack 5 的改进主要集中在以下几个方面：
+Webpack 5's improvements focus on the following areas:
 
-### 长期缓存优化
+### Long-Term Caching Optimizations
 
-Webpack 5 改进了模块 ID 和 chunk ID 的确定性算法：
+Webpack 5 improved the deterministic algorithm for module IDs and chunk IDs:
 
 ```js
 // webpack.config.js
@@ -30,15 +30,15 @@ module.exports = {
 };
 ```
 
-新增 `chunkIds` 和 `moduleIds` 选项：
+Two new options were added, `chunkIds` and `moduleIds`:
 
-- `'natural'`：按使用顺序的数字 ID
-- `'named'`：可读的模块名称（开发用）
-- `'deterministic'`：短数字 ID，构建间稳定（生产用）
+- `'natural'`: numeric IDs in usage order
+- `'named'`: human-readable module names (for development)
+- `'deterministic'`: short numeric IDs that stay stable across builds (for production)
 
-### 持久化缓存
+### Persistent Caching
 
-Webpack 5 内置了文件系统缓存，替代了 `hard-source-webpack-plugin`：
+Webpack 5 has built-in filesystem caching, replacing `hard-source-webpack-plugin`:
 
 ```js
 module.exports = {
@@ -52,7 +52,7 @@ module.exports = {
 };
 ```
 
-实测效果：
+Measured results:
 
 ```
 # 首次构建
@@ -62,9 +62,9 @@ webpack 5.0.0-beta.16 compiled successfully in 8342ms
 webpack 5.0.0-beta.16 compiled successfully in 1203ms
 ```
 
-### 更好的 Tree Shaking
+### Better Tree Shaking
 
-Webpack 5 引入了嵌套 Tree Shaking 和内部模块 Tree Shaking：
+Webpack 5 introduced nested Tree Shaking and inner-module Tree Shaking:
 
 ```js
 // package.json
@@ -78,7 +78,7 @@ Webpack 5 引入了嵌套 Tree Shaking 和内部模块 Tree Shaking：
 }
 ```
 
-Webpack 5 还支持 CommonJS 的 Tree Shaking：
+Webpack 5 also supports Tree Shaking for CommonJS:
 
 ```js
 // 这种写法在 Webpack 5 中也能被 Tree Shaking
@@ -86,27 +86,27 @@ const { get } = require('lodash');
 // 只会打包 lodash.get，而不是整个 lodash
 ```
 
-### 模块联邦（Module Federation）
+### Module Federation
 
-这是 Webpack 5 最具革命性的特性，允许在运行时动态加载其他独立构建的模块。
+This is the most revolutionary feature in Webpack 5—it lets you dynamically load modules from other independently built bundles at runtime.
 
 ## Module Federation In-Depth
 
 ### Core Concepts
 
-Module Federation 的核心思想是：每个构建产物（bundle）既可以消费远程模块，也可以暴露自己的模块供其他构建产物使用。
+The core idea of Module Federation is that every build artifact (bundle) can both consume remote modules and expose its own modules for other build artifacts to use.
 
-关键术语：
+Key terms:
 
-- **Host**：消费远程模块的构建
-- **Remote**：暴露模块供其他构建使用的构建
-- **Shared**：多个构建之间共享的依赖
+- **Host**: a build that consumes remote modules
+- **Remote**: a build that exposes modules for others to consume
+- **Shared**: dependencies shared between multiple builds
 
-### 基础配置
+### Basic Configuration
 
-假设有两个独立的前端应用：`app-shell`（主应用）和 `dashboard`（仪表盘应用）。
+Suppose we have two independent frontend apps: `app-shell` (the host app) and `dashboard` (the dashboard app).
 
-**dashboard 应用（Remote）暴露模块：**
+**The dashboard app (Remote) exposes these modules:**
 
 ```js
 // dashboard/webpack.config.js
@@ -136,7 +136,7 @@ module.exports = {
 };
 ```
 
-**app-shell 应用（Host）消费模块：**
+**The app-shell app (Host) consumes these modules:**
 
 ```js
 // app-shell/webpack.config.js
@@ -160,7 +160,7 @@ module.exports = {
 };
 ```
 
-### 在代码中使用远程模块
+### Using Remote Modules in Code
 
 ```jsx
 // app-shell/src/App.jsx
@@ -185,9 +185,9 @@ function App() {
 export default App;
 ```
 
-### 共享依赖的配置
+### Configuring Shared Dependencies
 
-Shared 配置控制多个构建之间的依赖共享方式：
+The `shared` config controls how dependencies are shared between builds:
 
 ```js
 new ModuleFederationPlugin({
@@ -209,18 +209,18 @@ new ModuleFederationPlugin({
 });
 ```
 
-配置选项说明：
+Here's what the options mean:
 
-| 选项 | 说明 | 默认值 |
-|------|------|--------|
-| `singleton` | 只加载一个实例 | false |
-| `requiredVersion` | 版本要求 | package.json 中的版本 |
-| `eager` | 是否打包到入口 chunk | false |
-| `strictVersion` | 版本不匹配时是否报错 | true |
+| Option | Description | Default |
+|--------|-------------|---------|
+| `singleton` | Load only a single instance | false |
+| `requiredVersion` | Required version | The version in package.json |
+| `eager` | Whether to bundle into the entry chunk | false |
+| `strictVersion` | Whether to error when versions mismatch | true |
 
-### 多 Remote 配置
+### Multiple Remote Configuration
 
-一个应用可以同时消费多个 Remote：
+A single app can consume multiple Remotes at once:
 
 ```js
 new ModuleFederationPlugin({
@@ -235,7 +235,7 @@ new ModuleFederationPlugin({
 
 ### Dynamic Remote Loading
 
-如果 Remote 地址是动态的，可以这样配置：
+If the Remote address is dynamic, you can configure it like this:
 
 ```js
 // 在运行时动态加载远程模块
@@ -271,9 +271,9 @@ const Widget = await loadRemoteModule(
 
 ## Real-World Architecture Patterns
 
-### 微前端架构
+### Micro-Frontend Architecture
 
-Module Federation 非常适合构建微前端架构：
+Module Federation is a great fit for building a micro-frontend architecture:
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -286,11 +286,11 @@ Module Federation 非常适合构建微前端架构：
 └─────────────────────────────────────────────┘
 ```
 
-每个团队可以独立开发、独立部署自己的 Remote 模块，App Shell 负责组装。
+Each team can develop and deploy its own Remote modules independently, while the App Shell is responsible for assembling them.
 
-### 组件库共享
+### Sharing a Component Library
 
-多个项目可以共享组件库而不需要发布 npm 包：
+Multiple projects can share a component library without having to publish an npm package:
 
 ```js
 // shared-ui/webpack.config.js
@@ -312,10 +312,10 @@ new ModuleFederationPlugin({
 
 ## Summary
 
-- Webpack 5 的核心改进：持久化缓存、确定性模块 ID、更好的 Tree Shaking
-- Module Federation 允许独立构建的应用在运行时共享模块
-- Host 消费远程模块，Remote 暴露模块，Shared 控制依赖共享
-- `singleton: true` 确保共享依赖只加载一个实例
-- 非常适合微前端架构和跨项目组件共享
-- 支持动态加载和多 Remote 配置
-- 预计 Webpack 5 正式版将在近期发布
+- Webpack 5's core improvements: persistent caching, deterministic module IDs, and better Tree Shaking
+- Module Federation lets independently built apps share modules at runtime
+- A Host consumes remote modules, a Remote exposes them, and Shared controls dependency sharing
+- `singleton: true` ensures a shared dependency is loaded only once
+- A great fit for micro-frontend architectures and cross-project component sharing
+- Supports dynamic loading and multiple Remote configurations
+- The official Webpack 5 release was expected to land soon

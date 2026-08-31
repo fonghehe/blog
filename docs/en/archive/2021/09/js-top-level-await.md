@@ -5,11 +5,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "在日常开发中，JavaScript 顶层 await 使用场景 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 179
+description: "Top-level await use cases in JavaScript are growing in everyday code. This article systematically covers its usage, mechanics, and practical patterns."
+wordCount: 174
 ---
 
-在日常开发中，JavaScript 顶层 await 使用场景 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+Top-level await use cases in JavaScript are being used more and more frequently in daily development. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 

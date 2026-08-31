@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 8 于 2019 年 5 月 28 日正式发布。Ivy 以 opt-in 方式进入预览，差异化加载默认开启。实际体验了一个月，来讲讲升级经验和各项功能的实际效果。"
-wordCount: 298
+wordCount: 307
 ---
 
 Angular 8 于 2019 年 5 月 28 日正式发布。Ivy 以 opt-in 方式进入预览，差异化加载默认开启。实际体验了一个月，来讲讲升级经验和各项功能的实际效果。
@@ -32,7 +32,7 @@ dist/
 <script nomodule src="main-es5.js"></script>
 ```
 
-实测数据（操个中等规模 Angular 项目）：
+实测数据（以一个中等规模的 Angular 项目为例）：
 
 - 现代浏览器下 main bundle **减小 20%+**
 - 运行时解析速度明显提升
@@ -107,4 +107,4 @@ export class AppComponent {
 
 ## 总结
 
-Angular 8 的差异化加载是对现有项目影响最大的运行时改进。Ivy 还在预览阶段，但已可以开始梳理自己项目的 `ViewChild` 静态查询和惰性加载写法，为 Angular 9 的 Ivy 默认开启做好准备。
+Angular 8 的差异化加载是对现有项目影响最大的运行时改进。Ivy 目前仍处于预览阶段，但已经可以着手梳理自己项目中的 `ViewChild` 静态查询与惰性加载写法，为 Angular 9 中 Ivy 默认开启做好准备。

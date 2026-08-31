@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "学完基础泛型后，深入研究了一下条件类型和映射类型，发现 TypeScript 的类型系统比想象中强大得多。"
-wordCount: 186
+wordCount: 187
 ---
 
 学完基础泛型后，深入研究了一下条件类型和映射类型，发现 TypeScript 的类型系统比想象中强大得多。
@@ -162,4 +162,4 @@ emitter.on("user:login", (data) => {
 - 条件类型 `T extends U ? X : Y` 让类型可以根据条件变化
 - `infer` 在条件类型中提取未知类型
 - 映射类型遍历现有类型的键生成新类型
-- `ReturnType`、`Parameters`、`Awaited` 等内置工具类型都是这些技术的应用
+- `ReturnType`、`Parameters`、`Awaited` 等内置工具类型都建立在这些技术之上

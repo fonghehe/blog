@@ -6,23 +6,23 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "Vuex 4 能用，但写起来总觉得别扭。Pinia 是 Vue 核心团队成员开发的新状态管理库，API 设计比 Vuex 干净很多，已经在 Vue 3 项目里用了两个多月，分享一下经验。"
-wordCount: 311
+description: "Vuex 4 works, but writing with it always feels awkward. Pinia is a new state-management library built by a Vue core team member, with an API that's much cleaner than Vuex's. I've been using it in a Vue 3 project for over two months now, so here's my experience."
+wordCount: 251
 ---
 
-Vuex 4 能用，但写起来总觉得别扭。Pinia 是 Vue 核心团队成员开发的新状态管理库，API 设计比 Vuex 干净很多，已经在 Vue 3 项目里用了两个多月，分享一下经验。
+Vuex 4 works, but writing with it always feels awkward. Pinia is a new state-management library built by a Vue core team member, with an API that's much cleaner than Vuex's. I've been using it in a Vue 3 project for over two months now, so here's my experience.
 
 ## Why Not Use Vuex 4
 
-Vuex 4 能在 Vue 3 里跑，但核心问题没解决：
+Vuex 4 runs in Vue 3, but its core problems were never solved:
 
-- TypeScript 支持差（要靠一堆类型体操）
-- mutations 和 actions 分开写，大部分时候 mutation 就是赋值
-- 模块系统复杂（namespace、modules 嵌套）
+- Poor TypeScript support (you need a lot of type gymnastics)
+- Mutations and actions are split apart, yet most of the time a mutation just assigns a value
+- The module system is complex (namespacing, nested modules)
 
-Pinia 直接砍掉了 mutations，actions 统一处理同步和异步操作。
+Pinia simply drops mutations; actions handle both synchronous and asynchronous operations.
 
-## 基本用法
+## Basic Usage
 
 ```bash
 npm install pinia
@@ -135,7 +135,7 @@ export const useCountStore = defineStore('count', {
 })
 ```
 
-## Store 组合（替代 Vuex modules）
+## Store Composition (a Replacement for Vuex Modules)
 
 ```typescript
 // stores/cart.ts
@@ -161,19 +161,19 @@ export const useCartStore = defineStore('cart', {
 })
 ```
 
-不需要 namespaced，不需要 rootGetters，直接 import 就能用。
+No namespacing, no rootGetters — you just import a store and use it.
 
 ## Dev Tools Integration
 
-Pinia 自带 DevTools 支持，Vue DevTools 里能看到：
+Pinia ships with built-in DevTools support. In Vue DevTools you can see:
 
-- 每个 store 的 state 变化
-- 时间旅行调试
-- 修改 state 后实时更新
+- State changes for each store
+- Time-travel debugging
+- Live updates after modifying state
 
 ## Tips for Working with Tailwind CSS JIT
 
-Pinia 管状态，Tailwind 管样式，配合很自然：
+Pinia manages state while Tailwind handles styling, and they pair together naturally:
 
 ```vue
 <script setup lang="ts">
@@ -191,7 +191,7 @@ const themeStore = useThemeStore()
 
 ## Summary
 
-- Pinia 是 Vue 3 状态管理的未来，Vuex 5 会基于 Pinia 的设计
-- 砍掉 mutations，TypeScript 原生支持，API 更简洁
-- Store 之间直接 import 调用，不需要 Vuex modules 的嵌套
-- 适合新项目直接用；老项目迁移成本不大（状态逻辑可以逐步迁移）
+- Pinia is the future of state management for Vue 3, and Vuex 5 will be based on Pinia's design
+- It drops mutations, supports TypeScript natively, and offers a cleaner API
+- Stores call each other through direct imports, with no nested Vuex modules
+- Great for new projects right away; the migration cost for existing projects is low (you can move state logic over gradually)

@@ -6,11 +6,11 @@ tags:
   - Engineering
 
 readingTime: 2
-description: "Vite + SWC 编译加速 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based o"
-wordCount: 185
+description: "Speeding up compilation with Vite plus SWC has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 169
 ---
 
-Vite + SWC 编译加速 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Vite + SWC compilation speed-up has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -74,7 +74,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Real-World Applications
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -135,5 +135,5 @@ Pay attention to boundary condition handling, which is critical in production.
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vite + SWC 编译加速不是银弹，需要根据项目规模和技术栈选择
+- Vite + SWC speed-up is no silver bullet; choose it based on project scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs

@@ -5,10 +5,10 @@ tags:
   - 工程化
 readingTime: 4
 description: "浏览器对 ES Modules 的支持已经相当成熟了。现在 Chrome、Firefox、Safari、Edge 都支持 `<script type=\"module\">`，这意味着在开发阶段甚至某些简单项目中，我们可能不再需要打包工具。这篇文章整理一下浏览器原生 ESM 的实践方式和注意点。"
-wordCount: 585
+wordCount: 580
 ---
 
-浏览器对 ES Modules 的支持已经相当成熟了。现在 Chrome、Firefox、Safari、Edge 都支持 `<script type="module">`，这意味着在开发阶段甚至某些简单项目中，我们可能不再需要打包工具。这篇文章整理一下浏览器原生 ESM 的实践方式和注意点。
+浏览器对 ES Modules 的支持已经相当成熟了。现在 Chrome、Firefox、Safari、Edge 都支持 `<script type="module">`，这意味着在开发阶段、甚至某些简单项目里，我们可能不再需要打包工具。这篇文章整理一下浏览器原生 ESM 的实践方式和注意点。
 
 ## 基本用法
 
@@ -40,7 +40,7 @@ wordCount: 585
 <script src="legacy.js" defer></script>
 ```
 
-多个 module script 按照在 HTML 中的声明顺序执行。
+多个 module script 会按照其在 HTML 中的声明顺序执行。
 
 ### 2. 严格模式
 
@@ -93,7 +93,7 @@ import { sum } from './utils'
 import App from './App'
 ```
 
-这在实际开发中需要特别注意，Node.js 也同样如此。
+实际开发中要特别注意这一点，Node.js 里也是如此。
 
 ### 5. bare module specifier 问题
 
@@ -262,7 +262,7 @@ npx live-server .
      ... 可能产生几十甚至上百个请求 -->
 ```
 
-对于小型项目、原型、演示页面，原生 ESM 完全够用。对于生产项目，目前还是建议用 Vite 或 Webpack 打包 —— Vite 在开发时用原生 ESM，构建时用 Rollup 打包，是目前最好的折中方案。
+对于小型项目、原型、演示页面，原生 ESM 完全够用。生产项目目前仍建议用 Vite 或 Webpack 打包。Vite 开发期用原生 ESM、构建期用 Rollup，是当下最理想的折中方案。
 
 ## 动态 import
 

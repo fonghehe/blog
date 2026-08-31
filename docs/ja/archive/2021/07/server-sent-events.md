@@ -5,16 +5,16 @@ tags:
   - JavaScript
   - フロントエンド
 
-readingTime: 2
+readingTime: 3
 description: "关于Server-Sent Events 单向实时通信，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 415
+wordCount: 461
 ---
 
-关于Server-Sent Events 单向实时通信，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
+Server-Sent Events の一方向リアルタイム通信について、多くの開発者は API の呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
 
 ## 基本原理
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみましょう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -35,7 +35,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
   }
   return result
 }
-
 ```
 
 このコードは基本的な使い方を示しています。実際のプロジェクトではエラー処理と境界条件も考慮する必要があります。
@@ -77,7 +76,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ## プロジェクト実践
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは、使い方はもう少し複雑になります：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -98,14 +97,13 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
   }
   return result
 }
-
 ```
 
 このアプローチにより、コードのテスト可能性とスケーラビリティが向上します。
 
 ## ベストプラクティス
 
-完全な例を以下に示します：
+全体のサンプルを以下に示します：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -141,5 +139,5 @@ class TypedEmitter<T extends Record<string, any>> {
 ## まとめ
 
 - 新しい技術を使うためだけに新しい技術を使わないでください
-- コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- Server-Sent Events 单向实时通信不是银弹，需要根据项目规模和技术栈选择
+- Server-Sent Events の一方向リアルタイム通信は万能ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要があります
+- コードサンプルは参考用のみであり、ビジネスの場面に応じて調整が必要です

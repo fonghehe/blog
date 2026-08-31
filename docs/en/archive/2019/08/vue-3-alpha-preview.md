@@ -4,17 +4,17 @@ date: 2019-08-14 16:33:13
 tags:
   - Vue
 readingTime: 3
-description: "2019 年 Vue 团队发布了 Vue 3 的 Alpha 版本，其中最大的变化之一就是响应式系统从 `Object.defineProperty` 切换到了 ES6 的 `Proxy`。本文将从源码和实践两个角度，对比 Vue 2 和 Vue 3 在响应式实现上的差异，带你提前感受 Vue 3 的新特性。"
-wordCount: 513
+description: "In 2019 the Vue team released the Vue 3 Alpha. One of its biggest changes is that the reactivity system switched from `Object.defineProperty` to the ES6 `Proxy`. Looking at both the source and the practice, this article compares how Vue 2 and Vue 3 implement reactivity differently, and gives you an early taste of Vue 3's new features."
+wordCount: 330
 ---
 
-2019 年 Vue 团队发布了 Vue 3 的 Alpha 版本，其中最大的变化之一就是响应式系统从 `Object.defineProperty` 切换到了 ES6 的 `Proxy`。本文将从源码和实践两个角度，对比 Vue 2 和 Vue 3 在响应式实现上的差异，带你提前感受 Vue 3 的新特性。
+In 2019 the Vue team released the Vue 3 Alpha. One of its biggest changes is that the reactivity system switched from `Object.defineProperty` to the ES6 `Proxy`. Looking at both the source and the practice, this article compares how Vue 2 and Vue 3 implement reactivity differently, and gives you an early taste of Vue 3's new features.
 
 ## Vue 2 Reactivity Limitations
 
-Vue 2 使用 `Object.defineProperty` 拦截对象属性的读写。这个方案存在几个明显的缺陷：
+Vue 2 uses `Object.defineProperty` to intercept reads and writes on object properties. This approach has a few obvious flaws:
 
-### 1. 无法检测属性的添加和删除
+### 1. Cannot Detect Property Addition and Deletion
 
 ```js
 // Vue 2
@@ -35,7 +35,7 @@ const vm = new Vue({
 });
 ```
 
-### 2. 无法检测数组索引的变化
+### 2. Cannot Detect Array Index Changes
 
 ```js
 // Vue 2
@@ -56,13 +56,13 @@ const vm = new Vue({
 });
 ```
 
-### 3. 初始化时需要递归遍历所有属性
+### 3. Recursive Traversal of All Properties at Initialization
 
-Vue 2 在创建响应式对象时，会递归遍历所有属性并转换为 getter/setter。对于大型对象，这个过程有性能开销。
+When creating a reactive object, Vue 2 recursively walks every property and converts it to a getter/setter. For large objects, that has a performance cost.
 
 ## Vue 3 Proxy Reactivity Implementation
 
-Vue 3 使用 `Proxy` 代理整个对象，从根本上解决了上述问题。
+Vue 3 uses a `Proxy` to wrap the whole object, solving the problems above at the root.
 
 ### Basic Principles
 
@@ -157,7 +157,7 @@ function effect(fn) {
 }
 ```
 
-### 使用示例
+### Usage Example
 
 ```js
 const state = reactive({
@@ -192,7 +192,7 @@ state.user.hobbies[0] = 'gaming'; // 完全支持！
 
 ## Vue 3 Composition API with Reactivity
 
-Vue 3 提供了 `reactive`、`ref`、`computed`、`watch` 等函数式 API：
+Vue 3 provides the functional APIs `reactive`, `ref`, `computed`, and `watch`:
 
 ```js
 import { reactive, ref, computed, watch, toRefs } from 'vue';
@@ -227,14 +227,14 @@ count.value++;  // ref 需要通过 .value 访问
 
 ## Proxy vs defineProperty Comparison
 
-| 特性 | defineProperty | Proxy |
+| Feature | defineProperty | Proxy |
 |------|---------------|-------|
-| 属性添加/删除 | 无法检测 | 自动检测 |
-| 数组索引修改 | 无法检测 | 自动检测 |
-| 深层嵌套 | 初始化时全部递归 | 惰性代理，按需处理 |
-| Map/Set | 不支持 | 可扩展支持 |
-| 性能 | 初始化慢 | 初始化快，按需代理 |
-| 兼容性 | IE9+ | 不支持 IE |
+| Property add/delete | Cannot detect | Auto-detected |
+| Array index changes | Cannot detect | Auto-detected |
+| Deep nesting | Full recursive traversal at init | Lazy proxy, on demand |
+| Map/Set | Not supported | Can be extended to support |
+| Performance | Slow initialization | Fast init, lazy proxying |
+| Compatibility | IE9+ | No IE support |
 
 ## Choosing Between ref and reactive
 
@@ -318,10 +318,10 @@ const { count, doubled, increment } = useCounter();
 
 ## Summary
 
-- Vue 3 使用 `Proxy` 替代 `Object.defineProperty`，从根本上解决了 Vue 2 响应式的局限
-- Proxy 可以拦截属性的添加、删除、数组索引修改等操作，无需特殊 API
-- 惰性代理机制：只有访问到的深层属性才会被代理，初始化性能更好
-- Composition API（`reactive`、`ref`、`computed`、`watch`）提供了更灵活的逻辑组织方式
-- `ref` 用于基本类型，`reactive` 用于对象类型，`toRefs` 解决解构丢失响应式的问题
-- Proxy 不支持 IE，Vue 3 正式放弃了 IE11 以下的支持
-- Vue 3 Alpha 阶段，API 可能会有调整，但核心设计理念已经确定
+- Vue 3 replaces `Object.defineProperty` with `Proxy`, fundamentally fixing Vue 2's reactivity limitations.
+- `Proxy` can intercept property addition, deletion, and array-index changes without any special API.
+- Lazy proxying: only deeply accessed properties get proxied, so initialization is faster.
+- The Composition API (`reactive`, `ref`, `computed`, `watch`) offers a more flexible way to organize logic.
+- Use `ref` for primitives, `reactive` for objects, and `toRefs` to avoid losing reactivity when destructuring.
+- `Proxy` doesn't support IE, so Vue 3 officially dropped support for IE11 and below.
+- Vue 3 is still in Alpha, so the API may shift, but the core design is settled.

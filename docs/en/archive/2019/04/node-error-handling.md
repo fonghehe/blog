@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 1
 description: "There are plenty of articles on Node.js error handling best practices online, but most lack real-world experience. This article explores best practices based on"
-wordCount: 116
+wordCount: 115
 ---
 
 There are plenty of articles on Node.js error handling best practices online, but most lack real-world experience. This article explores best practices based on actual projects.
@@ -39,7 +39,7 @@ function pLimit(concurrency) {
 }
 ```
 
-After rolling this pattern out across the team, the results were great — maintenance costs dropped noticeably.
+After adopting this pattern across the team, the results were great — maintenance costs dropped noticeably.
 
 ## Advanced Usage
 
@@ -74,7 +74,7 @@ class EventEmitter {
 }
 ```
 
-Pay attention to the performance details in the code above and avoid unnecessary computations.
+Be mindful of the performance details in the code above and avoid unnecessary computations.
 
 ## Handling Typed Errors
 

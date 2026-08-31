@@ -5,14 +5,14 @@ tags:
   - 性能优化
 readingTime: 1
 description: "最近在团队中落地Lighthouse 性能优化清单，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 274
+wordCount: 255
 ---
 
-最近在团队中落地Lighthouse 性能优化清单，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近在团队中落地了 Lighthouse 性能优化清单，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
 
 ## 核心概念
 
-先来看基本的实现方式：
+先看看基础实现：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -29,11 +29,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+这段代码是基础用法。真实项目里还要考虑错误处理和边界条件。
 
 ## 深度解析
 
-在这个基础上，我们可以进一步优化：
+在此基础上，还能进一步优化：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -50,11 +50,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种模式在大型项目里很实用，能明显降低维护成本。
 
 ## 落地经验
 
-实际项目中的用法会更复杂一些：
+真实项目里的用法会更复杂：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -71,11 +71,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样做之后，代码的可测试性和可扩展性都更好了。
 
 ## 调优策略
 
-以下是一个完整的示例：
+下面是一个完整示例：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -92,7 +92,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+注意处理边界条件，这在生产环境里很关键。
 
 ## 小结
 

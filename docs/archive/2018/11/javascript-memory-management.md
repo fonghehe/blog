@@ -5,10 +5,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "前端页面用久了会越来越卡，通常是内存泄漏。了解 JavaScript 的内存管理机制，能帮助写出不泄漏的代码。"
-wordCount: 323
+wordCount: 325
 ---
 
-前端页面用久了会越来越卡，通常是内存泄漏。了解 JavaScript 的内存管理机制，能帮助写出不泄漏的代码。
+前端页面用久了会越用越卡，多半是内存泄漏所致。了解 JavaScript 的内存管理机制，有助于写出不泄漏的代码。
 
 ## 内存生命周期
 

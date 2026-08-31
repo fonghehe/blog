@@ -4,15 +4,15 @@ date: 2020-05-05 17:11:52
 tags:
   - Engineering
 readingTime: 2
-description: "关于esbuild 极速构建工具入门，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 356
+description: "When it comes to getting started with esbuild, many developers only operate at the API level. This article looks at it from a production perspective, discussing the problems you'll actually run into and how to solve them."
+wordCount: 242
 ---
 
-关于esbuild 极速构建工具入门，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to getting started with esbuild, the lightning-fast build tool, many developers only operate at the API-call level. This article looks at it from a production perspective, discussing the problems you'll actually run into and how to solve them.
 
 ## Basic Principles
 
-我们可以通过以下方式来改进：
+We can improve on this in the following ways:
 
 ```javascript
 module.exports = {
@@ -33,14 +33,13 @@ module.exports = {
     }
   }
 }
-
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Advanced Features
 
-先来看基本的实现方式：
+Let's first look at the basic implementation:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -65,14 +64,13 @@ export default defineConfig({
     }
   }
 })
-
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project you'd also need to account for error handling and edge cases.
 
 ## Project Practice
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 module.exports = {
@@ -93,14 +91,13 @@ module.exports = {
     }
   }
 }
-
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly reduce maintenance cost.
 
 ## Best Practices
 
-实际项目中的用法会更复杂一些：
+In real projects, the actual usage tends to be a bit more involved:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -125,14 +122,13 @@ export default defineConfig({
     }
   }
 })
-
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and the extensibility of the code.
 
 ## Common Pitfalls
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 module.exports = {
@@ -153,15 +149,14 @@ module.exports = {
     }
   }
 }
-
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge-case handling—this is critical in production.
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- esbuild 极速构建工具入门不是银弹，需要根据项目规模和技术栈选择
+- In team collaboration, conventions and documentation matter more than the technology itself.
+- Keep an eye on what's happening in the community—technical solutions need to keep iterating.
+- Don't adopt new technology just for its own sake.
+- The code examples are for reference only and should be adapted to your specific use case.
+- Getting started with esbuild, the lightning-fast build tool, isn't a silver bullet; choose it based on your project's scale and tech stack.

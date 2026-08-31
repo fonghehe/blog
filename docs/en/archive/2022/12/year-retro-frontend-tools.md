@@ -3,16 +3,16 @@ title: "2022 Year-End Review: The Shifting Landscape of Frontend Toolchains"
 date: 2022-12-20 11:47:19
 tags:
   - Frontend
-readingTime: 3
-description: "2022 年是前端工具链剧烈变化的一年。Vite 成为主流构建工具、pnnpm + Turborepo 定义了 monorepo 的标准方案、ESM 迁移进入实质阶段。这篇文章做个年终总结。"
-wordCount: 577
+readingTime: 2
+description: "2022 was a year of dramatic change in frontend toolchains. Vite became the mainstream build tool, pnpm + Turborepo defined the standard monorepo solution, and the ESM migration entered its substantive phase. This article wraps up the year with a retrospective."
+wordCount: 384
 ---
 
-2022 年是前端工具链剧烈变化的一年。Vite 成为主流构建工具、pnnpm + Turborepo 定义了 monorepo 的标准方案、ESM 迁移进入实质阶段。这篇文章做个年终总结。
+2022 was a year of dramatic change in frontend toolchains. Vite became the mainstream build tool, pnpm + Turborepo defined the standard monorepo solution, and the ESM migration entered its substantive phase. This article wraps up the year with a retrospective.
 
 ## Build Tools: Vite Unifies the Dev Experience
 
-年初我们还在用 Webpack，年底所有新项目都跑在 Vite 上。
+At the start of the year we were still on Webpack; by year-end every new project was running on Vite.
 
 ```typescript
 // 2022 年初的 Webpack 配置
@@ -35,18 +35,18 @@ export default defineConfig({
 });
 ```
 
-Vite 3 的发布巩固了它的地位。esbuild 做依赖预构建、原生 ESM 做开发模式——这个架构被证明是正确的。
+The release of Vite 3 cemented its position. esbuild for dependency pre-bundling, native ESM for dev mode — this architecture proved to be the right call.
 
 ## Monorepo: pnpm + Turborepo Combination
 
-2022 年我们完成了 monorepo 的标准化：
+In 2022 we standardized our monorepo setup:
 
-| 工具 | 职责 |
+| Tool | Responsibility |
 |------|------|
-| pnpm | 依赖管理、workspace 管理 |
-| Turborepo | 构建编排、缓存 |
-| Changesets | 版本管理、发布 |
-| TypeScript Project References | 类型检查 |
+| pnpm | Dependency management, workspace management |
+| Turborepo | Build orchestration, caching |
+| Changesets | Versioning, publishing |
+| TypeScript Project References | Type checking |
 
 ```json
 // 一个典型的前端 monorepo
@@ -63,7 +63,7 @@ Vite 3 的发布巩固了它的地位。esbuild 做依赖预构建、原生 ESM 
 
 ## Testing: Vitest Takes Over from Jest
 
-Vitest 的优势太明显了——和 Vite 共享配置、原生 ESM、速度快 3 倍。我们把 5 个项目从 Jest 迁移到 Vitest，平均耗时半天。
+Vitest's advantages are too obvious to ignore — shared config with Vite, native ESM, 3x faster. We migrated five projects from Jest to Vitest, each taking about half a day on average.
 
 ```typescript
 // vitest.config.ts
@@ -79,11 +79,11 @@ export default defineConfig({
 
 ## CSS Solutions: The Rise of UnoCSS
 
-Tailwind 仍然主导市场，但 UnoCSS 在我们团队获得了更好的体验：
+Tailwind still dominates the market, but UnoCSS gave our team a better experience:
 
-- 按需生成，CSS 体积更小
-- 图标预设解决了图标管理问题
-- 自定义规则能力让组件库样式更灵活
+- On-demand generation, smaller CSS output
+- Icon presets solved icon management headaches
+- Custom rules made component library styling more flexible
 
 ```html
 <!-- UnoCSS：属性化模式 + 图标预设 -->
@@ -101,7 +101,7 @@ Deno 1.x       —— 边缘计算和实验
 Bun 0.1.x      —— 令人兴奋的挑战者
 ```
 
-Node.js 18 内置 fetch 和测试运行器，减少了对第三方依赖的需求。Bun 的速度表现令人印象深刻，但还不适合生产环境。
+Node.js 18 ships with built-in fetch and a test runner, reducing the need for third-party dependencies. Bun's speed benchmarks are impressive, but it's not production-ready yet.
 
 ## Framework Ecosystem
 
@@ -114,16 +114,16 @@ Astro 1.0   —— 内容站首选
 Solid.js    —— 性能标杆
 ```
 
-React 18 的并发特性让性能优化从「手动优化」变成「框架帮你优化」。Next.js 13 的 App Router 预示了 SSR 的未来方向。
+React 18's concurrent features shifted performance optimization from "manual tuning" to "the framework optimizes for you." Next.js 13's App Router signaled the future direction of SSR.
 
 ## TypeScript
 
-TypeScript 从 4.6 演进到 4.9，每一步都在解决实际问题：
+TypeScript evolved from 4.6 to 4.9, each release solving real-world problems:
 
-- 4.6：解构不破坏控制流
-- 4.7：ESM 支持（module: NodeNext）
-- 4.8：类型收窄增强
-- 4.9：satisfies 操作符
+- 4.6: Destructuring preserves control flow narrowing
+- 4.7: ESM support (module: NodeNext)
+- 4.8: Improved type narrowing
+- 4.9: satisfies operator
 
 ```typescript
 // satisfies 是今年最好的 TypeScript 特性
@@ -153,12 +153,12 @@ const routes = {
 
 ## Looking Ahead to 2023
 
-几个值得关注的方向：
-1. **Bun 正式版**：能否改变 JavaScript 工具链格局
-2. **Next.js 13 稳定版**：App Router 是否能被广泛接受
-3. **Rust 工具链**：SWC、Rspack、Biome 等基于 Rust 的工具
-4. **CSS 新特性**：Container Queries 广泛落地
+A few directions worth watching:
+1. **Bun 1.0**: Can it reshape the JavaScript toolchain landscape?
+2. **Next.js 13 stable**: Will App Router gain widespread adoption?
+3. **Rust-based toolchains**: SWC, Rspack, Biome and other Rust-powered tools
+4. **New CSS features**: Container Queries landing broadly
 
 ## Summary
 
-2022 年前端工具链的主题是「收敛」——Vite 统一构建、pnpm 统一包管理、Vitest 统一测试。碎片化在减少，开发者体验在提升。作为基础设施搭建者，今年的工作让团队的开发效率有了质的飞跃。
+The overarching theme of 2022 frontend toolchains was "convergence" — Vite unifying builds, pnpm unifying package management, Vitest unifying testing. Fragmentation is shrinking and developer experience is improving. As the team's infrastructure builder, this year's work gave our development efficiency a qualitative leap.

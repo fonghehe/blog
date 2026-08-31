@@ -4,11 +4,11 @@ date: 2024-12-19 19:53:30
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，Deno 2.0 Node 兼容 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 179
+description: "Deno 2.0 Node compatibility is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 154
 ---
 
-在日常开发中，Deno 2.0 Node 兼容 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+Deno 2.0 Node compatibility is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
 
 ## Quick Start
 
@@ -36,7 +36,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Internal Principles
 
@@ -67,7 +67,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Business Practice
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'

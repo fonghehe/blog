@@ -5,10 +5,10 @@ tags:
   - CSS
 readingTime: 3
 description: "在响应式设计中，我们一直依赖 `@media` 查询根据视口（viewport）大小来调整布局。但这种方式有一个根本性的缺陷：组件的行为取决于视口，而不是组件自身的尺寸。Container Queries 提案试图解决这个问题，让组件可以根据其父容器的尺寸来调整自身样式。"
-wordCount: 514
+wordCount: 504
 ---
 
-在响应式设计中，我们一直依赖 `@media` 查询根据视口（viewport）大小来调整布局。但这种方式有一个根本性的缺陷：组件的行为取决于视口，而不是组件自身的尺寸。Container Queries 提案试图解决这个问题，让组件可以根据其父容器的尺寸来调整自身样式。
+在响应式设计中，我们一直依赖 `@media`，根据视口（viewport）大小来调整布局。但这种方式有一个根本性的缺陷：组件的行为取决于视口，而不是组件自身的尺寸。Container Queries 提案试图解决这个问题，让组件可以根据其父容器的尺寸来调整自身样式。
 
 ## 响应式设计的痛点
 
@@ -33,7 +33,7 @@ wordCount: 514
 
 ## Container Queries 提案核心概念
 
-Container Queries（也称为 Element Queries）的核心思想是让 CSS 可以查询父容器的尺寸，而不是视口的尺寸。提案中的语法大致如下：
+Container Queries（也称 Element Queries）的核心思想是让 CSS 查询父容器而非视口的尺寸。提案中的语法大致如下：
 
 ```css
 /* 声明一个查询容器 */

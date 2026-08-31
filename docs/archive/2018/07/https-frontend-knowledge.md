@@ -5,7 +5,7 @@ tags:
   - HTTP
 readingTime: 1
 description: "HTTPS 已经是现代 Web 的标配，但具体是怎么工作的？和前端开发有什么关联？整理一下。"
-wordCount: 201
+wordCount: 202
 ---
 
 HTTPS 已经是现代 Web 的标配，但具体是怎么工作的？和前端开发有什么关联？整理一下。
@@ -117,7 +117,7 @@ EV（扩展验证）：最严格，需要 1-2 周
 ## 小结
 
 - HTTPS = HTTP + TLS，提供加密、身份验证、完整性保证
-- TLS 握手：非对称加密交换密钥，然后用对称加密通信
+- TLS 握手：先以非对称加密交换密钥，再以对称加密通信
 - 混合内容：HTTPS 页面必须所有资源都是 HTTPS
 - 本地开发：用 mkcert 生成可信证书，避免证书警告
 - Let's Encrypt 提供免费 DV 证书，没理由不上 HTTPS

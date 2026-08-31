@@ -8,7 +8,7 @@ description: "JavaScript Generator 與非同步流程控製是日常開發中經
 wordCount: 213
 ---
 
-JavaScript Generator 與非同步流程控製是日常開發中經常遇到的問題。本文從實際專案出發，分享具體的實現方法和經驗總結。
+JavaScript Generator 與非同步流程控制是日常開發中經常遇到的問題。本文從實際專案出發，分享具體的實現方法和經驗總結。
 
 ## 快速上手
 
@@ -99,6 +99,6 @@ app.use(errorHandler)
 
 ## 小結
 
-- JavaScript Generator 與非同步流程控製的關鍵在於理解核心概念，不要停留在表面用法
+- JavaScript Generator 與非同步流程控制的關鍵在於理解核心概念，不要停留在表面用法
 - 實際專案中根據場景選擇合適的方案
 - 團隊中統一約定比追求完美實現更重要

@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 泛型進階技巧這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 334
+wordCount: 332
 ---
 
 TypeScript 泛型進階技巧這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -47,7 +47,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ## 原始碼分析
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -71,7 +71,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 真實場景應用
 

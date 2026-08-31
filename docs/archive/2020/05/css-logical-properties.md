@@ -5,10 +5,10 @@ tags:
   - CSS
 readingTime: 2
 description: "在日常开发中，CSS 逻辑属性 Logical Properties的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 301
+wordCount: 302
 ---
 
-在日常开发中，CSS 逻辑属性 Logical Properties的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+在日常开发中，CSS 逻辑属性 Logical Properties 的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
 
 ## 快速上手
 

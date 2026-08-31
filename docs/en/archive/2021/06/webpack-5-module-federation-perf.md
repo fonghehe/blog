@@ -6,15 +6,15 @@ tags:
   - Performance Optimization
 
 readingTime: 1
-description: "Module Federation 性能优化策略 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real p"
-wordCount: 169
+description: "Performance optimization strategies for Module Federation are being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 168
 ---
 
-Module Federation 性能优化策略 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Module Federation performance optimization is being used more and more widely in frontend development. This article digs into its core principles and best practices, drawn from real projects.
 
 ## Basic Usage
 
-The key lies in understanding the core logic:
+The key is understanding the core logic:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -35,7 +35,7 @@ Performance optimization should be tailored to specific scenarios; not all cases
 
 ## Advanced Usage
 
-We can improve it in the following ways:
+Here are a few ways to take this further:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -52,7 +52,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
+This approach has run stably in production for over six months, so it's proven in practice.
 
 ## Practical Cases
 

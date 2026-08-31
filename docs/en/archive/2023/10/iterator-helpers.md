@@ -4,7 +4,7 @@ date: 2023-10-02 09:31:01
 tags:
   - Frontend
 readingTime: 2
-description: "We recently implemented JavaScript Iterator Helpers 提案， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing s"
+description: "I recently explored the JavaScript Iterator Helpers proposal with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 177
 ---
 

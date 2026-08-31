@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "在日常开发中，Mapbox GL JS 前端地图开发 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 205
+description: "Map development with Mapbox GL JS is showing up in more and more everyday work. This article systematically covers its usage, mechanics, and optimization strategies."
+wordCount: 192
 ---
 
-在日常开发中，Mapbox GL JS 前端地图开发 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+Mapbox GL JS frontend map development is being used more and more frequently in day-to-day development. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -156,4 +156,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Mapbox GL JS 前端地图开发不是银弹，需要根据项目规模和技术栈选择
+- Mapbox GL JS frontend map development is not a silver bullet; choose it based on your project's scale and tech stack

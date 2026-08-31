@@ -4,11 +4,11 @@ date: 2022-11-11 16:06:45
 tags:
   - Vite
 readingTime: 2
-description: "Vite 插件开发实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 211
+description: "Vite plugin development in practice is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 202
 ---
 
-Vite 插件开发实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Vite plugin development in practice is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
 
 ## Basic Usage
 
@@ -41,7 +41,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Usage
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -153,5 +153,5 @@ This approach has been running stably in production for over six months and has 
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vite 插件开发实战不是银弹，需要根据项目规模和技术栈选择
+- Vite plugin development in practice is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

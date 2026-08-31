@@ -12,7 +12,7 @@ wordCount: 287
 
 ## 事件流的三個階段
 
-當用户點擊一個元素，瀏覽器經歷三個階段：
+當用戶點擊一個元素，瀏覽器經歷三個階段：
 
 ```
 Window
@@ -129,7 +129,7 @@ document.addEventListener("user:login", (e) => {
 
 在 Vue 裏可以用這個方式做跨組件通信（雖然 Vuex 更適合）。
 
-## 防抖：頻繁觸發隻執行最後一次
+## 防抖：頻繁觸發只執行最後一次
 
 ```javascript
 // scroll/resize/input 等高頻事件需要防抖

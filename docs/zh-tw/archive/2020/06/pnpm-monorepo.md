@@ -19,7 +19,7 @@ npm/yarn 的問題：
 - 扁平化安裝導致的版本衝突
 
 pnpm 的優勢：
-- 嚴格依賴：隻能訪問 package.json 宣告的依賴
+- 嚴格依賴：只能訪問 package.json 宣告的依賴
 - 硬連結 + 符號連結：磁碟佔用大幅減少
 - 內建 workspace 支援：Monorepo 不需要 lerna
 ```
@@ -130,7 +130,7 @@ pnpm --filter @company/admin run dev
 # 在所有包中執行命令
 pnpm -r run build
 
-# 隻在有 changes 的包中執行
+# 只在有 changes 的包中執行
 pnpm -r --changed run build
 
 # 新增依賴到指定包
@@ -190,7 +190,7 @@ pnpm changeset publish
 
 ```yaml
 # .github/workflows/ci.yml
-# CI 中隻構建變更的包
+# CI 中只構建變更的包
 - name: Build changed packages
   run: pnpm -r --changed run build
 ```

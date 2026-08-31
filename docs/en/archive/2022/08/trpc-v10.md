@@ -4,11 +4,11 @@ date: 2022-08-18 17:22:20
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，tRPC v10 类型安全 API is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 201
+description: "In daily development, tRPC v10 type-safe APIs are being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 189
 ---
 
-在日常开发中，tRPC v10 类型安全 API is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In daily development, tRPC v10 type-safe APIs are being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -43,7 +43,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Internal Principles
 
-实际项目中的用法会更复杂一些：
+Usage in real projects tends to be more complex:
 
 ```javascript
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'

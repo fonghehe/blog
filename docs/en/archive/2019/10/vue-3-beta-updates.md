@@ -3,27 +3,27 @@ title: "Vue 3 Beta Update Tracker"
 date: 2019-10-10 16:50:19
 tags:
   - Vue
-readingTime: 4
-description: "Vue 3 自 2018 年 VueConf 上宣布重写以来，一直在稳步推进。截至目前，Vue 3 已经进入 Beta 阶段，核心 API 趋于稳定。本文整理 Vue 3 的主要变化，帮助 Vue 2 开发者提前了解即将到来的变化。"
-wordCount: 560
+readingTime: 3
+description: "Since Vue 3 was announced as a rewrite at VueConf 2018, it has been progressing steadily. As of now, Vue 3 has entered the Beta stage and its core APIs are stabilizing. This article rounds up the major changes in Vue 3 to help Vue 2 developers get a head start on what's coming."
+wordCount: 388
 ---
 
-Vue 3 自 2018 年 VueConf 上宣布重写以来，一直在稳步推进。截至目前，Vue 3 已经进入 Beta 阶段，核心 API 趋于稳定。本文整理 Vue 3 的主要变化，帮助 Vue 2 开发者提前了解即将到来的变化。
+Since Vue 3 was announced as a rewrite at VueConf 2018, it has been progressing steadily. As of now, Vue 3 has entered the Beta stage and its core APIs are stabilizing. This article rounds up the major changes in Vue 3 to help Vue 2 developers get a head start on what's coming.
 
 ## Why Rewrite?
 
-Vue 2 的代码库经过几年发展，暴露了一些架构上的限制：
+After a few years of growth, the Vue 2 codebase revealed several architectural limitations:
 
-1. **代码组织**：Options API 使得相关逻辑分散在不同选项中，大型组件难以维护
-2. **类型推导**：Options API 的对象写法对 TypeScript 支持有限
-3. **性能瓶颈**：虚拟 DOM 的 diff 算法是全量比较，无法跳过静态内容
-4. **体积**：不支持 Tree Shaking，打包整个运行时
+1. **Code organization**: the Options API scatters related logic across different options, making large components hard to maintain
+2. **Type inference**: the object-based Options API offers limited TypeScript support
+3. **Performance bottleneck**: the virtual DOM's diff algorithm compares everything, unable to skip static content
+4. **Bundle size**: no Tree Shaking support, so the entire runtime gets bundled
 
-Vue 3 从底层重写，解决了以上所有问题。
+Vue 3 was rewritten from the ground up and addresses all of the above.
 
 ## Composition API
 
-Composition API 是 Vue 3 最重要的新特性，提供了一组基于函数的 API 来组织组件逻辑：
+The Composition API is the most important new feature in Vue 3. It provides a set of function-based APIs for organizing component logic:
 
 ```js
 // Vue 2 Options API
@@ -75,7 +75,7 @@ export default {
 };
 ```
 
-### ref 和 reactive
+### `ref` and `reactive`
 
 ```js
 import { ref, reactive } from 'vue';
@@ -94,7 +94,7 @@ const state = reactive({
 // 模板中不需要 .value
 ```
 
-### 抽取可复用逻辑：Composables
+### Extracting Reusable Logic: Composables
 
 ```js
 // composables/useMousePosition.js
@@ -142,7 +142,7 @@ export function useFetch(url) {
 }
 ```
 
-在组件中使用：
+Using it in a component:
 
 ```vue
 {% raw %}
@@ -181,7 +181,7 @@ export default {
 
 ## New Reactivity System
 
-Vue 3 使用 `Proxy` 替代了 `Object.defineProperty`：
+Vue 3 uses `Proxy` instead of `Object.defineProperty`:
 
 ```js
 import { reactive, watch, watchEffect } from 'vue';
@@ -206,7 +206,7 @@ watchEffect(() => {
 
 ## Faster Virtual DOM
 
-Vue 3 编译器对模板进行静态分析，生成优化的渲染代码：
+The Vue 3 compiler performs static analysis on templates and generates optimized render code:
 
 ```js
 // 静态节点被提升到渲染函数外部
@@ -220,18 +220,18 @@ function render(_ctx, _cache) {
 }
 ```
 
-关键优化包括：
+The key optimizations include:
 
-1. **静态提升（Static Hoisting）**：静态节点只创建一次
-2. **Patch Flags**：编译器为动态节点打标记，diff 只比较标记的部分
-3. **Block Tree**：将包含动态节点的片段提升为 Block
-4. **缓存事件处理器**：内联事件处理器会被缓存
+1. **Static Hoisting**: static nodes are created only once
+2. **Patch Flags**: the compiler tags dynamic nodes so diffing only compares the tagged parts
+3. **Block Tree**: fragments containing dynamic nodes are hoisted into Blocks
+4. **Cached event handlers**: inline event handlers are cached
 
 ## Fragment, Teleport and Suspense
 
 ### Fragment
 
-Vue 3 组件可以有多个根节点：
+A Vue 3 component can have multiple root nodes:
 
 ```vue
 <template>
@@ -243,7 +243,7 @@ Vue 3 组件可以有多个根节点：
 
 ### Teleport
 
-将子组件渲染到 DOM 树的其他位置：
+Renders a child component to a different location in the DOM tree:
 
 ```vue
 <template>
@@ -258,7 +258,7 @@ Vue 3 组件可以有多个根节点：
 
 ### Suspense
 
-处理异步组件的加载状态：
+Handles the loading state of async components:
 
 ```vue
 <template>
@@ -275,7 +275,7 @@ Vue 3 组件可以有多个根节点：
 
 ## Modular Internal Architecture
 
-Vue 3 采用 monorepo，核心模块可独立使用：
+Vue 3 adopts a monorepo, and its core modules can be used independently:
 
 ```
 @vue/reactivity     // 响应式系统
@@ -286,7 +286,7 @@ Vue 3 采用 monorepo，核心模块可独立使用：
 vue                 // 完整版本
 ```
 
-响应式系统可独立使用：
+The reactivity system can be used on its own:
 
 ```js
 import { reactive, watchEffect } from '@vue/reactivity';
@@ -298,10 +298,10 @@ state.count++; // 输出: 1
 
 ## Summary
 
-- Vue 3 引入 Composition API，提供基于函数的逻辑组织和复用方式
-- 使用 Proxy 替代 Object.defineProperty，支持数组索引、新增属性、Map/Set
-- 编译器优化（静态提升、Patch Flags、Block Tree）大幅提升渲染性能
-- 新增 Fragment、Teleport、Suspense 等内置组件
-- 模块化架构，响应式系统可独立使用
-- 更好的 TypeScript 支持
-- Options API 仍然完全支持，可以渐进式迁移
+- Vue 3 introduces the Composition API, offering function-based logic organization and reuse
+- It uses Proxy instead of Object.defineProperty, supporting array indexing, added properties, and Map/Set
+- Compiler optimizations (static hoisting, Patch Flags, Block Tree) greatly improve render performance
+- New built-in components like Fragment, Teleport, and Suspense were added
+- The modular architecture lets the reactivity system be used standalone
+- It has better TypeScript support
+- The Options API is still fully supported, so migration can be gradual

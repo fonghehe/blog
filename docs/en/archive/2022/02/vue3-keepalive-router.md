@@ -4,7 +4,7 @@ date: 2022-02-15 16:44:46
 tags:
   - Vue
 readingTime: 1
-description: "Vue 3 KeepAlive 路由缓存方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pro"
+description: "Vue 3 KeepAlive route caching solutions are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 185
 ---
 

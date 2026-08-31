@@ -1,5 +1,5 @@
 ---
-title: "Storybook 9 實踐：大型元件库文档與测試的一體化方案"
+title: "Storybook 9 實踐：大型元件庫文檔與測試的一體化方案"
 date: 2025-12-30 16:44:21
 tags:
   - 前端
@@ -35,7 +35,7 @@ function reducer(state, action) {
 
 ## 內部原理
 
-實際項目中的用法會更復雜一些：
+實際項目中的用法會更複雜一些：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T

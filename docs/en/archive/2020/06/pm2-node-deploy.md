@@ -4,15 +4,15 @@ date: 2020-06-22 15:28:23
 tags:
   - Node.js
 readingTime: 2
-description: "在日常开发中，PM2 Node.js 生产环境部署的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 305
+description: "A systematic walkthrough of PM2-based Node.js production deployment, covering usage, internals, and optimization strategies."
+wordCount: 185
 ---
 
-在日常开发中，PM2 Node.js 生产环境部署的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+In everyday development, PM2-based Node.js production deployment is being used more and more. This article walks through its usage, internals, and optimization strategies in a structured way.
 
 ## Quick Start
 
-在这个基础上，我们可以进一步优化：
+Building on that, we can optimize further:
 
 ```javascript
 const fs = require('fs')
@@ -37,11 +37,11 @@ const csvToJson = new Transform({
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is especially handy in large projects, and it noticeably cuts maintenance cost.
 
 ## Internal Principles
 
-实际项目中的用法会更复杂一些：
+In a real project, the usage gets a bit more involved:
 
 ```javascript
 const fs = require('fs')
@@ -66,11 +66,11 @@ const csvToJson = new Transform({
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This way, the code becomes both more testable and more extensible.
 
 ## Business Practice
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 const fs = require('fs')
@@ -95,11 +95,11 @@ const csvToJson = new Transform({
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind the edge-case handling—that's critical in production.
 
 ## Performance Comparison
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 const fs = require('fs')
@@ -124,11 +124,11 @@ const csvToJson = new Transform({
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance tuning should fit the specific scenario—you don't need to over-optimize every case.
 
 ## Troubleshooting
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 const fs = require('fs')
@@ -153,11 +153,11 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- In a team, conventions and documentation matter more than the technology itself.
+- Keep an eye on the community—your technical approach needs to keep iterating.
+- Don't adopt new tech just for its own sake.
+- The code examples are for reference only—adapt them to your own use case.

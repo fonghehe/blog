@@ -5,10 +5,10 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 21 reached the milestone of its Signal migration in November 2025, and 21.1, as the first minor release, brought a large amount of ecosystem stabilizati"
-wordCount: 290
+wordCount: 286
 ---
 
-Angular 21 reached the milestone of its Signal migration in November 2025, and 21.1, as the first minor release, brought a large amount of ecosystem stabilization work in January 2026. The most notable highlights are `httpResource` graduating to a stable API, and `linkedSignal` being deeply integrated into complex state management.
+Angular 21 completed its Signal migration in November 2025, and 21.1 — its first minor release — shipped substantial ecosystem stabilization work in January 2026. The most notable highlights are `httpResource` graduating to a stable API, and `linkedSignal` being deeply integrated into complex state management.
 
 ## httpResource Fully Stabilized
 
@@ -94,7 +94,7 @@ Angular DevTools received a major upgrade in 21.1 for Signal debugging:
 
 - **Signal dependency graph visualization**: The DevTools panel now gives you an intuitive view of every Signal's dependency relationships
 - **Time-travel debugging**: Records Signal state change history, supporting rollback to any snapshot
-- **Performance hotspot detection**: Flags frequently triggering computed values and effects, helping identify over-computation
+- **Performance hotspot detection**: Flags computed values and effects that fire frequently, helping identify over-computation
 
 ```typescript
 // In development mode, this code shows a complete call stack in DevTools

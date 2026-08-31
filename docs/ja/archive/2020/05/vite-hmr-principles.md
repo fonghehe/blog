@@ -3,16 +3,16 @@ title: "Vite開発サーバーの原理：ESMベースの超高速ホットリ�
 date: 2020-05-09 17:09:28
 tags:
   - エンジニアリング
-readingTime: 2
+readingTime: 3
 description: "Vite 1.0 在 2020 年发布后，\"秒级启动\"让很多人惊叹。本文深入分析 Vite 能做到这一点的底层原理，以及它和 webpack dev server 的根本区别。"
-wordCount: 436
+wordCount: 680
 ---
 
-Vite 1.0 在 2020 年发布后，"秒级启动"让很多人惊叹。本文深入分析 Vite 能做到这一点的底层原理，以及它和 webpack dev server 的根本区别。
+Vite 1.0 が 2020 年に登場し、「秒単位の起動」に多くの開発者が驚いた。本記事では、Vite がそれを実現できた根底の仕組みと、webpack dev server との根本的な違いを深掘りする。
 
 ## 従来のwebpackのボトルネック
 
-webpack 在启动时必须**先打包再服务**：
+webpack は起動時に**まずバンドルしてから提供する**必要がある：
 
 ```
 启动 webpack dev server：
@@ -23,7 +23,7 @@ webpack 在启动时必须**先打包再服务**：
 → 冷启动时间：几十秒到几分钟（大型项目）
 ```
 
-这意味着你改一个文件，webpack 需要重新构建受影响的整个 chunk，然后通过 WebSocket 发送更新。
+これは、1 つのファイルを変更すると、webpack は影響を受けたチャンク全体を再ビルドし、WebSocket 経由で更新を送る必要があることを意味する。
 
 ## ViteのNo-bundleアプローチ
 
@@ -37,14 +37,14 @@ webpack 在启动时必须**先打包再服务**：
 按需转换被请求的模块（而不是提前打包所有模块）
 ```
 
-这依赖于现代浏览器原生支持 ES Module：
+これは、モダンブラウザが ES Module をネイティブにサポートしていることに依っている：
 
 ```html
 <!-- index.html -->
 <script type="module" src="/src/main.ts"></script>
 ```
 
-浏览器看到 `type="module"` 后，会自行解析 `import` 语句并发起请求。Vite 只需要在服务端转换被请求的文件：
+ブラウザは `type="module"` を見ると、自ら `import` 文を解析してリクエストを発行する。Vite はリクエストされたファイルをサーバー側で変換するだけでよい：
 
 ```javascript
 // 浏览器请求 /src/App.vue
@@ -54,9 +54,9 @@ webpack 在启动时必须**先打包再服务**：
 // 3. 返回 ES module 格式的 JS
 ```
 
-## 依赖预构建
+## 依存预构建
 
-`node_modules` 中的包通常是 CommonJS 格式，浏览器不能直接 `import`。Vite 在首次启动时用 **esbuild** 预构建这些依赖：
+`node_modules` 内のパッケージは通常 CommonJS 形式であり、ブラウザから直接 `import` できない。Vite は初回起動時に **esbuild** でこれらの依存をプリビルドする：
 
 ```
 # Vite 启动时的预构建
@@ -65,11 +65,11 @@ node_modules/vue       → .vite/vue.js
 ...
 ```
 
-esbuild 是 Go 语言编写的打包工具，速度比 webpack 快 10-100 倍，所以这个步骤通常在几百毫秒内完成。
+esbuild は Go で書かれたバンドラーで、webpack の 10〜100 倍速く、この手順は通常数百ミリ秒で完了する。
 
-## HMR 实现原理
+## HMR 実装原理
 
-Vite 的 HMR 比 webpack 更精准：
+Vite の HMR は webpack よりも的確だ：
 
 ```javascript
 // Vite HMR 协议
@@ -88,17 +88,17 @@ if (import.meta.hot) {
 }
 ```
 
-Vue 和 React 的 HMR 插件（`@vitejs/plugin-vue`、`@vitejs/plugin-react`）自动处理组件级热更新，开发者通常不需要手写上面的代码。
+Vue や React 向けの HMR プラグイン（`@vitejs/plugin-vue`、`@vitejs/plugin-react`）がコンポーネント単位のホット更新を自動で処理するため、開発者が上記のコードを自分で書く必要はふつうない。
 
 ## 与 webpack 的对比
 
 |            | webpack dev server     | Vite           |
 | ---------- | ---------------------- | -------------- |
-| 冷启动     | 慢（需要打包所有模块） | 快（按需转换） |
-| HMR 速度   | 毫秒~秒（依项目大小）  | 始终毫秒级     |
-| 生产构建   | webpack                | Rollup         |
-| 配置复杂度 | 高                     | 低             |
-| 兼容性     | IE11+                  | 现代浏览器     |
+| コールドスタート | 遅い（すべてのモジュールをバンドル必要） | 速い（必要に応じて変換） |
+| HMR 速度   | ミリ秒〜秒（プロジェクト規模依存）  | 常にミリ秒級     |
+| 本番ビルド   | webpack                | Rollup         |
+| 設定の複雑さ | 高い                     | 低い             |
+| 互換性     | IE11+                  | モダンブラウザ     |
 
 ## vite.config.js 基础配置
 
@@ -125,4 +125,4 @@ export default defineConfig({
 
 ## まとめ
 
-Vite 的快不是优化了 webpack，而是**绕过了打包这一步**。利用浏览器原生 ESM + esbuild 预构建，将"先打包再服务"变成了"按需转换"。这个思路对于理解下一代前端工具链非常重要。
+Vite の速さは webpack を最適化したのではなく、**バンドルというステップを迂回した**ことにある。ブラウザネイティブな ESM と esbuild のプリビルドを組み合わせ、「まずバンドルしてから提供」を「必要に応じた変換」に変えた。この考え方は、次世代のフロントエンドツールチェーンを理解する上で非常に重要だ。

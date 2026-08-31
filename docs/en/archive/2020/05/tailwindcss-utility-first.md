@@ -4,15 +4,15 @@ date: 2020-05-27 10:45:06
 tags:
   - CSS
 readingTime: 2
-description: "Tailwind CSS 实用优先的 CSS 框架这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 290
+description: "Tailwind CSS, the utility-first CSS framework, has been discussed many times in the community, but as the framework evolves, much earlier advice needs updating. This article revisits the topic based on the current version."
+wordCount: 196
 ---
 
-Tailwind CSS 实用优先的 CSS 框架这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+Tailwind CSS, the utility-first CSS framework, has been discussed many times in the community, but as the framework has evolved, a lot of earlier advice needs updating. This article revisits the topic based on the current version.
 
 ## Getting Started
 
-实际项目中的用法会更复杂一些：
+In real projects, the actual usage tends to be a bit more involved:
 
 ```css
 .container {
@@ -35,11 +35,11 @@ Tailwind CSS 实用优先的 CSS 框架这个话题社区讨论了很多次，�
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and the extensibility of the code.
 
 ## Source Code Analysis
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```css
 'use client'
@@ -66,11 +66,11 @@ export function AIChat() {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge-case handling—this is critical in production.
 
 ## Real-World Applications
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```css
 import { openai } from '@ai-sdk/openai'
@@ -89,11 +89,11 @@ export async function POST(req) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to fit the actual use case; not every situation calls for over-optimization.
 
 ## Optimization Tips
 
-我们可以通过以下方式来改进：
+We can improve on this in the following ways:
 
 ```css
 :root {
@@ -116,12 +116,12 @@ export async function POST(req) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- Always verify compatibility before using it in production.
+- In team collaboration, conventions and documentation matter more than the technology itself.
+- Keep an eye on what's happening in the community—technical solutions need to keep iterating.
+- Don't adopt new technology just for its own sake.
+- The code examples are for reference only and should be adapted to your specific use case.

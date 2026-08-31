@@ -1,5 +1,5 @@
 ---
-title: "Storybook 9 Component Development: 视觉Testing & 交互Testing深度Integration"
+title: "Storybook 9 Component Development: Deep Integration of Visual and Interaction Testing"
 date: 2025-09-29 17:43:20
 tags:
   - Frontend

@@ -1,14 +1,14 @@
 ---
-title: "Vite 3 Preview Mode: IntegrationTesting & 预ReleaseVerification流程"
+title: "Vite 3 Preview Mode: Integration Testing & Pre-Release Verification Workflow"
 date: 2022-12-29 10:22:38
 tags:
   - Vite
 readingTime: 2
-description: "Vite 3 预览模式详解 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 239
+description: "Vite 3 preview mode is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 205
 ---
 
-Vite 3 预览模式详解 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Vite 3 preview mode is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -64,7 +64,7 @@ const csvToJson = new Transform({
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates the basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Practical Cases
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Optimization
 
-实际项目中的用法会更复杂一些：
+Usage in real projects tends to be more complex:
 
 ```javascript
 .container {
@@ -153,6 +153,6 @@ Pay attention to boundary condition handling, which is critical in production.
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vite 3 预览模式详解不是银弹，需要根据项目规模和技术栈选择
+- Vite 3 preview mode is not a silver bullet; choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

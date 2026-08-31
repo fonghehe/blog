@@ -4,11 +4,11 @@ date: 2024-08-20 16:14:51
 tags:
   - Engineering
 readingTime: 2
-description: "Edge Computing 在前端领域越来越热。作为架构负责人，最近做了几个项目的渲染策略选型。整理一下不同场景下的决策逻辑。"
-wordCount: 261
+description: "Edge computing is getting hotter in the frontend world. As the architecture lead, I recently made rendering-strategy choices for several projects. Here's the decision logic for different scenarios."
+wordCount: 241
 ---
 
-Edge Computing 在前端领域越来越热。作为架构负责人，最近做了几个项目的渲染策略选型。整理一下不同场景下的决策逻辑。
+Edge computing is getting hotter in the frontend world. As the architecture lead, I recently made rendering-strategy choices for several projects. Here's the decision logic for different scenarios.
 
 ## Rendering Strategy Overview
 

@@ -4,7 +4,7 @@ date: 2022-06-01 09:31:14
 tags:
   - Micro Frontend
 readingTime: 2
-description: "We recently implemented 微前端 2022 最佳实践汇总， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+description: "I recently compiled a roundup of 2022 micro-frontend best practices with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 190
 ---
 

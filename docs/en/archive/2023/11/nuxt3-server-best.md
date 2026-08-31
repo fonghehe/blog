@@ -4,7 +4,7 @@ date: 2023-11-09 10:39:27
 tags:
   - Nuxt.js
 readingTime: 2
-description: "Nuxt 3 服务端最佳实践 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+description: "Server-side best practices in Nuxt 3 are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 195
 ---
 

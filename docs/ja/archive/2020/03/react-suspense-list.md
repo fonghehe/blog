@@ -3,16 +3,16 @@ title: "React SuspenseList による読み込み順序制御"
 date: 2020-03-24 16:02:13
 tags:
   - React
-readingTime: 2
-description: "最近在团队中落地React SuspenseList 加载顺序控制，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 332
+readingTime: 3
+description: "最近チームでReact SuspenseList による読み込み順序制御を導入し、かなりの経験を積んだ。同様の作業の参考になれば幸いだ。"
+wordCount: 497
 ---
 
-最近在团队中落地React SuspenseList 加载顺序控制，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近チームで React SuspenseList による読み込み順序の制御を進め、いくつかの知見が溜まった。似たような取り組みをする人の参考になればとまとめておく。
 
 ## コアコンセプト
 
-在这个基础上，我们可以进一步优化：
+この上にさらに最適化を重ねられる：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -31,11 +31,11 @@ function reducer(state, action) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模なプロジェクトで非常に実用的であり、保守コストを大きく下げられる。
 
 ## 深掘り解析
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -54,11 +54,11 @@ function reducer(state, action) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+この方式により、コードのテスト容易性と拡張性の両方が高まる。
 
 ## 実装経験
 
-以下是一个完整的示例：
+以下は全体のサンプルだ：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -77,11 +77,11 @@ function reducer(state, action) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理に注意すること。これは本番環境では極めて重要だ。
 
 ## 调优策略
 
-关键在于理解核心逻辑：
+鍵となるのは中核となるロジックを理解することだ：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -100,11 +100,11 @@ function reducer(state, action) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能最適化は具体的な場面に合わせる必要があり、すべての場合で過剰な最適化が必要なわけではない。
 
 ## 注意事項
 
-我们可以通过以下方式来改进：
+次の方法で改善できる：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -123,11 +123,11 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番環境で半年以上安定して稼働しており、実際に検証済みだ。
 
 ## まとめ
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- React SuspenseList 加载顺序控制不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- 新しい技術だからといって使うために使ってはならない
+- コード例はあくまで参考であり、業務の場面に合わせて調整する必要がある
+- React SuspenseList による読み込み順序の制御は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶべき
+- API を暗記するより、その背後にある原理を理解するほうが重要

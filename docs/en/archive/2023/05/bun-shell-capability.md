@@ -4,11 +4,11 @@ date: 2023-05-05 15:28:59
 tags:
   - Frontend
 readingTime: 1
-description: "Bun Shell 脚本能力是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。"
-wordCount: 191
+description: "Bun Shell scripting deserves attention in frontend development. This article draws on real project experience to explore the core concepts and best practices."
+wordCount: 149
 ---
 
-Bun Shell 脚本能力是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。
+Bun Shell scripting deserves attention in frontend development. This article draws on real project experience to explore the core concepts and best practices.
 
 ## Basic Concepts
 
@@ -86,7 +86,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Best Practices
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 核心实现
@@ -107,6 +107,6 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Summary
 
-- 性能优化需要基于实际数据，避免过度优化
+- Base performance optimization on real data and avoid premature optimization
 - Bun Shell 脚本能力的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
+- In real projects, choosing the right solution matters more than chasing the newest technology

@@ -5,10 +5,10 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 7 正式发布后，CDK 中的 Drag and Drop 和 Virtual Scrolling 迅速成为最受欢迎的特性。本文用实际项目案例深入讲解这两个功能。"
-wordCount: 268
+wordCount: 267
 ---
 
-Angular 7 正式发布后，CDK 中的 Drag and Drop 和 Virtual Scrolling 迅速成为最受欢迎的特性。本文用实际项目案例深入讲解这两个功能。
+Angular 7 正式发布后，CDK 的 Drag and Drop 和 Virtual Scrolling 迅速成为最受欢迎的特性。本文结合实际项目案例，深入讲解它们的用法。
 
 ## 拖拽排序：任务看板
 
@@ -138,4 +138,4 @@ export class VirtualUserListComponent {
 
 ## 总结
 
-Angular CDK 的 Drag and Drop 模块设计得非常完善，看板类应用几乎不需要额外代码。虚拟滚动则是大数据列表的标配方案，学会这两个 API，能解决企业应用中大量的 UI 交互挑战。
+Angular CDK 的 Drag and Drop 模块设计得相当完善，看板类应用几乎无需额外代码；虚拟滚动则是大数据列表的标配方案。掌握这两个 API，足以应对企业应用里大量 UI 交互需求。

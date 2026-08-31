@@ -9,7 +9,7 @@ description: "Vue 3.2 正式將 `<script setup>` 標記為穩定特性。用了�
 wordCount: 196
 ---
 
-Vue 3.2 正式將 `<script setup>` 標記為穩定特性。用了半年實驗性支持，現在可以放心在生產環境用了。
+Vue 3.2 正式將 `<script setup>` 標記為穩定特性。用了半年實驗性支援，現在可以放心在生產環境用了。
 
 ## 之前的痛點
 
@@ -264,6 +264,6 @@ function handleSort(key: string) {
 
 - `<script setup>` 是 Vue 3 的推薦寫法，減少模板代碼，邏輯更內聚
 - `defineProps` / `defineEmits` 的 TypeScript 類型聲明方式是重點
-- `defineExpose` 控製組件暴露的屬性，默認全部隱藏
+- `defineExpose` 控制組件暴露的屬性，默認全部隱藏
 - 頂層 await 配合 Suspense 做異步數據加載
 - 從 Options API 遷移的項目可以逐步引入，新項目直接用

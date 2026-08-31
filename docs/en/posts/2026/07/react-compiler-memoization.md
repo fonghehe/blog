@@ -3,9 +3,9 @@ title: "React 22 Compiler Optimization Principles: How Automatic Memoization Wor
 date: 2026-07-10 21:37:01
 tags:
   - React
-readingTime: 7
+readingTime: 9
 description: "React Compiler automatically inserts memoization logic through compile-time static analysis, eliminating the burden of manual useMemo/useCallback. This article analyzes the compiler's working principles, output code structure, limitations, and compares compilation strategies with Vue Vapor Mode."
-wordCount: 2300
+wordCount: 1307
 ---
 
 The React community has long faced a dilemma: `useMemo`, `useCallback`, and `React.memo` are "correct but tedious." Developers either spend significant effort on manual optimization or endure unnecessary re-renders. React Compiler's goal is to transfer this decision from developers to the compiler — letting the machine decide what needs to be memoized.

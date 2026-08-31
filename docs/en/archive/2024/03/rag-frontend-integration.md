@@ -4,11 +4,11 @@ date: 2024-03-25 09:48:02
 tags:
   - Frontend
 readingTime: 2
-description: "最近团队在内部知识库项目中落地了 RAG（Retrieval-Augmented Generation）架构。作为前端平台负责人，整理一下前端侧的技术方案。"
-wordCount: 274
+description: "My team recently adopted a RAG (Retrieval-Augmented Generation) architecture in an internal knowledge-base project. As the frontend platform lead, here's a rundown of the frontend-side technical approach."
+wordCount: 260
 ---
 
-最近团队在内部知识库项目中落地了 RAG（Retrieval-Augmented Generation）架构。作为前端平台负责人，整理一下前端侧的技术方案。
+My team recently adopted a RAG (Retrieval-Augmented Generation) architecture in an internal knowledge-base project. As the frontend platform lead, here's a rundown of the frontend-side technical approach.
 
 ## RAG Basic Architecture
 

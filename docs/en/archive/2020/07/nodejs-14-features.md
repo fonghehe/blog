@@ -4,13 +4,13 @@ date: 2020-07-07 10:40:44
 tags:
   - JavaScript
 readingTime: 2
-description: "Node.js 14 进入 LTS 阶段，升级了 V8 引擎到 8.1，带来了一些实用的新特性。作为前端工程师，这些变化直接影响我们的构建工具和脚本。"
-wordCount: 189
+description: "Node.js 14 enters LTS with V8 8.1, bringing practical new features that directly impact frontend build tools and scripts."
+wordCount: 125
 ---
 
-Node.js 14 进入 LTS 阶段，升级了 V8 引擎到 8.1，带来了一些实用的新特性。作为前端工程师，这些变化直接影响我们的构建工具和脚本。
+Node.js 14 has entered its LTS phase, upgrading the V8 engine to 8.1 and bringing several practical new features. As frontend engineers, these changes directly affect our build tools and scripts.
 
-## 可选链和空值合并在 Node.js 中原生支持
+## Optional Chaining and Nullish Coalescing Natively Supported in Node.js
 
 ```javascript
 // 不需要 --harmony 标志了！
@@ -67,7 +67,7 @@ console.log("数据获取完成:", data);
 }
 ```
 
-## Intl.DisplayNames：国际化名称显示
+## Intl.DisplayNames: Localized Name Display
 
 ```javascript
 // 以前需要一个映射表
@@ -93,7 +93,7 @@ function getCountryOptions(locale = "zh") {
 // [{ value: 'CN', label: '中国' }, { value: 'US', label: '美国' }, ...]
 ```
 
-## 更好的错误堆栈
+## Cleaner Stack Traces
 
 ```javascript
 // Node.js 14 的错误堆栈更清晰
@@ -119,7 +119,7 @@ outer();
 // 干净多了，没有 internal 的噪音
 ```
 
-## Stream 性能提升
+## Stream Performance Improvements
 
 ```javascript
 // readable.iterator() 支持 for-await-of
@@ -143,7 +143,7 @@ async function processLargeFile(filePath) {
 }
 ```
 
-## 对前端工具链的影响
+## Impact on the Frontend Toolchain
 
 ```javascript
 // Webpack 5 要求 Node.js >= 10.13.0，14 完全兼容
@@ -166,7 +166,7 @@ if (!semver.satisfies(process.version, required)) {
 console.log(`Node.js ${process.version} ✓`);
 ```
 
-## 升级注意事项
+## Upgrade Notes
 
 ```bash
 # 推荐用 nvm 管理 Node.js 版本
@@ -187,8 +187,8 @@ nvm use 14
 
 ## Summary
 
-- 可选链和空值合并在 Node.js 中原生支持，构建脚本也可以用了
-- Top-level await 简化了 ESM 模块的异步初始化代码
-- Intl.DisplayNames 内置国际化名称显示，不再需要手动映射
-- 错误堆栈更干净，调试体验更好
-- 建议尽快升级到 Node.js 14 LTS
+- Optional chaining and nullish coalescing are natively supported in Node.js, so you can use them in build scripts too.
+- Top-level await simplifies the async initialization code in ESM modules.
+- Intl.DisplayNames provides built-in localized name display, so you no longer need hand-written mapping tables.
+- Stack traces are cleaner, which improves the debugging experience.
+- It is worth upgrading to Node.js 14 LTS as soon as you can.

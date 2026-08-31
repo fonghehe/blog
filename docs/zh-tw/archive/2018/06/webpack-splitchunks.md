@@ -19,7 +19,7 @@ Webpack 4 用 `splitChunks` 替代了之前的 `CommonsChunkPlugin`，配置更�
 
 - 公共庫（vue、lodash）單獨打包，利用瀏覽器快取
 - 路由對應的頁面按需載入
-- 首屏隻加載必要程式碼
+- 首屏只加載必要程式碼
 
 ## 路由懶載入（最簡單的分割）
 
@@ -132,6 +132,6 @@ Vue CLI 3 會自動為懶載入的 chunk 生成 `<link rel="prefetch">` 標籤�
 ## 小結
 
 - 路由懶載入是最簡單的程式碼分割方式，一行程式碼
-- `splitChunks.cacheGroups` 控製如何分組
+- `splitChunks.cacheGroups` 控制如何分組
 - 第三方庫單獨打包，充分利用瀏覽器快取
 - 用 bundle analyzer 確認分割效果

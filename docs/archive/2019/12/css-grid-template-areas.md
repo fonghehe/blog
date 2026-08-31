@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 3
 description: "CSS Grid 布局规范已经出来几年了，浏览器支持也相当完善（IE11 部分支持带前缀）。但实际项目中，很多同学还是习惯用 Flexbox 解决所有布局问题。最近在重构后台管理系统的页面布局时，我全面采用了 Grid 的 `template-areas` 方案，效果出乎意料的好。这篇文章分享一些实战经验。"
-wordCount: 534
+wordCount: 536
 ---
 
 CSS Grid 布局规范已经出来几年了，浏览器支持也相当完善（IE11 部分支持带前缀）。但实际项目中，很多同学还是习惯用 Flexbox 解决所有布局问题。最近在重构后台管理系统的页面布局时，我全面采用了 Grid 的 `template-areas` 方案，效果出乎意料的好。这篇文章分享一些实战经验。
@@ -64,7 +64,7 @@ CSS Grid 布局规范已经出来几年了，浏览器支持也相当完善（IE
 
 ## 经典页面布局案例
 
-后台管理系统中最常见的 Dashboard 页面，通常有顶部统计卡片、左侧图表、右侧列表。用 `template-areas` 可以非常直观地表达：
+后台管理系统中最常见的 Dashboard 页面，通常包含顶部统计卡片、左侧图表与右侧列表。用 `template-areas` 可以非常直观地表达：
 
 ```css
 .dashboard {

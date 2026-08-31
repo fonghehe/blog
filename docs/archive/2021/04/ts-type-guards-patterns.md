@@ -5,14 +5,14 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 类型守卫模式这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 353
+wordCount: 348
 ---
 
-TypeScript 类型守卫模式这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+TypeScript 类型守卫这个话题社区已经讨论过很多次，但随着版本迭代，不少结论需要更新。本文基于较新版本重新梳理了一遍。
 
 ## 入门指南
 
-我们可以通过以下方式来改进：
+我们可以用下面这种方式来改进：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -43,11 +43,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已经在线上稳定运行半年多，经受过实际验证。
 
 ## 源码分析
 
-先来看基本的实现方式：
+先看最基本的实现方式：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -71,11 +71,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+这段代码演示了基本用法。真实项目里还得考虑错误处理和边界情况。
 
 ## 真实场景应用
 
-在这个基础上，我们可以进一步优化：
+在这个基础上，我们还能进一步优化：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -106,11 +106,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种模式在大型项目里很实用，能明显降低维护成本。
 
 ## 优化技巧
 
-实际项目中的用法会更复杂一些：
+真实业务里的用法往往更复杂一些：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -134,11 +134,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+用这种方式，代码的可测试性和可扩展性都上去了。
 
 ## 避坑指南
 
-以下是一个完整的示例：
+下面是一段完整示例：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -169,7 +169,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界条件的处理很关键，生产环境尤其不能马虎。
 
 ## 小结
 

@@ -1,14 +1,14 @@
 ---
-title: "Angular Material 入門：構建企業級 UI 元件庫"
+title: "Angular Material 入門：建構企業級 UI 元件庫"
 date: 2018-09-01 17:34:02
 tags:
   - Angular
 readingTime: 2
-description: "Angular Material 是 Angular 官方出品的 Material Design UI 元件庫，開箱即用、可訪問性良好，適合快速構建企業管理系統。"
+description: "Angular Material 是 Angular 官方出品的 Material Design UI 元件庫，開箱即用、可存取性良好，適合快速建構企業管理系統。"
 wordCount: 171
 ---
 
-Angular Material 是 Angular 官方出品的 Material Design UI 元件庫，開箱即用、可訪問性良好，適合快速構建企業管理系統。
+Angular Material 是 Angular 官方出品的 Material Design UI 元件庫，開箱即用、可存取性良好，適合快速建構企業管理系統。
 
 ## 安裝與設定
 
@@ -16,7 +16,7 @@ Angular Material 是 Angular 官方出品的 Material Design UI 元件庫，開�
 ng add @angular/material
 # 選擇一個預置主題，或自定義
 # 是否新增 BrowserAnimationsModule？Yes
-# 是否新增全域性字型和圖示？Yes
+# 是否新增全域字型和圖示？Yes
 ```
 
 `ng add` 會自動修改 `angular.json`、`AppModule` 等設定，無需手動處理。
@@ -77,7 +77,7 @@ export class MaterialModule {}
         <mat-cell *matCellDef="let row">{{ row.name }}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="email">
-        <mat-header-cell *matHeaderCellDef>郵箱</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef>電子郵件</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.email }}</mat-cell>
       </ng-container>
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

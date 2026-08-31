@@ -3,12 +3,12 @@ title: "TypeScript 5.6 New Features"
 date: 2024-10-07 14:21:58
 tags:
   - TypeScript
-readingTime: 2
-description: "在日常开发中，TypeScript 5.6 新特性 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 172
+readingTime: 1
+description: "TypeScript 5.6 new features is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 147
 ---
 
-在日常开发中，TypeScript 5.6 新特性 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+TypeScript 5.6 new features is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
 
 ## Quick Start
 
@@ -37,7 +37,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Internal Principles
 
@@ -69,7 +69,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Business Practice
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 :root {

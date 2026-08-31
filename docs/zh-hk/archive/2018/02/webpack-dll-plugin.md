@@ -53,7 +53,7 @@ module.exports = {
 ### Step 2：生成 dll 檔案
 
 ```bash
-# package.json 里加個命令
+# package.json 裡加個命令
 "scripts": {
   "dll": "webpack --config webpack.dll.js"
 }

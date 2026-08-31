@@ -5,16 +5,16 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 8 第一個 RC 版本已釋出，帶來了兩個備受期待的特性：可選的 Ivy 編譯器預覽和 `import()` 想式載入語法。"
-wordCount: 427
+wordCount: 425
 ---
 
-Angular 8 第一個 RC 版本已釋出，帶來了兩個備受期待的特性：可選的 Ivy 編譯器預覽和 `import()` 想式載入語法。
+Angular 8 第一個 RC 版本已釋出，帶來了兩個備受期待的特性：可選的 Ivy 編譯器預覽和 `import()` 惰性載入語法。
 
 ## Ivy 是什麼
 
 Ivy 是 Angular 的下一代渲染引擎。它重寫了編譯器和執行時，目標是：
 
-- **更小的包體積**：tree-shaking 友好，隻打包實際使用的框架功能
+- **更小的包體積**：tree-shaking 友好，只打包實際使用的框架功能
 - **更快的重新構建**：增量編譯，修改一個檔案不需重新編譯全專案
 - **更好的除錯體驗**：渲染器程式碼可讀性更強
 - **未來支撐**：Server-Side Rendering、Higher-order components 等高階功能
@@ -32,7 +32,7 @@ Ivy 是 Angular 的下一代渲染引擎。它重寫了編譯器和執行時，�
 
 注意：Angular 8 中 Ivy 僅是 **opt-in** 預覽，不推薦生產測試。完全預設開啟要等 Angular 9。
 
-## 想性載入語法變化
+## 惰性載入語法變化
 
 這是 Angular 8 **非常實用**的變化。之前用字串載入模組路徑沒有型別檢查，現在用原生 ES `import()` 語法，編譯器可以檢查路徑正確性：
 
@@ -59,7 +59,7 @@ const routes: Routes = [
 
 1. IDE 跟蹤路徑，重新命名自動更新
 2. TypeScript 編譯時檢查路徑是否存在
-3. 更建議人讀——清楚地看到對應關係
+3. 更易讀——清楚地看到對應關係
 
 ## Web Worker 支援
 

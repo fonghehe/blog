@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "Clipboard API 剪贴板高级用法 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic b"
-wordCount: 190
+description: "Advanced usage of the Clipboard API has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 171
 ---
 
-Clipboard API 剪贴板高级用法 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+The advanced usage of the Clipboard API has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -71,7 +71,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Real-World Applications
 
-实际项目中的用法会更复杂一些：
+Real-world usage gets a bit more complex:
 
 ```javascript
 :root {
@@ -129,4 +129,4 @@ Pay attention to boundary condition handling, which is critical in production.
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Clipboard API 剪贴板高级用法不是银弹，需要根据项目规模和技术栈选择
+- Advanced Clipboard API usage is not a silver bullet; choose it based on your project's scale and tech stack.

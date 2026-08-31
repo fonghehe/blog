@@ -4,17 +4,17 @@ date: 2022-02-08 10:39:57
 tags:
   - Vite
 readingTime: 2
-description: "Vite 3 发布了。从 Vite 2 到 3，不只是版本号的变化——冷启动速度更快、开发体验更好、插件生态更成熟。作为团队构建基础设施的技术选型负责人，这篇文章聊聊 Vite 3 的核心变化和我们的迁移经验。"
-wordCount: 329
+description: "Vite 3 is out. From Vite 2 to 3, it's more than a version bump — faster cold starts, better developer experience, and a more mature plugin ecosystem. As the person responsible for our team's build-infrastructure choices, this article covers Vite 3's core changes and our migration experience."
+wordCount: 228
 ---
 
-Vite 3 发布了。从 Vite 2 到 3，不只是版本号的变化——冷启动速度更快、开发体验更好、插件生态更成熟。作为团队构建基础设施的技术选型负责人，这篇文章聊聊 Vite 3 的核心变化和我们的迁移经验。
+Vite 3 is here. The jump from Vite 2 to 3 is more than just a version bump — faster cold starts, a better developer experience, and a more mature plugin ecosystem. As the person on our team responsible for build-tooling decisions, this post walks through Vite 3's core changes and what we learned migrating to it.
 
-## 核心改进
+## Core Improvements
 
-### 冷启动优化
+### Faster Cold Start
 
-Vite 3 的开发服务器冷启动比 Vite 2 快了不少。主要优化：
+Vite 3's dev server now cold-starts noticeably faster than Vite 2. The main optimizations:
 
 ```bash
 # Vite 3 使用 esbuild 做依赖预构建，但优化了缓存策略
@@ -24,7 +24,7 @@ vite --force  # 强制重新预构建（清除缓存）
 DEBUG=vite:deps npx vite
 ```
 
-### 内置的 CSS Modules 支持
+### Built-in CSS Modules Support
 
 ```css
 /* styles.module.css */
@@ -43,7 +43,7 @@ import styles from './styles.module.css';
 const cls = styles.container;
 ```
 
-### 构建优化
+### Build Optimizations
 
 ```typescript
 // vite.config.ts
@@ -77,9 +77,9 @@ export default defineConfig({
 });
 ```
 
-## 插件生态
+## Plugin Ecosystem
 
-Vite 3 的插件生态已经成熟。我们常用的核心插件：
+Vite 3's plugin ecosystem has matured. The core plugins we use day to day:
 
 ```typescript
 // vite.config.ts
@@ -113,7 +113,7 @@ export default defineConfig({
 });
 ```
 
-## 从 Webpack 迁移的实战
+## Migrating from Webpack in Practice
 
 ```typescript
 // webpack.config.js → vite.config.ts
@@ -163,7 +163,7 @@ export default defineConfig({
 });
 ```
 
-### 环境变量迁移
+### Environment Variable Migration
 
 ```bash
 # Webpack: .env 中用 REACT_APP_ 前缀
@@ -181,7 +181,7 @@ const url = process.env.REACT_APP_API_URL;
 const url = import.meta.env.VITE_API_URL;
 ```
 
-## Monorepo 中的 Vite 配置共享
+## Sharing Vite Config in a Monorepo
 
 ```typescript
 // packages/vite-config/index.ts
@@ -218,16 +218,16 @@ export default createViteConfig({
 
 ## Performance Comparison
 
-我们一个中型后台项目（200+ 页面组件）的实测数据：
+Here are the real numbers from one of our mid-sized admin projects (200+ page components):
 
-| 指标 | Webpack 5 | Vite 2 | Vite 3 |
-|------|-----------|--------|--------|
-| 冷启动 | 45s | 3.2s | 2.1s |
+| Metric | Webpack 5 | Vite 2 | Vite 3 |
+|--------|-----------|--------|--------|
+| Cold start | 45s | 3.2s | 2.1s |
 | HMR | 800ms | 28ms | 18ms |
-| 生产构建 | 120s | 35s | 28s |
+| Production build | 120s | 35s | 28s |
 
-冷启动提升最明显，开发体验质的飞跃。
+The cold-start improvement is the most dramatic, and it's a qualitative leap for the developer experience.
 
 ## Summary
 
-Vite 3 标志着前端构建工具进入新阶段。基于浏览器原生 ESM 的开发模式已经被验证是可行的。对于新项目，没有理由不用 Vite。对于老项目，迁移成本不高，收益明显。接下来我会写 Vitest——Vite 原生的测试框架，配合 Vite 组成完整的工具链。
+Vite 3 marks a new phase for frontend build tooling. The browser-native-ESM dev model has now been proven viable. For new projects, there's no reason not to use Vite. For legacy projects, the migration cost is low and the payoff is clear. Next up I'll cover Vitest — Vite's native test runner — which rounds out a complete toolchain alongside Vite.

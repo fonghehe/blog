@@ -5,15 +5,15 @@ tags:
   - Vue
 
 readingTime: 2
-description: "Vue 3 生态在 2021 年逐步成熟，Vue Router 4 也随之进入稳定期。年初我主导了一个中型后台管理系统的 Vue Router 3 → 4 迁移，踩了不少坑，总结一下核心变化和迁移策略。"
-wordCount: 390
+description: "The Vue 3 ecosystem matured through 2021, and Vue Router 4 entered its stable phase with it. Early this year I led the Vue Router 3 to 4 migration of a mid-sized admin system, hit plenty of pitfalls, and here is a summary of the core changes and migration strategy."
+wordCount: 274
 ---
 
-Vue 3 生态在 2021 年逐步成熟，Vue Router 4 也随之进入稳定期。年初我主导了一个中型后台管理系统的 Vue Router 3 → 4 迁移，踩了不少坑，总结一下核心变化和迁移策略。
+The Vue 3 ecosystem matured steadily through 2021, and Vue Router 4 reached stability alongside it. Early this year I led the migration of a medium-sized admin system from Vue Router 3 to 4, hit quite a few pitfalls, and here's a summary of the key changes and migration strategy.
 
 ## Changes to Route Definition
 
-Vue Router 4 最直观的变化是创建实例的 API 从构造函数变成了函数调用：
+The most visible change in Vue Router 4 is that the API for creating an instance went from a constructor to a function call:
 
 ```javascript
 // Vue Router 3
@@ -32,11 +32,11 @@ const router = createRouter({
 })
 ```
 
-注意 `mode: 'history'` 被替换成了 `history` 参数，需要显式调用 `createWebHistory()`、`createWebHashHistory()` 或 `createMemoryHistory()`。
+Note that `mode: 'history'` was replaced by the `history` option, and you must explicitly call `createWebHistory()`, `createWebHashHistory()`, or `createMemoryHistory()`.
 
 ## Route Guard Adjustments
 
-`beforeRouteEnter`、`beforeRouteUpdate`、`beforeRouteLeave` 在组合式 API 中的写法有变化：
+The composition-API equivalents of `beforeRouteEnter`, `beforeRouteUpdate`, and `beforeRouteLeave` have changed:
 
 ```javascript
 import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'
@@ -62,9 +62,9 @@ export default {
 
 ## Common Pitfalls
 
-**1. `*` 通配路由不再支持**
+**1. The `*` wildcard route is no longer supported**
 
-Vue Router 4 移除了 `*` 通配符，改用 `/:pathMatch(.*)*`：
+Vue Router 4 removed the `*` wildcard in favor of `/:pathMatch(.*)*`:
 
 ```javascript
 // Vue Router 3
@@ -76,9 +76,9 @@ Vue Router 4 移除了 `*` 通配符，改用 `/:pathMatch(.*)*`：
 { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ```
 
-**2. `$router` 和 `$route` 类型变化**
+**2. The `$router` and `$route` types changed**
 
-在 TypeScript 项目中，需要使用 `useRouter()` 和 `useRoute()` 获取类型安全的实例：
+In TypeScript projects, you should use `useRouter()` and `useRoute()` to get type-safe instances:
 
 ```typescript
 import { useRouter, useRoute } from 'vue-router'
@@ -94,9 +94,9 @@ export default {
 }
 ```
 
-**3. 移除了 `router.match`**
+**3. `router.match` was removed**
 
-用 `router.resolve()` 替代：
+Use `router.resolve()` instead:
 
 ```javascript
 // Vue Router 3
@@ -108,18 +108,18 @@ const resolved = router.resolve('/path')
 
 ## Migration Strategy
 
-我们采用的是渐进式迁移：
+We went with an incremental migration:
 
-1. 先升级 Vue Router 包，不改业务代码，利用兼容层先跑起来
-2. 逐个文件替换 API，优先处理路由定义和守卫
-3. 最后统一处理 TypeScript 类型问题
-4. 充分测试动态路由和嵌套路由场景
+1. First upgrade the Vue Router package without touching business code, leaning on the compatibility layer to get things running
+2. Replace the APIs file by file, prioritizing route definitions and guards
+3. Finally, tackle the TypeScript type issues in one pass
+4. Test dynamic and nested route scenarios thoroughly
 
-整个迁移过程大约花了 2 周，主要时间花在类型修复和边界用例测试上。
+The whole migration took about two weeks, most of it spent on type fixes and edge-case testing.
 
 ## Summary
 
-- Vue Router 4 的 API 设计更加函数化，和 Vue 3 的组合式 API 风格一致
-- 通配路由、路由守卫写法变化是主要的 breaking change
-- TypeScript 支持显著增强，`useRouter`/`useRoute` 是推荐方式
-- 渐进式迁移策略能有效降低风险
+- Vue Router 4's API is more functional and aligns with Vue 3's composition-API style
+- The wildcard-route and route-guard changes are the main breaking changes
+- TypeScript support is greatly improved; `useRouter`/`useRoute` is the recommended approach
+- An incremental migration strategy effectively lowers risk

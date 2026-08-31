@@ -1,5 +1,5 @@
 ---
-title: "Vue 3.6 Reactivity Optimization: Vapor Mode  & ReactivitySystem重新设计"
+title: "Vue 3.6 Reactivity Optimization: Vapor Mode and a Redesigned Reactivity System"
 date: 2025-08-06 09:40:17
 tags:
   - Vue

@@ -4,7 +4,7 @@ date: 2022-03-14 16:44:26
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 可变元组类型 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
+description: "TypeScript variadic tuple types are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 218
 ---
 

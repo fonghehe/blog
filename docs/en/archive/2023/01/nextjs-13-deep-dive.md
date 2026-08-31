@@ -4,11 +4,11 @@ date: 2023-01-03 14:50:54
 tags:
   - Next.js
 readingTime: 1
-description: "Next.js 14 新特性汇总在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 188
+description: "A Next.js 14 new features summary has evolved quickly in recent years. This article digs into how it works and how to apply it in practice."
+wordCount: 148
 ---
 
-Next.js 14 新特性汇总在近年来发展迅速，本文将深入分析其原理和实践方法。
+A Next.js 14 new features summary has evolved quickly in recent years. This article digs into how it works and how to apply it in practice.
 
 ## Basic Concepts
 
@@ -65,7 +65,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Practical Application
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 使用示例
@@ -86,7 +86,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Best Practices
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 工具函数封装
@@ -114,10 +114,10 @@ function createHandler(options = {}) {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+With this pattern, the code's maintainability improves.
 
 ## Summary
 
 - Next.js 14 新特性汇总的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
+- In real projects, choosing the right solution matters more than chasing the newest technology
+- Keep code style consistent across the team to cut maintenance costs

@@ -153,4 +153,4 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 ## Summary
 
-Angular Material covers 90% of enterprise UI needs. Combined with Angular CDK it handles more complex interaction scenarios. The key is to set up a shared `MaterialModule` to avoid repeated imports in every feature module.
+Angular Material covers 90% of enterprise UI needs. Combined with Angular CDK, it handles more complex interaction scenarios. The key is to set up a shared `MaterialModule` to avoid repeated imports in every feature module.

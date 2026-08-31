@@ -76,11 +76,11 @@ function UserList() {
 }
 ```
 
-React Query 提供的不隻是更簡潔的寫法，還有：
+React Query 提供的不只是更簡潔的寫法，還有：
 
-- **自動緩存**：相同 key 的數據隻請求一次
+- **自動緩存**：相同 key 的數據只請求一次
 - **後臺刷新**：窗口重新聚焦時自動重新請求
-- **去重**：多個組件請求同一數據時隻發一次請求
+- **去重**：多個組件請求同一數據時只發一次請求
 - **自動 GC**：未使用的緩存自動清除
 
 ## 緩存與 staleTime
@@ -120,7 +120,7 @@ function CreateUser() {
       onClick={() => mutation.mutate({ name: "Alice" })}
       disabled={mutation.isLoading}
     >
-      {mutation.isLoading ? "創建中..." : "創建用户"}
+      {mutation.isLoading ? "創建中..." : "創建用戶"}
     </button>
   );
 }

@@ -4,7 +4,7 @@ date: 2022-05-04 14:50:34
 tags:
   - Frontend
 readingTime: 1
-description: "In daily development, Jotai v2 原子化状态改进 is being used more and more frequently. This article systematically explains its usage, principles, and optimization stra"
+description: "The atomic-state improvements in Jotai v2 matter more and more in everyday development. This article systematically covers their usage, mechanics, and practical strategies."
 wordCount: 171
 ---
 

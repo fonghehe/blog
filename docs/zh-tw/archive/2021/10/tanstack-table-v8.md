@@ -6,10 +6,10 @@ tags:
   - TypeScript
 readingTime: 2
 description: "關於TanStack Table v8 資料表格，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 307
+wordCount: 305
 ---
 
-關於TanStack Table v8 資料表格，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於TanStack Table v8 資料表格，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 
@@ -36,7 +36,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 高階特性
 

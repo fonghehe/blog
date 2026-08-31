@@ -4,15 +4,15 @@ date: 2020-02-03 15:25:31
 tags:
   - Vue
 readingTime: 3
-description: "首屏加载性能是前端优化的核心指标之一。Vue 项目的路由级懒加载已经很常见，但组件级懒加载、图片懒加载、数据懒加载这些更细粒度的策略同样值得深入掌握。本文从工程实践出发，整理一套完整的懒加载方案。"
-wordCount: 370
+description: "First-screen load performance is a core metric in frontend optimization. Route-level lazy loading is already common in Vue projects, but finer-grained strategies—component-level, image, and data lazy loading—are equally worth mastering. This article lays out a complete lazy-loading playbook drawn from engineering practice."
+wordCount: 247
 ---
 
-首屏加载性能是前端优化的核心指标之一。Vue 项目的路由级懒加载已经很常见，但组件级懒加载、图片懒加载、数据懒加载这些更细粒度的策略同样值得深入掌握。本文从工程实践出发，整理一套完整的懒加载方案。
+First-screen load performance is one of the core metrics in front-end optimization. Route-level lazy loading is already common in Vue projects, but finer-grained strategies — component-level lazy loading, image lazy loading, and data lazy loading — are just as worth mastering. Drawing on engineering practice, this article lays out a complete lazy-loading playbook.
 
 ## Route Lazy Loading
 
-最基础也最有效的优化手段，将路由组件拆分到独立 chunk。
+The most basic yet most effective optimization: split route components into separate chunks.
 
 ```javascript
 // router/index.js
@@ -56,11 +56,11 @@ const router = createRouter({
 export default router
 ```
 
-`webpackChunkName` 注释让打包产物有可读的文件名，方便排查和缓存管理。
+The `webpackChunkName` comment gives the bundled output a readable filename, which makes debugging and cache management easier.
 
 ## Component-Level Lazy Loading
 
-不是所有组件都需要首屏加载。对于模态框、抽屉、编辑器这类"按需出现"的组件，可以用 `defineAsyncComponent` 实现懒加载。
+Not every component needs to load on the first screen. For components that appear on demand — modals, drawers, editors — you can lazy-load them with `defineAsyncComponent`.
 
 ```vue
 <template>
@@ -103,9 +103,9 @@ export default {
 </script>
 ```
 
-## Intersection Observer 实现图片懒加载
+## Lazy-Loading Images with Intersection Observer
 
-图片是最常见的带宽杀手。使用 `IntersectionObserver` API 实现可视区域内才加载真实图片。
+Images are the most common bandwidth hog. Use the `IntersectionObserver` API to load the real image only when it enters the viewport.
 
 ```javascript
 // directives/v-lazy.js
@@ -153,9 +153,9 @@ export default {
 // <img v-lazy="imageUrl" alt="产品图" />
 ```
 
-## 数据懒加载：虚拟滚动
+## Data Lazy Loading: Virtual Scrolling
 
-列表数据量大时（超过 1000 条），即使只渲染可见区域的 DOM 也能大幅提升性能。
+When a list is large (over 1,000 rows), rendering only the DOM in the visible area can dramatically improve performance.
 
 ```vue
 {% raw %}
@@ -224,8 +224,8 @@ export default {
 
 ## Summary
 
-- 路由懒加载用 `() => import()` 配合 `webpackChunkName`，效果立竿见影
-- `defineAsyncComponent` 支持自定义 loading/error 组件和超时配置
-- 图片懒加载使用 IntersectionObserver，设置 `rootMargin` 提前加载
-- 大列表用虚拟滚动，只渲染可视区域内的 DOM，性能提升可达数十倍
-- 懒加载的核心原则：不在首屏的代码和资源，一律按需加载
+- Route-level lazy loading with `() => import()` plus `webpackChunkName` pays off immediately
+- `defineAsyncComponent` supports custom loading/error components and a timeout setting
+- For image lazy loading, use IntersectionObserver and set `rootMargin` to start loading ahead of time
+- For large lists, use virtual scrolling and render only the DOM in the visible area — a performance gain of up to tens of times
+- The core principle of lazy loading: anything not needed on the first screen should be loaded on demand

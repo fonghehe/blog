@@ -3,20 +3,20 @@ title: "Vue 3 TeleportとSuspenseコンポーネント"
 date: 2020-08-03 14:49:22
 tags:
   - Vue
-readingTime: 4
+readingTime: 6
 description: "Vue 3 新增了两个内置组件：Teleport 和 Suspense。一个解决 DOM 结构嵌套问题，一个解决异步组件加载状态问题。这两个在实际项目中用得非常频繁，特别是 Teleport，几乎是模态框组件的标配了。"
-wordCount: 691
+wordCount: 1108
 ---
 
-Vue 3 新增了两个内置组件：Teleport 和 Suspense。一个解决 DOM 结构嵌套问题，一个解决异步组件加载状态问题。这两个在实际项目中用得非常频繁，特别是 Teleport，几乎是模态框组件的标配了。
+Vue 3 には組み込みコンポーネントとして Teleport と Suspense の 2 つが追加された。一方は DOM 構造のネスト問題を解決し、もう一方は非同期コンポーネントの読み込み状態の問題を解決する。どちらも実際のプロジェクトで非常によく使われる。とりわけ Teleport は、モーダルコンポーネントの事実上の標準になっている。
 
 ## Teleport：DOMツリーの任意の場所にコンポーネントをレンダリング
 
 ### なぜTeleportが必要なのか
 
-做弹窗、Toast、Drawer 这类浮层组件时，我们经常遇到一个问题：组件的 DOM 结构嵌套在父组件里，但我们需要它渲染到 body 下面，否则会被 `overflow: hidden` 或 `z-index` 影响。
+モーダルや Toast、Drawer といったオーバーレイ系コンポーネントを作る際、よく次のような問題に直面する。コンポーネントの DOM 構造が親コンポーネントの中にネストされているのに、実際には body 直下に描画したい――そうしないと `overflow: hidden` や `z-index` の影響を受けてしまうのだ。
 
-以前的解决方案是：手动操作 DOM，或者用 Portal 库。Vue 3 的 Teleport 是原生方案。
+従来の解決策は、DOM を手動で操作するか、Portal ライブラリを使うかのいずれかだった。Vue 3 の Teleport はネイティブな解決策だ。
 
 ```vue
 <template>
@@ -79,7 +79,7 @@ function moveToFooter() {
 
 ### 同じターゲットへの複数のTeleport
 
-多个 Teleport 可以渲染到同一个目标元素，它们按声明顺序追加：
+複数の Teleport を同じターゲット要素に描画でき、宣言順に追加される：
 
 ```vue
 <template>
@@ -97,7 +97,7 @@ function moveToFooter() {
 
 ### Teleportの無効化
 
-有时候在某些条件下需要禁用 Teleport（比如单元测试时）：
+状況によっては Teleport を無効にしたい場合がある（たとえばユニットテスト時など）：
 
 ```vue
 <template>
@@ -174,7 +174,7 @@ export function useToast() {
 
 ### 基本的な使い方
 
-Suspense 让我们可以声明式地处理异步组件的加载状态。当子组件（或子组件内的 setup 函数）返回 Promise 时，Suspense 会等待 Promise 完成：
+Suspense を使うと、非同期コンポーネントの読み込み状態を宣言的に扱える。子コンポーネント（またはその中の setup 関数）が Promise を返すと、Suspense はその Promise が完了するのを待つ：
 
 ```vue
 <template>
@@ -229,7 +229,7 @@ const user = await res.json()
 
 ### ネストされたSuspense
 
-可以嵌套 Suspense 实现更细粒度的加载控制：
+Suspense をネストさせると、よりきめ細かい読み込み制御が実現できる：
 
 ```vue
 <template>
@@ -262,7 +262,7 @@ const user = await res.json()
 
 ### 配合 Teleport + Suspense
 
-一个常见的场景：弹窗内有异步数据加载。Teleport 负责渲染位置，Suspense 负责加载状态：
+よくある場面として、モーダル内で非同期データを読み込む場合がある。Teleport が描画位置を担い、Suspense が読み込み状態を担う：
 
 ```vue
 <template>
@@ -288,7 +288,7 @@ const user = await res.json()
 
 ### 错误处理
 
-Suspense 目前没有专门的 error 插槽（这还在 RFC 讨论中），需要配合 `onErrorCaptured` 处理错误：
+Suspense には現時点で専用の error スロットはない（これは RFC でまだ議論中だ）。`onErrorCaptured` と組み合わせてエラーを処理する必要がある：
 
 ```vue
 {% raw %}
@@ -330,15 +330,15 @@ function retry() {
 
 ## 注意事項
 
-1. **Suspense 仍然是实验性特性** —— Vue 3 正式发布时 Suspense 还是 experimental 状态，API 可能会变，生产环境慎用
-2. **Teleport 的组件实例关系不变** —— 虽然 DOM 渲染到了别处，但 Vue 组件树中的父子关系不变，provide/inject 照常工作
-3. **Suspense 要求 setup 是 async 的或使用了 defineAsyncComponent** —— 普通的 setup 函数不会触发 Suspense
+1. **Suspense は引き続き実験的（experimental）な機能だ** —— Vue 3 の正式リリース時点でも Suspense は experimental の状態にあり、API が変わる可能性があるため、本番環境での利用は慎重に
+2. **Teleport でもコンポーネントインスタンスの関係は変わらない** —— DOM は別の場所に描画されても、Vue のコンポーネントツリー上の親子関係はそのままであり、provide/inject は通常通り機能する
+3. **Suspense を機能させるには setup が async であるか、defineAsyncComponent を使っている必要がある** —— 普通の setup 関数では Suspense は発動しない
 
 ## まとめ
 
-- Teleport 将子组件的 DOM 渲染到指定位置，解决模态框/Toast 等浮层的 z-index 和 overflow 问题
-- Teleport 支持动态目标、多个 Teleport 到同一目标、以及禁用模式
-- Suspense 声明式处理异步组件的加载和错误状态
-- Suspense 支持嵌套，可以实现更细粒度的加载控制
-- Suspense 目前仍是实验性特性，生产使用要关注 API 变化
-- Teleport + Suspense 组合是处理异步弹窗内容的最佳实践
+- Teleport は子コンポーネントの DOM を指定した位置に描画し、モーダルや Toast といったオーバーレイの z-index や overflow の問題を解決する
+- Teleport は動的ターゲット、同一ターゲットへの複数 Teleport、および無効化モードに対応している
+- Suspense は非同期コンポーネントの読み込み状態とエラー状態を宣言的に扱う
+- Suspense はネストに対応しており、よりきめ細かい読み込み制御が可能になる
+- Suspense は現時点でも実験的（experimental）な特性であり、本番での利用では API の変化に注意が必要だ
+- Teleport と Suspense を組み合わせるのは、非同期のモーダル内容を扱ううえでのベストプラクティスだ

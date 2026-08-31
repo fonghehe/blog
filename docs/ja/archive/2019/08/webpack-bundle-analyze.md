@@ -4,12 +4,12 @@ date: 2019-08-07 15:09:22
 tags:
   - Webpack
   - エンジニアリング
-readingTime: 4
-description: "项目上线后用户反馈首屏加载慢？打包产物体积过大是前端性能优化中最常见的瓶颈之一。`webpack-bundle-analyzer` 是一个可视化分析工具，能够以直观的树状图展示打包结果，帮助我们精准定位体积问题。本文将深入讲解如何使用它进行打包分析与优化。"
-wordCount: 867
+readingTime: 6
+description: "プロジェクト公開後にユーザーから初期ロードが遅いというフィードバックを受けたことはないだろうか。バンドル成果物のサイズ過大は、フロントエンドのパフォーマンス最適化で最も一般的なボトルネックの一つだ。`webpack-bundle-analyzer` はビジュアル分析ツールで、直感的なツリーマップでバンドル結果を表示し、サイズ問題の正確な特定を支援する。本記事ではこれを使ったバンドル分析と最適化の方法を詳しく解説する。"
+wordCount: 1298
 ---
 
-项目上线后用户反馈首屏加载慢？打包产物体积过大是前端性能优化中最常见的瓶颈之一。`webpack-bundle-analyzer` 是一个可视化分析工具，能够以直观的树状图展示打包结果，帮助我们精准定位体积问题。本文将深入讲解如何使用它进行打包分析与优化。
+プロジェクト公開後にユーザーから初期ロードが遅いというフィードバックを受けたことはないだろうか。バンドル成果物のサイズ過大は、フロントエンドのパフォーマンス最適化で最も一般的なボトルネックの一つだ。`webpack-bundle-analyzer` はビジュアル分析ツールで、直感的なツリーマップでバンドル結果を表示し、サイズ問題の正確な特定を支援する。本記事ではこれを使ったバンドル分析と最適化の方法を詳しく解説する。
 
 ## インストールと基本設定
 
@@ -17,7 +17,7 @@ wordCount: 867
 npm install --save-dev webpack-bundle-analyzer
 ```
 
-### 在 Webpack 配置中集成
+### Webpack設定への統合
 
 ```js
 // webpack.config.js
@@ -26,24 +26,24 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 module.exports = {
   plugins: [
     new BundleAnalyzerPlugin({
-      // 运行模式：server / static / json
+      // 実行モード：server / static / json
       analyzerMode: 'server',
-      // 分析服务器端口
+      // 分析サーバーのポート
       analyzerPort: 8888,
-      // 是否在打包后自动打开浏览器
+      // バンドル後にブラウザを自動で開くかどうか
       openAnalyzer: true,
-      // 生成的报告文件名（static 和 json 模式）
+      // 生成されるレポートファイル名（staticおよびjsonモード）
       reportFilename: 'report.html',
-      // 模块大小计算方式：stat / parsed / gzip
+      // モジュールサイズの計算方法：stat / parsed / gzip
       defaultSizes: 'parsed',
     }),
   ],
 };
 ```
 
-### 通过 npm scripts 使用
+### npm scriptsでの使用
 
-更推荐不修改 Webpack 配置，而是通过命令行按需分析：
+Webpack設定を変更せず、コマンドラインで必要に応じて分析する方法をより推奨する：
 
 ```json
 {
@@ -61,46 +61,46 @@ if (process.env.ANALYZE) {
 }
 ```
 
-这样只在需要分析时才启动，不影响日常构建。
+これで分析が必要な時だけ起動し、通常のビルドに影響しない。
 
 ## 可視化レポートの理解
 
-执行 `npm run analyze` 后，浏览器会自动打开报告页面。报告是一个交互式的树状图（Treemap），核心信息包括：
+`npm run analyze` を実行すると、ブラウザが自動的にレポートページを開く。レポートはインタラクティブなツリーマップ（Treemap）で、以下のコア情報が含まれる：
 
-### 三种体积度量
+### 3つのサイズ指標
 
-- **Stat size** — 文件在磁盘上的原始大小（未经任何处理）
-- **Parsed size** — 经过 Webpack 处理后的大小（包含 uglify/terser 压缩）
-- **Gzip size** — 经过 gzip 压缩后的大小（更接近用户实际下载大小）
+- **Stat size** — ディスク上の元のファイルサイズ（未処理）
+- **Parsed size** — Webpack処理後のサイズ（uglify/terser圧縮込み）
+- **Gzip size** — gzip圧縮後のサイズ（ユーザーの実際のダウンロードサイズに近い）
 
-在实际优化中，我们应以 **Gzip size** 为基准衡量优化效果。
+実際の最適化では、**Gzip size** を基準に最適化効果を測定すべきである。
 
-### 色块解读
+### カラーブロックの解釈
 
-每个色块代表一个模块或 chunk：
+各カラーブロックはモジュールまたはチャンクを表す：
 
-- 色块越大，体积越大
-- 相同颜色的色块属于同一个 chunk
-- 可以点击色块查看具体的依赖树
+- ブロックが大きいほどサイズが大きい
+- 同じ色のブロックは同じチャンクに属する
+- ブロックをクリックすると依存関係ツリーを確認できる
 
 ## 実践：バンドルサイズ超過の調査
 
-### 案例一：moment.js locale 文件全部打入
+### ケース1：moment.jsのロケールファイルがすべてバンドルされる
 
-一个常见问题：`moment.js` 默认会将所有 locale 文件打包进来。
+よくある問題：`moment.js` はデフォルトで全てのロケールファイルをバンドルしてしまう。
 
 ```
-检查报告中 moment 目录：
+レポートのmomentディレクトリを確認：
   moment/
-  ├── moment.js          (约 70KB)
+  ├── moment.js          (約70KB)
   ├── locale/
-  │   ├── zh-cn.js       (约 2KB)
-  │   ├── en-gb.js       (约 2KB)
-  │   ├── ...             (共 100+ 个 locale 文件)
-  │   └── (总计约 200KB+)
+  │   ├── zh-cn.js       (約2KB)
+  │   ├── en-gb.js       (約2KB)
+  │   ├── ...             (合計100以上のロケールファイル)
+  │   └── (合計約200KB以上)
 ```
 
-解决方案：使用 `IgnorePlugin` 只保留需要的 locale。
+解決策：`IgnorePlugin` を使って必要なロケールのみ保持する。
 
 ```js
 // webpack.config.js
@@ -115,52 +115,52 @@ module.exports = {
   ],
 };
 
-// 在代码中手动引入需要的 locale
+// コード内で必要なロケールを手動インポート
 import moment from 'moment';
 import 'moment/locale/zh-cn';
 
 moment.locale('zh-cn');
 ```
 
-优化前后对比：moment 相关体积从约 270KB 降低到约 72KB。
+最適化前後の比較：moment関連のサイズが約270KBから約72KBに削減。
 
-### 案例二：lodash 全量引入
+### ケース2：lodashのフルインポート
 
-在报告中发现整个 lodash 库被完整引入，约 70KB。实际项目只用到了 `debounce`、`get`、`cloneDeep` 几个方法。
+レポートでlodashライブラリ全体がインポートされており、約70KBであることが判明。実際のプロジェクトでは `debounce`、`get`、`cloneDeep` 程度のメソッドしか使っていない。
 
-解决方案一：使用 lodash-es 配合 tree shaking
+解決策1：lodash-esを使ってtree shakingを活用
 
 ```js
 // webpack.config.js
 module.exports = {
   resolve: {
     alias: {
-      // 将 lodash 映射到 lodash-es，支持 ES modules 和 tree shaking
+      // lodashをlodash-esにマッピングし、ES modulesとtree shakingをサポート
       'lodash': 'lodash-es',
     },
   },
 };
 
-// 源码中按需引入
+// ソースコードでオンデマンドインポート
 import { debounce, get, cloneDeep } from 'lodash';
 ```
 
-解决方案二：使用 babel-plugin-import 或手动按需引入
+解決策2：babel-plugin-importを使うか手動でオンデマンドインポート
 
 ```js
-// 直接引入具体模块
+// 具体的なモジュールを直接インポート
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 ```
 
-优化前后对比：lodash 相关体积从 70KB 降低到约 8KB。
+最適化前後の比較：lodash関連のサイズが70KBから約8KBに削減。
 
-### 案例三：重复依赖
+### ケース3：重複依存
 
-报告中发现了多个不同版本的相同库。例如 `axios` 出现了两次，因为不同的第三方组件各自打包了一份。
+レポートで同じライブラリの異なるバージョンが複数見つかった。たとえば `axios` が2回登場しており、異なるサードパーティコンポーネントがそれぞれ独自にバンドルしているためだ。
 
-解决方案：
+解決策：
 
 ```json
 {
@@ -170,9 +170,9 @@ import cloneDeep from 'lodash/cloneDeep';
 }
 ```
 
-在 `package.json` 中使用 `resolutions`（Yarn）强制所有依赖使用同一版本。
+`package.json` で `resolutions`（Yarn）を使い、すべての依存を同一バージョンに強制する。
 
-也可以通过 Webpack 的 `resolve.alias` 统一：
+Webpackの `resolve.alias` で統一することもできる：
 
 ```js
 module.exports = {
@@ -186,9 +186,9 @@ module.exports = {
 
 ## 高度な最適化戦略
 
-### 1. 使用 externals 排除公共库
+### 1. externalsで共通ライブラリを除外
 
-对于 CDN 引入的库，应该在 Webpack 中配置 externals，避免重复打包：
+CDNで読み込むライブラリについては、Webpackでexternalsを設定して重複バンドルを避けるべきだ：
 
 ```js
 // webpack.config.js
@@ -207,7 +207,7 @@ module.exports = {
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
-### 2. 配置 splitChunks 精细控制
+### 2. splitChunksの詳細設定
 
 ```js
 module.exports = {
@@ -220,7 +220,7 @@ module.exports = {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name(module) {
-            // 将每个 npm 包拆分成独立 chunk，便于缓存
+            // 各npmパッケージを独立したチャンクに分割し、キャッシュを容易にする
             const packageName = module.context.match(
               /[\\/]node_modules[\\/](.*?)([\\/]|$)/
             )[1];
@@ -234,7 +234,7 @@ module.exports = {
 };
 ```
 
-### 3. 使用动态 import 拆分路由
+### 3. 動的importでルートを分割
 
 ```jsx
 const Dashboard = React.lazy(() => import(
@@ -248,9 +248,9 @@ const Settings = React.lazy(() => import(
 ));
 ```
 
-### 4. 分析 CSS 体积
+### 4. CSSサイズの分析
 
-CSS 文件也值得关注。如果使用了 `mini-css-extract-plugin`，可以查看 CSS 的体积分布：
+CSSファイルも注目すべきだ。`mini-css-extract-plugin` を使用している場合、CSSのサイズ分布を確認できる：
 
 ```js
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -274,7 +274,7 @@ module.exports = {
 
 ## バンドルサイズの自動監視
 
-为了防止体积回退，可以在 CI 中加入体积检查：
+サイズの逆行を防ぐため、CIにサイズチェックを組み込める：
 
 ```js
 // scripts/check-bundle-size.js
@@ -283,7 +283,7 @@ const path = require('path');
 const gzipSize = require('gzip-size');
 
 const BUILD_DIR = path.resolve(__dirname, '../build/static/js');
-const MAX_SIZE_KB = 250; // 主 bundle 最大 250KB (gzip)
+const MAX_SIZE_KB = 250; // メインバンドル最大250KB（gzip）
 
 const files = fs.readdirSync(BUILD_DIR).filter(f => f.endsWith('.js'));
 
@@ -296,7 +296,7 @@ files.forEach(file => {
   console.log(`${file}: ${sizeKB}KB (gzip)`);
 
   if (file.includes('main') && size > MAX_SIZE_KB * 1024) {
-    console.error(`主 bundle 超过 ${MAX_SIZE_KB}KB 限制！`);
+    console.error(`メインバンドルが${MAX_SIZE_KB}KBの制限を超過！`);
     failed = true;
   }
 });
@@ -318,9 +318,9 @@ if (failed) {
 
 ## まとめ
 
-- `webpack-bundle-analyzer` 以可视化方式展示打包产物，是定位体积问题的首选工具
-- 关注 Gzip size 而非 Stat size，它更接近用户实际下载量
-- 常见体积问题：moment locale 全量打包、lodash 全量引入、重复依赖
-- 使用 `IgnorePlugin`、`externals`、`splitChunks` 等手段可以显著降低 bundle 体积
-- 建议在 CI 流程中加入体积监控，防止优化成果回退
-- 定期使用 analyzer 扫描项目，新引入的第三方库往往是体积增长的主要原因
+- `webpack-bundle-analyzer` はバンドル成果物をビジュアルで表示し、サイズ問題の特定に最適なツールである
+- Stat sizeではなくGzip sizeに注目する。ユーザーの実際のダウンロード量に近い
+- よくあるサイズ問題：momentロケールのフルバンドル、lodashのフルインポート、重複依存
+- `IgnorePlugin`・`externals`・`splitChunks` などを活用することでバンドルサイズを大幅に削減できる
+- CIパイプラインにサイズ監視を組み込み、最適化成果の逆行を防ぐことを推奨する
+- 定期的にanalyzerでプロジェクトをスキャンする。新しく追加したサードパーティライブラリがサイズ増加の主因となることが多い

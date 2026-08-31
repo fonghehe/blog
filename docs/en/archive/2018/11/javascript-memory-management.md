@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Frontend pages that get slower over time usually have a memory leak. Understanding JavaScript's memory management helps you write code that doesn't leak."
-wordCount: 191
+wordCount: 190
 ---
 
 Frontend pages that get slower over time usually have a memory leak. Understanding JavaScript's memory management helps you write code that doesn't leak.
@@ -61,7 +61,7 @@ function foo() {
 }
 ```
 
-**2. Uncleaned timers**
+**2. Uncleared timers**
 
 ```javascript
 // ❌ Timer keeps running after component is destroyed, holding a reference to the component
@@ -77,7 +77,7 @@ beforeDestroy() {
 }
 ```
 
-**3. Unremoved event listeners**
+**3. Lingering event listeners**
 
 ```javascript
 // ❌
@@ -92,7 +92,7 @@ beforeDestroy() {
 }
 ```
 
-**4. Uncleaned Vue event bus listeners**
+**4. Uncleared Vue event bus listeners**
 
 ```javascript
 // ❌
@@ -127,7 +127,7 @@ function attachEvent(element) {
 
 ## Finding Memory Leaks with Chrome DevTools
 
-1. **Performance panel**: record a session and check whether the memory line chart keeps climbing
+1. **Performance panel**: record a session and check whether the memory graph keeps climbing
 2. **Memory panel → Heap snapshot**:
    - Take a snapshot before the operation
    - Perform the suspicious operation (e.g., open and close a modal)

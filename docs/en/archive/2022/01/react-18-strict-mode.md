@@ -4,11 +4,11 @@ date: 2022-01-05 10:39:10
 tags:
   - React
 readingTime: 1
-description: "Frequently used in daily work, React 18 严格模式，Here is a systematic summary to help everyone better understand and apply it."
-wordCount: 144
+description: "React 18 strict mode comes up constantly in daily work, so here is a systematic summary to help you understand and apply it better."
+wordCount: 139
 ---
 
-Frequently used in daily work, React 18 严格模式，Here is a systematic summary to help everyone better understand and apply it.
+Frequently used in daily work, React 18 Strict Mode deserves a systematic summary to help everyone better understand and apply it.
 
 ## Basic Concepts
 
@@ -86,7 +86,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Best Practices
 
-我们可以这样实现：
+Here is how we can implement it:
 
 ```javascript
 // 使用示例

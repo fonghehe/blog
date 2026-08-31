@@ -4,20 +4,20 @@ date: 2020-03-10 17:20:21
 tags:
   - Node.js
 readingTime: 2
-description: "Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上批评了 Node.js 的十大设计遗憾，随后宣布了 Deno 项目。现在 Deno 已经进入候选版本阶段，是时候体验一下了。"
-wordCount: 283
+description: "Node.js creator Ryan Dahl criticized Node.js's ten design regrets at JSConf 2018 and then announced Deno. Now that Deno has reached its release candidate stage, it's time to give it a try."
+wordCount: 186
 ---
 
-Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上批评了 Node.js 的十大设计遗憾，随后宣布了 Deno 项目。现在 Deno 已经进入候选版本阶段，是时候体验一下了。
+Ryan Dahl, the creator of Node.js, criticized Node.js's ten "design regrets" at JSConf 2018 and then announced the Deno project. Deno has now reached its release candidate stage, so it's time to give it a try.
 
 ## What Problems Deno Solves with Node.js
 
-Ryan Dahl 总结的 Node.js 十大遗憾中，Deno 重点解决：
+Of the ten regrets Ryan Dahl summarized about Node.js, Deno mainly addresses:
 
-1. **安全性**：Node.js 默认可以访问所有系统资源，Deno 默认沙箱隔离
-2. **模块系统**：不使用 `node_modules`，直接通过 URL 导入
-3. **TypeScript 支持**：内置 TypeScript 编译器
-4. **去中心化**：不需要 npm registry
+1. **Security**: Node.js can access all system resources by default, while Deno sandboxes by default.
+2. **Module system**: No `node_modules`; modules are imported directly via URL.
+3. **TypeScript support**: A TypeScript compiler is built in.
+4. **Decentralization**: No npm registry required.
 
 ## Quick Start
 
@@ -45,7 +45,7 @@ deno run hello.ts
 
 ## Permission System
 
-这是 Deno 最大的安全创新：
+This is Deno's biggest security innovation:
 
 ```typescript
 // file.ts
@@ -71,7 +71,7 @@ deno run --allow-net=api.example.com server.ts
 deno run --allow-all file.ts
 ```
 
-## URL 导入模块
+## Importing Modules via URL
 
 ```typescript
 // 不需要 npm install，直接导入
@@ -92,7 +92,7 @@ deno run --allow-net server.ts
 # 第一次运行时下载依赖，之后有缓存
 ```
 
-## 与 Node.js 的 API 对比
+## API Comparison with Node.js
 
 ```typescript
 // 文件操作
@@ -119,7 +119,7 @@ app.use(ctx => {
 await app.listen({ port: 3000 });
 ```
 
-## 现阶段的局限
+## Current Limitations
 
 ```typescript
 // 1. 生态系统：npm 有 100 万+ 包，Deno 还很少
@@ -131,7 +131,7 @@ import * as path from 'https://deno.land/std/path/mod.ts';
 // 5. 原生模块：C++ addon 不支持
 ```
 
-## 适合什么场景
+## When to Use It
 
 ```markdown
 现在适合：
@@ -147,8 +147,8 @@ import * as path from 'https://deno.land/std/path/mod.ts';
 
 ## Summary
 
-- Deno 在安全性、TypeScript 支持、模块系统上确实改进了 Node.js 的痛点
-- 权限系统是最大亮点，默认最小权限原则
-- URL 导入省去了 node_modules，但也带来了网络依赖问题
-- 目前生态和工具链还不成熟，适合尝鲜和工具脚本，不适合生产项目
-- 持续关注，1.0 正式发布后再评估是否引入
+- Deno genuinely improves on Node.js's pain points in security, TypeScript support, and the module system.
+- The permission system is the standout feature, following least-privilege by default.
+- URL imports remove the need for node_modules, but introduce a network dependency.
+- The ecosystem and tooling aren't mature yet—good for experimentation and utility scripts, but not for production.
+- I'll keep watching and re-evaluate whether to adopt it once 1.0 ships.

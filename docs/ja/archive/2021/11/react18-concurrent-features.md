@@ -7,14 +7,14 @@ tags:
 
 readingTime: 2
 description: "React 18 Alpha がリリースされ、試用できるようになりました。2年間待ち望んだ Concurrent 機能がついに正式版となります。"
-wordCount: 341
+wordCount: 326
 ---
 
-React 18 Alpha がリリースされ、試用できるようになりました。2年間待ち望んだ Concurrent 機能がついに正式版となります。
+React 18 Alpha がリリースされ、試用できるようになった。2年間待ち望んだ Concurrent 機能がついに正式版になる。
 
 ## 並行レンダリング
 
-React 18 の核心的な変更点：レンダリングが中断・再開可能なプロセスになります。
+React 18 の最大の変更点：レンダリングが中断・再開可能なプロセスになる。
 
 ```javascript
 // React 17：同期レンダリング
@@ -27,7 +27,7 @@ const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
-この1行の変更だけで、多くの並行機能が有効になります。
+この1行の変更だけで、多くの並行機能が有効になる。
 
 ## Automatic Batching（自動バッチ処理）
 
@@ -54,7 +54,7 @@ setTimeout(() => {
 });
 ```
 
-コードの変更は一切不要で、パフォーマンスが自動的に向上します。
+コードの変更は一切不要で、パフォーマンスが自動的に向上する。
 
 ## useTransition
 
@@ -169,8 +169,8 @@ function FormField({ label, type }) {
 
 ## まとめ
 
-- Automatic Batching は React 18 の最も実用的な改善で、コードの変更は不要です
-- useTransition：緊急/非緊急の更新を区別し、UI の応答性を維持します
-- Suspense SSR：ストリーミングレンダリングにより、ユーザーはより早くコンテンツを表示できます
-- useId：SSR と CSR で一貫した一意の ID を提供します
-- 正式版は2022年初頭にリリース予定です
+- Automatic Batching は React 18 の最も実用的な改善で、コードの変更は不要だ
+- useTransition：緊急/非緊急の更新を区別し、UI の応答性を維持する
+- Suspense SSR：ストリーミングレンダリングにより、ユーザーはより早くコンテンツを表示できる
+- useId：SSR と CSR で一貫した一意の ID を提供する
+- 正式版は2022年初頭にリリース予定だ

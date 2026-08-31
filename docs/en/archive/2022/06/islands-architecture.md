@@ -4,7 +4,7 @@ date: 2022-06-03 14:50:21
 tags:
   - Frontend
 readingTime: 2
-description: "In daily development, Islands Architecture 岛屿架构 is being used more and more frequently. This article systematically explains its usage, principles, and optimiza"
+description: "The islands architecture is showing up in more and more everyday work. This article systematically covers its usage, rationale, and optimization strategies."
 wordCount: 205
 ---
 

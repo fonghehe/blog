@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In everyday development, type system patterns in frontend are being used with increasing frequency. This article systematically covers their usage, underlying p"
-wordCount: 190
+wordCount: 182
 ---
 
 In everyday development, type system patterns in frontend are being used with increasing frequency. This article systematically covers their usage, underlying principles, and optimization strategies.
@@ -40,7 +40,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 }
 ```
 
-Pay close attention to edge case handling — this is critical in production environments.
+Pay close attention to edge cases — they're critical in production.
 
 ## Internal Mechanics
 
@@ -72,7 +72,7 @@ Performance optimization must be approached in context — not every situation c
 
 ## Real Business Applications
 
-We can improve on this in the following way:
+Here's a practical way to build on this:
 
 ```javascript
 :root {
@@ -127,11 +127,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 }
 ```
 
-This code demonstrates the basic usage. In real projects, you'll also need to account for error handling and edge cases.
+This code shows the basic usage; in real projects you'll also need to handle errors and edge cases.
 
 ## Troubleshooting
 
-Building on this foundation, we can optimize further:
+From here, you can optimize further:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T

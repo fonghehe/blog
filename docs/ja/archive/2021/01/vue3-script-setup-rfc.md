@@ -5,16 +5,16 @@ tags:
   - Vue
   - TypeScript
 
-readingTime: 3
-description: "Vue 3.2 即将带来 `<script setup>` 语法糖，目前 RFC 已经进入最终阶段。这是 Vue 3 Composition API 体验提升最大的一个特性，值得提前了解。"
-wordCount: 414
+readingTime: 4
+description: "Vue 3.2 では `<script setup>` というシンタックスシュガーが登場する（現在 RFC は最終段階）。これは Vue 3 の Composition API において体験を最も大きく向上させる機能であり、早めに知っておく価値がある。"
+wordCount: 726
 ---
 
-Vue 3.2 即将带来 `<script setup>` 语法糖，目前 RFC 已经进入最终阶段。这是 Vue 3 Composition API 体验提升最大的一个特性，值得提前了解。
+Vue 3.2 では `<script setup>` というシンタックスシュガーが登場します（現在 RFC は最終段階）。これは Vue 3 の Composition API において体験を最も大きく向上させる機能であり、早めに知っておく価値があります。
 
 ## なぜ `<script setup>` が必要か
 
-先看当前 Composition API 的写法，一个简单的组件需要大量样板代码：
+現在の Composition API の書き方から見てみましょう。単純なコンポーネントでも大量のボイラープレートコードが必要です：
 
 ```vue
 <!-- 传统 setup() 写法 -->
@@ -43,7 +43,7 @@ export default defineComponent({
 </script>
 ```
 
-每个变量都要在 `return` 里声明一次，组件越大样板越多。`<script setup>` 直接解决了这个问题：
+すべての変数を `return` で一度ずつ宣言する必要があり、コンポーネントが大きくなるほどボイラープレートが増えます。`<script setup>` はこの問題を直接解決します：
 
 ```vue
 <!-- <script setup> 写法 -->
@@ -69,9 +69,9 @@ function increment() {
 
 ## コア機能の解析
 
-**1. 顶层绑定自动暴露**
+**1. トップレベルのバインディングの自動公開**
 
-`<script setup>` 中的顶层 `import`、`ref`、`computed`、函数声明都会自动暴露给模板，不需要手动 `return`：
+`<script setup>` では、トップレベルの `import`、`ref`、`computed`、関数宣言はすべてテンプレートに自動的に公開され、手動で `return` する必要はありません：
 
 ```vue
 <script setup>
@@ -95,9 +95,9 @@ function handleClick() {
 </template>
 ```
 
-**2. 组件自动注册**
+**2. コンポーネントの自動登録**
 
-`import` 进来的组件自动注册，不需要在 `components` 里手动声明：
+`import` したコンポーネントは自動的に登録され、`components` に手動で宣言する必要はありません：
 
 ```vue
 <script setup>
@@ -115,9 +115,9 @@ import Button from './Button.vue'
 </template>
 ```
 
-**3. defineProps / defineEmits 编译宏**
+**3. defineProps / defineEmits コンパイルマクロ**
 
-这两个不需要 import，是编译时宏（compiler macro）：
+これらは import 不要で、コンパイル時のマクロ（compiler macro）です：
 
 ```vue
 <script setup>
@@ -148,9 +148,9 @@ function handleSubmit() {
 </script>
 ```
 
-**4. defineExpose 显式暴露**
+**4. defineExpose による明示的な公開**
 
-默认情况下，`<script setup>` 暴露的是顶层绑定。如果需要暴露子组件的特定方法：
+デフォルトでは、`<script setup>` が公開するのはトップレベルのバインディングです。子コンポーネントの特定のメソッドを公開したい場合は：
 
 ```vue
 <!-- Child.vue -->
@@ -189,7 +189,7 @@ function handleReset() {
 
 ## TypeScript との連携
 
-`<script setup>` 对 TypeScript 的支持很自然：
+`<script setup>` の TypeScript サポートは自然です：
 
 ```vue
 <script setup lang="ts">
@@ -220,7 +220,7 @@ function handleChange(value: string) {
 
 ## 実プロジェクトでの比較
 
-迁移前（Options API 风格）：
+移行前（Options API スタイル）：
 
 ```vue
 <script>
@@ -263,12 +263,12 @@ onMounted(async () => {
 </script>
 ```
 
-代码量减少了，逻辑也更聚合——相关的状态和逻辑在一起，不用在 `data`、`computed`、`methods` 之间跳来跳去。
+コード量が減り、ロジックも集約されます——関連する状態とロジックが一か所にまとまり、`data`、`computed`、`methods` の間を飛び回る必要がなくなります。
 
 ## まとめ
 
-- `<script setup>` 是 Composition API 的语法糖，大幅减少样板代码
-- 顶层绑定自动暴露，组件 import 自动注册，开发体验接近 React Hooks
-- `defineProps` / `defineEmits` / `defineExpose` 是编译宏，不需要 import
-- TypeScript 支持自然，类型推断比 Options API 好很多
-- 预计 Vue 3.2 正式支持，现在可以先在实验性项目中试用
+- `<script setup>` は Composition API のシンタックスシュガーであり、ボイラープレートを大幅に削減する
+- トップレベルのバインディングは自動的に公開され、コンポーネントの import は自動登録されるため、開発体験は React Hooks に近い
+- `defineProps` / `defineEmits` / `defineExpose` はコンパイル時のマクロであり、import は不要だ
+- TypeScript のサポートは自然で、型推論は Options API よりもはるかに優れている
+- Vue 3.2 での正式サポートが予定されており、今は実験的なプロジェクトで先行して試すことができる

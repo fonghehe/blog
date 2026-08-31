@@ -3,9 +3,9 @@ title: "Lighthouse 效能最佳化清單"
 date: 2020-07-29 16:34:33
 tags:
   - 效能最佳化
-readingTime: 2
+readingTime: 1
 description: "最近在團隊中落地Lighthouse 效能最佳化清單，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 281
+wordCount: 279
 ---
 
 最近在團隊中落地Lighthouse 效能最佳化清單，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -71,7 +71,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 調優策略
 

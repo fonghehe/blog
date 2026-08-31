@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Our company's legacy backend system was a jQuery project from 2016. New features needed to be built with Vue, but a full rewrite wasn't feasible. Micro-frontend"
-wordCount: 257
+wordCount: 259
 ---
 
 Our company's legacy backend system was a jQuery project from 2016. New features needed to be built with Vue, but a full rewrite wasn't feasible. Micro-frontends solved this problem.
@@ -146,7 +146,7 @@ window.__MICRO_APP_BUS__.on("theme:change", (theme) => {
 1. **Global variable pollution**: Sub-apps must clean up registered global variables and event listeners when unmounting
 2. **CSS global pollution**: Global styles from third-party UI libraries (Element UI) interfere with each other
 3. **Routing conflicts**: Sub-app routes need `base` configuration to avoid clashing with the main app's routes
-4. **Duplicate dependencies**: Each sub-app bundles Vue separately, increasing size. Use CDN to share
+4. **Duplicate dependencies**: Each sub-app bundles Vue separately, increasing bundle size. Share it via a CDN.
 
 ## Our Migration Roadmap
 

@@ -4,9 +4,9 @@ date: 2026-08-23 11:31:54
 tags:
   - 工程化
   - 安全
-readingTime: 9
+readingTime: 8
 description: "在 pnpm monorepo 中落地依赖自动升级，不是装个 Renovate 就完事。本文覆盖分组策略、automerge 分级、lockfile-only 更新、CI 门禁（typecheck/测试/bundle size）、breaking change codemod 集成和安全漏洞响应流程，附团队实际推行数据。"
-wordCount: 3600
+wordCount: 1582
 ---
 
 去年我们团队的 monorepo 有 12 个 packages、4 个 apps，依赖总数超过 300 个。手动升级依赖的状态是：平均每月花 3 天处理升级 PR，安全漏洞从发布到修复平均 18 天，还时不时因为升级漏改 breaking change 导致线上事故。今年初我们系统性地搭了一套自动升级流水线，三个月后升级耗时降到每月半天，安全漏洞修复周期压到 2 天以内。这篇文章记录完整的配置思路和踩过的坑。

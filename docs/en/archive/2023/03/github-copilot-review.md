@@ -4,11 +4,11 @@ date: 2023-03-15 16:44:36
 tags:
   - Git
 readingTime: 2
-description: "用 GitHub Copilot 已经半年了，说说真实感受。不是广告，也不是恐慌文，就是真实体验。"
-wordCount: 535
+description: "I've been using GitHub Copilot for six months now — here are my honest impressions. Not an ad, not a panic piece, just the real experience."
+wordCount: 530
 ---
 
-用 GitHub Copilot 已经半年了，说说真实感受。不是广告，也不是恐慌文，就是真实体验。
+I've been using GitHub Copilot for six months now — here are my honest impressions. Not an ad, not a panic piece, just the real experience.
 
 ## When Copilot Saves Me Time
 

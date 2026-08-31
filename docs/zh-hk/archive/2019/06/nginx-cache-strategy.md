@@ -5,7 +5,7 @@ tags:
   - 工程化
 readingTime: 6
 description: "前端效能優化離不開緩存策略，而 Nginx 作為最常用的靜態資源服務器，掌握它的緩存設定是每個前端工程師的必備技能。"
-wordCount: 843
+wordCount: 842
 ---
 
 前端性能優化離不開緩存策略，而 Nginx 作為最常用的靜態資源服務器，掌握它的緩存配置是每個前端工程師的必備技能。
@@ -14,7 +14,7 @@ wordCount: 843
 
 在配置 Nginx 之前，先回顧一下瀏覽器緩存的整個流程：
 
-1. 首先檢查 **強緩存**（Expires / Cache-Control），命中則直接使用本地緩存
+1. 先檢查 **強緩存**（Expires / Cache-Control），命中則直接使用本地緩存
 2. 強緩存未命中，進入**協商緩存**（Last-Modified / ETag），向服務器驗證資源是否過期
 3. 服務器返回 304 則使用緩存，返回 200 則返回新資源
 
@@ -74,9 +74,9 @@ server {
 - `expires off` — 不添加緩存頭（使用 Nginx 默認）
 - `expires max` — 緩存 10 年（等同於 `expires 10y`）
 
-## Cache-Control 精細控製
+## Cache-Control 精細控制
 
-有時候 `expires` 不夠靈活，需要直接用 `add_header` 設置 `Cache-Control` 來做更精細的控製。
+有時候 `expires` 不夠靈活，需要直接用 `add_header` 設置 `Cache-Control` 來做更精細的控制。
 
 ```nginx
 server {
@@ -112,7 +112,7 @@ Cache-Control 常用指令速查：
 |
 ------|------|
 | `public` | 瀏覽器和 CDN 都可以緩存 |
-| `private` | 隻有瀏覽器可以緩存 |
+| `private` | 只有瀏覽器可以緩存 |
 | `no-cache` | 可以緩存，但每次必須驗證 |
 | `no-store` | 完全不緩存 |
 | `max-age=N` | 緩存有效期（秒） |
@@ -269,7 +269,7 @@ server {
 }
 ```
 
-這套策略的核心思路：**hash 控製緩存失效**。檔案名不變就一直用緩存，內容一改檔案名就變，瀏覽器自動請求新檔案。
+這套策略的核心思路：**hash 控制緩存失效**。檔案名不變就一直用緩存，內容一改檔案名就變，瀏覽器自動請求新檔案。
 
 ## Gzip 壓縮設定
 

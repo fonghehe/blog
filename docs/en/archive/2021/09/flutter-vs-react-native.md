@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "最近在团队中落地Flutter vs React Native 2021 对比， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 188
+description: "I recently evaluated Flutter vs React Native (2021 edition) in a real team setting and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 189
 ---
 
-最近在团队中落地Flutter vs React Native 2021 对比， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently rolled out a Flutter vs React Native (2021) comparison in our team and gained a lot of experience. This write-up is shared for reference, in the hope that it helps anyone doing similar work.
 
 ## Core Concepts
 

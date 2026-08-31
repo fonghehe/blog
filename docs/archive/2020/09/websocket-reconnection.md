@@ -5,10 +5,10 @@ tags:
   - 前端
 readingTime: 2
 description: "WebSocket 断线重连与心跳机制在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 310
+wordCount: 305
 ---
 
-WebSocket 断线重连与心跳机制在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+WebSocket 断线重连与心跳机制在前端开发中用得越来越普遍。下面结合实际项目，聊聊它的核心原理与最佳实践。
 
 ## 基础用法
 
@@ -65,7 +65,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要结合具体场景，千万别为了优化而过度优化。
 
 ## 实战案例
 

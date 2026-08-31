@@ -8,7 +8,7 @@ description: "做了一段時間效能優化，但一直沒有系統地監控線
 wordCount: 167
 ---
 
-做了一段時間性能優化，但一直沒有系統地監控線上性能。研究了一下如何把性能數據收集起來。
+做了一段時間效能優化，但一直沒有系統地監控線上效能。研究了一下如何把效能數據收集起來。
 
 ## 為什麼需要線上監控
 
@@ -24,7 +24,7 @@ DevTools 測的是你本機的情況
 
 ## Performance API
 
-瀏覽器內置的性能時間戳：
+瀏覽器內置的效能時間戳：
 
 ```javascript
 // 獲取各階段時間
@@ -135,4 +135,4 @@ function reportMetric(name, value) {
 - `performance.timing`：各階段時間戳（TTFB、DNS、TCP 等）
 - `PerformanceObserver`：監聽 LCP、FID、CLS 等指標
 - `navigator.sendBeacon`：頁面卸載時可靠上報數據
-- 線上監控是發現真實性能問題的唯一方式，本機 DevTools 不夠
+- 線上監控是發現真實效能問題的唯一方式，本機 DevTools 不夠

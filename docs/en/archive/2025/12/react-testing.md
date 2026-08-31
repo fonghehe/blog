@@ -1,5 +1,5 @@
 ---
-title: "React Testing 2025 Practice: 复杂Component交互TestingMode总结"
+title: "React Testing 2025 in Practice: Testing Patterns for Complex Component Interactions"
 date: 2025-12-02 16:16:53
 tags:
   - React

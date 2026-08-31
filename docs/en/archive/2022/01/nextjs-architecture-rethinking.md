@@ -4,11 +4,11 @@ date: 2022-01-21 14:31:01
 tags:
   - Next.js
 readingTime: 1
-description: "We recently implemented Next.js 13 App Router 预览， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar"
-wordCount: 153
+description: "I recently explored the Next.js 13 App Router preview with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 152
 ---
 
-We recently implemented Next.js 13 App Router 预览， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently explored the Next.js 13 App Router preview, and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 

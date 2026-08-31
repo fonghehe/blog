@@ -8,11 +8,11 @@ description: "Vite 環境變量管理在近年來發展迅速，本文將深入�
 wordCount: 229
 ---
 
-Vite 環境變量管理在近年來發展迅速，本文將深入分析其原理和實踐方法。
+Vite 環境變數管理在近年來發展迅速，本文將深入分析其原理和實踐方法。
 
 ## 基礎概念
 
-我們可以這樣實現：
+我們可以這樣實作：
 
 ```javascript
 // 工具函數封裝
@@ -42,12 +42,12 @@ function createHandler(options = {}) {
 
 通過這種模式，代碼的可維護性得到了提升。
 
-## 核心實現
+## 核心實作
 
 具體用法參考以下代碼：
 
 ```javascript
-// 核心實現
+// 核心實作
 const processData = (input) => {
   return input
     .filter(item => item.active)
@@ -65,7 +65,7 @@ const processData = (input) => {
 
 ## 實戰應用
 
-來看具體的實現方式：
+來看具體的實作方式：
 
 ```javascript
 // 使用示例
@@ -82,7 +82,7 @@ app.mount('#root')
 
 ```
 
-這種實現方式簡潔高效，適合大多數場景。
+這種實作方式簡潔高效，適合大多數場景。
 
 ## 最佳實踐
 
@@ -120,4 +120,4 @@ function createHandler(options = {}) {
 
 - 持續關注社區動態，及時更新技術方案
 - 效能優化需要基於實際數據，避免過度優化
-- Vite 環境變量管理的核心在於理解底層原理，而非僅僅記住 API
+- Vite 環境變數管理的核心在於理解底層原理，而非僅僅記住 API

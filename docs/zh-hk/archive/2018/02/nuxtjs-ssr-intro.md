@@ -16,16 +16,16 @@ wordCount: 462
 
 ```
 瀏覽器請求頁面
-→ 服務器返回空 HTML（隻有 <div id="app"></div>）
+→ 服務器返回空 HTML（只有 <div id="app"></div>）
 → 瀏覽器下載 JS bundle
 → Vue 在客户端渲染，填充內容
-→ 用户看到頁面
+→ 用戶看到頁面
 ```
 
 這帶來兩個問題：
 
 1. **SEO 差**：搜索引擎爬蟲拿到的是空 HTML，看不到內容
-2. **首屏慢**：用户需要等 JS 下載執行完才能看到內容
+2. **首屏慢**：用戶需要等 JS 下載執行完才能看到內容
 
 SSR 解決方案：
 
@@ -33,7 +33,7 @@ SSR 解決方案：
 瀏覽器請求頁面
 → 服務器運行 Vue，生成完整 HTML
 → 返回有內容的 HTML
-→ 用户立即看到頁面（首屏快）
+→ 用戶立即看到頁面（首屏快）
 → JS 加載完成，Vue 接管（Hydration）
 → 頁面變成正常的 SPA
 ```
@@ -170,7 +170,7 @@ module.exports = {
 
 ## 靜態站點生成（generate）
 
-如果不需要真正的 SSR，隻想生成靜態 HTML（博客場景）：
+如果不需要真正的 SSR，只想生成靜態 HTML（博客場景）：
 
 ```bash
 npm run generate
@@ -197,7 +197,7 @@ SSR 環境下（Node.js）沒有 `window` 對象，直接用會報錯：
 ```javascript
 // ❌ 這會在服務端報錯
 mounted() {
-  // mounted 隻在客户端執行，這裏是安全的 ✅
+  // mounted 只在客户端執行，這裏是安全的 ✅
   window.addEventListener('resize', this.handleResize)
 }
 
@@ -212,7 +212,7 @@ asyncData() {
 ```javascript
 // nuxt.config.js
 plugins: [
-  { src: "~/plugins/some-plugin", ssr: false }, // 隻在客户端加載
+  { src: "~/plugins/some-plugin", ssr: false }, // 只在客户端加載
 ];
 ```
 

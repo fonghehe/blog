@@ -5,15 +5,15 @@ tags:
   - Webpack
   - Engineering
 readingTime: 2
-description: "Webpack 5 已经进入 Beta 阶段，虽然还没正式发布，但新特性值得关注。梳理一下对我们日常开发影响最大的几个变化。"
-wordCount: 266
+description: "Webpack 5 has entered beta. It isn't officially released yet, but its new features are worth watching. Here's a rundown of the changes that will affect day-to-day development the most."
+wordCount: 176
 ---
 
-Webpack 5 已经进入 Beta 阶段，虽然还没正式发布，但新特性值得关注。梳理一下对我们日常开发影响最大的几个变化。
+Webpack 5 has entered the Beta stage. It isn't officially released yet, but its new features are worth watching. Here's a rundown of the changes that affect our day-to-day development the most.
 
-## Module Federation：微前端的官方解法
+## Module Federation: The Official Solution for Micro-Frontends
 
-这是 Webpack 5 最重磅的特性，允许多个独立构建的应用共享模块：
+This is the headline feature of Webpack 5 — it lets multiple independently built applications share modules:
 
 ```javascript
 // app1/webpack.config.js
@@ -57,11 +57,11 @@ module.exports = {
 const Button = () => import('app1/Button');
 ```
 
-这意味着微前端不再需要 iframe 或 single-spa 那么重的方案了。
+This means micro-frontends no longer need heavyweight solutions like iframes or single-spa.
 
-## 持久化缓存
+## Persistent Caching
 
-Webpack 5 内置了持久化缓存，不再需要 `hard-source-webpack-plugin`：
+Webpack 5 has built-in persistent caching, so you no longer need `hard-source-webpack-plugin`:
 
 ```javascript
 // webpack.config.js
@@ -76,11 +76,11 @@ module.exports = {
 };
 ```
 
-实测：二次构建时间从 45 秒降到 8 秒。
+In practice, the second build dropped from 45 seconds to 8 seconds.
 
-## 资源模块 (Asset Modules)
+## Asset Modules
 
-内置了资源处理，不再需要 `file-loader`、`url-loader`、`raw-loader`：
+Asset handling is built in, so you no longer need `file-loader`, `url-loader`, or `raw-loader`:
 
 ```javascript
 // Webpack 4
@@ -126,7 +126,7 @@ module.exports = {
 };
 ```
 
-## Tree Shaking 增强
+## Enhanced Tree Shaking
 
 ```javascript
 // package.json 中声明 sideEffects
@@ -151,11 +151,11 @@ module.exports = {
 };
 ```
 
-## 最小 Node.js 版本
+## Minimum Node.js Version
 
-Webpack 5 要求 Node.js >= 10.13.0。在升级前确认 CI 环境。
+Webpack 5 requires Node.js >= 10.13.0. Check your CI environment before upgrading.
 
-## 迁移注意事项
+## Migration Notes
 
 ```bash
 # 升级命令
@@ -189,8 +189,8 @@ resolve: {
 
 ## Summary
 
-- Module Federation 是微前端的重大突破，值得深入研究
-- 持久化缓存大幅缩短二次构建时间
-- Asset Modules 简化了资源处理配置
-- Tree Shaking 更智能，产出更小
-- Node.js 最低版本要求提升到 10.13.0，升级前检查环境
+- Module Federation is a major breakthrough for micro-frontends and worth studying in depth
+- Persistent caching dramatically shortens second-build times
+- Asset Modules simplify asset-handling configuration
+- Tree Shaking is smarter and produces smaller output
+- The minimum Node.js version is now 10.13.0 — check your environment before upgrading

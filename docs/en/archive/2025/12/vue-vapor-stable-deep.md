@@ -1,5 +1,5 @@
 ---
-title: "Vue Vapor Stable Practice: RealProjectSwitching后Performance对比"
+title: "Vue Vapor Stable in Practice: Performance Comparison After Switching a Real Project"
 date: 2025-12-04 17:18:55
 tags:
   - Vue

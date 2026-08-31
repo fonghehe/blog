@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript の列挙型（enum）は Java や C# から来た開発者がよく使う機能ですが、TS では注意すべき点があります。名前空間（namespace）は使用頻度が低いですが、適切なユースケースもあります。"
-wordCount: 431
+wordCount: 430
 ---
 
 TypeScript の列挙型（enum）は Java や C# から来た開発者がよく使う機能ですが、TS では注意すべき点があります。名前空間（namespace）は使用頻度が低いですが、適切なユースケースもあります。
@@ -63,7 +63,7 @@ const dir = Direction.Up;
 
 ## 列挙型の代替案（より現代的）
 
-多くのシナリオでは列挙型の代わりに共用型（Union Type）を使用できます：
+多くのケースでは列挙型の代わりに共用型（Union Type）を使用できます：
 
 ```typescript
 // 列挙型の書き方

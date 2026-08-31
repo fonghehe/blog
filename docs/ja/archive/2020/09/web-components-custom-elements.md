@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "Web Components はブラウザネイティブのコンポーネント化手法であり、フレームワークを必要とせずに再利用可能なカスタム HTML 要素を作成できます。2020 年時点で全ての主要ブラウザがサポートしており、今が深く学ぶ絶好のタイミングです。"
-wordCount: 551
+wordCount: 563
 ---
 
 Web Components はブラウザネイティブのコンポーネント化手法であり、フレームワークを必要とせずに再利用可能なカスタム HTML 要素を作成できます。2020 年時点で全ての主要ブラウザがサポートしており、今が深く学ぶ絶好のタイミングです。
@@ -131,7 +131,7 @@ customElements.define("my-card", MyCard);
 </my-card>
 ```
 
-## 与框架集成
+## フレームワークとの統合
 
 Custom Elements はどのフレームワークにもシームレスに組み込めます：
 
@@ -153,7 +153,7 @@ function App() {
 <user-card :name="user.name" :email="user.email" @follow="handleFollow" />
 ```
 
-## 何时选择 Web Components
+## Web Components を選ぶべきタイミング
 
 **適しているケース**：
 

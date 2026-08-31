@@ -97,7 +97,7 @@ export default {
   setup() {
     const view = ref('List')
 
-    // 隻緩存指定組件
+    // 只緩存指定組件
     const cachedViews = computed(() => {
       if (view.value === 'Chart') return [] // 圖表不緩存
       return ['List', 'Form']
@@ -109,11 +109,11 @@ export default {
 </script>
 ```
 
-`keep-alive` 的 `include` 接受組件名稱數組或正則，`max` 限製最大緩存數量，防止內存泄漏。
+`keep-alive` 的 `include` 接受組件名稱數組或正則，`max` 限制最大緩存數量，防止內存泄漏。
 
 ## 異步組件與 defineAsyncComponent
 
-對於大型組件（富文本編輯器、地圖、圖表庫），隻在需要時加載可以顯著減小首屏 bundle。
+對於大型組件（富文本編輯器、地圖、圖表庫），只在需要時加載可以顯著減小首屏 bundle。
 
 ```vue
 <template>
@@ -150,7 +150,7 @@ export default {
 
 ## 高級設定：超時與錯誤處理
 
-`defineAsyncComponent` 支援完整的加載生命週期控製。
+`defineAsyncComponent` 支援完整的加載生命週期控制。
 
 ```javascript
 import { defineAsyncComponent, h } from 'vue'
@@ -234,6 +234,6 @@ export default {
 ## 小結
 
 - `<component :is>` 是動態渲染的核心，`shallowRef` 避免不必要的 Proxy 開銷
-- `<keep-alive>` 緩存組件實例，`include` 和 `max` 控製緩存範圍
+- `<keep-alive>` 緩存組件實例，`include` 和 `max` 控制緩存範圍
 - `defineAsyncComponent` 實現組件級代碼拆分，配合 `Suspense` 管理加載態
-- 生產環境中務必配置 `errorComponent` 和 `onError`，給用户優雅的降級體驗
+- 生產環境中務必配置 `errorComponent` 和 `onError`，給用戶優雅的降級體驗

@@ -5,20 +5,20 @@ tags:
   - セキュリティ
 readingTime: 2
 description: "CSP を設定すれば、XSS 注入が成功しても、攻撃者は悪意のあるスクリプトを外部リンクや実行することができません。"
-wordCount: 434
+wordCount: 440
 ---
 
-CSP を設定すれば、XSS 注入が成功しても、攻撃者は悪意のあるスクリプトを外部リンクや実行することができません。
+CSP を設定すれば、たとえ XSS インジェクションに成功しても、攻撃者は悪意のあるスクリプトを外部から読み込んだり実行したりすることはできない。
 
 ## CSP とは
 
-Content Security Policy は HTTP レスポンスヘッダーで、どのリソースがロードおよび実行できるかをブラウザに伝えます：
+Content Security Policy は HTTP レスポンスヘッダーであり、どのリソースをロードおよび実行できるかをブラウザに伝える：
 
 ```http
 Content-Security-Policy: default-src 'self'; script-src 'self' cdn.example.com; style-src 'self' 'unsafe-inline'
 ```
 
-ブラウザはポリシーに合致しないすべてのリソースのロードを拒否します（インラインスクリプトを含む）。
+ブラウザはポリシーに合致しないすべてのリソースのロードを拒否する（インラインスクリプトを含む）。
 
 ## よく使うディレクティブ
 
@@ -85,15 +85,15 @@ add_header Content-Security-Policy "script-src 'self' 'nonce-$nonce'";
 </script>
 ```
 
-## まず Report-Only モードで試す
+## Report-Only モードで試す
 
-直接 CSP を有効にすると正常な機能がブロックされる可能性があります。まず Report-Only で観察：
+直接 CSP を有効にすると正常な機能がブロックされる可能性がある。Report-Only で観察：
 
 ```http
 Content-Security-Policy-Report-Only: default-src 'self'; report-uri /csp-report
 ```
 
-ブロックせず、違反レポートを `/csp-report` に送信してデバッグに活用します。
+ブロックせず、違反レポートを `/csp-report` に送信してデバッグに活用する。
 
 ```javascript
 // CSP 違反レポートを受信
@@ -117,6 +117,6 @@ app.post(
 ## まとめ
 
 - CSP は XSS 防御の最後の砦。スクリプトが注入されても実行できない
-- まず `Report-Only` モードで違反を収集してから本番適用
+- `Report-Only` モードで違反を収集してから本番適用
 - nonce は `unsafe-inline` より安全
 - `frame-ancestors: none` でクリックジャッキングも防止

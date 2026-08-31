@@ -26,7 +26,7 @@ I built an SSR project with Nuxt.js in the first half of the year. Using it was 
 ```
 1. Browser requests HTML → server runs Vue
 2. Vue generates HTML string on the server → sends to browser
-3. Browser displays HTML (first screen immediately visible)
+3. Browser displays HTML (content is visible immediately)
 4. Browser loads JS → Vue "takes over" existing DOM (Hydration)
 5. Page becomes an interactive SPA
 ```

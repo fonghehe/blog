@@ -1,12 +1,13 @@
 ---
-readingTime: 7
-wordCount: 1415
+readingTime: 6
+wordCount: 1368
 title: "以太坊智能合約開發入門：從 Solidity 到部署"
 date: 2018-02-14 19:07:01
 tags:
   - Web3
   - Ethereum
   - Smart Contract
+description: "以太坊智能合約開發要求前端工程師建立一套全新的心智模型：狀態不可變性、Gas 經濟學，以及異步交易模型。本文將圍繞工具鏈、Solidity 語言基礎、合約部署與前端調用，系統性地梳理從開發到上線的完整流程。"
 ---
 
 以太坊智能合約開發要求前端工程師建立一套全新的心智模型：狀態不可變性、Gas 經濟學，以及異步交易模型。本文將圍繞工具鏈、Solidity 語言基礎、合約部署與前端調用，系統性地梳理從開發到上線的完整流程。
@@ -28,7 +29,7 @@ tags:
 
 ### 合約結構
 
-Solidity 的合約（Contract）類似於面嚮對象語言中的類，包含狀態變量、函數、事件、修飾器等成員：
+Solidity 的合約（Contract）類似於面向對象語言中的類，包含狀態變量、函數、事件、修飾器等成員：
 
 ```solidity
 pragma solidity ^0.4.18;

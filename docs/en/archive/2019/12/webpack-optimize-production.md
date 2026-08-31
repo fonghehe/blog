@@ -5,15 +5,15 @@ tags:
   - Webpack
   - Engineering
 readingTime: 4
-description: "Webpack 4 已经相当成熟，但生产环境的优化配置依然让人头疼。这篇文章整理了我们团队在实际项目中使用的 Webpack 优化清单，覆盖压缩、Tree Shaking、代码分割、持久缓存、体积分析等环节。每个优化点都给出可直接使用的配置代码。"
-wordCount: 434
+description: "Webpack 4 is already quite mature, but its production optimization config is still a headache. This article lays out the Webpack optimization checklist our team uses in real projects, covering minification, Tree Shaking, code splitting, persistent caching, and bundle-size analysis. Each optimization point comes with config code you can use directly."
+wordCount: 288
 ---
 
-Webpack 4 已经相当成熟，但生产环境的优化配置依然让人头疼。这篇文章整理了我们团队在实际项目中使用的 Webpack 优化清单，覆盖压缩、Tree Shaking、代码分割、持久缓存、体积分析等环节。每个优化点都给出可直接使用的配置代码。
+Webpack 4 is already quite mature, but its production optimization config is still a headache. This article lays out the Webpack optimization checklist our team uses in real projects, covering minification, Tree Shaking, code splitting, persistent caching, and bundle-size analysis. Each optimization point comes with config code you can use directly.
 
 ## Code Minification
 
-Webpack 4 的 `mode: 'production'` 默认开启 TerserPlugin 压缩 JS。但我们可以进一步调整配置：
+Webpack 4's `mode: 'production'` enables TerserPlugin for JS minification by default. But we can tune the config further:
 
 ```javascript
 // webpack.config.js
@@ -76,7 +76,7 @@ module.exports = {
 
 ## Tree Shaking Verification
 
-Tree Shaking 在 `mode: 'production'` 下自动开启，但要确保它真正生效，需要注意几个条件：
+Tree Shaking is enabled automatically under `mode: 'production'`, but to make sure it actually takes effect you need to watch a few conditions:
 
 ```javascript
 // 条件一：使用 ES Module 导出（不要混用 CommonJS）
@@ -107,7 +107,7 @@ import * as utils from './utils'
 }
 ```
 
-验证 Tree Shaking 是否生效的方法：
+Ways to verify whether Tree Shaking has taken effect:
 
 ```bash
 # 方法一：使用 Webpack Bundle Analyzer 查看
@@ -123,7 +123,7 @@ npx webpack --mode production --display-used-exports
 
 ## Code Splitting Strategies
 
-代码分割是优化加载性能最有效的手段。我们采用多层级的分割策略：
+Code splitting is the most effective way to optimize load performance. We use a multi-level splitting strategy:
 
 ```javascript
 module.exports = {
@@ -181,7 +181,7 @@ module.exports = {
 }
 ```
 
-路由级别的动态导入：
+Route-level dynamic imports:
 
 ```javascript
 // 路由懒加载
@@ -213,7 +213,7 @@ function App() {
 
 ## Persistent Cache
 
-通过 contenthash 实现长期缓存，文件内容不变则 hash 不变，浏览器可以使用缓存：
+Long-term caching is achieved with contenthash: when a file's content is unchanged its hash stays the same, so the browser can keep using the cached copy:
 
 ```javascript
 module.exports = {
@@ -243,7 +243,7 @@ module.exports = {
 }
 ```
 
-配合 HTML 模板和 CDN 部署：
+Combined with an HTML template and CDN deployment:
 
 ```javascript
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -269,7 +269,7 @@ module.exports = {
 
 ## Bundle Size Analysis
 
-定期分析包体积是保持项目健康的关键：
+Analyzing bundle size regularly is key to keeping a project healthy:
 
 ```javascript
 // webpack.config.js
@@ -301,7 +301,7 @@ ANALYZE=true npx webpack --mode production
 
 ## Complete Production Configuration
 
-把上面所有优化整合到一个配置文件中：
+Combine all the optimizations above into a single config file:
 
 ```javascript
 const path = require('path')
@@ -401,9 +401,9 @@ module.exports = {
 
 ## Summary
 
-- TerserPlugin 是默认的 JS 压缩器，开启 parallel 和 drop_console 可以提升压缩效率
-- Tree Shaking 需要 ES Module + 按需导入 + sideEffects 标记三个条件同时满足
-- 代码分割按 vendors/chunks/共享模块三层拆分，配合路由懒加载效果最佳
-- contenthash 实现持久缓存，runtimeChunk 避免 vendors hash 变化导致缓存失效
-- 定期用 Bundle Analyzer 分析体积，大库考虑按需引入或替换更轻量的替代品
-- moment.js (300KB) 替换为 dayjs (2KB)、lodash 全量引入改为按路径引入，是最常见的体积优化
+- TerserPlugin is the default JS minifier; enabling parallel and drop_console improves minification efficiency
+- Tree Shaking needs three conditions together: ES Module + on-demand imports + a sideEffects flag
+- Split code into vendors / chunks / shared modules, paired with route-level lazy loading for best results
+- contenthash enables persistent caching, and runtimeChunk prevents vendor hash changes from invalidating the cache
+- Run Bundle Analyzer regularly to inspect size; for heavy libraries consider on-demand imports or a lighter alternative
+- The most common size wins: swap moment.js (~300KB) for dayjs (~2KB), and import lodash by path instead of wholesale

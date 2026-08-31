@@ -5,10 +5,10 @@ tags:
   - React
 readingTime: 2
 description: "最近在團隊中落地React SuspenseList 載入順序控製，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 334
+wordCount: 332
 ---
 
-最近在團隊中落地React SuspenseList 載入順序控製，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
+最近在團隊中落地React SuspenseList 載入順序控制，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
 
 ## 核心概念
 
@@ -35,7 +35,7 @@ function reducer(state, action) {
 
 ## 深度解析
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -54,7 +54,7 @@ function reducer(state, action) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 落地經驗
 
@@ -129,5 +129,5 @@ function reducer(state, action) {
 
 - 不要為了用新技術而用新技術
 - 程式碼示例僅供參考，需根據業務場景調整
-- React SuspenseList 載入順序控製不是銀彈，需要根據專案規模和技術棧選擇
+- React SuspenseList 載入順序控制不是銀彈，需要根據專案規模和技術棧選擇
 - 理解底層原理比記住 API 更重要

@@ -6,15 +6,15 @@ tags:
   - TypeScript
 
 readingTime: 3
-description: "Vue 3.2 即将带来 `<script setup>` 语法糖，目前 RFC 已经进入最终阶段。这是 Vue 3 Composition API 体验提升最大的一个特性，值得提前了解。"
-wordCount: 396
+description: "Vue 3.2 will bring the script setup syntax sugar, and its RFC is now in the final stage. This is the biggest experience upgrade for the Vue 3 Composition API — worth learning early."
+wordCount: 291
 ---
 
-Vue 3.2 即将带来 `<script setup>` 语法糖，目前 RFC 已经进入最终阶段。这是 Vue 3 Composition API 体验提升最大的一个特性，值得提前了解。
+Vue 3.2 is bringing the `<script setup>` syntax sugar, and its RFC is now in the final stage. It's the single biggest quality-of-life improvement to the Vue 3 Composition API, and worth getting to know ahead of time.
 
 ## Why `<script setup>` is Needed
 
-先看当前 Composition API 的写法，一个简单的组件需要大量样板代码：
+First look at the current Composition API style — even a simple component needs a lot of boilerplate:
 
 ```vue
 <!-- 传统 setup() 写法 -->
@@ -43,7 +43,7 @@ export default defineComponent({
 </script>
 ```
 
-每个变量都要在 `return` 里声明一次，组件越大样板越多。`<script setup>` 直接解决了这个问题：
+Every variable has to be declared in `return` once, and the bigger the component, the more boilerplate. `<script setup>` solves this directly:
 
 ```vue
 <!-- <script setup> 写法 -->
@@ -69,9 +69,9 @@ function increment() {
 
 ## Core Feature Analysis
 
-**1. 顶层绑定自动暴露**
+**1. Top-level bindings are exposed automatically**
 
-`<script setup>` 中的顶层 `import`、`ref`、`computed`、函数声明都会自动暴露给模板，不需要手动 `return`：
+Top-level `import`s, `ref`s, `computed`s, and function declarations in `<script setup>` are all exposed to the template automatically — no manual `return` needed:
 
 ```vue
 <script setup>
@@ -95,9 +95,9 @@ function handleClick() {
 </template>
 ```
 
-**2. 组件自动注册**
+**2. Components register automatically**
 
-`import` 进来的组件自动注册，不需要在 `components` 里手动声明：
+Components you `import` are registered automatically — no need to declare them manually in `components`:
 
 ```vue
 <script setup>
@@ -115,9 +115,9 @@ import Button from './Button.vue'
 </template>
 ```
 
-**3. defineProps / defineEmits 编译宏**
+**3. defineProps / defineEmits compiler macros**
 
-这两个不需要 import，是编译时宏（compiler macro）：
+Neither needs to be imported; they are compile-time macros:
 
 ```vue
 <script setup>
@@ -148,9 +148,9 @@ function handleSubmit() {
 </script>
 ```
 
-**4. defineExpose 显式暴露**
+**4. defineExpose for explicit exposure**
 
-默认情况下，`<script setup>` 暴露的是顶层绑定。如果需要暴露子组件的特定方法：
+By default, `<script setup>` exposes its top-level bindings. If you need to expose specific methods of a child component:
 
 ```vue
 <!-- Child.vue -->
@@ -189,7 +189,7 @@ function handleReset() {
 
 ## Working with TypeScript
 
-`<script setup>` 对 TypeScript 的支持很自然：
+TypeScript support in `<script setup>` feels natural:
 
 ```vue
 <script setup lang="ts">
@@ -220,7 +220,7 @@ function handleChange(value: string) {
 
 ## Comparison in Real Projects
 
-迁移前（Options API 风格）：
+Before migration (Options API style):
 
 ```vue
 <script>
@@ -243,7 +243,7 @@ export default {
 </script>
 ```
 
-迁移后：
+After migration:
 
 ```vue
 <script setup>
@@ -263,12 +263,12 @@ onMounted(async () => {
 </script>
 ```
 
-代码量减少了，逻辑也更聚合——相关的状态和逻辑在一起，不用在 `data`、`computed`、`methods` 之间跳来跳去。
+There's less code, and the logic is more cohesive — related state and logic live together, instead of jumping between `data`, `computed`, and `methods`.
 
 ## Summary
 
-- `<script setup>` 是 Composition API 的语法糖，大幅减少样板代码
-- 顶层绑定自动暴露，组件 import 自动注册，开发体验接近 React Hooks
-- `defineProps` / `defineEmits` / `defineExpose` 是编译宏，不需要 import
-- TypeScript 支持自然，类型推断比 Options API 好很多
-- 预计 Vue 3.2 正式支持，现在可以先在实验性项目中试用
+- `<script setup>` is syntactic sugar over the Composition API that cuts boilerplate dramatically
+- Top-level bindings are exposed automatically and imported components register themselves, making the dev experience close to React Hooks
+- `defineProps` / `defineEmits` / `defineExpose` are compiler macros and need no import
+- TypeScript support is natural, and type inference is much better than with the Options API
+- Full support is expected in Vue 3.2; you can try it now in experimental projects

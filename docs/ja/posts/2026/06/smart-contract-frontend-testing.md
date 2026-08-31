@@ -5,9 +5,9 @@ tags:
   - Web3
   - 测试
   - Smart Contract
-readingTime: 7
+readingTime: 9
 description: "Web3フロントエンドテストの階層化戦略を体系的に解説。コントラクトMock、メインネットFork、テストネット、イベントアサーション、CI統合をカバー"
-wordCount: 3200
+wordCount: 1484
 ---
 
 ## Web3フロントエンドテストの特有な課題
@@ -104,7 +104,7 @@ describe('コントラクト相互作用モジュール', () => {
     })
   })
 
-  it('マルチシグコントラクトのownersを正しく読み取るべし', async () => {
+  it('マルチシグコントラクトのownersを正しく読み取るべきである', async () => {
     // Mock戻り値を設定
     mockClient.setContractReadResult(
       '0x1234...', // コントラクトアドレス
@@ -118,7 +118,7 @@ describe('コントラクト相互作用モジュール', () => {
     expect(owners[0]).toBe('0xaaa...')
   })
 
-  it('トランザクションのrevertをシミュレートすべし', async () => {
+  it('トランザクションのrevertをシミュレートすべきである', async () => {
     mockClient.setContractSimulationError(
       '0x1234...',
       'transfer',
@@ -181,7 +181,7 @@ afterAll(() => {
 })
 
 describe('USDC転送（メインネットFork）', () => {
-  it('USDCの転送に成功すべし', async () => {
+  it('USDCの転送に成功すべきである', async () => {
     const USDC = '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'
 
     // AnvilのimpersonateAccount機能で実際の保有者を操作
@@ -268,7 +268,7 @@ describe('テストネット統合テスト', () => {
     })
   })
 
-  it('Sepolia上でコントラクトをデプロイすべし', async () => {
+  it('Sepolia上でコントラクトをデプロイすべきである', async () => {
     const hash = await testClient.deployContract({
       abi: testTokenAbi,
       bytecode: testTokenBytecode,
@@ -336,7 +336,7 @@ class EventAssertions {
 describe('イベントアサーション', () => {
   const assertions = new EventAssertions(routerAbi)
 
-  it('Swapイベントを発火すべし', async () => {
+  it('Swapイベントを発火すべきである', async () => {
     const receipt = await executeSwap(forkClient, forkWallet)
 
     assertions.expectEvent(receipt, 'Swap', {
@@ -346,7 +346,7 @@ describe('イベントアサーション', () => {
     })
   })
 
-  it('正しい順序でイベントを発火すべし', async () => {
+  it('正しい順序でイベントを発火すべきである', async () => {
     const receipt = await executeSwap(forkClient, forkWallet)
 
     assertions.expectEventOrder(receipt, ['Approval', 'Transfer', 'Swap'])
@@ -386,7 +386,7 @@ describe('SwapComponent統合テスト', () => {
     await waitForAnvilReady(FORK_URL)
   })
 
-  it('正しいトークン残高を表示しswapを完了すべし', async () => {
+  it('正しいトークン残高を表示しswapを完了すべきである', async () => {
     const config = createTestConfig()
 
     render(

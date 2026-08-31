@@ -5,11 +5,11 @@ tags:
   - CSS
 
 readingTime: 1
-description: "关于CSS Color Level 4 新色彩函数，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspect"
-wordCount: 191
+description: "Many developers only know the new CSS Color Level 4 color functions at the API level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 188
 ---
 
-关于CSS Color Level 4 新色彩函数，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to the new color functions in CSS Color Level 4, many developers only stay at the API surface. This article looks at the problems you'll actually encounter in production and how to solve them.
 
 ## Basic Principles
 
@@ -121,7 +121,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- CSS Color Level 4 新色彩函数不是银弹，需要根据项目规模和技术栈选择
+- CSS Color Level 4's new color functions are no silver bullet—choose them based on your project's size and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

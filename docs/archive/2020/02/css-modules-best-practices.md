@@ -5,10 +5,10 @@ tags:
   - CSS
 readingTime: 2
 description: "多人协作的大项目，CSS 全局污染是个老大难问题。对比了 Scoped CSS、CSS Modules 和 CSS-in-JS 后，最终在组件库项目中选择了 CSS Modules，记录一下实践方案。"
-wordCount: 234
+wordCount: 239
 ---
 
-多人协作的大项目，CSS 全局污染是个老大难问题。对比了 Scoped CSS、CSS Modules 和 CSS-in-JS 后，最终在组件库项目中选择了 CSS Modules，记录一下实践方案。
+多人协作的大项目，CSS 全局污染是个老大难问题。对比了 Scoped CSS、CSS Modules 和 CSS-in-JS 之后，我们最终在组件库项目中选择了 CSS Modules，下面记录一下实践方案。
 
 ## Scoped CSS vs CSS Modules
 

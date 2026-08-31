@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "最近在团队中落地Partial Prerendering 部分预渲染，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 503
+wordCount: 521
 ---
 
 最近在团队中落地Partial Prerendering 部分预渲染，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -143,6 +143,6 @@ export async function POST(request: NextRequest) {
 ## まとめ
 
 - コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整する必要があります
-- Partial Prerendering 部分预渲染不是银弹，需要根据项目规模和技术栈选择
+- Partial Prerendering 部分预渲染 は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある
 - 基礎的な原理を理解することは、APIを暗記することより重要です
 - 本番環境で使用する前に必ず互換性を確認してください

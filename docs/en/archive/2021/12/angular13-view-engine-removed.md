@@ -6,19 +6,19 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "Angular 13 于 2021 年 11 月 3 日正式发布。这个版本最大的意义是**彻底清理历史包袱**：完全移除 View Engine 相关代码、废弃 IE 11 支持、重新设计 Angular Package Format（APF）。对于已经在 Ivy 上稳定运行的项目，这次升级带来了更小的依赖体积和更快的"
-wordCount: 447
+description: "Angular 13 was officially released on November 3, 2021. This release's biggest significance is thoroughly clearing out historical baggage: completely removing View Engine code, dropping IE 11 support, and redesigning the Angular Package Format (APF). For projects already on Ivy"
+wordCount: 307
 ---
 
-Angular 13 于 2021 年 11 月 3 日正式发布。这个版本最大的意义是**彻底清理历史包袱**：完全移除 View Engine 相关代码、废弃 IE 11 支持、重新设计 Angular Package Format（APF）。对于已经在 Ivy 上稳定运行的项目，这次升级带来了更小的依赖体积和更快的编译速度。
+Angular 13 was officially released on November 3, 2021. The biggest significance of this release is that it **clears out legacy baggage**: it completely removes the View Engine code, deprecates IE 11 support, and redesigns the Angular Package Format (APF). For projects already running stably on Ivy, this upgrade brings a smaller dependency footprint and faster compile times.
 
 ## Complete Removal of View Engine
 
-Angular 12 标记了 View Engine 为废弃，Angular 13 **完全删除**了相关代码：
+Angular 12 marked View Engine as deprecated; Angular 13 **fully removes** the related code:
 
-- 移除 `@angular/compiler` 中的 View Engine 编译逻辑
-- 不再生成 `ngfactory` 和 `ngsummary` 文件
-- `TestBed` 不再调用 `compileComponents()`（异步编译）：
+- Removed the View Engine compilation logic from `@angular/compiler`
+- No longer generates `ngfactory` and `ngsummary` files
+- `TestBed` no longer calls `compileComponents()` (async compilation):
 
 ```typescript
 // Angular 13 之前：TestBed 需要 async compileComponents
@@ -37,11 +37,11 @@ beforeEach(() => {
 });
 ```
 
-这让测试代码更简洁，测试套件运行更快。
+This makes test code cleaner and test suites run faster.
 
 ## Dropping IE 11 Support Completely
 
-Angular 13 不再为 IE 11 构建额外的 polyfill 和兼容代码：
+Angular 13 no longer builds extra polyfills and compatibility code for IE 11:
 
 ```json
 // angular.json - Angular 13 新建项目不再有 IE 相关配置
@@ -57,15 +57,15 @@ last 2 iOS major versions
 Firefox ESR
 ```
 
-**影响**：
+**Impact**:
 
-- 主包体积减少约 4KB（去掉 IE 相关 polyfill）
-- 构建速度提升（不需要生成 ES5 兼容代码）
-- 如果你仍需支持 IE 11，**不要升级到 Angular 13**
+- Main bundle size reduced by about 4 KB (IE-related polyfills removed)
+- Faster builds (no need to generate ES5-compatible code)
+- If you still need to support IE 11, **do not upgrade to Angular 13**
 
-## Angular Package Format（APF）重设计
+## Redesigning the Angular Package Format (APF)
 
-APF 定义了 Angular 库如何发布到 npm。Angular 13 重新设计了 APF：
+APF defines how Angular libraries are published to npm. Angular 13 redesigned the APF:
 
 ```
 旧 APF（复杂）：
@@ -83,11 +83,11 @@ dist/
   fesm2015/     ← flat ES2015（旧 Node.js 兼容）
 ```
 
-移除了 ES5 产物，减少了库的发布体积 **约 25%**。
+By removing the ES5 artifacts, the published size of libraries was reduced by **about 25%**.
 
 ## Simplified Dynamic Component Creation API
 
-Angular 13 简化了 `ViewContainerRef.createComponent` 的 API：
+Angular 13 simplified the `ViewContainerRef.createComponent` API:
 
 ```typescript
 // Angular 13 之前：需要 ComponentFactoryResolver
@@ -99,11 +99,11 @@ const componentRef = this.viewContainer.createComponent(DynamicComponent);
 componentRef.instance.data = "some data";
 ```
 
-`ComponentFactoryResolver` 仍然存在（兼容）但已废弃，推荐用新 API。
+`ComponentFactoryResolver` still exists (for compatibility) but is deprecated; the new API is recommended.
 
-## inline fonts 改进
+## Inline Fonts Improvements
 
-Angular 13 的 CLI 改进了字体内联策略，支持更多 Google Fonts 格式：
+Angular 13's CLI improved its font-inlining strategy, supporting more Google Fonts formats:
 
 ```html
 <!-- Angular 13 构建后，字体 CSS 会被内联 -->
@@ -116,7 +116,7 @@ Angular 13 的 CLI 改进了字体内联策略，支持更多 Google Fonts 格�
 </style>
 ```
 
-`font-display: swap` 的自动添加对 CLS（累计布局偏移）指标有正向影响。
+Automatically adding `font-display: swap` has a positive impact on the CLS (Cumulative Layout Shift) metric.
 
 ## Upgrading to Angular 13
 
@@ -129,7 +129,7 @@ ng update @angular/core@13 @angular/cli@13
 # 3. 更新 tsconfig 中的 target 到 ES2020
 ```
 
-**升级前检查**：
+**Pre-upgrade checklist**:
 
 ```bash
 ng update --list
@@ -138,4 +138,4 @@ ng update --list
 
 ## Summary
 
-Angular 13 是一个"清扫型"版本——删掉历史包袱，让框架更轻、更快。移除 View Engine 和 IE 11 支持后，Angular 应用的构建产物平均减少 10-15%。如果你的用户中已经没有 IE 11，这次升级性价比非常高。
+Angular 13 is a "cleanup" release — it clears out legacy baggage, making the framework lighter and faster. After removing View Engine and IE 11 support, Angular apps' build output shrinks by an average of 10–15%. If none of your users are on IE 11, this upgrade offers excellent value.

@@ -4,13 +4,13 @@ date: 2020-09-28 10:39:27
 tags:
   - Vue
 readingTime: 2
-description: "一等再等，Vue 3.0 \"One Piece\" 上周正式发布了！跟踪了将近一年的 alpha/beta，终于来了。这篇文章是系统性的上手指南。"
-wordCount: 231
+description: "After a long wait, Vue 3.0 'One Piece' was officially released last week — we followed the alpha and beta releases for almost a year, and it's finally here. This is a systematic getting-started guide."
+wordCount: 189
 ---
 
-一等再等，Vue 3.0 "One Piece" 上周正式发布了！跟踪了将近一年的 alpha/beta，终于来了。这篇文章是系统性的上手指南。
+After endless waiting, Vue 3.0 "One Piece" was officially released last week! After nearly a year of tracking the alpha/beta, it's finally here. This article is a systematic getting-started guide.
 
-## 安装
+## Installation
 
 ```bash
 npm init @vitejs/app my-vue3-app -- --template vue-ts
@@ -19,7 +19,7 @@ npm init vite-app my-app
 cd my-app && npm install && npm run dev
 ```
 
-## Composition API 实战
+## Composition API in Practice
 
 ```vue
 {% raw %}
@@ -91,7 +91,7 @@ onMounted(loadUsers);
 {% endraw %}
 ```
 
-## Composables：逻辑复用
+## Composables: Logic Reuse
 
 ```typescript
 // composables/useFetch.ts
@@ -125,7 +125,7 @@ const {
 } = useFetch(() => api.getUsers({ page: page.value }));
 ```
 
-## 和 Vue 2 的重大变化
+## Major Changes from Vue 2
 
 ```typescript
 // 生命周期重命名
@@ -150,7 +150,7 @@ app.config.globalProperties.$http = axios; // 替代 Vue.prototype.$http
 app.mount("#app");
 ```
 
-## v-model 的变化
+## Changes to v-model
 
 ```vue
 <!-- Vue 2：v-model = :value + @input -->
@@ -166,7 +166,7 @@ app.mount("#app");
 <UserForm v-model:name="name" v-model:email="email" />
 ```
 
-## Teleport（传送门）
+## Teleport
 
 ```vue
 <!-- 把组件渲染到 DOM 中的其他位置 -->
@@ -185,19 +185,19 @@ app.mount("#app");
 </template>
 ```
 
-## Vue 3 生态现状（2020年9月）
+## The Vue 3 Ecosystem Status (September 2020)
 
-- **Vue Router 4**：已有 RC 版，和 Vue 3 配套
-- **Vuex 4**：同时支持 Vue 2/3
-- **Element Plus**：Element UI 的 Vue 3 版，还在开发中
-- **Vite**：Vue 3 官方推荐构建工具
+- **Vue Router 4**: already has an RC and pairs with Vue 3
+- **Vuex 4**: supports both Vue 2 and Vue 3
+- **Element Plus**: the Vue 3 version of Element UI, still in development
+- **Vite**: Vue 3's officially recommended build tool
 
-大部分第三方库还需要时间迁移，生产项目暂时观望，新项目可以开始用了。
+Most third-party libraries still need time to migrate — for production projects it's best to wait and see for now, but new projects can start using it.
 
 ## Summary
 
-- Vue 3 不是颠覆，是演进。Composition API 是加法，Options API 还在
-- `setup()` 或 `<script>` 是新的写法方式，更灵活
-- Composables 替代 Mixin，来源清晰，类型友好
-- `Teleport`、`Suspense` 解决了 Vue 2 的痛点
-- 生态还需要 6-12 个月成熟，但已经可以在新项目中使用
+- Vue 3 isn't a disruption, it's an evolution. The Composition API is additive — the Options API is still here.
+- `setup()` or `<script setup>` is the new way to write components, and it's more flexible.
+- Composables replace Mixins — clearer sources and type-friendly.
+- `Teleport` and `Suspense` solve pain points from Vue 2.
+- The ecosystem still needs 6–12 months to mature, but it's already usable in new projects.

@@ -4,58 +4,58 @@ date: 2019-09-12 11:02:48
 tags:
   - Frontend
 readingTime: 5
-description: "HTTP/2 带来了多路复用、头部压缩、服务端推送等重大改进。其中 Server Push 允许服务器在客户端请求之前主动推送资源，减少请求往返次数，显著提升页面加载速度。本文将深入讲解 HTTP/2 Server Push 的工作原理，并结合 Node.js 和 Nginx 给出实战配置。"
-wordCount: 861
+description: "HTTP/2 brought major improvements such as multiplexing, header compression, and server push. Among them, Server Push lets the server proactively push resources to the client before it even asks, reducing the number of request round trips and noticeably speeding up page loads. This article explains how HTTP/2 Server Push works and provides practical configurations using Node.js and Nginx."
+wordCount: 573
 ---
 
-HTTP/2 带来了多路复用、头部压缩、服务端推送等重大改进。其中 Server Push 允许服务器在客户端请求之前主动推送资源，减少请求往返次数，显著提升页面加载速度。本文将深入讲解 HTTP/2 Server Push 的工作原理，并结合 Node.js 和 Nginx 给出实战配置。
+HTTP/2 brought major improvements such as multiplexing, header compression, and server push. Among them, Server Push lets the server proactively push resources to the client before it even asks, reducing the number of request round trips and noticeably speeding up page loads. This article explains how HTTP/2 Server Push works and provides practical configurations using Node.js and Nginx.
 
 ## HTTP/1.1 Resource Loading Bottlenecks
 
-在 HTTP/1.1 中，浏览器解析 HTML 后发现需要加载 CSS/JS，才会发起新的请求：
+In HTTP/1.1, the browser only discovers it needs CSS/JS after parsing the HTML, and only then issues new requests:
 
 ```
-浏览器                          服务器
-  |---- 请求 index.html -------->|  (第 1 次往返)
-  |<---- 返回 index.html --------|
+Browser                        Server
+  |---- Request index.html -------->|  (Round trip 1)
+  |<---- Return index.html ---------|
   |
-  |---- 请求 style.css --------->|  (第 2 次往返)
-  |<---- 返回 style.css ---------|
+  |---- Request style.css --------->|  (Round trip 2)
+  |<---- Return style.css ----------|
   |
-  |---- 请求 app.js ------------>|  (第 3 次往返)
-  |<---- 返回 app.js ------------|
+  |---- Request app.js ------------>|  (Round trip 3)
+  |<---- Return app.js -------------|
 ```
 
-每次往返都有网络延迟（RTT），资源越多，等待时间越长。
+Each round trip incurs network latency (RTT). The more resources, the longer the wait.
 
 ## How HTTP/2 Server Push Works
 
-Server Push 允许服务器在响应 HTML 时，主动推送关联的 CSS/JS：
+Server Push lets the server proactively push the associated CSS/JS while responding to the HTML:
 
 ```
-浏览器                          服务器
-  |---- 请求 index.html -------->|
-  |<---- 返回 index.html --------|
-  |<---- 推送 style.css ---------|  (服务器主动推送)
-  |<---- 推送 app.js ------------|  (服务器主动推送)
+Browser                        Server
+  |---- Request index.html -------->|
+  |<---- Return index.html ---------|
+  |<---- Push style.css ------------|  (server proactively pushes)
+  |<---- Push app.js ---------------|  (server proactively pushes)
 ```
 
-节省了两次往返时间！
+That saves two round trips!
 
-### 技术细节
+### Technical Details
 
-Server Push 使用 HTTP/2 的 `PUSH_PROMISE` 帧：
+Server Push uses the `PUSH_PROMISE` frame of HTTP/2:
 
-1. 服务器收到对 `index.html` 的请求
-2. 服务器发送 `PUSH_PROMISE` 帧，告知客户端即将推送 `style.css`
-3. 客户端检查缓存，如果已有该资源则发送 `RST_STREAM` 拒绝推送
-4. 如果客户端需要，服务器发送资源数据
+1. The server receives the request for `index.html`.
+2. The server sends a `PUSH_PROMISE` frame, telling the client it is about to push `style.css`.
+3. The client checks its cache and sends `RST_STREAM` to refuse the push if it already has the resource.
+4. If the client needs it, the server sends the resource data.
 
-### 关键概念
+### Key Concepts
 
-- **推送缓存（Push Cache）** — 推送的资源暂存在一个特殊的 HTTP/2 Push Cache 中，只有当浏览器真正需要该资源时才会使用
-- **推送可以被拒绝** — 如果客户端已有缓存，可以拒绝服务器的推送
-- **推送与请求关联** — 推送的资源关联到触发推送的那个请求
+- **Push cache** — pushed resources are held in a special HTTP/2 push cache and are only used when the browser actually needs them.
+- **Pushes can be refused** — if the client already has the resource cached, it can refuse the server's push.
+- **Pushes are tied to a request** — a pushed resource is associated with the request that triggered the push.
 
 ## Nginx Server Push Configuration
 
@@ -86,9 +86,9 @@ server {
 }
 ```
 
-### 使用 Link header 动态推送
+### Dynamic Push via the Link Header
 
-Nginx 支持通过响应头中的 `Link` 字段触发推送：
+Nginx can trigger pushes through the `Link` response header:
 
 ```nginx
 # 基于请求路径动态决定推送内容
@@ -111,7 +111,7 @@ location / {
 
 ## Server Push with Node.js
 
-### 原生 http2 模块
+### Native http2 Module
 
 ```js
 const http2 = require('http2');
@@ -233,13 +233,13 @@ server.listen(8443);
 
 ## Deciding Which Resources to Push
 
-不是所有资源都适合推送。适合推送的资源特征：
+Not every resource is worth pushing. Resources that are good candidates share these traits:
 
-1. **关键渲染路径资源** — 首屏 CSS、首屏 JS
-2. **体积较小** — 推送大文件会阻塞主响应
-3. **该页面一定会用到** — 不会被其他条件跳过
+1. **Critical rendering-path resources** — above-the-fold CSS and JS.
+2. **Small in size** — pushing large files blocks the main response.
+3. **Definitely used on that page** — not skipped by other conditions.
 
-### 分析关键资源
+### Analyzing Critical Resources
 
 ```js
 // 使用 Lighthouse 获取关键请求链
@@ -274,17 +274,17 @@ getCriticalResources('https://example.com');
 
 ## Push Cache and Client Cache Interaction
 
-### 问题：重复推送
+### Problem: Duplicate Pushes
 
-如果客户端已有缓存，服务器仍然推送，会浪费带宽：
+If the client already has a resource cached but the server still pushes it, bandwidth is wasted:
 
 ```
-客户端已有 style.css 缓存
-服务器仍然推送 style.css
-客户端收到 PUSH_PROMISE 后拒绝（但推送数据已经发出了一部分）
+Client already has style.css cached
+Server still pushes style.css
+Client receives PUSH_PROMISE and refuses it (but some push data was already sent)
 ```
 
-### 解决方案：使用 Cookie 追踪缓存
+### Solution: Track Cache with a Cookie
 
 ```nginx
 # 基于 Cookie 判断是否需要推送
@@ -303,9 +303,9 @@ location / {
 }
 ```
 
-### 更优雅的方案：103 Early Hints
+### A Cleaner Alternative: 103 Early Hints
 
-HTTP/2 Server Push 的一个替代方案是 103 Early Hints：
+An alternative to HTTP/2 Server Push is 103 Early Hints:
 
 ```js
 // Node.js 实现 103 Early Hints
@@ -325,22 +325,22 @@ server.on('stream', (stream, headers) => {
 });
 ```
 
-103 Early Hints 让客户端在服务器处理请求的同时预加载资源，不需要服务器决定推送什么。
+103 Early Hints lets the client preload resources while the server is still processing the request, without the server deciding what to push.
 
 ## Server Push Considerations
 
-1. **不要过度推送** — 推送太多资源反而会阻塞主响应
-2. **考虑已有缓存** — 推送被缓存的资源是浪费
-3. **Push Cache 生命周期短** — 未使用的推送资源在连接关闭后就会丢弃
-4. **需要 HTTPS** — HTTP/2 Server Push 只在 HTTPS 下可用
-5. **测量实际效果** — 不同网络条件下效果不同，需要用 RUM 数据验证
+1. **Don't over-push** — pushing too many resources will block the main response.
+2. **Account for existing caches** — pushing already-cached resources is wasteful.
+3. **Short push-cache lifetime** — unused pushed resources are dropped once the connection closes.
+4. **Requires HTTPS** — HTTP/2 Server Push is only available over HTTPS.
+5. **Measure the actual effect** — results vary by network conditions; validate with RUM data.
 
 ## Summary
 
-- HTTP/2 Server Push 通过 `PUSH_PROMISE` 帧在客户端请求前主动推送资源，减少 RTT
-- 适合推送的资源：关键渲染路径资源、体积小、该页面一定用到的
-- Nginx 配置简单（`http2_push`），Node.js 需要使用 http2 模块手动实现
-- 推送缓存（Push Cache）与常规缓存独立，生命周期较短
-- 需要注意避免重复推送已被缓存的资源
-- 103 Early Hints 是 Server Push 的轻量替代方案，让客户端自主决定是否预加载
-- 务必使用 RUM 数据验证 Server Push 的实际性能收益
+- HTTP/2 Server Push uses the `PUSH_PROMISE` frame to proactively push resources before the client requests them, cutting down RTT.
+- Good candidates to push: critical rendering-path resources, small files, and resources the page is certain to use.
+- Nginx configuration is simple (`http2_push`); Node.js requires implementing it manually with the http2 module.
+- The push cache is independent from the regular cache and has a short lifetime.
+- Be careful to avoid re-pushing resources that are already cached.
+- 103 Early Hints is a lightweight alternative to Server Push, letting the client decide whether to preload.
+- Always validate Server Push's real performance gains with RUM data.

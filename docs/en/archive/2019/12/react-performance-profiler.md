@@ -3,18 +3,18 @@ title: "React Profiler: Performance Analysis Tool"
 date: 2019-12-12 15:50:43
 tags:
   - React
-readingTime: 4
-description: "React 16.5 引入了 Profiler API，16.9 又做了改进。在实际项目中，\"页面卡顿\"是非常模糊的描述，需要工具来精确定位性能瓶颈。React Profiler 就是这样的工具——它能告诉你每个组件的渲染耗时、渲染次数、渲染原因。结合其他手段，我们可以系统性地优化 React 应用性能。"
-wordCount: 419
+readingTime: 3
+description: "React 16.5 introduced the Profiler API, and 16.9 improved it further. In real projects, 'the page feels janky' is a very vague description—you need a tool to pinpoint performance bottlenecks precisely. React Profiler is exactly that tool: it tells you each component's render time, render count, and the reason it rendered. Combined with other techniques, we can optimize React app performance systematically."
+wordCount: 261
 ---
 
-React 16.5 引入了 Profiler API，16.9 又做了改进。在实际项目中，"页面卡顿"是非常模糊的描述，需要工具来精确定位性能瓶颈。React Profiler 就是这样的工具——它能告诉你每个组件的渲染耗时、渲染次数、渲染原因。结合其他手段，我们可以系统性地优化 React 应用性能。
+React 16.5 introduced the Profiler API, and 16.9 improved it further. In real projects, "the page feels janky" is a very vague description—you need a tool to pinpoint performance bottlenecks precisely. React Profiler is exactly that tool: it tells you each component's render time, render count, and the reason it rendered. Combined with other techniques, we can optimize React app performance systematically.
 
 ## React DevTools Profiler
 
-React DevTools 的 Profiler 面板是最直观的性能分析工具。安装 React DevTools 后，在 Chrome DevTools 中会多出一个 Profiler 标签页。
+The Profiler panel in React DevTools is the most intuitive performance-analysis tool. Once React DevTools is installed, an extra Profiler tab appears in Chrome DevTools.
 
-使用方式非常简单：
+Using it is very simple:
 
 ```jsx
 // 确保使用 development 构建进行分析
@@ -34,7 +34,7 @@ React DevTools 的 Profiler 面板是最直观的性能分析工具。安装 Rea
 
 ## onRender Callback
 
-`<Profiler>` 组件可以包裹任意组件树，在每次渲染时触发回调，收集详细的性能数据：
+The `<Profiler>` component can wrap any component tree and fires a callback on every render, collecting detailed performance data:
 
 ```jsx
 import React, { Profiler } from 'react'
@@ -71,7 +71,7 @@ function App() {
 }
 ```
 
-在实际项目中，我们会把 Profiler 数据发送到监控服务：
+In real projects, we send the Profiler data to a monitoring service:
 
 ```jsx
 function performanceCallback(
@@ -116,7 +116,7 @@ function performanceCallback(
 
 ## why-did-you-render
 
-`@welldone-software/why-did-you-render` 是一个非常实用的工具，它能自动检测不必要的重渲染并给出原因：
+`@welldone-software/why-did-you-render` is a very practical tool—it automatically detects unnecessary re-renders and explains why:
 
 ```javascript
 // 安装
@@ -167,7 +167,7 @@ function ExpensiveList({ items, onItemClick }) {
 
 ## Performance Optimization Strategies
 
-有了 Profiler 数据，常见的优化策略如下：
+With Profiler data in hand, here are the common optimization strategies:
 
 ```jsx
 // 1. React.memo：跳过 props 没有变化的重渲染
@@ -273,7 +273,7 @@ function Dashboard() {
 
 ## Real Optimization Cases
 
-我们的后台管理系统有一个列表页，1000 条数据渲染耗时 800ms。通过 Profiler 分析后定位到问题：
+Our admin system has a list page that took 800ms to render 1000 rows. After analyzing it with the Profiler we located the problem:
 
 ```jsx
 // 优化前：每个 Item 都重渲染，总计 800ms
@@ -332,9 +332,9 @@ function OrderList({ orders }) {
 
 ## Summary
 
-- React DevTools Profiler 的 Flamegraph 视图可以直观定位渲染耗时最长的组件
-- `<Profiler>` 组件的 onRender 回调可用于收集线上性能数据
-- why-did-you-render 帮助识别不必要的重渲染，开发阶段必备
-- 常见优化手段：React.memo、useMemo、useCallback、列表虚拟化
-- 优化要基于数据：先用 Profiler 定位瓶颈，再针对性优化，避免过早优化
-- 大列表场景下，虚拟化是收益最大的优化方式（1000 条数据从 800ms 降到 45ms）
+- React DevTools Profiler's Flamegraph view makes it easy to spot the component with the longest render time
+- The `<Profiler>` component's onRender callback can collect production performance data
+- why-did-you-render helps identify unnecessary re-renders and is a must-have in development
+- Common optimizations: React.memo, useMemo, useCallback, and list virtualization
+- Optimize based on data: locate the bottleneck with the Profiler first, then optimize specifically—avoid premature optimization
+- For large lists, virtualization gives the biggest payoff (1000 rows dropped from 800ms to 45ms)

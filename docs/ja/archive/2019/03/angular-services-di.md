@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angularの依存性注入システムはフレームワークのコアだ。これを理解することで、より模块化されテスト可能なコードを書けるようになる。"
-wordCount: 140
+wordCount: 136
 ---
 
 Angularの依存性注入システムはフレームワークのコアだ。これを理解することで、より模块化されテスト可能なコードを書けるようになる。
@@ -62,4 +62,4 @@ TestBed.configureTestingModule({
 });
 ```
 
-AngularのDIシステムは、エンタープライズアプリケーションで人気を集めている重要な理由の一つだ。
+AngularのDIシステムは、エンタープライズアプリケーションで好まれる重要な理由の一つだ。

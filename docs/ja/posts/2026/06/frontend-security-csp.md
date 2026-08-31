@@ -5,10 +5,10 @@ tags:
   - セキュリティ
 readingTime: 2
 description: "Content Security Policy v3 と Subresource Integrity は 2026 年のフロントエンドセキュリティの2つの柱だ。CSP の設定戦略、SRI の使用方法、よくあるセキュリティ陷阱を議論する。"
-wordCount: 367
+wordCount: 373
 ---
 
-フロントエンドセキュリティはもはや「オプションの追加项」ではなく、アプリケーションアーキテクチャのコア部分だ。2026 年の Web セキュリティ環境はより複雑で、CSP v3 と SRI は標準化された保護メカニズムを提供する。
+フロントエンドセキュリティはもはや「後付けのオプション」ではなく、アプリケーションアーキテクチャのコア部分だ。2026 年の Web セキュリティ環境はより複雑で、CSP v3 と SRI は標準化された保護メカニズムを提供する。
 
 ## Content Security Policy の基礎
 
@@ -78,9 +78,9 @@ SRI は外部リソースの改ざんを防止する：
         crossorigin="anonymous"></script>
 ```
 
-## よくあるセキュリティ陷阱
+## よくあるセキュリティ上の落とし穴
 
-**陷阱 1：`unsafe-inline` のリスク**
+**落とし穴 1：`unsafe-inline` のリスク**
 
 ```html
 <!-- 危険：任意のインラインスクリプトを許可 -->

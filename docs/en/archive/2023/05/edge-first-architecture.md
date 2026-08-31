@@ -4,11 +4,11 @@ date: 2023-05-23 09:48:11
 tags:
   - Frontend
 readingTime: 2
-description: "Edge-first 前端架构设计这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 197
+description: "Edge-first frontend architecture design has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 180
 ---
 
-Edge-first 前端架构设计这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+Edge-first frontend architecture design has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
 
 ## Getting Started
 

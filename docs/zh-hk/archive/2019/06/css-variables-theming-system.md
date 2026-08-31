@@ -153,4 +153,4 @@ $primary: #409eff;
 - CSS 變量運行時生效，可以用 JS 動態修改，比 Sass 變量更靈活
 - `:root` 定義全局變量，組件內定義局部變量
 - `data-theme` 屬性 + CSS 變量 = 零運行時成本的主題切換
-- 用 `prefers-color-scheme` 媒體查詢尊重用户系統主題偏好
+- 用 `prefers-color-scheme` 媒體查詢尊重用戶系統主題偏好

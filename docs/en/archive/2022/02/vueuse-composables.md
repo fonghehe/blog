@@ -4,11 +4,11 @@ date: 2022-02-09 16:06:17
 tags:
   - Vue
 readingTime: 2
-description: "关于VueUse 组合式工具库大全，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 221
+description: "When it comes to VueUse's comprehensive composable utilities, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter."
+wordCount: 198
 ---
 
-关于VueUse 组合式工具库大全，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to VueUse's comprehensive composable utilities, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter.
 
 ## Basic Principles
 

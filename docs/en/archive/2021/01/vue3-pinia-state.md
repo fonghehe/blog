@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 1
-description: "Pinia 下一代 Vuex 状态管理 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projec"
-wordCount: 182
+description: "Pinia, the next-generation Vuex, is increasingly popular for state management. This article starts from real projects and digs into its core principles and best practices."
+wordCount: 184
 ---
 
-Pinia 下一代 Vuex 状态管理 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Pinia, the next-generation state management library for Vue, is being adopted more and more widely in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 

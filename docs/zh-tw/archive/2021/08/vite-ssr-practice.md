@@ -9,7 +9,7 @@ description: "最近把一個內部運營平臺從 CSR 遷移到了 Vite SSR，�
 wordCount: 284
 ---
 
-最近把一個內部運營平臺從 CSR 遷移到了 Vite SSR，記錄一下踩坑和經驗。Vite 2.x 的 SSR 支援已經比較成熟了，但文件偏少，實際用起來還是有一些要注意的。
+最近把一個內部營運平臺從 CSR 遷移到了 Vite SSR，記錄一下踩坑和經驗。Vite 2.x 的 SSR 支援已經比較成熟了，但文件偏少，實際用起來還是有一些要注意的。
 
 ## 基本架構
 
@@ -252,7 +252,7 @@ export function useAsyncData<T>(key: string, fetcher: () => Promise<T>) {
 | 首屏可見 | ~1.5s | ~0.3s |
 | 可互動時間 | ~2s | ~1s |
 
-內部運營平臺對 SEO 沒需求，但首屏速度提升明顯，特別是弱網環境。
+內部營運平臺對 SEO 沒需求，但首屏速度提升明顯，特別是弱網環境。
 
 ## 小結
 

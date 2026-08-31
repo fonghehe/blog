@@ -5,10 +5,10 @@ tags:
   - Vue
 readingTime: 2
 description: "最近在团队中落地Vue 3.2 script-setup 实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 351
+wordCount: 355
 ---
 
-最近在团队中落地Vue 3.2 script-setup 实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近在团队里落地了 Vue 3.2 的 script-setup 实践，积累了不少经验。整理出来供大家参考，希望对做类似工作的同学有所帮助。
 
 ## 核心概念
 

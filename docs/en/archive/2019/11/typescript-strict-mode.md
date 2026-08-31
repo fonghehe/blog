@@ -4,15 +4,15 @@ date: 2019-11-20 09:57:07
 tags:
   - TypeScript
 readingTime: 3
-description: "TypeScript 的 `strict` 模式启用了一系列严格的类型检查选项，能在编译期捕获大量潜在错误。对于已有项目来说，启用 strict 模式可能会带来大量报错。本文将详细介绍 strict 模式的各个选项，以及如何渐进式地在项目中启用严格类型检查。"
-wordCount: 461
+description: "TypeScript's `strict` mode turns on a set of rigorous type-checking options that catch many potential errors at compile time. For an existing project, enabling strict mode can surface a flood of errors. This article details each option and shows how to adopt strict type checking incrementally."
+wordCount: 292
 ---
 
-TypeScript 的 `strict` 模式启用了一系列严格的类型检查选项，能在编译期捕获大量潜在错误。对于已有项目来说，启用 strict 模式可能会带来大量报错。本文将详细介绍 strict 模式的各个选项，以及如何渐进式地在项目中启用严格类型检查。
+TypeScript's `strict` mode turns on a set of rigorous type-checking options that catch many potential errors at compile time. For an existing project, enabling strict mode can surface a flood of errors. This article details each option and shows how to adopt strict type checking incrementally.
 
 ## What strict Mode Includes
 
-`strict: true` 实际上等同于开启以下所有选项：
+`strict: true` is effectively shorthand for enabling all of the following options:
 
 ```json
 {
@@ -32,7 +32,7 @@ TypeScript 的 `strict` 模式启用了一系列严格的类型检查选项，�
 
 ## noImplicitAny
 
-禁止隐式的 `any` 类型。所有变量、参数都必须有明确的类型：
+Disallows implicit `any` types. Every variable and parameter must have an explicit type:
 
 ```ts
 // 关闭时（宽松模式）：参数隐式为 any
@@ -49,7 +49,7 @@ function add(a: number, b: number): number {
 const multiply = (a: number, b: number) => a * b;
 ```
 
-常见报错与解决：
+Common errors and how to fix them:
 
 ```ts
 // 报错：Parameter 'event' implicitly has an 'any' type
@@ -85,7 +85,7 @@ function greet(user: User) {
 
 ## strictNullChecks
 
-`null` 和 `undefined` 不再是所有类型的子类型，必须显式处理：
+`null` and `undefined` are no longer subtypes of every type, so they must be handled explicitly:
 
 ```ts
 // 关闭时：可以忽略 null
@@ -111,7 +111,7 @@ function getLength(str: string | undefined): number {
 }
 ```
 
-在实际项目中的应用：
+Applying it in a real project:
 
 ```ts
 interface User {
@@ -156,7 +156,7 @@ const firstUserSafe = users[0]; // 需要检查
 
 ## strictFunctionTypes
 
-函数参数类型检查更严格，使用逆变（contravariance）检查：
+Function parameter types are checked more strictly, using contravariance:
 
 ```ts
 // 关闭时：参数类型是双向协变的
@@ -174,7 +174,7 @@ const handler: Handler = mouseHandler; // 不报错
 
 ## strictPropertyInitialization
 
-类属性必须在构造函数中初始化，或有默认值：
+Class properties must be initialized in the constructor or have a default value:
 
 ```ts
 class User {
@@ -200,9 +200,9 @@ class User {
 
 ## Gradually Enabling strict
 
-对于已有项目，不建议一步到位启用所有 strict 选项。可以渐进式迁移：
+For an existing project, don't flip on every strict option at once. Migrate incrementally instead:
 
-### 第一步：启用 noImplicitAny
+### Step 1: Enable noImplicitAny
 
 ```json
 {
@@ -212,7 +212,7 @@ class User {
 }
 ```
 
-处理策略：对确实不知道类型的参数，暂时使用 `any` 或 `unknown`：
+Strategy: for parameters whose type you genuinely don't know yet, fall back to `any` or `unknown` temporarily:
 
 ```ts
 // 对第三方库的回调
@@ -228,9 +228,9 @@ function handleResponseSafe(data: unknown) {
 }
 ```
 
-### 第二步：启用 strictNullChecks
+### Step 2: Enable strictNullChecks
 
-这是最难的一步，因为现有代码很少处理 null：
+This is the hardest step, because most existing code doesn't handle null:
 
 ```json
 {
@@ -240,7 +240,7 @@ function handleResponseSafe(data: unknown) {
 }
 ```
 
-使用 `// @ts-ignore` 或 `as any` 临时绕过，逐步修复：
+Use `// @ts-ignore` or `as any` as a temporary escape hatch, then fix gradually:
 
 ```ts
 // 临时绕过
@@ -251,7 +251,7 @@ const name: string = userData.name;
 const name: string = userData?.name ?? 'unknown';
 ```
 
-### 第三步：启用其余选项
+### Step 3: Enable the Rest
 
 ```json
 {
@@ -263,7 +263,7 @@ const name: string = userData?.name ?? 'unknown';
 
 ## Using unknown Instead of any
 
-`unknown` 是类型安全的 `any`：
+`unknown` is the type-safe version of `any`:
 
 ```ts
 // any：关闭类型检查
@@ -337,10 +337,10 @@ function isApiResponse<T>(value: unknown): value is ApiResponse<T> {
 
 ## Summary
 
-- `strict: true` 包含 7 个严格类型检查选项
-- `noImplicitAny` 禁止隐式 any，`strictNullChecks` 强制处理 null/undefined
-- 建议渐进式启用：先 noImplicitAny，再 strictNullChecks，最后全部开启
-- 使用 `unknown` 替代 `any`，提高类型安全性
-- 类型守卫（type guard）是处理联合类型的关键工具
-- 临时使用 `// @ts-ignore` 绕过报错，逐步修复
-- strict 模式虽然前期投入大，但能显著减少运行时错误
+- `strict: true` bundles 7 strict type-checking options
+- `noImplicitAny` bans implicit any; `strictNullChecks` forces you to handle null/undefined
+- Enable incrementally: start with noImplicitAny, then strictNullChecks, then turn on everything
+- Prefer `unknown` over `any` to improve type safety
+- Type guards are the key tool for working with union types
+- Use `// @ts-ignore` as a temporary workaround, then fix the errors over time
+- Strict mode costs more upfront, but it noticeably cuts down runtime errors

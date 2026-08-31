@@ -3,16 +3,16 @@ title: "Turborepo: The Perfect Partner for Monorepo Build Orchestration"
 date: 2022-03-08 10:39:07
 tags:
   - Frontend
-readingTime: 3
-description: "上一篇写了 pnpm workspace 做依赖管理。这篇讲构建编排——当你的 monorepo 有十几个包需要构建和测试，怎么让它们按依赖顺序执行，并且尽可能并行？"
-wordCount: 442
+readingTime: 2
+description: "The last post covered pnpm workspace for dependency management. This one is about build orchestration — when your monorepo has a dozen packages to build and test, how do you run them in dependency order while maximizing parallelism?"
+wordCount: 304
 ---
 
-上一篇写了 pnpm workspace 做依赖管理。这篇讲构建编排——当你的 monorepo 有十几个包需要构建和测试，怎么让它们按依赖顺序执行，并且尽可能并行？
+The last post covered pnpm workspace for dependency management. This one is about build orchestration — when your monorepo has a dozen packages to build and test, how do you run them in dependency order while maximizing parallelism?
 
-Turborepo 是答案。它是一个构建编排工具，不替代 pnpm，而是和 pnpm 配合。
+Turborepo is the answer. It's a build orchestration tool that doesn't replace pnpm but works alongside it.
 
-## 安装与初始化
+## Installation and Setup
 
 ```bash
 # 在已有的 pnpm workspace 项目中
@@ -43,15 +43,15 @@ pnpm add -D -w turbo
 }
 ```
 
-关键配置解释：
+Key configuration explained:
 
-- `dependsOn: ["^build"]`：表示当前包的 build 依赖其所有 workspace 依赖的 build（`^` 表示依赖）
-- `dependsOn: ["build"]`：表示 test 依赖当前包自己的 build
-- `outputs`：构建产物路径，Turborepo 用来做缓存
-- `cache: false`：dev 不缓存
-- `persistent: true`：dev 是长驻进程
+- `dependsOn: ["^build"]`: means the current package's build depends on the builds of all its workspace dependencies (`^` indicates upstream dependencies)
+- `dependsOn: ["build"]`: means test depends on the current package's own build
+- `outputs`: build output paths, used by Turborepo for caching
+- `cache: false`: dev is not cached
+- `persistent: true`: dev is a long-running process
 
-## 执行命令
+## Running Commands
 
 ```bash
 # 构建所有包（按拓扑排序 + 并行）
@@ -73,9 +73,9 @@ turbo run build test lint
 turbo run dev --parallel
 ```
 
-## 远程缓存
+## Remote Caching
 
-Turborepo 最有吸引力的特性——CI 和本地共享构建缓存：
+Turborepo's most attractive feature — CI and local environments share the build cache:
 
 ```bash
 # 登录 Vercel（Turborepo 官方托管）
@@ -85,7 +85,7 @@ npx turbo login
 npx turbo link
 ```
 
-也可以自建远程缓存：
+You can also self-host the remote cache:
 
 ```json
 // turbo.json
@@ -106,11 +106,11 @@ npx turbo link
     TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 ```
 
-效果：第一次 CI 构建后，后续的 PR 如果没改构建源码，直接命中缓存，构建从 3 分钟降到 5 秒。
+The result: after the first CI build, subsequent PRs that don't change build source code hit the cache directly, dropping build time from 3 minutes to 5 seconds.
 
-## 实际项目配置
+## Real-World Project Configuration
 
-我们的 monorepo 结构：
+Our monorepo structure:
 
 ```
 frontend-monorepo/
@@ -162,9 +162,9 @@ frontend-monorepo/
 }
 ```
 
-`globalDependencies` 定义了影响所有包的文件——这些文件变了，所有缓存都会失效。
+`globalDependencies` defines files that affect all packages — when any of these change, all caches are invalidated.
 
-## 过滤器的高级用法
+## Advanced Filter Usage
 
 ```bash
 # 构建所有 apps 目录下的包
@@ -213,19 +213,19 @@ jobs:
           TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 ```
 
-## pnpm + Turborepo 的分工
+## Division of Labor: pnpm + Turborepo
 
-| 能力 | pnpm workspace | Turborepo |
+| Capability | pnpm workspace | Turborepo |
 |------|---------------|-----------|
-| 依赖管理 | 负责 | 不管 |
-| workspace 协议 | 负责 | 不管 |
-| 构建编排 | 基础（-r） | 负责 |
-| 并行执行 | 基础 | 智能并行 |
-| 构建缓存 | 没有 | 本地 + 远程 |
-| 任务管道 | 没有 | 完整支持 |
+| Dependency management | Handles it | Not its job |
+| Workspace protocol | Handles it | Not its job |
+| Build orchestration | Basic (-r) | Handles it |
+| Parallel execution | Basic | Smart parallelism |
+| Build caching | None | Local + remote |
+| Task pipeline | None | Full support |
 
-简单说：pnpm 管依赖，Turborepo 管构建。
+In short: pnpm manages dependencies, Turborepo manages builds.
 
 ## Summary
 
-Turborepo 是 monorepo 构建编排的轻量级方案。它不做包管理（pnpm 做），只专注于任务编排和缓存。对于中小型 monorepo，pnpm + Turborepo 的组合已经足够好。如果需要更重的功能（版本管理、changelog 生成），可以再加 Changesets。
+Turborepo is a lightweight solution for monorepo build orchestration. It doesn't do package management (that's pnpm's job) — it focuses solely on task orchestration and caching. For small-to-medium monorepos, the pnpm + Turborepo combination is already excellent. If you need heavier features (versioning, changelog generation), add Changesets on top.

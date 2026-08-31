@@ -4,11 +4,11 @@ date: 2022-07-13 11:13:17
 tags:
   - WebAssembly
 readingTime: 2
-description: "在日常开发中，WebAssembly Component Model is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategi"
-wordCount: 205
+description: "The WebAssembly Component Model is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 193
 ---
 
-在日常开发中，WebAssembly Component Model is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+the WebAssembly Component Model is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
 
 ## Quick Start
 
@@ -47,7 +47,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Internal Principles
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 const express = require('express')
@@ -166,4 +166,4 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- WebAssembly Component Model不是银弹，需要根据项目规模和技术栈选择
+- WebAssembly Component Model is not a silver bullet — choose based on your project scale and tech stack

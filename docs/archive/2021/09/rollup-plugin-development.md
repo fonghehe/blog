@@ -5,7 +5,7 @@ tags:
   - Rollup
 readingTime: 2
 description: "Vite 底层用 Rollup 做生产构建，理解 Rollup 插件机制对深度使用 Vite 非常重要。今年我们在组件库构建中开发了几个自定义 Rollup 插件，总结一下开发经验。"
-wordCount: 229
+wordCount: 232
 ---
 
 Vite 底层用 Rollup 做生产构建，理解 Rollup 插件机制对深度使用 Vite 非常重要。今年我们在组件库构建中开发了几个自定义 Rollup 插件，总结一下开发经验。
@@ -213,7 +213,7 @@ export default function debugPlugin() {
 ## 小结
 
 - Rollup 插件的核心是 transform、resolveId、load 三个 hook
-- Vite 兼容 Rollup 插件 API，理解 Rollup 对 Vite 深度使用很重要
+- Vite 兼容 Rollup 插件 API，所以理解 Rollup 对深度使用 Vite 很有帮助
 - 插件开发中 `this.emitFile`、`this.warn` 等上下文方法很实用
 - 组件库构建是自定义插件的典型应用场景
 - 调试时善用 `this.info` 输出中间状态

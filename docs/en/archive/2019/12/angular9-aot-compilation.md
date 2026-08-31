@@ -4,31 +4,31 @@ date: 2019-12-20 09:57:10
 tags:
   - Angular
 readingTime: 2
-description: "Angular 9 目前处于 Beta 阶段，预计 2020 年初正式发布。最大的变化是 Ivy 渲染引擎将成为默认，连带着 AOT 也将默认开启。这两个变化对包体积和模板类型安全都有显著影响。"
-wordCount: 352
+description: "Angular 9 is currently in beta and is expected to ship in early 2020. The biggest change is that the Ivy rendering engine becomes the default, and with it AOT compilation is enabled by default as well. Both changes have a significant impact on bundle size and template type safety."
+wordCount: 240
 ---
 
-Angular 9 目前处于 Beta 阶段，预计 2020 年初正式发布。最大的变化是 Ivy 渲染引擎将成为默认，连带着 AOT 也将默认开启。这两个变化对包体积和模板类型安全都有显著影响。
+Angular 9 is currently in beta and is expected to ship in early 2020. The biggest change is that the Ivy rendering engine becomes the default, and with it AOT compilation is enabled by default as well. Both changes have a significant impact on bundle size and template type safety.
 
 ## AOT vs JIT Review
 
-| 特性                | JIT（运行时编译）          | AOT（构建时编译） |
-| ------------------- | -------------------------- | ----------------- |
-| 编译时机            | 运行时                     | 构建时            |
-| 用户初始加载速度    | 慢（需要下载并解析编译器） | 快                |
-| Bundle 中包含编译器 | 是（+~100KB）              | 否                |
-| 模板错误检测        | 运行时                     | 构建时            |
-| Tree-shaking 效果   | 差                         | 好                |
+| Feature             | JIT (compiled at runtime)  | AOT (compiled at build time) |
+| ------------------- | -------------------------- | ---------------------------- |
+| Compile time        | Runtime                    | Build time                   |
+| Initial page load   | Slow (downloads & parses the compiler) | Fast               |
+| Compiler in bundle  | Yes (+~100KB)              | No                           |
+| Template error detection | Runtime               | Build time                   |
+| Tree-shaking        | Poor                       | Good                         |
 
-在 Angular 8 中，dev 模式默认是 JIT，production 才用 AOT。Angular 9 将两种模式都切成 AOT。
+In Angular 8, dev mode defaulted to JIT and only production used AOT. Angular 9 switches both modes to AOT.
 
 ## Bundle Size Benefits from Ivy + AOT
 
-根据 Angular 团队公布的数据：
+According to data published by the Angular team:
 
-- **小型应用**：减小约 30%
-- **中型应用**：减小约 40%
-- **大型应用**：收益相对较小，但 tree-shaking 效果改善明显
+- **Small apps**: bundle size drops by about 30%
+- **Medium apps**: drops by about 40%
+- **Large apps**: the gains are relatively smaller, but the improvement in tree-shaking is noticeable
 
 ## strictTemplates Options
 
@@ -46,11 +46,11 @@ Angular 9 目前处于 Beta 阶段，预计 2020 年初正式发布。最大的�
 }
 ```
 
-开启后，模板里的类型错误将在构建时就被捕获，而不是在运行时。
+Once enabled, template type errors are caught at build time rather than at runtime.
 
 ## Common Migration Issues
 
-**1. ViewChild 需要指定 `{ static }` 选项**
+**1. ViewChild now requires the `{ static }` option**
 
 ```typescript
 // Angular 8+ 必须显式指定
@@ -59,7 +59,7 @@ Angular 9 目前处于 Beta 阶段，预计 2020 年初正式发布。最大的�
 @ViewChild('myRef', { static: false }) myRef: ElementRef;
 ```
 
-**2. Renderer2 替代 Renderer**
+**2. Use Renderer2 instead of Renderer**
 
 ```typescript
 // ❌ Renderer 已在 Ivy 中删除
@@ -67,7 +67,7 @@ Angular 9 目前处于 Beta 阶段，预计 2020 年初正式发布。最大的�
 constructor(private renderer: Renderer2) {}
 ```
 
-**3. 模板类型错误修复**
+**3. Fixing template type errors**
 
 ```html
 <!-- ❌ 类型不匹配会报错 -->
@@ -91,4 +91,4 @@ ng update @angular/core @angular/cli
 
 ## Summary
 
-Angular 9 的核心是“默认更好”——AOT 默认开启让开发模式与生产模式一致，消除了“本地正常上线打破”的经典问题。Ivy 的体积收益将让 Angular 应用在性能指标上更具竞争力。
+Angular 9's core philosophy is "better by default"—with AOT on by default, dev and production modes stay consistent, eliminating the classic "works on my machine but breaks in production" problem. Ivy's bundle-size wins make Angular apps more competitive on performance metrics.

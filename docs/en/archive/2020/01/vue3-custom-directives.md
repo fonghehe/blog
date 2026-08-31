@@ -4,15 +4,15 @@ date: 2020-01-24 09:35:33
 tags:
   - Vue
 readingTime: 2
-description: "自定义指令在 Vue 3 中经过了重设计，生命周期钩子和 Composition API 保持了一致的命名风格。对于需要直接操作 DOM 的场景——拖拽、防抖点击、权限控制——自定义指令仍然是最干净的抽象方式。"
-wordCount: 317
+description: "Custom directives were redesigned in Vue 3, with lifecycle hooks aligned to the Composition API naming style. For scenarios requiring direct DOM manipulation—dragging, debounced clicks, permission control—custom directives remain the cleanest abstraction."
+wordCount: 209
 ---
 
-自定义指令在 Vue 3 中经过了重设计，生命周期钩子和 Composition API 保持了一致的命名风格。对于需要直接操作 DOM 的场景——拖拽、防抖点击、权限控制——自定义指令仍然是最干净的抽象方式。
+Custom directives were redesigned in Vue 3, with lifecycle hooks following the same naming style as the Composition API. For scenarios that need direct DOM manipulation—dragging, debounced clicks, permission control—custom directives remain the cleanest abstraction.
 
 ## Directive Lifecycle Hook Changes
 
-Vue 3 将 Vue 2 的 `bind`、`inserted`、`update` 等统一为更语义化的命名：
+Vue 3 unified Vue 2's `bind`, `inserted`, `update`, etc. into more semantic names:
 
 | Vue 2 | Vue 3 |
 |-------|-------|
@@ -48,7 +48,7 @@ const vDirective = {
 
 ## In Practice: Debounce Directive
 
-最常用的场景之一，点击防抖避免重复提交。
+One of the most common scenarios: debouncing clicks to prevent duplicate submissions.
 
 ```javascript
 // directives/v-debounce.js
@@ -87,7 +87,7 @@ app.directive('debounce', vDebounce)
 
 ## In Practice: Permission Control Directive
 
-后端返回用户权限列表，前端通过指令控制按钮显隐。
+The backend returns the user's permission list, and the frontend uses the directive to control whether buttons are shown or hidden.
 
 ```javascript
 // directives/v-permission.js
@@ -123,9 +123,9 @@ app.directive('permission', vPermission)
 // <button v-permission="['order:export', 'admin:export']">导出数据</button>
 ```
 
-## 实战：点击外部关闭
+## In Practice: Click Outside to Close
 
-Dropdown 和 Popover 组件经常需要这个功能。
+Dropdown and Popover components often need this functionality.
 
 ```javascript
 // directives/v-click-outside.js
@@ -153,9 +153,9 @@ export default {
 // </div>
 ```
 
-## 局部注册与全局注册
+## Local vs. Global Registration
 
-除了全局注册，指令也可以在组件内局部注册。
+Besides global registration, directives can also be registered locally within a component.
 
 ```vue
 <script>
@@ -177,8 +177,8 @@ export default {
 
 ## Summary
 
-- Vue 3 指令钩子命名更语义化，与组件生命周期一致
-- 指令适合处理纯 DOM 操作：防抖、权限控制、点击外部等
-- `binding.value` 是指令绑定值，`binding.arg` 是参数（`v-debounce:500` 中的 500）
-- 在 `unmounted` 中清理事件监听，防止内存泄漏
-- 局部注册指令适合只在特定组件使用的场景，减少全局污染
+- Vue 3 directive hooks are more semantic and consistent with component lifecycle hooks.
+- Directives are suited for pure DOM operations: debouncing, permission control, click-outside, and so on.
+- `binding.value` is the directive's bound value, and `binding.arg` is its argument (the `500` in `v-debounce:500`).
+- Clean up event listeners in `unmounted` to prevent memory leaks.
+- Local directive registration fits scenarios where a directive is only used in a specific component, reducing global pollution.

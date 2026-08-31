@@ -9,7 +9,7 @@ description: "React 18 即將發佈，Suspense 的數據獲取模式終於有了
 wordCount: 307
 ---
 
-React 18 即將發佈，Suspense 的數據獲取模式終於有了官方推薦方案。之前 Suspense 隻能做代碼分割的 loading 狀態，現在可以用於數據獲取了。
+React 18 即將發佈，Suspense 的數據獲取模式終於有了官方推薦方案。之前 Suspense 只能做代碼分割的 loading 狀態，現在可以用於數據獲取了。
 
 ## Suspense 的核心思路
 
@@ -111,7 +111,7 @@ function App() {
 
 ## 結合 React Query（推薦方案）
 
-React Query 3.25+ 已經支持 Suspense 模式：
+React Query 3.25+ 已經支援 Suspense 模式：
 
 ```jsx
 import { useQuery } from 'react-query'
@@ -206,7 +206,7 @@ function App() {
 // 客户端逐段 hydrate，不需要等所有內容
 ```
 
-用户更早看到內容，交互也更早可用。
+用戶更早看到內容，交互也更早可用。
 
 ## 錯誤處理
 

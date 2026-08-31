@@ -6,11 +6,11 @@ tags:
   - エンジニアリング
 
 readingTime: 2
-description: "给团队的组件库搭建文档站，对比了 VuePress 和 VitePress 后选择了后者。VitePress 基于 Vite + Vue 3，构建速度快了一个量级，而且配置更简洁。记录一下搭建过程和定制化配置。"
-wordCount: 280
+description: "チームのコンポーネントライブラリ向けにドキュメントサイトを構築するにあたり、VuePress と VitePress を比較して後者を選んだ。VitePress は Vite + Vue 3 ベースでビルド速度が一桁速く、設定も簡潔だ。構築手順とカスタマイズ設定を記録する。"
+wordCount: 422
 ---
 
-给团队的组件库搭建文档站，对比了 VuePress 和 VitePress 后选择了后者。VitePress 基于 Vite + Vue 3，构建速度快了一个量级，而且配置更简洁。记录一下搭建过程和定制化配置。
+チームのコンポーネントライブラリ向けにドキュメントサイトを構築するにあたり、VuePress と VitePress を比較して後者を選んだ。VitePress は Vite + Vue 3 ベースで、ビルド速度が一桁速く、設定も簡潔だ。構築手順とカスタマイズ設定を記録する。
 
 ## クイックスタート
 
@@ -31,7 +31,7 @@ npm install vitepress vue --save-dev
 #     └── table.md
 ```
 
-package.json 中添加脚本：
+package.json にスクリプトを追加する：
 
 ```json
 {
@@ -106,7 +106,7 @@ export default defineConfig({
 
 ## Markdown への Vue コンポーネントの埋め込み
 
-VitePress 支持在 Markdown 中直接使用 Vue 组件，这是文档站最强大的功能：
+VitePress は Markdown 内で Vue コンポーネントを直接使える。これがドキュメントサイトとして最も強力な機能だ：
 
 ````markdown
 # Button 按钮
@@ -141,7 +141,7 @@ import '@company/components/dist/style.css'
 
 ## カスタムホームページ
 
-VitePress 支持 Hero 风格的首页：
+VitePress は Hero スタイルのホームページにも対応している：
 
 ```markdown
 ---
@@ -170,7 +170,7 @@ features:
 
 ## デプロイ
 
-我们用的是 GitLab CI 自动部署到内网静态服务器：
+私たちは GitLab CI で内網の静的サーバーへ自動デプロイしている：
 
 ```yaml
 # .gitlab-ci.yml
@@ -189,7 +189,7 @@ pages:
 
 ## まとめ
 
-- VitePress 构建速度比 VuePress 快很多，开发体验更好
-- 在 Markdown 中直接嵌入 Vue 组件是做组件文档的核心能力
-- 配置简洁，上手门槛低，适合团队快速搭建
-- 目前 VitePress 还在 0.x 阶段，API 可能有变动，但已足够稳定用于内部文档
+- VitePress のビルド速度は VuePress より大幅に速く、開発体験も優れている
+- Markdown 内に Vue コンポーネントを直接埋め込めることは、コンポーネントドキュメントの中核となる機能だ
+- 設定が簡潔で学習コストが低く、チームでの迅速な構築に適している
+- 現在 VitePress はまだ 0.x 段階であり API が変わる可能性はあるが、内部ドキュメントには十分安定して使える

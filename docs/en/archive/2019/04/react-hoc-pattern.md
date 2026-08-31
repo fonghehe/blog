@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "There are plenty of articles on the React Higher-Order Component (HOC) pattern online, but most lack real-world experience. This article explores best practices"
-wordCount: 116
+wordCount: 115
 ---
 
 There are plenty of articles on the React Higher-Order Component (HOC) pattern online, but most lack real-world experience. This article explores best practices based on actual projects.
@@ -38,7 +38,7 @@ export default {
 {% endraw %}
 ```
 
-After rolling this pattern out across the team, the results were great — maintenance costs dropped noticeably.
+After adopting this pattern across the team, the results were great — maintenance costs dropped noticeably.
 
 ## Advanced Techniques
 
@@ -63,7 +63,7 @@ export default {
 };
 ```
 
-Pay attention to the performance details in the code above and avoid unnecessary computations.
+Be mindful of the performance details in the code above and avoid unnecessary computations.
 
 ## Practical Case
 

@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "在日常开发中，Vue 3 keep-alive 深入の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 503
+wordCount: 550
 ---
 
 在日常开发中，Vue 3 keep-alive 深入の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -62,7 +62,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理やエッジケースへの対応も必要になる。
 
 ## ビジネス実践
 
@@ -95,7 +95,7 @@ const csvToJson = new Transform({
 
 ## パフォーマンス比較
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -152,5 +152,5 @@ function useIntersectionObserver(options = {}) {
 - コミュニティの動向を注視し、技術的なソリューションは継続的な反復が必要です
 - 新しい技術を使うためだけに新しい技術を使わないでください
 - コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- Vue 3 keep-alive 深入不是银弹，需要根据项目规模和技术栈选择
+- Vue 3 keep-alive 深入 は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある
 - 基礎的な原理を理解することは、APIを暗記することより重要です

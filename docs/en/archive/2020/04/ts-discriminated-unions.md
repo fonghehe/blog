@@ -4,15 +4,15 @@ date: 2020-04-17 16:27:20
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 可辨识联合类型这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 262
+description: "TypeScript discriminated unions have been discussed many times in the community, but as versions evolve, many conclusions need updating. This article revisits the topic based on the latest version."
+wordCount: 159
 ---
 
-TypeScript 可辨识联合类型这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+The topic of TypeScript discriminated unions has been discussed in the community many times, but as versions iterate, many conclusions need updating. This article revisits it based on the latest version.
 
 ## Getting Started
 
-先来看基本的实现方式：
+Let's start with a basic implementation:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll also need to account for error handling and edge cases.
 
 ## Source Code Analysis
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -71,11 +71,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly lower maintenance cost.
 
 ## Real-World Applications
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -99,11 +99,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This way, both the testability and extensibility of the code improve.
 
 ## Optimization Tips
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -134,10 +134,10 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — that is critical in production.
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- In team collaboration, conventions and documentation matter more than the technology itself.
+- Keep an eye on the community; technical solutions need continuous iteration.
+- Don't adopt new tech just for the sake of using it.

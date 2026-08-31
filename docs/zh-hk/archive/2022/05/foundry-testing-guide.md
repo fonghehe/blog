@@ -5,9 +5,9 @@ tags:
   - Web3
   - Solidity
   - Smart Contract
-readingTime: 12
+readingTime: 8
 description: "Foundry 是用 Rust 編寫的 Solidity 開發工具鏈，最大的特點是測試用 Solidity 本身編寫，無需 JavaScript 中間層。本文系統介紹 Forge、Cast、Anvil、Chisel 四件套，並與 Hardhat 測試體系做深度對比。"
-wordCount: 3200
+wordCount: 1171
 ---
 
 Foundry（前身 Forge）是由 Georgios Konstantopoulos 和 Andreas Bigger 發起的 Rust 實現的 Solidity 開發工具鏈。它已成為許多頭部 DeFi 協議（Uniswap、MakerDAO、Compound 等）的默認測試框架。核心原因很簡單：用 Solidity 測試 Solidity，消除了 JavaScript 中間層帶來的類型翻譯損失和心智負擔。

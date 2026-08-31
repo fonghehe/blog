@@ -1,5 +1,5 @@
 ---
-title: "Farm Bundler Practice: 大型Project中Performance对比 & 工程决策"
+title: "Farm Build Tool in Practice: Performance Comparison and Engineering Decisions in a Large Project"
 date: 2025-11-27 15:01:38
 tags:
   - Frontend

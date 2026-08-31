@@ -1,5 +1,5 @@
 ---
-title: "Vitest 3.0 實踐：從 Jest 遷移的完整经驗总结"
+title: "Vitest 3.0 實踐：從 Jest 遷移的完整經驗總結"
 date: 2025-12-26 14:40:17
 tags:
   - 工程化
@@ -96,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 ## 最佳化技巧
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 .container {

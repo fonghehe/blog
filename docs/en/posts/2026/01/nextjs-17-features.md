@@ -5,14 +5,14 @@ tags:
   - React
 readingTime: 3
 description: "Next.js 17, released at the end of 2025, brings several major changes to the underlying architecture. The most significant shifts are Turbopack officially repla"
-wordCount: 274
+wordCount: 275
 ---
 
 Next.js 17, released at the end of 2025, brings several major changes to the underlying architecture. The most significant shifts are Turbopack officially replacing Webpack as the default bundler, and the stable release of PPR (Partial Prerendering). For large-scale projects, these changes have a substantial impact.
 
 ## Turbopack: Finally Saying Goodbye to Webpack
 
-Turbopack went through 3 years of development and refinement, and finally becomes the default bundler in Next.js 17. For our project with 200+ pages, cold start time dropped from 45 seconds with Webpack to under 3 seconds.
+Turbopack went through 3 years of development and refinement, and finally became the default bundler in Next.js 17. For our project with 200+ pages, cold start time dropped from 45 seconds with Webpack to under 3 seconds.
 
 ```typescript
 // next.config.ts —— Next.js 17 configuration
@@ -228,7 +228,7 @@ export const config = {
 
 ## Takeaways
 
-- Turbopack officially replaces Webpack; build speed improvements for large projects are orders of magnitude
+- Turbopack officially replaces Webpack; build speed improvements for large projects are orders of magnitude faster
 - PPR combines the speed of SSG with the dynamism of SSR — Next.js's most innovative feature
 - The new Cache API turns caching from "all or nothing" into per-data-level precise control
 - Middleware capabilities greatly enhanced; auth, A/B testing, and rate limiting can be done at the edge

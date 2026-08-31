@@ -1,18 +1,18 @@
 ---
-title: "Vue 3 Composition API in Practice: setup、ref  &  reactive CompleteGuide"
+title: "Vue 3 Composition API in Practice: setup, ref, and reactive Complete Guide"
 date: 2019-05-08 09:40:28
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 的 Composition API 已经在 RFC 中敲定，虽然正式版还要几个月，但提前深入理解很有必要。这不是 Vue 2 的简单升级，而是组件逻辑组织方式的根本变化。"
-wordCount: 224
+description: "Vue 3's Composition API has been finalized in its RFC. Although the stable release is still months away, it's worth understanding deeply now. This isn't a simple upgrade from Vue 2—it's a fundamental change in how component logic is organized."
+wordCount: 163
 ---
 
-Vue 3 的 Composition API 已经在 RFC 中敲定，虽然正式版还要几个月，但提前深入理解很有必要。这不是 Vue 2 的简单升级，而是组件逻辑组织方式的根本变化。
+Vue 3's Composition API has been finalized in its RFC. Although the stable release is still a few months away, it's worth understanding it deeply now. This isn't a simple upgrade from Vue 2 — it's a fundamental change in how component logic is organized.
 
-## 为什么需要 Composition API
+## Why the Composition API
 
-Options API 在简单组件中很好用，但复杂组件有明显痛点：
+The Options API works well for simple components, but complex components have clear pain points:
 
 ```javascript
 // Options API 的问题：相关逻辑被拆散
@@ -43,7 +43,7 @@ export default {
 };
 ```
 
-## Composition API 的核心
+## The Core of the Composition API
 
 ```javascript
 import { ref, reactive, computed, watch, onMounted } from 'vue';
@@ -104,7 +104,7 @@ export default {
 };
 ```
 
-## 抽取为可复用的 Composables
+## Extracting Reusable Composables
 
 ```javascript
 // composables/usePagination.js
@@ -176,7 +176,7 @@ export function useUser() {
 }
 ```
 
-## 在组件中使用
+## Using It in Components
 
 ```vue
 <script>
@@ -203,7 +203,7 @@ export default {
 </script>
 ```
 
-## ref vs reactive 怎么选
+## Choosing Between ref and reactive
 
 ```javascript
 // ref：适合原始值和需要替换整个值的场景
@@ -231,7 +231,7 @@ const state = ref({
 state.value.user = { name: 'test' }; // 访问 .value 后就是普通对象
 ```
 
-## 生命周期对应关系
+## Lifecycle Mapping
 
 ```javascript
 // Options API  →  Composition API
@@ -248,8 +248,8 @@ state.value.user = { name: 'test' }; // 访问 .value 后就是普通对象
 
 ## Summary
 
-- Composition API 把相关逻辑集中到一起，解决 Options API 逻辑分散的问题
-- `setup()` 是入口，`ref`/`reactive` 管理状态，`watch`/`onMounted` 处理副作用
-- 逻辑复用从 mixins 变成 composables（函数），更清晰、无命名冲突
-- `ref` 和 `reactive` 选择看场景，建议统一用 `ref` 降低心智负担
-- Options API 在 Vue 3 中仍然支持，简单组件用 Options API 也没问题
+- The Composition API colocates related logic, solving the scattered-logic problem of the Options API.
+- `setup()` is the entry point; `ref`/`reactive` manage state, while `watch`/`onMounted` handle side effects.
+- Logic reuse moves from mixins to composables (functions) — clearer, with no naming collisions.
+- Choose between `ref` and `reactive` based on the scenario; using `ref` consistently is recommended to reduce cognitive load.
+- The Options API is still supported in Vue 3, and it's perfectly fine to use it for simple components.

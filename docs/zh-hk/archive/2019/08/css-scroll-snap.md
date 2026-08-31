@@ -79,11 +79,11 @@ scroll-snap-type: inline;  /* 行內方向 */
 
 /* strictness: none | proximity | mandatory */
 scroll-snap-type: x mandatory;   /* 嚴格吸附，必須對齊到吸附點 */
-scroll-snap-type: x proximity;   /* 寬鬆吸附，儘量對齊但不強製 */
+scroll-snap-type: x proximity;   /* 寬鬆吸附，儘量對齊但不強制 */
 ```
 
 - **`mandatory`** — 滾動停止時必須對齊到吸附點。適用於輪播圖、全屏滾動等精確場景
-- **`proximity`** — 滾動停止時儘量對齊，但位置不夠精確時不會強製調整。適用於長列表等自然滾動場景
+- **`proximity`** — 滾動停止時儘量對齊，但位置不夠精確時不會強制調整。適用於長列表等自然滾動場景
 
 ### scroll-snap-align 詳解
 
@@ -177,9 +177,9 @@ scroll-snap-align: start end; /* 第一個值：行內方向，第二個值：�
 }
 ```
 
-## scroll-snap-stop 控製滾動穿透
+## scroll-snap-stop 控制滾動穿透
 
-默認情況下，快速滑動可能跳過多個吸附點。`scroll-snap-stop` 可以控製這個行為：
+默認情況下，快速滑動可能跳過多個吸附點。`scroll-snap-stop` 可以控制這個行為：
 
 ```css
 .slide {
@@ -189,7 +189,7 @@ scroll-snap-align: start end; /* 第一個值：行內方向，第二個值：�
 }
 ```
 
-這個屬性特別適合需要用户逐頁閲讀的場景，如新手引導頁。
+這個屬性特別適合需要用戶逐頁閱讀的場景，如新手引導頁。
 
 ## scroll-padding 和 scroll-margin
 
@@ -319,7 +319,7 @@ section {
   }
 }
 
-/* 不支援的瀏覽器仍然可以正常使用滾動，隻是沒有吸附效果 */
+/* 不支援的瀏覽器仍然可以正常使用滾動，只是沒有吸附效果 */
 ```
 
 ## 小結

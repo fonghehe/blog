@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "关于Bun 1.1 跨平台运行时，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 503
+wordCount: 519
 ---
 
 关于Bun 1.1 跨平台运行时，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -35,7 +35,7 @@ function reducer(state, action) {
 
 ## 高度な機能
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -153,7 +153,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+この構成は本番環境で半年以上安定稼働しており、実運用で検証済みだ。
 
 ## まとめ
 

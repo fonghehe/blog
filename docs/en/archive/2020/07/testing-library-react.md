@@ -4,15 +4,15 @@ date: 2020-07-03 17:18:36
 tags:
   - React
 readingTime: 2
-description: "关于React Testing Library 最佳实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 305
+description: "A production-focused guide to React Testing Library best practices, going beyond basic API calls to address real-world testing challenges and solutions."
+wordCount: 196
 ---
 
-关于React Testing Library 最佳实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to React Testing Library best practices, many developers only stay at the level of API calls. This article tries to discuss the real problems you'll hit and their solutions from a production perspective.
 
 ## Basic Principles
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -31,11 +31,11 @@ function reducer(state, action) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge cases — this is critical in production.
 
 ## Advanced Features
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -53,11 +53,11 @@ test.describe('用户登录流程', () => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to be tied to the specific scenario; not everything needs to be over-optimized.
 
 ## Project Practice
 
-我们可以通过以下方式来改进：
+We can improve it in the following ways:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -80,11 +80,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been validated in practice.
 
 ## Best Practices
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -109,11 +109,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll also need to consider error handling and edge cases.
 
 ## Common Pitfalls
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -137,10 +137,10 @@ describe('LoginForm', () => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and can significantly cut maintenance cost.
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- On a team, conventions and documentation matter more than the tech itself.
+- Keep up with the community — your tech stack needs continuous iteration.
+- Don't adopt new tech just for the sake of using it.

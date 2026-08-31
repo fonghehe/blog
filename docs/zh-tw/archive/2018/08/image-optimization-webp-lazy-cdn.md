@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
 />
 ```
 
-## CDN 與快取控製
+## CDN 與快取控制
 
 圖片上傳到 CDN，配置合理的快取策略：
 

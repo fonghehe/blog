@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Node.js 内置 fetch API 预览这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 271
+wordCount: 260
 ---
 
-Node.js 内置 fetch API 预览这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+Node.js 内置 fetch API 这个话题社区讨论过很多次；不过随着版本迭代，不少旧结论需要更新。本文基于最新版本重新梳理。
 
 ## 入门指南
 
@@ -38,7 +38,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+这段代码演示了基本用法，实际项目里还得补上错误处理和边界情况。
 
 ## 源码分析
 
@@ -96,7 +96,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样既提升了可测试性，也方便后续扩展。
 
 ## 优化技巧
 

@@ -5,9 +5,9 @@ tags:
   - Web3
   - Solidity
   - Smart Contract
-readingTime: 16
+readingTime: 8
 description: "From project structure to CI/CD integration, engineering practices for building production-grade smart contracts with Hardhat"
-wordCount: 4500
+wordCount: 432
 ---
 
 ## Hardhat vs Truffle: Why Migrate

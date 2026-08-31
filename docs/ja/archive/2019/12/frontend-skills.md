@@ -317,8 +317,8 @@ const config = {
 ```
 
 ```typescript
-// 测试体系：单元测试 + 集成测试
-// 使用 Jest + React Testing Library
+// テスト体系：单元测试 + 集成测试
+// 使用例 Jest + React Testing Library
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import UserForm from './UserForm'
@@ -328,13 +328,13 @@ describe('UserForm', () => {
     const onSubmit = jest.fn()
     render(<UserForm onSubmit={onSubmit} />)
 
-    userEvent.type(screen.getByLabelText(/用户名/i), '张三')
+    userEvent.type(screen.getByLabelText(/用户名/i), '張三')
     userEvent.type(screen.getByLabelText(/邮箱/i), 'zhangsan@example.com')
     userEvent.click(screen.getByRole('button', { name: /提交/i }))
 
     await waitFor(() => {
       expect(onSubmit).toHaveBeenCalledWith({
-        name: '张三',
+        name: '張三',
         email: 'zhangsan@example.com'
       })
     })

@@ -4,7 +4,7 @@ date: 2022-06-20 17:22:32
 tags:
   - Frontend
 readingTime: 2
-description: "View Transitions API 页面转场 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
+description: "Page transitions with the View Transitions API are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 194
 ---
 

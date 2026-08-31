@@ -7,11 +7,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "Angular 的路由系统内置了强大的懒加载和预加载机制。合理配置可以让首屏体积减少 40-60%，同时通过预加载确保后续导航几乎无等待。"
-wordCount: 349
+description: "Angular's router ships powerful built-in lazy-loading and preloading mechanisms. Configured well, they can cut the initial bundle by 40-60% while preloading keeps subsequent navigation virtually wait-free."
+wordCount: 225
 ---
 
-Angular 的路由系统内置了强大的懒加载和预加载机制。合理配置可以让首屏体积减少 40-60%，同时通过预加载确保后续导航几乎无等待。
+Angular's routing system has built-in, powerful lazy-loading and preloading mechanisms. With the right configuration, you can shrink the initial bundle by 40–60%, while preloading keeps subsequent navigation nearly instant.
 
 ## Lazy Loading Basics
 
@@ -38,14 +38,14 @@ const routes: Routes = [
 ];
 ```
 
-**canLoad vs canActivate 的区别**：
+**The difference between canLoad and canActivate:**
 
-- `canActivate`：导航时检查权限，但 JS chunk 已经下载
-- `canLoad`：权限不足时完全不下载 chunk，更安全也更节省带宽
+- `canActivate`: checks permissions at navigation time, but the JS chunk is already downloaded
+- `canLoad`: when permissions are insufficient, the chunk is never downloaded at all — more secure and lighter on bandwidth
 
 ## Three Preloading Strategies
 
-### 1. NoPreloading（默认）
+### 1. NoPreloading (Default)
 
 ```typescript
 RouterModule.forRoot(routes, {
@@ -53,7 +53,7 @@ RouterModule.forRoot(routes, {
 });
 ```
 
-适合：网络条件差的场景，或模块体积特别大。
+Best for: poor network conditions, or modules that are especially large.
 
 ### 2. PreloadAllModules
 
@@ -65,11 +65,11 @@ RouterModule.forRoot(routes, {
 });
 ```
 
-适合：应用不大、用户网络好的场景。
+Best for: small apps where users have a good network connection.
 
-### 3. 自定义预加载策略（推荐）
+### 3. Custom Preloading Strategy (Recommended)
 
-只预加载标记了 `preload: true` 的路由：
+Only preload routes flagged with `preload: true`:
 
 ```typescript
 // selective-preload.strategy.ts
@@ -133,15 +133,15 @@ ng build --stats-json
 npx webpack-bundle-analyzer dist/my-app/stats.json
 ```
 
-实践建议：
+Practical recommendations:
 
-- **核心路由**（Dashboard、首页）：可以不懒加载，减少一次请求
-- **次要功能**（设置、个人中心）：懒加载 + 标记预加载
-- **低频功能**（管理后台、帮助中心）：懒加载，不预加载
+- **Core routes** (Dashboard, home page): you can skip lazy loading to avoid an extra request
+- **Secondary features** (settings, profile): lazy-load and flag for preloading
+- **Low-frequency features** (admin, help center): lazy-load but don't preload
 
 ## Route Transition Animations
 
-懒加载时页面可能有短暂白屏，配合 Angular Animations 优化体验：
+Lazy loading can cause a brief white flash; pair it with Angular Animations to smooth the experience:
 
 ```typescript
 @Component({
@@ -171,4 +171,4 @@ export class AppComponent {
 
 ## Summary
 
-Angular 路由懒加载是最容易获得显著性能提升的优化手段。配合自定义预加载策略，可以在"按需加载"和"无感知导航"之间找到最佳平衡点。建议先用 `webpack-bundle-analyzer` 分析当前 chunk 分布，再有针对性地标记预加载路由。
+Route-level lazy loading is one of the easiest wins for a noticeable performance boost in Angular. Combined with a custom preloading strategy, it strikes the best balance between on-demand loading and seamless navigation. I'd start with `webpack-bundle-analyzer` to understand your current chunk distribution, then selectively flag routes for preloading.

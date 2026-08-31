@@ -4,15 +4,15 @@ date: 2020-12-18 09:53:47
 tags:
   - JavaScript
 readingTime: 2
-description: "关于JavaScript 私有类字段，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 315
+description: "Many developers only know JavaScript private class fields at the syntax level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 176
 ---
 
-关于JavaScript 私有类字段，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+On JavaScript private class fields: many developers only operate at the API-call level. This post tries to look at the real problems and solutions from a production perspective.
 
 ## Basic Principles
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can take it further:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -31,11 +31,11 @@ function reducer(state, action) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and noticeably cuts maintenance cost.
 
 ## Advanced Features
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets more involved:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -66,11 +66,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This way, both the testability and extensibility of the code improve.
 
 ## Project Practice
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 const express = require('express')
@@ -95,11 +95,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind the edge-case handling — that's critical in production.
 
 ## Best Practices
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -118,11 +118,11 @@ function reducer(state, action) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to fit the context; not every case needs over-optimization.
 
 ## Common Pitfalls
 
-我们可以通过以下方式来改进：
+Here's how we can improve it:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -153,11 +153,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- Always validate compatibility before using it in production
+- Conventions and docs matter more than the tech itself in a team
+- Keep an eye on the community; technical approaches need continuous iteration
+- Don't adopt new tech just for its own sake

@@ -15,7 +15,7 @@ wordCount: 414
 | 特性       | Cookie     | localStorage | sessionStorage | IndexedDB  |
 | 
 ---------- | ---------- | ------------ | -------------- | ---------- |
-| 大小限製   | 4KB        | 5MB          | 5MB            | 無實際限製 |
+| 大小限制   | 4KB        | 5MB          | 5MB            | 無實際限制 |
 | 生命週期   | 可設置過期 | 永久         | 標籤頁關閉刪除 | 永久       |
 | 隨請求發送 | 是         | 否           | 否             | 否         |
 | 同步/異步  | 同步       | 同步         | 同步           | 異步       |
@@ -42,12 +42,12 @@ function getCookie(name) {
 **安全屬性：**
 
 - `HttpOnly`：JS 無法讀取，防 XSS 竊取 token
-- `Secure`：隻通過 HTTPS 發送
+- `Secure`：只通過 HTTPS 發送
 - `SameSite=Strict`：防 CSRF
 
 ## localStorage
 
-最常用的前端存儲，用於持久化用户偏好、緩存數據：
+最常用的前端存儲，用於持久化用戶偏好、緩存數據：
 
 ```javascript
 // 存儲（隻支援字符串，對象需要序列化）
@@ -96,7 +96,7 @@ const storage = {
 
 ## IndexedDB
 
-真正的客户端數據庫，適合大量結構化數據。直接用原生 API 比較繁瑣：
+真正的客戶端數據庫，適合大量結構化數據。直接用原生 API 比較繁瑣：
 
 ```javascript
 // 打開數據庫
@@ -144,7 +144,7 @@ const user = await db.get("users", 1);
 ## 選擇指南
 
 - **需要服務端讀取**（如 session token）→ Cookie（配合 HttpOnly）
-- **少量用户偏好/配置**（主題、語言）→ localStorage
+- **少量用戶偏好/配置**（主題、語言）→ localStorage
 - **表單臨時狀態**→ sessionStorage
 - **離線緩存大量數據**（文章列表、圖片元數據）→ IndexedDB
 - **大文件存儲**（音視頻）→ Cache API（PWA 場景）

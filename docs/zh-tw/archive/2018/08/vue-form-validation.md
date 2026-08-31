@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "表單驗證是後臺系統裡最頻繁的需求，用 Element UI 做了不少，整理一下最佳實踐。"
-wordCount: 149
+wordCount: 150
 ---
 
 表單驗證是後臺系統裡最頻繁的需求，用 Element UI 做了不少，整理一下最佳實踐。
@@ -165,6 +165,6 @@ const validateUsername = async (rule, value, callback) => {
 
 - `validate` 驗證全部，`validateField` 驗證單個欄位
 - 自定義驗證器：呼叫 `callback()` 表示通過，`callback(new Error())` 表示失敗
-- 聯動驗證：watch 被依賴欄位，手動觸發 `validateField`
+- 聯動驗證：watch 被依賴的欄位，手動觸發 `validateField`
 - 非同步驗證：自定義驗證器裡用 async/await
 - `resetFields` 重置表單到初始狀態

@@ -33,7 +33,7 @@ const processData = (input) => {
 
 ## 核心實現
 
-下面是一個實際的示例：
+下面是一個實際的範例：
 
 ```javascript
 // 使用示例

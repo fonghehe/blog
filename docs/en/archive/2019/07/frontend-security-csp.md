@@ -5,7 +5,7 @@ tags:
   - Security
 readingTime: 2
 description: "Frontend security is something every developer should take seriously. XSS attacks are hard to prevent — relying solely on filtering user input is never foolproo"
-wordCount: 298
+wordCount: 297
 ---
 
 Frontend security is something every developer should take seriously. XSS attacks are hard to prevent — relying solely on filtering user input is never foolproof. CSP (Content Security Policy) provides a browser-level mechanism to restrict resource loading and script execution, making it an important complement to XSS defense.
@@ -89,7 +89,7 @@ Note: The `meta` tag approach doesn't support `report-uri`, `frame-ancestors`, a
 
 ## Nonce Strategy: Solving the Inline Script Problem
 
-Many projects (especially those using Webpack) generate inline scripts. CSP blocks all inline scripts by default, unless you use `'unsafe-inline'` — but this reopens the security gate.
+Many projects (especially those using Webpack) generate inline scripts. CSP blocks all inline scripts by default, unless you use `'unsafe-inline'` — but that defeats the protection.
 
 A better approach is **nonce** (a one-time random number):
 

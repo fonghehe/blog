@@ -5,10 +5,10 @@ tags:
   - 安全
 readingTime: 4
 description: "前端安全是每個開發者都應該重視的話題。XSS 攻擊防不勝防，單純靠過濾用户輸入很難做到萬無一失。CSP（Content Security Policy）提供了一種從瀏覽器層面限製資源加載和腳本執行的機製，是 XSS 防禦的重要補充。"
-wordCount: 865
+wordCount: 866
 ---
 
-前端安全是每個開發者都應該重視的話題。XSS 攻擊防不勝防，單純靠過濾用户輸入很難做到萬無一失。CSP（Content Security Policy）提供了一種從瀏覽器層面限製資源加載和腳本執行的機製，是 XSS 防禦的重要補充。
+前端安全是每個開發者都應該重視的話題。XSS 攻擊防不勝防，單純靠過濾用戶輸入很難做到萬無一失。CSP（Content Security Policy）提供了一種從瀏覽器層面限制資源加載和腳本執行的機制，是 XSS 防禦的重要補充。
 
 ## CSP 是什麼
 
@@ -20,7 +20,7 @@ CSP 是一個 HTTP 響應頭，告訴瀏覽器哪些資源可以加載、哪些�
 Content-Security-Policy: default-src 'self'
 ```
 
-這行設定意味着：所有資源（腳本、樣式、圖片、字體等）隻能從同源加載。
+這行設定意味着：所有資源（腳本、樣式、圖片、字體等）只能從同源加載。
 
 ## 設定方式
 
@@ -90,7 +90,7 @@ app.use((req, res, next) => {
 
 ## nonce 方案：解決 inline script 問題
 
-很多項目（特別是用了 Webpack 打包的）會生成 inline script。CSP 默認會阻止所有 inline script，除非你使用 `'unsafe-inline'`，但這等於把安全大門又打開了。
+很多項目（特別是用了 Webpack 打包的）會生成 inline script。CSP 默認會阻止所有 inline script，除非你使用 `'unsafe-inline'`，但那無異於把安全大門重新敞開。
 
 更好的方案是 **nonce**（一次性隨機數）：
 
@@ -230,7 +230,7 @@ app.post(
 }
 ```
 
-還有 `Content-Security-Policy-Report-Only` 頭，隻上報不阻止，適合上線前的灰度測試：
+還有 `Content-Security-Policy-Report-Only` 頭，只上報不阻止，適合上線前的灰度測試：
 
 ```
 Content-Security-Policy-Report-Only: default-src 'self'; report-uri /csp-report
@@ -266,7 +266,7 @@ script-src https://trusted.com/api/safe-endpoint
 <script src="/steal-cookies.js"></script>
 ```
 
-防禦：限製 `base-uri`：
+防禦：限制 `base-uri`：
 
 ```
 base-uri 'self'

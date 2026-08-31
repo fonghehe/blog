@@ -1,5 +1,5 @@
 ---
-title: "Hono Full-Stack Practice: ProductionEnvironmentDeployment & PerformanceOptimization经验"
+title: "Hono Full-Stack Development in Practice: Production Deployment and Performance Optimization Experience"
 date: 2025-12-18 10:32:09
 tags:
   - Frontend

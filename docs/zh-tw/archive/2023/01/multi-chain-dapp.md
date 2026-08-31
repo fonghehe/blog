@@ -5,9 +5,9 @@ tags:
   - Web3
   - DApp
   - 架構
-readingTime: 12
+readingTime: 9
 description: "2023 年的 Web3 已是多鏈世界。前端需要同時連接 Ethereum、Polygon、Arbitrum、Optimism、BSC 等多條鏈。本文系統拆解多鏈 DApp 的架構設計、狀態管理和跨鏈數據同步方案。"
-wordCount: 3200
+wordCount: 863
 ---
 
 以太坊主網不再是 DApp 的唯一部署目標。Gas 費用高企和擴容需求推動了 Layer 2 和側鏈的增長。一個典型的 DeFi 協議通常同時部署到 Ethereum、Polygon、Arbitrum、Optimism、BSC 等多條鏈上。多鏈部署帶來的前端架構挑戰是根本性的：如何管理不同鏈上的不同合約地址、如何處理用戶的鏈切換、如何同步跨鏈狀態。

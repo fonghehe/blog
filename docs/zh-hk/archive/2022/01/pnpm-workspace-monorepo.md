@@ -143,7 +143,7 @@ pnpm --filter '...ui-components' --filter 'admin...' build
 pnpm -r --no-filter docs test
 ```
 
-這在 CI 裏特別有用——隻 build 和 test 有變更的項目。
+這在 CI 裏特別有用——只 build 和 test 有變更的項目。
 
 ## 踩坑記錄
 

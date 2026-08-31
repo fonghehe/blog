@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 8
 description: "将一个内部仪表盘从传统 SPA + Express API 架构迁移到 React Router 7 framework mode 的完整过程：routes.ts 配置、loader/action 数据流设计、single-fetch 与 typegen、hydration 陷阱、Error Boundary UX，以及何时应该继续用 declarative mode。"
-wordCount: 3300
+wordCount: 1683
 ---
 
 我们团队维护的一个内部运营仪表盘在三年间从一个简单的 React SPA 膨胀成了前后端分离的两套代码库：前端用 Vite + React Router v6，后端用 Express + Prisma。每次加一个新页面，需要改路由配置、写 API endpoint、加前端 fetch 调用、处理 loading/error 状态——四步改动分散在两个仓库中。React Router 7 的 framework mode 承诺把这些统一到一个项目里。我花了两周时间完成了迁移，这篇文章记录真实过程中的收获和踩坑。

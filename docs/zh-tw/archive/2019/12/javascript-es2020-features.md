@@ -70,7 +70,7 @@ async function fetchUser(id) {
 
 ## Nullish Coalescing (??)
 
-Nullish Coalescing 運算子 `??` 與 `||` 類似，但隻在左側為 `null` 或 `undefined` 時才返回右側值。這個區別在處理 `0`、`''`、`false` 等 falsy 值時非常重要：
+Nullish Coalescing 運算子 `??` 與 `||` 類似，但只在左側為 `null` 或 `undefined` 時才返回右側值。這個區別在處理 `0`、`''`、`false` 等 falsy 值時非常重要：
 
 ```javascript
 // || 的問題：會把所有 falsy 值都替換掉
@@ -117,7 +117,7 @@ function getFormValues(formData) {
 
 ## BigInt
 
-BigInt 是 JavaScript 新增的基本資料型別，用於表示任意精度的整數。它解決了 `Number.MAX_SAFE_INTEGER` (2^53 - 1) 的限製：
+BigInt 是 JavaScript 新增的基本資料型別，用於表示任意精度的整數。它解決了 `Number.MAX_SAFE_INTEGER` (2^53 - 1) 的限制：
 
 ```javascript
 // Number 的精度限製

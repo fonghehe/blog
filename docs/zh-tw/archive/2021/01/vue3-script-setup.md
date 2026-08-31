@@ -8,7 +8,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "Vue 3 script-setup 語法糖在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 281
+wordCount: 279
 ---
 
 Vue 3 script-setup 語法糖在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -86,7 +86,7 @@ export default {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 效能最佳化
 

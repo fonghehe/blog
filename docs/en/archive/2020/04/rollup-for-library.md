@@ -4,11 +4,11 @@ date: 2020-04-28 10:29:03
 tags:
   - Engineering
 readingTime: 2
-description: "用 Webpack 打包应用，但打包库的时候 Rollup 更合适。为什么？因为 Rollup 产物更干净、更小。记录一下用 Rollup 打包一个 Vue 组件库的全过程。"
-wordCount: 183
+description: "Use Webpack to bundle applications, but Rollup is the better fit for libraries. Why? Because Rollup produces cleaner, smaller output. Here I document the full process of bundling a Vue component library with Rollup."
+wordCount: 120
 ---
 
-用 Webpack 打包应用，但打包库的时候 Rollup 更合适。为什么？因为 Rollup 产物更干净、更小。记录一下用 Rollup 打包一个 Vue 组件库的全过程。
+Use Webpack to bundle applications, but Rollup is the better fit for libraries. Why? Because Rollup produces cleaner, smaller output. Here I'll document the full process of bundling a Vue component library with Rollup.
 
 ## Why Use Rollup Instead of Webpack for Libraries
 
@@ -22,7 +22,7 @@ wordCount: 183
 | Code Splitting | 支持         | 有限             |
 ```
 
-简单说：Webpack 管理应用，Rollup 打包库。
+In short: Webpack manages applications, while Rollup bundles libraries.
 
 ## Project Structure
 
@@ -150,7 +150,7 @@ export default {
 }
 ```
 
-## 处理样式
+## Handling Styles
 
 ```javascript
 // rollup.config.js 样式相关配置
@@ -173,7 +173,7 @@ postcss({
 });
 ```
 
-## 按需引入配置
+## On-Demand Import Configuration
 
 ```json
 // package.json
@@ -207,7 +207,7 @@ module.exports = {
 };
 ```
 
-## TypeScript 类型导出
+## Exporting TypeScript Types
 
 ```json
 // tsconfig.json
@@ -224,8 +224,8 @@ module.exports = {
 
 ## Summary
 
-- Rollup 产物更干净，适合打包库；Webpack 适合打包应用
-- 输出 ESM + CJS + UMD 三种格式，满足不同使用场景
-- `peerDependencies` 声明 Vue 版本，不把 Vue 打包进去
-- `sideEffects` 声明副作用文件，让使用者能按需引入
-- 样式建议提取为独立 CSS 文件，而不是内联到 JS
+- Rollup produces cleaner output and suits libraries, whereas Webpack suits applications.
+- Emitting ESM + CJS + UMD covers different consumption scenarios.
+- Declare the Vue version via `peerDependencies` so Vue isn't bundled in.
+- Mark side-effect files with `sideEffects` so consumers can import on demand.
+- Extract styles into a standalone CSS file rather than inlining them into JS.

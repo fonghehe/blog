@@ -3,9 +3,9 @@ title: "Angular 23 Hydration 上級：インクリメンタルハイドレーシ
 date: 2026-08-27 16:48:05
 tags:
   - Angular
-readingTime: 8
+readingTime: 13
 description: "Angular 23 の hydration はもはや全量アクティベーションだけではない。本記事では @defer hydrate トリガー、選択的ハイドレーション境界、zoneless との連携、TBT/INP 測定、コンテンツページとダッシュボードの異なる戦略について、マーケティングサイトの移行における実データと落とし穴の経験を記録する。"
-wordCount: 3300
+wordCount: 3537
 ---
 
 Angular 17 は SSR hydration を導入し、長年の re-render flicker 問題を解決した。しかしデフォルトの全量ハイドレーションはコンテンツ型ページには重すぎる――マーケティングランディングページに 20 個のコンポーネントがあり、ユーザーの可視領域はファーストビューの 3 個だけで、残り 17 個はバックグラウンドでメインスレッドを消費して hydration を行い、TBT と INP を引きずり下ろす。Angular 23 の incremental hydration はこれに精密な制御をもたらした。

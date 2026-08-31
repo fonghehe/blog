@@ -3,16 +3,16 @@ title: "TypeScript Conditional Types In Depth"
 date: 2019-09-23 11:02:29
 tags:
   - TypeScript
-readingTime: 4
-description: "TypeScript 的条件类型（Conditional Types）是类型系统中最强大的特性之一。它让我们可以根据类型的条件分支来动态生成新的类型，类似于 JavaScript 中的三元表达式。配合泛型和 `infer` 关键字，条件类型可以实现极其灵活的类型推导。本文将从基础语法到高级用法，深入讲解条件类型。"
-wordCount: 396
+readingTime: 3
+description: "TypeScript's conditional types are among the most powerful features of the type system. They let us dynamically generate new types based on conditional branches over types, much like a ternary expression in JavaScript. Combined with generics and the `infer` keyword, conditional types enable extremely flexible type inference. This article goes from basic syntax to advanced usage, exploring conditional types in depth."
+wordCount: 246
 ---
 
-TypeScript 的条件类型（Conditional Types）是类型系统中最强大的特性之一。它让我们可以根据类型的条件分支来动态生成新的类型，类似于 JavaScript 中的三元表达式。配合泛型和 `infer` 关键字，条件类型可以实现极其灵活的类型推导。本文将从基础语法到高级用法，深入讲解条件类型。
+TypeScript's conditional types are among the most powerful features of the type system. They let us dynamically generate new types based on conditional branches over types, much like a ternary expression in JavaScript. Combined with generics and the `infer` keyword, conditional types enable extremely flexible type inference. This article goes from basic syntax to advanced usage, exploring conditional types in depth.
 
 ## Conditional Types Basic Syntax
 
-条件类型使用 `extends` 关键字进行类型判断：
+Conditional types use the `extends` keyword for type checks:
 
 ```ts
 // 基本语法：T extends U ? X : Y
@@ -27,7 +27,7 @@ type C = IsString<'hello'>; // true (字面量类型是 string 的子类型)
 
 ## Distributive Conditional Types
 
-当条件类型的参数是联合类型时，条件类型会自动分发（distribute）：
+When the parameter of a conditional type is a union, the conditional type distributes automatically:
 
 ```ts
 type ToArray<T> = T extends any ? T[] : never;
@@ -42,7 +42,7 @@ type Result2 = ToArrayNoDistribute<string | number>;
 // 结果：(string | number)[]
 ```
 
-### 实用示例：排除特定类型
+### Practical Example: Excluding Specific Types
 
 ```ts
 // 实现 Exclude
@@ -64,9 +64,9 @@ type Result2 = MyExtract<string | number | boolean, string | number>;
 
 ## The infer Keyword
 
-`infer` 是条件类型中用于类型推断的关键字，只能在 `extends` 子句中使用：
+`infer` is the keyword for type inference inside conditional types; it can only be used within an `extends` clause:
 
-### 推断函数返回值类型
+### Inferring a Function's Return Type
 
 ```ts
 type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
@@ -84,7 +84,7 @@ type User = ReturnType<typeof getUser>;
 // { id: number; name: string; age: number }
 ```
 
-### 推断函数参数类型
+### Inferring Function Parameter Types
 
 ```ts
 type Parameters<T> = T extends (...args: infer P) => any ? P : never;
@@ -104,7 +104,7 @@ type CreateUserParams = Parameters<typeof createUser>;
 // [string, number, string]
 ```
 
-### 推断 Promise 内部类型
+### Inferring the Inner Type of a Promise
 
 ```ts
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
@@ -130,7 +130,7 @@ type FetchResult = DeepUnwrapPromise<ReturnType<typeof fetchData>>;
 // { id: number; name: string }
 ```
 
-### 推断数组元素类型
+### Inferring Array Element Types
 
 ```ts
 type ElementOf<T> = T extends (infer E)[] ? E : never;
@@ -152,7 +152,7 @@ type Last<T> = T extends [...any[], infer L] ? L : never;
 type G = Last<[string, number, boolean]>; // boolean
 ```
 
-### 推断对象属性类型
+### Inferring Object Property Types
 
 ```ts
 type ValueType<T> = T extends { value: infer V } ? V : never;
@@ -314,9 +314,9 @@ emitter.emit('login', { userId: '123', timestamp: Date.now() }); // 正确
 
 ## Summary
 
-- 条件类型使用 `T extends U ? X : Y` 语法，根据类型关系进行分支判断
-- 联合类型在条件类型中会自动分发（distribute），包裹 `[T]` 可以阻止分发
-- `infer` 关键字可以在条件类型中推断和提取子类型，是类型推导的核心工具
-- 常用内置条件类型：`ReturnType`、`Parameters`、`Exclude`、`Extract`、`NonNullable`
-- 条件类型可以递归使用，实现 `DeepReadonly`、`DeepUnwrapPromise` 等深层类型操作
-- 实际项目中常用于：API 类型推导、事件系统类型安全、状态管理类型定义
+- Conditional types use the `T extends U ? X : Y` syntax to branch based on type relationships.
+- Union types distribute automatically inside conditional types; wrapping with `[T]` prevents distribution.
+- The `infer` keyword extracts subtypes within conditional types and is the core tool for type inference.
+- Common built-in conditional types: `ReturnType`, `Parameters`, `Exclude`, `Extract`, `NonNullable`.
+- Conditional types can be used recursively to implement deep type operations like `DeepReadonly` and `DeepUnwrapPromise`.
+- In real projects they're commonly used for: API type inference, type-safe event systems, and state-management type definitions.

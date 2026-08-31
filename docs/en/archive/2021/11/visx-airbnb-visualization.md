@@ -6,15 +6,15 @@ tags:
   - JavaScript
 
 readingTime: 1
-description: "关于Visx Airbnb 数据可视化库，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 186
+description: "Many developers only know visx, Airbnb's data visualization library, at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 173
 ---
 
-关于Visx Airbnb 数据可视化库，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+On the Visx (Airbnb) data visualization library: many developers only operate at the API-call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more involved:
 
 ```javascript
 import { openai } from '@ai-sdk/openai'

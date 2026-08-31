@@ -4,11 +4,11 @@ date: 2022-12-23 09:48:16
 tags:
   - Node.js
 readingTime: 2
-description: "Node.js 事件循环深入 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 215
+description: "A deep dive into the Node.js event loop is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 204
 ---
 
-Node.js 事件循环深入 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+a deep dive into the Node.js event loop is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
 
 ## Getting Started
 
@@ -121,7 +121,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Pitfall Guide
 
@@ -155,4 +155,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Node.js 事件循环深入不是银弹，需要根据项目规模和技术栈选择
+- A deep dive into the node.js event loop is not a silver bullet — choose based on your project scale and tech stack

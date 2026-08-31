@@ -4,15 +4,15 @@ date: 2019-08-30 10:47:06
 tags:
   - CSS
 readingTime: 1
-description: "很多同学在CSS 动画性能优化策略上存在理解偏差，本文系统地梳理核心要点和常见误区。"
-wordCount: 204
+description: "Many developers misunderstand CSS animation performance optimization. This article systematically covers the key concepts and common pitfalls."
+wordCount: 125
 ---
 
-很多同学在CSS 动画性能优化策略上存在理解偏差，本文系统地梳理核心要点和常见误区。
+Many readers misunderstand CSS animation performance optimization. This article systematically sorts out the key points and common pitfalls.
 
 ## Basic Concepts
 
-我们可以通过以下方式实现：
+We can implement it as follows:
 
 ```css
 function deepClone(obj, map = new WeakMap()) {
@@ -29,11 +29,11 @@ function deepClone(obj, map = new WeakMap()) {
 }
 ```
 
-注意上面代码中的性能细节，避免不必要的计算。
+Note the performance details in the code above and avoid unnecessary computation.
 
 ## Deep Dive
 
-具体实现参考以下代码：
+See the following code for a concrete implementation:
 
 ```css
 function pLimit(concurrency) {
@@ -57,11 +57,11 @@ function pLimit(concurrency) {
 }
 ```
 
-经过线上验证，这套方案运行稳定。
+This approach has been validated in production and runs stably.
 
 ## Project Application
 
-先来看基本的用法：
+Let's start with the basic usage:
 
 ```css
 class EventEmitter {
@@ -92,11 +92,11 @@ class EventEmitter {
 }
 ```
 
-这种写法简洁明了，适合大多数场景。
+This style is clear and concise, and fits most scenarios.
 
 ## Summary
 
-- 持续学习和总结，保持技术敏感度
-- 遇到问题多看源码和官方文档
-- CSS 动画性能优化策略的关键在于理解核心概念，不要停留在表面用法
-- 实际项目中根据场景选择合适的方案
+- Keep learning and summarizing to stay sensitive to new techniques.
+- When you hit a problem, read the source code and official docs.
+- The key to CSS animation performance optimization is understanding the core concepts, not just superficial usage.
+- In real projects, pick the right approach for the situation.

@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Solid.js 1.0 has been out for a year, and it's time to take it seriously. Its JSX syntax is nearly identical to React, but there's no virtual DOM, no Diff, no F"
-wordCount: 351
+wordCount: 315
 ---
 
 Solid.js 1.0 has been out for a year, and it's time to take it seriously. Its JSX syntax is nearly identical to React, but there's no virtual DOM, no Diff, no Fiber — reactive updates operate directly on the real DOM.
@@ -174,12 +174,12 @@ These are not ordinary if/for — Solid's `<For>` uses DOM node reuse and doesn'
 
 | 特性 | React | Solid |
 |------|-------|-------|
-| 更新粒度 | 组件 | 精确 DOM 节点 |
-| 虚拟 DOM | 有 | 没有 |
-| 组件执行 | 每次更新都重跑 | 只执行一次 |
-| 依赖追踪 | 依赖数组（手动） | 自动追踪 |
-| Hooks 规则 | 有（不能条件调用） | 没有 |
-| 学习曲线 | 中 | 低（如果会 React） |
+| Update granularity | Component | Precise DOM nodes |
+| Virtual DOM | Yes | No |
+| Component execution | Re-runs on every update | Runs only once |
+| Dependency tracking | Dependency arrays (manual) | Automatic |
+| Hooks rules | Yes (no conditional calls) | No |
+| Learning curve | Medium | Low (if you know React) |
 
 ## Actual Performance
 
@@ -192,7 +192,7 @@ Solid 1.0:    1.02
 Vanilla JS:   1.00
 ```
 
-Solid 的性能接近原生 JS，在所有框架中最快。
+Solid's performance is close to vanilla JS — the fastest of all frameworks.
 
 ## Summary
 

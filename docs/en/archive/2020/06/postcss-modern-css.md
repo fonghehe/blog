@@ -3,16 +3,16 @@ title: "PostCSS: Modern CSS Workflow"
 date: 2020-06-05 10:28:15
 tags:
   - CSS
-readingTime: 2
-description: "PostCSS 现代 CSS 工作流在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 290
+readingTime: 1
+description: "An exploration of PostCSS and modern CSS workflows, analyzing core principles and best practices based on real project experience."
+wordCount: 179
 ---
 
-PostCSS 现代 CSS 工作流在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+The PostCSS modern CSS workflow is being adopted more and more widely in frontend development. Drawing on real projects, this article digs into its core principles and best practices.
 
 ## Basic Usage
 
-实际项目中的用法会更复杂一些：
+In a real project, the usage gets a bit more involved:
 
 ```css
 .container {
@@ -35,11 +35,11 @@ PostCSS 现代 CSS 工作流在前端开发中的应用越来越广泛。本文�
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This way, the code becomes both more testable and more extensible.
 
 ## Advanced Usage
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```css
 :root {
@@ -62,11 +62,11 @@ PostCSS 现代 CSS 工作流在前端开发中的应用越来越广泛。本文�
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind the edge-case handling—that's critical in production.
 
 ## Practical Cases
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```css
 .container {
@@ -89,11 +89,11 @@ PostCSS 现代 CSS 工作流在前端开发中的应用越来越广泛。本文�
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance tuning should fit the specific scenario—you don't need to over-optimize every case.
 
-## 性能优化
+## Performance Optimization
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```css
 :root {
@@ -116,12 +116,12 @@ PostCSS 现代 CSS 工作流在前端开发中的应用越来越广泛。本文�
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- PostCSS 现代 CSS 工作流不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
+- Don't adopt new tech just for its own sake.
+- The code examples are for reference only—adapt them to your own use case.
+- The PostCSS modern CSS workflow isn't a silver bullet—pick it based on your project's scale and tech stack.
+- Understanding the underlying principles matters more than memorizing the API.
+- Before using it in production, be sure to verify compatibility.

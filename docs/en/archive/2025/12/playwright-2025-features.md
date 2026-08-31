@@ -1,5 +1,5 @@
 ---
-title: "Playwright 2025 Practice: 大型Project端 to 端TestingStrategyUpgrade"
+title: "Playwright 2025 in Practice: Upgrading End-to-End Testing Strategy for a Large Project"
 date: 2025-12-24 13:38:15
 tags:
   - Testing

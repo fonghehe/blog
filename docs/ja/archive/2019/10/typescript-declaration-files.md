@@ -5,14 +5,14 @@ tags:
   - TypeScript
 readingTime: 4
 description: "在 TypeScript 项目中引入第三方 JavaScript 库时，声明文件（`.d.ts`）是连接类型系统和无类型代码的桥梁。即使库本身没有提供类型定义，我们也可以自己编写声明文件。本文系统地介绍声明文件的编写方法。"
-wordCount: 493
+wordCount: 734
 ---
 
-在 TypeScript 项目中引入第三方 JavaScript 库时，声明文件（`.d.ts`）是连接类型系统和无类型代码的桥梁。即使库本身没有提供类型定义，我们也可以自己编写声明文件。本文系统地介绍声明文件的编写方法。
+TypeScript プロジェクトにサードパーティの JavaScript ライブラリを導入する際、宣言ファイル（`.d.ts`）は型システムと型なしコードをつなぐ架け橋となります。ライブラリ自体が型定義を提供していなくても、自分で宣言ファイルを書けます。本記事では宣言ファイルの書き方を体系的に紹介します。
 
 ## 型宣言ファイルの役割
 
-声明文件（`.d.ts`）只包含类型信息，不包含实现。编译器使用它来理解 JavaScript 代码的类型结构：
+宣言ファイル（`.d.ts`）は型情報だけを含み、実装は含みません。コンパイラはこれを使って JavaScript コードの型構造を理解します：
 
 ```ts
 // index.d.ts - 声明文件
@@ -27,7 +27,7 @@ add('1', '2');    // 类型错误：Argument of type 'string' is not assignable
 
 ## グローバル宣言
 
-对于通过 `<script>` 标签引入的库，需要使用全局声明：
+`<script>` タグ経由で読み込むライブラリには、グローバル宣言が必要です：
 
 ```ts
 // globals.d.ts
@@ -48,7 +48,7 @@ declare namespace NodeJS {
 
 ## モジュール宣言
 
-对于 npm 包，使用模块声明：
+npm パッケージには、モジュール宣言を使います：
 
 ```ts
 // declarations/lodash.d.ts
@@ -131,7 +131,7 @@ declare module '*.md' {
 
 ## 関数オーバーロード
 
-声明文件中可以使用函数重载来表达同一个函数的不同调用方式：
+宣言ファイルでは、関数オーバーロードを使って同じ関数の異なる呼び出し方を表現できます：
 
 ```ts
 declare function ajax(url: string): Promise<string>;
@@ -200,7 +200,7 @@ declare module 'react-query' {
 
 ## ハイブリッド型宣言
 
-有些 JavaScript 导出既是函数，又有属性：
+関数でもあり、かつプロパティも持つ JavaScript のエクスポートもあります：
 
 ```ts
 // axios 既有默认导出函数，又有 axios.get 等方法
@@ -251,7 +251,7 @@ declare module 'axios' {
 
 ## @typesコミュニティ宣言の使用
 
-DefinitelyTyped 是社区维护的类型声明仓库，大部分流行的 npm 包都有对应的 `@types` 包：
+DefinitelyTyped はコミュニティが保守する型宣言リポジトリであり、人気のある npm パッケージの多くに相当する `@types` パッケージがあります：
 
 ```bash
 # 安装社区类型声明
@@ -260,7 +260,7 @@ npm install --save-dev @types/react
 npm install --save-dev @types/node
 ```
 
-如果找不到对应的类型声明，可以创建一个 fallback：
+対応する型宣言が見つからない場合は、フォールバックを作成できます：
 
 ```ts
 // declarations/unknown-modules.d.ts
@@ -290,7 +290,7 @@ declare module 'some-untyped-library' {
 
 ## 自分の型宣言を公開する
 
-如果开发了一个 npm 包，可以在 `package.json` 中指定类型入口：
+npm パッケージを開発する場合、`package.json` で型のエントリを指定できます：
 
 ```json
 {
@@ -301,14 +301,14 @@ declare module 'some-untyped-library' {
 }
 ```
 
-类型声明应该与源码一起发布，而不是放到 DefinitelyTyped。
+型宣言はソースコードと一緒に公開し、DefinitelyTyped には置かないようにします。
 
 ## まとめ
 
-- 声明文件（`.d.ts`）只包含类型信息，不包含实现代码
-- `declare module` 用于声明模块类型，`declare namespace` 用于声明全局命名空间
-- 函数重载可以表达同一个函数的不同调用签名
-- 泛型可以让类型声明更加灵活和精确
-- Webpack 中的文件类型（`.png`、`.css` 等）需要特殊声明
-- 使用 `@types/xxx` 可以获取社区维护的类型声明
-- 发布 npm 包时，`package.json` 的 `types` 字段指向类型入口
+- 宣言ファイル（`.d.ts`）は型情報だけを含み、実装コードは含みません
+- `declare module` はモジュール型の宣言に、`declare namespace` はグローバル名前空間の宣言に使います
+- 関数オーバーロードは同じ関数の異なる呼び出しシグネチャを表現できます
+- ジェネリクスにより、型宣言をより柔軟かつ正確にできます
+- Webpack のファイル型（`.png`、`.css` など）には特別な宣言が必要です
+- `@types/xxx` を使うとコミュニティ保守の型宣言を取得できます
+- npm パッケージを公開する際、`package.json` の `types` フィールドは型のエントリを指します

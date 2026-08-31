@@ -4,11 +4,11 @@ date: 2022-09-14 11:13:07
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，Compression Streams API 压缩 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategie"
-wordCount: 218
+description: "In daily development, the Compression Streams API is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 192
 ---
 
-在日常开发中，Compression Streams API 压缩 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In daily development, the Compression Streams API is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -66,7 +66,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Business Practice
 
@@ -99,7 +99,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Comparison
 
-实际项目中的用法会更复杂一些：
+Usage in real projects tends to be more complex:
 
 ```javascript
 const express = require('express')

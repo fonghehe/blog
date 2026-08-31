@@ -4,11 +4,11 @@ date: 2019-07-17 10:28:31
 tags:
   - React
 readingTime: 1
-description: "在團隊推廣React Portals 實現全域性彈窗的過程中，踩了不少坑。整理出來希望對大家有所幫助。"
+description: "在團隊推廣 React Portals 實現全域性彈窗的過程中，踩了不少坑。整理出來希望對大家有所幫助。"
 wordCount: 212
 ---
 
-在團隊推廣React Portals 實現全域性彈窗的過程中，踩了不少坑。整理出來希望對大家有所幫助。
+在團隊推廣 React Portals 實現全域性彈窗的過程中，踩了不少坑。整理出來希望對大家有所幫助。
 
 ## 核心原理
 

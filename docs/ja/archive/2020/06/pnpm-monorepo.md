@@ -5,30 +5,30 @@ tags:
   - Node.js
 readingTime: 2
 description: "团队有 5 个前端项目，共用一套组件库和工具函数。之前组件库改动需要手动发布、各项目手动升级，效率太低。用 pnpm workspace 搭建 Monorepo 后，一切都变简单了。"
-wordCount: 185
+wordCount: 330
 ---
 
-团队有 5 个前端项目，共用一套组件库和工具函数。之前组件库改动需要手动发布、各项目手动升级，效率太低。用 pnpm workspace 搭建 Monorepo 后，一切都变简单了。
+チームには 5 つのフロントエンドプロジェクトがあり、共通のコンポーネントライブラリとユーティリティ関数を共有している。以前はコンポーネントライブラリを変更するたびに手動で公開し、各プロジェクトも手動でアップグレードしていたため、効率が悪かった。pnpm workspace で Monorepo を組んだことで、すべてが格段に楽になった。
 
 ## なぜpnpmを選ぶのか
 
 ```markdown
-npm/yarn 的问题：
-- node_modules 幽灵依赖（没声明的包也能访问）
-- 磁盘占用大（每个项目都拷贝一份）
-- 扁平化安装导致的版本冲突
+npm/yarn の問題点：
+- node_modules の幽霊依存（未宣言のパッケージにもアクセスできてしまう）
+- ディスク占有量が大きい（プロジェクトごとに丸ごとコピーされる）
+- フラット化インストールによるバージョン競合
 
-pnpm 的优势：
-- 严格依赖：只能访问 package.json 声明的依赖
-- 硬链接 + 符号链接：磁盘占用大幅减少
-- 内置 workspace 支持：Monorepo 不需要 lerna
+pnpm のメリット：
+- 厳格な依存関係：package.json で宣言した依存だけにアクセス可能
+- ハードリンク + シンボリックリンク：ディスク占有量を大幅に削減
+- 組み込みの workspace サポート：Monorepo に lerna は不要
 ```
 
 ```bash
-# 安装 pnpm
+# pnpm をインストールする
 npm install -g pnpm
 
-# 验证
+# 確認
 pnpm --version
 ```
 
@@ -39,20 +39,20 @@ monorepo/
 ├── pnpm-workspace.yaml
 ├── package.json
 ├── packages/
-│   ├── components/        # 组件库
+│   ├── components/        # コンポーネントライブラリ
 │   │   ├── package.json   # @company/components
 │   │   └── src/
-│   ├── utils/             # 工具函数库
+│   ├── utils/             # ユーティリティ関数ライブラリ
 │   │   ├── package.json   # @company/utils
 │   │   └── src/
-│   └── types/             # 类型定义
+│   └── types/             # 型定義
 │       ├── package.json   # @company/types
 │       └── src/
 ├── apps/
-│   ├── admin/             # 管理后台
+│   ├── admin/             # 管理画面
 │   │   ├── package.json
 │   │   └── src/
-│   └── portal/            # 门户
+│   └── portal/            # ポータル
 │       ├── package.json
 │       └── src/
 ```
@@ -67,7 +67,7 @@ packages:
 ```
 
 ```json
-// 根 package.json
+// ルートの package.json
 {
   "name": "monorepo",
   "private": true,
@@ -95,7 +95,7 @@ packages:
 }
 ```
 
-## 包之间互相引用
+## パッケージ間の相互参照
 
 ```json
 // apps/admin/package.json
@@ -110,75 +110,75 @@ packages:
 
 ```typescript
 // apps/admin/src/App.vue
-// 直接 import，pnpm 会自动处理链接
+// そのまま import すれば、pnpm がリンクを自動で解決する
 import { Button, Input } from '@company/components';
 import { formatCurrency } from '@company/utils';
 
-// 修改 packages/components 后，admin 里立刻生效
-// 不需要手动发布和升级
+// packages/components を変更すると、admin 側にすぐ反映される
+// 手動での公開やアップグレードは不要
 ```
 
 ## 常用命令
 
 ```bash
-# 安装所有依赖
+# すべての依存をインストール
 pnpm install
 
-# 在指定包中执行命令
+# 指定したパッケージでコマンドを実行
 pnpm --filter @company/admin run dev
 
-# 在所有包中执行命令
+# すべてのパッケージでコマンドを実行
 pnpm -r run build
 
-# 只在有 changes 的包中执行
+# 変更のあったパッケージのみで実行
 pnpm -r --changed run build
 
-# 添加依赖到指定包
+# 指定したパッケージに依存を追加
 pnpm --filter @company/admin add axios
 
-# 添加内部包依赖
+# 内部パッケージの依存を追加
 pnpm --filter @company/admin add @company/utils@workspace:*
 
-# 添加开发依赖
+# 開発依存を追加
 pnpm --filter @company/admin add -D typescript
 ```
 
 ## 和 lerna 对比
 
 ```bash
-# lerna + yarn 需要：
+# lerna + yarn の場合：
 # 1. lerna.json
-# 2. yarn workspaces 配置
+# 2. yarn workspaces の設定
 # 3. lerna bootstrap
 # 4. lerna publish
 
-# pnpm workspace：
+# pnpm workspace の場合：
 # 1. pnpm-workspace.yaml
 # 2. pnpm install
-# 3. 发布可以用 pnpm publish 或 changeset
+# 3. 公開は pnpm publish または changeset を利用
 ```
 
 ```bash
-# 用 changeset 管理版本和发包
+# changeset でバージョン管理と公開を行う
 pnpm add -Dw @changesets/cli
 
-# 初始化
+# 初期化
 pnpm changeset init
 
-# 记录变更
+# 変更を記録
 pnpm changeset
 
-# 升级版本
+# バージョンを上げる
 pnpm changeset version
 
-# 发布
+# 公開
 pnpm changeset publish
 ```
 
 ## 选择性构建
 
 ```json
-// 根 package.json
+// ルートの package.json
 {
   "scripts": {
     "build:changed": "pnpm -r --changed run build",
@@ -190,15 +190,15 @@ pnpm changeset publish
 
 ```yaml
 # .github/workflows/ci.yml
-# CI 中只构建变更的包
+# CI では変更のあったパッケージだけをビルドする
 - name: Build changed packages
   run: pnpm -r --changed run build
 ```
 
 ## まとめ
 
-- pnpm workspace 是管理 Monorepo 最轻量的选择，不需要额外工具
-- `workspace:*` 声明内部依赖，修改立刻生效
-- 严格依赖管理杜绝幽灵依赖问题
-- 硬链接节省磁盘空间，安装速度也更快
-- 配合 changeset 管理版本和发布，流程自动化
+- pnpm workspace は Monorepo を管理するうえで最も軽量な選択肢で、追加のツールは不要だ
+- `workspace:*` で内部依存を宣言すれば、変更が即座に反映される
+- 厳格な依存関係の管理により、幽霊依存（phantom dependency）の問題を防げる
+- ハードリンクによってディスク容量を節約でき、インストールも高速になる
+- changeset と組み合わせれば、バージョン管理と公開を自動化できる

@@ -80,7 +80,7 @@ VUE_APP_API_URL=https://api.example.com
 VUE_APP_VERSION=1.0.0
 ```
 
-在程式碼裡用 `process.env.VUE_APP_*` 訪問（隻有 `VUE_APP_` 字首的才會暴露給客戶端）。
+在程式碼裡用 `process.env.VUE_APP_*` 訪問（只有 `VUE_APP_` 字首的才會暴露給客戶端）。
 
 ## GUI 介面
 

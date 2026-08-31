@@ -62,7 +62,7 @@ Angular 9 目前处于 Beta 阶段，预计 2020 年初正式发布。最大的�
 **2. Renderer2 替代 Renderer**
 
 ```typescript
-// ❌ Renderer 已在 Ivy 中删除
+// ❌ Renderer 已在 Ivy 中削除
 // ✅ 用 Renderer2
 constructor(private renderer: Renderer2) {}
 ```

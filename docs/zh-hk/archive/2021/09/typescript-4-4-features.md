@@ -5,14 +5,14 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.4 發佈了，幾個實用的改進值得關注。不是大版本，但有幾個對日常開發有實際幫助的特性。"
-wordCount: 292
+wordCount: 291
 ---
 
 TypeScript 4.4 發佈了，幾個實用的改進值得關注。不是大版本，但有幾個對日常開發有實際幫助的特性。
 
 ## Control Flow Analysis for Aliased Conditions
 
-之前 TypeScript 對變量別名的控製流分析很弱，4.4 改善了這一點。
+之前 TypeScript 對變量別名的控制流分析很弱，4.4 改善了這一點。
 
 ```typescript
 // 之前：把 result 賦給別名後，類型守衞失效
@@ -101,7 +101,7 @@ function describe(value: unknown): string {
 }
 ```
 
-## Symbol 和範本字符串類型
+## Symbol 和範本字串類型
 
 ```typescript
 // 模板字符串類型也可以用 symbol
@@ -113,7 +113,7 @@ type T = typeof sym extends string ? never : typeof sym
 
 ## 效能改進
 
-TypeScript 4.4 在多個方面優化了性能：
+TypeScript 4.4 在多個方面優化了效能：
 
 - 條件類型中的延遲類型推斷
 - 交叉類型和聯合類型的處理優化
@@ -150,5 +150,5 @@ TypeScript 4.4 在多個方面優化了性能：
 - Control Flow Analysis for Aliased Conditions：變量賦值後類型守衞不再失效
 - `exactOptionalPropertyTypes`：可選屬性不能顯式賦 `undefined`，語義更精確
 - `switch(true)` 也能做類型收窄了
-- 性能提升，大型項目感知明顯
+- 效能提升，大型項目感知明顯
 - 建議開啓 `noUncheckedIndexedAccess` 配合使用，進一步提升類型安全

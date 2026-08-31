@@ -4,11 +4,11 @@ date: 2022-12-02 14:50:34
 tags:
   - Angular
 readingTime: 2
-description: "Angular 15 让 Standalone APIs 正式稳定后，很多团队开始考虑迁移现有项目。Angular 提供了自动化迁移工具，但了解迁移的每个步骤和潜在问题仍然必要。这篇文章梳理完整的迁移路径。"
-wordCount: 224
+description: "Now that Angular 15 has made the Standalone APIs officially stable, many teams are considering migrating existing projects. Angular provides automated migration tooling, but understanding each step and its pitfalls is still essential. This article maps out the complete migration path."
+wordCount: 157
 ---
 
-Angular 15 让 Standalone APIs 正式稳定后，很多团队开始考虑迁移现有项目。Angular 提供了自动化迁移工具，但了解迁移的每个步骤和潜在问题仍然必要。这篇文章梳理完整的迁移路径。
+Now that Angular 15 has made the Standalone APIs officially stable, many teams are considering migrating existing projects. Angular provides automated migration tooling, but understanding each step and its pitfalls is still essential. This article maps out the complete migration path.
 
 ## Automated Migration Tools
 
@@ -33,7 +33,7 @@ ng generate @angular/core:standalone
 
 ## Key Points for Manual Migration
 
-### 1. 组件依赖从 Module 移到 Component
+### 1. Move Component Dependencies from Module to Component
 
 ```typescript
 // 迁移前：组件通过 NgModule 获得依赖
@@ -59,7 +59,7 @@ export class UserCardModule {}
 export class UserCardComponent {}
 ```
 
-### 2. 路由模块迁移
+### 2. Migrate Routing Modules
 
 ```typescript
 // 迁移前：Feature 路由模块
@@ -87,7 +87,7 @@ export const USER_ROUTES: Routes = [
 }
 ```
 
-### 3. 全局 providers 迁移
+### 3. Migrate Global Providers
 
 ```typescript
 // 迁移前：AppModule
@@ -121,7 +121,7 @@ bootstrapApplication(AppComponent, {
 
 ### 4. SharedModule 拆分
 
-迁移中最麻烦的通常是 `SharedModule`（包含大量公共组件）：
+The trickiest part of the migration is usually the `SharedModule` (full of shared components):
 
 ```typescript
 // 迁移前：大型 SharedModule
@@ -174,7 +174,7 @@ providers: [{
 
 ## Migration Progress Strategy
 
-不必一次性全迁移，推荐渐进式：
+You don't have to migrate everything at once — incremental is the way:
 
 ```
 阶段 1：新功能全部用 Standalone 开发
@@ -186,4 +186,4 @@ providers: [{
 
 ## Summary
 
-Angular 15 的 Standalone 迁移工具降低了迁移成本，但对于大型项目仍需要谨慎规划。最重要的是理解：Standalone 不是"新功能"，而是 NgModule 的替代——两者可以共存，迁移可以渐进进行。迁完之后代码量通常减少 20-30%，架构也更直观。
+Angular 15's Standalone migration tooling lowers the cost of migrating, but large projects still need careful planning. The key thing to understand: Standalone isn't a 'new feature' — it's a replacement for NgModule. The two can coexist, and migration can proceed incrementally. After migrating, code volume typically drops 20-30% and the architecture becomes more intuitive.

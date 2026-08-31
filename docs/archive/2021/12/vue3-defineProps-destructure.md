@@ -6,10 +6,10 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Vue 3.2 defineProps 解构在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 321
+wordCount: 317
 ---
 
-Vue 3.2 defineProps 解构在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Vue 3.2 中 defineProps 的解构在项目中用得越来越广。本文结合实际项目，深入剖析它的核心原理与最佳实践。
 
 ## 基础用法
 
@@ -96,7 +96,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界情况的处理要格外留意，生产环境里这很关键。
 
 ## 性能优化
 
@@ -125,7 +125,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要结合具体场景，没必要处处都过度优化。
 
 ## 常见陷阱
 

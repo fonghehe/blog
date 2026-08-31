@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "关于Web Share API 原生分享功能，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective"
-wordCount: 186
+description: "Many developers only know the Web Share API's native sharing at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 167
 ---
 
-关于Web Share API 原生分享功能，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Regarding the Web Share API's native sharing feature, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
@@ -69,7 +69,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Project Practice
 
-实际项目中的用法会更复杂一些：
+Real-world usage gets a bit more complex:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -128,4 +128,4 @@ Pay attention to boundary condition handling, which is critical in production.
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Web Share API 原生分享功能不是银弹，需要根据项目规模和技术栈选择
+- The Web Share API's native sharing is not a silver bullet; choose it based on your project's scale and tech stack.

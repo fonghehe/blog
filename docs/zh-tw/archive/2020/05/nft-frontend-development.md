@@ -1,12 +1,13 @@
 ---
-readingTime: 4
-wordCount: 918
+readingTime: 8
+wordCount: 916
 title: "NFT 前端開發：ERC-721 合約與展示"
 date: 2020-05-06 09:48:51
 tags:
   - Web3
   - NFT
   - Ethereum
+description: "ERC-721 標準於 2018 年 1 月在 EIP-721 中正式提出，定義了非同質化代幣（Non-Fungible Token）的接口規範。與 ERC-20 的\"每枚代幣完全等價\"不同，ERC-721 的每個代幣擁有唯一的 tokenId，可以代表獨一無二的數字資產。"
 ---
 
 ## ERC-721 標準與非同質化代幣

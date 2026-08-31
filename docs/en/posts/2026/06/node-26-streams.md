@@ -5,10 +5,10 @@ tags:
   - Node.js
 readingTime: 3
 description: "Node.js 26 refactors Streams implementation, unifying Node.js Streams and Web Streams APIs. This article analyzes the new Streams architecture and how to leverage these improvements for better I/O performance."
-wordCount: 235
+wordCount: 237
 ---
 
-Node.js Streams have always been core to handling large-scale I/O, but the coexistence of Node.js Streams and Web Streams APIs has created choice difficulty for developers. Node.js 26, through underlying refactoring, makes interoperability between the two APIs smoother while maintaining backward compatibility.
+Node.js Streams have always been central to handling large-scale I/O, but the coexistence of Node.js Streams and the Web Streams API has left developers unsure which to use. Node.js 26, through underlying refactoring, makes interoperability between the two APIs smoother while maintaining backward compatibility.
 
 ## Current State of Dual Streams Systems
 
@@ -101,7 +101,7 @@ import { createReadStream } from 'node:fs'
 import { pipeline } from 'node:stream/promises'
 import { Transform } from 'node:stream'
 
-// Use for await...of to遍历 ReadableStream
+// Use for await...of to iterate over the ReadableStream
 const stream = createReadStream('data.json', { encoding: 'utf8' })
 const chunks = []
 

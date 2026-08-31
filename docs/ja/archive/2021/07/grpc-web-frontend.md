@@ -5,12 +5,12 @@ tags:
   - フロントエンド
   - TypeScript
 
-readingTime: 2
-description: "最近在团队中落地gRPC Web 前端通信实践，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 473
+readingTime: 3
+description: "最近在团队中落地gRPC Web 前端通信实践，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てば幸いです。"
+wordCount: 483
 ---
 
-最近在团队中落地gRPC Web 前端通信实践，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
+最近チーム内で gRPC Web フロントエンド通信の実践を導入し、多くの経験を積みました。同じような取り組みをされる方の参考になれば幸いです。
 
 ## コアコンセプト
 
@@ -45,7 +45,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-パフォーマンスの最適化は具体的なシナリオに合わせる必要があり、すべてのケースで過度な最適化が必要というわけではありません。
+パフォーマンスの最適化は具体的な場面に合わせる必要があり、すべてのケースで過度な最適化が必要というわけではありません。
 
 ## 詳細分析
 
@@ -78,20 +78,32 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ## 実装経験
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみましょう：
 
 ```javascript
-import { useReducer, useCallback } from 'react'
+type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
 
-const initialState = { items: [], filter: '', sort: 'date' }
+async function fetchUser(id: string) {
+  const res = await fetch(`/api/users/${id}`)
+  return res.json() as Promise<{ id: string; name: string; email: string }>
+}
 
-function reducer(state, action) {
-  switch (action.type) {
-    case 'SET_ITEMS': return { ...state, items: action.payload }
-    case 'SET_FILTER': return { ...state, filter: action.payload }
-    case 'ADD_ITEM': return { ...state, items: [...state.items, action.payload] }
-    case 'REMOVE_ITEM': return { ...state, items: state.items.filter(i => i.id !== action.payload) }
-    default: throw new Error(`Unknown: ${action.type}`)
+type User = UnwrapPromise<ReturnType<typeof fetchUser>>
+
+// 类型安全的事件系统
+interface EventMap {
+  login: { userId: string; timestamp: number }
+  logout: { userId: string }
+}
+
+class TypedEmitter<T extends Record<string, any>> {
+  private handlers = new Map<keyof T, Set<Function>>()
+  on<K extends keyof T>(event: K, handler: (payload: T[K]) => void) {
+    if (!this.handlers.has(event)) this.handlers.set(event, new Set())
+    this.handlers.get(event)!.add(handler)
+  }
+  emit<K extends keyof T>(event: K, payload: T[K]) {
+    this.handlers.get(event)?.forEach(h => h(payload))
   }
 }
 
@@ -137,6 +149,6 @@ class TypedEmitter<T extends Record<string, any>> {
 ## まとめ
 
 - 新しい技術を使うためだけに新しい技術を使わないでください
-- コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- gRPC Web 前端通信实践不是银弹，需要根据项目规模和技术栈选择
+- コードサンプルは参考用のみであり、ビジネスの場面に応じて調整が必要です
+- gRPC Web フロントエンド通信は万能ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要があります
 - 基礎的な原理を理解することは、APIを暗記することより重要です

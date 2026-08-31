@@ -56,7 +56,7 @@ const router = createRouter({
 export default router
 ```
 
-`webpackChunkName` 註釋讓打包產物有可讀的文件名，方便排查和緩存管理。
+`webpackChunkName` 註釋讓打包產物有可讀的檔案名，方便排查和緩存管理。
 
 ## 組件級懶加載
 
@@ -155,7 +155,7 @@ export default {
 
 ## 數據懶加載：虛擬滾動
 
-列表數據量大時（超過 1000 條），即使隻渲染可見區域的 DOM 也能大幅提升效能。
+列表數據量大時（超過 1000 條），即使只渲染可見區域的 DOM 也能大幅提升效能。
 
 ```vue
 {% raw %}
@@ -227,5 +227,5 @@ export default {
 - 路由懶加載用 `() => import()` 配合 `webpackChunkName`，效果立竿見影
 - `defineAsyncComponent` 支持自定義 loading/error 組件和超時配置
 - 圖片懶加載使用 IntersectionObserver，設置 `rootMargin` 提前加載
-- 大列表用虛擬滾動，隻渲染可視區域內的 DOM，效能提升可達數十倍
+- 大列表用虛擬滾動，只渲染可視區域內的 DOM，效能提升可達數十倍
 - 懶加載的核心原則：不在首屏的代碼和資源，一律按需加載

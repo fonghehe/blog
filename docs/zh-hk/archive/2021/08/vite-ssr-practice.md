@@ -120,7 +120,7 @@ startServer()
 
 ## 踩坑 1：CSS 處理
 
-Vite SSR 默認不提取 CSS，需要手動處理：
+Vite SSR 預設不提取 CSS，需要手動處理：
 
 ```typescript
 // 在渲染前收集樣式
@@ -133,13 +133,13 @@ const html = await renderToString(app)
 // 生產環境需要讀取 manifest.json
 ```
 
-生產構建需要 `ssrManifest`：
+生產建構需要 `ssrManifest`：
 
 ```bash
-# 構建客户端（生成 ssr-manifest.json）
+# 建構客户端（生成 ssr-manifest.json）
 vite build --outDir dist/client --ssrManifest
 
-# 構建服務端
+# 建構服務端
 vite build --outDir dist/server --ssr src/entry-server.ts
 ```
 
@@ -207,7 +207,7 @@ const getToken = () => {
 
 // ✅ 或者用 import.meta.env.SSR（Vite 提供）
 if (!import.meta.env.SSR) {
-  // 這段代碼隻會出現在客户端 bundle
+  // 這段代碼只會出現在客户端 bundle
   initAnalytics()
 }
 ```

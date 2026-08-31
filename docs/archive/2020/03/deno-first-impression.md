@@ -5,14 +5,14 @@ tags:
   - Node.js
 readingTime: 2
 description: "Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上批评了 Node.js 的十大设计遗憾，随后宣布了 Deno 项目。现在 Deno 已经进入候选版本阶段，是时候体验一下了。"
-wordCount: 292
+wordCount: 298
 ---
 
 Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上批评了 Node.js 的十大设计遗憾，随后宣布了 Deno 项目。现在 Deno 已经进入候选版本阶段，是时候体验一下了。
 
 ## Deno 解决了 Node.js 的哪些问题
 
-Ryan Dahl 总结的 Node.js 十大遗憾中，Deno 重点解决：
+在 Ryan Dahl 总结的 Node.js 十大遗憾中，Deno 重点解决了以下几项：
 
 1. **安全性**：Node.js 默认可以访问所有系统资源，Deno 默认沙箱隔离
 2. **模块系统**：不使用 `node_modules`，直接通过 URL 导入

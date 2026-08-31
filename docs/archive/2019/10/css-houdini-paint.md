@@ -97,7 +97,7 @@ if ('paintWorklet' in CSS) {
 }
 ```
 
-然后就可以在 CSS 中使用了：
+现在就可以在 CSS 中使用了：
 
 ```css
 .dot-box {

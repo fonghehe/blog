@@ -13,13 +13,13 @@ Webpack 4 用 `splitChunks` 替代了之前的 `CommonsChunkPlugin`，配置更�
 
 ## 為什麼要代碼分割
 
-不分割的情況下，所有代碼打成一個 `main.js`，用户每次訪問都需要加載整個檔案，即使大部分頁面他用不到。
+不分割的情況下，所有代碼打成一個 `main.js`，用戶每次訪問都需要加載整個檔案，即使大部分頁面他用不到。
 
 代碼分割後：
 
 - 公共庫（vue、lodash）單獨打包，利用瀏覽器緩存
 - 路由對應的頁面按需加載
-- 首屏隻加載必要代碼
+- 首屏只加載必要代碼
 
 ## 路由懶加載（最簡單的分割）
 
@@ -132,6 +132,6 @@ Vue CLI 3 會自動為懶加載的 chunk 生成 `<link rel="prefetch">` 標籤�
 ## 小結
 
 - 路由懶加載是最簡單的代碼分割方式，一行代碼
-- `splitChunks.cacheGroups` 控製如何分組
+- `splitChunks.cacheGroups` 控制如何分組
 - 第三方庫單獨打包，充分利用瀏覽器緩存
 - 用 bundle analyzer 確認分割效果

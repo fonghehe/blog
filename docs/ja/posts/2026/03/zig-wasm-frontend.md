@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "Zig WebAssemblyはフロントエンド開発においてますます広く活用されている。本記事は実際のプロジェクトの観点から、そのコア原理とベストプラクティスを深く分析する。"
-wordCount: 541
+wordCount: 543
 ---
 
 Zig WebAssemblyはフロントエンド開発においてますます広く活用されている。本記事は実際のプロジェクトの観点から、そのコア原理とベストプラクティスを深く分析する。
@@ -40,7 +40,7 @@ const csvToJson = new Transform({
 
 ## 応用的な使い方
 
-まず基本的な実装方法を見てみよう：
+基本的な実装方法を見てみよう：
 
 ```javascript
 import { useRef, useEffect, useState } from "react";
@@ -126,7 +126,7 @@ const csvToJson = new Transform({
 
 ## よくある落とし穴
 
-以下は完全なサンプルだ：
+以下にサンプルを示します：
 
 ```javascript
 import { useRef, useEffect, useState } from "react";
@@ -160,5 +160,5 @@ function useIntersectionObserver(options = {}) {
 - 新しい技術を使うこと自体を目的にしない
 - コード例はあくまで参考であり、ビジネスの要件に合わせて調整が必要
 - Zig WebAssemblyのフロントエンド応用は銀の弾丸ではない。プロジェクトの規模とスタックに合わせて選択すること
-- APIを覚えることよりも、底層の原理を理解することが重要
+- API を覚えることよりも、基礎となる原理を理解することが重要
 - 本番環境で使用する前に必ず互換性の検証を行うこと

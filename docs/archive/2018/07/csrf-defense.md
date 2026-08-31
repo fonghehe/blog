@@ -5,7 +5,7 @@ tags:
   - 安全
 readingTime: 2
 description: "之前写过 XSS 防御，这次聊 CSRF。两者经常一起提，但原理完全不同。"
-wordCount: 369
+wordCount: 374
 ---
 
 之前写过 XSS 防御，这次聊 CSRF。两者经常一起提，但原理完全不同。
@@ -116,7 +116,7 @@ app.use((req, res, next) => {
 
 ## 小结
 
-- CSRF 利用浏览器自动携带 cookie 的特性，让用户不知情地发请求
+- CSRF 利用浏览器自动携带 cookie 的机制，让用户在不知情的情况下发出请求
 - CSRF Token 是最通用的防御方案
 - `SameSite: Lax/Strict` 是现代浏览器的有效防御
 - GET 请求不应有副作用（否则 img src 就能攻击）

@@ -6,15 +6,15 @@ tags:
   - Engineering
 
 readingTime: 2
-description: "关于Playwright E2E 跨浏览器测试，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspectiv"
-wordCount: 202
+description: "When it comes to Playwright E2E cross-browser testing, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 184
 ---
 
-关于Playwright E2E 跨浏览器测试，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to Playwright E2E cross-browser testing, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more involved:
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -60,7 +60,7 @@ test.describe('用户登录流程', () => {
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Pay attention to edge case handling, which is critical in production.
 
 ## Project Practice
 
@@ -115,7 +115,7 @@ This approach has been running stably in production for over six months and has 
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Playwright E2E 跨浏览器测试不是银弹，需要根据项目规模和技术栈选择
+- Playwright E2E cross-browser testing isn't a silver bullet; pick it based on your project's scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

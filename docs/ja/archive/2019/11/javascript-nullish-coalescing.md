@@ -5,14 +5,14 @@ tags:
   - JavaScript
 readingTime: 3
 description: "空值合并运算符（Nullish Coalescing）`??` 是 TC39 提案，与可选链 `?.` 搭配使用，为 JavaScript 提供了更精确的默认值处理方式。本文详细介绍 `??` 的用法和它与 `||` 的关键区别。"
-wordCount: 359
+wordCount: 582
 ---
 
-空值合并运算符（Nullish Coalescing）`??` 是 TC39 提案，与可选链 `?.` 搭配使用，为 JavaScript 提供了更精确的默认值处理方式。本文详细介绍 `??` 的用法和它与 `||` 的关键区别。
+Null 合体演算子（Nullish Coalescing）`??` は TC39 の提案であり、オプショナルチェーン `?.` と組み合わせることで、JavaScript により正確なデフォルト値の処理方法を提供します。本記事では `??` の使い方と、それが `||` と決定的に異なる点を詳しく解説します。
 
 ## 問題の背景
 
-在 JavaScript 中，使用 `||` 设置默认值是一个常见模式，但它有一个根本问题：
+JavaScript で `||` を使ってデフォルト値を設定するのは一般的なパターンですが、根本的な問題があります：
 
 ```js
 // || 运算符在所有 falsy 值时都会使用默认值
@@ -30,7 +30,7 @@ const threshold = false || 0.5; // 0.5（错误，false 可能是有效配置）
 
 ## Null合体演算子
 
-`??` 只在左侧为 `null` 或 `undefined` 时才使用右侧的默认值：
+`??` は左辺が `null` または `undefined` の場合にのみ、右辺のデフォルト値を使います：
 
 ```js
 // 只有 null 和 undefined 触发默认值
@@ -57,12 +57,12 @@ const config = {
   retries: undefined,
 };
 
-// 使用 || —— 会错误地覆盖 falsy 值
+// 使用例 || —— 会错误地覆盖 falsy 值
 console.log(config.port || 3000);     // 3000（错误，应该是 0）
 console.log(config.host || 'localhost'); // 'localhost'（错误，应该是 ''）
 console.log(config.debug || true);     // true（错误，应该是 false）
 
-// 使用 ?? —— 只在 null/undefined 时使用默认值
+// 使用例 ?? —— 只在 null/undefined 时使用默认值
 console.log(config.port ?? 3000);     // 0（正确）
 console.log(config.host ?? 'localhost'); // ''（正确）
 console.log(config.debug ?? true);     // false（正确）
@@ -72,7 +72,7 @@ console.log(config.retries ?? 3);      // 3（正确，undefined 触发默认值
 
 ## 使用シーン
 
-### 场景一：API 响应处理
+### ケース 1：API レスポンスの処理
 
 ```js
 function processApiResponse(response) {
@@ -91,7 +91,7 @@ function processApiResponse(response) {
 }
 ```
 
-### 场景二：配置对象合并
+### ケース 2：設定オブジェクトのマージ
 
 ```js
 function createConfig(userConfig) {
@@ -113,7 +113,7 @@ createConfig({ port: 0 });
 // { port: 0, host: '127.0.0.1', debug: false, timeout: 5000, maxConnections: 100 }
 ```
 
-### 场景三：表单默认值
+### ケース 3：フォームのデフォルト値
 
 ```js
 function getFormDefaults(savedData) {
@@ -126,7 +126,7 @@ function getFormDefaults(savedData) {
 }
 ```
 
-### 场景四：环境变量处理
+### ケース 4：環境変数の処理
 
 ```js
 // 0 是有效的环境变量值
@@ -139,7 +139,7 @@ const NODE_ENV = process.env.NODE_ENV ?? 'development';
 
 ## オプショナルチェーンとの組み合わせ
 
-`??` 和 `?.` 是最佳搭档：
+`??` と `?.` は最強の組み合わせです：
 
 ```js
 const user = {
@@ -163,6 +163,8 @@ const language = user?.profile?.settings?.language ?? 'zh-CN';
 ```
 
 ## Reactでの使い方
+
+### コンポーネントの props のデフォルト値
 
 ```jsx
 // 组件 props 默认值
@@ -192,13 +194,13 @@ function Notification({ message, count }) {
 
 ## && と || と混在できない
 
-`??` 不能直接与 `&&` 或 `||` 混合使用，必须用括号明确优先级：
+`??` は `&&` や `||` と直接混ぜて書くことはできず、優先順位を明示するために括弧が必要です：
 
 ```js
 // 错误：SyntaxError
 const result = a ?? b || c;
 
-// 正确：使用括号
+// 正しい：使用括号
 const result1 = (a ?? b) || c;
 const result2 = a ?? (b || c);
 
@@ -219,10 +221,10 @@ npm install --save-dev @babel/plugin-proposal-nullish-coalescing-operator
 }
 ```
 
-编译后的产物：
+コンパイル後の出力：
 
 ```js
-// 输入
+// 入力
 const value = obj.prop ?? 'default';
 
 // 输出
@@ -233,7 +235,7 @@ const value = obj.prop !== null && obj.prop !== void 0
 
 ## TypeScript 支持
 
-TypeScript 3.7+ 原生支持空值合并运算符：
+TypeScript 3.7 以降は Null 合体演算子をネイティブにサポートしています：
 
 ```typescript
 interface Config {
@@ -253,9 +255,9 @@ function createServer(config: Config) {
 
 ## まとめ
 
-- `??` 只在左侧为 `null` 或 `undefined` 时才使用右侧默认值
-- 与 `||` 的关键区别：`||` 对所有 falsy 值（0、''、false、NaN）都触发默认值
-- 适合处理配置项、API 响应、表单值等可能有意为 falsy 的场景
-- 经常与可选链 `?.` 配合使用
-- 不能直接与 `&&` 或 `||` 混用，需要括号明确优先级
-- TypeScript 3.7+ 和 Babel 都支持
+- `??` は左辺が `null` または `undefined` の場合にのみ、右辺のデフォルト値を使います
+- `||` との決定的な違い：`||` はすべての falsy 値（0、''、false、NaN）に対してデフォルト値を適用します
+- 設定項目、API レスポンス、フォーム値など、意図的に falsy になる可能性がある場面に適しています
+- オプショナルチェーン `?.` と組み合わせて使うことが多いです
+- `&&` や `||` と直接混ぜて書くことはできず、優先順位を明示するために括弧が必要です
+- TypeScript 3.7 以降と Babel の両方でサポートされています

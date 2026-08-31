@@ -6,15 +6,15 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "图片 CDN 自动优化方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 233
+description: "Automatic image optimization via CDN is being adopted more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 211
 ---
 
-图片 CDN 自动优化方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Image CDN auto-optimization is being used more and more widely in frontend development. This article digs into its core principles and best practices, drawn from real projects.
 
 ## Basic Usage
 
-We can improve it in the following ways:
+Here are a few ways to take this further:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -31,7 +31,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
+This approach has run stably in production for over six months, so it's proven in practice.
 
 ## Advanced Usage
 
@@ -81,7 +81,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Optimization
 
-实际项目中的用法会更复杂一些：
+In real projects, usage gets a bit more involved:
 
 ```javascript
 FROM node:20-alpine AS deps
@@ -102,7 +102,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-Through this approach, both the testability and scalability of the code are improved.
+This makes the code both more testable and more scalable.
 
 ## Common Traps
 
@@ -123,7 +123,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Handle edge cases carefully — they are critical in production.
 
 ## Summary
 
@@ -131,4 +131,4 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- 图片 CDN 自动优化方案不是银弹，需要根据项目规模和技术栈选择
+- Image CDN auto-optimization isn't a silver bullet — pick it based on your project's scale and tech stack

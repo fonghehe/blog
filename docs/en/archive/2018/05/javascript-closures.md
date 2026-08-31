@@ -5,10 +5,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Closures are an obligatory interview topic, but truly understood by few. This article starts from lexical scope to explain what a closure is, and its practical "
-wordCount: 187
+wordCount: 189
 ---
 
-Closures are an obligatory interview topic, but truly understood by few. This article starts from lexical scope to explain what a closure is, and its practical engineering uses.
+Closures are an obligatory interview topic, but truly understood by few. This article starts from lexical scope to explain what a closure is, and how it is applied in engineering.
 
 ## Lexical Scope: The Foundation of Closures
 

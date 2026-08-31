@@ -6,18 +6,18 @@ tags:
 
 readingTime: 4
 description: "2年間 Lerna + Yarn workspace を使ってきた後、今年は pnpm workspace を試し始めました。pnpm のハードリンク機構は Monorepo に自然に適合しており、依存関係が重複インストールされず、ディスク使用量が大幅に削減されます。比較してみると、pnpm workspace は現時点で最もエレガントな Monorepo ソリューションかもしれません。"
-wordCount: 859
+wordCount: 840
 ---
 
-2年間 Lerna + Yarn workspace を使ってきた後、今年は pnpm workspace を試し始めました。pnpm のハードリンク機構は Monorepo に自然に適合しており、依存関係が重複インストールされず、ディスク使用量が大幅に削減されます。比較してみると、pnpm workspace は現時点で最もエレガントな Monorepo ソリューションかもしれません。
+2年間 Lerna + Yarn workspace を使ってきた後、今年は pnpm workspace を試し始めた。pnpm のハードリンク機構は Monorepo に自然に適合しており、依存関係が重複インストールされず、ディスク使用量が大幅に削減される。比較してみると、pnpm workspace は現時点で最もエレガントな Monorepo ソリューションだろう。
 
 ## なぜ pnpm を選ぶか
 
-pnpm の核となる利点は Monorepo のシナリオで特に顕著です：
+pnpm の核となる利点は Monorepo という場面で特に顕著だ：
 
-1. **ハードリンクストレージ**：グローバルストア + ハードリンクにより、10 のサブプロジェクトで同じ依存関係を共有し、Yarn v1 のように各プロジェクトに個別にインストールされることはありません
-2. **厳格な依存関係管理**：ファントム依存関係の問題が完全に解決され、package.json で宣言されていない依存関係は使用できません
-3. **ネイティブ workspace サポート**：Lerna のような上位ツールは不要で、pnpm 単体で処理できます
+1. **ハードリンクストレージ**：グローバルストア + ハードリンクにより、10 のサブプロジェクトで同じ依存関係を共有し、Yarn v1 のように各プロジェクトに個別にインストールされることはない
+2. **厳格な依存関係管理**：ファントム依存関係の問題が完全に解決され、package.json で宣言されていない依存関係は使用できない
+3. **ネイティブ workspace サポート**：Lerna のような上位ツールは不要で、pnpm 単体で処理できる
 
 ```bash
 # インストール速度比較（同一 Monorepo、30 サブプロジェクト）
@@ -131,7 +131,7 @@ packages:
 
 ## パッケージ間の相互参照
 
-Monorepo では、サブパッケージ間の相互参照に `workspace:` プロトコルを使用します：
+Monorepo では、サブパッケージ間の相互参照に `workspace:` プロトコルを使用する：
 
 ```json
 {
@@ -143,7 +143,7 @@ Monorepo では、サブパッケージ間の相互参照に `workspace:` プロ
 }
 ```
 
-公開時に pnpm は自動的に `workspace:*` を実際のバージョン番号に置き換えます。
+公開時に pnpm は自動的に `workspace:*` を実際のバージョン番号に置き換える。
 
 ```typescript
 // packages/components/src/Button.vue
@@ -158,7 +158,7 @@ const formatted = computed(() => formatCurrency(props.amount))
 
 ## pnpm --filter コマンド
 
-`--filter` は pnpm workspace の最も強力な機能で、コマンドの適用範囲を正確に制御できます：
+`--filter` は pnpm workspace の最も強力な機能で、コマンドの適用範囲を正確に制御できる：
 
 ```bash
 # admin アプリにのみ lodash をインストール
@@ -224,7 +224,7 @@ import something from 'transitive-dependency'
 // エラー：Module not found
 ```
 
-これは pnpm の設計上の決定であり、正しい依存関係の宣言を強制します。
+これは pnpm の設計上の決定であり、正しい依存関係の宣言を強制する。
 
 **`.npmrc` 設定**：
 
@@ -247,11 +247,11 @@ public-hoist-pattern[]=*eslint*
 | バージョン公開 | Lerna publish | changesets |
 | 学習曲線 | 中程度 | 低い |
 
-チームがまだ Lerna を使っている場合、移行コストは高くなく、メリットは明らかです。
+チームがまだ Lerna を使っている場合、移行コストは高くなく、メリットは明らかだ。
 
 ## まとめ
 
-- pnpm workspace は現時点で最も軽量な Monorepo ソリューションであり、Lerna は不要です
+- pnpm workspace は現時点で最も軽量な Monorepo ソリューションであり、Lerna は不要だ
 - `workspace:*` プロトコルでサブパッケージ間の依存関係を処理し、`--filter` でコマンド範囲を正確に制御
 - ハードリンクストレージ + 厳格な依存関係管理が pnpm の核となる利点
 - Vite と組み合わせてサブパッケージをビルドすると、開発体験が非常にスムーズ

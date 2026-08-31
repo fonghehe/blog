@@ -4,15 +4,15 @@ date: 2019-10-16 17:17:13
 tags:
   - JavaScript
 readingTime: 2
-description: "JavaScript Proxy 拦截器是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。"
-wordCount: 260
+description: "JavaScript Proxy interceptors are a common challenge in day-to-day development. Drawing on real projects, this article shares concrete implementation approaches and lessons learned."
+wordCount: 171
 ---
 
-JavaScript Proxy 拦截器是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。
+JavaScript Proxy interceptors are a common challenge in day-to-day development. Drawing on real projects, this article shares concrete implementation approaches and lessons learned.
 
 ## Quick Start
 
-先来看基本的用法：
+Let's start with the basic usage:
 
 ```javascript
 export default {
@@ -36,11 +36,11 @@ export default {
 }
 ```
 
-这种写法简洁明了，适合大多数场景。
+This approach is clean and clear, and works well for most scenarios.
 
 ## Advanced Usage
 
-核心代码如下：
+The core code looks like this:
 
 ```javascript
 import React, { Component } from 'react'
@@ -68,11 +68,11 @@ class DataList extends Component {
 }
 ```
 
-实际项目中还需要考虑边界条件和异常处理。
+In real projects you also need to consider edge cases and error handling.
 
 ## Business Scenarios
 
-下面是一个实际的例子：
+Here is a concrete example:
 
 ```javascript
 import React, { Component } from 'react'
@@ -107,11 +107,11 @@ class Form extends Component {
 }
 ```
 
-这种模式在团队中推广后效果很好，维护成本明显降低。
+After rolling this pattern out across the team, the results were positive and maintenance cost dropped noticeably.
 
 ## Pitfall Avoidance Guide
 
-我们可以通过以下方式实现：
+We can implement it in the following way:
 
 ```javascript
 function deepClone(obj, map = new WeakMap()) {
@@ -128,11 +128,11 @@ function deepClone(obj, map = new WeakMap()) {
 }
 ```
 
-注意上面代码中的性能细节，避免不必要的计算。
+Pay attention to the performance details in the code above and avoid unnecessary computation.
 
 ## Quick Start
 
-具体实现参考以下代码：
+Refer to the code below for the concrete implementation:
 
 ```javascript
 function pLimit(concurrency) {
@@ -156,10 +156,10 @@ function pLimit(concurrency) {
 }
 ```
 
-经过线上验证，这套方案运行稳定。
+This solution has been validated in production and runs stably.
 
 ## Summary
 
-- JavaScript Proxy 拦截器的关键在于理解核心概念，不要停留在表面用法
-- 实际项目中根据场景选择合适的方案
-- 团队中统一约定比追求完美实现更重要
+- The key to JavaScript Proxy interceptors is understanding the core concepts, not just the surface-level usage
+- Pick the right approach for the scenario in real projects
+- Consistent team conventions matter more than chasing a perfect implementation

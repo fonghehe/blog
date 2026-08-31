@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "Declarative Shadow DOM 声明式のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 483
+wordCount: 520
 ---
 
 Declarative Shadow DOM 声明式のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -119,7 +119,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理やエッジケースへの対応も必要になる。
 
 ## よくある落とし穴
 
@@ -154,4 +154,4 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 - 新しい技術を使うためだけに新しい技術を使わないでください
 - コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- Declarative Shadow DOM 声明式不是银弹，需要根据项目规模和技术栈选择
+- Declarative Shadow DOM 声明式 は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある

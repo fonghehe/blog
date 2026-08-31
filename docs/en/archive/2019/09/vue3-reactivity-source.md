@@ -4,11 +4,11 @@ date: 2019-09-24 15:06:04
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 alpha 代码公开了！第一时间去看了响应式系统（packages/reactivity），相比 Vue 2 改变很大。"
-wordCount: 207
+description: "The Vue 3 alpha source code is public! I went straight to look at the reactivity system (`packages/reactivity`), and it's a big change from Vue 2."
+wordCount: 138
 ---
 
-Vue 3 alpha 代码公开了！第一时间去看了响应式系统（packages/reactivity），相比 Vue 2 改变很大。
+The Vue 3 alpha source code is public! I went straight to look at the reactivity system (`packages/reactivity`), and it's a big change from Vue 2.
 
 ## Vue 2 Reactivity Limitations
 
@@ -24,7 +24,7 @@ vm.items[0] = newItem; // 不触发更新！需要 Vue.set 或 splice
 // 问题 3：初始化时需要遍历所有属性（性能）
 ```
 
-## Vue 3 基于 Proxy 的响应式
+## Vue 3's Proxy-Based Reactivity
 
 ```javascript
 // packages/reactivity/src/reactive.ts（简化版）
@@ -163,16 +163,16 @@ function computed(getter) {
 
 ## Performance Comparison with Vue 2
 
-|          | Vue 2                      | Vue 3                  |
+| | Vue 2 | Vue 3 |
 | -------- | -------------------------- | ---------------------- |
-| 初始化   | 递归遍历所有属性           | 懒代理（访问到才代理） |
-| 新增属性 | 不追踪（需要 $set）        | 自动追踪               |
-| 数组     | 重写 7 个方法              | 原生支持               |
-| 内存     | 每个属性创建 getter/setter | WeakMap 管理依赖       |
+| Initialization | Recursively walks all properties | Lazy proxying (only when accessed) |
+| New properties | Not tracked (needs `$set`) | Tracked automatically |
+| Arrays | Overrides 7 methods | Native support |
+| Memory | Creates a getter/setter per property | `WeakMap` manages dependencies |
 
 ## Summary
 
-- Proxy 比 defineProperty 更强大：拦截新增、删除、数组索引操作
-- 懒递归代理（访问时才 reactive）比 Vue 2 初始化时全量递归更高效
-- `track` 收集依赖，`trigger` 触发更新，是整个响应式的核心
-- `computed` 用脏标记实现懒求值，只有访问时才重新计算
+- `Proxy` is more powerful than `defineProperty`: it intercepts add, delete, and array-index operations.
+- Lazy recursive proxying (proxying only when accessed) is more efficient than Vue 2's full recursive initialization.
+- `track` collects dependencies and `trigger` fires updates—the heart of the whole reactivity system.
+- `computed` uses a dirty flag for lazy evaluation, recomputing only when accessed.

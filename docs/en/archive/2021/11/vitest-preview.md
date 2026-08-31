@@ -6,15 +6,15 @@ tags:
   - Testing
 
 readingTime: 2
-description: "Vitest 在 2021 年底作为 Vite 生态的测试框架正式亮相。作为一个从 Jest 迁移过来的项目，Vitest 最大的卖点是和 Vite 共享配置和转换管线——不需要额外的打包配置，HMR 支持，以及原生 ESM。"
-wordCount: 299
+description: "Vitest made its official debut at the end of 2021 as the testing framework of the Vite ecosystem. As someone migrating a project from Jest, I found its biggest selling point is sharing configuration and transform pipeline with Vite — no extra bundler config, HMR support, and native ESM."
+wordCount: 205
 ---
 
-Vitest 在 2021 年底作为 Vite 生态的测试框架正式亮相。作为一个从 Jest 迁移过来的项目，Vitest 最大的卖点是和 Vite 共享配置和转换管线——不需要额外的打包配置，HMR 支持，以及原生 ESM。
+Vitest officially appeared at the end of 2021 as a testing framework in the Vite ecosystem. Having migrated from Jest, its biggest selling point is sharing Vite's config and transform pipeline—no extra bundler config, HMR support, and native ESM.
 
 ## Why Vitest Is Needed
 
-在 Vite 项目中用 Jest 并不顺畅：
+Using Jest in a Vite project isn't smooth:
 
 ```
 Jest 的问题：
@@ -24,7 +24,7 @@ Jest 的问题：
 4. 两套配置文件，维护成本高
 ```
 
-Vitest 直接复用 `vite.config.ts`，零配置起步。
+Vitest reuses `vite.config.ts` directly, so you can start with zero config.
 
 ## Quick Start
 
@@ -41,7 +41,7 @@ npm install -D vitest
 }
 ```
 
-Vitest 会自动读取 `vite.config.ts`，不需要额外配置。如果需要覆盖：
+Vitest automatically reads `vite.config.ts`, so no extra config is needed. To override it:
 
 ```typescript
 // vite.config.ts
@@ -64,7 +64,7 @@ export default defineConfig({
 
 ## Writing Tests
 
-API 和 Jest 几乎完全兼容：
+The API is almost fully compatible with Jest:
 
 ```typescript
 // src/utils/format.test.ts
@@ -95,7 +95,7 @@ describe('formatDate', () => {
 
 ## Vue Component Testing
 
-用 `@vue/test-utils`，和 Jest 中的用法一样：
+With `@vue/test-utils`, the usage is the same as in Jest:
 
 ```typescript
 // src/components/Button.test.ts
@@ -127,9 +127,9 @@ describe('Button', () => {
 })
 ```
 
-## Mock 功能
+## Mocking
 
-Vitest 内置了 `vi` 对象，提供 mock 功能：
+Vitest ships a built-in `vi` object that provides mocking:
 
 ```typescript
 import { describe, it, expect, vi, beforeEach } from 'vitest'
@@ -158,7 +158,7 @@ describe('useUser', () => {
 
 ## Performance Comparison
 
-在我们组件库项目中的实测数据：
+Measured data from our component library project:
 
 ```
 项目规模：120 个测试文件，约 800 个测试用例
@@ -169,13 +169,13 @@ Vitest：    ~4s
 vitest --watch 的 HMR 响应：约 200ms
 ```
 
-性能提升主要来自 Vite 的 esbuild 预构建和原生 ESM 支持。
+The performance gain mainly comes from Vite's esbuild pre-bundling and native ESM support.
 
 ## Summary
 
-- Vitest 和 Vite 共享配置，零配置起步，学习成本低
-- API 和 Jest 高度兼容，迁移成本小
-- 性能显著优于 Jest，特别是在大型项目中
-- 内置 UI 界面（`--ui`）让调试体验更好
-- 目前还在快速迭代中，但核心功能已经稳定可用
-- 如果项目用 Vite，Vitest 是最自然的测试方案选择
+- Vitest shares config with Vite, so you can start with zero config and the learning curve is low
+- Its API is highly compatible with Jest, so migration cost is low
+- It outperforms Jest significantly, especially in large projects
+- The built-in UI (`--ui`) makes debugging a better experience
+- It's still iterating quickly, but the core features are already stable and usable
+- If your project uses Vite, Vitest is the most natural testing choice

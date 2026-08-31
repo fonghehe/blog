@@ -4,9 +4,9 @@ date: 2025-03-15 19:04:38
 tags:
   - Web3
   - AI
-readingTime: 12
+readingTime: 10
 description: "LLM Agent がスマートコントラクトを呼び出す完全なアーキテクチャを探求し、意図認識、安全署名、自動化取引パイプライン、マルチステップ取引オーケストレーションをカバー"
-wordCount: 3700
+wordCount: 1308
 ---
 
 ## LLM Agent によるスマートコントラクト呼び出しのアーキテクチャ

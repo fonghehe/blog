@@ -5,9 +5,9 @@ tags:
   - Web3
   - Blockchain
   - DApp
-readingTime: 15
+readingTime: 11
 description: "Arbitrum One と Optimism のフロントエンド適応の違い、クロスチェーン連携とマルチ L2 ネットワーク管理の実践"
-wordCount: 4300
+wordCount: 1360
 ---
 
 ## Layer2 エコシステムの状況

@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 6
 description: "スクロール駆動アニメーションは近年の Web アニメーション分野における重要な方向性です。CSS Scroll-linked Animations 仕様はまだ草案段階ですが、その概念は Intersection Observer API と scroll イベントを使用して本番環境で実装可能です。この記事では仕様草案から出発し、実際のケースを交えてスクロール駆動アニメーションの実装方法を探ります。"
-wordCount: 737
+wordCount: 747
 ---
 
 スクロール駆動アニメーションは、近年の Web アニメーション分野における重要なトレンドです。CSS Scroll-linked Animations の仕様はまだ草案の段階ですが、そのアイデアは Intersection Observer API や scroll イベントを使って本番環境で実装することがすでに可能です。この記事では仕様草案を出発点としながら、実際のケースを交えてスクロール駆動アニメーションの実装方法を探っていきます。
@@ -36,11 +36,11 @@ CSS Scroll-linked Animations 仕様では `scroll-timeline` と `animation-timel
 }
 ```
 
-ネイティブサポートはまだ先ですが、JavaScript で同じ効果を実現できます。以下に2つの主流な方法を紹介します。
+ネイティブサポートはまだ先ですが、JavaScript で同じ効果を実現できます。以下に2つの主流的なアプローチを紹介します。
 
 ## 方法1：Intersection Observer
 
-Intersection Observer は要素がビューポートに入る/出るを効率的に検出でき、「スクロールインアニメーション」の実装に最適です：
+Intersection Observer は要素がビューポートに入ったり出たりするのを効率的に検出でき、「スクロールインアニメーション」の実装に最適です：
 
 ```html
 <!-- 典型的なシナリオ：要素がビューポートに入ったときに登場アニメーションを再生 -->

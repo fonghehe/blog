@@ -68,7 +68,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ## 真實場景應用
 
-實際項目中的用法會更復雜一些：
+實際項目中的用法會更複雜一些：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T

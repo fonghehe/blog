@@ -4,11 +4,11 @@ date: 2023-08-08 10:39:00
 tags:
   - ESLint
 readingTime: 2
-description: "Biome（原 Rome 项目重生）发布了。用 Rust 重写的 Linter + Formatter，对标 ESLint + Prettier。实测后说说值不值得换。"
-wordCount: 499
+description: "Biome (the rebirth of the Rome project) is out: a Rust-rewritten linter plus formatter aiming at ESLint and Prettier. After hands-on testing, here's whether it's worth switching."
+wordCount: 492
 ---
 
-Biome（原 Rome 项目重生）发布了。用 Rust 重写的 Linter + Formatter，对标 ESLint + Prettier。实测后说说值不值得换。
+Biome (the rebirth of the Rome project) is out: a Rust-rewritten linter plus formatter aiming at ESLint and Prettier. After hands-on testing, here's whether it's worth switching.
 
 ## Why We Need an Alternative
 

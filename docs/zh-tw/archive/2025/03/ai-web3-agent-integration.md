@@ -4,9 +4,9 @@ date: 2025-03-15 19:04:38
 tags:
   - Web3
   - AI
-readingTime: 12
+readingTime: 8
 description: "探索 LLM Agent 調用智能合約的完整架構，涵蓋意圖識別、安全簽名、自動化交易管道及多步交易編排"
-wordCount: 3700
+wordCount: 775
 ---
 
 ## LLM Agent 調用智能合約的架構

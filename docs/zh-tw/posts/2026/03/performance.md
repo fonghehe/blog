@@ -5,10 +5,10 @@ tags:
   - 效能最佳化
 readingTime: 2
 description: "關於Web 效能 2026 最佳化指南，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 303
+wordCount: 308
 ---
 
-關於Web 效能 2026 最佳化指南，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+談到 Web 效能 2026 的最佳化指南，許多開發者只停留在呼叫 API 的層次。這篇文章想從正式環境的角度，聊聊實務上會遇到的問題與解法。
 
 ## 基本原理
 
@@ -29,11 +29,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-效能最佳化需要結合具體場景，不是所有情況都需要過度最佳化。
+效能最佳化要對應具體場景，並非每個地方都值得過度優化。
 
 ## 高階特性
 
-我們可以通過以下方式來改進：
+我們可以透過以下方式來改進：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -50,11 +50,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
+這套做法已在正式環境穩定運作超過半年，實務上經得起考驗。
 
 ## 專案實踐
 
-先來看基本的實現方式：
+先從最基本的實作方式看起：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -71,7 +71,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這段程式碼展示了基本的使用方式。實際專案中還需要考慮錯誤處理和邊界條件。
+以上示範了最基本的用法，實際專案裡還得把錯誤處理與邊界情況一併考慮進去。
 
 ## 最佳實踐
 
@@ -92,7 +92,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這種模式在大型專案中非常實用，能顯著降低維護成本。
+這種寫法在大型專案中相當實用，能明顯降低後續的維護成本。
 
 ## 小結
 

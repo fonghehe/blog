@@ -4,15 +4,15 @@ date: 2020-04-03 11:02:10
 tags:
   - TypeScript
 readingTime: 2
-description: "在日常开发中，TypeScript 装饰器与元数据的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 253
+description: "In day-to-day development, TypeScript decorators and metadata are used more and more frequently. This article systematically covers their usage, underlying principles, and optimization strategies."
+wordCount: 149
 ---
 
-在日常开发中，TypeScript 装饰器与元数据的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+In day-to-day development, TypeScript decorators and metadata are being used more and more often. This article systematically covers their usage, underlying principles, and optimization strategies.
 
 ## Quick Start
 
-先来看基本的实现方式：
+Let's start with a basic implementation:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll also need to account for error handling and edge cases.
 
 ## Internal Principles
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -71,11 +71,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly lower maintenance cost.
 
 ## Business Practice
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -99,11 +99,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This way, both the testability and extensibility of the code improve.
 
 ## Performance Comparison
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -134,10 +134,10 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — that is critical in production.
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- Understanding the underlying principles matters more than memorizing APIs.
+- Before using it in production, make sure to verify compatibility.
+- In team collaboration, conventions and documentation matter more than the technology itself.

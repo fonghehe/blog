@@ -4,15 +4,15 @@ date: 2020-04-03 11:02:10
 tags:
   - TypeScript
 readingTime: 2
-description: "在日常开发中，TypeScript 装饰器与元数据的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 274
+description: "日々の開発において、TypeScript のデコレータとメタデータの利用頻度はますます高まっている。本稿ではその使い方、原理、最適化の戦略を体系的に解説する。"
+wordCount: 406
 ---
 
-在日常开发中，TypeScript 装饰器与元数据的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+日々の開発において、TypeScript のデコレータとメタデータの利用頻度はますます高まっている。本稿ではその使い方、原理、最適化の戦略を体系的に解説する。
 
 ## クイックスタート
 
-先来看基本的实现方式：
+まずは基本的な実装の仕方を見てみよう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトでは、エラー処理や境界条件も考慮する必要がある。
 
 ## 内部原理
 
-在这个基础上，我们可以进一步优化：
+この上にさらに、次のように最適化できる：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -71,11 +71,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模なプロジェクトで非常に実用的で、保守コストを大きく下げられる。
 
 ## ビジネス実践
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -99,11 +99,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+この方法により、コードのテスト容易性と拡張性の両方が向上する。
 
 ## パフォーマンス比較
 
-以下是一个完整的示例：
+以下は完全なサンプルだ：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -134,10 +134,10 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理には注意が必要だ。これは本番環境で極めて重要になる。
 
 ## まとめ
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- 基礎となる原理を理解することは、API を覚えるよりも重要だ
+- 本番環境での使用前に、必ず互換性の検証を行うこと
+- チーム開発では、技術そのものよりも取り決めとドキュメントの方が重要だ

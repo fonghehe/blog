@@ -4,11 +4,11 @@ date: 2024-05-15 16:44:58
 tags:
   - React
 readingTime: 3
-description: "React Conf 2024 于 5 月 15-16 日举行，最重磅的消息是 **React Compiler Beta 正式发布**（此前代号 React Forget）。React 团队宣布 Instagram 已在生产环境使用 React Compiler 超过一年，并将其开源给社区使用。这可能是 React "
-wordCount: 633
+description: "React Conf 2024 は 5 月 15-16 日に開催され、最大のニュースは React Compiler Beta の正式公開だった（旧コードネームは React Forget）。React チームは Instagram が本番環境で React Compiler を 1 年以上使用しており、コミュニティへオープンソース化すると発表した。これはここ数年で最も重要なツールの変化だろう。"
+wordCount: 666
 ---
 
-React Conf 2024 于 5 月 15-16 日举行，最重磅的消息是 **React Compiler Beta 正式发布**（此前代号 React Forget）。React 团队宣布 Instagram 已在生产环境使用 React Compiler 超过一年，并将其开源给社区使用。这可能是 React 近几年最具实质意义的更新。
+React Conf 2024 は 5 月 15-16 日に開催され、最大のニュースは React Compiler Beta の正式公開だった（旧コードネームは React Forget）。React チームは Instagram が本番環境で React Compiler を 1 年以上使用しており、コミュニティへオープンソース化すると発表した。これはここ数年で最も重要なツールの変化だろう。
 
 ## React Compiler 是什么
 

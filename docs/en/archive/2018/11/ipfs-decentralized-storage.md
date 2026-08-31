@@ -4,9 +4,12 @@ date: 2018-11-18 15:02:01
 tags:
   - Web3
   - Blockchain
+readingTime: 8
+wordCount: 976
+description: "The cost of blockchain storage is one of the first things frontend engineers notice when they start working in Web3. Storing 1 MB of data on Ethereum can cost t"
 ---
 
-The cost of blockchain storage is one of the first shocks frontend engineers encounter when entering the Web3 space. Storing 1 MB of data on Ethereum can cost thousands of dollars in gas fees—making on-chain storage of images, videos, JSON files, and other content entirely impractical. IPFS (InterPlanetary File System), as a decentralized storage solution, became the key infrastructure to resolve this contradiction. Its positioning is clear: store hashes on-chain, store content off-chain.
+The cost of blockchain storage is one of the first things frontend engineers notice when they start working in Web3. Storing 1 MB of data on Ethereum can cost thousands of dollars in gas fees—making on-chain storage of images, videos, JSON files, and other content entirely impractical. IPFS (InterPlanetary File System), as a decentralized storage solution, became the key infrastructure to resolve this contradiction. Its role is clear: keep hashes on-chain and store content off-chain.
 
 ## Core Concepts of IPFS
 
@@ -28,7 +31,7 @@ Core advantages of content addressing:
 
 1. **Tamper resistance**: The hash is determined by the content—if the content changes, the hash changes
 2. **Deduplication**: Identical content is stored only once—same hash means same content
-3. **Censorship resistance**: There is no centralized server to shut down—any node can serve the file
+3. **Censorship resistance**: There is no central server that can be shut down—any node can serve the file
 
 ### DAG (Directed Acyclic Graph)
 
@@ -44,7 +47,7 @@ IPFS internally uses a Merkle DAG data structure to organize data. Files are spl
 Root Node → CID bafy...root (包含所有子块链接)
 ```
 
-This structure supports efficient content verification and deduplication—if two large files share some identical content, the identical blocks only need to be stored once.
+This structure supports efficient content verification and deduplication—if two large files have identical content in places, those identical blocks are stored only once.
 
 ### DHT (Distributed Hash Table)
 
@@ -298,7 +301,7 @@ A self-hosted gateway can be configured as a pinning node, ensuring important co
 
 ## Integrating with Ethereum: Hash On-Chain, Content Off-Chain
 
-This is the most classic IPFS pattern in DApps—storing content on IPFS and storing its CID in an Ethereum contract:
+This is the most classic IPFS pattern in DApps—storing content on IPFS while recording its CID in an Ethereum contract:
 
 ```solidity
 // contracts/FileRegistry.sol
@@ -550,7 +553,7 @@ async function pinToPinata(cid, name) {
 
 ### Advantages
 
-- **Decentralized**: Content does not depend on a single server, censorship-resistant
+- **Decentralized**: Content is not tied to a single server and is censorship-resistant
 - **Content addressing**: Hash is the address, content integrity is verifiable
 - **Saves on-chain storage costs**: Large file storage costs drop from thousands of dollars to zero
 - **Deduplication**: Identical content is automatically deduplicated, saving storage space
@@ -561,7 +564,7 @@ async function pinToPinata(cid, name) {
 - **Unstable access speed**: Depends on whether nodes in the network serve the content
 - **Immutable**: Content updates change the CID, no in-place updates possible
 - **Gateway single point of risk**: Many DApps rely on the ipfs.io gateway—if it goes down, content is inaccessible
-- **Storage cost shifted**: Although free, data persistence depends on third-party pinning services
+- **Persistence trade-off**: Although storage is free, durability depends on third-party pinning services
 
 ### Use Cases
 
@@ -582,4 +585,4 @@ However, there is a significant gap between IPFS's "decentralization ideal" and 
 
 From a frontend engineering perspective, IPFS integration is not always smooth. js-ipfs running in the browser has a large footprint, slow initialization, and unstable connections—most DApps ultimately fall back to using public gateways. But the concept of content addressing is correct and important—it provides a mechanism for verifying content integrity, which is indispensable in decentralized applications.
 
-For developers planning to use IPFS in DApps, the core advice is: always implement a multi-gateway fallback + local node combination strategy, and use pinning services for critical content. Do not rely on the persistence of public gateways—a CID accessible today may have no provider tomorrow.
+For developers planning to use IPFS in DApps, the core advice is: always combine a multi-gateway fallback with a local node, and use pinning services for critical content. Do not rely on the persistence of public gateways—a CID accessible today may have no provider tomorrow.

@@ -1,5 +1,5 @@
 ---
-title: "Storybook 9 Practice: 大型Component库Documentation & Testing一体化Solution"
+title: "Storybook 9 in Practice: A Unified Docs-and-Testing Solution for a Large Component Library"
 date: 2025-12-30 16:44:21
 tags:
   - Frontend

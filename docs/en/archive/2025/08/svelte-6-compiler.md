@@ -1,5 +1,5 @@
 ---
-title: "Svelte 6 Compiler Improvements: 新ReactivityCompilationStrategy"
+title: "Svelte 6 Compiler Improvements: A New Reactive Compilation Strategy"
 date: 2025-08-28 17:02:39
 tags:
   - Svelte

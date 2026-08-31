@@ -4,7 +4,7 @@ date: 2022-03-10 11:13:00
 tags:
   - TypeScript
 readingTime: 2
-description: "In daily development, TypeScript 4.9 satisfies 操作符 is being used more and more frequently. This article systematically explains its usage, principles, and optim"
+description: "The TypeScript satisfies operator is showing up in more and more everyday code. This article systematically covers its usage, mechanics, and practical strategies."
 wordCount: 175
 ---
 

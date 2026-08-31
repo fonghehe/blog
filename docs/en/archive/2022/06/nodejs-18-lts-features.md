@@ -5,15 +5,15 @@ tags:
   - Node.js
   - TypeScript
 readingTime: 2
-description: "Node.js 18 在 2022 年 4 月进入 LTS。这是个重要版本——内置了 fetch API、新增了测试运行器，还默认启用了 OpenSSL 3.0。作为前端基础设施的搭建者，这些变化直接影响我们的工具链。"
-wordCount: 207
+description: "Node.js 18 entered LTS in April 2022. It's an important release — with a built-in fetch API, a new test runner, and OpenSSL 3.0 enabled by default. As builders of frontend infrastructure, these changes directly affect our toolchain."
+wordCount: 145
 ---
 
-Node.js 18 在 2022 年 4 月进入 LTS。这是个重要版本——内置了 fetch API、新增了测试运行器，还默认启用了 OpenSSL 3.0。作为前端基础设施的搭建者，这些变化直接影响我们的工具链。
+Node.js 18 entered LTS in April 2022. It's an important release — with a built-in fetch API, a new test runner, and OpenSSL 3.0 enabled by default. As builders of frontend infrastructure, these changes directly affect our toolchain.
 
-## 内置 fetch API
+## Built-in fetch API
 
-不再需要安装 node-fetch 或 axios 做简单请求：
+No need to install node-fetch or axios for simple requests anymore:
 
 ```typescript
 // 直接用！不需要 import
@@ -38,7 +38,7 @@ while (true) {
 }
 ```
 
-配合 `FormData`、`Headers`、`Request`、`Response` 全部内置。
+`FormData`, `Headers`, `Request`, and `Response` are all built in as well.
 
 ## Built-in Test Runner
 
@@ -77,9 +77,9 @@ node --test sum.test.ts
 node --test src/**/*.test.ts
 ```
 
-不需要装 Jest 或 Mocha，Node.js 自带了。对于工具脚本和 CLI 项目，内置测试运行器够用了。
+No need to install Jest or Mocha — Node.js has it built in. For utility scripts and CLI projects, the built-in test runner is sufficient.
 
-## Blob 和 Web Streams
+## Blob and Web Streams
 
 ```typescript
 // Blob 内置
@@ -134,7 +134,7 @@ for await (const _ of setInterval(1000)) {
 }
 ```
 
-## ES2022 支持
+## ES2022 Support
 
 ```typescript
 // Top-level await（模块顶层直接用 await）
@@ -157,7 +157,7 @@ const obj = { a: 1 };
 console.log(Object.hasOwn(obj, 'a')); // true
 ```
 
-## 实用的新 API
+## Useful New APIs
 
 ```typescript
 // 全局对象
@@ -174,7 +174,7 @@ const match = re.exec('2022-06');
 console.log(match.indices.groups.year); // [0, 4]
 ```
 
-## 性能改进
+## Performance Improvements
 
 ```bash
 # V8 引擎升级到 10.1
@@ -187,7 +187,7 @@ console.timeEnd('map');
 "
 ```
 
-## 在 CI 中使用
+## Using in CI
 
 ```yaml
 # .github/workflows/ci.yml
@@ -211,4 +211,4 @@ jobs:
 
 ## Summary
 
-Node.js 18 把很多之前需要第三方库的功能内置了——fetch、测试、Blob、Streams。这意味着更少的依赖、更小的 node_modules、更一致的 API。对于新项目，直接用 Node 18 不需要犹豫。
+Node.js 18 brings many previously third-party features built in — fetch, testing, Blob, Streams. This means fewer dependencies, smaller node_modules, and more consistent APIs. For new projects, there's no hesitation needed — just use Node 18.

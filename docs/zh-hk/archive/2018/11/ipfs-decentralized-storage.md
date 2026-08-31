@@ -1,11 +1,12 @@
 ---
-readingTime: 8
-wordCount: 1649
+readingTime: 9
+wordCount: 1686
 title: "IPFS 去中心化存儲：前端文件託管實踐"
 date: 2018-11-18 15:02:01
 tags:
   - Web3
   - Blockchain
+description: "區塊鏈的存儲成本是前端工程師進入 Web3 領域後最先感受到的震撼之一。在以太坊上存儲 1 MB 數據的 Gas 費用可能高達數千美元——這讓圖片、視頻、JSON 文件等內容的鏈上存儲完全不可行。IPFS（InterPlanetary File System）作為去中心化存儲方案，成為了解決這一矛盾的關鍵基礎設施。它的"
 ---
 
 區塊鏈的存儲成本是前端工程師進入 Web3 領域後最先感受到的震撼之一。在以太坊上存儲 1 MB 數據的 Gas 費用可能高達數千美元——這讓圖片、視頻、JSON 文件等內容的鏈上存儲完全不可行。IPFS（InterPlanetary File System）作為去中心化存儲方案，成為了解決這一矛盾的關鍵基礎設施。它的定位很明確：鏈上存儲哈希，鏈下存儲內容。
@@ -14,12 +15,12 @@ tags:
 
 ### 內容尋址
 
-傳統 Web 使用位置尋址（Location Addressing）——通過 URL 找到文件所在的服務器。IPFS 使用內容尋址（Content Addressing）——通過文件內容的哈希值找到文件。
+傳統 Web 使用位置尋址（Location Addressing）——通過 URL 找到文件所在的伺服器。IPFS 使用內容尋址（Content Addressing）——通過文件內容的哈希值找到文件。
 
 ```
 # 位置尋址（HTTP）
 https://example.com/images/photo.jpg
-# 文件在哪台服務器上，由域名決定
+# 文件在哪台伺服器上，由域名決定
 
 # 內容尋址（IPFS）
 /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG
@@ -30,7 +31,7 @@ https://example.com/images/photo.jpg
 
 1. **不可篡改性**：哈希值由內容決定，內容變化則哈希變化
 2. **去重**：相同內容只存儲一份，哈希相同即內容相同
-3. **抗審查**：沒有中心化服務器可以被關閉，任何節點都可以提供文件
+3. **抗審查**：沒有中心化伺服器可以被關閉，任何節點都可以提供文件
 
 ### DAG（有向無環圖）
 
@@ -251,7 +252,7 @@ async function getFileInfo(cid) {
 
 ## IPFS 網關的使用與自建
 
-IPFS 網關是提供 HTTP 接口訪問 IPFS 內容的服務器。通過網關，任何瀏覽器都可以通過 HTTP URL 訪問 IPFS 上的內容，無需運行 IPFS 節點：
+IPFS 網關是提供 HTTP 接口訪問 IPFS 內容的伺服器。通過網關，任何瀏覽器都可以通過 HTTP URL 訪問 IPFS 上的內容，無需運行 IPFS 節點：
 
 ```
 https://ipfs.io/ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG
@@ -552,7 +553,7 @@ async function pinToPinata(cid, name) {
 
 ### 優點
 
-- **去中心化**：內容不依賴單一服務器，抗審查
+- **去中心化**：內容不依賴單一伺服器，抗審查
 - **內容尋址**：哈希即地址，內容完整性可驗證
 - **節省鏈上存儲成本**：大文件存儲成本從數千美元降至零
 - **去重**：相同內容自動去重，節省存儲空間
@@ -571,7 +572,7 @@ async function pinToPinata(cid, name) {
 |------|------|------|
 | NFT metadata | ✓ | 不可篡改性正好匹配 NFT 需求 |
 | DApp 前端託管 | ✓ | 配合 ENS 可實現完全去中心化前端 |
-| 用户上傳的圖片/文檔 | ✓ | 大文件存儲成本低 |
+| 用戶上傳的圖片/文檔 | ✓ | 大文件存儲成本低 |
 | 頻繁更新的數據 | ✗ | CID 變化導致引用失效 |
 | 需要搜索的數據 | ✗ | IPFS 不支持內容檢索 |
 | 小量關鍵數據 | ✗ | 直接上鍊更可靠 |

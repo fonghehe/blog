@@ -4,11 +4,11 @@ date: 2018-09-14 14:48:41
 tags:
   - CSS
 readingTime: 1
-description: "專案做大了，CSS 命名開始混亂：`.title`、`.list-item`、`.active`……全域性樣式衝突越來越多。用 BEM 規範統一命名之後，問題少了很多。"
-wordCount: 124
+description: "專案做大了，CSS 命名開始混亂：`.title`、`.list-item`、`.active`……全域樣式衝突越來越多。用 BEM 規範統一命名之後，問題少了很多。"
+wordCount: 123
 ---
 
-專案做大了，CSS 命名開始混亂：`.title`、`.list-item`、`.active`……全域性樣式衝突越來越多。用 BEM 規範統一命名之後，問題少了很多。
+專案做大了，CSS 命名開始混亂：`.title`、`.list-item`、`.active`……全域樣式衝突越來越多。用 BEM 規範統一命名之後，問題少了很多。
 
 ## BEM 是什麼
 
@@ -131,7 +131,7 @@ Modifier（修飾符）：塊或元素的狀態/變體，用 -- 連線，如 car
 
 ```
 1. 命名自解釋：看類名就知道這個元素是什麼、屬於哪裡
-2. 低優先順序：隻用類選擇器，不用巢狀，樣式權重一致
+2. 低優先順序：只用類選擇器，不用巢狀，樣式權重一致
 3. 可複用：Block 是獨立的，可以放到任何地方
 4. 低耦合：不依賴 HTML 結構，重構不怕
 ```
@@ -141,7 +141,7 @@ Modifier（修飾符）：塊或元素的狀態/變體，用 -- 連線，如 car
 ```
 - 工具類（如 .text-center、.mt-16）不用 BEM
 - 狀態類（如 .is-active、.has-error）習慣用 is-/has- 字首
-- 全域性重置樣式
+- 全域重置樣式
 ```
 
 ## 和 Vue scoped 配合
@@ -162,6 +162,6 @@ Modifier（修飾符）：塊或元素的狀態/變體，用 -- 連線，如 car
 ## 小結
 
 - `block__element--modifier` 三層命名
-- 隻用類選擇器，不巢狀，保持低優先順序
+- 只用類選擇器，不巢狀，保持低優先順序
 - SCSS `&__` 和 `&--` 讓 BEM 更方便寫
 - 狀態類用 `.is-active`、`.has-error` 字首

@@ -83,7 +83,7 @@ document.documentElement.style.setProperty('--primary', '#67c23a')
   --primary: #64b5f6;
 }
 
-/* 所有組件隻用變量，不寫具體顏色 */
+/* 所有組件只用變量，不寫具體顏色 */
 body {
   background: var(--bg-color);
   color: var(--text-color);

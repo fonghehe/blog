@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 3 将响应式系统从 `Object.defineProperty` 完全重写为 `Proxy`。这不是为了追时髦，而是为了彻底解决 Vue 2 中一些根本性缺陷。"
-wordCount: 193
+wordCount: 195
 ---
 
 Vue 3 将响应式系统从 `Object.defineProperty` 完全重写为 `Proxy`。这不是为了追时髦，而是为了彻底解决 Vue 2 中一些根本性缺陷。
@@ -125,4 +125,4 @@ count.value++; // 触发更新
 
 ## 总结
 
-Vue 3 响应式系统的升级不只是技术选型的迭代，而是对原有设计局限的一次彻底修正。`Proxy` 的全拦截能力 + `WeakMap`索引的依赖图，这套设计已被证明性能和正确性都更好。
+Vue 3 响应式系统的升级不只是技术选型的迭代，而是对原有设计局限的一次彻底修正。`Proxy` 的全拦截能力 + `WeakMap`索引的依赖图，这套设计已被证明在性能和正确性上都更优。

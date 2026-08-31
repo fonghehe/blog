@@ -4,11 +4,11 @@ date: 2018-01-11 17:34:30
 tags:
   - 性能優化
 readingTime: 3
-description: "做效能優化之前，得先搞清楚瀏覽器從收到 HTML 到使用者看到頁面，中間經歷了什麼。這些步驟合在一起叫做**關鍵渲染路徑**（Critical Rendering Path）。不理解這個，很多優化手段隻能照葫蘆畫瓢。"
+description: "做效能優化之前，得先搞清楚瀏覽器從收到 HTML 到使用者看到頁面，中間經歷了什麼。這些步驟合在一起叫做**關鍵渲染路徑**（Critical Rendering Path）。不理解這個，很多優化手段只能照葫蘆畫瓢。"
 wordCount: 634
 ---
 
-做效能優化之前，得先搞清楚瀏覽器從收到 HTML 到使用者看到頁面，中間經歷了什麼。這些步驟合在一起叫做**關鍵渲染路徑**（Critical Rendering Path）。不理解這個，很多優化手段隻能照葫蘆畫瓢。
+做效能優化之前，得先搞清楚瀏覽器從收到 HTML 到使用者看到頁面，中間經歷了什麼。這些步驟合在一起叫做**關鍵渲染路徑**（Critical Rendering Path）。不理解這個，很多優化手段只能照葫蘆畫瓢。
 
 ## 瀏覽器渲染的五個步驟
 
@@ -112,7 +112,7 @@ for (let i = 0; i < items.length; i++) {
 // 較好：先讀後批次寫入
 const containerWidth = container.offsetWidth; // 讀一次
 for (let i = 0; i < items.length; i++) {
-  items[i].style.width = containerWidth + "px"; // 隻寫
+  items[i].style.width = containerWidth + "px"; // 只寫
 }
 ```
 
@@ -129,7 +129,7 @@ for (let i = 0; i < items.length; i++) {
   transform: translateZ(0);
 }
 
-/* 高效能動畫：隻用 transform 和 opacity */
+/* 高效能動畫：只用 transform 和 opacity */
 @keyframes slide-in {
   from {
     transform: translateX(-100%);

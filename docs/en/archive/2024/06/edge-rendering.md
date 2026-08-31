@@ -4,8 +4,8 @@ date: 2024-06-27 15:01:38
 tags:
   - Frontend
 readingTime: 2
-description: "I recently implemented Edge Rendering 2024 最佳实践 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will hel"
-wordCount: 175
+description: "I recently applied Edge Rendering 2024 best practices with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 161
 ---
 
 I recently implemented Edge Rendering 2024 最佳实践 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those doing similar work.
@@ -125,6 +125,6 @@ Pay attention to edge case handling — this is critical in production environme
 
 ## Summary
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- Keep an eye on community trends; technical approaches need continuous iteration
+- Don't adopt new technology just for the sake of it
+- Code samples are for reference only and need adjusting to your business scenario

@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 18 は 2024 年 5 月 22 日に正式リリースされました。最も待望されている機能は **Zoneless 変更検知**（実験的）です。これは Angular アプリケーションが `zone.js` に全く依存せずに動作できることを意味し、バンドルサイズの削減、パフォーマンスの向上、そして zon"
-wordCount: 643
+wordCount: 681
 ---
 
 Angular 18 は 2024 年 5 月 22 日に正式リリースされました。最も待望されている機能は **Zoneless 変更検知**（実験的）です。これは Angular アプリケーションが `zone.js` に全く依存せずに動作できることを意味し、バンドルサイズの削減、パフォーマンスの向上、そして zone.js が長年引き起こしてきた様々な互換性の問題を解決します。
@@ -139,9 +139,9 @@ it("should update counter", async () => {
 
 ## Angular 18 のその他の新機能
 
-- **Material 3 稳定版**：Angular Material 完成 Material Design 3 迁移
-- **i18n hydration**：服务端渲染的国际化内容支持水合
-- **Route-level render mode**（路由级渲染模式，开发预览）：每条路由可独立选择 SSR/SSG/CSR
+- **Material 3 安定版**：Angular Material が Material Design 3 への移行を完了
+- **i18n hydration**：サーバーレンダリングされた国際化コンテンツのハイドレーションに対応
+- **Route-level render mode**（ルート単位のレンダリングモード、開発プレビュー）：各ルートが独立して SSR/SSG/CSR を選択可能
 
 ```typescript
 // app.routes.ts（Angular 18 路由级渲染模式预览）

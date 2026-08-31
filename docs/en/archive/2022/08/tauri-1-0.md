@@ -4,15 +4,15 @@ date: 2022-08-05 15:28:30
 tags:
   - Frontend
 readingTime: 2
-description: "最近在团队中落地Tauri 1.0 正式版桌面应用， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 213
+description: "We recently adopted Tauri 1.0 stable for desktop applications on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 194
 ---
 
-最近在团队中落地Tauri 1.0 正式版桌面应用， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently adopted Tauri 1.0 stable for desktop applications on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 
-实际项目中的用法会更复杂一些：
+Usage in real projects tends to be more complex:
 
 ```javascript
 import React, { useState, useCallback } from 'react'
@@ -148,4 +148,4 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Tauri 1.0 正式版桌面应用不是银弹，需要根据项目规模和技术栈选择
+- Tauri 1.0 stable for desktop apps is not a silver bullet — choose based on your project scale and tech stack

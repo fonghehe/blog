@@ -4,7 +4,7 @@ date: 2022-05-30 15:09:42
 tags:
   - Storybook
 readingTime: 2
-description: "We recently implemented Storybook 7.0 预览与迁移， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work"
+description: "I recently explored the Storybook 7.0 preview and migration with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 188
 ---
 

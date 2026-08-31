@@ -4,13 +4,13 @@ date: 2022-06-07 15:28:54
 tags:
   - Frontend
 readingTime: 2
-description: "Astro 1.0 正式发布了。它的核心理念很明确：默认输出零 JavaScript，只在需要交互的地方加载 JS。对于内容型网站（博客、文档、营销页），这个方案比 React/Vue 全家桶高效得多。"
-wordCount: 326
+description: "Astro 1.0 has been officially released. Its core philosophy is clear: output zero JavaScript by default, and only load JS where interactivity is needed. For content-driven sites (blogs, docs, marketing pages), this approach is far more efficient than the full React/Vue stack."
+wordCount: 201
 ---
 
-Astro 1.0 正式发布了。它的核心理念很明确：默认输出零 JavaScript，只在需要交互的地方加载 JS。对于内容型网站（博客、文档、营销页），这个方案比 React/Vue 全家桶高效得多。
+Astro 1.0 has been officially released. Its core philosophy is clear: output zero JavaScript by default, and only load JS where interactivity is needed. For content-driven sites (blogs, docs, marketing pages), this approach is far more efficient than the full React/Vue stack.
 
-## 核心理念：Islands Architecture
+## Core Concept: Islands Architecture
 
 ```
 ┌─────────────────────────────┐
@@ -25,7 +25,7 @@ Astro 1.0 正式发布了。它的核心理念很明确：默认输出零 JavaSc
 └─────────────────────────────┘
 ```
 
-页面大部分是静态 HTML，只有标记为「Island」的组件才会加载 JS 并变成可交互的。
+Most of the page is static HTML; only components marked as "Islands" load JS and become interactive.
 
 ## Getting Started
 
@@ -36,7 +36,7 @@ pnpm install
 pnpm dev
 ```
 
-## Astro 组件语法
+## Astro Component Syntax
 
 ```astro
 ---
@@ -69,7 +69,7 @@ const title = '我的技术博客';
 </Layout>
 ```
 
-## Client Directives：控制何时加载 JS
+## Client Directives: Controlling When JS Loads
 
 ```astro
 ---
@@ -95,9 +95,9 @@ import Search from '../components/Search';
 <HeavyChart client:only="react" />
 ```
 
-## 混合框架
+## Mixing Frameworks
 
-Astro 支持在同一个项目中混合使用不同框架：
+Astro supports mixing different frameworks in the same project:
 
 ```astro
 ---
@@ -126,11 +126,11 @@ export default defineConfig({
 });
 ```
 
-这在微前端场景或渐进式迁移中很有用。
+This is useful in micro-frontend scenarios or for incremental migrations.
 
-## 内容集合（Content Collections）
+## Content Collections
 
-Astro 1.0 的杀手特性：用 TypeScript 类型安全的方式管理 Markdown 内容。
+Astro 1.0's killer feature: managing Markdown content with TypeScript type safety.
 
 ```typescript
 // src/content/config.ts
@@ -171,7 +171,7 @@ const sorted = posts.sort(
 ))}
 ```
 
-## 构建输出
+## Build Output
 
 ```typescript
 // astro.config.mjs
@@ -185,13 +185,13 @@ export default defineConfig({
 });
 ```
 
-静态构建输出的是纯 HTML + CSS + 极少量 JS。我们博客项目构建后，首页 JS 体积只有 2KB（React 做的搜索组件）。
+Static builds output pure HTML + CSS + minimal JS. After building our blog project, the homepage JS is only 2KB (a React-powered search component).
 
 ## Performance Comparison
 
-同一个博客项目用不同方案的 Lighthouse 分数：
+Lighthouse scores for the same blog project using different solutions:
 
-| 框架 | Performance | JS 体积 |
+| Framework | Performance | JS Size |
 |------|-------------|---------|
 | Next.js (SSG) | 78 | 180KB |
 | Gatsby | 72 | 220KB |
@@ -199,4 +199,4 @@ export default defineConfig({
 
 ## Summary
 
-Astro 不是要替代 React/Vue，而是填补了一个空白：内容型网站不需要 SPA 的复杂度。默认零 JS、Islands Architecture、混合框架支持——这些特性让它成为文档站和博客的最佳选择。
+Astro isn't trying to replace React/Vue — it fills a gap: content-driven sites don't need the complexity of an SPA. Zero JS by default, Islands Architecture, and multi-framework support make it the best choice for documentation sites and blogs.

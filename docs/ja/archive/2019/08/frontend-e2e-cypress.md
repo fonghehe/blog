@@ -3,12 +3,12 @@ title: "Cypress E2Eテスト入門と実践"
 date: 2019-08-09 09:44:05
 tags:
   - テスト
-readingTime: 4
-description: "前端自动化测试一直是团队落地的难点。单元测试覆盖不到用户真实操作流程，Selenium 又配置复杂、运行不稳定。Cypress 是一个专门为现代前端应用设计的 E2E 测试框架，开箱即用、API 简洁、自带自动重试机制，是目前社区中非常受欢迎的选择。本文将从零搭建 Cypress 测试环境，逐步覆盖核心功能。"
-wordCount: 547
+readingTime: 5
+description: "フロントエンドの自動化テストは、チームでの導入が常に難しい課題だった。ユニットテストではユーザーの実際の操作フローをカバーできず、Seleniumは設定が複雑で動作も不安定だ。Cypressは現代のフロントエンドアプリケーション向けに設計されたE2Eテストフレームワークで、すぐに使えてAPIもシンプル、自動リトライ機構も備わっており、現在コミュニティで非常に人気のある選択肢である。本記事ではゼロからCypressのテスト環境を構築し、コア機能を順を追って解説する。"
+wordCount: 872
 ---
 
-前端自动化测试一直是团队落地的难点。单元测试覆盖不到用户真实操作流程，Selenium 又配置复杂、运行不稳定。Cypress 是一个专门为现代前端应用设计的 E2E 测试框架，开箱即用、API 简洁、自带自动重试机制，是目前社区中非常受欢迎的选择。本文将从零搭建 Cypress 测试环境，逐步覆盖核心功能。
+フロントエンドの自動化テストは、チームでの導入が常に難しい課題だった。ユニットテストではユーザーの実際の操作フローをカバーできず、Seleniumは設定が複雑で動作も不安定だ。Cypressは現代のフロントエンドアプリケーション向けに設計されたE2Eテストフレームワークで、すぐに使えてAPIもシンプル、自動リトライ機構も備わっており、現在コミュニティで非常に人気のある選択肢である。本記事ではゼロからCypressのテスト環境を構築し、コア機能を順を追って解説する。
 
 ## インストールと初期化
 
@@ -16,7 +16,7 @@ wordCount: 547
 npm install --save-dev cypress
 ```
 
-在 `package.json` 中添加脚本：
+`package.json` にスクリプトを追加する：
 
 ```json
 {
@@ -27,36 +27,36 @@ npm install --save-dev cypress
 }
 ```
 
-首次运行 `npx cypress open` 会自动创建以下目录结构：
+初めて `npx cypress open` を実行すると、以下のディレクトリ構造が自動作成される：
 
 ```
 cypress/
-├── fixtures/       # 测试数据
-├── integration/    # 测试用例
-├── plugins/        # 插件配置
-└── support/        # 辅助函数和命令
+├── fixtures/       # テストデータ
+├── integration/    # テストケース
+├── plugins/        # プラグイン設定
+└── support/        # ヘルパー関数とコマンド
 ```
 
 ## 最初のテストケース
 
-创建 `cypress/integration/home.spec.js`：
+`cypress/integration/home.spec.js` を作成する：
 
 ```js
-describe('首页测试', () => {
+describe('ホームページテスト', () => {
   beforeEach(() => {
     cy.visit('/');
   });
 
-  it('应该正确渲染页面标题', () => {
-    cy.get('h1').should('contain', '欢迎');
+  it('ページタイトルが正しくレンダリングされること', () => {
+    cy.get('h1').should('contain', 'ようこそ');
   });
 
-  it('应该能点击导航链接', () => {
+  it('ナビゲーションリンクをクリックできること', () => {
     cy.get('[data-testid="nav-about"]').click();
     cy.url().should('include', '/about');
   });
 
-  it('应该能搜索内容', () => {
+  it('コンテンツを検索できること', () => {
     cy.get('[data-testid="search-input"]')
       .type('Cypress')
       .should('have.value', 'Cypress');
@@ -71,120 +71,120 @@ describe('首页测试', () => {
 
 ## コアAPIリファレンス
 
-### 元素选择
+### 要素の選択
 
-Cypress 使用 jQuery 选择器语法，推荐使用 `data-testid` 作为选择器：
+CypressはjQueryセレクタ構文を使用する。セレクタには `data-testid` を使うことを推奨する：
 
 ```js
-// 推荐：使用 data-testid，不受样式或结构调整影响
+// 推奨：data-testidを使用すれば、スタイルや構造の変更に影響されない
 cy.get('[data-testid="submit-button"]')
 
-// 也可以使用 CSS 选择器
+// CSSセレクタも使用可能
 cy.get('.btn-primary')
 cy.get('#login-form')
 cy.get('form > button[type="submit"]')
 
-// 包含文本选择
-cy.contains('提交')
-cy.contains('button', '登录')
+// テキストを含む要素の選択
+cy.contains('送信')
+cy.contains('button', 'ログイン')
 ```
 
-### 断言
+### アサーション
 
-Cypress 内置了 Chai 断言库，支持 BDD 风格的 `should` 和 `expect`：
+CypressにはChaiアサーションライブラリが組み込まれており、BDDスタイルの `should` と `expect` をサポートしている：
 
 ```js
-// 元素存在性
+// 要素の存在確認
 cy.get('.error-msg').should('exist');
 cy.get('.loading').should('not.exist');
 
-// 文本内容
-cy.get('.title').should('contain', '欢迎');
-cy.get('.title').should('have.text', '欢迎来到我的网站');
+// テキストコンテンツ
+cy.get('.title').should('contain', 'ようこそ');
+cy.get('.title').should('have.text', '私のサイトへようこそ');
 
-// 属性和类名
+// 属性とクラス名
 cy.get('input').should('have.value', 'test');
 cy.get('.card').should('have.class', 'active');
 cy.get('a').should('have.attr', 'href', '/about');
 
-// 数量
+// 個数
 cy.get('.list-item').should('have.length', 5);
 cy.get('.card').should('have.length.greaterThan', 0);
 
-// 可见性
+// 表示状態
 cy.get('.modal').should('be.visible');
 cy.get('.hidden-element').should('not.be.visible');
 
-// CSS 样式
+// CSSスタイル
 cy.get('.btn').should('have.css', 'color', 'rgb(0, 123, 255)');
 ```
 
-### 交互操作
+### インタラクション操作
 
 ```js
-// 点击
+// クリック
 cy.get('.btn').click();
 cy.get('.btn').dblclick();
 cy.get('.btn').rightclick();
 
-// 输入
+// 入力
 cy.get('input').type('Hello World');
 cy.get('input').clear().type('new value');
 
-// 表单
-cy.get('select').select('选项一');
+// フォーム
+cy.get('select').select('オプション1');
 cy.get('[type="checkbox"]').check();
 cy.get('[type="checkbox"]').uncheck();
 cy.get('[type="radio"]').check();
 
-// 滚动
+// スクロール
 cy.get('.long-list').scrollTo('bottom');
 cy.scrollTo(0, 500);
 ```
 
 ## 非同期操作の処理
 
-Cypress 的核心设计理念之一是自动重试，大多数命令都会自动重试直到断言通过或超时。
+Cypressの中核的な設計思想の一つは自動リトライであり、ほとんどのコマンドはアサーションが通るかタイムアウトするまで自動的にリトライする。
 
-### 网络请求
+### ネットワークリクエスト
 
 ```js
-// 拦截 API 请求
-describe('用户列表', () => {
-  it('应该加载并显示用户数据', () => {
-    // 使用 cy.server 和 cy.route 拦截请求
+// APIリクエストのインターセプト
+describe('ユーザー一覧', () => {
+  it('ユーザーデータを読み込んで表示すること', () => {
+    // cy.serverとcy.routeでリクエストをインターセプト
     cy.server();
     cy.route('GET', '/api/users', 'fixture:users.json').as('getUsers');
 
     cy.visit('/users');
 
-    // 等待请求完成
+    // リクエスト完了を待機
     cy.wait('@getUsers');
 
-    // 验证页面渲染
+    // ページレンダリングの検証
     cy.get('[data-testid="user-row"]').should('have.length', 10);
   });
 
-  it('应该处理请求失败', () => {
+  it('リクエスト失敗を処理すること', () => {
     cy.server();
     cy.route({
       method: 'GET',
       url: '/api/users',
       status: 500,
-      response: { error: '服务器错误' },
+      response: { error: 'サーバーエラー' },
     }).as('getUsersError');
 
     cy.visit('/users');
     cy.wait('@getUsersError');
 
-    cy.get('.error-message').should('contain', '服务器错误');
+    cy.get('.error-message').should('contain', 'サーバーエラー');
   });
 });
 ```
 
-### 使用 fixtures 模拟数据
+### fixturesを使ったデータのモック
 
-创建 `cypress/fixtures/users.json`：
+`cypress/fixtures/users.json` を作成する：
 
 ```json
 [
@@ -195,23 +195,23 @@ describe('用户列表', () => {
 ```
 
 ```js
-it('应该显示 fixture 数据', () => {
+it('fixtureデータが表示されること', () => {
   cy.server();
   cy.route('GET', '/api/users', 'fixture:users.json').as('getUsers');
 
   cy.visit('/users');
   cy.wait('@getUsers');
 
-  cy.get('[data-testid="user-name"]').first().should('contain', '张三');
+  cy.get('[data-testid="user-name"]').first().should('contain', '張三');
 });
 ```
 
 ## カスタムコマンド
 
-在 `cypress/support/commands.js` 中定义自定义命令，封装重复操作：
+`cypress/support/commands.js` でカスタムコマンドを定義し、繰り返し操作をカプセル化する：
 
 ```js
-// 登录命令
+// ログインコマンド
 Cypress.Commands.add('login', (email = 'test@example.com', password = 'password123') => {
   cy.request({
     method: 'POST',
@@ -222,46 +222,46 @@ Cypress.Commands.add('login', (email = 'test@example.com', password = 'password1
   });
 });
 
-// 快速填写表单
+// フォームの素早い入力
 Cypress.Commands.add('fillForm', (formData) => {
   Object.entries(formData).forEach(([name, value]) => {
     cy.get(`[name="${name}"]`).clear().type(value);
   });
 });
 
-// 等待元素出现
+// 要素の表示待機
 Cypress.Commands.add('waitForElement', (selector, timeout = 10000) => {
   cy.get(selector, { timeout }).should('be.visible');
 });
 ```
 
-使用自定义命令：
+カスタムコマンドの使用例：
 
 ```js
-describe('需要登录的页面', () => {
+describe('ログインが必要なページ', () => {
   beforeEach(() => {
     cy.login();
     cy.visit('/dashboard');
   });
 
-  it('应该显示用户信息', () => {
+  it('ユーザー情報が表示されること', () => {
     cy.get('[data-testid="user-name"]').should('be.visible');
   });
 
-  it('应该能提交表单', () => {
+  it('フォームを送信できること', () => {
     cy.fillForm({
-      title: '测试标题',
-      content: '测试内容',
+      title: 'テストタイトル',
+      content: 'テストコンテンツ',
     });
     cy.get('[data-testid="submit"]').click();
-    cy.get('.success-message').should('contain', '提交成功');
+    cy.get('.success-message').should('contain', '送信成功');
   });
 });
 ```
 
 ## ページオブジェクトパターン
 
-当测试用例增多时，可以使用页面对象模式组织代码：
+テストケースが増えたら、ページオブジェクトパターンでコードを整理できる：
 
 ```js
 // cypress/pages/LoginPage.js
@@ -297,29 +297,29 @@ export default new LoginPage();
 ```
 
 ```js
-// 测试用例
+// テストケース
 import LoginPage from '../pages/LoginPage';
 
-describe('登录功能', () => {
+describe('ログイン機能', () => {
   beforeEach(() => {
     LoginPage.visit();
   });
 
-  it('成功登录后跳转到首页', () => {
+  it('ログイン成功後にホームページへ遷移すること', () => {
     LoginPage.login('admin@example.com', 'admin123');
     cy.url().should('include', '/dashboard');
   });
 
-  it('错误的密码应该显示错误信息', () => {
+  it('間違ったパスワードでエラーメッセージが表示されること', () => {
     LoginPage.login('admin@example.com', 'wrong');
-    LoginPage.getErrorMessage().should('contain', '密码错误');
+    LoginPage.getErrorMessage().should('contain', 'パスワードが間違っています');
   });
 });
 ```
 
 ## 設定ファイル
 
-`cypress.json` 常用配置：
+`cypress.json` の一般的な設定：
 
 ```json
 {
@@ -339,7 +339,7 @@ describe('登录功能', () => {
 
 ## CI/CDへの統合
 
-在 CI 环境中使用 `cypress run` 而非 `cypress open`：
+CI環境では `cypress open` ではなく `cypress run` を使用する：
 
 ```yaml
 # .github/workflows/e2e.yml
@@ -372,10 +372,10 @@ jobs:
 
 ## まとめ
 
-- Cypress 是一个专为前端设计的 E2E 测试框架，开箱即用，无需 WebDriver
-- 自动重试机制让测试更稳定，不需要手动添加 `sleep` 或 `wait`
-- 推荐使用 `data-testid` 作为选择器，避免测试因样式变化而失败
-- 使用 fixtures 模拟 API 数据，让测试不依赖后端环境
-- 自定义命令和页面对象模式可以有效组织测试代码，减少重复
-- CI 集成时使用 `cypress run`（无头模式），配合 `wait-on` 确保应用就绪后再执行测试
-- 注意合理设置超时时间和 viewport 大小，适应不同场景
+- Cypressはフロントエンド向けに設計されたE2Eテストフレームワークで、WebDriver不要ですぐに使える
+- 自動リトライ機構によりテストが安定し、手動で `sleep` や `wait` を追加する必要がない
+- セレクタには `data-testid` を推奨する。スタイル変更によるテスト失敗を防げる
+- fixturesを使ってAPIデータをモックすることで、バックエンド環境に依存しないテストができる
+- カスタムコマンドとページオブジェクトパターンでテストコードを効果的に整理し、重複を減らせる
+- CI連携時は `cypress run`（ヘッドレスモード）を使い、`wait-on` でアプリの準備完了を待ってからテストを実行する
+- タイムアウト時間とviewportサイズを適切に設定し、さまざまな場面に対応すること

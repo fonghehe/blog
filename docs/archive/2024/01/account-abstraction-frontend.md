@@ -5,9 +5,9 @@ tags:
   - Web3
   - Ethereum
   - DApp
-readingTime: 12
+readingTime: 10
 description: "深入解析 ERC-4337 账户抽象的前端实践，涵盖 UserOperation 生命周期、Bundler 交互、Paymaster Gas 赞助及社交恢复方案"
-wordCount: 3800
+wordCount: 1294
 ---
 
 ## ERC-4337 账户抽象概述

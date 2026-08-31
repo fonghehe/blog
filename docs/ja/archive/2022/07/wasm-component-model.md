@@ -5,7 +5,7 @@ tags:
   - WebAssembly
 readingTime: 3
 description: "在日常开发中，WebAssembly Component Modelの使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 495
+wordCount: 524
 ---
 
 在日常开发中，WebAssembly Component Modelの使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -47,7 +47,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ## 内部原理
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 const express = require('express')
@@ -166,4 +166,4 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 - コミュニティの動向を注視し、技術的なソリューションは継続的な反復が必要です
 - 新しい技術を使うためだけに新しい技術を使わないでください
 - コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- WebAssembly Component Model不是银弹，需要根据项目规模和技术栈选择
+- WebAssembly Component Model は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある

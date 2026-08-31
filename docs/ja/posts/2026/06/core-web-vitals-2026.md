@@ -5,7 +5,7 @@ tags:
   - パフォーマンス
 readingTime: 2
 description: "Core Web Vitals は 2026 年に INP 指標を更新し、FID を置き換えた。新しい評価基準、測定ツール、最適化戦略を議論し、ユーザーエクスペリエンスと検索ランキングの向上を支援する。"
-wordCount: 369
+wordCount: 371
 ---
 
 Core Web Vitals は Google がユーザーエクスペリエンスを測るコア指標で、検索ランキングに直接影響する。2026 年の指標体系は安定し、INP（Interaction to Next Paint）が FID を正式に置き換え、主要なインタラクション応答指標となった。
@@ -93,7 +93,7 @@ async function processLargeDataset(data) {
 
 ## CLS 最適化
 
-CLS はレイアウトシフトを測定し、安定性を維持する目標：
+CLS はレイアウトシフトを測定し、安定性を保つための指標だ：
 
 ```css
 /* 画像と広告のスペースを確保 */

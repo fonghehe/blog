@@ -4,11 +4,11 @@ date: 2024-12-18 13:52:29
 tags:
   - React
 readingTime: 2
-description: "React 19 officially launched on December 5, 2024 (stable release), ending nearly two years of RC/Beta phase.新版本带来了 `use()`、`useActionState()`、`useFormStatus()`、"
-wordCount: 204
+description: "React 19 was officially released on December 5, 2024 (stable), ending nearly two years of RC/Beta. The new version brings entirely new hooks — use(), useActionState(), useFormStatus(), useOptimistic() — along with the official stabilization of Server Actions and more."
+wordCount: 185
 ---
 
-React 19 officially launched on December 5, 2024 (stable release), ending nearly two years of RC/Beta phase.新版本带来了 `use()`、`useActionState()`、`useFormStatus()`、`useOptimistic()` 等全新 Hook，以及 Server Actions 的正式化和 Document Metadata 原生支持。
+React 19 was officially released on December 5, 2024 (stable), ending nearly two years of RC/Beta. The new version brings entirely new hooks — use(), useActionState(), useFormStatus(), useOptimistic() — along with the official stabilization of Server Actions and more.
 
 ## use(): Reading Promises and Context
 
@@ -195,4 +195,4 @@ React 19 stable + React Compiler Beta is the most recommended React stack right 
 
 ## Summary
 
-React 19 is the most changed React version in recent years, but the direction is clear: **elevating async operations and form handling to first-class citizens**.`useActionState` + `useFormStatus` + `useOptimistic` 三件套几乎覆盖了所有表单场景，告别了繁琐的手动状态管理。配合 React Compiler，2025 年的 React 开发体验将大幅提升。
+React 19 is the most changed React version in recent years, but the direction is clear: **elevating async operations and form handling to first-class citizens**. The `useActionState` + `useFormStatus` + `useOptimistic` trio covers almost every form scenario — say goodbye to tedious manual state management. Combined with React Compiler, the React development experience in 2025 gets a major boost.

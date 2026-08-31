@@ -4,9 +4,9 @@ date: 2022-10-26 14:31:18
 tags:
   - Vite
   - Vitest
-readingTime: 2
+readingTime: 3
 description: "关于Vitest 配置与插件，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 477
+wordCount: 496
 ---
 
 关于Vitest 配置与插件，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -121,7 +121,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理やエッジケースへの対応も必要になる。
 
 ## よくある落とし穴
 

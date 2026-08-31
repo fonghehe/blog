@@ -8,7 +8,7 @@ description: "泛型是 TypeScript 類型系統中最強大的特性之一。很
 wordCount: 584
 ---
 
-泛型是 TypeScript 類型系統中最強大的特性之一。很多人隻知道 `Array<T>` 這種基本用法，實際上泛型結合條件類型、映射類型、`infer` 關鍵字可以實現非常靈活的類型推導。本文從基礎到實戰，系統講解泛型編程模式。
+泛型是 TypeScript 類型系統中最強大的特性之一。很多人只知道 `Array<T>` 這種基本用法，實際上泛型結合條件類型、映射類型、`infer` 關鍵字可以實現非常靈活的類型推導。本文從基礎到實戰，系統講解泛型編程模式。
 
 ## 泛型基礎
 
@@ -86,7 +86,7 @@ stringQueue.enqueue('hello');
 
 ## 泛型約束
 
-泛型默認可以接受任何類型，但有時候需要限製 T 必須具備某些屬性。
+泛型默認可以接受任何類型，但有時候需要限制 T 必須具備某些屬性。
 
 ```typescript
 // 問題：這個函數想訪問 arg.length，但不是所有類型都有 length
@@ -691,7 +691,7 @@ type T6 = InstanceType<typeof MyClass>; // MyClass
 ## 小結
 
 - 泛型讓類型可以參數化，是 TypeScript 類型系統的基礎構建塊
-- 泛型約束（`extends`）限製類型參數的範圍，`keyof` 約束確保 key 存在於對象上
+- 泛型約束（`extends`）限制類型參數的範圍，`keyof` 約束確保 key 存在於對象上
 - 條件類型（`T extends U ? X : Y`）實現類型級別的條件判斷，對聯合類型有自動分發行為
 - `infer` 關鍵字實現類型模式匹配，可以從複雜類型中提取子類型
 - 映射類型（`[P in keyof T]`）實現類型遍歷和變換，是 `Partial`、`Pick`、`Readonly` 等工具類型的基礎

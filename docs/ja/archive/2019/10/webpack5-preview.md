@@ -9,7 +9,7 @@ description: "Webpack 5 は現在も Beta 段階ですが、多くのエキサ�
 wordCount: 1281
 ---
 
-Webpack 5 は Beta 段階ではありますが、すでに数多くのエキサイティングな改善が含まれています。特に注目すべきは Module Federation です。これはフロントエンドマイクロサービスの実装方法を根本的に変えるものです。本記事では Webpack 5 の核心的な新機能を紹介し、Module Federation の動作原理を詳しく見ていきます。
+Webpack 5 は Beta 段階ではありますが、すでに数多くのエキサイティングな改善が含まれています。特に注目すべきは Module Federation です。これはフロントエンドマイクロサービスの実装方法を根本的に変えるものです。本記事では Webpack 5 の本質的な新機能を紹介し、Module Federation の動作原理を詳しく見ていきます。
 
 ## Webpack 5 全体的な改善の概要
 
@@ -94,7 +94,7 @@ const { get } = require('lodash');
 
 ### コアコンセプト
 
-Module Federation の核心的な考え方は、各ビルド成果物（bundle）がリモートモジュールを消費することも、自身のモジュールを他のビルド成果物に公開することもできるというものです。
+Module Federation の本質的な考え方は、各ビルド成果物（bundle）がリモートモジュールを消費することも、自身のモジュールを他のビルド成果物に公開することもできるというものです。
 
 主要な用語：
 
@@ -312,7 +312,7 @@ new ModuleFederationPlugin({
 
 ## まとめ
 
-- Webpack 5 の核心的な改善点：永続キャッシュ、決定論的モジュール ID、より優れた Tree Shaking
+- Webpack 5 の本質的な改善点：永続キャッシュ、決定論的モジュール ID、より優れた Tree Shaking
 - Module Federation により、独立してビルドされたアプリケーションが実行時にモジュールを共有可能
 - Host はリモートモジュールを消費し、Remote はモジュールを公開し、Shared は依存関係の共有を制御
 - `singleton: true` は共有依存関係が1つのインスタンスのみロードされることを保証

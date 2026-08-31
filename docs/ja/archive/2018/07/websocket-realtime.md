@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "プロジェクトにリアルタイムのメッセージ通知機能を追加するためにWebSocketを調べました。まとめておきます。"
-wordCount: 344
+wordCount: 342
 ---
 
 プロジェクトにリアルタイムのメッセージ通知機能を追加するためにWebSocketを調べました。まとめておきます。
@@ -54,7 +54,7 @@ ws.send(JSON.stringify({ type: "message", content: "Hello" }));
 ws.close();
 ```
 
-## カプセル化：自動再接続
+## ラップ：自動再接続
 
 本番環境では切断時の再接続処理が必要です：
 

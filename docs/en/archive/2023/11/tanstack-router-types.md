@@ -4,7 +4,7 @@ date: 2023-11-17 16:44:54
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，TanStack Router 类型路由 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+description: "Type-safe routing with TanStack Router is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
 wordCount: 185
 ---
 

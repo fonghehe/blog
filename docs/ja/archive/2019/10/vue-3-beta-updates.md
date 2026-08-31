@@ -3,27 +3,27 @@ title: "Vue 3 Beta更新内容トラッキング"
 date: 2019-10-10 16:50:19
 tags:
   - Vue
-readingTime: 4
+readingTime: 5
 description: "Vue 3 自 2018 年 VueConf 上宣布重写以来，一直在稳步推进。截至目前，Vue 3 已经进入 Beta 阶段，核心 API 趋于稳定。本文整理 Vue 3 的主要变化，帮助 Vue 2 开发者提前了解即将到来的变化。"
-wordCount: 595
+wordCount: 1004
 ---
 
-Vue 3 自 2018 年 VueConf 上宣布重写以来，一直在稳步推进。截至目前，Vue 3 已经进入 Beta 阶段，核心 API 趋于稳定。本文整理 Vue 3 的主要变化，帮助 Vue 2 开发者提前了解即将到来的变化。
+Vue 3 は 2018 年の VueConf で書き直しが発表されて以来、着実に進められてきました。現時点で Vue 3 は Beta 段階に入り、コア API は安定しています。本記事では Vue 3 の主な変更を整理し、Vue 2 の開発者がこれからの変化を事前に知る手助けをします。
 
 ## なぜ書き直すのか
 
-Vue 2 的代码库经过几年发展，暴露了一些架构上的限制：
+Vue 2 のコードベースは数年の発展を経て、いくつかのアーキテクチャ上の制限が明らかになりました：
 
-1. **代码组织**：Options API 使得相关逻辑分散在不同选项中，大型组件难以维护
-2. **类型推导**：Options API 的对象写法对 TypeScript 支持有限
-3. **性能瓶颈**：虚拟 DOM 的 diff 算法是全量比较，无法跳过静态内容
-4. **体积**：不支持 Tree Shaking，打包整个运行时
+1. **コードの整理**：Options API では関連するロジックが異なるオプションに分散し、大規模なコンポーネントは保守しにくくなります
+2. **型推論**：Options API のオブジェクト記法は TypeScript のサポートが限定的です
+3. **パフォーマンスのボトルネック**：仮想 DOM の diff アルゴリズムは全量比較であり、静的コンテンツをスキップできません
+4. **バンドルサイズ**：Tree Shaking に対応しておらず、ランタイム全体をバンドルします
 
-Vue 3 从底层重写，解决了以上所有问题。
+Vue 3 は下層から書き直され、上記のすべての問題を解決しました。
 
 ## Composition API
 
-Composition API 是 Vue 3 最重要的新特性，提供了一组基于函数的 API 来组织组件逻辑：
+Composition API は Vue 3 で最も重要な新機能であり、関数ベースの API のセットでコンポーネントのロジックを整理できます：
 
 ```js
 // Vue 2 Options API
@@ -75,7 +75,7 @@ export default {
 };
 ```
 
-### ref 和 reactive
+### ref と reactive
 
 ```js
 import { ref, reactive } from 'vue';
@@ -94,7 +94,7 @@ const state = reactive({
 // 模板中不需要 .value
 ```
 
-### 抽取可复用逻辑：Composables
+### 再利用可能なロジックの抽出：Composables
 
 ```js
 // composables/useMousePosition.js
@@ -142,7 +142,7 @@ export function useFetch(url) {
 }
 ```
 
-在组件中使用：
+コンポーネントでの使用：
 
 ```vue
 {% raw %}
@@ -181,7 +181,7 @@ export default {
 
 ## 新しいリアクティブシステム
 
-Vue 3 使用 `Proxy` 替代了 `Object.defineProperty`：
+Vue 3 は `Object.defineProperty` の代わりに `Proxy` を使います：
 
 ```js
 import { reactive, watch, watchEffect } from 'vue';
@@ -206,7 +206,7 @@ watchEffect(() => {
 
 ## より高速な仮想DOM
 
-Vue 3 编译器对模板进行静态分析，生成优化的渲染代码：
+Vue 3 のコンパイラはテンプレートを静的解析し、最適化されたレンダリングコードを生成します：
 
 ```js
 // 静态节点被提升到渲染函数外部
@@ -220,18 +220,18 @@ function render(_ctx, _cache) {
 }
 ```
 
-关键优化包括：
+主な最適化は以下のとおりです：
 
-1. **静态提升（Static Hoisting）**：静态节点只创建一次
-2. **Patch Flags**：编译器为动态节点打标记，diff 只比较标记的部分
-3. **Block Tree**：将包含动态节点的片段提升为 Block
-4. **缓存事件处理器**：内联事件处理器会被缓存
+1. **静的ホイスティング（Static Hoisting）**：静的ノードは一度だけ作成されます
+2. **Patch Flags**：コンパイラが動的ノードにマークを付け、diff はマークされた部分だけを比較します
+3. **Block Tree**：動的ノードを含むフラグメントを Block に引き上げます
+4. **イベントハンドラのキャッシュ**：インラインのイベントハンドラはキャッシュされます
 
 ## Fragment、Teleport、Suspense
 
 ### Fragment
 
-Vue 3 组件可以有多个根节点：
+Vue 3 のコンポーネントは複数のルートノードを持てます：
 
 ```vue
 <template>
@@ -243,7 +243,7 @@ Vue 3 组件可以有多个根节点：
 
 ### Teleport
 
-将子组件渲染到 DOM 树的其他位置：
+子コンポーネントを DOM ツリーの別の位置に描画します：
 
 ```vue
 <template>
@@ -258,7 +258,7 @@ Vue 3 组件可以有多个根节点：
 
 ### Suspense
 
-处理异步组件的加载状态：
+非同期コンポーネントのロード状態を扱います：
 
 ```vue
 <template>
@@ -275,7 +275,7 @@ Vue 3 组件可以有多个根节点：
 
 ## モジュール化された内部アーキテクチャ
 
-Vue 3 采用 monorepo，核心模块可独立使用：
+Vue 3 は monorepo を採用しており、コアモジュールは独立して利用できます：
 
 ```
 @vue/reactivity     // 响应式系统
@@ -286,7 +286,7 @@ Vue 3 采用 monorepo，核心模块可独立使用：
 vue                 // 完整版本
 ```
 
-响应式系统可独立使用：
+リアクティブシステムは独立して利用できます：
 
 ```js
 import { reactive, watchEffect } from '@vue/reactivity';
@@ -298,10 +298,10 @@ state.count++; // 输出: 1
 
 ## まとめ
 
-- Vue 3 引入 Composition API，提供基于函数的逻辑组织和复用方式
-- 使用 Proxy 替代 Object.defineProperty，支持数组索引、新增属性、Map/Set
-- 编译器优化（静态提升、Patch Flags、Block Tree）大幅提升渲染性能
-- 新增 Fragment、Teleport、Suspense 等内置组件
-- 模块化架构，响应式系统可独立使用
-- 更好的 TypeScript 支持
-- Options API 仍然完全支持，可以渐进式迁移
+- Vue 3 は Composition API を導入し、関数ベースのロジックの整理と再利用を提供します
+- `Object.defineProperty` の代わりに Proxy を使い、配列インデックス・新規プロパティ・Map/Set に対応
+- コンパイラの最適化（静的ホイスティング、Patch Flags、Block Tree）がレンダリング性能を大きく向上
+- Fragment、Teleport、Suspense などの組み込みコンポーネントが追加
+- モジュール化されたアーキテクチャにより、リアクティブシステムを独立して利用可能
+- より良い TypeScript サポート
+- Options API は引き続き完全にサポートされ、段階的に移行可能

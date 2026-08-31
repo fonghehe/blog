@@ -30,10 +30,10 @@ const threshold = false || 0.5; // 0.5（錯誤，false 可能是有效配置）
 
 ## 空值合併運算符
 
-`??` 隻在左側為 `null` 或 `undefined` 時才使用右側的默認值：
+`??` 只在左側為 `null` 或 `undefined` 時才使用右側的默認值：
 
 ```js
-// 隻有 null 和 undefined 觸發默認值
+// 只有 null 和 undefined 觸發默認值
 const port = config.port ?? 3000;
 console.log(config.port ?? 3000); // 0（正確）
 console.log(null ?? '默認');       // '默認'
@@ -62,7 +62,7 @@ console.log(config.port || 3000);     // 3000（錯誤，應該是 0）
 console.log(config.host || 'localhost'); // 'localhost'（錯誤，應該是 ''）
 console.log(config.debug || true);     // true（錯誤，應該是 false）
 
-// 使用 ?? —— 隻在 null/undefined 時使用默認值
+// 使用 ?? —— 只在 null/undefined 時使用默認值
 console.log(config.port ?? 3000);     // 0（正確）
 console.log(config.host ?? 'localhost'); // ''（正確）
 console.log(config.debug ?? true);     // false（正確）
@@ -78,13 +78,13 @@ console.log(config.retries ?? 3);      // 3（正確，undefined 觸發默認值
 function processApiResponse(response) {
   // 後端可能返回 null 或空值
   const userId = response.userId ?? null;
-  const userName = response.userName ?? '匿名用户';
+  const userName = response.userName ?? '匿名用戶';
   const avatar = response.avatar ?? '/default-avatar.png';
 
   // 如果後端返回 0 表示第一頁，不應該被覆蓋
   const page = response.page ?? 1;
 
-  // 如果後端返回 0 表示無限製，不應該被覆蓋
+  // 如果後端返回 0 表示無限制，不應該被覆蓋
   const limit = response.limit ?? 20;
 
   return { userId, userName, avatar, page, limit };
@@ -96,19 +96,19 @@ function processApiResponse(response) {
 ```js
 function createConfig(userConfig) {
   return {
-    // 用户可能有意設置 0
+    // 用戶可能有意設置 0
     port: userConfig.port ?? 8080,
-    // 用户可能有意設置空字符串
+    // 用戶可能有意設置空字符串
     host: userConfig.host ?? '127.0.0.1',
-    // 用户可能有意關閉調試
+    // 用戶可能有意關閉調試
     debug: userConfig.debug ?? false,
-    // 以下隻能是 null/undefined 時才用默認值
+    // 以下只能是 null/undefined 時才用默認值
     timeout: userConfig.timeout ?? 5000,
     maxConnections: userConfig.maxConnections ?? 100,
   };
 }
 
-// 用户配置
+// 用戶配置
 createConfig({ port: 0 });
 // { port: 0, host: '127.0.0.1', debug: false, timeout: 5000, maxConnections: 100 }
 ```
@@ -173,7 +173,7 @@ function UserCard({ name, age, email, role }) {
       <p>年齡: {age ?? '未填寫'}</p>
       {/* 0 歲嬰兒不應該顯示為 "未填寫" */}
       <p>郵箱: {email ?? '未綁定'}</p>
-      <p>角色: {role ?? '普通用户'}</p>
+      <p>角色: {role ?? '普通用戶'}</p>
     </div>
   );
 }
@@ -253,7 +253,7 @@ function createServer(config: Config) {
 
 ## 小結
 
-- `??` 隻在左側為 `null` 或 `undefined` 時才使用右側默認值
+- `??` 只在左側為 `null` 或 `undefined` 時才使用右側默認值
 - 與 `||` 的關鍵區別：`||` 對所有 falsy 值（0、''、false、NaN）都觸發默認值
 - 適合處理配置項、API 響應、表單值等可能有意為 falsy 的場景
 - 經常與可選鏈 `?.` 配合使用

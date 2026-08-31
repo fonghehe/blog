@@ -5,11 +5,11 @@ tags:
   - Angular
   - JavaScript
 readingTime: 2
-description: "Angular 21 RC.0 于 2025 年 10 月初发布，正式版预计 11 月 19 日。Angular 21 是继 Angular 20 之后的下一个主版本，核心目标是将 Signal Forms 从开发者预览提升为稳定 API，并带来全新的路由 API 改进。"
-wordCount: 328
+description: "Angular 21 RC.0 shipped in early October 2025, with the stable release scheduled for November 19. Angular 21 is the next major after Angular 20, and its core goal is promoting Signal Forms from developer preview to stable, along with improvements to the routing API."
+wordCount: 304
 ---
 
-Angular 21 RC.0 于 2025 年 10 月初发布，正式版预计 11 月 19 日。Angular 21 是继 Angular 20 之后的下一个主版本，核心目标是将 Signal Forms 从开发者预览提升为稳定 API，并带来全新的路由 API 改进。
+Angular 21 RC.0 shipped in early October 2025, with the stable release scheduled for November 19. Angular 21 is the next major after Angular 20, and its core goal is promoting Signal Forms from developer preview to stable, along with improvements to the routing API.
 
 > 本文基于 Angular 21 RC，正式版可能有细微差异。
 

@@ -4,18 +4,18 @@ date: 2025-10-24 14:18:55
 tags:
   - Angular
   - JavaScript
-readingTime: 2
-description: "Angular 21 RC.0 于 2025 年 10 月初发布，正式版预计 11 月 19 日。Angular 21 是继 Angular 20 之后的下一个主版本，核心目标是将 Signal Forms 从开发者预览提升为稳定 API，并带来全新的路由 API 改进。"
-wordCount: 330
+readingTime: 3
+description: "Angular 21 RC.0 は 2025 年 10 月上旬にリリースされ、正式版は 11 月 19 日の予定。Angular 21 は Angular 20 の次のメジャーバージョンで、核心目標は Signal Forms を開発者プレビューから安定 API に引き上げ、ルーティング API の改善をもたらすことだ。"
+wordCount: 430
 ---
 
-Angular 21 RC.0 于 2025 年 10 月初发布，正式版预计 11 月 19 日。Angular 21 是继 Angular 20 之后的下一个主版本，核心目标是将 Signal Forms 从开发者预览提升为稳定 API，并带来全新的路由 API 改进。
+Angular 21 RC.0 は 2025 年 10 月上旬にリリースされ、正式版は 11 月 19 日の予定。Angular 21 は Angular 20 の次のメジャーバージョンで、核心目標は Signal Forms を開発者プレビューから安定 API に引き上げ、ルーティング API の改善をもたらすことだ。
 
-> 本文基于 Angular 21 RC，正式版可能有细微差异。
+> 本記事は Angular 21 RC に基づいており、正式版とは細かな差異がある可能性がある。
 
 ## Signal Forms 正式稳定
 
-Angular 21 将 Signal Forms 提升为稳定 API，意味着可以在生产环境放心使用：
+Angular 21 が Signal Forms を安定 API に引き上げたことで、本番環境でも安心して使えるようになった：
 
 ```typescript
 import { formGroup, formControl, Validators } from "@angular/forms";
@@ -56,9 +56,9 @@ export class ContactFormComponent {
 }
 ```
 
-## 全新路由 Resolve API：基于 resource()
+## 新しいルーティング Resolve API：resource() ベース
 
-Angular 21 将路由 Resolve（数据预加载）与 `resource()` 深度集成：
+Angular 21 はルーティングの Resolve（データの事前読み込み）を `resource()` と深く統合した：
 
 ```typescript
 // app.routes.ts
@@ -85,9 +85,9 @@ export class UserDetailComponent {
 }
 ```
 
-## 路由级 Meta 支持（原生 SEO）
+## ルート単位の Meta 対応（ネイティブ SEO）
 
-Angular 21 内置了路由级元数据注入，无需 Angular Meta 服务：
+Angular 21 はルート単位のメタデータ注入を内蔵し、Angular Meta サービスは不要になった：
 
 ```typescript
 export const routes: Routes = [
@@ -122,7 +122,7 @@ export const routes: Routes = [
 export class AppComponent {}
 ```
 
-## Angular 21 主要变化概览
+## Angular 21 の主要な変更点
 
 ```
 特性                          Angular 20      Angular 21
@@ -138,7 +138,7 @@ zone.js 废弃警告             否              新项目警告 ⚠️
 
 ## Signal Forms 迁移路线
 
-Angular 21 提供了从 ReactiveFormsModule 迁移的 schematic：
+Angular 21 は ReactiveFormsModule からの移行 schematic を提供している：
 
 ```bash
 # 自动迁移（Angular 21 RC）

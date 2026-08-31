@@ -4,11 +4,11 @@ date: 2018-09-28 15:30:34
 tags:
   - JavaScript
 readingTime: 1
-description: "Lodash 是前端專案裡最常用的工具庫之一，但很多人隻用了一小部分。整理一下工作中最實用的方法。"
+description: "Lodash 是前端專案裡最常用的工具庫之一，但很多人只用了一小部分。整理一下工作中最實用的方法。"
 wordCount: 129
 ---
 
-Lodash 是前端專案裡最常用的工具庫之一，但很多人隻用了一小部分。整理一下工作中最實用的方法。
+Lodash 是前端專案裡最常用的工具庫之一，但很多人只用了一小部分。整理一下工作中最實用的方法。
 
 ## 物件操作
 
@@ -32,7 +32,7 @@ _.get(user, "address.country", "中國"); // '中國'（預設值）
 // _.set：安全地設定深層屬性
 const updated = _.set({ ...user }, "address.country", "中國");
 
-// _.pick：隻取指定屬性
+// _.pick：只取指定屬性
 _.pick(user, ["name", "address"]); // { name: '張三', address: {...} }
 
 // _.omit：去掉指定屬性
@@ -89,9 +89,9 @@ const expensiveCalc = _.memoize((n) => {
   return n * n;
 });
 
-// _.once：隻執行一次
+// _.once：只執行一次
 const init = _.once(() => {
-  console.log("隻初始化一次");
+  console.log("只初始化一次");
 });
 init();
 init(); // 不再執行
@@ -114,7 +114,7 @@ _.template("你好，<%= name %>！")({ name: "張三" }); // '你好，張三�
 // 全量引入：很大
 import _ from "lodash";
 
-// 按需引入：隻打包用到的
+// 按需引入：只打包用到的
 import get from "lodash/get";
 import debounce from "lodash/debounce";
 import cloneDeep from "lodash/cloneDeep";

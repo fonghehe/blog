@@ -4,11 +4,11 @@ date: 2023-12-20 11:47:15
 tags:
   - Frontend
 readingTime: 2
-description: "Bun 1.0 发布三个月了。在测试环境和几个小项目中深度使用后，写一份全面的评测。"
-wordCount: 419
+description: "Bun 1.0 shipped three months ago. After using it deeply in test environments and several small projects, here's a comprehensive review."
+wordCount: 405
 ---
 
-Bun 1.0 发布三个月了。在测试环境和几个小项目中深度使用后，写一份全面的评测。
+Bun 1.0 shipped three months ago. After using it deeply in test environments and several small projects, here's a comprehensive review.
 
 ## What is Bun
 
@@ -149,7 +149,7 @@ bun --bun run your-script.ts
 
 ## Practical Recommendations
 
-**可以用 Bun 的场景：**
+**Scenarios where Bun is a good fit:**
 - 新的 API 服务（Hono / Elysia）
 - CLI 工具
 - 脚本和自动化

@@ -146,11 +146,11 @@ export default defineConfig({
 });
 ```
 
-Vite 2 的 SSR 支持雖然還不夠完善（和 Nuxt 比），但為 Nuxt 3 奠定了基礎。
+Vite 2 的 SSR 支援雖然還不夠完善（和 Nuxt 比），但為 Nuxt 3 奠定了基礎。
 
 ## 小結
 
-- Vite 2 最大變化：框架無關，Vue/React/Svelte 都支持
+- Vite 2 最大變化：框架無關，Vue/React/Svelte 都支援
 - 遷移要注意：`process.env` → `import.meta.env`，`require` → `import`
 - 開發體驗提升顯著，新項目推薦用 Vite 替代 Vue CLI / Create React App
 - SSR 還不完善，需要 Nuxt 3 / Remix 等上層框架

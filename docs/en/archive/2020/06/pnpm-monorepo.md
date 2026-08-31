@@ -4,24 +4,24 @@ date: 2020-06-23 15:01:17
 tags:
   - Node.js
 readingTime: 2
-description: "团队有 5 个前端项目，共用一套组件库和工具函数。之前组件库改动需要手动发布、各项目手动升级，效率太低。用 pnpm workspace 搭建 Monorepo 后，一切都变简单了。"
-wordCount: 172
+description: "How we set up a pnpm workspace monorepo to share a component library across five frontend projects, eliminating manual publishing and version-sync headaches."
+wordCount: 115
 ---
 
-团队有 5 个前端项目，共用一套组件库和工具函数。之前组件库改动需要手动发布、各项目手动升级，效率太低。用 pnpm workspace 搭建 Monorepo 后，一切都变简单了。
+Our team runs five frontend projects that share a common component library and utility functions. Before, any change to the component library meant manually publishing it and upgrading it in every project—far too inefficient. After setting up a pnpm workspace monorepo, everything became much simpler.
 
 ## Why Choose pnpm
 
 ```markdown
-npm/yarn 的问题：
-- node_modules 幽灵依赖（没声明的包也能访问）
-- 磁盘占用大（每个项目都拷贝一份）
-- 扁平化安装导致的版本冲突
+Problems with npm/yarn:
+- Phantom dependencies in node_modules (you can import packages that were never declared)
+- Heavy disk usage (every project keeps its own copy)
+- Version conflicts caused by flat installation
 
-pnpm 的优势：
-- 严格依赖：只能访问 package.json 声明的依赖
-- 硬链接 + 符号链接：磁盘占用大幅减少
-- 内置 workspace 支持：Monorepo 不需要 lerna
+Advantages of pnpm:
+- Strict dependencies: you can only access what's declared in package.json
+- Hard links + symlinks: disk usage drops dramatically
+- Built-in workspace support: a monorepo needs no Lerna
 ```
 
 ```bash
@@ -57,7 +57,7 @@ monorepo/
 │       └── src/
 ```
 
-## 配置文件
+## Configuration Files
 
 ```yaml
 # pnpm-workspace.yaml
@@ -95,7 +95,7 @@ packages:
 }
 ```
 
-## 包之间互相引用
+## Cross-Package References
 
 ```json
 // apps/admin/package.json
@@ -118,7 +118,7 @@ import { formatCurrency } from '@company/utils';
 // 不需要手动发布和升级
 ```
 
-## 常用命令
+## Common Commands
 
 ```bash
 # 安装所有依赖
@@ -143,7 +143,7 @@ pnpm --filter @company/admin add @company/utils@workspace:*
 pnpm --filter @company/admin add -D typescript
 ```
 
-## 和 lerna 对比
+## Comparison with Lerna
 
 ```bash
 # lerna + yarn 需要：
@@ -175,7 +175,7 @@ pnpm changeset version
 pnpm changeset publish
 ```
 
-## 选择性构建
+## Selective Builds
 
 ```json
 // 根 package.json
@@ -197,8 +197,8 @@ pnpm changeset publish
 
 ## Summary
 
-- pnpm workspace 是管理 Monorepo 最轻量的选择，不需要额外工具
-- `workspace:*` 声明内部依赖，修改立刻生效
-- 严格依赖管理杜绝幽灵依赖问题
-- 硬链接节省磁盘空间，安装速度也更快
-- 配合 changeset 管理版本和发布，流程自动化
+- pnpm workspace is the lightest-weight option for managing a monorepo—no extra tooling needed.
+- Declaring internal dependencies with `workspace:*` makes changes take effect immediately.
+- Strict dependency management eliminates the phantom-dependency problem.
+- Hard links save disk space, and installs are faster too.
+- Pair it with changeset to manage versions and publishing, automating the whole flow.

@@ -92,7 +92,7 @@ Object.values(STATUS); // ['ACTIVE', 'DISABLED']
 名稱空間在 ES6 模組化普及之前用於組織程式碼，現在主要用於給第三方 JS 庫寫宣告檔案：
 
 ```typescript
-// 宣告 window 上的全域性變數
+// 宣告 window 上的全域變數
 declare namespace window {
   const __CONFIG__: {
     apiUrl: string;
@@ -105,7 +105,7 @@ console.log(window.__CONFIG__.apiUrl);
 ```
 
 ```typescript
-// 給 jQuery 這類全域性庫寫型別宣告
+// 給 jQuery 這類全域庫寫型別宣告
 declare namespace $ {
   function ajax(url: string, options?: object): Promise<any>;
   namespace fn {
@@ -140,6 +140,6 @@ enum HttpMethod {
 
 - 數字列舉：有反向對映，但數字可讀性差
 - 字串列舉：可讀性好，推薦用
-- `const enum`：編譯時內聯，更小的 bundle，但功能有限製
+- `const enum`：編譯時內聯，更小的 bundle，但功能有限制
 - 現代替代：聯合型別或 `as const` 物件，更靈活
 - 名稱空間：主要用於宣告檔案，業務程式碼用 ES module

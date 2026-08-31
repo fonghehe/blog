@@ -191,7 +191,7 @@ import React, { Suspense, lazy } from 'react'
 // import Home from './pages/Home'
 // import Dashboard from './pages/Dashboard'
 
-// 使用动态导入实现按需加载
+// 使用例动态导入实现按需加载
 const Home = lazy(() => import(/* webpackChunkName: "home" */ './pages/Home'))
 const Dashboard = lazy(() => import(/* webpackChunkName: "dashboard" */ './pages/Dashboard'))
 const Settings = lazy(() => import(/* webpackChunkName: "settings" */ './pages/Settings'))
@@ -199,7 +199,7 @@ const User = lazy(() => import(/* webpackChunkName: "user" */ './pages/User'))
 
 function App() {
   return (
-    <Suspense fallback={<div>加载中...</div>}>
+    <Suspense fallback={<div>読み込み中...</div>}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/dashboard" component={Dashboard} />

@@ -4,15 +4,15 @@ date: 2019-12-04 14:54:06
 tags:
   - Frontend
 readingTime: 6
-description: "作为前端工程师，VS Code 几乎是每天都要打交道的编辑器。最近团队需要一个内部工具——自动扫描项目中的 TODO/FIXME 并生成任务列表，我决定用 VS Code 插件来实现。这次开发经历让我对 VS Code 的扩展体系有了比较完整的认识，整理成文分享给大家。"
-wordCount: 506
+description: "As frontend engineers, VS Code is an editor we touch almost every day. Recently the team needed an internal tool—one that automatically scans the project for TODO/FIXME markers and generates a task list—so I decided to build it as a VS Code extension. This development experience gave me a fairly complete picture of VS Code's extension system, and I'm writing it up to share."
+wordCount: 330
 ---
 
-作为前端工程师，VS Code 几乎是每天都要打交道的编辑器。最近团队需要一个内部工具——自动扫描项目中的 TODO/FIXME 并生成任务列表，我决定用 VS Code 插件来实现。这次开发经历让我对 VS Code 的扩展体系有了比较完整的认识，整理成文分享给大家。
+As frontend engineers, VS Code is an editor we touch almost every day. Recently the team needed an internal tool—one that automatically scans the project for TODO/FIXME markers and generates a task list—so I decided to build it as a VS Code extension. This development experience gave me a fairly complete picture of VS Code's extension system, and I'm writing it up to share.
 
 ## Environment Setup and Project Structure
 
-VS Code 插件开发需要 Node.js 和 Yeoman 脚手架：
+VS Code extension development needs Node.js and the Yeoman scaffolding:
 
 ```bash
 # 安装脚手架工具
@@ -34,7 +34,7 @@ my-extension/
 
 ## contributes in package.json
 
-`contributes` 是插件能力声明的核心。通过它，你可以注册命令、菜单项、快捷键、配置项等，而不需要写任何运行时代码：
+`contributes` is the core of an extension's capability declaration. Through it you can register commands, menu items, keybindings, and configuration options—without writing any runtime code:
 
 ```json
 {
@@ -138,7 +138,7 @@ my-extension/
 
 ## Activation Events
 
-插件不会在 VS Code 启动时立即加载，而是通过激活事件按需激活，这对性能很重要：
+An extension is not loaded immediately when VS Code starts; instead it is activated on demand through activation events, which matters for performance:
 
 ```json
 // 常用的激活事件
@@ -166,11 +166,11 @@ my-extension/
 }
 ```
 
-实际开发中，建议尽量使用具体的激活事件。我们的插件只需要在用户执行命令或打开视图时激活，不需要 `*` 全量激活。
+In practice, prefer specific activation events wherever possible. Our extension only needs to activate when the user runs a command or opens a view, so it does not need the `*` full-scope activation.
 
 ## Command Registration and Core Logic
 
-插件的入口文件 `extension.ts` 负责注册命令和初始化：
+The extension's entry file `extension.ts` is responsible for registering commands and initializing:
 
 ```typescript
 import * as vscode from 'vscode'
@@ -290,7 +290,7 @@ export function deactivate() {
 
 ## TreeView Implementation
 
-TreeView 是 VS Code 侧边栏展示层级数据的标准方式。对于我们的 TODO 列表，TreeView 非常合适：
+TreeView is the standard way to show hierarchical data in the VS Code sidebar. For our TODO list, TreeView fits perfectly:
 
 ```typescript
 import * as vscode from 'vscode'
@@ -407,7 +407,7 @@ class TodoTreeItem extends vscode.TreeItem {
 
 ## Webview Panel
 
-当需要展示更复杂的内容（图表、表单、交互式界面）时，TreeView 就不够用了，需要用 Webview：
+When you need to present more complex content—charts, forms, interactive interfaces—TreeView is no longer enough and you need a Webview:
 
 ```typescript
 import * as vscode from 'vscode'
@@ -517,7 +517,7 @@ function getNonce(): string {
 
 ## Debugging and Publishing
 
-开发过程中的调试和最终发布都很方便：
+Both debugging during development and final publishing are quite convenient:
 
 ```bash
 # 调试：按 F5 启动 Extension Development Host
@@ -540,9 +540,9 @@ vsce publish patch  # 1.0.0 -> 1.0.1
 
 ## Summary
 
-- `package.json` 的 `contributes` 字段是插件能力声明的核心，理解它是开发插件的第一步
-- 激活事件要精确指定，避免使用 `*` 全量激活影响 VS Code 启动速度
-- 命令注册是插件的核心逻辑入口，所有 UI 交互都围绕命令展开
-- TreeView 适合展示层级数据，Webview 适合复杂交互界面
-- CSP 策略是 Webview 安全的基本要求，务必配置
-- 调试体验很好，F5 即可启动开发窗口，支持断点调试
+- The `contributes` field in `package.json` is the core of an extension's capability declaration; understanding it is the first step in extension development
+- Specify activation events precisely and avoid `*` full-scope activation, which slows VS Code startup
+- Command registration is the core logic entry point of an extension; all UI interactions revolve around commands
+- TreeView suits hierarchical data, while Webview suits complex interactive interfaces
+- A CSP policy is the basic security requirement for Webviews and must be configured
+- The debugging experience is great: F5 launches the development host window with breakpoint support

@@ -4,11 +4,11 @@ date: 2022-11-16 16:44:56
 tags:
   - Angular
 readingTime: 2
-description: "Angular 15 于 2022 年 11 月 16 日正式发布。这个版本让 Standalone APIs 进入稳定状态（不再是 developer preview），同时带来了两个重量级新特性：Directive Composition API 和 NgOptimizedImage。"
-wordCount: 291
+description: "Angular 15 was officially released on November 16, 2022. This release brings Standalone APIs to stable (no longer developer preview), along with two major new features: Directive Composition API and NgOptimizedImage."
+wordCount: 187
 ---
 
-Angular 15 于 2022 年 11 月 16 日正式发布。这个版本让 Standalone APIs 进入稳定状态（不再是 developer preview），同时带来了两个重量级新特性：Directive Composition API 和 NgOptimizedImage。
+Angular 15 was officially released on November 16, 2022. This release brings Standalone APIs to stable (no longer developer preview), along with two major new features: Directive Composition API and NgOptimizedImage.
 
 ## Standalone APIs Officially Stable
 
@@ -38,7 +38,7 @@ bootstrapApplication(AppComponent, {
 
 ## Directive Composition API
 
-这是 Angular 15 最重要的新特性。`hostDirectives` 允许一个组件/指令**内嵌**其他指令的行为，实现类似 mixin 的效果：
+This is the most important new feature in Angular 15. `hostDirectives` allows a component/directive to **embed** the behavior of other directives, achieving a mixin-like effect:
 
 ```typescript
 // 先定义一些小的行为指令
@@ -82,7 +82,7 @@ export class HighlightDirective {
 export class DraggableCardComponent {}
 ```
 
-使用时：
+Usage:
 
 ```html
 <!-- hostDirectives 的 inputs 暴露在组件上 -->
@@ -117,17 +117,17 @@ import { NgOptimizedImage } from "@angular/common";
 export class HeroComponent {}
 ```
 
-**NgOptimizedImage 做了什么**：
+**What NgOptimizedImage does**:
 
-- 自动生成 `srcset` 和 `sizes`
-- 对 `priority` 图片添加 `<link rel="preload">`
-- 防止布局偏移（CLS）：强制要求设置 `width` 和 `height`
-- 懒加载非关键图片（自动添加 `loading="lazy"`）
-- 支持 CDN loader（Imgix、Cloudinary、Cloudflare Images）
+- Automatically generates `srcset` and `sizes`
+- Adds `<link rel="preload">` for `priority` images
+- Prevents layout shift (CLS): enforces setting `width` and `height`
+- Lazy-loads non-critical images (automatically adds `loading="lazy"`)
+- Supports CDN loaders (Imgix, Cloudinary, Cloudflare Images)
 
-## 更好的错误栈信息
+## Better Error Stack Traces
 
-Angular 15 大幅改善了错误信息，特别是模板中的错误：
+Angular 15 significantly improved error messages, especially for template errors:
 
 ```
 # Angular 14 的错误栈（难以定位）
@@ -143,7 +143,7 @@ ERROR Error: Cannot read property 'name' of undefined
 
 ## Removing Deprecated APIs
 
-Angular 15 清理了一批长期废弃的 API：
+Angular 15 cleaned up a batch of long-deprecated APIs:
 
 ```typescript
 // ❌ 已移除：ComponentFactoryResolver（Angular 13 废弃）
@@ -167,4 +167,4 @@ ng update @angular/core@15 @angular/cli@15 @angular/material@15
 
 ## Summary
 
-Angular 15 的核心贡献是：Directive Composition API 填补了长期缺失的指令复用能力，NgOptimizedImage 让图片优化变成一键式操作，Standalone APIs 正式稳定则标志着"无 NgModule"时代正式到来。对 Angular 团队来说，2022 年的两个版本（14、15）让框架重新焕发了活力。
+Angular 15's core contributions are: the Directive Composition API fills in the long-missing directive reuse capability, NgOptimizedImage makes image optimization a one-click operation, and Standalone APIs going stable officially marks the arrival of the "NgModule-free" era. For the Angular team, the two releases in 2022 (14 and 15) have revitalized the framework.

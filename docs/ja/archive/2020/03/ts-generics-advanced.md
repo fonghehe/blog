@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript のジェネリクス応用テクニックについてはコミュニティで何度も議論されてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。この記事では最新バージョンに基づいて再整理します。"
-wordCount: 563
+wordCount: 558
 ---
 
 TypeScript のジェネリクス応用テクニックについてはコミュニティで何度も議論されてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。この記事では最新バージョンに基づいて再整理します。
@@ -73,9 +73,9 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 この方法により、コードのテスタビリティと拡張性が向上します。
 
-## 実際のシナリオへの応用
+## 実際の場面への応用
 
-以下は完全なサンプルです：
+以下は全体のサンプルです：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -134,7 +134,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-パフォーマンス最適化は具体的なシナリオに応じて行う必要があり、すべての場合に過度な最適化が必要なわけではありません。
+パフォーマンス最適化は具体的な場面に応じて行う必要があり、すべての場合に過度な最適化が必要なわけではありません。
 
 ## 落とし穴回避ガイド
 
@@ -176,4 +176,4 @@ class TypedEmitter<T extends Record<string, any>> {
 - チームコラボレーションにおいては、約束事とドキュメントが技術自体よりも重要です
 - コミュニティの動向に注目し、技術的な解決策は継続的に改善する必要があります
 - 新しい技術を使うために使うのは避けましょう
-- コードサンプルは参考用です。実際のビジネスシナリオに応じて調整してください
+- コードサンプルは参考用です。実際のビジネスケースに応じて調整してください

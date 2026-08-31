@@ -4,11 +4,11 @@ date: 2023-01-20 17:22:49
 tags:
   - Frontend
 readingTime: 2
-description: "NgRx 15 随 Angular 15 同步发布，带来了对 Standalone APIs 的全面支持。不再需要在 `NgModule` 里注册 `StoreModule`、`EffectsModule`——现在可以在 `bootstrapApplication` 中用函数式 API 配置整个 NgRx 栈。"
-wordCount: 176
+description: "NgRx 15 shipped alongside Angular 15, bringing full support for the Standalone APIs. You no longer need to register StoreModule and EffectsModule inside an NgModule — you can now configure the entire NgRx stack with functional APIs in bootstrapApplication."
+wordCount: 164
 ---
 
-NgRx 15 随 Angular 15 同步发布，带来了对 Standalone APIs 的全面支持。不再需要在 `NgModule` 里注册 `StoreModule`、`EffectsModule`——现在可以在 `bootstrapApplication` 中用函数式 API 配置整个 NgRx 栈。
+NgRx 15 shipped alongside Angular 15, bringing full support for the Standalone APIs. You no longer need to register StoreModule and EffectsModule inside an NgModule — you can now configure the entire NgRx stack with functional APIs in bootstrapApplication.
 
 ## New Functional Configuration API
 

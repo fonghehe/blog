@@ -4,24 +4,25 @@ date: 2020-09-14 11:27:45
 tags:
   - CSS
 readingTime: 3
-description: "最近在做设计系统的颜色体系，发现 CSS 颜色规范正在从 sRGB 向更广的色彩空间扩展。Chrome 已经开始实验性支持 `lab()`、`lch()`、`color()` 函数。虽然目前还不能用于生产，但作为前端工程师需要了解这些即将到来的变化。"
-wordCount: 605
+description: "An exploration of new CSS color spaces like Lab and LCH as the spec expands beyond sRGB, including experimental browser support and what frontend engineers need to know."
+wordCount: 416
 ---
 
-最近在做设计系统的颜色体系，发现 CSS 颜色规范正在从 sRGB 向更广的色彩空间扩展。Chrome 已经开始实验性支持 `lab()`、`lch()`、`color()` 函数。虽然目前还不能用于生产，但作为前端工程师需要了解这些即将到来的变化。
+I've been working on the color system for a design system lately, and I noticed that the CSS color spec is expanding beyond sRGB into wider color spaces. Chrome has started experimentally supporting the `lab()`, `lch()`, and `color()` functions. They aren't production-ready yet, but as frontend engineers we should understand the changes that are coming.
 
-## 为什么需要新的色彩空间
+## Why New Color Spaces Are Needed
 
-sRGB 能表示的颜色范围（色域）有限。现在越来越多的设备支持 Display P3 广色域（所有 Apple 设备、高端显示器），如果 CSS 只用 sRGB，就无法充分利用这些硬件的能力。
+sRGB can only represent a limited range of colors (its gamut). More and more devices now support the wider Display P3 gamut (all Apple devices, high-end displays), and if CSS sticks to sRGB we can't take advantage of that hardware.
 
-更关键的是，sRGB 的色相在亮度变化时会丢失饱和度 —— 这就是为什么你用 `hsl()` 调颜色时，把亮度调到 50% 的色相看起来和亮度 90% 完全不一样。
+More importantly, sRGB loses saturation in its hues as lightness changes — that's why, when you tune colors with `hsl()`, a hue at 50% lightness looks completely different from the same hue at 90% lightness.
 
-## Lab 色彩空间
+## The Lab Color Space
 
-Lab（CIELAB）是一种感知均匀的色彩空间，三个通道：
-- **L**：亮度，0（黑）到 100（白）
-- **a**：红-绿轴，负值偏绿，正值偏红
-- **b**：黄-蓝轴，负值偏蓝，正值偏黄
+Lab (CIELAB) is a perceptually uniform color space with three channels:
+
+- **L**: lightness, 0 (black) to 100 (white)
+- **a**: red–green axis, negative leans green, positive leans red
+- **b**: yellow–blue axis, negative leans blue, positive leans yellow
 
 ```css
 /* Lab 语法 */
@@ -33,12 +34,13 @@ color: lab(20% 0 0);         /* 低亮度，中性灰 */
 color: lab(50% 40 30 / 0.8);
 ```
 
-## LCH 色彩空间
+## The LCH Color Space
 
-LCH 是 Lab 的极坐标表示，更直观：
-- **L**：亮度，0 到 100
-- **C**：色度（饱和度），0（灰色）到 ~150（理论最大）
-- **H**：色相角度，0-360 度
+LCH is the polar-coordinate form of Lab, and is more intuitive:
+
+- **L**: lightness, 0 to 100
+- **C**: chroma (saturation), 0 (gray) to ~150 (theoretical max)
+- **H**: hue angle, 0–360 degrees
 
 ```css
 /* LCH 语法 —— 和 HSL 类似但更直观 */
@@ -53,9 +55,9 @@ color: lch(80% 20 270);      /* 高亮度，低饱和度，淡紫色 */
 color: lch(50% 0 0);         /* 中性灰 */
 ```
 
-## LCH vs HSL 的核心区别
+## The Core Difference Between LCH and HSL
 
-这是最值得理解的部分。用 HSL 做设计系统的颜色梯度时，人眼感知到的亮度变化是不均匀的。LCH 解决了这个问题：
+This is the part most worth understanding. When you build a color gradient for a design system with HSL, the lightness changes the human eye perceives are uneven. LCH fixes this:
 
 ```css
 /* HSL 的问题：相同的亮度值，不同色相看起来亮度差异很大 */
@@ -69,9 +71,9 @@ color: lch(50% 0 0);         /* 中性灰 */
 /* 人眼感知到的亮度是一样的 */
 ```
 
-## 实战：用 LCH 构建颜色系统
+## In Practice: Building a Color System with LCH
 
-LCH 特别适合构建设计系统的色彩梯度，因为只需调整亮度（L）就能得到一致的亮暗色阶：
+LCH is especially well suited to building color gradients for design systems, because you only need to adjust lightness (L) to get a consistent light-to-dark scale:
 
 ```css
 :root {
@@ -99,7 +101,7 @@ LCH 特别适合构建设计系统的色彩梯度，因为只需调整亮度（L
 }
 ```
 
-用 JavaScript 生成色阶：
+Generating the scale with JavaScript:
 
 ```typescript
 // 用 Style Values API（未来 API）或者手动生成
@@ -117,9 +119,9 @@ function generateColorScale(hue: number, chroma: number) {
 console.log(generateColorScale(250, 80))
 ```
 
-## color() 函数：指定色域
+## The color() Function: Specifying a Gamut
 
-`color()` 函数允许指定具体的色彩空间：
+The `color()` function lets you specify a concrete color space:
 
 ```css
 /* sRGB 色域（默认） */
@@ -137,9 +139,9 @@ color: color(display-p3 0.5 0.3 0.8);
 }
 ```
 
-## 浏览器支持与渐进增强
+## Browser Support and Progressive Enhancement
 
-目前（2020 年 9 月）Lab/LCH 还处于实验阶段。可以用 `@supports` 做渐进增强：
+As of now (September 2020), Lab/LCH are still experimental. You can use `@supports` for progressive enhancement:
 
 ```css
 .theme-primary {
@@ -165,9 +167,9 @@ function supportsLab() {
 
 ## Summary
 
-- Lab/LCH 是感知均匀的色彩空间，人眼感知到的亮度变化更线性
-- LCH 适合构建设计系统色彩梯度，调整亮度时色相和饱和度保持稳定
-- LCH 相比 HSL 的核心优势是亮度感知均匀
-- `color()` 函数支持指定色域，可以利用 Display P3 广色域
-- 目前浏览器支持度有限，建议用 `@supports` 做渐进增强
-- 这是 CSS 颜色规范的未来方向，值得提前学习
+- Lab/LCH are perceptually uniform color spaces, where the lightness changes the human eye perceives are more linear.
+- LCH is well suited to building color gradients for design systems; when you adjust lightness, hue and saturation stay stable.
+- LCH's core advantage over HSL is uniform perceptual lightness.
+- The `color()` function lets you specify a gamut and take advantage of the wide Display P3 gamut.
+- Browser support is still limited today, so use `@supports` for progressive enhancement.
+- This is the future direction of the CSS color spec, and worth learning ahead of time.

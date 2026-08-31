@@ -6,10 +6,10 @@ tags:
   - 性能优化
 readingTime: 2
 description: "最近在团队中落地Resource Hints 资源提示优化，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 299
+wordCount: 286
 ---
 
-最近在团队中落地Resource Hints 资源提示优化，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近在团队里落地了 Resource Hints（资源提示优化），积累了一些经验，整理出来供参考，希望对做类似工作的同学有所帮助。
 
 ## 核心概念
 
@@ -30,7 +30,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样既提升了可测试性，也方便后续扩展。
 
 ## 深度解析
 
@@ -72,7 +72,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要结合具体场景，并非处处都值得做。
 
 ## 调优策略
 

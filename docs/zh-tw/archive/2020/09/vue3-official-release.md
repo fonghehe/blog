@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "一等再等，Vue 3.0 \"One Piece\" 上週正式釋出了！跟蹤了將近一年的 alpha/beta，終於來了。這篇文章是系統性的上手指南。"
-wordCount: 232
+wordCount: 230
 ---
 
 一等再等，Vue 3.0 "One Piece" 上週正式釋出了！跟蹤了將近一年的 alpha/beta，終於來了。這篇文章是系統性的上手指南。
@@ -197,7 +197,7 @@ app.mount("#app");
 ## 小結
 
 - Vue 3 不是顛覆，是演進。Composition API 是加法，Options API 還在
-- `setup()` 或 `<script>` 是新的寫法方式，更靈活
+- `setup()` 或 `<script>` 是新的寫法，更靈活
 - Composables 替代 Mixin，來源清晰，型別友好
 - `Teleport`、`Suspense` 解決了 Vue 2 的痛點
 - 生態還需要 6-12 個月成熟，但已經可以在新專案中使用

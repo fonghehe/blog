@@ -5,7 +5,7 @@ tags:
   - クロスプラットフォーム
 readingTime: 3
 description: "最近チームで内部ツールを作る必要がありました——JSON フォーマット/変換のデスクトップツールです。Web版でも作れましたが、ローカルファイルの読み書き、システムクリップボード、ショートカットキー登録などが必要だったため、最終的に Electron を選びました。この記事はゼロからパッケージング配布までの完全な過程を"
-wordCount: 452
+wordCount: 465
 ---
 
 最近チームで内部ツールを作る必要がありました——JSON フォーマット/変換のデスクトップツールです。Web版でも作れましたが、ローカルファイルの読み書き、システムクリップボード、ショートカットキー登録などが必要だったため、最終的に Electron を選びました。この記事はゼロからパッケージング配布までの完全な過程を記録します。
@@ -166,7 +166,7 @@ ipcRenderer.on("save-success", (event, { path }) => {
 
 ## まとめ
 
-- Electron = Chromium + Node.js。メインプロセスがライフサイクルを管理し、レンダラーがUIを表示する
-- プロセス間通信には `ipcMain`/`ipcRenderer` を使用
-- `contextIsolation: false` で開発が簡単になるが、本番環境ではセキュリティを考慮すること
-- `electron-builder` でMac/Windows/Linuxへのクロスプラットフォームパッケージングが可能
+- Electron = Chromium + Node.js。メインプロセスがライフサイクルを管理し、レンダラーがUIを表示します
+- プロセス間通信には `ipcMain`/`ipcRenderer` を使用します
+- `contextIsolation: false` で開発が簡単になりますが、本番環境ではセキュリティを考慮する必要があります
+- `electron-builder` でMac/Windows/Linuxへのクロスプラットフォームパッケージングが可能です

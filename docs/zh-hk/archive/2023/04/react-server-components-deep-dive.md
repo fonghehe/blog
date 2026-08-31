@@ -13,9 +13,9 @@ React Server Components（RSC）不是又一個 SSR 方案。它是 React 團隊
 
 ## SSR vs RSC
 
-傳統 SSR：服務端渲染 HTML，客户端 hydrate 成完整的 React 組件樹。所有組件都有客户端 bundle。
+傳統 SSR：服務端渲染 HTML，客戶端 hydrate 成完整的 React 組件樹。所有組件都有客戶端 bundle。
 
-RSC：組件隻在服務端運行，不會出現在客户端 bundle 中。客户端隻接收渲染結果（一種特殊的 JSON 格式）。
+RSC：組件隻在服務端運行，不會出現在客戶端 bundle 中。客戶端隻接收渲染結果（一種特殊的 JSON 格式）。
 
 ```
 傳統 SSR:
@@ -89,7 +89,7 @@ export function LikeButton({ postId, initialCount }: LikeButtonProps) {
 ## 數據獲取模式的變革
 
 ```typescript
-// 傳統模式：客户端獲取
+// 傳統模式：客戶端獲取
 function UserProfile({ userId }) {
   const [user, setUser] = useState(null);
   useEffect(() => {
@@ -126,7 +126,7 @@ async function UserProfile({ userId }: { userId: string }) {
 - 純展示、不需要交互的組件
 - 數據獲取邏輯
 - 訪問後端資源（數據庫、文件系統、內部服務）
-- 敏感操作（token、密鑰不暴露給客户端）
+- 敏感操作（token、密鑰不暴露給客戶端）
 
 **什麼時候用 Client Component：**
 - 有 `useState`、`useEffect`
@@ -141,5 +141,5 @@ async function UserProfile({ userId }: { userId: string }) {
 - RSC 不是 SSR 的替代，是全新的組件模型
 - 默認 Server Component，需要交互時才標記 `'use client'`
 - 消除了傳統數據獲取的 loading/waterfall 問題
-- 服務端邏輯不暴露給客户端，安全性和 bundle 體積都有優勢
-- 需要轉變心智模型：從"所有組件都在客户端"到"按需選擇運行環境"
+- 服務端邏輯不暴露給客戶端，安全性和 bundle 體積都有優勢
+- 需要轉變心智模型：從"所有組件都在客戶端"到"按需選擇運行環境"

@@ -6,15 +6,15 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "年初决定把团队的 Vue 2 组件库迁移到 Vue 3 + TypeScript。这个库有 50+ 组件，200+ API，迁移过程花了近 3 个月。整理一下关键的重构策略和踩过的坑。"
-wordCount: 325
+description: "Early this year we decided to migrate our team's Vue 2 component library to Vue 3 plus TypeScript. The library has 50+ components and 200+ APIs, and the migration took nearly three months. Here are the key refactoring strategies and the pitfalls we hit."
+wordCount: 248
 ---
 
-年初决定把团队的 Vue 2 组件库迁移到 Vue 3 + TypeScript。这个库有 50+ 组件，200+ API，迁移过程花了近 3 个月。整理一下关键的重构策略和踩过的坑。
+At the start of the year we decided to migrate the team's Vue 2 component library to Vue 3 + TypeScript. The library has 50+ components and 200+ APIs, and the migration took nearly three months. Here's a rundown of the key refactoring strategies and the pitfalls we hit.
 
 ## Refactoring Strategy: Incremental, Not Full Rewrite
 
-一开始想全量重写，后来发现不现实。我们的策略是分三步：
+We initially wanted a full rewrite, but soon realized that wasn't realistic. Our strategy came in three steps:
 
 ```
 第一步：搭建 Vue 3 + Vite + TypeScript 构建环境
@@ -22,11 +22,11 @@ wordCount: 325
 第三步：按优先级逐步迁移复杂组件（Table、Form、Select）
 ```
 
-核心原则：新组件用 Vue 3 Composition API 写，旧组件保持可用但标记 deprecated。
+Core principle: new components are written with the Vue 3 Composition API, while old components stay usable but are marked deprecated.
 
 ## Type Definition System
 
-组件库的类型定义是最花时间的部分，但也是收益最大的：
+The component library's type definitions took the most time, but also delivered the greatest payoff:
 
 ```typescript
 // types/component.ts - 统一的类型定义
@@ -59,7 +59,7 @@ export interface ButtonInstance {
 }
 ```
 
-在组件中使用：
+Using them in a component:
 
 ```vue
 <script setup lang="ts">
@@ -109,7 +109,7 @@ defineExpose({
 
 ## Slot Type Inference
 
-Vue 3.2+ 的 `defineSlots` 让插槽也有类型：
+Vue 3.2+'s `defineSlots` also gives slots types:
 
 ```vue
 <script setup lang="ts">
@@ -135,7 +135,7 @@ defineSlots<{
 
 ## Build Configuration
 
-用 Vite Library Mode 构建组件库：
+Build the component library with Vite's Library Mode:
 
 ```typescript
 // vite.config.ts
@@ -174,7 +174,7 @@ export type { ButtonProps, TableProps, FormProps } from './types'
 
 ## Biggest Migration Pitfall: v-model Changes
 
-Vue 3 的 `v-model` 语义和 Vue 2 不同，这是迁移中改代码最多的地方：
+Vue 3's `v-model` semantics differ from Vue 2's, and this is where we changed the most code during the migration:
 
 ```vue
 <!-- Vue 2 -->
@@ -188,12 +188,12 @@ Vue 3 的 `v-model` 语义和 Vue 2 不同，这是迁移中改代码最多的�
 <MyDialog v-model:visible="show" />
 ```
 
-我们的解决方案是写了一个 ESLint 规则，在迁移期间自动检测 Vue 2 风格的 props。
+Our solution was to write an ESLint rule that automatically detects Vue 2-style props during the migration.
 
 ## Summary
 
-- 渐进式迁移比全量重写更现实，先迁移简单组件建立模式
-- TypeScript 类型定义体系是组件库的核心资产，值得花时间
-- Vite Library Mode 简化了构建配置
-- `v-model` 语义变化是最大的 breaking change，需要系统性处理
-- Vue 3.2+ 的 `defineSlots` 和 `defineExpose` 让组件 API 更完整
+- Incremental migration is more realistic than a full rewrite — migrate the simple components first to establish a pattern
+- The TypeScript type-definition system is a core asset of the component library and worth the investment
+- Vite's Library Mode simplifies the build configuration
+- The `v-model` semantic change is the biggest breaking change and needs to be handled systematically
+- Vue 3.2+'s `defineSlots` and `defineExpose` make the component API more complete

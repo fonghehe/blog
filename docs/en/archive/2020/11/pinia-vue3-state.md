@@ -4,25 +4,25 @@ date: 2020-11-15 17:14:15
 tags:
   - Vue
 readingTime: 2
-description: "发布于 2020-11-15"
-wordCount: 235
+description: "An early look at Pinia as a new state management solution for Vue 3, published during its initial development stage before it became the official recommendation."
+wordCount: 173
 ---
 
-发布于 2020-11-15
+Published on 2020-11-15
 
-> 注：Pinia 在 2020 年处于早期开发阶段，2021 年成为 Vue 官方状态管理方案。本文基于早期版本撰写。
+> Note: Pinia was still in its early development stage in 2020 and became Vue's official state-management solution in 2021. This article is based on an early version.
 
 ---
 
-用了一段时间 Pinia（尤雨溪推荐的 Vuex 替代品），感觉比 Vuex 简单多了。
+I've been using Pinia (Evan You's recommended Vuex alternative) for a while, and it feels much simpler than Vuex.
 
 ## Why Not Vuex 4
 
-Vuex 4 虽然支持 Vue 3，但 API 几乎没变，还是 mutations/actions 那套。问题：
+Vuex 4 does support Vue 3, but its API is barely changed — still the same mutations/actions setup. The problems:
 
-1. mutations 和 actions 功能重叠（异步都用 actions，为啥还要 mutations？）
-2. 对 TypeScript 支持不好（需要复杂的类型声明）
-3. 命名空间模块（namespaced modules）太繁琐
+1. mutations and actions overlap in responsibility (async logic already goes in actions, so why keep mutations?)
+2. poor TypeScript support (needs verbose type declarations)
+3. namespaced modules are too cumbersome
 
 ## Pinia Basics
 
@@ -152,8 +152,8 @@ const name = userStore.displayName; // 类型正确
 
 ## Summary
 
-- Pinia 去掉了 mutations，直接在 actions 里改 state，更简单
-- 对 TypeScript 友好，类型自动推导
-- Store 间引用直接 use 对方的 store，不需要 rootGetters
-- Setup Store 语法和 Composition API 完全一致
-- 尤雨溪已经表示 Pinia 将成为 Vue 的官方状态管理，Vuex 5 直接就是 Pinia
+- Pinia drops mutations and lets you mutate state directly inside actions — simpler.
+- TypeScript-friendly, with automatically inferred types.
+- Cross-store references just call the other store directly — no rootGetters needed.
+- Setup Store syntax matches the Composition API exactly.
+- Evan You has said Pinia will become Vue's official state management, and Vuex 5 is essentially Pinia.

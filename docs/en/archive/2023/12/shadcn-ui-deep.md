@@ -4,7 +4,7 @@ date: 2023-12-11 10:39:08
 tags:
   - Frontend
 readingTime: 2
-description: "Shadcn UI 深入使用 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+description: "Going deep with shadcn/ui is increasingly relevant in frontend development. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 212
 ---
 

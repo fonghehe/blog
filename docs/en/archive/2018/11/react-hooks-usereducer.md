@@ -1,14 +1,14 @@
 ---
-title: "React useReducer Basics: Hooks Era复杂StateManagement"
+title: "React useReducer Primer: Complex State Management in the Hooks Era"
 date: 2020-02-20 10:12:00
 tags:
   - React
 readingTime: 1
 description: "The use of React useReducer for state management is becoming increasingly common in everyday development. This article systematically covers its usage, internal"
-wordCount: 129
+wordCount: 130
 ---
 
-The use of React useReducer for state management is becoming increasingly common in everyday development. This article systematically covers its usage, internals, and optimization strategies.
+React's useReducer hook is being used more and more for state management in everyday development. This article systematically covers its usage, internals, and optimization strategies.
 
 ## Quick Start
 
@@ -39,7 +39,7 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-With this approach, both testability and extensibility of the code are improved.
+This approach improves both the testability and the extensibility of the code.
 
 ## Internals
 
@@ -101,11 +101,11 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-Performance optimization needs to be approached in context — not every situation calls for micro-optimization.
+Performance optimization has to fit the context — not every situation calls for micro-optimization.
 
 ## Performance Comparison
 
-We can improve things as follows:
+Here is one way to improve on it:
 
 ```javascript
 import { useRef, useEffect, useState } from "react";

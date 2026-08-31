@@ -5,11 +5,11 @@ tags:
   - Vite
   - Vitest
 readingTime: 2
-description: "关于Vitest 配置与插件，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 193
+description: "When it comes to Vitest configuration and plugins, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 177
 ---
 
-关于Vitest 配置与插件，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to Vitest configuration and plugins, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
@@ -121,7 +121,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates the basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Common Pitfalls
 

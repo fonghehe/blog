@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In daily development, Web3 frontend DApp development is becoming increasingly common. This article systematically covers its usage, principles, and optimization strategies."
-wordCount: 315
+wordCount: 164
 ---
 
 In daily development, Web3 frontend DApp development is becoming increasingly common. This article systematically covers its usage, principles, and optimization strategies.

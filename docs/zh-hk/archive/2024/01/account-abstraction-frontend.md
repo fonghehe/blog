@@ -1,22 +1,22 @@
 ---
-title: "賬户抽象 (ERC-4337) 前端實踐"
+title: "賬戶抽象 (ERC-4337) 前端實踐"
 date: 2024-01-14 15:17:29
 tags:
   - Web3
   - Ethereum
   - DApp
-readingTime: 12
-description: "深入解析 ERC-4337 賬户抽象的前端實踐，涵蓋 UserOperation 生命週期、Bundler 交互、Paymaster Gas 贊助及社交恢復方案"
-wordCount: 3800
+readingTime: 10
+description: "深入解析 ERC-4337 賬戶抽象的前端實踐，涵蓋 UserOperation 生命週期、Bundler 交互、Paymaster Gas 贊助及社交恢復方案"
+wordCount: 1294
 ---
 
-## ERC-4337 賬户抽象概述
+## ERC-4337 賬戶抽象概述
 
-賬户抽象（Account Abstraction, ERC-4337）是以太坊上最具變革性的提案之一。其核心目標是將賬户的驗證邏輯從協議層移至合約層，使得智能賬户可以擁有自定義的簽名驗證、Gas 支付和執行邏輯。
+賬戶抽象（Account Abstraction, ERC-4337）是以太坊上最具變革性的提案之一。其核心目標是將賬戶的驗證邏輯從協議層移至合約層，使得智能賬戶可以擁有自定義的簽名驗證、Gas 支付和執行邏輯。
 
-在傳統以太坊模型中，存在兩種賬户：外部擁有賬户（EOA）和合約賬户（CA）。EOA 由私鑰控制，只能發起交易且簽名算法固定為 secp256k1 ECDSA。合約賬户無法主動發起交易——它們只能被 EOA 調用。這種限制導致了糟糕的用户體驗：用户必須管理私鑰、持有 ETH 支付 Gas、且無法實現批量操作或社交恢復。
+在傳統以太坊模型中，存在兩種賬戶：外部擁有賬戶（EOA）和合約賬戶（CA）。EOA 由私鑰控制，只能發起交易且簽名算法固定為 secp256k1 ECDSA。合約賬戶無法主動發起交易——它們只能被 EOA 調用。這種限制導致了糟糕的用戶體驗：用戶必須管理私鑰、持有 ETH 支付 Gas、且無法實現批量操作或社交恢復。
 
-ERC-4337 選擇了不修改共識層的路線。它引入了一個獨立的 mempool 系統——UserOperation mempool，以及一個名為 Bundler 的角色。Bundler 是一個常規的 EOA，它從 UserOp mempool 中收集 UserOperations，打包後通過一個名為 `EntryPoint` 的單例合約提交到鏈上。這種設計在不改變 L1 共識的前提下實現了賬户抽象。
+ERC-4337 選擇了不修改共識層的路線。它引入了一個獨立的 mempool 系統——UserOperation mempool，以及一個名為 Bundler 的角色。Bundler 是一個常規的 EOA，它從 UserOp mempool 中收集 UserOperations，打包後通過一個名為 `EntryPoint` 的單例合約提交到鏈上。這種設計在不改變 L1 共識的前提下實現了賬戶抽象。
 
 ## Smart Account vs EOA：架構差異
 
@@ -25,7 +25,7 @@ ERC-4337 選擇了不修改共識層的路線。它引入了一個獨立的 memp
 ```
 EOA 模型：
 ┌──────────┐     ┌──────────────┐
-│  用户私鑰  │────▶│  EOA Account  │────▶│  合約調用  │
+│  用戶私鑰  │────▶│  EOA Account  │────▶│  合約調用  │
 └──────────┘     └──────────────┘
 
 Smart Account 模型：
@@ -41,7 +41,7 @@ Smart Account 模型：
                  └─────────────┘
 ```
 
-Smart Account 的驗證邏輯完全由合約代碼定義。它可以使用 Passkey、Session Key、多籤、社交恢復等任意驗證方案。前端不再需要處理 `personal_sign` 這種固定的簽名模式，而是根據賬户合約的 `validateUserOp` 函數來構造簽名數據。
+Smart Account 的驗證邏輯完全由合約代碼定義。它可以使用 Passkey、Session Key、多籤、社交恢復等任意驗證方案。前端不再需要處理 `personal_sign` 這種固定的簽名模式，而是根據賬戶合約的 `validateUserOp` 函數來構造簽名數據。
 
 ## UserOperation 數據結構與生命週期
 
@@ -49,9 +49,9 @@ UserOperation（簡稱 UserOp）是 ERC-4337 的核心數據結構。它類似�
 
 ```typescript
 interface UserOperation {
-  sender: string;              // 智能賬户地址
+  sender: string;              // 智能賬戶地址
   nonce: bigint;               // 防重放 nonce
-  initCode: string;            // 部署賬户時的初始化代碼
+  initCode: string;            // 部署賬戶時的初始化代碼
   callData: string;            // 要執行的調用數據
   callGasLimit: bigint;        // 執行 callData 的 Gas 限制
   verificationGasLimit: bigint;// 驗證階段的 Gas 限制
@@ -66,7 +66,7 @@ interface UserOperation {
 UserOp 的生命週期從前端構造開始，經歷以下階段：
 
 1. **構造**：前端組裝 UserOp 字段，部分字段需要從 Bundler 估算
-2. **簽名**：用户用其驗證方案對 UserOp 哈希簽名
+2. **簽名**：用戶用其驗證方案對 UserOp 哈希簽名
 3. **提交**：通過 `eth_sendUserOperation` 發送到 Bundler
 4. **打包**：Bundler 將多個 UserOp 打包成一筆交易
 5. **執行**：`EntryPoint` 逐一驗證並執行每個 UserOp
@@ -123,7 +123,7 @@ interface UserOperationReceipt {
   }
 }
 
-// 創建 Bundler 客户端
+// 創建 Bundler 客戶端
 function createBundlerClient(bundlerUrl: string): BundlerClient {
   const transport = http(bundlerUrl)
 
@@ -288,7 +288,7 @@ async function sponsorUserOp(
 
 ## 社交恢復與多籤的前端交互
 
-Smart Account 的最大優勢之一是支持社交恢復。用户可以指定一組"守護者"地址，在私鑰丟失時通過守護者投票恢復賬户訪問。
+Smart Account 的最大優勢之一是支持社交恢復。用戶可以指定一組"守護者"地址，在私鑰丟失時通過守護者投票恢復賬戶訪問。
 
 ```typescript
 // 社交恢復前端交互
@@ -336,7 +336,7 @@ async function initiateSocialRecovery(
 
 ## 完整的 AA 前端交互模塊
 
-以下是一個端到端的 AA 前端交互模塊，涵蓋賬户部署、Gas 贊助交易和狀態追蹤：
+以下是一個端到端的 AA 前端交互模塊，涵蓋賬戶部署、Gas 贊助交易和狀態追蹤：
 
 ```typescript
 import { createPublicClient, http, encodeFunctionData, type Address, type Hash } from 'viem'
@@ -372,7 +372,7 @@ class SmartAccountClient {
     this.signer = signer
   }
 
-  // 計算反事實地址（部署前的賬户地址）
+  // 計算反事實地址（部署前的賬戶地址）
   async getCounterfactualAddress(salt: bigint = 0n): Promise<Address> {
     const initCode = this.buildInitCode(salt)
     // 調用工廠的 getAddress 函數
@@ -386,7 +386,7 @@ class SmartAccountClient {
     return address
   }
 
-  // 發送交易（自動處理賬户部署）
+  // 發送交易（自動處理賬戶部署）
   async sendTransaction(
     target: Address,
     value: bigint,
@@ -437,7 +437,7 @@ class SmartAccountClient {
       userOp = await sponsorUserOp(userOp, this.config.paymasterConfig)
     }
 
-    // 用户簽名
+    // 用戶簽名
     const userOpHash = this.getUserOpHash(userOp)
     userOp.signature = await this.signer.signMessage(userOpHash)
 
@@ -516,13 +516,13 @@ class SmartAccountClient {
 export { SmartAccountClient }
 ```
 
-## 用户體驗：無 Gas 交易與批量操作
+## 用戶體驗：無 Gas 交易與批量操作
 
-賬户抽象帶來的最大 UX 提升是 **無 Gas 交易** 和 **批量操作**。
+賬戶抽象帶來的最大 UX 提升是 **無 Gas 交易** 和 **批量操作**。
 
-無 Gas 交易通過 Paymaster 實現。前端在發送 UserOp 前請求 Paymaster 贊助，用户無需持有 ETH。Paymaster 可以選擇免費贊助（作為獲客成本）或接受 ERC-20 代幣支付 Gas。
+無 Gas 交易通過 Paymaster 實現。前端在發送 UserOp 前請求 Paymaster 贊助，用戶無需持有 ETH。Paymaster 可以選擇免費贊助（作為獲客成本）或接受 ERC-20 代幣支付 Gas。
 
-批量操作通過 Smart Account 的 `executeBatch` 函數實現。用户可以將多個操作——如 approve + swap + stake——打包成一個 UserOp 提交，只需一次簽名和一筆 Gas。
+批量操作通過 Smart Account 的 `executeBatch` 函數實現。用戶可以將多個操作——如 approve + swap + stake——打包成一個 UserOp 提交，只需一次簽名和一筆 Gas。
 
 ```typescript
 // 批量操作示例
@@ -607,13 +607,13 @@ class SmartAccountAdapter implements UnifiedWallet {
 
 // 統一連接入口
 async function connectWallet(): Promise<UnifiedWallet> {
-  // 優先嚐試 Smart Account（如用户已配置）
+  // 優先嚐試 Smart Account（如用戶已配置）
   // 回退到 EOA
 }
 ```
 
-這種適配器模式讓上層組件無需感知底層賬户類型，業務代碼保持一致。
+這種適配器模式讓上層組件無需感知底層賬戶類型，業務代碼保持一致。
 
 ## 小結
 
-ERC-4337 賬户抽象從根本上改變了以太坊的交互模型。對前端而言，核心變化在於：交易構造從 `eth_sendTransaction` 變為 UserOp 流程，Gas 支付從用户自付變為可選贊助，簽名方案從固定 ECDSA 變為合約自定義。這些變化帶來更好的用户體驗，但也增加了前端的複雜度——Bundler 交互、Paymaster 集成、Gas 估算方式都與傳統模式不同。過渡期內，DApp 需要同時適配 EOA 和 Smart Account，統一抽象層是務實的選擇。從長期看，Smart Account 將成為默認的賬户模型，前端架構應為此做好準備。
+ERC-4337 賬戶抽象從根本上改變了以太坊的交互模型。對前端而言，核心變化在於：交易構造從 `eth_sendTransaction` 變為 UserOp 流程，Gas 支付從用戶自付變為可選贊助，簽名方案從固定 ECDSA 變為合約自定義。這些變化帶來更好的用戶體驗，但也增加了前端的複雜度——Bundler 交互、Paymaster 集成、Gas 估算方式都與傳統模式不同。過渡期內，DApp 需要同時適配 EOA 和 Smart Account，統一抽象層是務實的選擇。從長期看，Smart Account 將成為默認的賬戶模型，前端架構應為此做好準備。

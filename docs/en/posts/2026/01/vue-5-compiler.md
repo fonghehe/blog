@@ -5,10 +5,10 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 5 compiler architecture is a topic worth paying attention to in frontend development. This article explores core concepts and best practices from real proje"
-wordCount: 137
+wordCount: 138
 ---
 
-Vue 5 compiler architecture is a topic worth paying attention to in frontend development. This article explores core concepts and best practices from real project experience.
+Vue 5's compiler architecture is worth watching in frontend development. This article walks through its core concepts and best practices, drawn from real project experience.
 
 ## Basic Concepts
 
@@ -48,7 +48,7 @@ const app = createApp(config);
 app.mount("#root");
 ```
 
-In real projects, adjustments should be made based on specific requirements.
+In real projects, you'll usually need to adapt this to your specific requirements.
 
 ## Practical Application
 

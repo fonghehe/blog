@@ -4,15 +4,15 @@ date: 2020-08-27 11:23:10
 tags:
   - Engineering
 readingTime: 2
-description: "最近在团队中落地Design System 设计令牌 Design Tokens，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 290
+description: "Lessons learned from implementing Design Tokens within a team design system, shared as a practical reference for others doing similar work."
+wordCount: 193
 ---
 
-最近在团队中落地Design System 设计令牌 Design Tokens，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+Recently I rolled out a Design System / Design Tokens initiative within my team and accumulated quite a bit of experience. I'm writing it up as a reference, hoping it helps others doing similar work.
 
 ## Core Concepts
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 const express = require('express')
@@ -37,11 +37,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to fit the specific scenario; not every case calls for over-optimization.
 
 ## In-Depth Analysis
 
-我们可以通过以下方式来改进：
+We can improve things in the following ways:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -60,11 +60,11 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Implementation Experience
 
-先来看基本的实现方式：
+Let's first look at the basic implementation:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -95,11 +95,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you also need to consider error handling and edge cases.
 
 ## Tuning Strategies
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 const express = require('express')
@@ -124,11 +124,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly reduce maintenance cost.
 
 ## Summary
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Design System 设计令牌 Design Tokens不是银弹，需要根据项目规模和技术栈选择
+- Keep an eye on the community; technical solutions need continuous iteration
+- Don't adopt new technology just for its own sake
+- The code examples are for reference only and should be adapted to your business scenario
+- Design System / Design Tokens is not a silver bullet; choose based on project scale and tech stack

@@ -144,5 +144,5 @@ module.exports = {
 
 - AST 是程式碼的樹形結構，Babel/ESLint/Prettier 都基於它工作
 - 流程：Parse（程式碼→AST）→ Traverse（處理）→ Generate（AST→程式碼）
-- Babel 外掛通過 visitor 模式處理特定節點型別
+- Babel 外掛透過 visitor 模式處理特定節點型別
 - astexplorer.net 是必備的除錯工具

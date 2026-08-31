@@ -6,11 +6,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "Vue 3.2 defineProps 解构 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pro"
-wordCount: 207
+description: "Destructuring defineProps in Vue 3.2 is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 193
 ---
 
-Vue 3.2 defineProps 解构 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Vue 3.2's `defineProps` destructuring is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -43,7 +43,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Usage
 
-实际项目中的用法会更复杂一些：
+Real-world usage gets a bit more complex:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -155,5 +155,5 @@ This approach has been running stably in production for over six months and has 
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vue 3.2 defineProps 解构不是银弹，需要根据项目规模和技术栈选择
+- Vue 3.2's `defineProps` destructuring is not a silver bullet; choose it based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs

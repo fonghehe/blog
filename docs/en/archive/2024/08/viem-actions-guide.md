@@ -5,9 +5,9 @@ tags:
   - Web3
   - TypeScript
   - Ethereum
-readingTime: 13
+readingTime: 8
 description: "An in-depth analysis of viem's design philosophy, core concepts, Actions pattern, and ABI type inference, with a complete DApp interaction layer implementation and ethers.js migration strategy"
-wordCount: 3900
+wordCount: 859
 ---
 
 ## viem Design Philosophy: Tree-Shakable + Type-Safe + Zero Dependencies

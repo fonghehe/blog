@@ -13,7 +13,7 @@ SolidJS 是 2021 年最值得關注的前端框架之一。它的核心主張聽
 
 ## 和 React 的對比：相似的語法，截然不同的原理
 
-SolidJS 的語法刻意向 React 靠攏，但底層機製完全不同：
+SolidJS 的語法刻意向 React 靠攏，但底層機制完全不同：
 
 ```jsx
 // React
@@ -134,9 +134,9 @@ function TodoApp() {
 }
 ```
 
-## 控製流元件
+## 控制流元件
 
-SolidJS 用元件替代 JSX 裡的 JavaScript 控製流，以確保細粒度追蹤：
+SolidJS 用元件替代 JSX 裡的 JavaScript 控制流，以確保細粒度追蹤：
 
 ```jsx
 // Show：條件渲染（替代 &&）

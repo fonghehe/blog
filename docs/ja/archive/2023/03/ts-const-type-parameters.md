@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "关于TypeScript 5.0 const 类型参数，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 515
+wordCount: 533
 ---
 
 关于TypeScript 5.0 const 类型参数，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -174,6 +174,6 @@ class TypedEmitter<T extends Record<string, any>> {
 ## まとめ
 
 - コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整する必要があります
-- TypeScript 5.0 const 类型参数不是银弹，需要根据项目规模和技术栈选择
+- TypeScript 5.0 const 类型参数 は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある
 - 基礎的な原理を理解することは、APIを暗記することより重要です
 - 本番環境で使用する前に必ず互換性を確認してください

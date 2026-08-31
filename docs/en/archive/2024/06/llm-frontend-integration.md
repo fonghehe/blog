@@ -4,8 +4,8 @@ date: 2024-06-13 19:47:24
 tags:
   - Engineering
 readingTime: 2
-description: "LLM 前端集成方案This topic has been discussed many times in the community, but with each version update, many conclusions need revising. This article revisits the top"
-wordCount: 206
+description: "LLM frontend integration has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 186
 ---
 
 LLM 前端集成方案This topic has been discussed many times in the community, but with each version update, many conclusions need revising. This article revisits the topic based on the latest version.
@@ -120,7 +120,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on community trends; technical approaches need continuous iteration
+- Don't adopt new technology just for the sake of it
+- Code samples are for reference only and need adjusting to your business scenario

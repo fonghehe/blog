@@ -4,13 +4,13 @@ date: 2020-09-05 10:00:18
 tags:
   - Frontend
 readingTime: 2
-description: "React 的状态更新要求不可变（immutable）——不能直接修改 state，而是要返回新对象。对于嵌套较深的数据结构，这会带来大量样板代码。Immer 通过 Proxy 魔法让你\"直接修改\"数据，背后帮你生成不可变的新对象。"
-wordCount: 276
+description: "React state updates must be immutable — you never mutate state directly, you return a new object. With deeply nested data, that means a lot of boilerplate. Immer's Proxy magic lets you 'mutate' the data directly while it produces the new immutable object for you behind the scenes."
+wordCount: 212
 ---
 
-React 的状态更新要求不可变（immutable）——不能直接修改 state，而是要返回新对象。对于嵌套较深的数据结构，这会带来大量样板代码。Immer 通过 Proxy 魔法让你"直接修改"数据，背后帮你生成不可变的新对象。
+React requires state updates to be immutable — you can't mutate state directly; you have to return a new object. For deeply nested data structures this generates a lot of boilerplate. Immer uses Proxy magic to let you "mutate" the data directly, while it generates the new immutable object for you behind the scenes.
 
-## 没有 Immer 的痛苦
+## The Pain Without Immer
 
 ```javascript
 // 更新深层嵌套状态
@@ -33,7 +33,7 @@ const nextState = {
 };
 ```
 
-## 有了 Immer
+## With Immer
 
 ```javascript
 import produce from "immer";
@@ -44,9 +44,9 @@ const nextState = produce(state, (draft) => {
 });
 ```
 
-`produce` 接收当前 state 和一个"recipe 函数"，recipe 里的 `draft` 是 state 的 Proxy，对 draft 的修改会被 Immer 记录并生成新的不可变对象。原始 state 不会被改变。
+`produce` takes the current state and a "recipe function". The `draft` inside the recipe is a Proxy of the state; any changes you make to `draft` are recorded by Immer and used to produce a new immutable object. The original state is never changed.
 
-## 在 React useState 中使用
+## Using It with React useState
 
 ```javascript
 import produce from "immer";
@@ -85,7 +85,7 @@ function TodoList() {
 }
 ```
 
-## 在 useReducer 中使用
+## Using It with useReducer
 
 ```javascript
 const reducer = produce((draft, action) => {
@@ -107,9 +107,9 @@ const reducer = produce((draft, action) => {
 const [state, dispatch] = useReducer(reducer, initialState);
 ```
 
-## 在 Redux 中使用（配合 RTK）
+## Using It with Redux (with RTK)
 
-Redux Toolkit 内置了 Immer，`createSlice` 里可以直接"修改"state：
+Redux Toolkit has Immer built in, so you can "mutate" state directly inside `createSlice`:
 
 ```javascript
 import { createSlice } from "@reduxjs/toolkit";
@@ -129,9 +129,9 @@ const todosSlice = createSlice({
 });
 ```
 
-## 性能注意事项
+## Performance Notes
 
-Immer 使用 Proxy，在现代 JS 引擎上性能已经非常好，但有几点需要注意：
+Immer uses Proxy, and its performance on modern JS engines is already very good, but there are a few things to keep in mind:
 
 ```javascript
 // ✅ 正常使用
@@ -153,4 +153,4 @@ enableMapSet(); // 支持 Map 和 Set
 
 ## Summary
 
-Immer 是 React 状态管理中性价比最高的工具之一：学习成本极低（就是"在 recipe 里随便改"），却能把复杂嵌套状态的更新代码简化 70% 以上。Redux Toolkit 已内置 Immer，说明这个思路已经被 Redux 官方认可。
+Immer is one of the highest-leverage tools in React state management: the learning cost is minimal (literally "just mutate inside the recipe"), yet it can cut the code for updating complex nested state by over 70%. Redux Toolkit already bundles Immer, which shows this approach has been endorsed by the Redux team.

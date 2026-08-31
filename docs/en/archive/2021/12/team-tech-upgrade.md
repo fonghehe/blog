@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 1
-description: "今年主导了三个大的技术栈升级：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每个都踩过坑，总结出一套方法论。技术升级不只是技术决策，更是一次团队管理实践。"
-wordCount: 260
+description: "This year I led three major tech-stack upgrades: Vue 2 to Vue 3, Jest to Vitest, and Lerna to pnpm workspace. Each one hit pitfalls, and together they produced a methodology. Tech upgrades aren't just technical decisions — they're also a team-management exercise."
+wordCount: 184
 ---
 
-今年主导了三个大的技术栈升级：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每个都踩过坑，总结出一套方法论。技术升级不只是技术决策，更是一次团队管理实践。
+This year I led three major tech-stack upgrades: Vue 2 → Vue 3, Jest → Vitest, and Lerna → pnpm workspace. Each had its share of pitfalls, from which I distilled a methodology. A tech upgrade is not just a technical decision — it's also a team-management exercise.
 
 ## Three Stages of Upgrade
 
@@ -33,7 +33,7 @@ wordCount: 260
 
 ## Key Questions in the Evaluation Phase
 
-每次做升级决策，我都会问自己这 5 个问题：
+Every time I make an upgrade decision, I ask myself these five questions:
 
 ```markdown
 ## 升级评估清单
@@ -65,7 +65,7 @@ wordCount: 260
 
 ## Execution Phase Strategy
 
-### Vue 3 迁移：渐进式
+### Vue 3 Migration: Incremental
 
 ```javascript
 // 迁移路线图
@@ -78,7 +78,7 @@ const migrationPlan = {
 }
 ```
 
-### pnpm 迁移：一次性切换
+### pnpm Migration: All-at-Once Switch
 
 ```bash
 # pnpm 迁移不适合渐进式，要么用要么不用
@@ -100,7 +100,7 @@ pnpm test        # 验证测试是否通过
 
 ## Team Knowledge Transfer
 
-技术升级最怕的是只有一个人懂。我们的做法：
+The biggest fear in a tech upgrade is having only one person who understands it. Here's our approach:
 
 ```typescript
 // 知识传递计划
@@ -131,7 +131,7 @@ interface KnowledgeTransfer {
 
 ## Handling Resistance
 
-技术升级一定会遇到阻力。常见的几种情况：
+A tech upgrade will inevitably meet resistance. Here are some common cases:
 
 ```
 "现在的方案挺好的，为什么要换？"
@@ -149,8 +149,8 @@ interface KnowledgeTransfer {
 
 ## Summary
 
-- 技术升级的评估要量化，用数字说服团队和领导
-- 执行阶段要有明确的回滚方案，降低风险
-- 知识传递比技术方案更重要，避免单点依赖
-- 阻力是正常的，关键是用数据和体验来化解
-- 好的技术升级应该是"无痛"的——用户和大部分团队成员感觉不到变化
+- Quantify the upgrade evaluation; use numbers to convince the team and leadership
+- Have a clear rollback plan during execution to reduce risk
+- Knowledge transfer matters more than the technical solution itself; avoid single points of dependency
+- Resistance is normal; the key is to defuse it with data and experience
+- A good tech upgrade should be "painless" — users and most team members shouldn't feel the change

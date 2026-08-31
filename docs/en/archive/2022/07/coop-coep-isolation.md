@@ -4,15 +4,15 @@ date: 2022-07-01 09:31:45
 tags:
   - Frontend
 readingTime: 2
-description: "COOP COEP 跨源隔离策略 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 196
+description: "COOP and COEP cross-origin isolation strategies are becoming increasingly widespread in frontend development. This article dives into their core principles and best practices from real projects."
+wordCount: 179
 ---
 
-COOP COEP 跨源隔离策略 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+COOP and COEP cross-origin isolation strategies are becoming increasingly widespread in frontend development. This article dives into their core principles and best practices from real projects.
 
 ## Basic Usage
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 const fs = require('fs')
@@ -126,6 +126,6 @@ This approach has been running stably in production for over six months and has 
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- COOP COEP 跨源隔离策略不是银弹，需要根据项目规模和技术栈选择
+- COOP/COEP cross-origin isolation is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

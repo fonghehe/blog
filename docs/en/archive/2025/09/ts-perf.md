@@ -1,5 +1,5 @@
 ---
-title: "TypeScript Performance Practice: Project规模化Type检查Strategy"
+title: "TypeScript Performance Optimization in Practice: Type-Checking Strategies at Project Scale"
 date: 2025-09-04 13:18:55
 tags:
   - TypeScript

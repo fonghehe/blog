@@ -25,7 +25,7 @@ wordCount: 644
 2018 年底尤雨溪已經透露了 Vue 3 的方向：
 
 - Composition API（借鑑 React Hooks 的思路）
-- 基於 Proxy 的響應式（解決 Vue 2 的已知限製）
+- 基於 Proxy 的響應式（解決 Vue 2 的已知限制）
 - 更好的 TypeScript 支持
 - 更小的體積（Tree Shaking 更徹底）
 
@@ -70,7 +70,7 @@ GitHub Copilot 等工具還沒出現，但 2019 年會有更多關於 AI 輔助�
 - **深入 React**：Hooks 出了就係統學，搞懂 Concurrent Mode 的原理
 - **Vue 3**：跟進 Alpha 版本，做技術儲備
 - **TypeScript**：把現有項目遷移，實踐高級類型
-- **Node.js**：學會用 Node 解決工程化問題，不隻是寫 API
+- **Node.js**：學會用 Node 解決工程化問題，不只是寫 API
 - **計算機基礎**：讀《CSAPP》、刷 LeetCode，補齊短板
 
 2019，繼續努力。

@@ -5,9 +5,9 @@ tags:
   - Web3
   - 性能优化
   - DApp
-readingTime: 8
+readingTime: 9
 description: "系统性分析 DApp 性能瓶颈，涵盖 RPC 批量请求、多节点轮询、SWR 缓存策略、索引服务对比及 bundle 优化"
-wordCount: 3600
+wordCount: 1212
 ---
 
 ## DApp 性能瓶颈分析：RPC 延迟是最大问题
@@ -34,7 +34,7 @@ DApp 的性能瓶颈与传统 Web 应用截然不同。传统应用的瓶颈通�
 
 ## RPC 批量请求：Multicall 合约与 multicall.js
 
-Multicall3 合约是最有效的 RPC 请求优化手段。它允许在一次交易中调用多个合约的多个函数，将 N 次 RPC 请求合并为 1 次：
+Multicall3 合约是最有效的 RPC 请求优化手段。它允许在一次调用中批量调用多个合约的多个函数，将 N 次 RPC 请求合并为 1 次：
 
 ```typescript
 import { createPublicClient, http, encodeFunctionData, type Address } from 'viem'
@@ -571,7 +571,7 @@ class DAppDataLayer {
 
 ## 性能指标：FCP, LCP, TTI 在 DApp 中的特殊考量
 
-DApp 的性能指标与传统 Web 应用有特殊考量：
+DApp 在解读性能指标时与传统 Web 应用有所不同：
 
 - **FCP (First Contentful Paint)**：DApp 应在 FCP 时展示骨架屏，不等待 RPC 响应
 - **LCP (Largest Contentful Paint)**：关键链上数据（如代币余额）应在 2 秒内加载完成

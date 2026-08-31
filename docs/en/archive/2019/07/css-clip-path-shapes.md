@@ -22,7 +22,7 @@ Traditional CSS clipping is limited — `overflow: hidden` only does rectangular
   /* Clips each side by the specified amount, similar to margin syntax */
 }
 
-/* In practice: clips around the image, keeping only the center area */
+/* Effect: clips inward from each side, keeping only the central area */
 .avatar {
   clip-path: inset(5% round 50%);
   /* round followed by corner radius value */

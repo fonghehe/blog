@@ -5,14 +5,14 @@ tags:
   - Micro Frontend
 readingTime: 2
 description: "The topic of micro-frontend architecture has been discussed many times in the community, but with each new iteration, many prior conclusions need updating. This"
-wordCount: 218
+wordCount: 204
 ---
 
 The topic of micro-frontend architecture has been discussed many times in the community, but with each new iteration, many prior conclusions need updating. This article provides a fresh take based on the latest developments.
 
 ## Getting Started
 
-We can improve on the baseline in the following way:
+Here's how to improve on the baseline:
 
 ```javascript
 const fs = require("fs");
@@ -67,11 +67,11 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-This code demonstrates the basic usage. In real projects, you'll also need to account for error handling and edge cases.
+This code shows the basic usage; in real projects you'll also need to handle errors and edge cases.
 
 ## Real-World Application
 
-Building on this foundation, we can optimize further:
+From here, you can optimize further:
 
 ```javascript
 .container {
@@ -98,7 +98,7 @@ This pattern is highly practical in large-scale projects and can significantly r
 
 ## Optimization Tips
 
-In real projects, the usage tends to be more complex:
+Real-world usage is usually more complex:
 
 ```javascript
 const fs = require("fs");
@@ -153,7 +153,7 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-Pay close attention to edge case handling — this is critical in production environments.
+Pay close attention to edge cases — they're critical in production.
 
 ## Summary
 

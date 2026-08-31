@@ -5,14 +5,14 @@ tags:
   - React
 readingTime: 2
 description: "最近在團隊中落地React Portal 實現 Modal 元件，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 308
+wordCount: 306
 ---
 
 最近在團隊中落地React Portal 實現 Modal 元件，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
 
 ## 核心概念
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -35,7 +35,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 深度解析
 

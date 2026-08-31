@@ -1,5 +1,5 @@
 ---
-title: "TypeScript 6.0 Generics Improvements: 更高阶Type抽象Capability"
+title: "TypeScript 6.0 Generics Improvements: Higher-Order Type Abstraction"
 date: 2025-08-04 19:38:15
 tags:
   - TypeScript

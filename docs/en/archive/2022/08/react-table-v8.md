@@ -4,11 +4,11 @@ date: 2022-08-10 16:06:14
 tags:
   - React
 readingTime: 2
-description: "在日常开发中，React Table v8 Headless 表格 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategie"
-wordCount: 193
+description: "In daily development, React Table v8 headless tables are being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+wordCount: 173
 ---
 
-在日常开发中，React Table v8 Headless 表格 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In daily development, React Table v8 headless tables are being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -124,7 +124,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Troubleshooting
 

@@ -4,9 +4,9 @@ date: 2026-07-12 11:15:41
 tags:
   - Vite
   - 工程化
-readingTime: 7
+readingTime: 12
 description: "Vite の本番ビルドは Rollup/Rolldown に基づくパッケージングであり、コード分割戦略が初回レンダリング性能に直結する。本記事では manualChunks 設定、動的 import、modulepreload プリロード、Tree Shaking の落とし穴、CSS 分割を詳解し、500KB の初回 bundle を 80KB に最適化する完全なプロセスを示す。"
-wordCount: 3000
+wordCount: 2429
 ---
 
 Vite の開発体験はすでにフロントエンドツールチェインのベンチマークとなっているが、本番ビルドの性能最適化は依然として多くのチームの盲点である。dev モードでのオンデマンド読み込みの ESM モジュールは、本番環境では静的リソースにパッケージされる。この過程でのコード分割戦略、プリロードメカニズム、Tree Shaking の効果が、ユーザーの初回レンダリング体験を直接決定する。
@@ -89,7 +89,7 @@ export default defineConfig({
 
 ```javascript
 manualChunks(id) {
-  // React コアルタイム
+  // React コアライブラリ
   if (id.includes('node_modules/react/') ||
       id.includes('node_modules/react-dom/') ||
       id.includes('node_modules/scheduler/')) {
@@ -264,7 +264,7 @@ Vite はデフォルトで動的 import の chunk に `<link rel="modulepreload"
 <link rel="modulepreload" href="/assets/charts.[hash].js" />
 ```
 
-デフォルトの挙動は現在ルートの chunk をプリロードすることである。よりきめ細かな制御が必要なシーンでは、`vite-plugin-pwa` やカスタムプリロード戦略が使用できる：
+デフォルトの挙動は現在ルートの chunk をプリロードすることである。よりきめ細かな制御が必要な場面では、`vite-plugin-pwa` やカスタムプリロード戦略が使用できる：
 
 ```typescript
 // カスタムプリロード戦略：ユーザーがリンクをホバーした時にプリロード
@@ -544,7 +544,7 @@ Lazy loaded:
 - editor: 245KB (gzip: 78KB)
 ```
 
-初回 bundle が 512KB から 78KB に削減され、gzip 後はわずか 26KB。コア思路：**初回は初回レンダリングに必要なコードのみ読み込む**。
+初回 bundle が 512KB から 78KB に削減され、gzip 後はわずか 26KB。基本方針：**初回は初回レンダリングに必要なコードのみ読み込む**。
 
 ## 性能予算と CI 統合
 
@@ -618,7 +618,7 @@ jobs:
 
 実践において、最もよくある bundle 膨張の原因は技術的な問題ではなく協業の問題である：開発者が新しい依存を導入する際、サイズへの影響を考慮していない。`import { debounce } from 'lodash'` は無害に見えるが、Tree Shaking の保証がなければ lodash 全体がパッケージされる。依存審査プロセスの構築（PR で新規依存のサイズを自動報告）は、事後最適化より効果的である。
 
-最後に、極限の分割を追求しないこと。初回 bundle を 500KB から 80KB に最適化する価値はあるが、80KB から 60KB には多大な労力が必要で効果は限定的である。性能最適化は ROI（費用対効果）に注目すべきである——ユーザーの体感に最も影響のある箇所に時間を費やす。
+最後に、過度な分割を追求しないこと。初回 bundle を 500KB から 80KB に最適化する価値はあるが、80KB から 60KB には多大な労力が必要で効果は限定的である。性能最適化は ROI（費用対効果）に注目すべきである——ユーザーの体感に最も影響のある箇所に時間を費やす。
 
 ## まとめ
 

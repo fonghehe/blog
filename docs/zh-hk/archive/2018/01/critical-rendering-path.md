@@ -4,11 +4,11 @@ date: 2018-01-11 17:34:30
 tags:
   - 性能優化
 readingTime: 3
-description: "做效能優化之前，要先搞清楚瀏覽器從收到 HTML 到用戶睇到頁面，中間經歷咗咩。呢啲步驟合埋一齊叫做**關鍵渲染路徑**（Critical Rendering Path）。唔理解呢個，好多優化手段隻能照貓畫虎。"
+description: "做效能優化之前，要先搞清楚瀏覽器從收到 HTML 到用戶睇到頁面，中間經歷咗咩。呢啲步驟合埋一齊叫做**關鍵渲染路徑**（Critical Rendering Path）。唔理解呢個，好多優化手段只能照貓畫虎。"
 wordCount: 630
 ---
 
-做效能優化之前，要先搞清楚瀏覽器從收到 HTML 到用戶睇到頁面，中間經歷咗咩。呢啲步驟合埋一齊叫做**關鍵渲染路徑**（Critical Rendering Path）。唔理解呢個，好多優化手段隻能照貓畫虎。
+做效能優化之前，要先搞清楚瀏覽器從收到 HTML 到用戶睇到頁面，中間經歷咗咩。呢啲步驟合埋一齊叫做**關鍵渲染路徑**（Critical Rendering Path）。唔理解呢個，好多優化手段只能照貓畫虎。
 
 ## 瀏覽器渲染嘅五個步驟
 
@@ -94,7 +94,7 @@ wordCount: 630
 
 - **重排**（Reflow/Layout）：元素幾何屬性改變，重新計算所有受影響元素嘅位置大小。代價最高。
 - **重繪**（Repaint）：元素外觀改變（顏色、背景），唔影響佈局。代價居中。
-- **合成**（Composite）：隻影響 transform、opacity，喺獨立嘅合成層處理。代價最低。
+- **合成**（Composite）：只影響 transform、opacity，喺獨立嘅合成層處理。代價最低。
 
 ```javascript
 // 觸發重排嘅屬性（讀取呢啲屬性都會強製瀏覽器同步計算）
@@ -112,7 +112,7 @@ for (let i = 0; i < items.length; i++) {
 // 較好：先讀後批量寫
 const containerWidth = container.offsetWidth; // 讀一次
 for (let i = 0; i < items.length; i++) {
-  items[i].style.width = containerWidth + "px"; // 隻寫
+  items[i].style.width = containerWidth + "px"; // 只寫
 }
 ```
 
@@ -129,7 +129,7 @@ for (let i = 0; i < items.length; i++) {
   transform: translateZ(0);
 }
 
-/* 高效能動畫：隻用 transform 同 opacity */
+/* 高效能動畫：只用 transform 同 opacity */
 @keyframes slide-in {
   from {
     transform: translateX(-100%);

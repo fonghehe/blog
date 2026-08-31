@@ -8,10 +8,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Vue 3 defineComponent 与 TypeScript在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 305
+wordCount: 309
 ---
 
-Vue 3 defineComponent 与 TypeScript在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Vue 3 的 `defineComponent` 与 TypeScript 搭配，在前端开发中应用得越来越广泛。本文从实际项目出发，深入分析其核心原理与最佳实践。
 
 ## 基础用法
 

@@ -3,9 +3,9 @@ title: "Vue SSR Streaming レンダリング：2026 年のストリーミング�
 date: 2026-08-19 20:12:33
 tags:
   - Vue
-readingTime: 9
+readingTime: 11
 description: "Vue SSR は Vapor の時代において vue-server-renderer から renderToStream + 選択的 Hydration へと進化している。本記事では内部管理システムの CSR から公開サイトの SSR への移行経験をもとに、ストリーミングレンダリング、hydration mismatch のデバッグ、CDN edge streaming 統合などの核心的な課題を網羅する。"
-wordCount: 3500
+wordCount: 2703
 ---
 
 2018 年に筆者は Vue SSR の詳細解析記事を執筆したが、当時は `vue-server-renderer` を使用しており、レンダリングフロー全体が同期ブロッキングだった――サーバー側で完全な HTML を組み立ててからクライアントに送信する必要があり、遅い API が 1 つあれば TTFB を引きずり下ろすことができた。8 年が経過し、Vue 5 の SSR は全く異なるものになっている：`renderToStream` はレンダリングしながら送信でき、Vapor Mode コンポーネントは hydration をスキップ可能で、CDN Edge がエッジノードでストリーミング結合を行える。本記事では我々のチームが CSR の内部管理システムを SSR の公開サイトに改修した全過程を記録する。

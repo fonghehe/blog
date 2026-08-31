@@ -1,5 +1,5 @@
 ---
-title: "Rolldown Stable Release: Rollup Compatibility Rust 打包新纪元"
+title: "Rolldown Stable Release: A New Era of Rust Bundling, Rollup-Compatible"
 date: 2025-08-21 19:55:32
 tags:
   - Frontend

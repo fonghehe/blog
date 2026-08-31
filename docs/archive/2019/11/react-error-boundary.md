@@ -5,10 +5,10 @@ tags:
   - React
 readingTime: 2
 description: "很多同学在React 错误边界 ErrorBoundary上存在理解偏差，本文系统地梳理核心要点和常见误区。"
-wordCount: 257
+wordCount: 258
 ---
 
-很多同学在React 错误边界 ErrorBoundary上存在理解偏差，本文系统地梳理核心要点和常见误区。
+很多同学在 React 错误边界 ErrorBoundary 上存在理解偏差，本文系统地梳理核心要点和常见误区。
 
 ## 快速上手
 

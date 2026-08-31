@@ -1,11 +1,12 @@
 ---
-readingTime: 5
-wordCount: 1144
+readingTime: 9
+wordCount: 1164
 title: "WalletConnect 協議集成：跨錢包 DApp 連接"
 date: 2020-08-15 11:44:27
 tags:
   - Web3
   - DApp
+description: "MetaMask 瀏覽器擴展在桌面端為 DApp 提供了便捷的連接方式，但它有一個根本侷限：用戶必須在桌面瀏覽器中安裝 MetaMask 插件。移動端瀏覽器無法安裝擴展，這意味著移動端用戶無法直接使用 MetaMask 與 DApp 交互。"
 ---
 
 ## 為什麼需要 WalletConnect

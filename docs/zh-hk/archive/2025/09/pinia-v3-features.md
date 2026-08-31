@@ -1,5 +1,5 @@
 ---
-title: "Pinia v3 新特性速覽：型別系统增強與 DevTools 升级"
+title: "Pinia v3 新特性速覽：型別系統增強與 DevTools 升級"
 date: 2025-09-19 12:33:10
 tags:
   - Vue

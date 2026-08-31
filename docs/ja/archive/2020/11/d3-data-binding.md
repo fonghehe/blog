@@ -3,16 +3,16 @@ title: "D3.jsのデータバインディングとDOM操作"
 date: 2020-11-25 11:04:22
 tags:
   - 数据可视化
-readingTime: 2
-description: "关于D3.js 数据绑定与 DOM 操作，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 345
+readingTime: 3
+description: "多くの開発者はD3.js のデータバインディングと DOM 操作について、API を呼ぶレベルでしか理解していない。本記事では本番環境の視点から、実際に直面する問題とその解決策を議論する。"
+wordCount: 527
 ---
 
-关于D3.js 数据绑定与 DOM 操作，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+D3.js のデータバインディングと DOM 操作について、多くの開発者は API 呼び出しの層にとどまっている。本記事では本番環境の観点から、実際に起こりうる問題とその解決策を論じる。
 
 ## 基本原理
 
-以下是一个完整的示例：
+以下に全体のサンプルを示す：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理には注意しよう。本番環境では極めて重要なポイントだ。
 
 ## 高度な機能
 
-关键在于理解核心逻辑：
+ポイントは中核となるロジックを理解することだ：
 
 ```javascript
 :root {
@@ -63,11 +63,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+パフォーマンスチューニングは具体的な場面に合わせる必要があり、あらゆるケースで過剰な最適化が必要なわけではない。
 
 ## プロジェクト実践
 
-我们可以通过以下方式来改进：
+次の方法で改善できる：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -92,11 +92,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番環境で半年以上安定稼働しており、実際に検証済みだ。
 
 ## ベストプラクティス
 
-先来看基本的实现方式：
+まずは基本的な実装方法を見ていこう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -120,11 +120,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトでは、エラー処理と境界条件も考慮する必要がある。
 
 ## ハマりやすい注意点
 
-在这个基础上，我们可以进一步优化：
+これを土台に、さらに最適化を進められる：
 
 ```javascript
 :root {
@@ -147,10 +147,10 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模なプロジェクトで非常に実用的で、保守コストを大きく下げられる。
 
 ## まとめ
 
-- 代码示例仅供参考，需根据业务场景调整
-- D3.js 数据绑定与 DOM 操作不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- コードサンプルは参考用だ。実際のビジネスの場面に合わせて調整すること
+- D3.js のデータバインディングと DOM 操作は万能薬ではなく、プロジェクトの規模や技術スタックに合わせて選ぶ必要がある
+- API を暗記するより、根本的な仕組みを理解することが大切だ

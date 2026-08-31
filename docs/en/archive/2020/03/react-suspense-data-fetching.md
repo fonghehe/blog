@@ -4,15 +4,15 @@ date: 2020-03-02 09:37:21
 tags:
   - React
 readingTime: 2
-description: "最近在团队中落地React Suspense 数据获取新模式，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 310
+description: "Our team recently adopted the new React Suspense data-fetching pattern and gained valuable experience. I'm writing this up as a reference for anyone doing similar work."
+wordCount: 185
 ---
 
-最近在团队中落地React Suspense 数据获取新模式，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+Recently our team got hands-on with the new React Suspense data-fetching pattern and accumulated quite a bit of experience. I'm writing it up as a reference, hoping it helps others doing similar work.
 
 ## Core Concepts
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -37,11 +37,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling—it is critical in production.
 
 ## In-Depth Analysis
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -66,11 +66,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tuned to the actual scenario—not everything needs over-optimization.
 
 ## Implementation Experience
 
-我们可以通过以下方式来改进：
+We can improve it in the following ways:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -95,11 +95,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and is proven in practice.
 
-## 调优策略
+## Tuning Strategies
 
-先来看基本的实现方式：
+Here is a concrete implementation:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -124,11 +124,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage; in real projects you'll also need to consider error handling and edge cases.
 
 ## Important Notes
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -153,10 +153,10 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and significantly cuts maintenance cost.
 
 ## Summary
 
-- React Suspense 数据获取新模式不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
+- The new React Suspense data-fetching pattern isn't a silver bullet—pick it based on project size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Be sure to verify compatibility before using it in production.

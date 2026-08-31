@@ -4,11 +4,11 @@ date: 2021-03-29 10:22:36
 tags:
   - TypeScript
 readingTime: 2
-description: "關於TypeScript satisfies 運算子預覽，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 343
+description: "關於TypeScript satisfies 運算子預覽，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
+wordCount: 341
 ---
 
-關於TypeScript satisfies 運算子預覽，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於TypeScript satisfies 運算子預覽，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 
@@ -71,7 +71,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 專案實踐
 

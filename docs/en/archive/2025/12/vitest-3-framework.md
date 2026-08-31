@@ -1,5 +1,5 @@
 ---
-title: "Vitest 3.0 Practice:  Jest MigrationComplete经验总结"
+title: "Vitest 3.0 in Practice: A Complete Summary of Migrating from Jest"
 date: 2025-12-26 14:40:17
 tags:
   - Engineering

@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Express 中间件设计模式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 319
+wordCount: 318
 ---
 
 Express 中间件设计模式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
@@ -66,7 +66,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化需要结合具体场景，不必对所有情况都过度优化。
 
 ## 实战案例
 

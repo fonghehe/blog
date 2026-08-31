@@ -5,20 +5,20 @@ tags:
   - 安全
 readingTime: 2
 description: "之前寫過 XSS 防禦，這次聊 CSRF。兩者經常一起提，但原理完全不同。"
-wordCount: 369
+wordCount: 378
 ---
 
 之前寫過 XSS 防禦，這次聊 CSRF。兩者經常一起提，但原理完全不同。
 
 ## CSRF 是什麼
 
-CSRF（Cross-Site Request Forgery，跨站請求偽造）：攻擊者誘導已登錄用户訪問惡意頁面，惡意頁面以用户身份發起請求。
+CSRF（Cross-Site Request Forgery，跨站請求偽造）：攻擊者誘導已登錄用戶訪問惡意頁面，惡意頁面以用戶身份發起請求。
 
 ```
-正常流程：用户 → 登錄銀行網站（獲得 cookie）→ 轉賬
+正常流程：用戶 → 登錄銀行網站（獲得 cookie）→ 轉賬
 
 CSRF 攻擊：
-用户 → 登錄銀行（有 cookie）
+用戶 → 登錄銀行（有 cookie）
      → 訪問攻擊者頁面（含 <img src="https://bank.com/transfer?to=hacker&amount=10000">）
      → 瀏覽器自動發請求，帶上銀行的 cookie
      → 銀行執行了轉賬！
@@ -30,10 +30,10 @@ CSRF 攻擊：
 
 ### 1. CSRF Token（最常用）
 
-服務端生成隨機 token，嵌入表單/請求頭，攻擊者無法偽造：
+伺服器端生成隨機 token，嵌入表單/請求頭，攻擊者無法偽造：
 
 ```javascript
-// 服務端：生成 token 並存 session
+// 伺服器端：生成 token 並存 session
 const csrfToken = crypto.randomBytes(32).toString("hex");
 req.session.csrfToken = csrfToken;
 
@@ -54,10 +54,10 @@ axios.interceptors.request.use((config) => {
 ```
 
 ```javascript
-// 服務端：驗證 token
+// 伺服器端：驗證 token
 app.use((req, res, next) => {
   if (["GET", "HEAD", "OPTIONS"].includes(req.method)) {
-    return next(); // 隻讀請求不需要驗證
+    return next(); // 只讀請求不需要驗證
   }
 
   const token = req.headers["x-csrf-token"];
@@ -70,7 +70,7 @@ app.use((req, res, next) => {
 
 ### 2. SameSite Cookie
 
-現代瀏覽器支援 `SameSite` 屬性，控製跨站請求是否攜帶 cookie：
+現代瀏覽器支援 `SameSite` 屬性，控制跨站請求是否攜帶 cookie：
 
 ```
 Set-Cookie: session=xxx; SameSite=Strict; HttpOnly; Secure
@@ -103,20 +103,20 @@ app.use((req, res, next) => {
 });
 ```
 
-缺點：Referer 可能被用户或代理過濾掉，不夠可靠。
+缺點：Referer 可能被用戶或代理過濾掉，不夠可靠。
 
 ## CSRF vs XSS
 
 |                | CSRF                    | XSS                         |
 | 
 -------------- | ----------------------- | --------------------------- |
-| 利用           | 用户的身份（cookie）    | 瀏覽器執行攻擊者的代碼      |
-| 攻擊者能做什麼 | 以用户身份發請求        | 讀取 cookie、改頁面、發請求 |
+| 利用           | 用戶的身份（cookie）    | 瀏覽器執行攻擊者的代碼      |
+| 攻擊者能做什麼 | 以用戶身份發請求        | 讀取 cookie、改頁面、發請求 |
 | 防禦核心       | Token + SameSite Cookie | CSP + 輸入轉義              |
 
 ## 小結
 
-- CSRF 利用瀏覽器自動攜帶 cookie 的特性，讓用户不知情地發請求
+- CSRF 利用瀏覽器自動攜帶 cookie 的特性，讓用戶不知情地發請求
 - CSRF Token 是最通用的防禦方案
 - `SameSite: Lax/Strict` 是現代瀏覽器的有效防禦
-- GET 請求不應有副作用（否則 img src 就能攻擊）
+- GET 請求不應有副作用（否則一個 img src 就能被利用來發起攻擊）

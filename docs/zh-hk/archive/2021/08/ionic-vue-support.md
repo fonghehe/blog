@@ -46,7 +46,7 @@ const ItemList = ({ data, onRefresh }) => {
 
 ## 進階用法
 
-先來看基本的實現方式：
+先來看基本的實作方式：
 
 ```javascript
 import React, { useState, useCallback } from 'react'
@@ -179,7 +179,7 @@ const ItemList = ({ data, onRefresh }) => {
 ## 小結
 
 - 理解底層原理比記住 API 更重要
-- 生產環境使用前務必做好兼容性驗證
+- 生產環境使用前務必做好相容性驗證
 - 團隊協作中約定和文檔比技術本身更重要
 - 關注社區動態，技術方案需要持續迭代
 - 不要為了用新技術而用新技術

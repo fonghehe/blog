@@ -8,7 +8,7 @@ description: "前端工程師不懂 Nginx 設定，很多部署問題沒法自�
 wordCount: 173
 ---
 
-前端工程師不懂 Nginx 配置，很多部署問題沒法自己解決。整理一份常用配置手冊。
+前端工程師不懂 Nginx 設定，很多部署問題沒法自己解決。整理一份常用設定手冊。
 
 ## 基礎：SPA 路由支援
 
@@ -45,7 +45,7 @@ server {
   ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256;
   ssl_prefer_server_ciphers off;
 
-  # HSTS（讓瀏覽器記住隻用 HTTPS）
+  # HSTS（讓瀏覽器記住只用 HTTPS）
   add_header Strict-Transport-Security "max-age=63072000" always;
 }
 
@@ -149,7 +149,7 @@ upstream backend {
   least_conn;  # 最少連線數演算法
   server backend1:3000 weight=3;
   server backend2:3000 weight=1;
-  server backend3:3000 backup;  # 備用，隻有前兩個都掛了才用
+  server backend3:3000 backup;  # 備用，只有前兩個都掛了才用
 
   keepalive 32;  # 長連線池
 }
@@ -164,7 +164,7 @@ server {
 ## 小結
 
 - `try_files $uri $uri/ /index.html` 是 SPA 路由的關鍵
-- HTTPS 配置加上 HSTS，防止中間人攻擊
+- HTTPS 設定加上 HSTS，防止中間人攻擊
 - 帶 hash 的靜態檔案長期快取，HTML 不快取
 - Gzip 壓縮對 JS/CSS 能減少 60-70% 體積
 - 反向代理解決前後端跨域，同時隱藏後端地址

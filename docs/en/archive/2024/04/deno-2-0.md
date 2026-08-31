@@ -4,8 +4,8 @@ date: 2024-04-23 17:22:53
 tags:
   - Deno
 readingTime: 1
-description: "关于Deno 2.0 Node 兼容与 npm，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment persp"
-wordCount: 171
+description: "Many developers only know Deno 2.0 Node compatibility and npm support at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 152
 ---
 
 关于Deno 2.0 Node 兼容与 npm，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -128,6 +128,6 @@ Pay attention to edge case handling — this is critical in production environme
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Always verify compatibility thoroughly before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on community trends; technical approaches need continuous iteration

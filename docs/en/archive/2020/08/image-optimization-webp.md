@@ -4,15 +4,15 @@ date: 2020-08-05 11:17:16
 tags:
   - Performance Optimization
 readingTime: 2
-description: "前端图片优化 WebP AVIF这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 293
+description: "A refreshed look at frontend image optimization with WebP and AVIF, updating community conclusions based on the latest format versions and tooling."
+wordCount: 196
 ---
 
-前端图片优化 WebP AVIF这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+The topic of frontend image optimization with WebP and AVIF has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits it based on the latest versions.
 
 ## Getting Started
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -29,11 +29,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to fit the specific scenario; not every case calls for over-optimization.
 
 ## Source Code Analysis
 
-我们可以通过以下方式来改进：
+We can improve things in the following ways:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -50,11 +50,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Real-World Applications
 
-先来看基本的实现方式：
+Let's first look at the basic implementation:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -71,11 +71,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you also need to consider error handling and edge cases.
 
 ## Optimization Tips
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -92,11 +92,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly reduce maintenance cost.
 
 ## Summary
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- 前端图片优化 WebP AVIF不是银弹，需要根据项目规模和技术栈选择
+- Keep an eye on the community; technical solutions need continuous iteration
+- Don't adopt new technology just for its own sake
+- The code examples are for reference only and should be adapted to your business scenario
+- Frontend image optimization with WebP and AVIF is not a silver bullet; choose based on project scale and tech stack

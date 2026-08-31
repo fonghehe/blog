@@ -5,9 +5,9 @@ tags:
   - Web3
   - TypeScript
   - Ethereum
-readingTime: 11
+readingTime: 10
 description: "コントラクト呼び出しの型定義を手動で保守するのは Web3 フロントエンド開発における一般的な課題です。本記事では TypeChain から viem までの型安全性の進化の道のりを整理し、コンパイル時の ABI 型チェックの実現方法を示します。"
-wordCount: 3000
+wordCount: 1693
 ---
 
 Ethereum DApp 開発において、フロントエンドとスマートコントラクトのインタラクションは ABI（Application Binary Interface）を通じて行われます。ABI はコントラクトの関数シグネチャ、イベント構造、パラメータ型を定義します。しかし、ABI JSON を直接 ethers.js や web3.js で使用する場合、型安全性はほぼゼロです——関数名のスペルミス、パラメータ型の不一致、パラメータ順序のエラーなどは実行時にしか発見できません。本記事では手動型定義から TypeChain、さらに viem の組み込み型推導まで、完全な進化の道のりを整理します。

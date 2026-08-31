@@ -4,11 +4,11 @@ date: 2022-11-01 09:31:25
 tags:
   - Next.js
 readingTime: 2
-description: "Next.js 13 发布，最大变化是 App Router（`/app` 目录），和 Pages Router 思路完全不同。"
-wordCount: 225
+description: "Next.js 13 was released, and the biggest change is the App Router (`/app` directory), which takes a completely different approach from Pages Router."
+wordCount: 172
 ---
 
-Next.js 13 发布，最大变化是 App Router（`/app` 目录），和 Pages Router 思路完全不同。
+Next.js 13 was released, and the biggest change is the App Router (`/app` directory), which takes a completely different approach from Pages Router.
 
 ## App Router vs Pages Router
 
@@ -65,7 +65,7 @@ export function UserCard({ user }: { user: User }) {
 }
 ```
 
-**关键原则：Server Component 可以包含 Client Component，但反过来不行。**
+**Key principle: A Server Component can contain a Client Component, but not the other way around.**
 
 ## layout.tsx: Nested Layouts
 
@@ -170,19 +170,19 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 
 ## My Assessment
 
-App Router 是思路层面的革命：Server Components + streaming 让"服务端优先"成为可能。
+App Router is a paradigm-level revolution: Server Components + streaming make "server-first" possible.
 
-但 2022 年 11 月刚发布时还不成熟：
+But it wasn't mature when first released in November 2022:
 
-- 文档不完善
-- 很多第三方库不支持 Server Components
-- 调试复杂（server/client 边界不容易理解）
+- Documentation was incomplete
+- Many third-party libraries didn't support Server Components
+- Debugging was complex (the server/client boundary isn't easy to understand)
 
-建议：新项目可以开始用，老项目等 6 个月生态稳定再迁移。
+Recommendation: new projects can start using it; for existing projects, wait 6 months for the ecosystem to stabilize before migrating.
 
 ## Summary
 
-- App Router 默认 Server Components：直接 async/await，不打包到客户端
-- `'use client'` 声明需要交互和 hooks 的组件
-- `layout.tsx` 嵌套布局，比 `_app.js` 更灵活
-- fetch 扩展了缓存控制，三种策略（静态/动态/增量再生成）
+- App Router defaults to Server Components: use async/await directly, not bundled to the client
+- `'use client'` declares components that need interactivity and hooks
+- `layout.tsx` nested layouts are more flexible than `_app.js`
+- fetch extends caching control with three strategies (static / dynamic / incremental regeneration)

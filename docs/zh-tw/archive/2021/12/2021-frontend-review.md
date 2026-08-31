@@ -65,7 +65,7 @@ Webpack 5 在今年也做了不少最佳化（持久快取、Module Federation�
 
 ## TypeScript
 
-- **TypeScript 4.4**：控製流分析改進、`exactOptionalPropertyTypes`
+- **TypeScript 4.4**：控制流分析改進、`exactOptionalPropertyTypes`
 - **TypeScript 4.5**：`Awaited` 型別、`type` 修飾符匯入
 - 型別體操社群活躍：`type-fest`、`ts-toolbelt`
 
@@ -78,7 +78,7 @@ Webpack 5 在今年也做了不少最佳化（持久快取、Module Federation�
 
 ### Monorepo
 
-- **Turborepo**：12 月開源，Vercel 收購併開源，Go 寫的高效能構建編排
+- **Turborepo**：12 月開源，Vercel 收購並開源，Go 寫的高效能構建編排
 - **Nx**：持續迭代，12.9 版本支援 Vite executor
 - **pnpm workspace**：成為最輕量的 Monorepo 方案
 
@@ -128,7 +128,7 @@ Monorepo：pnpm workspace + Turborepo
 ## 小結
 
 - 2021 是 Vite 之年，構建工具格局被徹底改變
-- React 18 的併發特性是框架層面最重要的變化
+- React 18 的並發特性是框架層面最重要的變化
 - Rust 重寫工具鏈是趨勢，效能差距讓 JavaScript 工具相形見絀
 - Monorepo 工具鏈成熟：pnpm + Turborepo 是最優組合
 - 2022 年看好：Vitest 正式釋出、React 18 正式版、RSC（React Server Components）落地

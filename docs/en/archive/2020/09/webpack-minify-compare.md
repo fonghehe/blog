@@ -5,15 +5,15 @@ tags:
   - Webpack
   - Engineering
 readingTime: 1
-description: "Webpack 代码压缩对比是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。"
-wordCount: 219
+description: "A practical comparison of code minification options for Webpack, exploring core concepts and best practices drawn from real project experience."
+wordCount: 132
 ---
 
-Webpack 代码压缩对比是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。
+Comparing code minifiers for Webpack is a topic worth paying attention to in frontend development. Drawing on real project experience, this article explores its core concepts and best practices.
 
 ## Basic Concepts
 
-核心代码如下：
+The core code looks like this:
 
 ```javascript
 // 核心实现
@@ -30,11 +30,11 @@ const processData = (input) => {
 
 ```
 
-注意处理好边界条件和异常情况。
+Be sure to handle edge cases and exceptions properly.
 
 ## Core Implementation
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 使用示例
@@ -51,11 +51,11 @@ app.mount('#root')
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+This pattern improves the code's maintainability.
 
 ## Practical Application
 
-具体用法参考以下代码：
+See the code below for the concrete usage:
 
 ```javascript
 // 工具函数封装
@@ -83,11 +83,11 @@ function createHandler(options = {}) {
 
 ```
 
-建议在团队中统一规范，减少不一致的问题。
+It's best to standardize conventions across the team to reduce inconsistencies.
 
 ## Best Practices
 
-来看具体的实现方式：
+Here is the specific implementation:
 
 ```javascript
 // 核心实现
@@ -104,10 +104,10 @@ const processData = (input) => {
 
 ```
 
-这种实现方式简洁高效，适合大多数场景。
+This approach is concise and efficient, and fits most scenarios.
 
 ## Summary
 
-- 团队协作中保持代码风格一致，降低维护成本
-- 持续关注社区动态，及时更新技术方案
-- 性能优化需要基于实际数据，避免过度优化
+- Keep a consistent code style across the team to lower maintenance costs.
+- Keep up with community developments and update your technical approach in time.
+- Base performance optimization on real data — avoid over-optimizing.

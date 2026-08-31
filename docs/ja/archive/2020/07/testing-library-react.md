@@ -3,16 +3,16 @@ title: "React Testing Library ベストプラクティス"
 date: 2020-07-03 17:18:36
 tags:
   - React
-readingTime: 2
-description: "关于React Testing Library 最佳实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 332
+readingTime: 3
+description: "React Testing Library のベストプラクティスについて、多くの開発者は API 呼び出しのレイヤーにとどまっている。本記事では本番環境の視点から、実際に直面する問題とその解決策を議論する。"
+wordCount: 498
 ---
 
-关于React Testing Library 最佳实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+React Testing Library のベストプラクティスについて、多くの開発者は API 呼び出しのレイヤーにとどまっている。本記事では本番環境の視点から、実際に直面する問題とその解決策を議論する。
 
 ## 基本原理
 
-以下是一个完整的示例：
+以下に完全なサンプルを示す：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -31,11 +31,11 @@ function reducer(state, action) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理に注意すること。これは本番環境では極めて重要だ。
 
 ## 高度な機能
 
-关键在于理解核心逻辑：
+重要なのはコアとなるロジックを理解することだ：
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -53,11 +53,11 @@ test.describe('用户登录流程', () => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+パフォーマンス最適化は具体的なシナリオに応じて行う必要があり、すべてのケースで過度な最適化が必要なわけではない。
 
 ## プロジェクト実践
 
-我们可以通过以下方式来改进：
+以下のアプローチで改善できる：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -80,11 +80,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番環境で半年以上安定稼働しており、実際に検証済みだ。
 
 ## ベストプラクティス
 
-先来看基本的实现方式：
+まず基本的な実装方法を見てみよう：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -109,11 +109,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理や境界条件も考慮する必要がある。
 
 ## ハマりやすい注意点
 
-在这个基础上，我们可以进一步优化：
+これをベースにさらに最適化できる：
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -137,10 +137,10 @@ describe('LoginForm', () => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模なプロジェクトで非常に実用的で、保守コストを大きく下げられる。
 
 ## まとめ
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- チームでの合意とドキュメントは、技術そのものよりも重要だ
+- コミュニティの動向を注視し、技術案は継続的に改善していく必要がある
+- 新しい技術のために新しい技術を使うのは避けるべきだ

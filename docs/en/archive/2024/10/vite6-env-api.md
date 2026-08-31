@@ -1,12 +1,12 @@
 ---
-title: "Vite 6 Environment API: 统一Development & BuildEnvironment新范式"
+title: "Vite 6 Environment API: A New Paradigm Unifying Development and Build Environments"
 date: 2024-10-03 15:17:54
 tags:
   - JavaScript
   - Engineering
 readingTime: 2
 description: "Vite 6 Environment API 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
-wordCount: 238
+wordCount: 214
 ---
 
 Vite 6 Environment API 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -63,7 +63,7 @@ Let's start with the basic implementation:
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Practical Cases
 
@@ -96,7 +96,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Optimization
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -151,7 +151,7 @@ Pay attention to boundary condition handling, which is critical in production.
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vite 6 Environment API 实战不是银弹，需要根据项目规模和技术栈选择
+- Vite 6 Environment API 实战 is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

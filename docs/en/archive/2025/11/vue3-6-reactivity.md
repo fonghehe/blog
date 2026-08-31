@@ -1,5 +1,5 @@
 ---
-title: "Vue 3.6 Reactivity Practice: Upgrade后ComponentPerformance量化改善"
+title: "Vue 3.6 Reactivity in Practice: Quantified Component Performance Gains After the Upgrade"
 date: 2025-11-11 10:45:22
 tags:
   - Vue

@@ -5,9 +5,9 @@ tags:
   - Web3
   - Blockchain
   - DApp
-readingTime: 15
+readingTime: 9
 description: "Arbitrum One 與 Optimism 的前端適配差異、跨鏈交互與多 L2 網絡管理實踐"
-wordCount: 4300
+wordCount: 800
 ---
 
 ## Layer2 生態格局
@@ -37,7 +37,7 @@ Optimistic Rollup 的交易確認模式與 L1 不同：
 1. **軟確認**：交易在 L2 上快速確認（幾秒內），前端可以顯示"已確認"狀態
 2. **最終確認**：交易在 L1 上被包含並過了挑戰期（7 天）後才最終確認
 
-對於前端 UX，軟確認足以讓用户認為交易已完成。但提款到 L1 必須等待挑戰期，這是前端需要明確告知用户的：
+對於前端 UX，軟確認足以讓用戶認為交易已完成。但提款到 L1 必須等待挑戰期，這是前端需要明確告知用戶的：
 
 ```javascript
 const L2_CONFIRMATION_STATUS = {
@@ -692,4 +692,4 @@ async function compareGasAcrossNetworks() {
 
 Arbitrum 和 Optimism 的前端適配核心在於網絡切換、地址映射和橋接交互。兩者的 EVM 兼容性使得合約代碼幾乎無需修改，但 Optimistic Rollup 的 7 天挑戰期給提款流程帶來了獨特的 UX 挑戰——前端需要清晰地傳達"快速存款、延遲提款"的不對稱體驗。
 
-多 L2 網絡管理是 DApp 前端的重要課題。用户可能在 Ethereum、Arbitrum、Optimism 之間頻繁切換，前端需要優雅地處理網絡檢測、自動切換和資產映射。一個良好的實踐是維護一個統一的網絡配置中心，將鏈 ID、RPC、合約地址、橋接邏輯集中管理，避免分散在各處的硬編碼。
+多 L2 網絡管理是 DApp 前端的重要課題。用戶可能在 Ethereum、Arbitrum、Optimism 之間頻繁切換，前端需要優雅地處理網絡檢測、自動切換和資產映射。一個良好的實踐是維護一個統一的網絡配置中心，將鏈 ID、RPC、合約地址、橋接邏輯集中管理，避免分散在各處的硬編碼。

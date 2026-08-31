@@ -3,9 +3,9 @@ title: "Promise チェーンとエラー処理の正しいやり方"
 date: 2018-02-24 10:00:11
 tags:
   - JavaScript
-readingTime: 2
+readingTime: 3
 description: "Promise は誰もが使っていますが、エラー処理は頻繁に間違えます。よくある落とし穴と正しいパターンをまとめます。"
-wordCount: 409
+wordCount: 419
 ---
 
 Promise は誰もが使っていますが、エラー処理は頻繁に間違えます。よくある落とし穴と正しいパターンをまとめます。
@@ -124,7 +124,7 @@ results.forEach((result) => {
 
 ## async/await のエラー処理
 
-async/await は Promise の糖衣構文で、エラー処理には try/catch を使います：
+async/await は Promise の糖衣構文で、エラー処理には try/catch を使います。
 
 ```javascript
 async function loadUserPage(userId) {
@@ -141,7 +141,7 @@ async function loadUserPage(userId) {
 
 ### より細粒度のエラー処理
 
-異なるステップのエラーを個別に処理する必要がある場合：
+異なるステップのエラーを個別に処理する必要がある場合は、次のようになります。
 
 ```javascript
 async function loadUserPage(userId) {
@@ -190,7 +190,7 @@ async function loadData() {
 
 ## 未処理の Promise エラー
 
-Node.js とブラウザは未処理の Promise rejection について警告を出します：
+Node.js とブラウザは未処理の Promise rejection について警告を出します。
 
 ```javascript
 // ブラウザ

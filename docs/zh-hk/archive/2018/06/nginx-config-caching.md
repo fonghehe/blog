@@ -108,7 +108,7 @@ server {
   ssl_prefer_server_ciphers on;
   ssl_session_cache shared:SSL:10m;
 
-  # HSTS：強製瀏覽器用 HTTPS
+  # HSTS：強制瀏覽器用 HTTPS
   add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 
   root /var/www/myapp/dist;

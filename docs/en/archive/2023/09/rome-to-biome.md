@@ -4,7 +4,7 @@ date: 2023-09-12 10:39:43
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，Rome 到 Biome 工具链演变 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+description: "The toolchain evolution from Rome to Biome matters more and more in everyday development. This article systematically covers what changed, why, and how to adapt."
 wordCount: 201
 ---
 

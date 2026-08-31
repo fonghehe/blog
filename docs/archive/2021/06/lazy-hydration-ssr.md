@@ -6,10 +6,10 @@ tags:
   - 性能优化
 readingTime: 2
 description: "SSR 懒水合 Lazy Hydration 策略在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 267
+wordCount: 250
 ---
 
-SSR 懒水合 Lazy Hydration 策略在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+SSR 懒水合（Lazy Hydration）策略在前端用得越来越普遍。本文从实际项目出发，拆解它的核心原理和落地实践。
 
 ## 基础用法
 
@@ -38,7 +38,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+这段代码演示了基本用法，实际项目里还得补上错误处理和边界情况。
 
 ## 进阶用法
 
@@ -93,7 +93,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样既提升了可测试性，也方便后续扩展。
 
 ## 性能优化
 

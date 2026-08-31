@@ -4,15 +4,15 @@ date: 2019-12-05 10:47:52
 tags:
   - CSS
 readingTime: 3
-description: "CSS Grid 布局规范已经出来几年了，浏览器支持也相当完善（IE11 部分支持带前缀）。但实际项目中，很多同学还是习惯用 Flexbox 解决所有布局问题。最近在重构后台管理系统的页面布局时，我全面采用了 Grid 的 `template-areas` 方案，效果出乎意料的好。这篇文章分享一些实战经验。"
-wordCount: 511
+description: "The CSS Grid spec has been around for a few years, and browser support is now quite solid (IE11 supports it partially, with a prefix). Yet in real projects many developers still reach for Flexbox to solve every layout problem. While refactoring the page layout of an admin dashboard recently, I adopted Grid's `template-areas` approach throughout, and the results were unexpectedly good. This post shares some hands-on experience."
+wordCount: 348
 ---
 
-CSS Grid 布局规范已经出来几年了，浏览器支持也相当完善（IE11 部分支持带前缀）。但实际项目中，很多同学还是习惯用 Flexbox 解决所有布局问题。最近在重构后台管理系统的页面布局时，我全面采用了 Grid 的 `template-areas` 方案，效果出乎意料的好。这篇文章分享一些实战经验。
+The CSS Grid spec has been around for a few years, and browser support is now quite solid (IE11 supports it partially, with a prefix). Yet in real projects many developers still reach for Flexbox to solve every layout problem. While refactoring the page layout of an admin dashboard recently, I adopted Grid's `template-areas` approach throughout, and the results were unexpectedly good. This post shares some hands-on experience.
 
 ## Basic Concepts: grid-template-areas
 
-`grid-template-areas` 允许你用"画"的方式定义布局，每个区域有一个名字，直观且易维护：
+`grid-template-areas` lets you define a layout by "drawing" it—each region gets a name, which is intuitive and easy to maintain:
 
 ```css
 /* 最经典的后台管理布局 */
@@ -52,7 +52,7 @@ CSS Grid 布局规范已经出来几年了，浏览器支持也相当完善（IE
 }
 ```
 
-对应的 HTML 结构非常简洁：
+The corresponding HTML structure is very clean:
 
 ```html
 <div class="app-layout">
@@ -64,7 +64,7 @@ CSS Grid 布局规范已经出来几年了，浏览器支持也相当完善（IE
 
 ## Classic Page Layout Cases
 
-后台管理系统中最常见的 Dashboard 页面，通常有顶部统计卡片、左侧图表、右侧列表。用 `template-areas` 可以非常直观地表达：
+The most common dashboard layout in an admin system has stat cards up top, charts on the left, and a list on the right. `template-areas` expresses this very intuitively:
 
 ```css
 .dashboard {
@@ -134,7 +134,7 @@ CSS Grid 布局规范已经出来几年了，浏览器支持也相当完善（IE
 
 ## Responsive Reflow
 
-`template-areas` 最大的优势之一是响应式布局极其直观——只需要重新"画"区域图即可，不需要改 HTML 结构：
+One of `template-areas`' biggest strengths is how intuitive responsive layouts become—you simply redraw the region map, with no need to touch the HTML structure:
 
 ```css
 /* 桌面端：三列布局 */
@@ -178,11 +178,11 @@ CSS Grid 布局规范已经出来几年了，浏览器支持也相当完善（IE
 }
 ```
 
-相比 Flexbox 的响应式方案，Grid 的 `template-areas` 在断点切换时完全不需要调整 HTML 顺序或使用 `order` 属性，视觉语义一目了然。
+Compared with Flexbox's responsive approach, Grid's `template-areas` needs no HTML reordering or use of the `order` property at breakpoints, and the visual structure is clear at a glance.
 
 ## Handling Empty Areas with Empty Cells
 
-有时候布局中某些区域需要留空，用 `.` 表示即可：
+Sometimes you need to leave certain regions empty; just use `.` to represent them:
 
 ```css
 /* 侧边栏只占部分高度的布局 */
@@ -212,7 +212,7 @@ CSS Grid 布局规范已经出来几年了，浏览器支持也相当完善（IE
 
 ## Using Grid and Flexbox Together
 
-Grid 负责宏观页面布局，Flexbox 负责组件内部排列，两者配合是最佳实践：
+Grid handles the macro page layout while Flexbox handles arrangement inside components—using them together is the best practice:
 
 ```css
 /* Grid 负责整体布局 */
@@ -254,7 +254,7 @@ Grid 负责宏观页面布局，Flexbox 负责组件内部排列，两者配合�
 
 ## Notes for Real Projects
 
-在实际项目中使用 `template-areas` 有几个要点：
+There are a few key points to keep in mind when using `template-areas` in real projects:
 
 ```css
 /* 1. 区域名称必须形成矩形，不能有 L 形或 T 形 */
@@ -290,9 +290,9 @@ Grid 负责宏观页面布局，Flexbox 负责组件内部排列，两者配合�
 
 ## Summary
 
-- `grid-template-areas` 用命名区域定义布局，直观且易于维护，像画图一样组织页面结构
-- 响应式布局只需在断点处重新定义 `template-areas`，无需改动 HTML 结构
-- Grid 负责宏观布局，Flexbox 负责组件内部排列，两者配合是最佳实践
-- 区域名称必须形成矩形，用 `.` 表示空白区域
-- 配合 `minmax`、`auto-fit` 和 CSS 变量，可以构建灵活且可维护的布局系统
-- 浏览器兼容性已经非常好，IE11 带 `-ms-` 前缀部分支持，现代浏览器全面支持
+- `grid-template-areas` defines layouts with named regions—intuitive, easy to maintain, and you organize the page structure as if you were drawing it
+- Responsive layouts only need `template-areas` redefined at each breakpoint, with no changes to the HTML structure
+- Grid owns the macro layout and Flexbox owns intra-component arrangement; combining them is the best practice
+- Region names must form a rectangle; use `.` to denote empty regions
+- Paired with `minmax`, `auto-fit`, and CSS variables, you can build a flexible, maintainable layout system
+- Browser support is already excellent: IE11 supports it partially with the `-ms-` prefix, and modern browsers support it fully

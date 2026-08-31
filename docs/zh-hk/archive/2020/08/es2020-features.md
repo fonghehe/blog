@@ -229,7 +229,7 @@ async function loadChart(type) {
 ## 小結
 
 - 可選鏈和空值合併是最實用的特性，日常代碼每天都會用到
-- BigInt 處理大整數，適合數據庫 ID、金融計算等場景
+- BigInt 處理大整數，適合資料庫 ID、金融計算等場景
 - Promise.allSettled 解決批量請求中部分失敗的需求
 - globalThis 統一了全局對象的訪問方式
 - 這些特性在現代瀏覽器中都已支持，老項目可用 Babel 降級

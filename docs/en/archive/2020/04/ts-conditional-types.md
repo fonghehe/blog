@@ -4,15 +4,15 @@ date: 2020-04-08 09:30:34
 tags:
   - TypeScript
 readingTime: 2
-description: "关于TypeScript 条件类型深度解析，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 290
+description: "When it comes to TypeScript conditional types, many developers only scratch the surface at the API level. This article examines the practical problems you'll hit in production and how to solve them."
+wordCount: 181
 ---
 
-关于TypeScript 条件类型深度解析，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to TypeScript conditional types, many developers only scratch the surface at the API-call level. This article looks at the practical problems you'll hit in production and how to solve them.
 
 ## Basic Principles
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tied to the specific scenario; not every case needs over-optimization.
 
 ## Advanced Features
 
-我们可以通过以下方式来改进：
+Here are some ways we can improve on this:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -71,11 +71,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Project Practice
 
-先来看基本的实现方式：
+Let's start with a basic implementation:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -99,11 +99,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll also need to account for error handling and edge cases.
 
 ## Best Practices
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -134,11 +134,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly lower maintenance cost.
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Understanding the underlying principles matters more than memorizing APIs.
+- Before using it in production, make sure to verify compatibility.
+- In team collaboration, conventions and documentation matter more than the technology itself.
+- Keep an eye on the community; technical solutions need continuous iteration.

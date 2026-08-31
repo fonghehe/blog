@@ -51,7 +51,7 @@ module.exports = {
 
 ## 複用 Vite 的思路
 
-核心想法很直接：讓測試也走 Vite 的模組處理管道。Vite 內部已經有一個 transform pipeline，處理 TypeScript、Vue SFC、CSS Modules、靜態資源等，測試隻需要複用它。
+核心想法很直接：讓測試也走 Vite 的模組處理管道。Vite 內部已經有一個 transform pipeline，處理 TypeScript、Vue SFC、CSS Modules、靜態資源等，測試只需要複用它。
 
 ```
 現有的工具鏈：
@@ -104,7 +104,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   test: {
-    globals: true,          // 全域性 API（describe/it/expect）
+    globals: true,          // 全域 API（describe/it/expect）
     environment: 'jsdom',   // 或 'happy-dom'
     include: ['src/**/*.test.ts'],
     exclude: ['node_modules'],

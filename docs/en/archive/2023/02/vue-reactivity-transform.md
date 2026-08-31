@@ -5,11 +5,11 @@ tags:
   - Vue
   - React
 readingTime: 2
-description: "关于Vue 响应性语法糖 $ref，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 201
+description: "Many developers only know Vue reactivity syntax sugar $ref at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 198
 ---
 
-关于Vue 响应性语法糖 $ref，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Many developers only know Vue reactivity syntax sugar $ref at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -135,5 +135,5 @@ This pattern is very practical in large projects and can significantly reduce ma
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vue 响应性语法糖 $ref不是银弹，需要根据项目规模和技术栈选择
+- Vue reactivity syntax sugar $ref is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

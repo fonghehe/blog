@@ -5,14 +5,14 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Proxy は ES2015 で追加されましたが、あまり使われていませんでした。Vue 3 のリアクティブシステムが Proxy に基づいているため、しっかり理解する時が来ました。"
-wordCount: 391
+wordCount: 382
 ---
 
-Proxy は ES2015 で追加されましたが、あまり使われていませんでした。Vue 3 のリアクティブシステムが Proxy に基づいているため、しっかり理解する時が来ました。
+Proxy は ES2015 で追加されたが、あまり使われていなかった。Vue 3 のリアクティブシステムが Proxy に基づいているため、しっかり理解する時が来た。
 
 ## Proxy の基礎
 
-Proxy はオブジェクトへの様々な操作をインターセプトできます：
+Proxy はオブジェクトへの様々な操作をインターセプトできる：
 
 ```javascript
 const handler = {
@@ -87,11 +87,11 @@ Vue 2 は `Object.defineProperty` を使っているため：
 - 新しいプロパティの追加を検知できない（`Vue.set` が必要）
 - 配列のインデックスへの代入を検知できない
 
-Vue 3 は Proxy でこれらの問題を解決しています。
+Vue 3 は Proxy でこれらの問題を解決している。
 
 ## Reflect：オブジェクト操作の標準化
 
-`Reflect` は Proxy のハンドラーメソッドに対応する静的メソッドを提供します：
+`Reflect` は Proxy のハンドラーメソッドに対応する静的メソッドを提供する：
 
 ```javascript
 // 以前の書き方

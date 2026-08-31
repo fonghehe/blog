@@ -4,15 +4,15 @@ date: 2022-10-04 14:50:37
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 4.9 satisfies 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from rea"
-wordCount: 188
+description: "TypeScript 4.9 satisfies in practice is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from rea"
+wordCount: 178
 ---
 
-TypeScript 4.9 satisfies 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+TypeScript 4.9 satisfies in practice is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Getting Started
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage is a bit more complex:
 
 ```javascript
 const fs = require('fs')
@@ -124,7 +124,7 @@ This approach has been running stably in production for over six months and has 
 
 ## Summary
 
-- TypeScript 4.9 satisfies 实战不是银弹，需要根据项目规模和技术栈选择
+- TypeScript 4.9 satisfies in practice is not a silver bullet; choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

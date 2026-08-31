@@ -5,15 +5,15 @@ tags:
   - React
   - パフォーマンス最適化
 readingTime: 3
-description: "关于React 性能分析 Profiler 实战，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 499
+description: "多くの開発者はReact Profiler パフォーマンス分析実践について、API を呼ぶレベルでしか理解していない。本記事では本番環境の視点から、実際に直面する問題とその解決策を議論する。"
+wordCount: 524
 ---
 
-关于React 性能分析 Profiler 实战，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+React のパフォーマンス Profiler について、API の呼び出し方だけを理解している開発者は多いです。本記事では、本番環境の視点から、実際に起こり得る問題とその解決策について考えてみます。
 
 ## 基本原理
 
-以下は完全な例です：
+以下は全体のサンプルです：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -57,7 +57,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-パフォーマンス最適化は具体的なシナリオに合わせて行う必要があります。すべての場合に過剰な最適化が必要なわけではありません。
+パフォーマンス最適化は具体的なケースに合わせて行う必要があります。すべての場合に過剰な最適化が必要なわけではありません。
 
 ## プロジェクト実践
 
@@ -84,7 +84,7 @@ function reducer(state, action) {
 
 ## ベストプラクティス
 
-まず基本的な実装方法から見てみましょう：
+基本的な実装方法から見てみましょう：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'

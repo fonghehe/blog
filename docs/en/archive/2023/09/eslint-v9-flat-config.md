@@ -4,7 +4,7 @@ date: 2023-09-08 15:28:03
 tags:
   - ESLint
 readingTime: 2
-description: "关于ESLint v9 Flat Config 默认，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspec"
+description: "Many developers only know ESLint v9's flat config default at the surface level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 199
 ---
 

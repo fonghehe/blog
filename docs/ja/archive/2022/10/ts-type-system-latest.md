@@ -5,14 +5,14 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.9 satisfies 实战のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 480
+wordCount: 508
 ---
 
 TypeScript 4.9 satisfies 实战のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
 
 ## 入門ガイド
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 const fs = require('fs')
@@ -124,7 +124,7 @@ const csvToJson = new Transform({
 
 ## まとめ
 
-- TypeScript 4.9 satisfies 实战不是银弹，需要根据项目规模和技术栈选择
+- TypeScript 4.9 satisfies 实战 は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある
 - 基礎的な原理を理解することは、APIを暗記することより重要です
 - 本番環境で使用する前に必ず互換性を確認してください
 - チームコラボレーションでは、規約とドキュメントが技術そのものより重要です

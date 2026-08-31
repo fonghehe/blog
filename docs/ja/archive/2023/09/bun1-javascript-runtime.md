@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Bun 1.0 が正式リリースされました！Zig で書かれた JavaScript ランタイムで、Node.js より大幅に速いと主張しています。切り替える価値があるか見てみましょう。"
-wordCount: 341
+wordCount: 344
 ---
 
 Bun 1.0 が正式リリースされました！Zig で書かれた JavaScript ランタイムで、Node.js より大幅に速いと主張しています。切り替える価値があるか見てみましょう。
@@ -106,7 +106,7 @@ app.listen(3000);
 
 ## 切り替えるべきか？（2023年9月の判断）
 
-**可以用 Bun 的场景：**
+**Bun が向いているシーン：**
 
 - 个人项目、脚本、工具
 - 用 `bun install` 替代 npm（向下兼容，风险低）

@@ -196,5 +196,5 @@ qiankun 預設不支援 keep-alive，每次切換都會銷燬重建。我們通�
 - qiankun 接入的核心是子應用暴露三個生命週期鉤子
 - CSS 隔離推薦 `experimentalStyleIsolation`
 - publicPath 動態設定和跨域配置是最常見的接入問題
-- 子應用間通訊要剋製，優先用主應用中轉
+- 子應用間通訊要克制，優先用主應用中轉
 - keep-alive 支援是 qiankun 的短板，需要額外處理

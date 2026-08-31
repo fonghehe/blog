@@ -4,11 +4,11 @@ date: 2023-02-20 17:22:28
 tags:
   - Vite
 readingTime: 2
-description: "最近在团队中落地Vite 5.0 发布 Rollup 4 构建， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 194
+description: "I recently applied Vite 5.0 with Rollup 4 with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 177
 ---
 
-最近在团队中落地Vite 5.0 发布 Rollup 4 构建， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+I recently applied Vite 5.0 with Rollup 4 with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
 
 ## Core Concepts
 
@@ -132,7 +132,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- Vite 5.0 发布 Rollup 4 构建不是银弹，需要根据项目规模和技术栈选择
+- Vite 5.0 with Rollup 4 is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

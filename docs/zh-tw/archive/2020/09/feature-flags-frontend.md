@@ -5,10 +5,10 @@ tags:
   - 前端
 readingTime: 2
 description: "前端特性開關 Feature Flags這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 325
+wordCount: 327
 ---
 
-前端特性開關 Feature Flags這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
+前端特性開關 Feature Flags 這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
 
 ## 入門指南
 
@@ -151,6 +151,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## 小結
 
-- 前端特性開關 Feature Flags不是銀彈，需要根據專案規模和技術棧選擇
+- 前端特性開關 Feature Flags 不是銀彈，需要根據專案規模和技術棧選擇
 - 理解底層原理比記住 API 更重要
 - 生產環境使用前務必做好相容性驗證

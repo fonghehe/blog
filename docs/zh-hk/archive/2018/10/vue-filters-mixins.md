@@ -60,7 +60,7 @@ Vue.filter("status", (value) => STATUS_MAP[value] || "未知");
 ```javascript
 export default {
   filters: {
-    // 隻在這個組件裏用
+    // 只在這個組件裏用
     truncate(value, length = 20) {
       if (!value) return "";
       return value.length > length ? value.slice(0, length) + "..." : value;

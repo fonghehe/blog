@@ -28,12 +28,12 @@ export class UserService {
 ## 注入層級
 
 ```typescript
-// 模組級別 - 共享例項
+// 模組級別 - 共享實例
 @NgModule({
   providers: [UserService]
 })
 
-// 元件級別 - 每個元件獨立例項
+// 元件級別 - 每個元件獨立實例
 @Component({
   providers: [UserService]
 })

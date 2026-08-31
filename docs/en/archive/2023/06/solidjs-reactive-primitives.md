@@ -3,12 +3,12 @@ title: "Solid.js: Another Answer to Fine-Grained Reactivity"
 date: 2023-06-22 09:48:23
 tags:
   - React
-readingTime: 3
-description: "React 有虚拟 DOM diff，Vue 有 Proxy 响应式，Solid 选择了第三条路：编译时 + 细粒度信号。这个框架值得前端架构师了解。"
-wordCount: 478
+readingTime: 2
+description: "React has virtual DOM diffing, Vue has Proxy reactivity, and Solid chose a third path: compile-time plus fine-grained signals. This framework is worth every frontend architect's attention."
+wordCount: 458
 ---
 
-React 有虚拟 DOM diff，Vue 有 Proxy 响应式，Solid 选择了第三条路：编译时 + 细粒度信号。这个框架值得前端架构师了解。
+React has virtual DOM diffing, Vue has Proxy reactivity, and Solid chose a third path: compile-time plus fine-grained signals. This framework is worth every frontend architect's attention.
 
 ## Core Philosophy
 
@@ -164,7 +164,7 @@ function UserList({ users, filter }) {
 - 团队愿意学习新范式
 
 **不适合：**
-- 需要丰富的第三方组件库
+- A rich third-party component library is required
 - 大型团队协作（生态和工具链还在成长）
 - 依赖大量 React 生态的项目
 

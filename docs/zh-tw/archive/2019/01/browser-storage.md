@@ -17,7 +17,7 @@ wordCount: 223
 ----------- | ---------------- | -------------- | ------------ | --------- |
 | 容量        | 4KB              | 5-10MB         | 5-10MB       | >250MB    |
 | 生命週期    | 設定過期時間     | 標籤頁關閉     | 永久         | 永久      |
-| 服務端訪問  | ✅（隨請求傳送） | ❌             | ❌           | ❌        |
+| 伺服端存取  | ✅（隨請求傳送） | ❌             | ❌           | ❌        |
 | API         | 字串操作       | 同步           | 同步         | 非同步      |
 | 跨 Tab 共享 | ✅               | ❌             | ✅           | ✅        |
 
@@ -37,8 +37,8 @@ Cookies.remove("token");
 
 安全屬性：
 
-- `HttpOnly`：JS 無法讀取（隻能後端設定），防 XSS 偷 token
-- `Secure`：隻在 HTTPS 傳輸
+- `HttpOnly`：JS 無法讀取（只能後端設定），防 XSS 偷 token
+- `Secure`：只在 HTTPS 傳輸
 - `SameSite=Strict/Lax`：防 CSRF
 
 ## localStorage

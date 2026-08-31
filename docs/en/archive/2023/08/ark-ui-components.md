@@ -4,7 +4,7 @@ date: 2023-08-14 11:13:14
 tags:
   - Frontend
 readingTime: 2
-description: "Ark UI headless 组件库This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh"
+description: "Ark UI, the headless component library, has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
 wordCount: 204
 ---
 

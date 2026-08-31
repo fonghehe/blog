@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常开发中，Mapbox GL JS 前端地图开发的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 316
+wordCount: 301
 ---
 
-在日常开发中，Mapbox GL JS 前端地图开发的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+Mapbox GL JS 用于前端地图开发，在日常里用得越来越普遍。本文系统讲解它的用法、原理和优化策略。
 
 ## 快速上手
 
@@ -36,7 +36,7 @@ wordCount: 316
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界条件一定要处理到位，生产环境里这是关键。
 
 ## 内部原理
 
@@ -65,7 +65,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要因地制宜，别为了优化而优化。
 
 ## 业务实战
 
@@ -93,7 +93,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已在线上稳定运行半年多，经受过真实流量的检验。
 
 ## 性能对比
 
@@ -120,7 +120,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+上面只是最基本的用法，实际项目里错误处理和边界条件都得补上。
 
 ## 问题排查
 
@@ -149,7 +149,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种模式在大型项目里很实用，能明显压低维护成本。
 
 ## 小结
 

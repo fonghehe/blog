@@ -4,7 +4,7 @@ date: 2022-06-27 10:22:18
 tags:
   - Frontend
 readingTime: 1
-description: "We recently implemented WebAuthn Passkeys 无密码认证， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar "
+description: "I recently rolled out WebAuthn passkeys for passwordless authentication with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 189
 ---
 

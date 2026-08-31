@@ -5,10 +5,10 @@ tags:
   - テスト
 readingTime: 2
 description: "Playwright 2.0 はすべての主要ブラウザをサポートし、強力な自動化テスト能力を提供する。Playwright のアーキテクチャ設計、テスト戦略、CI/CD 統合を議論する。"
-wordCount: 308
+wordCount: 313
 ---
 
-Playwright はフロントエンドエンドツーエンドテストの首选ツールとなった。2026 年の Playwright 2.0 はすべての主要ブラウザをサポートするだけでなく、より良いデバッグ能力と CI/CD 統合も提供する。
+Playwright はフロントエンドのエンドツーエンドテストで最も選ばれるツールとなった。2026 年の Playwright 2.0 はすべての主要ブラウザをサポートするだけでなく、より良いデバッグ能力と CI/CD 統合も提供する。
 
 ## Playwright アーキテクチャ
 

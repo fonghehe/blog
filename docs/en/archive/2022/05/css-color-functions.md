@@ -4,11 +4,11 @@ date: 2022-05-05 10:05:20
 tags:
   - CSS
 readingTime: 2
-description: "CSS 色彩函数对比在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 201
+description: "CSS color functions have evolved rapidly in recent years. This article provides an in-depth analysis of their principles and practical usage."
+wordCount: 168
 ---
 
-CSS 色彩函数对比在近年来发展迅速，本文将深入分析其原理和实践方法。
+CSS color functions have evolved rapidly in recent years. This article provides an in-depth analysis of their principles and practical usage.
 
 ## Basic Concepts
 
@@ -112,7 +112,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Best Practices
 
-我们可以这样实现：
+We can implement it like this:
 
 ```css
 :root {
@@ -144,7 +144,7 @@ Through this pattern, the maintainability of the code is improved.
 
 ## Common Issues
 
-具体用法参考以下代码：
+See the following code for specific usage:
 
 ```css
 .grid {
@@ -178,7 +178,7 @@ It is recommended to unify conventions within the team to reduce inconsistency.
 
 ## Summary
 
-- CSS 色彩函数对比的核心在于理解底层原理，而非仅仅记住 API
+- The key to CSS color functions lies in understanding the underlying principles, not just memorizing APIs
 - In real projects, choosing the right solution is more important than chasing the latest technology
 - Maintaining consistent code style in team collaboration reduces maintenance costs
-- 持续关注社区动态，及时更新技术方案
+- Stay updated with community trends and keep your technical solutions current

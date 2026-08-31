@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript の型システムは非常に強力で、マップ型（Mapped Types）はその中でも最も実用的な機能の一つです。既存の型を基に新しい型を作成し、プロパティの修飾子を一括変更できます。この記事では基礎から実践まで、マップ型を詳しく解説します。"
-wordCount: 405
+wordCount: 422
 ---
 
 TypeScript の型システムは非常に強力で、マップ型（Mapped Types）はその中でも最も実用的な機能の一つです。既存の型を基に新しい型を作成し、プロパティの修飾子を一括変更できます。この記事では基礎から実践まで、マップ型を詳しく解説します。
@@ -20,9 +20,9 @@ type MappedType<T> = {
 };
 ```
 
-- `keyof T`：T の全キーをユニオン型として取得
-- `K in keyof T`：各キーを繰り返す
-- `T[K]`：T の キー K に対応する型を取得（インデックスアクセス型）
+- `keyof T`：T の全キーをユニオン型として取得します
+- `K in keyof T`：各キーを繰り返します
+- `T[K]`：T の キー K に対応する型を取得します（インデックスアクセス型）
 
 シンプルな例：
 
@@ -42,7 +42,7 @@ type StringifyUser = {
 
 ## readonly 修飾子：readonly +/-
 
-`+` は修飾子を追加（デフォルト、省略可能）、`-` は削除します：
+`+` は修飾子を追加します（デフォルトで省略可能）、`-` は削除します：
 
 ```typescript
 // readonly を追加（全プロパティが読み取り専用に）
@@ -123,7 +123,7 @@ type DeepReadonly<T> = {
 
 ## まとめ
 
-- マップ型は既存の型を一括変換し、繰り返しの型宣言を避けられる
-- `+readonly`/`-readonly` と `+?`/`-?` で修飾子を制御できる
-- 条件型と組み合わせると非常に強力になる
-- TypeScript の組み込み `Partial`、`Required`、`Readonly`、`Record`、`Pick`、`Omit` は全てマップ型で実装されている
+- マップ型は既存の型を一括変換し、繰り返しの型宣言を避けられます
+- `+readonly`/`-readonly` と `+?`/`-?` で修飾子を制御できます
+- 条件型と組み合わせると非常に強力になります
+- TypeScript の組み込み `Partial`、`Required`、`Readonly`、`Record`、`Pick`、`Omit` は全てマップ型で実装されています

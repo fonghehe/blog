@@ -42,7 +42,7 @@ export default {
 };
 ```
 
-**緩存的意義：** 如果範本裏多處用到 `fullName`，普通 `methods` 每次渲染都會重新執行，`computed` 隻在依賴變了才重新計算。
+**緩存的意義：** 如果範本裏多處用到 `fullName`，普通 `methods` 每次渲染都會重新執行，`computed` 只在依賴變了才重新計算。
 
 ## watch：響應變化，執行副作用
 

@@ -1,5 +1,5 @@
 ---
-title: "Astro 5 View Transitions: MPA 架构下 SPA 级过渡Experience"
+title: "Astro 5 View Transitions: SPA-Level Transition Experience on an MPA Architecture"
 date: 2025-09-15 10:29:06
 tags:
   - React

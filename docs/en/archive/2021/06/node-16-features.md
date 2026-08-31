@@ -6,15 +6,15 @@ tags:
   - Node.js
 
 readingTime: 2
-description: "在日常开发中，Node.js 16 新特性与变更 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 206
+description: "The new features and changes in Node.js 16 affect everyday development more and more. This article systematically covers what changed, why, and how to adapt."
+wordCount: 198
 ---
 
-在日常开发中，Node.js 16 新特性与变更 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In day-to-day development, Node.js 16's new features and changes are showing up more and more often. This article walks through how to use them, how they work under the hood, and optimization strategies.
 
 ## Quick Start
 
-We can improve it in the following ways:
+Here are a few ways to take this further:
 
 ```javascript
 const fs = require('fs')
@@ -39,7 +39,7 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
+This approach has run stably in production for over six months, so it's proven in practice.
 
 ## Internal Principles
 
@@ -101,7 +101,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Comparison
 
-实际项目中的用法会更复杂一些：
+In real projects, usage gets a bit more involved:
 
 ```javascript
 const express = require('express')
@@ -126,7 +126,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-Through this approach, both the testability and scalability of the code are improved.
+This makes the code both more testable and more scalable.
 
 ## Troubleshooting
 
@@ -155,7 +155,7 @@ const csvToJson = new Transform({
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Handle edge cases carefully — they are critical in production.
 
 ## Summary
 

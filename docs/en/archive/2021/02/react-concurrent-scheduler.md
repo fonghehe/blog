@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "最近在团队中落地React 18 startTransition 使用场景， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 171
+description: "I recently rolled out React 18 startTransition use cases with my team and learned quite a bit along the way. Here's a write-up for anyone doing similar work."
+wordCount: 160
 ---
 
-最近在团队中落地React 18 startTransition 使用场景， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently rolled out React 18 startTransition use cases in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 
@@ -72,7 +72,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Implementation Experience
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is somewhat more complex:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'

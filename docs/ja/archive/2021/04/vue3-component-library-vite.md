@@ -6,12 +6,12 @@ tags:
   - Vite
   - TypeScript
 
-readingTime: 2
+readingTime: 3
 description: "团队计划从 Element UI 迁移到自建 Vue 3 组件库。用 Vite 做构建工具比 Rollup 或 Webpack 更简洁，特别是处理 Vue SFC 时。记录一下搭建过程。"
-wordCount: 213
+wordCount: 342
 ---
 
-团队计划从 Element UI 迁移到自建 Vue 3 组件库。用 Vite 做构建工具比 Rollup 或 Webpack 更简洁，特别是处理 Vue SFC 时。记录一下搭建过程。
+チームでは Element UI から独自の Vue 3 コンポーネントライブラリへ移行する計画だ。ビルドツールに Vite を使うのは Rollup や Webpack よりも簡潔で、特に Vue SFC を扱う際に役立つ。構築手順をここに記録しておく。
 
 ## プロジェクト構成
 
@@ -269,7 +269,7 @@ import 'my-ui/dist/my-ui.css'
 
 ## 開発デバッグ
 
-用 examples 目录做开发时的 playground：
+開発時の playground として examples ディレクトリを使う：
 
 ```typescript
 // examples/main.ts
@@ -294,8 +294,8 @@ pnpm pack --dry-run
 
 ## まとめ
 
-- Vite 的 library mode 适合构建 Vue 3 组件库，配置比 Rollup 简洁
-- 用 `vite-plugin-dts` 自动生成类型声明，按需引入体验更好
-- `exports` 字段配合 `sideEffects` 确保 tree-shaking 生效
-- Vue SFC 的 `<script setup>` 写组件很自然，类型支持也好
-- 建议用 pnpm workspace 管理组件库 + 示例应用 + 文档站的 Monorepo
+- Vite の library mode は Vue 3 コンポーネントライブラリの構築に向いており、設定は Rollup より簡潔だ
+- `vite-plugin-dts` で型宣言を自動生成でき、オンデマンド導入の体験も向上する
+- `exports` フィールドと `sideEffects` を組み合わせることで、tree-shaking が確実に効くようになる
+- Vue SFC の `<script setup>` でコンポーネントを書くのは自然で、型サポートも良好だ
+- コンポーネントライブラリ＋サンプルアプリ＋ドキュメントサイトの Monorepo は、pnpm workspace で管理するのがおすすめだ

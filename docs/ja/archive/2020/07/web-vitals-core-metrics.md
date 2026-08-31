@@ -3,16 +3,16 @@ title: "Web Vitals コアパフォーマンス指標の詳解"
 date: 2020-07-24 10:29:01
 tags:
   - パフォーマンス最適化
-readingTime: 2
-description: "关于Web Vitals 核心性能指标详解，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 358
+readingTime: 3
+description: "多くの開発者はWeb Vitals コアパフォーマンス指標詳解について、API を呼ぶレベルでしか理解していない。本記事では本番環境の視点から、実際に直面する問題とその解決策を議論する。"
+wordCount: 546
 ---
 
-关于Web Vitals 核心性能指标详解，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+Web Vitals の中核となるパフォーマンス指標の詳解について、多くの開発者は API 呼び出しのレイヤーにとどまっている。本記事では本番環境の視点から、実際に直面する問題とその解決策を議論する。
 
 ## 基本原理
 
-在这个基础上，我们可以进一步优化：
+これをベースにさらに最適化できる：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -29,11 +29,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模なプロジェクトで非常に実用的で、保守コストを大幅に下げられる。
 
 ## 高度な機能
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは使い方はもう少し複雑になる：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -50,11 +50,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+この方法により、コードのテスタビリティと拡張性の両方が向上する。
 
 ## プロジェクト実践
 
-以下是一个完整的示例：
+以下に完全なサンプルを示す：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -71,11 +71,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理に注意すること。これは本番環境では極めて重要だ。
 
 ## ベストプラクティス
 
-关键在于理解核心逻辑：
+重要なのはコアとなるロジックを理解することだ：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -92,11 +92,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+パフォーマンス最適化は具体的なシナリオに応じて行う必要があり、すべてのケースで過度な最適化が必要なわけではない。
 
 ## ハマりやすい注意点
 
-我们可以通过以下方式来改进：
+以下のアプローチで改善できる：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -113,11 +113,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番環境で半年以上安定稼働しており、実際に検証済みだ。
 
 ## まとめ
 
-- Web Vitals 核心性能指标详解不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- Web Vitals の中核となるパフォーマンス指標の詳解は銀の弾丸ではなく、プロジェクトの規模と技術スタックに応じて選択する必要がある
+- API を覚えることよりも、背後にある原理を理解することが重要だ
+- 本番環境で使う前には必ず互換性の検証を行うこと
+- チームでの合意とドキュメントは、技術そのものよりも重要だ

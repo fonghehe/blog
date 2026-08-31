@@ -4,15 +4,15 @@ date: 2022-08-03 14:50:26
 tags:
   - Frontend
 readingTime: 2
-description: "Capacitor 4 跨平台更新 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
-wordCount: 201
+description: "The Capacitor 4 cross-platform update is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 192
 ---
 
-Capacitor 4 跨平台更新 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+The Capacitor 4 cross-platform update is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
 
 ## Basic Usage
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 FROM node:20-alpine AS deps
@@ -132,4 +132,4 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Capacitor 4 跨平台更新不是银弹，需要根据项目规模和技术栈选择
+- The Capacitor 4 cross-platform update is not a silver bullet — choose based on your project scale and tech stack

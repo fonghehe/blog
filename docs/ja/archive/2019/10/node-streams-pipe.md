@@ -3,16 +3,16 @@ title: "Node.js Stream pipeメカニズムの深掘り"
 date: 2019-10-15 10:46:45
 tags:
   - Node.js
-readingTime: 4
+readingTime: 6
 description: "Node.js 的 Stream 是处理 I/O 数据流的核心抽象，而 `pipe` 方法是将多个流串联起来的关键 API。理解 pipe 的工作原理和背压（backpressure）机制，对于编写高性能的 Node.js 应用至关重要。"
-wordCount: 632
+wordCount: 1071
 ---
 
-Node.js 的 Stream 是处理 I/O 数据流的核心抽象，而 `pipe` 方法是将多个流串联起来的关键 API。理解 pipe 的工作原理和背压（backpressure）机制，对于编写高性能的 Node.js 应用至关重要。
+Node.js の Stream は I/O データフローを扱う中核となる抽象であり、`pipe` メソッドは複数のストリームをつなぐ重要な API です。pipe の仕組みとバックプレッシャー（backpressure）の機構を理解することは、高性能な Node.js アプリケーションを書くために欠かせません。
 
 ## Streamの基礎おさらい
 
-Node.js 中有四种基本的 Stream 类型：
+Node.js には 4 つの基本的な Stream 型があります：
 
 ```js
 const { Readable, Writable, Duplex, Transform } = require('stream');
@@ -25,7 +25,7 @@ const { Readable, Writable, Duplex, Transform } = require('stream');
 
 ## pipeメソッドの基本的な使い方
 
-`pipe` 方法将可读流的数据导向可写流：
+`pipe` メソッドは、読み取り可能ストリームのデータを行き先の書き込み可能ストリームへ流します：
 
 ```js
 const fs = require('fs');
@@ -41,7 +41,7 @@ writeStream.on('finish', () => {
 });
 ```
 
-等价于手动处理的写法：
+これは手動で処理する書き方と同等です：
 
 ```js
 readStream.on('data', (chunk) => {
@@ -55,11 +55,11 @@ readStream.on('data', (chunk) => {
 readStream.on('end', () => writeStream.end());
 ```
 
-`pipe` 本质上帮你处理了这个复杂的流程。
+`pipe` は本質的に、この複雑な流れを代わりに処理してくれます。
 
 ## pipeのチェーン呼び出し
 
-`pipe` 返回目标流，因此可以链式调用：
+`pipe` は行き先のストリームを返すため、チェーンで呼び出せます：
 
 ```js
 const fs = require('fs');
@@ -71,12 +71,12 @@ fs.createReadStream('input.txt')
   .pipe(zlib.createGzip())
   .pipe(crypto.createCipher('aes192', '密钥'))
   .pipe(fs.createWriteStream('output.txt.gz.enc'))
-  .on('finish', () => console.log('处理完成'));
+  .on('finish', () => console.log('処理完了'));
 ```
 
 ## バックプレッシャーの仕組み
 
-背压是 Stream 中最重要的概念。当可写流的写入速度跟不上可读流的读取速度时，就会产生背压：
+バックプレッシャーは Stream の中で最も重要な概念です。書き込み可能ストリームの書き込み速度が読み取り可能ストリームの読み取り速度に追いつかないとき、バックプレッシャーが生じます：
 
 ```js
 const { Readable, Writable } = require('stream');
@@ -104,14 +104,14 @@ const slowWriter = new Writable({
 fastReader.pipe(slowWriter);
 ```
 
-没有背压机制的话，快速读取的数据会在内存中不断堆积，最终导致 OOM（内存溢出）。`pipe` 会自动处理这个问题：
+バックプレッシャー機構がないと、高速に読み取ったデータがメモリ上にどんどん溜まり、最終的に OOM（メモリ不足）に至ります。`pipe` はこの問題を自動的に処理します：
 
 1. 当 `write()` 返回 `false` 时，`pipe` 暂停可读流
 2. 当可写流触发 `drain` 事件时，`pipe` 恢复可读流
 
 ### pipe 的背压处理源码分析
 
-`pipe` 的核心逻辑大致如下（简化版）：
+`pipe` の中核となるロジックは、概ね以下のようになります（簡略版）：
 
 ```js
 function pipe(src, dest, endFn) {
@@ -141,7 +141,7 @@ function pipe(src, dest, endFn) {
 
 ## pipeのエラー処理
 
-`pipe` 默认不会自动处理错误，也不会自动销毁流。需要手动处理：
+`pipe` はデフォルトではエラーを自動処理せず、ストリームも自動破棄しません。手動で処理する必要があります：
 
 ```js
 const fs = require('fs');
@@ -163,7 +163,7 @@ writeStream.on('error', (err) => {
 });
 ```
 
-从 Node.js 10 开始，`pipe` 支持 `{ end: false }` 选项，以及更好的错误传播：
+Node.js 10 以降、`pipe` は `{ end: false }` オプションと、より優れたエラー伝播をサポートしています：
 
 ```js
 // { end: false } 不自动关闭目标流
@@ -175,7 +175,7 @@ readStream.on('end', () => {
 });
 ```
 
-推荐使用 `pipeline` 代替 `pipe`（Node.js 10+）：
+`pipe` の代わりに `pipeline` の使用を推奨します（Node.js 10 以降）：
 
 ```js
 const { pipeline } = require('stream');
@@ -196,11 +196,11 @@ pipeline(
 );
 ```
 
-`pipeline` 会自动处理错误、销毁流，避免内存泄漏。
+`pipeline` はエラーやストリームの破棄を自動処理し、メモリリークを防ぎます。
 
 ## 実践：カスタムTransformストリーム
 
-Transform 流是最灵活的流类型，可以对数据进行任意转换：
+Transform ストリームは最も柔軟なストリーム型であり、データを自由に変換できます：
 
 ```js
 const { Transform } = require('stream');
@@ -262,7 +262,7 @@ class CsvToJsonTransform extends Transform {
   }
 }
 
-// 使用
+// 使用例
 const fs = require('fs');
 const { pipeline } = require('stream');
 
@@ -279,7 +279,7 @@ pipeline(
 
 ## 実践：HTTPプロキシストリーミング転送
 
-在做 HTTP 代理时，流式处理可以大幅降低内存占用：
+HTTP プロキシを構築する際、ストリーミング処理によりメモリ使用量を大幅に抑えられます：
 
 ```js
 const http = require('http');
@@ -321,7 +321,7 @@ server.listen(8080, () => {
 
 ## 実践：バッチファイル処理
 
-处理目录中的所有文件，逐个压缩：
+ディレクトリ内のすべてのファイルを一つずつ圧縮します：
 
 ```js
 const fs = require('fs');
@@ -362,10 +362,10 @@ compressDir('./data').catch(console.error);
 
 ## まとめ
 
-- `pipe` 方法将可读流的数据导向可写流，自动处理背压
-- 背压机制防止快速生产者压垮慢速消费者，避免内存溢出
-- `pipe` 返回目标流，支持链式调用
-- Node.js 10+ 推荐使用 `pipeline` 替代 `pipe`，自动处理错误和资源清理
-- Transform 流可以对数据进行自定义转换
-- 流式处理适合处理大文件、HTTP 代理、日志处理等场景
-- 自定义流需要正确实现 `_transform` 和 `_flush` 方法
+- `pipe` メソッドは読み取り可能ストリームのデータを書き込み可能ストリームへ流し、バックプレッシャーを自動処理する
+- バックプレッシャー機構は、高速な生産者が低速な消費者を圧迫するのを防ぎ、メモリ溢れを回避する
+- `pipe` は行き先のストリームを返し、チェーン呼び出しをサポートする
+- Node.js 10 以降では `pipe` の代わりに `pipeline` を使うことを推奨します。エラーとリソースの解放を自動処理します
+- Transform ストリームはデータに対して独自の変換を行えます
+- ストリーミング処理は、大容量ファイル、HTTP プロキシ、ログ処理などのシチュエーションに適しています
+- 独自のストリームを実装するには、`_transform` と `_flush` メソッドを正しく実装する必要があります

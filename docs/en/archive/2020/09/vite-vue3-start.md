@@ -4,25 +4,25 @@ date: 2020-09-07 10:27:38
 tags:
   - Vue
 readingTime: 4
-description: "Vue 3 正式 RC 阶段了，Vite 1.0 也已经稳定。团队新起的一个内部工具项目决定直接上 Vite + Vue 3，不再用 Vue CLI + Webpack 了。这篇文章记录一下完整的搭建过程和踩坑点。"
-wordCount: 420
+description: "A complete guide to starting a new project with Vite and Vue 3 instead of Vue CLI and Webpack, documenting the full setup process and pitfalls encountered."
+wordCount: 292
 ---
 
-Vue 3 正式 RC 阶段了，Vite 1.0 也已经稳定。团队新起的一个内部工具项目决定直接上 Vite + Vue 3，不再用 Vue CLI + Webpack 了。这篇文章记录一下完整的搭建过程和踩坑点。
+Vue 3 has officially entered its RC phase, and Vite 1.0 is already stable. Our team decided to build a new internal tool directly on Vite + Vue 3 instead of Vue CLI + Webpack. This article records the full setup process and the pitfalls we hit.
 
-## 为什么选 Vite
+## Why Vite
 
-先说结论：开发体验提升太明显了。
+The bottom line first: the developer experience improvement is dramatic.
 
 | | Vue CLI + Webpack | Vite |
 |---|---|---|
-| 冷启动 | 30-60s（大项目） | < 1s |
-| HMR | 2-5s | 几乎即时 |
-| 构建 | 1-3min | 20-40s（Rollup） |
+| Cold start | 30-60s (large projects) | < 1s |
+| HMR | 2-5s | near-instant |
+| Build | 1-3min | 20-40s (Rollup) |
 
-Vite 的原理很简单：开发时利用浏览器原生 ESM，不打包，按需编译。构建时用 Rollup 打包。所以开发速度极快，构建产物也很干净。
+Vite's principle is simple: in development it relies on the browser's native ESM, with no bundling and compile-on-demand. For builds it uses Rollup to bundle. That makes dev extremely fast, and the build output is clean.
 
-## 项目初始化
+## Project Initialization
 
 ```bash
 # 创建项目
@@ -46,7 +46,7 @@ my-project/
     └── shims-vue.d.ts
 ```
 
-## 项目配置
+## Project Configuration
 
 ### vite.config.ts
 
@@ -145,7 +145,7 @@ declare module '*.vue' {
 }
 ```
 
-## 路由配置
+## Router Configuration
 
 ```typescript
 // src/router/index.ts
@@ -188,9 +188,9 @@ const router = createRouter({
 export default router
 ```
 
-## 状态管理：简单场景用 reactive
+## State Management: Using reactive for Simple Cases
 
-对于内部工具，不一定需要 Vuex/Pinia，直接用 Composition API + provide/inject：
+For an internal tool you don't necessarily need Vuex/Pinia — you can just use the Composition API + provide/inject:
 
 ```typescript
 // src/stores/useAppStore.ts
@@ -254,7 +254,7 @@ export const AppStoreKey: InjectionKey<AppStore> = Symbol('AppStore')
 // 组件中通过 inject(AppStoreKey) 使用
 ```
 
-## 组合式函数（Composables）
+## Composables
 
 ```typescript
 // src/composables/useRequest.ts
@@ -303,9 +303,9 @@ export function useRequest<T>(
 // )
 ```
 
-## 环境变量
+## Environment Variables
 
-Vite 使用 `.env` 文件管理环境变量，变量必须以 `VITE_` 开头才能在客户端访问：
+Vite manages environment variables with `.env` files, and a variable must be prefixed with `VITE_` to be accessible on the client:
 
 ```bash
 # .env.development
@@ -336,9 +336,9 @@ interface ImportMeta {
 
 ## Common Issues
 
-### 1. CommonJS 模块兼容
+### 1. CommonJS Module Compatibility
 
-Vite 基于 ESM，某些旧的 npm 包只提供 CJS 格式会报错：
+Vite is built on ESM, and some old npm packages that only ship in CJS format will throw errors:
 
 ```typescript
 // vite.config.ts 中配置 optimizeDeps
@@ -349,7 +349,7 @@ export default defineConfig({
 })
 ```
 
-### 2. 静态资源处理
+### 2. Handling Static Assets
 
 ```typescript
 // Vite 中获取静态资源 URL
@@ -364,7 +364,7 @@ function getImageUrl(name: string) {
 }
 ```
 
-### 3. 全局样式变量
+### 3. Global Style Variables
 
 ```typescript
 // vite.config.ts
@@ -379,9 +379,9 @@ css: {
 
 ## Summary
 
-- Vite 的开发体验相比 Webpack 有质的飞跃，冷启动和 HMR 快到几乎不需要等待
-- Vue 3 + Composition API 的组合式函数非常适合逻辑复用
-- 项目配置从 vue.config.js 迁移到 vite.config.ts，结构类似但更简洁
-- 环境变量必须以 `VITE_` 开头才能在客户端使用
-- 对于 CJS 兼容和静态资源路径，需要注意 Vite 的特殊要求
-- 内部项目如果不需要太多 Webpack 生态插件，建议直接上 Vite
+- Vite's developer experience is a quantum leap over Webpack — cold start and HMR are so fast you barely wait.
+- Vue 3 + the Composition API's composables are great for logic reuse.
+- Project config moves from vue.config.js to vite.config.ts — similar structure, but cleaner.
+- Environment variables must start with `VITE_` to be usable on the client.
+- For CJS compatibility and static asset paths, mind Vite's specific requirements.
+- For internal projects that don't need much of the Webpack plugin ecosystem, I'd recommend going straight to Vite.

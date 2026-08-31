@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Babel 7 officially launched in August (after an extraordinarily long beta period). After upgrading several projects, here's a summary of the major changes and t"
-wordCount: 196
+wordCount: 202
 ---
 
 Babel 7 officially launched in August (after an extraordinarily long beta period). After upgrading several projects, here's a summary of the major changes and the pitfalls I encountered.
@@ -42,7 +42,7 @@ npm install @babel/preset-env
 
 ### 3. Config File Format
 
-Supports the new `babel.config.js` (project-level), more flexible:
+It also supports the new `babel.config.js` (project-level) config, which is more flexible:
 
 ```javascript
 // babel.config.js (new recommended approach)
@@ -113,7 +113,7 @@ presets: ["@babel/preset-env", "@babel/preset-typescript"];
 
 ## New Features: Optional Chaining and Nullish Coalescing
 
-These two proposals were available in Babel 7 beta:
+Both proposals were already available during Babel 7's beta phase:
 
 ```javascript
 // Optional chaining (?.): access deep properties without null checks

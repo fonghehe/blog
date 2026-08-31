@@ -4,8 +4,8 @@ date: 2024-05-14 11:13:46
 tags:
   - Frontend
 readingTime: 2
-description: "I recently implemented Valtio v2 Proxy 状态管理 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help th"
-wordCount: 216
+description: "I recently applied Valtio v2 Proxy state management with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 192
 ---
 
 I recently implemented Valtio v2 Proxy 状态管理 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those doing similar work.
@@ -124,8 +124,8 @@ This solution has been running stably in production for over six months and has 
 
 ## Summary
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Valtio v2 Proxy 状态管理不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- Keep an eye on community trends; technical approaches need continuous iteration
+- Don't adopt new technology just for the sake of it
+- Code samples are for reference only and need adjusting to your business scenario
+- Valtio v2 Proxy state management is not a silver bullet — choose based on your project scale and tech stack
+- Understanding the underlying principles matters more than memorizing APIs

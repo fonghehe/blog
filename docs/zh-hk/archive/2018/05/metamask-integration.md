@@ -1,19 +1,20 @@
 ---
-readingTime: 5
-wordCount: 1065
+readingTime: 8
+wordCount: 1081
 title: "MetaMask 集成實踐：瀏覽器錢包對接"
 date: 2018-05-21 12:08:47
 tags:
   - Web3
   - Ethereum
   - DApp
+description: "MetaMask 是 DApp 生態中最關鍵的基礎設施之一。它既是用戶管理以太坊賬戶的錢包，又是 DApp 前端連接區塊鏈的橋樑。對於前端開發者而言，MetaMask 集成是 DApp 開發的必修課——但集成過程中的坑遠比想象中多：用戶未安裝、網絡不匹配、權限拒絕、交易被取消，每個場景都需要妥善處理。"
 ---
 
-MetaMask 是 DApp 生態中最關鍵的基礎設施之一。它既是用户管理以太坊賬户的錢包，又是 DApp 前端連接區塊鏈的橋樑。對於前端開發者而言，MetaMask 集成是 DApp 開發的必修課——但集成過程中的坑遠比想象中多：用户未安裝、網絡不匹配、權限拒絕、交易被取消，每個場景都需要妥善處理。
+MetaMask 是 DApp 生態中最關鍵的基礎設施之一。它既是用戶管理以太坊賬戶的錢包，又是 DApp 前端連接區塊鏈的橋樑。對於前端開發者而言，MetaMask 集成是 DApp 開發的必修課——但集成過程中的坑遠比想象中多：用戶未安裝、網絡不匹配、權限拒絕、交易被取消，每個場景都需要妥善處理。
 
 ## MetaMask 瀏覽器擴展的工作原理
 
-MetaMask 本質上是一個注入到網頁中的以太坊 Provider。當用户安裝 MetaMask 擴展後，它會在每個頁面加載時向 `window` 對象注入一個 `web3` 實例（早期）或 `ethereum` 對象（EIP-1102 之後）。
+MetaMask 本質上是一個注入到網頁中的以太坊 Provider。當用戶安裝 MetaMask 擴展後，它會在每個頁面加載時向 `window` 對象注入一個 `web3` 實例（早期）或 `ethereum` 對象（EIP-1102 之後）。
 
 其內部架構如下：
 
@@ -21,7 +22,7 @@ MetaMask 本質上是一個注入到網頁中的以太坊 Provider。當用户�
 2. **Content Script**：注入到網頁中，作為網頁與 Background Script 之間的消息橋
 3. **Injected Object**：暴露給網頁的 `window.web3` / `window.ethereum` 對象
 
-MetaMask 不會將用户的私鑰暴露給網頁。當 DApp 需要發送交易時，MetaMask 彈出確認窗口，用户在擴展界面內確認簽名，簽名後的交易由 MetaMask 發送到節點。這個過程確保了私鑰永遠不會離開 MetaMask 的安全沙箱。
+MetaMask 不會將用戶的私鑰暴露給網頁。當 DApp 需要發送交易時，MetaMask 彈出確認窗口，用戶在擴展界面內確認簽名，簽名後的交易由 MetaMask 發送到節點。這個過程確保了私鑰永遠不會離開 MetaMask 的安全沙箱。
 
 ## window.web3 / window.ethereum 注入機制
 
@@ -36,19 +37,19 @@ MetaMask 直接在 `window` 上注入完整的 web3.js 實例，DApp 可以直�
 if (typeof web3 !== 'undefined') {
     web3 = new Web3(web3.currentProvider);
 } else {
-    // 用户未安裝 MetaMask
+    // 用戶未安裝 MetaMask
     console.log('No MetaMask found');
 }
 ```
 
-這種方案的問題在於安全性——任意網頁都能直接讀取用户地址，無需用户授權。這引發了隱私爭議。
+這種方案的問題在於安全性——任意網頁都能直接讀取用戶地址，無需用戶授權。這引發了隱私爭議。
 
 ### EIP-1102 方案（MetaMask v4+）
 
-MetaMask v4 開始引入 `window.ethereum` 對象，不再默認暴露賬户信息。DApp 必須主動請求用户授權：
+MetaMask v4 開始引入 `window.ethereum` 對象，不再默認暴露賬戶信息。DApp 必須主動請求用戶授權：
 
 ```javascript
-// EIP-1102：需要用户授權才能獲取賬户
+// EIP-1102：需要用戶授權才能獲取賬戶
 window.ethereum.enable()
     .then(accounts => {
         console.log('Authorized account:', accounts[0]);
@@ -58,7 +59,7 @@ window.ethereum.enable()
     });
 ```
 
-這個變化是 DApp UX 的一個分水嶺——從"自動連接"變成了"用户需手動確認連接"，類似於傳統 Web 中的 OAuth 授權流程。
+這個變化是 DApp UX 的一個分水嶺——從"自動連接"變成了"用戶需手動確認連接"，類似於傳統 Web 中的 OAuth 授權流程。
 
 ## 檢測 MetaMask 是否安裝
 
@@ -110,7 +111,7 @@ function connectMetaMask() {
             })
             .catch(error => {
                 if (error.code === 4001) {
-                    // 用户拒絕了授權請求
+                    // 用戶拒絕了授權請求
                     reject(new Error('User rejected authorization'));
                 } else {
                     reject(error);
@@ -119,7 +120,7 @@ function connectMetaMask() {
     });
 }
 
-// 在用户點擊連接按鈕時調用
+// 在用戶點擊連接按鈕時調用
 document.getElementById('connect-btn').addEventListener('click', async function() {
     try {
         this.disabled = true;
@@ -200,7 +201,7 @@ function sendTransaction(txParams) {
     return new Promise((resolve, reject) => {
         web3.eth.sendTransaction(txParams, function(err, txHash) {
             if (err) {
-                // 用户可能在 MetaMask 中拒絕了交易
+                // 用戶可能在 MetaMask 中拒絕了交易
                 if (err.code === 4001 || err.message.includes('User denied')) {
                     reject(new Error('Transaction rejected by user'));
                 } else {
@@ -260,7 +261,7 @@ function waitForTransaction(txHash) {
 
 ## 網絡切換事件監聽
 
-當用户在 MetaMask 中切換網絡時，DApp 需要感知變化並重新初始化：
+當用戶在 MetaMask 中切換網絡時，DApp 需要感知變化並重新初始化：
 
 ```javascript
 // MetaMask 在網絡切換時會重新加載頁面（舊版行為）
@@ -287,7 +288,7 @@ if (window.ethereum) {
         handleNetworkChange(netId);
     });
 
-    // 賬户切換監聽
+    // 賬戶切換監聽
     window.ethereum.on('accountsChanged', function(accounts) {
         console.log('Account switched to:', accounts[0]);
         handleAccountChange(accounts[0]);
@@ -444,11 +445,11 @@ var MetaMaskManager = {
 module.exports = MetaMaskManager;
 ```
 
-## 用户體驗設計
+## 用戶體驗設計
 
 ### 引導安裝
 
-當檢測到用户未安裝 MetaMask 時，應提供清晰的引導：
+當檢測到用戶未安裝 MetaMask 時，應提供清晰的引導：
 
 ```javascript
 function showInstallPrompt() {
@@ -493,15 +494,15 @@ function showNetworkBanner(title, message) {
 ## 安全注意事項
 
 1. **不要信任前端傳入的地址**：合約中應使用 `msg.sender` 而非前端傳入的地址參數來確定操作者身份
-2. **驗證交易參數**：在發送交易前，前端應清晰展示交易的接收地址、金額、數據等內容，讓用户確認
-3. **防止釣魚**：DApp 不應要求用户輸入私鑰或 Keystore 密碼——所有簽名操作都應通過 MetaMask 完成
+2. **驗證交易參數**：在發送交易前，前端應清晰展示交易的接收地址、金額、數據等內容，讓用戶確認
+3. **防止釣魚**：DApp 不應要求用戶輸入私鑰或 Keystore 密碼——所有簽名操作都應通過 MetaMask 完成
 4. **HTTPS**：生產環境必須使用 HTTPS，否則 MetaMask 可能拒絕注入
 5. **校驗合約地址**：前端應驗證合約地址格式正確，並在部署後通過 Etherscan 驗證
 
 ## 小結
 
-MetaMask 集成看似簡單——檢測、連接、發交易三步走——但實際涉及的細節遠超預期。網絡切換、賬户切換、授權拒絕、交易取消、Gas 估算錯誤，每個邊界條件都直接影響用户體驗。
+MetaMask 集成看似簡單——檢測、連接、發交易三步走——但實際涉及的細節遠超預期。網絡切換、賬戶切換、授權拒絕、交易取消、Gas 估算錯誤，每個邊界條件都直接影響用戶體驗。
 
 MetaMask 集成的一大痛點在於 API 的演進。從 `window.web3` 到 `window.ethereum.enable()`，從頁面自動重載到事件監聽，API 幾經變動。DApp 開發者需要編寫兼容代碼來處理不同版本的 MetaMask。
 
-從更高層面看，MetaMask 代表了一種新的身份認證範式——不再是"用户名+密碼"，而是"錢包地址+簽名授權"。這種範式將身份控制權從服務端轉移到了用户手中，是 Web3 去中心化理念在前端的具體體現。理解這種範式轉變，比掌握 MetaMask 的某個具體 API 更重要。
+從更高層面看，MetaMask 代表了一種新的身份認證範式——不再是"用戶名+密碼"，而是"錢包地址+簽名授權"。這種範式將身份控制權從服務端轉移到了用戶手中，是 Web3 去中心化理念在前端的具體體現。理解這種範式轉變，比掌握 MetaMask 的某個具體 API 更重要。

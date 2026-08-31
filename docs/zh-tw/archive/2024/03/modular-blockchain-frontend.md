@@ -4,9 +4,9 @@ date: 2024-03-22 19:53:23
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 8
 description: "探討模塊化區塊鏈架構下前端數據讀取的變化，涵蓋 Celestia DA 層交互、EigenLayer AVS 集成及多層數據源管理"
-wordCount: 3600
+wordCount: 1084
 ---
 
 ## 模塊化區塊鏈概念：DA 層、結算層、執行層

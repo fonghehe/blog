@@ -4,15 +4,15 @@ date: 2020-08-27 11:23:10
 tags:
   - エンジニアリング
 readingTime: 2
-description: "最近在团队中落地Design System 设计令牌 Design Tokens，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 308
+description: "最近チームでデザインシステムのデザイントークンを導入し、かなりの経験を積んだ。同様の作業の参考になれば幸いだ。"
+wordCount: 481
 ---
 
-最近在团队中落地Design System 设计令牌 Design Tokens，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近チーム内で Design System のデザイントークン（Design Tokens）を本番導入し、さまざまな知見が溜まった。その成果をまとめて公開する。同じような取り組みに挑む人の参考になれば幸いだ。
 
 ## コアコンセプト
 
-关键在于理解核心逻辑：
+肝心なのはコアとなるロジックを理解することだ：
 
 ```javascript
 const express = require('express')
@@ -37,11 +37,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+パフォーマンス最適化は具体的な状況に合わせる必要があり、すべてのケースで過度な最適化が必要なわけではない。
 
 ## 深掘り解析
 
-我们可以通过以下方式来改进：
+次の方法で改善できる：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -60,11 +60,11 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番環境で半年以上安定して動いており、実際に検証済みだ。
 
 ## 実装経験
 
-先来看基本的实现方式：
+基本的な実装方法を見てみよう：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -95,11 +95,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラーハンドリングや境界条件も考慮する必要がある。
 
 ## チューニング戦略
 
-在这个基础上，我们可以进一步优化：
+これをベースに、さらに最適化できる：
 
 ```javascript
 const express = require('express')
@@ -124,11 +124,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模なプロジェクトで非常に実用的で、保守コストを大きく下げられる。
 
 ## まとめ
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Design System 设计令牌 Design Tokens不是银弹，需要根据项目规模和技术栈选择
+- コミュニティの動向を追い、技術的なアプローチは継続的に磨き込む
+- 新しい技術のために新しい技術を使ってはいけない
+- コード例はあくまで参考で、業務の場面に合わせて調整すること
+- Design System のデザイントークン（Design Tokens）は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある

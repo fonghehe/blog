@@ -4,15 +4,15 @@ date: 2020-10-05 15:35:51
 tags:
   - Security
 readingTime: 2
-description: "JWT 前端认证方案与安全实践在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 354
+description: "A comprehensive guide to JWT-based frontend authentication and security best practices, drawn from real-world project experience."
+wordCount: 220
 ---
 
-JWT 前端认证方案与安全实践在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+JWT-based frontend authentication and its security practices are being adopted more and more widely in frontend development. Starting from real projects, this article takes a deep look at the core principles and best practices.
 
 ## Basic Usage
 
-我们可以通过以下方式来改进：
+Here's how we can improve on it:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -30,11 +30,11 @@ function setCSP(req, res, next) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it's proven in practice.
 
 ## Advanced Usage
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -52,11 +52,11 @@ function setCSP(req, res, next) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll still need to account for error handling and edge cases.
 
 ## Practical Cases
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -74,11 +74,11 @@ function setCSP(req, res, next) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly cut maintenance cost.
 
 ## Performance Optimization
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -96,11 +96,11 @@ function setCSP(req, res, next) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Common Traps
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -118,12 +118,12 @@ function setCSP(req, res, next) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — it's critical in production.
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- JWT 前端认证方案与安全实践不是银弹，需要根据项目规模和技术栈选择
+- In team collaboration, conventions and documentation matter more than the technology itself.
+- Keep an eye on community developments; technical solutions need continuous iteration.
+- Don't adopt new tech for its own sake.
+- The code examples are for reference only and should be adapted to your actual use case.
+- JWT-based frontend authentication and security practices are no silver bullet; choose them based on your project's scale and tech stack.

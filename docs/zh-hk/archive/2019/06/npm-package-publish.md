@@ -68,14 +68,14 @@ npm init
 - **`types`**：TypeScript 類型聲明文件的入口，`tsc` 和 IDE 會根據這個字段提供類型提示
 - **`files`**：指定發佈到 npm 時包含哪些文件。沒有這個字段，npm 會發布整個目錄（除了 `.npmignore` 排除的）
 - **`description`**：會顯示在 npm 搜索結果中，寫清楚便於搜索
-- **`keywords`**：同樣用於 npm 搜索，儘量覆蓋用户可能搜索的關鍵詞
-- **`repository`**：npm 頁面上會顯示倉庫鏈接，方便用户提 issue
+- **`keywords`**：同樣用於 npm 搜索，儘量覆蓋用戶可能搜索的關鍵詞
+- **`repository`**：npm 頁面上會顯示倉庫鏈接，方便用戶提 issue
 - **`license`**：不寫的話每次 `npm publish` 都會警告，開源項目一般選 MIT
 - **`prepublishOnly`**：發佈前自動執行的鈎子，確保發佈前代碼是構建好的、測試通過的
 
 ## .npmignore vs files 字段
 
-控製發佈內容有兩種方式：
+控制發佈內容有兩種方式：
 
 **方式一：`files` 字段（推薦）**
 
@@ -88,7 +88,7 @@ npm init
 }
 ```
 
-白名單模式，隻發布 `files` 中列出的檔案。簡潔明確，不容易出錯。注意 `package.json`、`README.md`、`LICENSE` 和 `CHANGELOG` 始終會被包含，不需要顯式列出。
+白名單模式，只發布 `files` 中列出的檔案。簡潔明確，不容易出錯。注意 `package.json`、`README.md`、`LICENSE` 和 `CHANGELOG` 始終會被包含，不需要顯式列出。
 
 **方式二：`.npmignore`**
 
@@ -118,7 +118,7 @@ coverage/
 | 模式 | 白名單 | 黑名單 |
 | 安全性 | 高，不會意外發布 | 需要持續維護 |
 | 可見性 | 在 package.json 中 | 單獨文件 |
-| 推薦場景 | 絕大多數情況 | 需要精細控製時 |
+| 推薦場景 | 絕大多數情況 | 需要精細控制時 |
 
 推薦用 `files` 字段，原因很簡單：白名單更安全，且不需要維護額外的檔案。
 
@@ -264,7 +264,7 @@ npm version prerelease --preid=beta  # 1.0.0 → 1.0.1-beta.0
 npm publish --tag beta               # 發佈到 beta 標籤
 ```
 
-用户可以通過 `npm install my-awesome-utils@beta` 安裝預發佈版本。
+用戶可以通過 `npm install my-awesome-utils@beta` 安裝預發佈版本。
 
 `npm version` 還會自動創建 git tag，方便回溯每個版本對應的代碼。
 
@@ -334,11 +334,11 @@ npm notice package size:  2.3 kB
 
 ## README 怎麼寫
 
-README 是用户瞭解你包的第一入口，至少包含以下內容：
+README 是用戶瞭解你包的第一入口，至少包含以下內容：
 
 - 一句話説明這個包是幹什麼的
 - 安裝命令
-- 最小可用示例（讓用户 30 秒內跑起來）
+- 最小可用示例（讓用戶 30 秒內跑起來）
 - 完整的 API 文檔
 - License
 
@@ -408,16 +408,16 @@ npm deprecate my-awesome-utils "此包已遷移到 @fonghehe/utils，請更新�
 
 關鍵區別：
 
-- `npm unpublish`：從 registry 徹底刪除，其他依賴它的項目會安裝失敗。npm 有 72 小時限製，且如果有人依賴了你的包則不允許 unpublish
-- `npm deprecate`：包還在，隻是安裝時會顯示警告。對已有用户更友好
+- `npm unpublish`：從 registry 徹底刪除，其他依賴它的項目會安裝失敗。npm 有 72 小時限制，且如果有人依賴了你的包則不允許 unpublish
+- `npm deprecate`：包還在，只是安裝時會顯示警告。對已有用戶更友好
 
 **最佳實踐**：不要 unpublish，而是 deprecate + 發佈修復版本。unpublish 會破壞其他項目的構建，尤其是你的包被間接依賴時。
 
 ## 小結
 
 - `package.json` 中 `main`、`module`、`types` 三個字段分別對應 CJS 入口、ESM 入口和類型聲明，打包工具會按需讀取
-- 用 `files` 字段白名單控製發佈內容，比 `.npmignore` 更安全
-- TypeScript 類型聲明對 TS 用户是剛需，即使源碼是 JS 也應該提供
+- 用 `files` 字段白名單控制發佈內容，比 `.npmignore` 更安全
+- TypeScript 類型聲明對 TS 用戶是剛需，即使源碼是 JS 也應該提供
 - `npm pack --dry-run` 發佈前檢查打包內容，避免泄露敏感文件
 - 遵循語義化版本，用 `npm version` 自動管理版本號和 git tag
 - `prepublishOnly` 鈎子確保發佈前自動執行 lint、test、build，防止發佈有問題的代碼

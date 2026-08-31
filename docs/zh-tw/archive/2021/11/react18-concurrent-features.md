@@ -1,5 +1,5 @@
 ---
-title: "React 18 新特性預覽：併發特性正式來了"
+title: "React 18 新特性預覽：並發特性正式來了"
 date: 2021-11-20 17:22:18
 tags:
   - React
@@ -11,7 +11,7 @@ wordCount: 202
 
 React 18 Alpha 已經發布，可以試用了。等了兩年的 Concurrent 特性終於要正式了。
 
-## 併發渲染（Concurrent Rendering）
+## 並發渲染（Concurrent Rendering）
 
 React 18 的核心變化：渲染變成可以被打斷、恢復的過程。
 
@@ -20,18 +20,18 @@ React 18 的核心變化：渲染變成可以被打斷、恢復的過程。
 import ReactDOM from "react-dom";
 ReactDOM.render(<App />, document.getElementById("root"));
 
-// React 18：併發渲染
+// React 18：並發渲染
 import { createRoot } from "react-dom/client";
 const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
-隻是這一行變化，但開啟了很多併發特性。
+只是這一行變化，但開啟了很多並發特性。
 
 ## Automatic Batching（自動批處理）
 
 ```javascript
-// React 17：隻有 React 事件處理中才批處理
+// React 17：只有 React 事件處理中才批處理
 function handleClick() {
   setCount((c) => c + 1); // 單獨渲染
   setName("Alice"); // 單獨渲染
@@ -49,7 +49,7 @@ setTimeout(() => {
 setTimeout(() => {
   setCount((c) => c + 1);
   setName("Alice");
-  // 隻渲染 1 次！
+  // 只渲染 1 次！
 });
 ```
 
@@ -159,7 +159,7 @@ function FormField({ label, type }) {
 
 ```javascript
 // createRoot 替換 ReactDOM.render（必須的）
-// 但在 React 18 中，ReactDOM.render 仍然可用（相容模式，不開啟併發特性）
+// 但在 React 18 中，ReactDOM.render 仍然可用（相容模式，不開啟並發特性）
 
 // 如果用了 useEffect 的副作用，React 18 StrictMode 會執行兩次
 // 用於檢測不純的副作用（開發模式）

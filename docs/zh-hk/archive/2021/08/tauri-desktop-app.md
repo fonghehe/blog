@@ -47,7 +47,7 @@ const ItemList = ({ data, onRefresh }) => {
 
 ## 進階用法
 
-先來看基本的實現方式：
+先來看基本的實作方式：
 
 ```javascript
 import React, { useState, useCallback } from 'react'

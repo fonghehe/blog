@@ -4,8 +4,8 @@ date: 2024-05-28 10:22:13
 tags:
   - Frontend
 readingTime: 2
-description: "前端测试 2024 最佳实践 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real proj"
-wordCount: 228
+description: "Frontend testing best practices in 2024 is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 202
 ---
 
 前端测试 2024 最佳实践 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real project experience.
@@ -132,7 +132,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 Performance optimization should be tailored to specific scenarios; not every situation requires aggressive optimization.
 
-## 常见陷阱
+## Common Pitfalls
 
 We can improve this in the following ways:
 
@@ -163,7 +163,7 @@ This solution has been running stably in production for over six months and has 
 
 ## Summary
 
-- 前端测试 2024 最佳实践不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- Frontend testing best practices in 2024 is not a silver bullet — choose based on your project scale and tech stack
+- Understanding the underlying principles matters more than memorizing APIs
+- Always verify compatibility thoroughly before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself

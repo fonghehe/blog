@@ -6,11 +6,11 @@ tags:
   - Node.js
 
 readingTime: 2
-description: "Node.js 内置 fetch API 预览 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic"
-wordCount: 167
+description: "Node.js's built-in fetch API preview has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 160
 ---
 
-Node.js 内置 fetch API 预览 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+The Node.js native fetch API preview has been discussed many times in the community, but as versions iterate, a lot of the old conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -72,7 +72,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Real-World Applications
 
-实际项目中的用法会更复杂一些：
+In real projects, usage gets a bit more involved:
 
 ```javascript
 const express = require('express')
@@ -97,7 +97,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-Through this approach, both the testability and scalability of the code are improved.
+This makes the code both more testable and more scalable.
 
 ## Optimization Tips
 
@@ -126,7 +126,7 @@ const csvToJson = new Transform({
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Handle edge cases carefully — they are critical in production.
 
 ## Summary
 

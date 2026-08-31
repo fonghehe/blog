@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 3
 description: "2018 is coming to an end. When I started writing this, I scrolled back through the blog posts from this year and was surprised to find nearly 50 of them. From t"
-wordCount: 576
+wordCount: 577
 ---
 
 2018 is coming to an end. When I started writing this, I scrolled back through the blog posts from this year and was surprised to find nearly 50 of them. From the Vue features notes in January to the in-depth articles in December, I can genuinely feel myself growing.
@@ -52,7 +52,7 @@ Participated in several tech talks — took content from the blog, organized it 
 - **August**: React 16.6 brings lazy/Suspense
 - **October**: React Conf 2018; Hooks officially unveiled
 - **November**: Vue 2.6 released; v-slot unifies slot syntax
-- **Throughout the year**: TypeScript's momentum keeps growing, more projects adopting it
+- **Throughout the year**: TypeScript's momentum kept growing, more projects adopting it
 
 React Hooks was the most exciting thing for me this year. It's not stable yet, but the direction is right — extracting logic from UI, composing with custom Hooks, much more elegant than HOCs and render props.
 
@@ -61,7 +61,7 @@ React Hooks was the most exciting thing for me this year. It's not stable yet, b
 **Technical:**
 
 - Wait for stable React Hooks, then fully migrate a company React project
-- Track Vue 3.0 progress seriously; learn Composition API
+- Track Vue 3.0's progress closely; learn the Composition API
 - Get the TypeScript advanced types and type gymnastics down
 - Do a systematic Node.js study — not just for writing scripts
 

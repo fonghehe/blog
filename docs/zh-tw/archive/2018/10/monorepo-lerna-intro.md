@@ -15,7 +15,7 @@ wordCount: 331
 
 **Multirepo（多倉庫）**：每個專案/包一個 git 倉庫
 
-- 優點：職責清晰，互不幹擾
+- 優點：職責清晰，互不干擾
 - 缺點：跨包改動需要多次 PR，本地聯調複雜，版本管理困難
 
 **Monorepo（單倉庫）**：多個包在一個 git 倉庫
@@ -66,7 +66,7 @@ npx lerna add @myorg/utils --scope=@myorg/admin
 # 在所有包裡執行命令
 npx lerna run build          # 所有包執行 npm run build
 npx lerna run test           # 所有包執行 npm run test
-npx lerna run build --scope=@myorg/components  # 隻跑某個包
+npx lerna run build --scope=@myorg/components  # 只跑某個包
 
 # 釋出
 npx lerna publish
@@ -127,7 +127,7 @@ packages/
 
 ## 痛點
 
-- 大倉庫的 CI 時間會變長（需要隻針對變化的包執行 CI）
+- 大倉庫的 CI 時間會變長（需要只針對變化的包執行 CI）
 - IDE 效能可能下降（node_modules 很大）
 - 需要設定每個包的構建工具
 

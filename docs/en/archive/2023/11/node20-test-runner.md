@@ -4,7 +4,7 @@ date: 2023-11-13 16:06:49
 tags:
   - Node.js
 readingTime: 2
-description: "Node.js 20 测试运行器 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+description: "The Node.js 20 test runner is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 201
 ---
 

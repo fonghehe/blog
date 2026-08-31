@@ -7,11 +7,11 @@ tags:
   - React
 
 readingTime: 2
-description: "Vite SSR 服务端渲染方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 209
+description: "Vite's SSR server-rendering story is being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 189
 ---
 
-Vite SSR 服务端渲染方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Vite's SSR (server-side rendering) solution is becoming increasingly common in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -43,7 +43,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Usage
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more involved:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -163,7 +163,7 @@ This approach has been running stably in production for over six months and has 
 
 ## Summary
 
-- Vite SSR 服务端渲染方案不是银弹，需要根据项目规模和技术栈选择
+- Vite's SSR solution is not a silver bullet; choose it based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

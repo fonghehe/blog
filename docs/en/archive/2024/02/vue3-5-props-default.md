@@ -3,9 +3,9 @@ title: "Vue 3.5: Props Destructure Defaults"
 date: 2024-02-29 15:09:06
 tags:
   - Vue
-readingTime: 2
+readingTime: 1
 description: "I frequently use Vue 3.5: Props Destructure Defaults in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it be"
-wordCount: 220
+wordCount: 176
 ---
 
 I frequently use Vue 3.5: Props Destructure Defaults in daily work and have compiled this systematic summary, hoping to help everyone understand and apply it better.
@@ -86,7 +86,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Best Practices
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 使用示例
@@ -107,7 +107,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Common Issues
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 工具函数封装
@@ -135,11 +135,11 @@ function createHandler(options = {}) {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+With this pattern, the code's maintainability improves.
 
 ## Summary
 
-- 性能优化需要基于实际数据，避免过度优化
+- Base performance optimization on real data and avoid premature optimization
 - Vue 3.5: Props Destructure Defaults的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
+- In real projects, choosing the right solution matters more than chasing the newest technology
+- Keep code style consistent across the team to cut maintenance costs

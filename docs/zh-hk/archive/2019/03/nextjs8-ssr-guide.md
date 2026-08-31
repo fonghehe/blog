@@ -74,7 +74,7 @@ export default function handler(req, res) {
   if (req.method === "POST") {
     const { email, message } = req.body;
 
-    // 發郵件、存數據庫...
+    // 發郵件、存資料庫...
     sendEmail({ to: "admin@example.com", message });
 
     res.status(200).json({ success: true });
@@ -102,7 +102,7 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-// 全局 getInitialProps（比如獲取用户信息）
+// 全局 getInitialProps（比如獲取用戶信息）
 MyApp.getInitialProps = async (appContext) => {
   const appProps = await App.getInitialProps(appContext);
   const user = await fetchUser(appContext.ctx);
@@ -172,5 +172,5 @@ const HeavyChart = dynamic(() => import("../components/HeavyChart"), {
 - Next.js 文件即路由，SSR/SSG 混合模式
 - `getInitialProps` 在服務端和客户端都可能運行（注意區分環境）
 - API Routes 讓 Next.js 可以做輕量全棧
-- 沒有 `getInitialProps` 的頁面會自動靜態化，性能最好
+- 沒有 `getInitialProps` 的頁面會自動靜態化，效能最好
 - 項目實踐建議：官網類用靜態導出，後臺管理用 CSR，電商用 SSR

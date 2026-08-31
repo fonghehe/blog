@@ -3,12 +3,12 @@ title: "GraphQL Client: Apollo Client in Practice"
 date: 2019-08-12 16:38:12
 tags:
   - GraphQL
-readingTime: 5
-description: "REST API 在复杂业务场景下经常遇到 over-fetching 和 under-fetching 的问题。GraphQL 让前端精确声明需要的数据结构，后端按需返回。Apollo Client 是目前最成熟的 GraphQL 客户端，提供了缓存、状态管理、乐观更新等开箱即用的能力。本文将以一个真实的博客管理项目"
-wordCount: 371
+readingTime: 4
+description: "REST APIs often run into over-fetching and under-fetching problems in complex business scenarios. GraphQL lets the front end declare exactly the data shape it needs, and the back end returns just that. Apollo Client is the most mature GraphQL client available today, offering caching, state management, and optimistic updates out of the box. Using a real blog-admin project as an example, this article walks through the complete Apollo Client workflow."
+wordCount: 260
 ---
 
-REST API 在复杂业务场景下经常遇到 over-fetching 和 under-fetching 的问题。GraphQL 让前端精确声明需要的数据结构，后端按需返回。Apollo Client 是目前最成熟的 GraphQL 客户端，提供了缓存、状态管理、乐观更新等开箱即用的能力。本文将以一个真实的博客管理项目为例，讲解 Apollo Client 的完整使用流程。
+REST APIs often run into over-fetching and under-fetching problems in complex business scenarios. GraphQL lets the front end declare exactly the data shape it needs, and the back end returns just that. Apollo Client is the most mature GraphQL client available today, offering caching, state management, and optimistic updates out of the box. Using a real blog-admin project as an example, this article walks through the complete Apollo Client workflow.
 
 ## Apollo Client Installation and Initialization
 
@@ -17,7 +17,7 @@ npm install apollo-client apollo-cache-inmemory apollo-link-http graphql graphql
 npm install react-apollo
 ```
 
-### 创建 Apollo Client 实例
+### Creating the Apollo Client Instance
 
 ```js
 // src/apollo/client.js
@@ -45,7 +45,7 @@ const client = new ApolloClient({
 export default client;
 ```
 
-### 在 React 应用中接入
+### Wiring It into a React App
 
 ```jsx
 // src/App.jsx
@@ -267,9 +267,9 @@ export default CreatePost;
 
 ## Cache Management
 
-Apollo Client 内置了强大的 Normalized Cache，自动以 `__typename + id` 作为缓存 key。
+Apollo Client ships with a powerful normalized cache that uses `__typename + id` as the cache key by default.
 
-### 配置 dataIdFromObject
+### Configuring dataIdFromObject
 
 ```js
 import ApolloClient from 'apollo-client';
@@ -289,7 +289,7 @@ const cache = new InMemoryCache({
 });
 ```
 
-### 手动操作缓存
+### Manipulating the Cache Manually
 
 ```js
 import { useApolloClient } from 'react-apollo';
@@ -307,7 +307,7 @@ function useDeletePost() {
 }
 ```
 
-### refetchQueries 刷新关联查询
+### Refreshing Related Queries with refetchQueries
 
 ```jsx
 <Mutation
@@ -326,7 +326,7 @@ function useDeletePost() {
 
 ## Using Hooks Style (react-apollo 2.1+)
 
-从 react-apollo 2.1 开始，推荐使用 Hooks API：
+Starting with react-apollo 2.1, the Hooks API is the recommended approach:
 
 ```jsx
 {% raw %}
@@ -459,10 +459,10 @@ const client = new ApolloClient({
 
 ## Summary
 
-- Apollo Client 是 React 生态中最成熟的 GraphQL 客户端，提供了完整的数据获取、缓存、状态管理方案
-- 使用 `Query` 组件（或 `useQuery` Hook）声明式地获取数据，自动处理 loading 和 error 状态
-- `Mutation` 配合 `update` 和 `optimisticResponse` 可以实现乐观更新，提升用户体验
-- Apollo 的 Normalized Cache 自动以 `__typename + id` 管理缓存，数据更新时保持一致性
-- 推荐使用 Hooks 风格的 API（`useQuery`、`useMutation`），代码更简洁
-- 注意配置认证 token 和 token 过期刷新逻辑，保证 API 请求的安全性
-- `refetchQueries` 是最简单的数据同步方式，但性能敏感场景应优先使用手动 cache 操作
+- Apollo Client is the most mature GraphQL client in the React ecosystem, providing a complete solution for data fetching, caching, and state management.
+- Use the `Query` component (or the `useQuery` Hook) to fetch data declaratively, with loading and error states handled automatically.
+- Pair `Mutation` with `update` and `optimisticResponse` to implement optimistic updates and improve perceived performance.
+- Apollo's normalized cache manages data automatically by `__typename + id`, keeping things consistent when data changes.
+- Prefer the Hooks-style API (`useQuery`, `useMutation`) for cleaner code.
+- Configure the auth token and token-refresh-on-expiry logic to keep API requests secure.
+- `refetchQueries` is the simplest way to sync data, but for performance-sensitive cases prefer manual cache manipulation.

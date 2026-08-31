@@ -8,11 +8,11 @@ description: "Turborepo 高效能 Monorepo這個話題社區討論了很多次�
 wordCount: 300
 ---
 
-Turborepo 高效能 Monorepo這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
+Turborepo 高效能 Monorepo這個話題社群討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
 
 ## 入門指南
 
-實際項目中的用法會更復雜一些：
+實際項目中的用法會更複雜一些：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {

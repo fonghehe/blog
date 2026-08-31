@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 7 was officially released in October 2018, bringing important improvements including virtual scrolling, a drag-and-drop CDK, and performance optimizatio"
-wordCount: 99
+wordCount: 100
 ---
 
 Angular 7 was officially released in October 2018, bringing important improvements including virtual scrolling, a drag-and-drop CDK, and performance optimizations. Here is a summary of the most noteworthy new features.
@@ -61,4 +61,4 @@ export class DragListComponent {
 
 ## Summary
 
-Angular 7's updates are relatively stable. Virtual scrolling and the drag-and-drop CDK are the standout out-of-the-box features, well-suited for large enterprise applications.
+Angular 7 is a stable, low-risk upgrade. Virtual scrolling and the drag-and-drop CDK are the standout out-of-the-box features, well-suited for large enterprise applications.

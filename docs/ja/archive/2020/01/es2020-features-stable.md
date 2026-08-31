@@ -3,16 +3,16 @@ title: "ES2020 正式リリース：プロジェクトでのベストプラク�
 date: 2020-01-06 11:24:24
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 4
 description: "2020 年了，ES2020 的特性已经进入 Stage 4，主流浏览器和 Node 14 都支持了。趁着年初，把项目里能用的新特性梳理一遍，顺便统一团队的编码风格。"
-wordCount: 458
+wordCount: 727
 ---
 
-2020 年了，ES2020 的特性已经进入 Stage 4，主流浏览器和 Node 14 都支持了。趁着年初，把项目里能用的新特性梳理一遍，顺便统一团队的编码风格。
+2020 年になり、ES2020 の機能は Stage 4 に入り、主要なブラウザと Node 14 が対応した。年始めに、プロジェクトで使える新機能を洗い出し、ついでにチームのコーディングスタイルを統一しておこう。
 
 ## オプショナルチェーン (?.)
 
-之前写过好几篇关于防御性编程的文章，现在终于有了语言层面的支持。
+防御的プログラミングについてこれまで何本か記事を書いてきたが、ついに言語レベルでのサポートが入った。
 
 ```javascript
 // 老写法：层层判断
@@ -28,7 +28,7 @@ const result = api?.getUserInfo?.();
 const firstItem = arr?.[0];
 ```
 
-**在我们项目里的实际应用：**
+**実際のプロジェクトでの適用：**
 
 ```javascript
 // API 响应处理 —— 以前最容易出 TypeError 的地方
@@ -44,7 +44,7 @@ function formatOrder(order) {
 }
 ```
 
-**一个踩坑点：** `?.` 和函数调用结合时要注意：
+**ハマりやすい点：** `?.` を関数呼び出しと組み合わせる際の注意点：
 
 ```javascript
 // 这样写有问题：如果 obj.method 不存在，后面的 () 还是会执行
@@ -57,7 +57,7 @@ obj.method?.(arg);  // 如果 method 存在但不是函数，?.(arg) 返回 unde
 
 ## Null合体演算子 (??)
 
-以前用 `||` 做默认值，但 `0`、`''`、`false` 都会被吃掉。
+以前は `||` でデフォルト値を作っていたが、`0`、`''`、`false` もすべて巻き込まれていた。
 
 ```javascript
 // 老写法的坑
@@ -70,7 +70,7 @@ const pageSize = config.pageSize ?? 20;
 // 0、''、false 都保留
 ```
 
-**团队规范：什么时候用 `??` 什么时候用 `||`？**
+**チーム規約：`??` と `||` の使い分け：**
 
 ```javascript
 // 明确规则：
@@ -89,7 +89,7 @@ const x = (a ?? b) || c;  // OK
 
 ## Promise.allSettled
 
-这个特性我们团队盼了很久。之前做批量请求，`Promise.all` 一个失败全部失败太坑了。
+この機能はチームで長く待ち望んでいた。以前バッチリクエストを作るとき、`Promise.all` は一つでも失敗すると全部失敗してしまい、本当に困った。
 
 ```javascript
 // 老写法：要自己包一层
@@ -119,7 +119,7 @@ results.forEach(result => {
 });
 ```
 
-**实际场景：批量导出报表**
+**実際のケース：レポートの一括エクスポート**
 
 ```javascript
 async function exportReports(reportIds) {
@@ -148,7 +148,7 @@ async function exportReports(reportIds) {
 
 ## 动态 import()
 
-之前用 Webpack 的 code splitting，动态 import 已经在用了。但作为语言标准，现在更规范。
+以前は Webpack のコード分割で動的 import を使っていた。だが言語標準としては、今の方がより正規のやり方だ。
 
 ```javascript
 // 路由懒加载（Vue 项目）
@@ -189,7 +189,7 @@ async function loadChartModule() {
 
 ## globalThis
 
-终于不用写这种恶心的兼容代码了：
+こんな気持ち悪い互換コードを書かずに済むようになった：
 
 ```javascript
 // 老写法：判断环境
@@ -203,7 +203,7 @@ const globalObj =
 const globalObj = globalThis;
 ```
 
-在工具库中很有用：
+ユーティリティライブラリでは役立つ：
 
 ```javascript
 // polyfill 注册
@@ -218,9 +218,9 @@ globalThis.__APP_CONFIG__ = {
 };
 ```
 
-## BigInt（了解即可）
+## BigInt（知っていれば十分）
 
-前端用到大整数的场景不多，但在处理后端 ID 时可能会遇到。
+フロントエンドで大きな整数を使う場面は多くないが、バックエンドの ID を扱う際に出会うことがある。
 
 ```javascript
 // 超过 Number.MAX_SAFE_INTEGER 的 ID
@@ -234,9 +234,9 @@ const bigId = BigInt('9007199254740993');
 const result = userId + 1n;     // OK
 ```
 
-我们目前后端 ID 还在安全范围内，暂时不需要，但作为知识储备要知道。
+現在のところバックエンドの ID は安全範囲内なので当面不要だが、知識として押さえておくべきだ。
 
-## 项目落地计划
+## プロジェクトへの導入計画
 
 ```
 1. Babel 配置升级
@@ -254,8 +254,8 @@ const result = userId + 1n;     // OK
 
 ## まとめ
 
-- Optional Chaining 和 Nullish Coalescing 是最实用的两个特性，直接减少防御性代码
-- `??` 替代 `||` 做默认值要注意区分场景：需要跳过 falsy 用 `||`，只跳过 nullish 用 `??`
-- `Promise.allSettled` 解决了批量请求的部分失败问题，比 `Promise.all` 更安全
-- 动态 import 是代码拆分的标准方式，配合路由懒加载效果好
-- `globalThis` 统一了全局对象获取，写跨平台工具库时有用
+- Optional Chaining と Nullish Coalescing は最も実用的な2つの機能で、防御的なコードを直接減らせる
+- `??` を `||` の代わりにデフォルト値に使う際は場面を見分ける：falsy を飛ばしたいなら `||`、nullish だけを飛ばしたいなら `??`
+- `Promise.allSettled` はバッチリクエストの部分的な失敗の問題を解決し、`Promise.all` より安全だ
+- 動的 import はコード分割の標準的な方法で、ルーティングの遅延読み込みと組み合わせると効果的だ
+- `globalThis` はグローバルオブジェクトの取得を統一し、クロスプラットフォームなユーティリティライブラリを書く際に役立つ

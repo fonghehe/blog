@@ -5,14 +5,14 @@ tags:
   - Frontend
 readingTime: 2
 description: "Zig WebAssembly is seeing increasingly broad adoption in frontend development. This article takes a hands-on project perspective to analyze its core principles "
-wordCount: 206
+wordCount: 193
 ---
 
 Zig WebAssembly is seeing increasingly broad adoption in frontend development. This article takes a hands-on project perspective to analyze its core principles and best practices in depth.
 
 ## Basic Usage
 
-We can improve on the baseline in the following way:
+Here's how to improve on the baseline:
 
 ```javascript
 const fs = require("fs");
@@ -67,11 +67,11 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-This code demonstrates the basic usage. In real projects, you'll also need to account for error handling and edge cases.
+This code shows the basic usage; in real projects you'll also need to handle errors and edge cases.
 
 ## Practical Case Study
 
-Building on this foundation, we can optimize further:
+From here, you can optimize further:
 
 ```javascript
 .container {
@@ -98,7 +98,7 @@ This pattern is highly practical in large-scale projects and can significantly r
 
 ## Performance Optimization
 
-In real projects, usage tends to be more complex:
+Real-world usage is usually more complex:
 
 ```javascript
 const fs = require("fs");
@@ -153,7 +153,7 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-Pay close attention to edge case handling — this is critical in production environments.
+Pay close attention to edge cases — they're critical in production.
 
 ## Summary
 

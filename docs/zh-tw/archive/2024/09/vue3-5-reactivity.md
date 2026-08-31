@@ -1,5 +1,5 @@
 ---
-title: "Vue 3.5 響應式重构：響應式 Props 解构與 useTemplateRef"
+title: "Vue 3.5 響應式重構：響應式 Props 解構與 useTemplateRef"
 date: 2024-09-19 15:53:30
 tags:
   - Vue
@@ -12,7 +12,7 @@ Vue 3.5 響應式重構在前端開發中的應用越來越廣泛。本文從實
 
 ## 入門指南
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 const fs = require('fs')

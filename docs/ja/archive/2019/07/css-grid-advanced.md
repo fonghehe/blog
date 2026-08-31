@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 3
 description: "CSS Grid は主要ブラウザでサポートされてからしばらく経ちます。`grid-template-columns` と `grid-template-rows` の基本的な使い方は多くの人が知っていますが、`grid-template-areas`、`auto-fill` vs `auto-fit`、`minmax("
-wordCount: 738
+wordCount: 748
 ---
 
 CSS Grid は主要ブラウザでサポートされてからしばらく経ちます。`grid-template-columns` と `grid-template-rows` の基本的な使い方は多くの人が知っていますが、`grid-template-areas`、`auto-fill` vs `auto-fit`、`minmax()` などの上級機能こそ Grid の真の力を発揮するものです。この記事では実際のレイアウト例を通じてこれらの機能を解説します。
@@ -44,7 +44,7 @@ CSS Grid は主要ブラウザでサポートされてからしばらく経ち�
 }
 ```
 
-コードの可読性が一目瞭然——レイアウトの見た目がそのままコードになっています。
+コードの可読性が一目瞭然です。レイアウトの見た目がそのままコードに表れているからです。
 
 ### レスポンシブレイアウトとの組み合わせ
 
@@ -157,7 +157,7 @@ auto-fit（2列、空列が折り畳まれ子要素が伸びる）:
 
 ## まとめ
 
-- `grid-template-areas` でレイアウトの可読性が大幅に向上する
-- カードには `auto-fit`、固定グリッドには `auto-fill` が適している
-- `minmax()` はレスポンシブレイアウトの基本
-- Grid とメディアクエリを組み合わせると、余分なラッパーなしにきれいなレスポンシブデザインが実現できる
+- `grid-template-areas` でレイアウトの可読性が大幅に向上します
+- カードには `auto-fit`、固定グリッドには `auto-fill` が適しています
+- `minmax()` はレスポンシブレイアウトの基本です
+- Grid とメディアクエリを組み合わせると、余分なラッパーなしにきれいなレスポンシブデザインが実現できます

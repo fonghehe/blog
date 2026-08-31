@@ -5,12 +5,12 @@ tags:
   - Node.js
 readingTime: 2
 description: "Deno 1.0 终于发布了。作为 Node.js 之父 Ryan Dahl 的\"第二次尝试\"，它修正了 Node.js 的十大设计遗憾。在 1.0 之际，认真评估一下它到底适不适合在项目中使用。"
-wordCount: 196
+wordCount: 322
 ---
 
-Deno 1.0 终于发布了。作为 Node.js 之父 Ryan Dahl 的"第二次尝试"，它修正了 Node.js 的十大设计遗憾。在 1.0 之际，认真评估一下它到底适不适合在项目中使用。
+Deno 1.0 がついにリリースされた。Node.js の生みの親である Ryan Dahl による「2 回目の挑戦」であり、Node.js の十大設計上の後悔を是正している。1.0 を迎えたこの機会に、プロジェクトでの採用に耐えるかどうかを真剣に評価してみる。
 
-## Deno 的核心卖点
+## Deno の中心的な売り
 
 ```typescript
 // 1. 安全：默认沙箱，需要显式授权
@@ -90,7 +90,7 @@ Deno.test('异步测试', async () => {
 });
 ```
 
-## 实际写一个小服务
+## 実際に小さなサービスを書いてみる
 
 ```typescript
 // server.ts
@@ -140,7 +140,7 @@ await app.listen({ port: 8000 });
 deno run --allow-net server.ts
 ```
 
-## 现阶段的实际问题
+## 現時点での実際の課題
 
 ```markdown
 1. 生态太小：npm 有 130 万个包，Deno 的第三方模块很少
@@ -151,7 +151,7 @@ deno run --allow-net server.ts
 6. 调试：Chrome DevTools 支持有，但体验不如 Node.js
 ```
 
-## 什么时候可以考虑用 Deno
+## どんなときに Deno を検討できるか
 
 ```markdown
 适合：
@@ -169,8 +169,8 @@ deno run --allow-net server.ts
 
 ## まとめ
 
-- Deno 1.0 在安全性和开发体验上确实比 Node.js 更好
-- 内置 TypeScript、测试、lint、格式化，开箱即用
-- URL 导入去掉了 node_modules，但也带来了版本管理问题
-- 生态系统是最大短板，npm 生态不是一两年能追上的
-- 2020 年可以在工具脚本中使用，生产项目还是用 Node.js
+- Deno 1.0 はセキュリティと開発体験の面で確かに Node.js より優れている
+- TypeScript・テスト・lint・フォーマットを内蔵し、導入直後から使える
+- URL インポートによって node_modules が不要になった一方で、バージョン管理の問題を生む
+- エコシステムが最大の弱点で、npm のエコシステムは数年では追いつかない
+- 2020 年時点ではツール系スクリプトでの利用が現実的で、本番プロジェクトでは引き続き Node.js を使うべきだ

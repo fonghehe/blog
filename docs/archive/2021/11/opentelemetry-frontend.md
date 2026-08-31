@@ -6,10 +6,10 @@ tags:
   - 工程化
 readingTime: 2
 description: "在日常开发中，OpenTelemetry 前端可观测性的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 345
+wordCount: 336
 ---
 
-在日常开发中，OpenTelemetry 前端可观测性的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+OpenTelemetry 用于前端可观测性，在日常开发里用得越来越普遍。本文系统讲解它的用法、原理和优化策略。
 
 ## 快速上手
 
@@ -36,7 +36,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已在线上稳定运行半年多，经受过真实流量的检验。
 
 ## 内部原理
 
@@ -63,7 +63,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+上面只是最基本的用法，实际项目里错误处理和边界条件都得补上。
 
 ## 业务实战
 
@@ -92,7 +92,7 @@ const csvToJson = new Transform({
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种模式在大型项目里很实用，能明显压低维护成本。
 
 ## 性能对比
 
@@ -119,7 +119,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样处理，代码的可测试性和可扩展性都更好了。
 
 ## 问题排查
 
@@ -146,7 +146,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界条件一定要处理到位，生产环境里这是关键。
 
 ## 小结
 

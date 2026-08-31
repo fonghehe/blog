@@ -8,7 +8,7 @@ description: "在日常開發中，MSW Mock Service Worker 介面模擬的使用
 wordCount: 295
 ---
 
-在日常開發中，MSW Mock Service Worker 接口模擬的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
+在日常開發中，MSW Mock Service Worker 介面模擬的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
 
 ## 快速上手
 
@@ -45,7 +45,7 @@ describe('LoginForm', () => {
 ```javascript
 import { test, expect } from '@playwright/test'
 
-test.describe('用户登錄流程', () => {
+test.describe('用戶登錄流程', () => {
   test('成功登錄跳轉到首頁', async ({ page }) => {
     await page.goto('/login')
     await page.fill('[data-testid="email"]', 'admin@example.com')
@@ -95,7 +95,7 @@ describe('LoginForm', () => {
 ```javascript
 import { test, expect } from '@playwright/test'
 
-test.describe('用户登錄流程', () => {
+test.describe('用戶登錄流程', () => {
   test('成功登錄跳轉到首頁', async ({ page }) => {
     await page.goto('/login')
     await page.fill('[data-testid="email"]', 'admin@example.com')

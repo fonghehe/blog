@@ -3,16 +3,16 @@ title: "HTTPS TLS Handshake Process Explained"
 date: 2020-10-08 11:02:30
 tags:
   - Security
-readingTime: 2
-description: "关于HTTPS TLS 握手过程详解，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 302
+readingTime: 1
+description: "A production-focused explanation of the HTTPS TLS handshake process, addressing real-world problems developers encounter beyond theoretical understanding."
+wordCount: 196
 ---
 
-关于HTTPS TLS 握手过程详解，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to the HTTPS TLS handshake, many developers only operate at the API-call level. This article tries to look at it from a production-environment perspective, discussing the problems you'll actually run into and how to solve them.
 
 ## Basic Principles
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -30,11 +30,11 @@ function setCSP(req, res, next) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Advanced Features
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -52,11 +52,11 @@ function setCSP(req, res, next) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — it's critical in production.
 
 ## Project Practice
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -74,11 +74,11 @@ function setCSP(req, res, next) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tied to the actual scenario; not every case calls for over-optimizing.
 
 ## Best Practices
 
-我们可以通过以下方式来改进：
+Here's how we can improve on it:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -96,12 +96,12 @@ function setCSP(req, res, next) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it's proven in practice.
 
 ## Summary
 
-- HTTPS TLS 握手过程详解不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- A deep dive into the HTTPS TLS handshake is no silver bullet; choose it based on your project's scale and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Before using it in production, make sure to verify compatibility.
+- In team collaboration, conventions and documentation matter more than the technology itself.
+- Keep an eye on community developments; technical solutions need continuous iteration.

@@ -4,7 +4,7 @@ date: 2023-10-16 16:44:19
 tags:
   - Webpack
 readingTime: 2
-description: "Rspack 与 Webpack 对比 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projec"
+description: "Comparing Rspack with Webpack is increasingly relevant in frontend development. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 210
 ---
 

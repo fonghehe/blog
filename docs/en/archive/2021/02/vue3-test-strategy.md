@@ -7,11 +7,11 @@ tags:
   - JavaScript
 
 readingTime: 1
-description: "在日常工作中经常用到Vue 3 测试策略，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。"
-wordCount: 193
+description: "Vue 3 testing strategy comes up constantly in daily work, so here is a systematic summary to help you understand and apply it better."
+wordCount: 142
 ---
 
-在日常工作中经常用到Vue 3 测试策略，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。
+Vue 3 testing strategies come up often in day-to-day work, so I've put together a systematic write-up in the hope that it helps you understand and apply them better.
 
 ## Basic Concepts
 
@@ -36,7 +36,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Core Implementation
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 工具函数封装
@@ -68,7 +68,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Practical Application
 
-我们可以这样实现：
+Here is one way to implement it:
 
 ```javascript
 // 核心实现
@@ -85,7 +85,7 @@ const processData = (input) => {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+This pattern improves the code's maintainability.
 
 ## Best Practices
 
@@ -110,6 +110,6 @@ It is recommended to unify conventions within the team to reduce inconsistency.
 
 ## Summary
 
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
-- 持续关注社区动态，及时更新技术方案
+- In real projects, choosing the right approach matters more than chasing the latest technology.
+- Keep the team's code style consistent to lower maintenance costs.
+- Keep an eye on the community and update your tech choices in a timely manner.

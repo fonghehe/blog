@@ -1,18 +1,18 @@
 ---
-title: "CSS aspect-ratio Native Aspect Ratio: Chrome 88 正式Support"
+title: "Native CSS aspect-ratio: Chrome 88 Official Support"
 date: 2019-11-11 10:30:38
 tags:
   - CSS
 readingTime: 1
-description: "最近在团队中落地CSS aspect-ratio 原生宽高比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 284
+description: "We recently adopted native CSS aspect-ratio on our team and gained valuable experience. I'm writing this up as a reference for anyone doing similar work."
+wordCount: 180
 ---
 
-最近在团队中落地CSS aspect-ratio 原生宽高比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+We recently adopted native CSS aspect-ratio in our team and learned a lot in the process. I'm writing this up as a reference, hoping it helps others who are doing similar work.
 
 ## Core Concepts
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```css
 .container {
@@ -35,11 +35,11 @@ wordCount: 284
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance tuning should fit the specific scenario—you don't need to over-optimize every case.
 
 ## In-Depth Analysis
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```css
 :root {
@@ -62,11 +62,11 @@ wordCount: 284
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Implementation Experience
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```css
 .container {
@@ -89,11 +89,11 @@ wordCount: 284
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project, you'll also need to handle errors and edge cases.
 
-## 调优策略
+## Tuning Strategy
 
-在这个基础上，我们可以进一步优化：
+Building on that, we can optimize further:
 
 ```css
 :root {
@@ -116,11 +116,11 @@ wordCount: 284
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is especially handy in large projects, and it noticeably cuts maintenance cost.
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- In a team, conventions and documentation matter more than the technology itself.
+- Keep an eye on the community—your technical approach needs to keep iterating.
+- Don't adopt new tech just for its own sake.
+- The code examples are for reference only—adapt them to your own use case.

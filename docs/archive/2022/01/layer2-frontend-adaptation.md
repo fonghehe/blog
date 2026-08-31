@@ -5,9 +5,9 @@ tags:
   - Web3
   - Blockchain
   - DApp
-readingTime: 15
+readingTime: 9
 description: "Arbitrum One 与 Optimism 的前端适配差异、跨链交互与多 L2 网络管理实践"
-wordCount: 4300
+wordCount: 792
 ---
 
 ## Layer2 生态格局
@@ -37,7 +37,7 @@ Optimistic Rollup 的交易确认模式与 L1 不同：
 1. **软确认**：交易在 L2 上快速确认（几秒内），前端可以显示"已确认"状态
 2. **最终确认**：交易在 L1 上被包含并过了挑战期（7 天）后才最终确认
 
-对于前端 UX，软确认足以让用户认为交易已完成。但提款到 L1 必须等待挑战期，这是前端需要明确告知用户的：
+对于前端 UX，软确认足以让用户觉得交易已完成。但提款到 L1 必须等待挑战期，这是前端需要明确告知用户的：
 
 ```javascript
 const L2_CONFIRMATION_STATUS = {
@@ -74,7 +74,7 @@ async function getL2TransactionStatus(provider, txHash, l1Provider) {
 
 ### Gas 估算差异
 
-L2 的 Gas 估算与 L1 有本质区别。在 Optimism 上，交易 Gas 包含两部分：L2 执行 Gas 和 L1 数据 Gas（将交易数据发布到 L1 的成本）：
+L2 的 Gas 估算与 L1 有本质区别。在 Optimism 上，一笔交易的 Gas 由两部分组成：L2 执行 Gas 和 L1 数据 Gas（将交易数据发布到 L1 的成本）。
 
 ```javascript
 // Optimism 的 Gas 估算需要考虑 L1 data cost

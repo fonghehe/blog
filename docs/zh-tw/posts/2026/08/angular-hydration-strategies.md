@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 8
 description: "Angular 23 的 hydration 不再只是全量啟用。本文從 @defer hydrate 觸發器、選擇性水合邊界、zoneless 配合、TBT/INP 度量到內容頁與儀表板的不同策略，記錄一個行銷站遷移的真實資料和踩坑經驗。"
-wordCount: 3300
+wordCount: 1984
 ---
 
 Angular 17 引入 SSR hydration，解決了長期以來的 re-render flicker 問題。但預設的全量水合對內容型頁面來說太重了——一個行銷落地頁有 20 個元件，使用者可見區域只有首屏 3 個，剩下 17 個在背景默默消耗主執行緒做 hydration，拖慢 TBT 和 INP。Angular 23 的 incremental hydration 讓這件事有了精細控制的可能。

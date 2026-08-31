@@ -4,7 +4,7 @@ date: 2023-12-13 16:06:54
 tags:
   - React
 readingTime: 2
-description: "React 性能优化新范式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+description: "The new paradigm for React performance optimization is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 170
 ---
 

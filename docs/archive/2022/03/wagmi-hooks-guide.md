@@ -5,9 +5,9 @@ tags:
   - Web3
   - React
   - DApp
-readingTime: 15
+readingTime: 9
 description: "使用 wagmi Hooks 构建 React DApp，从钱包连接到合约交互的完整状态管理方案"
-wordCount: 4200
+wordCount: 620
 ---
 
 ## Wagmi 设计哲学

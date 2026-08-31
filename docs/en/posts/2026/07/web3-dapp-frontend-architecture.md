@@ -4,9 +4,9 @@ date: 2026-07-29 20:28:31
 tags:
   - Web3
   - Architecture
-readingTime: 7
+readingTime: 11
 description: "Web3 DApp frontend architecture differs fundamentally from traditional web applications: decentralized data sources, wallet-based authentication, and asynchronous transaction confirmations. This article systematically covers DApp frontend engineering practices—from Ethereum interaction layer encapsulation and multi-wallet adaptation, to ABI type safety, on-chain data caching, and transaction state management."
-wordCount: 2500
+wordCount: 1583
 ---
 
 The frontend architecture of a Web3 DApp differs fundamentally from that of a traditional web application. Traditional apps get their data from centralized API servers, authenticate via cookies/tokens, and follow a predictable synchronous request-response model. DApps, on the other hand, face a decentralized blockchain network: data comes from multiple RPC nodes, authentication relies on wallet signatures, and submitted transactions must wait for block confirmations—the entire process is fraught with asynchrony, uncertainty, and network latency.

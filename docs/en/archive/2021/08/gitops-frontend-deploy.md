@@ -6,15 +6,15 @@ tags:
   - Frontend
 
 readingTime: 1
-description: "GitOps 前端部署工作流 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 199
+description: "GitOps deployment workflows for frontends are being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 178
 ---
 
-GitOps 前端部署工作流 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+GitOps frontend deployment workflows are becoming increasingly widespread in frontend development. This article dives into their core principles and best practices drawn from real projects.
 
 ## Basic Usage
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more complex:
 
 ```javascript
 FROM node:20-alpine AS deps
@@ -117,5 +117,5 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- GitOps 前端部署工作流不是银弹，需要根据项目规模和技术栈选择
+- GitOps frontend deployment workflows are no silver bullet; choose based on your project size and tech stack
 - Understanding underlying principles is more important than memorizing APIs

@@ -5,6 +5,9 @@ tags:
   - Web3
   - Ethereum
   - DApp
+readingTime: 8
+wordCount: 1462
+description: "web3.js 是以太坊生态最早的 JavaScript SDK，由以太坊基金会支持开发。其 1.x 版本奠定了 DApp 前端开发的基础范式：全局 Provider 实例、Contract 对象、事件订阅、交易签名。"
 ---
 
 ## 两个库的设计哲学与演进
@@ -131,7 +134,7 @@ ethers.js 的 BigNumber 实现更轻量，且与库的其他工具函数深度�
 
 ## 类型安全：ethers.js 的 TypeScript 支持
 
-ethers.js v5 从底层用 TypeScript 重写，提供了完整的类型定义。通过类型扩展，可以获得编译时的合约方法检查：
+ethers.js v5 从底层开始用 TypeScript 重写，提供了完整的类型定义。通过类型扩展，可以获得编译时的合约方法检查：
 
 ```typescript
 import { ethers, type ContractTransaction } from 'ethers';
@@ -189,7 +192,7 @@ contract.off(filter, callback);
 contract.removeAllListeners(filter);
 ```
 
-ethers.js 的事件过滤器 API 更加一致。`contract.filters.EventName(arg1, arg2)` 接受按位置参数索引，`null` 表示通配符。这种设计使得复杂的事件过滤更加直观。
+ethers.js 的事件过滤器 API 更加一致。`contract.filters.EventName(arg1, arg2)` 按参数位置传入索引，`null` 表示通配符。这种设计使得复杂的事件过滤更加直观。
 
 ### 历史日志查询
 
@@ -317,7 +320,7 @@ ethers.js 版本的代码行数更少，可读性也更好——`allowance.lt(am
 
 ### ABI 格式差异
 
-web3.js 接受两种 ABI 格式（human-readable 和 JSON），而 ethers.js v5 额外支持更简洁的 human-readable ABI：
+web3.js 支持 JSON 与 human-readable 两种 ABI 格式，而 ethers.js v5 还额外提供了更简洁的 human-readable 写法：
 
 ```javascript
 // 两个库都支持的 JSON ABI
@@ -357,7 +360,7 @@ ethers.js v5 的 Tree-shaking 支持意味着只引入需要的功能可以进�
 
 ### 执行效率
 
-ethers.js v5 在 ABI 编码/解码、BigNumber 运算方面做了大量优化。在批量合约调用场景下（如查询 100 个代币余额），ethers.js 的解码速度约为 web3.js 的 1.5-2 倍。这主要得益于 ethers.js v5 重写的 ABI Coder 使用了更高效的二进制操作。
+ethers.js v5 在 ABI 编码/解码、BigNumber 运算方面做了大量优化。在批量合约调用场景下（如查询 100 个代币余额），ethers.js 的解码速度约为 web3.js 的 1.5-2 倍。这主要得益于 ethers.js v5 重写的 ABI Coder 采用了更高效的底层二进制处理。
 
 ```javascript
 // 批量余额查询性能对比

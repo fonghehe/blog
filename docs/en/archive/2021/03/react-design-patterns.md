@@ -7,11 +7,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "React 常用设计模式汇总 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on"
-wordCount: 236
+description: "Roundups of common React design patterns have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 216
 ---
 
-React 常用设计模式汇总 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Common React design patterns have been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -96,7 +96,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Optimization Tips
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more involved:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -153,5 +153,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- React 常用设计模式汇总不是银弹，需要根据项目规模和技术栈选择
+- Common React design patterns are not a silver bullet; choose them based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs

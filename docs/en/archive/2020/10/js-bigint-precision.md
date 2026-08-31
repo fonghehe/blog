@@ -4,15 +4,15 @@ date: 2020-10-29 11:00:42
 tags:
   - JavaScript
 readingTime: 2
-description: "JavaScript BigInt 高精度计算这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 268
+description: "A refreshed examination of JavaScript BigInt for high-precision arithmetic, revisiting earlier conclusions in light of updated browser support and standards."
+wordCount: 166
 ---
 
-JavaScript BigInt 高精度计算这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+The topic of JavaScript BigInt for high-precision arithmetic has been discussed in the community many times, but with version iterations a lot of the conclusions need refreshing. This article re-examines it based on the latest version.
 
 ## Getting Started
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll still need to account for error handling and edge cases.
 
 ## Source Code Analysis
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 :root {
@@ -63,11 +63,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly cut maintenance cost.
 
 ## Real-World Applications
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -92,11 +92,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Optimization Tips
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -120,10 +120,10 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — it's critical in production.
 
 ## Summary
 
-- JavaScript BigInt 高精度计算不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
+- JavaScript BigInt for high-precision arithmetic is no silver bullet; base your choice on project scale and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Before using it in production, make sure to verify compatibility.

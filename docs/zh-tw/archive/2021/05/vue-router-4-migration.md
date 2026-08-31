@@ -8,11 +8,11 @@ description: "Vue 3 生態在 2021 年逐步成熟，Vue Router 4 也隨之進�
 wordCount: 406
 ---
 
-Vue 3 生態在 2021 年逐步成熟，Vue Router 4 也隨之進入穩定期。年初我主導了一箇中型後臺管理系統的 Vue Router 3 → 4 遷移，踩了不少坑，總結一下核心變化和遷移策略。
+Vue 3 生態在 2021 年逐步成熟，Vue Router 4 也隨之進入穩定期。年初我主導了一個中型後臺管理系統的 Vue Router 3 → 4 遷移，踩了不少坑，總結一下核心變化和遷移策略。
 
 ## 路由定義方式的變化
 
-Vue Router 4 最直觀的變化是建立例項的 API 從建構函式變成了函式呼叫：
+Vue Router 4 最直觀的變化是建立實例的 API 從建構函式變成了函式呼叫：
 
 ```javascript
 // Vue Router 3
@@ -77,7 +77,7 @@ Vue Router 4 移除了 `*` 萬用字元，改用 `/:pathMatch(.*)*`：
 
 **2. `$router` 和 `$route` 型別變化**
 
-在 TypeScript 專案中，需要使用 `useRouter()` 和 `useRoute()` 獲取型別安全的例項：
+在 TypeScript 專案中，需要使用 `useRouter()` 和 `useRoute()` 獲取型別安全的實例：
 
 ```typescript
 import { useRouter, useRoute } from 'vue-router'

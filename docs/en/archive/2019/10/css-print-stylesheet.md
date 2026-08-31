@@ -4,15 +4,15 @@ date: 2019-10-29 11:00:50
 tags:
   - CSS
 readingTime: 1
-description: "CSS 打印样式表方案是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。"
-wordCount: 252
+description: "CSS print stylesheets are a common challenge in day-to-day development. Drawing on real projects, this article shares concrete implementation approaches and lessons learned."
+wordCount: 157
 ---
 
-CSS 打印样式表方案是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。
+CSS print stylesheets are a common challenge in day-to-day development. Drawing on real projects, this article shares concrete implementation approaches and lessons learned.
 
 ## Basic Concepts
 
-先来看基本的用法：
+Let's start with the basic usage:
 
 ```css
 function deepClone(obj, map = new WeakMap()) {
@@ -29,11 +29,11 @@ function deepClone(obj, map = new WeakMap()) {
 }
 ```
 
-这种写法简洁明了，适合大多数场景。
+This approach is clean and clear, and works well for most scenarios.
 
 ## Deep Dive
 
-核心代码如下：
+The core code looks like this:
 
 ```css
 function pLimit(concurrency) {
@@ -57,11 +57,11 @@ function pLimit(concurrency) {
 }
 ```
 
-实际项目中还需要考虑边界条件和异常处理。
+In real projects you also need to consider edge cases and error handling.
 
 ## Project Application
 
-下面是一个实际的例子：
+Here is a concrete example:
 
 ```css
 class EventEmitter {
@@ -92,11 +92,11 @@ class EventEmitter {
 }
 ```
 
-这种模式在团队中推广后效果很好，维护成本明显降低。
+After rolling this pattern out across the team, the results were positive and maintenance cost dropped noticeably.
 
 ## Common Issues
 
-我们可以通过以下方式实现：
+We can implement it in the following way:
 
 ```css
 interface User {
@@ -118,11 +118,11 @@ function createUser(data: Partial<User>): User {
 type UserKeys = keyof User  // 'id' | 'name' | 'email' | 'role'
 ```
 
-注意上面代码中的性能细节，避免不必要的计算。
+Pay attention to the performance details in the code above and avoid unnecessary computation.
 
 ## Summary
 
-- CSS 打印样式表方案的关键在于理解核心概念，不要停留在表面用法
-- 实际项目中根据场景选择合适的方案
-- 团队中统一约定比追求完美实现更重要
-- 持续学习和总结，保持技术敏感度
+- The key to CSS print stylesheets is understanding the core concepts, not just the surface-level usage
+- Pick the right approach for the scenario in real projects
+- Consistent team conventions matter more than chasing a perfect implementation
+- Keep learning and summarizing to stay technically sharp

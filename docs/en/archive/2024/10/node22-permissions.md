@@ -4,11 +4,11 @@ date: 2024-10-11 16:25:02
 tags:
   - Node.js
 readingTime: 2
-description: "在日常开发中，Node.js 22 权限模型 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 207
+description: "The Node.js 22 permission model is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 183
 ---
 
-在日常开发中，Node.js 22 权限模型 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+The Node.js 22 permission model is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
 
 ## Quick Start
 
@@ -95,7 +95,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Performance Comparison
 
@@ -125,4 +125,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Node.js 22 权限模型不是银弹，需要根据项目规模和技术栈选择
+- The node.js 22 permission model is not a silver bullet — choose based on your project scale and tech stack

@@ -3,9 +3,9 @@ title: "AI コードレビュー 2026 ベストプラクティス"
 date: 2026-01-02 13:36:13
 tags:
   - エンジニアリング
-readingTime: 4
+readingTime: 3
 description: "AI コードレビューは「あれば嬉しい」機能からチームの標準装備へと変わった。しかし多くのチームが誤った使い方をしている ─ AI に頼りすぎてエンジニアが考えなくなるか、あるいは単なる高機能リンターとして使うだけ。本稿は3つの大規模プロジェクトで培った AI コードレビューの実践経験を共有する。"
-wordCount: 1057
+wordCount: 771
 ---
 
 AI コードレビューは「あれば嬉しい」機能からチームの標準装備へと変わった。しかし多くのチームが誤った使い方をしている ─ AI に頼りすぎてエンジニアが考えなくなるか、あるいは単なる高機能リンターとして使うだけ。本稿は3つの大規模プロジェクトで培った AI コードレビューの実践経験を共有する。
@@ -134,43 +134,4 @@ const reviewWorkflow = {
 - 良いレビュー prompt は良いレビューツールより重要 ─ 次元別に専用 prompt を書く
 - CI では AI が初回スクリーニング、人間が最終承認。逆にしてはいけない
 - AI レビューの最大の価値は「人間がノイズを読む時間を減らすこと」であり、人間の判断を置き換えることではない
-- 常に信じること：AI は見落とす。人間が最終的な品質の番人
-  const criticalIssues = results.issues.filter(
-    (i) => i.severity === "critical" || i.severity === "high",
-  );
-
-  if (criticalIssues.length > 0) {
-    await octokit.issues.createComment({
-      owner: "myorg",
-      repo: "frontend",
-      issue_number: prNumber,
-      body: formatReviewComment(criticalIssues),
-    });
-    // 自動マージをブロック
-    process.exit(1);
-  }
-}
-```
-
-## よくある落とし穴を避ける
-
-最大の落とし穴は「AI が問題なしと言ったから本当に問題なし」だ。AI はビジネスロジックのエラー、コンテキスト依存の問題、チームの暗黙のルールを見落とす。私のアプローチ：AI は機械的なチェック（型安全性・パフォーマンスパターン・よくあるバグパターン）を担当し、人間はビジネスの正確性とアーキテクチャの一貫性を担当する。
-
-```typescript
-// アンチパターン：AI の提案を人間の判断なしに自動適用する
-const autoApplyAISuggestions = true; // 危険！
-
-// 正しいアプローチ：AI が問題を指摘し、人間が採用するかどうかを決める
-const reviewWorkflow = {
-  aiFirstPass: { autoApply: false, generateSuggestions: true },
-  humanReview: { showAIInsights: true, collapseLowConfidence: true },
-};
-```
-
-## まとめ
-
-- AI レビューはモードベースであるべき：小さな変更は自動、大きな変更は深い分析
-- 良いレビュー prompt は良いレビューツールより重要 ─ 次元別に専用 prompt を書く
-- CI では AI が初回スクリーニング、人間が最終承認。逆にしてはいけない
-- AI レビューの最大の価値は「人間がノイズを読む時間を減らすこと」であり、人間の判断を置き換えることではない
-- 常に信じること：AI は見落とす。人間が最終的な品質の番人
+- 常に心に留めておくべきは、AI にも見落としがあるということだ。最終的な品質の番人はあくまで人間である

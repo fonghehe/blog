@@ -4,18 +4,18 @@ date: 2019-08-19 10:44:46
 tags:
   - CSS
 readingTime: 4
-description: "图片轮播、全屏滚动页面、横向滚动卡片——这些常见的交互效果过去往往需要依赖 JavaScript 库实现。CSS Scroll Snap 属性让我们可以用纯 CSS 实现滚动吸附效果，性能更好、代码更简洁。2019 年，Scroll Snap 已经获得了主流浏览器的广泛支持。本文将系统讲解 Scroll Snap 的用"
-wordCount: 615
+description: "Image carousels, full-screen scrolling pages, and horizontal scrolling cards—these common interaction patterns used to depend on JavaScript libraries. The CSS Scroll Snap property lets you achieve scroll-snapping effects with pure CSS, giving you better performance and cleaner code. By 2019, Scroll Snap enjoyed broad support across major browsers. This article systematically covers how Scroll Snap works."
+wordCount: 400
 ---
 
-图片轮播、全屏滚动页面、横向滚动卡片——这些常见的交互效果过去往往需要依赖 JavaScript 库实现。CSS Scroll Snap 属性让我们可以用纯 CSS 实现滚动吸附效果，性能更好、代码更简洁。2019 年，Scroll Snap 已经获得了主流浏览器的广泛支持。本文将系统讲解 Scroll Snap 的用法和实战案例。
+Image carousels, full-screen scrolling pages, and horizontal scrolling cards—these common interaction patterns used to depend on JavaScript libraries. The CSS Scroll Snap property lets you achieve scroll-snapping effects with pure CSS, giving you better performance and cleaner code. By 2019, Scroll Snap enjoyed broad support across major browsers. This article systematically covers how Scroll Snap works, with real-world examples.
 
 ## Core Concepts
 
-Scroll Snap 涉及两个关键属性：
+Scroll Snap revolves around two key properties:
 
-- **`scroll-snap-type`** — 设置在滚动容器上，定义滚动轴和吸附严格程度
-- **`scroll-snap-align`** — 设置在子元素上，定义吸附位置
+- **`scroll-snap-type`** — set on the scroll container; defines the scroll axis and how strictly snapping is enforced.
+- **`scroll-snap-align`** — set on the child elements; defines the snap position.
 
 ## Basic Usage: Horizontal Carousel
 
@@ -64,7 +64,7 @@ Scroll Snap 涉及两个关键属性：
 .slide-4 { background: #96ceb4; color: white; }
 ```
 
-### scroll-snap-type 详解
+### Understanding scroll-snap-type
 
 ```css
 /* 语法 */
@@ -82,10 +82,10 @@ scroll-snap-type: x mandatory;   /* 严格吸附，必须对齐到吸附点 */
 scroll-snap-type: x proximity;   /* 宽松吸附，尽量对齐但不强制 */
 ```
 
-- **`mandatory`** — 滚动停止时必须对齐到吸附点。适用于轮播图、全屏滚动等精确场景
-- **`proximity`** — 滚动停止时尽量对齐，但位置不够精确时不会强制调整。适用于长列表等自然滚动场景
+- **`mandatory`** — when scrolling stops, the position must snap to a snap point. Best for carousels, full-screen scrolling, and other precise scenarios.
+- **`proximity`** — when scrolling stops it snaps if reasonably close, but won't force alignment when the position isn't precise enough. Best for naturally scrolling lists and similar scenarios.
 
-### scroll-snap-align 详解
+### Understanding scroll-snap-align
 
 ```css
 /* 语法 */
@@ -134,7 +134,7 @@ scroll-snap-align: start end; /* 第一个值：行内方向，第二个值：�
 
 ## Card List Snap
 
-适用于产品展示、文章列表等场景：
+Works well for product showcases, article lists, and similar scenarios:
 
 ```html
 <div class="card-container">
@@ -179,7 +179,7 @@ scroll-snap-align: start end; /* 第一个值：行内方向，第二个值：�
 
 ## scroll-snap-stop: Preventing Scroll Pass-Through
 
-默认情况下，快速滑动可能跳过多个吸附点。`scroll-snap-stop` 可以控制这个行为：
+By default, a fast swipe can skip several snap points. `scroll-snap-stop` lets you control this behavior:
 
 ```css
 .slide {
@@ -189,13 +189,13 @@ scroll-snap-align: start end; /* 第一个值：行内方向，第二个值：�
 }
 ```
 
-这个属性特别适合需要用户逐页阅读的场景，如新手引导页。
+This property is especially useful when you want readers to go through content page by page, such as onboarding screens.
 
 ## scroll-padding and scroll-margin
 
-### scroll-padding（设置在容器上）
+### scroll-padding (set on the container)
 
-在滚动容器内设置内边距，不影响布局但影响吸附位置：
+Sets padding inside the scroll container. It doesn't affect layout but shifts where snapping happens:
 
 ```css
 /* 有固定导航栏时，避免内容被遮挡 */
@@ -209,9 +209,9 @@ scroll-snap-align: start end; /* 第一个值：行内方向，第二个值：�
 }
 ```
 
-### scroll-margin（设置在子元素上）
+### scroll-margin (set on the child)
 
-为单个子元素设置外边距：
+Sets a margin for an individual child element:
 
 ```css
 .section {
@@ -264,7 +264,7 @@ scroll-snap-align: start end; /* 第一个值：行内方向，第二个值：�
 
 ## Vertical Content Navigation
 
-配合侧边导航使用，实现点击导航自动滚动：
+Pair it with a side navigation so clicking a nav item scrolls automatically:
 
 ```html
 <div class="layout">
@@ -299,15 +299,15 @@ section {
 
 ## Browser Compatibility
 
-2019 年 8 月的支持情况：
+Support as of August 2019:
 
-- Chrome 69+ — 完整支持
-- Firefox 68+ — 完整支持
-- Safari 11+ — 完整支持（需要 `-webkit-` 前缀）
-- Edge 79+ — 完整支持
-- IE — 不支持
+- Chrome 69+ — full support
+- Firefox 68+ — full support
+- Safari 11+ — full support (requires `-webkit-` prefix)
+- Edge 79+ — full support
+- IE — not supported
 
-对于不支持的浏览器，可以添加渐进增强：
+For unsupported browsers, you can add progressive enhancement:
 
 ```css
 @supports (scroll-snap-type: x mandatory) {
@@ -324,9 +324,9 @@ section {
 
 ## Summary
 
-- `scroll-snap-type` 设置在容器上定义滚动轴和吸附严格度，`scroll-snap-align` 设置在子元素上定义吸附位置
-- `mandatory` 严格吸附适用于轮播图等精确场景，`proximity` 宽松吸附适用于列表等自然滚动场景
-- `scroll-snap-stop: always` 可以防止快速滑动时跳过内容
-- `scroll-padding` 和 `scroll-margin` 用于处理固定导航栏等偏移场景
-- 使用 `@supports` 做渐进增强，不支持的浏览器仍可正常使用滚动功能
-- 纯 CSS 实现，性能优于 JavaScript 方案，推荐在新项目中优先使用
+- `scroll-snap-type`, set on the container, defines the scroll axis and snap strictness; `scroll-snap-align`, set on the children, defines the snap position.
+- `mandatory` enforces strict snapping, ideal for carousels and other precise scenarios; `proximity` offers loose snapping, better for naturally scrolling lists.
+- `scroll-snap-stop: always` prevents content from being skipped during a fast swipe.
+- `scroll-padding` and `scroll-margin` handle offsets from fixed nav bars and similar cases.
+- Use `@supports` for progressive enhancement; unsupported browsers still scroll normally, just without snapping.
+- Pure-CSS implementation outperforms JavaScript approaches, so it's worth reaching for first in new projects.

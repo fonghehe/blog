@@ -4,11 +4,11 @@ date: 2023-04-03 09:31:52
 tags:
   - CSS
 readingTime: 1
-description: "CSS interpolate-size 插值这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 202
+description: "CSS interpolate-size has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 180
 ---
 
-CSS interpolate-size 插值这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+CSS interpolate-size has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
 
 ## Getting Started
 
@@ -121,6 +121,6 @@ This pattern is very practical in large projects and can significantly reduce ma
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- CSS interpolate-size 插值不是银弹，需要根据项目规模和技术栈选择
+- CSS interpolate-size is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

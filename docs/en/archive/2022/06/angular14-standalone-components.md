@@ -4,13 +4,13 @@ date: 2022-06-15 16:44:03
 tags:
   - Angular
 readingTime: 2
-description: "Angular 14 于 2022 年 6 月 2 日正式发布，这是 Angular 近年来最重要的版本之一。Standalone Components（独立组件）从根本上改变了 Angular 的模块化方式——组件不再强制依附于 `NgModule`，可以直接声明自己的依赖。"
-wordCount: 255
+description: "Angular 14 was officially released on June 2, 2022, marking one of the most significant Angular releases in recent years. Standalone Components fundamentally change how Angular handles modularity — components no longer need to belong to an `NgModule` and can declare their own dependencies directly."
+wordCount: 161
 ---
 
-Angular 14 于 2022 年 6 月 2 日正式发布，这是 Angular 近年来最重要的版本之一。Standalone Components（独立组件）从根本上改变了 Angular 的模块化方式——组件不再强制依附于 `NgModule`，可以直接声明自己的依赖。
+Angular 14 was officially released on June 2, 2022, marking one of the most significant Angular releases in recent years. Standalone Components fundamentally change how Angular handles modularity — components no longer need to belong to an `NgModule` and can declare their own dependencies directly.
 
-## 什么是 Standalone Component
+## What Is a Standalone Component
 
 ```typescript
 // 旧方式：组件必须属于某个 NgModule
@@ -37,7 +37,7 @@ export class ButtonComponent {
 }
 ```
 
-## 应用引导：bootstrapApplication
+## Application Bootstrapping: bootstrapApplication
 
 ```typescript
 // main.ts（Angular 14 新方式，不需要 AppModule）
@@ -56,7 +56,7 @@ bootstrapApplication(AppComponent, {
 }).catch((err) => console.error(err));
 ```
 
-## Standalone 路由配置
+## Standalone Route Configuration
 
 ```typescript
 // app.routes.ts
@@ -83,9 +83,9 @@ export const PRODUCT_ROUTES: Routes = [
 ];
 ```
 
-## inject() 函数：函数式依赖注入
+## The inject() Function: Functional Dependency Injection
 
-Angular 14 引入了 `inject()` 函数，可以在 injection context 中调用（组件构造期间、工厂函数等）：
+Angular 14 introduced the `inject()` function, which can be called in an injection context (during component construction, factory functions, etc.):
 
 ```typescript
 // 不再需要 constructor 注入
@@ -118,9 +118,9 @@ export const authGuard = () => {
 }
 ```
 
-## 严格类型化表单（TypedForms）
+## Strictly Typed Forms (TypedForms)
 
-Angular 14 的另一个重大改进：响应式表单终于有了完整的 TypeScript 类型：
+Another major improvement in Angular 14: reactive forms finally have full TypeScript types:
 
 ```typescript
 // Angular 14 之前：FormControl 是 any 类型
@@ -139,9 +139,9 @@ const loginForm = new FormGroup({
 // { email: string | null; password: string | null; rememberMe: boolean | null }
 ```
 
-## 从 NgModule 迁移到 Standalone
+## Migrating from NgModule to Standalone
 
-Angular 14 提供了迁移 schematic：
+Angular 14 provides a migration schematic:
 
 ```bash
 ng generate @angular/core:standalone
@@ -154,4 +154,4 @@ ng generate @angular/core:standalone
 
 ## Summary
 
-Angular 14 的 Standalone Components 是向"无 NgModule"架构迈出的第一步。它降低了 Angular 的学习曲线（NgModule 是新手最困惑的概念之一），并让代码更易于按功能组织。TypedForms 则补上了长期缺失的类型安全缺口。Angular 正在变得更现代，更简洁。
+Angular 14's Standalone Components are the first step toward an "NgModule-free" architecture. They lower Angular's learning curve (NgModule is one of the most confusing concepts for beginners) and make it easier to organize code by feature. TypedForms fills a long-standing type safety gap. Angular is becoming more modern and cleaner.

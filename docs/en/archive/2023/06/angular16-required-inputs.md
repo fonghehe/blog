@@ -4,11 +4,11 @@ date: 2023-06-30 10:56:23
 tags:
   - Angular
 readingTime: 2
-description: "Angular 16 对 `@Input()` 装饰器进行了两项重要增强：**Required Inputs**（必填输入）和 **Input Transforms**（输入转换）。这两个特性让组件的输入接口更接近 TypeScript 的原生类型安全，减少了运行时错误。"
-wordCount: 361
+description: "Angular 16 brings two important enhancements to the @Input() decorator: Required Inputs and Input Transforms. Together they bring component input interfaces closer to TypeScript's native type safety and reduce runtime errors."
+wordCount: 330
 ---
 
-Angular 16 对 `@Input()` 装饰器进行了两项重要增强：**Required Inputs**（必填输入）和 **Input Transforms**（输入转换）。这两个特性让组件的输入接口更接近 TypeScript 的原生类型安全，减少了运行时错误。
+Angular 16 brings two important enhancements to the @Input() decorator: Required Inputs and Input Transforms. Together they bring component input interfaces closer to TypeScript's native type safety and reduce runtime errors.
 
 ## Required Inputs: Mandatory Inputs
 

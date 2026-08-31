@@ -59,7 +59,7 @@ Mock.mock("/api/users", "get", {
       // 生成 10 條資料
       "id|+1": 1, // 自增 id
       name: "@cname", // 隨機中文名
-      email: "@email", // 隨機郵箱
+      email: "@email", // 隨機電子郵件
       "age|18-60": 1, // 18-60 隨機整數
       avatar: '@image("100x100")',
     },
@@ -153,7 +153,7 @@ export const handlers = [
 在 `vue.config.js` 裡，開發環境根據環境變數決定是否啟用 Mock.js：
 
 ```javascript
-// 隻在開發環境載入 mock
+// 只在開發環境載入 mock
 if (process.env.VUE_APP_MOCK === "true") {
   require("./src/mock");
 }

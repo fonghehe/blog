@@ -4,7 +4,7 @@ date: 2022-04-04 14:50:15
 tags:
   - CSS
 readingTime: 2
-description: "We recently implemented CSS Subgrid 浏览器实现， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+description: "I recently worked with CSS Subgrid's browser implementations with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 179
 ---
 

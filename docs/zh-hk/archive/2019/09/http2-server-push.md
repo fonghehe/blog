@@ -4,18 +4,18 @@ date: 2019-09-12 11:02:48
 tags:
   - 前端
 readingTime: 5
-description: "HTTP/2 帶來了多路複用、頭部壓縮、服務端推送等重大改進。其中 Server Push 允許服務器在客户端請求之前主動推送資源，減少請求往返次數，顯著提升頁面加載速度。本文將深入講解 HTTP/2 Server Push 的工作原理，並結合 Node.js 和 Nginx 給出實戰設定。"
+description: "HTTP/2 帶來了多路複用、頭部壓縮、服務端推送等重大改進。其中 Server Push 允許伺服器在客戶端請求之前主動推送資源，減少請求往返次數，顯著提升頁面加載速度。本文將深入講解 HTTP/2 Server Push 的工作原理，並結合 Node.js 和 Nginx 給出實戰設定。"
 wordCount: 887
 ---
 
-HTTP/2 帶來了多路複用、頭部壓縮、服務端推送等重大改進。其中 Server Push 允許服務器在客户端請求之前主動推送資源，減少請求往返次數，顯著提升頁面加載速度。本文將深入講解 HTTP/2 Server Push 的工作原理，並結合 Node.js 和 Nginx 給出實戰配置。
+HTTP/2 帶來了多路複用、頭部壓縮、服務端推送等重大改進。其中 Server Push 允許伺服器在客戶端請求之前主動推送資源，減少請求往返次數，顯著提升頁面加載速度。本文將深入講解 HTTP/2 Server Push 的工作原理，並結合 Node.js 和 Nginx 給出實戰配置。
 
 ## HTTP/1.1 的資源加載瓶頸
 
 在 HTTP/1.1 中，瀏覽器解析 HTML 後發現需要加載 CSS/JS，才會發起新的請求：
 
 ```
-瀏覽器                          服務器
+瀏覽器                          伺服器
   |
 ---- 請求 index.html -------->|  (第 1 次往返)
   |<---- 返回 index.html --------|
@@ -31,14 +31,14 @@ HTTP/2 帶來了多路複用、頭部壓縮、服務端推送等重大改進。�
 
 ## HTTP/2 Server Push 的工作原理
 
-Server Push 允許服務器在響應 HTML 時，主動推送關聯的 CSS/JS：
+Server Push 允許伺服器在響應 HTML 時，主動推送關聯的 CSS/JS：
 
 ```
-瀏覽器                          服務器
+瀏覽器                          伺服器
   |---- 請求 index.html -------->|
   |<---- 返回 index.html --------|
-  |<---- 推送 style.css ---------|  (服務器主動推送)
-  |<---- 推送 app.js ------------|  (服務器主動推送)
+  |<---- 推送 style.css ---------|  (伺服器主動推送)
+  |<---- 推送 app.js ------------|  (伺服器主動推送)
 ```
 
 節省了兩次往返時間！
@@ -47,15 +47,15 @@ Server Push 允許服務器在響應 HTML 時，主動推送關聯的 CSS/JS：
 
 Server Push 使用 HTTP/2 的 `PUSH_PROMISE` 幀：
 
-1. 服務器收到對 `index.html` 的請求
-2. 服務器發送 `PUSH_PROMISE` 幀，告知客户端即將推送 `style.css`
-3. 客户端檢查緩存，如果已有該資源則發送 `RST_STREAM` 拒絕推送
-4. 如果客户端需要，服務器發送資源數據
+1. 伺服器收到對 `index.html` 的請求
+2. 伺服器發送 `PUSH_PROMISE` 幀，告知客戶端即將推送 `style.css`
+3. 客戶端檢查緩存，如果已有該資源則發送 `RST_STREAM` 拒絕推送
+4. 如果客戶端需要，伺服器發送資源數據
 
 ### 關鍵概念
 
-- **推送緩存（Push Cache）** — 推送的資源暫存在一個特殊的 HTTP/2 Push Cache 中，隻有當瀏覽器真正需要該資源時才會使用
-- **推送可以被拒絕** — 如果客户端已有緩存，可以拒絕服務器的推送
+- **推送緩存（Push Cache）** — 推送的資源暫存在一個特殊的 HTTP/2 Push Cache 中，只有當瀏覽器真正需要該資源時才會使用
+- **推送可以被拒絕** — 如果客戶端已有緩存，可以拒絕伺服器的推送
 - **推送與請求關聯** — 推送的資源關聯到觸發推送的那個請求
 
 ## Nginx 設定 Server Push
@@ -273,16 +273,16 @@ async function getCriticalResources(url) {
 getCriticalResources('https://example.com');
 ```
 
-## 推送緩存與客户端緩存的交互
+## 推送緩存與客戶端緩存的交互
 
 ### 問題：重複推送
 
-如果客户端已有緩存，服務器仍然推送，會浪費帶寬：
+如果客戶端已有緩存，伺服器仍然推送，會浪費帶寬：
 
 ```
-客户端已有 style.css 緩存
-服務器仍然推送 style.css
-客户端收到 PUSH_PROMISE 後拒絕（但推送數據已經發出了一部分）
+客戶端已有 style.css 緩存
+伺服器仍然推送 style.css
+客戶端收到 PUSH_PROMISE 後拒絕（但推送數據已經發出了一部分）
 ```
 
 ### 解決方案：使用 Cookie 追蹤緩存
@@ -326,22 +326,22 @@ server.on('stream', (stream, headers) => {
 });
 ```
 
-103 Early Hints 讓客户端在服務器處理請求的同時預加載資源，不需要服務器決定推送什麼。
+103 Early Hints 讓客戶端在伺服器處理請求的同時預加載資源，不需要伺服器決定推送什麼。
 
 ## Server Push 的注意事項
 
 1. **不要過度推送** — 推送太多資源反而會阻塞主響應
 2. **考慮已有緩存** — 推送被緩存的資源是浪費
 3. **Push Cache 生命週期短** — 未使用的推送資源在連接關閉後就會丟棄
-4. **需要 HTTPS** — HTTP/2 Server Push 隻在 HTTPS 下可用
+4. **需要 HTTPS** — HTTP/2 Server Push 只在 HTTPS 下可用
 5. **測量實際效果** — 不同網絡條件下效果不同，需要用 RUM 數據驗證
 
 ## 小結
 
-- HTTP/2 Server Push 通過 `PUSH_PROMISE` 幀在客户端請求前主動推送資源，減少 RTT
+- HTTP/2 Server Push 通過 `PUSH_PROMISE` 幀在客戶端請求前主動推送資源，減少 RTT
 - 適合推送的資源：關鍵渲染路徑資源、體積小、該頁面一定用到的
 - Nginx 設定簡單（`http2_push`），Node.js 需要使用 http2 模塊手動實現
 - 推送緩存（Push Cache）與常規緩存獨立，生命週期較短
 - 需要注意避免重複推送已被緩存的資源
-- 103 Early Hints 是 Server Push 的輕量替代方案，讓客户端自主決定是否預加載
+- 103 Early Hints 是 Server Push 的輕量替代方案，讓客戶端自主決定是否預加載
 - 務必使用 RUM 數據驗證 Server Push 的實際性能收益

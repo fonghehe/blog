@@ -4,15 +4,15 @@ date: 2019-12-09 15:47:43
 tags:
   - React
 readingTime: 3
-description: "今年团队在推动单元测试的过程中，我们从 Enzyme 迁移到了 React Testing Library（RTL）。Enzyme 虽然功能强大，但它的 API 鼓励测试实现细节——测试组件内部 state、instance 方法——导致重构时测试频繁挂掉。React Testing Library 的理念完全不同：*"
-wordCount: 348
+description: "This year, as the team pushed unit testing forward, we migrated from Enzyme to React Testing Library (RTL). Enzyme is powerful, but its API encourages testing implementation details—component internal state, instance methods—which makes tests break frequently during refactoring. React Testing Library takes a completely different philosophy: **test user behavior, not implementation details**."
+wordCount: 239
 ---
 
-今年团队在推动单元测试的过程中，我们从 Enzyme 迁移到了 React Testing Library（RTL）。Enzyme 虽然功能强大，但它的 API 鼓励测试实现细节——测试组件内部 state、instance 方法——导致重构时测试频繁挂掉。React Testing Library 的理念完全不同：**测试用户行为，而不是实现细节**。
+This year, as the team pushed unit testing forward, we migrated from Enzyme to React Testing Library (RTL). Enzyme is powerful, but its API encourages testing implementation details—component internal state, instance methods—which makes tests break frequently during refactoring. React Testing Library takes a completely different philosophy: **test user behavior, not implementation details**.
 
 ## Core Philosophy
 
-React Testing Library 的设计哲学可以用一句话概括：**你的测试越像软件的使用方式，它们就越能给你信心。**
+React Testing Library's design philosophy can be summed up in one sentence: **the more your tests resemble the way software is used, the more confidence they give you.**
 
 ```jsx
 // Enzyme 风格：测试实现细节（不推荐）
@@ -40,7 +40,7 @@ test('点击按钮增加计数', () => {
 
 ## Query Priority: getBy / queryBy / findBy
 
-RTL 提供了三类查询方法，各有适用场景。官方推荐的优先级是：
+RTL provides three families of query methods, each suited to different situations. The officially recommended priority order is:
 
 ```jsx
 import { render, screen, waitFor } from '@testing-library/react'
@@ -121,7 +121,7 @@ test('异步加载用户信息', async () => {
 
 ## userEvent vs fireEvent
 
-`fireEvent` 是底层的 DOM 事件触发，而 `userEvent` 更贴近真实用户交互。官方推荐优先使用 `userEvent`：
+`fireEvent` triggers raw DOM events at a low level, while `userEvent` is closer to real user interaction. The official recommendation is to prefer `userEvent`:
 
 ```jsx
 import { render, screen } from '@testing-library/react'
@@ -180,7 +180,7 @@ test('键盘导航', () => {
 
 ## Testing Custom Hooks
 
-对于自定义 Hook，RTL 提供了 `renderHook`：
+For custom Hooks, RTL provides `renderHook`:
 
 ```jsx
 import { renderHook, act } from '@testing-library/react-hooks'
@@ -218,7 +218,7 @@ test('useCounter 基本功能', () => {
 
 ## Testing Async Requests
 
-实际项目中大量场景涉及异步请求，需要配合 MSW（Mock Service Worker）或 Jest mock：
+Many real-world scenarios involve async requests and need to be paired with MSW (Mock Service Worker) or a Jest mock:
 
 ```jsx
 import { render, screen, waitFor } from '@testing-library/react'
@@ -330,9 +330,9 @@ module.exports = {
 
 ## Summary
 
-- React Testing Library 鼓励测试用户行为而非实现细节，重构时测试更稳定
-- 查询优先级：getByRole > getByLabelText > getByText > getByTestId
-- getBy 用于元素必须存在，queryBy 用于断言元素不存在，findBy 用于异步等待
-- userEvent 比 fireEvent 更贴近真实用户交互，优先使用 userEvent
-- 异步测试用 waitFor + findBy，配合 jest.fn() mock 请求
-- 自定义 Hook 用 renderHook + act 测试
+- React Testing Library encourages testing user behavior instead of implementation details, so tests stay stable through refactors
+- Query priority: getByRole > getByLabelText > getByText > getByTestId
+- getBy is for elements that must exist, queryBy asserts an element is absent, findBy waits asynchronously
+- userEvent is closer to real user interaction than fireEvent; prefer userEvent
+- For async tests use waitFor + findBy, paired with jest.fn() to mock requests
+- Test custom Hooks with renderHook + act

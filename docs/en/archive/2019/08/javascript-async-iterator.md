@@ -4,15 +4,15 @@ date: 2019-08-21 17:03:21
 tags:
   - JavaScript
 readingTime: 4
-description: "ES2018 引入了异步迭代器（Async Iterator）和 `for-await-of` 语法，让我们可以用同步的方式处理异步数据流。这个特性在处理分页 API、WebSocket 消息、文件流等场景下非常有用。本文将从迭代器协议讲起，深入理解异步迭代器的原理和实战应用。"
-wordCount: 544
+description: "ES2018 introduced async iterators (Async Iterator) and the `for-await-of` syntax, letting us process asynchronous data streams in a style that looks synchronous. This feature is especially useful for paginated APIs, WebSocket message streams, file streams, and similar scenarios. Starting from the iterator protocol, this article dives into how async iterators work and how to use them in practice."
+wordCount: 369
 ---
 
-ES2018 引入了异步迭代器（Async Iterator）和 `for-await-of` 语法，让我们可以用同步的方式处理异步数据流。这个特性在处理分页 API、WebSocket 消息、文件流等场景下非常有用。本文将从迭代器协议讲起，深入理解异步迭代器的原理和实战应用。
+ES2018 introduced async iterators (Async Iterator) and the `for-await-of` syntax, letting us process asynchronous data streams in a style that looks synchronous. This feature is especially useful for paginated APIs, WebSocket message streams, file streams, and similar scenarios. Starting from the iterator protocol, this article dives into how async iterators work and how to use them in practice.
 
 ## Review: Synchronous Iterators
 
-在理解异步迭代器之前，先回顾同步迭代器。一个对象要可迭代（iterable），需要实现 `Symbol.iterator` 方法：
+Before async iterators, let's revisit synchronous ones. For an object to be iterable, it must implement the `Symbol.iterator` method:
 
 ```js
 // 自定义可迭代对象
@@ -42,11 +42,11 @@ for (const num of range) {
 
 ## Async Iterator Protocol
 
-异步迭代器与同步迭代器的关键区别：
+The key differences between async and sync iterators:
 
-1. 方法名是 `Symbol.asyncIterator` 而非 `Symbol.iterator`
-2. `next()` 返回的是 `Promise<{value, done}>` 而非 `{value, done}`
-3. 使用 `for-await-of` 而非 `for-of` 进行迭代
+1. The method is `Symbol.asyncIterator` instead of `Symbol.iterator`.
+2. `next()` returns a `Promise<{value, done}>` instead of `{value, done}`.
+3. You iterate with `for-await-of` instead of `for-of`.
 
 ```js
 const asyncRange = {
@@ -82,7 +82,7 @@ main();
 
 ## In Practice: Paginated API Data Fetching
 
-实际项目中经常需要处理分页 API，直到某一页返回空数据。异步迭代器非常适合这种场景：
+In real projects you often need to page through an API until some page returns empty data. Async iterators fit this scenario perfectly:
 
 ```js
 // 创建一个自动翻页的异步可迭代对象
@@ -127,9 +127,9 @@ async function fetchAllUsers() {
 }
 ```
 
-## Simplifying with async generator
+## Simplifying with Async Generators
 
-`async function*` 是创建异步迭代器更简洁的方式：
+`async function*` is a more concise way to create an async iterator:
 
 ```js
 // 使用 async generator 重写分页 API
@@ -161,7 +161,7 @@ async function main() {
 
 ## In Practice: WebSocket Message Stream
 
-将 WebSocket 的消息流封装为异步可迭代对象：
+Wrap a WebSocket message stream as an async iterable:
 
 ```js
 async function* websocketMessages(url) {
@@ -227,7 +227,7 @@ async function handleChatMessages() {
 
 ## In Practice: Line-by-Line File Reading
 
-Node.js 中读取大文件时，可以使用异步迭代器逐行处理，避免一次性加载到内存：
+When reading large files in Node.js, you can process them line by line with an async iterator, avoiding loading the whole file into memory at once:
 
 ```js
 const fs = require('fs');
@@ -265,7 +265,7 @@ async function processLogFile() {
 
 ## Async Generator Methods
 
-异步生成器也支持 `return()` 和 `throw()` 方法：
+Async generators also support the `return()` and `throw()` methods:
 
 ```js
 async function* dataStream() {
@@ -330,25 +330,25 @@ async function main() {
 
 ## Comparison with RxJS
 
-| 特性 | for-await-of | RxJS Observable |
+| Feature | for-await-of | RxJS Observable |
 |------|-------------|-----------------|
-| 学习成本 | 低（原生语法） | 高（需要学习操作符） |
-| 背压控制 | 消费者驱动（天然背压） | 需要额外处理 |
-| 操作符 | 需要手动实现 | 丰富的内置操作符 |
-| 可取消性 | break / return() | unsubscribe |
-| 适用场景 | 简单异步迭代 | 复杂数据流处理 |
+| Learning curve | Low (native syntax) | High (need to learn operators) |
+| Backpressure | Consumer-driven (natural backpressure) | Requires extra handling |
+| Operators | Must implement manually | Rich built-in operators |
+| Cancellability | break / return() | unsubscribe |
+| Best for | Simple async iteration | Complex data stream processing |
 
 ## Browser Compatibility
 
-- Chrome 63+、Firefox 57+、Safari 12+、Node 10+
-- IE 不支持
-- 可以通过 Babel + `@babel/plugin-proposal-async-generator-functions` 编译
+- Chrome 63+, Firefox 57+, Safari 12+, Node 10+
+- IE not supported
+- Can be transpiled via Babel + `@babel/plugin-proposal-async-generator-functions`
 
 ## Summary
 
-- 异步迭代器实现了 `Symbol.asyncIterator`，`next()` 返回 Promise
-- `for-await-of` 提供了类似同步迭代的语法来处理异步数据流
-- `async function*` 是创建异步迭代器最简洁的方式
-- 典型场景：分页 API、WebSocket 消息流、文件逐行读取
-- 异步迭代器天然支持背压（backpressure），消费者按需拉取数据
-- 与 RxJS 相比，学习成本更低，适合不需要复杂操作符的场景
+- An async iterator implements `Symbol.asyncIterator`, and its `next()` returns a Promise.
+- `for-await-of` gives you a syntax much like synchronous iteration for processing async data streams.
+- `async function*` is the most concise way to create an async iterator.
+- Typical use cases: paginated APIs, WebSocket message streams, and line-by-line file reading.
+- Async iterators support backpressure naturally—the consumer pulls data on demand.
+- Compared with RxJS, the learning curve is lower, making it a good fit when you don't need complex operators.

@@ -4,11 +4,11 @@ date: 2023-10-22 09:48:15
 tags:
   - Svelte
 readingTime: 2
-description: "Svelte 4 发布了，同时 Svelte 5 Runes 提案也已公开。聊聊 Svelte 的设计哲学，以及它和 React/Vue 的根本区别。"
-wordCount: 482
+description: "Svelte 4 is out, and the Svelte 5 Runes proposal is now public. Let's talk about Svelte's design philosophy and how it fundamentally differs from React and Vue."
+wordCount: 468
 ---
 
-Svelte 4 发布了，同时 Svelte 5 Runes 提案也已公开。聊聊 Svelte 的设计哲学，以及它和 React/Vue 的根本区别。
+Svelte 4 is out, and the Svelte 5 Runes proposal is now public. Let's talk about Svelte's design philosophy and how it fundamentally differs from React and Vue.
 
 ## Compile-Time vs Runtime
 
@@ -159,7 +159,7 @@ Svelte 的 bundle 体积优势在小项目上非常明显。运行时性能差�
 
 **不推荐的场景：**
 - 大型团队协作（生态和工具链不如 React/Vue 成熟）
-- 需要丰富的第三方组件库
+- A rich third-party component library is required
 - 已有 React/Vue 技术栈的项目
 
 ## Summary

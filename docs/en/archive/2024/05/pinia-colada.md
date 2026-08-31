@@ -4,8 +4,8 @@ date: 2024-05-16 11:47:00
 tags:
   - Pinia
 readingTime: 1
-description: "I recently implemented Pinia Colada 数据获取库 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help thos"
-wordCount: 175
+description: "I recently applied the Pinia Colada data fetching library with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 160
 ---
 
 I recently implemented Pinia Colada 数据获取库 in my team and accumulated quite a bit of experience. I have organized it here for reference, hoping it will help those doing similar work.
@@ -110,6 +110,6 @@ Pay attention to edge case handling — this is critical in production environme
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on community trends; technical approaches need continuous iteration
+- Don't adopt new technology just for the sake of it

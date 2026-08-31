@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "关于Web Share API 原生分享功能，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 288
+wordCount: 282
 ---
 
-关于Web Share API 原生分享功能，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+关于 Web Share API 的原生分享能力，很多开发者只停留在 API 调用层面。本文从生产环境的视角，聊聊实际落地时会遇到的问题与对策。
 
 ## 基本原理
 
@@ -37,7 +37,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+以上只是基础用法，实际项目里还要考虑错误处理和边界情况。
 
 ## 高级特性
 
@@ -121,7 +121,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界情况的处理要格外留意，生产环境里这很关键。
 
 ## 小结
 

@@ -4,6 +4,9 @@ date: 2020-08-15 11:44:27
 tags:
   - Web3
   - DApp
+readingTime: 9
+wordCount: 733
+description: "The MetaMask browser extension provides a convenient connection method for DApps on desktop, but it has a fundamental limitation: users must install the MetaMas"
 ---
 
 ## Why WalletConnect Is Needed

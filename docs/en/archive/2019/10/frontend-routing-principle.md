@@ -4,15 +4,15 @@ date: 2019-10-04 17:35:32
 tags:
   - Frontend
 readingTime: 1
-description: "关于前端路由实现原理，网上有不少文章但大多缺乏实战经验。本文结合真实项目，探讨最佳实践。"
-wordCount: 216
+description: "There are plenty of articles online about how frontend routing works, but most lack real-world experience. Drawing on actual projects, this article explores best practices."
+wordCount: 147
 ---
 
-关于前端路由实现原理，网上有不少文章但大多缺乏实战经验。本文结合真实项目，探讨最佳实践。
+There are plenty of articles online about how frontend routing works, but most lack real-world experience. Drawing on actual projects, this article explores best practices.
 
 ## Quick Start
 
-下面是一个实际的例子：
+Here is a concrete example:
 
 ```javascript
 .grid {
@@ -36,11 +36,11 @@ wordCount: 216
 }
 ```
 
-这种模式在团队中推广后效果很好，维护成本明显降低。
+After rolling this pattern out across the team, the results were positive and maintenance cost dropped noticeably.
 
 ## Advanced Usage
 
-我们可以通过以下方式实现：
+We can implement it in the following way:
 
 ```javascript
 :root {
@@ -62,11 +62,11 @@ body {
 }
 ```
 
-注意上面代码中的性能细节，避免不必要的计算。
+Pay attention to the performance details in the code above and avoid unnecessary computation.
 
 ## Business Scenarios
 
-具体实现参考以下代码：
+Refer to the code below for the concrete implementation:
 
 ```javascript
 const express = require('express')
@@ -95,11 +95,11 @@ app.get('/api/users', async (req, res, next) => {
 app.use(errorHandler)
 ```
 
-经过线上验证，这套方案运行稳定。
+This solution has been validated in production and runs stably.
 
 ## Pitfall Avoidance Guide
 
-先来看基本的用法：
+Let's start with the basic usage:
 
 ```javascript
 const http = require('http')
@@ -125,10 +125,10 @@ if (cluster.isMaster) {
 }
 ```
 
-这种写法简洁明了，适合大多数场景。
+This approach is clean and clear, and works well for most scenarios.
 
 ## Summary
 
-- 团队中统一约定比追求完美实现更重要
-- 持续学习和总结，保持技术敏感度
-- 遇到问题多看源码和官方文档
+- Consistent team conventions matter more than chasing a perfect implementation
+- Keep learning and summarizing to stay technically sharp
+- When you hit a problem, read the source code and the official docs

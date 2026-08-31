@@ -5,14 +5,14 @@ tags:
   - React
 readingTime: 2
 description: "在日常開發中，React useReducer 狀態管理詳解的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 299
+wordCount: 295
 ---
 
-在日常開發中，React useReducer 狀態管理詳解的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
+在日常開發中，React useReducer 作為狀態管理方案的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
 
 ## 快速上手
 
-實際項目中的用法會更復雜一些：
+實際項目中的用法會更複雜一些：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -121,7 +121,7 @@ function useIntersectionObserver(options = {}) {
 ## 小結
 
 - 代碼示例僅供參考，需根據業務場景調整
-- React useReducer 狀態管理詳解不是銀彈，需要根據項目規模和技術棧選擇
+- React useReducer 不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要
 - 生產環境使用前務必做好兼容性驗證
 - 團隊協作中約定和文檔比技術本身更重要

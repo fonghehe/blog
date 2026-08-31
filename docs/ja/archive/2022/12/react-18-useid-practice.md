@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 18 useId 实践のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 531
+wordCount: 560
 ---
 
 React 18 useId 实践のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -62,7 +62,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理やエッジケースへの対応も必要になる。
 
 ## 実際のシナリオへの応用
 
@@ -95,7 +95,7 @@ const csvToJson = new Transform({
 
 ## 最適化テクニック
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'

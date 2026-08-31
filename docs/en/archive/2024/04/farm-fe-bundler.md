@@ -4,11 +4,11 @@ date: 2024-04-08 15:28:50
 tags:
   - Frontend
 readingTime: 2
-description: "Farm 前端构建工具正式发布This topic has been discussed many times in the community, but with each version update, many conclusions need revising. This article revisits th"
-wordCount: 224
+description: "The official Farm build tool release has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 194
 ---
 
-Farm 前端构建工具正式发布This topic has been discussed many times in the community, but with each version update, many conclusions need revising. This article revisits the topic based on the latest version.
+The official Farm build tool release has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
 
 ## Getting Started
 
@@ -160,7 +160,7 @@ This solution has been running stably in production for over six months and has 
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- Always verify compatibility thoroughly before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on community trends; technical approaches need continuous iteration
+- Don't adopt new technology just for the sake of it

@@ -7,14 +7,14 @@ tags:
 
 readingTime: 2
 description: "关于Web Share API 原生分享功能，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 417
+wordCount: 466
 ---
 
-关于Web Share API 原生分享功能，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
+Web Share API のネイティブ共有機能については、多くの開発者が API の呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
 
 ## 基本原理
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみましょう：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -69,7 +69,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## プロジェクト実践
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になります：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -98,7 +98,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ## ベストプラクティス
 
-完全な例を以下に示します：
+全体のサンプルを以下に示します：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -127,5 +127,5 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 ## まとめ
 
 - 新しい技術を使うためだけに新しい技術を使わないでください
-- コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- Web Share API 原生分享功能不是银弹，需要根据项目规模和技术栈选择
+- コードサンプルは参考用のみであり、実際のプロジェクトの状況に応じて調整が必要です
+- Web Share API のネイティブ共有機能は万能薬ではなく、プロジェクトの規模と技術スタックに応じて選ぶ必要があります

@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 1
 description: "Promoting React Context as a Redux replacement within the team came with plenty of pitfalls. Documenting them here in the hope it helps others."
-wordCount: 78
+wordCount: 73
 ---
 
 Promoting React Context as a Redux replacement within the team came with plenty of pitfalls. Documenting them here in the hope it helps others.
@@ -39,7 +39,7 @@ describe("utils", () => {
 });
 ```
 
-In real projects, you also need to consider edge cases and error handling.
+In real projects, you'll also need to handle edge cases and errors.
 
 ## Source Code Analysis
 
@@ -69,11 +69,11 @@ export default {
 {% endraw %}
 ```
 
-After promoting this pattern across the team, the results were great and maintenance costs dropped noticeably.
+Rolling this pattern out across the team worked well and noticeably cut maintenance costs.
 
 ## Real-World Application
 
-This can be achieved with the following approach:
+Here's one way to implement it:
 
 ```javascript
 export default {

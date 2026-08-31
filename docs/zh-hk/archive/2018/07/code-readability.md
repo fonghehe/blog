@@ -144,17 +144,17 @@ createButton({ text: "提交", type: "primary", onClick: handleSubmit });
 
 ```javascript
 // ❌ 註釋重複代碼內容（廢話）
-// 遍歷用户列表
+// 遍歷用戶列表
 users.forEach((user) => {
-  // 檢查用户是否激活
+  // 檢查用戶是否激活
   if (user.isActive) {
-    // 處理激活用户
+    // 處理激活用戶
     processUser(user);
   }
 });
 
 // ✅ 註釋解釋為什麼，或者非直覺的邏輯
-// 隻處理當月加入的用户，歷史用户在另一個任務裏批量處理
+// 只處理當月加入的用戶，歷史用戶在另一個任務裏批量處理
 users.filter((u) => u.joinedAt >= startOfMonth).forEach(processUser);
 
 // 注意：這裏用 .9 而不是整數，是因為 IE 的精度 bug
@@ -171,7 +171,7 @@ setTimeout(refresh, 300)
 
 // ✅ 常量命名
 const MAX_RECENT_ITEMS = 3
-const DEBOUNCE_DELAY = 300  // ms，等待用户停止輸入
+const DEBOUNCE_DELAY = 300  // ms，等待用戶停止輸入
 
 if (list.length > MAX_RECENT_ITEMS) { ... }
 setTimeout(refresh, DEBOUNCE_DELAY)

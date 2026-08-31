@@ -8,7 +8,7 @@ description: "工作中用了 CSS Grid 一段時間，發現大多數人屐5e止
 wordCount: 217
 ---
 
-工作中用了 CSS Grid 一段時間，發現大多數人屐5e止於基礎的 `grid-template-columns: repeat(3, 1fr)` 就不用了。Grid 的命名網格線和模板區域才是真正讓它秒殺複雜佈局的功能。
+工作中用了 CSS Grid 一段時間，發現大多數人僅止於基礎的 `grid-template-columns: repeat(3, 1fr)` 就不用了。Grid 的命名網格線和範本區域才是真正讓它秒殺複雜佈局的功能。
 
 ## 命名網格線
 
@@ -48,7 +48,7 @@ wordCount: 217
 
 ## grid-template-areas
 
-模板區域是可讀性最高的 Grid 佈局方式——ASCII art 就是佈局圖：
+範本區域是可讀性最高的 Grid 佈局方式——ASCII art 就是佈局圖：
 
 ```css
 .layout {
@@ -95,7 +95,7 @@ wordCount: 217
 ## 自動填充與自動佈局
 
 ```css
-/* 自動列數，最少 200px，此止套不下 canvas */
+/* 自動列數，最少 200px，尺寸套不下 canvas */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -145,4 +145,4 @@ subgrid 是 2019 年討論熱度很高的提案，允許子網格共享父網格
 
 ## 總結
 
-CSS Grid 的命名網格線和 `grid-template-areas` 讓複雜頁面佈局變得可維護。`auto-fill + minmax` 幾乎是我現在開發卡片網格的首選方案，遠比手崗 Flexbox 巢狀。
+CSS Grid 的命名網格線和 `grid-template-areas` 讓複雜頁面佈局變得可維護。`auto-fill + minmax` 幾乎是我現在開發卡片網格的首選方案，遠比手寫 Flexbox 巢狀。

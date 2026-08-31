@@ -3,9 +3,9 @@ title: "Rolldown：Rust 実装の Rollup"
 date: 2023-02-27 10:22:35
 tags:
   - フロントエンド
-readingTime: 2
+readingTime: 3
 description: "在日常开发中，Rolldown Rust 实现的 Rollupの使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 476
+wordCount: 495
 ---
 
 在日常开发中，Rolldown Rust 实现的 Rollupの使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -160,6 +160,6 @@ module.exports = {
 
 ## まとめ
 
-- Rolldown Rust 实现的 Rollup不是银弹，需要根据项目规模和技术栈选择
+- Rolldown Rust 实现的 Rollup は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある
 - 基礎的な原理を理解することは、APIを暗記することより重要です
 - 本番環境で使用する前に必ず互換性を確認してください

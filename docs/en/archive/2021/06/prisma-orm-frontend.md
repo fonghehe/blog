@@ -5,15 +5,15 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "关于Prisma ORM 全栈开发实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 207
+description: "Many developers only know Prisma ORM for full-stack development at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 202
 ---
 
-关于Prisma ORM 全栈开发实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+This is a guide to full-stack development with Prisma ORM. Many developers only scratch the surface at the API level. This article looks at the real problems you hit in production and how to solve them.
 
 ## Basic Principles
 
-We can improve it in the following ways:
+Here are a few ways to take this further:
 
 ```javascript
 const fs = require('fs')
@@ -38,7 +38,7 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
+This approach has run stably in production for over six months, so it's proven in practice.
 
 ## Advanced Features
 
@@ -100,7 +100,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Best Practices
 
-实际项目中的用法会更复杂一些：
+In real projects, usage gets a bit more involved:
 
 ```javascript
 const express = require('express')
@@ -125,7 +125,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-Through this approach, both the testability and scalability of the code are improved.
+This makes the code both more testable and more scalable.
 
 ## Common Pitfalls
 
@@ -154,7 +154,7 @@ const csvToJson = new Transform({
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Handle edge cases carefully — they are critical in production.
 
 ## Summary
 

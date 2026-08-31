@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React Error Boundary のベストプラクティスについてはコミュニティで何度も議論されてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。この記事では最新バージョンに基づいて再整理します。"
-wordCount: 475
+wordCount: 472
 ---
 
 React Error Boundary のベストプラクティスについてはコミュニティで何度も議論されてきましたが、バージョンアップに伴い、多くの結論を更新する必要があります。この記事では最新バージョンに基づいて再整理します。
@@ -68,7 +68,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 このパターンは大規模プロジェクトで非常に実用的で、保守コストを大幅に削減できます。
 
-## 実際のシナリオへの応用
+## 実際の場面への応用
 
 実際のプロジェクトでの使用法はもう少し複雑になります：
 
@@ -99,7 +99,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ## 最適化のコツ
 
-以下は完全なサンプルです：
+以下は全体のサンプルです：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -129,5 +129,5 @@ function DataList({ endpoint, pageSize = 20 }) {
 ## まとめ
 
 - 新しい技術を使うために使うのは避けましょう
-- コードサンプルは参考用です。実際のビジネスシナリオに応じて調整してください
+- コードサンプルは参考用です。実際のビジネスケースに応じて調整してください
 - React Error Boundary のベストプラクティスは銀の弾丸ではありません。プロジェクトの規模や技術スタックに応じて選択する必要があります

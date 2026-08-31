@@ -8,7 +8,7 @@ description: "Stream 是 Node.js 最核心的模組之一，但很多開發者�
 wordCount: 443
 ---
 
-Stream 是 Node.js 最核心的模組之一，但很多開發者日常隻用 `fs.readFile` 處理檔案。當你需要處理大檔案、構建管道式資料處理、或者實現高效 I/O 時，Stream 是不可或缺的工具。
+Stream 是 Node.js 最核心的模組之一，但很多開發者日常只用 `fs.readFile` 處理檔案。當你需要處理大檔案、構建管道式資料處理、或者實現高效 I/O 時，Stream 是不可或缺的工具。
 
 ## 為什麼需要 Stream
 
@@ -269,7 +269,7 @@ parser.end()
 
 ## pipe 和 pipeline
 
-`pipe()` 是 Stream 的核心機製，將可讀流連線到可寫流。
+`pipe()` 是 Stream 的核心機制，將可讀流連線到可寫流。
 
 ```javascript
 const fs = require('fs')
@@ -332,7 +332,7 @@ pipeline(
 
 ## 背壓（Backpressure）
 
-背壓是 Stream 處理速度不匹配時的自動調節機製。
+背壓是 Stream 處理速度不匹配時的自動調節機制。
 
 ```javascript
 const fs = require('fs')

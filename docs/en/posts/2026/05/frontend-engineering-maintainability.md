@@ -59,7 +59,7 @@ In practice, Monorepo introduces equally thorny problems:
 }
 ```
 
-**Blurry permission boundaries** — everyone can change everything. Pair with CODEOWNERS and protected branch rules:
+**Unclear permission boundaries** — everyone can change everything. Pair with CODEOWNERS and protected branch rules:
 
 ```
 # .github/CODEOWNERS

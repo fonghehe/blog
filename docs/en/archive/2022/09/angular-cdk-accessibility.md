@@ -4,11 +4,11 @@ date: 2022-09-28 10:22:48
 tags:
   - Angular
 readingTime: 2
-description: "无障碍访问（Accessibility，a11y）是很多前端团队长期欠债的领域。Angular CDK 提供了一套完善的 A11y 工具，包括焦点管理、键盘导航、屏幕阅读器支持等。这篇文章介绍 CDK A11y 模块的核心 API。"
-wordCount: 276
+description: "Accessibility (a11y) is an area where many frontend teams have long-standing debt. Angular CDK provides a comprehensive set of a11y tools, including focus management, keyboard navigation, screen reader support, and more. This article covers the core APIs of the CDK A11y module."
+wordCount: 182
 ---
 
-无障碍访问（Accessibility，a11y）是很多前端团队长期欠债的领域。Angular CDK 提供了一套完善的 A11y 工具，包括焦点管理、键盘导航、屏幕阅读器支持等。这篇文章介绍 CDK A11y 模块的核心 API。
+Accessibility (a11y) is an area where many frontend teams have long-standing debt. Angular CDK provides a comprehensive set of a11y tools, including focus management, keyboard navigation, screen reader support, and more. This article covers the core APIs of the CDK A11y module.
 
 ## Installation and Configuration
 
@@ -28,7 +28,7 @@ export class FeatureModule {}
 
 ## FocusTrap: Modal Focus Trapping
 
-打开模态框时，焦点应该被"困"在模态框内，防止用户 Tab 键跳到后面的内容：
+When opening a modal, focus should be "trapped" inside it to prevent users from tabbing to content behind it:
 
 ```typescript
 import { FocusTrap, FocusTrapFactory } from "@angular/cdk/a11y";
@@ -67,7 +67,7 @@ export class DialogComponent {
 }
 ```
 
-`cdkTrapFocus` 指令自动处理焦点陷阱，`cdkTrapFocusAutoCapture` 让模态框打开时自动聚焦第一个可聚焦元素。
+The `cdkTrapFocus` directive automatically handles focus trapping, and `cdkTrapFocusAutoCapture` auto-focuses the first focusable element when the modal opens.
 
 ## LiveAnnouncer: Live Screen Reader Announcements
 
@@ -109,7 +109,7 @@ export class FileUploadComponent {
 }
 ```
 
-`polite` = 等当前内容朗读完再通知；`assertive` = 立即打断并通知（用于错误等重要信息）。
+`polite` = wait until the current announcement finishes before notifying; `assertive` = interrupt immediately and notify (used for errors and other critical information).
 
 ## FocusMonitor: Tracking Focus Origin
 
@@ -217,4 +217,4 @@ export class AppComponent {
 
 ## Summary
 
-Angular CDK A11y 模块提供了构建无障碍组件所需的底层工具——焦点陷阱、屏幕阅读器通知、焦点来源检测、键盘导航管理。这些能力在自定义组件库中尤为重要。无障碍访问不是"锦上添花"，在越来越多的国家和地区已经是法律要求。
+The Angular CDK A11y module provides the low-level tools needed to build accessible components — focus trapping, screen reader announcements, focus origin detection, and keyboard navigation management. These capabilities are especially important in custom component libraries. Accessibility is not just a nice-to-have — it's already a legal requirement in an increasing number of countries and regions.

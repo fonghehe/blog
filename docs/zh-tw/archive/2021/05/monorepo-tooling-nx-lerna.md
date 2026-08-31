@@ -5,7 +5,7 @@ tags:
   - 前端工程化
 readingTime: 2
 description: "Turborepo 高效能 Monorepo這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 308
+wordCount: 306
 ---
 
 Turborepo 高效能 Monorepo這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -29,7 +29,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 原始碼分析
 

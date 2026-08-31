@@ -168,6 +168,6 @@ methods: {
 
 ## 小結
 
-- 簡單場景用 `JSON.parse(JSON.stringify())`，但瞭解它的限製
+- 簡單場景用 `JSON.parse(JSON.stringify())`，但瞭解它的限制
 - 生產代碼推薦 `lodash/cloneDeep`，省心
 - 如果追求零依賴，手寫遞歸方案，記得處理循環引用

@@ -6,15 +6,15 @@ tags:
   - Frontend
 
 readingTime: 1
-description: "关于Vercel 前端部署与预览环境，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 188
+description: "Many developers only know Vercel frontend deployment and preview environments at the surface level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 177
 ---
 
-关于Vercel 前端部署与预览环境，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to Vercel frontend deployment and preview environments, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more complex:
 
 ```javascript
 FROM node:20-alpine AS deps

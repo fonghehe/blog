@@ -5,10 +5,10 @@ tags:
   - React
 readingTime: 2
 description: "在日常開發中，React Native 導航方案對比的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 284
+wordCount: 287
 ---
 
-在日常開發中，React Native 導航方案對比的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
+在日常開發中，React Native 開發者進行導航方案對比的需求越來越高。本文系統地講解其用法、原理和優化策略。
 
 ## 快速上手
 

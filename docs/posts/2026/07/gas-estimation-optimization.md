@@ -5,16 +5,16 @@ tags:
   - Web3
   - Ethereum
   - 性能优化
-readingTime: 7
+readingTime: 8
 description: "深入解析 EIP-1559 Gas 机制、前端 Gas 估算 API、批量交易优化策略及 L2 Gas 估算差异"
-wordCount: 3200
+wordCount: 799
 ---
 
 ## Gas 机制解析：EIP-1559 的 base fee + priority fee
 
 EIP-1559 重塑了以太坊的费用市场。每笔交易的费用由两部分组成：
 
-- **base fee**：由协议根据区块拥堵程度动态调整，被燃烧而非支付给矿工
+- **base fee**：由协议根据区块拥堵程度动态调整，被燃烧而非支付给验证者
 - **priority fee（tip）**：用户自愿支付给验证者的小费，影响交易打包优先级
 
 交易通过两个参数控制 Gas 价格：

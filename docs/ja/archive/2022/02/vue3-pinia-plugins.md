@@ -6,14 +6,14 @@ tags:
   - Pinia
 readingTime: 2
 description: "日常開発において、Pinia 插件系统与持久化の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 435
+wordCount: 451
 ---
 
-日常開発において、Pinia 插件系统与持久化の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
+日常の開発において、Pinia のプラグインシステムと状態の永続化は、使う機会が増えてきています。本記事では、その使い方・仕組み・最適化の戦略を体系的に解説します。
 
 ## クイックスタート
 
-まず基本的な実装方法から見てみましょう：
+基本的な実装方法から見てみましょう：
 
 ```javascript
 import { ref, computed, watch, onMounted } from 'vue'
@@ -88,7 +88,7 @@ export default {
 
 ## パフォーマンス比較
 
-以下は完全な例です：
+以下は全体のサンプルです：
 
 ```javascript
 import { reactive, toRefs, computed } from 'vue'

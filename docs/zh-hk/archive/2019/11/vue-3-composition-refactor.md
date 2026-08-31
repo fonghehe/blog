@@ -8,11 +8,11 @@ description: "Vue 3 的 Composition API 引入了一種全新的組件邏輯組�
 wordCount: 418
 ---
 
-Vue 3 的 Composition API 引入了一種全新的組件邏輯組織方式。本文通過一個真實的用户管理頁面，演示如何用 Composition API 重構 Vue 2 的 Options API 代碼，展示 Composable 函數的抽取和複用。
+Vue 3 的 Composition API 引入了一種全新的組件邏輯組織方式。本文通過一個真實的用戶管理頁面，演示如何用 Composition API 重構 Vue 2 的 Options API 代碼，展示 Composable 函數的抽取和複用。
 
 ## 重構前：Options API
 
-假設有一個用户管理頁面，包含搜索、列表展示、分頁、編輯彈窗等功能：
+假設有一個用戶管理頁面，包含搜索、列表展示、分頁、編輯彈窗等功能：
 
 ```vue
 {% raw %}
@@ -21,10 +21,10 @@ Vue 3 的 Composition API 引入了一種全新的組件邏輯組織方式。本
     <div class="toolbar">
       <input
         v-model="searchKeyword"
-        placeholder="搜索用户..."
+        placeholder="搜索用戶..."
         @input="handleSearch"
       />
-      <button @click="showCreateDialog = true">新建用户</button>
+      <button @click="showCreateDialog = true">新建用戶</button>
     </div>
 
     <div v-if="loading" class="loading">加載中...</div>
@@ -110,7 +110,7 @@ export default {
         this.users = data.list;
         this.total = data.total;
       } catch (error) {
-        console.error('獲取用户列表失敗:', error);
+        console.error('獲取用戶列表失敗:', error);
       } finally {
         this.loading = false;
       }
@@ -329,9 +329,9 @@ export function useConfirm() {
     <div class="toolbar">
       <input
         v-model="keyword"
-        placeholder="搜索用户..."
+        placeholder="搜索用戶..."
       />
-      <button @click="showCreateDialog = true">新建用户</button>
+      <button @click="showCreateDialog = true">新建用戶</button>
     </div>
 
     <div v-if="loading" class="loading">加載中...</div>
@@ -455,7 +455,7 @@ export default {
 按照 Vue 3 的慣例：
 
 1. 文件名和函數名以 `use` 開頭
-2. 每個 Composable 隻負責一個關注點
+2. 每個 Composable 只負責一個關注點
 3. 返回的 ref 和 reactive 對象保持響應性
 4. 組合多個 Composable 來構建複雜功能
 
@@ -477,7 +477,7 @@ composables/
 |
 ------|-----------------|------------|
 | 響應性 | 自動追蹤依賴 | 需要手動指定依賴數組 |
-| 調用順序 | 無限製 | 必須在頂層調用 |
+| 調用順序 | 無限制 | 必須在頂層調用 |
 | 副作用清理 | onUnmounted | useEffect 返回清理函數 |
 | 複用方式 | 函數調用 | 函數調用 |
 | 狀態隔離 | 每次調用創建獨立狀態 | 每次調用創建獨立狀態 |

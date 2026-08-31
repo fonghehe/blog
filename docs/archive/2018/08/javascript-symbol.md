@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Symbol 是 ES6 新增的基本类型，但很多人不知道什么时候用。来看几个实际场景。"
-wordCount: 228
+wordCount: 221
 ---
 
 Symbol 是 ES6 新增的基本类型，但很多人不知道什么时候用。来看几个实际场景。
@@ -22,7 +22,7 @@ console.log(typeof s1); // 'symbol'
 
 ## 场景一：避免对象属性名冲突
 
-当你给一个外部对象（你不拥有的对象）添加属性时，用 Symbol 避免和现有属性冲突：
+当你给一个外部对象添加属性时，用 Symbol 避免和现有属性冲突：
 
 ```javascript
 // 给 Array 添加自定义方法（不污染原型）

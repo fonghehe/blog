@@ -8,11 +8,11 @@ description: "React 在 16.3 版本引入了 Fiber 架構，為併發渲染打�
 wordCount: 611
 ---
 
-React 在 16.3 版本引入了 Fiber 架構，為併發渲染打下了基礎。Concurrent Mode 是 React 團隊正在開發的一項實驗性功能，它讓 React 可以同時準備多個版本的 UI，從根本上改善用户體驗。本文將深入探討 Concurrent Mode 的工作原理和使用方式。
+React 在 16.3 版本引入了 Fiber 架構，為併發渲染打下了基礎。Concurrent Mode 是 React 團隊正在開發的一項實驗性功能，它讓 React 可以同時準備多個版本的 UI，從根本上改善用戶體驗。本文將深入探討 Concurrent Mode 的工作原理和使用方式。
 
 ## 為什麼需要 Concurrent Mode
 
-在傳統的 React 渲染模式下，一旦開始渲染，就會同步地完成整棵組件樹的渲染。對於大型應用，這個過程可能會阻塞主線程幾十甚至幾百毫秒，導致用户交互無響應：
+在傳統的 React 渲染模式下，一旦開始渲染，就會同步地完成整棵組件樹的渲染。對於大型應用，這個過程可能會阻塞主線程幾十甚至幾百毫秒，導致用戶交互無響應：
 
 ```jsx
 // 傳統模式下的問題
@@ -49,7 +49,7 @@ function App() {
 }
 ```
 
-Concurrent Mode 允許 React 中斷耗時的渲染，優先處理用户交互。
+Concurrent Mode 允許 React 中斷耗時的渲染，優先處理用戶交互。
 
 ## 開啓 Concurrent Mode
 
@@ -173,7 +173,7 @@ function App() {
 }
 ```
 
-### useTransition 的優先級機製
+### useTransition 的優先級機制
 
 ```
 用户輸入 "react"
@@ -188,7 +188,7 @@ function App() {
 
 ## SuspenseList
 
-`SuspenseList` 控製多個 Suspense 邊界的顯示順序：
+`SuspenseList` 控制多個 Suspense 邊界的顯示順序：
 
 ```jsx
 import React, { Suspense, SuspenseList } from 'react';
@@ -282,7 +282,7 @@ function UserCard({ userId }) {
 |
 ------|---------|----------------|
 | 渲染方式 | 同步、不可中斷 | 異步、可中斷 |
-| 用户交互 | 渲染期間阻塞 | 優先響應交互 |
+| 用戶交互 | 渲染期間阻塞 | 優先響應交互 |
 | 加載狀態 | 各組件自行管理 | Suspense 統一管理 |
 | 代碼分割 | React.lazy | React.lazy + Suspense |
 | 數據獲取 | useEffect + setState | Suspense + 資源讀取 |
@@ -302,10 +302,10 @@ npm install react@experimental react-dom@experimental
 
 ## 小結
 
-- Concurrent Mode 讓 React 可以中斷渲染，優先處理用户交互
+- Concurrent Mode 讓 React 可以中斷渲染，優先處理用戶交互
 - `useTransition` 標記低優先級的狀態更新
 - Suspense 統一管理加載狀態，包括數據獲取
-- `SuspenseList` 控製多個異步組件的顯示順序
+- `SuspenseList` 控制多個異步組件的顯示順序
 - 需要使用 `createRoot` API 開啓
 - 目前仍處於實驗階段，API 可能變化
 - 代表了 React 未來的發展方向：聲明式異步 UI

@@ -24,7 +24,7 @@ const name = pluck(user, 'name')   // string
 const role = pluck(user, 'role')   // 'admin' | 'user' | 'guest'
 ```
 
-After promoting this pattern across the team, the results were great and maintenance costs dropped noticeably.
+Once this pattern was rolled out across the team, the results were strong and maintenance costs dropped noticeably.
 
 ## Deep Dive
 
@@ -54,7 +54,7 @@ This can be achieved with the following approach:
 }
 ```
 
-Pay attention to the performance details in the code above and avoid unnecessary computation.
+Mind the performance details in the snippet above and avoid needless computation.
 
 ## Project Application
 

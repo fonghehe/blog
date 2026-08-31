@@ -3,11 +3,11 @@ title: "智能合約前端測試策略：從 Mock 到 Fork"
 date: 2026-06-15 20:15:10
 tags:
   - Web3
-  - 测试
+  - 測試
   - Smart Contract
 readingTime: 7
 description: "系統性講解 Web3 前端測試的分層策略，涵蓋合約 Mock、主網 Fork、測試網、事件斷言及 CI 整合"
-wordCount: 3200
+wordCount: 850
 ---
 
 ## Web3 前端測試的獨特挑戰

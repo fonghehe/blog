@@ -8,7 +8,7 @@ description: "TypeScript 3.0 through 3.3 released one after another, adding many
 wordCount: 43
 ---
 
-TypeScript 3.0 through 3.3 released one after another, adding many practical features. Here's a summary.
+TypeScript 3.0 through 3.3 shipped in quick succession, each adding practical features. Here's a rundown.
 
 ## 3.0: Tuple Improvements + the `unknown` Type
 

@@ -4,12 +4,12 @@ date: 2026-07-26 18:26:07
 tags:
   - ブラウザ
   - パフォーマンス最適化
-readingTime: 8
+readingTime: 16
 description: "ブラウザレンダリングパイプラインの各段階を深く掘り下げ、合成レイヤーの作成条件と GPU アクセラレーションの原理を理解し、60fps の複雑アニメーション最適化の方法論を習得する。"
-wordCount: 3400
+wordCount: 3779
 ---
 
-フロントエンドのパフォーマンス最適化において、「left の代わりに transform を使う」「visibility の代わりに opacity を使う」といったアドバイスは至る所で見られる。しかしブラウザのレンダリングパイプラインの完全な経路を理解していなければ、これらのアドバイスは単なる教条に過ぎない——なぜ有効なのか、どのような場合に失效するのかがわからない。本記事はレンダリングパイプラインの低レベルの仕組みから出発し、合成レイヤー最適化の原理と実践を体系的に整理する。
+フロントエンドのパフォーマンス最適化において、「left の代わりに transform を使う」「visibility の代わりに opacity を使う」といったアドバイスは至る所で見られる。しかしブラウザのレンダリングパイプラインの完全な経路を理解していなければ、これらのアドバイスは単なる教条に過ぎない——なぜ有効なのか、どのような場合に効かなくなるのかがわからない。本記事ではレンダリングパイプラインの低レベルの仕組みを起点に、合成レイヤー最適化の原理と実践を体系的に整理する。
 
 ## ブラウザレンダリングパイプラインの完全なフロー
 
@@ -77,7 +77,7 @@ elements.forEach(el => {
   // 次のループの読み取りが再び Layout をトリガー
 });
 
-// 正しい做法：先にバッチ読み取り、それからバッチ書き込み
+// 正しいやり方：先にバッチ読み取り、それからバッチ書き込み
 const widths = elements.map(el => el.offsetWidth); // 一度の Layout
 elements.forEach((el, i) => {
   el.style.width = widths[i] + 10 + 'px'; // 追加の Layout をトリガーしない
@@ -168,9 +168,9 @@ Paint のコストは Layout より低いが、ピクセルの再計算と描画
 ### transform で幾何プロパティを代替
 
 ```css
-/* アニメーション方案の比較 */
+/* アニメーション手法の比較 */
 
-/* 方案 A：Layout をトリガー（悪い） */
+/* 案 A：Layout をトリガー（悪い） */
 .slide-left-layout {
   transition: left 0.3s ease;
   left: 0;
@@ -179,7 +179,7 @@ Paint のコストは Layout より低いが、ピクセルの再計算と描画
   left: 100px;
 }
 
-/* 方案 B：Composite のみをトリガー（良い） */
+/* 案 B：Composite のみをトリガー（良い） */
 .slide-left-transform {
   transition: transform 0.3s ease;
   transform: translateX(0);
@@ -189,7 +189,7 @@ Paint のコストは Layout より低いが、ピクセルの再計算と描画
 }
 ```
 
-方案 B はアニメーション全体を通して Composite のみをトリガーし、Layout と Paint を完全にスキップするため、60fps を容易に達成できる。
+案 B はアニメーション全体を通して Composite のみをトリガーし、Layout と Paint を完全にスキップするため、60fps を容易に達成できる。
 
 ## GPU アクセラレーションの仕組みとメモリコスト
 
@@ -227,10 +227,10 @@ console.log(estimateLayerMemory(1920, 1080, 30));
 
 ### レイヤー爆発とは
 
-レイヤー爆発とはページ内に不要な合成レイヤーが大量に発生し、GPU メモリの暴増と合成オーバーヘッドの急増を引き起こすことである。よくあるトリガーシーン：
+レイヤー爆発とはページ内に不要な合成レイヤーが大量に発生し、GPU メモリの暴増と合成オーバーヘッドの急増を引き起こすことである。よくあるトリガー場面：
 
 ```css
-/* レイヤー爆発の典型的なシーン */
+/* レイヤー爆発の典型的なパターン */
 .container {
   /* will-change によりコンテナが合成レイヤーになる */
   will-change: transform;
@@ -244,7 +244,7 @@ console.log(estimateLayerMemory(1920, 1080, 30));
 /* 100 個の .item があれば、100+ の合成レイヤーが発生 */
 ```
 
-より隠蔽されたレイヤー爆発シーンは**重複合成レイヤー**である。合成レイヤーが大量の通常要素と重なる場合、ブラウザは描画順序のエラーを防ぐため、これらの通常要素も合成レイヤーに昇格させることがある。
+より潜在的なレイヤー爆発の例は**重複合成レイヤー**である。合成レイヤーが大量の通常要素と重なる場合、ブラウザは描画順序のエラーを防ぐため、これらの通常要素も合成レイヤーに昇格させることがある。
 
 ### レイヤー爆発の特定
 
@@ -328,9 +328,9 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ entryTypes: ['layout-shift'] });
 ```
 
-## 一般的な CSS アニメーションのパフォーマンス最適化方案
+## 一般的な CSS アニメーションのパフォーマンス最適化手法
 
-### 方案一：アニメーションプロパティの選択
+### 案 1：アニメーションプロパティの選択
 
 ```css
 /* 高パフォーマンスアニメーションプロパティ（Composite のみをトリガー） */
@@ -354,7 +354,7 @@ observer.observe({ entryTypes: ['layout-shift'] });
 }
 ```
 
-### 方案二：contain プロパティの使用
+### 案 2：contain プロパティの使用
 
 CSS の `contain` プロパティは要素のレンダリングの独立性をブラウザに伝え、Layout と Paint の影響範囲を分離できる：
 
@@ -374,13 +374,13 @@ CSS の `contain` プロパティは要素のレンダリングの独立性を�
 }
 ```
 
-### 方案三：content-visibility でレンダリングを遅延
+### 案 3：content-visibility でレンダリングを遅延
 
 ```css
 /* 画面外のコンテンツのレンダリングを遅延 */
 .long-list-item {
   content-visibility: auto;
-  contain-intrinsic-size: 200px; /* 推定高さ、スクロールバーの跳动を回避 */
+  contain-intrinsic-size: 200px; /* 推定高さ、スクロールバーのガタつきを回避 */
 }
 ```
 
@@ -388,7 +388,7 @@ CSS の `contain` プロパティは要素のレンダリングの独立性を�
 
 ## 実戦ケース：60fps の複雑アニメーションページの最適化
 
-### シーンの説明
+### ケースの説明
 
 200 個のパーティクルを含むアニメーションページで、各パーティクルに位置、サイズ、カラーのアニメーションがある。初期実装ではフレームレートが 20fps しかなかった。
 
@@ -467,7 +467,7 @@ function animate() {
 ```
 
 ```javascript
-// 最終方案：Canvas でパーティクルを描画、DOM レンダリングパイプラインを完全にバイパス
+// 最終案：Canvas でパーティクルを描画、DOM レンダリングパイプラインを完全にバイパス
 class ParticleSystem {
   private canvas: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
@@ -503,8 +503,8 @@ class ParticleSystem {
 | 指標 | 目標値 | 意味 |
 |------|--------|------|
 | FPS | ≥ 60 | フレームレート、滑らかなアニメーションの最低要件 |
-| Layout Duration | < 8ms | 1 フレームあたりの Layout 耗時間 |
-| Paint Duration | < 4ms | 1 フレームあたりの Paint 耗時間 |
+| Layout Duration | < 8ms | 1 フレームあたりの Layout の所要時間 |
+| Paint Duration | < 4ms | 1 フレームあたりの Paint の所要時間 |
 | Layer Count | < 30 | 合成レイヤー数 |
 | Layer Memory | < 50MB | 合成レイヤーの総メモリ使用量 |
 | CLS | < 0.1 | 累積レイアウトシフト |

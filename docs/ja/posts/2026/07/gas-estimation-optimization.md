@@ -5,9 +5,9 @@ tags:
   - Web3
   - Ethereum
   - 性能优化
-readingTime: 7
+readingTime: 9
 description: "EIP-1559のGasメカニズム、フロントエンドGas見積もりAPI、バッチ取引最適化戦略、L2 Gas見積もりの違いを深く解説"
-wordCount: 3200
+wordCount: 1284
 ---
 
 ## Gasメカニズム：EIP-1559のbase fee + priority fee
@@ -489,7 +489,7 @@ interface TransactionGasEstimate {
 
 ## Gas予測UI：署名前に見積もり費用を表示
 
-良好なGas UIはユーザーが署名する前に完全な費用情報を表示すべきである：
+優れたGas UIはユーザーが署名する前に完全な費用情報を表示すべきである：
 
 ```tsx
 function GasEstimationPanel({ estimate, onChange }: {
@@ -585,7 +585,7 @@ class ArbitrumGasEstimator implements L2GasEstimator {
   chainId = 42161
 
   async estimateGas(tx: TransactionRequest) {
-    // ArbitrumはArbOSを通じて詳細なGas分解を報告
+    // ArbitrumはArbOSを通じてGasの詳細な内訳を報告
     const result = await this.publicClient.request({
       method: 'eth_estimateGas',
       params: [tx],
@@ -641,4 +641,4 @@ class GasMonitor {
 
 ## まとめ
 
-Gas管理はWeb3フロントエンドのコア体験要素である。EIP-1559の二重フィーモデルによりGas見積もりはより予測可能になったが、フロントエンドは依然として`maxFeePerGas`と`maxPriorityFeePerGas`を正確に計算する必要がある。見積もり失敗の処理は分類が必要である——revert、out of gas、nonce競合はそれぞれ異なる戦略を要する。Multicallは最も効果的なGas最適化手法であり、バッチ操作のコストを大幅に削減する。L2のGasメカニズムはL1と大幅に異なる——OptimismにはL1データコストがあり、Arbitrumには内部Gas換算があり、フロントエンドはチェーン認識を持って適応しなければならない。Gas予測UIは署名前に完全な費用分解を表示し、ユーザーに明確な期待を与えるべきである。Gas監視とアラートシステムはユーザーが低Gas期間にトランザクションを送信するのに役立ち、取引コストを最適化できる。
+Gas管理はWeb3フロントエンドのコア体験要素である。EIP-1559の二重フィーモデルによりGas見積もりはより予測可能になったが、フロントエンドは依然として`maxFeePerGas`と`maxPriorityFeePerGas`を正確に計算する必要がある。見積もり失敗の処理は分類が必要である——revert、out of gas、nonce競合はそれぞれ異なる戦略を要する。Multicallは最も効果的なGas最適化手法であり、バッチ操作のコストを大幅に削減する。L2のGasメカニズムはL1と大幅に異なる——OptimismにはL1データコストがあり、Arbitrumには内部Gas換算があり、フロントエンドはチェーン認識を持って適応しなければならない。Gas予測UIは署名前に費用の内訳を完全に表示し、ユーザーに明確な期待を与えるべきである。Gas監視とアラートシステムはユーザーが低Gas期間にトランザクションを送信するのに役立ち、取引コストを最適化できる。

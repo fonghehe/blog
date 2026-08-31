@@ -4,11 +4,11 @@ date: 2022-05-06 15:28:04
 tags:
   - Node.js
 readingTime: 2
-description: "关于Node.js 18 LTS 新特性，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 214
+description: "Regarding the new features in Node.js 18 LTS, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective."
+wordCount: 194
 ---
 
-关于Node.js 18 LTS 新特性，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+Regarding the new features in Node.js 18 LTS, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective.
 
 ## Basic Principles
 
@@ -137,4 +137,4 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Node.js 18 LTS 新特性 is not a silver bullet; choose based on your project scale and tech stack
+- Node.js 18 LTS new features are not a silver bullet; choose based on your project scale and tech stack

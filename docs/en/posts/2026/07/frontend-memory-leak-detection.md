@@ -5,7 +5,7 @@ tags:
   - Performance
 readingTime: 8
 description: "A systematic guide to common frontend memory leak patterns, Chrome DevTools diagnostic methods, proper use of weak references, and automated memory leak detection with Puppeteer."
-wordCount: 2600
+wordCount: 709
 ---
 
 Frontend memory leaks are a "boiling frog" problem. During development, a few MB of leakage is barely noticeable; but after the application runs for a long time, pages gradually become sluggish and crash — by then, user churn has already occurred. With the proliferation of SPAs and increasing frontend complexity, memory management has gone from "optional optimization" to "essential capability."
@@ -502,7 +502,7 @@ jobs:
 
 ## Production Memory Monitoring
 
-Development environment detection isn't enough to cover all scenarios. Production requires continuous monitoring of user-side memory status:
+Development environment detection isn't enough to cover all scenarios. Production requires continuous monitoring of client-side memory usage:
 
 ```typescript
 // Production memory monitoring
@@ -579,10 +579,10 @@ observer.observe({ entryTypes: ['longtask'] });
 
 ## Summary
 
-Frontend memory leaks are not a single issue but a category of problems — closures, event listeners, timers, DOM references, global variables — each with specific detection and fix methods. Chrome DevTools' three-snapshot comparison method is the gold standard for locating leaks, but manual operation is hard to sustain. The Puppeteer automation approach is what integrates into CI.
+Frontend memory leaks are not a single issue but a category of problems — closures, event listeners, timers, DOM references, global variables — each with specific detection and fix methods. Chrome DevTools' three-snapshot comparison method is the gold standard for locating leaks, but manual checks are hard to sustain. It's the Puppeteer automation approach that can actually be wired into CI.
 
 WeakMap and WeakRef provide reference types that don't prevent GC, making them the right tools for caching and object association scenarios. But remember, weak references aren't a silver bullet — they increase code complexity, and GC timing is uncontrollable. Use them only when truly needed.
 
-Production memory monitoring is the last line of defense. Continuously sampling user-side heap usage through the `performance.memory` API and alerting when memory pressure reaches thresholds can catch problems before users notice lag.
+Production memory monitoring is the last line of defense. Sampling users' heap usage through the `performance.memory` API and alerting when memory pressure crosses a threshold can catch problems before users notice any slowdown.
 
 Memory management is a marker of frontend engineering maturity. A team that cares about user experience shouldn't wait for OOM crashes to start paying attention to memory.

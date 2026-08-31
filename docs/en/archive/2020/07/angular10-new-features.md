@@ -4,21 +4,21 @@ date: 2020-07-17 09:48:23
 tags:
   - Angular
 readingTime: 2
-description: "Angular 10 于 2020 年 6 月 24 日正式发布，距离 Angular 9 仅约 4 个月。这次版本主要聚焦于**质量和生态健康**：更严格的 TypeScript 配置、废弃旧版依赖、修复大量 bug。"
-wordCount: 314
+description: "Angular 10 was officially released on June 24, 2020, only about four months after Angular 9. This release focuses mainly on **quality and ecosystem health**: stricter TypeScript configuration, deprecation of legacy dependencies, and a large number of bug fixes."
+wordCount: 217
 ---
 
-Angular 10 于 2020 年 6 月 24 日正式发布，距离 Angular 9 仅约 4 个月。这次版本主要聚焦于**质量和生态健康**：更严格的 TypeScript 配置、废弃旧版依赖、修复大量 bug。
+Angular 10 was officially released on June 24, 2020, only about four months after Angular 9. This release focuses mainly on **quality and ecosystem health**: stricter TypeScript configuration, deprecation of legacy dependencies, and a large number of bug fixes.
 
 ## Strict Mode Enabled by Default for New Projects
 
-Angular 10 CLI 创建新项目时提供严格模式选项：
+When you create a new project, the Angular 10 CLI offers a strict mode option:
 
 ```bash
 ng new my-app --strict
 ```
 
-严格模式会在 `tsconfig.json` 和 `angular.json` 中启用一系列配置：
+Strict mode enables a series of settings in `tsconfig.json` and `angular.json`:
 
 ```json
 // tsconfig.json（strict 模式）
@@ -51,9 +51,9 @@ ng new my-app --strict
 
 ## TypeScript 3.9 Support
 
-Angular 10 要求 TypeScript 3.9，带来了一些实用改进：
+Angular 10 requires TypeScript 3.9, which brings several practical improvements:
 
-**`// @ts-expect-error` 注释**
+**`// @ts-expect-error` comment**
 
 ```typescript
 // 之前：用 @ts-ignore 压制错误（即使代码后来修好了，ignore 还在）
@@ -67,7 +67,7 @@ const x: number = "hello"; // 有错误，正确
 const y: number = 123; // 没有错误！TS 会提示这个注释是多余的
 ```
 
-**条件类型推断改进**
+**Improved Conditional Type Inference**
 
 ```typescript
 // 3.9 之前，某些联合类型的条件类型推断不正确
@@ -79,12 +79,12 @@ type Test = IsString<string | number>;
 
 ## Deprecating Legacy Dependencies
 
-Angular 10 开始**废弃**以下内容（Angular 12 会删除）：
+Angular 10 begins **deprecating** the following (they will be removed in Angular 12):
 
-- `ViewEncapsulation.Native` → 使用 `ViewEncapsulation.ShadowDom`
-- `ModuleWithProviders` 的非泛型形式
-- `ActivatedRoute` 的部分废弃属性
-- 对 IE 9、10 和 IE Mobile 的支持
+- `ViewEncapsulation.Native` → use `ViewEncapsulation.ShadowDom`
+- Non-generic form of `ModuleWithProviders`
+- Certain deprecated properties on `ActivatedRoute`
+- Support for IE 9, 10, and IE Mobile
 
 ```typescript
 // ❌ 废弃
@@ -100,7 +100,7 @@ Angular 10 开始**废弃**以下内容（Angular 12 会删除）：
 
 ## Date Range Picker (Material UI)
 
-Angular 10 在 Angular Material 中新增了日期范围选择器：
+Angular 10 adds a date range picker to Angular Material:
 
 ```html
 <mat-date-range-input [rangePicker]="picker">
@@ -128,12 +128,12 @@ ng update @angular/core@10 @angular/cli@10
 ng update @angular/material@10
 ```
 
-主要迁移内容：
+The main migration steps are:
 
-1. 修复 `ViewEncapsulation.Native` → `ShadowDom` 的警告
-2. `ModuleWithProviders<T>` 泛型参数补全（CLI 会自动处理）
-3. 更新 TypeScript 到 3.9
+1. Fix `ViewEncapsulation.Native` → `ShadowDom` warnings
+2. Add the generic parameter to `ModuleWithProviders<T>` (the CLI handles this automatically)
+3. Update TypeScript to 3.9
 
 ## Summary
 
-Angular 10 不是功能驱动的大版本，而是**工程质量驱动**的版本。严格模式默认开启对新项目来说是非常好的实践——从一开始就建立正确的类型习惯，比后期迁移成本低得多。
+Angular 10 is not a feature-driven major release, but an **engineering-quality-driven** one. Enabling strict mode by default is a great practice for new projects — building the right typing habits from the start costs far less than migrating later.

@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "2020 年是改变一切的一年。疫情、居家、不确定性……同时也是技术突破的一年。"
-wordCount: 558
+wordCount: 559
 ---
 
 2020 年是改变一切的一年。疫情、居家、不确定性……同时也是技术突破的一年。
@@ -16,7 +16,7 @@ wordCount: 558
 
 等了一年多，终于来了。9 月发布后，我们内部新项目开始用 Vue 3 + Vite。开发体验比 Vue 2 + Webpack 好很多，特别是启动速度。
 
-Composition API 用熟之后，真的很爽——逻辑复用清晰，TypeScript 支持好。但生态还不完整，Element Plus 还在 Beta，用了一些社区组件库踩了不少坑。
+Composition API 用熟之后，真的很爽——逻辑复用清晰，TypeScript 支持也好。但生态还不完整，Element Plus 还在 Beta，试过几个社区组件库，踩了不少坑。
 
 **Vite 1.0**
 

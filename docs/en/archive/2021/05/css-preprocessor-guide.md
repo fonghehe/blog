@@ -5,11 +5,11 @@ tags:
   - CSS
 
 readingTime: 1
-description: "CSS 预处理器选择指南在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 182
+description: "Choosing a CSS preprocessor has evolved quickly in recent years. This article digs into the underlying principles and how to make the choice in practice."
+wordCount: 139
 ---
 
-CSS 预处理器选择指南在近年来发展迅速，本文将深入分析其原理和实践方法。
+The CSS preprocessor landscape has evolved rapidly in recent years. This article takes an in-depth look at its principles and practical approaches.
 
 ## Basic Concepts
 
@@ -111,7 +111,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Best Practices
 
-核心代码如下：
+The core code looks like this:
 
 ```css
 .grid {
@@ -145,6 +145,6 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Summary
 
-- 性能优化需要基于实际数据，避免过度优化
-- CSS 预处理器选择指南的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
+- Performance optimization should be grounded in real data; avoid over-optimizing.
+- The heart of choosing a CSS preprocessor is understanding the underlying principles, not just memorizing APIs.
+- In real projects, picking the right tool matters more than chasing the latest one.

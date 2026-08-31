@@ -7,11 +7,11 @@ tags:
   - Webpack
 
 readingTime: 2
-description: "最近在团队中落地前端构建工具统一化趋势， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 194
+description: "I recently worked through the trend of unifying frontend build tooling with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 172
 ---
 
-最近在团队中落地前端构建工具统一化趋势， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently adopted the trend toward unified frontend build tools on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 
@@ -75,7 +75,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Implementation Experience
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -136,5 +136,5 @@ Pay attention to boundary condition handling, which is critical in production.
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- 前端构建工具统一化趋势不是银弹，需要根据项目规模和技术栈选择
+- The shift toward unified frontend build tools is no silver bullet; choose it based on project scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs

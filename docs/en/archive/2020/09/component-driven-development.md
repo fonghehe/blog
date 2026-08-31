@@ -3,16 +3,16 @@ title: "Component-Driven Development (CDD) Methodology"
 date: 2020-09-01 16:55:58
 tags:
   - Frontend
-readingTime: 2
-description: "组件驱动开发 CDD 方法论在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 295
+readingTime: 1
+description: "An in-depth look at Component-Driven Development (CDD) methodology, exploring its core principles and best practices through real-world frontend projects."
+wordCount: 187
 ---
 
-组件驱动开发 CDD 方法论在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+The Component-Driven Development (CDD) methodology is being adopted in frontend development more and more widely. Drawing on real-world projects, this article takes a deep dive into its core principles and best practices.
 
 ## Basic Usage
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 FROM node:20-alpine AS deps
@@ -30,14 +30,13 @@ FROM nginx:alpine AS runner
 COPY --from=builder /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization always depends on the specific context — not every case calls for aggressive tuning.
 
 ## Advanced Usage
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 FROM node:20-alpine AS deps
@@ -55,14 +54,13 @@ FROM nginx:alpine AS runner
 COPY --from=builder /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Practical Cases
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 FROM node:20-alpine AS deps
@@ -80,14 +78,13 @@ FROM nginx:alpine AS runner
 COPY --from=builder /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project you'll also need to account for error handling and edge cases.
 
 ## Performance Optimization
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 FROM node:20-alpine AS deps
@@ -105,14 +102,13 @@ FROM nginx:alpine AS runner
 COPY --from=builder /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is especially useful in large projects and can significantly lower maintenance costs.
 
 ## Summary
 
-- 代码示例仅供参考，需根据业务场景调整
-- 组件驱动开发 CDD 方法论不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
+- The code samples are for reference only — adapt them to your actual use case.
+- CDD is no silver bullet; choose it based on your project's size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Always verify compatibility before shipping to production.

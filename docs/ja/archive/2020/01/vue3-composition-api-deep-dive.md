@@ -3,16 +3,16 @@ title: "Vue 3 Composition API 深度解析：从 Options 到 Composition 的移�
 date: 2020-01-01 15:25:34
 tags:
   - Vue
-readingTime: 2
+readingTime: 3
 description: "Vue 3 的 Composition API 是自 Vue 诞生以来最重大的范式转变。对于习惯了 Options API 的开发者来说，这套 API 的学习曲线并不陡峭，但要真正用好它，需要理解其设计哲学和底层机制。本文从实际工程角度出发，剖析 Composition API 的核心用法。"
-wordCount: 461
+wordCount: 667
 ---
 
-Vue 3 的 Composition API 是自 Vue 诞生以来最重大的范式转变。对于习惯了 Options API 的开发者来说，这套 API 的学习曲线并不陡峭，但要真正用好它，需要理解其设计哲学和底层机制。本文从实际工程角度出发，剖析 Composition API 的核心用法。
+Vue 3 の Composition API は、Vue 誕生以来もっとも大きなパラダイムシフトだ。Options API に慣れた開発者にとって学習曲線はそれほど急ではないが、本当に使いこなすにはその設計思想と背後にある仕組みを理解する必要がある。本稿では実際の開発の観点から、Composition API の主要な使い方を掘り下げる。
 
 ## setup関数とリアクティビティの基礎
 
-`setup` 是 Composition API 的入口，它在组件创建之前执行，接收 `props` 和 `context` 两个参数。所有响应式状态、计算属性、方法都在这里定义。
+`setup` は Composition API の入り口で、コンポーネントの生成前に実行され、`props` と `context` の2つの引数を受け取る。すべてのリアクティブな状態、算出プロパティ、メソッドはここで定義する。
 
 ```javascript
 import { ref, reactive, toRefs } from 'vue'
@@ -57,11 +57,11 @@ export default {
 }
 ```
 
-注意 `ref` 返回的对象在 JS 中访问需要 `.value`，在模板中则自动解包。这是很多初学者容易踩的坑。
+`ref` が返すオブジェクトは JS 上では `.value` を通してアクセスする必要があり、テンプレートでは自動的にアンラップされる。これは多くの初学者がハマりやすい点だ。
 
 ## カスタム再利用可能ロジック
 
-Composition API 最强大的地方在于逻辑复用。过去用 mixins 会有命名冲突和来源不明的问题，现在用 composables 可以清晰地管理依赖。
+Composition API の最も強力な点はロジックの再利用だ。以前 mixins を使うと名前の衝突や出自が分からない問題があったが、今は composables で依存関係を明確に管理できる。
 
 ```javascript
 // composables/useMousePosition.js
@@ -87,7 +87,7 @@ export function useMousePosition() {
   return { x, y }
 }
 
-// 使用
+// 使用例
 import { useMousePosition } from './composables/useMousePosition'
 
 export default {
@@ -100,7 +100,7 @@ export default {
 
 ## watchEffectとwatchの使い分け
 
-`watchEffect` 会自动追踪函数内的响应式依赖，首次立即执行。`watch` 则需要显式指定数据源。
+`watchEffect` は関数内のリアクティブな依存を自動的に追跡し、初回は即座に実行される。`watch` はデータソースを明示的に指定する必要がある。
 
 ```javascript
 import { ref, watch, watchEffect } from 'vue'
@@ -127,11 +127,11 @@ export default {
 }
 ```
 
-选择建议：需要获取旧值或精确控制触发条件时用 `watch`；需要自动追踪多个依赖时用 `watchEffect`。
+選び方の指針：旧値の取得やトリガー条件の厳密な制御が必要なら `watch`、複数の依存を自動追跡したいなら `watchEffect` を使う。
 
-## 生命周期钩子的映射
+## ライフサイクルフックのマッピング
 
-Composition API 中的生命周期钩子都以 `on` 开头，且只在 `setup` 中有效。
+Composition API のライフサイクルフックはすべて `on` で始まり、`setup` 内でのみ有効だ。
 
 ```javascript
 import { onMounted, onUpdated, onUnmounted, onBeforeMount, onBeforeUpdate, onBeforeUnmount } from 'vue'
@@ -167,8 +167,8 @@ export default {
 
 ## まとめ
 
-- Composition API 的核心是 `setup` 函数，所有逻辑从这里组织
-- `ref` 用于基本类型，`reactive` 用于对象，注意 `.value` 的使用场景
-- Composables 替代 mixins，解决了命名冲突和来源不明的问题
-- `watchEffect` 自动追踪依赖，`watch` 显式指定且可获取旧值
-- 生命周期钩子全部以 `on` 前缀命名，只能在 `setup` 中调用
+- Composition API の核心は `setup` 関数で、すべてのロジックはここから組み立てる
+- `ref` は基本型に、`reactive` はオブジェクトに使い、`.value` の使い分けに注意
+- Composables は mixins に代わり、名前の衝突や出自が分からない問題を解決する
+- `watchEffect` は依存を自動追跡し、`watch` は明示的に指定して旧値を取得できる
+- ライフサイクルフックはすべて `on` 接頭辞で名前が付き、`setup` 内でのみ呼び出せる

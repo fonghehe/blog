@@ -4,11 +4,11 @@ date: 2022-09-05 10:05:44
 tags:
   - Frontend
 readingTime: 2
-description: "最近在团队中落地Popover API 原生弹出层， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 210
+description: "We recently adopted the native Popover API on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 181
 ---
 
-最近在团队中落地Popover API 原生弹出层， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently adopted the native Popover API on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 
@@ -95,7 +95,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Optimization Strategies
 
@@ -129,6 +129,6 @@ This pattern is very practical in large projects and can significantly reduce ma
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Popover API 原生弹出层不是银弹，需要根据项目规模和技术栈选择
+- The native Popover API is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

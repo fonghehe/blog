@@ -5,10 +5,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Most developers are comfortable with the basics of `Promise` (`.then`, `.catch`, `.finally`), but real-world projects often require advanced patterns: concurren"
-wordCount: 186
+wordCount: 187
 ---
 
-Most developers are comfortable with the basics of `Promise` (`.then`, `.catch`, `.finally`), but real-world projects often require advanced patterns: concurrency control, timeout handling, sequential execution, and waiting for all promises regardless of success or failure. This article covers the advanced Promise patterns I've accumulated in production projects.
+Most developers are comfortable with the basics of `Promise` (`.then`, `.catch`, `.finally`), but real-world projects often require advanced patterns: concurrency control, timeout handling, sequential execution, and waiting for all promises regardless of success or failure. This article covers the advanced Promise patterns I've picked up in real-world projects.
 
 ## Promise.all vs Promise.race
 

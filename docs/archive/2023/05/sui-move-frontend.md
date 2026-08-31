@@ -4,9 +4,9 @@ date: 2023-05-11 19:14:49
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 8
 description: "Sui 采用 Object 模型而非 EVM 的 Account 模型，前端交互方式截然不同。本文覆盖 @mysten/sui.js SDK、钱包连接、Object 读取与交易构建的完整链路。"
-wordCount: 3100
+wordCount: 1038
 ---
 
 Sui 是 Mysten Labs 开发的 Layer 1 区块链，使用 Move 语言和基于 Object 的数据模型。与 EVM 链的 Account 模型不同，Sui 的每个资产都是独立的 Object，拥有自己的 ID 和所有权。这种架构差异直接影响了前端开发的方式——从数据读取到交易构建，都需要重新理解。

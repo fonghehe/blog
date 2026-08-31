@@ -5,9 +5,9 @@ tags:
   - Web3
   - Solidity
   - Smart Contract
-readingTime: 12
+readingTime: 11
 description: "Foundry は Rust で記述された Solidity 開発ツールチェーンです。最大の特徴はテストを Solidity 本体で記述できること、JavaScript 中間層が不要なことです。本記事では Forge、Cast、Anvil、Chisel の4つのツールを体系的に紹介し、Hardhat テスト体系との詳細な比較を行います。"
-wordCount: 3200
+wordCount: 1871
 ---
 
 Foundry（旧称 Forge）は、Georgios Konstantopoulos と Andreas Bigger によって立ち上げられた Rust 実装の Solidity 開発ツールチェーンです。Uniswap、MakerDAO、Compound などの主要な DeFi プロトコルでは、デフォルトのテストフレームワークとして採用されています。その核心的な理由はシンプルです：Solidity で Solidity をテストすることで、JavaScript 中間層による型変換のロスと認知的負荷を排除できます。

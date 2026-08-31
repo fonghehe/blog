@@ -4,7 +4,7 @@ date: 2023-02-09 10:39:17
 tags:
   - Vue
 readingTime: 1
-description: "在日常开发中，Vue Macros 语法增强工具集 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+description: "Vue Macros, the syntax-enhancement tool collection, is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
 wordCount: 181
 ---
 

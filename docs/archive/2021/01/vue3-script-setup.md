@@ -8,10 +8,10 @@ tags:
   - TypeScript
 readingTime: 1
 description: "Vue 3 script-setup 语法糖在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 274
+wordCount: 275
 ---
 
-Vue 3 script-setup 语法糖在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Vue 3 的 `script-setup` 语法糖在前端开发里用得越来越普遍。本文从实际项目出发，深入分析其核心原理与最佳实践。
 
 ## 基础用法
 
@@ -114,5 +114,5 @@ function useCounter(initial = 0) {
 ## 小结
 
 - 代码示例仅供参考，需根据业务场景调整
-- Vue 3 script-setup 语法糖不是银弹，需要根据项目规模和技术栈选择
+- Vue 3 的 `script-setup` 语法糖不是银弹，需要根据项目规模和技术栈选择
 - 理解底层原理比记住 API 更重要

@@ -87,7 +87,7 @@ class EventBus {
   }
 }
 
-// 全域性事件匯流排
+// 全域事件匯流排
 const bus = new EventBus();
 
 // 元件 A：釋出者

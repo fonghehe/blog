@@ -13,7 +13,7 @@ wordCount: 255
 ## 為什麼選 Next.js
 
 - React 官方推薦的服務端渲染框架
-- 檔案系統路由，不用配置 react-router
+- 檔案系統路由，不用設定 react-router
 - 支援 SSR、SSG（靜態生成）、混合模式
 - 8.0 版本加入了自動靜態最佳化（Automatic Static Optimization）
 

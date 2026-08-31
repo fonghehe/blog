@@ -4,11 +4,11 @@ date: 2023-03-30 10:56:17
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，CSS 相对颜色语法 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 215
+description: "CSS relative color syntax is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 201
 ---
 
-在日常开发中，CSS 相对颜色语法 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+CSS relative color syntax is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
 
 ## Quick Start
 
@@ -147,7 +147,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 ## Summary
 
-- CSS 相对颜色语法不是银弹，需要根据项目规模和技术栈选择
+- CSS relative color syntax is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

@@ -53,11 +53,11 @@ function heavyCalculation(arr) {
 }
 ```
 
-Worker 線程裏不能訪問 DOM、`window`、`document`。能用的 API：`navigator`、`location`（隻讀）、`setTimeout`/`setInterval`、`fetch`、`WebSocket` 等。
+Worker 線程裏不能訪問 DOM、`window`、`document`。能用的 API：`navigator`、`location`（只讀）、`setTimeout`/`setInterval`、`fetch`、`WebSocket` 等。
 
 ## 實戰：大檔案 CSV 解析
 
-用户上傳 50MB 的 CSV 文件，主線程解析會卡死：
+用戶上傳 50MB 的 CSV 文件，主線程解析會卡死：
 
 ```javascript
 // csv-worker.js
@@ -259,5 +259,5 @@ Chrome DevTools 調試 Worker：
 - 主線程和 Worker 通過 `postMessage` / `onmessage` 通信
 - 使用 Transferable 對象（ArrayBuffer）可以零拷貝傳遞大數據
 - Worker 不能訪問 DOM，能用的 API 有限（fetch、WebSocket、定時器等）
-- 頻繁任務用 Worker Pool 複用線程，避免創建銷燬開銷
+- 頻繁任務用 Worker Pool 複用線程，避免創建銷毀開銷
 - 在 React 中封裝為 useWorker Hook，使用更簡潔

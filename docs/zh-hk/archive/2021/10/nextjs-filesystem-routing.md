@@ -9,7 +9,7 @@ description: "Vercel 在 2021 年 10 月發佈了 Next.js 12，這是近年來�
 wordCount: 334
 ---
 
-Vercel 在 2021 年 10 月發佈了 Next.js 12，這是近年來最大的一次版本更新。Rust 編譯器、Middleware、React 18 支持，每個特性都很重磅。
+Vercel 在 2021 年 10 月發佈了 Next.js 12，這是近年來最大的一次版本更新。Rust 編譯器、Middleware、React 18 支援，每個特性都很重磅。
 
 ## Rust 編譯器
 
@@ -24,7 +24,7 @@ SWC（Next.js 12）:    初始編譯 ~5s，  HMR ~50ms
 提升約 5-7 倍
 ```
 
-對用户來説是無感的升級——設定檔案不需要改，但開發體驗肉眼變好了。而且 SWC 還承擔了代碼壓縮的工作，替代了 Terser：
+對用戶來説是無感的升級——設定檔案不需要改，但開發體驗肉眼變好了。而且 SWC 還承擔了代碼壓縮的工作，替代了 Terser：
 
 ```javascript
 // next.config.js - 實際上不需要改任何設定
@@ -106,7 +106,7 @@ module.exports = {
 
 ## React 18 支援
 
-Next.js 12 開始支持 React 18 的部分特性：
+Next.js 12 開始支援 React 18 的部分特性：
 
 ```jsx
 // pages/index.js
@@ -153,6 +153,6 @@ export default function Page() {
 
 - SWC 編譯器讓構建速度提升 5-7 倍，無配置升級
 - Middleware 是 Next.js 12 最重要的新特性，運行在 Edge Runtime
-- React 18 的 Suspense SSR 支持讓頁面加載體驗更好
+- React 18 的 Suspense SSR 支援讓頁面加載體驗更好
 - Rust 化是前端工具鏈的趨勢（SWC、esbuild、Vite 的 esbuild 預構建）
 - Next.js 正在從 React 框架演進為全棧開發平臺

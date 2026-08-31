@@ -5,10 +5,10 @@ tags:
   - Engineering
 readingTime: 1
 description: "Monorepo toolchains matured in 2026, with Turborepo, Nx, and Rush each having advantages. This article discusses core differences, performance comparisons, and selection recommendations."
-wordCount: 243
+wordCount: 246
 ---
 
-Monorepo has become the standard architecture for large frontend projects. In 2026, Turborepo, Nx, and Rush are the three mainstream tools, each with characteristics and applicable scenarios.
+Monorepo has become the standard architecture for large frontend projects. In 2026, Turborepo, Nx, and Rush are the three mainstream tools, each with its own strengths and ideal use cases.
 
 ## Turborepo
 

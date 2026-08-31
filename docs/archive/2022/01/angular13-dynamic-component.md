@@ -157,7 +157,7 @@ export class DynamicPageComponent {
 }
 ```
 
-注意：`inputs` 参数是 Angular 14 才正式支持的（Angular 13 的 `NgComponentOutlet` 还不支持），这里仅作预览。
+注意：`inputs` 参数是 Angular 14 才正式支持的（Angular 13 的 `NgComponentOutlet` 还不支持），目前仅作预览。
 
 ## 迁移建议
 

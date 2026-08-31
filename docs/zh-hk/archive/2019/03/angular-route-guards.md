@@ -1,14 +1,14 @@
 ---
-title: "Angular 路由守衞：權限控製最佳實踐"
+title: "Angular 路由守衞：權限控制最佳實踐"
 date: 2019-03-13 15:35:38
 tags:
   - Angular
 readingTime: 1
-description: "Angular Router 提供多種守衞介面，可以精細控製路由訪問權限。"
+description: "Angular Router 提供多種守衞介面，可以精細控制路由訪問權限。"
 wordCount: 78
 ---
 
-Angular Router 提供多種守衞介面，可以精細控製路由訪問權限。
+Angular Router 提供多種守衞介面，可以精細控制路由訪問權限。
 
 ## CanActivate
 
@@ -38,7 +38,7 @@ const routes: Routes = [
 
 ## CanDeactivate
 
-防止用户意外離開未保存的表單：
+防止用戶意外離開未保存的表單：
 
 ```typescript
 @Injectable({ providedIn: 'root' })

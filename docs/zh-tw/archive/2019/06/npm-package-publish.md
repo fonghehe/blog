@@ -66,7 +66,7 @@ npm init
 - **`main`**：CommonJS 入口，`require('my-awesome-utils')` 會載入這個檔案
 - **`module`**：ES Module 入口，Webpack、Rollup 等打包工具會優先讀取這個欄位，支援 tree-shaking。這不是 npm 官方欄位，但已是社群事實標準
 - **`types`**：TypeScript 型別宣告檔案的入口，`tsc` 和 IDE 會根據這個欄位提供型別提示
-- **`files`**：指定釋出到 npm 時包含哪些檔案。沒有這個欄位，npm 會發布整個目錄（除了 `.npmignore` 排除的）
+- **`files`**：指定釋出到 npm 時包含哪些檔案。沒有這個欄位，npm 會發佈整個目錄（除了 `.npmignore` 排除的）
 - **`description`**：會顯示在 npm 搜尋結果中，寫清楚便於搜尋
 - **`keywords`**：同樣用於 npm 搜尋，儘量覆蓋使用者可能搜尋的關鍵詞
 - **`repository`**：npm 頁面上會顯示倉庫連結，方便使用者提 issue
@@ -75,7 +75,7 @@ npm init
 
 ## .npmignore vs files 欄位
 
-控製釋出內容有兩種方式：
+控制釋出內容有兩種方式：
 
 **方式一：`files` 欄位（推薦）**
 
@@ -88,7 +88,7 @@ npm init
 }
 ```
 
-白名單模式，隻發布 `files` 中列出的檔案。簡潔明確，不容易出錯。注意 `package.json`、`README.md`、`LICENSE` 和 `CHANGELOG` 始終會被包含，不需要顯式列出。
+白名單模式，只發佈 `files` 中列出的檔案。簡潔明確，不容易出錯。注意 `package.json`、`README.md`、`LICENSE` 和 `CHANGELOG` 始終會被包含，不需要顯式列出。
 
 **方式二：`.npmignore`**
 
@@ -116,9 +116,9 @@ coverage/
 |
 ---|---|---|
 | 模式 | 白名單 | 黑名單 |
-| 安全性 | 高，不會意外發布 | 需要持續維護 |
+| 安全性 | 高，不會意外發佈 | 需要持續維護 |
 | 可見性 | 在 package.json 中 | 單獨檔案 |
-| 推薦場景 | 絕大多數情況 | 需要精細控製時 |
+| 推薦場景 | 絕大多數情況 | 需要精細控制時 |
 
 推薦用 `files` 欄位，原因很簡單：白名單更安全，且不需要維護額外的檔案。
 
@@ -264,7 +264,7 @@ npm version prerelease --preid=beta  # 1.0.0 → 1.0.1-beta.0
 npm publish --tag beta               # 釋出到 beta 標籤
 ```
 
-使用者可以通過 `npm install my-awesome-utils@beta` 安裝預釋出版本。
+使用者可以透過 `npm install my-awesome-utils@beta` 安裝預釋出版本。
 
 `npm version` 還會自動建立 git tag，方便回溯每個版本對應的程式碼。
 
@@ -360,7 +360,7 @@ yarn add my-awesome-utils
 \`\`\`javascript
 import { debounce, throttle, deepClone } from 'my-awesome-utils'
 
-// 防抖：300ms 內多次觸發隻執行最後一次
+// 防抖：300ms 內多次觸發只執行最後一次
 const handleSearch = debounce((keyword) => {
   fetchSearchResults(keyword)
 }, 300)
@@ -408,15 +408,15 @@ npm deprecate my-awesome-utils "此包已遷移到 @fonghehe/utils，請更新�
 
 關鍵區別：
 
-- `npm unpublish`：從 registry 徹底刪除，其他依賴它的專案會安裝失敗。npm 有 72 小時限製，且如果有人依賴了你的包則不允許 unpublish
-- `npm deprecate`：包還在，隻是安裝時會顯示警告。對已有使用者更友好
+- `npm unpublish`：從 registry 徹底刪除，其他依賴它的專案會安裝失敗。npm 有 72 小時限制，且如果有人依賴了你的包則不允許 unpublish
+- `npm deprecate`：包還在，只是安裝時會顯示警告。對已有使用者更友好
 
 **最佳實踐**：不要 unpublish，而是 deprecate + 釋出修復版本。unpublish 會破壞其他專案的構建，尤其是你的包被間接依賴時。
 
 ## 小結
 
 - `package.json` 中 `main`、`module`、`types` 三個欄位分別對應 CJS 入口、ESM 入口和型別宣告，打包工具會按需讀取
-- 用 `files` 欄位白名單控製釋出內容，比 `.npmignore` 更安全
+- 用 `files` 欄位白名單控制釋出內容，比 `.npmignore` 更安全
 - TypeScript 型別宣告對 TS 使用者是剛需，即使原始碼是 JS 也應該提供
 - `npm pack --dry-run` 釋出前檢查打包內容，避免洩露敏感檔案
 - 遵循語義化版本，用 `npm version` 自動管理版本號和 git tag

@@ -4,15 +4,15 @@ date: 2020-06-12 09:55:30
 tags:
   - JavaScript
 readingTime: 2
-description: "关于NestJS 企业级 Node.js 框架入门，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 277
+description: "A production-oriented introduction to NestJS, the enterprise-grade Node.js framework. Many developers only scratch the surface with basic API calls; this article explores real-world problems and solutions you'll encounter in practice."
+wordCount: 168
 ---
 
-关于NestJS 企业级 Node.js 框架入门，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to getting started with NestJS—an enterprise-grade Node.js framework—many developers only stay at the API-call level. This article tries to approach it from a production angle, discussing the real problems you'll face and how to solve them.
 
 ## Basic Principles
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 const express = require('express')
@@ -37,11 +37,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project, you'll also need to handle errors and edge cases.
 
 ## Advanced Features
 
-在这个基础上，我们可以进一步优化：
+Building on that, we can optimize further:
 
 ```javascript
 const fs = require('fs')
@@ -66,11 +66,11 @@ const csvToJson = new Transform({
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is especially handy in large projects, and it noticeably cuts maintenance cost.
 
 ## Project Practice
 
-实际项目中的用法会更复杂一些：
+In a real project, the usage gets a bit more involved:
 
 ```javascript
 const express = require('express')
@@ -95,11 +95,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This way, the code becomes both more testable and more extensible.
 
 ## Best Practices
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 const fs = require('fs')
@@ -124,10 +124,10 @@ const csvToJson = new Transform({
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind the edge-case handling—that's critical in production.
 
 ## Summary
 
-- NestJS 企业级 Node.js 框架入门不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
+- Getting started with NestJS—an enterprise-grade Node.js framework—isn't a silver bullet; choose it based on your project's scale and tech stack.
+- Understanding the underlying principles matters more than memorizing the API.
+- Before using it in production, be sure to verify compatibility.

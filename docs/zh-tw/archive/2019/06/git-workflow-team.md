@@ -286,7 +286,7 @@ module.exports = {
 
 ## Code Review 與 Pull Request
 
-PR 不隻是「合併程式碼」的工具，更是團隊知識共享和質量把控的關卡：
+PR 不只是「合併程式碼」的工具，更是團隊知識共享和質量把控的關卡：
 
 ```bash
 # 完整的 PR 流程

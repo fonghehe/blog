@@ -4,15 +4,15 @@ date: 2019-10-28 16:19:50
 tags:
   - TypeScript
 readingTime: 3
-description: "在 TypeScript 项目中引入第三方 JavaScript 库时，声明文件（`.d.ts`）是连接类型系统和无类型代码的桥梁。即使库本身没有提供类型定义，我们也可以自己编写声明文件。本文系统地介绍声明文件的编写方法。"
-wordCount: 434
+description: "When you pull a third-party JavaScript library into a TypeScript project, declaration files (`.d.ts`) are the bridge between the type system and untyped code. Even if the library ships no type definitions, you can write declaration files yourself. This article systematically walks through how to write them."
+wordCount: 284
 ---
 
-在 TypeScript 项目中引入第三方 JavaScript 库时，声明文件（`.d.ts`）是连接类型系统和无类型代码的桥梁。即使库本身没有提供类型定义，我们也可以自己编写声明文件。本文系统地介绍声明文件的编写方法。
+When you pull a third-party JavaScript library into a TypeScript project, declaration files (`.d.ts`) are the bridge between the type system and untyped code. Even if the library ships no type definitions, you can write declaration files yourself. This article systematically walks through how to write them.
 
 ## Purpose of Declaration Files
 
-声明文件（`.d.ts`）只包含类型信息，不包含实现。编译器使用它来理解 JavaScript 代码的类型结构：
+A declaration file (`.d.ts`) contains only type information, not implementation. The compiler uses it to understand the type structure of JavaScript code:
 
 ```ts
 // index.d.ts - 声明文件
@@ -27,7 +27,7 @@ add('1', '2');    // 类型错误：Argument of type 'string' is not assignable
 
 ## Global Declarations
 
-对于通过 `<script>` 标签引入的库，需要使用全局声明：
+For libraries pulled in via a `<script>` tag, you need global declarations:
 
 ```ts
 // globals.d.ts
@@ -48,7 +48,7 @@ declare namespace NodeJS {
 
 ## Module Declarations
 
-对于 npm 包，使用模块声明：
+For npm packages, use module declarations:
 
 ```ts
 // declarations/lodash.d.ts
@@ -131,7 +131,7 @@ declare module '*.md' {
 
 ## Function Overloads
 
-声明文件中可以使用函数重载来表达同一个函数的不同调用方式：
+Declaration files can use function overloads to express the different ways the same function can be called:
 
 ```ts
 declare function ajax(url: string): Promise<string>;
@@ -200,7 +200,7 @@ declare module 'react-query' {
 
 ## Hybrid Type Declarations
 
-有些 JavaScript 导出既是函数，又有属性：
+Some JavaScript exports are both a function and an object with properties:
 
 ```ts
 // axios 既有默认导出函数，又有 axios.get 等方法
@@ -251,7 +251,7 @@ declare module 'axios' {
 
 ## Using @types Community Declarations
 
-DefinitelyTyped 是社区维护的类型声明仓库，大部分流行的 npm 包都有对应的 `@types` 包：
+DefinitelyTyped is a community-maintained repository of type declarations; most popular npm packages have a corresponding `@types` package:
 
 ```bash
 # 安装社区类型声明
@@ -260,7 +260,7 @@ npm install --save-dev @types/react
 npm install --save-dev @types/node
 ```
 
-如果找不到对应的类型声明，可以创建一个 fallback：
+If you can't find a matching type declaration, you can create a fallback:
 
 ```ts
 // declarations/unknown-modules.d.ts
@@ -290,7 +290,7 @@ declare module 'some-untyped-library' {
 
 ## Publishing Your Own Type Declarations
 
-如果开发了一个 npm 包，可以在 `package.json` 中指定类型入口：
+If you've built an npm package, you can specify the types entry point in `package.json`:
 
 ```json
 {
@@ -301,14 +301,14 @@ declare module 'some-untyped-library' {
 }
 ```
 
-类型声明应该与源码一起发布，而不是放到 DefinitelyTyped。
+Type declarations should be published alongside the source code rather than dropped into DefinitelyTyped.
 
 ## Summary
 
-- 声明文件（`.d.ts`）只包含类型信息，不包含实现代码
-- `declare module` 用于声明模块类型，`declare namespace` 用于声明全局命名空间
-- 函数重载可以表达同一个函数的不同调用签名
-- 泛型可以让类型声明更加灵活和精确
-- Webpack 中的文件类型（`.png`、`.css` 等）需要特殊声明
-- 使用 `@types/xxx` 可以获取社区维护的类型声明
-- 发布 npm 包时，`package.json` 的 `types` 字段指向类型入口
+- A declaration file (`.d.ts`) contains only type information, never implementation code
+- `declare module` declares a module's types, and `declare namespace` declares a global namespace
+- Function overloads can express the different call signatures of the same function
+- Generics make type declarations more flexible and precise
+- File types handled by Webpack (`.png`, `.css`, etc.) need special declarations
+- Use `@types/xxx` to get community-maintained type declarations
+- When publishing an npm package, the `types` field in `package.json` points to the type entry

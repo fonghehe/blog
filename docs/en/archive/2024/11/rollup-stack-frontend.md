@@ -4,9 +4,9 @@ date: 2024-11-25 12:42:17
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 9
 description: "Comparing the architectural differences between OP Stack and ZK Stack, with a deep dive into cross-chain interactions, message passing, withdrawal flows, and confirmation time adaptation in multi-Rollup environments"
-wordCount: 3800
+wordCount: 699
 ---
 
 ## OP Stack Architecture: Optimism's Modular Rollup Framework

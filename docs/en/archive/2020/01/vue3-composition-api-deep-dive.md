@@ -4,15 +4,15 @@ date: 2020-01-01 15:25:34
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 的 Composition API 是自 Vue 诞生以来最重大的范式转变。对于习惯了 Options API 的开发者来说，这套 API 的学习曲线并不陡峭，但要真正用好它，需要理解其设计哲学和底层机制。本文从实际工程角度出发，剖析 Composition API 的核心用法。"
-wordCount: 438
+description: "Vue 3's Composition API is the most significant paradigm shift since Vue was created. For developers used to the Options API the learning curve isn't steep, but truly mastering it requires understanding its design philosophy and underlying mechanisms. This article breaks down the core usage from a practical engineering perspective."
+wordCount: 295
 ---
 
-Vue 3 的 Composition API 是自 Vue 诞生以来最重大的范式转变。对于习惯了 Options API 的开发者来说，这套 API 的学习曲线并不陡峭，但要真正用好它，需要理解其设计哲学和底层机制。本文从实际工程角度出发，剖析 Composition API 的核心用法。
+Vue 3's Composition API is the most significant paradigm shift since Vue was created. For developers used to the Options API, the learning curve isn't steep, but to truly use it well you need to understand its design philosophy and underlying mechanisms. This article breaks down the core usage of the Composition API from a practical engineering perspective.
 
 ## The setup Function and Reactivity Basics
 
-`setup` 是 Composition API 的入口，它在组件创建之前执行，接收 `props` 和 `context` 两个参数。所有响应式状态、计算属性、方法都在这里定义。
+The `setup` function is the entry point of the Composition API. It runs before the component is created and receives two arguments: `props` and `context`. All reactive state, computed properties, and methods are defined here.
 
 ```javascript
 import { ref, reactive, toRefs } from 'vue'
@@ -57,11 +57,11 @@ export default {
 }
 ```
 
-注意 `ref` 返回的对象在 JS 中访问需要 `.value`，在模板中则自动解包。这是很多初学者容易踩的坑。
+Note that a `ref`'s value is accessed via `.value` in JavaScript but is automatically unwrapped in templates. This is a common pitfall for beginners.
 
 ## Custom Reusable Logic
 
-Composition API 最强大的地方在于逻辑复用。过去用 mixins 会有命名冲突和来源不明的问题，现在用 composables 可以清晰地管理依赖。
+The most powerful aspect of the Composition API is logic reuse. In the past, mixins caused naming conflicts and unclear source-of-truth issues; now composables let you manage dependencies clearly.
 
 ```javascript
 // composables/useMousePosition.js
@@ -100,7 +100,7 @@ export default {
 
 ## Choosing Between watchEffect and watch
 
-`watchEffect` 会自动追踪函数内的响应式依赖，首次立即执行。`watch` 则需要显式指定数据源。
+`watchEffect` automatically tracks the reactive dependencies inside the function and runs immediately on first call. `watch` requires you to specify the data source explicitly.
 
 ```javascript
 import { ref, watch, watchEffect } from 'vue'
@@ -127,11 +127,11 @@ export default {
 }
 ```
 
-选择建议：需要获取旧值或精确控制触发条件时用 `watch`；需要自动追踪多个依赖时用 `watchEffect`。
+Rule of thumb: use `watch` when you need the old value or precise control over triggers; use `watchEffect` when you need to automatically track multiple dependencies.
 
-## 生命周期钩子的映射
+## Lifecycle Hook Mapping
 
-Composition API 中的生命周期钩子都以 `on` 开头，且只在 `setup` 中有效。
+Lifecycle hooks in the Composition API all start with `on` and are only valid inside `setup`.
 
 ```javascript
 import { onMounted, onUpdated, onUnmounted, onBeforeMount, onBeforeUpdate, onBeforeUnmount } from 'vue'
@@ -167,8 +167,8 @@ export default {
 
 ## Summary
 
-- Composition API 的核心是 `setup` 函数，所有逻辑从这里组织
-- `ref` 用于基本类型，`reactive` 用于对象，注意 `.value` 的使用场景
-- Composables 替代 mixins，解决了命名冲突和来源不明的问题
-- `watchEffect` 自动追踪依赖，`watch` 显式指定且可获取旧值
-- 生命周期钩子全部以 `on` 前缀命名，只能在 `setup` 中调用
+- The core of the Composition API is the `setup` function, where all logic is organized.
+- Use `ref` for primitives and `reactive` for objects; mind where `.value` is needed.
+- Composables replace mixins, solving the naming-conflict and unclear-source problems.
+- `watchEffect` tracks dependencies automatically, while `watch` is explicit and can access the old value.
+- All lifecycle hooks are prefixed with `on` and can only be called inside `setup`.

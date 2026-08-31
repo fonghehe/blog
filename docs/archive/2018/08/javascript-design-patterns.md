@@ -13,7 +13,7 @@ wordCount: 241
 
 ## 观察者模式（发布/订阅）
 
-用于解耦：A 不需要直接知道 B，只需要发布事件，B 自己订阅。
+用于解耦：A 不必直接依赖 B，只需发布事件，由 B 自行订阅。
 
 ```javascript
 class EventEmitter {

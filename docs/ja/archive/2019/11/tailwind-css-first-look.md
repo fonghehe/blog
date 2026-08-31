@@ -3,16 +3,16 @@ title: "Tailwind CSS初体験：アトミックCSS"
 date: 2019-11-13 11:08:11
 tags:
   - CSS
-readingTime: 4
+readingTime: 5
 description: "Tailwind CSS 是一个实用优先（Utility-First）的 CSS 框架，它提供了大量原子化的 CSS 类名，让开发者可以直接在 HTML 中组合样式，而不需要编写自定义 CSS。本文将从零开始体验 Tailwind CSS，探索原子化 CSS 的开发模式。"
-wordCount: 593
+wordCount: 961
 ---
 
-Tailwind CSS 是一个实用优先（Utility-First）的 CSS 框架，它提供了大量原子化的 CSS 类名，让开发者可以直接在 HTML 中组合样式，而不需要编写自定义 CSS。本文将从零开始体验 Tailwind CSS，探索原子化 CSS 的开发模式。
+Tailwind CSS はユーティリティファースト（Utility-First）の CSS フレームワークです。多数のアトミックな CSS クラス名を提供しており、開発者はカスタム CSS を書かずに HTML 内でスタイルを組み合わせられます。本記事ではゼロから Tailwind CSS を試し、アトミック CSS の開発スタイルを探ります。
 
 ## アトミックCSSとは
 
-传统 CSS 编写方式是为每个组件创建语义化的类名：
+従来の CSS の書き方は、各コンポーネントに対して意味的なクラス名を作成するものでした：
 
 ```html
 <!-- 传统方式 -->
@@ -33,7 +33,7 @@ Tailwind CSS 是一个实用优先（Utility-First）的 CSS 框架，它提供�
 </style>
 ```
 
-原子化 CSS 使用预定义的小类名来组合样式：
+アトミック CSS は、あらかじめ定義された小さなクラス名を組み合わせてスタイルを作ります：
 
 ```html
 <!-- Tailwind 方式 -->
@@ -52,7 +52,7 @@ Tailwind CSS 是一个实用优先（Utility-First）的 CSS 框架，它提供�
 npm install tailwindcss
 ```
 
-初始化配置文件：
+設定ファイルを初期化します：
 
 ```bash
 npx tailwindcss init
@@ -104,7 +104,7 @@ module.exports = {
 };
 ```
 
-创建 CSS 入口文件：
+CSS のエントリーファイルを作成します：
 
 ```css
 /* src/styles/tailwind.css */
@@ -152,7 +152,7 @@ npx tailwindcss src/styles/tailwind.css -o dist/tailwind.css
 <div class="m-4 mx-auto mt-2">
 ```
 
-### 字体与颜色
+### フォントと色
 
 ```html
 <!-- 字号: text-xs (12px), text-sm (14px), text-base (16px), text-lg (18px) -->
@@ -161,7 +161,7 @@ npx tailwindcss src/styles/tailwind.css -o dist/tailwind.css
 <p class="text-sm text-gray-600">正文内容</p>
 ```
 
-### 响应式
+### レスポンシブ対応
 
 ```html
 <!-- sm: 640px, md: 768px, lg: 1024px, xl: 1280px -->
@@ -189,7 +189,7 @@ npx tailwindcss src/styles/tailwind.css -o dist/tailwind.css
 
 ## @applyでコンポーネントクラスを抽出する
 
-当某组工具类需要复用时，可以用 `@apply` 提取为组件类：
+ある程度のツールクラスを再利用したい場合は、`@apply` でコンポーネントクラスとして抽出できます：
 
 ```css
 /* styles/components.css */
@@ -282,20 +282,20 @@ function App() {
 
 ## メリット・デメリット分析
 
-### 优点
+### メリット
 
-1. **开发速度快**：不需要想类名，不需要在 CSS 和 HTML 之间切换
-2. **不会增长的 CSS**：只有使用的工具类会被生成
-3. **响应式简单**：前缀语法 `md:`、`lg:` 非常直观
-4. **一致性**：设计系统内置，间距、颜色、字号等都有规范
-5. **易于重构**：删除 HTML 元素时不会留下无用的 CSS
+1. **開発速度が速い**：クラス名を考える必要がなく、CSS と HTML を行き来する必要がありません
+2. **CSS が増えない**：使ったツールクラスだけが生成されます
+3. **レスポンシブ対応が簡単**：接頭辞構文 `md:`、`lg:` が直感的です
+4. **一貫性**：デザインシステムが組み込まれており、余白や色、フォントサイズなどに規律があります
+5. **リファクタリングが容易**：HTML 要素を削除しても不要な CSS が残りません
 
-### 缺点
+### デメリット
 
-1. **学习曲线**：需要记住大量的类名
-2. **HTML 可读性**：长类名列表可能影响 HTML 可读性
-3. **不适合复杂组件**：高度定制化的组件还是需要自定义 CSS
-4. **团队共识**：需要团队接受原子化 CSS 的理念
+1. **学習曲線**：多数のクラス名を覚える必要があります
+2. **HTML の可読性**：長いクラス名の列が HTML の可読性を損なう可能性があります
+3. **複雑なコンポーネントには不向き**：高度にカスタマイズされたコンポーネントには引き続きカスタム CSS が必要です
+4. **チームの合意**：チームがアトミック CSS の考え方を受け入れる必要があります
 
 ## ビルドの最適化
 
@@ -312,14 +312,14 @@ module.exports = {
 };
 ```
 
-启用 `purge` 后，Tailwind 会在生产构建时移除未使用的类，CSS 文件大小可以从 3MB+ 降到 10KB 以下。
+`purge` を有効にすると、Tailwind は本番ビルド時に未使用のクラスを削除し、CSS ファイルのサイズを 3MB+ から 10KB 以下に減らせます。
 
 ## まとめ
 
-- Tailwind CSS 是实用优先的 CSS 框架，提供大量原子化工具类
-- 直接在 HTML/JSX 中组合样式，不需要编写自定义 CSS
-- `@apply` 可以将常用组合提取为组件类
-- 响应式和状态修饰符使用前缀语法（`md:`、`hover:`）
-- `purge` 配置可以大幅减小生产环境的 CSS 体积
-- 适合快速原型开发和团队协作
-- 需要团队达成共识，接受原子化 CSS 的开发方式
+- Tailwind CSS はユーティリティファーストの CSS フレームワークで、多数のアトミックなツールクラスを提供します
+- HTML/JSX 内で直接スタイルを組み合わせられ、カスタム CSS を書く必要がありません
+- `@apply` でよく使う組み合わせをコンポーネントクラスとして抽出できます
+- レスポンシブや状態の修飾子は接頭辞構文（`md:`、`hover:`）を使います
+- `purge` 設定で本番環境の CSS サイズを大幅に削減できます
+- プロトタイプの迅速な開発やチーム開発に向いています
+- チームで合意し、アトミック CSS の開発スタイルを受け入れることが必要です

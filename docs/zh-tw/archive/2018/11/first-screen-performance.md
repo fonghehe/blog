@@ -4,11 +4,11 @@ date: 2018-11-06 16:51:48
 tags:
   - 效能最佳化
 readingTime: 2
-description: "首屏載入速度直接影響使用者體驗，公司專案優化了一輪，記錄一下有效的手段。"
-wordCount: 295
+description: "首屏載入速度直接影響用戶體驗，公司專案優化了一輪，記錄一下有效的手段。"
+wordCount: 299
 ---
 
-首屏載入速度直接影響使用者體驗，公司專案優化了一輪，記錄一下有效的手段。
+首屏載入速度直接影響用戶體驗，公司專案優化了一輪，記錄一下有效的手段。
 
 ## 問題診斷
 
@@ -18,7 +18,7 @@ wordCount: 295
 lighthouse https://yourdomain.com --output html --output-path ./report.html
 ```
 
-我們專案的主要問題：FCP 4.2s（應該 < 1.8s），主要原因：
+我們專案的主要問題在於：FCP 4.2s（目標值應 < 1.8s），具體表現在：
 
 - JS bundle 太大：main.js 2.4MB
 - 沒有路由懶載入

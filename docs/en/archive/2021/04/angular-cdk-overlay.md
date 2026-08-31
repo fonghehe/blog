@@ -6,11 +6,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "Angular CDK 的 Overlay 模块提供了创建弹出层（Tooltip、Popover、Dropdown、自定义 Dialog）的底层能力。相比直接操作 DOM 或用第三方库，CDK Overlay 与 Angular 的依赖注入、变更检测完美集成，是构建组件库的理想基础。"
-wordCount: 159
+description: "Angular CDK's Overlay module provides the low-level capability for building popups — tooltips, popovers, dropdowns, custom dialogs. Compared with manipulating the DOM directly or pulling in a third-party library, CDK Overlay integrates perfectly with Angular's dependency injection and change detection, making it the foundation for building component libraries."
+wordCount: 121
 ---
 
-Angular CDK 的 Overlay 模块提供了创建弹出层（Tooltip、Popover、Dropdown、自定义 Dialog）的底层能力。相比直接操作 DOM 或用第三方库，CDK Overlay 与 Angular 的依赖注入、变更检测完美集成，是构建组件库的理想基础。
+Angular CDK's Overlay module provides the low-level building blocks for creating popups—tooltips, popovers, dropdowns, and custom dialogs. Compared with manipulating the DOM directly or pulling in a third-party library, CDK Overlay integrates tightly with Angular's dependency injection and change detection, making it an ideal foundation for a component library.
 
 ## Installation
 
@@ -236,4 +236,4 @@ openModal() {
 
 ## Summary
 
-Angular CDK Overlay 是构建各类弹出层的瑞士军刀。掌握 `ConnectedPositionStrategy` 和 `backdropClick`，就能实现 Tooltip、Dropdown、Popover 等所有常见弹出交互。相比使用第三方 UI 库里的具体组件，CDK 给了你更大的定制空间，同时保持了与 Angular 生态的完整兼容。
+Angular CDK Overlay is a Swiss Army knife for building all kinds of popups. Once you master `ConnectedPositionStrategy` and `backdropClick`, you can build every common popup interaction—tooltips, dropdowns, popovers, and more. Compared with using the concrete components of a third-party UI library, CDK gives you far more room to customize while staying fully compatible with the Angular ecosystem.

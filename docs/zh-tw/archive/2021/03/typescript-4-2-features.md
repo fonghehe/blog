@@ -12,10 +12,10 @@ TypeScript 4.2 在 2 月底釋出，帶來了一些實用的型別系統改進�
 
 ## Rest 元組型別中的命名元素
 
-之前元組型別隻能這樣寫：
+之前元組型別只能這樣寫：
 
 ```typescript
-// 以前：隻能用位置來理解含義
+// 以前：只能用位置來理解含義
 type Args = [string, number, boolean]
 // 不看文件完全不知道每個位置是什麼
 
@@ -103,16 +103,16 @@ function createAnimal(ctor: new () => Animal) {
 // 4.2：可以用 abstract 約束
 function createAnimal(ctor: abstract new () => Animal) {
   // 這樣就不能傳 Animal 本身了（它是 abstract 的）
-  // 隻能傳 Dog、Cat 這樣的具體子類
+  // 只能傳 Dog、Cat 這樣的具體子類
   return new ctor()
 }
 
-// ❌ createAnimal(Animal) // Animal 不能例項化
+// ❌ createAnimal(Animal) // Animal 不能實例化
 // ✅ createAnimal(Dog)    // OK
 // ✅ createAnimal(Cat)    // OK
 ```
 
-在框架設計中，這個特性可以幫助強製要求傳入的具體實現類：
+在框架設計中，這個特性可以幫助強制要求傳入的具體實現類：
 
 ```typescript
 // DI 容器的場景

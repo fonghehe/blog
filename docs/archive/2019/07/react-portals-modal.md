@@ -8,7 +8,7 @@ description: "在团队推广React Portals 实现全局弹窗的过程中，踩�
 wordCount: 207
 ---
 
-在团队推广React Portals 实现全局弹窗的过程中，踩了不少坑。整理出来希望对大家有所帮助。
+在团队推广 React Portals 实现全局弹窗的过程中，踩了不少坑，整理出来希望对大家有所帮助。
 
 ## 核心原理
 

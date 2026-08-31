@@ -5,11 +5,11 @@ tags:
   - Vite
   - Vitest
 readingTime: 2
-description: "Vitest 1.0 正式发布了。从 0.x 到 1.0，它已经从\"有趣的实验\"变成了可以认真用在生产环境的测试框架。"
-wordCount: 411
+description: "Vitest 1.0 is officially out. From 0.x to 1.0, it has grown from an interesting experiment into a testing framework you can seriously use in production."
+wordCount: 398
 ---
 
-Vitest 1.0 正式发布了。从 0.x 到 1.0，它已经从"有趣的实验"变成了可以认真用在生产环境的测试框架。
+Vitest 1.0 is officially out. From 0.x to 1.0, it has grown from an interesting experiment into a testing framework you can seriously use in production.
 
 ## Why Migrate from Jest
 

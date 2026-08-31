@@ -5,6 +5,9 @@ tags:
   - Web3
   - Ethereum
   - DApp
+readingTime: 7
+wordCount: 937
+description: "web3.js is the earliest JavaScript SDK in the Ethereum ecosystem. Developed with support from the Ethereum Foundation, it evolved from the 0.x series in 2015 to"
 ---
 
 ## History and Design Philosophy of Both Libraries

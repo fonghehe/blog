@@ -7,10 +7,10 @@ tags:
   - TypeScript
 readingTime: 3
 description: "Vue 3.2 即將帶來 `<script setup>` 語法糖，目前 RFC 已經進入最終階段。這是 Vue 3 Composition API 體驗提升最大的一個特性，值得提前瞭解。"
-wordCount: 411
+wordCount: 415
 ---
 
-Vue 3.2 即將帶來 `<script setup>` 語法糖，目前 RFC 已經進入最終階段。這是 Vue 3 Composition API 體驗提升最大的一個特性，值得提前瞭解。
+Vue 3.2 即將帶來 `<script setup>` 語法糖，目前 RFC 已經進入最終階段。這是 Vue 3 Composition API 中對開發體驗提升最大的一項特性，值得提前瞭解。
 
 ## 為什麼需要 `<script setup>`
 
@@ -164,7 +164,7 @@ function reset() {
   count.value = 0
 }
 
-// 隻暴露 reset 和 count，不暴露 internalState
+// 只暴露 reset 和 count，不暴露 internalState
 defineExpose({ reset, count })
 </script>
 ```

@@ -7,7 +7,7 @@ tags:
   - Smart Contract
 readingTime: 7
 description: "系统性讲解 Web3 前端测试的分层策略，涵盖合约 Mock、主网 Fork、测试网、事件断言及 CI 集成"
-wordCount: 3200
+wordCount: 846
 ---
 
 ## Web3 前端测试的独特挑战

@@ -4,11 +4,11 @@ date: 2020-08-17 10:39:36
 tags:
   - JavaScript
 readingTime: 3
-description: "Node.js 14 LTS 在 4 月份发布，带来了不少实用特性。最让前端工程师开心的是 V8 引擎升级到了 8.1，原生支持了 Optional Chaining（`?.`）和 Nullish Coalescing（`??`）—— 终于不用再在 Node 代码里手动转译这些语法了。"
-wordCount: 262
+description: "Node.js 14 LTS ships with V8 8.1, natively supporting Optional Chaining and Nullish Coalescing so frontend engineers no longer need to transpile these syntax features."
+wordCount: 201
 ---
 
-Node.js 14 LTS 在 4 月份发布，带来了不少实用特性。最让前端工程师开心的是 V8 引擎升级到了 8.1，原生支持了 Optional Chaining（`?.`）和 Nullish Coalescing（`??`）—— 终于不用再在 Node 代码里手动转译这些语法了。
+Node.js 14 LTS was released in April, bringing a number of useful features. The one frontend engineers are happiest about is the V8 engine upgrade to 8.1, which natively supports Optional Chaining (`?.`) and Nullish Coalescing (`??`) — so we no longer have to transpile these syntax features by hand in Node code.
 
 ## Optional Chaining
 
@@ -77,7 +77,7 @@ function handleClick(event) {
 
 ## Nullish Coalescing
 
-`??` 和 `||` 的区别很重要：
+The difference between `??` and `||` matters:
 
 ```javascript
 // || 在左侧为 falsy 时返回右侧
@@ -119,7 +119,7 @@ const name =
 
 ## Array.flat() and Array.flatMap()
 
-Node.js 14 的 V8 8.1 也原生支持了这些方法：
+Node.js 14's V8 8.1 also supports these methods natively:
 
 ```javascript
 // Array.flat() —— 数组扁平化
@@ -152,7 +152,7 @@ const results = ids.flatMap((id) => {
 
 ## globalThis
 
-统一的全局对象访问方式：
+A unified way to access the global object:
 
 ```javascript
 // 以前 —— 需要判断环境
@@ -210,7 +210,7 @@ function parseLogErrors(log: string) {
 }
 ```
 
-## Intl.DisplayNames —— 国际化名称
+## Intl.DisplayNames — Localized Display Names
 
 ```javascript
 // 获取语言、地区、货币的本地化显示名称
@@ -229,9 +229,9 @@ console.log(currencyNames.of("CNY")); // 人民币
 console.log(currencyNames.of("USD")); // 美元
 ```
 
-## 在 tsconfig.json 中配置
+## Configuring tsconfig.json
 
-如果项目用 TypeScript，需要注意配置以使用这些新特性：
+If your project uses TypeScript, you need to configure it accordingly to use these new features:
 
 ```json
 {
@@ -246,10 +246,10 @@ console.log(currencyNames.of("USD")); // 美元
 
 ## Summary
 
-- Node.js 14 原生支持 Optional Chaining（`?.`）和 Nullish Coalescing（`??`），不再需要 Babel 转译
-- `??` 和 `||` 的区别：`??` 只处理 null/undefined，`||` 处理所有 falsy 值
-- `Array.flat()` 和 `Array.flatMap()` 原生可用，简化数组操作
-- `globalThis` 提供了统一的全局对象访问方式
-- `String.matchAll()` 让正则批量匹配变得优雅
-- `Intl.DisplayNames` 方便国际化场景
-- tsconfig 的 target 可以设置为 ES2020 来利用这些特性
+- Node.js 14 supports Optional Chaining (`?.`) and Nullish Coalescing (`??`) natively, so no Babel transpilation is needed
+- The difference between `??` and `||`: `??` only handles null/undefined, while `||` handles all falsy values
+- `Array.flat()` and `Array.flatMap()` are available natively, simplifying array operations
+- `globalThis` provides a unified way to access the global object
+- `String.matchAll()` makes batch regex matching elegant
+- `Intl.DisplayNames` is handy for internationalization
+- You can set the tsconfig `target` to ES2020 to take advantage of these features

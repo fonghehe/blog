@@ -5,6 +5,9 @@ tags:
   - Web3
   - NFT
   - Ethereum
+readingTime: 8
+wordCount: 905
+description: "ERC-721 标准在 EIP-721 中定义了非同质化代币（Non-Fungible Token）的接口规范。与 ERC-20 的\"每枚代币完全等价\"不同，ERC-721 的每个代币拥有唯一的 tokenId，可以代表独一无二的数字资产。"
 ---
 
 ## ERC-721 标准与非同质化代币

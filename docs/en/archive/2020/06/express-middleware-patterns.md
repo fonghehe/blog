@@ -4,15 +4,15 @@ date: 2020-06-29 10:18:20
 tags:
   - Frontend
 readingTime: 2
-description: "Express 中间件设计模式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 310
+description: "Express middleware design patterns are seeing wider adoption in frontend development. Drawing on real projects, this article digs into their core principles and best practices."
+wordCount: 184
 ---
 
-Express 中间件设计模式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Express middleware design patterns are being used more and more widely in frontend development. Drawing on real projects, this article digs into their core principles and best practices.
 
 ## Basic Usage
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 const fs = require('fs')
@@ -37,11 +37,11 @@ const csvToJson = new Transform({
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind the edge-case handling—that's critical in production.
 
 ## Advanced Usage
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 const express = require('express')
@@ -66,11 +66,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance tuning should fit the specific scenario—you don't need to over-optimize every case.
 
 ## Practical Cases
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 const fs = require('fs')
@@ -95,11 +95,11 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it's battle-tested.
 
-## 性能优化
+## Performance Optimization
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 const express = require('express')
@@ -124,11 +124,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project, you'll also need to handle errors and edge cases.
 
 ## Common Traps
 
-在这个基础上，我们可以进一步优化：
+Building on that, we can optimize further:
 
 ```javascript
 const fs = require('fs')
@@ -153,10 +153,10 @@ const csvToJson = new Transform({
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is especially handy in large projects, and it noticeably cuts maintenance cost.
 
 ## Summary
 
-- 代码示例仅供参考，需根据业务场景调整
-- Express 中间件设计模式不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- The code examples are for reference only—adapt them to your own use case.
+- Express middleware design patterns aren't a silver bullet—choose them based on your project's scale and tech stack.
+- Understanding the underlying principles matters more than memorizing the API.

@@ -3,16 +3,16 @@ title: "Vue Composition API vs Options API 比較"
 date: 2019-09-04 15:43:47
 tags:
   - Vue
-readingTime: 4
+readingTime: 5
 description: "Vue 3 引入的 Composition API 是继 React Hooks 之后又一个重要的函数式编程范式在前端框架中的实践。它允许开发者以函数为单位组织组件逻辑，解决了 Options API 在复杂组件中逻辑分散的问题。本文将从多个维度对比两种 API 风格，并给出迁移建议。"
-wordCount: 567
+wordCount: 782
 ---
 
-Vue 3 引入的 Composition API 是继 React Hooks 之后又一个重要的函数式编程范式在前端框架中的实践。它允许开发者以函数为单位组织组件逻辑，解决了 Options API 在复杂组件中逻辑分散的问题。本文将从多个维度对比两种 API 风格，并给出迁移建议。
+Vue 3 で導入された Composition API は、React Hooks に続く、フロントエンドフレームワークにおけるもう一つの重要な関数型プログラミングの実践だ。開発者は関数単位でコンポーネントのロジックを整理でき、Options API が抱える「複雑なコンポーネントでロジックが散在する」という問題を解決する。本記事では複数の観点から両者の API スタイルを比較し、移行のアドバイスを提示する。
 
 ## Options APIの問題点
 
-在 Options API 中，一个功能的逻辑分散在 data、computed、methods、watch 等多个选项中：
+Options API では、1つの機能のロジックが data・computed・methods・watch などの複数のオプションに分散してしまう：
 
 ```vue
 <script>
@@ -97,11 +97,11 @@ export default {
 </script>
 ```
 
-问题很明显：搜索功能的逻辑分散在多个选项中，需要来回跳转才能理解完整逻辑。组件越大，这个问题越严重。
+問題は明らかだ。検索機能のロジックが複数のオプションに散らばっており、全体の流れを理解するにはあちこち行き来する必要がある。コンポーネントが大きくなるほどこの問題は深刻になる。
 
 ## Composition APIへのリファクタリング
 
-使用 Composition API，我们可以将同一功能的逻辑组织在一起：
+Composition API を使えば、同じ機能のロジックをまとめて整理できる：
 
 ```vue
 <script>
@@ -241,11 +241,11 @@ export default {
 </script>
 ```
 
-每个功能的逻辑都集中在一个函数中，清晰且可复用。
+各機能のロジックは1つの関数に集約され、見通しがよく再利用もしやすい。
 
 ## 再利用ロジックの比較
 
-### Options API 复用：Mixins
+### Options API での再利用：Mixins
 
 ```js
 // mixins/searchMixin.js
@@ -261,7 +261,7 @@ export default {
   },
 };
 
-// 使用
+// 使用例
 export default {
   mixins: [searchMixin, paginationMixin],
   // 问题：
@@ -271,7 +271,7 @@ export default {
 };
 ```
 
-### Composition API 复用：Composables
+### Composition API での再利用：Composables
 
 ```js
 // composables/useSearch.js
@@ -290,7 +290,7 @@ export function useSearch(apiEndpoint) {
   return { query, results, search };
 }
 
-// 使用
+// 使用例
 import { useSearch } from './composables/useSearch';
 import { usePagination } from './composables/usePagination';
 
@@ -314,7 +314,7 @@ export default {
 
 ## 型推論の比較
 
-TypeScript 支持是 Composition API 的另一个优势：
+TypeScript のサポートも Composition API のもう一つの強みだ：
 
 ```ts
 // Options API 的类型推导较弱
@@ -355,7 +355,7 @@ function useCounter(initialValue: number = 0) {
   };
 }
 
-// 使用时获得完整的类型提示
+// 使用例时获得完整的类型提示
 const { count, doubled, increment } = useCounter();
 // count.value: number
 // doubled.value: number
@@ -364,20 +364,20 @@ const { count, doubled, increment } = useCounter();
 
 ## Options APIとComposition APIの使い分け
 
-### 适合 Options API 的场景
+### Options API に向いている場面
 
-1. **简单的展示型组件** — 逻辑简单，不需要复用
-2. **团队 Vue 经验丰富** — Options API 更容易理解和约束
-3. **不需要 TypeScript** — Options API 在 JS 项目中完全够用
+1. **シンプルな表示専用コンポーネント** — ロジックが単純で再利用も不要
+2. **Vue に習熟したチーム** — Options API の方が理解しやすく制約も明確
+3. **TypeScript が不要** — Options API で十分な JS プロジェクト
 
-### 适合 Composition API 的场景
+### Composition API に向いている場面
 
-1. **复杂组件** — 逻辑交叉，需要按功能组织
-2. **逻辑复用** — 需要在多个组件间共享逻辑
-3. **TypeScript 项目** — 获得更好的类型推导
-4. **函数式偏好** — 团队更习惯函数式风格
+1. **複雑なコンポーネント** — ロジックが絡み合い、機能ごとに整理したい
+2. **ロジックの再利用** — 複数のコンポーネント間でロジックを共有したい
+3. **TypeScript プロジェクト** — より良い型推論を得られる
+4. **関数型志向** — チームが関数型スタイルに慣れている
 
-### 两种 API 可以共存
+### 両方の API は共存可能
 
 ```vue
 <script>

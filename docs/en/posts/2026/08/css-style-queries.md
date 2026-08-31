@@ -3,9 +3,9 @@ title: "CSS Style Queries in Practice: Driving Component Variants with Custom Pr
 date: 2026-08-21 14:06:19
 tags:
   - CSS
-readingTime: 8
+readingTime: 5
 description: "CSS Style Queries (@container style(...)) reached Baseline 2026, finally enabling styles based on custom property values. This article focuses on practical usage: theme switching without classes, component variants driven by custom properties, integration with @property, and fallback strategies."
-wordCount: 3300
+wordCount: 749
 ---
 
 Container Queries solved the problem of "responding to container dimensions," but they have a blind spot: you can't change child component styles based on container state (such as current theme, density mode, or brand color). Until now, we either piled on classes (`.dark`, `.compact`, `.brand-acme`) or computed values in JS and passed them as props. Style Queries fill this gap — they let you query custom property values directly with `@container style(...)`, returning variant control to CSS.

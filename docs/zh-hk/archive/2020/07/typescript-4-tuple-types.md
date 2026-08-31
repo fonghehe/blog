@@ -51,7 +51,7 @@ const g: NamedArgs = ['config', 42, 'extra1', 'extra2']
 
 ## 前置和中置剩餘元素
 
-TypeScript 4.0 還支援把剩餘元素放在開頭或中間，而不隻是末尾：
+TypeScript 4.0 還支援把剩餘元素放在開頭或中間，而不只是末尾：
 
 ```typescript
 // 剩餘元素在開頭
@@ -166,7 +166,7 @@ const emitter = new TypedEmitter<EventMap>()
 
 emitter.on('login', (userId, timestamp) => {
   // userId: string, timestamp: number — 類型自動推斷
-  console.log(`用户 ${userId} 在 ${timestamp} 登錄`)
+  console.log(`用戶 ${userId} 在 ${timestamp} 登錄`)
 })
 
 emitter.on('error', (code, message, details) => {

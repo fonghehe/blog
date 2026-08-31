@@ -6,10 +6,10 @@ tags:
   - 工程化
 readingTime: 2
 description: "在日常開發中，OpenTelemetry 前端可觀測性的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 345
+wordCount: 344
 ---
 
-在日常開發中，OpenTelemetry 前端可觀測性的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
+在日常開發中，OpenTelemetry 前端可觀測性應用得越來越廣泛。本文系統地講解其用法、原理和優化策略。
 
 ## 快速上手
 

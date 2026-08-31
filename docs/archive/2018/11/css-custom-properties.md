@@ -5,10 +5,10 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS 自定义属性（也叫 CSS 变量）现在主流浏览器都支持了，IE 除外。它和 Sass 变量不一样，有自己独特的优势，值得认真了解。"
-wordCount: 429
+wordCount: 430
 ---
 
-CSS 自定义属性（也叫 CSS 变量）现在主流浏览器都支持了，IE 除外。它和 Sass 变量不一样，有自己独特的优势，值得认真了解。
+CSS 自定义属性（也称 CSS 变量）如今主流浏览器均已支持（IE 除外）。它和 Sass 变量不同，具备独特的运行时优势，值得深入了解。
 
 ## 基础语法
 
@@ -193,7 +193,7 @@ element.style.setProperty("--button-size", "32px");
 
 ## 浏览器支持
 
-截至 2018 年初，主流浏览器都已支持：Chrome 49+、Firefox 31+、Safari 9.1+、Edge 15+。唯独 IE 不支持。
+截至 2018 年初，现代浏览器均已支持：Chrome 49+、Firefox 31+、Safari 9.1+、Edge 15+，唯独 IE 不支持。
 
 如果需要支持 IE，可以用 `postcss-custom-properties` 在编译时将变量替换为具体值（失去动态能力，但保证兼容性）。
 

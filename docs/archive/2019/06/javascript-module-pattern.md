@@ -5,14 +5,14 @@ tags:
   - JavaScript
 readingTime: 7
 description: "JavaScript 在诞生之初并没有模块系统，所有代码共享同一个全局作用域。随着前端项目规模的增长，模块化方案经历了 IIFE、CommonJS、AMD、UMD、ES Modules 的演变。理解这段历史，能帮助我们在实际项目中做出更好的选择。"
-wordCount: 941
+wordCount: 934
 ---
 
 JavaScript 在诞生之初并没有模块系统，所有代码共享同一个全局作用域。随着前端项目规模的增长，模块化方案经历了 IIFE、CommonJS、AMD、UMD、ES Modules 的演变。理解这段历史，能帮助我们在实际项目中做出更好的选择。
 
 ## 原始时代：全局变量
 
-最早期的前端开发，所有 JS 文件通过 `<script>` 标签引入，所有变量都挂在 `window` 上：
+最早期的前端开发中，JS 文件都通过 `<script>` 标签引入，变量也全都挂在 `window` 上：
 
 ```html
 <!-- index.html -->
@@ -96,7 +96,7 @@ var myPlugin = (function($, utils) {
 // ↑ 立即执行，传入依赖
 ```
 
-IIFE 解决了作用域隔离的问题，但模块的加载顺序仍然需要手动管理，而且多个模块之间的依赖关系很不直观。
+IIFE 解决了作用域隔离的问题，但模块的加载顺序仍需手动管理，且模块间的依赖关系也不直观。
 
 ## CommonJS：Node.js 的模块标准
 

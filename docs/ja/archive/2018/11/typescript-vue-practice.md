@@ -5,16 +5,16 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue プロジェクトで TypeScript を使うのは想像より面倒です。2 週間格闘して、完全な設定フローをまとめます。"
-wordCount: 341
+wordCount: 331
 ---
 
-Vue プロジェクトで TypeScript を使うのは想像より面倒です。2 週間格闘して、完全な設定フローをまとめます。
+Vue プロジェクトで TypeScript を使うのは想像より面倒だ。2 週間格闘して、完全な設定フローをまとめる。
 
 ## Vue + TS の設定が複雑な理由
 
-Vue 2 の設計はオプションオブジェクトベース（Options API）でクラス風ではないため、TypeScript の型推論と相性があまりよくありません。`vue-class-component` と `vue-property-decorator` が提供されており、TS サポートが改善されています。
+Vue 2 の設計はオプションオブジェクトベース（Options API）でクラス風ではないため、TypeScript の型推論と相性があまりよくない。`vue-class-component` と `vue-property-decorator` が提供されており、TS サポートが改善されている。
 
-Vue 3 は設計上で TS により親しみやすくなりますが、今は Vue 2 を使っています。
+Vue 3 は設計上で TS により親しみやすくなるが、今は Vue 2 を使っている。
 
 ## プロジェクト設定
 
@@ -141,7 +141,7 @@ export interface PaginatedData<T> {
 
 ## Vuex の TypeScript サポート
 
-これが最も面倒な部分で、`vuex-class` が必要です：
+これが最も面倒な部分で、`vuex-class` が必要だ：
 
 ```typescript
 // src/store/modules/user.ts

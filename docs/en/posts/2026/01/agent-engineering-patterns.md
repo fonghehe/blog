@@ -5,10 +5,10 @@ tags:
   - Frontend
 readingTime: 3
 description: "In the second half of 2025, I led my team in upgrading an internal low-code platform's code generation module from \"manually written + AI completion\" to \"Agent "
-wordCount: 238
+wordCount: 240
 ---
 
-In the second half of 2025, I led my team in upgrading an internal low-code platform's code generation module from "manually written + AI completion" to "Agent autonomous planning + toolchain execution." The process involved plenty of pitfalls, but also produced some reusable patterns.
+In the second half of 2025, I led my team to upgrade an internal low-code platform's code generation module from "hand-written + AI completion" to "Agent autonomous planning + toolchain execution." The work hit plenty of pitfalls, but also yielded some reusable patterns.
 
 ## Agent Is Not a Chatbot
 
@@ -41,7 +41,7 @@ interface AgentStep {
 
 ## Pattern 1: ReAct Loop
 
-The most fundamental Agent pattern is ReAct (Reasoning + Acting). The most common frontend application is the **file operations Agent**:
+The most fundamental Agent pattern is ReAct (Reasoning + Acting). In frontend work, the most common use of it is a **file-operations agent**:
 
 ```typescript
 // react-agent.ts - ReAct pattern implementation
@@ -78,7 +78,7 @@ class ReactAgent {
 }
 ```
 
-In practice, the tool registry can include read file, write file, execute commands, search code, and more:
+In practice, the tool registry can include reading files, writing files, running commands, searching code, and more:
 
 ```typescript
 const tools = new ToolRegistry()

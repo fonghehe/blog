@@ -12,7 +12,7 @@ wordCount: 553
 
 React 18 のリリースが近づき、Suspense のデータフェッチパターンにようやく公式の推奨方式が登場しました。これまで Suspense はコード分割のローディング状態にしか使えませんでしたが、今後はデータフェッチにも使用できるようになります。
 
-## Suspense の核心的な考え方
+## Suspense の本質的な考え方
 
 Suspense は「loading 状態管理」ではなく、「非同期依存関係のコーディネーター」です。
 
@@ -261,7 +261,7 @@ function Good({ showProfile, userId }) {
 
 ## まとめ
 
-- Suspense データフェッチの核心：コンポーネントが Promise を投げ、Suspense がキャッチして fallback を表示
+- Suspense データフェッチの本質：コンポーネントが Promise を投げ、Suspense がキャッチして fallback を表示
 - React Query / SWR などのライブラリの Suspense モードを推奨、自前実装は不要
 - ネストされた Suspense で領域ごとの読み込みを実現、React 18 のストリーミング SSR との組み合わせが最適
 - Suspense + ErrorBoundary：loading とエラー処理の責務分離

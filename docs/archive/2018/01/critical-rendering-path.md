@@ -5,7 +5,7 @@ tags:
   - 性能优化
 readingTime: 3
 description: "做性能优化之前，得先搞清楚浏览器从收到 HTML 到用户看到页面，中间经历了什么。这些步骤合在一起叫做**关键渲染路径**（Critical Rendering Path）。不理解这个，很多优化手段只能照猫画虎。"
-wordCount: 626
+wordCount: 629
 ---
 
 做性能优化之前，得先搞清楚浏览器从收到 HTML 到用户看到页面，中间经历了什么。这些步骤合在一起叫做**关键渲染路径**（Critical Rendering Path）。不理解这个，很多优化手段只能照猫画虎。
@@ -22,7 +22,7 @@ wordCount: 626
 
 ## CSS 阻塞渲染
 
-浏览器必须等待 CSSOM 构建完成才能开始渲染。原因很简单：如果先渲染再等 CSS，用户会看到样式闪烁（FOUC，Flash of Unstyled Content）。
+浏览器必须等待 CSSOM 构建完成才能开始渲染。原因很简单：如果先渲染页面、再加载 CSS，用户会看到样式闪烁（FOUC，Flash of Unstyled Content）。
 
 ```html
 <!-- 这个 CSS 文件的下载和解析会阻塞页面渲染 -->
@@ -93,7 +93,7 @@ wordCount: 626
 渲染完成后，修改 DOM 或样式会触发重新渲染：
 
 - **重排**（Reflow/Layout）：元素几何属性改变，重新计算所有受影响元素的位置大小。代价最高。
-- **重绘**（Repaint）：元素外观改变（颜色、背景），不影响布局。代价居中。
+- **重绘**（Repaint）：元素外观改变（颜色、背景），不影响布局。代价中等。
 - **合成**（Composite）：仅影响 transform、opacity，在独立的合成层处理。代价最低。
 
 ```javascript

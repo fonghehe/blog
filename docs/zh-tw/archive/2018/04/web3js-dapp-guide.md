@@ -1,12 +1,13 @@
 ---
-readingTime: 5
-wordCount: 1034
+readingTime: 6
+wordCount: 1027
 title: "Web3.js 入門：用 JavaScript 與以太坊交互"
 date: 2018-04-03 20:17:15
 tags:
   - Web3
   - Ethereum
   - DApp
+description: "web3.js 是以太坊官方維護的 JavaScript SDK，也是前端工程師進入 DApp 開發的第一道門檻。web3.js 0.20.x 是長期使用的穩定版本，而 1.0 beta 版本已經發布，兩者 API 設計差異巨大——0.20.x 使用回調函數，1.0 引入了 Promise 和事件發射器。理解這種差異對"
 ---
 
 web3.js 是以太坊官方維護的 JavaScript SDK，也是前端工程師進入 DApp 開發的第一道門檻。web3.js 0.20.x 是長期使用的穩定版本，而 1.0 beta 版本已經發布，兩者 API 設計差異巨大——0.20.x 使用回調函數，1.0 引入了 Promise 和事件發射器。理解這種差異對開發者處理不同項目至關重要。

@@ -5,11 +5,11 @@ tags:
   - 前端
   - 工程化
 readingTime: 1
-description: "今年主導了三個大的技術棧升級：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每個都踩過坑，總結出一套方法論。技術升級不隻是技術決策，更是一次團隊管理實踐。"
+description: "今年主導了三個大的技術棧升級：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每個都踩過坑，總結出一套方法論。技術升級不只是技術決策，更是一次團隊管理實踐。"
 wordCount: 277
 ---
 
-今年主導了三個大的技術棧升級：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每個都踩過坑，總結出一套方法論。技術升級不隻是技術決策，更是一次團隊管理實踐。
+今年主導了三個大的技術棧升級：Vue 2 → Vue 3、Jest → Vitest、Lerna → pnpm workspace。每個都踩過坑，總結出一套方法論。技術升級不只是技術決策，更是一次團隊管理實踐。
 
 ## 升級的三個階段
 
@@ -99,7 +99,7 @@ pnpm test        # 驗證測試是否通過
 
 ## 團隊知識傳遞
 
-技術升級最怕的是隻有一個人懂。我們的做法：
+技術升級最怕的是只有一個人懂。我們的做法：
 
 ```typescript
 // 知識傳遞計劃

@@ -4,11 +4,11 @@ date: 2020-02-13 10:38:48
 tags:
   - CSS
 readingTime: 2
-description: "多人协作的大项目，CSS 全局污染是个老大难问题。对比了 Scoped CSS、CSS Modules 和 CSS-in-JS 后，最终在组件库项目中选择了 CSS Modules，记录一下实践方案。"
-wordCount: 246
+description: "複数人で協業する大規模プロジェクトでは、CSS のグローバル汚染が長年の課題だ。Scoped CSS、CSS Modules、CSS-in-JS を比較した結果、コンポーネントライブラリプロジェクトでは CSS Modules を採用し、その実践内容を記録する。"
+wordCount: 431
 ---
 
-多人协作的大项目，CSS 全局污染是个老大难问题。对比了 Scoped CSS、CSS Modules 和 CSS-in-JS 后，最终在组件库项目中选择了 CSS Modules，记录一下实践方案。
+多人で協業する大規模プロジェクトでは、CSS のグローバル汚染が長年の悩みの種だ。Scoped CSS、CSS Modules、CSS-in-JS を比較した上で、最終的にコンポーネントライブラリのプロジェクトでは CSS Modules を選び、その実践内容を記録しておく。
 
 ## Scoped CSS vs CSS Modules
 
@@ -27,10 +27,10 @@ wordCount: 246
 <!-- 选择器变成 .button[data-v-f3f3eg9] -->
 ```
 
-Scoped CSS 的问题：
-- 属性选择器性能比类选择器差（虽然差距很小）
-- 子组件根元素会同时有 scoped 和非 scoped 样式
-- 深度选择器（`/deep/`、`::v-deep`）容易被滥用
+Scoped CSS の問題点：
+- 属性セレクターはクラスセレクターよりパフォーマンスが劣る（差は小さいが）
+- 子コンポーネントのルート要素には scoped と非 scoped の両方のスタイルが当たる
+- 深度セレクター（`/deep/`、`::v-deep`）は乱用されやすい
 
 ## CSS Modulesの基本設定
 
@@ -64,7 +64,7 @@ Scoped CSS 的问题：
 </style>
 ```
 
-编译后类名变成哈希值，天然无冲突：`container_x7f2a`、`btn_k9m3z`。
+コンパイル後はクラス名がハッシュ値に変わり、衝突はそもそも起きない：`container_x7f2a`、`btn_k9m3z`。
 
 ## コンポーネントライブラリでの使い方
 
@@ -131,7 +131,7 @@ export default {
 </style>
 ```
 
-## 动态类名
+## 動的クラス名
 
 ```vue
 <template>
@@ -168,7 +168,7 @@ export default {
 </script>
 ```
 
-## 全局样式变量
+## グローバルスタイル変数
 
 ```javascript
 // vue.config.js
@@ -206,8 +206,8 @@ module.exports = {
 
 ## まとめ
 
-- CSS Modules 通过哈希类名彻底解决全局污染问题
-- 在 Vue 中通过 `$style` 对象访问，模板中绑定 `:class`
-- 组件库项目推荐 BEM 命名 + CSS Modules 结合
-- 开发环境保留可读类名，生产环境用短哈希
-- CSS-in-JS 方案在 Vue 生态不如 CSS Modules 自然
+- CSS Modules はハッシュ化されたクラス名により、グローバル汚染問題を根本的に解決する
+- Vue では `$style` オブジェクトを通じてアクセスし、テンプレートでは `:class` でバインドする
+- コンポーネントライブラリプロジェクトでは BEM 命名 + CSS Modules の組み合わせを推奨する
+- 開発環境では可読性のあるクラス名を残し、本番環境では短いハッシュを使う
+- CSS-in-JS は Vue エコシステムでは CSS Modules ほど自然に馴染まない

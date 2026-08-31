@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 17 Release Candidate が2023年10月4日に公開され、正式版は11月8日にリリース予定です。RC段階の API はすでに安定しており、非本番環境で先行体験できます。最も重要な2つの特性——**組み込み制御フロー**と **Deferrable Views**——が Angular "
-wordCount: 597
+wordCount: 622
 ---
 
 Angular 17 Release Candidate が2023年10月4日に公開され、正式版は11月8日にリリース予定です。RC段階の API はすでに安定しており、非本番環境で先行体験できます。最も重要な2つの特性——**組み込み制御フロー**と **Deferrable Views**——が Angular テンプレートの書き方を根本的に変えます。
@@ -14,7 +14,7 @@ Angular 17 Release Candidate が2023年10月4日に公開され、正式版は11
 
 ## 組み込み制御フロー：@if / @for / @switch
 
-Angular 的结构指令（`*ngIf`、`*ngFor`）是历史遗留设计，需要 `CommonModule` 或单独导入，语法也不直观。Angular 17 引入了语言级别的控制流语法：
+Angular の構造ディレクティブ（`*ngIf`、`*ngFor`）は歴史的な設計で、`CommonModule` か個別のインポートが必要であり、構文も直感的ではなかった。Angular 17 は言語レベルの制御フロー構文を導入した：
 
 ```html
 <!-- 旧方式：需要导入 NgIf、NgFor、NgSwitch -->

@@ -1,5 +1,5 @@
 ---
-title: "Rspack 2.0 Complete Guide: Module Federation 2.0  & 持久缓存"
+title: "The Complete Rspack 2.0 Guide: Module Federation 2.0 and Persistent Caching"
 date: 2025-08-08 10:42:19
 tags:
   - Frontend

@@ -18,7 +18,7 @@ wordCount: 227
 // ❌ 模板裏做不了這個（不能根據 prop 動態指定標籤名）
 // <component :is="level">  // 能用，但如果標籤名邏輯複雜就麻煩了
 
-// ✅ render 函數完全用 JS 控製
+// ✅ render 函數完全用 JS 控制
 export default {
   props: {
     level: { type: Number, required: true },

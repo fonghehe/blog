@@ -8,7 +8,7 @@ description: "Next.js 9 在 9 月底發佈，帶來了兩個重要特性：內�
 wordCount: 176
 ---
 
-Next.js 9 在 9 月底發佈，帶來了兩個重要特性：內置 TypeScript 支持和更完善的 API Routes。
+Next.js 9 在 9 月底發佈，帶來了兩個重要特性：內置 TypeScript 支援和更完善的 API Routes。
 
 ## 內置 TypeScript
 
@@ -162,5 +162,5 @@ export default AboutPage
 
 - Next.js 9 內置 TypeScript，零設定開箱即用
 - API Routes 讓 Next.js 成為真正的全棧框架
-- Catch-all Routes `[...slug]` 處理嵌套動態路徑
+- Catch-all Routes `[...slug]` 處理巢狀動態路徑
 - 靜態優化繼續完善，沒有數據獲取的頁面自動預渲染

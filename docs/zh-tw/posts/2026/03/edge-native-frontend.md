@@ -5,14 +5,14 @@ tags:
   - 前端
 readingTime: 2
 description: "Edge Native 前端架構在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 355
+wordCount: 363
 ---
 
-Edge Native 前端架構在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
+Edge Native 前端架構在前端開發中的應用越來越廣泛。這篇文章從實際專案出發，深入探討它的核心原理與最佳實踐。
 
 ## 基礎用法
 
-我們可以通過以下方式來改進：
+我們可以透過以下方式來改進：
 
 ```javascript
 const fs = require('fs')
@@ -37,11 +37,11 @@ const csvToJson = new Transform({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
+這套做法已在正式環境穩定運作超過半年，實務上經得起考驗。
 
 ## 進階用法
 
-先來看基本的實現方式：
+先從最基本的實作方式看起：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -64,7 +64,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這段程式碼展示了基本的使用方式。實際專案中還需要考慮錯誤處理和邊界條件。
+以上示範了最基本的用法，實際專案裡還得把錯誤處理與邊界情況一併考慮進去。
 
 ## 實戰案例
 
@@ -91,7 +91,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這種模式在大型專案中非常實用，能顯著降低維護成本。
+這種寫法在大型專案中相當實用，能明顯降低後續的維護成本。
 
 ## 效能最佳化
 
@@ -120,11 +120,11 @@ const csvToJson = new Transform({
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+透過這種方式，程式碼的可測試性與可擴充性都會更好。
 
 ## 常見陷阱
 
-以下是一個完整的示例：
+以下是一個完整的範例：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -147,7 +147,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-注意邊界條件處理，這在生產環境中至關重要。
+特別留意邊界情況的處理，這在正式環境裡至關重要。
 
 ## 小結
 

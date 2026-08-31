@@ -5,11 +5,11 @@ tags:
   - React
   - TypeScript
 readingTime: 2
-description: "React Server Components 入门This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides "
-wordCount: 184
+description: "Getting started with React Server Components has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 178
 ---
 
-React Server Components 入门This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
+React Server Components has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
 
 ## Getting Started
 
@@ -125,7 +125,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- React Server Components 入门 is not a silver bullet; choose based on your project scale and tech stack
+- React Server Components is not a silver bullet; choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

@@ -4,7 +4,7 @@ date: 2022-04-13 11:13:21
 tags:
   - CSS
 readingTime: 2
-description: "Open Props CSS 设计令牌This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh"
+description: "Open Props and CSS design tokens have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
 wordCount: 203
 ---
 

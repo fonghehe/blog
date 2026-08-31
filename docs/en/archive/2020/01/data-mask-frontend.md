@@ -4,15 +4,15 @@ date: 2020-01-31 09:50:35
 tags:
   - Frontend
 readingTime: 1
-description: "前端数据脱敏方案是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。"
-wordCount: 237
+description: "Frontend data masking is an important topic in web development. Drawing on real project experience, this article explores its core concepts and best practices."
+wordCount: 138
 ---
 
-前端数据脱敏方案是前端开发中一个值得关注的话题。本文从实际项目经验出发，探讨其核心概念和最佳实践。
+Frontend data masking is a topic worth paying attention to in frontend development. Drawing on real project experience, this article explores its core concepts and best practices.
 
 ## Basic Concepts
 
-来看具体的实现方式：
+Here is a concrete implementation:
 
 ```javascript
 // 核心实现
@@ -29,11 +29,11 @@ const processData = (input) => {
 
 ```
 
-这种实现方式简洁高效，适合大多数场景。
+This approach is concise and efficient, and fits most scenarios.
 
 ## Core Implementation
 
-下面是一个实际的示例：
+Here is a practical example:
 
 ```javascript
 // 使用示例
@@ -50,11 +50,11 @@ app.mount('#root')
 
 ```
 
-在实际项目中，还需要根据具体需求做适当调整。
+In real projects, you'll still need to adapt it to your specific requirements.
 
 ## Practical Application
 
-核心代码如下：
+The core code looks like this:
 
 ```javascript
 // 工具函数封装
@@ -82,11 +82,11 @@ function createHandler(options = {}) {
 
 ```
 
-注意处理好边界条件和异常情况。
+Be sure to handle edge cases and exceptions properly.
 
 ## Best Practices
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 核心实现
@@ -103,10 +103,10 @@ const processData = (input) => {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+This pattern improves the maintainability of the code.
 
 ## Summary
 
-- 前端数据脱敏方案的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
+- The key to frontend data masking is understanding the underlying principles, not just memorizing APIs.
+- In real projects, choosing the right approach matters more than chasing the latest technology.
+- Keeping a consistent code style across the team lowers maintenance cost.

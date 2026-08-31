@@ -5,7 +5,7 @@ tags:
   - Frontend Engineering
 readingTime: 2
 description: "The team has been migrating multiple frontend projects to pnpm workspace for half a year. Disk usage dropped by 60%, installation speed improved noticeably, and"
-wordCount: 368
+wordCount: 274
 ---
 
 The team has been migrating multiple frontend projects to pnpm workspace for half a year. Disk usage dropped by 60%, installation speed improved noticeably, and the phantom dependency problem was completely resolved. This article documents our migration process.
@@ -30,7 +30,7 @@ pnpm store path
 
 ## Project Structure
 
-我们前端 monorepo 的结构：
+Here is the structure of our frontend monorepo:
 
 ```
 frontend-monorepo/
@@ -48,7 +48,7 @@ frontend-monorepo/
 └── pnpm-lock.yaml
 ```
 
-## pnpm-workspace.yaml 配置
+## pnpm-workspace.yaml Configuration
 
 ```yaml
 packages:
@@ -56,7 +56,7 @@ packages:
   - 'apps/*'
 ```
 
-根目录 `package.json`：
+The root `package.json`:
 
 ```json
 {
@@ -91,7 +91,7 @@ pnpm -r add -D typescript
 pnpm add -D -w husky lint-staged
 ```
 
-安装后 `admin/package.json` 的依赖会是这样：
+After installation, the dependencies in `admin/package.json` will look like this:
 
 ```json
 {
@@ -102,9 +102,9 @@ pnpm add -D -w husky lint-staged
 }
 ```
 
-`workspace:*` 表示永远使用本地版本，发布时 pnpm 会自动替换成真实版本号。
+`workspace:*` means the local version is always used; when publishing, pnpm automatically replaces it with the real version number.
 
-## .npmrc 配置
+## .npmrc Configuration
 
 ```ini
 # 使用严格模式，不能访问未声明的依赖
@@ -120,14 +120,14 @@ shared-workspace-lockfile=true
 auto-install-peers=false
 ```
 
-`node-linker` 有三个选项：
-- `isolated`（默认）：严格的符号链接结构，兼容性最差但最安全
-- `hoisted`：类似 npm/yarn 的扁平结构，兼容性最好
-- `hoisted`：折中方案
+`node-linker` has three options:
+- `isolated` (default): a strict symlink structure—worst compatibility but most secure
+- `hoisted`: a flat structure like npm/yarn—best compatibility
+- `hoisted`: a middle-ground option
 
-我们选 `hoisted` 是因为有些老依赖不支持严格的 node_modules 结构。
+We chose `hoisted` because some legacy dependencies don't support the strict node_modules structure.
 
-## 过滤器的妙用
+## Getting the Most Out of Filters
 
 ```bash
 # 只执行 admin 及其依赖的 build
@@ -143,11 +143,11 @@ pnpm --filter '...ui-components' --filter 'admin...' build
 pnpm -r --no-filter docs test
 ```
 
-这在 CI 里特别有用——只 build 和 test 有变更的项目。
+This is especially useful in CI—it builds and tests only the projects that changed.
 
 ## Common Pitfalls
 
-### 1. peerDependencies 警告
+### 1. peerDependencies Warnings
 
 ```json
 // packages/ui-components/package.json
@@ -163,9 +163,9 @@ pnpm -r --no-filter docs test
 }
 ```
 
-pnpm 对 peerDependencies 严格，每个消费方都需要显式安装 react。
+pnpm is strict about peerDependencies, so every consumer must install react explicitly.
 
-### 2. Workspace 协议的版本范围
+### 2. Workspace Protocol Version Ranges
 
 ```json
 "ui-components": "workspace:^"   // 发布时替换为 ^1.2.3
@@ -173,7 +173,7 @@ pnpm 对 peerDependencies 严格，每个消费方都需要显式安装 react。
 "ui-components": "workspace:~"   // 发布时替换为 ~1.2.3
 ```
 
-### 3. 脚本执行顺序
+### 3. Script Execution Order
 
 ```bash
 # 按拓扑排序执行（先执行依赖，再执行消费方）
@@ -183,7 +183,7 @@ pnpm -r --workspace-concurrency=1 build
 pnpm -r build
 ```
 
-## 迁移步骤总结
+## Migration Steps Summary
 
 ```bash
 # 1. 全局安装 pnpm
@@ -205,4 +205,4 @@ pnpm install
 
 ## Summary
 
-pnpm workspace 在磁盘效率和依赖隔离上做到了最佳平衡。对于前端 monorepo，它是目前最务实的选择。接下来我会写 Turborepo 来做构建编排，配合 pnpm 组成完整的 monorepo 工具链。
+pnpm workspace strikes the best balance between disk efficiency and dependency isolation. For frontend monorepos, it is currently the most pragmatic choice. Next, I'll write about Turborepo for build orchestration, combining it with pnpm to form a complete monorepo toolchain.

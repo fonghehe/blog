@@ -5,14 +5,14 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.1 4.2 新特性汇总在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 327
+wordCount: 305
 ---
 
-TypeScript 4.1 4.2 新特性汇总在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+TypeScript 4.1 和 4.2 陆续发布后，新特性值得系统梳理一遍。本文结合实际项目，聊聊其中比较实用的部分。
 
 ## 基础用法
 
-在这个基础上，我们可以进一步优化：
+在这个基础上继续优化：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -43,11 +43,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种写法在大型项目里很实用，能明显压低维护成本。
 
 ## 进阶用法
 
-实际项目中的用法会更复杂一些：
+真实项目里的用法会更复杂一些：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -71,11 +71,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样抽一层之后，代码更好测，也更好扩展。
 
 ## 实战案例
 
-以下是一个完整的示例：
+看一个相对完整的例子：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -106,11 +106,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界情况要处理好，生产环境里这点很关键。
 
 ## 性能优化
 
-关键在于理解核心逻辑：
+理解核心逻辑，剩下的就是怎么用：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -134,11 +134,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化得看具体场景，不是每处都值得过度优化。
 
 ## 常见陷阱
 
-我们可以通过以下方式来改进：
+可以从这几个角度入手改进：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -169,7 +169,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套写法已经在线上稳定跑了半年多，是经过实战检验的。
 
 ## 小结
 

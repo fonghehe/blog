@@ -1,11 +1,11 @@
 ---
-title: "Vite 3 预览模式：生产构建的本地验证利器"
+title: "Vite 3 プレビューモード：本番ビルドをローカルで検証する利器"
 date: 2022-10-03 09:31:43
 tags:
   - Vite
 readingTime: 2
 description: "在日常开发中，Vite 3 预览模式详解の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 393
+wordCount: 422
 ---
 
 在日常开发中，Vite 3 预览模式详解の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -37,7 +37,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理やエッジケースへの対応も必要になる。
 
 ## 内部原理
 
@@ -69,7 +69,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## ビジネス実践
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 :root {

@@ -1,18 +1,18 @@
 ---
-title: "Getting Started with Sentry:  SDK Configuration to  SourceMap 上传"
+title: "Getting Started with Sentry: From SDK Configuration to SourceMap Upload"
 date: 2019-10-24 11:00:27
 tags:
   - Performance Optimization
 readingTime: 2
-description: "前端监控 Sentry 接入实践在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 310
+description: "Integrating Sentry for frontend monitoring is being adopted more and more widely in frontend development. Drawing on real projects, this article takes a deep look at its core principles and best practices."
+wordCount: 185
 ---
 
-前端监控 Sentry 接入实践在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Integrating Sentry for frontend monitoring is being adopted more and more widely in frontend development. Drawing on real projects, this article takes a deep look at its core principles and best practices.
 
 ## Basic Usage
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -43,11 +43,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and noticeably lowers maintenance cost.
 
 ## Advanced Usage
 
-实际项目中的用法会更复杂一些：
+In real projects the usage is a bit more complex:
 
 ```javascript
 const express = require('express')
@@ -72,11 +72,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and the extensibility of the code.
 
 ## Practical Cases
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -95,11 +95,11 @@ function reducer(state, action) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Watch the edge-case handling—it's critical in production.
 
 ## Performance Optimization
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -130,11 +130,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to fit the specific scenario; not every case calls for over-optimization.
 
 ## Common Traps
 
-我们可以通过以下方式来改进：
+We can improve it in the following ways:
 
 ```javascript
 const express = require('express')
@@ -159,11 +159,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This solution has been running stably in production for over half a year and is battle-tested.
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- Always verify compatibility before using it in production
+- In team collaboration, conventions and docs matter more than the tech itself
+- Keep an eye on the community; technical solutions need continuous iteration
+- Don't adopt new tech just for the sake of using it

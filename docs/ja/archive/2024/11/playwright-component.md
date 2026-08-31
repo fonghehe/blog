@@ -5,7 +5,7 @@ tags:
   - テスト
 readingTime: 3
 description: "在日常开发中，Playwright 组件测试 2024の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 491
+wordCount: 507
 ---
 
 在日常开发中，Playwright 组件测试 2024の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -41,7 +41,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ## 内部原理
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -147,7 +147,7 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+この構成は本番環境で半年以上安定稼働しており、実運用で検証済みだ。
 
 ## まとめ
 

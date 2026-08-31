@@ -43,7 +43,7 @@ function useIntersectionObserver(options = {}) {
 
 ## 内部原理
 
-完全な例を示します：
+全体のサンプルを示します：
 
 ```javascript
 import { useRef, useEffect, useState } from "react";
@@ -101,8 +101,8 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-パフォーマンス最適化は具体的なシナリオと組み合わせる必要があります。すべての場合で過度な最適化は不要です。
+パフォーマンス最適化は具体的な場面と組み合わせる必要があります。すべての場合で過度な最適化は不要です。
 
 ## まとめ
 
-- コード例は参考のみです。ビジネスシナリオに応じて調整してください
+- コード例は参考のみです。ビジネスの場面に応じて調整してください

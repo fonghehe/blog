@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "在日常开发中，File System Access API 文件操作 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategi"
-wordCount: 216
+description: "File operations with the File System Access API are showing up in more and more everyday work. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 195
 ---
 
-在日常开发中，File System Access API 文件操作 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In day-to-day development, the File System Access API is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -37,7 +37,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Internal Principles
 
-实际项目中的用法会更复杂一些：
+Real-world usage gets a bit more complex:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -162,4 +162,4 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- File System Access API 文件操作不是银弹，需要根据项目规模和技术栈选择
+- The File System Access API is not a silver bullet; choose it based on your project's scale and tech stack.

@@ -4,24 +4,24 @@ date: 2019-09-02 14:58:08
 tags:
   - React
 readingTime: 4
-description: "Svelte 是一个全新的前端编译框架，与 React 和 Vue 不同，它没有虚拟 DOM，在编译阶段就将组件转换为高效的命令式代码。Svelte 的响应式系统基于编译时的赋值追踪，语法极其简洁。2019 年 Svelte 3 正式发布，本文将带你深入了解其响应式原理和核心语法。"
-wordCount: 693
+description: "Svelte is a brand-new frontend compiling framework. Unlike React and Vue, it has no virtual DOM—it compiles components into efficient imperative code at build time. Svelte's reactivity is based on compile-time assignment tracking, and its syntax is extremely concise. Svelte 3 was officially released in 2019; this article takes you deep into its reactivity model and core syntax."
+wordCount: 412
 ---
 
-Svelte 是一个全新的前端编译框架，与 React 和 Vue 不同，它没有虚拟 DOM，在编译阶段就将组件转换为高效的命令式代码。Svelte 的响应式系统基于编译时的赋值追踪，语法极其简洁。2019 年 Svelte 3 正式发布，本文将带你深入了解其响应式原理和核心语法。
+Svelte is a brand-new frontend compiling framework. Unlike React and Vue, it has no virtual DOM—it compiles components into efficient imperative code at build time. Svelte's reactivity is based on compile-time assignment tracking, and its syntax is extremely concise. Svelte 3 was officially released in 2019; this article takes you deep into its reactivity model and core syntax.
 
 ## Svelte's Core Philosophy
 
-React 和 Vue 在运行时维护一套虚拟 DOM，通过 diff 算法计算最小更新。Svelte 的思路完全不同：在编译时分析组件的依赖关系，生成直接操作真实 DOM 的代码。
+React and Vue maintain a virtual DOM at runtime and compute the minimal update via a diffing algorithm. Svelte takes a completely different approach: it analyzes a component's dependencies at compile time and generates code that manipulates the real DOM directly.
 
-这意味着：
-- 没有虚拟 DOM 开销
-- 运行时代码更少（bundle 更小）
-- 响应式不需要特殊的运行时库
+This means:
+- No virtual DOM overhead
+- Less runtime code (smaller bundle)
+- Reactivity needs no special runtime library
 
 ## Variable Declaration Is Reactive
 
-在 Svelte 中，普通的变量赋值就是响应式的：
+In Svelte, an ordinary variable assignment is reactive:
 
 ```svelte
 <script>
@@ -37,7 +37,7 @@ React 和 Vue 在运行时维护一套虚拟 DOM，通过 diff 算法计算最�
 </button>
 ```
 
-编译后的代码大致如下（简化版）：
+The compiled code looks roughly like this (simplified):
 
 ```js
 function create_fragment(ctx) {
@@ -63,11 +63,11 @@ function create_fragment(ctx) {
 }
 ```
 
-Svelte 在编译时就知道 `count` 变化会影响按钮的文本，因此生成了精准的 DOM 更新代码。
+Svelte already knows at compile time that a change to `count` affects the button's text, so it generates precise DOM-update code.
 
 ## Reactive Declarations with $
 
-使用 `$:` 标记的语句是响应式声明，当依赖的变量变化时自动重新执行：
+Statements marked with `$:` are reactive declarations—they re-run automatically when their dependent variables change:
 
 ```svelte
 <script>
@@ -98,9 +98,9 @@ Svelte 在编译时就知道 `count` 变化会影响按钮的文本，因此生�
 <p>周长: {perimeter}</p>
 ```
 
-### 响应式声明的依赖追踪
+### Dependency Tracking in Reactive Declarations
 
-Svelte 的响应式声明通过静态分析来确定依赖关系：
+Svelte's reactive declarations determine dependencies through static analysis:
 
 ```svelte
 <script>
@@ -129,7 +129,7 @@ Svelte 的响应式声明通过静态分析来确定依赖关系：
 
 ## Reactivity for Arrays and Objects
 
-Svelte 的响应式基于赋值操作，这意味着对数组或对象的修改不会自动触发更新：
+Svelte's reactivity is based on assignment operations, which means mutating an array or object won't automatically trigger an update:
 
 ```svelte
 <script>
@@ -175,7 +175,7 @@ Svelte 的响应式基于赋值操作，这意味着对数组或对象的修改�
 
 ## Managing Cross-Component State with store
 
-Svelte 提供了 writable store 和 readable store 来管理全局状态：
+Svelte provides `writable` and `readable` stores to manage global state:
 
 ```js
 // stores/counter.js
@@ -207,7 +207,7 @@ function createCounter() {
 export const counter = createCounter();
 ```
 
-在组件中使用 store：
+Using the store in a component:
 
 ```svelte
 <script>
@@ -227,7 +227,7 @@ export const counter = createCounter();
 <button on:click={counter.reset}>重置</button>
 ```
 
-`$count` 是 Svelte 的语法糖，等价于手动订阅：
+`$count` is Svelte's syntactic sugar, equivalent to manually subscribing:
 
 ```svelte
 <script>
@@ -241,7 +241,7 @@ export const counter = createCounter();
 
 ## Two-Way Binding with bind
 
-Svelte 内置了简洁的双向绑定语法：
+Svelte has built-in, concise two-way binding syntax:
 
 ```svelte
 <script>
@@ -307,22 +307,22 @@ Svelte 内置了简洁的双向绑定语法：
 
 ## Svelte vs React/Vue Comparison
 
-| 维度 | Svelte | React | Vue |
-|------|--------|-------|-----|
-| 编译/运行时 | 纯编译 | 运行时 + 虚拟 DOM | 运行时 + 虚拟 DOM |
-| 响应式 | 编译时赋值追踪 | 手动 setState/hooks | Object.defineProperty |
-| 包体积 | 极小（无框架运行时） | 较大 | 中等 |
-| 语法 | `.svelte` 单文件 | JSX | `.vue` 单文件 |
-| 学习曲线 | 低 | 中 | 中 |
-| 生态 | 较小 | 最大 | 大 |
-| 适用场景 | 小型应用、嵌入式组件 | 大型 SPA | 大型 SPA |
+| Dimension | Svelte | React | Vue |
+|-----------|--------|-------|-----|
+| Compile / runtime | Pure compile | Runtime + virtual DOM | Runtime + virtual DOM |
+| Reactivity | Compile-time assignment tracking | Manual setState/hooks | Object.defineProperty |
+| Bundle size | Very small (no framework runtime) | Larger | Medium |
+| Syntax | `.svelte` single-file | JSX | `.vue` single-file |
+| Learning curve | Low | Medium | Medium |
+| Ecosystem | Smaller | Largest | Large |
+| Best for | Small apps, embedded components | Large SPAs | Large SPAs |
 
 ## Summary
 
-- Svelte 的响应式基于编译时赋值追踪，普通变量赋值即触发视图更新
-- `$:` 标记响应式声明，自动追踪依赖的变量
-- 数组和对象的修改需要重新赋值才能触发响应式更新，或者使用 `obj = obj` 技巧
-- `writable` 和 `derived` store 提供了跨组件状态管理方案
-- `$store` 语法糖自动处理订阅和取消订阅
-- `bind:` 提供了简洁的双向绑定语法
-- Svelte 适合追求极致性能和最小包体积的场景，但生态不如 React 和 Vue 成熟
+- Svelte's reactivity is based on compile-time assignment tracking—an ordinary variable assignment triggers a view update.
+- The `$:` marker declares a reactive statement that automatically tracks its dependent variables.
+- Mutating arrays and objects requires reassignment to trigger a reactive update, or you can use the `obj = obj` trick.
+- `writable` and `derived` stores provide cross-component state management.
+- The `$store` sugar automatically handles subscribing and unsubscribing.
+- `bind:` provides concise two-way binding syntax.
+- Svelte fits scenarios that demand extreme performance and minimal bundle size, but its ecosystem isn't as mature as React's or Vue's.

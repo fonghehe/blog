@@ -4,11 +4,11 @@ date: 2019-09-20 10:13:42
 tags:
   - 工程化
 readingTime: 4
-description: "前端項目不再隻是幾個靜態檔案放到 CDN 上那麼簡單。越來越多的前端應用需要 Node.js 服務端渲染、Nginx 反向代理、環境變量注入等能力。Docker 提供了一致的運行環境，讓前端項目可以在任何地方以相同的方式構建和運行。本文將從零搭建前端項目的 Docker 化部署方案。"
+description: "前端項目不再只是幾個靜態檔案放到 CDN 上那麼簡單。越來越多的前端應用需要 Node.js 服務端渲染、Nginx 反向代理、環境變量注入等能力。Docker 提供了一致的運行環境，讓前端項目可以在任何地方以相同的方式構建和運行。本文將從零搭建前端項目的 Docker 化部署方案。"
 wordCount: 579
 ---
 
-前端項目不再隻是幾個靜態檔案放到 CDN 上那麼簡單。越來越多的前端應用需要 Node.js 服務端渲染、Nginx 反向代理、環境變量注入等能力。Docker 提供了一致的運行環境，讓前端項目可以在任何地方以相同的方式構建和運行。本文將從零搭建前端項目的 Docker 化部署方案。
+前端項目不再只是幾個靜態檔案放到 CDN 上那麼簡單。越來越多的前端應用需要 Node.js 服務端渲染、Nginx 反向代理、環境變量注入等能力。Docker 提供了一致的運行環境，讓前端項目可以在任何地方以相同的方式構建和運行。本文將從零搭建前端項目的 Docker 化部署方案。
 
 ## 為什麼前端需要 Docker
 
@@ -33,7 +33,7 @@ RUN npm ci --registry=https://registry.npm.taobao.org
 COPY . .
 RUN npm run build
 
-# 第二階段：部署（隻保留構建產物）
+# 第二階段：部署（只保留構建產物）
 FROM nginx:1.17-alpine
 
 # 複製構建產物到 nginx 目錄
@@ -52,8 +52,8 @@ CMD ["nginx", "-g", "daemon off;"]
 多階段構建是 Docker 的重要特性：
 
 - 第一階段（`builder`）使用完整的 Node.js 鏡像構建項目
-- 第二階段使用輕量的 Nginx 鏡像，隻複製構建產物
-- 最終鏡像不包含 Node.js、npm、源碼等，體積可以控製在 20MB 以內
+- 第二階段使用輕量的 Nginx 鏡像，只複製構建產物
+- 最終鏡像不包含 Node.js、npm、源碼等，體積可以控制在 20MB 以內
 
 ## Nginx 設定
 
@@ -100,7 +100,7 @@ server {
 
 ## Docker Compose 編排
 
-前端 + 後端 + 數據庫的完整編排：
+前端 + 後端 + 資料庫的完整編排：
 
 ```yaml
 # docker-compose.yml
@@ -138,7 +138,7 @@ services:
       - redis
     restart: unless-stopped
 
-  # 數據庫
+  # 資料庫
   postgres:
     image: postgres:12-alpine
     environment:
@@ -301,7 +301,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 ### 安全設定
 
 ```dockerfile
-# 使用非 root 用户運行
+# 使用非 root 用戶運行
 FROM nginx:1.17-alpine
 
 RUN addgroup -g 1001 -S appgroup && \
@@ -327,9 +327,9 @@ docker history myapp/frontend
 
 ## 小結
 
-- 使用多階段構建分離構建環境和運行環境，最終鏡像隻包含必要的運行檔案
-- Nginx 作為靜態文件服務器 + 反向代理，配置 SPA 路由支持和 gzip 壓縮
-- 環境變量注入可以通過 sed 替換模板變量或獨立的 config.js 文件實現
+- 使用多階段構建分離構建環境和運行環境，最終鏡像只包含必要的運行檔案
+- Nginx 作為靜態文件伺服器 + 反向代理，配置 SPA 路由支持和 gzip 壓縮
+- 環境變量注入可以通過 sed 替換範本變量或獨立的 config.js 文件實現
 - Docker Compose 編排前端、後端和依賴服務，docker-compose.yml 即架構文檔
-- CI/CD 中構建 Docker 鏡像並推送到 Registry，部署時隻需 pull 和 restart
-- 注意 .dockerignore、非 root 用户、健康檢查等生產環境安全和可靠性配置
+- CI/CD 中構建 Docker 鏡像並推送到 Registry，部署時只需 pull 和 restart
+- 注意 .dockerignore、非 root 用戶、健康檢查等生產環境安全和可靠性配置

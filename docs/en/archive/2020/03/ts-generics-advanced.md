@@ -4,15 +4,15 @@ date: 2020-03-27 11:11:10
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 泛型进阶技巧这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 314
+description: "Advanced TypeScript generics techniques have been discussed many times in the community, but as versions evolve, many conclusions need updating. This article revisits them based on the latest version."
+wordCount: 187
 ---
 
-TypeScript 泛型进阶技巧这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+Advanced TypeScript generics have been discussed in the community many times, but as versions iterate, many conclusions need updating. This article revisits them based on the latest version.
 
 ## Getting Started
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -43,11 +43,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and significantly cuts maintenance cost.
 
 ## Source Code Analysis
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets a bit more complex:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -71,11 +71,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Real-World Applications
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -106,11 +106,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling—it is critical in production.
 
 ## Optimization Tips
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -134,11 +134,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tuned to the actual scenario—not everything needs over-optimization.
 
 ## Pitfall Avoidance Guide
 
-我们可以通过以下方式来改进：
+We can improve it in the following ways:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -169,11 +169,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- On a team, conventions and documentation matter more than the tech itself.
+- Keep up with the community—your tech choices need to keep iterating.
+- Don't adopt new tech just for its own sake.
+- The code examples are for reference only; adapt them to your use case.

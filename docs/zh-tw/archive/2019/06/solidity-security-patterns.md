@@ -1,12 +1,13 @@
 ---
-readingTime: 8
-wordCount: 1764
+readingTime: 10
+wordCount: 1823
 title: "Solidity 安全實踐：常見漏洞與防禦模式"
 date: 2019-06-22 17:12:45
 tags:
   - Web3
   - Solidity
   - Smart Contract
+description: "智能合約的安全問題不是\"可能發生\"的風險，而是\"已經發生且持續發生\"的現實。The DAO 在 2016 年因重入攻擊損失 6000 萬美元，Parity 錢包因 delegatecall 漏洞先後凍結 1.5 億美元和永久鎖定 2.8 億美元，多個 ERC20 代幣因整數溢出而歸零。智能合約一旦部署就不可修改（除非使"
 ---
 
 智能合約的安全問題不是"可能發生"的風險，而是"已經發生且持續發生"的現實。The DAO 在 2016 年因重入攻擊損失 6000 萬美元，Parity 錢包因 `delegatecall` 漏洞先後凍結 1.5 億美元和永久鎖定 2.8 億美元，多個 ERC20 代幣因整數溢出而歸零。智能合約一旦部署就不可修改（除非使用代理模式），一個安全漏洞可能導致不可挽回的資金損失。安全不是事後的修補，而是從設計階段就必須融入的約束。
@@ -150,7 +151,7 @@ contract TokenVulnerable {
 
 ### SafeMath 庫
 
-OpenZeppelin 的 SafeMath 庫通過在每次運算後檢查溢出來防禦此漏洞：
+OpenZeppelin 的 SafeMath 庫透過在每次運算後檢查溢出來防禦此漏洞：
 
 ```solidity
 library SafeMath {
@@ -285,7 +286,7 @@ contract VulnerableProxy {
 }
 ```
 
-Parity 錢包漏洞正是利用了這一機制——攻擊者通過 `delegatecall` 調用 `initWallet` 函數，覆蓋了 owner 變量，獲得了錢包的控制權。
+Parity 錢包漏洞正是利用了這一機制——攻擊者透過 `delegatecall` 調用 `initWallet` 函數，覆蓋了 owner 變量，獲得了錢包的控制權。
 
 防禦原則：
 

@@ -4,9 +4,9 @@ date: 2023-07-22 13:05:54
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 9
 description: "Aptos 繼承了 Diem 的 Move 血統，在資源模型和並行執行上有獨到設計。本文覆蓋 @aptos-labs/ts-sdk、Petra Wallet 集成和 Move 合約前端交互的完整方案。"
-wordCount: 3000
+wordCount: 1250
 ---
 
 Aptos 是由前 Meta（Facebook）Diem 項目核心成員創立的 Layer 1 區塊鏈，主網已上線。與 Sui 類似，Aptos 也使用 Move 語言，但兩者的 Move 實現有顯著差異。Aptos 保留了 Diem 的 Move 標準實現，採用資源（Resource）模型而非 Sui 的 Object 模型。對前端開發者而言，Aptos 的 SDK 設計和錢包集成方式也自成一套體系。

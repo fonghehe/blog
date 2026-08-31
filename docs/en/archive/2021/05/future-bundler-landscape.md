@@ -7,11 +7,11 @@ tags:
   - Vite
 
 readingTime: 1
-description: "在日常开发中，Turbopack 构建工具概念分析 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 161
+description: "Turbopack's take on build tooling is increasingly relevant in everyday development. This article systematically covers its concepts, mechanics, and practical implications."
+wordCount: 147
 ---
 
-在日常开发中，Turbopack 构建工具概念分析 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+The Turbopack bundler is being used more and more frequently in day-to-day development. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -75,7 +75,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Business Practice
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 import { defineConfig } from 'vite'

@@ -37,7 +37,7 @@ BEM（Block-Element-Modifier）我們用了 4 年，解決了命名衝突問題�
   padding: 16px;
   margin-bottom: 12px;
 }
-/* 這些 flex、padding、margin 在無陣列件中重複 */
+/* 這些 flex、padding、margin 在無數元件中重複 */
 ```
 
 核心問題是：CSS 檔案膨脹、佈局樣式重複、命名心智負擔高。

@@ -4,9 +4,9 @@ date: 2025-06-20 19:10:34
 tags:
   - Web3
   - DApp
-readingTime: 12
+readingTime: 9
 description: "系統性講解 DApp 錢包會話的生命週期管理，涵蓋持久化、自動重連、網絡切換檢測、多錢包併發及移動端適配"
-wordCount: 3600
+wordCount: 902
 ---
 
 ## 錢包會話的生命週期

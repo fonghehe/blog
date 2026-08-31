@@ -42,7 +42,7 @@ Involving component decomposition, state management migration, routing refactori
 - Monolithic component → multiple child components
 - Inline styles → CSS Modules or Tailwind
 
-These require **humans to define boundaries first**, with AI executing within each boundary. Telling AI "migrate this project from Redux to Zustand" without providing strategy will likely produce chaos.
+These require **humans to define boundaries first**, with AI executing within each boundary. Telling AI "migrate this project from Redux to Zustand" without a strategy will likely produce chaos.
 
 **L4: High Risk — Not Recommended for Independent AI Execution**
 - Refactoring involving security logic (authentication, authorization, encryption)

@@ -6,14 +6,14 @@ tags:
   - エンジニアリング
 readingTime: 2
 description: "Webpack 5 已经进入 Beta 阶段，虽然还没正式发布，但新特性值得关注。梳理一下对我们日常开发影响最大的几个变化。"
-wordCount: 268
+wordCount: 429
 ---
 
-Webpack 5 已经进入 Beta 阶段，虽然还没正式发布，但新特性值得关注。梳理一下对我们日常开发影响最大的几个变化。
+Webpack 5 はすでに Beta 段階に入っている。正式リリースはまだだが、新機能は注目に値する。日常の開発に最も影響するいくつかの変更を整理する。
 
 ## Module Federation：微前端的官方解法
 
-这是 Webpack 5 最重磅的特性，允许多个独立构建的应用共享模块：
+これは Webpack 5 最大の目玉機能で、独立してビルドされた複数のアプリケーション間でモジュールを共有できる：
 
 ```javascript
 // app1/webpack.config.js
@@ -57,11 +57,11 @@ module.exports = {
 const Button = () => import('app1/Button');
 ```
 
-这意味着微前端不再需要 iframe 或 single-spa 那么重的方案了。
+これにより、マイクロフロントエンドに iframe や single-spa のような重い仕組みは不要になる。
 
 ## 持久化缓存
 
-Webpack 5 内置了持久化缓存，不再需要 `hard-source-webpack-plugin`：
+Webpack 5 には永続キャッシュが組み込まれており、`hard-source-webpack-plugin` は不要になる：
 
 ```javascript
 // webpack.config.js
@@ -76,11 +76,11 @@ module.exports = {
 };
 ```
 
-实测：二次构建时间从 45 秒降到 8 秒。
+実測：2 回目のビルド時間が 45 秒から 8 秒に短縮された。
 
 ## 资源模块 (Asset Modules)
 
-内置了资源处理，不再需要 `file-loader`、`url-loader`、`raw-loader`：
+リソース処理が組み込まれ、`file-loader`、`url-loader`、`raw-loader` は不要になる：
 
 ```javascript
 // Webpack 4
@@ -153,7 +153,7 @@ module.exports = {
 
 ## 最小 Node.js 版本
 
-Webpack 5 要求 Node.js >= 10.13.0。在升级前确认 CI 环境。
+Webpack 5 は Node.js >= 10.13.0 を要求する。アップグレード前に CI 環境を確認しておくこと。
 
 ## 迁移注意事项
 
@@ -189,8 +189,8 @@ resolve: {
 
 ## まとめ
 
-- Module Federation 是微前端的重大突破，值得深入研究
-- 持久化缓存大幅缩短二次构建时间
-- Asset Modules 简化了资源处理配置
-- Tree Shaking 更智能，产出更小
-- Node.js 最低版本要求提升到 10.13.0，升级前检查环境
+- Module Federation はマイクロフロントエンドにおける大きな飛躍であり、深掘りする価値がある
+- 永続キャッシュは 2 回目のビルド時間を大幅に短縮する
+- Asset Modules はリソース処理の設定を簡略化する
+- Tree Shaking がより賢明になり、出力が小さくなる
+- Node.js の最小バージョン要件が 10.13.0 に引き上がるため、アップグレード前に環境を確認する

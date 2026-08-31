@@ -1,12 +1,13 @@
 ---
-readingTime: 4
-wordCount: 918
+readingTime: 8
+wordCount: 914
 title: "NFT 前端開發：ERC-721 合約與展示"
 date: 2020-05-06 09:48:51
 tags:
   - Web3
   - NFT
   - Ethereum
+description: "ERC-721 標準於 2018 年 1 月在 EIP-721 中正式提出，定義了非同質化代幣（Non-Fungible Token）的接口規範。與 ERC-20 的\"每枚代幣完全等價\"不同，ERC-721 的每個代幣擁有唯一的 tokenId，可以代表獨一無二的數字資產。"
 ---
 
 ## ERC-721 標準與非同質化代幣
@@ -107,7 +108,7 @@ async function getNFTMetadata(provider, contractAddress, tokenId) {
 }
 ```
 
-### 獲取用户持有的所有 NFT
+### 獲取用戶持有的所有 NFT
 
 ```javascript
 async function getNFTsByOwner(provider, contractAddress, ownerAddress) {
@@ -224,7 +225,7 @@ function formatAttributeValue(attribute) {
 
 ## 圖片資源處理：IPFS vs HTTP vs On-chain SVG
 
-NFT 的圖片存儲方式直接影響前端的加載策略和用户體驗：
+NFT 的圖片存儲方式直接影響前端的加載策略和用戶體驗：
 
 ### IPFS 存儲
 
@@ -501,7 +502,7 @@ async function getOpenSeaData(contractAddress, tokenId) {
 
 ## 大量 NFT 的前端加載策略
 
-當一個用户持有大量 NFT，或者一個集合有數千個 NFT 需要展示時，前端需要考慮性能優化：
+當一個用戶持有大量 NFT，或者一個集合有數千個 NFT 需要展示時，前端需要考慮性能優化：
 
 ### 分頁加載與虛擬滾動
 
@@ -575,7 +576,7 @@ function pLimit(tasks, limit) {
 
 ### 使用 The Graph 索引
 
-對於大量 NFT 的查詢，直接讀取鏈上數據效率太低。通過 The Graph 子圖索引 Transfer 事件，可以快速查詢用户持倉、集合統計等數據：
+對於大量 NFT 的查詢，直接讀取鏈上數據效率太低。通過 The Graph 子圖索引 Transfer 事件，可以快速查詢用戶持倉、集合統計等數據：
 
 ```graphql
 # The Graph 查詢：獲取用户持有的所有 NFT
@@ -620,4 +621,4 @@ async function getNFTsFromSubgraph(ownerAddress) {
 
 NFT 前端開發的核心挑戰在於**鏈上數據與鏈下 metadata 的協調**。`tokenURI` 是連接這兩者的橋樑，而圖片資源的加載策略、metadata 的格式兼容性、大量 NFT 的性能優化，構成了前端開發的主要工作。
 
-ERC-721 標準雖然定義了合約接口，但 metadata 的實現方式（IPFS、HTTP、on-chain）差異很大，前端必須具備足夠的容錯能力。在實際項目中，建議優先考慮使用 The Graph 等索引服務來處理大量 NFT 的查詢，避免直接通過 RPC 節點逐個讀取，這對用户體驗和 RPC 調用成本都是必要的優化。
+ERC-721 標準雖然定義了合約接口，但 metadata 的實現方式（IPFS、HTTP、on-chain）差異很大，前端必須具備足夠的容錯能力。在實際項目中，建議優先考慮使用 The Graph 等索引服務來處理大量 NFT 的查詢，避免直接通過 RPC 節點逐個讀取，這對用戶體驗和 RPC 調用成本都是必要的優化。

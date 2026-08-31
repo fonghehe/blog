@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "关于技术债务管理与偿还策略，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 202
+description: "Many developers have never thought about technical debt management and repayment strategy beyond the buzzword. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 190
 ---
 
-关于技术债务管理与偿还策略，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to technical debt management and repayment strategies, many developers only engage with it at the API-call level. This article looks at the real problems and solutions from a production-environment perspective.
 
 ## Basic Principles
 
@@ -139,4 +139,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- 技术债务管理与偿还策略不是银弹，需要根据项目规模和技术栈选择
+- Technical debt management and repayment strategies are not a silver bullet; choose based on project size and tech stack

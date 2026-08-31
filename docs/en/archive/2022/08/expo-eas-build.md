@@ -4,11 +4,11 @@ date: 2022-08-01 09:31:10
 tags:
   - Frontend
 readingTime: 2
-description: "关于Expo EAS Build 云构建，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 241
+description: "When it comes to Expo EAS Build, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 210
 ---
 
-关于Expo EAS Build 云构建，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to Expo EAS Build, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
@@ -74,7 +74,7 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Project Practice
 
@@ -111,7 +111,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Best Practices
 
-实际项目中的用法会更复杂一些：
+Usage in real projects tends to be more complex:
 
 ```javascript
 import React, { useState, useCallback } from 'react'
@@ -180,5 +180,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Expo EAS Build 云构建不是银弹，需要根据项目规模和技术栈选择
+- Expo EAS Build is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

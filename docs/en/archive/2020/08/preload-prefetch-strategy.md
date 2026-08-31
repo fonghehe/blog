@@ -4,15 +4,15 @@ date: 2020-08-07 10:13:40
 tags:
   - Performance Optimization
 readingTime: 2
-description: "preload prefetch 资源加载策略这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 312
+description: "A refreshed examination of preload and prefetch resource-loading strategies, updating earlier community conclusions based on current browser behavior."
+wordCount: 196
 ---
 
-preload prefetch 资源加载策略这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+The topic of preload/prefetch resource-loading strategies has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits it based on the current version.
 
 ## Getting Started
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 :root {
@@ -35,11 +35,11 @@ preload prefetch 资源加载策略这个话题社区讨论了很多次，但随
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — this is critical in production.
 
 ## Source Code Analysis
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -64,11 +64,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to fit the specific scenario; not every case calls for over-optimization.
 
 ## Real-World Applications
 
-我们可以通过以下方式来改进：
+We can improve things in the following ways:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -92,11 +92,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Optimization Tips
 
-先来看基本的实现方式：
+Let's first look at the basic implementation:
 
 ```javascript
 :root {
@@ -119,11 +119,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you also need to consider error handling and edge cases.
 
 ## Pitfall Avoidance Guide
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -148,10 +148,10 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly reduce maintenance cost.
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- preload prefetch 资源加载策略不是银弹，需要根据项目规模和技术栈选择
+- Don't adopt new technology just for its own sake
+- The code examples are for reference only and should be adapted to your business scenario
+- preload/prefetch resource-loading strategies are not a silver bullet; choose based on project scale and tech stack

@@ -19,7 +19,7 @@ Webpack 5 Beta 版已經可以試用，最受關注的是 Module Federation（�
 // webpack.config.js
 module.exports = {
   cache: {
-    type: "filesystem", // 緩存到硬盤（之前隻有內存緩存）
+    type: "filesystem", // 緩存到硬盤（之前只有內存緩存）
     buildDependencies: {
       config: [__filename], // 配置文件變化時失效緩存
     },
@@ -114,11 +114,11 @@ function App() {
 | 共享依賴   | 手動（systemjs map） | 自動（shared 配置） |
 | 運行時     | 需要主應用調度       | 按需加載            |
 | 獨立部署   | ✅                   | ✅                  |
-| 技術棧限製 | 無                   | 需要 Webpack 5      |
+| 技術棧限制 | 無                   | 需要 Webpack 5      |
 
 ## 踩坑
 
-1. **版本不一致**：shared 的 `singleton: true` 確保隻有一個實例
+1. **版本不一致**：shared 的 `singleton: true` 確保只有一個實例
 2. **本地開發**：需要同時啓動多個開發服務器
 3. **類型支援**：TypeScript 還需要手動聲明遠程模塊的類型
 

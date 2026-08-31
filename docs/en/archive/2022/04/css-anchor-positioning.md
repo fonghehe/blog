@@ -4,7 +4,7 @@ date: 2022-04-07 15:28:38
 tags:
   - CSS
 readingTime: 1
-description: "We recently implemented CSS Anchor Positioning 锚点定位， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing simi"
+description: "I recently explored CSS Anchor Positioning with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 179
 ---
 

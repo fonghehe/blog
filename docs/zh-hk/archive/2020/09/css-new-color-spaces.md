@@ -12,7 +12,7 @@ wordCount: 606
 
 ## 為什麼需要新的色彩空間
 
-sRGB 能表示的顏色範圍（色域）有限。現在越來越多的設備支援 Display P3 廣色域（所有 Apple 設備、高端顯示器），如果 CSS 隻用 sRGB，就無法充分利用這些硬件的能力。
+sRGB 能表示的顏色範圍（色域）有限。現在越來越多的設備支援 Display P3 廣色域（所有 Apple 設備、高端顯示器），如果 CSS 只用 sRGB，就無法充分利用這些硬件的能力。
 
 更關鍵的是，sRGB 的色相在亮度變化時會丟失飽和度 —— 這就是為什麼你用 `hsl()` 調顏色時，把亮度調到 50% 的色相看起來和亮度 90% 完全不一樣。
 
@@ -71,7 +71,7 @@ color: lch(50% 0 0);         /* 中性灰 */
 
 ## 實戰：用 LCH 構建顏色系統
 
-LCH 特別適合構建設計系統的色彩梯度，因為隻需調整亮度（L）就能得到一致的亮暗色階：
+LCH 特別適合構建設計系統的色彩梯度，因為只需調整亮度（L）就能得到一致的亮暗色階：
 
 ```css
 :root {
@@ -79,7 +79,7 @@ LCH 特別適合構建設計系統的色彩梯度，因為隻需調整亮度（L
   --color-hue: 250;       /* 藍紫色 */
   --color-chroma: 80;     /* 飽和度 */
 
-  /* 色階 —— 隻需調整 L 值 */
+  /* 色階 —— 只需調整 L 值 */
   --color-50:  lch(97% calc(var(--color-chroma) * 0.1) var(--color-hue));
   --color-100: lch(93% calc(var(--color-chroma) * 0.2) var(--color-hue));
   --color-200: lch(85% calc(var(--color-chroma) * 0.4) var(--color-hue));
@@ -155,7 +155,7 @@ color: color(display-p3 0.5 0.3 0.8);
 ```
 
 ```javascript
-// JavaScript 中檢測支持
+// JavaScript 中檢測支援
 function supportsLab() {
   const el = document.createElement('div')
   el.style.color = 'lab(50% 0 0)'
@@ -168,6 +168,6 @@ function supportsLab() {
 - Lab/LCH 是感知均勻的色彩空間，人眼感知到的亮度變化更線性
 - LCH 適合構建設計系統色彩梯度，調整亮度時色相和飽和度保持穩定
 - LCH 相比 HSL 的核心優勢是亮度感知均勻
-- `color()` 函數支持指定色域，可以利用 Display P3 廣色域
-- 目前瀏覽器支持度有限，建議用 `@supports` 做漸進增強
+- `color()` 函數支援指定色域，可以利用 Display P3 廣色域
+- 目前瀏覽器支援度有限，建議用 `@supports` 做漸進增強
 - 這是 CSS 顏色規範的未來方向，值得提前學習

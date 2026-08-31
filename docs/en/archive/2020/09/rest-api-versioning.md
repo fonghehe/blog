@@ -4,15 +4,15 @@ date: 2020-09-15 10:00:18
 tags:
   - Frontend
 readingTime: 2
-description: "REST API 版本管理策略这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 293
+description: "A refreshed look at REST API versioning strategies, revisiting earlier community conclusions in light of evolving practices and standards."
+wordCount: 182
 ---
 
-REST API 版本管理策略这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+REST API versioning strategy has been discussed many times in the community, but as versions have evolved, many conclusions need revisiting. This article revisits it based on the latest version.
 
 ## Getting Started
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more involved:
 
 ```javascript
 .container {
@@ -32,14 +32,13 @@ REST API 版本管理策略这个话题社区讨论了很多次，但随着版�
 @container (min-width: 400px) {
   .card__content { display: grid; grid-template-columns: 200px 1fr; }
 }
-
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This improves both the testability and extensibility of the code.
 
 ## Source Code Analysis
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 const fs = require('fs')
@@ -61,14 +60,13 @@ const csvToJson = new Transform({
     callback()
   }
 })
-
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind edge-case handling — it is critical in production.
 
 ## Real-World Applications
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -88,14 +86,13 @@ function useIntersectionObserver(options = {}) {
 
   return [ref, isVisible]
 }
-
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization always depends on the specific context — not every case calls for aggressive tuning.
 
 ## Optimization Tips
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 .container {
@@ -115,15 +112,14 @@ function useIntersectionObserver(options = {}) {
 @container (min-width: 400px) {
   .card__content { display: grid; grid-template-columns: 200px 1fr; }
 }
-
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- REST API 版本管理策略不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
+- Don't adopt new tech just for the sake of using it.
+- The code samples are for reference only — adapt them to your actual use case.
+- REST API versioning is no silver bullet; choose it based on your project's size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Always verify compatibility before shipping to production.

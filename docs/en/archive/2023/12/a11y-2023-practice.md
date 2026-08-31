@@ -4,7 +4,7 @@ date: 2023-12-26 09:48:30
 tags:
   - Frontend
 readingTime: 2
-description: "We recently implemented 前端无障碍 2023 实践， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+description: "I recently applied 2023 frontend accessibility practices with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 201
 ---
 

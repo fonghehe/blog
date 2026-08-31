@@ -1,12 +1,13 @@
 ---
-readingTime: 7
-wordCount: 1593
+readingTime: 8
+wordCount: 1669
 title: "Solidity 數據類型與存儲模型詳解"
 date: 2018-07-15 10:43:47
 tags:
   - Web3
   - Solidity
   - Smart Contract
+description: "Solidity 的數據類型系統表面上看起來像 JavaScript 和 C++ 的混合體，但其存儲模型卻與兩者截然不同。智能合約的每次狀態寫入都需要消耗 Gas，而 Gas 消耗直接取決於數據在 storage 中的佈局方式。理解 Solidity 的數據類型與存儲模型，不僅是寫出正確合約的前提，更是寫出經濟合約的關"
 ---
 
 Solidity 的數據類型系統表面上看起來像 JavaScript 和 C++ 的混合體，但其存儲模型卻與兩者截然不同。智能合約的每次狀態寫入都需要消耗 Gas，而 Gas 消耗直接取決於數據在 storage 中的佈局方式。理解 Solidity 的數據類型與存儲模型，不僅是寫出正確合約的前提，更是寫出經濟合約的關鍵。
@@ -176,7 +177,7 @@ function processArray(uint[] memory arr) public pure returns (uint) {
 
 ### calldata
 
-`calldata` 是隻讀的、不可修改的函數輸入數據區域，類似於 `memory` 但更省 Gas：
+`calldata` 是只讀的、不可修改的函數輸入數據區域，類似於 `memory` 但更省 Gas：
 
 ```solidity
 function externalFunc(uint[] calldata arr) external pure returns (uint) {

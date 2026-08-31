@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "最近在團隊中落地React 18 startTransition 使用場景，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 273
+wordCount: 271
 ---
 
 最近在團隊中落地React 18 startTransition 使用場景，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -96,7 +96,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 調優策略
 

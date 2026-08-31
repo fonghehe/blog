@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 5
 description: "很多人一提到 `useRef`，第一反應就是「用來獲取 DOM 節點」。但 `useRef` 的能力遠不止於此。它本質上是在函數組件中提供了一個跨渲染週期持久存在的可變容器，這個特性讓它在很多場景下成為不可替代的工具。"
-wordCount: 847
+wordCount: 846
 ---
 
 很多人一提到 `useRef`，第一反應就是「用來獲取 DOM 節點」。但 `useRef` 的能力遠不止於此。它本質上是在函數組件中提供了一個跨渲染週期持久存在的可變容器，這個特性讓它在很多場景下成為不可替代的工具。
@@ -142,7 +142,7 @@ function ProfileChangeTracker({ userId }) {
 }
 ```
 
-為什麼不用 state 存上一次的值？因為 state 變化會觸發重新渲染，而我們隻是想「記錄」一下，並不需要因為記錄本身觸發渲染。這就是 ref 和 state 的本質區別。
+為什麼不用 state 存上一次的值？因為 state 變化會觸發重新渲染，而我們只是想「記錄」一下，並不需要因為記錄本身觸發渲染。這就是 ref 和 state 的本質區別。
 
 ## ref 與 state 的區別和選擇
 
@@ -248,7 +248,7 @@ function Form() {
 }
 ```
 
-`useImperativeHandle` 的核心價值是**控製暴露的介面**。如果不使用它，父組件通過 ref 拿到的是整個 DOM 節點，父組件可以隨意操作——比如 `fancyInputRef.current.style.display = 'none'`。這種直接操作破壞了組件的封裝性。通過 `useImperativeHandle` 我們隻暴露有限的、安全的方法。
+`useImperativeHandle` 的核心價值是**控制暴露的介面**。如果不使用它，父組件通過 ref 拿到的是整個 DOM 節點，父組件可以隨意操作——比如 `fancyInputRef.current.style.display = 'none'`。這種直接操作破壞了組件的封裝性。通過 `useImperativeHandle` 我們只暴露有限的、安全的方法。
 
 ## 在 setInterval 中正確使用 ref
 
@@ -297,7 +297,7 @@ function IntervalCounter() {
 
 ## 實際項目中的綜合運用
 
-最後看一個真實場景：防抖搜索組件，綜合運用了 ref 的多種能力：
+再看一個真實場景：防抖搜索組件，綜合運用了 ref 的多種能力：
 
 ```javascript
 import React, { useState, useRef, useEffect, useCallback } from 'react';
@@ -360,7 +360,7 @@ function DebouncedSearch({ onSearch }) {
 ## 小結
 
 - `useRef` 的本質是提供一個在組件整個生命週期內持久存在的可變容器，`.current` 的修改不會觸發重新渲染
-- 不隻是獲取 DOM——存儲定時器 ID、上一次的值、防抖/節流標記、訂閲句柄等都是常見用途
+- 不只是獲取 DOM——存儲定時器 ID、上一次的值、防抖/節流標記、訂閲句柄等都是常見用途
 - 選擇 ref 還是 state 的核心標準：這個值的變化是否需要反映到 UI 上
-- `forwardRef` + `useImperativeHandle` 可以精確控製子組件暴露給父組件的介面
+- `forwardRef` + `useImperativeHandle` 可以精確控制子組件暴露給父組件的介面
 - 在異步回調（`setInterval`、`setTimeout`、事件監聽）中，ref 是拿到最新值的可靠手段

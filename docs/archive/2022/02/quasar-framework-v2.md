@@ -5,10 +5,10 @@ tags:
   - 前端
 readingTime: 1
 description: "Quasar Framework v2 全栈 UI 框架这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 293
+wordCount: 295
 ---
 
-Quasar Framework v2 全栈 UI 框架这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+Quasar Framework v2 这套全栈 UI 框架，社区已经反复讨论过多次，但随着版本迭代，不少旧结论需要更新。本文基于最新版本重新梳理。
 
 ## 入门指南
 

@@ -5,10 +5,10 @@ tags:
   - JavaScript
 readingTime: 1
 description: "關於JavaScript 深複製方案對比，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。"
-wordCount: 256
+wordCount: 258
 ---
 
-關於JavaScript 深複製方案對比，網上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。
+關於JavaScript 深複製方案對比，網路上有不少文章但大多缺乏實戰經驗。本文結合真實專案，探討最佳實踐。
 
 ## 基本概念
 
@@ -28,7 +28,7 @@ const role = pluck(user, 'role')   // 'admin' | 'user' | 'guest'
 
 ## 深入理解
 
-我們可以通過以下方式實現：
+我們可以透過以下方式實作：
 
 ```javascript
 .grid {
@@ -56,7 +56,7 @@ const role = pluck(user, 'role')   // 'admin' | 'user' | 'guest'
 
 ## 專案應用
 
-具體實現參考以下程式碼：
+具體實作請參考以下程式碼：
 
 ```javascript
 :root {

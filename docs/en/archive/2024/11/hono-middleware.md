@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Hono 中间件系统 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 210
+wordCount: 200
 ---
 
 Hono 中间件系统 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -41,7 +41,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Usage
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -154,4 +154,4 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Hono 中间件系统不是银弹，需要根据项目规模和技术栈选择
+- Hono 中间件系统 is not a silver bullet — choose based on your project scale and tech stack

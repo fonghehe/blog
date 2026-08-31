@@ -213,5 +213,5 @@ axios.interceptors.response.use(
 - 路由懶載入是最基礎也是效果最明顯的最佳化
 - `Object.freeze` 避免大型資料物件的深層響應式開銷
 - Webpack splitChunks 按業務/依賴分包，利用瀏覽器快取
-- 請求層面做好防重複和取消機製
+- 請求層面做好防重複和取消機制
 - 優先最佳化首屏相關的資源，非關鍵資源延後載入

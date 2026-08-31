@@ -7,7 +7,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "Netlify Edge Functions 邊緣計算這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 310
+wordCount: 306
 ---
 
 Netlify Edge Functions 邊緣計算這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -35,7 +35,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-效能最佳化需要結合具體場景，不是所有情況都需要過度最佳化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 原始碼分析
 
@@ -87,9 +87,9 @@ CMD ["nginx", "-g", "daemon off;"]
 
 這段程式碼展示了基本的使用方式。實際專案中還需要考慮錯誤處理和邊界條件。
 
-## 最佳化技巧
+## 優化技巧
 
-在這個基礎上，我們可以進一步最佳化：
+在這個基礎上，我們可以進一步優化：
 
 ```javascript
 FROM node:20-alpine AS deps

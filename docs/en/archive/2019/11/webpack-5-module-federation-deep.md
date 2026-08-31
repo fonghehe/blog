@@ -1,27 +1,27 @@
 ---
-title: "Webpack 5 Module Federation Deep Dive: 微前端下一个答案"
+title: "Webpack 5 Module Federation Deep Dive: The Next Answer for Micro Frontends"
 date: 2019-11-06 11:20:08
 tags:
   - Webpack
   - Engineering
-readingTime: 5
-description: "在上一篇文章中我们预览了 Webpack 5 的新特性，其中 Module Federation 是最具革命性的功能。本文将深入探讨 Module Federation 的架构设计、配置细节和在微前端场景中的实战应用。"
-wordCount: 625
+readingTime: 4
+description: "In a previous article we previewed the new features of Webpack 5, among which Module Federation is the most revolutionary. This article digs into its architecture, configuration details, and real-world use in micro-frontend scenarios."
+wordCount: 389
 ---
 
-在上一篇文章中我们预览了 Webpack 5 的新特性，其中 Module Federation 是最具革命性的功能。本文将深入探讨 Module Federation 的架构设计、配置细节和在微前端场景中的实战应用。
+In a previous article we previewed the new features of Webpack 5, among which Module Federation is the most revolutionary. This article digs into its architecture, configuration details, and real-world use in micro-frontend scenarios.
 
 ## Module Federation Core Idea
 
-Module Federation 允许一个 JavaScript 应用在运行时动态加载另一个应用暴露的模块，而不需要在构建时就确定依赖关系。这意味着：
+Module Federation lets one JavaScript application dynamically load modules exposed by another at runtime, without locking in the dependency at build time. That means:
 
-1. 每个应用独立构建、独立部署
-2. 共享代码不需要发布为 npm 包
-3. 依赖可以跨应用共享，避免重复加载
+1. Each app is built and deployed independently
+2. Shared code doesn't need to be published as an npm package
+3. Dependencies can be shared across apps, avoiding duplicate loading
 
 ## Core Concepts Explained
 
-### Host 与 Remote
+### Host and Remote
 
 ```
 ┌──────────────────┐         ┌──────────────────┐
@@ -33,13 +33,13 @@ Module Federation 允许一个 JavaScript 应用在运行时动态加载另一�
 └──────────────────┘         └──────────────────┘
 ```
 
-- **Host**：消费远程模块的应用，通过 `remotes` 配置指定远程模块来源
-- **Remote**：暴露模块供其他应用使用，通过 `exposes` 配置暴露哪些模块
-- 一个应用可以同时是 Host 和 Remote
+- **Host**: the app that consumes remote modules, specifying their source via the `remotes` config
+- **Remote**: the app that exposes modules for others to use, declaring them via the `exposes` config
+- An app can be both a Host and a Remote at once
 
-### 容器（Container）与入口（Entry）
+### Container and Entry
 
-每个配置了 ModuleFederationPlugin 的应用构建后会产生一个 `remoteEntry.js` 文件，它是远程容器的入口：
+Every app configured with ModuleFederationPlugin produces a `remoteEntry.js` file on build—this is the entry point of the remote container:
 
 ```
 dashboard/
@@ -49,11 +49,11 @@ dashboard/
 │   └── vendors.js
 ```
 
-Host 应用通过加载这个 `remoteEntry.js` 来初始化远程容器。
+The Host app initializes the remote container by loading this `remoteEntry.js`.
 
 ## Detailed Configuration
 
-### Remote 端配置
+### Remote-Side Configuration
 
 ```js
 // dashboard/webpack.config.js
@@ -105,7 +105,7 @@ module.exports = {
 };
 ```
 
-### Host 端配置
+### Host-Side Configuration
 
 ```js
 // main-app/webpack.config.js
@@ -132,7 +132,7 @@ module.exports = {
 };
 ```
 
-### 在 Host 中使用 Remote 模块
+### Consuming Remote Modules in the Host
 
 ```jsx
 // main-app/src/App.jsx
@@ -171,7 +171,7 @@ function App() {
 
 ## Shared Dependencies In-Depth
 
-Shared 配置控制依赖如何在 Host 和 Remote 之间共享：
+The `shared` config controls how dependencies are shared between Host and Remote:
 
 ```js
 shared: {
@@ -193,9 +193,9 @@ shared: {
 }
 ```
 
-### 版本协商机制
+### Version Negotiation Mechanism
 
-当 Host 和 Remote 共享同一个依赖时，Webpack 会进行版本协商：
+When both Host and Remote share a dependency, Webpack negotiates the version:
 
 ```
 Host: react@16.12.0
@@ -207,7 +207,7 @@ requiredVersion: ^16.8.0
 - 如果 singleton: false → 各自使用各自的版本
 ```
 
-如果版本不兼容：
+If the versions are incompatible:
 
 ```
 Host: react@16.12.0
@@ -221,7 +221,7 @@ Remote 的 react@17.0.0 不满足 ^16.8.0：
 
 ## Dynamic Remote Loading
 
-在某些场景下，Remote 地址是动态的（比如从配置中心获取）：
+In some scenarios the Remote address is dynamic—for example, fetched from a config center:
 
 ```js
 // remote-loader.js
@@ -287,7 +287,7 @@ micro-frontend/
 └── package.json
 ```
 
-### Shell 主应用
+### The Shell App
 
 ```js
 // shell/webpack.config.js
@@ -306,7 +306,7 @@ new ModuleFederationPlugin({
 });
 ```
 
-### Products 应用（既是 Remote 又是 Host）
+### The Products App (Both Remote and Host)
 
 ```js
 // products/webpack.config.js
@@ -328,7 +328,7 @@ new ModuleFederationPlugin({
 });
 ```
 
-### 路由整合
+### Route Integration
 
 ```jsx
 // shell/src/App.jsx
@@ -364,20 +364,20 @@ function App() {
 
 ## Comparison with Other Micro-Frontend Solutions
 
-| 特性 | Module Federation | qiankun | single-spa |
-|------|------------------|---------|------------|
-| 隔离级别 | CSS 共享作用域 | JS/CSS 沙箱 | JS 沙箱 |
-| 通信方式 | 直接 import | 全局状态 | 自定义 |
-| 依赖共享 | 内置版本协商 | 需要配置 | 需要 import maps |
-| 构建要求 | 必须 Webpack 5 | 无要求 | 无要求 |
-| 子应用加载 | 模块级别 | 应用级别 | 应用级别 |
+| Feature | Module Federation | qiankun | single-spa |
+|---------|-------------------|---------|------------|
+| Isolation level | CSS shared scope | JS/CSS sandbox | JS sandbox |
+| Communication | Direct import | Global state | Custom |
+| Dependency sharing | Built-in version negotiation | Requires config | Requires import maps |
+| Build requirement | Webpack 5 required | None | None |
+| Child app loading | Module level | App level | App level |
 
 ## Summary
 
-- Module Federation 允许独立构建的应用在运行时共享模块
-- Host 通过 `remotes` 配置消费远程模块，Remote 通过 `exposes` 暴露模块
-- `remoteEntry.js` 是远程容器的入口文件
-- `shared` 配置实现依赖共享，`singleton: true` 确保只加载一个实例
-- 支持动态加载，适用于配置驱动的微前端架构
-- 一个应用可以同时是 Host 和 Remote
-- 与 qiankun 等方案相比，Module Federation 的优势在于模块级别的共享和内置的依赖协商
+- Module Federation lets independently built apps share modules at runtime
+- The Host consumes remote modules via `remotes`; the Remote exposes them via `exposes`
+- `remoteEntry.js` is the entry file of the remote container
+- The `shared` config enables dependency sharing; `singleton: true` ensures only one instance is loaded
+- Dynamic loading is supported, which fits config-driven micro-frontend architectures
+- An app can be both a Host and a Remote at once
+- Compared with solutions like qiankun, Module Federation's edge is module-level sharing and built-in dependency negotiation

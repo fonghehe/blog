@@ -6,11 +6,11 @@ tags:
   - Testing
 
 readingTime: 2
-description: "Vitest Vite 原生单元测试框架 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic ba"
-wordCount: 173
+description: "Vitest, Vite's native unit-testing framework, has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 162
 ---
 
-Vitest Vite 原生单元测试框架 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Vitest, the Vite-native unit-testing framework, has been discussed many times in the community, but as versions iterate, a lot of the old conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -70,7 +70,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Real-World Applications
 
-实际项目中的用法会更复杂一些：
+In real projects, usage gets a bit more involved:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -98,7 +98,7 @@ export default defineConfig({
 
 ```
 
-Through this approach, both the testability and scalability of the code are improved.
+This makes the code both more testable and more scalable.
 
 ## Optimization Tips
 
@@ -120,7 +120,7 @@ test.describe('用户登录流程', () => {
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Handle edge cases carefully — they are critical in production.
 
 ## Summary
 

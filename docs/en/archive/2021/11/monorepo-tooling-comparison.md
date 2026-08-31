@@ -5,15 +5,15 @@ tags:
   - Engineering
 
 readingTime: 2
-description: "Vercel 收购了 Turborepo 并开源，这是一个用 Go 写的高性能 Monorepo 构建工具。试用了一周，和 Lerna / pnpm workspace 对比了一下。"
-wordCount: 353
+description: "Vercel acquired Turborepo and open-sourced it — a high-performance monorepo build tool written in Go. I tried it for a week and compared it with Lerna and pnpm workspace."
+wordCount: 248
 ---
 
-Vercel 收购了 Turborepo 并开源，这是一个用 Go 写的高性能 Monorepo 构建工具。试用了一周，和 Lerna / pnpm workspace 对比了一下。
+Vercel acquired Turborepo and open-sourced it; it's a high-performance monorepo build tool written in Go. I tried it out for a week and compared it against Lerna and pnpm workspaces.
 
 ## Pain Points of Monorepo
 
-用 pnpm workspace 管理 monorepo 项目，包管理没问题，但构建编排很原始：
+When managing a monorepo with pnpm workspaces, package management is fine, but the build orchestration is rather primitive:
 
 ```bash
 # pnpm workspace 的构建方式
@@ -30,9 +30,9 @@ pnpm run build --filter=apps/web
 
 ## What Turborepo Solves
 
-- **构建缓存**：相同输入不重复构建（本地 + 远程缓存）
-- **并行调度**：自动分析依赖图，并行构建无依赖的包
-- **增量构建**：只构建有变化的包及其下游依赖
+- **Build caching**: identical inputs aren't rebuilt (local + remote cache)
+- **Parallel scheduling**: automatically analyzes the dependency graph and builds independent packages in parallel
+- **Incremental builds**: only builds changed packages and their downstream dependents
 
 ## Basic Configuration
 
@@ -132,7 +132,7 @@ turbo run build
 # apps/web:        build (5.1s)                             # 依赖 ui，重新构建
 ```
 
-缓存 key 基于：源文件内容 + 环境变量 + lock 文件 + package.json scripts。
+The cache key is based on: source file contents + environment variables + the lock file + package.json scripts.
 
 ## Remote Caching (CI Scenarios)
 
@@ -147,7 +147,7 @@ npx turbo link
 # 本地构建一次 → CI 直接用缓存
 ```
 
-CI 配置示例：
+Example CI configuration:
 
 ```yaml
 # .github/workflows/ci.yml
@@ -179,15 +179,15 @@ jobs:
 
 ## Comparison with Lerna
 
-| 特性 | Lerna | Turborepo |
-|------|-------|-----------|
-| 构建编排 | 依赖 topo 排序 | 自动依赖图 + 并行 |
-| 缓存 | 无 | 本地 + 远程 |
-| 增量构建 | 无 | 自动 |
-| 包发布 | 有（核心功能） | 无（不管发布） |
-| 配置复杂度 | 中等 | 极简 |
+| Feature | Lerna | Turborepo |
+|---------|-------|-----------|
+| Build orchestration | Relies on topological sort | Automatic dependency graph + parallelism |
+| Caching | None | Local + remote |
+| Incremental builds | None | Automatic |
+| Package publishing | Yes (core feature) | No (doesn't handle publishing) |
+| Config complexity | Moderate | Minimal |
 
-Lerna 管发布，Turborepo 管构建，可以一起用。
+Lerna handles publishing, Turborepo handles builds; the two can be used together.
 
 ## Working with pnpm Workspace
 
@@ -212,8 +212,8 @@ Lerna 管发布，Turborepo 管构建，可以一起用。
 
 ## Summary
 
-- Turborepo 解决 Monorepo 的构建编排和缓存问题，不解决包发布问题
-- 本地 + 远程缓存是最大卖点，CI 构建时间可以从分钟级降到秒级
-- 和 pnpm workspace 配合是最优方案：pnpm 管依赖，Turborepo 管构建
-- 配置极简（一个 turbo.json），学习成本低
-- 适合有 3+ 包的 Monorepo 项目；包少的话 pnpm workspace 够用
+- Turborepo solves the build orchestration and caching problems of monorepos, but not package publishing
+- Local + remote caching is its biggest selling point; CI build times can drop from minutes to seconds
+- Pairing it with pnpm workspaces is the optimal setup: pnpm manages dependencies, Turborepo manages builds
+- Configuration is minimal (a single turbo.json), so the learning curve is low
+- It suits monorepos with 3+ packages; for fewer packages, pnpm workspaces alone are enough

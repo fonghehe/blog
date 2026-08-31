@@ -4,11 +4,11 @@ date: 2021-11-02 14:50:40
 tags:
   - 前端工程化
 readingTime: 2
-description: "在日常開發中，前端工程團隊新人 Onboarding的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
+description: "在日常開發中，前端工程團隊對新人 Onboarding 的重視程度也越來越高。本文系統性地說明其做法、原理與優化策略。"
 wordCount: 294
 ---
 
-在日常開發中，前端工程團隊新人 Onboarding的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
+在日常開發中，前端工程團隊對新人 Onboarding 的重視程度也越來越高。本文系統性地說明其做法、原理與優化策略。
 
 ## 快速上手
 
@@ -37,11 +37,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-效能最佳化需要結合具體場景，不是所有情況都需要過度最佳化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 內部原理
 
-我們可以通過以下方式來改進：
+我們可以透過以下方式來改進：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -64,7 +64,7 @@ function reducer(state, action) {
 
 ## 業務實戰
 
-先來看基本的實現方式：
+先來看基本的實作方式：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -99,7 +99,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ## 效能對比
 
-在這個基礎上，我們可以進一步最佳化：
+在這個基礎上，我們可以進一步優化：
 
 ```javascript
 const express = require('express')

@@ -3,9 +3,9 @@ title: "DApp Frontend Real-Time Data Subscription Architecture: WebSocket, Reorg
 date: 2026-08-29 13:19:38
 tags:
   - Web3
-readingTime: 9
+readingTime: 7
 description: "Real-time data in dApp frontends is more than plugging in a WebSocket. This article covers WS provider subscriptions vs polling vs indexing service trade-offs, reconnection and resubscription strategies, on-chain reorg handling in UI state, BroadcastChannel multi-tab sync, and TanStack Query patterns for fusing subscriptions with REST snapshots."
-wordCount: 3500
+wordCount: 894
 ---
 
 Building the frontend for a DeFi dashboard, the hardest part isn't UI complexity — it's data real-time performance and consistency. User positions, pending transactions, and pool TVL are all constantly changing. REST polling either has too much latency or generates an explosion of requests. WebSocket subscriptions look like the answer, but production reality brings reconnection challenges, on-chain reorgs reverting state, and users opening three tabs each maintaining independent state.

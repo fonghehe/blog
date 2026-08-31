@@ -4,7 +4,7 @@ date: 2023-05-25 10:22:47
 tags:
   - Micro Frontend
 readingTime: 2
-description: "关于微前端 2023 架构演进总结，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+description: "Many summaries of 2023 micro-frontend architecture evolution stay at the surface level. This article looks at the topic from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 163
 ---
 

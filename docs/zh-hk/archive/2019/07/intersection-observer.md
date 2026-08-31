@@ -8,7 +8,7 @@ description: "以前做圖片懶加載、無限滾動這些功能，基本都是
 wordCount: 408
 ---
 
-以前做圖片懶加載、無限滾動這些功能，基本都是靠 `scroll` 事件 + `getBoundingClientRect()` 來實現的。性能差不説，代碼還醜。Intersection Observer API 的出現徹底改變了這個局面。
+以前做圖片懶加載、無限滾動這些功能，基本都是靠 `scroll` 事件 + `getBoundingClientRect()` 來實現的。性能差不說，代碼還醜。Intersection Observer API 的出現徹底改變了這個局面。
 
 ## 基本用法
 
@@ -329,7 +329,7 @@ function ArticleList() {
 
 ## 實戰三：廣告曝光統計
 
-廣告行業需要統計廣告是否真正被用户看到（不僅僅是在 DOM 中，而是用户真的看到了）：
+廣告行業需要統計廣告是否真正被用戶看到（不僅僅是在 DOM 中，而是用戶真的看到了）：
 
 ```javascript
 class AdTracker {
@@ -378,7 +378,7 @@ document.querySelectorAll('.ad-slot').forEach(ad => {
 })
 ```
 
-**關鍵點：** 使用 `threshold: [0.5]` 確保廣告至少 50% 可見才統計，避免用户快速滾動時誤統計。用 `navigator.sendBeacon` 上報，即使頁面關閉也能送達。
+**關鍵點：** 使用 `threshold: [0.5]` 確保廣告至少 50% 可見才統計，避免用戶快速滾動時誤統計。用 `navigator.sendBeacon` 上報，即使頁面關閉也能送達。
 
 ## 相容性處理
 
@@ -444,6 +444,6 @@ function createSafeObserver(callback, options) {
 - Intersection Observer 用異步回調替代 scroll + getBoundingClientRect，性能好得多
 - 圖片懶加載：`rootMargin` 提前加載，`unobserve` 加載後取消觀察
 - 無限滾動：用哨兵元素 + `isIntersecting` 判斷是否需要加載更多
-- 廣告曝光：用 `threshold: [0.5]` 控製可見比例，`navigator.sendBeacon` 可靠上報
+- 廣告曝光：用 `threshold: [0.5]` 控制可見比例，`navigator.sendBeacon` 可靠上報
 - 注意 `disconnect()` 清理觀察器，避免內存泄漏
 - IE 不支援，需要 polyfill 或降級方案

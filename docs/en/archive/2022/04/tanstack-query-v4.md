@@ -4,11 +4,11 @@ date: 2022-04-26 14:31:22
 tags:
   - Frontend
 readingTime: 2
-description: "关于TanStack Query v4 重大更新，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 220
+description: "Regarding the major updates in TanStack Query v4, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective."
+wordCount: 198
 ---
 
-关于TanStack Query v4 重大更新，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+Regarding the major updates in TanStack Query v4, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective.
 
 ## Basic Principles
 
@@ -127,7 +127,7 @@ This approach has been running stably in production for over six months and has 
 
 ## Summary
 
-- TanStack Query v4 重大更新 is not a silver bullet; choose based on your project scale and tech stack
+- TanStack Query v4's major updates are not a silver bullet; choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

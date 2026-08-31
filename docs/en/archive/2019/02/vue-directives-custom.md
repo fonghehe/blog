@@ -63,7 +63,7 @@ export default {
 };
 ```
 
-After promoting this pattern across the team, the results were great and maintenance costs dropped noticeably.
+Once this pattern was rolled out across the team, the results were strong and maintenance costs dropped noticeably.
 
 ## Real-World Case Study
 
@@ -91,10 +91,10 @@ export default {
 };
 ```
 
-Pay attention to the performance details in the code above and avoid unnecessary computation.
+Mind the performance details in the snippet above and avoid needless computation.
 
 ## Summary
 
-- Choose the right approach for the scenario in real projects
-- Establishing team-wide conventions matters more than pursuing perfect implementations
-- Keep learning and summarizing; stay technically sharp
+- Pick the approach that fits the scenario in real projects.
+- Establishing team-wide conventions matters more than chasing perfect implementations.
+- Keep learning and reflecting to stay sharp.

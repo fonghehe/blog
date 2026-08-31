@@ -93,7 +93,7 @@ function useIntersectionObserver(options = {}) {
 
 ## 優化技巧
 
-實際項目中的用法會更復雜一些：
+實際項目中的用法會更複雜一些：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'

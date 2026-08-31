@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS 自定義屬性（也叫 CSS 變數）現在主流瀏覽器都支援了，IE 除外。它和 Sass 變數不一樣，有自己獨特的優勢，值得認真瞭解。"
-wordCount: 430
+wordCount: 429
 ---
 
 CSS 自定義屬性（也叫 CSS 變數）現在主流瀏覽器都支援了，IE 除外。它和 Sass 變數不一樣，有自己獨特的優勢，值得認真瞭解。
@@ -83,7 +83,7 @@ document.documentElement.style.setProperty('--primary', '#67c23a')
   --primary: #64b5f6;
 }
 
-/* 所有元件隻用變數，不寫具體顏色 */
+/* 所有元件只用變數，不寫具體顏色 */
 body {
   background: var(--bg-color);
   color: var(--text-color);
@@ -121,7 +121,7 @@ document.documentElement.setAttribute("data-theme", "light");
 }
 ```
 
-## 應用場景 3：元件級變數（區域性作用域）
+## 應用場景 3：元件級變數（局部作用域）
 
 CSS 變數遵循 CSS 繼承規則，可以在元件內覆蓋：
 
@@ -144,7 +144,7 @@ CSS 變數遵循 CSS 繼承規則，可以在元件內覆蓋：
 }
 ```
 
-這種模式特別適合元件庫的主題定製：
+這種模式特別適合元件庫的主題定制：
 
 ```css
 /* 使用者可以覆蓋元件的預設樣式變數 */
@@ -187,7 +187,7 @@ document.documentElement.style.setProperty("--primary-color", "#67c23a");
 // 刪除（恢復繼承的值）
 document.documentElement.style.removeProperty("--primary-color");
 
-// 在元件內區域性設定
+// 在元件內局部設定
 element.style.setProperty("--button-size", "32px");
 ```
 

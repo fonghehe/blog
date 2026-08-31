@@ -5,7 +5,7 @@ tags:
   - パフォーマンス最適化
 readingTime: 2
 description: "複雑なアニメーションを作ったらカクついたので、再描画とリフローの原理を調べ、最適化方法をまとめました。"
-wordCount: 407
+wordCount: 417
 ---
 
 複雑なアニメーションを作ったらカクついたので、再描画とリフローの原理を調べ、最適化方法をまとめました。
@@ -121,7 +121,7 @@ el.style.transform = `translate(${x}px, ${y}px)`;
 
 ## requestAnimationFrame
 
-アニメーションをrAFの中に入れてブラウザのレンダリングリズムに合わせる：
+アニメーションの更新を rAF のコールバック内で行い、ブラウザのレンダリングリズムに合わせます：
 
 ```javascript
 function animate() {

@@ -192,7 +192,7 @@ import './polyfill';  // 沒有導入任何具名內容
 }
 ```
 
-這種寫法更精細：隻有列表中的檔案有副作用（比如 CSS 檔案通過 `import './style.css'` 引入，沒有導出但不能刪），其他模塊可以安全地 Tree Shaking。
+這種寫法更精細：只有列表中的檔案有副作用（比如 CSS 檔案通過 `import './style.css'` 引入，沒有導出但不能刪），其他模塊可以安全地 Tree Shaking。
 
 ### sideEffects 的工作原理
 

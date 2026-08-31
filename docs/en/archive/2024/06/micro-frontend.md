@@ -4,8 +4,8 @@ date: 2024-06-20 17:54:31
 tags:
   - Micro Frontend
 readingTime: 2
-description: "In daily development, 微前端 2024 架构趋势总结 is used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 221
+description: "The 2024 micro-frontend architecture trend roundup is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 198
 ---
 
 In daily development, 微前端 2024 架构趋势总结 is used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -120,7 +120,7 @@ function reducer(state, action) {
 
 Performance optimization should be tailored to specific scenarios; not every situation requires aggressive optimization.
 
-## 问题排查
+## Troubleshooting
 
 We can improve this in the following ways:
 
@@ -157,7 +157,7 @@ This solution has been running stably in production for over six months and has 
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- 微前端 2024 架构趋势总结不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- Don't adopt new technology just for the sake of it
+- Code samples are for reference only and need adjusting to your business scenario
+- The 2024 micro-frontend architecture trend roundup is not a silver bullet — choose based on your project scale and tech stack
+- Understanding the underlying principles matters more than memorizing APIs

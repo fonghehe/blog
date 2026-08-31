@@ -5,11 +5,11 @@ tags:
   - Web Components
   - TypeScript
 readingTime: 2
-description: "Lit Web Components 开发实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 204
+description: "The topic of Lit Web Components development practices has been discussed many times in the community, but with version iterations, many conclusions need updating. This article re-examines the topic based on the latest version."
+wordCount: 175
 ---
 
-Lit Web Components 开发实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+The topic of Lit Web Components development practices has been discussed many times in the community, but with version iterations, many conclusions need updating. This article re-examines the topic based on the latest version.
 
 ## Getting Started
 
@@ -100,7 +100,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Optimization Tips
 

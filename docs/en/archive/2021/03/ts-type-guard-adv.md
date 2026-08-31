@@ -4,16 +4,16 @@ date: 2021-03-19 11:47:40
 tags:
   - TypeScript
 
-readingTime: 2
-description: "TypeScript 类型守卫进阶在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 225
+readingTime: 1
+description: "Advanced TypeScript type guards have evolved quickly in recent years. This article digs into how they work and how to apply them in practice."
+wordCount: 169
 ---
 
-TypeScript 类型守卫进阶在近年来发展迅速，本文将深入分析其原理和实践方法。
+Advanced TypeScript type guards have developed rapidly in recent years. This article takes a deep dive into their underlying principles and practical approaches.
 
 ## Basic Concepts
 
-我们可以这样实现：
+Here is one way to implement it:
 
 ```javascript
 // 工具函数封装
@@ -41,7 +41,7 @@ function createHandler(options = {}) {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+This approach improves the code's maintainability.
 
 ## Core Implementation
 
@@ -119,7 +119,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Common Issues
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 核心实现
@@ -140,7 +140,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Summary
 
-- 持续关注社区动态，及时更新技术方案
-- 性能优化需要基于实际数据，避免过度优化
-- TypeScript 类型守卫进阶的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
+- Keep an eye on community trends and update your technical approach in time.
+- Performance optimization should be based on real data; avoid over-optimizing.
+- The essence of advanced TypeScript type guards lies in understanding the underlying principles, not just memorizing APIs.
+- In real projects, choosing the right approach matters more than chasing the newest technology.

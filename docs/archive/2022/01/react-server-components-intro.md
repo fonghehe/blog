@@ -6,10 +6,10 @@ tags:
   - TypeScript
 readingTime: 2
 description: "React Server Components 入门这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 298
+wordCount: 303
 ---
 
-React Server Components 入门这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+React Server Components 入门这个话题，社区已经聊过很多轮，但随着版本迭代，不少结论需要更新。这篇文章基于最新版本重新梳理一遍。
 
 ## 入门指南
 

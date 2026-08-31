@@ -47,7 +47,7 @@ class Form extends Component {
 }
 ```
 
-After promoting this pattern across the team, the results were great and maintenance costs dropped noticeably.
+Once this pattern was rolled out across the team, the results were strong and maintenance costs dropped noticeably.
 
 ## Advanced Techniques
 
@@ -68,7 +68,7 @@ function deepClone(obj, map = new WeakMap()) {
 }
 ```
 
-Pay attention to the performance details in the code above and avoid unnecessary computation.
+Mind the performance details in the snippet above and avoid needless computation.
 
 ## Real-World Case Study
 

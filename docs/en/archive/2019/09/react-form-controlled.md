@@ -4,15 +4,15 @@ date: 2019-09-26 10:53:27
 tags:
   - React
 readingTime: 2
-description: "React 表单受控与非控组件是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。"
-wordCount: 269
+description: "Controlled vs. uncontrolled components in React forms are a common issue in everyday development. Drawing on real projects, this article shares concrete implementation approaches and lessons learned."
+wordCount: 178
 ---
 
-React 表单受控与非控组件是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。
+Controlled vs. uncontrolled components in React forms are a common issue in everyday development. Drawing on real projects, this article shares concrete implementation approaches and lessons learned.
 
 ## Basic Usage
 
-先来看基本的用法：
+Let's start with the basic usage:
 
 ```javascript
 {% raw %}
@@ -38,11 +38,11 @@ export default {
 {% endraw %}
 ```
 
-这种写法简洁明了，适合大多数场景。
+This approach is concise and clear, and works for most scenarios.
 
 ## Advanced Techniques
 
-核心代码如下：
+The core code looks like this:
 
 ```javascript
 export default {
@@ -63,11 +63,11 @@ export default {
 }
 ```
 
-实际项目中还需要考虑边界条件和异常处理。
+In real projects you also need to account for edge cases and exception handling.
 
 ## Practical Cases
 
-下面是一个实际的例子：
+Here is a concrete example:
 
 ```javascript
 export default {
@@ -91,11 +91,11 @@ export default {
 }
 ```
 
-这种模式在团队中推广后效果很好，维护成本明显降低。
+After this pattern was rolled out across the team, the results were good and maintenance costs dropped noticeably.
 
 ## Important Notes
 
-我们可以通过以下方式实现：
+We can implement it in the following way:
 
 ```javascript
 import React, { Component } from 'react'
@@ -123,11 +123,11 @@ class DataList extends Component {
 }
 ```
 
-注意上面代码中的性能细节，避免不必要的计算。
+Pay attention to the performance details in the code above and avoid unnecessary computation.
 
 ## Basic Usage
 
-具体实现参考以下代码：
+For a concrete implementation, see the following code:
 
 ```javascript
 import React, { Component } from 'react'
@@ -162,10 +162,10 @@ class Form extends Component {
 }
 ```
 
-经过线上验证，这套方案运行稳定。
+This approach has been validated in production and runs stably.
 
 ## Summary
 
-- React 表单受控与非控组件的关键在于理解核心概念，不要停留在表面用法
-- 实际项目中根据场景选择合适的方案
-- 团队中统一约定比追求完美实现更重要
+- The key to controlled vs. uncontrolled React form components is understanding the core concepts, not just surface-level usage.
+- Choose the right approach for the scenario in real projects.
+- In a team, agreed conventions matter more than pursuing a perfect implementation.

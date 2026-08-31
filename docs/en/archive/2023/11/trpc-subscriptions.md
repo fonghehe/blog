@@ -3,12 +3,12 @@ title: "tRPC Subscriptions and Real-Time"
 date: 2023-11-22 17:22:59
 tags:
   - Frontend
-readingTime: 2
-description: "tRPC 订阅与实时在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 226
+readingTime: 1
+description: "tRPC subscriptions and real-time features has evolved quickly in recent years. This article digs into how it works and how to apply it in practice."
+wordCount: 177
 ---
 
-tRPC 订阅与实时在近年来发展迅速，本文将深入分析其原理和实践方法。
+tRPC subscriptions and real-time features has evolved quickly in recent years. This article digs into how it works and how to apply it in practice.
 
 ## Basic Concepts
 
@@ -86,7 +86,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Best Practices
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 工具函数封装
@@ -118,7 +118,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Common Issues
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 核心实现
@@ -135,11 +135,11 @@ const processData = (input) => {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+With this pattern, the code's maintainability improves.
 
 ## Summary
 
-- 性能优化需要基于实际数据，避免过度优化
+- Base performance optimization on real data and avoid premature optimization
 - tRPC 订阅与实时的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
+- In real projects, choosing the right solution matters more than chasing the newest technology
+- Keep code style consistent across the team to cut maintenance costs

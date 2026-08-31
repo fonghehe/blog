@@ -1,12 +1,13 @@
 ---
-readingTime: 7
-wordCount: 1514
+readingTime: 8
+wordCount: 1485
 title: "Ethers.js vs Web3.js：DApp 前端庫選型"
 date: 2020-03-22 18:17:51
 tags:
   - Web3
   - Ethereum
   - DApp
+description: "web3.js 是以太坊生態最早的 JavaScript SDK，由以太坊基金會支持開發，從 2015 年的 0.x 版本一路演進到 2019 年的 1.x 穩定版。web3.js 1.x 奠定了 DApp 前端開發的基礎範式：全局 Provider 實例、Contract 對象、事件訂閱、交易簽名。"
 ---
 
 ## 兩個庫的歷史與設計哲學

@@ -8,7 +8,7 @@ description: "Vue 團隊發佈了 Composition API RFC，社區炸了——支援
 wordCount: 259
 ---
 
-Vue 團隊發佈了 Composition API RFC，社區炸了——支持的説好，反對的説像 React Hooks。我仔細讀了 RFC，説説我的理解。
+Vue 團隊發佈了 Composition API RFC，社區炸了——支持的說好，反對的說像 React Hooks。我仔細讀了 RFC，說說我的理解。
 
 ## 為什麼需要 Composition API
 
@@ -160,13 +160,13 @@ const { loading: searchLoading } = useSearch();
 
 ## 我的看法
 
-反對聲音説"太像 React Hooks 了"，我覺得這不是問題。好的思路就該借鑑。
+反對聲音說"太像 React Hooks 了"，我覺得這不是問題。好的思路就該借鑑。
 
 不同之處：
 
 - Vue Composition API 不需要 dependency array（Proxy 追蹤）
-- 沒有 "Hook 規則"（不是 Hooks 機製，隻是普通函數）
-- 和 Options API 可以混用（不強製遷移）
+- 沒有 "Hook 規則"（不是 Hooks 機制，只是普通函數）
+- 和 Options API 可以混用（不強制遷移）
 
 RFC 最後大概率會採納，準備學起來。
 
@@ -174,5 +174,5 @@ RFC 最後大概率會採納，準備學起來。
 
 - Composition API 讓邏輯按功能組織，解決大型組件的維護問題
 - Composables 替代 Mixin，來源清晰，無命名衝突
-- 和 Options API 相容，不強製遷移
+- 和 Options API 相容，不強制遷移
 - Vue 3 正式版還要等，但可以用 `@vue/composition-api` 插件在 Vue 2 上試用

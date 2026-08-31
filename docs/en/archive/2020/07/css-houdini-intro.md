@@ -4,17 +4,17 @@ date: 2020-07-31 17:45:52
 tags:
   - CSS
 readingTime: 2
-description: "CSS Houdini 是一组底层 CSS API，让开发者可以介入浏览器的 CSS 渲染流程。其中 **Paint Worklet** 是目前兼容性最好、最实用的部分，Chrome 65+ 已经支持。"
-wordCount: 270
+description: "An introduction to CSS Houdini, a set of low-level APIs that let developers hook into the browser's rendering pipeline, with a focus on the widely-supported Paint Worklet."
+wordCount: 203
 ---
 
-CSS Houdini 是一组底层 CSS API，让开发者可以介入浏览器的 CSS 渲染流程。其中 **Paint Worklet** 是目前兼容性最好、最实用的部分，Chrome 65+ 已经支持。
+CSS Houdini is a set of low-level CSS APIs that let developers hook into the browser's CSS rendering pipeline. Among them, the **Paint Worklet** currently has the best browser support and is the most practical part — it is available in Chrome 65+.
 
 ## What Is CSS Houdini
 
-传统 CSS 的问题：如果你想实现一个浏览器不支持的样式效果（比如自定义的 border-image 或背景图案），只能用图片或 JavaScript hack。
+The problem with traditional CSS: if you want a style effect the browser doesn't support natively (such as a custom border-image or background pattern), you can only fall back to images or JavaScript hacks.
 
-Houdini 让你可以用 JavaScript **扩展 CSS**：
+Houdini lets you **extend CSS** with JavaScript:
 
 ```
 CSS Houdini 包含的 API：
@@ -27,7 +27,7 @@ CSS Houdini 包含的 API：
 
 ## Paint Worklet: Custom Background Drawing
 
-创建一个"彩色格子"背景：
+Let's create a "colored checkerboard" background:
 
 ```javascript
 // checkerboard.js（Paint Worklet 文件）
@@ -75,7 +75,7 @@ CSS.paintWorklet.addModule("./checkerboard.js");
 
 ## CSS Properties and Values API
 
-让自定义属性拥有类型，实现动画过渡：
+Typed custom properties let you animate transitions:
 
 ```javascript
 // 注册类型化的自定义属性
@@ -99,7 +99,7 @@ CSS.registerProperty({
 }
 ```
 
-没有 `CSS.registerProperty`，`--gradient-angle` 只是个字符串，无法参与 `transition`。注册类型后，浏览器知道如何在 `0deg` 和 `135deg` 之间插值。
+Without `CSS.registerProperty`, `--gradient-angle` is just a string and can't participate in a `transition`. Once the property is registered with a type, the browser knows how to interpolate between `0deg` and `135deg`.
 
 ## Practical Example: Wavy Underline
 
@@ -152,4 +152,4 @@ if ("paintWorklet" in CSS) {
 
 ## Summary
 
-CSS Houdini 中的 Paint Worklet 已经在 Chrome 中可以用于生产。它的意义不只是"画几个好看的背景"，而是开创了**浏览器渲染扩展点**的先例——未来或许连 CSS 布局引擎也能由社区扩展。现在学习是投资未来。
+The Paint Worklet in CSS Houdini is already usable in production in Chrome. Its significance goes beyond "drawing a few nice backgrounds" — it sets a precedent for **extending the browser's rendering pipeline**, and perhaps one day even the CSS layout engine could be community-extensible. Learning it now is an investment in the future.

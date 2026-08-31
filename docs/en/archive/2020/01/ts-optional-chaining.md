@@ -4,15 +4,15 @@ date: 2020-01-07 16:46:58
 tags:
   - TypeScript
 readingTime: 1
-description: "TypeScript 3.7 引入了可选链（Optional Chaining）和空值合并（Nullish Coalescing）这两个语法，终于不用再写一长串的 `&&` 判断了。在实际项目中用了一段时间，总结一下使用场景和注意事项。"
-wordCount: 223
+description: "TypeScript 3.7 introduced optional chaining and nullish coalescing, finally freeing us from long chains of `&&` checks. After using them in real projects for a while, here's a summary of usage scenarios and caveats."
+wordCount: 156
 ---
 
-TypeScript 3.7 引入了可选链（Optional Chaining）和空值合并（Nullish Coalescing）这两个语法，终于不用再写一长串的 `&&` 判断了。在实际项目中用了一段时间，总结一下使用场景和注意事项。
+TypeScript 3.7 introduced optional chaining and nullish coalescing, so we no longer have to write long chains of `&&` checks. After using them in real projects for a while, here's a summary of usage scenarios and caveats.
 
-## What Problem Does Optional Chaining ?. Solve
+## What Problem Does Optional Chaining (?.) Solve
 
-日常开发中最常见的就是访问深层嵌套对象属性，以前得这么写：
+The most common case in daily development is accessing deeply nested object properties, which used to be written like this:
 
 ```typescript
 // 以前：层层判断
@@ -23,7 +23,7 @@ import get from 'lodash/get';
 const street = get(user, 'address.street');
 ```
 
-有了可选链，一行搞定：
+With optional chaining, it's done in one line:
 
 ```typescript
 // 可选链：简洁明了
@@ -38,7 +38,7 @@ const first = arr?.[0];
 
 ## Nullish Coalescing ??
 
-和 `||` 的区别是关键：`||` 会把 `0`、`''`、`false` 也当作假值，`??` 只处理 `null` 和 `undefined`。
+The key difference from `||` is this: `||` treats `0`, `''`, and `false` as falsy too, while `??` only handles `null` and `undefined`.
 
 ```typescript
 const count = 0;
@@ -104,7 +104,7 @@ const userName = computed(() => {
 });
 ```
 
-## 配置 TypeScript 支持
+## Configuring TypeScript Support
 
 ```json
 // tsconfig.json
@@ -116,7 +116,7 @@ const userName = computed(() => {
 }
 ```
 
-如果目标浏览器不支持，Babel 会帮忙降级：
+If the target browser doesn't support them, Babel will downlevel them:
 
 ```bash
 npm install @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-nullish-coalescing-operator -D
@@ -134,7 +134,7 @@ npm install @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-null
 
 ## Summary
 
-- 可选链 `?.` 让深层属性访问变得安全且简洁
-- 空值合并 `??` 比 `||` 更精确，不会误判 `0`、`''`、`false`
-- 配合 TypeScript 3.7+ 使用，类型推断也能正确跟随
-- 注意兼容性，老项目需要 Babel 插件降级
+- Optional chaining `?.` makes deep property access safe and concise.
+- Nullish coalescing `??` is more precise than `||` and won't misjudge `0`, `''`, or `false`.
+- Used with TypeScript 3.7+, type inference follows correctly too.
+- Watch out for compatibility—legacy projects need Babel plugins to downlevel.

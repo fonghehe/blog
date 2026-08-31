@@ -7,14 +7,14 @@ tags:
 
 readingTime: 2
 description: "React 18 useTransition 非阻塞更新このテーマはコミュニティで何度も議論されていますが、バージョンアップに伴い多くの結論は更新が必要です。本記事では最新バージョンをベースに改めて整理します。"
-wordCount: 425
+wordCount: 447
 ---
 
-React 18 useTransition 非阻塞更新このテーマはコミュニティで何度も議論されていますが、バージョンアップに伴い多くの結論は更新が必要です。本記事では最新バージョンをベースに改めて整理します。
+React 18 の useTransition（非ブロッキング更新）というテーマはコミュニティで何度も議論されてきたが、バージョンアップに伴い多くの結論は更新が必要だ。本記事では最新バージョンをベースに改めて整理する。
 
 ## 入門ガイド
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみよう：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -39,11 +39,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-このコードは基本的な使い方を示しています。実際のプロジェクトではエラー処理と境界条件も考慮する必要があります。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理と境界条件も考慮する必要がある。
 
 ## ソースコード分析
 
-この基盤の上でさらに最適化できます：
+この基礎の上でさらに最適化できる：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -68,11 +68,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-このパターンは大規模プロジェクトで非常に実用的で、保守コストを大幅に削減できます。
+このパターンは大規模プロジェクトで非常に実用的で、保守コストを大幅に削減できる。
 
 ## 実際のシナリオへの応用
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは使い方がより複雑になる：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -97,11 +97,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-このアプローチにより、コードのテスト可能性とスケーラビリティが向上します。
+このアプローチにより、コードのテスト可能性とスケーラビリティが向上する。
 
 ## 最適化テクニック
 
-完全な例を以下に示します：
+全体のサンプルを以下に示す：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -130,6 +130,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ## まとめ
 
-- React 18 useTransition 非阻塞更新不是银弹，需要根据项目规模和技术栈选择
-- 基礎的な原理を理解することは、APIを暗記することより重要です
+- React 18 の useTransition（非ブロッキング更新）は銀の弾丸ではなく、プロジェクトの規模と技術スタックに応じて選ぶ必要がある
+- 基礎的な原理を理解することは、API を暗記することより重要だ
 - 本番環境で使用する前に必ず互換性を確認してください

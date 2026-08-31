@@ -14,7 +14,7 @@ wordCount: 145
 
 ```html
 <el-form :model="form" :rules="rules" ref="formRef" label-width="100px">
-  <el-form-item label="用户名" prop="username">
+  <el-form-item label="用戶名" prop="username">
     <el-input v-model="form.username" />
   </el-form-item>
 
@@ -53,7 +53,7 @@ export default {
       form: { username: "", email: "", password: "" },
       rules: {
         username: [
-          { required: true, message: "請輸入用户名", trigger: "blur" },
+          { required: true, message: "請輸入用戶名", trigger: "blur" },
           { min: 2, max: 20, message: "長度 2-20 個字符", trigger: "blur" },
         ],
         email: [
@@ -140,18 +140,18 @@ methods: {
 }
 ```
 
-## 異步驗證（檢查用户名是否已存在）
+## 異步驗證（檢查用戶名是否已存在）
 
 ```javascript
 const validateUsername = async (rule, value, callback) => {
   if (!value) {
-    callback(new Error("請輸入用户名"));
+    callback(new Error("請輸入用戶名"));
     return;
   }
   try {
     const { exists } = await checkUsernameExists(value);
     if (exists) {
-      callback(new Error("用户名已存在"));
+      callback(new Error("用戶名已存在"));
     } else {
       callback();
     }

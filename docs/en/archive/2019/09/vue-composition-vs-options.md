@@ -4,15 +4,15 @@ date: 2019-09-04 15:43:47
 tags:
   - Vue
 readingTime: 4
-description: "Vue 3 引入的 Composition API 是继 React Hooks 之后又一个重要的函数式编程范式在前端框架中的实践。它允许开发者以函数为单位组织组件逻辑，解决了 Options API 在复杂组件中逻辑分散的问题。本文将从多个维度对比两种 API 风格，并给出迁移建议。"
-wordCount: 544
+description: "The Composition API introduced in Vue 3 is another important application of the functional-programming paradigm in frontend frameworks, following React Hooks. It lets developers organize component logic by function, solving the problem of scattered logic in the Options API for complex components. This article compares the two API styles across multiple dimensions and offers migration advice."
+wordCount: 374
 ---
 
-Vue 3 引入的 Composition API 是继 React Hooks 之后又一个重要的函数式编程范式在前端框架中的实践。它允许开发者以函数为单位组织组件逻辑，解决了 Options API 在复杂组件中逻辑分散的问题。本文将从多个维度对比两种 API 风格，并给出迁移建议。
+The Composition API introduced in Vue 3 is another important application of the functional-programming paradigm in frontend frameworks, following React Hooks. It lets developers organize component logic by function, solving the problem of scattered logic in the Options API for complex components. This article compares the two API styles across multiple dimensions and offers migration advice.
 
 ## Problems with Options API
 
-在 Options API 中，一个功能的逻辑分散在 data、computed、methods、watch 等多个选项中：
+In the Options API, the logic for one feature is scattered across multiple options such as `data`, `computed`, `methods`, and `watch`:
 
 ```vue
 <script>
@@ -97,11 +97,11 @@ export default {
 </script>
 ```
 
-问题很明显：搜索功能的逻辑分散在多个选项中，需要来回跳转才能理解完整逻辑。组件越大，这个问题越严重。
+The problem is obvious: a search feature's logic is spread across multiple options, and you have to jump around to understand the full picture. The bigger the component, the worse this gets.
 
 ## Refactoring to Composition API
 
-使用 Composition API，我们可以将同一功能的逻辑组织在一起：
+With the Composition API, we can group the logic for one feature together:
 
 ```vue
 <script>
@@ -241,11 +241,11 @@ export default {
 </script>
 ```
 
-每个功能的逻辑都集中在一个函数中，清晰且可复用。
+The logic for each feature lives in a single function—clear and reusable.
 
 ## Reusable Logic Comparison
 
-### Options API 复用：Mixins
+### Options API Reuse: Mixins
 
 ```js
 // mixins/searchMixin.js
@@ -271,7 +271,7 @@ export default {
 };
 ```
 
-### Composition API 复用：Composables
+### Composition API Reuse: Composables
 
 ```js
 // composables/useSearch.js
@@ -314,7 +314,7 @@ export default {
 
 ## Type Inference Comparison
 
-TypeScript 支持是 Composition API 的另一个优势：
+TypeScript support is another advantage of the Composition API:
 
 ```ts
 // Options API 的类型推导较弱
@@ -364,20 +364,20 @@ const { count, doubled, increment } = useCounter();
 
 ## When to Use Options API vs Composition API
 
-### 适合 Options API 的场景
+### When Options API Fits
 
-1. **简单的展示型组件** — 逻辑简单，不需要复用
-2. **团队 Vue 经验丰富** — Options API 更容易理解和约束
-3. **不需要 TypeScript** — Options API 在 JS 项目中完全够用
+1. **Simple presentational components** — logic is simple and doesn't need reuse.
+2. **Team experienced with Vue** — the Options API is easier to understand and constrains structure.
+3. **No TypeScript needed** — the Options API is perfectly adequate in JS projects.
 
-### 适合 Composition API 的场景
+### When Composition API Fits
 
-1. **复杂组件** — 逻辑交叉，需要按功能组织
-2. **逻辑复用** — 需要在多个组件间共享逻辑
-3. **TypeScript 项目** — 获得更好的类型推导
-4. **函数式偏好** — 团队更习惯函数式风格
+1. **Complex components** — logic crosses concerns and needs to be organized by feature.
+2. **Logic reuse** — logic needs to be shared across multiple components.
+3. **TypeScript projects** — it gives better type inference.
+4. **Functional preference** — the team is more comfortable with a functional style.
 
-### 两种 API 可以共存
+### The Two APIs Can Coexist
 
 ```vue
 <script>
@@ -415,9 +415,9 @@ export default {
 
 ## Summary
 
-- Composition API 通过 `setup()` 函数和组合式函数组织逻辑，解决了 Options API 中逻辑分散的问题
-- Composable 函数（类似 React Hooks）提供了比 Mixins 更好的逻辑复用方式
-- Composition API 天然支持 TypeScript，类型推导完整
-- 两种 API 可以在同一项目中共存，不需要强制迁移
-- 简单组件使用 Options API，复杂/需要复用的组件使用 Composition API
-- Vue 3 的 Composition API 设计借鉴了 React Hooks，但基于响应式系统而非闭包，避免了 hooks 的一些陷阱（如 stale closure）
+- The Composition API organizes logic via the `setup()` function and composable functions, solving the scattered-logic problem of the Options API.
+- Composable functions (similar to React Hooks) offer better logic reuse than mixins.
+- The Composition API supports TypeScript natively, with complete type inference.
+- The two APIs can coexist in the same project; migration isn't forced.
+- Use the Options API for simple components, and the Composition API for complex or reusable ones.
+- Vue 3's Composition API drew inspiration from React Hooks but is based on the reactivity system rather than closures, avoiding some hooks pitfalls (such as stale closures).

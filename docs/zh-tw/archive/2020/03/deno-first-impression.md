@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上批評了 Node.js 的十大設計遺憾，隨後宣佈了 Deno 專案。現在 Deno 已經進入候選版本階段，是時候體驗一下了。"
-wordCount: 296
+wordCount: 293
 ---
 
 Node.js 之父 Ryan Dahl 在 2018 年 JSConf 上批評了 Node.js 的十大設計遺憾，隨後宣佈了 Deno 專案。現在 Deno 已經進入候選版本階段，是時候體驗一下了。
@@ -43,7 +43,7 @@ console.log(greet('Deno'));
 deno run hello.ts
 ```
 
-## 許可權系統
+## 權限系統
 
 這是 Deno 最大的安全創新：
 
@@ -148,7 +148,7 @@ import * as path from 'https://deno.land/std/path/mod.ts';
 ## 小結
 
 - Deno 在安全性、TypeScript 支援、模組系統上確實改進了 Node.js 的痛點
-- 許可權系統是最大亮點，預設最小許可權原則
+- 權限系統是最大亮點，預設最小權限原則
 - URL 匯入省去了 node_modules，但也帶來了網路依賴問題
 - 目前生態和工具鏈還不成熟，適合嚐鮮和工具指令碼，不適合生產專案
 - 持續關注，1.0 正式釋出後再評估是否引入

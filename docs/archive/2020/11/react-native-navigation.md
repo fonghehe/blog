@@ -5,10 +5,10 @@ tags:
   - React
 readingTime: 2
 description: "在日常开发中，React Native 导航方案对比的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 284
+wordCount: 291
 ---
 
-在日常开发中，React Native 导航方案对比的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+日常开发中，React Native 的导航方案选型经常被拿来对比，相关讨论也越来越多。本文系统讲讲它的用法、原理和优化策略。
 
 ## 快速上手
 

@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "As a project grows with more pages, code shared across multiple pages gets bundled redundantly. `SplitChunks` extracts shared code so the browser can cache and "
-wordCount: 119
+wordCount: 122
 ---
 
 As a project grows with more pages, code shared across multiple pages gets bundled redundantly. `SplitChunks` extracts shared code so the browser can cache and reuse it.
@@ -152,7 +152,7 @@ module.exports = {
 
 ## Results
 
-In our project, after splitting optimization:
+Once we applied the split optimization in our project:
 
 ```
 Before:

@@ -154,5 +154,5 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 ## 小結
 
 - 團隊協作中約定和文檔比技術本身更重要
-- 關注社區動態，技術方案需要持續迭代
+- 關注社群動態，技術方案需要持續迭代
 - 不要為了用新技術而用新技術

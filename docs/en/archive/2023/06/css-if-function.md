@@ -4,11 +4,11 @@ date: 2023-06-13 11:13:59
 tags:
   - CSS
 readingTime: 1
-description: "CSS if() 函数提案在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 176
+description: "The CSS if() function proposal has evolved quickly in recent years. This article digs into how it works and how to apply it in practice."
+wordCount: 151
 ---
 
-CSS if() 函数提案在近年来发展迅速，本文将深入分析其原理和实践方法。
+The CSS if() function proposal has evolved quickly in recent years. This article digs into how it works and how to apply it in practice.
 
 ## Basic Concepts
 
@@ -110,7 +110,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Best Practices
 
-核心代码如下：
+The core code is as follows:
 
 ```css
 .grid {
@@ -144,6 +144,6 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Summary
 
-- 性能优化需要基于实际数据，避免过度优化
+- Base performance optimization on real data and avoid premature optimization
 - CSS if() 函数提案的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
+- In real projects, choosing the right solution matters more than chasing the newest technology

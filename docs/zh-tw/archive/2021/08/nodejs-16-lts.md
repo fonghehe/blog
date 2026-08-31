@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Node.js 16 在 2021 年 4 月釋出，10 月進入 LTS 階段。作為前端工具鏈的執行時基礎，Node.js 版本直接影響 Vite、Webpack 5、esbuild 等構建工具的表現。整理一下 v16 中值得關注的特性。"
-wordCount: 267
+wordCount: 266
 ---
 
-Node.js 16 在 2021 年 4 月釋出，10 月進入 LTS 階段。作為前端工具鏈的執行時基礎，Node.js 版本直接影響 Vite、Webpack 5、esbuild 等構建工具的表現。整理一下 v16 中值得關注的特性。
+Node.js 16 在 2021 年 4 月釋出，10 月進入 LTS 階段。作為前端工具鏈的執行時基礎，Node.js 版本直接影響 Vite、Webpack 5、esbuild 等構建工具的效能。整理一下 v16 中值得關注的特性。
 
 ## V8 引擎升級到 9.0
 
@@ -99,7 +99,7 @@ for await (const _ of setInterval(1000)) {
 
 ## AbortController 全域性可用
 
-Node.js 16 中 `AbortController` 變成全域性可用，不再需要 polyfill：
+Node.js 16 中 `AbortController` 變成全域可用，不再需要 polyfill：
 
 ```javascript
 // 全域性直接使用，不需要 import

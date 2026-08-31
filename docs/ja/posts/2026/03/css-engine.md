@@ -34,7 +34,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ## 内部原理
 
-まず基本的な実装方法を見てみましょう。
+基本的な実装方法を見てみましょう。
 
 ```css
 const observer = new PerformanceObserver((list) => {
@@ -51,11 +51,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-このコードは基本的な使い方を示しています。実際のプロジェクトではエラーハンドリングやエッジケースも考慮する必要があります。
+このコードは基本的な使い方を示しています。実際のプロジェクトではエラー処理やエッジケースも考慮する必要があります。
 
 ## 実務での活用
 
-この基盤をもとに、さらなる最適化が可能です。
+この基礎をもとに、さらに最適化を進められます。
 
 ```css
 const observer = new PerformanceObserver((list) => {
@@ -76,7 +76,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ## パフォーマンス比較
 
-実際のプロジェクトではより複雑な使い方になります。
+実際のプロジェクトでは、もう少し複雑な使い方になります。
 
 ```css
 const observer = new PerformanceObserver((list) => {
@@ -97,7 +97,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ## 問題のトラブルシューティング
 
-完全な例を示します。
+以下にサンプルを示します。
 
 ```css
 const observer = new PerformanceObserver((list) => {

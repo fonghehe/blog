@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "最近在团队中落地Flutter vs React Native 2021 对比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 308
+wordCount: 312
 ---
 
-最近在团队中落地Flutter vs React Native 2021 对比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近在团队里落地了 Flutter 与 React Native 的对比实践，积累了不少经验。整理出来供参考，希望对做类似选型工作的同学有帮助。
 
 ## 核心概念
 

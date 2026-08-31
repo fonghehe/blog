@@ -170,7 +170,7 @@ const pieOption = {
 ECharts 全量引入約 800KB，按需載入減小體積：
 
 ```javascript
-// 隻引入需要的模組
+// 只引入需要的模組
 import echarts from "echarts/lib/echarts";
 import "echarts/lib/chart/line";
 import "echarts/lib/chart/bar";

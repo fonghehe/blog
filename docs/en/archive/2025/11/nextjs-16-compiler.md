@@ -1,5 +1,5 @@
 ---
-title: "Next.js 16 Compiler Practice: Migration后Build速度Real提升Data"
+title: "Next.js 16 Compiler in Practice: Real Build-Speed Gains After Migration"
 date: 2025-11-06 13:40:17
 tags:
   - React

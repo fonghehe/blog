@@ -4,7 +4,7 @@ date: 2023-08-01 09:31:29
 tags:
   - Frontend
 readingTime: 1
-description: "We recently implemented Oxlint Rust 实现的 ESLint， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar w"
+description: "I recently tried Oxlint, the Rust implementation of ESLint, with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 151
 ---
 

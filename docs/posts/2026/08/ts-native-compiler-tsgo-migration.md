@@ -3,9 +3,9 @@ title: "原生 TypeScript 编译器 tsgo 迁移实战：Monorepo 从 tsc 到 Go 
 date: 2026-08-11 09:47:12
 tags:
   - TypeScript
-readingTime: 8
+readingTime: 7
 description: "将一个中型 Monorepo 从 tsc 迁移到 Go 原生编译器 tsgo 的完整过程：哪些场景真的变快了、配置和 API 层面的破坏性变更、CI 流水线调整、回滚策略，以及一份可直接复用的迁移清单。"
-wordCount: 3400
+wordCount: 1750
 ---
 
 TypeScript 7.x 系列发布后，社区讨论最多的不是类型系统的新特性，而是那个用 Go 重写的原生编译器 tsgo。微软在 TypeScript 7.0 中正式将 tsgo 作为可选编译器后端提供，目标是将大型项目的类型检查速度提升一个数量级。我在团队的一个中型 Monorepo（约 40 万行 TS/TSX，12 个 packages）上完成了从 tsc 到 tsgo 的迁移，这篇文章记录了真实过程中遇到的加速、阻碍和取舍。

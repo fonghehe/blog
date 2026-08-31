@@ -3,7 +3,7 @@ title: "Node.js Security 2025"
 date: 2025-10-23 19:17:54
 tags:
   - Node.js
-  - 安全
+  - Security
 readingTime: 2
 description: "Regarding Node.js Security 2025, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production env"
 wordCount: 180

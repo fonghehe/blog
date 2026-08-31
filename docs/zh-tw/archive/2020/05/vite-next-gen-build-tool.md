@@ -49,7 +49,7 @@ module.exports = {
     "@": "/src",
   },
   optimizeDeps: {
-    // 預最佳化：把 CommonJS 依賴轉為 ESM（隻做一次）
+    // 預最佳化：把 CommonJS 依賴轉為 ESM（只做一次）
     include: ["lodash-es", "axios"],
   },
 };
@@ -108,7 +108,7 @@ module.exports = {
 
 ## 2020 年 5 月的現狀
 
-- 隻支援 Vue 3（當時）
+- 只支援 Vue 3（當時）
 - API 還不穩定（Vite 1.0 要年底）
 - 部分邊緣情況處理不好
 - SSR 支援還不完善

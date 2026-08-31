@@ -5,9 +5,9 @@ tags:
   - Web3
   - 性能优化
   - DApp
-readingTime: 8
+readingTime: 9
 description: "系統性分析 DApp 效能瓶頸，涵蓋 RPC 批次請求、多節點輪詢、SWR 快取策略、索引服務對比及 bundle 最佳化"
-wordCount: 3600
+wordCount: 1236
 ---
 
 ## DApp 效能瓶頸分析：RPC 延遲是最大問題

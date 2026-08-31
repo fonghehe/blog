@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "前后端并行开发时，前端需要 Mock 数据。用过好几种方案，整理一下各自的优缺点。"
-wordCount: 360
+wordCount: 359
 ---
 
 前后端并行开发时，前端需要 Mock 数据。用过好几种方案，整理一下各自的优缺点。
@@ -105,7 +105,7 @@ json-server --watch db.json --port 3000
 - `PUT /users/1` → 更新
 - `DELETE /users/1` → 删除
 
-然后在 devServer.proxy 里代理到它。
+再在 devServer.proxy 里代理到它。
 
 ## 方案五：MSW（Mock Service Worker）
 

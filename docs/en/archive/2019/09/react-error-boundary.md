@@ -3,27 +3,27 @@ title: "React Error Boundary in Practice"
 date: 2019-09-16 10:46:28
 tags:
   - React
-readingTime: 5
-description: "在生产环境中，一个组件的 JavaScript 错误不应该导致整个应用崩溃。React 16 引入的 Error Boundary 机制让我们可以优雅地捕获和处理组件树中的错误，展示降级 UI 而非白屏。本文将深入讲解 Error Boundary 的原理、用法和最佳实践。"
-wordCount: 516
+readingTime: 4
+description: "In production, a JavaScript error in one component shouldn't bring down the entire application. The Error Boundary mechanism introduced in React 16 lets us gracefully catch and handle errors anywhere in the component tree, showing a fallback UI instead of a blank white screen. This article takes an in-depth look at how Error Boundaries work, how to use them, and best practices."
+wordCount: 334
 ---
 
-在生产环境中，一个组件的 JavaScript 错误不应该导致整个应用崩溃。React 16 引入的 Error Boundary 机制让我们可以优雅地捕获和处理组件树中的错误，展示降级 UI 而非白屏。本文将深入讲解 Error Boundary 的原理、用法和最佳实践。
+In production, a JavaScript error in one component shouldn't bring down the entire application. The Error Boundary mechanism introduced in React 16 lets us gracefully catch and handle errors anywhere in the component tree, showing a fallback UI instead of a blank white screen. This article takes an in-depth look at how Error Boundaries work, how to use them, and best practices.
 
 ## What Is an Error Boundary
 
-Error Boundary 是 React 组件，用于捕获其子组件树中任何位置的 JavaScript 错误，记录错误并展示降级 UI。
+An Error Boundary is a React component that catches JavaScript errors anywhere in its child component tree, logs those errors, and displays a fallback UI.
 
-Error Boundary 可以捕获的错误：
-- 渲染期间的错误
-- 生命周期方法中的错误
-- 构造函数中的错误
+Errors an Error Boundary can catch:
+- Errors during rendering
+- Errors in lifecycle methods
+- Errors in constructors
 
-Error Boundary 不能捕获的错误：
-- 事件处理函数中的错误（因为没有在渲染期间发生）
-- 异步代码（setTimeout、requestAnimationFrame）
-- 服务端渲染
-- Error Boundary 自身的错误
+Errors an Error Boundary cannot catch:
+- Errors in event handlers (because they don't happen during rendering)
+- Asynchronous code (setTimeout, requestAnimationFrame)
+- Server-side rendering
+- Errors in the Error Boundary itself
 
 ## Basic Implementation
 
@@ -128,7 +128,7 @@ function App() {
 }
 ```
 
-### 多级 Error Boundary
+### Nested Error Boundaries
 
 ```jsx
 function App() {
@@ -159,9 +159,9 @@ function App() {
 }
 ```
 
-外层 Error Boundary 兜底整个应用的未捕获错误，内层 Error Boundary 保护独立的功能模块。这样某个模块出错时，其他部分仍然可以正常工作。
+The outer Error Boundary catches any uncaught error for the whole app, while the inner ones protect independent feature modules. That way, when one module fails, the rest keeps working.
 
-### 配合 React.lazy 使用
+### Using with React.lazy
 
 ```jsx
 import React, { Suspense, lazy } from 'react';
@@ -187,7 +187,7 @@ function App() {
 
 ## Handling Errors in Event Handlers
 
-Error Boundary 不能捕获事件处理器中的错误，需要手动 try/catch：
+Error Boundaries can't catch errors in event handlers; you need a manual try/catch:
 
 ```jsx
 import React, { Component } from 'react';
@@ -226,7 +226,7 @@ class DataForm extends Component {
 
 ## Function Component + Hooks Error Handling
 
-虽然 Error Boundary 必须是类组件（因为需要 `getDerivedStateFromError` 和 `componentDidCatch`），但我们可以封装一个 Hook 处理事件错误：
+Although an Error Boundary must be a class component (because it needs `getDerivedStateFromError` and `componentDidCatch`), we can wrap a Hook to handle event errors:
 
 ```jsx
 import { useState, useCallback } from 'react';
@@ -422,10 +422,10 @@ export default ErrorBoundary;
 
 ## Summary
 
-- Error Boundary 是 React 组件，用于捕获子组件树中的渲染错误并展示降级 UI
-- 必须实现 `getDerivedStateFromError`（更新 state）和 `componentDidCatch`（记录/上报错误）两个生命周期方法
-- Error Boundary 不能捕获事件处理器、异步代码和服务端渲染中的错误
-- 使用多级 Error Boundary 实现错误隔离，某个模块出错不影响其他模块
-- 事件处理器中的错误需要手动 try/catch，或使用自定义 Hook 间接抛出
-- 生产环境需要将错误信息上报到监控平台（如 Sentry）
-- 建议设置重试次数限制，防止无限重试循环
+- An Error Boundary is a React component that catches rendering errors in its child tree and shows a fallback UI.
+- It must implement two lifecycle methods: `getDerivedStateFromError` (to update state) and `componentDidCatch` (to log/report the error).
+- Error Boundaries can't catch errors in event handlers, async code, or server-side rendering.
+- Use nested Error Boundaries to isolate failures so one module's error doesn't affect others.
+- Errors in event handlers need a manual try/catch, or an indirect rethrow via a custom Hook.
+- In production, report error info to a monitoring service (such as Sentry).
+- It's a good idea to cap the retry count to prevent infinite retry loops.

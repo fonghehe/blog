@@ -4,15 +4,15 @@ date: 2020-01-14 10:09:53
 tags:
   - Vue
 readingTime: 2
-description: "管理后台项目随着业务增长，首屏加载从 3 秒飙到 12 秒，页面切换也开始卡顿。系统梳理了一套 Vue 2 项目的性能优化方案，记录下来。"
-wordCount: 223
+description: "As our admin dashboard grew, first-screen load time jumped from 3 seconds to 12, and page transitions started to stutter. Here is a systematic set of performance optimization strategies for Vue 2 projects."
+wordCount: 149
 ---
 
-管理后台项目随着业务增长，首屏加载从 3 秒飙到 12 秒，页面切换也开始卡顿。系统梳理了一套 Vue 2 项目的性能优化方案，记录下来。
+As our admin dashboard grew, first-screen load time jumped from 3 seconds to 12, and page transitions started to stutter. I've put together a set of performance optimization strategies for Vue 2 projects and am recording them here.
 
 ## Route Lazy Loading
 
-最常见的优化手段，但细节值得注意：
+The most common optimization technique, but the details are worth noting:
 
 ```javascript
 // router/index.js
@@ -39,7 +39,7 @@ const routes = [
 ];
 ```
 
-效果：首屏 JS 从 1.2MB 降到 300KB。
+Result: first-screen JS dropped from 1.2MB to 300KB.
 
 ## Component-Level Optimization
 
@@ -113,7 +113,7 @@ const mutations = {
 };
 ```
 
-## Webpack 打包优化
+## Webpack Bundle Optimization
 
 ```javascript
 // vue.config.js
@@ -163,7 +163,7 @@ module.exports = {
 };
 ```
 
-## 接口与数据层
+## API and Data Layer
 
 ```javascript
 // 防止重复请求
@@ -199,18 +199,18 @@ axios.interceptors.response.use(
 );
 ```
 
-## 优化结果
+## Optimization Results
 
-| 指标 | 优化前 | 优化后 |
+| Metric | Before | After |
 |------|--------|--------|
-| 首屏加载 | 12s | 2.8s |
-| JS 体积 | 1.2MB | 320KB (gzip: 98KB) |
-| 首次可交互 | 15s | 3.5s |
+| First-screen load | 12s | 2.8s |
+| JS bundle size | 1.2MB | 320KB (gzip: 98KB) |
+| Time to interactive | 15s | 3.5s |
 
 ## Summary
 
-- 路由懒加载是最基础也是效果最明显的优化
-- `Object.freeze` 避免大型数据对象的深层响应式开销
-- Webpack splitChunks 按业务/依赖分包，利用浏览器缓存
-- 请求层面做好防重复和取消机制
-- 优先优化首屏相关的资源，非关键资源延后加载
+- Route lazy loading is the most basic optimization and also the most noticeable in impact.
+- `Object.freeze` avoids the deep-reactivity overhead of large data objects.
+- Webpack's splitChunks splits bundles by business/dependency so the browser cache can be leveraged.
+- At the request level, implement de-duplication and cancellation mechanisms.
+- Prioritize optimizing first-screen resources, and defer loading of non-critical ones.

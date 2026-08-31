@@ -6,11 +6,11 @@ tags:
   - Engineering
 
 readingTime: 2
-description: "Vite 预构建原理 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 198
+description: "Vite's pre-bundling mechanics matter more and more in everyday development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 187
 ---
 
-Vite 预构建原理 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Vite's pre-bundling mechanism is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -43,7 +43,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Usage
 
-实际项目中的用法会更复杂一些：
+Real-world usage gets a bit more complex:
 
 ```javascript
 import { useReducer, useCallback } from 'react'

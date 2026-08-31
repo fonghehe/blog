@@ -63,7 +63,7 @@ function increment() {
   emit('update:count', props.count + 1)
 }
 
-// 不需要 return！頂層綁定自動暴露給範本
+// 不需要 return！頂層綁定自動暴露給模板
 </script>
 ```
 
@@ -71,7 +71,7 @@ function increment() {
 
 **1. 頂層綁定自動暴露**
 
-`<script setup>` 中的頂層 `import`、`ref`、`computed`、函數聲明都會自動暴露給範本，不需要手動 `return`：
+`<script setup>` 中的頂層 `import`、`ref`、`computed`、函數聲明都會自動暴露給模板，不需要手動 `return`：
 
 ```vue
 <script setup>
@@ -164,7 +164,7 @@ function reset() {
   count.value = 0
 }
 
-// 隻暴露 reset 和 count，不暴露 internalState
+// 只暴露 reset 和 count，不暴露 internalState
 defineExpose({ reset, count })
 </script>
 ```
@@ -189,7 +189,7 @@ function handleReset() {
 
 ## 和 TypeScript 的配合
 
-`<script setup>` 對 TypeScript 的支持很自然：
+`<script setup>` 對 TypeScript 的支援很自然：
 
 ```vue
 <script setup lang="ts">
@@ -270,5 +270,5 @@ onMounted(async () => {
 - `<script setup>` 是 Composition API 的語法糖，大幅減少樣板代碼
 - 頂層綁定自動暴露，組件 import 自動註冊，開發體驗接近 React Hooks
 - `defineProps` / `defineEmits` / `defineExpose` 是編譯宏，不需要 import
-- TypeScript 支持自然，類型推斷比 Options API 好很多
-- 預計 Vue 3.2 正式支持，現在可以先在實驗性項目中試用
+- TypeScript 支援自然，類型推斷比 Options API 好很多
+- 預計 Vue 3.2 正式支援，現在可以先在實驗性項目中試用

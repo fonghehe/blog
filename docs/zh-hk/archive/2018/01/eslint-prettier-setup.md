@@ -168,7 +168,7 @@ npm install --save-dev husky lint-staged
 }
 ```
 
-呢個設定嘅效果：每次 `git commit` 時，隻對本次修改嘅檔案（而唔係全量）運行 lint 同格式化，速度快，唔影響未改動嘅檔案。
+呢個設定嘅效果：每次 `git commit` 時，只對本次修改嘅檔案（而唔係全量）運行 lint 同格式化，速度快，唔影響未改動嘅檔案。
 
 ## VSCode 編輯器整合
 
@@ -192,7 +192,7 @@ npm install --save-dev husky lint-staged
 
 喺現有項目上推行代碼規範，唔好一次過將所有規則都打開——會產生幾百個 error，團隊唔會接受。建議分階段：
 
-1. **第一步**：隻開 Prettier，統一格式，零 error
+1. **第一步**：只開 Prettier，統一格式，零 error
 2. **第二步**：開啟 `eslint:recommended`，修復已有問題
 3. **第三步**：逐步添加團隊約定嘅自定義規則
 

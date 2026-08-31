@@ -5,10 +5,10 @@ tags:
   - 前端
 readingTime: 2
 description: "每個項目都在用 axios，但很多人還是把請求分散在各個組件裏。統一封裝攔截器，能讓認證、錯誤處理、loading 狀態管理這些事情隻寫一遍。"
-wordCount: 157
+wordCount: 162
 ---
 
-每個項目都在用 axios，但很多人還是把請求分散在各個組件裏。統一封裝攔截器，能讓認證、錯誤處理、loading 狀態管理這些事情隻寫一遍。
+幾乎每個項目都在用 axios，但不少人仍把請求邏輯散落在各個組件裏。把攔截器統一封裝後，認證、錯誤處理、loading 狀態管理等就只需要寫一次。
 
 ## 基礎封裝
 
@@ -80,7 +80,7 @@ service.interceptors.response.use(
         Message.error("請求的資源不存在");
         break;
       case 500:
-        Message.error("服務器錯誤，請稍後重試");
+        Message.error("伺服器錯誤，請稍後重試");
         break;
       default:
         Message.error(`請求失敗 (${status})`);
@@ -170,7 +170,7 @@ export default {
 };
 ```
 
-## 全局 loading 控製
+## 全局 loading 控制
 
 ```javascript
 let requestCount = 0;
@@ -215,5 +215,5 @@ service.interceptors.response.use(
 
 - 請求攔截器：統一加 token、處理 GET 緩存
 - 響應攔截器：統一處理業務錯誤碼、HTTP 狀態碼
-- API 模塊：按業務拆分，組件裏隻調介面不處理 HTTP 細節
+- API 模塊：按業務拆分，組件只負責呼叫介面，不處理 HTTP 細節
 - 請求取消：列表頁快速翻頁時避免舊請求覆蓋新數據

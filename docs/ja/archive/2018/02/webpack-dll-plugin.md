@@ -5,7 +5,7 @@ tags:
   - Webpack
 readingTime: 2
 description: "プロジェクトが大きくなるにつれて、Webpack のコールドスタートがどんどん遅くなります。DllPlugin の考え方は、ほとんど変わらないサードパーティライブラリを別途ビルドしておき、毎回のビルドで再処理しなくて済むようにするというものです。"
-wordCount: 445
+wordCount: 465
 ---
 
 プロジェクトが大きくなるにつれて、Webpack のコールドスタートがどんどん遅くなります。DllPlugin の考え方は、ほとんど変わらないサードパーティライブラリを別途ビルドしておき、毎回のビルドで再処理しなくて済むようにするというものです。
@@ -62,7 +62,7 @@ module.exports = {
 npm run dll
 ```
 
-実行後に生成されるファイル：
+実行後に生成されるファイルは以下の通りです。
 
 - `dll/vendor.dll.js`
 - `dll/vendor-manifest.json`
@@ -94,7 +94,7 @@ module.exports = {
 
 ## 効果比較
 
-私のプロジェクト（Vue、echarts、moment などを含む）：
+私のプロジェクト（Vue、echarts、moment などを含む）での結果は以下の通りです。
 
 ```
 DllPlugin なし：コールドスタート約 18 秒

@@ -7,10 +7,10 @@ tags:
 
 readingTime: 2
 description: "今年处理了好几次因为依赖问题导致的线上事故：版本升级导致的兼容性问题、lockfile 冲突导致的构建差异、依赖安全漏洞。总结一下在团队中管理前端依赖的经验。"
-wordCount: 302
+wordCount: 457
 ---
 
-今年处理了好几次因为依赖问题导致的线上事故：版本升级导致的兼容性问题、lockfile 冲突导致的构建差异、依赖安全漏洞。总结一下在团队中管理前端依赖的经验。
+今年は依存関係の問題から引き起こされた本番障害を何度か経験した。バージョンアップに伴う互換性の問題、lockfile の競合によるビルドの差異、依存パッケージのセキュリティ脆弱性だ。チームでフロントエンドの依存関係を管理する経験をまとめておく。
 
 ## バージョンロック戦略
 
@@ -29,7 +29,7 @@ wordCount: 302
 }
 ```
 
-我们的策略：
+我々の戦略は以下の通りだ：
 
 ```
 核心依赖（Vue、React、TypeScript）：^ 精确到 major.minor
@@ -39,7 +39,7 @@ wordCount: 302
 
 ## Lockfile 管理
 
-Lockfile 冲突是团队协作中最常见的问题：
+Lockfile の競合はチーム開発で最もよくある問題だ：
 
 ```bash
 # 原则一：lockfile 必须提交到 Git
@@ -83,7 +83,7 @@ security-audit:
 
 ## 依存関係のクリーンアップ
 
-项目依赖会随时间膨胀，需要定期清理：
+プロジェクトの依存関係は時間とともに膨らむため、定期的に整理する必要がある：
 
 ```bash
 # 找出未使用的依赖
@@ -101,7 +101,7 @@ npx depcheck
 pnpm uninstall lodash-es moment
 ```
 
-更严格的方案是在 CI 中集成检查：
+より厳格なアプローチとして、CI にチェックを組み込む方法がある：
 
 ```javascript
 // scripts/check-deps.js
@@ -123,7 +123,7 @@ depcheck(process.cwd(), {
 
 ## Monorepo における依存関係管理
 
-pnpm workspace 的依赖管理尤其需要注意：
+pnpm workspace での依存関係管理は特に注意が必要だ：
 
 ```json
 // 根目录 package.json
@@ -178,9 +178,9 @@ pnpm workspace 的依赖管理尤其需要注意：
 
 ## まとめ
 
-- 版本号策略要团队统一，核心依赖用 `^` 精确到 minor
-- Lockfile 冲突不要手动解决，重新生成是更好的做法
-- `npm audit` 要集成到 CI，高危漏洞阻止发布
-- 定期用 depcheck 清理未使用的依赖
-- Monorepo 中依赖管理更复杂，需要用 pnpm 的 overrides 和 peerDependencies
-- 依赖管理的核心原则：可重复构建、安全、不过时
+- バージョン番号の戦略はチームで統一し、コア依存には `^` で minor まで固定する
+- Lockfile の競合は手動で解決せず、再生成するほうが良い
+- `npm audit` は CI に組み込み、危険度が高い脆弱性はリリースをブロックする
+- 未使用の依存は定期的に depcheck で整理する
+- Monorepo では依存管理がより複雑になるため、pnpm の overrides や peerDependencies を使う
+- 依存管理の本質的な原則は、再現可能なビルド・セキュリティ・陳腐化の防止だ。

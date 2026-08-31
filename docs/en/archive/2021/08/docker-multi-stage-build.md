@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "在日常开发中，Docker 多阶段构建前端应用 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 207
+description: "Docker multi-stage builds for frontend apps are increasingly common in everyday work. This article systematically covers usage, mechanics, and optimization strategies."
+wordCount: 190
 ---
 
-在日常开发中，Docker 多阶段构建前端应用 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In day-to-day development, Docker multi-stage builds for frontend applications are being used more and more frequently. This article systematically explains their usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -176,4 +176,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Docker 多阶段构建前端应用不是银弹，需要根据项目规模和技术栈选择
+- Docker multi-stage builds for frontend applications are no silver bullet; choose based on your project size and tech stack

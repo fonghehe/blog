@@ -6,11 +6,11 @@ tags:
   - Engineering
 
 readingTime: 1
-description: "在日常开发中，Vite HMR 热更新原理分析 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 162
+description: "Understanding Vite's HMR mechanics pays off in everyday development. This article systematically covers how hot updates work under the hood and how to tune them."
+wordCount: 150
 ---
 
-在日常开发中，Vite HMR 热更新原理分析 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+Vite's HMR (hot module replacement) mechanism is being used more and more frequently in day-to-day development. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -74,7 +74,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Business Practice
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more involved:
 
 ```javascript
 import { defineConfig } from 'vite'

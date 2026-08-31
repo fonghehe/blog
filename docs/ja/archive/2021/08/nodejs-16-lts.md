@@ -7,14 +7,14 @@ tags:
 
 readingTime: 2
 description: "Node.js 16 在 2021 年 4 月发布，10 月进入 LTS 阶段。作为前端工具链的运行时基础，Node.js 版本直接影响 Vite、Webpack 5、esbuild 等构建工具的表现。整理一下 v16 中值得关注的特性。"
-wordCount: 267
+wordCount: 434
 ---
 
-Node.js 16 在 2021 年 4 月发布，10 月进入 LTS 阶段。作为前端工具链的运行时基础，Node.js 版本直接影响 Vite、Webpack 5、esbuild 等构建工具的表现。整理一下 v16 中值得关注的特性。
+Node.js 16 は 2021 年 4 月にリリースされ、10 月に LTS フェーズに入った。フロントエンドのツールチェーンにおけるランタイムの基盤として、Node.js のバージョンは Vite、Webpack 5、esbuild といったビルドツールの動作に直結する。v16 で注目すべき機能を整理する。
 
-## V8 引擎升级到 9.0
+## V8 エンジンが 9.0 にアップグレード
 
-Node.js 16 搭载 V8 9.0，带来了几个实用的新 API：
+Node.js 16 は V8 9.0 を搭載し、いくつかの実用的な新 API が追加された：
 
 ```javascript
 // Array.prototype.at - 支持负索引
@@ -43,9 +43,9 @@ try {
 }
 ```
 
-## Fetch API 实验性支持
+## Fetch API の実験的サポート
 
-Node.js 16 开始实验性地内置 Fetch API（基于 undici）：
+Node.js 16 から、Fetch API が実験的に組み込まれた（undici ベース）：
 
 ```javascript
 // 启用：需要加 --experimental-fetch 标志
@@ -72,11 +72,11 @@ try {
 }
 ```
 
-虽然还是实验性功能，但意味着以后不用再装 `node-fetch` 或 `axios` 做简单的 HTTP 请求了。
+まだ実験的な機能だが、これで単純な HTTP リクエストのために `node-fetch` や `axios` を別途導入する必要がなくなる。
 
 ## Timers Promises API
 
-`timers/promises` 模块提供了 Promise 版本的定时器：
+`timers/promises` モジュールは、Promise 版のタイマーを提供する：
 
 ```javascript
 import { setTimeout, setInterval } from 'timers/promises'
@@ -98,9 +98,9 @@ for await (const _ of setInterval(1000)) {
 }
 ```
 
-## AbortController 全局可用
+## AbortController がグローバルに利用可能に
 
-Node.js 16 中 `AbortController` 变成全局可用，不再需要 polyfill：
+Node.js 16 では `AbortController` がグローバルに使えるようになり、polyfill は不要になった：
 
 ```javascript
 // 全局直接使用，不需要 import
@@ -116,7 +116,7 @@ ac.abort() // 中断文件读取
 
 ## 移行時の注意点
 
-从 Node.js 14 升级到 16，需要注意：
+Node.js 14 から 16 へアップグレードする際の注意点：
 
 ```bash
 # 1. 检查 node-sass 依赖
@@ -137,8 +137,8 @@ export NODE_OPTIONS=--openssl-legacy-provider
 
 ## まとめ
 
-- `Array.at()`、`Object.hasOwn()`、`Error.cause` 是最实用的新 API
-- Fetch API 内置是趋势，虽然目前还是实验性
-- `timers/promises` 终于让定时器的 Promise 化不再手写
-- 从 Node 14 迁移要注意 node-sass 和 OpenSSL 3.0 兼容性
-- 建议团队统一使用 nvm 或 fnm 管理 Node 版本
+- `Array.at()`、`Object.hasOwn()`、`Error.cause` は最も実用的な新 API だ
+- Fetch API の内蔵は今後のトレンドだが、現時点ではまだ実験的だ
+- `timers/promises` の登場で、タイマーの Promise 化を自前で書く必要がなくなった
+- Node 14 からの移行では node-sass と OpenSSL 3.0 の互換性に注意が必要だ
+- チームでは nvm や fnm で Node のバージョンを統一することをおすすめする

@@ -1,5 +1,5 @@
 ---
-title: "Vitest 3.0 Testing Framework: Browser Mode  & 全新断言 API"
+title: "Vitest 3.0 Testing Framework: Browser Mode and a New Assertion API"
 date: 2025-09-25 15:39:16
 tags:
   - Engineering

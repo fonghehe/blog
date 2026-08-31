@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 13 で最も地味でありながら最も実用的な変更の一つは、動的コンポーネント作成 API の完全な簡素化です。以前はコンポーネントを動的にレンダリングするのに3ステップが必要でしたが、今は1行のコードで十分です。この記事では、いくつかの実際のシナリオを通じて新しい API の使い方を紹介します。"
-wordCount: 407
+wordCount: 433
 ---
 
 Angular 13 で最も地味でありながら最も実用的な変更の一つは、動的コンポーネント作成 API の完全な簡素化です。以前はコンポーネントを動的にレンダリングするのに3ステップが必要でしたが、今は1行のコードで十分です。この記事では、いくつかの実際のシナリオを通じて新しい API の使い方を紹介します。
@@ -63,7 +63,7 @@ export class HostComponent {
 
 `ComponentFactoryResolver` は Angular 13 で非推奨（deprecated）としてマークされていますが、エラーなしで引き続き使用できます。
 
-## 実際のシナリオ：動的 Toast 通知
+## 実際の場面：動的 Toast 通知
 
 ```typescript
 // notification.service.ts
@@ -101,7 +101,7 @@ export class ToastComponent {
 }
 ```
 
-## 実際のシナリオ：ルートレベルモーダル（ルート設定不要）
+## 実際の場面：ルートレベルモーダル（ルート設定不要）
 
 ```typescript
 // 点击弹出详情，不改变 URL
@@ -136,7 +136,7 @@ export class ListComponent {
 
 ## NgComponentOutlet ディレクティブ
 
-对于模板驱动的动态组件，`NgComponentOutlet` 也做了同步更新，支持 inputs：
+テンプレート駆動の動的コンポーネントにおいても、`NgComponentOutlet` が同様にアップデートされ、`inputs` をサポートするようになりました：
 
 ```html
 <!-- Angular 13 的 NgComponentOutlet -->

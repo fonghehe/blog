@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "React 19 新 Hooks 汇总のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 511
+wordCount: 527
 ---
 
 React 19 新 Hooks 汇总のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -47,7 +47,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ## ソースコード分析
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 const express = require('express')
@@ -159,7 +159,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+この構成は本番環境で半年以上安定稼働しており、実運用で検証済みだ。
 
 ## まとめ
 

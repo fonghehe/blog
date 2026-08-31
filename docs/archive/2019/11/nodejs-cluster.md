@@ -8,7 +8,7 @@ description: "最近项目中用到了Node.js Cluster 多进程，发现比预�
 wordCount: 223
 ---
 
-最近项目中用到了Node.js Cluster 多进程，发现比预想的要复杂。分享一下实践过程中总结的经验。
+最近项目中用到了 Node.js Cluster 多进程，发现比预想的要复杂。分享一下实践过程中总结的经验。
 
 ## 快速上手
 

@@ -15,7 +15,7 @@ Tailwind CSS 2.x 開始流行，3.0 的 JIT（Just-in-Time）模式徹底改變�
 
 以前的前端：寫 HTML → 寫 CSS 類 → 寫 CSS 規則（來回切換文件）
 
-Tailwind：把樣式寫在 HTML 裏，不需要切換檔案
+Tailwind：把樣式寫在 HTML 裡，不需要切換檔案
 
 ```html
 <!-- 傳統方式 -->
@@ -35,7 +35,7 @@ Tailwind：把樣式寫在 HTML 裏，不需要切換檔案
 
 之前的問題：Tailwind 的 CSS 文件很大（未使用的類很多），生產要用 PurgeCSS 清理。
 
-JIT：根據源碼按需生成 CSS，隻生成用到的類，任意值也支援。
+JIT：根據源碼按需生成 CSS，只生成用到的類，任意值也支援。
 
 ```bash
 # 安裝

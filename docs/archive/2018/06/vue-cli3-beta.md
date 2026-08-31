@@ -3,9 +3,9 @@ title: "Vue CLI 3 Beta 初体验"
 date: 2018-06-07 10:24:17
 tags:
   - Vue
-readingTime: 2
+readingTime: 1
 description: "Vue CLI 3 刚出 Beta，和之前的 CLI 2 差别很大，试用了一下记录一下感受。"
-wordCount: 346
+wordCount: 341
 ---
 
 Vue CLI 3 刚出 Beta，和之前的 CLI 2 差别很大，试用了一下记录一下感受。
@@ -94,7 +94,7 @@ vue ui
 
 ## 和 CLI 2 的迁移
 
-旧项目如果想用 CLI 3，暂时没有自动迁移工具，建议新项目用 CLI 3。旧项目可以继续用 CLI 2 维护，等时机成熟再迁移。
+目前还没有自动迁移工具。旧项目可以继续用 CLI 2 维护，等时机成熟再迁移；新项目建议直接用 CLI 3。
 
 ## 小结
 

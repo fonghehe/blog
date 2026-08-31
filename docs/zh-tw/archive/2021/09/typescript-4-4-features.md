@@ -12,7 +12,7 @@ TypeScript 4.4 釋出了，幾個實用的改進值得關注。不是大版本�
 
 ## Control Flow Analysis for Aliased Conditions
 
-之前 TypeScript 對變數別名的控製流分析很弱，4.4 改善了這一點。
+之前 TypeScript 對變數別名的控制流分析很弱，4.4 改善了這一點。
 
 ```typescript
 // 之前：把 result 賦給別名後，型別守衛失效

@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular Material 13 随 Angular 13 一起发布，带来了基于 Material Design Components for Web（MDC）重新实现的组件。这次重构不只是样式调整——组件的 DOM 结构和 CSS 类名都发生了变化，因此迁移需要一定的关注。"
-wordCount: 446
+wordCount: 447
 ---
 
 Angular Material 13 随 Angular 13 一起发布，带来了基于 Material Design Components for Web（MDC）重新实现的组件。这次重构不只是样式调整——组件的 DOM 结构和 CSS 类名都发生了变化，因此迁移需要一定的关注。
@@ -30,7 +30,7 @@ import { MatButtonModule } from "@angular/material/button"; // 仍是旧实现
 // Angular Material 13 的迁移策略：逐步替换
 ```
 
-注意：Angular Material 13 的大多数组件默认已切换到 MDC 实现，但会提供 Legacy 模块作为兼容过渡期。
+注意：Angular Material 13 的大多数组件默认已切换到 MDC 实现，但会保留 Legacy 模块作为兼容过渡方案。
 
 ## 主要变化：Button
 

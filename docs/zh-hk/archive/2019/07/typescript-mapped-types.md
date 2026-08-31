@@ -47,7 +47,7 @@ type StringifyUser = {
 // }
 ```
 
-## 隻讀修飾符：readonly +/- 
+## 只讀修飾符：readonly +/- 
 
 加號 `+` 表示添加修飾符（默認行為，可省略），減號 `-` 表示移除修飾符：
 
@@ -141,7 +141,7 @@ type PickFunctions<T> = {
 
 ### DeepPartial — 深層可選
 
-內置的 `Partial` 隻處理第一層，巢狀對象不會被處理：
+內置的 `Partial` 只處理第一層，巢狀對象不會被處理：
 
 ```typescript
 interface Config {
@@ -180,7 +180,7 @@ const partialConfig: DeepPartial<Config> = {
 }
 ```
 
-### DeepReadonly — 深層隻讀
+### DeepReadonly — 深層只讀
 
 ```typescript
 type DeepReadonly<T> = {

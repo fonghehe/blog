@@ -4,16 +4,16 @@ date: 2021-07-28 15:09:57
 tags:
   - JavaScript
 
-readingTime: 2
+readingTime: 3
 description: "TC39 在 2021 年 6 月正式发布了 ES2021 标准。和 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 这种重磅特性相比，ES2021 的更新更偏向实用主义——每个特性都不大，但写代码时确实用得上。"
-wordCount: 352
+wordCount: 550
 ---
 
-TC39 在 2021 年 6 月正式发布了 ES2021 标准。和 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 这种重磅特性相比，ES2021 的更新更偏向实用主义——每个特性都不大，但写代码时确实用得上。
+TC39 は 2021 年 6 月に ES2021 を正式リリースした。ES2020 の `Optional Chaining` や `Nullish Coalescing` のような目玉機能と比べると、ES2021 の更新は実用主義に寄っている──どれも小さな機能だが、コードを書くときに確実に役立つ。
 
 ## String.prototype.replaceAll
 
-终于不用再写正则或者 `split().join()` 了：
+ついに正規表現や `split().join()` を書かずに済むようになった：
 
 ```javascript
 // 以前的写法
@@ -32,7 +32,7 @@ text.replaceAll(/hello/, 'hi')   // TypeError
 
 ## Promise.any
 
-和 `Promise.all` 相反，`Promise.any` 在第一个 Promise fulfilled 时就 resolve：
+`Promise.all` と逆に、`Promise.any` は最初の Promise が fulfilled になった時点で resolve する：
 
 ```javascript
 const promises = [
@@ -56,13 +56,13 @@ try {
 }
 ```
 
-和 `Promise.race` 的区别：`race` 是第一个 settled（不管成功失败）就返回，`any` 是第一个 fulfilled（只看成功）才返回。
+`Promise.race` との違いは、`race` は最初に settled になったもの（成否を問わず）を返すのに対し、`any` は最初に fulfilled になったもの（成功のみ）を返す点だ。
 
-实际场景：多 CDN 源竞争、多数据源降级。
+実際の場面：複数の CDN ソース間の競争や、複数データソースのフェイルオーバーなど。
 
 ## 論理代入演算子
 
-三个新的复合赋值运算符，简化条件赋值：
+条件付き代入を簡略化する、3 つの新しい複合代入演算子：
 
 ```javascript
 // ||=  等价于 x = x || y（假值时赋值）
@@ -85,11 +85,11 @@ settings.theme = settings.theme || 'dark' // 会覆盖 0, '' 等假值
 settings.theme ??= 'dark'                 // 只覆盖 null 和 undefined
 ```
 
-在处理配置合并、默认值设置时特别好用。
+設定のマージやデフォルト値の設定を扱うときに特に便利だ。
 
-## WeakRef 和 FinalizationRegistry
+## WeakRef と FinalizationRegistry
 
-`WeakRef` 允许创建对象的弱引用，不阻止 GC 回收：
+`WeakRef` はオブジェクトの弱参照を作ることを許し、GC による回収を妨げない：
 
 ```javascript
 let cache = new Map()
@@ -119,11 +119,11 @@ function cacheData(key, data) {
 }
 ```
 
-这个特性主要用于内存敏感的缓存场景，日常业务开发用得不多。
+この機能は主にメモリに敏感なキャッシュの場面で使われ、日常的な業務開発ではあまり使われない。
 
 ## 数値セパレーター
 
-纯粹的语法糖，让大数字更易读：
+単なるシンタックスシュガーで、大きな数値を読みやすくする：
 
 ```javascript
 const billion = 1_000_000_000
@@ -138,9 +138,9 @@ const maxInt = 9_007_199_254_740_991
 
 ## まとめ
 
-- `replaceAll` 解决了字符串替换的老痛点
-- `Promise.any` 填补了 Promise 组合方法的最后一块拼图
-- 逻辑赋值运算符让条件赋值更简洁，`??=` 最实用
-- `WeakRef` 场景较特殊，大部分业务不需要
-- 数字分隔符是纯粹的可读性提升
-- 这些特性在 Node.js 16 和所有现代浏览器中已全面支持
+- `replaceAll` は文字列置換の長年の悩みの種を解決した
+- `Promise.any` は Promise の組み合わせメソッドの最後のピースを埋めた
+- 論理代入演算子は条件付き代入を簡潔にし、なかでも `??=` が最も実用的だ
+- `WeakRef` の場面はやや特殊で、大半の業務では必要ない
+- 数値セパレーターは純粋な可読性の向上だ
+- これらの機能は Node.js 16 とすべてのモダンブラウザですでに全面サポートされている

@@ -6,16 +6,16 @@ tags:
 
 readingTime: 3
 description: "CSS 仕様に関心のある方はすでにお気づきかもしれませんが、Container Queries が Chrome Canary の実験段階に入りました。この機能は数年待たれていたもので、ついに実現しようとしています。"
-wordCount: 548
+wordCount: 535
 ---
 
-CSS 仕様に関心のある方はすでにお気づきかもしれませんが、Container Queries が Chrome Canary の実験段階に入りました。この機能は数年待たれていたもので、ついに実現しようとしています。
+CSS 仕様に関心のある方はすでにお気づきかもしれないが、Container Queries が Chrome Canary の実験段階に入った。この機能は数年待たれていたもので、ついに実現しようとしている。
 
 ## Container Queries とは
 
-Media Queries は**ビューポートの幅**に応じてレスポンシブになりますが、Container Queries は**親コンテナの幅**に応じてレスポンシブになります。
+Media Queries は**ビューポートの幅**に応じてレスポンシブになるが、Container Queries は**親コンテナの幅**に応じてレスポンシブになる。
 
-これこそがコンポーネント指向開発に真に必要な能力です。
+これこそがコンポーネント指向開発に真に必要な能力だ。
 
 ```css
 /* Media Queries：ブラウザウィンドウの幅に応じる */
@@ -35,7 +35,7 @@ Media Queries は**ビューポートの幅**に応じてレスポンシブに�
 
 ## なぜこの機能が重要か
 
-現在の課題：同じコンポーネントをサイドバー（狭い）とメインコンテンツエリア（広い）に配置した場合、表示を変えるべきです。しかし Media Queries はビューポートしか見ず、コンテナを見ません。
+現在の課題：同じコンポーネントをサイドバー（狭い）とメインコンテンツエリア（広い）に配置した場合、表示を変えるべきだ。しかし Media Queries はビューポートしか見ず、コンテナを見ない。
 
 ```html
 <!-- 同じ Card コンポーネント -->
@@ -159,7 +159,7 @@ document.querySelectorAll('.card-wrapper').forEach((el) => {
 
 ## Tailwind CSS との組み合わせ
 
-Tailwind 3.0 は実験的に `@container` をサポートしています：
+Tailwind 3.0 は実験的に `@container` をサポートしている：
 
 ```html
 <!-- コンテナに container クラスを追加する必要がある -->
@@ -181,7 +181,7 @@ Tailwind 3.0 は実験的に `@container` をサポートしています：
 - Chrome 105+：デフォルトでサポート予定
 - Firefox / Safari：サポート時期は未定
 
-現時点では PostCSS プラグインでフォールバックできます：
+現時点では PostCSS プラグインでフォールバックできる：
 
 ```bash
 npm install -D @csstools/postcss-container-queries

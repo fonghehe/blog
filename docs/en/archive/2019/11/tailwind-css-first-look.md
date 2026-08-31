@@ -3,16 +3,16 @@ title: "Tailwind CSS First Look: Atomic CSS"
 date: 2019-11-13 11:08:11
 tags:
   - CSS
-readingTime: 4
-description: "Tailwind CSS 是一个实用优先（Utility-First）的 CSS 框架，它提供了大量原子化的 CSS 类名，让开发者可以直接在 HTML 中组合样式，而不需要编写自定义 CSS。本文将从零开始体验 Tailwind CSS，探索原子化 CSS 的开发模式。"
-wordCount: 541
+readingTime: 3
+description: "Tailwind CSS is a utility-first CSS framework. It provides a large set of atomic utility classes so developers can compose styles directly in HTML without writing custom CSS. This article explores Tailwind CSS from scratch and looks at the atomic-CSS development model."
+wordCount: 335
 ---
 
-Tailwind CSS 是一个实用优先（Utility-First）的 CSS 框架，它提供了大量原子化的 CSS 类名，让开发者可以直接在 HTML 中组合样式，而不需要编写自定义 CSS。本文将从零开始体验 Tailwind CSS，探索原子化 CSS 的开发模式。
+Tailwind CSS is a utility-first CSS framework. It provides a large set of atomic utility classes so developers can compose styles directly in HTML without writing custom CSS. This article explores Tailwind CSS from scratch and looks at the atomic-CSS development model.
 
 ## What Is Atomic CSS
 
-传统 CSS 编写方式是为每个组件创建语义化的类名：
+The traditional way of writing CSS is to create semantic class names for each component:
 
 ```html
 <!-- 传统方式 -->
@@ -33,7 +33,7 @@ Tailwind CSS 是一个实用优先（Utility-First）的 CSS 框架，它提供�
 </style>
 ```
 
-原子化 CSS 使用预定义的小类名来组合样式：
+Atomic CSS composes styles from small, predefined class names:
 
 ```html
 <!-- Tailwind 方式 -->
@@ -52,7 +52,7 @@ Tailwind CSS 是一个实用优先（Utility-First）的 CSS 框架，它提供�
 npm install tailwindcss
 ```
 
-初始化配置文件：
+Initialize the config file:
 
 ```bash
 npx tailwindcss init
@@ -104,7 +104,7 @@ module.exports = {
 };
 ```
 
-创建 CSS 入口文件：
+Create the CSS entry file:
 
 ```css
 /* src/styles/tailwind.css */
@@ -120,7 +120,7 @@ npx tailwindcss src/styles/tailwind.css -o dist/tailwind.css
 
 ## Quick Reference: Utility Classes
 
-### 布局
+### Layout
 
 ```html
 <!-- Flexbox -->
@@ -142,7 +142,7 @@ npx tailwindcss src/styles/tailwind.css -o dist/tailwind.css
 </div>
 ```
 
-### 间距
+### Spacing
 
 ```html
 <!-- padding: p-4 (16px), px-4 (左右), py-4 (上下), pt-4 (上) -->
@@ -152,7 +152,7 @@ npx tailwindcss src/styles/tailwind.css -o dist/tailwind.css
 <div class="m-4 mx-auto mt-2">
 ```
 
-### 字体与颜色
+### Typography and Color
 
 ```html
 <!-- 字号: text-xs (12px), text-sm (14px), text-base (16px), text-lg (18px) -->
@@ -161,7 +161,7 @@ npx tailwindcss src/styles/tailwind.css -o dist/tailwind.css
 <p class="text-sm text-gray-600">正文内容</p>
 ```
 
-### 响应式
+### Responsive
 
 ```html
 <!-- sm: 640px, md: 768px, lg: 1024px, xl: 1280px -->
@@ -178,7 +178,7 @@ npx tailwindcss src/styles/tailwind.css -o dist/tailwind.css
 </div>
 ```
 
-### Hover / Focus 状态
+### Hover / Focus States
 
 ```html
 <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded
@@ -189,7 +189,7 @@ npx tailwindcss src/styles/tailwind.css -o dist/tailwind.css
 
 ## Extracting Component Classes with @apply
 
-当某组工具类需要复用时，可以用 `@apply` 提取为组件类：
+When a set of utility classes needs to be reused, you can extract them into component classes with `@apply`:
 
 ```css
 /* styles/components.css */
@@ -282,20 +282,20 @@ function App() {
 
 ## Pros and Cons
 
-### 优点
+### Pros
 
-1. **开发速度快**：不需要想类名，不需要在 CSS 和 HTML 之间切换
-2. **不会增长的 CSS**：只有使用的工具类会被生成
-3. **响应式简单**：前缀语法 `md:`、`lg:` 非常直观
-4. **一致性**：设计系统内置，间距、颜色、字号等都有规范
-5. **易于重构**：删除 HTML 元素时不会留下无用的 CSS
+1. **Fast development**: no need to invent class names or switch between CSS and HTML
+2. **CSS that doesn't grow**: only the utilities you actually use are generated
+3. **Easy responsiveness**: the prefix syntax `md:`, `lg:` is very intuitive
+4. **Consistency**: a built-in design system standardizes spacing, colors, font sizes, and more
+5. **Easy to refactor**: removing an HTML element leaves no orphaned CSS behind
 
-### 缺点
+### Cons
 
-1. **学习曲线**：需要记住大量的类名
-2. **HTML 可读性**：长类名列表可能影响 HTML 可读性
-3. **不适合复杂组件**：高度定制化的组件还是需要自定义 CSS
-4. **团队共识**：需要团队接受原子化 CSS 的理念
+1. **Learning curve**: you have to memorize a large number of class names
+2. **HTML readability**: long class lists can hurt HTML readability
+3. **Not ideal for complex components**: highly customized components still need custom CSS
+4. **Team buy-in**: the team needs to embrace the atomic-CSS philosophy
 
 ## Build Optimization
 
@@ -312,14 +312,14 @@ module.exports = {
 };
 ```
 
-启用 `purge` 后，Tailwind 会在生产构建时移除未使用的类，CSS 文件大小可以从 3MB+ 降到 10KB 以下。
+Once `purge` is enabled, Tailwind strips unused classes from the production build, shrinking the CSS from 3 MB+ down to under 10 KB.
 
 ## Summary
 
-- Tailwind CSS 是实用优先的 CSS 框架，提供大量原子化工具类
-- 直接在 HTML/JSX 中组合样式，不需要编写自定义 CSS
-- `@apply` 可以将常用组合提取为组件类
-- 响应式和状态修饰符使用前缀语法（`md:`、`hover:`）
-- `purge` 配置可以大幅减小生产环境的 CSS 体积
-- 适合快速原型开发和团队协作
-- 需要团队达成共识，接受原子化 CSS 的开发方式
+- Tailwind CSS is a utility-first framework that ships a large set of atomic utility classes
+- Compose styles directly in HTML/JSX without writing custom CSS
+- `@apply` extracts common combinations into component classes
+- Responsive and state modifiers use the prefix syntax (`md:`, `hover:`)
+- The `purge` config dramatically reduces production CSS size
+- Great for rapid prototyping and team collaboration
+- Requires team consensus to adopt the atomic-CSS way of working

@@ -4,7 +4,7 @@ date: 2023-03-31 15:47:49
 tags:
   - Frontend
 readingTime: 2
-description: "Astro 2.0 于 2023 年 1 月 24 日正式发布，最重要的新特性是 Content Collections——一套专为 Markdown/MDX 内容设计的类型安全 API。如果你用 Astro 构建博客、文档站或内容型网站，这个特性会彻底改变你组织内容的方式。"
+description: "Astro 2.0 was officially released on January 24, 2023, and its most important new feature is Content Collections — a type-safe API designed for Markdown/MDX content. If you build blogs, documentation sites, or content-driven websites with Astro, this feature will completely change how you organize content."
 wordCount: 292
 ---
 

@@ -5,10 +5,10 @@ tags:
   - 前端
 readingTime: 2
 description: "關於約定式提交 Conventional Commits，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 282
+wordCount: 286
 ---
 
-關於約定式提交 Conventional Commits，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於約定式提交 Conventional Commits，很多開發者只停留在 API 呼叫層面。本文從生產環境的角度出發，探討實際開發中常見的問題與對應的解決方案。
 
 ## 基本原理
 

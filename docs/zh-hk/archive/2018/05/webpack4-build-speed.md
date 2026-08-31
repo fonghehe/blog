@@ -39,7 +39,7 @@ module.exports = {
       {
         test: /\.js$/,
         use: "babel-loader",
-        include: path.resolve(__dirname, "src"), // 隻處理 src
+        include: path.resolve(__dirname, "src"), // 只處理 src
         exclude: /node_modules/, // 排除 node_modules
       },
     ],
@@ -72,7 +72,7 @@ module.exports = {
 }
 ```
 
-第一次構建慢，後續構建隻處理變化的檔案。
+第一次構建慢，後續構建只處理變化的檔案。
 
 ## 優化 3：多線程構建
 
@@ -93,7 +93,7 @@ npm install --save-dev thread-loader
 }
 ```
 
-**注意**：開啓多線程有開銷，隻對計算量大的 loader 才有收益。
+**注意**：開啓多線程有開銷，只對計算量大的 loader 才有收益。
 
 ## 優化 4：DLL 預編譯
 
@@ -123,7 +123,7 @@ module.exports = {
 ```
 
 ```bash
-# 先構建 DLL（隻需要運行一次，依賴變化時重跑）
+# 先構建 DLL（只需要運行一次，依賴變化時重跑）
 webpack --config webpack.dll.js
 ```
 
@@ -157,7 +157,7 @@ plugins: [new HardSourceWebpackPlugin()];
 
 ## 效果對比
 
-以一箇中型 Vue 項目為例（約 200 個組件）：
+以一個中型 Vue 項目為例（約 200 個組件）：
 
 | 優化項            | 構建時間   |
 | 

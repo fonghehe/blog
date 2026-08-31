@@ -4,11 +4,11 @@ date: 2020-03-18 16:39:59
 tags:
   - Engineering
 readingTime: 2
-description: "团队在管理后台项目中积累了几十个业务组件，但散落在各个项目里，复用靠复制粘贴。决定抽离出一个内部组件库，记录一下设计思路。"
-wordCount: 203
+description: "Our admin dashboard projects had accumulated dozens of business components scattered across repos, reused only by copy-pasting. We decided to extract an internal component library, and these are my notes on the design thinking behind it."
+wordCount: 130
 ---
 
-团队在管理后台项目中积累了几十个业务组件，但散落在各个项目里，复用靠复制粘贴。决定抽离出一个内部组件库，记录一下设计思路。
+Our admin dashboard projects had accumulated dozens of business components, but they were scattered across different projects and only reused by copy-pasting. We decided to extract an internal component library, and these are my notes on the design thinking behind it.
 
 ## Component Layering
 
@@ -101,7 +101,7 @@ export default {
 {% endraw %}
 ```
 
-## 原则 2：事件统一
+## Principle 2: Unified Events
 
 ```javascript
 // 统一事件命名：on + 动词 + 名词
@@ -117,7 +117,7 @@ this.$emit('update', value);       // 太模糊
 this.$emit('onPageChange');        // 带 on 前缀多余
 ```
 
-## 原则 3：样式隔离 + 主题化
+## Principle 3: Style Isolation and Theming
 
 ```scss
 // 使用 CSS 变量实现主题
@@ -156,7 +156,7 @@ this.$emit('onPageChange');        // 带 on 前缀多余
 }
 ```
 
-## 发布和使用
+## Publishing and Usage
 
 ```json
 // package.json
@@ -180,7 +180,7 @@ import CompanyUI from '@company/ui';
 Vue.use(CompanyUI);
 ```
 
-## 文档和示例
+## Documentation and Examples
 
 ```markdown
 每个组件需要：
@@ -195,8 +195,8 @@ Vue.use(CompanyUI);
 
 ## Summary
 
-- 组件分三层：基础组件、业务组件、复合组件，职责清晰
-- API 设计遵循 props 驱动 + slot 扩展，减少使用者的理解成本
-- CSS 变量实现主题化，不用预处理器也能覆盖样式
-- 每个组件都需要完整文档和示例，降低团队学习成本
-- 内部组件库不追求大而全，解决团队实际痛点就好
+- Components are split into three layers—base, business, and composite—each with clearly defined responsibilities.
+- API design is props-driven with slot-based extension, lowering the cognitive load for consumers.
+- Theming uses CSS variables, so styles can be overridden without a preprocessor.
+- Every component needs complete docs and examples to cut the team's learning curve.
+- An internal component library shouldn't aim to be all-encompassing—just solve the team's real pain points.

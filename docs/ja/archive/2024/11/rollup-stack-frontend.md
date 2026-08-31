@@ -4,9 +4,9 @@ date: 2024-11-25 12:42:17
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 11
 description: "OP Stack と ZK Stack のアーキテクチャの違いを比較し、マルチ Rollup 環境におけるフロントエンドのクロスチェーンインタラクション、メッセージング、ウィズドロワルフロー、確認時間対応を深く探求"
-wordCount: 3800
+wordCount: 1777
 ---
 
 ## OP Stack アーキテクチャ：Optimism のモジュラー Rollup フレームワーク

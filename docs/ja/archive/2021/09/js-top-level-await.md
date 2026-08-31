@@ -6,14 +6,14 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，JavaScript 顶层 await 使用场景の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 493
+wordCount: 502
 ---
 
-在日常开发中，JavaScript 顶层 await 使用场景の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
+日常の開発において JavaScript のトップレベル await（使用場面）を使う頻度が高まっています。本記事では、その使い方、仕組み、最適化戦略を体系的に説明します。
 
 ## クイックスタート
 
-完全な例を以下に示します：
+全体のサンプルを以下に示します：
 
 ```javascript
 'use client'
@@ -44,7 +44,7 @@ export function AIChat() {
 
 ## 内部原理
 
-コアロジックを理解することが重要です：
+中心的なロジックを理解することが重要です：
 
 ```javascript
 import { openai } from '@ai-sdk/openai'
@@ -63,7 +63,7 @@ export async function POST(req) {
 
 ```
 
-パフォーマンスの最適化は具体的なシナリオに合わせる必要があり、すべてのケースで過度な最適化が必要というわけではありません。
+パフォーマンスの最適化は具体的な場面に合わせる必要があり、すべてのケースで過度な最適化が必要というわけではありません。
 
 ## ビジネス実践
 
@@ -98,7 +98,7 @@ export function AIChat() {
 
 ## パフォーマンス比較
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみましょう：
 
 ```javascript
 import { openai } from '@ai-sdk/openai'

@@ -17,7 +17,7 @@ Tree shaking 依賴 ES module 的**靜態結構**（import/export 在編譯時�
 
 ```javascript
 // ES module：靜態，可以分析
-import { add } from "./math"; // 隻用了 add
+import { add } from "./math"; // 只用了 add
 export function add(a, b) {
   return a + b;
 }
@@ -98,7 +98,7 @@ console.log(add(1, 2));
 import { debounce } from "lodash"; // 會打包整個 lodash！
 
 // 解決：用 lodash-es（ES module 版本）
-import { debounce } from "lodash-es"; // ✅ 隻打包 debounce
+import { debounce } from "lodash-es"; // ✅ 只打包 debounce
 
 // 或者按路徑引入
 import debounce from "lodash/debounce"; // ✅ 也可以

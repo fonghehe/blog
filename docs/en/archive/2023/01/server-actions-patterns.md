@@ -4,11 +4,11 @@ date: 2023-01-11 16:06:36
 tags:
   - Frontend
 readingTime: 3
-description: "Server Actions 不只是替代 API 路由的语法糖，它改变了数据流的组织方式。在实际项目中，我们需要一套成熟的设计模式来管理校验、错误处理、权限控制和状态同步。这篇文章总结了我在生产环境中验证过的几种模式。"
-wordCount: 411
+description: "Server Actions are more than a syntactic replacement for API routes — they change how data flow is organized. In real projects you need mature design patterns for validation, error handling, authorization, and state synchronization. This article summarizes the patterns I've validated in production."
+wordCount: 369
 ---
 
-Server Actions 不只是替代 API 路由的语法糖，它改变了数据流的组织方式。在实际项目中，我们需要一套成熟的设计模式来管理校验、错误处理、权限控制和状态同步。这篇文章总结了我在生产环境中验证过的几种模式。
+Server Actions are more than a syntactic replacement for API routes — they change how data flow is organized. In real projects you need mature design patterns for validation, error handling, authorization, and state synchronization. This article summarizes the patterns I've validated in production.
 
 ## Pattern 1: Command Pattern for Business Logic
 

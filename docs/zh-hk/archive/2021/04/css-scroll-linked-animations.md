@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "最近在團隊中落地CSS 滾動驅動動畫 Scroll Animations，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 297
+wordCount: 298
 ---
 
 最近在團隊中落地CSS 滾動驅動動畫 Scroll Animations，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -122,5 +122,5 @@ wordCount: 297
 
 - 不要為了用新技術而用新技術
 - 代碼示例僅供參考，需根據業務場景調整
-- CSS 滾動驅動動畫 Scroll Animations不是銀彈，需要根據項目規模和技術棧選擇
+- CSS 滾動驅動動畫 Scroll Animations 不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要

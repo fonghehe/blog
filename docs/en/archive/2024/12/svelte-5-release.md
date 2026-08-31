@@ -1,18 +1,18 @@
 ---
-title: "Svelte 5 Post-Release Ecosystem: 社区Migration进展 & Tool链更新"
+title: "Svelte 5 Post-Release Ecosystem: Community Migration Progress and Toolchain Updates"
 date: 2024-12-17 18:51:28
 tags:
   - Svelte
 readingTime: 2
-description: "最近在团队中落地Svelte 5 发布详解， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 207
+description: "I recently applied the Svelte 5 release with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 186
 ---
 
-最近在团队中落地Svelte 5 发布详解， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+I recently applied the Svelte 5 release with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
 
 ## Core Concepts
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -126,4 +126,4 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Svelte 5 发布详解不是银弹，需要根据项目规模和技术栈选择
+- The svelte 5 release is not a silver bullet — choose based on your project scale and tech stack

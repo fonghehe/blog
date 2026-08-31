@@ -4,11 +4,11 @@ date: 2022-04-05 10:05:16
 tags:
   - CSS
 readingTime: 2
-description: "关于CSS Cascade Layers @layer 规范，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 242
+description: "When it comes to the CSS Cascade Layers @layer specification, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter."
+wordCount: 224
 ---
 
-关于CSS Cascade Layers @layer 规范，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to the CSS Cascade Layers @layer specification, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter.
 
 ## Basic Principles
 
@@ -151,4 +151,4 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- CSS Cascade Layers @layer 规范 is not a silver bullet; choose based on your project scale and tech stack
+- The CSS Cascade Layers @layer specification is not a silver bullet; choose based on your project scale and tech stack

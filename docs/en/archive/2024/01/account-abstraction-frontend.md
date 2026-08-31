@@ -5,9 +5,9 @@ tags:
   - Web3
   - Ethereum
   - DApp
-readingTime: 12
+readingTime: 10
 description: "An in-depth analysis of ERC-4337 account abstraction frontend practices, covering UserOperation lifecycle, Bundler interaction, Paymaster gas sponsorship, and social recovery solutions"
-wordCount: 3800
+wordCount: 870
 ---
 
 ## ERC-4337 Account Abstraction Overview

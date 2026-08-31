@@ -5,10 +5,10 @@ tags:
   - Rollup
 readingTime: 2
 description: "Vite 底層用 Rollup 做生產構建，理解 Rollup 外掛機製對深度使用 Vite 非常重要。今年我們在元件庫構建中開發了幾個自定義 Rollup 外掛，總結一下開發經驗。"
-wordCount: 231
+wordCount: 229
 ---
 
-Vite 底層用 Rollup 做生產構建，理解 Rollup 外掛機製對深度使用 Vite 非常重要。今年我們在元件庫構建中開發了幾個自定義 Rollup 外掛，總結一下開發經驗。
+Vite 底層用 Rollup 做生產構建，理解 Rollup 外掛機制對深度使用 Vite 非常重要。今年我們在元件庫構建中開發了幾個自定義 Rollup 外掛，總結一下開發經驗。
 
 ## 外掛基本結構
 
@@ -73,7 +73,7 @@ export default function myPlugin() {
 
     // 轉換模組程式碼（最常用的 hook）
     transform(code, id) {
-      // 隻處理 .vue 檔案
+      // 只處理 .vue 檔案
       if (!id.endsWith('.vue')) return null
 
       // 對 Vue SFC 做自定義處理
@@ -160,7 +160,7 @@ export default {
 
 ## 和 Vite 的關係
 
-Vite 的外掛系統相容 Rollup 外掛 API，但有擴充套件：
+Vite 的外掛系統相容 Rollup 外掛 API，但有擴展：
 
 ```javascript
 // Vite 獨有的 hook

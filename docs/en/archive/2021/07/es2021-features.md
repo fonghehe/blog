@@ -5,15 +5,15 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "TC39 在 2021 年 6 月正式发布了 ES2021 标准。和 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 这种重磅特性相比，ES2021 的更新更偏向实用主义——每个特性都不大，但写代码时确实用得上。"
-wordCount: 340
+description: "TC39 officially released the ES2021 standard in June 2021. Compared with heavyweight features like ES2020's `Optional Chaining` and `Nullish Coalescing`, the ES2021 updates lean toward pragmatism — each feature is small, but genuinely useful when you're writing code."
+wordCount: 243
 ---
 
-TC39 在 2021 年 6 月正式发布了 ES2021 标准。和 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 这种重磅特性相比，ES2021 的更新更偏向实用主义——每个特性都不大，但写代码时确实用得上。
+TC39 officially released the ES2021 standard in June 2021. Compared with heavyweight features like ES2020's `Optional Chaining` and `Nullish Coalescing`, the ES2021 updates lean toward pragmatism — each feature is small, but genuinely useful when you're writing code.
 
 ## String.prototype.replaceAll
 
-终于不用再写正则或者 `split().join()` 了：
+You no longer have to reach for a regex or `split().join()`:
 
 ```javascript
 // 以前的写法
@@ -32,7 +32,7 @@ text.replaceAll(/hello/, 'hi')   // TypeError
 
 ## Promise.any
 
-和 `Promise.all` 相反，`Promise.any` 在第一个 Promise fulfilled 时就 resolve：
+The opposite of `Promise.all`, `Promise.any` resolves as soon as the first promise fulfills:
 
 ```javascript
 const promises = [
@@ -56,13 +56,13 @@ try {
 }
 ```
 
-和 `Promise.race` 的区别：`race` 是第一个 settled（不管成功失败）就返回，`any` 是第一个 fulfilled（只看成功）才返回。
+The difference from `Promise.race`: `race` returns on the first settled promise (regardless of success or failure), while `any` returns only on the first fulfilled one (it only cares about success).
 
-实际场景：多 CDN 源竞争、多数据源降级。
+Real-world scenarios: competing across multiple CDN sources, or falling back between multiple data sources.
 
 ## Logical Assignment Operators
 
-三个新的复合赋值运算符，简化条件赋值：
+Three new compound assignment operators that simplify conditional assignment:
 
 ```javascript
 // ||=  等价于 x = x || y（假值时赋值）
@@ -85,11 +85,11 @@ settings.theme = settings.theme || 'dark' // 会覆盖 0, '' 等假值
 settings.theme ??= 'dark'                 // 只覆盖 null 和 undefined
 ```
 
-在处理配置合并、默认值设置时特别好用。
+They're especially handy when merging configurations or setting default values.
 
-## WeakRef 和 FinalizationRegistry
+## WeakRef and FinalizationRegistry
 
-`WeakRef` 允许创建对象的弱引用，不阻止 GC 回收：
+`WeakRef` lets you create a weak reference to an object without preventing the GC from reclaiming it:
 
 ```javascript
 let cache = new Map()
@@ -119,11 +119,11 @@ function cacheData(key, data) {
 }
 ```
 
-这个特性主要用于内存敏感的缓存场景，日常业务开发用得不多。
+This feature is mainly for memory-sensitive caching scenarios; it rarely comes up in day-to-day application development.
 
 ## Numeric Separators
 
-纯粹的语法糖，让大数字更易读：
+Pure syntactic sugar that makes large numbers easier to read:
 
 ```javascript
 const billion = 1_000_000_000
@@ -138,9 +138,9 @@ const maxInt = 9_007_199_254_740_991
 
 ## Summary
 
-- `replaceAll` 解决了字符串替换的老痛点
-- `Promise.any` 填补了 Promise 组合方法的最后一块拼图
-- 逻辑赋值运算符让条件赋值更简洁，`??=` 最实用
-- `WeakRef` 场景较特殊，大部分业务不需要
-- 数字分隔符是纯粹的可读性提升
-- 这些特性在 Node.js 16 和所有现代浏览器中已全面支持
+- `replaceAll` solves the long-standing pain of string replacement.
+- `Promise.any` fills the last gap in the Promise combinators.
+- The logical assignment operators make conditional assignment more concise, with `??=` being the most useful.
+- `WeakRef` covers a fairly niche scenario that most applications don't need.
+- Numeric separators are a pure readability win.
+- All of these features are fully supported in Node.js 16 and every modern browser.

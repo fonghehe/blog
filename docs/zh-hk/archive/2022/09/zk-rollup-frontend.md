@@ -4,12 +4,12 @@ date: 2022-09-19 13:53:40
 tags:
   - Web3
   - Blockchain
-readingTime: 12
-description: "zkSync 2.0 (era) 原生支持賬户抽象和 Paymaster，前端集成方式與 EVM Layer1 有顯著差異。本文覆蓋 zkSync 前端開發的完整鏈路，從 SDK 使用到 Paymaster 集成。"
-wordCount: 3100
+readingTime: 9
+description: "zkSync 2.0 (era) 原生支持賬戶抽象和 Paymaster，前端集成方式與 EVM Layer1 有顯著差異。本文覆蓋 zkSync 前端開發的完整鏈路，從 SDK 使用到 Paymaster 集成。"
+wordCount: 1220
 ---
 
-zkSync 2.0（後更名為 zkSync Era）是 Matter Labs 開發的 zkRollup 方案，目前已主網上線。與 Optimistic Rollup 不同，zkSync 使用零知識證明（具體為 PLONK 證明系統）來保證 L2 狀態的有效性，提款不需要 7 天挑戰期。更重要的是，zkSync 從底層就原生支持賬户抽象（Account Abstraction）和 Paymaster（Gas 代付），這使得前端交互模型與傳統 EVM 有顯著差異。
+zkSync 2.0（後更名為 zkSync Era）是 Matter Labs 開發的 zkRollup 方案，目前已主網上線。與 Optimistic Rollup 不同，zkSync 使用零知識證明（具體為 PLONK 證明系統）來保證 L2 狀態的有效性，提款不需要 7 天挑戰期。更重要的是，zkSync 從底層就原生支持賬戶抽象（Account Abstraction）和 Paymaster（Gas 代付），這使得前端交互模型與傳統 EVM 有顯著差異。
 
 ## zkSync Era 概述與 zkRollup 原理
 
@@ -37,14 +37,14 @@ zkSync Era 不是 EVM 等效（EVM-equivalent），而是 EVM 兼容（EVM-compa
 
 因此，部分操作碼在 zkSync 上不可用或行為不同（如 `SELFDESTRUCT`、`CALLCODE`），需要特別注意。
 
-## 賬户抽象在 zkSync 上的原生支持
+## 賬戶抽象在 zkSync 上的原生支持
 
-zkSync Era 原生支持 EIP-4337 風格的賬户抽象，不需要額外的 EntryPoint 合約。每個賬户都可以是智能合約錢包，支持自定義簽名驗證和交易執行邏輯。
+zkSync Era 原生支持 EIP-4337 風格的賬戶抽象，不需要額外的 EntryPoint 合約。每個賬戶都可以是智能合約錢包，支持自定義簽名驗證和交易執行邏輯。
 
 ```typescript
-// zkSync 上的賬户可以是：
-// 1. EOAs（外部擁有賬户）—— 與以太坊一致
-// 2. 智能合約賬户 —— 原生支持，無需 EntryPoint
+// zkSync 上的賬戶可以是：
+// 1. EOAs（外部擁有賬戶）—— 與以太坊一致
+// 2. 智能合約賬戶 —— 原生支持，無需 EntryPoint
 
 // 這意味着前端可以支持：
 // - 社交登錄錢包（無需助記詞）
@@ -55,14 +55,14 @@ zkSync Era 原生支持 EIP-4337 風格的賬户抽象，不需要額外的 Entr
 
 ## Paymaster：Gas 費代付機制
 
-Paymaster 是 zkSync 上最具特色的功能之一。它允許第三方為用户支付 Gas 費，用户可以用 ERC-20 代幣（而非 ETH）支付 Gas，甚至完全免費。
+Paymaster 是 zkSync 上最具特色的功能之一。它允許第三方為用戶支付 Gas 費，用戶可以用 ERC-20 代幣（而非 ETH）支付 Gas，甚至完全免費。
 
 ### Paymaster 的工作原理
 
 ```
-用户發起交易 → zkSync 協議檢查是否有 Paymaster → Paymaster 支付 Gas
+用戶發起交易 → zkSync 協議檢查是否有 Paymaster → Paymaster 支付 Gas
                                                       ↓
-                                              用户按約定補償（可選）
+                                              用戶按約定補償（可選）
 ```
 
 ### 前端集成 Paymaster
@@ -199,7 +199,7 @@ async function withdrawETH(amount: string) {
 
   // 注意：雖然不需要 7 天挑戰期
   // 但仍需等待 ZK Proof 被驗證（幾小時）
-  // 用户不需要手動 finalize！
+  // 用戶不需要手動 finalize！
   return tx
 }
 ```
@@ -379,14 +379,14 @@ export function useZkSyncWallet() {
     setL1Provider(ethProvider)
     setProvider(zkProvider)
 
-    // 檢查已連接的賬户
+    // 檢查已連接的賬戶
     ethProvider.listAccounts().then((accounts) => {
       if (accounts.length > 0) {
         setAccount(accounts[0])
       }
     })
 
-    // 監聽賬户切換
+    // 監聽賬戶切換
     window.ethereum.on('accountsChanged', (accounts: string[]) => {
       setAccount(accounts[0] || null)
     })
@@ -640,7 +640,7 @@ async function estimateGas(
 
 - **L2 交易**：通常 1-2 秒確認（即時）
 - **L1 → L2 充值**：需要 L1 確認 + L2 最終確認（幾分鐘）
-- **L2 → L1 提款**：需要 ZK Proof 驗證（幾小時），但無需用户手動 finalize
+- **L2 → L1 提款**：需要 ZK Proof 驗證（幾小時），但無需用戶手動 finalize
 
 ## 與 Optimistic Rollup 的前端適配差異
 
@@ -649,16 +649,16 @@ async function estimateGas(
 | 提款時間 | ~7 天 | 幾小時 |
 | 提款操作 | 需要手動 finalize | 自動完成 |
 | Gas 支付 | 僅 ETH | ETH + ERC-20（Paymaster） |
-| 賬户模型 | EOA + 智能合約 | 原生賬户抽象 |
+| 賬戶模型 | EOA + 智能合約 | 原生賬戶抽象 |
 | SDK | ethers.js 兼容 | zksync-web3（ethers 衍生） |
 | 合約部署 | 直接部署 | 需要 zksolc 編譯 |
 | 狀態輪詢 | 複雜（跨鏈） | 簡單（自動確認） |
 
 ## 小結
 
-zkSync Era 的前端開發在許多方面比 Optimistic Rollup 簡單——提款不需要手動 finalize、不需要管理 7 天等待期的狀態機。但 zkSync 引入了新的概念：Paymaster、賬户抽象、pubdata Gas 模型，這些都需要前端開發者學習新的交互模式。
+zkSync Era 的前端開發在許多方面比 Optimistic Rollup 簡單——提款不需要手動 finalize、不需要管理 7 天等待期的狀態機。但 zkSync 引入了新的概念：Paymaster、賬戶抽象、pubdata Gas 模型，這些都需要前端開發者學習新的交互模式。
 
-Paymaster 是 zkSync 最具創新性的功能。它讓 DApp 可以補貼用户的 Gas 費，或者讓用户用穩定幣支付 Gas，這對降低用户門檻有巨大價值。在傳統 EVM 上實現 Gas 代付需要複雜的 relayer 基礎設施，而在 zkSync 上是原生支持的能力。
+Paymaster 是 zkSync 最具創新性的功能。它讓 DApp 可以補貼用戶的 Gas 費，或者讓用戶用穩定幣支付 Gas，這對降低用戶門檻有巨大價值。在傳統 EVM 上實現 Gas 代付需要複雜的 relayer 基礎設施，而在 zkSync 上是原生支持的能力。
 
 SDK 的選擇上，`zksync-web3` 與 ethers v5 高度兼容，遷移成本較低。但需要注意 zkSync 特有的 `customData` 字段和 Gas 估算方式。對於已有 EVM DApp，遷移到 zkSync 的主要工作量在於：調整合約編譯流程（使用 zksolc）、適配 Paymaster、以及測試 zkEVM 兼容性（某些操作碼不可用）。
 

@@ -5,15 +5,15 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "TypeScript 4.4 发布了，几个实用的改进值得关注。不是大版本，但有几个对日常开发有实际帮助的特性。"
-wordCount: 286
+description: "TypeScript 4.4 is out, with several practical improvements worth watching. It's not a major release, but a few features genuinely help day-to-day development."
+wordCount: 183
 ---
 
-TypeScript 4.4 发布了，几个实用的改进值得关注。不是大版本，但有几个对日常开发有实际帮助的特性。
+TypeScript 4.4 has been released, and a few practical improvements are worth noting. It's not a major version, but it ships several features that genuinely help day-to-day development.
 
 ## Control Flow Analysis for Aliased Conditions
 
-之前 TypeScript 对变量别名的控制流分析很弱，4.4 改善了这一点。
+Previously TypeScript's control-flow analysis for aliased variables was weak; 4.4 improves on this.
 
 ```typescript
 // 之前：把 result 赋给别名后，类型守卫失效
@@ -52,7 +52,7 @@ function handleInput(input: string | null) {
 
 ## `exactOptionalPropertyTypes`
 
-这个选项解决了一个长期困扰的问题：可选属性到底能不能赋值 `undefined`。
+This option solves a long-standing headache: whether an optional property can be assigned `undefined`.
 
 ```typescript
 // tsconfig.json
@@ -80,9 +80,9 @@ interface Config {
 }
 ```
 
-这个选项让 `undefined` 的语义更精确：可选属性可以省略，但不能显式赋 `undefined`。
+This option makes the semantics of `undefined` more precise: an optional property can be omitted, but it can't be explicitly assigned `undefined`.
 
-## `switch(true)` 模式
+## The `switch(true)` Pattern
 
 ```typescript
 function describe(value: unknown): string {
@@ -102,7 +102,7 @@ function describe(value: unknown): string {
 }
 ```
 
-## Symbol 和模板字符串类型
+## Symbols and Template Literal Types
 
 ```typescript
 // 模板字符串类型也可以用 symbol
@@ -114,13 +114,13 @@ type T = typeof sym extends string ? never : typeof sym
 
 ## Performance Improvements
 
-TypeScript 4.4 在多个方面优化了性能：
+TypeScript 4.4 improves performance in several areas:
 
-- 条件类型中的延迟类型推断
-- 交叉类型和联合类型的处理优化
-- `@types` 包的加载速度提升
+- Lazy type inference in conditional types
+- Optimized handling of intersection and union types
+- Faster loading of `@types` packages
 
-实际体感：大型项目的 `tsc --noEmit` 速度快了 10-20%。
+In practice: on large projects, `tsc --noEmit` runs 10–20% faster.
 
 ## Practical Configuration Tips
 
@@ -148,8 +148,8 @@ TypeScript 4.4 在多个方面优化了性能：
 
 ## Summary
 
-- Control Flow Analysis for Aliased Conditions：变量赋值后类型守卫不再失效
-- `exactOptionalPropertyTypes`：可选属性不能显式赋 `undefined`，语义更精确
-- `switch(true)` 也能做类型收窄了
-- 性能提升，大型项目感知明显
-- 建议开启 `noUncheckedIndexedAccess` 配合使用，进一步提升类型安全
+- Control Flow Analysis for Aliased Conditions: type guards no longer break after assignment.
+- `exactOptionalPropertyTypes`: optional properties can't be explicitly assigned `undefined`, making the semantics more precise.
+- `switch(true)` can now also narrow types.
+- Performance improvements are noticeable on large projects.
+- I recommend enabling `noUncheckedIndexedAccess` alongside it to further improve type safety.

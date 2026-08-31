@@ -5,9 +5,9 @@ tags:
   - Web3
   - Ethereum
   - DeFi
-readingTime: 15
+readingTime: 9
 description: "從餘額查詢到授權轉賬，全面解析 ERC-20 代幣的前端交互模式與工程實踐"
-wordCount: 4200
+wordCount: 801
 ---
 
 ## ERC-20 標準接口概覽
@@ -643,7 +643,7 @@ async function getUserTokenPortfolio(provider, chainId, userAddress, tokenAddres
 | 方式 | RPC 調用數 | 100 個代幣耗時 |
 |---|---|---|
 | 逐個查詢 | 300（餘額+精度+符號） | ~30s |
-| Promise.all 併發 | 300 | ~3s |
+| Promise.all 並發 | 300 | ~3s |
 | Multicall | 1 | ~0.5s |
 
 在大量代幣查詢場景下，Multicall 將 RPC 調用從數百次減少到 1 次，顯著降低了網絡延遲和 Infura/Alchemy 的 API 調用量。
@@ -652,4 +652,4 @@ async function getUserTokenPortfolio(provider, chainId, userAddress, tokenAddres
 
 ERC-20 是 Web3 前端開發中最基礎也是最高頻的交互對象。從餘額查詢到授權轉賬，從單代幣操作到批量管理，一個完善的 ERC-20 交互層應該處理好精度轉換、授權管理、事件監聽和性能優化這幾個核心問題。
 
-在實際項目中，建議將 ERC-20 交互封裝為獨立的 service 層，與 UI 組件解耦。Multicall 是優化性能的關鍵工具——任何需要查詢多個代幣信息的場景都應該優先考慮使用 Multicall，而不是併發發送大量 RPC 請求。授權策略的選擇需要根據應用場景平衡安全性和用戶體驗，DeFi 協議交互通常使用無限授權，而轉賬類操作則應使用精確授權。
+在實際項目中，建議將 ERC-20 交互封裝為獨立的 service 層，與 UI 組件解耦。Multicall 是優化性能的關鍵工具——任何需要查詢多個代幣信息的場景都應該優先考慮使用 Multicall，而不是並發發送大量 RPC 請求。授權策略的選擇需要根據應用場景平衡安全性和用戶體驗，DeFi 協議交互通常使用無限授權，而轉賬類操作則應使用精確授權。

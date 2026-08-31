@@ -6,7 +6,7 @@ tags:
   - 工程化
 readingTime: 3
 description: "2021 年快结束了，整理一下这一年前端生态的重要变化。如果用一个词总结 2021 的前端，我会选\"Vite\"。"
-wordCount: 884
+wordCount: 880
 ---
 
 2021 年快结束了，整理一下这一年前端生态的重要变化。如果用一个词总结 2021 的前端，我会选"Vite"。
@@ -78,7 +78,7 @@ Webpack 5 在今年也做了不少优化（持久缓存、Module Federation）�
 
 ### Monorepo
 
-- **Turborepo**：12 月开源，Vercel 收购并开源，Go 写的高性能构建编排
+- **Turborepo**：12 月由 Vercel 开源，Go 写的高性能构建编排
 - **Nx**：持续迭代，12.9 版本支持 Vite executor
 - **pnpm workspace**：成为最轻量的 Monorepo 方案
 

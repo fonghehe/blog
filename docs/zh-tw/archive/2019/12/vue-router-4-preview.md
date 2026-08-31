@@ -66,7 +66,7 @@ const guard = (
 
 ## createRouter 替代 new VueRouter
 
-Vue Router 4 採用了 Vue 3 的函式式風格，不再通過 `new` 建立例項：
+Vue Router 4 採用了 Vue 3 的函式式風格，不再通過 `new` 建立實例：
 
 ```typescript
 // Vue Router 3

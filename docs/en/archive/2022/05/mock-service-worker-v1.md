@@ -4,11 +4,11 @@ date: 2022-05-26 10:22:29
 tags:
   - Frontend
 readingTime: 2
-description: "关于MSW v1 正式发布，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 203
+description: "Regarding the official release of MSW v1, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective."
+wordCount: 183
 ---
 
-关于MSW v1 正式发布，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+Regarding the official release of MSW v1, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective.
 
 ## Basic Principles
 

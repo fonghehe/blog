@@ -4,11 +4,11 @@ date: 2024-02-20 17:22:08
 tags:
   - Frontend
 readingTime: 3
-description: "作为前端平台负责人，从去年开始尝试将 AI 引入 Code Review 流程。经过几个月的实践，整理一下我们的经验和踩过的坑。"
-wordCount: 645
+description: "As the frontend platform lead, I started bringing AI into our code review process last year. After months of practice, here's our experience and the pitfalls we hit."
+wordCount: 625
 ---
 
-作为前端平台负责人，从去年开始尝试将 AI 引入 Code Review 流程。经过几个月的实践，整理一下我们的经验和踩过的坑。
+As the frontend platform lead, I started bringing AI into our code review process last year. After months of practice, here's our experience and the pitfalls we hit.
 
 ## Why AI Assistance Is Needed
 

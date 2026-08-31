@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 8 於 2019 年 5 月 28 日正式釋出。Ivy 以 opt-in 方式進入預覽，差異化載入預設開啟。實際體驗了一個月，來講講升級經驗和各項功能的實際效果。"
-wordCount: 299
+wordCount: 302
 ---
 
 Angular 8 於 2019 年 5 月 28 日正式釋出。Ivy 以 opt-in 方式進入預覽，差異化載入預設開啟。實際體驗了一個月，來講講升級經驗和各項功能的實際效果。
@@ -32,7 +32,7 @@ dist/
 <script nomodule src="main-es5.js"></script>
 ```
 
-實測資料（操箇中等規模 Angular 專案）：
+實測資料（操作一個中等規模的 Angular 專案）：
 
 - 現代瀏覽器下 main bundle **減小 20%+**
 - 執行時解析速度明顯提升

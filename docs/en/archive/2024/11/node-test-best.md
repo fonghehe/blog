@@ -4,11 +4,11 @@ date: 2024-11-28 13:22:59
 tags:
   - Node.js
 readingTime: 2
-description: "在日常开发中，Node.js 测试最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 242
+description: "Node.js testing best practices is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 208
 ---
 
-在日常开发中，Node.js 测试最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+Node.js testing best practices is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
 
 ## Quick Start
 
@@ -62,7 +62,7 @@ Let's start with the basic implementation:
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Business Practice
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Comparison
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -152,5 +152,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Node.js 测试最佳实践不是银弹，需要根据项目规模和技术栈选择
+- Node.js testing best practices is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

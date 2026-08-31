@@ -4,11 +4,11 @@ date: 2023-05-04 10:05:09
 tags:
   - Playwright
 readingTime: 2
-description: "Playwright 组件测试指南这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 209
+description: "The Playwright component testing guide has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 187
 ---
 
-Playwright 组件测试指南这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+The Playwright component testing guide has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
 
 ## Getting Started
 
@@ -114,6 +114,6 @@ This approach has been running stably in production for over six months and has 
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Playwright 组件测试指南不是银弹，需要根据项目规模和技术栈选择
+- The playwright component testing guide is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

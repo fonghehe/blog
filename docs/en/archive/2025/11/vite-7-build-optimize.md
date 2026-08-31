@@ -1,5 +1,5 @@
 ---
-title: "Vite 7 Build Optimization: 大型Project打包速度 & 体积实测对比"
+title: "Vite 7 Build Optimization in Practice: Measured Bundling Speed and Size in a Large Project"
 date: 2025-11-24 19:58:35
 tags:
   - Engineering

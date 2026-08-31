@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "在日常开发中，Node.js Cluster 多进程性能优化的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 305
+wordCount: 304
 ---
 
 在日常开发中，Node.js Cluster 多进程性能优化的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -66,7 +66,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化需要结合具体场景，不必对所有情况都过度优化。
 
 ## 业务实战
 

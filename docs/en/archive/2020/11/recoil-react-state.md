@@ -4,15 +4,15 @@ date: 2020-11-27 10:57:06
 tags:
   - React
 readingTime: 2
-description: "关于Recoil React 状态管理新选择，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 318
+description: "A production-focused look at Recoil as a new option for React state management, addressing real-world problems developers encounter beyond basic API usage."
+wordCount: 208
 ---
 
-关于Recoil React 状态管理新选择，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to Recoil as a new option for React state management, many developers stop at the API-call level. This article looks at the real-world problems you run into in production, and how to solve them.
 
 ## Basic Principles
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -31,11 +31,11 @@ function reducer(state, action) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge-case handling — that is critical in production.
 
 ## Advanced Features
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -60,11 +60,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance tuning has to fit the actual scenario; not every case needs over-optimization.
 
 ## Project Practice
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 import { create } from 'zustand'
@@ -88,11 +88,11 @@ const useStore = create(
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Best Practices
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -115,11 +115,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project you also need to handle errors and edge cases.
 
 ## Common Pitfalls
 
-在这个基础上，我们可以进一步优化：
+Building on that, we can push the optimization a step further:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -138,10 +138,10 @@ function reducer(state, action) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in larger projects and significantly lowers maintenance cost.
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Recoil React 状态管理新选择不是银弹，需要根据项目规模和技术栈选择
+- Don't adopt new tech just for its own sake.
+- The code samples are for reference only; adapt them to your use case.
+- Recoil as a new option for React state management isn't a silver bullet — pick it based on project size and your tech stack.

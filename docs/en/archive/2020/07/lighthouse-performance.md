@@ -4,15 +4,15 @@ date: 2020-07-29 16:34:33
 tags:
   - Performance Optimization
 readingTime: 1
-description: "最近在团队中落地Lighthouse 性能优化清单，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 265
+description: "Lessons learned from rolling out a Lighthouse performance optimization checklist across the team, shared as a practical reference for similar efforts."
+wordCount: 164
 ---
 
-最近在团队中落地Lighthouse 性能优化清单，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+I recently rolled out a Lighthouse performance optimization checklist across the team and picked up a lot of experience along the way. I'm sharing it here in case it helps others doing similar work.
 
 ## Core Concepts
 
-先来看基本的实现方式：
+Let's look at the basic implementation first:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -29,11 +29,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll also need to consider error handling and edge cases.
 
 ## In-Depth Analysis
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -50,11 +50,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and can significantly cut maintenance cost.
 
 ## Implementation Experience
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -71,11 +71,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Tuning Strategies
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -92,10 +92,10 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge cases — this is critical in production.
 
 ## Summary
 
-- Lighthouse 性能优化清单不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
+- A Lighthouse performance checklist is no silver bullet; choose it based on your project's size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Be sure to verify compatibility before using it in production.

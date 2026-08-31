@@ -5,7 +5,7 @@ tags:
   - Vite
   - Vitest
 readingTime: 2
-description: "We recently implemented Vitest 2.0 新特性， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+description: "I recently adopted Vitest 2.0's new features with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 210
 ---
 

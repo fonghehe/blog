@@ -12,7 +12,7 @@ JavaScript 在誕生之初並沒有模組系統，所有程式碼共享同一個
 
 ## 原始時代：全域性變數
 
-最早期的前端開發，所有 JS 檔案通過 `<script>` 標籤引入，所有變數都掛在 `window` 上：
+最早期的前端開發，所有 JS 檔案透過 `<script>` 標籤引入，所有變數都掛在 `window` 上：
 
 ```html
 <!-- index.html -->
@@ -562,4 +562,4 @@ ESM        ✅          ✅         ✅         ✅**        ✅***      ✅
 - IIFE 用函式作用域隔離變數，但依賴手動管理載入順序；CommonJS 是 Node.js 的同步方案，不適合瀏覽器直接使用
 - AMD 為瀏覽器設計了非同步載入，但語法繁瑣；UMD 相容所有環境但程式碼冗餘
 - ES Modules 是語言原生標準，靜態分析友好，支援 tree shaking 和動態 `import()`，是現代前端的首選方案
-- 實際專案中通過 Webpack 等構建工具打包，利用動態 `import()` 實現程式碼分割，ES Modules 的靜態特性讓 tree shaking 成為可能
+- 實際專案中透過 Webpack 等構建工具打包，利用動態 `import()` 實現程式碼分割，ES Modules 的靜態特性讓 tree shaking 成為可能

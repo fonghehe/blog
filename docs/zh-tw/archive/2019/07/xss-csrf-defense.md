@@ -138,7 +138,7 @@ add_header Content-Security-Policy "frame-ancestors 'none';" always;
 
 ```
 □ 不直接 innerHTML 使用者輸入，用 DOMPurify 過濾富文本
-□ v-html / dangerouslySetInnerHTML 隻用於可信內容
+□ v-html / dangerouslySetInnerHTML 只用於可信內容
 □ API 請求新增 CSRF Token 或依賴 SameSite Cookie
 □ 設定 CSP 響應頭
 □ 設定 X-Frame-Options 防止點選劫持

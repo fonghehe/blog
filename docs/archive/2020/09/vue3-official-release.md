@@ -197,7 +197,7 @@ app.mount("#app");
 ## 小结
 
 - Vue 3 不是颠覆，是演进。Composition API 是加法，Options API 还在
-- `setup()` 或 `<script>` 是新的写法方式，更灵活
+- `setup()` 或 `<script>` 是新的书写方式，更灵活
 - Composables 替代 Mixin，来源清晰，类型友好
 - `Teleport`、`Suspense` 解决了 Vue 2 的痛点
 - 生态还需要 6-12 个月成熟，但已经可以在新项目中使用

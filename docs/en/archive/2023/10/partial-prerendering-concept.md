@@ -1,5 +1,5 @@
 ---
-title: "Partial Prerendering Concept: Next.js 混合渲染未来"
+title: "Partial Prerendering Explained: The Hybrid Rendering Future of Next.js"
 date: 2023-10-03 14:50:22
 tags:
   - Frontend

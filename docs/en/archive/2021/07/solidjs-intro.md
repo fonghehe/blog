@@ -5,15 +5,15 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "SolidJS 是 2021 年最值得关注的前端框架之一。它的核心主张听起来和 Svelte 相似——\"不用虚拟 DOM\"——但实现原理完全不同。Svelte 是编译时框架，SolidJS 是运行时细粒度响应式。这篇文章带你了解它为什么能在性能测试中长期排名第一。"
-wordCount: 387
+description: "SolidJS is one of the most noteworthy front-end frameworks of 2021. Its core claim sounds similar to Svelte's — \"no virtual DOM\" — but the implementation is completely different. Svelte is a compile-time framework, whereas SolidJS is runtime, fine-grained reactivity. This article walks you through why it consistently ranks at the top of performance benchmarks."
+wordCount: 281
 ---
 
-SolidJS 是 2021 年最值得关注的前端框架之一。它的核心主张听起来和 Svelte 相似——"不用虚拟 DOM"——但实现原理完全不同。Svelte 是编译时框架，SolidJS 是运行时细粒度响应式。这篇文章带你了解它为什么能在性能测试中长期排名第一。
+SolidJS is one of the most noteworthy front-end frameworks of 2021. Its core claim sounds similar to Svelte's — "no virtual DOM" — but the implementation is completely different. Svelte is a compile-time framework, whereas SolidJS is runtime, fine-grained reactivity. This article walks you through why it consistently ranks at the top of performance benchmarks.
 
 ## Comparison with React: Similar Syntax, Fundamentally Different Principles
 
-SolidJS 的语法刻意向 React 靠拢，但底层机制完全不同：
+SolidJS deliberately mimics React's syntax, but the underlying mechanism is completely different:
 
 ```jsx
 // React
@@ -33,10 +33,10 @@ function Counter() {
 }
 ```
 
-关键区别：
+The key difference:
 
-- React：状态变化 → 组件重新渲染 → Virtual DOM diff → DOM 更新
-- SolidJS：状态变化 → **直接**更新用到这个状态的 DOM 节点
+- React: state change → component re-renders → Virtual DOM diff → DOM update
+- SolidJS: state change → **directly** updates the DOM nodes that consume that state
 
 ## Reactive Primitives
 
@@ -68,7 +68,7 @@ function App() {
 }
 ```
 
-注意：`count` 是函数，读取时要调用 `count()`——这是 SolidJS 和 React 最明显的语法区别。
+Note: `count` is a function, so you call `count()` to read it — this is the most visible syntax difference between SolidJS and React.
 
 ## Benefits of Fine-Grained Updates
 
@@ -105,7 +105,7 @@ function List() {
 }
 ```
 
-## Store：嵌套响应式状态
+## Store: Nested Reactive State
 
 ```jsx
 import { createStore } from 'solid-js/store';
@@ -136,7 +136,7 @@ function TodoApp() {
 
 ## Control Flow Components
 
-SolidJS 用组件替代 JSX 里的 JavaScript 控制流，以确保细粒度追踪：
+SolidJS replaces JavaScript control flow inside JSX with components to guarantee fine-grained tracking:
 
 ```jsx
 // Show：条件渲染（替代 &&）
@@ -159,7 +159,7 @@ SolidJS 用组件替代 JSX 里的 JavaScript 控制流，以确保细粒度追�
 
 ## Why the Performance Is So Good
 
-JS 框架性能测试（js-framework-benchmark）中，SolidJS 始终排名前列，接近原生 JavaScript：
+In the js-framework-benchmark, SolidJS consistently ranks near the top, close to vanilla JavaScript:
 
 | 框架     | 创建1000行 | 替换1000行 | 部分更新 |
 | -------- | ---------- | ---------- | -------- |
@@ -168,8 +168,8 @@ JS 框架性能测试（js-framework-benchmark）中，SolidJS 始终排名前�
 | Vue 3    | ~1.3x      | ~1.5x      | ~1.6x    |
 | React 17 | ~1.6x      | ~2.0x      | ~2.0x    |
 
-原因：没有虚拟 DOM diff，状态变化直接转化为精确的 DOM 操作。
+The reason: with no virtual DOM diff, a state change turns directly into a precise DOM operation.
 
 ## Summary
 
-SolidJS 证明了"React 式 API + 细粒度响应式"是可行的。它不一定会取代 React 或 Vue，但它的设计思想正在影响整个生态——Vue 3 的 `@vue/reactivity` 和 Preact Signals 都有 SolidJS 的影子。2021 年值得用它做个小项目体验一下。
+SolidJS proves that a React-style API combined with fine-grained reactivity is viable. It may not replace React or Vue, but its design thinking is already influencing the whole ecosystem — Vue 3's `@vue/reactivity` and Preact Signals both show SolidJS's fingerprints. In 2021 it's worth building a small project with it to get a feel for it.

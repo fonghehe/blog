@@ -4,7 +4,7 @@ date: 2023-05-10 16:06:08
 tags:
   - Storybook
 readingTime: 2
-description: "在日常开发中，Storybook 7 迁移完整指南 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+description: "A complete guide to Storybook 7 migration matters more and more in everyday work. This article systematically covers the process, rationale, and practical strategies."
 wordCount: 207
 ---
 

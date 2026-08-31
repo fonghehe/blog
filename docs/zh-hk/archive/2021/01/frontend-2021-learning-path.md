@@ -12,7 +12,7 @@ tags:
   - 測試
 readingTime: 3
 description: "新年第一週，適合做一次技術規劃。2020 年變化太多：Vue 3、Angular 11、webpack 5、Vite……與其追趕每一個新玩意兒，不如想清楚哪些值得深耕。"
-wordCount: 743
+wordCount: 747
 ---
 
 新年第一週，適合做一次技術規劃。2020 年變化太多：Vue 3、Angular 11、webpack 5、Vite……與其追趕每一個新玩意兒，不如想清楚哪些值得深耕。
@@ -23,9 +23,9 @@ wordCount: 743
 
 **Vite 的出現**改變了開發體驗的預期。一旦用過秒級啓動，很難回去接受分鐘級等待。即使你的生產環境還在用 webpack，開發環境也值得考慮遷移。
 
-**Vue 3 的 Composition API** 不隻是 Vue 的特性，它和 React Hooks 共同確立了"邏輯複用用 hook/composable"的範式，替代了過去 mixin 和 HOC 的混亂地帶。
+**Vue 3 的 Composition API** 不只是 Vue 的特性，它和 React Hooks 共同確立了"邏輯複用用 hook/composable"的範式，替代了過去 mixin 和 HOC 的混亂地帶。
 
-**TypeScript 滲透率** 已經到了"新項目不用需要解釋"的程度。2021 年關注點應該從"要不要用"轉向"怎麼用好"。
+**TypeScript 滲透率** 已經到了「新項目不用它反而需要解釋」的程度。2021 年關注點應該從"要不要用"轉向"怎麼用好"。
 
 ## 2021 年技術樹推薦
 
@@ -48,14 +48,14 @@ type ExtractRouteParams<T extends string> =
 ```
 
 **React 18 / Vue 3 深度**
-不是學 API，是理解併發渲染、Suspense 數據加載、Composition API 的設計動機。
+不是學 API，是理解並發渲染、Suspense 數據加載、Composition API 的設計動機。
 
-**性能工程化**
+**效能工程化**
 Core Web Vitals 進入 Google 排名算法（2021 年 5 月），LCP/FID/CLS 從"錦上添花"變成"基礎要求"。
 
 ### 值得了解（擴寬技術視野）
 
-**SSR / 元框架**：Next.js 10、Nuxt 3 beta、SvelteKit——服務端渲染從"高端玩法"變成了標配選項。
+**SSR / 元框架**：Next.js 10、Nuxt 3 beta、SvelteKit——伺服器端渲染從"高端玩法"變成了標配選項。
 
 **測試**：Vitest（基於 Vite 的測試框架）、Playwright（跨瀏覽器 E2E）、Testing Library——測試工具鏈在 2021 年有顯著進步。
 
@@ -84,7 +84,7 @@ Core Web Vitals 進入 Google 排名算法（2021 年 5 月），LCP/FID/CLS 從
 ## 我的 2021 重點
 
 1. **TypeScript 體操**：把條件類型、模板字面量類型用熟
-2. **性能優化**：系統學習 Core Web Vitals，給現有項目做一次全面體檢
+2. **效能優化**：系統學習 Core Web Vitals，給現有項目做一次全面體檢
 3. **Vite 生態**：跟進 Vite 2.0 和 Vitest 的進展
 4. **閲讀源碼**：Vue 3 響應式系統 + React Fiber 核心部分
 

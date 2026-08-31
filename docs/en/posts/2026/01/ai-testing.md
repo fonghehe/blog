@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 4
 description: "Writing test cases is one of the most tedious yet most important parts of frontend development. In 2026, AI can automatically generate unit tests, integration t"
-wordCount: 268
+wordCount: 270
 ---
 
 Writing test cases is one of the most tedious yet most important parts of frontend development. In 2026, AI can automatically generate unit tests, integration tests, and even end-to-end tests. But "auto-generated" doesn't mean "auto-generated well" — bad tests are more dangerous than no tests, because they give you a false sense of security.
@@ -219,7 +219,7 @@ const highRiskGaps = gaps.filter((g) => g.riskScore >= 70);
 
 ## Automating Test Maintenance
 
-The biggest cost of testing isn't writing tests — it's maintaining them. AI can monitor test failures, automatically fix tests broken by code changes, and even flag outdated tests.
+The biggest cost of testing isn't writing tests — it's maintaining them. AI can monitor test failures, automatically fix tests that break due to code changes, and even flag outdated tests.
 
 ```typescript
 // test-maintenance.ts

@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常開發中，File System Access API 檔案操作的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 334
+wordCount: 332
 ---
 
 在日常開發中，File System Access API 檔案操作的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
@@ -67,7 +67,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 業務實戰
 

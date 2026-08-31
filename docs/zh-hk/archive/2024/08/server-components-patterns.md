@@ -13,14 +13,14 @@ Server Components 進入穩定期，我們團隊在一箇中等複雜度的項�
 
 ## 模式一：數據獲取下沉
 
-最直接的好處：數據獲取邏輯從客户端移到服務端。
+最直接的好處：數據獲取邏輯從客戶端移到服務端。
 
 ```tsx
 // app/products/[id]/page.tsx — Server Component
 import { db } from "@/lib/db";
 import { Suspense } from "react";
 
-// 這個函數隻在服務端運行，零客户端 JS
+// 這個函數隻在服務端運行，零客戶端 JS
 async function ProductDetail({ id }: { id: string }) {
   const product = await db.product.findUnique({
     where: { id },
@@ -57,7 +57,7 @@ async function ProductReviews({ productId }: { productId: string }) {
 
 ## 模式二：交互島嶼隔離
 
-保持交互邏輯的最小化客户端邊界：
+保持交互邏輯的最小化客戶端邊界：
 
 ```tsx
 // Server Component 中嵌入 Client Component
@@ -193,12 +193,12 @@ export default function SettingsPage() {
 
 **序列化邊界要注意**。Server Component 向 Client Component 傳遞 props 時，隻能傳遞可序列化的數據。Date 對象、Map、Set 都不能直接傳。
 
-**"use client" 不是整個組件樹**。標記了 `"use client"` 的組件仍然可以在服務端渲染，隻是它的子組件會在客户端 hydrate。
+**"use client" 不是整個組件樹**。標記了 `"use client"` 的組件仍然可以在服務端渲染，隻是它的子組件會在客戶端 hydrate。
 
 ## 小結
 
-- 數據獲取下沉到 Server Component，減少客户端 JS bundle
+- 數據獲取下沉到 Server Component，減少客戶端 JS bundle
 - Suspense 流式加載讓頁面感知更快
 - Parallel Routes 實現多區域獨立加載
 - Server Actions 簡化表單提交和數據變更
-- 關鍵是控製好 Server/Client 邊界，最小化客户端代碼
+- 關鍵是控製好 Server/Client 邊界，最小化客戶端代碼

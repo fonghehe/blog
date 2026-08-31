@@ -6,22 +6,22 @@ tags:
   - Webpack
   - TypeScript
 
-readingTime: 2
+readingTime: 3
 description: "Angular 12 于 2021 年 5 月 26 日正式发布。这是一个里程碑版本：View Engine 正式退场，Ivy 成为唯一渲染引擎；Webpack 5 从实验性升级为默认构建工具。升级之后我们整理了一份完整的变化记录。"
-wordCount: 499
+wordCount: 851
 ---
 
-Angular 12 于 2021 年 5 月 26 日正式发布。这是一个里程碑版本：View Engine 正式退场，Ivy 成为唯一渲染引擎；Webpack 5 从实验性升级为默认构建工具。升级之后我们整理了一份完整的变化记录。
+Angular 12 は 2021 年 5 月 26 日に正式リリースされた。View Engine が正式に姿を消し、Ivy が唯一のレンダリングエンジンになったのが象徴的な節目だ。また Webpack 5 が実験的扱いからデフォルトのビルドツールへと昇格した。アップグレード後に、変更点をまとめた記録をここに残す。
 
-## View Engine 正式停用
+## View Engine の廃止
 
-Angular 12 中 `@angular/compiler` 不再包含 View Engine，`ngcc` 也不再需要（因为所有库都已用 Ivy 格式发布）。
+Angular 12 では `@angular/compiler` に View Engine が含まれなくなり、`ngcc` も不要になった（すべてのライブラリが Ivy 形式で公開されているため）。
 
-**对开发者的影响**：
+**開発者への影響**：
 
-- 升级 Angular 12 后，项目需要所有依赖都是 Ivy 兼容版本
-- 使用旧版第三方库（未更新到 Angular 9+ 的）可能报错
-- `enableIvy: false` 配置不再有效
+- Angular 12 へアップグレードすると、プロジェクトのすべての依存関係が Ivy 互換である必要がある
+- Angular 9 以降に更新されていない古いサードパーティ製ライブラリを使うとエラーになる可能性がある
+- `enableIvy: false` の設定は無効になる
 
 ## Webpack 5 が正式にデフォルトに
 
@@ -33,7 +33,7 @@ ng new my-app  # 使用 Webpack 4
 ng new my-app  # 使用 Webpack 5（持久化缓存默认开启）
 ```
 
-**持久化缓存的实际效果**（中型项目测试）：
+**永続キャッシュの実際の効果**（中規模プロジェクトでの検証）：
 
 ```
 首次 ng serve：28s
@@ -41,15 +41,15 @@ ng new my-app  # 使用 Webpack 5（持久化缓存默认开启）
 修改一个组件后 ng serve：6s  ← 增量重建
 ```
 
-持久化缓存存储在 `.angular/cache` 目录，建议加入 `.gitignore`：
+永続キャッシュは `.angular/cache` ディレクトリに保存されるため、`.gitignore` への追加を推奨する：
 
 ```bash
 echo ".angular/cache" >> .gitignore
 ```
 
-## strictTemplates 成为新项目默认
+## strictTemplates が新規プロジェクトのデフォルトに
 
-Angular 12 开始，所有新项目默认启用 `strictTemplates`，无需 `--strict` flag：
+Angular 12 以降、すべての新規プロジェクトで `strictTemplates` がデフォルトで有効になり、`--strict` フラグは不要になった：
 
 ```json
 // tsconfig.json（Angular 12 新项目默认配置）
@@ -62,9 +62,9 @@ Angular 12 开始，所有新项目默认启用 `strictTemplates`，无需 `--st
 }
 ```
 
-## Sass API 更新（重要！）
+## Sass API の更新（重要！）
 
-Angular 12 升级了对 Sass 的支持，废弃旧版 Node Sass API，改用 Dart Sass 的现代 API：
+Angular 12 では Sass のサポートが強化され、旧来の Node Sass API が非推奨となり、Dart Sass のモダンな API が採用された：
 
 ```bash
 # 之前：需要 node-sass（C++ 依赖，安装麻烦）
@@ -74,7 +74,7 @@ npm install node-sass
 npm install sass
 ```
 
-**迁移旧的 Sass 写法**：
+**古い Sass の書き方からの移行**：
 
 ```scss
 // ❌ 旧 API（已废弃）
@@ -90,11 +90,11 @@ npm install sass
 }
 ```
 
-`@use` 替代 `@import` 的好处：避免全局作用域污染，每个文件明确声明依赖。
+`@use` が `@import` に代わる利点は、グローバルスコープの汚染を防ぎ、各ファイルが依存関係を明示的に宣言できる点だ。
 
-## Inline Sass（内联样式支持）
+## Inline Sass（インラインスタイルのサポート）
 
-Angular 12 的 CLI 支持在组件里用 Sass 语法写内联样式：
+Angular 12 の CLI では、コンポーネント内で Sass 構文を使ってインラインスタイルを書ける：
 
 ```typescript
 @Component({
@@ -115,7 +115,7 @@ Angular 12 的 CLI 支持在组件里用 Sass 语法写内联样式：
 export class ButtonComponent {}
 ```
 
-## ng build 默认生产模式
+## ng build のデフォルトが本番モードに
 
 ```bash
 # Angular 12 之前
@@ -127,7 +127,7 @@ ng build           # 生产模式（默认！）
 ng build --configuration development  # 开发模式
 ```
 
-这个改变防止了"忘记加 `--prod` 就发布了开发版本"的事故。
+この変更により、「`--prod` を付け忘れて開発版を公開してしまう」という事故を防げる。
 
 ## Angular 12 へのアップグレード
 
@@ -140,7 +140,7 @@ ng update @angular/core@12 @angular/cli@12
 # 3. 更新 Sass 相关配置
 ```
 
-**注意**：如果依赖了未升级到 Ivy 的第三方库，升级可能失败。先用 `ng update --list` 检查：
+**注意**：Ivy に対応していないサードパーティ製ライブラリに依存していると、アップグレードが失敗する可能性がある。まず `ng update --list` で確認しよう：
 
 ```bash
 ng update --list
@@ -149,4 +149,4 @@ ng update --list
 
 ## まとめ
 
-Angular 12 的变化里，View Engine 退场是最有象征意义的——Ivy 时代正式开始。Webpack 5 默认开启让增量构建速度翻倍，`ng build` 默认生产模式则消除了一类常见的部署事故。这次升级对绝大多数项目来说是低风险的，推荐尽快跟进。
+Angular 12 の変更のなかで、最も象徴的なのは View Engine の退場──Ivy の時代が本格的に始まったことを意味する。Webpack 5 のデフォルト化でインクリメンタルビルドの速度は倍になり、`ng build` のデフォルト本番モードはよくあるデプロイ事故の一種を排除した。このアップグレードは大半のプロジェクトにとって低リスクであり、できるだけ早く追従することを推奨する。

@@ -1,12 +1,13 @@
 ---
-readingTime: 6
-wordCount: 1395
+readingTime: 8
+wordCount: 1406
 title: "Truffle 框架開發指南：DApp 項目工程化"
 date: 2018-09-09 17:05:37
 tags:
   - Web3
   - Ethereum
   - DApp
+description: "當智能合約從簡單的存儲示例發展到真實業務邏輯時，Remix 的在線 IDE 很快就顯得力不從心。合約之間互相依賴、需要版本管理、需要自動化測試、需要多環境部署——這些需求催生了 Truffle 框架。Truffle 是以太坊 DApp 工程化的主流框架，它將合約開發從\"寫一個文件、部署一個文件\"的模式帶入了一個結構化的"
 ---
 
 當智能合約從簡單的存儲示例發展到真實業務邏輯時，Remix 的在線 IDE 很快就顯得力不從心。合約之間互相依賴、需要版本管理、需要自動化測試、需要多環境部署——這些需求催生了 Truffle 框架。Truffle 是以太坊 DApp 工程化的主流框架，它將合約開發從"寫一個文件、部署一個文件"的模式帶入了一個結構化的項目管理體系。
@@ -71,11 +72,11 @@ Truffle 讀取 `contracts/` 下所有 `.sol` 文件，使用 `solc` 編譯器編
 }
 ```
 
-`networks` 字段記錄了合約在各網絡上的部署地址。Truffle 通過這個字段實現"同一份代碼、多網絡部署"的管理。
+`networks` 字段記錄了合約在各網路上的部署地址。Truffle 通過這個字段實現"同一份代碼、多網路部署"的管理。
 
 ## 遷移腳本：truffle migrate
 
-遷移腳本是 Truffle 的核心概念之一。它不是數據庫遷移，而是一組按順序執行的部署腳本，文件名前綴的數字決定了執行順序。
+遷移腳本是 Truffle 的核心概念之一。它不是資料庫遷移，而是一組按順序執行的部署腳本，文件名前綴的數字決定了執行順序。
 
 ### Migrations.sol 合約
 
@@ -154,7 +155,7 @@ truffle migrate --reset
 
 這個機制確保了遷移腳本只執行一次，避免重複部署。但在實際開發中，如果合約邏輯變更需要重新部署，需要使用 `--reset` 參數或增加新的遷移腳本。
 
-## 測試網絡配置：truffle-config.js
+## 測試網路配置：truffle-config.js
 
 ```javascript
 // truffle-config.js
@@ -175,11 +176,11 @@ module.exports = {
     },
 
     networks: {
-        // 本地開發網絡
+        // 本地開發網路
         development: {
             host: '127.0.0.1',
-            port: 7545,          // Ganache 默認端口
-            network_id: '*',     // 匹配任何網絡 ID
+            port: 7545,          // Ganache 預設埠
+            network_id: '*',     // 匹配任何網路 ID
             gas: 6721975,
             gasPrice: 20000000000  // 20 Gwei
         },
@@ -438,7 +439,7 @@ async function getTokenInfo() {
 1. **自動處理 Gas 估算**：不需要手動設置 Gas Limit
 2. **Promise 風格**：即使底層是 web3.js 0.20.x 也返回 Promise
 3. **交易哈希和回執統一處理**：`send` 方法返回回執而非僅返回交易哈希
-4. **網絡感知**：合約 JSON 中包含部署地址，自動匹配當前網絡
+4. **網路感知**：合約 JSON 中包含部署地址，自動匹配當前網路
 
 ## 完整的 Truffle 項目配置與遷移腳本
 
@@ -496,7 +497,7 @@ module.exports = function(deployer, network, accounts) {
 | 部署 | 手動編寫部署腳本 | 遷移腳本管理 |
 | 測試 | 手動搭建測試環境 | 內置 Mocha + Assert |
 | 合約 ABI 管理 | 手動維護 JSON 文件 | 編譯輸出自動生成 |
-| 多網絡部署 | 手動切換 Provider | 配置文件管理 |
+| 多網路部署 | 手動切換 Provider | 配置文件管理 |
 | 依賴管理 | 手動複製合約文件 | npm 集成 |
 
 plain web3.js 開發的問題在於沒有工程規範——每個開發者自行決定目錄結構、部署流程和測試方案，導致項目間難以複用經驗。Truffle 的價值在於提供了一套約定優於配置的工程規範。

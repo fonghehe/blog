@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS custom properties (also called CSS variables) are now supported in all major browsers, except IE. They're fundamentally different from Sass variables and ha"
-wordCount: 266
+wordCount: 270
 ---
 
 CSS custom properties (also called CSS variables) are now supported in all major browsers, except IE. They're fundamentally different from Sass variables and have their own unique advantages worth understanding properly.
@@ -63,7 +63,7 @@ document.documentElement.style.setProperty('--primary', '#67c23a')
 /* All elements using var(--primary) update immediately */
 ```
 
-This is the biggest advantage of CSS variables: **runtime dynamic modification**.
+This is the biggest advantage of CSS variables: **they can be changed dynamically at runtime**.
 
 ## Use Case 1: Theme Switching
 

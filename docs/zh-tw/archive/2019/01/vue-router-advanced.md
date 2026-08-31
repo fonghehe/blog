@@ -8,7 +8,7 @@ description: "Vue Router 的基礎用法很簡單，但許可權控製、路由�
 wordCount: 199
 ---
 
-Vue Router 的基礎用法很簡單，但許可權控製、路由元資訊、動態新增路由這些進階用法，很多專案都沒用好。
+Vue Router 的基礎用法很簡單，但許可權控制、路由元資訊、動態新增路由這些進階用法，很多專案都沒用好。
 
 ## 導航守衛執行順序
 
@@ -59,7 +59,7 @@ const routes = [
 ];
 ```
 
-## 角色許可權控製
+## 角色許可權控制
 
 ```javascript
 router.beforeEach((to, from, next) => {
@@ -82,7 +82,7 @@ router.beforeEach((to, from, next) => {
 });
 ```
 
-## 動態新增路由（後臺許可權選單）
+## 動態新增路由（後台許可權選單）
 
 前端常見的需求：後端返回使用者有許可權的選單，前端動態註冊路由。
 
@@ -167,4 +167,4 @@ const router = new VueRouter({
 - 全域性守衛處理通用邏輯（登入驗證、許可權檢查）
 - `route.matched` 獲取所有匹配記錄，適合處理巢狀路由許可權
 - `addRoute` 動態註冊路由實現後端驅動的許可權選單
-- 路由懶載入 + `webpackChunkName` 控製程式碼分割粒度
+- 路由懶載入 + `webpackChunkName` 控制程式碼分割粒度

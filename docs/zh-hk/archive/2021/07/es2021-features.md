@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "TC39 在 2021 年 6 月正式發佈了 ES2021 標準。和 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 這種重磅特性相比，ES2021 的更新更偏向實用主義——每個特性都不大，但寫代碼時確實用得上。"
-wordCount: 348
+wordCount: 349
 ---
 
 TC39 在 2021 年 6 月正式發佈了 ES2021 標準。和 ES2020 的 `Optional Chaining`、`Nullish Coalescing` 這種重磅特性相比，ES2021 的更新更偏向實用主義——每個特性都不大，但寫代碼時確實用得上。
@@ -56,7 +56,7 @@ try {
 }
 ```
 
-和 `Promise.race` 的區別：`race` 是第一個 settled（不管成功失敗）就返回，`any` 是第一個 fulfilled（隻看成功）才返回。
+和 `Promise.race` 的區別：`race` 是第一個 settled（不管成功失敗）就返回，`any` 是第一個 fulfilled（只看成功）才返回。
 
 實際場景：多 CDN 源競爭、多數據源降級。
 
@@ -85,7 +85,7 @@ settings.theme = settings.theme || 'dark' // 會覆蓋 0, '' 等假值
 settings.theme ??= 'dark'                 // 隻覆蓋 null 和 undefined
 ```
 
-在處理設定合併、默認值設置時特別好用。
+在處理設定合併、默認值設定時特別好用。
 
 ## WeakRef 和 FinalizationRegistry
 
@@ -119,7 +119,7 @@ function cacheData(key, data) {
 }
 ```
 
-這個特性主要用於內存敏感的緩存場景，日常業務開發用得不多。
+這個特性主要用於記憶體敏感的快取場景，日常業務開發用得不多。
 
 ## 數字分隔符
 
@@ -143,4 +143,4 @@ const maxInt = 9_007_199_254_740_991
 - 邏輯賦值運算符讓條件賦值更簡潔，`??=` 最實用
 - `WeakRef` 場景較特殊，大部分業務不需要
 - 數字分隔符是純粹的可讀性提升
-- 這些特性在 Node.js 16 和所有現代瀏覽器中已全面支持
+- 這些特性在 Node.js 16 和所有現代瀏覽器中已全面支援

@@ -5,11 +5,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "TypeScript 类型守卫模式 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based"
-wordCount: 229
+description: "TypeScript type-guard patterns have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 210
 ---
 
-TypeScript 类型守卫模式 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+TypeScript type guards have been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -111,7 +111,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Optimization Tips
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -176,6 +176,6 @@ Pay attention to boundary condition handling, which is critical in production.
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- TypeScript 类型守卫模式不是银弹，需要根据项目规模和技术栈选择
+- TypeScript type guards are no silver bullet—adopt them based on your project's size and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

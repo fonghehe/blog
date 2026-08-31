@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "Three.js 3D Web 可视化入门 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic b"
-wordCount: 197
+description: "Getting started with Three.js for 3D web visualization has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 189
 ---
 
-Three.js 3D Web 可视化入门 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Getting started with Three.js for 3D web visualization has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -49,7 +49,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Source Code Analysis
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more involved:
 
 ```javascript
 const express = require('express')

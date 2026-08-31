@@ -267,7 +267,7 @@ declare module "vue/types/vue" {
 
 **問題 3：class-style 元件裡 this 的型別**
 
-Computed properties 和 methods 裡的 `this` 需要是元件例項型別：
+Computed properties 和 methods 裡的 `this` 需要是元件實例型別：
 
 ```typescript
 // 在 methods 裡定義其他 methods 的型別

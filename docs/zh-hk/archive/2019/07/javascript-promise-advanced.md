@@ -5,10 +5,10 @@ tags:
   - JavaScript
 readingTime: 4
 description: "日常開發中 `Promise` 的基礎用法（`.then`、`.catch`、`.finally`）已經很熟了，但實際項目中經常遇到一些進階場景：併發控製、超時處理、串行執行、全部完成（不管成功失敗）等。這篇文章整理了我在項目中積累的 Promise 高級用法。"
-wordCount: 557
+wordCount: 563
 ---
 
-日常開發中 `Promise` 的基礎用法（`.then`、`.catch`、`.finally`）已經很熟了，但實際項目中經常遇到一些進階場景：併發控製、超時處理、串行執行、全部完成（不管成功失敗）等。這篇文章整理了我在項目中積累的 Promise 高級用法。
+日常開發中 `Promise` 的基礎用法（`.then`、`.catch`、`.finally`）已經很熟了，但實際項目中經常遇到一些進階場景：併發控制、超時處理、串行執行、全部完成（不管成功失敗）等。這篇文章整理了我在項目中積累的 Promise 高級用法。
 
 ## Promise.all vs Promise.race
 
@@ -55,7 +55,7 @@ try {
 }
 ```
 
-但上面的實現有個問題：即使超時了，原來的 fetch 請求仍然在後臺繼續執行（隻是我們不再等它了）。更好的做法是配合 `AbortController`（2019 年大部分現代瀏覽器已支援）：
+但上面的實現有個問題：即使超時了，原來的 fetch 請求仍然在後臺繼續執行（只是我們不再等待它罷了）。更好的做法是配合 `AbortController`（2019 年大部分現代瀏覽器已支援）：
 
 ```javascript
 function fetchWithAbort(url, options = {}, timeout = 5000) {
@@ -123,7 +123,7 @@ const failures = results
   .map(r => r.reason)
 ```
 
-實際應用場景：批量刪除用户，部分可能因為權限不足而失敗，但不希望一個失敗影響其他操作：
+實際應用場景：批量刪除用戶，部分可能因為權限不足而失敗，但不希望一個失敗影響其他操作：
 
 ```javascript
 async function batchDeleteUsers(userIds) {
@@ -146,9 +146,9 @@ async function batchDeleteUsers(userIds) {
 }
 ```
 
-## 實戰三：併發控製
+## 實戰三：併發控制
 
-同時發 100 個請求？服務器會扛不住。需要控製併發數量：
+一次併發 100 個請求，伺服器恐怕扛不住，因此需要控制併發數量：
 
 ```javascript
 class ConcurrencyPool {
@@ -225,7 +225,7 @@ const results = await parallelLimit(
 
 ## 實戰四：串行執行
 
-有些場景必須串行——比如數據庫遷移、文件順序處理等：
+有些場景必須串行——比如資料庫遷移、文件順序處理等：
 
 ```javascript
 // 方式一：用 reduce
@@ -297,7 +297,7 @@ const result = await promiseAll([p1, p2, p3])
 console.log(result) // [1, 2, 3]
 ```
 
-## 實戰六：retry 重試機製
+## 實戰六：retry 重試機制
 
 網絡請求經常需要失敗重試：
 
@@ -399,9 +399,9 @@ console.log('end')
 
 ## 小結
 
-- `Promise.race` 適合做超時控製，配合 `AbortController` 可以真正取消請求
+- `Promise.race` 適合做超時控制，配合 `AbortController` 可以真正取消請求
 - `Promise.allSettled` 適合批量操作中允許部分失敗的場景（需 polyfill）
-- 併發控製是實際項目中的高頻需求，用隊列 + 計數器實現
+- 併發控制是實際項目中的高頻需求，用隊列 + 計數器實現
 - 串行執行用 `for...of` + `await` 最直觀
 - 手寫 `Promise.all` 幫助理解原理：收集所有結果，計數器判斷全部完成
 - 注意 `forEach` + async 的坑，它不會等待異步回調完成

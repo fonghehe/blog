@@ -12,7 +12,7 @@ wordCount: 279
 
 ## なぜHooksが必要なのか
 
-クラスコンポーネントの3つの痛点：
+クラスコンポーネントの3つの課題：
 
 1. **ステートロジックの再利用が難しい**：HOCのネスト地獄（「ラッパー地獄」）、読みにくいrender props
 2. **ライフサイクルロジックが分散**：関連するロジックがcomponentDidMount / componentDidUpdate / componentWillUnmountに散らばっている
@@ -61,7 +61,7 @@ function Counter() {
 
 ## カスタムフック：ロジックの再利用
 
-Hooksの最大の価値は**カスタムフック**だ——ステートを持つロジックを何でも抽出できる。
+Hooksの最大の価値は**カスタムフック**だ——ステートを持つロジックを自在に抽出できる。
 
 ```javascript
 // useLocalStorage：localStorageに永続化される状態

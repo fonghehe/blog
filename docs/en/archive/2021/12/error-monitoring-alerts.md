@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "关于前端错误监控告警，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 234
+description: "Many developers only know frontend error monitoring and alerting at the API level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 214
 ---
 
-关于前端错误监控告警，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Regarding frontend error monitoring and alerting, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
@@ -97,7 +97,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Best Practices
 
-实际项目中的用法会更复杂一些：
+Real-world usage gets a bit more complex:
 
 ```javascript
 const fs = require('fs')
@@ -157,4 +157,4 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- 前端错误监控告警不是银弹，需要根据项目规模和技术栈选择
+- Frontend error monitoring and alerting is not a silver bullet; choose it based on your project's scale and tech stack.

@@ -4,11 +4,11 @@ date: 2020-07-28 11:08:27
 tags:
   - React
 readingTime: 2
-description: "React Query（现已更名为 TanStack Query）解决的核心问题是：**服务端状态的管理**。Redux、MobX 擅长管理客户端状态，但对于\"从服务器获取数据、缓存、同步\"这类需求，它们提供的工具过于底层。React Query 把这个痛点做成了开箱即用的解决方案。"
-wordCount: 285
+description: "React Query (now TanStack Query) targets one core problem: server-state management. Redux and MobX handle client state well, but for fetching, caching, and syncing server data their tooling is too low-level. React Query packages that pain into an out-of-the-box solution."
+wordCount: 192
 ---
 
-React Query（现已更名为 TanStack Query）解决的核心问题是：**服务端状态的管理**。Redux、MobX 擅长管理客户端状态，但对于"从服务器获取数据、缓存、同步"这类需求，它们提供的工具过于底层。React Query 把这个痛点做成了开箱即用的解决方案。
+The core problem React Query (now renamed TanStack Query) solves is **managing server state**. Redux and MobX excel at client state, but for needs like "fetching data from the server, caching, and syncing," the tools they offer are too low-level. React Query turns that pain point into an out-of-the-box solution.
 
 ## Installation and Basic Usage
 
@@ -50,7 +50,7 @@ function UserList() {
 
 ## Why Not useEffect + useState
 
-传统写法每次都要手写加载、错误、数据三个状态：
+The traditional approach makes you hand-write three states — loading, error, and data — every time:
 
 ```jsx
 // ❌ 传统写法，样板代码多
@@ -76,12 +76,12 @@ function UserList() {
 }
 ```
 
-React Query 提供的不只是更简洁的写法，还有：
+What React Query provides goes beyond more concise code — it also offers:
 
-- **自动缓存**：相同 key 的数据只请求一次
-- **后台刷新**：窗口重新聚焦时自动重新请求
-- **去重**：多个组件请求同一数据时只发一次请求
-- **自动 GC**：未使用的缓存自动清除
+- **Automatic caching**: data with the same key is requested only once.
+- **Background refetch**: automatically re-requests when the window regains focus.
+- **Deduplication**: when multiple components request the same data, only one request is sent.
+- **Automatic GC**: unused cache is cleared automatically.
 
 ## Caching and staleTime
 
@@ -142,4 +142,4 @@ const { data, isPreviousData } = useQuery(
 
 ## Summary
 
-React Query 的核心思想是：**区分客户端状态和服务端状态**，并为服务端状态提供专门的工具。引入它之后，大部分 Redux store 里的异步 action 可以直接删掉，代码量通常减少 30-40%。2020 年的 React 项目非常值得引入。
+The core idea of React Query is to **separate client state from server state** and provide dedicated tooling for server state. Once you adopt it, most of the async actions in your Redux store can be deleted outright, typically cutting 30–40% of the code. For a React project in 2020, it is well worth introducing.

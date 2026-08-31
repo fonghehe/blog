@@ -6,10 +6,10 @@ tags:
   - 安全
 readingTime: 2
 description: "在日常開發中，前端金鑰安全管理方案的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 274
+wordCount: 270
 ---
 
-在日常開發中，前端金鑰安全管理方案的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
+在日常開發中，前端金鑰安全管理方案的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
 
 ## 快速上手
 
@@ -40,7 +40,7 @@ wordCount: 274
 
 ## 內部原理
 
-在這個基礎上，我們可以進一步最佳化：
+在這個基礎上，我們可以進一步優化：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -93,7 +93,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 效能對比
 

@@ -9,11 +9,11 @@ description: "React 18 在 2021 年進入 Beta 階段，Concurrent 模式的核�
 wordCount: 445
 ---
 
-React 18 在 2021 年進入 Beta 階段，Concurrent 模式的核心 API 逐步穩定。`useTransition` 是其中最值得提前瞭解的 Hook——它解決了一個長期困擾 React 開發者的問題：大列表渲染導致的界面卡頓。
+React 18 在 2021 年進入 Beta 階段，Concurrent 模式的核心 API 逐步穩定。`useTransition` 是其中最值得提前瞭解的 Hook——它解決了一個長期困擾 React 開發者的問題：大列表渲染導致的介面卡頓。
 
 ## 問題背景
 
-假設你有一個搜索組件，用户輸入後過濾一個上萬條數據的列表：
+假設你有一個搜索組件，用戶輸入後過濾一個上萬條數據的列表：
 
 ```jsx
 function SearchableList({ items }) {
@@ -70,14 +70,14 @@ function SearchableList({ items }) {
 
 核心思路是把狀態更新分成兩個優先級：
 - `setQuery` 是緊急更新，立即執行，保證輸入框響應
-- `startTransition` 包裹的更新是過渡更新，可以被中斷，不阻塞用户交互
+- `startTransition` 包裹的更新是過渡更新，可以被中斷，不阻塞用戶交互
 
 ## 和防抖的區別
 
 很多人第一反應是"這不就是防抖嗎"，但本質不同：
 
 ```
-防抖：延遲執行，用户停止輸入後才觸發過濾
+防抖：延遲執行，用戶停止輸入後才觸發過濾
 useTransition：立即執行但可中斷，保證緊急更新優先
 ```
 
@@ -110,13 +110,13 @@ function App() {
 }
 ```
 
-當用户快速切換用户時，舊內容會保持顯示，直到新內容加載完成，避免了白屏閃爍。
+當用戶快速切換用戶時，舊內容會保持顯示，直到新內容加載完成，避免了白屏閃爍。
 
 ## 注意事項
 
 1. `startTransition` 回調裏的更新必須是同步的，不能包裹異步操作
 2. Transition 不能用於受控輸入框的值更新
-3. 目前 `useTransition` 隻在 Concurrent 模式下生效，Legacy 模式下會退化為同步更新
+3. 目前 `useTransition` 只在 Concurrent 模式下生效，Legacy 模式下會退化為同步更新
 
 ## 小結
 

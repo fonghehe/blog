@@ -5,9 +5,9 @@ tags:
   - Web3
   - Solidity
   - Smart Contract
-readingTime: 12
+readingTime: 8
 description: "Foundry is a Solidity development toolchain written in Rust. Its biggest feature is that tests are written in Solidity itself, eliminating the need for a JavaScript intermediary layer. This article systematically covers the Forge, Cast, Anvil, and Chisel suite, with an in-depth comparison against the Hardhat testing ecosystem."
-wordCount: 3200
+wordCount: 735
 ---
 
 Foundry (formerly Forge) is a Rust-implemented Solidity development toolchain initiated by Georgios Konstantopoulos and Andreas Bigger. It has become the default testing framework for many top DeFi protocols (Uniswap, MakerDAO, Compound, etc.). The core reason is simple: testing Solidity with Solidity eliminates the type translation overhead and cognitive burden introduced by the JavaScript intermediary layer.

@@ -4,15 +4,15 @@ date: 2019-10-15 10:46:45
 tags:
   - Node.js
 readingTime: 4
-description: "Node.js 的 Stream 是处理 I/O 数据流的核心抽象，而 `pipe` 方法是将多个流串联起来的关键 API。理解 pipe 的工作原理和背压（backpressure）机制，对于编写高性能的 Node.js 应用至关重要。"
-wordCount: 570
+description: "Node.js Streams are the core abstraction for handling I/O data flows, and the `pipe` method is the key API for chaining multiple streams together. Understanding how `pipe` works—and the backpressure mechanism—is essential for writing high-performance Node.js applications."
+wordCount: 380
 ---
 
-Node.js 的 Stream 是处理 I/O 数据流的核心抽象，而 `pipe` 方法是将多个流串联起来的关键 API。理解 pipe 的工作原理和背压（backpressure）机制，对于编写高性能的 Node.js 应用至关重要。
+Node.js Streams are the core abstraction for handling I/O data flows, and the `pipe` method is the key API for chaining multiple streams together. Understanding how `pipe` works—and the backpressure mechanism—is essential for writing high-performance Node.js applications.
 
 ## Stream Basics Review
 
-Node.js 中有四种基本的 Stream 类型：
+Node.js has four basic stream types:
 
 ```js
 const { Readable, Writable, Duplex, Transform } = require('stream');
@@ -25,7 +25,7 @@ const { Readable, Writable, Duplex, Transform } = require('stream');
 
 ## pipe Method Basic Usage
 
-`pipe` 方法将可读流的数据导向可写流：
+The `pipe` method directs data from a readable stream into a writable stream:
 
 ```js
 const fs = require('fs');
@@ -41,7 +41,7 @@ writeStream.on('finish', () => {
 });
 ```
 
-等价于手动处理的写法：
+This is equivalent to handling it manually:
 
 ```js
 readStream.on('data', (chunk) => {
@@ -55,11 +55,11 @@ readStream.on('data', (chunk) => {
 readStream.on('end', () => writeStream.end());
 ```
 
-`pipe` 本质上帮你处理了这个复杂的流程。
+Under the hood, `pipe` handles exactly this complex flow for you.
 
 ## Chaining pipe Calls
 
-`pipe` 返回目标流，因此可以链式调用：
+`pipe` returns the destination stream, so you can chain calls:
 
 ```js
 const fs = require('fs');
@@ -76,7 +76,7 @@ fs.createReadStream('input.txt')
 
 ## Backpressure Mechanism
 
-背压是 Stream 中最重要的概念。当可写流的写入速度跟不上可读流的读取速度时，就会产生背压：
+Backpressure is the most important concept in Streams. It occurs when the writable stream can't keep up with the rate at which the readable stream produces data:
 
 ```js
 const { Readable, Writable } = require('stream');
@@ -104,14 +104,14 @@ const slowWriter = new Writable({
 fastReader.pipe(slowWriter);
 ```
 
-没有背压机制的话，快速读取的数据会在内存中不断堆积，最终导致 OOM（内存溢出）。`pipe` 会自动处理这个问题：
+Without backpressure, data read quickly would keep piling up in memory and eventually cause an OOM (out-of-memory) error. `pipe` handles this automatically:
 
-1. 当 `write()` 返回 `false` 时，`pipe` 暂停可读流
-2. 当可写流触发 `drain` 事件时，`pipe` 恢复可读流
+1. When `write()` returns `false`, `pipe` pauses the readable stream
+2. When the writable stream emits a `drain` event, `pipe` resumes the readable stream
 
-### pipe 的背压处理源码分析
+### Source-Level Look at How `pipe` Handles Backpressure
 
-`pipe` 的核心逻辑大致如下（简化版）：
+The core logic of `pipe` looks roughly like this (simplified):
 
 ```js
 function pipe(src, dest, endFn) {
@@ -141,7 +141,7 @@ function pipe(src, dest, endFn) {
 
 ## Error Handling in pipe
 
-`pipe` 默认不会自动处理错误，也不会自动销毁流。需要手动处理：
+By default, `pipe` doesn't handle errors or destroy streams automatically—you have to do that yourself:
 
 ```js
 const fs = require('fs');
@@ -163,7 +163,7 @@ writeStream.on('error', (err) => {
 });
 ```
 
-从 Node.js 10 开始，`pipe` 支持 `{ end: false }` 选项，以及更好的错误传播：
+Starting with Node.js 10, `pipe` supports the `{ end: false }` option as well as better error propagation:
 
 ```js
 // { end: false } 不自动关闭目标流
@@ -175,7 +175,7 @@ readStream.on('end', () => {
 });
 ```
 
-推荐使用 `pipeline` 代替 `pipe`（Node.js 10+）：
+It's recommended to use `pipeline` instead of `pipe` (Node.js 10+):
 
 ```js
 const { pipeline } = require('stream');
@@ -196,11 +196,11 @@ pipeline(
 );
 ```
 
-`pipeline` 会自动处理错误、销毁流，避免内存泄漏。
+`pipeline` handles errors and destroys streams automatically, avoiding memory leaks.
 
 ## In Practice: Custom Transform Stream
 
-Transform 流是最灵活的流类型，可以对数据进行任意转换：
+Transform streams are the most flexible type—they can transform data however you like:
 
 ```js
 const { Transform } = require('stream');
@@ -279,7 +279,7 @@ pipeline(
 
 ## In Practice: HTTP Proxy Streaming
 
-在做 HTTP 代理时，流式处理可以大幅降低内存占用：
+When building an HTTP proxy, streaming can greatly reduce memory usage:
 
 ```js
 const http = require('http');
@@ -321,7 +321,7 @@ server.listen(8080, () => {
 
 ## In Practice: Batch File Processing
 
-处理目录中的所有文件，逐个压缩：
+To compress every file in a directory, one at a time:
 
 ```js
 const fs = require('fs');
@@ -362,10 +362,10 @@ compressDir('./data').catch(console.error);
 
 ## Summary
 
-- `pipe` 方法将可读流的数据导向可写流，自动处理背压
-- 背压机制防止快速生产者压垮慢速消费者，避免内存溢出
-- `pipe` 返回目标流，支持链式调用
-- Node.js 10+ 推荐使用 `pipeline` 替代 `pipe`，自动处理错误和资源清理
-- Transform 流可以对数据进行自定义转换
-- 流式处理适合处理大文件、HTTP 代理、日志处理等场景
-- 自定义流需要正确实现 `_transform` 和 `_flush` 方法
+- The `pipe` method directs data from a readable stream into a writable stream and handles backpressure automatically
+- The backpressure mechanism prevents a fast producer from overwhelming a slow consumer, avoiding out-of-memory errors
+- `pipe` returns the destination stream, so calls can be chained
+- On Node.js 10+, prefer `pipeline` over `pipe`—it handles errors and resource cleanup automatically
+- Transform streams let you apply custom transformations to the data
+- Streaming fits scenarios like large files, HTTP proxies, and log processing
+- Custom streams must correctly implement the `_transform` and `_flush` methods

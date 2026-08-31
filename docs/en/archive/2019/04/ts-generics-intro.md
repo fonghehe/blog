@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "There are plenty of articles on TypeScript generics online, but most lack real-world experience. This article explores best practices based on actual projects."
-wordCount: 84
+wordCount: 83
 ---
 
 There are plenty of articles on TypeScript generics online, but most lack real-world experience. This article explores best practices based on actual projects.
@@ -56,7 +56,7 @@ module.exports = {
 };
 ```
 
-After rolling this pattern out across the team, the results were great — maintenance costs dropped noticeably.
+After adopting this pattern across the team, the results were great — maintenance costs dropped noticeably.
 
 ## Advanced Usage
 

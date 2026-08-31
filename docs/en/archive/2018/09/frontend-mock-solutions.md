@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "When frontend and backend are developed in parallel, the frontend needs mock data. Here's a comparison of several approaches I've used."
-wordCount: 206
+wordCount: 213
 ---
 
 When frontend and backend are developed in parallel, the frontend needs mock data. Here's a comparison of several approaches I've used.
@@ -135,7 +135,7 @@ export const handlers = [
 ];
 ```
 
-Advantage: no changes to business code, real network requests, visible in DevTools Network.
+Advantages: it requires no changes to business code, makes real network requests, and shows up in the DevTools Network panel.
 
 ## Comparison
 

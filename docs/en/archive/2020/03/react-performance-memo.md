@@ -4,15 +4,15 @@ date: 2020-03-11 15:50:17
 tags:
   - React
 readingTime: 2
-description: "React 性能优化 memo useMemo这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 294
+description: "React performance optimization with memo and useMemo has been discussed many times in the community, but as versions evolve, many conclusions need updating. This article revisits them based on the latest version."
+wordCount: 186
 ---
 
-React 性能优化 memo useMemo这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+React performance optimization with memo and useMemo has been discussed in the community many times, but as versions iterate, many conclusions need updating. This article revisits them based on the latest version.
 
 ## Getting Started
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets a bit more complex:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -37,11 +37,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Source Code Analysis
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -58,11 +58,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling—it is critical in production.
 
 ## Real-World Applications
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -85,11 +85,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tuned to the actual scenario—not everything needs over-optimization.
 
 ## Optimization Tips
 
-我们可以通过以下方式来改进：
+We can improve it in the following ways:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -108,12 +108,12 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 
-- 代码示例仅供参考，需根据业务场景调整
-- React 性能优化 memo useMemo不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- The code examples are for reference only; adapt them to your use case.
+- React performance optimization with memo and useMemo isn't a silver bullet—pick it based on project size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Be sure to verify compatibility before using it in production.
+- On a team, conventions and documentation matter more than the tech itself.

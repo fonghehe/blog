@@ -4,7 +4,7 @@ date: 2023-07-12 10:39:29
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，Hono v3 全栈 Web 框架 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+description: "Hono v3, the full-stack web framework, is showing up in more and more everyday development. This article systematically covers its usage, rationale, and practical strategies."
 wordCount: 216
 ---
 

@@ -4,15 +4,15 @@ date: 2020-02-04 15:38:30
 tags:
   - Vue
 readingTime: 2
-description: "Vue 3 对 `v-model` 做了重大简化：移除了 `.sync` 修饰符，统一为 `modelValue` + `update:modelValue` 的标准模式。同时支持多个 `v-model` 绑定，解决了 Vue 2 中组件双向绑定的诸多痛点。"
-wordCount: 277
+description: "Vue 3 greatly simplified `v-model` by removing the `.sync` modifier and unifying everything into the `modelValue` + `update:modelValue` pattern. It also supports multiple `v-model` bindings, solving many two-way binding pain points from Vue 2."
+wordCount: 187
 ---
 
-Vue 3 对 `v-model` 做了重大简化：移除了 `.sync` 修饰符，统一为 `modelValue` + `update:modelValue` 的标准模式。同时支持多个 `v-model` 绑定，解决了 Vue 2 中组件双向绑定的诸多痛点。
+Vue 3 made a big simplification to `v-model`: it removed the `.sync` modifier and unified everything into the `modelValue` + `update:modelValue` standard. It also supports multiple `v-model` bindings, solving many of the pain points of two-way binding in Vue 2 components.
 
 ## Vue 2 vs Vue 3 Differences
 
-Vue 2 中，子组件要实现双向绑定需要通过 `value` prop 和 `$emit('input')`。如果还需要 `.sync` 同步其他属性，又是一套不同的规则。
+In Vue 2, a child component achieved two-way binding through the `value` prop and `$emit('input')`. If you also needed `.sync` to sync other properties, that was a whole different set of rules.
 
 ```vue
 <!-- Vue 2 写法 -->
@@ -34,7 +34,7 @@ export default {
 <MyInput :title.sync="title" />
 ```
 
-Vue 3 统一了规则。
+Vue 3 unifies the rules.
 
 ```vue
 <!-- Vue 3 写法 -->
@@ -54,7 +54,7 @@ export default {
 
 ## Multiple v-model Bindings
 
-Vue 3 支持为 `v-model` 指定参数，实现一个组件多个双向绑定。
+Vue 3 lets you pass an argument to `v-model`, enabling multiple two-way bindings on a single component.
 
 ```vue
 {% raw %}
@@ -123,9 +123,9 @@ export default {
 {% endraw %}
 ```
 
-## 自定义 v-model 修饰符
+## Custom v-model Modifiers
 
-Vue 3 允许为自定义组件的 `v-model` 传递修饰符。
+Vue 3 lets you pass modifiers to a custom component's `v-model`.
 
 ```vue
 {% raw %}
@@ -172,9 +172,9 @@ export default {
 {% endraw %}
 ```
 
-## 使用 v-model 封装表单组件
+## Wrapping Form Components with v-model
 
-实际项目中最常见的场景：封装 Select、DatePicker 等表单组件。
+The most common scenario in real projects: wrapping form components like Select and DatePicker.
 
 ```vue
 {% raw %}
@@ -237,7 +237,7 @@ export default {
 
 ## Summary
 
-- Vue 3 统一用 `modelValue` + `update:modelValue`，替代 Vue 2 的 `value` + `input`
-- `.sync` 修饰符被移除，`v-model:propName` 更直观地实现多属性双向绑定
-- 自定义修饰符通过 `modelModifiers` prop 接收，灵活扩展行为
-- 封装表单组件时，始终遵循 props 声明 + emits 声明的规范
+- Vue 3 standardizes on `modelValue` + `update:modelValue`, replacing Vue 2's `value` + `input`
+- The `.sync` modifier is gone; `v-model:propName` makes multi-property two-way binding more intuitive
+- Custom modifiers are received through the `modelModifiers` prop, flexibly extending behavior
+- When wrapping form components, always follow the props declaration + emits declaration convention

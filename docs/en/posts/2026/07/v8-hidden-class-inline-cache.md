@@ -3,9 +3,9 @@ title: "V8 Engine Hidden Classes and Inline Caches: The Underlying Secrets of Ja
 date: 2026-07-15 10:34:13
 tags:
   - JavaScript
-readingTime: 8
+readingTime: 7
 description: "Deep dive into V8 engine's Hidden Class and Inline Cache mechanisms, understanding the underlying optimization principles of JavaScript object property access, and writing performance-friendly code."
-wordCount: 2500
+wordCount: 1075
 ---
 
 JavaScript is a dynamically typed language where object properties can be added, deleted, and modified at any time. This flexibility is convenient for developers but poses enormous challenges for engine implementers — how do you achieve property access speeds approaching static languages on top of dynamic typing? The V8 engine answers this question through two key mechanisms: Hidden Classes and Inline Caches.

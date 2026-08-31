@@ -5,11 +5,11 @@ tags:
   - Angular
   - Esbuild
 readingTime: 2
-description: "Angular 17 于 2023 年 11 月正式发布，其中最直接影响开发体验的改进之一是将 esbuild 设为默认构建器。新项目无需任何配置即可享受大幅加速的构建速度，老项目也只需一个命令完成迁移。年初正好是盘点和升级的好时机，来看看这个改变究竟带来了多大的实质提升。"
-wordCount: 359
+description: "Angular 17 was officially released in November 2023, and one of the most direct developer-experience improvements is making esbuild the default builder. New projects enjoy dramatically faster builds with zero configuration, and existing projects can migrate with a single command. The start of the year is a good time to take stock and upgrade — let's see how much this change actually delivers."
+wordCount: 314
 ---
 
-Angular 17 于 2023 年 11 月正式发布，其中最直接影响开发体验的改进之一是将 esbuild 设为默认构建器。新项目无需任何配置即可享受大幅加速的构建速度，老项目也只需一个命令完成迁移。年初正好是盘点和升级的好时机，来看看这个改变究竟带来了多大的实质提升。
+Angular 17 was officially released in November 2023, and one of the most direct developer-experience improvements is making esbuild the default builder. New projects enjoy dramatically faster builds with zero configuration, and existing projects can migrate with a single command. The start of the year is a good time to take stock and upgrade — let's see how much this change actually delivers.
 
 ## Old vs New Builder Comparison
 

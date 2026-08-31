@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I added real-time message notifications to a project and did a deep dive into WebSocket. Here are my notes."
-wordCount: 122
+wordCount: 119
 ---
 
 I added real-time message notifications to a project and did a deep dive into WebSocket. Here are my notes.
@@ -177,7 +177,7 @@ socket.emit("message", { room: "general", text: "Hello" });
 
 ## Summary
 
-- WebSocket maintains a persistent connection and supports bidirectional communication with great real-time performance
+- WebSocket keeps a persistent, bidirectional connection that enables real-time communication
 - Production environments need reconnection handling
 - Native API is sufficient when Socket.io's extra features aren't needed
 - Remember to remove event listeners when components are destroyed to prevent memory leaks

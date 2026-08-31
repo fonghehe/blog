@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "面接の定番問題だが、自分で実装してみると最も深く理解できる。"
-wordCount: 94
+wordCount: 93
 ---
 
 面接の定番問題だが、自分で実装してみると最も深く理解できる。
@@ -14,7 +14,7 @@ wordCount: 94
 
 1. Promiseには3つの状態がある：pending → fulfilled または pending → rejected（不可逆）
 2. `then`は新しいPromiseを返す（チェーン呼び出し）
-3. 非同期処理、値の素通り、エラーキャプチャ
+3. 非同期処理、値のパススルー、エラー捕捉
 
 ```javascript
 class MyPromise {

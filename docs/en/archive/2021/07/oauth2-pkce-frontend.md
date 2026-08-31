@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "在日常开发中，OAuth 2.0 PKCE 前端认证流程 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 203
+description: "In day-to-day development, the OAuth 2.0 PKCE frontend authentication flow is being used more and more often. This article systematically walks through its usage, underlying principles, and optimization strategies."
+wordCount: 194
 ---
 
-在日常开发中，OAuth 2.0 PKCE 前端认证流程 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In day-to-day development, the OAuth 2.0 PKCE frontend authentication flow is being used more and more often. This article systematically walks through its usage, underlying principles, and optimization strategies.
 
 ## Quick Start
 
@@ -36,7 +36,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Internal Principles
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more involved:
 
 ```javascript
 function setCSP(req, res, next) {
@@ -76,7 +76,7 @@ function setCSP(req, res, next) {
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Pay attention to edge case handling, which is critical in production.
 
 ## Performance Comparison
 

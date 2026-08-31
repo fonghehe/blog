@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular 23 的 Zoneless 變更偵測徹底移除了 Zone.js，讓應用性能更好、除錯更清晰。本文討論 Zoneless 的工作原理、遷移策略和性能提升。"
-wordCount: 321
+wordCount: 326
 ---
 
 Angular 23 的 Zoneless 變更偵測是 Angular 架構的一次重大革新。它移除了對 Zone.js 的依賴，讓變更偵測變得更可預測、更高效。
@@ -161,4 +161,4 @@ export class ProductListComponent {
 
 ## 總結
 
-Angular 23 的 Zoneless 變更偵測讓應用更高效、更可預測。遷移需要漸進式進行，優先使用 Signal 替代手動標記。2026 年的 Angular 開發，Zoneless 不是可選項，而是推薦的最佳實踐。
+Angular 23 的 Zoneless 變更偵測讓應用更高效、更可預測。遷移需要漸進式進行，優先使用 Signal 替代手動標記。到了 2026 年，Angular 開發採用 Zoneless 已非可有可無，而是推薦的最佳實踐。

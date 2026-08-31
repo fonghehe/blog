@@ -4,11 +4,11 @@ date: 2019-10-23 17:10:53
 tags:
   - Vue
 readingTime: 1
-description: "Vue 3 将响应式系统从 `Object.defineProperty` 完全重写为 `Proxy`。这不是为了追时髦，而是为了彻底解决 Vue 2 中一些根本性缺陷。"
-wordCount: 181
+description: "Vue 3 completely rewrote its reactivity system from `Object.defineProperty` to `Proxy`. This wasn't done just to follow a trend—it was to fundamentally fix some deep-rooted flaws in Vue 2."
+wordCount: 126
 ---
 
-Vue 3 将响应式系统从 `Object.defineProperty` 完全重写为 `Proxy`。这不是为了追时髦，而是为了彻底解决 Vue 2 中一些根本性缺陷。
+Vue 3 completely rewrote its reactivity system from `Object.defineProperty` to `Proxy`. This wasn't done just to follow a trend—it was to fundamentally fix some deep-rooted flaws in Vue 2.
 
 ## Vue 2 Limitations
 
@@ -27,11 +27,11 @@ this.$set(this.arr, 0, "new");
 Vue.set(obj, key, value);
 ```
 
-`Object.defineProperty` 在对象创建时遍历属性添加 getter/setter，所以后续新增的属性自然没有拦截。
+`Object.defineProperty` walks the object's properties at creation time to attach getters/setters, so any property added later naturally has no interception.
 
 ## Vue 3's Proxy Approach
 
-`Proxy` 可以拦截对象的所有操作，包括属性新增和删除：
+`Proxy` can intercept every operation on an object, including adding and deleting properties:
 
 ```javascript
 function reactive(target) {
@@ -125,4 +125,4 @@ count.value++; // 触发更新
 
 ## Summary
 
-Vue 3 响应式系统的升级不只是技术选型的迭代，而是对原有设计局限的一次彻底修正。`Proxy` 的全拦截能力 + `WeakMap`索引的依赖图，这套设计已被证明性能和正确性都更好。
+The upgrade of Vue 3's reactivity system is more than just a change in tech choice—it's a thorough fix for the original design's limitations. The full-intercept capability of `Proxy` combined with a `WeakMap`-indexed dependency graph has proven to be better in both performance and correctness.

@@ -6,11 +6,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "NgRx 是 Angular 生态最主流的状态管理库，基于 Redux 模式 + RxJS。对于中大型 Angular 应用，NgRx 能让状态流转变得可预测、可调试、可测试。这篇文章带你完整走一遍 NgRx 的核心概念和实际用法。"
-wordCount: 234
+description: "NgRx is the most mainstream state-management library in the Angular ecosystem, built on the Redux pattern plus RxJS. For medium-to-large Angular apps, NgRx makes state transitions predictable, debuggable, and testable. This article walks you through NgRx's core concepts and real usage end to end."
+wordCount: 154
 ---
 
-NgRx 是 Angular 生态最主流的状态管理库，基于 Redux 模式 + RxJS。对于中大型 Angular 应用，NgRx 能让状态流转变得可预测、可调试、可测试。这篇文章带你完整走一遍 NgRx 的核心概念和实际用法。
+NgRx is the most popular state-management library in the Angular ecosystem, built on the Redux pattern + RxJS. For medium-to-large Angular apps, NgRx makes state flow predictable, debuggable, and testable. This article walks you through NgRx's core concepts and real-world usage from start to finish.
 
 ## Core Concepts
 
@@ -111,7 +111,7 @@ export const selectActiveUsers = createSelector(selectAllUsers, (users) =>
 );
 ```
 
-## Effects（处理副作用）
+## Effects (Handling Side Effects)
 
 ```typescript
 // users/users.effects.ts
@@ -192,17 +192,17 @@ export class AppModule {}
 
 ## When to Choose NgRx
 
-**适合**：
+**Good fit:**
 
-- 多个不相关组件共享状态
-- 需要时间旅行调试（Redux DevTools）
-- 复杂异步流程（多个 API 依赖、乐观更新）
+- Multiple unrelated components share state.
+- You need time-travel debugging (Redux DevTools).
+- Complex async flows (multiple dependent API calls, optimistic updates).
 
-**不适合**：
+**Not a good fit:**
 
-- 小型应用（用 BehaviorSubject + Service 就够了）
-- 简单的父子组件通信（用 @Input/@Output）
+- Small apps (a BehaviorSubject + Service is enough).
+- Simple parent-child component communication (use @Input/@Output).
 
 ## Summary
 
-NgRx 的学习曲线较陡，但一旦理解了 Action → Reducer → Store → Selector → Effect 这条链路，调试和测试状态逻辑会变得非常顺手。NgRx DevTools 的时间旅行调试是企业级应用排查 bug 的利器。
+NgRx has a steep learning curve, but once you understand the Action → Reducer → Store → Selector → Effect pipeline, debugging and testing your state logic becomes very straightforward. NgRx DevTools' time-travel debugging is a powerful tool for tracking down bugs in enterprise-scale applications.

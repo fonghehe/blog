@@ -5,9 +5,9 @@ tags:
   - Web3
   - TypeScript
   - Ethereum
-readingTime: 11
+readingTime: 7
 description: "Manually maintaining type definitions for contract calls is a common pain point in Web3 frontend development. This article traces the evolution from TypeChain to viem's built-in type inference, showing how to achieve compile-time ABI type checking."
-wordCount: 3000
+wordCount: 631
 ---
 
 In Ethereum DApp development, the frontend interacts with smart contracts through the ABI (Application Binary Interface). The ABI defines the contract's function signatures, event structures, and parameter types. However, when directly using ABI JSON with ethers.js or web3.js, type safety is virtually nonexistent—misspelled function names, mismatched parameter types, and incorrect parameter ordering only surface at runtime. This article traces the complete evolution from manual type definitions to TypeChain to viem's built-in type inference.

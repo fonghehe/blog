@@ -1,11 +1,11 @@
 ---
-title: "Deno 2.0 Node 兼容 2024 年末：生态现状与生产评估"
+title: "Deno 2.0 Node 互換 2024 年末：エコシステムの現状と本番評価"
 date: 2024-12-19 19:53:30
 tags:
   - フロントエンド
 readingTime: 2
 description: "在日常开发中，Deno 2.0 Node 兼容の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 390
+wordCount: 419
 ---
 
 在日常开发中，Deno 2.0 Node 兼容の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -36,7 +36,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理やエッジケースへの対応も必要になる。
 
 ## 内部原理
 
@@ -67,7 +67,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## ビジネス実践
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでの使い方はもう少し複雑になる：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'

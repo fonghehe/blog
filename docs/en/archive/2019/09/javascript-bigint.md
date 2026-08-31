@@ -4,11 +4,11 @@ date: 2019-09-11 15:50:18
 tags:
   - JavaScript
 readingTime: 3
-description: "JavaScript 的 `Number` 类型基于 IEEE 754 双精度浮点数，安全整数范围为 `-(2^53 - 1)` 到 `2^53 - 1`（即 `Number.MAX_SAFE_INTEGER` 和 `Number.MIN_SAFE_INTEGER`）。超过这个范围的整数运算就会出现精度丢失。ES202"
-wordCount: 369
+description: "JavaScript's `Number` type is based on IEEE 754 double-precision floats, with a safe-integer range of `-(2^53 - 1)` to `2^53 - 1`. Integer arithmetic beyond this range loses precision. The `BigInt` type introduced in ES2020 lets us represent integers of arbitrary precision. This article takes an in-depth look at BigInt's use cases, syntax, and caveats."
+wordCount: 254
 ---
 
-JavaScript 的 `Number` 类型基于 IEEE 754 双精度浮点数，安全整数范围为 `-(2^53 - 1)` 到 `2^53 - 1`（即 `Number.MAX_SAFE_INTEGER` 和 `Number.MIN_SAFE_INTEGER`）。超过这个范围的整数运算就会出现精度丢失。ES2020 引入的 `BigInt` 类型让我们可以表示任意精度的整数。本文将深入讲解 BigInt 的使用场景、语法和注意事项。
+JavaScript's `Number` type is based on IEEE 754 double-precision floats, with a safe-integer range of `-(2^53 - 1)` to `2^53 - 1` (i.e. `Number.MAX_SAFE_INTEGER` and `Number.MIN_SAFE_INTEGER`). Integer arithmetic beyond this range loses precision. The `BigInt` type introduced in ES2020 lets us represent integers of arbitrary precision. This article takes an in-depth look at BigInt's use cases, syntax, and caveats.
 
 ## Number Precision Issue Demo
 
@@ -61,7 +61,7 @@ console.log(+10n);         // TypeError: Cannot convert a BigInt value to a numb
 
 ## BigInt and Number Cannot Be Mixed
 
-BigInt 和 Number 不能直接混合运算，必须先转换类型：
+BigInt and Number can't be mixed in operations directly; you must convert types first:
 
 ```js
 // 错误：不能混算
@@ -131,7 +131,7 @@ console.log(toJson(user));
 
 ## In Practice: Precise Amount Calculations
 
-金融场景中，金额通常以最小单位（如分）存储为整数：
+In finance scenarios, amounts are usually stored as integers in the smallest unit (e.g. cents):
 
 ```js
 // 金额计算（以分为单位）
@@ -163,7 +163,7 @@ console.log(formatCurrency(salePrice)); // "85.00"
 
 ## BigInt Bitwise Operations
 
-BigInt 支持所有整数位运算：
+BigInt supports all integer bitwise operations:
 
 ```js
 const a = 0b1010n;  // 10
@@ -195,7 +195,7 @@ console.log(hasPermission(userPermissions, DELETE)); // false
 
 ## BigInt Limitations in the Math Object
 
-`Math` 对象的方法不支持 BigInt：
+The methods of the `Math` object don't support BigInt:
 
 ```js
 // Math.max / Math.min 不支持 BigInt
@@ -236,14 +236,14 @@ function ensureBigInt(value) {
 
 ## Browser and Node.js Compatibility
 
-- Chrome 67+ — 支持
-- Firefox 68+ — 支持
-- Safari 14+ — 支持
-- Edge 79+ — 支持
-- Node.js 10.4+ — 支持
-- IE — 不支持
+- Chrome 67+ — supported
+- Firefox 68+ — supported
+- Safari 14+ — supported
+- Edge 79+ — supported
+- Node.js 10.4+ — supported
+- IE — not supported
 
-对于不支持的环境，可以使用 `big-integer` 或 `bignumber.js` 等 polyfill：
+For unsupported environments, you can use polyfills such as `big-integer` or `bignumber.js`:
 
 ```js
 import bigInt from 'big-integer';
@@ -255,9 +255,9 @@ console.log(b.toString()); // "9007199254740994"
 
 ## Summary
 
-- BigInt 解决了 Number 类型的安全整数范围限制，可以表示任意精度的整数
-- 使用 `数字后加 n` 或 `BigInt()` 构造函数创建 BigInt 值
-- BigInt 和 Number 不能混合运算，需要显式转换
-- 实际场景：数据库 64 位 ID、金融金额计算、位运算权限系统
-- BigInt 不支持 `Math` 对象的方法，JSON 序列化需要自定义处理
-- 2019 年主流浏览器和 Node.js 10.4+ 已支持，IE 不支持需使用 polyfill
+- BigInt solves the safe-integer limit of the `Number` type, representing integers of arbitrary precision.
+- Create BigInt values with the `n` suffix or the `BigInt()` constructor.
+- BigInt and Number can't be mixed in operations; explicit conversion is required.
+- Real-world scenarios: 64-bit database IDs, financial amount calculations, bitwise permission systems.
+- BigInt isn't supported by `Math` object methods, and JSON serialization needs custom handling.
+- By 2019, mainstream browsers and Node.js 10.4+ already supported it; IE doesn't, so a polyfill is needed.

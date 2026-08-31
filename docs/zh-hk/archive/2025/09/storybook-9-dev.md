@@ -1,5 +1,5 @@
 ---
-title: "Storybook 9 元件開發：視覺测試與交互测試的深度集成"
+title: "Storybook 9 元件開發：視覺測試與交互測試的深度集成"
 date: 2025-09-29 17:43:20
 tags:
   - 前端
@@ -69,7 +69,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ## 項目實踐
 
-實際項目中的用法會更復雜一些：
+實際項目中的用法會更複雜一些：
 
 ```javascript
 :root {

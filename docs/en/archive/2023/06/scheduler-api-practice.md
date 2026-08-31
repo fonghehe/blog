@@ -4,11 +4,11 @@ date: 2023-06-29 15:09:51
 tags:
   - Frontend
 readingTime: 2
-description: "关于Scheduler API 任务调度实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective"
-wordCount: 189
+description: "Many developers only know Scheduler API task scheduling in practice at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 186
 ---
 
-关于Scheduler API 任务调度实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Many developers only know Scheduler API task scheduling in practice at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -134,7 +134,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- Scheduler API 任务调度实践不是银弹，需要根据项目规模和技术栈选择
+- Scheduler API task scheduling in practice is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

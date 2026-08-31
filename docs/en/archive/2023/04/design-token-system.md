@@ -4,11 +4,11 @@ date: 2023-04-28 14:31:48
 tags:
   - Frontend
 readingTime: 2
-description: "作为组件系统负责人，设计 Token 是我们团队今年的重点建设之一。分享一下从 0 到 1 搭建 Token 系统的经验。"
-wordCount: 285
+description: "As the owner of our component system, design tokens were one of my team's key initiatives this year. Here's our experience building a token system from zero to one."
+wordCount: 269
 ---
 
-作为组件系统负责人，设计 Token 是我们团队今年的重点建设之一。分享一下从 0 到 1 搭建 Token 系统的经验。
+As the owner of our component system, design tokens were one of my team's key initiatives this year. Here's our experience building a token system from zero to one.
 
 ## What Is a Design Token
 

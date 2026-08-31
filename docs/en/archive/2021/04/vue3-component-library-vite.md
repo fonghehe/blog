@@ -7,11 +7,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "团队计划从 Element UI 迁移到自建 Vue 3 组件库。用 Vite 做构建工具比 Rollup 或 Webpack 更简洁，特别是处理 Vue SFC 时。记录一下搭建过程。"
-wordCount: 178
+description: "My team plans to migrate from Element UI to an in-house Vue 3 component library. Using Vite as the build tool is simpler than Rollup or Webpack, especially when handling Vue SFCs. Here's how we set it up."
+wordCount: 136
 ---
 
-团队计划从 Element UI 迁移到自建 Vue 3 组件库。用 Vite 做构建工具比 Rollup 或 Webpack 更简洁，特别是处理 Vue SFC 时。记录一下搭建过程。
+Our team plans to migrate from Element UI to a self-built Vue 3 component library. Using Vite as the build tool is simpler than Rollup or Webpack, especially when handling Vue SFCs. This article documents the setup process.
 
 ## Project Structure
 
@@ -210,7 +210,7 @@ export type { InputProps } from './input'
 
 ## Usage
 
-**全量引入**：
+**Full import:**
 
 ```typescript
 // main.ts
@@ -221,7 +221,7 @@ import 'my-ui/dist/my-ui.css'
 createApp(App).use(MyUI).mount('#app')
 ```
 
-**按需引入**：
+**On-demand import:**
 
 ```vue
 <script setup>
@@ -236,7 +236,7 @@ import 'my-ui/dist/my-ui.css'
 </template>
 ```
 
-## package.json 配置
+## package.json Configuration
 
 ```json
 {
@@ -269,7 +269,7 @@ import 'my-ui/dist/my-ui.css'
 
 ## Development Debugging
 
-用 examples 目录做开发时的 playground：
+Use the examples directory as a development playground:
 
 ```typescript
 // examples/main.ts
@@ -294,8 +294,8 @@ pnpm pack --dry-run
 
 ## Summary
 
-- Vite 的 library mode 适合构建 Vue 3 组件库，配置比 Rollup 简洁
-- 用 `vite-plugin-dts` 自动生成类型声明，按需引入体验更好
-- `exports` 字段配合 `sideEffects` 确保 tree-shaking 生效
-- Vue SFC 的 `<script setup>` 写组件很自然，类型支持也好
-- 建议用 pnpm workspace 管理组件库 + 示例应用 + 文档站的 Monorepo
+- Vite's library mode fits building Vue 3 component libraries and is simpler to configure than Rollup.
+- Use `vite-plugin-dts` to auto-generate type declarations, which makes on-demand imports smoother.
+- The `exports` field combined with `sideEffects` ensures tree-shaking works.
+- Writing components with Vue SFC's `<script setup>` feels natural and has good type support.
+- Consider using a pnpm workspace to manage the component library, example app, and docs site as a monorepo.

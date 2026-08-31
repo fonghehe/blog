@@ -3,12 +3,12 @@ title: "Native ES Modules in the Browser: A Practical Guide"
 date: 2020-08-10 10:47:29
 tags:
   - Engineering
-readingTime: 4
-description: "浏览器对 ES Modules 的支持已经相当成熟了。现在 Chrome、Firefox、Safari、Edge 都支持 `<script type=\"module\">`，这意味着在开发阶段甚至某些简单项目中，我们可能不再需要打包工具。这篇文章整理一下浏览器原生 ESM 的实践方式和注意点。"
-wordCount: 567
+readingTime: 3
+description: "Browser support for ES Modules has matured: Chrome, Firefox, Safari, and Edge all support script type=module, which means for development — and even some simple projects — you may not need a bundler at all. This article walks through practical usage of native ESM in the browser."
+wordCount: 375
 ---
 
-浏览器对 ES Modules 的支持已经相当成熟了。现在 Chrome、Firefox、Safari、Edge 都支持 `<script type="module">`，这意味着在开发阶段甚至某些简单项目中，我们可能不再需要打包工具。这篇文章整理一下浏览器原生 ESM 的实践方式和注意点。
+Browser support for ES Modules is now quite mature. Chrome, Firefox, Safari, and Edge all support `<script type="module">`, which means that during development — and even for some simple projects — you may no longer need a bundler. This article summarizes practical approaches and gotchas for using native ESM in the browser.
 
 ## Basic Usage
 
@@ -27,9 +27,9 @@ wordCount: 567
 
 ## Key Features
 
-### 1. 自动延迟加载
+### 1. Automatic Deferred Loading
 
-`<script type="module">` 默认是 defer 的，不需要手动加 `defer`：
+`<script type="module">` is deferred by default, so you don't need to add `defer` manually:
 
 ```html
 <!-- 这两个效果一样 -->
@@ -40,11 +40,11 @@ wordCount: 567
 <script src="legacy.js" defer></script>
 ```
 
-多个 module script 按照在 HTML 中的声明顺序执行。
+Multiple module scripts execute in the order they are declared in the HTML.
 
-### 2. 严格模式
+### 2. Strict Mode
 
-ES Module 默认运行在严格模式下，不需要手动写 `'use strict'`：
+ES modules run in strict mode by default, so you don't need to write `'use strict'` manually:
 
 ```javascript
 // module.js — 自动严格模式
@@ -57,9 +57,9 @@ console.log(this) // undefined（非严格模式下是 window）
 undeclaredVar = 42 // ReferenceError: undeclaredVar is not defined
 ```
 
-### 3. 作用域隔离
+### 3. Scope Isolation
 
-每个模块有独立的作用域，不会污染全局：
+Each module has its own scope and won't pollute the global namespace:
 
 ```javascript
 // module-a.js
@@ -78,9 +78,9 @@ function greet() {
 export { greet }
 ```
 
-### 4. import 必须带文件扩展名
+### 4. Imports Must Include the File Extension
 
-这是和打包工具最大的区别 —— 浏览器原生 ESM 不会自动补全扩展名：
+This is the biggest difference from bundlers — native browser ESM does not auto-complete file extensions:
 
 ```javascript
 // 正确 — 必须写完整的 .js 扩展名
@@ -93,11 +93,11 @@ import { sum } from './utils'
 import App from './App'
 ```
 
-这在实际开发中需要特别注意，Node.js 也同样如此。
+This is worth keeping in mind during development; Node.js behaves the same way.
 
-### 5. bare module specifier 问题
+### 5. The Bare Module Specifier Problem
 
-裸模块说明符（bare specifier）如 `import { ref } from 'vue'` 在浏览器中无法直接工作，因为浏览器不知道 `vue` 对应哪个 URL。解决方法：
+Bare specifiers like `import { ref } from 'vue'` don't work directly in the browser, because the browser doesn't know which URL `vue` maps to. Solutions:
 
 ```html
 <!-- 方案一：使用 Import Maps（Chrome 89+） -->
@@ -131,7 +131,7 @@ import App from './App'
 
 ## In Practice: Building a Pure ESM Vue 3 Project
 
-不使用 Vite、不使用 Webpack，纯原生 ESM + Vue 3：
+No Vite, no Webpack — just native ESM + Vue 3:
 
 ```html
 <!-- index.html -->
@@ -236,7 +236,7 @@ export default {
 
 ## Local Development Requires a Static File Server
 
-直接用 `file://` 协议打开 HTML 是不行的，因为 ES Module 的 CORS 限制：
+Opening the HTML directly via the `file://` protocol won't work, due to CORS restrictions on ES Modules:
 
 ```bash
 # 方案一：Python
@@ -251,7 +251,7 @@ npx live-server .
 
 ## Performance Considerations
 
-原生 ESM 在开发环境有优势，但生产环境需要谨慎：
+Native ESM has advantages in development, but you should be cautious in production:
 
 ```html
 <!-- 问题：每个 import 都是一个独立的 HTTP 请求 -->
@@ -262,11 +262,11 @@ npx live-server .
      ... 可能产生几十甚至上百个请求 -->
 ```
 
-对于小型项目、原型、演示页面，原生 ESM 完全够用。对于生产项目，目前还是建议用 Vite 或 Webpack 打包 —— Vite 在开发时用原生 ESM，构建时用 Rollup 打包，是目前最好的折中方案。
+For small projects, prototypes, and demo pages, native ESM is more than enough. For production projects, it's still best to bundle with Vite or Webpack — Vite uses native ESM in development and Rollup for the build, which is currently the best compromise.
 
-## 动态 import
+## Dynamic import
 
-浏览器原生支持动态 import，实现按需加载：
+Browsers natively support dynamic `import()`, enabling on-demand loading:
 
 ```javascript
 // 点击按钮时才加载
@@ -289,9 +289,9 @@ async function loadRoute(routeName) {
 
 ## Summary
 
-- 浏览器原生 ESM 已经得到主流浏览器全面支持
-- `type="module"` 默认严格模式、延迟加载、作用域隔离
-- import 必须带完整扩展名，裸模块说明符需要 import maps 或 URL 映射
-- 本地开发需要静态文件服务器，不能用 `file://`
-- 小型项目和原型可以直接用原生 ESM，无需打包工具
-- 生产项目建议用 Vite，开发时用原生 ESM，构建时打包优化
+- Native browser ESM is now fully supported by all major browsers
+- `type="module"` is strict-mode, deferred, and scope-isolated by default
+- Imports must include the full file extension; bare specifiers need import maps or URL mapping
+- Local development requires a static file server; `file://` won't work
+- Small projects and prototypes can use native ESM directly, with no bundler needed
+- For production projects, Vite is recommended — native ESM in development, bundling for the build

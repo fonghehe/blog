@@ -5,15 +5,15 @@ tags:
   - 前端
   - 工程化
 readingTime: 2
-description: "在日常開發中，OpenTelemetry 前端可觀測性的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 352
+description: "在日常開發中，OpenTelemetry 前端可觀測性越來越常被運用。本文系統性地說明它的用法、原理與優化策略。"
+wordCount: 348
 ---
 
-在日常開發中，OpenTelemetry 前端可觀測性的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
+在日常開發中，OpenTelemetry 前端可觀測性越來越常被運用。本文系統性地說明它的用法、原理與優化策略。
 
 ## 快速上手
 
-我們可以通過以下方式來改進：
+我們可以透過以下方式來改進：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -40,7 +40,7 @@ function useIntersectionObserver(options = {}) {
 
 ## 內部原理
 
-先來看基本的實現方式：
+先來看基本的實作方式：
 
 ```javascript
 .container {
@@ -67,7 +67,7 @@ function useIntersectionObserver(options = {}) {
 
 ## 業務實戰
 
-在這個基礎上，我們可以進一步最佳化：
+在這個基礎上，我們可以進一步優化：
 
 ```javascript
 const fs = require('fs')
@@ -119,7 +119,7 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+透過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 問題排查
 

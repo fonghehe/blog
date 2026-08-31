@@ -8,11 +8,11 @@ description: "TypeScript 4.2 在 2 月底發佈，帶來了一些實用的類型
 wordCount: 362
 ---
 
-TypeScript 4.2 在 2 月底發佈，帶來了一些實用的類型系統改進。挑幾個對日常開發影響最大的特性説説。
+TypeScript 4.2 在 2 月底發佈，帶來了一些實用的類型系統改進。挑幾個對日常開發影響最大的特性說說。
 
 ## Rest 元組類型中的命名元素
 
-之前元組類型隻能這樣寫：
+之前元組類型只能這樣寫：
 
 ```typescript
 // 以前：隻能用位置來理解含義
@@ -38,7 +38,7 @@ function processArgs(...args: [name: string, count: number, flag: boolean]) {
 }
 ```
 
-對於庫作者來説，API 簽名的可讀性提升很明顯：
+對於庫作者來說，API 簽名的可讀性提升很明顯：
 
 ```typescript
 // 實際場景：事件處理函數的參數
@@ -112,7 +112,7 @@ function createAnimal(ctor: abstract new () => Animal) {
 // ✅ createAnimal(Cat)    // OK
 ```
 
-在框架設計中，這個特性可以幫助強製要求傳入的具體實現類：
+在框架設計中，這個特性可以幫助強制要求傳入的具體實現類：
 
 ```typescript
 // DI 容器的場景

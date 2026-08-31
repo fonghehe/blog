@@ -5,14 +5,14 @@ tags:
   - Git
 readingTime: 2
 description: "每次提交代码前手动跑 lint 和测试太容易忘了。用 Git Hooks 把这些检查自动化，在提交时自动执行。"
-wordCount: 297
+wordCount: 302
 ---
 
 每次提交代码前手动跑 lint 和测试太容易忘了。用 Git Hooks 把这些检查自动化，在提交时自动执行。
 
 ## Git Hooks 是什么
 
-Git 在特定事件（提交、推送等）前后会触发对应的脚本，叫 Hook。
+Git 在特定事件（提交、推送等）前后会触发对应的脚本，这类脚本称为 Hook。
 
 ```
 pre-commit：git commit 前触发（最常用）

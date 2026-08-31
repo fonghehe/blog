@@ -1,5 +1,5 @@
 ---
-title: "Next.js 15 Turbopack Default: 新一代BuildTool里程碑"
+title: "Next.js 15 Makes Turbopack the Default: A Milestone for a New Generation of Build Tools"
 date: 2024-09-16 19:50:27
 tags:
   - React

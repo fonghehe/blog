@@ -4,15 +4,15 @@ date: 2020-09-21 10:54:20
 tags:
   - PWA
 readingTime: 2
-description: "关于IndexedDB 离线数据存储方案，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 350
+description: "A production-focused guide to offline data storage with IndexedDB, addressing real-world problems developers face beyond basic API usage."
+wordCount: 213
 ---
 
-关于IndexedDB 离线数据存储方案，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to offline data storage with IndexedDB, many developers stop at the API-call level. This article looks at the problems you'll actually run into and how to solve them, from a production standpoint.
 
 ## Basic Principles
 
-我们可以通过以下方式来改进：
+Here are a few ways we can improve on this:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -32,14 +32,13 @@ function useIntersectionObserver(options = {}) {
 
   return [ref, isVisible]
 }
-
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Advanced Features
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 .container {
@@ -59,14 +58,13 @@ function useIntersectionObserver(options = {}) {
 @container (min-width: 400px) {
   .card__content { display: grid; grid-template-columns: 200px 1fr; }
 }
-
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In a real project you'll also need to account for error handling and edge cases.
 
 ## Project Practice
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 const fs = require('fs')
@@ -88,14 +86,13 @@ const csvToJson = new Transform({
     callback()
   }
 })
-
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is especially useful in large projects and can significantly lower maintenance costs.
 
 ## Best Practices
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more involved:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -115,14 +112,13 @@ function useIntersectionObserver(options = {}) {
 
   return [ref, isVisible]
 }
-
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This improves both the testability and extensibility of the code.
 
 ## Common Pitfalls
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 .container {
@@ -142,15 +138,14 @@ function useIntersectionObserver(options = {}) {
 @container (min-width: 400px) {
   .card__content { display: grid; grid-template-columns: 200px 1fr; }
 }
-
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Mind edge-case handling — it is critical in production.
 
 ## Summary
 
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- IndexedDB 离线数据存储方案不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
+- Don't adopt new tech just for the sake of using it.
+- The code samples are for reference only — adapt them to your actual use case.
+- IndexedDB offline storage is no silver bullet; choose it based on your project's size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.
+- Always verify compatibility before shipping to production.

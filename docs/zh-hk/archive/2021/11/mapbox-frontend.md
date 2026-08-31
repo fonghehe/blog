@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常開發中，Mapbox GL JS 前端地圖開發的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 316
+wordCount: 315
 ---
 
-在日常開發中，Mapbox GL JS 前端地圖開發的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
+在日常開發中，Mapbox GL JS 前端地圖開發應用得越來越廣泛。本文系統地講解其用法、原理和優化策略。
 
 ## 快速上手
 

@@ -5,6 +5,9 @@ tags:
   - Web3
   - Blockchain
   - DApp
+readingTime: 8
+wordCount: 327
+description: "A DAO (Decentralized Autonomous Organization) is an on-chain organization that implements governance rules through smart contracts. After Compound released its "
 ---
 
 ## DAOs and On-chain Governance

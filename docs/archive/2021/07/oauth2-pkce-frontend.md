@@ -6,14 +6,14 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常开发中，OAuth 2.0 PKCE 前端认证流程的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 318
+wordCount: 303
 ---
 
-在日常开发中，OAuth 2.0 PKCE 前端认证流程的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+日常开发中，OAuth 2.0 PKCE 前端认证流程用得越来越频繁。本文系统讲解它的用法、原理和优化策略。
 
 ## 快速上手
 
-在这个基础上，我们可以进一步优化：
+在此基础上还能继续优化：
 
 ```javascript
 function setCSP(req, res, next) {
@@ -31,11 +31,11 @@ function setCSP(req, res, next) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+这种写法在大型项目里很实用，能明显省下维护成本。
 
 ## 内部原理
 
-实际项目中的用法会更复杂一些：
+实际项目里用起来会更复杂些：
 
 ```javascript
 function setCSP(req, res, next) {
@@ -53,11 +53,11 @@ function setCSP(req, res, next) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样一来，代码的可测试性和可扩展性都更好了。
 
 ## 业务实战
 
-以下是一个完整的示例：
+下面是一个完整示例：
 
 ```javascript
 function setCSP(req, res, next) {
@@ -75,11 +75,11 @@ function setCSP(req, res, next) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+生产环境里边界情况务必处理好，这点很关键。
 
 ## 性能对比
 
-关键在于理解核心逻辑：
+关键还是理解背后的核心逻辑：
 
 ```javascript
 function setCSP(req, res, next) {
@@ -97,11 +97,11 @@ function setCSP(req, res, next) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化得看具体场景，不是所有地方都要过度优化。
 
 ## 问题排查
 
-我们可以通过以下方式来改进：
+可以试着从下面几个方面改进：
 
 ```javascript
 function setCSP(req, res, next) {
@@ -119,7 +119,7 @@ function setCSP(req, res, next) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套方案已经在线上稳定运行半年多，是经过实战验证的。
 
 ## 小结
 

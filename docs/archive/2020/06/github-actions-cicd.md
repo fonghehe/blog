@@ -5,7 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "最近在团队中落地GitHub Actions CI/CD 前端流水线，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 300
+wordCount: 299
 ---
 
 最近在团队中落地GitHub Actions CI/CD 前端流水线，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -33,7 +33,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化需要结合具体场景，不必对所有情况都过度优化。
 
 ## 深度解析
 

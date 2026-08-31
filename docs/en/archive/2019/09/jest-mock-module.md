@@ -4,15 +4,15 @@ date: 2019-09-18 16:13:14
 tags:
   - Engineering
 readingTime: 4
-description: "单元测试中经常需要隔离被测代码的依赖：替换 API 调用、模拟定时器、mock 第三方库。Jest 提供了一套完整的 mock 工具链，从简单的函数 mock 到模块级别的替换，覆盖了绝大多数测试场景。本文将系统讲解 Jest 中各种 mock 的用法和最佳实践。"
-wordCount: 320
+description: "When writing unit tests you often need to isolate the dependencies of the code under test: replacing API calls, faking timers, mocking third-party libraries. Jest provides a complete mocking toolchain—from simple function mocks to module-level replacement—that covers the vast majority of testing scenarios. This article systematically explains the various mocking techniques in Jest and their best practices."
+wordCount: 208
 ---
 
-单元测试中经常需要隔离被测代码的依赖：替换 API 调用、模拟定时器、mock 第三方库。Jest 提供了一套完整的 mock 工具链，从简单的函数 mock 到模块级别的替换，覆盖了绝大多数测试场景。本文将系统讲解 Jest 中各种 mock 的用法和最佳实践。
+When writing unit tests you often need to isolate the dependencies of the code under test: replacing API calls, faking timers, mocking third-party libraries. Jest provides a complete mocking toolchain—from simple function mocks to module-level replacement—that covers the vast majority of testing scenarios. This article systematically explains the various mocking techniques in Jest and their best practices.
 
-## Mock 函数基础
+## Mock Function Basics
 
-### jest.fn() 创建 mock 函数
+### Creating a Mock Function with jest.fn()
 
 ```js
 // 创建一个 mock 函数
@@ -30,7 +30,7 @@ expect(mockFn).toHaveBeenCalledWith('hello', 'world');
 expect(mockFn).toHaveBeenLastCalledWith(42);
 ```
 
-### 设置返回值
+### Setting Return Values
 
 ```js
 const mockFn = jest.fn();
@@ -63,7 +63,7 @@ asyncMock.mockRejectedValue(new Error('网络错误'));
 await expect(asyncMock()).rejects.toThrow('网络错误');
 ```
 
-### 设置实现
+### Setting the Implementation
 
 ```js
 const mockFn = jest.fn();
@@ -88,9 +88,9 @@ asyncMock.mockImplementation(async () => {
 });
 ```
 
-## Mock 整个模块
+## Mocking an Entire Module
 
-### Mock 第三方库
+### Mocking a Third-Party Library
 
 ```js
 // __mocks__/axios.js（放在与 node_modules 同级的 __mocks__ 目录）
@@ -105,7 +105,7 @@ export default {
 };
 ```
 
-在测试文件中：
+In the test file:
 
 ```js
 import axios from 'axios';
@@ -141,7 +141,7 @@ describe('userService', () => {
 });
 ```
 
-### Mock 项目内的模块
+### Mocking Internal Project Modules
 
 ```js
 // src/services/userService.js
@@ -199,9 +199,9 @@ describe('userService', () => {
 });
 ```
 
-## Mock 日期和定时器
+## Mocking Dates and Timers
 
-### Mock Date
+### Mocking Date
 
 ```js
 // 固定时间
@@ -225,7 +225,7 @@ afterEach(() => {
 });
 ```
 
-### Mock 定时器
+### Mocking Timers
 
 ```js
 beforeEach(() => {
@@ -258,7 +258,7 @@ it('setInterval 应该每秒触发', () => {
 });
 ```
 
-## Mock localStorage
+## Mocking localStorage
 
 ```js
 // 创建 localStorage mock
@@ -294,7 +294,7 @@ it('应该从 localStorage 读取 token', () => {
 });
 ```
 
-## Mock 项目中的工具函数
+## Mocking Utility Functions in a Project
 
 ```js
 // src/utils/logger.js
@@ -337,7 +337,7 @@ describe('dataProcessor', () => {
 });
 ```
 
-## Mock Class
+## Mocking a Class
 
 ```js
 // src/services/ApiService.js
@@ -377,7 +377,7 @@ it('应该使用 ApiService 获取数据', async () => {
 });
 ```
 
-## jest.spyOn 追踪真实函数调用
+## jest.spyOn: Track Real Function Calls
 
 ```js
 import { formatDate } from '../utils/date';
@@ -398,7 +398,7 @@ expect(Math.random()).toBe(0.5);
 mathSpy.mockRestore();
 ```
 
-## Mock 清理策略
+## Mock Cleanup Strategy
 
 ```js
 // jest.config.js
@@ -419,10 +419,10 @@ beforeEach(() => {
 
 ## Summary
 
-- `jest.fn()` 创建 mock 函数，支持设置返回值（`mockReturnValue`）、实现（`mockImplementation`）和异步行为（`mockResolvedValue`/`mockRejectedValue`）
-- `jest.mock()` 可以 mock 整个模块，支持使用 `__mocks__` 目录定义手动 mock
-- `jest.spyOn()` 追踪真实函数的调用，也可以替换实现
-- 定时器使用 `jest.useFakeTimers()` + `jest.advanceTimersByTime()` 控制时间
-- localStorage、fetch 等浏览器 API 需要在 setup 文件中全局 mock
-- 始终在测试结束后清理 mock 状态，避免测试间相互影响
-- 部分 mock 可以只替换模块中的某些导出，保留其他导出的真实实现
+- `jest.fn()` creates a mock function, supporting return values (`mockReturnValue`), implementations (`mockImplementation`), and async behavior (`mockResolvedValue`/`mockRejectedValue`).
+- `jest.mock()` can mock an entire module, including manual mocks defined via the `__mocks__` directory.
+- `jest.spyOn()` tracks calls to real functions, and can also replace their implementation.
+- Control time with `jest.useFakeTimers()` + `jest.advanceTimersByTime()`.
+- Browser APIs like `localStorage` and `fetch` need to be mocked globally in a setup file.
+- Always clean up mock state after tests to prevent cross-test interference.
+- Partial mocks let you replace only certain exports of a module while keeping the real implementations of the others.

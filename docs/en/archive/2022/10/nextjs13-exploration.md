@@ -3,12 +3,12 @@ title: "Next.js 13 First Look: The Design Philosophy of App Router"
 date: 2022-10-11 16:06:02
 tags:
   - Next.js
-readingTime: 3
-description: "Next.js 13 发布了，App Router 带来了巨大的范式变化。在正式版之前，让我们先理解它的设计哲学——React Server Components、Streaming、嵌套布局。这些不是渐进式改进，而是对「前端应该如何构建」的重新思考。"
-wordCount: 382
+readingTime: 2
+description: "Next.js 13 is out, and the App Router brings a huge paradigm shift. Before the stable release, let's understand its design philosophy — React Server Components, streaming, and nested layouts. These aren't incremental improvements; they're a rethinking of how frontends should be built."
+wordCount: 255
 ---
 
-Next.js 13 发布了，App Router 带来了巨大的范式变化。在正式版之前，让我们先理解它的设计哲学——React Server Components、Streaming、嵌套布局。这些不是渐进式改进，而是对「前端应该如何构建」的重新思考。
+Next.js 13 is out, and the App Router brings a huge paradigm shift. Before the stable release, let's understand its design philosophy — React Server Components, streaming, and nested layouts. These aren't incremental improvements; they're a rethinking of how frontends should be built.
 
 ## From Pages Router to App Router
 
@@ -34,7 +34,7 @@ app/
     └── page.tsx
 ```
 
-关键区别：每个文件夹可以有自己的 `layout.tsx`、`loading.tsx`、`error.tsx`。
+Key difference: each folder can have its own `layout.tsx`, `loading.tsx`, and `error.tsx`.
 
 ## React Server Components
 
@@ -65,7 +65,7 @@ async function PostsPage() {
 export default PostsPage;
 ```
 
-这个组件不会发送任何 JS 到浏览器——HTML 直接在服务端渲染。客户端收到的是纯 HTML。
+This component sends no JS to the browser — the HTML is rendered directly on the server. The client receives pure HTML.
 
 ## Client Components
 
@@ -97,7 +97,7 @@ export function LikeButton({ postId, initialCount }: {
 }
 ```
 
-`'use client'` 指令标记这是一个客户端组件——会发送 JS 到浏览器。
+The `'use client'` directive marks this as a client component — it sends JS to the browser.
 
 ## Combined Usage
 
@@ -127,7 +127,7 @@ export default async function PostPage({ params }: {
 }
 ```
 
-服务端组件负责数据获取和静态内容，客户端组件负责交互。这才是正确的分工。
+Server components handle data fetching and static content; client components handle interaction. This is the right division of labor.
 
 ## Streaming and Suspense
 
@@ -163,7 +163,7 @@ async function Stats() {
 }
 ```
 
-浏览器收到 HTML 后，先显示骨架屏。数据准备好后，服务端通过 Streaming 逐段发送填充内容——不需要客户端重新获取数据。
+After the browser receives the HTML, it shows a skeleton first. Once the data is ready, the server streams the filled-in content in chunks — no client-side refetch needed.
 
 ## Nested Layouts
 
@@ -200,7 +200,7 @@ export default function DashboardLayout({ children }: {
 }
 ```
 
-仪表盘页面会同时使用根布局和仪表盘布局。导航栏不会重新加载——这是 Pages Router 做不到的。
+The dashboard page uses both the root layout and the dashboard layout. The navigation bar doesn't reload — something the Pages Router can't do.
 
 ## Paradigm Shift in Data Fetching
 
@@ -220,8 +220,8 @@ export default async function Page() {
 }
 ```
 
-不再需要 `getServerSideProps`/`getStaticProps`——数据获取就是组件的一部分。
+No more `getServerSideProps`/`getStaticProps` — data fetching is just part of the component.
 
 ## Summary
 
-Next.js 13 的 App Router 是对传统 SPA 模式的根本反思。Server Components 重新定义了「哪些代码在哪里运行」，Streaming 让页面不再需要等待所有数据，嵌套布局让 UI 结构更合理。但目前还是 beta，生产项目建议等稳定后再迁移。
+Next.js 13's App Router is a fundamental rethink of the traditional SPA model. Server Components redefine which code runs where, streaming frees pages from waiting on all the data, and nested layouts make the UI structure more sensible. It's still beta, though — for production projects I'd wait until it stabilizes before migrating.

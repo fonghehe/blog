@@ -90,9 +90,9 @@ fix bug
 wip
 ```
 
-## commitlint + husky 強製規範
+## commitlint + husky 強制規範
 
-光靠文檔約定不夠，用工具強製：
+光靠文檔約定不夠，用工具強制：
 
 ```bash
 npm install --save-dev @commitlint/cli @commitlint/config-conventional husky
@@ -148,7 +148,7 @@ npm install --save-dev lint-staged
 }
 ```
 
-這樣隻檢查本次提交的檔案，速度快，不影響整個項目的 lint。
+這樣只檢查本次提交的檔案，速度快，不影響整個項目的 lint。
 
 ## 版本號管理
 
@@ -222,4 +222,4 @@ coverage/
 - Git Flow 提供了清晰的分支策略
 - commit message 規範讓歷史可讀，能自動生成 changelog
 - `husky + commitlint + lint-staged` 三件套是工程化標配
-- 小步提交，每個 commit 隻做一件事
+- 小步提交，每個 commit 只做一件事

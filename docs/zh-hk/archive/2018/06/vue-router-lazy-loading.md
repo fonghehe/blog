@@ -4,11 +4,11 @@ date: 2018-06-30 09:32:13
 tags:
   - Vue
 readingTime: 2
-description: "後臺管理系統越來越大，首頁加載時間越來越長。用 Vue Router 的懶加載把初始 bundle 拆開，明顯感受到了加速。"
+description: "後臺管理系統越來越大，首頁加載時間越來越長。用 Vue Router 的懶加載把初始 bundle 拆開，加載速度明顯提升。"
 wordCount: 256
 ---
 
-後臺管理系統越來越大，首頁加載時間越來越長。用 Vue Router 的懶加載把初始 bundle 拆開，明顯感受到了加速。
+後臺管理系統越來越大，首頁加載時間越來越長。用 Vue Router 的懶加載把初始 bundle 拆開，加載速度明顯提升。
 
 ## 什麼是路由懶加載
 
@@ -24,11 +24,11 @@ const routes = [
   { path: "/order", component: Order },
 ];
 
-// 問題：用户進首頁，也要下載 User 和 Order 的代碼
+// 問題：用戶進首頁，也要下載 User 和 Order 的代碼
 ```
 
 ```javascript
-// 懶加載：隻有訪問對應路由時才下載該頁面的代碼
+// 懶加載：只有訪問對應路由時才下載該頁面的代碼
 const routes = [
   {
     path: "/",
@@ -51,7 +51,7 @@ const routes = [
 
 ```javascript
 const routes = [
-  // 用户模塊：打進同一個 chunk
+  // 用戶模塊：打進同一個 chunk
   {
     path: "/user/list",
     component: () =>
@@ -77,7 +77,7 @@ const routes = [
 ```
 dist/
 ├── app.js          ← 主 bundle
-├── chunk-user.js   ← 用户模塊
+├── chunk-user.js   ← 用戶模塊
 └── chunk-order.js  ← 訂單模塊
 ```
 
@@ -128,7 +128,7 @@ const routes = [
 
 ## 預加載（Prefetch）
 
-用户還沒跳轉，但提前下載代碼：
+用戶還沒跳轉，但提前下載代碼：
 
 ```javascript
 // webpackPrefetch：瀏覽器空閒時預下載（推薦）
@@ -144,5 +144,5 @@ const routes = [
 
 - 路由懶加載：`component: () => import('./Page.vue')`
 - 魔法註釋 `webpackChunkName`：把相關頁面打進同一個 chunk
-- 首屏加載優化：隻加載當前需要的 JS，其他按需加載
+- 首屏加載優化：只加載當前需要的 JS，其他按需加載
 - `webpackPrefetch`：瀏覽器空閒時預加載，進一步改善體驗

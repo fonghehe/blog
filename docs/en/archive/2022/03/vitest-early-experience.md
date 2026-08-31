@@ -5,7 +5,7 @@ tags:
   - Vite
   - Vitest
 readingTime: 2
-description: "Vitest 1.0 正式发布稳定版This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh "
+description: "Vitest 1.0's official stable release has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
 wordCount: 193
 ---
 

@@ -4,7 +4,7 @@ date: 2022-06-16 11:47:21
 tags:
   - Frontend
 readingTime: 2
-description: "Navigation API 新一代路由This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fres"
+description: "The Navigation API as the next generation of routing has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
 wordCount: 206
 ---
 

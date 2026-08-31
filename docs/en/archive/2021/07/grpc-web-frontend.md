@@ -6,11 +6,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "最近在团队中落地gRPC Web 前端通信实践， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 200
+description: "We recently rolled out gRPC-Web frontend communication in practice on our team and have picked up quite a bit of experience along the way. This is a summary I'm sharing for reference, in the hope that it helps anyone doing similar work."
+wordCount: 196
 ---
 
-最近在团队中落地gRPC Web 前端通信实践， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently rolled out gRPC-Web frontend communication in practice on our team and have picked up quite a bit of experience along the way. This is a summary I'm sharing for reference, in the hope that it helps anyone doing similar work.
 
 ## Core Concepts
 
@@ -138,5 +138,5 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- gRPC Web 前端通信实践不是银弹，需要根据项目规模和技术栈选择
+- gRPC-Web frontend communication isn't a silver bullet; pick it based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs

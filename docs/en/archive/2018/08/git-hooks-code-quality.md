@@ -5,7 +5,7 @@ tags:
   - Git
 readingTime: 2
 description: "Manually running lint and tests before every commit is easy to forget. Use Git Hooks to automate these checks so they run automatically on commit."
-wordCount: 190
+wordCount: 192
 ---
 
 Manually running lint and tests before every commit is easy to forget. Use Git Hooks to automate these checks so they run automatically on commit.
@@ -43,7 +43,7 @@ npm install husky --save-dev
 
 ## lint-staged: Only Check Staged Files
 
-Running lint on the entire project on every commit is slow for large projects. `lint-staged` only processes files in this commit:
+Running lint on the entire project on every commit is slow for large projects. `lint-staged` only processes the files changed in that commit:
 
 ```bash
 npm install lint-staged --save-dev

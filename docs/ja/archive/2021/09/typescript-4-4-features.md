@@ -5,15 +5,15 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "TypeScript 4.4 发布了，几个实用的改进值得关注。不是大版本，但有几个对日常开发有实际帮助的特性。"
-wordCount: 302
+description: "TypeScript 4.4 がリリースされた。いくつかの実用的な改善が注目に値する。メジャーバージョンではないが、日常の開発に実際に役立つ機能がいくつかある。"
+wordCount: 458
 ---
 
-TypeScript 4.4 发布了，几个实用的改进值得关注。不是大版本，但有几个对日常开发有实际帮助的特性。
+TypeScript 4.4 がリリースされた。いくつかの実用的な改善が注目に値する。メジャー版ではないが、日常の開発に実際に役立つ機能がいくつかある。
 
 ## Control Flow Analysis for Aliased Conditions
 
-之前 TypeScript 对变量别名的控制流分析很弱，4.4 改善了这一点。
+以前の TypeScript は変数のエイリアスに対する制御フロー解析が弱かったが、4.4 で改善された。
 
 ```typescript
 // 之前：把 result 赋给别名后，类型守卫失效
@@ -52,7 +52,7 @@ function handleInput(input: string | null) {
 
 ## `exactOptionalPropertyTypes`
 
-这个选项解决了一个长期困扰的问题：可选属性到底能不能赋值 `undefined`。
+このオプションは長年悩まされていた問題を解決する：オプショナルプロパティに `undefined` を代入できるかどうかだ。
 
 ```typescript
 // tsconfig.json
@@ -80,9 +80,9 @@ interface Config {
 }
 ```
 
-这个选项让 `undefined` 的语义更精确：可选属性可以省略，但不能显式赋 `undefined`。
+このオプションにより `undefined` の意味論がより厳密になる：オプショナルプロパティは省略できるが、`undefined` を明示的に代入することはできない。
 
-## `switch(true)` 模式
+## `switch(true)` パターン
 
 ```typescript
 function describe(value: unknown): string {
@@ -102,7 +102,7 @@ function describe(value: unknown): string {
 }
 ```
 
-## Symbol 和模板字符串类型
+## Symbol とテンプレートリテラル型
 
 ```typescript
 // 模板字符串类型也可以用 symbol
@@ -148,8 +148,8 @@ TypeScript 4.4 在多个方面优化了性能：
 
 ## まとめ
 
-- Control Flow Analysis for Aliased Conditions：变量赋值后类型守卫不再失效
-- `exactOptionalPropertyTypes`：可选属性不能显式赋 `undefined`，语义更精确
-- `switch(true)` 也能做类型收窄了
-- 性能提升，大型项目感知明显
-- 建议开启 `noUncheckedIndexedAccess` 配合使用，进一步提升类型安全
+- Control Flow Analysis for Aliased Conditions：変数代入後も型ガードが失効しなくなった
+- `exactOptionalPropertyTypes`：オプショナルプロパティに `undefined` を明示的に代入できず、意味論がより厳密に
+- `switch(true)` でも型の絞り込みができるようになった
+- パフォーマンスが向上し、大規模プロジェクトでの体感が明らかだ
+- `noUncheckedIndexedAccess` を併用して有効にすることを推奨する。型安全性がさらに向上する。

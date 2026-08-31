@@ -5,6 +5,9 @@ tags:
   - Web3
   - DeFi
   - Ethereum
+readingTime: 7
+wordCount: 806
+description: "The decentralized finance (DeFi) ecosystem is built on a layer of foundational protocols—MakerDAO's DAI stablecoin, Compound's lending protocol, and Synthetix's"
 ---
 
 ## The DeFi Ecosystem and Uniswap V2

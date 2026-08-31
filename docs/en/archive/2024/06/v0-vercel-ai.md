@@ -4,8 +4,8 @@ date: 2024-06-18 16:52:29
 tags:
   - Engineering
 readingTime: 2
-description: "v0 Vercel AI UI 生成工具 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on rea"
-wordCount: 218
+description: "The v0 Vercel AI UI generation tool is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 196
 ---
 
 v0 Vercel AI UI 生成工具 is being applied more and more widely in frontend development. This article delves into its core principles and best practices based on real project experience.
@@ -134,7 +134,7 @@ export function AIChat() {
 
 Performance optimization should be tailored to specific scenarios; not every situation requires aggressive optimization.
 
-## 常见陷阱
+## Common Pitfalls
 
 We can improve this in the following ways:
 
@@ -167,7 +167,7 @@ This solution has been running stably in production for over six months and has 
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on community trends; technical approaches need continuous iteration
+- Don't adopt new technology just for the sake of it
+- Code samples are for reference only and need adjusting to your business scenario

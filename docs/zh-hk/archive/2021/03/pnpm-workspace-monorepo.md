@@ -5,10 +5,10 @@ tags:
   - 前端工程化
 readingTime: 3
 description: "用了兩年 Lerna + Yarn workspace 的組合後，今年開始嘗試 pnpm workspace。pNpm 的硬鏈接機製天然適合 Monorepo——依賴不會重複安裝，磁盤佔用大幅減少。對比下來，pnpm workspace 可能是目前最優雅的 Monorepo 方案。"
-wordCount: 505
+wordCount: 506
 ---
 
-用了兩年 Lerna + Yarn workspace 的組合後，今年開始嘗試 pnpm workspace。pNpm 的硬鏈接機製天然適合 Monorepo——依賴不會重複安裝，磁盤佔用大幅減少。對比下來，pnpm workspace 可能是目前最優雅的 Monorepo 方案。
+用了兩年 Lerna + Yarn workspace 的組合後，今年開始嘗試 pnpm workspace。pNpm 的硬鏈接機制天然適合 Monorepo——依賴不會重複安裝，磁盤佔用大幅減少。對比下來，pnpm workspace 可能是目前最優雅的 Monorepo 方案。
 
 ## 為什麼選 pnpm
 
@@ -157,7 +157,7 @@ const formatted = computed(() => formatCurrency(props.amount))
 
 ## pnpm --filter 命令
 
-`--filter` 是 pnpm workspace 最強大的功能，可以精確控製命令作用範圍：
+`--filter` 是 pnpm workspace 最強大的功能，可以精確控制命令作用範圍：
 
 ```bash
 # 隻在 admin 應用中安裝 lodash
@@ -223,7 +223,7 @@ import something from 'transitive-dependency'
 // 報錯：Module not found
 ```
 
-這是 pnpm 的設計決策，強製正確的依賴聲明。
+這是 pnpm 的設計決策：強制要求正確聲明依賴。
 
 **`.npmrc` 配置**：
 
@@ -252,7 +252,7 @@ public-hoist-pattern[]=*eslint*
 ## 小結
 
 - pnpm workspace 是目前最輕量的 Monorepo 方案，不需要 Lerna
-- `workspace:*` 協議處理子包間依賴，`--filter` 精確控製命令範圍
+- `workspace:*` 協議處理子包間依賴，`--filter` 精確控制命令範圍
 - 硬鏈接存儲 + 嚴格依賴管理是 pnpm 的核心優勢
 - 搭配 Vite 構建子包，開發體驗很流暢
 - 版本管理推薦用 changesets 替代 Lerna publish

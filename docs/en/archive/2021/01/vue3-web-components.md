@@ -9,11 +9,11 @@ tags:
   - Node.js
 
 readingTime: 2
-description: "在日常开发中，Vue 3 构建 Web Components is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 200
+description: "Building Web Components with Vue 3 is increasingly common in everyday work. This article systematically covers usage, internals, and optimization strategies."
+wordCount: 191
 ---
 
-在日常开发中，Vue 3 构建 Web Components is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In day-to-day development, building Web Components with Vue 3 is becoming more and more common. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -45,7 +45,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Internal Principles
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets a bit more complex:
 
 ```javascript
 import { defineConfig } from 'vite'

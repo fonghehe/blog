@@ -234,9 +234,9 @@ export default {
 }
 ```
 
-## 本地開發需要靜態檔案服務器
+## 本地開發需要靜態檔案伺服器
 
-直接用 `file://` 協議打開 HTML 是不行的，因為 ES Module 的 CORS 限製：
+直接用 `file://` 協議打開 HTML 是不行的，因為 ES Module 的 CORS 限制：
 
 ```bash
 # 方案一：Python
@@ -292,6 +292,6 @@ async function loadRoute(routeName) {
 - 瀏覽器原生 ESM 已經得到主流瀏覽器全面支持
 - `type="module"` 默認嚴格模式、延遲加載、作用域隔離
 - import 必須帶完整擴展名，裸模塊説明符需要 import maps 或 URL 映射
-- 本地開發需要靜態檔案服務器，不能用 `file://`
+- 本地開發需要靜態檔案伺服器，不能用 `file://`
 - 小型項目和原型可以直接用原生 ESM，無需打包工具
 - 生產項目建議用 Vite，開發時用原生 ESM，構建時打包優化

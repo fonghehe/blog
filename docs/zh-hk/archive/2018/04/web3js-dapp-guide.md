@@ -1,12 +1,13 @@
 ---
-readingTime: 5
-wordCount: 1034
+readingTime: 6
+wordCount: 1011
 title: "Web3.js 入門：用 JavaScript 與以太坊交互"
 date: 2018-04-03 20:17:15
 tags:
   - Web3
   - Ethereum
   - DApp
+description: "web3.js 是以太坊官方維護的 JavaScript SDK，也是前端工程師進入 DApp 開發的第一道門檻。其 0.20.x 版本與 1.0 版本的 API 設計差異巨大——0.20.x 使用回調函數，1.0 引入了 Promise 和事件發射器。理解這兩套 API 的異同，有助於在維護舊項目或對接不同文檔時避免"
 ---
 
 web3.js 是以太坊官方維護的 JavaScript SDK，也是前端工程師進入 DApp 開發的第一道門檻。其 0.20.x 版本與 1.0 版本的 API 設計差異巨大——0.20.x 使用回調函數，1.0 引入了 Promise 和事件發射器。理解這兩套 API 的異同，有助於在維護舊項目或對接不同文檔時避免混淆。
@@ -17,7 +18,7 @@ web3.js 0.20.x 的 API 設計深受 Node.js 早期風格影響，大量使用回
 
 - `web3.eth`：以太坊區塊鏈相關操作
 - `web3.net`：網絡信息
-- `web3.personal`：賬户管理
+- `web3.personal`：賬戶管理
 - `web3.shh`：Whisper 協議（消息傳遞）
 
 ```javascript
@@ -104,12 +105,12 @@ if (typeof web3 !== 'undefined') {
 }
 ```
 
-## 賬户管理
+## 賬戶管理
 
-### 創建新賬户
+### 創建新賬戶
 
 ```javascript
-// 0.20.x 創建賬户（注意：僅生成本地賬户，不會同步到節點）
+// 0.20.x 創建賬戶（注意：僅生成本地賬戶，不會同步到節點）
 var account = web3.eth.accounts.create();
 console.log(account.address);   // 0x...
 console.log(account.privateKey); // 0x...
@@ -122,10 +123,10 @@ web3.eth.accounts.create().then(account => {
 
 ### 導入 Keystore
 
-Keystore 文件是加密存儲的私鑰，通過密碼解密後獲取賬户：
+Keystore 文件是加密存儲的私鑰，通過密碼解密後獲取賬戶：
 
 ```javascript
-// 從 Keystore 文件恢復賬户
+// 從 Keystore 文件恢復賬戶
 var keythereum = require('keythereum');
 var datadir = '/path/to/ethereum/data';
 var address = '0x...';
@@ -215,7 +216,7 @@ contract.methods.getValue().call({ from: '0x...' })
     .then(result => console.log(result));
 ```
 
-`call` 方法還可以傳入交易參數，例如指定 `from` 地址來模擬特定用户視角下的狀態（當合約邏輯依賴 `msg.sender` 時）。
+`call` 方法還可以傳入交易參數，例如指定 `from` 地址來模擬特定用戶視角下的狀態（當合約邏輯依賴 `msg.sender` 時）。
 
 ## 發送交易：send 方法與事件監聽
 

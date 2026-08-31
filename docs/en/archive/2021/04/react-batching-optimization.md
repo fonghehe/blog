@@ -6,15 +6,15 @@ tags:
   - JavaScript
 
 readingTime: 3
-description: "React 18 Alpha 已经发布，带来了 Concurrent Mode 的实际落地——不再是实验性的概念，而是可以真正用起来的能力。两个最值得关注的特性是自动批处理（Automatic Batching）和 `useTransition`。"
-wordCount: 418
+description: "React 18 Alpha is out, bringing Concurrent Mode into practical use — no longer an experimental concept but something you can actually rely on. The two features most worth watching are automatic batching and useTransition."
+wordCount: 275
 ---
 
-React 18 Alpha 已经发布，带来了 Concurrent Mode 的实际落地——不再是实验性的概念，而是可以真正用起来的能力。两个最值得关注的特性是自动批处理（Automatic Batching）和 `useTransition`。
+React 18 Alpha has been released, bringing Concurrent Mode into real, practical use—no longer an experimental concept but something you can actually rely on. The two features most worth attention are Automatic Batching and `useTransition`.
 
 ## Automatic Batching
 
-React 17 及之前，只有 React 事件处理器中的多次 `setState` 会被批处理。在 `setTimeout`、`Promise` 回调、原生事件中则不会：
+Before React 17, only multiple `setState` calls inside a React event handler were batched. They were not batched inside `setTimeout`, `Promise` callbacks, or native events:
 
 ```jsx
 // React 17 —— 事件处理器中：批处理 ✅
@@ -42,7 +42,7 @@ async function fetchData() {
 }
 ```
 
-React 18 在所有场景下自动批处理：
+React 18 batches automatically in every scenario:
 
 ```jsx
 // React 18 —— 所有场景都批处理 ✅
@@ -63,7 +63,7 @@ async function fetchData() {
 }
 ```
 
-性能提升直接且无需改代码。唯一的例外是你需要强制同步更新，用 `flushSync`：
+The performance win is immediate and requires no code changes. The only exception is when you need a forced synchronous update, using `flushSync`:
 
 ```jsx
 import { flushSync } from 'react-dom'
@@ -80,7 +80,7 @@ function handleClick() {
 
 ## useTransition
 
-`useTransition` 是 React 18 的核心新 API，用于标记低优先级的状态更新：
+`useTransition` is a core new API in React 18, used to mark low-priority state updates:
 
 ```jsx
 import { useState, useTransition } from 'react'
@@ -115,11 +115,11 @@ function SearchPage() {
 }
 ```
 
-核心概念：`startTransition` 内的状态更新会被标记为"可以被打断"。如果用户快速输入，React 会丢弃旧的渲染，优先响应新的输入——不会出现输入卡顿的情况。
+Key idea: state updates inside `startTransition` are marked as "interruptible." If the user types quickly, React discards the old render and prioritizes the new input—so the typing never feels laggy.
 
 ## useDeferredValue
 
-`useDeferredValue` 是 `useTransition` 的补充，用于延迟某个值的更新：
+`useDeferredValue` complements `useTransition` and is used to defer updates to a particular value:
 
 ```jsx
 import { useState, useDeferredValue, useMemo } from 'react'
@@ -148,7 +148,7 @@ function App() {
 }
 ```
 
-和 `Suspense` 配合使用效果更好：
+It works even better combined with `Suspense`:
 
 ```jsx
 function App() {
@@ -168,7 +168,7 @@ function App() {
 
 ## Upgrading to React 18
 
-升级步骤比预想的简单：
+The upgrade steps are simpler than you might expect:
 
 ```jsx
 // React 17
@@ -181,11 +181,11 @@ const root = createRoot(document.getElementById('root'))
 root.render(<App />)
 ```
 
-注意：用了新的 `createRoot` API 后，自动批处理就生效了。不改 API 的话默认还是 React 17 行为，可以渐进升级。
+Note: once you adopt the new `createRoot` API, automatic batching kicks in. If you don't change the API, the default React 17 behavior remains, so you can upgrade incrementally.
 
 ## Real-World Scenario Comparison
 
-一个表格筛选场景的对比：
+Here's a comparison using a table-filtering scenario:
 
 ```jsx
 // 没有 useTransition：输入框卡顿
@@ -227,8 +227,8 @@ function FilterTable() {
 
 ## Summary
 
-- React 18 自动批处理无需改代码，升级后所有场景默认合并更新
-- `useTransition` 解决了输入卡顿等性能问题，核心思路是区分优先级
-- `useDeferredValue` 适合"显示旧数据比显示空白好"的场景
-- 升级用 `createRoot` API，可渐进式迁移
-- Concurrent Mode 终于不再是概念，而是实用工具
+- React 18's automatic batching needs no code changes—after upgrading, updates are merged by default in every scenario.
+- `useTransition` solves performance issues like input lag; the core idea is to separate priorities.
+- `useDeferredValue` suits scenarios where showing stale data is better than showing nothing.
+- Upgrade via the `createRoot` API for an incremental migration.
+- Concurrent Mode is finally a practical tool, not just a concept.

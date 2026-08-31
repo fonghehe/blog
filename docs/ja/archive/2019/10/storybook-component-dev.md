@@ -3,22 +3,22 @@ title: "Storybookコンポーネント開発環境の構築"
 date: 2019-10-07 14:56:30
 tags:
   - テスト
-readingTime: 4
+readingTime: 6
 description: "在组件化开发成为主流的今天，如何高效地开发、测试和文档化独立组件是一个重要课题。Storybook 是一个开源的 UI 组件开发环境，它让你可以在隔离环境中构建和展示组件，不依赖业务代码。本文将从零搭建一个完整的 Storybook 开发环境。"
-wordCount: 737
+wordCount: 1231
 ---
 
-在组件化开发成为主流的今天，如何高效地开发、测试和文档化独立组件是一个重要课题。Storybook 是一个开源的 UI 组件开发环境，它让你可以在隔离环境中构建和展示组件，不依赖业务代码。本文将从零搭建一个完整的 Storybook 开发环境。
+コンポーネントベースの開発が主流となった今、独立したコンポーネントをいかに効率的に開発・テスト・ドキュメント化するかは重要な課題です。Storybook はオープンソースの UI コンポーネント開発環境であり、業務コードに依存せず隔離された環境でコンポーネントを構築・展示できます。本記事ではゼロから完成した Storybook 開発環境を構築します。
 
 ## プロジェクトの初期化
 
-以 React 项目为例，使用 `npx` 初始化 Storybook：
+React プロジェクトを例に、`npx` で Storybook を初期化します：
 
 ```bash
 npx -p @storybook/cli sb init
 ```
 
-初始化完成后，会自动安装依赖并创建 `.storybook` 配置目录和 `stories` 示例目录。项目结构如下：
+初期化が完了すると、依存関係が自動でインストールされ、`.storybook` 設定ディレクトリと `stories` サンプルディレクトリが作成されます。プロジェクト構成は以下のとおりです：
 
 ```
 ├── .storybook
@@ -32,7 +32,7 @@ npx -p @storybook/cli sb init
 
 ## 最初のStoryを書く
 
-一个 Story 就是组件在某种状态下的展示。推荐使用 Component Story Format (CSF)，这是 Storybook 5.2 引入的新格式：
+Story とは、コンポーネントがある状態で表示される姿のことです。Component Story Format（CSF）の使用を推奨します。これは Storybook 5.2 で導入された新しいフォーマットです：
 
 ```jsx
 import React from 'react';
@@ -53,11 +53,11 @@ export const Disabled = () => <Button disabled>不可点击</Button>;
 export const Loading = () => <Button loading>加载中...</Button>;
 ```
 
-每个导出的函数都是一个独立的 Story，在 Storybook 侧边栏中可以单独查看和交互。
+エクスポートされた各関数が独立した Story となり、Storybook のサイドバーから個別に確認・操作できます。
 
 ## Knobsプラグインで動的にPropsを調整
 
-`@storybook/addon-knobs` 是最常用的插件之一，可以在 Storybook 面板中动态调整组件的 props：
+`@storybook/addon-knobs` は最もよく使われるアドオンの一つであり、Storybook パネル上でコンポーネントの props を動的に調整できます：
 
 ```jsx
 import React from 'react';
@@ -89,7 +89,7 @@ export const Playground = () => {
 };
 ```
 
-在 `.storybook/addons.js` 中注册插件：
+`.storybook/addons.js` でアドオンを登録します：
 
 ```js
 import '@storybook/addon-knobs/register';
@@ -99,7 +99,7 @@ import '@storybook/addon-links/register';
 
 ## Actionsプラグインでイベントをキャプチャ
 
-Actions 插件可以在 Storybook 面板中查看组件触发的事件回调，方便调试交互逻辑：
+Actions アドオンは、Storybook パネル上でコンポーネントが発火したイベントコールバックを確認でき、インタラクションのデバッグに便利です：
 
 ```jsx
 import React from 'react';
@@ -122,7 +122,7 @@ export const WithFormSubmit = () => (
 
 ## カスタムWebpackの設定
 
-项目如果使用了 CSS Modules、TypeScript 等，需要扩展 Storybook 的 Webpack 配置：
+プロジェクトで CSS Modules や TypeScript などを使っている場合、Storybook の Webpack 設定を拡張する必要があります：
 
 ```js
 // .storybook/webpack.config.js
@@ -177,7 +177,7 @@ module.exports = ({ config }) => {
 
 ## Docsプラグインの追加
 
-Storybook 5.2 引入了 `@storybook/addon-docs`，用 MDX 格式编写文档更加直观：
+Storybook 5.2 で `@storybook/addon-docs` が導入され、MDX フォーマットでドキュメントを書く方が直感的になります：
 
 ```mdx
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
@@ -210,7 +210,7 @@ import Button from '../components/Button';
 
 ## Decoratorsを使ったグローバルラッピング
 
-Decorators 可以给每个 Story 添加统一的上下文，比如主题 Provider、Redux Store、Router 等：
+Decorators を使うと、各 Story に統一したコンテキスト（テーマ Provider、Redux Store、Router など）を追加できます：
 
 ```js
 {% raw %}
@@ -239,7 +239,7 @@ configure(loadStories, module);
 {% endraw %}
 ```
 
-也可以在单个 Story 级别添加 Decorator：
+単一の Story レベルで Decorator を追加することもできます：
 
 ```jsx
 {% raw %}
@@ -258,7 +258,7 @@ export default {
 
 ## Storyのディレクトリ構造の整理
 
-推荐按照组件的实际目录结构来组织 Story 文件：
+コンポーネントの実際のディレクトリ構成に合わせて Story ファイルを整理することを推奨します：
 
 ```
 src/
@@ -275,7 +275,7 @@ src/
 │   └── index.ts
 ```
 
-在 `.storybook/config.js` 中配置文件匹配规则：
+`.storybook/config.js` でファイルのマッチングルールを設定します：
 
 ```js
 const req = require.context('../src', true, /\.stories\.(js|tsx)$/);
@@ -283,7 +283,7 @@ const req = require.context('../src', true, /\.stories\.(js|tsx)$/);
 
 ## アクセシビリティチェックとの統合
 
-Storybook 非常适合作为组件库的文档站点。可以结合 `@storybook/addon-a11y` 做无障碍检查：
+Storybook はコンポーネントライブラリのドキュメントサイトとして非常に適しています。`@storybook/addon-a11y` と組み合わせてアクセシビリティ（a11y）チェックを行えます：
 
 ```js
 // .storybook/config.js
@@ -292,17 +292,17 @@ import { withA11y } from '@storybook/addon-a11y';
 addDecorator(withA11y);
 ```
 
-这样每个 Story 面板都会显示无障碍检查结果，帮助确保组件的可访问性。
+これにより、各 Story パネルにアクセシビリティのチェック結果が表示され、コンポーネントのアクセシビリティ確保に役立ちます。
 
 ## 静的サイトの構築
 
-Storybook 可以构建为静态 HTML 站点，方便部署到任何静态托管服务：
+Storybook は静的 HTML サイトとしてビルドでき、任意の静的ホスティングサービスへデプロイしやすくなります：
 
 ```bash
 npm run build-storybook
 ```
 
-构建产物在 `storybook-static` 目录中，可以部署到 GitHub Pages、Netlify 或内部服务器。
+ビルド成果物は `storybook-static` ディレクトリに出力され、GitHub Pages、Netlify、または社内サーバーへデプロイできます。
 
 ```json
 {
@@ -316,11 +316,11 @@ npm run build-storybook
 
 ## まとめ
 
-- Storybook 提供了隔离的组件开发环境，不依赖业务上下文
-- CSF (Component Story Format) 是推荐的 Story 编写格式
-- Knobs 插件支持动态调整 props，方便交互式调试
-- Actions 插件可以捕获和展示组件的事件回调
-- 自定义 Webpack 配置支持 CSS Modules、TypeScript 等
-- Decorators 可以提供全局或局部的上下文包装
-- addon-docs 支持用 MDX 格式编写组件文档
-- 可以构建为静态站点，方便团队共享和部署
+- Storybook は業務コンテキストに依存しない隔離されたコンポーネント開発環境を提供する
+- CSF（Component Story Format）は推奨される Story の記述フォーマットです
+- Knobs アドオンは props の動的調整をサポートし、インタラクティブなデバッグに便利です
+- Actions アドオンはコンポーネントのイベントコールバックを捕捉・表示できます
+- カスタム Webpack 設定は CSS Modules や TypeScript などに対応します
+- Decorators はグローバルまたはローカルなコンテキストのラップを提供できます
+- addon-docs は MDX フォーマットでのコンポーネントドキュメント記述をサポートします
+- 静的サイトとしてビルドでき、チームでの共有やデプロイに便利です

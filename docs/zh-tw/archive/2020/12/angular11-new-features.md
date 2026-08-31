@@ -12,7 +12,7 @@ Angular 11 於 2020 年 11 月 11 日正式釋出。相比 Angular 10 的"質量
 
 ## 開箱即用的 HMR
 
-Angular 11 之前，開啟 HMR 需要手動修改 `main.ts`，設定繁瑣。現在隻需一個 CLI 引數：
+Angular 11 之前，開啟 HMR 需要手動修改 `main.ts`，設定繁瑣。現在只需一個 CLI 引數：
 
 ```bash
 # Angular 11 之前的 HMR 設定（繁瑣）
@@ -39,7 +39,7 @@ ng serve --hmr
 }
 ```
 
-HMR 開啟後，修改元件的範本或樣式隻會更新該元件，而不是重新整理整個頁面，開發體驗大幅提升。
+HMR 開啟後，修改元件的範本或樣式只會更新該元件，而不是重新整理整個頁面，開發體驗大幅提升。
 
 ## 字型內聯最佳化
 
@@ -52,7 +52,7 @@ Angular 11 CLI 預設會將 Google Fonts 的 CSS 內聯到 HTML 中，避免額�
   rel="stylesheet"
 />
 
-<!-- Angular 11 構建後自動內聯（僅 CSS，字型檔案本身仍 CDN 載入）-->
+<!-- Angular 11 構建後自動內聯（僅 CSS，字型檔案本身仍由 CDN 載入）-->
 <style>
   /* 內聯字型 CSS，省去一次 DNS 解析 + HTTP 請求 */
   @font-face {

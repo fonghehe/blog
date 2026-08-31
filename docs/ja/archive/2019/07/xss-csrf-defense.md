@@ -5,7 +5,7 @@ tags:
   - Security
 readingTime: 3
 description: "XSS と CSRF はフロントエンドで最も一般的なセキュリティ脆弱性です。この記事では両方の攻撃タイプと実践的な防御戦略を解説します。"
-wordCount: 652
+wordCount: 674
 ---
 
 XSS と CSRF はフロントエンドで最も一般的なセキュリティ脆弱性です。この記事では両方の攻撃タイプと実践的な防御戦略を解説します。
@@ -16,7 +16,7 @@ XSS 攻撃は悪意あるスクリプトを他のユーザーが閲覧するウ�
 
 ### 1. 蓄積型（Stored）XSS
 
-悪意あるスクリプトがデータベースに保存され、感染コンテンツを閲覧する全ユーザーに配信される：
+悪意あるスクリプトがデータベースに保存され、感染コンテンツを閲覧する全ユーザーに配信されます：
 
 ```javascript
 // 攻撃者がコメントとして送信：
@@ -30,7 +30,7 @@ XSS 攻撃は悪意あるスクリプトを他のユーザーが閲覧するウ�
 
 ### 2. 反射型（Reflected）XSS
 
-URLパラメーターを通じてスクリプトが注入され、レスポンスに反映される：
+URLパラメーターを通じてスクリプトが注入され、レスポンスに反映されます：
 
 ```
 https://example.com/search?q=<script>alert(document.cookie)</script>
@@ -58,7 +58,7 @@ element.textContent = userInput;
 
 ### HTML コンテンツには DOMPurify を使う
 
-リッチテキストエディタの出力など、HTML のレンダリングが必要な場合：
+リッチテキストエディタの出力など、HTML のレンダリングが必要な場合は：
 
 ```javascript
 import DOMPurify from "dompurify";
@@ -97,7 +97,7 @@ CSRF は認証済みユーザーを騙して悪意あるリクエストを送信
 
 ### SameSite クッキー
 
-最も効果的な現代的防御——ブラウザにクロスオリジンリクエストでクッキーを送らないよう指示：
+最も効果的な現代的防御——ブラウザにクロスオリジンリクエストでクッキーを送らないよう指示します：
 
 ```http
 Set-Cookie: sessionId=abc123; SameSite=Lax; HttpOnly; Secure
@@ -145,7 +145,7 @@ add_header Content-Security-Policy "frame-ancestors 'self';";
 
 ## まとめ
 
-- XSS：ユーザーデータを必ずエスケープ、HTML には DOMPurify、厳格な CSP を設定
-- CSRF：SameSite クッキー、CSRF トークン、またはカスタムヘッダーを使用
-- クリックジャッキング：`X-Frame-Options` か `frame-ancestors` CSP を使用
-- 多層防御——複数の仕組みを組み合わせることが重要
+- XSS：ユーザーデータを必ずエスケープし、HTML には DOMPurify を使い、厳格な CSP を設定します
+- CSRF：SameSite クッキー、CSRF トークン、またはカスタムヘッダーを使用します
+- クリックジャッキング：`X-Frame-Options` か `frame-ancestors` CSP を使用します
+- 多層防御——複数の仕組みを組み合わせることが重要です

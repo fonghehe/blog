@@ -5,9 +5,9 @@ tags:
   - Web3
   - TypeScript
   - Ethereum
-readingTime: 11
+readingTime: 8
 description: "手动维护合约调用的类型定义是 Web3 前端开发中的常见痛点。本文梳理从 TypeChain 到 viem 的类型安全演进路径，展示如何实现编译时 ABI 类型检查。"
-wordCount: 3000
+wordCount: 1068
 ---
 
 在以太坊 DApp 开发中，前端与智能合约的交互通过 ABI（Application Binary Interface）完成。ABI 定义了合约的函数签名、事件结构和参数类型。然而，直接使用 ABI JSON 与 ethers.js 或 web3.js 交互时，类型安全几乎为零——函数名拼写错误、参数类型不匹配、参数顺序错误等问题只能在运行时暴露。本文梳理从手动类型定义到 TypeChain 再到 viem 内置类型推导的完整演进。

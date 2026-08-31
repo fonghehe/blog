@@ -4,17 +4,17 @@ date: 2019-12-30 16:17:22
 tags:
   - Frontend
 readingTime: 7
-description: "2019 年是技术深度和广度都有明显成长的一年。年初定下的几个目标——React Hooks 全面落地、TypeScript 成为日常、微前端从零到一——基本都完成了。当然也有遗憾：测试覆盖率没有达到预期、Node.js BFF 的探索还停留在方案阶段。这篇总结尽量用数据说话，同时诚实地记录不足。"
-wordCount: 1385
+description: "2019 was a year of clear growth in both the depth and breadth of my technical skills. The goals I set at the start of the year—fully rolling out React Hooks, making TypeScript part of daily work, and taking micro-frontends from zero to one—were essentially all met. There were regrets too: test coverage fell short of expectations, and our exploration of a Node.js BFF layer never moved past the planning stage. This summary tries to let the data speak, while honestly recording what fell short."
+wordCount: 905
 ---
 
-2019 年是技术深度和广度都有明显成长的一年。年初定下的几个目标——React Hooks 全面落地、TypeScript 成为日常、微前端从零到一——基本都完成了。当然也有遗憾：测试覆盖率没有达到预期、Node.js BFF 的探索还停留在方案阶段。这篇总结尽量用数据说话，同时诚实地记录不足。
+2019 was a year of clear growth in both the depth and breadth of my technical skills. The goals I set at the start of the year—fully rolling out React Hooks, making TypeScript part of daily work, and taking micro-frontends from zero to one—were essentially all met. There were regrets too: test coverage fell short of expectations, and our exploration of a Node.js BFF layer never moved past the planning stage. This summary tries to let the data speak, while honestly recording what fell short.
 
 ## React Hooks Fully Adopted
 
-2 月 React 16.8 发布 Hooks 正式版后，我花了一个月深入学习，然后在团队推广。到年底，所有新项目都采用函数组件 + Hooks，class 组件不再出现在新代码中。
+After React 16.8 shipped the stable Hooks API in February, I spent a month studying it in depth and then promoted it across the team. By year's end every new project used function components + Hooks, and class components no longer appeared in new code.
 
-自定义 Hook 是今年最大的技术收获。团队内部沉淀了 12 个通用 Hook：
+Custom Hooks were my biggest technical takeaway this year. The team built up a library of 12 reusable Hooks:
 
 ```typescript
 // 2019 年团队自定义 Hook 库（精选）
@@ -93,9 +93,9 @@ function useLocalStorage<T>(key: string, initialValue: T) {
 }
 ```
 
-**代码风格演进：2018 vs 2019**
+**Code Style Evolution: 2018 vs 2019**
 
-下面是一个真实的组件重写案例，展示了编码风格的变化：
+Here is a real component-rewrite example that shows how the coding style changed:
 
 ```tsx
 // ====== 2018：class 组件 + setState ======
@@ -211,7 +211,7 @@ const UserDetail: React.FC<UserDetailProps> = ({ userId }) => {
 
 ## The Path to TypeScript Mastery
 
-年初对 TypeScript 的态度是"会用但不熟"，到了年底，类型体操已经成为日常。
+At the start of the year my attitude toward TypeScript was "I can use it but I'm not fluent." By December, type gymnastics had become part of my daily routine.
 
 ```typescript
 // 2019 年掌握的 TypeScript 高级特性
@@ -262,14 +262,14 @@ function log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
 }
 ```
 
-**数据指标：**
-- TypeScript 项目占比：从 2018 年的 20% 提升到 2019 年的 85%
-- 类型覆盖率：核心模块 95%，整体 78%
-- 因类型错误导致的线上 bug：相比 2018 年减少了约 60%
+**Metrics:**
+- TypeScript project share: up from 20% in 2018 to 85% in 2019
+- Type coverage: 95% in core modules, 78% overall
+- Production bugs caused by type errors: down about 60% versus 2018
 
 ## Micro-Frontend single-spa Adoption
 
-今年最有价值的架构决策是用 single-spa 对公司的老 jQuery 系统进行了渐进式迁移。没有大规模重写，而是新功能用 Vue 开发，老功能逐步替换。
+The most valuable architectural decision this year was using single-spa to incrementally migrate the company's legacy jQuery system. Rather than a big rewrite, new features were built in Vue while old ones were replaced gradually.
 
 ```
 架构设计：
@@ -282,26 +282,26 @@ function log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
 └─────────────────────────────────────────────┘
 ```
 
-**成果数据：**
-- 4 个微应用成功接入（2 个 Vue、1 个 React、1 个 jQuery）
-- 新功能开发周期缩短约 30%（新框架开发效率更高）
-- 独立部署：各微应用独立发布，互不影响
-- 最大的挑战是共享状态和 CSS 隔离，最终通过 CSS Modules + 事件总线解决
+**Results:**
+- 4 micro-apps successfully integrated (2 Vue, 1 React, 1 jQuery)
+- New-feature development cycle shortened by about 30% (the new framework is more productive)
+- Independent deployment: each micro-app ships on its own, with no mutual interference
+- The biggest challenge was shared state and CSS isolation, eventually solved with CSS Modules + an event bus
 
 ## Component Library v2 Iteration
 
-年初发布的组件库 v2 是基于 TypeScript + React Hooks 重写的：
+The component library v2 released at the start of the year was rewritten on TypeScript + React Hooks:
 
-**组件库指标：**
-- 共 35 个组件（v1 是 22 个）
-- TypeScript 类型覆盖率 100%
-- 单元测试覆盖率 72%（目标 80%，未达成）
-- 内部 npm 包周下载量从 120 次增长到 450 次
-- 接入项目从 3 个增长到 8 个
+**Component library metrics:**
+- 35 components in total (v1 had 22)
+- TypeScript type coverage 100%
+- Unit-test coverage 72% (target was 80%, not met)
+- Weekly downloads of the internal npm package grew from 120 to 450
+- Adopting projects grew from 3 to 8
 
 ## Vue 3 Outlook
 
-虽然主力是 React，但对 Vue 3 的关注一直没有落下。从 Composition API RFC 阶段就开始学习，主要收获：
+Although React is my main stack, I never stopped following Vue 3. I started learning from the Composition API RFC stage; the main takeaways:
 
 ```javascript
 // Vue 3 Composition API 对比 React Hooks 的思考
@@ -314,7 +314,7 @@ function log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
 
 ## Monitoring System Setup (Sentry)
 
-今年接入了 Sentry 做前端监控，从零到一搭建了完整的错误追踪体系：
+This year I integrated Sentry for frontend monitoring and built a complete error-tracking system from scratch:
 
 ```javascript
 // Sentry 初始化配置
@@ -360,58 +360,58 @@ Sentry.init({
 })
 ```
 
-**监控效果：**
-- 接入前：线上问题靠用户反馈，平均发现时间 2-3 天
-- 接入后：线上错误实时告警，平均发现时间 15 分钟
-- 错误修复效率提升：从"找复现路径"到"直接看堆栈和上下文"
-- 累计捕获并修复 47 个线上错误，其中 12 个是 P1 级别
+**Monitoring impact:**
+- Before: production issues relied on user feedback; average detection time 2–3 days
+- After: real-time alerts on production errors; average detection time 15 minutes
+- Faster fixes: from "hunting for a repro path" to "reading the stack and context directly"
+- Cumulatively caught and fixed 47 production errors, 12 of them P1 level
 
 ## Code Review and Knowledge Sharing
 
-今年认真推了 Code Review，收效显著：
+This year I seriously pushed Code Review, with significant results:
 
-**Code Review 数据：**
-- 全年完成 PR Review 286 个
-- 通过 Review 发现的问题中，潜在 bug 占 35%，代码规范占 40%，性能隐患占 15%，其他 10%
-- 团队代码质量明显提升：月均线上 bug 从 8.2 个降到 4.5 个
+**Code Review stats:**
+- 286 PR reviews completed over the year
+- Of issues found in review, potential bugs were 35%, code-style 40%, performance risks 15%, other 10%
+- Team code quality rose noticeably: average monthly production bugs dropped from 8.2 to 4.5
 
-**技术分享：**
-- 内部技术分享 8 次（React Hooks、TypeScript、微前端、Webpack 优化等）
-- 坚持写技术博客，全年发表文章 23 篇
-- 写作帮助自己梳理知识体系，收益大于投入
+**Tech sharing:**
+- 8 internal tech talks (React Hooks, TypeScript, micro-frontends, Webpack optimization, etc.)
+- Kept up tech blogging; published 23 articles over the year
+- Writing helped me organize my knowledge system; the payoff exceeded the effort
 
 ## Shortcomings and Reflections
 
-诚实地说，有几个目标没有完成：
+To be honest, a few goals went unmet:
 
-1. **测试覆盖率未达标**：目标 80%，实际 72%。原因是在项目进度压力下，测试被优先级挤压了。2020 年需要在 CI 中强制覆盖率门禁。
-2. **Node.js BFF 停留在方案阶段**：年初计划用 Koa 搭建 BFF 层，但由于团队 Node.js 经验不足，最终只完成了技术预研。2020 年需要找一个合适的项目切入。
-3. **文档不够系统**：虽然写了博客，但团队内部的规范文档还不够完善，新人上手还是靠口头传帮带。
+1. **Test coverage missed the target**: goal 80%, actual 72%. The cause was project schedule pressure pushing tests down the priority list. In 2020 we need a hard coverage gate in CI.
+2. **Node.js BFF stuck at the planning stage**: the plan at the start of the year was a Koa-based BFF layer, but with limited team Node.js experience we only finished a tech spike. In 2020 we need to find a suitable project to pilot it.
+3. **Documentation not systematic enough**: although I blogged, the team's internal standards docs are still incomplete; onboarding new people still relies on word-of-mouth.
 
 ## 2020 Plans
 
-**技术方向：**
-- Vue 3 正式版跟进：预计 Q2 发布，准备组件库的 Vue 3 版本
-- React Concurrent Mode：等稳定版发布后深入学习
-- 微前端扩展：从 4 个应用扩展到 8-10 个，解决共享依赖和样式隔离问题
+**Technical direction:**
+- Follow Vue 3 stable: expected in Q2; prepare the Vue 3 version of the component library
+- React Concurrent Mode: study in depth once the stable release ships
+- Expand micro-frontends: from 4 apps to 8–10, solving shared-dependency and style-isolation issues
 
-**工程目标：**
-- 测试覆盖率强制 80% 以上，CI 中设置门禁
-- 前端规范文档体系化（编码规范、Git 规范、Review 规范）
-- Node.js BFF 落地：选择 1-2 个项目试点
+**Engineering goals:**
+- Enforce test coverage above 80% with a CI gate
+- Systematize frontend standards docs (coding, Git, review conventions)
+- Land the Node.js BFF: pilot on 1–2 projects
 
-**个人成长：**
-- 输出更多深度文章（从数量导向转向质量导向）
-- 参加 1-2 个技术大会，做主题分享
-- 阅读 5 本技术书籍
+**Personal growth:**
+- Produce more in-depth articles (shift from quantity to quality)
+- Attend 1–2 tech conferences and give a talk
+- Read 5 technical books
 
 ## Summary
 
-- React Hooks 全面落地，团队沉淀了 12 个通用 Hook，代码量减少约 20%
-- TypeScript 项目占比从 20% 提升到 85%，类型错误导致的线上 bug 减少 60%
-- 微前端 single-spa 成功接入 4 个应用，新功能开发周期缩短 30%
-- 组件库 v2 用 TypeScript 重写，类型覆盖率 100%，接入项目从 3 个增长到 8 个
-- Sentry 监控体系上线，线上问题平均发现时间从 2-3 天缩短到 15 分钟
-- Code Review 坚持执行，月均线上 bug 从 8.2 个降到 4.5 个
-- 测试覆盖率（72%）和 Node.js BFF 两个目标未完成，2020 年需要补上
-- 2020 年重点：Vue 3 跟进、微前端扩展、测试覆盖率提升、BFF 落地
+- React Hooks fully rolled out; the team built up 12 reusable Hooks, cutting code volume by about 20%
+- TypeScript project share rose from 20% to 85%, and production bugs from type errors dropped 60%
+- Micro-frontend single-spa integrated 4 apps; new-feature dev cycle shortened 30%
+- Component library v2 rewritten in TypeScript with 100% type coverage; adopting projects grew from 3 to 8
+- Sentry monitoring went live; average production-issue detection time dropped from 2–3 days to 15 minutes
+- Code Review sustained; average monthly production bugs fell from 8.2 to 4.5
+- Two goals missed: test coverage (72%) and the Node.js BFF—both to be closed in 2020
+- 2020 focus: follow Vue 3, expand micro-frontends, raise test coverage, and land the BFF

@@ -23,7 +23,7 @@ wordCount: 187
 | Code Splitting | 支持         | 有限             |
 ```
 
-簡單説：Webpack 管理應用，Rollup 打包庫。
+簡單說：Webpack 管理應用，Rollup 打包庫。
 
 ## 項目結構
 

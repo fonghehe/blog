@@ -3,9 +3,9 @@ title: "Long Animation Frame API 実践：帰属の盲点から INP 精密最適
 date: 2026-08-14 15:23:41
 tags:
   - パフォーマンス最適化
-readingTime: 7
+readingTime: 10
 description: "PerformanceObserver long-animation-frame（LoAF）API は Long Task API の帰因不能という核心的な欠陥を解決する。本記事では LoAF のフィールドの意味、本番環境での収集方法を解説し、サードパーティスクリプトのブロッキング、長いレンダリングパス、スタイル・レイアウトスラッシングの 3 つの実例を通じて、LoAF を活用した INP 最適化の方法を示す。"
-wordCount: 3100
+wordCount: 2198
 ---
 
 INP（Interaction to Next Paint）が 2024 年に FID に代わって Core Web Vitals 指標となった後、フロントエンドチームは気まずい現実に直面している：ページの応答が遅いことは分かっているが、何を原因とするのかが分からないのだ。Long Task API は「300ms のロングタスクがある」ことを教えてくれるが、その 300ms の間に一体どんなコードが実行されていたのかは教えてくれない。この帰属の盲点は 2026 年に Long Animation Frame API（LoAF）によって埋められた。

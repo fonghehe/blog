@@ -17,7 +17,7 @@ Cypress 組件測試入門在前端開發中的應用越來越廣泛。本文從
 ```javascript
 import { test, expect } from '@playwright/test'
 
-test.describe('用户登錄流程', () => {
+test.describe('用戶登錄流程', () => {
   test('成功登錄跳轉到首頁', async ({ page }) => {
     await page.goto('/login')
     await page.fill('[data-testid="email"]', 'admin@example.com')
@@ -67,7 +67,7 @@ describe('LoginForm', () => {
 ```javascript
 import { test, expect } from '@playwright/test'
 
-test.describe('用户登錄流程', () => {
+test.describe('用戶登錄流程', () => {
   test('成功登錄跳轉到首頁', async ({ page }) => {
     await page.goto('/login')
     await page.fill('[data-testid="email"]', 'admin@example.com')
@@ -117,7 +117,7 @@ describe('LoginForm', () => {
 ```javascript
 import { test, expect } from '@playwright/test'
 
-test.describe('用户登錄流程', () => {
+test.describe('用戶登錄流程', () => {
   test('成功登錄跳轉到首頁', async ({ page }) => {
     await page.goto('/login')
     await page.fill('[data-testid="email"]', 'admin@example.com')

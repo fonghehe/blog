@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 1
 description: "Angular 內置的路由懶加載是優化大型應用首屏效能的關鍵手段。"
-wordCount: 85
+wordCount: 86
 ---
 
 Angular 內置的路由懶加載是優化大型應用首屏效能的關鍵手段。
@@ -37,7 +37,7 @@ const routes: Routes = [
 })
 ```
 
-自定義策略：隻預加載標記了 `preload: true` 的模塊：
+自定義策略：只預加載標記了 `preload: true` 的模塊：
 
 ```typescript
 @Injectable({ providedIn: 'root' })
@@ -50,4 +50,4 @@ export class SelectivePreloadingStrategy implements PreloadingStrategy {
 
 ## 效果
 
-合理拆分後，首屏包體積可減少 40%-60%，配合服務端 HTTP/2 推送效果更好。
+合理拆分後，首屏包體積可減少 40%-60%，配合伺服器端 HTTP/2 推送效果更好。

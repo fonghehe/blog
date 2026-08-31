@@ -129,4 +129,4 @@ ng update @angular/core@22.0.0-rc.0 --migrate-only
 
 ## 總結
 
-Angular 22 RC 展示了一個在工具鏈和架構層面雙雙成熟的 Angular。Evergreen 編譯器大幅改善了開發體驗，Zoneless 的預設化標誌著整個框架的技術路線已完全轉向 Signal 驅動。正式版預計 5 月中旬釋出，值得現在就在非關鍵專案上驗證升級可行性。
+Angular 22 RC 展示了一個在工具鏈和架構層面都更成熟的 Angular。Evergreen 編譯器大幅改善了開發體驗，Zoneless 的預設化標誌著整個框架的技術路線已完全轉向 Signal 驅動。正式版預計 5 月中旬釋出，值得現在就在非關鍵專案上驗證升級可行性。

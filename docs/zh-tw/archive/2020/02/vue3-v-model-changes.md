@@ -8,11 +8,11 @@ description: "Vue 3 對 `v-model` 做了重大簡化：移除了 `.sync` 修飾�
 wordCount: 284
 ---
 
-Vue 3 對 `v-model` 做了重大簡化：移除了 `.sync` 修飾符，統一為 `modelValue` + `update:modelValue` 的標準模式。同時支援多個 `v-model` 繫結，解決了 Vue 2 中元件雙向繫結的諸多痛點。
+Vue 3 對 `v-model` 做了重大簡化：移除了 `.sync` 修飾符，統一為 `modelValue` + `update:modelValue` 的標準模式。同時支援多個 `v-model` 綁定，解決了 Vue 2 中元件雙向綁定的諸多痛點。
 
 ## Vue 2 vs Vue 3 的差異
 
-Vue 2 中，子元件要實現雙向繫結需要通過 `value` prop 和 `$emit('input')`。如果還需要 `.sync` 同步其他屬性，又是一套不同的規則。
+Vue 2 中，子元件要實現雙向綁定需要通過 `value` prop 和 `$emit('input')`。如果還需要 `.sync` 同步其他屬性，又是一套不同的規則。
 
 ```vue
 <!-- Vue 2 寫法 -->
@@ -52,9 +52,9 @@ export default {
 <MyInput v-model="name" />
 ```
 
-## 多個 v-model 繫結
+## 多個 v-model 綁定
 
-Vue 3 支援為 `v-model` 指定引數，實現一個元件多個雙向繫結。
+Vue 3 支援為 `v-model` 指定參數，實現一個元件多個雙向綁定。
 
 ```vue
 {% raw %}
@@ -238,6 +238,6 @@ export default {
 ## 小結
 
 - Vue 3 統一用 `modelValue` + `update:modelValue`，替代 Vue 2 的 `value` + `input`
-- `.sync` 修飾符被移除，`v-model:propName` 更直觀地實現多屬性雙向繫結
+- `.sync` 修飾符被移除，`v-model:propName` 更直觀地實現多屬性雙向綁定
 - 自定義修飾符通過 `modelModifiers` prop 接收，靈活擴充套件行為
 - 封裝表單元件時，始終遵循 props 宣告 + emits 宣告的規範

@@ -5,11 +5,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "关于TypeScript 品牌类型 Nominal Typing，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production p"
-wordCount: 159
+description: "Many developers only know TypeScript branded types (nominal typing) at the concept level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 156
 ---
 
-关于TypeScript 品牌类型 Nominal Typing，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to TypeScript branded types (a.k.a. nominal typing), many developers only stay at the API surface. This article looks at the real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
@@ -76,7 +76,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Project Practice
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T

@@ -5,15 +5,15 @@ tags:
   - CSS
 
 readingTime: 2
-description: "今年在团队内推动了一次 CSS 架构的升级——从 BEM 命名规范逐步迁移到 Utility-First 方案。过程中有争论、有妥协，最终找到了一个平衡点。"
-wordCount: 410
+description: "This year I drove a CSS architecture upgrade within my team — migrating step by step from BEM naming to a utility-first approach. There were arguments and compromises, and we eventually found a balance."
+wordCount: 286
 ---
 
-今年在团队内推动了一次 CSS 架构的升级——从 BEM 命名规范逐步迁移到 Utility-First 方案。过程中有争论、有妥协，最终找到了一个平衡点。
+This year I led a CSS architecture upgrade within the team—gradually migrating from the BEM naming convention to a Utility-First approach. There were debates and compromises along the way, but we eventually found a balance.
 
 ## Pain Points of BEM
 
-BEM（Block-Element-Modifier）我们用了 4 年，解决了命名冲突问题，但随着项目变大，新问题逐渐暴露：
+We used BEM (Block-Element-Modifier) for four years. It solved our naming-collision problem, but as projects grew, new issues began to surface:
 
 ```css
 /* BEM 的典型代码 */
@@ -40,7 +40,7 @@ BEM（Block-Element-Modifier）我们用了 4 年，解决了命名冲突问题�
 /* 这些 flex、padding、margin 在无数组件中重复 */
 ```
 
-核心问题是：CSS 文件膨胀、布局样式重复、命名心智负担高。
+The core problems are: bloated CSS files, duplicated layout styles, and a high mental overhead for naming.
 
 ## Advantages of Utility-First
 
@@ -60,11 +60,11 @@ BEM（Block-Element-Modifier）我们用了 4 年，解决了命名冲突问题�
 </div>
 ```
 
-优点很明显：不用在 HTML 和 CSS 之间跳转，不用想命名，样式一目了然。但初期团队的抵触也很大——"HTML 太丑了"、"和内联样式有什么区别"。
+The advantages are obvious: no more jumping between HTML and CSS, no need to think up class names, and styles are visible at a glance. But the team's initial resistance was strong—"The HTML looks ugly" and "How is this different from inline styles?"
 
 ## Our Compromise Solution
 
-没有全盘用 Utility-First，而是分层处理：
+Rather than going all-in on Utility-First, we took a layered approach:
 
 ```html
 <!-- 1. 布局用 utility classes -->
@@ -85,14 +85,14 @@ BEM（Block-Element-Modifier）我们用了 4 年，解决了命名冲突问题�
 </div>
 ```
 
-原则是：
-- **布局和间距**：用 utility classes，不写 CSS
-- **组件的结构样式**：用 BEM，保持语义
-- **颜色和字体微调**：用 utility classes
+The principles are:
+- **Layout and spacing**: use utility classes, no custom CSS
+- **Component structural styles**: use BEM to keep semantics
+- **Color and font tweaks**: use utility classes
 
 ## Unifying Design Tokens with CSS Variables
 
-不管用什么 CSS 方法论，Design Token 都应该统一管理：
+Regardless of the CSS methodology you use, Design Tokens should be managed centrally:
 
 ```css
 :root {
@@ -128,7 +128,7 @@ BEM（Block-Element-Modifier）我们用了 4 年，解决了命名冲突问题�
 
 ## Toolchain Configuration
 
-我们用 Windi CSS（兼容 Tailwind 的 API）作为 utility 工具，配合 Vite 使用：
+We use Windi CSS (which is API-compatible with Tailwind) as our utility tool, together with Vite:
 
 ```javascript
 // vite.config.ts
@@ -146,12 +146,12 @@ export default {
 }
 ```
 
-Windi CSS 的按需生成特性让最终 CSS 体积很小，而且 JIT 模式下所有 utility 都是按需编译的。
+Windi CSS's on-demand generation keeps the final CSS bundle small, and in JIT mode every utility is compiled on demand.
 
 ## Summary
 
-- BEM 不是过时了，而是在布局和间距层面过于冗余
-- Utility-First 不适合全盘采用，和 BEM 结合使用是更好的方案
-- Design Token 用 CSS 变量管理，不管用什么方法论都需要
-- Windi CSS / Tailwind JIT 让 Utility-First 方案的运行时开销几乎为零
-- 团队接受度需要渐进式推进，先从布局样式开始
+- BEM isn't obsolete; it's just too redundant at the layout and spacing level.
+- Utility-First isn't suitable as an all-or-nothing switch; combining it with BEM is the better approach.
+- Manage Design Tokens with CSS variables—something you need regardless of methodology.
+- Windi CSS / Tailwind JIT makes the runtime overhead of a Utility-First approach virtually zero.
+- Team adoption needs to be gradual—start with layout styles first.

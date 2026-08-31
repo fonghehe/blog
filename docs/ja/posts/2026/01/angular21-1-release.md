@@ -5,10 +5,10 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 21は2025年11月にSignal化移行のマイルストーンを達成し、最初のマイナーバージョンである21.1は2026年1月に大量のエコシステム安定化作業をもたらしました。最も注目されるのは`httpResource`が安定版APIに正式昇格したことと、`linkedSignal`が複雑な状態管理に深く統"
-wordCount: 760
+wordCount: 750
 ---
 
-Angular 21は2025年11月にSignal化移行のマイルストーンを達成し、最初のマイナーバージョンである21.1は2026年1月に大量のエコシステム安定化作業をもたらしました。最も注目されるのは`httpResource`が安定版APIに正式昇格したことと、`linkedSignal`が複雑な状態管理に深く統合されたことです。
+Angular 21は2025年11月にSignal化移行のマイルストーンを達成し、最初のマイナーバージョンである21.1は2026年1月、エコシステムの安定化を大幅に進めました。最も注目されるのは`httpResource`が安定版APIに正式昇格したことと、`linkedSignal`が複雑な状態管理に深く統合されたことです。
 
 ## httpResourceの全面安定化
 
@@ -58,7 +58,7 @@ userResource = httpResource<User>(() => `/api/users/${this.userId()}`, {
 
 ## linkedSignalの複雑なシナリオへの応用
 
-`linkedSignal`は古典的な問題を解決します：ソースSignalが変わったとき、派生Signalはリセットが必要でありながら、ユーザーのローカル変更も保持する必要がある場合です。
+`linkedSignal` は、ソース Signal が変わったときに派生 Signal をリセットしつつもユーザーのローカルな変更を保持したい、という古典的なケースを解決します。
 
 ```typescript
 @Component({ template: `...` })
@@ -117,8 +117,8 @@ ng update @angular/core@21.1 @angular/cli@21.1
 
 1. `httpClient.get()`などの従来のメソッドは引き続き使用可能ですが、IDEに「httpResourceへの移行を推薦」のヒントが表示されます
 2. `resource()` APIの`loader`関数が`AbortSignal`をサポートするようになり、リクエストのキャンセルがよりエレガントになりました
-3. `effect()`のスケジューリング戦略に`microtask`オプションが追加され、同期的な感知が必要なシナリオに適しています
+3. `effect()`のスケジューリング戦略に`microtask`オプションが追加され、同期的な感知が必要な場合に適しています
 
 ## まとめ
 
-Angular 21.1は`httpResource`とSignalツールチェーンを安定化させ、2025年の多くの「開発者プレビュー」機能をプロダクション利用可能な状態に引き上げました。強化されたDevToolsと合わせて、2026年のAngular開発体験はこれまで以上にスムーズになっています。次のバージョン21.2はSignal Formsのプロダクション実践改善に焦点を当てる予定で、注目に値します。
+Angular 21.1は`httpResource`とSignalツールチェーンを安定化させ、2025年の多くの「開発者プレビュー」機能をプロダクション利用可能な状態に引き上げました。強化されたDevToolsと合わせて、2026年のAngular開発体験はこれまで以上にスムーズになっています。次のバージョン21.2はSignal Formsの本番運用に向けた改善に焦点を当てる予定で、注目に値します。

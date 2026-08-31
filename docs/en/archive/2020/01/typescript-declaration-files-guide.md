@@ -4,15 +4,15 @@ date: 2020-01-13 16:15:38
 tags:
   - TypeScript
 readingTime: 3
-description: "TypeScript 4.0 在去年 8 月发布了，团队从 3.7 升级到 4.0 几乎没有 breaking changes。这周整理了升级过程中发现的实用特性，以及我们维护声明文件的经验。"
-wordCount: 301
+description: "TypeScript 4.0 shipped last August, and our team's upgrade from 3.7 to 4.0 had almost no breaking changes. This week I compiled the useful features we discovered during the upgrade, along with our experience maintaining declaration files."
+wordCount: 191
 ---
 
-TypeScript 4.0 在去年 8 月发布了，团队从 3.7 升级到 4.0 几乎没有 breaking changes。这周整理了升级过程中发现的实用特性，以及我们维护声明文件的经验。
+TypeScript 4.0 was released last August, and our team's upgrade from 3.7 to 4.0 introduced almost no breaking changes. This week I put together the useful features we discovered during the upgrade, along with our experience maintaining declaration files.
 
 ## Variadic Tuple Types
 
-这个特性对写工具类型帮助很大。
+This feature is a big help when writing utility types.
 
 ```typescript
 // 以前：处理不同类型参数组合很痛苦
@@ -37,7 +37,7 @@ type Result = PartialArgs<[string, number, boolean]>;
 // [string | undefined, number | undefined, boolean | undefined]
 ```
 
-**实际应用：类型安全的事件系统**
+**Real-world application: a type-safe event system**
 
 ```typescript
 // 我们的事件总线类型定义
@@ -118,11 +118,11 @@ class MyComponent extends BaseComponent {
 }
 ```
 
-## 声明文件最佳实践
+## Declaration File Best Practices
 
-我们团队维护了一个内部组件库，声明文件的写法很重要。
+Our team maintains an internal component library, so how we write declaration files matters a lot.
 
-### 1. 基础组件声明
+### 1. Basic Component Declarations
 
 ```typescript
 // types/button.d.ts
@@ -153,7 +153,7 @@ export declare const Button: {
 };
 ```
 
-### 2. 泛型组件声明
+### 2. Generic Component Declarations
 
 ```typescript
 // types/table.d.ts
@@ -176,7 +176,7 @@ export interface TableProps<T = any> {
 // 用法：TableProps<User> 就能自动推导列的 key 类型
 ```
 
-### 3. 模块声明与路径映射
+### 3. Module Declarations and Path Mapping
 
 ```typescript
 // types/global.d.ts
@@ -219,7 +219,7 @@ declare module 'some-untyped-lib' {
 }
 ```
 
-### 4. API 响应类型体系
+### 4. API Response Type System
 
 ```typescript
 // types/api.d.ts
@@ -255,7 +255,7 @@ export type UserListResponse = PaginatedResponse<User>;
 export type UserDetailResponse = ApiResponse<User>;
 ```
 
-### 5. 工具函数的类型体操
+### 5. Type Gymnastics for Utility Functions
 
 ```typescript
 // types/utils.d.ts
@@ -285,7 +285,7 @@ type UserInput = RequiredByKeys<User, 'name' | 'email'>;
 // name 和 email 必填，其他可选
 ```
 
-## tsconfig.json 配置要点
+## Key tsconfig.json Configuration
 
 ```json
 {
@@ -315,7 +315,7 @@ type UserInput = RequiredByKeys<User, 'name' | 'email'>;
 }
 ```
 
-## 升级注意事项
+## Upgrade Notes
 
 ```bash
 # Upgrade Steps
@@ -332,8 +332,8 @@ npx tsc --noEmit
 
 ## Summary
 
-- TypeScript 4.0 的可变参数元组类型让复杂类型组合变得简洁
-- 标记元组元素提升了代码可读性，推荐所有元组类型都加标签
-- 声明文件是组件库的重要资产，良好的类型定义能显著提升开发体验
-- API 响应类型体系要从项目初期就建立规范，避免后期到处写 `any`
-- 升级 4.0 的 breaking changes 很少，放心升级
+- TypeScript 4.0's variadic tuple types make complex type combinations concise.
+- Labeled tuple elements improve code readability—I'd recommend labeling all tuple types.
+- Declaration files are a key asset for component libraries; good type definitions noticeably improve the development experience.
+- Establish conventions for the API response type system from the start of the project, to avoid sprinkling `any` everywhere later.
+- There are very few breaking changes in the 4.0 upgrade, so you can upgrade with confidence.

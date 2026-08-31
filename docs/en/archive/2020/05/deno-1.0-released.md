@@ -4,11 +4,11 @@ date: 2020-05-12 16:31:31
 tags:
   - Node.js
 readingTime: 2
-description: "Deno 1.0 终于发布了。作为 Node.js 之父 Ryan Dahl 的\"第二次尝试\"，它修正了 Node.js 的十大设计遗憾。在 1.0 之际，认真评估一下它到底适不适合在项目中使用。"
-wordCount: 189
+description: "Deno 1.0 has finally been released. Billed as Node.js creator Ryan Dahl's \"second attempt,\" it addresses the ten design regrets of Node.js. With 1.0 out, let's seriously evaluate whether it's actually ready for production use."
+wordCount: 133
 ---
 
-Deno 1.0 终于发布了。作为 Node.js 之父 Ryan Dahl 的"第二次尝试"，它修正了 Node.js 的十大设计遗憾。在 1.0 之际，认真评估一下它到底适不适合在项目中使用。
+Deno 1.0 has finally been released. Billed as Node.js creator Ryan Dahl's "second attempt," it fixes the ten design regrets of Node.js. Now that 1.0 is out, let's seriously evaluate whether it's actually suitable for use in projects.
 
 ## Deno's Core Selling Points
 
@@ -55,7 +55,7 @@ import { readJson } from 'https://deno.land/std@0.50.0/fs/read_json.ts';
 | TypeScript   | 需要 ts-node         | 原生支持             |
 ```
 
-## 内置工具链
+## Built-in Toolchain
 
 ```bash
 # 测试
@@ -90,7 +90,7 @@ Deno.test('异步测试', async () => {
 });
 ```
 
-## 实际写一个小服务
+## Building a Small Service
 
 ```typescript
 // server.ts
@@ -140,7 +140,7 @@ await app.listen({ port: 8000 });
 deno run --allow-net server.ts
 ```
 
-## 现阶段的实际问题
+## Practical Issues Today
 
 ```markdown
 1. 生态太小：npm 有 130 万个包，Deno 的第三方模块很少
@@ -151,7 +151,7 @@ deno run --allow-net server.ts
 6. 调试：Chrome DevTools 支持有，但体验不如 Node.js
 ```
 
-## 什么时候可以考虑用 Deno
+## When Deno Is Worth Considering
 
 ```markdown
 适合：
@@ -169,8 +169,8 @@ deno run --allow-net server.ts
 
 ## Summary
 
-- Deno 1.0 在安全性和开发体验上确实比 Node.js 更好
-- 内置 TypeScript、测试、lint、格式化，开箱即用
-- URL 导入去掉了 node_modules，但也带来了版本管理问题
-- 生态系统是最大短板，npm 生态不是一两年能追上的
-- 2020 年可以在工具脚本中使用，生产项目还是用 Node.js
+- Deno 1.0 is genuinely better than Node.js in terms of security and developer experience.
+- It ships TypeScript, testing, linting, and formatting out of the box.
+- URL imports do away with node_modules, but they also introduce version-management headaches.
+- Its ecosystem is the biggest weakness; npm's ecosystem can't be caught up to in just a year or two.
+- In 2020 you can use it for utility scripts, but stick with Node.js for production projects.

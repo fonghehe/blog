@@ -4,7 +4,7 @@ date: 2023-09-27 14:31:43
 tags:
   - Frontend
 readingTime: 2
-description: "在日常开发中，structuredClone 深拷贝实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
+description: "Deep copying with structuredClone is showing up in more and more everyday code. This article systematically covers its usage, mechanics, and practical patterns."
 wordCount: 197
 ---
 

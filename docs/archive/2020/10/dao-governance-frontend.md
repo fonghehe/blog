@@ -5,13 +5,16 @@ tags:
   - Web3
   - Blockchain
   - DApp
+readingTime: 8
+wordCount: 568
+description: "DAO（Decentralized Autonomous Organization，去中心化自治组织）是通过智能合约实现治理规则的链上组织。Compound 的治理系统（GovernorAlpha）发布后，DAO 治理界面成为 DeFi 前端的一个重要细分领域。与交易或借贷界面不同，治理前端需要处理复杂的提案生命周期、"
 ---
 
 ## DAO 与链上治理
 
 DAO（Decentralized Autonomous Organization，去中心化自治组织）是通过智能合约实现治理规则的链上组织。Compound 的治理系统（GovernorAlpha）发布后，DAO 治理界面成为 DeFi 前端的一个重要细分领域。与交易或借贷界面不同，治理前端需要处理复杂的提案生命周期、投票权计算和执行流程。
 
-Compound 治理系统（GovernorAlpha）成为了 DAO 治理合约的事实标准，后续的 Uniswap 治理、Gitcoin 治理等都在其基础上扩展。理解 GovernorAlpha 的接口和数据结构，是构建 DAO 治理前端的基础。
+GovernorAlpha 因此成为 DAO 治理合约的事实标准，后续的 Uniswap 治理、Gitcoin 治理等都在其基础上扩展。理解 GovernorAlpha 的接口和数据结构，是构建 DAO 治理前端的基础。
 
 ## 治理合约核心接口
 
@@ -366,7 +369,7 @@ async function createProposal(
 
 ## 提案执行与排队
 
-通过的提案需要先排队（queue）到 Timelock 合约，等待 grace period 后才能执行（execute）：
+提案通过后，需要先进入 Timelock 合约排队（queue），等待 grace period（宽限期）结束才能执行（execute）：
 
 ```javascript
 async function queueProposal(provider, governanceAddress, proposalId) {
@@ -649,4 +652,4 @@ function ProposalVotePanel({ provider, governanceAddress, tokenAddress, proposal
 
 DAO 治理前端的核心在于**将复杂的链上治理流程转化为可理解、可操作的界面**。提案的完整生命周期（创建→投票→排队→执行）涉及多个状态和条件判断，前端需要准确同步这些状态并及时反馈给用户。
 
-治理前端面临的最大挑战是信息密度的平衡——投票权、法定人数、投票周期、执行延迟等参数对用户决策至关重要，但大多数用户并不理解这些概念。优秀的治理前端应该通过可视化和渐进式信息展示，让普通用户也能做出知情投票决策。同时，实时状态同步（通过事件监听或轮询）确保了投票数据的准确性，这对治理公平性至关重要。
+治理前端面临的最大挑战，是在信息密度与可读性之间取得平衡——投票权、法定人数、投票周期、执行延迟等参数对用户决策至关重要，但大多数用户并不理解这些概念。优秀的治理前端应该通过可视化和渐进式信息展示，让普通用户也能做出知情投票决策。同时，实时状态同步（通过事件监听或轮询）确保了投票数据的准确性，这对治理公平性至关重要。

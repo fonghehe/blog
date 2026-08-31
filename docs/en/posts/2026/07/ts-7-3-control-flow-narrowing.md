@@ -3,9 +3,9 @@ title: "TypeScript 7.3 Type Narrowing and Control Flow Analysis: How the Compile
 date: 2026-07-02 21:40:27
 tags:
   - TypeScript
-readingTime: 7
+readingTime: 8
 description: "TypeScript 7.3 brings several enhancements to control flow analysis. This article examines the implementation mechanics of type narrowing from the compiler's perspective, including improvements to instanceof, the in operator, custom type guards, discriminated unions, and const type parameters."
-wordCount: 2200
+wordCount: 1051
 ---
 
 The real power of TypeScript's type system lies not in how complex its types can be, but in the compiler's ability to automatically narrow types along different execution paths. This process is called control flow analysis (CFA), and it is the core guarantee of type safety in TS. Version 7.3 brings several enhancements to narrowing capabilities. This article dives deep into these improvements from the compiler's behavioral perspective and analyzes how they affect everyday development.

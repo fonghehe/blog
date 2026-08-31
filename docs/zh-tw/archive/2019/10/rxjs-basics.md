@@ -12,7 +12,7 @@ RxJS 是 JavaScript 的響應式程式設計庫，它基於 Observable 模式，
 
 ## 什麼是 Observable
 
-Observable 代表一個可被訂閱的資料流。與 Promise 隻能 resolve 一次不同，Observable 可以發出多個值：
+Observable 代表一個可被訂閱的資料流。與 Promise 只能 resolve 一次不同，Observable 可以發出多個值：
 
 ```js
 import { Observable } from 'rxjs';

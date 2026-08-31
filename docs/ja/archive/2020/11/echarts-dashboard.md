@@ -3,16 +3,16 @@ title: "EChartsデータビジュアライゼーションダッシュボード�
 date: 2020-11-20 16:42:57
 tags:
   - TypeScript
-readingTime: 2
-description: "关于ECharts 数据可视化大屏开发，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 346
+readingTime: 3
+description: "多くの開発者はECharts データ可視化ダッシュボード開発について、API を呼ぶレベルでしか理解していない。本記事では本番環境の視点から、実際に直面する問題とその解決策を議論する。"
+wordCount: 526
 ---
 
-关于ECharts 数据可视化大屏开发，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+ECharts を用いたデータビジュアライゼーションのダッシュボード開発について、多くの開発者は API 呼び出しの層にとどまっている。本記事では本番環境の観点から、実際に起こりうる問題とその解決策を論じる。
 
 ## 基本原理
 
-在这个基础上，我们可以进一步优化：
+これを土台に、さらに最適化を進められる：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -43,11 +43,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+このパターンは大規模なプロジェクトで非常に実用的で、保守コストを大きく下げられる。
 
 ## 高度な機能
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは、もう少し複雑な使い方になる：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -71,11 +71,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+この手法により、コードのテスト容易性と拡張性の両方が向上する。
 
 ## プロジェクト実践
 
-以下是一个完整的示例：
+以下に全体のサンプルを示す：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -106,11 +106,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理には注意しよう。本番環境では極めて重要なポイントだ。
 
 ## ベストプラクティス
 
-关键在于理解核心逻辑：
+ポイントは中核となるロジックを理解することだ：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -134,11 +134,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+パフォーマンスチューニングは具体的な場面に合わせる必要があり、あらゆるケースで過剰な最適化が必要なわけではない。
 
 ## ハマりやすい注意点
 
-我们可以通过以下方式来改进：
+次の方法で改善できる：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -169,11 +169,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番環境で半年以上安定稼働しており、実際に検証済みだ。
 
 ## まとめ
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- 本番環境で使う前に、必ず互換性の検証を行うこと
+- チームでの開発では、技術そのものより合意形成とドキュメントが重要になる
+- コミュニティの動向を追い、技術的アプローチは継続的に改善していくこと
+- 新しい技術のために新しい技術を使うのは避ける

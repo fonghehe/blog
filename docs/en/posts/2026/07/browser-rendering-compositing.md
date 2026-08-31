@@ -4,9 +4,9 @@ date: 2026-07-26 18:26:07
 tags:
   - Browser
   - Performance
-readingTime: 8
+readingTime: 10
 description: "Deep dive into every stage of the browser rendering pipeline, understanding compositing layer creation conditions and GPU acceleration principles, and mastering the optimization methodology for 60fps complex animations."
-wordCount: 2700
+wordCount: 1494
 ---
 
 In frontend performance optimization, advice like "use transform instead of left" and "use opacity instead of visibility" is everywhere. But without understanding the browser's complete rendering pipeline, this advice is just dogma — you don't know why it works or when it fails. This article starts from the underlying mechanisms of the rendering pipeline and systematically covers compositing layer optimization principles and practices.

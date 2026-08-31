@@ -4,7 +4,7 @@ date: 2023-11-15 11:13:40
 tags:
   - Frontend
 readingTime: 2
-description: "关于CSS scroll-driven 动画实战，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspecti"
+description: "Many write-ups on CSS scroll-driven animations in practice stay at the API level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 219
 ---
 

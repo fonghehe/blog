@@ -3,16 +3,16 @@ title: "Vue 3 Composition API Refactoring in Practice"
 date: 2019-11-25 10:30:46
 tags:
   - Vue
-readingTime: 5
-description: "Vue 3 的 Composition API 引入了一种全新的组件逻辑组织方式。本文通过一个真实的用户管理页面，演示如何用 Composition API 重构 Vue 2 的 Options API 代码，展示 Composable 函数的抽取和复用。"
-wordCount: 410
+readingTime: 4
+description: "Vue 3's Composition API introduces a brand-new way to organize component logic. Using a real user-management page, this article shows how to refactor Vue 2 Options API code with the Composition API, and demonstrates how to extract and reuse composable functions."
+wordCount: 273
 ---
 
-Vue 3 的 Composition API 引入了一种全新的组件逻辑组织方式。本文通过一个真实的用户管理页面，演示如何用 Composition API 重构 Vue 2 的 Options API 代码，展示 Composable 函数的抽取和复用。
+Vue 3's Composition API introduces a brand-new way to organize component logic. Using a real user-management page, this article shows how to refactor Vue 2 Options API code with the Composition API, and demonstrates how to extract and reuse composable functions.
 
 ## Before Refactoring: Options API
 
-假设有一个用户管理页面，包含搜索、列表展示、分页、编辑弹窗等功能：
+Suppose we have a user-management page with search, list display, pagination, and an edit dialog:
 
 ```vue
 {% raw %}
@@ -165,11 +165,11 @@ export default {
 {% endraw %}
 ```
 
-问题：相关逻辑分散在 `data`、`computed`、`watch`、`methods` 中，随着功能增加，文件会变得很长且难以维护。
+The problem: related logic is scattered across `data`, `computed`, `watch`, and `methods`. As features grow, the file gets long and hard to maintain.
 
 ## After Refactoring: Composition API
 
-### 抽取 Composable：usePagination
+### Extracting a Composable: usePagination
 
 ```js
 // composables/usePagination.js
@@ -193,7 +193,7 @@ export function usePagination(fetchFn, { pageSize = 10 } = {}) {
 }
 ```
 
-### 抽取 Composable：useSearch
+### Extracting a Composable: useSearch
 
 ```js
 // composables/useSearch.js
@@ -219,7 +219,7 @@ export function useSearch(callback, { debounce = 300 } = {}) {
 }
 ```
 
-### 抽取 Composable：useCrud
+### Extracting a Composable: useCrud
 
 ```js
 // composables/useCrud.js
@@ -303,7 +303,7 @@ export function useCrud(apiBase) {
 }
 ```
 
-### 抽取 Composable：useConfirm
+### Extracting a Composable: useConfirm
 
 ```js
 // composables/useConfirm.js
@@ -320,7 +320,7 @@ export function useConfirm() {
 }
 ```
 
-### 重构后的组件
+### The Refactored Component
 
 ```vue
 {% raw %}
@@ -452,12 +452,12 @@ export default {
 
 ## Composable Naming Conventions
 
-按照 Vue 3 的惯例：
+By Vue 3 convention:
 
-1. 文件名和函数名以 `use` 开头
-2. 每个 Composable 只负责一个关注点
-3. 返回的 ref 和 reactive 对象保持响应性
-4. 组合多个 Composable 来构建复杂功能
+1. File and function names start with `use`
+2. Each composable owns a single concern
+3. Returned `ref` and `reactive` objects stay reactive
+4. Combine multiple composables to build complex features
 
 ```
 composables/
@@ -473,19 +473,19 @@ composables/
 
 ## Comparison with React Hooks
 
-| 特性 | Vue 3 Composable | React Hook |
-|------|-----------------|------------|
-| 响应性 | 自动追踪依赖 | 需要手动指定依赖数组 |
-| 调用顺序 | 无限制 | 必须在顶层调用 |
-| 副作用清理 | onUnmounted | useEffect 返回清理函数 |
-| 复用方式 | 函数调用 | 函数调用 |
-| 状态隔离 | 每次调用创建独立状态 | 每次调用创建独立状态 |
+| Feature | Vue 3 Composable | React Hook |
+|---------|------------------|------------|
+| Reactivity | Automatic dependency tracking | Manual dependency array required |
+| Call order | No restriction | Must be called at the top level |
+| Side-effect cleanup | `onUnmounted` | `useEffect` returns a cleanup function |
+| Reuse mechanism | Function call | Function call |
+| State isolation | Independent state per call | Independent state per call |
 
 ## Summary
 
-- Composition API 通过 `setup()` 函数替代 Options API 的分散写法
-- Composable 函数可以将相关逻辑抽取为可复用的模块
-- `usePagination`、`useSearch`、`useCrud` 等常见的 Composable 可以跨组件复用
-- 命名约定以 `use` 开头，与 React Hooks 一致
-- Composition API 不替代 Options API，两者可以共存
-- 适合在大型项目中组织复杂逻辑，小型项目用 Options API 也完全足够
+- The Composition API replaces the scattered Options API style with a single `setup()` function
+- Composable functions extract related logic into reusable modules
+- Common composables like `usePagination`, `useSearch`, and `useCrud` can be shared across components
+- The `use` prefix follows the same naming convention as React Hooks
+- The Composition API doesn't replace the Options API; the two can coexist
+- It suits organizing complex logic in large projects; for small projects the Options API is still perfectly adequate

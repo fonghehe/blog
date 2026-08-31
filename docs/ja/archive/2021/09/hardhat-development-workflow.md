@@ -5,9 +5,9 @@ tags:
   - Web3
   - Solidity
   - Smart Contract
-readingTime: 16
+readingTime: 10
 description: "プロジェクト構造から CI/CD 統合まで、プロダクションレベルのスマートコントラクト Hardhat エンジニアリング実践"
-wordCount: 4500
+wordCount: 1234
 ---
 
 ## Hardhat vs Truffle：なぜ移行するのか

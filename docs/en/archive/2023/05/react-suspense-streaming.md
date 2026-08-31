@@ -4,11 +4,11 @@ date: 2023-05-29 15:09:13
 tags:
   - React
 readingTime: 2
-description: "React Suspense 流式渲染优化这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 211
+description: "React Suspense streaming rendering optimization has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 187
 ---
 
-React Suspense 流式渲染优化这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+React Suspense streaming rendering optimization has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
 
 ## Getting Started
 
@@ -114,6 +114,6 @@ This approach has been running stably in production for over six months and has 
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- React Suspense 流式渲染优化不是银弹，需要根据项目规模和技术栈选择
+- React Suspense streaming rendering optimization is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

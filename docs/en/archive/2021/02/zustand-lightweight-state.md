@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "Zustand 轻量级状态管理 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based o"
-wordCount: 191
+description: "Zustand's lightweight state management has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 187
 ---
 
-Zustand 轻量级状态管理 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Zustand lightweight state management has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 

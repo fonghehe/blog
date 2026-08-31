@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React Error Boundary 最佳實踐這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 288
+wordCount: 286
 ---
 
 React Error Boundary 最佳實踐這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -70,7 +70,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ## 真實場景應用
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -95,7 +95,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 最佳化技巧
 

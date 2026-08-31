@@ -37,8 +37,8 @@ Cookies.remove("token");
 
 安全屬性：
 
-- `HttpOnly`：JS 無法讀取（隻能後端設置），防 XSS 偷 token
-- `Secure`：隻在 HTTPS 傳輸
+- `HttpOnly`：JS 無法讀取（只能後端設置），防 XSS 偷 token
+- `Secure`：只在 HTTPS 傳輸
 - `SameSite=Strict/Lax`：防 CSRF
 
 ## localStorage

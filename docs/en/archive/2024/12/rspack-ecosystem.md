@@ -1,14 +1,14 @@
 ---
-title: "Rspack Ecosystem: 插件Compatibility性 & ProductionLanding案例"
+title: "The Rspack Ecosystem: Plugin Compatibility and Production Landing Cases"
 date: 2024-12-23 10:57:34
 tags:
   - Frontend
 readingTime: 2
-description: "关于Rspack 生态完整指南，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 237
+description: "Many developers only know the complete Rspack ecosystem guide at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 213
 ---
 
-关于Rspack 生态完整指南，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Many developers only know the Rspack ecosystem guide at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -62,7 +62,7 @@ Let's start with the basic implementation:
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Project Practice
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Best Practices
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -149,7 +149,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 ## Summary
 
-- Rspack 生态完整指南不是银弹，需要根据项目规模和技术栈选择
+- The complete rspack ecosystem guide is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

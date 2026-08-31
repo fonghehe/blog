@@ -339,7 +339,7 @@ interface ImportMeta {
 
 ### 1. CommonJS 模組相容
 
-Vite 基於 ESM，某些舊的 npm 包隻提供 CJS 格式會報錯：
+Vite 基於 ESM，某些舊的 npm 包只提供 CJS 格式會報錯：
 
 ```typescript
 // vite.config.ts 中配置 optimizeDeps

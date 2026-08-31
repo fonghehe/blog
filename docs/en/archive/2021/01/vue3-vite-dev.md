@@ -9,11 +9,11 @@ tags:
   - Node.js
 
 readingTime: 1
-description: "Vite + Vue 3 开发环境极速体验 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic b"
-wordCount: 186
+description: "The Vite plus Vue 3 dev experience has been discussed many times in the community, but things move fast and many conclusions are outdated. This article revisits the topic against the latest versions."
+wordCount: 168
 ---
 
-Vite + Vue 3 开发环境极速体验 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+The blazing-fast Vite + Vue 3 dev experience has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -71,7 +71,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Real-World Applications
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets a bit more complex:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -126,6 +126,6 @@ Pay attention to boundary condition handling, which is critical in production.
 
 ## Summary
 
-- Vite + Vue 3 开发环境极速体验不是银弹，需要根据项目规模和技术栈选择
+- The fast Vite + Vue 3 dev experience isn't a silver bullet; choose it based on your project's size and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

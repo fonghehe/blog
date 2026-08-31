@@ -5,11 +5,11 @@ tags:
   - CSS
 
 readingTime: 2
-description: "Tailwind CSS JIT 编译模式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real proj"
-wordCount: 225
+description: "Tailwind CSS's JIT compilation mode is being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 211
 ---
 
-Tailwind CSS JIT 编译模式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Tailwind CSS's JIT compilation mode is becoming increasingly common in frontend development. This article dives into its core principles and best practices based on real projects.
 
 ## Basic Usage
 
@@ -94,7 +94,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Optimization
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage gets a bit more involved:
 
 ```css
 .container {
@@ -155,5 +155,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Tailwind CSS JIT 编译模式不是银弹，需要根据项目规模和技术栈选择
+- Tailwind CSS's JIT compilation mode is no silver bullet—adopt it based on your project's size and tech stack.
 - Understanding underlying principles is more important than memorizing APIs

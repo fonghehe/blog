@@ -4,11 +4,11 @@ date: 2020-04-05 10:14:23
 tags:
   - React
 readingTime: 2
-description: "Angular 提供了两种表单方案：Template-driven 和 Reactive Forms。对于需要动态字段、跨字段验证、程序化控制的复杂场景，Reactive Forms 是唯一合适的选择。"
-wordCount: 146
+description: "Angular offers two form approaches: Template-driven and Reactive Forms. For complex scenarios requiring dynamic fields, cross-field validation, or programmatic control, Reactive Forms is the only sensible choice."
+wordCount: 100
 ---
 
-Angular 提供了两种表单方案：Template-driven 和 Reactive Forms。对于需要动态字段、跨字段验证、程序化控制的复杂场景，Reactive Forms 是唯一合适的选择。
+Angular offers two form strategies: Template-driven and Reactive Forms. For complex scenarios that need dynamic fields, cross-field validation, or programmatic control, Reactive Forms is the only sensible choice.
 
 ## Basic Structure
 
@@ -69,9 +69,9 @@ export class RegisterComponent {
 }
 ```
 
-## 动态表单：FormArray
+## Dynamic Forms: FormArray
 
-常见场景：用户可动态添加/删除联系方式：
+A common scenario is letting users add or remove contact details dynamically:
 
 ```typescript
 @Component({
@@ -119,7 +119,7 @@ export class ProfileFormComponent {
 }
 ```
 
-## 异步验证器
+## Async Validators
 
 ```typescript
 // 验证用户名是否被占用（调用后端 API）
@@ -145,7 +145,7 @@ this.fb.control("", {
 });
 ```
 
-## 表单状态监听
+## Listening to Form State Changes
 
 ```typescript
 ngOnInit() {
@@ -173,4 +173,4 @@ ngOnInit() {
 
 ## Summary
 
-Angular Reactive Forms 的强大之处在于**表单逻辑完全在 TypeScript 中**，便于测试和复用。核心三件套：`FormGroup`（字段组）、`FormArray`（动态列表）、异步验证器，掌握这三个就能应对 90% 的复杂表单场景。
+The strength of Angular Reactive Forms is that all form logic lives in TypeScript, which makes it easy to test and reuse. Master the core trio — `FormGroup` (field groups), `FormArray` (dynamic lists), and async validators — and you can handle about 90% of complex form scenarios.

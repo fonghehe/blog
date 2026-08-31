@@ -4,9 +4,9 @@ date: 2022-09-19 13:53:40
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 8
 description: "zkSync 2.0 (era) natively supports account abstraction and Paymaster, making its frontend integration approach significantly different from EVM Layer1. This article covers the complete zkSync frontend development pipeline, from SDK usage to Paymaster integration."
-wordCount: 3100
+wordCount: 761
 ---
 
 zkSync 2.0 (later renamed zkSync Era) is a zkRollup solution developed by Matter Labs that launched on mainnet. Unlike Optimistic Rollup, zkSync uses zero-knowledge proofs (specifically the PLONK proof system) to guarantee the validity of L2 state, and withdrawals do not require a 7-day challenge period. More importantly, zkSync natively supports Account Abstraction and Paymaster (gas sponsorship) from the ground up, making its frontend interaction model significantly different from traditional EVM.

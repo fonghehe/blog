@@ -6,15 +6,15 @@ tags:
   - Testing
 
 readingTime: 3
-description: "最近社区在讨论一个话题：既然 Vite 已经解决了开发和构建的问题，为什么测试环节还是需要一套独立的、和 Vite 完全无关的工具链？测试跑在 Node 上，用 Jest 的 transform 配置，又回到了 Babel/TypeScript 编译那一套。如果测试也能复用 Vite 的模块解析和转换能力呢？"
-wordCount: 679
+description: "A question has been circulating in the community: if Vite already solves dev and build, why does testing still need a separate toolchain that knows nothing about Vite? Tests run in Node with Jest's transform config, dragging the whole Babel/TypeScript compilation story back in. What if tests could reuse Vite's pipeline directly?"
+wordCount: 452
 ---
 
-最近社区在讨论一个话题：既然 Vite 已经解决了开发和构建的问题，为什么测试环节还是需要一套独立的、和 Vite 完全无关的工具链？测试跑在 Node 上，用 Jest 的 transform 配置，又回到了 Babel/TypeScript 编译那一套。如果测试也能复用 Vite 的模块解析和转换能力呢？
+The community has been discussing a question lately: now that Vite handles both development and builds, why does the testing step still need a separate toolchain completely unrelated to Vite? Tests run on Node using Jest's transform config, which brings back the whole Babel/TypeScript compilation dance. What if tests could also reuse Vite's module resolution and transformation?
 
 ## Pain Points of Existing Test Tools
 
-用 Jest 跑 Vite 项目，配置复杂且容易出错：
+Running a Vite project with Jest means complex, error-prone configuration:
 
 ```javascript
 // jest.config.js —— 一个 Vite + Vue 3 + TypeScript 项目的典型配置
@@ -44,15 +44,15 @@ module.exports = {
 }
 ```
 
-几个问题很明显：
+A few problems stand out:
 
-1. **配置重复**：vite.config.ts 里配了一遍别名、CSS 预处理、TS 转换，jest.config.js 里再配一遍
-2. **转换链不同**：Vite 用 esbuild 编译，Jest 用 Babel/ts-jest，两套编译结果可能不一致
-3. **调试困难**：测试和开发用不同的工具链，出了问题不好定位
+1. **Duplicated config**: aliases, CSS preprocessing, and TS transforms are configured once in `vite.config.ts` and again in `jest.config.js`
+2. **Different transform pipelines**: Vite compiles with esbuild while Jest uses Babel/ts-jest, so the two compilation results can diverge
+3. **Hard to debug**: tests and development use different toolchains, making issues harder to trace
 
 ## Reusing Vite's Design Philosophy
 
-核心想法很直接：让测试也走 Vite 的模块处理管道。Vite 内部已经有一个 transform pipeline，处理 TypeScript、Vue SFC、CSS Modules、静态资源等，测试只需要复用它。
+The core idea is straightforward: let tests go through Vite's module-handling pipeline. Vite already has a transform pipeline that handles TypeScript, Vue SFCs, CSS Modules, static assets, and more—tests just need to reuse it.
 
 ```
 现有的工具链：
@@ -66,7 +66,7 @@ module.exports = {
   构建: Vite → 生产
 ```
 
-基于这个思路，可以设计一个 Vite 原生的测试运行器。核心是利用 Vite 的 `createServer` API 做模块转换：
+Building on this idea, we can design a Vite-native test runner. The key is to use Vite's `createServer` API for module transformation:
 
 ```javascript
 // 概念验证：用 Vite 做测试的模块加载器
@@ -97,7 +97,7 @@ async function createTestRunner() {
 
 ## Hypothetical API Design
 
-如果要设计一个 Vite 原生的测试框架，API 应该是什么样的？
+If we were to design a Vite-native test framework, what should its API look like?
 
 ```typescript
 // jest.config.ts —— 直接复用 Vite 配置
@@ -117,7 +117,7 @@ export default defineConfig({
 })
 ```
 
-测试文件写法和 Jest 类似，但不需要额外配置：
+Test files are written much like Jest's, but without the extra configuration:
 
 ```typescript
 // src/utils/format.test.ts
@@ -142,7 +142,7 @@ describe('formatDate', () => {
 })
 ```
 
-组件测试：
+Component testing:
 
 ```typescript
 // src/components/Button.test.ts
@@ -175,31 +175,31 @@ describe('Button', () => {
 
 ## Comparison with Existing Solutions
 
-| 维度 | Jest | 未来方案（Vite 原生） |
-|------|------|---------------------|
-| 配置 | 独立配置，和 Vite 重复 | 继承 vite.config.ts |
-| 转换 | Babel/ts-jest | Vite transform（esbuild） |
-| 速度 | 中等 | 预期更快（esbuild 编译） |
-| 生态 | 成熟（jest-dom、msw 等） | 需要兼容层 |
-| 模块处理 | CommonJS 为主 | ESM 原生 |
-| Mock | jest.mock() | import.meta.jest 或类似的 |
+| Dimension | Jest | Future approach (Vite-native) |
+|----------|------|------------------------------|
+| Config | Standalone config, duplicated with Vite | Inherits `vite.config.ts` |
+| Transform | Babel/ts-jest | Vite transform (esbuild) |
+| Speed | Moderate | Expected faster (esbuild compilation) |
+| Ecosystem | Mature (jest-dom, msw, etc.) | Needs a compatibility layer |
+| Module handling | Mostly CommonJS | Native ESM |
+| Mocking | jest.mock() | import.meta.jest or similar |
 
 ## Future Outlook
 
-几个方向值得关注：
+A few directions are worth watching:
 
-1. **esbuild 编译测试文件**：比 Babel 快很多，且 TypeScript 支持开箱即用
-2. **ESM 原生**：不再需要 `transform` 把 ESM 转成 CJS，测试直接跑 ESM
-3. **Jest 兼容**：上层 API 兼容 Jest，迁移成本低
-4. **JSDOM / happy-dom**：统一的 DOM 环境管理
-5. **Watch 模式利用 Vite HMR**：文件变更时利用 Vite 的 HMR 管道增量更新
+1. **Compile test files with esbuild**: far faster than Babel, with TypeScript support out of the box
+2. **Native ESM**: no need for a `transform` step to convert ESM to CJS; tests run ESM directly
+3. **Jest compatibility**: the upper-layer API stays compatible with Jest, keeping migration costs low
+4. **JSDOM / happy-dom**: unified DOM environment management
+5. **Leverage Vite HMR in watch mode**: use Vite's HMR pipeline to update incrementally when files change
 
-如果社区能把这个方向做好，2021 年下半年前端工具链会真正实现 Vite 全覆盖——开发、测试、构建，一套配置搞定。
+If the community pulls this off, the frontend toolchain could achieve full Vite coverage in the second half of 2021—development, testing, and builds all driven by a single config.
 
 ## Summary
 
-- 目前测试工具链和 Vite 开发工具链割裂，配置重复且编译器不一致
-- 核心思路是复用 Vite 的 transform 管道，让测试也走 esbuild 编译
-- API 设计上可以继承 vite.config.ts，减少重复配置
-- Jest 生态成熟，新方案需要兼容层（jest 的 describe/it/expect API）
-- 这个方向值得期待，可能会在 2021 年下半年实现
+- Today's test toolchain is disconnected from Vite's dev toolchain, with duplicated config and mismatched compilers
+- The core idea is to reuse Vite's transform pipeline so tests also compile through esbuild
+- On the API side, inheriting `vite.config.ts` reduces duplicate configuration
+- Jest's ecosystem is mature, so the new approach needs a compatibility layer (Jest's `describe`/`it`/`expect` API)
+- This direction is worth looking forward to and may materialize in the second half of 2021

@@ -6,11 +6,11 @@ tags:
   - Engineering
 
 readingTime: 2
-description: "在日常开发中，Storybook 6.3 新特性交互测试 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 187
+description: "In day-to-day development, Storybook 6.3's new interaction-testing feature is being used more and more often. This article systematically walks through its usage, underlying principles, and optimization strategies."
+wordCount: 182
 ---
 
-在日常开发中，Storybook 6.3 新特性交互测试 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+In day-to-day development, Storybook 6.3's new interaction-testing feature is being used more and more often. This article systematically walks through its usage, underlying principles, and optimization strategies.
 
 ## Quick Start
 
@@ -32,7 +32,7 @@ test.describe('用户登录流程', () => {
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Pay attention to edge case handling, which is critical in production.
 
 ## Internal Principles
 

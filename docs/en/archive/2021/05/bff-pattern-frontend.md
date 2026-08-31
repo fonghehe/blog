@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "在日常开发中，BFF Backend For Frontend 模式 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategi"
-wordCount: 180
+description: "The BFF (Backend For Frontend) pattern is showing up in more and more everyday work. This article systematically covers its usage, rationale, and optimization strategies."
+wordCount: 167
 ---
 
-在日常开发中，BFF Backend For Frontend 模式 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
+The BFF (Backend For Frontend) pattern is being used more and more frequently in day-to-day development. This article systematically explains its usage, principles, and optimization strategies.
 
 ## Quick Start
 
@@ -70,7 +70,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Business Practice
 
-实际项目中的用法会更复杂一些：
+In real projects, the usage is a bit more involved:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -127,4 +127,4 @@ Pay attention to boundary condition handling, which is critical in production.
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- BFF Backend For Frontend 模式不是银弹，需要根据项目规模和技术栈选择
+- The BFF (Backend For Frontend) pattern is no silver bullet; choose it based on your project's scale and tech stack.

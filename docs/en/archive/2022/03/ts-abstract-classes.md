@@ -4,7 +4,7 @@ date: 2022-03-18 17:22:02
 tags:
   - TypeScript
 readingTime: 2
-description: "In daily development, TypeScript 抽象类与接口对比 is being used more and more frequently. This article systematically explains its usage, principles, and optimization s"
+description: "Comparing TypeScript abstract classes and interfaces comes up more and more in everyday development. This article systematically covers their usage, mechanics, and how to choose."
 wordCount: 190
 ---
 

@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently picked up a WeChat Mini Program project. Having a web background made the learning curve manageable, but there are plenty of things to adapt to."
-wordCount: 163
+wordCount: 165
 ---
 
 I recently picked up a WeChat Mini Program project. Having a web background made the learning curve manageable, but there are plenty of things to adapt to.
@@ -145,7 +145,7 @@ If the project targets only WeChat Mini Program, native development is sufficien
 
 ## Summary
 
-- Mini Programs share design philosophy with Vue — easy to pick up with web experience
+- Mini Programs follow a design philosophy similar to Vue — easy to pick up with web experience
 - Biggest difference: no DOM/BOM, all APIs are `wx.*`
 - Use `setData` to trigger view updates — can't modify `data` directly
 - rpx is Mini Program's own unit: 750rpx = full screen width

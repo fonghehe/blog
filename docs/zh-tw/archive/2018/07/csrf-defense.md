@@ -5,7 +5,7 @@ tags:
   - 安全
 readingTime: 2
 description: "之前寫過 XSS 防禦，這次聊 CSRF。兩者經常一起提，但原理完全不同。"
-wordCount: 376
+wordCount: 377
 ---
 
 之前寫過 XSS 防禦，這次聊 CSRF。兩者經常一起提，但原理完全不同。
@@ -30,7 +30,7 @@ CSRF 攻擊：
 
 ### 1. CSRF Token（最常用）
 
-服務端生成隨機 token，嵌入表單/請求頭，攻擊者無法偽造：
+伺服器端生成隨機 token，嵌入表單/請求頭，攻擊者無法偽造：
 
 ```javascript
 // 服務端：生成 token 並存 session
@@ -70,7 +70,7 @@ app.use((req, res, next) => {
 
 ### 2. SameSite Cookie
 
-現代瀏覽器支援 `SameSite` 屬性，控製跨站請求是否攜帶 cookie：
+現代瀏覽器支援 `SameSite` 屬性，控制跨站請求是否攜帶 cookie：
 
 ```
 Set-Cookie: session=xxx; SameSite=Strict; HttpOnly; Secure

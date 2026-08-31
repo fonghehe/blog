@@ -55,7 +55,7 @@ POST /updateUserInfo
 4xx 客戶端錯誤：
   400 Bad Request        請求引數錯誤
   401 Unauthorized       未登入（需要認證）
-  403 Forbidden          已登入但無許可權
+  403 Forbidden          已登入但無權限
   404 Not Found          資源不存在
   409 Conflict           衝突（如使用者名稱已存在）
   422 Unprocessable      引數驗證失敗

@@ -4,11 +4,11 @@ date: 2024-12-02 19:36:13
 tags:
   - CSS
 readingTime: 2
-description: "CSS 原生嵌套实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 240
+description: "Native CSS nesting in practice is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 217
 ---
 
-CSS 原生嵌套实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Native CSS nesting in practice is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
 
 ## Basic Usage
 
@@ -62,7 +62,7 @@ Let's start with the basic implementation:
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Practical Cases
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Optimization
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -152,5 +152,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- CSS 原生嵌套实战不是银弹，需要根据项目规模和技术栈选择
+- Native css nesting in practice is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

@@ -5,6 +5,9 @@ tags:
   - Web3
   - Ethereum
   - DApp
+readingTime: 6
+wordCount: 1015
+description: "web3.js 是以太坊官方维护的 JavaScript SDK，也是前端工程师进入 DApp 开发的第一道门槛。web3.js 0.20.x 是长期使用的稳定版本，而 1.0 尚处于 beta 阶段。两个版本的 API 设计差异巨大——0.20.x 使用回调函数，1.0 引入了 Promise 和事件发射器，这种版本"
 ---
 
 web3.js 是以太坊官方维护的 JavaScript SDK，也是前端工程师进入 DApp 开发的第一道门槛。web3.js 0.20.x 是长期使用的稳定版本，而 1.0 尚处于 beta 阶段。两个版本的 API 设计差异巨大——0.20.x 使用回调函数，1.0 引入了 Promise 和事件发射器，这种版本分裂给开发者带来了不少困惑。

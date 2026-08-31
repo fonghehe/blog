@@ -38,7 +38,7 @@ const first = arr?.[0];
 
 ## 空值合併 ??
 
-和 `||` 的區別是關鍵：`||` 會把 `0`、`''`、`false` 也當作假值，`??` 隻處理 `null` 和 `undefined`。
+和 `||` 的區別是關鍵：`||` 會把 `0`、`''`、`false` 也當作假值，`??` 只處理 `null` 和 `undefined`。
 
 ```typescript
 const count = 0;

@@ -302,7 +302,7 @@ Storybook 可以構建為靜態 HTML 站點，方便部署到任何靜態託管�
 npm run build-storybook
 ```
 
-構建產物在 `storybook-static` 目錄中，可以部署到 GitHub Pages、Netlify 或內部服務器。
+構建產物在 `storybook-static` 目錄中，可以部署到 GitHub Pages、Netlify 或內部伺服器。
 
 ```json
 {

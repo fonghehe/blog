@@ -5,10 +5,10 @@ tags:
   - React
 readingTime: 2
 description: "在日常开发中，React useReducer 状态管理详解的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 299
+wordCount: 295
 ---
 
-在日常开发中，React useReducer 状态管理详解的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+在日常开发中，React useReducer 作为状态管理方案的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
 
 ## 快速上手
 
@@ -121,7 +121,7 @@ function useIntersectionObserver(options = {}) {
 ## 小结
 
 - 代码示例仅供参考，需根据业务场景调整
-- React useReducer 状态管理详解不是银弹，需要根据项目规模和技术栈选择
+- React useReducer 不是银弹，需要根据项目规模和技术栈选择
 - 理解底层原理比记住 API 更重要
 - 生产环境使用前务必做好兼容性验证
 - 团队协作中约定和文档比技术本身更重要

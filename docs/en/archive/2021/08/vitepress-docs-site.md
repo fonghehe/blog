@@ -6,11 +6,11 @@ tags:
   - Engineering
 
 readingTime: 2
-description: "给团队的组件库搭建文档站，对比了 VuePress 和 VitePress 后选择了后者。VitePress 基于 Vite + Vue 3，构建速度快了一个量级，而且配置更简洁。记录一下搭建过程和定制化配置。"
-wordCount: 239
+description: "To build a documentation site for our team's component library, I compared VuePress and VitePress and chose the latter. VitePress is built on Vite plus Vue 3, builds an order of magnitude faster, and has cleaner configuration. Here's the setup process and custom configuration."
+wordCount: 183
 ---
 
-给团队的组件库搭建文档站，对比了 VuePress 和 VitePress 后选择了后者。VitePress 基于 Vite + Vue 3，构建速度快了一个量级，而且配置更简洁。记录一下搭建过程和定制化配置。
+I built a documentation site for the team's component library. After comparing VuePress and VitePress, I chose the latter. VitePress is built on Vite + Vue 3, builds an order of magnitude faster, and has simpler configuration. Here are my notes on the setup process and customization.
 
 ## Quick Start
 
@@ -31,7 +31,7 @@ npm install vitepress vue --save-dev
 #     └── table.md
 ```
 
-package.json 中添加脚本：
+Add the following scripts to package.json:
 
 ```json
 {
@@ -106,7 +106,7 @@ export default defineConfig({
 
 ## Embedding Vue Components in Markdown
 
-VitePress 支持在 Markdown 中直接使用 Vue 组件，这是文档站最强大的功能：
+VitePress lets you use Vue components directly in Markdown, which is the most powerful feature for a documentation site:
 
 ````markdown
 # Button 按钮
@@ -141,7 +141,7 @@ import '@company/components/dist/style.css'
 
 ## Custom Home Page
 
-VitePress 支持 Hero 风格的首页：
+VitePress supports a Hero-style homepage:
 
 ```markdown
 ---
@@ -170,7 +170,7 @@ features:
 
 ## Deployment
 
-我们用的是 GitLab CI 自动部署到内网静态服务器：
+We use GitLab CI to deploy automatically to an internal static server:
 
 ```yaml
 # .gitlab-ci.yml
@@ -189,7 +189,7 @@ pages:
 
 ## Summary
 
-- VitePress 构建速度比 VuePress 快很多，开发体验更好
-- 在 Markdown 中直接嵌入 Vue 组件是做组件文档的核心能力
-- 配置简洁，上手门槛低，适合团队快速搭建
-- 目前 VitePress 还在 0.x 阶段，API 可能有变动，但已足够稳定用于内部文档
+- VitePress builds much faster than VuePress and offers a better dev experience
+- Embedding Vue components directly in Markdown is the core capability for component docs
+- The configuration is concise and the learning curve is low, making it ideal for teams to set up quickly
+- VitePress is still in the 0.x stage and its API may change, but it's stable enough for internal docs

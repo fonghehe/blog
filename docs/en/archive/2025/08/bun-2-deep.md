@@ -1,5 +1,5 @@
 ---
-title: "Bun 2.0 Deep Dive: 原生 Windows Support &  Node Compatibility性突破"
+title: "Bun 2.0 In Depth: Native Windows Support and a Breakthrough in Node Compatibility"
 date: 2025-08-12 09:46:23
 tags:
   - Frontend

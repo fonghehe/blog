@@ -6,7 +6,7 @@ tags:
   - TailwindCSS
 readingTime: 2
 description: "Tailwind CSS JIT 編譯模式在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 357
+wordCount: 355
 ---
 
 Tailwind CSS JIT 編譯模式在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -94,7 +94,7 @@ export async function POST(req) {
 
 ## 效能最佳化
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```css
 .container {
@@ -117,7 +117,7 @@ export async function POST(req) {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+通過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 常見陷阱
 

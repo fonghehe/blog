@@ -4,8 +4,8 @@ date: 2023-10-13 11:13:08
 tags:
   - Nuxt.js
 readingTime: 1
-description: "Nuxt 3 中间件系统 is a topic worth paying attention to in frontend development. This article explores its core concepts and best practices from real project experien"
-wordCount: 227
+description: "The Nuxt 3 middleware system deserves attention in frontend development. This article draws on real project experience to explore the core concepts and best practices."
+wordCount: 183
 ---
 
 Nuxt 3 中间件系统 is a topic worth paying attention to in frontend development. This article explores its core concepts and best practices from real project experience.
@@ -86,7 +86,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Best Practices
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 核心实现
@@ -107,7 +107,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Common Issues
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 使用示例
@@ -124,11 +124,11 @@ app.mount('#root')
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+With this pattern, the code's maintainability improves.
 
 ## Summary
 
-- 性能优化需要基于实际数据，避免过度优化
+- Base performance optimization on real data and avoid premature optimization
 - Nuxt 3 中间件系统的核心在于理解底层原理，而非仅仅记住 API
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
+- In real projects, choosing the right solution matters more than chasing the newest technology
+- Keep code style consistent across the team to cut maintenance costs

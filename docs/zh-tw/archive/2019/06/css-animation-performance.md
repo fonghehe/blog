@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 6
 description: "前端動畫做多了會發現，不是寫不出動畫，而是動畫一多就卡。尤其在移動端，60fps 的流暢動畫是使用者體驗的底線。這篇文章從瀏覽器渲染原理出發，搞清楚 CSS 動畫到底卡在哪裡，以及怎麼最佳化。"
-wordCount: 838
+wordCount: 841
 ---
 
 前端動畫做多了會發現，不是寫不出動畫，而是動畫一多就卡。尤其在移動端，60fps 的流暢動畫是使用者體驗的底線。這篇文章從瀏覽器渲染原理出發，搞清楚 CSS 動畫到底卡在哪裡，以及怎麼最佳化。
@@ -79,7 +79,7 @@ JavaScript → Style → Layout → Paint → Composite
 }
 ```
 
-所以核心原則就一句話：**動畫儘量隻用 `transform` 和 `opacity`**。
+所以核心原則就一句話：**動畫儘量只用 `transform` 和 `opacity`**。
 
 ## 用 transform 替代 layout 屬性
 
@@ -251,7 +251,7 @@ element.addEventListener('transitionend', function handler() {
 }
 ```
 
-「CSS 黑魔法」`transform: translateZ(0)` 就是利用這個原理強製建立合成層。但不要濫用：
+「CSS 黑魔法」`transform: translateZ(0)` 就是利用這個原理強制建立合成層。但不要濫用：
 
 ```css
 /* ⚠️ 用 translateZ(0) 強製 GPU 加速——慎用 */
@@ -268,7 +268,7 @@ element.addEventListener('transitionend', function handler() {
 
 ## requestAnimationFrame vs CSS 動畫
 
-什麼時候用 CSS 動畫，什麼時候用 JS（`requestAnimationFrame`）控製動畫？
+什麼時候該用 CSS 動畫、什麼時候改用 JS（`requestAnimationFrame`）來控制動畫？
 
 ```css
 /* CSS 動畫/過渡：適合簡單、狀態驅動的動畫 */
@@ -559,7 +559,7 @@ DevTools → 更多工具(More tools) → 渲染(Rendering)
 }
 
 /* 動畫結束後移除 will-change */
-/* 這一步通過 JS 的 transitionend 事件實現 */
+/* 這一步透過 JS 的 transitionend 事件實現 */
 ```
 
 ```javascript
@@ -593,8 +593,8 @@ content.addEventListener('transitionend', (e) => {
 
 ## 小結
 
-- 動畫屬性選擇的核心原則：優先使用 `transform` 和 `opacity`，它們隻觸發 Composite，跳過 Layout 和 Paint
-- `will-change` 是最佳化提示而非萬能藥——隻在動畫即將發生時新增，動畫結束後移除，避免濫用導致視訊記憶體不足
+- 動畫屬性選擇的核心原則：優先使用 `transform` 和 `opacity`，它們只觸發 Composite，跳過 Layout 和 Paint
+- `will-change` 是最佳化提示而非萬能藥——只在動畫即將發生時新增，動畫結束後移除，避免濫用導致視訊記憶體不足
 - `contain: layout paint` 可以有效縮小回流和重繪的影響範圍
-- CSS 動畫適合簡單的狀態驅動動畫，`requestAnimationFrame` 適合需要精確控製的複雜動畫
+- CSS 動畫適合簡單的狀態驅動動畫，`requestAnimationFrame` 適合需要精確控制的複雜動畫
 - 善用 DevTools 的 Performance 面板和 Paint flashing 來定位真正的效能瓶頸，不要憑感覺最佳化

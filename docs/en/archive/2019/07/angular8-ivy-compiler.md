@@ -8,7 +8,7 @@ description: "Angular 8 was officially released on May 28, 2019. Ivy entered pre
 wordCount: 184
 ---
 
-Angular 8 was officially released on May 28, 2019. Ivy entered preview as an opt-in feature, and differential loading was enabled by default. After a month of hands-on experience, here's a summary of the upgrade experience and the practical results of each feature.
+Angular 8 was officially released on May 28, 2019. Ivy entered preview as an opt-in feature, and differential loading was enabled by default. After a month of hands-on use, here's a summary of our upgrade experience and the practical effects of each feature.
 
 ## Differential Loading: Enabled by Default
 

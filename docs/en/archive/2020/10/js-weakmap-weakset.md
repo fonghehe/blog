@@ -4,15 +4,15 @@ date: 2020-10-23 15:42:52
 tags:
   - JavaScript
 readingTime: 2
-description: "JavaScript WeakMap WeakSet 使用场景在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 297
+description: "Using JavaScript WeakMap and WeakSet has found wider and wider application in frontend development. Starting from real projects, this article takes a deep look at their core principles and best practices."
+wordCount: 184
 ---
 
-JavaScript WeakMap WeakSet 使用场景在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Using JavaScript WeakMap and WeakSet has found wider and wider application in frontend development. Starting from real projects, this article takes a deep look at their core principles and best practices.
 
 ## Basic Usage
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 :root {
@@ -35,11 +35,11 @@ JavaScript WeakMap WeakSet 使用场景在前端开发中的应用越来越广�
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — it's critical in production.
 
 ## Advanced Usage
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -64,11 +64,11 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization has to be tied to the actual scenario; not every case calls for over-optimizing.
 
 ## Practical Cases
 
-我们可以通过以下方式来改进：
+Here's how we can improve on it:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -92,11 +92,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year, so it's proven in practice.
 
 ## Performance Optimization
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 :root {
@@ -119,11 +119,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you'll still need to account for error handling and edge cases.
 
 ## Common Traps
 
-在这个基础上，我们可以进一步优化：
+Building on this foundation, we can optimize further:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -148,10 +148,10 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly reduce maintenance costs.
 
 ## Summary
 
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
+- In team collaboration, conventions and documentation matter more than the technology itself.
+- Keep an eye on community developments; technical solutions need continuous iteration.
+- Don't adopt new tech for its own sake.

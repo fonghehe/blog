@@ -1,5 +1,5 @@
 ---
-title: "Hono Full-Stack 2025: 边缘优先轻量级全栈Solution"
+title: "Hono Full-Stack Development 2025: An Edge-First, Lightweight Full-Stack Solution"
 date: 2025-09-17 11:31:08
 tags:
   - Frontend

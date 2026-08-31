@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 1
-description: "Netlify Edge Functions 边缘计算 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the t"
-wordCount: 198
+description: "Netlify Edge Functions and edge computing have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 190
 ---
 
-Netlify Edge Functions 边缘计算 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Netlify Edge Functions and edge computing have been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -117,4 +117,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Netlify Edge Functions 边缘计算不是银弹，需要根据项目规模和技术栈选择
+- Netlify Edge Functions and edge computing are no silver bullet; choose based on your project size and tech stack

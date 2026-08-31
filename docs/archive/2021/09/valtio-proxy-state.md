@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Valtio Proxy 状态管理这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 278
+wordCount: 280
 ---
 
-Valtio Proxy 状态管理这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
+关于 Valtio 的 Proxy 状态管理，社区已经讨论过很多轮，但随着版本迭代，不少旧结论需要更新。本文基于当前版本重新梳理。
 
 ## 入门指南
 

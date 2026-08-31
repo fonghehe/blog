@@ -1,42 +1,43 @@
 ---
-readingTime: 5
-wordCount: 1144
+readingTime: 9
+wordCount: 1167
 title: "WalletConnect 協議集成：跨錢包 DApp 連接"
 date: 2020-08-15 11:44:27
 tags:
   - Web3
   - DApp
+description: "MetaMask 瀏覽器擴展在桌面端為 DApp 提供了便捷的連接方式，但它有一個根本侷限：用戶必須在桌面瀏覽器中安裝 MetaMask 插件。移動端瀏覽器無法安裝擴展，這意味著用戶無法直接在手機上用 MetaMask 與 DApp 交互。"
 ---
 
 ## 為什麼需要 WalletConnect
 
-MetaMask 瀏覽器擴展在桌面端為 DApp 提供了便捷的連接方式，但它有一個根本侷限：用户必須在桌面瀏覽器中安裝 MetaMask 插件。移動端瀏覽器無法安裝擴展，這意味着移動端用户無法直接使用 MetaMask 與 DApp 交互。
+MetaMask 瀏覽器擴展在桌面端為 DApp 提供了便捷的連接方式，但它有一個根本侷限：用戶必須在桌面瀏覽器中安裝 MetaMask 插件。移動端瀏覽器無法安裝擴展，這意味著用戶無法直接在手機上用 MetaMask 與 DApp 交互。
 
-WalletConnect 協議正是為解決這個問題而生。它通過中繼服務器在 DApp 和錢包之間建立加密通信通道，使得任何設備上的 DApp 都能與任何移動錢包配對連接。WalletConnect 已被 Trust Wallet、Rainbow、Argent 等主流移動錢包廣泛支持，成為移動端 DApp 連接的事實標準。
+WalletConnect 協議正是為解決這個問題而生。它通過中繼伺服器在 DApp 和錢包之間建立加密通信通道，使得任何設備上的 DApp 都能與任何移動錢包配對連接。WalletConnect 已被 Trust Wallet、Rainbow、Argent 等主流移動錢包廣泛支持，成為移動端 DApp 連接的事實標準。
 
 ## WalletConnect 協議核心原理
 
-WalletConnect 的核心架構是一個**中繼服務器 + 加密載荷**的通信模型：
+WalletConnect 的核心架構是一個**中繼伺服器 + 加密載荷**的通信模型：
 
 1. **DApp** 生成一個隨機密鑰和連接 URI
-2. **錢包** 掃描 URI，提取會話信息和中繼服務器地址
-3. 雙方通過中繼服務器建立 WebSocket 連接
-4. 所有通信內容使用共享密鑰加密，中繼服務器只負責轉發加密消息，無法讀取內容
+2. **錢包** 掃描 URI，提取會話信息和中繼伺服器地址
+3. 雙方通過中繼伺服器建立 WebSocket 連接
+4. 所有通信內容使用共享密鑰加密，中繼伺服器只負責轉發加密消息，無法讀取內容
 
-這種設計保證了即使中繼服務器是中心化運行的，用户的私鑰和交易內容也不會泄露——私鑰永遠不離開錢包應用。
+這種設計保證了即使中繼伺服器是中心化運行的，用戶的私鑰和交易內容也不會泄露——私鑰永遠不離開錢包應用。
 
 ## v1 協議架構
 
 ### Bridge/Relay Server
 
-中繼服務器是一個簡單的消息代理，維護一個 topic 到 WebSocket 連接的映射。當 DApp 向某個 topic 發送消息時，中繼服務器將消息轉發給訂閲了該 topic 的錢包。
+中繼伺服器是一個簡單的消息代理，維護一個 topic 到 WebSocket 連接的映射。當 DApp 向某個 topic 發送消息時，中繼伺服器將消息轉發給訂閲了該 topic 的錢包。
 
 ```
 DApp -> [encrypt payload] -> Relay Server -> [forward] -> Wallet
 Wallet -> [encrypt payload] -> Relay Server -> [forward] -> DApp
 ```
 
-v1 協議支持自建中繼服務器，默認使用 `https://bridge.walletconnect.org`。
+v1 協議支持自建中繼伺服器，默認使用 `https://bridge.walletconnect.org`。
 
 ### Session 與 Peer
 
@@ -82,12 +83,12 @@ URI 的結構：
 - `wc:` 協議前綴
 - `8a5e5bdc-...` 會話 topic（UUID）
 - `@1` 協議版本
-- `bridge=` 中繼服務器 URL（URL 編碼）
+- `bridge=` 中繼伺服器 URL（URL 編碼）
 - `key=` 加密密鑰（hex 編碼）
 
 ### 2. 掃碼與會話建立
 
-錢包應用掃描二維碼後，解析 URI，連接到同一個中繼服務器，並返回一個 `session_request` 消息，包含錢包的 accounts 和 chainId。DApp 收到後確認會話建立。
+錢包應用掃描二維碼後，解析 URI，連接到同一個中繼伺服器，並返回一個 `session_request` 消息，包含錢包的 accounts 和 chainId。DApp 收到後確認會話建立。
 
 ## 前端集成實現
 
@@ -464,7 +465,7 @@ async function connectWallet() {
 
 ## 多鏈支持與網絡切換
 
-WalletConnect v1 的會話綁定了一個 `chainId`，用户切換鏈時需要更新會話：
+WalletConnect v1 的會話綁定了一個 `chainId`，用戶切換鏈時需要更新會話：
 
 ```javascript
 class WalletConnectManager {
@@ -658,16 +659,16 @@ class WalletManager {
 }
 ```
 
-## 安全考量與用户體驗
+## 安全考量與用戶體驗
 
 ### 安全要點
 
 1. **密鑰管理**：WalletConnect 的加密密鑰只存在於 DApp 前端和錢包中，不應通過 URL 參數傳遞給第三方
-2. **中繼服務器選擇**：默認中繼服務器是可信的（只轉發加密消息），但對於高安全要求的 DApp，建議自建中繼
+2. **中繼伺服器選擇**：默認中繼伺服器是可信的（只轉發加密消息），但對於高安全要求的 DApp，建議自建中繼
 3. **會話持久化**：localStorage 中的 session 數據包含加密密鑰，應設置合理的過期時間
-4. **交易確認 UI**：WalletConnect 交易在錢包端確認，DApp 前端應顯示交易內容摘要，讓用户在錢包確認前瞭解即將簽名的交易
+4. **交易確認 UI**：WalletConnect 交易在錢包端確認，DApp 前端應顯示交易內容摘要，讓用戶在錢包確認前瞭解即將簽名的交易
 
-### 用户體驗優化
+### 用戶體驗優化
 
 ```javascript
 // 交易狀態追蹤與用户反饋
@@ -715,4 +716,4 @@ class TransactionTracker {
 
 WalletConnect 解決了移動端 DApp 連接的核心問題，其加密中繼的設計在保證安全性的同時提供了良好的跨錢包兼容性。對於 DApp 開發者來説，集成 WalletConnect 的主要工作量在於會話管理、交易狀態追蹤和多錢包共存邏輯。
 
-v1 協議存在一些已知的侷限性：單鏈會話（一次只能連接一條鏈）、中繼服務器依賴、以及較慢的連接建立速度。這些痛點在後續版本中會得到改善，但 WalletConnect 已經是移動端 DApp 連接的最佳實踐方案。在實際項目中，建議將 WalletConnect 與 MetaMask 作為對等選項提供給用户，通過統一的 Wallet 管理器抹平底層差異。
+v1 協議存在一些已知的侷限性：單鏈會話（一次只能連接一條鏈）、中繼伺服器依賴、以及較慢的連接建立速度。這些痛點在後續版本中會得到改善，但 WalletConnect 已經是移動端 DApp 連接的最佳實踐方案。在實際項目中，建議將 WalletConnect 與 MetaMask 作為對等選項提供給用戶，通過統一的 Wallet 管理器抹平底層差異。

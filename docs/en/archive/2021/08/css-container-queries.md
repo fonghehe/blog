@@ -5,17 +5,17 @@ tags:
   - CSS
 
 readingTime: 2
-description: "关注 CSS 规范的同学可能已经注意到了，Container Queries 已经进入 Chrome Canary 实验阶段。这个特性等了好几年，终于要来了。"
-wordCount: 287
+description: "If you follow the CSS spec, you may have noticed that Container Queries have entered the experimental stage in Chrome Canary. This feature has been awaited for years, and it's finally arriving."
+wordCount: 224
 ---
 
-关注 CSS 规范的同学可能已经注意到了，Container Queries 已经进入 Chrome Canary 实验阶段。这个特性等了好几年，终于要来了。
+If you follow the CSS spec, you may have noticed that Container Queries have entered the experimental stage in Chrome Canary. This feature has been awaited for years, and it's finally arriving.
 
 ## What Are Container Queries
 
-Media Queries 根据**视口宽度**响应，Container Queries 根据**父容器宽度**响应。
+Media Queries respond to the **viewport width**, while Container Queries respond to the **parent container's width**.
 
-这才是组件化开发真正需要的能力。
+This is exactly the capability that component-based development has been missing.
 
 ```css
 /* Media Queries：根据浏览器窗口宽度 */
@@ -35,7 +35,7 @@ Media Queries 根据**视口宽度**响应，Container Queries 根据**父容器
 
 ## Why This Feature Matters
 
-现在的痛点：同一个组件放在侧边栏（窄）和主内容区（宽），表现应该不同。但 Media Queries 只看视口，不看容器。
+The current pain point: the same component placed in a sidebar (narrow) versus the main content area (wide) should look different. Yet Media Queries only look at the viewport, not the container.
 
 ```html
 <!-- 同一个 Card 组件 -->
@@ -159,7 +159,7 @@ document.querySelectorAll('.card-wrapper').forEach((el) => {
 
 ## Working with Tailwind CSS
 
-Tailwind 3.0 已经实验性支持 `@container`：
+Tailwind 3.0 already offers experimental support for `@container`:
 
 ```html
 <!-- 需要在容器上加 container 类 -->
@@ -175,13 +175,13 @@ Tailwind 3.0 已经实验性支持 `@container`：
 
 ## Browser Support Status
 
-截至 2021 年 8 月：
+As of August 2021:
 
-- Chrome Canary：实验性支持（需要开启 flag）
-- Chrome 105+：预计默认支持
-- Firefox / Safari：暂无支持时间表
+- Chrome Canary: experimental support (requires enabling a flag)
+- Chrome 105+: expected to ship by default
+- Firefox / Safari: no timeline yet
 
-目前可以用 PostCSS 插件做降级：
+For now you can use a PostCSS plugin as a fallback:
 
 ```bash
 npm install -D @csstools/postcss-container-queries
@@ -189,7 +189,7 @@ npm install -D @csstools/postcss-container-queries
 
 ## Summary
 
-- Container Queries 让组件根据父容器宽度响应，解决了 Media Queries 的根本局限
-- 语法：`container-type` 定义容器，`@container` 查询
-- 组件化开发的必备能力，Grid + Container Queries = 真正的响应式组件
-- 浏览器支持还在早期，但趋势已定，值得提前了解
+- Container Queries let components respond to their parent container's width, resolving the fundamental limitation of Media Queries
+- Syntax: `container-type` defines the container and `@container` queries it
+- An essential tool for component-based development — Grid plus Container Queries enable genuinely responsive components
+- Browser support is still in its early days, but the trend is clear, so it's worth getting familiar with it now

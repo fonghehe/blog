@@ -5,14 +5,14 @@ tags:
   - TypeScript
 readingTime: 2
 description: "在日常开发中，TypeScript 模板字面量类型的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 295
+wordCount: 283
 ---
 
-在日常开发中，TypeScript 模板字面量类型的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+TypeScript 的模板字面量类型在日常开发中用得越来越频繁。本文系统讲一下它的用法、原理和取舍。
 
 ## 快速上手
 
-实际项目中的用法会更复杂一些：
+真实项目里的用法会更复杂一些：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -36,11 +36,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样抽一层之后，代码更好测，也更好扩展。
 
 ## 内部原理
 
-以下是一个完整的示例：
+看一个相对完整的例子：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -71,11 +71,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+边界情况要处理好，生产环境里这点很关键。
 
 ## 业务实战
 
-关键在于理解核心逻辑：
+理解核心逻辑，剩下的就是怎么用：
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -99,11 +99,11 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化得看具体场景，不是每处都值得过度优化。
 
 ## 性能对比
 
-我们可以通过以下方式来改进：
+可以从这几个角度入手改进：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -134,7 +134,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+这套写法已经在线上稳定跑了半年多，是经过实战检验的。
 
 ## 小结
 

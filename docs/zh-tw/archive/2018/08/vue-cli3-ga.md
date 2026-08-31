@@ -29,7 +29,7 @@ CLI 3 專案結構：
 └── package.json
 ```
 
-webpack 配置完全內化，專案目錄清爽很多。
+webpack 配置完全內建，專案目錄清爽很多。
 
 ## vue.config.js 完整示例
 

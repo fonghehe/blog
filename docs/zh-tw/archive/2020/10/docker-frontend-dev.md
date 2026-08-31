@@ -62,7 +62,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ## 業務實戰
 
-實際專案中的用法會更復雜一些：
+實際專案中的用法會更複雜一些：
 
 ```dockerfile
 FROM node:20-alpine AS deps

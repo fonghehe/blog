@@ -4,11 +4,11 @@ date: 2020-02-27 15:48:54
 tags:
   - React
 readingTime: 2
-description: "React Hooks 发布一年多了，从最初的不适应到现在的离不开，总结一些项目中高频使用的自定义 Hook 模式。"
-wordCount: 156
+description: "React Hooks have been out for over a year now—from initial awkwardness to becoming indispensable. Here's a summary of the custom Hook patterns we reach for most often in our projects."
+wordCount: 119
 ---
 
-React Hooks 发布一年多了，从最初的不适应到现在的离不开，总结一些项目中高频使用的自定义 Hook 模式。
+React Hooks have been out for over a year now. What started as something we struggled to adapt to has become indispensable, so I want to summarize the custom Hook patterns we reach for most often in our projects.
 
 ## useRequest: Unified Data Fetching
 
@@ -114,7 +114,7 @@ function SearchBox() {
 }
 ```
 
-## useLocalStorage：持久化状态
+## useLocalStorage: Persisting State
 
 ```javascript
 import { useState, useCallback } from 'react';
@@ -160,7 +160,7 @@ function App() {
 }
 ```
 
-## usePrevious：获取上一次的值
+## usePrevious: Reading the Previous Value
 
 ```javascript
 import { useRef, useEffect } from 'react';
@@ -187,7 +187,7 @@ function Counter() {
 }
 ```
 
-## Hooks 使用注意事项
+## Notes on Using Hooks
 
 ```javascript
 // 1. 闭包陷阱：useRef 获取最新值
@@ -237,7 +237,7 @@ function Parent() {
 
 ## Summary
 
-- 自定义 Hook 是复用逻辑的核心手段，比 HOC 和 render props 更直观
-- `useRef` 解决闭包陷阱，存储不需要触发渲染的值
-- `useMemo` 和 `useCallback` 配合 `React.memo` 减少不必要的重渲染
-- 实际项目中，数据请求、防抖节流、本地存储是最高频的三个 Hook 场景
+- Custom Hooks are the primary way to reuse logic — more straightforward than HOCs and render props
+- `useRef` solves the stale-closure trap by holding values that don't need to trigger a re-render
+- `useMemo` and `useCallback`, together with `React.memo`, cut down on unnecessary re-renders
+- In real projects, data fetching, debounce/throttle, and local storage are the three most common Hook use cases

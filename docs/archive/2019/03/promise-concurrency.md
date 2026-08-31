@@ -5,10 +5,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "JavaScript Promise 并发控制是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。"
-wordCount: 257
+wordCount: 252
 ---
 
-JavaScript Promise 并发控制是日常开发中经常遇到的问题。本文从实际项目出发，分享具体的实现方法和经验总结。
+JavaScript Promise 并发控制是日常开发中的常见问题。本文从实际项目出发，分享实现方法与经验总结。
 
 ## 基本概念
 

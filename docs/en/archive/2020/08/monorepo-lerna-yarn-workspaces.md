@@ -4,15 +4,15 @@ date: 2020-08-25 15:12:48
 tags:
   - Node.js
 readingTime: 2
-description: "Monorepo 管理 Lerna 与 Yarn Workspaces在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 279
+description: "A deep dive into monorepo management with Lerna and Yarn Workspaces, exploring core principles and best practices from real-world frontend projects."
+wordCount: 179
 ---
 
-Monorepo 管理 Lerna 与 Yarn Workspaces在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Managing a monorepo with Lerna and Yarn Workspaces is increasingly common in frontend development. Drawing on a real project, this article takes a deep dive into its core principles and best practices.
 
 ## Basic Usage
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 const express = require('express')
@@ -37,11 +37,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to fit the specific scenario; not every case calls for over-optimization.
 
 ## Advanced Usage
 
-我们可以通过以下方式来改进：
+We can improve things in the following ways:
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -60,11 +60,11 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Practical Cases
 
-先来看基本的实现方式：
+Let's first look at the basic implementation:
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -95,11 +95,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you also need to consider error handling and edge cases.
 
 ## Performance Optimization
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 const express = require('express')
@@ -124,11 +124,11 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly reduce maintenance cost.
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Understanding the underlying principles matters more than memorizing APIs
+- Be sure to verify compatibility before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on the community; technical solutions need continuous iteration

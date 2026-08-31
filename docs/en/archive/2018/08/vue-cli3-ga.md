@@ -5,10 +5,10 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue CLI 3.0 GA (General Availability) is officially released, graduating from Beta. It's significantly more stable than the Beta and ready for production use."
-wordCount: 103
+wordCount: 105
 ---
 
-Vue CLI 3.0 GA (General Availability) is officially released, graduating from Beta. It's significantly more stable than the Beta and ready for production use.
+Vue CLI 3.0 has reached GA (General Availability), graduating from Beta. It's now significantly more stable than the Beta and ready for production use.
 
 ## Project Structure Comparison
 
@@ -29,7 +29,7 @@ CLI 3 project structure:
 └── package.json
 ```
 
-Webpack config is fully internalized, making the project directory much cleaner.
+Webpack configuration is now fully handled internally, keeping the project directory much cleaner.
 
 ## Complete vue.config.js Example
 

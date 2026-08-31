@@ -3,12 +3,12 @@ title: "ESLint Flat Config: The New Configuration Format"
 date: 2022-08-29 15:09:59
 tags:
   - ESLint
-readingTime: 2
-description: "ESLint Flat Config 新配置格式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real p"
-wordCount: 176
+readingTime: 1
+description: "ESLint Flat Config is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 149
 ---
 
-ESLint Flat Config 新配置格式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+ESLint Flat Config is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -36,7 +36,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Advanced Usage
 
@@ -67,7 +67,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Practical Cases
 
-实际项目中的用法会更复杂一些：
+Usage in real projects tends to be more complex:
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'

@@ -3,9 +3,9 @@ title: "Pinia State Management in Large Projects: Modular Design and Persistence
 date: 2026-08-02 16:27:05
 tags:
   - Vue
-readingTime: 7
+readingTime: 9
 description: "The challenges Pinia faces in large projects aren't about API usage but architectural design: how to split Stores by functional domain, manage cross-Store dependencies, balance state persistence with performance and consistency, and handle hydration in SSR scenarios. This article systematically covers Pinia state management architecture for large projects based on real-world experience."
-wordCount: 2700
+wordCount: 1177
 ---
 
 Pinia, as the officially recommended state management library for Vue, features a clean API, excellent TypeScript support, and comprehensive Devtools integration. In small to medium projects, it works well with minimal architectural thought. But when a project grows to dozens of pages, hundreds of API endpoints, and multiple teams working in parallel, Pinia usage needs to evolve from "writing Stores" to "designing Store architecture."

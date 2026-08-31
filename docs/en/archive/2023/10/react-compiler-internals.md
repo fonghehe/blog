@@ -4,7 +4,7 @@ date: 2023-10-30 10:56:30
 tags:
   - React
 readingTime: 2
-description: "关于React 编译器原理，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+description: "Many developers only know the React compiler at the surface level. This article looks at its internals from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 156
 ---
 

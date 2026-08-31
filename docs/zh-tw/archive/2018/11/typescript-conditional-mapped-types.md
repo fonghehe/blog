@@ -20,7 +20,7 @@ type Partial<T> = {
   [K in keyof T]?: T[K];
 };
 
-// 把所有屬性變為隻讀
+// 把所有屬性變為只讀
 type Readonly<T> = {
   readonly [K in keyof T]: T[K];
 };
@@ -109,7 +109,7 @@ type ArrayItem<T> = T extends (infer Item)[] ? Item : never;
 type N = ArrayItem<number[]>; // number
 type S = ArrayItem<string[]>; // string
 
-// 獲取函式第一個引數型別
+// 獲取函式第一個參數型別
 type FirstParam<T> = T extends (first: infer F, ...rest: any[]) => any
   ? F
   : never;

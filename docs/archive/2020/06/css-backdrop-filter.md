@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "在日常开发中，CSS backdrop-filter 毛玻璃效果的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 323
+wordCount: 322
 ---
 
 在日常开发中，CSS backdrop-filter 毛玻璃效果的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -116,7 +116,7 @@ wordCount: 323
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化需要结合具体场景，不必对所有情况都过度优化。
 
 ## 问题排查
 

@@ -4,11 +4,11 @@ date: 2023-03-09 16:06:17
 tags:
   - TypeScript
 readingTime: 2
-description: "关于TypeScript 5.0 const 类型参数，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspe"
-wordCount: 205
+description: "Many developers only know TypeScript 5.0 const type parameters at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 202
 ---
 
-关于TypeScript 5.0 const 类型参数，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+Many developers only know TypeScript 5.0 const type parameters at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
 
 ## Basic Principles
 
@@ -174,6 +174,6 @@ This approach has been running stably in production for over six months and has 
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- TypeScript 5.0 const 类型参数不是银弹，需要根据项目规模和技术栈选择
+- TypeScript 5.0 const type parameters is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

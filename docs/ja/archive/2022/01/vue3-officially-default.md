@@ -5,14 +5,14 @@ tags:
   - Vue
 readingTime: 3
 description: "新年の始まりとともに、フロントエンドエコシステムは静かながら重要な切り替えを完了しつつあります。Vue 3 は2022年第1四半期に `npm install vue` のデフォルトバージョンになる見込みで、Vite 2 はすでに多くの新プロジェクトで優先されるビルドツールとなっており、React 18 の正式リリース"
-wordCount: 570
+wordCount: 753
 ---
 
 新年の始まりとともに、フロントエンドエコシステムは静かながら重要な切り替えを完了しつつあります。Vue 3 は2022年第1四半期に `npm install vue` のデフォルトバージョンになる見込みで、Vite 2 はすでに多くの新プロジェクトで優先されるビルドツールとなっており、React 18 の正式リリースも目前に迫っています。この記事では2021年末のフロントエンドの状況を整理し、2022年の主要なマイルストーンを展望します。
 
 ## Vue 3 エコシステムの補完状況
 
-截至 2022 年初，Vue 3 生态缺口基本补齐：
+2022 年初頭の時点で、Vue 3 のエコシステムのギャップはほぼ埋まっている：
 
 ```bash
 # Vue 3 推荐技术栈（2022 年初）
@@ -79,16 +79,16 @@ export const useCartStore = defineStore("cart", () => {
 });
 ```
 
-对比 Vuex 4，Pinia 的优势：
+Vuex 4 と比較した Pinia の利点：
 
-- 无 mutations，直接修改 state
-- TypeScript 类型推断开箱即用
-- DevTools 支持完善
-- Bundle 体积约 1.5KB（vs Vuex ~10KB）
+- mutations がなく、state を直接変更できる
+- TypeScript の型推論がそのまま使える
+- DevTools のサポートが充実している
+- バンドルサイズは約 1.5KB（Vuex は約 10KB）
 
-## Vite 2 已成熟到生产可用
+## Vite 2 は本番環境で使える水準に成熟
 
-2021 年的实践验证了 Vite 2 可以用于生产大型项目：
+2021 年の実践により、Vite 2 が大規模な本番プロジェクトに使えることが検証された：
 
 ```javascript
 // vite.config.ts（2022 年常见配置）
@@ -120,25 +120,25 @@ export default defineConfig({
 });
 ```
 
-## React 18 正式版在路上
+## React 18 正式版が目前に
 
-React 18 从 2021 年 6 月发布 Alpha，已历经半年打磨。2022 年正式版将带来：
+React 18 は 2021 年 6 月に Alpha がリリースされてから半年の研磨を経た。2022 年の正式版では以下がもたらされる：
 
-- 自动批处理（Automatic Batching）
-- `useTransition` 和 `useDeferredValue`
+- 自動バッチ処理（Automatic Batching）
+- `useTransition` と `useDeferredValue`
 - Streaming SSR（`renderToPipeableStream`）
-- `<Suspense>` 支持异步数据（非仅懒加载组件）
+- `<Suspense>` が非同期データをサポート（遅延コンポーネントだけでなく）
 
-## 2022 值得关注的方向
+## 2022 年に注目すべき方向
 
-| 方向       | 代表技术                      | 预判                |
+| 方向       | 代表的な技術                    | 見通し              |
 | ---------- | ----------------------------- | ------------------- |
-| 构建工具   | Vite 3、Turbopack（Vercel）   | Vite 持续成为首选   |
-| 全栈框架   | Next.js 13、Nuxt 3、SvelteKit | 元框架竞争加剧      |
-| 状态管理   | Pinia、Zustand、Jotai         | 轻量化、原子化趋势  |
-| 测试       | Vitest、Playwright            | Vitest 快速扩大份额 |
-| TypeScript | TS 4.6、4.7、4.8              | 每版本都有实用改进  |
+| ビルドツール   | Vite 3、Turbopack（Vercel）   | Vite が引き続き首選に   |
+| フルスタックフレームワーク   | Next.js 13、Nuxt 3、SvelteKit | メタフレームワーク競争が激化      |
+| 状態管理   | Pinia、Zustand、Jotai         | 軽量・アトミックな方向へ  |
+| テスト       | Vitest、Playwright            | Vitest がシェアを急速に拡大 |
+| TypeScript | TS 4.6、4.7、4.8              | 各バージョンで実用的な改善  |
 
 ## まとめ
 
-2022 年的前端"战场"已经清晰：Vue 3 完成新老交替，React 18 并发渲染落地，Vite 生态持续扩张。对开发者来说，现在是迁移到 Vue 3 + Pinia + Vite 组合的最佳时机，而 React 项目则值得尽早体验 18 的并发特性。
+2022 年のフロントエンドの「戦場」は明確だ：Vue 3 が新旧の交代を完了し、React 18 の並行レンダリングが実用化され、Vite エコシステムが拡大を続ける。開発者にとって、今は Vue 3 + Pinia + Vite の組み合わせへ移行する最適な時期であり、React プロジェクトでも 18 の並行特性を早めに体験する価値がある。

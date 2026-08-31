@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 3
 description: "CSS `filter` 屬性讓我們可以在不修改圖片素材的情況下，對元素應用各種視覺效果：模糊、灰度、對比度調整、陰影等。這個屬性在圖片處理、UI 動效、暗黑模式適配等場景中非常實用。本文將詳細講解每個 filter 函數的用法，並通過實際案例展示如何組合使用。"
-wordCount: 504
+wordCount: 503
 ---
 
 CSS `filter` 屬性讓我們可以在不修改圖片素材的情況下，對元素應用各種視覺效果：模糊、灰度、對比度調整、陰影等。這個屬性在圖片處理、UI 動效、暗黑模式適配等場景中非常實用。本文將詳細講解每個 filter 函數的用法，並通過實際案例展示如何組合使用。
@@ -171,7 +171,7 @@ body.mourning {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* box-shadow 隻作用於元素的矩形邊界 */
+/* box-shadow 只作用於元素的矩形邊界 */
 /* drop-shadow 根據元素實際內容（alpha 通道）投影 */
 ```
 
@@ -279,7 +279,7 @@ img.onload = () => img.classList.add('loaded');
 }
 ```
 
-### 案例五：CSS 變量控製濾鏡強度
+### 案例五：CSS 變量控制濾鏡強度
 
 ```css
 :root {
@@ -318,7 +318,7 @@ document.documentElement.style.setProperty('--grayscale-amount', '0.5');
 }
 ```
 
-這種方法適用於快速原型或過渡期，生產環境建議還是使用 CSS 變量和主題色方案。
+這種方法適用於快速原型或過渡期，生產環境建議仍使用 CSS 變量與主題色方案。
 
 ## filter 動畫與效能
 
@@ -388,6 +388,6 @@ filter: blur(20px);           /* 高 */
 - 多個濾鏡可以組合使用，按聲明順序疊加效果
 - `backdrop-filter` 可以對元素背後的內容應用濾鏡，實現毛玻璃效果
 - filter 動畫性能開銷從小到大：opacity < grayscale < brightness < contrast < drop-shadow < blur
-- 使用 CSS 變量可以實現動態濾鏡效果的精確控製
+- 使用 CSS 變量可以實現動態濾鏡效果的精確控制
 - `drop-shadow` 與 `box-shadow` 不同，它根據元素實際內容（alpha 通道）投射陰影
 - `backdrop-filter` 相容性需要注意，建議使用 `@supports` 做漸進增強

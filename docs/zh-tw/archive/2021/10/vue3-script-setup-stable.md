@@ -264,6 +264,6 @@ function handleSort(key: string) {
 
 - `<script setup>` 是 Vue 3 的推薦寫法，減少模板程式碼，邏輯更內聚
 - `defineProps` / `defineEmits` 的 TypeScript 型別宣告方式是重點
-- `defineExpose` 控製組件暴露的屬性，預設全部隱藏
+- `defineExpose` 控制組件暴露的屬性，預設全部隱藏
 - 頂層 await 配合 Suspense 做非同步資料載入
 - 從 Options API 遷移的專案可以逐步引入，新專案直接用

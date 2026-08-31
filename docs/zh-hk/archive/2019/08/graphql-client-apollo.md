@@ -1,14 +1,14 @@
 ---
-title: "GraphQL 客户端 Apollo Client 實戰：落地路徑與實戰建議"
+title: "GraphQL 客戶端 Apollo Client 實戰：落地路徑與實戰建議"
 date: 2019-08-12 16:38:12
 tags:
   - GraphQL
 readingTime: 5
-description: "REST API 在複雜業務場景下經常遇到 over-fetching 和 under-fetching 的問題。GraphQL 讓前端精確聲明需要的數據結構，後端按需返回。Apollo Client 是目前最成熟的 GraphQL 客户端，提供了緩存、狀態管理、樂觀更新等開箱即用的能力。本文將以一個真實的博客管理項目"
+description: "REST API 在複雜業務場景下經常遇到 over-fetching 和 under-fetching 的問題。GraphQL 讓前端精確聲明需要的數據結構，後端按需返回。Apollo Client 是目前最成熟的 GraphQL 客戶端，提供了緩存、狀態管理、樂觀更新等開箱即用的能力。本文將以一個真實的博客管理項目"
 wordCount: 386
 ---
 
-REST API 在複雜業務場景下經常遇到 over-fetching 和 under-fetching 的問題。GraphQL 讓前端精確聲明需要的數據結構，後端按需返回。Apollo Client 是目前最成熟的 GraphQL 客户端，提供了緩存、狀態管理、樂觀更新等開箱即用的能力。本文將以一個真實的博客管理項目為例，講解 Apollo Client 的完整使用流程。
+REST API 在複雜業務場景下經常遇到 over-fetching 和 under-fetching 的問題。GraphQL 讓前端精確聲明需要的數據結構，後端按需返回。Apollo Client 是目前最成熟的 GraphQL 客戶端，提供了緩存、狀態管理、樂觀更新等開箱即用的能力。本文將以一個真實的博客管理項目為例，講解 Apollo Client 的完整使用流程。
 
 ## Apollo Client 安裝與初始化
 
@@ -195,7 +195,7 @@ function CreatePost() {
           excerpt: content.slice(0, 100),
           author: {
             __typename: 'Author',
-            name: '當前用户',
+            name: '當前用戶',
             avatar: '/default-avatar.png',
           },
           createdAt: new Date().toISOString(),
@@ -459,9 +459,9 @@ const client = new ApolloClient({
 
 ## 小結
 
-- Apollo Client 是 React 生態中最成熟的 GraphQL 客户端，提供了完整的數據獲取、緩存、狀態管理方案
+- Apollo Client 是 React 生態中最成熟的 GraphQL 客戶端，提供了完整的數據獲取、緩存、狀態管理方案
 - 使用 `Query` 組件（或 `useQuery` Hook）聲明式地獲取數據，自動處理 loading 和 error 狀態
-- `Mutation` 配合 `update` 和 `optimisticResponse` 可以實現樂觀更新，提升用户體驗
+- `Mutation` 配合 `update` 和 `optimisticResponse` 可以實現樂觀更新，提升用戶體驗
 - Apollo 的 Normalized Cache 自動以 `__typename + id` 管理緩存，數據更新時保持一致性
 - 推薦使用 Hooks 風格的 API（`useQuery`、`useMutation`），代碼更簡潔
 - 注意配置認證 token 和 token 過期刷新邏輯，保證 API 請求的安全性

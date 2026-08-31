@@ -5,11 +5,11 @@ tags:
   - Webpack
   - Engineering
 readingTime: 4
-description: "项目上线后用户反馈首屏加载慢？打包产物体积过大是前端性能优化中最常见的瓶颈之一。`webpack-bundle-analyzer` 是一个可视化分析工具，能够以直观的树状图展示打包结果，帮助我们精准定位体积问题。本文将深入讲解如何使用它进行打包分析与优化。"
-wordCount: 829
+description: "After launch, users complain the first paint is slow? Oversized bundles are one of the most common front-end performance bottlenecks. `webpack-bundle-analyzer` is a visualization tool that shows your build output as an intuitive treemap, helping you pinpoint size problems precisely. This article goes deep on how to use it for bundle analysis and optimization."
+wordCount: 521
 ---
 
-项目上线后用户反馈首屏加载慢？打包产物体积过大是前端性能优化中最常见的瓶颈之一。`webpack-bundle-analyzer` 是一个可视化分析工具，能够以直观的树状图展示打包结果，帮助我们精准定位体积问题。本文将深入讲解如何使用它进行打包分析与优化。
+After launch, users complain the first paint is slow? Oversized bundles are one of the most common front-end performance bottlenecks. `webpack-bundle-analyzer` is a visualization tool that shows your build output as an intuitive treemap, helping you pinpoint size problems precisely. This article goes deep on how to use it for bundle analysis and optimization.
 
 ## Installation and Basic Configuration
 
@@ -17,7 +17,7 @@ wordCount: 829
 npm install --save-dev webpack-bundle-analyzer
 ```
 
-### 在 Webpack 配置中集成
+### Integrating into the Webpack Config
 
 ```js
 // webpack.config.js
@@ -41,9 +41,9 @@ module.exports = {
 };
 ```
 
-### 通过 npm scripts 使用
+### Using via npm Scripts
 
-更推荐不修改 Webpack 配置，而是通过命令行按需分析：
+A cleaner approach is to avoid touching the Webpack config and run analysis on demand from the CLI:
 
 ```json
 {
@@ -61,33 +61,33 @@ if (process.env.ANALYZE) {
 }
 ```
 
-这样只在需要分析时才启动，不影响日常构建。
+That way it only runs when you actually need it, leaving everyday builds untouched.
 
 ## Understanding the Visual Report
 
-执行 `npm run analyze` 后，浏览器会自动打开报告页面。报告是一个交互式的树状图（Treemap），核心信息包括：
+After running `npm run analyze`, the browser opens the report automatically. The report is an interactive treemap, and its core information includes:
 
-### 三种体积度量
+### Three Size Metrics
 
-- **Stat size** — 文件在磁盘上的原始大小（未经任何处理）
-- **Parsed size** — 经过 Webpack 处理后的大小（包含 uglify/terser 压缩）
-- **Gzip size** — 经过 gzip 压缩后的大小（更接近用户实际下载大小）
+- **Stat size** — the raw size of the file on disk (before any processing).
+- **Parsed size** — the size after Webpack processes it (including uglify/terser minification).
+- **Gzip size** — the size after gzip compression (closest to what users actually download).
 
-在实际优化中，我们应以 **Gzip size** 为基准衡量优化效果。
+When optimizing, you should measure progress against **Gzip size**.
 
-### 色块解读
+### Reading the Treemap
 
-每个色块代表一个模块或 chunk：
+Each block represents a module or a chunk:
 
-- 色块越大，体积越大
-- 相同颜色的色块属于同一个 chunk
-- 可以点击色块查看具体的依赖树
+- The bigger the block, the larger the module.
+- Blocks of the same color belong to the same chunk.
+- Click a block to see its specific dependency tree.
 
 ## In Practice: Diagnosing Oversized Bundles
 
-### 案例一：moment.js locale 文件全部打入
+### Case 1: All moment.js Locale Files Bundled
 
-一个常见问题：`moment.js` 默认会将所有 locale 文件打包进来。
+A common issue: by default `moment.js` bundles every locale file.
 
 ```
 检查报告中 moment 目录：
@@ -100,7 +100,7 @@ if (process.env.ANALYZE) {
   │   └── (总计约 200KB+)
 ```
 
-解决方案：使用 `IgnorePlugin` 只保留需要的 locale。
+Solution: use `IgnorePlugin` to keep only the locales you need.
 
 ```js
 // webpack.config.js
@@ -122,13 +122,13 @@ import 'moment/locale/zh-cn';
 moment.locale('zh-cn');
 ```
 
-优化前后对比：moment 相关体积从约 270KB 降低到约 72KB。
+Before and after: moment-related size dropped from about 270KB to about 72KB.
 
-### 案例二：lodash 全量引入
+### Case 2: Importing All of lodash
 
-在报告中发现整个 lodash 库被完整引入，约 70KB。实际项目只用到了 `debounce`、`get`、`cloneDeep` 几个方法。
+The report shows the entire lodash library pulled in—about 70KB—even though the project only uses a few methods like `debounce`, `get`, and `cloneDeep`.
 
-解决方案一：使用 lodash-es 配合 tree shaking
+Solution 1: use lodash-es with tree shaking
 
 ```js
 // webpack.config.js
@@ -145,7 +145,7 @@ module.exports = {
 import { debounce, get, cloneDeep } from 'lodash';
 ```
 
-解决方案二：使用 babel-plugin-import 或手动按需引入
+Solution 2: use babel-plugin-import or import manually on demand
 
 ```js
 // 直接引入具体模块
@@ -154,13 +154,13 @@ import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 ```
 
-优化前后对比：lodash 相关体积从 70KB 降低到约 8KB。
+Before and after: lodash-related size dropped from 70KB to about 8KB.
 
-### 案例三：重复依赖
+### Case 3: Duplicate Dependencies
 
-报告中发现了多个不同版本的相同库。例如 `axios` 出现了两次，因为不同的第三方组件各自打包了一份。
+The report shows multiple versions of the same library. For example, `axios` appears twice because different third-party components each bundled their own copy.
 
-解决方案：
+Solution:
 
 ```json
 {
@@ -170,9 +170,9 @@ import cloneDeep from 'lodash/cloneDeep';
 }
 ```
 
-在 `package.json` 中使用 `resolutions`（Yarn）强制所有依赖使用同一版本。
+In `package.json`, use `resolutions` (Yarn) to force every dependency to use the same version.
 
-也可以通过 Webpack 的 `resolve.alias` 统一：
+You can also unify them through Webpack's `resolve.alias`:
 
 ```js
 module.exports = {
@@ -186,9 +186,9 @@ module.exports = {
 
 ## Advanced Optimization Strategies
 
-### 1. 使用 externals 排除公共库
+### 1. Excluding Common Libraries with externals
 
-对于 CDN 引入的库，应该在 Webpack 中配置 externals，避免重复打包：
+For libraries loaded via CDN, configure `externals` in Webpack so they aren't bundled again:
 
 ```js
 // webpack.config.js
@@ -207,7 +207,7 @@ module.exports = {
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
-### 2. 配置 splitChunks 精细控制
+### 2. Fine-Grained splitChunks Configuration
 
 ```js
 module.exports = {
@@ -234,7 +234,7 @@ module.exports = {
 };
 ```
 
-### 3. 使用动态 import 拆分路由
+### 3. Splitting Routes with Dynamic import
 
 ```jsx
 const Dashboard = React.lazy(() => import(
@@ -248,9 +248,9 @@ const Settings = React.lazy(() => import(
 ));
 ```
 
-### 4. 分析 CSS 体积
+### 4. Analyzing CSS Size
 
-CSS 文件也值得关注。如果使用了 `mini-css-extract-plugin`，可以查看 CSS 的体积分布：
+CSS files are worth watching too. If you use `mini-css-extract-plugin`, you can inspect how CSS size is distributed:
 
 ```js
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -274,7 +274,7 @@ module.exports = {
 
 ## Automated Bundle Size Monitoring
 
-为了防止体积回退，可以在 CI 中加入体积检查：
+To prevent size regressions, add a size check to your CI pipeline:
 
 ```js
 // scripts/check-bundle-size.js
@@ -318,9 +318,9 @@ if (failed) {
 
 ## Summary
 
-- `webpack-bundle-analyzer` 以可视化方式展示打包产物，是定位体积问题的首选工具
-- 关注 Gzip size 而非 Stat size，它更接近用户实际下载量
-- 常见体积问题：moment locale 全量打包、lodash 全量引入、重复依赖
-- 使用 `IgnorePlugin`、`externals`、`splitChunks` 等手段可以显著降低 bundle 体积
-- 建议在 CI 流程中加入体积监控，防止优化成果回退
-- 定期使用 analyzer 扫描项目，新引入的第三方库往往是体积增长的主要原因
+- `webpack-bundle-analyzer` visualizes your build output and is the go-to tool for locating size problems.
+- Focus on Gzip size rather than Stat size—it's closer to what users actually download.
+- Common size problems: bundling all moment locales, importing all of lodash, and duplicate dependencies.
+- Tools like `IgnorePlugin`, `externals`, and `splitChunks` can significantly shrink your bundle.
+- Add size monitoring to CI to stop optimization wins from regressing.
+- Scan the project with the analyzer regularly; a newly added third-party library is often the main cause of size growth.

@@ -45,7 +45,7 @@ server {
   ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256;
   ssl_prefer_server_ciphers off;
 
-  # HSTS（讓瀏覽器記住隻用 HTTPS）
+  # HSTS（讓瀏覽器記住只用 HTTPS）
   add_header Strict-Transport-Security "max-age=63072000" always;
 }
 
@@ -149,7 +149,7 @@ upstream backend {
   least_conn;  # 最少連接數算法
   server backend1:3000 weight=3;
   server backend2:3000 weight=1;
-  server backend3:3000 backup;  # 備用，隻有前兩個都掛了才用
+  server backend3:3000 backup;  # 備用，只有前兩個都掛了才用
 
   keepalive 32;  # 長連接池
 }

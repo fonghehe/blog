@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "关于Server-Sent Events 单向实时通信，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspe"
-wordCount: 184
+description: "When it comes to Server-Sent Events one-way real-time communication, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+wordCount: 168
 ---
 
-关于Server-Sent Events 单向实时通信，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to Server-Sent Events one-way real-time communication, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
 
 ## Basic Principles
 
@@ -77,7 +77,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Project Practice
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more involved:
 
 ```javascript
 type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
@@ -136,10 +136,10 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Pay attention to edge case handling, which is critical in production.
 
 ## Summary
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Server-Sent Events 单向实时通信不是银弹，需要根据项目规模和技术栈选择
+- Server-Sent Events one-way real-time communication isn't a silver bullet; pick it based on your project's scale and tech stack

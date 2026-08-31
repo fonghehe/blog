@@ -4,9 +4,9 @@ date: 2024-03-22 19:53:23
 tags:
   - Web3
   - Blockchain
-readingTime: 12
+readingTime: 8
 description: "探讨模块化区块链架构下前端数据读取的变化，涵盖 Celestia DA 层交互、EigenLayer AVS 集成及多层数据源管理"
-wordCount: 3600
+wordCount: 1082
 ---
 
 ## 模块化区块链概念：DA 层、结算层、执行层

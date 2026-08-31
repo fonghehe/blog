@@ -4,15 +4,15 @@ date: 2019-10-31 14:32:13
 tags:
   - Angular
 readingTime: 3
-description: "RxJS 是 JavaScript 的响应式编程库，它基于 Observable 模式，提供了一套强大的异步数据流处理工具。Angular 生态深度依赖 RxJS，即使在 React 项目中，RxJS 也能优雅地处理复杂的异步场景。本文从 Observable 的基本概念入手，系统介绍 RxJS 的核心用法。"
-wordCount: 332
+description: "RxJS is a reactive programming library for JavaScript built on the Observable pattern, providing a powerful toolkit for working with asynchronous data streams. The Angular ecosystem depends on RxJS heavily, but even in React projects RxJS can handle complex async scenarios elegantly. Starting from the basic concept of an Observable, this article systematically introduces RxJS's core usage."
+wordCount: 230
 ---
 
-RxJS 是 JavaScript 的响应式编程库，它基于 Observable 模式，提供了一套强大的异步数据流处理工具。Angular 生态深度依赖 RxJS，即使在 React 项目中，RxJS 也能优雅地处理复杂的异步场景。本文从 Observable 的基本概念入手，系统介绍 RxJS 的核心用法。
+RxJS is a reactive programming library for JavaScript built on the Observable pattern, providing a powerful toolkit for working with asynchronous data streams. The Angular ecosystem depends on RxJS heavily, but even in React projects RxJS can handle complex async scenarios elegantly. Starting from the basic concept of an Observable, this article systematically introduces RxJS's core usage.
 
 ## What Is an Observable
 
-Observable 代表一个可被订阅的数据流。与 Promise 只能 resolve 一次不同，Observable 可以发出多个值：
+An Observable represents a subscribable data stream. Unlike a Promise, which resolves only once, an Observable can emit multiple values:
 
 ```js
 import { Observable } from 'rxjs';
@@ -49,7 +49,7 @@ observable.subscribe({
 
 ## Observable Creation Factory Functions
 
-RxJS 提供了丰富的创建函数，不需要手动 `new Observable`：
+RxJS ships a rich set of creation functions, so you rarely need to write `new Observable` by hand:
 
 ```js
 import {
@@ -102,7 +102,7 @@ throwError('出错了').subscribe({
 
 ## Operators
 
-操作符是 RxJS 的核心，它们对 Observable 进行变换、过滤、组合：
+Operators are the heart of RxJS—they transform, filter, and combine Observables:
 
 ```js
 import { of, interval } from 'rxjs';
@@ -134,7 +134,7 @@ of(1, 2, 3, 4, 5)
 // 最终结果: 40
 ```
 
-### 转换操作符
+### Transformation Operators
 
 ```js
 import { from } from 'rxjs';
@@ -162,7 +162,7 @@ of(1, 2, 3, 4).pipe(
 // 1, 3, 6, 10
 ```
 
-### 过滤操作符
+### Filtering Operators
 
 ```js
 import { interval, fromEvent, Subject } from 'rxjs';
@@ -212,7 +212,7 @@ fromEvent(document, 'scroll').pipe(
 
 ## Higher-Order Operators
 
-高阶操作符处理的是"Observable 的 Observable"：
+Higher-order operators deal with "Observables of Observables":
 
 ```js
 import { interval, of, timer } from 'rxjs';
@@ -270,7 +270,7 @@ fromEvent(submitBtn, 'click').pipe(
 
 ## Subject
 
-Subject 既是 Observable 也是 Observer，用于在多个订阅者之间共享数据：
+A Subject is both an Observable and an Observer, and is used to share data among multiple subscribers:
 
 ```js
 import { Subject, BehaviorSubject, ReplaySubject } from 'rxjs';
@@ -363,10 +363,10 @@ subs.unsubscribe();
 
 ## Summary
 
-- Observable 代表可被订阅的数据流，可以发出多个值
-- `of`、`from`、`interval`、`fromEvent` 是最常用的创建函数
-- 操作符通过 `pipe` 链式调用，分为转换、过滤、组合等类型
-- `switchMap` 用于搜索场景，`mergeMap` 用于并行请求，`concatMap` 用于有序执行
-- Subject 是多播的核心，BehaviorSubject 保存最新值，ReplaySubject 重放历史值
-- `catchError` 和 `retry` 用于错误处理
-- 及时取消订阅避免内存泄漏
+- An Observable represents a subscribable data stream that can emit multiple values
+- `of`, `from`, `interval`, and `fromEvent` are the most commonly used creation functions
+- Operators are chained via `pipe` and fall into categories like transformation, filtering, and combination
+- `switchMap` fits search scenarios, `mergeMap` fits parallel requests, and `concatMap` fits ordered execution
+- A Subject is the core of multicasting; `BehaviorSubject` keeps the latest value and `ReplaySubject` replays past values
+- `catchError` and `retry` handle errors
+- Unsubscribe promptly to avoid memory leaks

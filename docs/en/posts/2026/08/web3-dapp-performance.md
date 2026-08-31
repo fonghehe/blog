@@ -3,16 +3,16 @@ title: "Web3 DApp Performance Optimization: RPC Requests and On-Chain Data Cachi
 date: 2026-08-07 19:44:35
 tags:
   - Web3
-  - 性能优化
+  - Performance
   - DApp
-readingTime: 8
+readingTime: 9
 description: "Systematic analysis of DApp performance bottlenecks, covering RPC batch requests, multi-node polling, SWR caching strategies, indexing service comparison, and bundle optimization"
-wordCount: 3600
+wordCount: 709
 ---
 
 ## DApp Performance Bottleneck Analysis: RPC Latency Is the Biggest Problem
 
-DApp performance bottlenecks are fundamentally different from traditional web applications. Traditional app bottlenecks are typically database queries or API responses, while DApp's primary bottleneck is RPC request latency. Each on-chain data read—balance, contract state, event logs—requires a full RPC round trip, typically 100-500ms, 5-10x slower than traditional API calls.
+DApp performance bottlenecks differ fundamentally from those of traditional web applications. Traditional app bottlenecks are typically database queries or API responses, while DApp's primary bottleneck is RPC request latency. Each on-chain data read—balance, contract state, event logs—requires a full RPC round trip, typically 100-500ms, 5-10x slower than traditional API calls.
 
 Typical RPC request volume for DApp first screen load:
 
@@ -117,7 +117,7 @@ class MulticallReader {
 }
 ```
 
-**Performance comparison**: Fetching 10 token balances serially requires 10 RPCs (~2-5s), Multicall requires only 1 (~200-400ms), a ~10x improvement.
+**Performance comparison**: Fetching 10 token balances serially requires 10 RPCs (~2-5s); a single Multicall request needs only one (~200-400ms)—roughly a 10x improvement.
 
 ## Multi-Node Polling and Failover
 
@@ -347,7 +347,7 @@ function useSwapAndRefresh() {
 
 ## Indexing Services: The Graph vs Self-Built Index
 
-Querying historical events directly from RPC is extremely inefficient—requires iterating blocks, one RPC call per block. Indexing services solve this by pre-building indexes.
+Querying historical events directly over RPC is extremely inefficient—it requires iterating through blocks, one RPC call per block. Indexing services solve this by pre-building indexes.
 
 ```typescript
 // The Graph query
@@ -569,7 +569,7 @@ class DAppDataLayer {
 }
 ```
 
-## Performance Metrics: FCP, LCP, TTI Special Considerations in DApps
+## Performance Metrics: Special Considerations for FCP, LCP, TTI in DApps
 
 DApp performance metrics have special considerations:
 
@@ -619,7 +619,7 @@ async function loadDashboard(userAddress: Address) {
 
 ## Frontend Bundle Optimization: wagmi/viem Tree Shaking
 
-viem and wagmi v2 are designed to be tree-shakable, but need proper configuration:
+viem and wagmi v2 are designed to be tree-shakable, but only deliver that benefit with proper configuration:
 
 ```typescript
 // ❌ Wrong: import entire library

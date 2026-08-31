@@ -4,12 +4,12 @@ date: 2026-07-31 19:23:17
 tags:
   - Testing
   - Engineering
-readingTime: 7
+readingTime: 9
 description: "The traditional testing pyramid model doesn't fit the frontend well. This article re-examines frontend testing layering strategies through the Testing Trophy model: unit test boundaries, component testing query philosophy, visual regression, contract testing, E2E cost control, and tiered execution strategies in CI."
-wordCount: 2600
+wordCount: 1186
 ---
 
-The "Testing Pyramid"—a broad base of unit tests, a middle layer of integration tests, and a small number of E2E tests at the top—has been gospel since it was proposed in 2009. But in the frontend domain, directly applying this model leads to大量 low-value tests and fragile E2E suites. Frontend testing strategies in 2026 require a re-examination of the layering logic.
+The "Testing Pyramid"—a broad base of unit tests, a middle layer of integration tests, and a small number of E2E tests at the top—has been gospel since it was proposed in 2009. But in the frontend domain, directly applying this model leads to a large number of low-value tests and fragile E2E suites. Frontend testing strategies in 2026 require a re-examination of the layering logic.
 
 ## Problems with the Traditional Testing Pyramid in Frontend
 

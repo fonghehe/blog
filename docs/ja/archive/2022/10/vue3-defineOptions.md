@@ -3,9 +3,9 @@ title: "Vue 3.2 defineOptions"
 date: 2022-10-06 15:28:41
 tags:
   - Vue
-readingTime: 2
+readingTime: 3
 description: "最近在团队中落地Vue 3.2 defineOptions，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 459
+wordCount: 497
 ---
 
 最近在团队中落地Vue 3.2 defineOptions，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -120,7 +120,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理やエッジケースへの対応も必要になる。
 
 ## 注意事項
 
@@ -152,5 +152,5 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 ## まとめ
 
 - コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- Vue 3.2 defineOptions不是银弹，需要根据项目规模和技术栈选择
+- Vue 3.2 defineOptions は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある
 - 基礎的な原理を理解することは、APIを暗記することより重要です

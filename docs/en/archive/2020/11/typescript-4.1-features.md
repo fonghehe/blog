@@ -4,11 +4,11 @@ date: 2020-11-24 17:33:01
 tags:
   - TypeScript
 readingTime: 2
-description: "TypeScript 4.1 发布了，带来了几个非常实用的类型系统增强。特别是模板字面量类型和递归条件类型，让类型编程能力又上了一个台阶。"
-wordCount: 181
+description: "TypeScript 4.1 brings practical type-system enhancements, notably template literal types and recursive conditional types that push type-level programming further."
+wordCount: 108
 ---
 
-TypeScript 4.1 发布了，带来了几个非常实用的类型系统增强。特别是模板字面量类型和递归条件类型，让类型编程能力又上了一个台阶。
+TypeScript 4.1 is out, bringing several very practical type-system enhancements. In particular, template literal types and recursive conditional types push type-level programming up another notch.
 
 ## Template Literal Types
 
@@ -219,8 +219,8 @@ npx tsc --version
 
 ## Summary
 
-- 模板字面量类型让类型编程可以做字符串操作，非常强大
-- Key Remapping 让映射类型可以重命名 key，派生类型更灵活
-- 递归条件类型的限制放宽，可以实现深度嵌套的类型转换
-- 错误提示更精确，调试类型问题更高效
-- TypeScript 正在变得越来越像一门类型编程语言
+- Template literal types let type-level programming do string manipulation — very powerful.
+- Key remapping lets mapped types rename keys, making derived types more flexible.
+- The relaxed limits on recursive conditional types make deep, nested type transformations possible.
+- Error messages are more precise, making type debugging more efficient.
+- TypeScript is increasingly becoming a type-level programming language in its own right.

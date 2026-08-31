@@ -4,15 +4,15 @@ date: 2020-02-11 11:19:41
 tags:
   - Vue
 readingTime: 3
-description: "Vue 3 要求显式声明组件发出的事件，这不仅是最佳实践，更是一种强制约束。配合 TypeScript 的类型推导，可以在编译期就捕获大部分事件相关的 bug。本文从 emit 的底层机制讲起，整理事件设计的最佳实践。"
-wordCount: 367
+description: "Vue 3 requires explicit declaration of emitted events—this isn't just best practice, it's a hard constraint. Combined with TypeScript's type inference, most event-related bugs can be caught at compile time. Starting from how emit works under the hood, this article lays out best practices for event design."
+wordCount: 249
 ---
 
-Vue 3 要求显式声明组件发出的事件，这不仅是最佳实践，更是一种强制约束。配合 TypeScript 的类型推导，可以在编译期就捕获大部分事件相关的 bug。本文从 emit 的底层机制讲起，整理事件设计的最佳实践。
+Vue 3 requires you to explicitly declare the events a component emits — this isn't just a best practice, it's a hard constraint. Combined with TypeScript's type inference, most event-related bugs can be caught at compile time. Starting from how `emit` works under the hood, this article lays out best practices for event design.
 
 ## The emits Option and Event Validation
 
-Vue 3 新增 `emits` 选项，要求声明组件会触发的所有事件。
+Vue 3 added the `emits` option, which requires you to declare every event the component can fire.
 
 ```vue
 {% raw %}
@@ -68,11 +68,11 @@ export default {
 {% endraw %}
 ```
 
-当验证函数返回 `false` 时，控制台会打印警告信息，但不会阻止事件触发。这适合开发环境排查问题。
+When the validation function returns `false`, a warning is printed to the console, but the event is still emitted. This is handy for spotting issues in development.
 
-## 事件命名规范
+## Event Naming Conventions
 
-Vue 3 的模板编译器会自动将事件名从 camelCase 转为 kebab-case。
+Vue 3's template compiler automatically converts event names from camelCase to kebab-case.
 
 ```vue
 <script>
@@ -93,11 +93,11 @@ export default {
 <!-- <Child @item-selected="handleSelect" /> -->
 ```
 
-团队中统一约定：emit 名称用 camelCase 声明，模板中用 kebab-case 监听。
+Our team convention: declare emit names in camelCase and listen for them with kebab-case in templates.
 
-## 带返回值的 emit 模式
+## The Emit Pattern with a Return Value
 
-有时子组件发出事件后需要父组件返回结果，可以用 Promise 包装。
+Sometimes a child component needs a result back from the parent after emitting an event; you can wrap it in a Promise.
 
 ```vue
 {% raw %}
@@ -156,9 +156,9 @@ export default {
 {% endraw %}
 ```
 
-## Composition API 中的 emit 模式
+## The emit Pattern in the Composition API
 
-在 `setup` 函数中通过 `context.emit` 发射事件，配合 TypeScript 类型更佳。
+Inside `setup`, emit events through `context.emit`; it works even better with TypeScript types.
 
 ```javascript
 // composables/useForm.js
@@ -223,7 +223,7 @@ export default {
 
 ## Summary
 
-- `emits` 选项让组件的对外接口更透明，开发环境下支持参数验证
-- 事件名在模板中自动转 kebab-case，团队统一约定模板写 kebab-case
-- 使用对象语法声明 emits 可以做参数类型校验，返回 false 会触发控制台警告
-- 在 composables 中通过 `emit` 参数传递事件触发能力，保持逻辑复用的灵活性
+- The `emits` option makes a component's public interface more transparent, and supports parameter validation in development
+- Event names are auto-converted to kebab-case in templates, so our team standardizes on kebab-case in templates
+- Declaring emits with object syntax lets you validate parameter types; returning `false` triggers a console warning
+- In composables, pass the emit capability through an `emit` argument to keep your reusable logic flexible

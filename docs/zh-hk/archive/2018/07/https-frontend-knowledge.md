@@ -17,17 +17,17 @@ HTTP：明文傳輸，中間人可以看到和修改所有內容
 
 HTTPS = HTTP + TLS（傳輸層安全協議）
   - 加密：數據對中間人不可讀
-  - 驗證：確認連接的服務器是真的，不是仿冒的
+  - 驗證：確認連接的伺服器是真的，不是仿冒的
   - 完整性：數據傳輸中沒有被篡改
 ```
 
 ## TLS 握手簡化版
 
 ```
-1. 客户端 → 服務器：我支持的 TLS 版本、加密算法列表
-2. 服務器 → 客户端：選定的加密算法 + 數字證書（含公鑰）
-3. 客户端：驗證證書合法性（CA 簽名）
-4. 客户端 → 服務器：用公鑰加密一個隨機數
+1. 客戶端 → 伺服器：我支持的 TLS 版本、加密算法列表
+2. 伺服器 → 客戶端：選定的加密算法 + 數字證書（含公鑰）
+3. 客戶端：驗證證書合法性（CA 簽名）
+4. 客戶端 → 伺服器：用公鑰加密一個隨機數
 5. 雙方：用隨機數派生出對稱加密密鑰
 6. 之後通信：用對稱密鑰加密（速度快）
 ```
@@ -53,7 +53,7 @@ HTTPS = HTTP + TLS（傳輸層安全協議）
 **混合內容（Mixed Content）**
 
 ```html
-<!-- HTTPS 頁面里加載 HTTP 資源 → 被瀏覽器阻止 -->
+<!-- HTTPS 頁面裡加載 HTTP 資源 → 被瀏覽器阻止 -->
 <img src="http://example.com/image.jpg" />
 <!-- 被阻止 -->
 <script src="http://cdn.com/lib.js"></script>
@@ -84,25 +84,25 @@ devServer: {
 **Secure Cookie**
 
 ```javascript
-// 隻在 HTTPS 下才發送這個 Cookie
+// 只在 HTTPS 下才發送這個 Cookie
 document.cookie = "token=xxx; Secure; HttpOnly";
 ```
 
 ## HSTS（HTTP 嚴格傳輸安全）
 
 ```
-服務器告訴瀏覽器：以後都用 HTTPS 訪問我，不要用 HTTP
+伺服器告訴瀏覽器：以後都用 HTTPS 訪問我，不要用 HTTP
 
 響應頭：
 Strict-Transport-Security: max-age=31536000; includeSubDomains
 ```
 
-瀏覽器會記住這個指令，即使用户輸入 `http://example.com`，也會自動改成 HTTPS。
+瀏覽器會記住這個指令，即使用戶輸入 `http://example.com`，也會自動改成 HTTPS。
 
 ## 證書類型
 
 ```
-DV（域名驗證）：隻驗證域名所有權，幾分鐘申請，免費
+DV（域名驗證）：只驗證域名所有權，幾分鐘申請，免費
   - Let's Encrypt 就是這種
   - 適合個人網站、博客
 

@@ -4,7 +4,7 @@ date: 2023-10-10 10:39:13
 tags:
   - TypeScript
 readingTime: 2
-description: "关于TypeScript 5.3 新特性，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+description: "Many developers only know TypeScript 5.3's new features at the surface level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 210
 ---
 

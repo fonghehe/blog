@@ -40,7 +40,7 @@ const csvToJson = new Transform({
 
 ## 応用的な使い方
 
-まず基本的な実装方法を見てみましょう。
+基本的な実装方法を見てみましょう。
 
 ```javascript
 import { useRef, useEffect, useState } from "react";
@@ -67,11 +67,11 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-このコードは基本的な使い方を示しています。実際のプロジェクトではエラーハンドリングやエッジケースも考慮する必要があります。
+このコードは基本的な使い方を示しています。実際のプロジェクトではエラー処理やエッジケースも考慮する必要があります。
 
 ## 実践事例
 
-この基盤をもとに、さらなる最適化が可能です。
+この基礎をもとに、さらに最適化を進められます。
 
 ```javascript
 .container {
@@ -98,7 +98,7 @@ function useIntersectionObserver(options = {}) {
 
 ## パフォーマンス最適化
 
-実際のプロジェクトではより複雑な使い方になります。
+実際のプロジェクトでは、もう少し複雑な使い方になります。
 
 ```javascript
 const fs = require("fs");
@@ -126,7 +126,7 @@ const csvToJson = new Transform({
 
 ## よくある落とし穴
 
-完全な例を示します。
+以下にサンプルを示します。
 
 ```javascript
 import { useRef, useEffect, useState } from "react";

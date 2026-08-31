@@ -5,15 +5,15 @@ tags:
   - Webpack
   - Engineering
 readingTime: 1
-description: "Webpack 5 Beta 版已经可以试用，最受关注的是 Module Federation（模块联邦）。这个特性可能会改变微前端的做法。"
-wordCount: 245
+description: "The Webpack 5 beta is already usable, and the most talked-about feature is Module Federation. This capability may well change how we do micro-frontends."
+wordCount: 160
 ---
 
-Webpack 5 Beta 版已经可以试用，最受关注的是 Module Federation（模块联邦）。这个特性可能会改变微前端的做法。
+The Webpack 5 beta is already usable, and the most talked-about feature is Module Federation. This capability may well change how we do micro-frontends.
 
 ## Webpack 5 Major Changes
 
-### 持久化缓存（最重要）
+### Persistent Cache (Most Important)
 
 ```javascript
 // webpack.config.js
@@ -28,7 +28,7 @@ module.exports = {
 // 二次构建速度提升极其明显（我测试从 60s → 8s）
 ```
 
-### 废弃 Node.js polyfill
+### Dropping Node.js Polyfills
 
 ```javascript
 // Webpack 4：自动 polyfill Node.js 内置模块
@@ -109,20 +109,20 @@ function App() {
 
 |            | single-spa           | Module Federation   |
 | ---------- | -------------------- | ------------------- |
-| 粒度       | 应用级别             | 组件/模块级别       |
-| 共享依赖   | 手动（systemjs map） | 自动（shared 配置） |
-| 运行时     | 需要主应用调度       | 按需加载            |
-| 独立部署   | ✅                   | ✅                  |
-| 技术栈限制 | 无                   | 需要 Webpack 5      |
+| Granularity | App level          | Component/module level |
+| Shared deps | Manual (systemjs map) | Automatic (`shared` config) |
+| Runtime | Requires host app orchestration | Loaded on demand |
+| Independent deploy | Yes | Yes |
+| Tech stack constraint | None | Requires Webpack 5 |
 
 ## Pitfalls
 
-1. **版本不一致**：shared 的 `singleton: true` 确保只有一个实例
-2. **本地开发**：需要同时启动多个开发服务器
-3. **类型支持**：TypeScript 还需要手动声明远程模块的类型
+1. **Version mismatch**: `shared` with `singleton: true` ensures only one instance
+2. **Local development**: you need to run multiple dev servers at once
+3. **Type support**: TypeScript still needs remote module types declared manually
 
 ## Summary
 
-- Webpack 5 持久化缓存是最实际的收益，二次构建极快
-- Module Federation 是微前端的新思路：模块级共享，而不是应用级隔离
-- Webpack 5 还在 Beta，等正式版（2020 年）再用于生产
+- Webpack 5's persistent cache is the most practical win; rebuilds are dramatically faster
+- Module Federation is a new take on micro-frontends: module-level sharing instead of app-level isolation
+- Webpack 5 is still in beta; wait for the stable release (2020) before using it in production

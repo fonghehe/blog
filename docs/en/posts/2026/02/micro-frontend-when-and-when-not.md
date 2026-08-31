@@ -5,7 +5,7 @@ tags:
   - Micro-frontend
 readingTime: 2
 description: "Over the past two years I've helped several teams evaluate micro-frontends — some moved forward, others pulled the plug. I want to write a clear-eyed article ab"
-wordCount: 253
+wordCount: 254
 ---
 
 Over the past two years I've helped several teams evaluate micro-frontends — some moved forward, others pulled the plug. I want to write a clear-eyed article about it.
@@ -58,7 +58,7 @@ The engineering overhead micro-frontends introduce — routing coordination, sta
 
 **Product is early-stage with rapidly changing requirements**
 
-Once you've split boundaries, cross-application changes during requirement shifts become painful. Wait until the business stabilizes.
+Once you've drawn those boundaries, cross-cutting changes become painful when requirements shift. Wait until the business stabilizes.
 
 **"Others are doing it, so should we"**
 

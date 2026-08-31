@@ -6,11 +6,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "Radix UI 无样式组件原语 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based "
-wordCount: 201
+description: "Radix UI's unstyled component primitives have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
+wordCount: 186
 ---
 
-Radix UI 无样式组件原语 has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
+Radix UI's unstyled component primitives have been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
 
 ## Getting Started
 
@@ -132,5 +132,5 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Radix UI 无样式组件原语不是银弹，需要根据项目规模和技术栈选择
+- Radix UI's unstyled primitives are not a silver bullet; choose based on project size and tech stack
 - Understanding underlying principles is more important than memorizing APIs

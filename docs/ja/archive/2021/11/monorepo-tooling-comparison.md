@@ -6,14 +6,14 @@ tags:
 
 readingTime: 3
 description: "Vercel が Turborepo を買収しオープンソース化しました。これは Go 言語で書かれた高性能 Monorepo ビルドツールです。1週間試用し、Lerna や pnpm workspace と比較してみました。"
-wordCount: 670
+wordCount: 651
 ---
 
-Vercel が Turborepo を買収しオープンソース化しました。これは Go 言語で書かれた高性能 Monorepo ビルドツールです。1週間試用し、Lerna や pnpm workspace と比較してみました。
+Vercel が Turborepo を買収しオープンソース化した。これは Go 言語で書かれた高性能な Monorepo ビルドツールだ。1週間試用し、Lerna や pnpm workspace と比較してみた。
 
 ## Monorepo の課題
 
-pnpm workspace で monorepo プロジェクトを管理する場合、パッケージ管理に問題はありませんが、ビルドのオーケストレーションが非常に原始的です：
+pnpm workspace で monorepo プロジェクトを管理する場合、パッケージ管理に問題はありませんが、ビルドのオーケストレーションが非常に原始的だ：
 
 ```bash
 # pnpm workspace でのビルド方法
@@ -132,9 +132,9 @@ turbo run build
 # apps/web:        build (5.1s)                             # ui に依存、再ビルド
 ```
 
-キャッシュキーは以下に基づきます：ソースファイルの内容 + 環境変数 + ロックファイル + package.json scripts。
+キャッシュキーは以下に基づく：ソースファイルの内容 + 環境変数 + ロックファイル + package.json scripts。
 
-## リモートキャッシュ（CIシナリオ）
+## リモートキャッシュ（CI 環境）
 
 ```bash
 # Vercel にログイン（リモートキャッシュは無料）
@@ -187,7 +187,7 @@ jobs:
 | パッケージ公開 | あり（コア機能） | なし（公開は対象外） |
 | 設定の複雑さ | 中程度 | 最小限 |
 
-Lerna は公開を担当し、Turborepo はビルドを担当します。併用が可能です。
+Lerna は公開を担当し、Turborepo はビルドを担当する。併用も可能だ。
 
 ## pnpm workspace との連携
 
@@ -212,8 +212,8 @@ Lerna は公開を担当し、Turborepo はビルドを担当します。併用�
 
 ## まとめ
 
-- Turborepo は Monorepo のビルドオーケストレーションとキャッシュの問題を解決しますが、パッケージ公開の問題は解決しません
-- ローカル＋リモートキャッシュが最大のセールスポイントで、CI のビルド時間を分単位から秒単位に短縮できます
-- pnpm workspace との連携が最適なソリューションです：pnpm が依存関係を管理し、Turborepo がビルドを管理します
-- 設定は最小限（turbo.json 1つ）で、学習コストが低いです
-- 3つ以上のパッケージがある Monorepo プロジェクトに適しています；パッケージが少ない場合は pnpm workspace で十分です
+- Turborepo は Monorepo のビルドオーケストレーションとキャッシュの問題を解決するが、パッケージ公開の問題は解決しない
+- ローカル＋リモートキャッシュが最大のセールスポイントで、CI のビルド時間を分単位から秒単位に短縮できる
+- pnpm workspace との連携が最適なソリューションだ：pnpm が依存関係を管理し、Turborepo がビルドを管理する
+- 設定は最小限（turbo.json 1つ）で、学習コストが低い
+- 3つ以上のパッケージがある Monorepo プロジェクトに適している；パッケージが少ない場合は pnpm workspace で十分だ

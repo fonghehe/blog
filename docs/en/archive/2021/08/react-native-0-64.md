@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "React Native 0.64 Hermes 引擎 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from rea"
-wordCount: 188
+description: "React Native 0.64 and the Hermes engine are being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 180
 ---
 
-React Native 0.64 Hermes 引擎 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+React Native 0.64's Hermes engine is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices drawn from real projects.
 
 ## Basic Usage
 
@@ -47,7 +47,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Advanced Usage
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'

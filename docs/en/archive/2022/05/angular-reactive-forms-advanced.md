@@ -5,13 +5,13 @@ tags:
   - React
   - Angular
 readingTime: 2
-description: "Angular 的响应式表单（Reactive Forms）在复杂表单场景下远比模板驱动表单更可控。这篇文章聚焦三个进阶场景：动态添加/删除表单项（FormArray）、跨字段联合验证器、以及实现自定义可重用的表单控件（ControlValueAccessor）。"
-wordCount: 228
+description: "Angular's Reactive Forms are far more controllable than template-driven forms in complex form scenarios. This article focuses on three advanced topics: dynamically adding/removing form items (FormArray), cross-field composite validators, and implementing custom reusable form controls (ControlValueAccessor)."
+wordCount: 126
 ---
 
-Angular 的响应式表单（Reactive Forms）在复杂表单场景下远比模板驱动表单更可控。这篇文章聚焦三个进阶场景：动态添加/删除表单项（FormArray）、跨字段联合验证器、以及实现自定义可重用的表单控件（ControlValueAccessor）。
+Angular's Reactive Forms are far more controllable than template-driven forms in complex form scenarios. This article focuses on three advanced topics: dynamically adding/removing form items (FormArray), cross-field composite validators, and implementing custom reusable form controls (ControlValueAccessor).
 
-## FormArray：动态表单项
+## FormArray: Dynamic Form Items
 
 ```typescript
 @Component({
@@ -68,7 +68,7 @@ export class InvoiceFormComponent {
 }
 ```
 
-## 跨字段验证器
+## Cross-Field Validators
 
 ```typescript
 // validators/password-match.validator.ts
@@ -110,7 +110,7 @@ const registerForm = new FormGroup(
 );
 ```
 
-## 异步验证器（用户名唯一性检查）
+## Async Validators (Username Uniqueness Check)
 
 ```typescript
 // validators/username-taken.validator.ts
@@ -137,9 +137,9 @@ username = new FormControl("", {
 });
 ```
 
-## ControlValueAccessor：自定义表单控件
+## ControlValueAccessor: Custom Form Controls
 
-实现一个星级评分组件，可以在 `[formControl]` 或 `[(ngModel)]` 中使用：
+Implement a star rating component that can be used with `[formControl]` or `[(ngModel)]`:
 
 ```typescript
 @Component({
@@ -192,7 +192,7 @@ export class StarRatingComponent implements ControlValueAccessor {
 // <app-star-rating [(ngModel)]="rating"></app-star-rating>
 ```
 
-## 表单状态可视化
+## Form State Visualization
 
 ```typescript
 // 在开发阶段快速展示表单状态（Debug 用）
@@ -216,4 +216,4 @@ export class FormDebugComponent {
 
 ## Summary
 
-Angular 响应式表单的进阶能力——`FormArray` 的动态增删、跨字段验证器、`ControlValueAccessor` 自定义控件——覆盖了绝大多数复杂业务表单场景。这套 API 虽然比 `ngModel` 啰嗦，但换来的是完整的类型安全和可测试性（Angular 14 之后表单还将引入更强的类型推断，敬请期待）。
+The advanced capabilities of Angular Reactive Forms — dynamic add/remove with `FormArray`, cross-field validators, and custom controls via `ControlValueAccessor` — cover the vast majority of complex business form scenarios. This API is more verbose than `ngModel`, but the tradeoff is full type safety and testability (Angular 14+ will introduce even stronger type inference for forms, so stay tuned).

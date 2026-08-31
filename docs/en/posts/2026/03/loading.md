@@ -5,7 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "The topic of loading performance optimization has been discussed extensively in the community, but with each new version release, many conclusions need revisiti"
-wordCount: 188
+wordCount: 183
 ---
 
 The topic of loading performance optimization has been discussed extensively in the community, but with each new version release, many conclusions need revisiting. This article provides a fresh look based on the latest state of the ecosystem.
@@ -32,7 +32,7 @@ Performance optimization must be approached in context — not every situation c
 
 ## Source Analysis
 
-We can improve on this in the following way:
+Here's a practical way to build on this:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -68,11 +68,11 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ entryTypes: ["largest-contentful-paint", "first-input"] });
 ```
 
-This code demonstrates the basic usage. In real projects, you'll also need to account for error handling and edge cases.
+This code shows the basic usage; in real projects you'll also need to handle errors and edge cases.
 
 ## Optimization Tips
 
-Building on this foundation, we can optimize further:
+From here, you can optimize further:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {

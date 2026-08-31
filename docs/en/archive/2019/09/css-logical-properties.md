@@ -1,18 +1,18 @@
 ---
-title: "CSS Logical Properties: International化Layout第一步"
+title: "CSS Logical Properties: The First Step Toward Internationalized Layouts"
 date: 2019-09-09 15:05:57
 tags:
   - CSS
 readingTime: 2
-description: "在日常开发中，CSS 逻辑属性 Logical Properties的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 289
+description: "In daily development, CSS Logical Properties are being used more and more frequently. This article systematically explains their usage, underlying principles, and optimization strategies."
+wordCount: 176
 ---
 
-在日常开发中，CSS 逻辑属性 Logical Properties的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+In daily development, CSS Logical Properties are being used more and more frequently. This article systematically explains their usage, underlying principles, and optimization strategies.
 
 ## Quick Start
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```css
 :root {
@@ -35,11 +35,11 @@ wordCount: 289
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling—this is critical in production environments.
 
 ## Internal Principles
 
-关键在于理解核心逻辑：
+The key is understanding the core logic:
 
 ```css
 .container {
@@ -62,11 +62,11 @@ wordCount: 289
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to be tailored to the specific scenario—not every case calls for over-optimization.
 
 ## Business Practice
 
-我们可以通过以下方式来改进：
+We can improve things in the following ways:
 
 ```css
 :root {
@@ -89,11 +89,11 @@ wordCount: 289
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been proven in real use.
 
 ## Performance Comparison
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```css
 .container {
@@ -116,11 +116,11 @@ wordCount: 289
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you also need to account for error handling and edge cases.
 
 ## Troubleshooting
 
-在这个基础上，我们可以进一步优化：
+Building on that, we can optimize further:
 
 ```css
 :root {
@@ -143,10 +143,10 @@ wordCount: 289
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and can significantly reduce maintenance costs.
 
 ## Summary
 
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- Understanding the underlying principles matters more than memorizing the API.
+- Always validate compatibility before using it in production.
+- In team collaboration, conventions and documentation matter more than the technology itself.

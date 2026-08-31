@@ -5,9 +5,9 @@ tags:
   - Web3
   - React
   - DApp
-readingTime: 11
+readingTime: 12
 description: "ウォレット接続は DApp ユーザー体験の最初のハードルです。RainbowKit は wagmi 上に構築され、すぐに使える接続コンポーネントとエレガントな UX デザインを提供します。本記事では基礎的な統合から深いカスタマイズまでの完全な方案を網羅します。"
-wordCount: 2900
+wordCount: 1995
 ---
 
 ウォレット接続はすべての DApp の入り口体験です。Web3 エコシステムにおいて、ユーザーは MetaMask、WalletConnect、Coinbase Wallet、Rainbow、Phantom など多様なウォレットを使用する可能性があります。各ウォレットに対して個別に接続ロジックを実装するのは煩雑でエラーが起きやすいです。RainbowKit は Rainbow Wallet チームがオープンソース化したもので、wagmi と viem 上に構築され、完全でカスタマイズ可能なウォレット接続ソリューションを提供します。

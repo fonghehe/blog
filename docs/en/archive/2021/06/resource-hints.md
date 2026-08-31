@@ -7,15 +7,15 @@ tags:
   - TypeScript
 
 readingTime: 1
-description: "最近在团队中落地Resource Hints 资源提示优化， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 204
+description: "I recently applied Resource Hints optimization with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 183
 ---
 
-最近在团队中落地Resource Hints 资源提示优化， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently rolled out Resource Hints optimization across our team and picked up quite a bit of experience along the way. I'm writing it up as a reference, hoping it helps anyone doing similar work.
 
 ## Core Concepts
 
-实际项目中的用法会更复杂一些：
+In real projects, usage gets a bit more involved:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -32,7 +32,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-Through this approach, both the testability and scalability of the code are improved.
+This makes the code both more testable and more scalable.
 
 ## In-Depth Analysis
 
@@ -53,11 +53,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Handle edge cases carefully — they are critical in production.
 
 ## Implementation Experience
 
-The key lies in understanding the core logic:
+The key is understanding the core logic:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -78,7 +78,7 @@ Performance optimization should be tailored to specific scenarios; not all cases
 
 ## Optimization Strategies
 
-We can improve it in the following ways:
+Here are a few ways to take this further:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -95,12 +95,12 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
+This approach has run stably in production for over six months, so it's proven in practice.
 
 ## Summary
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Resource Hints 资源提示优化不是银弹，需要根据项目规模和技术栈选择
+- Resource Hints optimization isn't a silver bullet — pick it based on your project's scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

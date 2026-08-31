@@ -5,10 +5,10 @@ tags:
   - Frontend
 readingTime: 2
 description: "Axios is the most mainstream HTTP client, but many projects just call it directly without a unified wrapper, resulting in request logic scattered everywhere. Th"
-wordCount: 164
+wordCount: 165
 ---
 
-Axios is the most mainstream HTTP client, but many projects just call it directly without a unified wrapper, resulting in request logic scattered everywhere. This article presents a complete encapsulation solution.
+Axios is the most widely used HTTP client, but many projects just call it directly without a unified wrapper, resulting in request logic scattered everywhere. This article presents a complete encapsulation solution.
 
 ## Why Wrap Axios
 

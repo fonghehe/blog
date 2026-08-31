@@ -171,13 +171,13 @@ function App() {
 
 ## 共享依賴詳解
 
-Shared 設定控製依賴如何在 Host 和 Remote 之間共享：
+Shared 設定控制依賴如何在 Host 和 Remote 之間共享：
 
 ```js
 shared: {
   react: {
-    // singleton: true 確保隻加載一個 React 例項
-    // 如果 Host 和 Remote 的 React 版本不相容，會載入兩個例項（non-singleton）
+    // singleton: true 確保只加載一個 React 實例
+    // 如果 Host 和 Remote 的 React 版本不相容，會載入兩個實例（non-singleton）
     singleton: true,
 
     // 版本要求，語義化版本範圍
@@ -193,7 +193,7 @@ shared: {
 }
 ```
 
-### 版本協商機製
+### 版本協商機制
 
 當 Host 和 Remote 共享同一個依賴時，Webpack 會進行版本協商：
 
@@ -378,7 +378,7 @@ function App() {
 - Module Federation 允許獨立構建的應用在執行時共享模組
 - Host 通過 `remotes` 配置消費遠端模組，Remote 通過 `exposes` 暴露模組
 - `remoteEntry.js` 是遠端容器的入口檔案
-- `shared` 設定實現依賴共享，`singleton: true` 確保隻加載一個例項
+- `shared` 設定實現依賴共享，`singleton: true` 確保只加載一個實例
 - 支援動態載入，適用於配置驅動的微前端架構
 - 一個應用可以同時是 Host 和 Remote
 - 與 qiankun 等方案相比，Module Federation 的優勢在於模組級別的共享和內建的依賴協商

@@ -1,5 +1,5 @@
 ---
-title: "React 20 Half-Year Review: 新特性在Production中实际Applications"
+title: "React 20 Six-Month Review: How the New Features Are Actually Being Used in Production"
 date: 2025-11-04 12:38:15
 tags:
   - React

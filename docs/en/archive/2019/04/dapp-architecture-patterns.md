@@ -5,9 +5,12 @@ tags:
   - Web3
   - DApp
   - Architecture
+readingTime: 11
+wordCount: 1081
+description: "Traditional web application architecture has formed mature patterns—frontend-backend separation, RESTful APIs, database read-write splitting, CDN acceleration, "
 ---
 
-Traditional web application architecture has formed mature patterns—frontend-backend separation, RESTful APIs, database read-write splitting, CDN acceleration, and microservices. But when an application needs to run on a blockchain, nearly all of these patterns must be reconsidered. DApps have no traditional backend servers, no centralized databases, and users authenticate via wallet signatures rather than passwords. This fundamental difference requires developers to build a new architectural mindset from scratch.
+Traditional web application architecture has formed mature patterns—frontend-backend separation, RESTful APIs, database read-write splitting, CDN acceleration, and microservices. But when an application needs to run on a blockchain, nearly all of these patterns must be reconsidered. DApps have no traditional backend servers, no centralized databases, and users authenticate via wallet signatures rather than passwords. This fundamental difference requires developers to develop a new architectural mindset from scratch.
 
 ## Core Differences Between DApps and Traditional Web Applications
 
@@ -23,7 +26,7 @@ Traditional web application architecture has formed mature patterns—frontend-b
 | Availability | 99.99% SLA | Depends on node availability |
 | Performance | Millisecond response | Seconds to minutes for confirmation |
 
-The most fundamental difference lies in the **cost and latency of write operations**. In a traditional application, a database write takes only milliseconds, while in a DApp, a contract call requires waiting for block confirmation (about 15 seconds on Ethereum). This directly determines that DApps cannot copy traditional application interaction patterns—users cannot be expected to wait 15 seconds after every click.
+The most fundamental difference lies in the **cost and latency of write operations**. In a traditional application, a database write takes only milliseconds, while in a DApp, a contract call requires waiting for block confirmation (about 15 seconds on Ethereum). This means DApps cannot simply reuse traditional interaction patterns—users cannot be expected to wait 15 seconds after every click.
 
 ## Layers of Decentralized Architecture
 
@@ -109,7 +112,7 @@ Data layering decision framework:
 
 ### Frontend Layer
 
-The frontend layer handles user interaction and is the most "traditional" part of a DApp, but with blockchain-specific logic added:
+The frontend layer handles user interaction and is the most "traditional" part of a DApp, but with blockchain-specific logic layered on top:
 
 ```javascript
 // DApp 前端架构
@@ -711,7 +714,7 @@ The core challenge of DApp architecture is finding the balance between "decentra
 
 DApp architecture still has rough edges today. Toolchain fragmentation, inconsistent state synchronization approaches, and a gap in user experience compared to traditional web applications are real challenges. But several architectural trends are clear:
 
-1. **Layered storage** was becoming consensus—store only core state and hashes on-chain
+1. **Layered storage** was emerging as the consensus approach—store only core state and hashes on-chain
 2. **Event-driven architecture** is the natural choice for DApp frontends—fitting the blockchain's asynchronous transaction model
 3. **Indexing services** will fill the query capability gap—but need to balance decentralization and efficiency
 

@@ -4,18 +4,18 @@ date: 2019-09-20 10:13:42
 tags:
   - Engineering
 readingTime: 4
-description: "前端项目不再只是几个静态文件放到 CDN 上那么简单。越来越多的前端应用需要 Node.js 服务端渲染、Nginx 反向代理、环境变量注入等能力。Docker 提供了一致的运行环境，让前端项目可以在任何地方以相同的方式构建和运行。本文将从零搭建前端项目的 Docker 化部署方案。"
-wordCount: 561
+description: "Frontend projects are no longer just a few static files dropped onto a CDN. More and more frontend applications need capabilities like Node.js server-side rendering, Nginx reverse proxying, and environment-variable injection. Docker provides a consistent runtime environment, letting a frontend project be built and run the same way anywhere. This article builds a Docker-based deployment setup for a frontend project from scratch."
+wordCount: 373
 ---
 
-前端项目不再只是几个静态文件放到 CDN 上那么简单。越来越多的前端应用需要 Node.js 服务端渲染、Nginx 反向代理、环境变量注入等能力。Docker 提供了一致的运行环境，让前端项目可以在任何地方以相同的方式构建和运行。本文将从零搭建前端项目的 Docker 化部署方案。
+Frontend projects are no longer just a few static files dropped onto a CDN. More and more frontend applications need capabilities like Node.js server-side rendering, Nginx reverse proxying, and environment-variable injection. Docker provides a consistent runtime environment, letting a frontend project be built and run the same way anywhere. This article builds a Docker-based deployment setup for a frontend project from scratch.
 
 ## Why Frontend Projects Need Docker
 
-1. **环境一致性** — 开发、测试、生产环境完全一致，告别"在我机器上没问题"
-2. **依赖隔离** — 不同项目的 Node.js 版本、系统依赖互不影响
-3. **快速部署** — 镜像即产物，部署时不需要重新构建
-4. **弹性伸缩** — 容器化后可以方便地水平扩展
+1. **Environment consistency** — development, staging, and production environments are identical, saying goodbye to "works on my machine."
+2. **Dependency isolation** — different projects' Node.js versions and system dependencies don't interfere with each other.
+3. **Fast deployment** — the image itself is the artifact; no rebuild is needed at deploy time.
+4. **Elastic scaling** — once containerized, it's easy to scale out horizontally.
 
 ## Basic Dockerfile: Static Sites
 
@@ -47,13 +47,13 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-### 多阶段构建说明
+### Notes on Multi-Stage Builds
 
-多阶段构建是 Docker 的重要特性：
+Multi-stage builds are an important Docker feature:
 
-- 第一阶段（`builder`）使用完整的 Node.js 镜像构建项目
-- 第二阶段使用轻量的 Nginx 镜像，只复制构建产物
-- 最终镜像不包含 Node.js、npm、源码等，体积可以控制在 20MB 以内
+- The first stage (`builder`) uses a full Node.js image to build the project.
+- The second stage uses a lightweight Nginx image and only copies the build artifacts.
+- The final image excludes Node.js, npm, and source code, keeping its size under 20MB.
 
 ## Nginx Configuration
 
@@ -100,7 +100,7 @@ server {
 
 ## Docker Compose Orchestration
 
-前端 + 后端 + 数据库的完整编排：
+Full orchestration of frontend + backend + database:
 
 ```yaml
 # docker-compose.yml
@@ -160,9 +160,9 @@ volumes:
 
 ## Environment Variable Injection
 
-Docker 构建后，环境变量被硬编码在产物中。运行时注入环境变量有几种方案：
+After a Docker build, environment variables are hardcoded into the artifacts. There are a few approaches to injecting them at runtime:
 
-### 方案一：运行时替换模板变量
+### Approach 1: Substitute Template Variables at Runtime
 
 ```dockerfile
 FROM nginx:1.17-alpine
@@ -204,7 +204,7 @@ services:
       - SENTRY_DSN=https://xxx@sentry.io/123
 ```
 
-### 方案二：运行时配置文件
+### Approach 2: Runtime Configuration File
 
 ```html
 <!-- public/config.js -->
@@ -223,7 +223,7 @@ window.__CONFIG__ = {
 </head>
 ```
 
-应用代码中使用：
+Used in application code:
 
 ```js
 const config = window.__CONFIG__ || {};
@@ -232,7 +232,7 @@ export const API_URL = config.API_URL || '/api';
 export const SENTRY_DSN = config.SENTRY_DSN || '';
 ```
 
-这样 `config.js` 不会被 Webpack 打包，可以独立替换。
+This way `config.js` is not bundled by Webpack and can be replaced independently.
 
 ## CI/CD Integration
 
@@ -289,7 +289,7 @@ coverage
 *.log
 ```
 
-### 健康检查
+### Health Checks
 
 ```dockerfile
 FROM nginx:1.17-alpine
@@ -298,7 +298,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD wget -qO- http://localhost/health || exit 1
 ```
 
-### 安全配置
+### Security Configuration
 
 ```dockerfile
 # 使用非 root 用户运行
@@ -313,7 +313,7 @@ COPY --chown=appuser:appgroup nginx.conf /etc/nginx/conf.d/default.conf
 USER appuser
 ```
 
-### 镜像体积优化
+### Image Size Optimization
 
 ```bash
 # 查看镜像各层大小
@@ -327,9 +327,9 @@ docker history myapp/frontend
 
 ## Summary
 
-- 使用多阶段构建分离构建环境和运行环境，最终镜像只包含必要的运行文件
-- Nginx 作为静态文件服务器 + 反向代理，配置 SPA 路由支持和 gzip 压缩
-- 环境变量注入可以通过 sed 替换模板变量或独立的 config.js 文件实现
-- Docker Compose 编排前端、后端和依赖服务，docker-compose.yml 即架构文档
-- CI/CD 中构建 Docker 镜像并推送到 Registry，部署时只需 pull 和 restart
-- 注意 .dockerignore、非 root 用户、健康检查等生产环境安全和可靠性配置
+- Use multi-stage builds to separate the build environment from the runtime environment, so the final image contains only the files needed to run.
+- Use Nginx as a static file server plus reverse proxy, with SPA route support and gzip compression configured.
+- Inject environment variables either by substituting template variables with `sed` or via a standalone `config.js` file.
+- Use Docker Compose to orchestrate the frontend, backend, and dependent services—`docker-compose.yml` doubles as architecture documentation.
+- In CI/CD, build the Docker image and push it to a registry; deployment only needs to pull and restart.
+- Pay attention to production safety and reliability settings such as `.dockerignore`, a non-root user, and health checks.

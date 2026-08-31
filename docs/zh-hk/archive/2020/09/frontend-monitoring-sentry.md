@@ -66,7 +66,7 @@ const asyncHandler = (fn) => (req, res, next) =>
 
 app.get('/api/users/:id', asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id)
-  if (!user) throw new AppError(404, '用户不存在')
+  if (!user) throw new AppError(404, '用戶不存在')
   res.json({ data: user })
 }))
 
@@ -153,7 +153,7 @@ const asyncHandler = (fn) => (req, res, next) =>
 
 app.get('/api/users/:id', asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id)
-  if (!user) throw new AppError(404, '用户不存在')
+  if (!user) throw new AppError(404, '用戶不存在')
   res.json({ data: user })
 }))
 

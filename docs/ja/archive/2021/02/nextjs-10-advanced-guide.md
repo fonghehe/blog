@@ -7,14 +7,14 @@ tags:
 
 readingTime: 3
 description: "Next.js 11 新特性 Image Optimizationのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 506
+wordCount: 509
 ---
 
-Next.js 11 新特性 Image Optimizationのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
+Next.js 11 の新機能「Image Optimization」のフロントエンド開発での活用が広まりつつある。本記事では実際のプロジェクトをベースに、コアな原理とベストプラクティスを掘り下げる。
 
 ## 基本的な使い方
 
-完全な例を以下に示します：
+全体のサンプルを以下に示す：
 
 ```javascript
 import { useState, useEffect, useCallback } from 'react'
@@ -43,7 +43,7 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ## 高度な使い方
 
-コアロジックを理解することが重要です：
+コアロジックを理解することが重要だ：
 
 ```javascript
 import { Suspense } from 'react'
@@ -62,11 +62,11 @@ export default async function HomePage() {
 
 ```
 
-パフォーマンスの最適化は具体的なシナリオに合わせる必要があり、すべてのケースで過度な最適化が必要というわけではありません。
+パフォーマンスの最適化は具体的な場面（ケース）に合わせる必要があり、すべてのケースで過度な最適化が必要というわけではない。
 
 ## 実践事例
 
-以下の方法で改善できます：
+以下の方法で改善できる：
 
 ```javascript
 import { useReducer, useCallback } from 'react'
@@ -85,11 +85,11 @@ function reducer(state, action) {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
+このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## パフォーマンス最適化
 
-まず基本的な実装方法を見てみましょう：
+基本的な実装方法を見てみよう：
 
 ```javascript
 import { NextRequest, NextResponse } from 'next/server'
@@ -113,11 +113,11 @@ export async function POST(request: NextRequest) {
 
 ```
 
-このコードは基本的な使い方を示しています。実際のプロジェクトではエラー処理と境界条件も考慮する必要があります。
+このコードは基本的な使い方を示している。実際のプロジェクトではエラー処理と境界条件も考慮する必要がある。
 
 ## よくある落とし穴
 
-この基盤の上でさらに最適化できます：
+この基礎の上でさらに最適化できる：
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -140,10 +140,10 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このパターンは大規模プロジェクトで非常に実用的で、保守コストを大幅に削減できます。
+このパターンは大規模プロジェクトで非常に実用的で、保守コストを大幅に削減できる。
 
 ## まとめ
 
-- コードサンプルは参考用のみであり、ビジネスシナリオに応じて調整が必要です
-- Next.js 11 新特性 Image Optimization不是银弹，需要根据项目规模和技术栈选择
-- 基礎的な原理を理解することは、APIを暗記することより重要です
+- コードサンプルは参考用に過ぎず、実際のプロジェクトに応じて調整が必要だ
+- Next.js 11 の新機能「Image Optimization」は銀の弾丸ではなく、プロジェクトの規模と技術スタックに応じて選ぶ必要がある
+- 基礎的な原理を理解することは、API を暗記することより重要だ

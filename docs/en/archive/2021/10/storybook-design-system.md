@@ -6,11 +6,11 @@ tags:
   - Frontend
 
 readingTime: 2
-description: "关于Storybook 驱动 Design System，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production persp"
-wordCount: 188
+description: "Many developers only know Storybook-driven design systems at the tool level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 184
 ---
 
-关于Storybook 驱动 Design System，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+When it comes to Storybook-driven design systems, many developers only engage with it at the API-call level. This article looks at the real problems and solutions from a production-environment perspective.
 
 ## Basic Principles
 
@@ -117,4 +117,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Storybook 驱动 Design System不是银弹，需要根据项目规模和技术栈选择
+- Storybook-driven design systems are not a silver bullet; choose based on project size and tech stack

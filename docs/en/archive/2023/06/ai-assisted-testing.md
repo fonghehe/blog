@@ -4,11 +4,11 @@ date: 2023-06-16 11:47:09
 tags:
   - Frontend
 readingTime: 2
-description: "AI 辅助测试用例生成 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 203
+description: "AI-assisted test case generation is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 194
 ---
 
-AI 辅助测试用例生成 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+AI-assisted test case generation is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
 
 ## Basic Usage
 
@@ -153,4 +153,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- AI 辅助测试用例生成不是银弹，需要根据项目规模和技术栈选择
+- AI-assisted test case generation is not a silver bullet — choose based on your project scale and tech stack

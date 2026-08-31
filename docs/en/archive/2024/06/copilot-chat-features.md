@@ -4,8 +4,8 @@ date: 2024-06-04 09:38:15
 tags:
   - Engineering
 readingTime: 1
-description: "In daily development, GitHub Copilot Chat 新特性 is used more and more frequently. This article systematically explains its usage, principles, and optimization str"
-wordCount: 201
+description: "GitHub Copilot Chat's new features is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
+wordCount: 182
 ---
 
 In daily development, GitHub Copilot Chat 新特性 is used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -120,7 +120,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- GitHub Copilot Chat 新特性不是银弹，需要根据项目规模和技术栈选择
+- Keep an eye on community trends; technical approaches need continuous iteration
+- Don't adopt new technology just for the sake of it
+- Code samples are for reference only and need adjusting to your business scenario
+- GitHub Copilot Chat's new features is not a silver bullet — choose based on your project scale and tech stack

@@ -5,10 +5,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "JavaScript globalThis 跨环境统一在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 307
+wordCount: 312
 ---
 
-JavaScript globalThis 跨环境统一在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+JavaScript 的 globalThis 实现了跨环境统一访问，在前端开发中用得越来越广。本文从实际项目出发，深入聊聊它的核心原理和最佳实践。
 
 ## 基础用法
 

@@ -4,70 +4,70 @@ date: 2020-12-30 14:36:05
 tags:
   - Frontend
 readingTime: 2
-description: "2020 年是改变一切的一年。疫情、居家、不确定性……同时也是技术突破的一年。"
-wordCount: 550
+description: "A year-end retrospective of 2020, reflecting on a year defined by pandemic, lockdown, and uncertainty alongside significant technical breakthroughs."
+wordCount: 398
 ---
 
-2020 年是改变一切的一年。疫情、居家、不确定性……同时也是技术突破的一年。
+2020 was the year everything changed. A pandemic, lockdown, uncertainty — and yet it was also a year of technical breakthroughs.
 
 ## Technically
 
-**Vue 3 正式版**
+**Vue 3 stable release**
 
-等了一年多，终于来了。9 月发布后，我们内部新项目开始用 Vue 3 + Vite。开发体验比 Vue 2 + Webpack 好很多，特别是启动速度。
+After more than a year of waiting, it finally arrived. Once it shipped in September, our internal greenfield projects moved to Vue 3 + Vite. The developer experience is far better than Vue 2 + Webpack — especially startup speed.
 
-Composition API 用熟之后，真的很爽——逻辑复用清晰，TypeScript 支持好。但生态还不完整，Element Plus 还在 Beta，用了一些社区组件库踩了不少坑。
+Once you get used to the Composition API, it really clicks — logic reuse is clean and TypeScript support is solid. But the ecosystem still isn't complete: Element Plus is still in beta, and we hit quite a few rough edges with some community component libraries.
 
 **Vite 1.0**
 
-12 月发布，决定在下个项目全面采用。告别 60 秒启动。
+Released in December; we've decided to adopt it wholesale on the next project. Goodbye 60-second startup.
 
-**远程工作适应**
+**Adapting to remote work**
 
-三月开始居家，到现在已经 9 个月了。逐渐接受并优化了远程工作方式：
+I started working from home in March, and it's been nine months now. I gradually accepted remote work and optimized how I do it:
 
-- 异步沟通为主，减少无效会议
-- 文档先行，代码 Review 更认真
-- 专注时间反而比在公司更长
+- Async-first communication, fewer pointless meetings
+- Docs before code, more careful code reviews
+- Actually more focused time than in the office
 
-**深入了解的技术**
+**Technologies I went deep on**
 
-- Vue 3 Composition API 源码
-- React Concurrent Mode（还在等正式版）
-- Vite 的 ESM 原理
-- 前端监控系统（自建了一套简单的）
+- Vue 3 Composition API source code
+- React Concurrent Mode (still waiting for the stable release)
+- How Vite's ESM works under the hood
+- A frontend monitoring system (built a simple in-house one)
 
 ## What I Didn't Finish in 2020
 
-- 算法刷题：计划每周三题，实际平均每月五题（😅）
-- 开源贡献：提了几个 issue，但没有实质性 PR
-- 技术分享：团队内分享 3 次，计划的 6 次
+- Algorithm practice: planned three problems a week, actually averaged about five a month 😅
+- Open source: filed a few issues, but no substantial PRs
+- Tech talks: gave 3 internal talks, planned 6
 
 ## The Most Impactful Thing
 
-被迫全面转向异步远程工作，让我意识到：
+Being forced to go fully async and remote made me realize:
 
-**写作能力对工程师很重要。**
+**Writing matters for engineers.**
 
-当面沟通成本低，可以用语气和肢体语言补充信息。文字沟通没有这些，必须把事情说清楚。这一年我写了更多技术文档、设计文档，沟通质量反而提升了。
+Face-to-face communication is cheap — you can fill in gaps with tone and body language. Written communication has none of that, so you have to state things clearly. This year I wrote more technical docs and design docs, and communication quality actually improved.
 
 ## 2021 Plans
 
-技术：
+Technically:
 
-- 深入 React 18 新特性（Concurrent Mode 应该正式了）
-- Vite 2 生产实践
-- 系统学习算法（认真的那种，每天 1 题）
-- 开始看英文技术书（SICP）
+- Go deep on React 18's new features (Concurrent Mode should be stable by then)
+- Put Vite 2 into production
+- Study algorithms systematically (for real this time — one problem a day)
+- Start reading English tech books (SICP)
 
-工程：
+Engineering:
 
-- 搭建团队前端监控系统
-- 推动组件库建设
+- Build the team's frontend monitoring system
+- Drive component-library development
 
-个人：
+Personally:
 
-- 博客每月至少 4 篇（不断更了）
-- 锻炼身体（居家久坐太糟糕了）
+- Blog at least 4 posts a month (no more gaps)
+- Exercise (sitting all day at home is terrible)
 
-2020 在混乱中度过，但混乱也是成长的土壤。2021 加油。
+2020 passed in chaos, but chaos is also fertile soil for growth. Onward to 2021.

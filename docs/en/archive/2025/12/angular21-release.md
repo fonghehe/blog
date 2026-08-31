@@ -4,11 +4,11 @@ date: 2025-12-17 15:31:08
 tags:
   - Angular
 readingTime: 2
-description: "Angular 21 于 2025 年 11 月 19 日正式发布。这是 Angular 自 2022 年启动\"Signal 化转型\"以来最具里程碑意义的版本——Signal Forms 正式稳定，意味着 Angular 组件的所有核心 API（输入、输出、查询、变更检测、表单）已完全 Signal 化。Angular"
-wordCount: 320
+description: "Angular 21 was officially released on November 19, 2025. This is the most milestone release since Angular began its Signals transition in 2022 — Signal Forms is officially stable, meaning all core Angular component APIs (inputs, outputs, queries, change detection, forms) are now fully signal-based."
+wordCount: 276
 ---
 
-Angular 21 于 2025 年 11 月 19 日正式发布。这是 Angular 自 2022 年启动"Signal 化转型"以来最具里程碑意义的版本——Signal Forms 正式稳定，意味着 Angular 组件的所有核心 API（输入、输出、查询、变更检测、表单）已完全 Signal 化。Angular 的现代化转型，至此划上了句号。
+Angular 21 was officially released on November 19, 2025. This is the most milestone release since Angular began its Signals transition in 2022 — Signal Forms is officially stable, meaning all core Angular component APIs (inputs, outputs, queries, change detection, forms) are now fully signal-based.
 
 ## Angular 21 稳定化的 API 清单
 

@@ -5,9 +5,9 @@ tags:
   - Web3
   - Blockchain
   - DApp
-readingTime: 14
+readingTime: 8
 description: "From contract deployment to frontend network switching, a complete guide to Polygon Layer2 DApp adaptation"
-wordCount: 3800
+wordCount: 557
 ---
 
 ## Polygon Network Overview

@@ -5,14 +5,14 @@ tags:
   - CSS
 readingTime: 4
 description: "CSS Houdini 是 W3C 提出的一組底層 CSS API，它讓開發者可以直接接入 CSS 渲染引擎的各個階段。其中 Paint API 是目前瀏覽器支援度最好的一個，它允許我們用 JavaScript 繪製自定義的 CSS 圖案，替代傳統的背景圖方案。"
-wordCount: 685
+wordCount: 687
 ---
 
 CSS Houdini 是 W3C 提出的一組底層 CSS API，它讓開發者可以直接接入 CSS 渲染引擎的各個階段。其中 Paint API 是目前瀏覽器支持度最好的一個，它允許我們用 JavaScript 繪製自定義的 CSS 圖案，替代傳統的背景圖方案。
 
 ## 什麼是 CSS Paint API
 
-傳統方式下，如果我們想實現一個複雜的背景效果（比如漸變網格、波浪線、動態斑點），要麼用 CSS 漸變拼湊，要麼用圖片，要麼用 SVG。CSS Paint API 提供了第四種方案：用 JavaScript 編寫繪製邏輯，然後像 CSS 函數一樣直接調用。
+傳統方式下，如果我們想實現一個複雜的背景效果（比如漸變網格、波浪線、動態斑點），可以用 CSS 漸變拼湊，也可以用圖片，還可以用 SVG。CSS Paint API 提供了第四種方案：用 JavaScript 編寫繪製邏輯，然後像 CSS 函數一樣直接調用。
 
 ```css
 /* 傳統方式 */
@@ -112,7 +112,7 @@ if ('paintWorklet' in CSS) {
 
 ## 使用 inputProperties 響應 CSS 變量
 
-Paint API 最強大的地方在於它可以讀取 CSS 自定義屬性（CSS Variables），這意味着繪製行為可以完全由 CSS 控製：
+Paint API 最強大的地方在於它可以讀取 CSS 自定義屬性（CSS Variables），這意味着繪製行為可以完全由 CSS 控制：
 
 ```js
 class GradientWavePainter {
@@ -295,7 +295,7 @@ function startSkeletonAnimation() {
 
 - CSS Paint API 是 Houdini 規範中最成熟的模塊，Chrome 已完整支持
 - 通過 `registerPaint()` 註冊繪製器，用 Canvas 2D 子集 API 繪製
-- `inputProperties` 可以讀取 CSS 自定義屬性，實現聲明式控製
+- `inputProperties` 可以讀取 CSS 自定義屬性，實現聲明式控制
 - Worklet 運行在獨立線程，不會阻塞主線程
 - 適合用於背景圖案、邊框裝飾、佔位圖等純視覺效果
 - 動畫需要在主線程修改 CSS 變量來觸發重繪

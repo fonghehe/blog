@@ -4,7 +4,7 @@ date: 2022-04-28 15:09:24
 tags:
   - Frontend
 readingTime: 2
-description: "Redux Toolkit 2.0 迁移指南 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pro"
+description: "The Redux Toolkit 2.0 migration guide is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 169
 ---
 

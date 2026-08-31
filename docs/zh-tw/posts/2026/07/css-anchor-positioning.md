@@ -3,9 +3,9 @@ title: "CSS Anchor Positioning 實戰：宣告式定位的新範式"
 date: 2026-07-08 14:50:02
 tags:
   - CSS
-readingTime: 6
+readingTime: 8
 description: "CSS Anchor Positioning API 讓浮動元素的定位從 JavaScript 回歸 CSS。本文詳解 anchor-name、position-anchor、position-try 等核心屬性，透過 Tooltip、Popover、Dropdown 的純 CSS 實作展示宣告式定位的實踐。"
-wordCount: 2600
+wordCount: 1600
 ---
 
 前端開發中，浮動元素的定位一直是個讓人頭疼的問題。Tooltip、Popover、Dropdown 這些元件的核心需求很簡單——「貼著某個元素顯示」，但實作起來卻需要處理邊界檢測、翻轉、偏移、捲動跟隨等一整套邏輯。Floating UI、Popper.js 等函式庫的存在本身就說明了這個問題的複雜度。CSS Anchor Positioning API 的出現，讓這一切回歸到 CSS 的宣告式範式。

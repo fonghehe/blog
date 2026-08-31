@@ -5,11 +5,11 @@ tags:
   - CSS
 
 readingTime: 1
-description: "最近在团队中落地CSS 滚动驱动动画 Scroll Animations， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 200
+description: "I recently shipped CSS scroll-linked animations with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 184
 ---
 
-最近在团队中落地CSS 滚动驱动动画 Scroll Animations， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently adopted CSS scroll-driven animations (Scroll Animations) on our team and gained quite a bit of experience. Here's a summary in case it helps anyone doing similar work.
 
 ## Core Concepts
 
@@ -123,5 +123,5 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- CSS 滚动驱动动画 Scroll Animations不是银弹，需要根据项目规模和技术栈选择
+- CSS scroll-driven animations (Scroll Animations) are no silver bullet—choose them based on your project's size and tech stack.
 - Understanding underlying principles is more important than memorizing APIs

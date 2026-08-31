@@ -1,5 +1,5 @@
 ---
-title: "Rspack 2.0 Production Landing: 大型Project Webpack MigrationCompleteRecord"
+title: "Rspack 2.0 in Production: A Complete Record of Migrating a Large Project from Webpack"
 date: 2025-11-13 19:47:24
 tags:
   - Frontend

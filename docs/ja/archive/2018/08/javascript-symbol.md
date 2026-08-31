@@ -4,13 +4,13 @@ date: 2018-08-28 15:30:12
 tags:
   - JavaScript
 readingTime: 2
-description: "SymbolはES6で追加されたプリミティブ型ですが、いつ使えばいいか分からない人が多いです。いくつかの実践的なシナリオを紹介します。"
-wordCount: 384
+description: "SymbolはES6で追加されたプリミティブ型ですが、いつ使えばいいか分からない人が多いです。いくつかの実践的なユースケースを紹介します。"
+wordCount: 386
 ---
 
-SymbolはES6で追加されたプリミティブ型ですが、いつ使えばいいか分からない人が多いです。いくつかの実践的なシナリオを紹介します。
+SymbolはES6で追加されたプリミティブ型ですが、いつ使えばいいか分からない人が多いです。いくつかの実践的なユースケースを紹介します。
 
-## 核心的な特性：唯一性
+## 本質的な特性：唯一性
 
 ```javascript
 const s1 = Symbol("description");
@@ -156,7 +156,7 @@ const MY_KEY = Symbol.for("app:my-key"); // moduleAと同じSymbol
 
 ## まとめ
 
-- Symbolの核心：唯一で不変
+- Symbolの本質：唯一で不変
 - ユースケース：プロパティ名の衝突回避、唯一の列挙値、「プライベート」プロパティ
 - Well-known Symbol：`Symbol.iterator`、`Symbol.toPrimitive`などでオブジェクトの動作をカスタマイズ可能
 - `Symbol.for`：グローバル登録、モジュール間での共有

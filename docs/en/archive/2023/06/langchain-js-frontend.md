@@ -4,11 +4,11 @@ date: 2023-06-20 17:22:12
 tags:
   - Frontend
 readingTime: 2
-description: "最近在团队中落地LangChain.js 前端 AI 应用， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 208
+description: "I recently applied LangChain.js for frontend AI applications with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 195
 ---
 
-最近在团队中落地LangChain.js 前端 AI 应用， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+I recently applied LangChain.js for frontend AI applications with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
 
 ## Core Concepts
 
@@ -152,6 +152,6 @@ This approach has been running stably in production for over six months and has 
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- LangChain.js 前端 AI 应用不是银弹，需要根据项目规模和技术栈选择
+- LangChain.js for frontend AI applications is not a silver bullet — choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production

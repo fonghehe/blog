@@ -8,7 +8,7 @@ description: "Rspack Rust 前端構建工具這個話題社區討論了很多次
 wordCount: 271
 ---
 
-Rspack Rust 前端構建工具這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
+Rspack Rust 前端構建工具這個話題社群討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
 
 ## 入門指南
 
@@ -72,7 +72,7 @@ module.exports = {
 
 ## 真實場景應用
 
-實際項目中的用法會更復雜一些：
+實際項目中的用法會更複雜一些：
 
 ```javascript
 import { defineConfig } from 'vite'

@@ -16,12 +16,12 @@ HTTP 緩存是前端性能優化的重要一環，但很多人對強緩存和協
 請求資源
   ↓
 瀏覽器有緩存?
-  → 否：直接請求服務器
+  → 否：直接請求伺服器
   → 是：檢查強緩存（Cache-Control / Expires）
        → 未過期：直接用緩存（200 from cache）
        → 已過期：協商緩存（發請求帶 If-None-Match / If-Modified-Since）
-                 → 服務器返回 304：用本地緩存
-                 → 服務器返回 200：用新資源
+                 → 伺服器返回 304：用本地緩存
+                 → 伺服器返回 200：用新資源
 ```
 
 ## 強緩存
@@ -31,9 +31,9 @@ HTTP 緩存是前端性能優化的重要一環，但很多人對強緩存和協
 Cache-Control: max-age=31536000  # 緩存 1 年（秒）
 Cache-Control: no-cache          # 不使用強緩存（還是會協商）
 Cache-Control: no-store          # 完全不緩存
-Cache-Control: private           # 隻能瀏覽器緩存，不能 CDN 緩存
+Cache-Control: private           # 只能瀏覽器緩存，不能 CDN 緩存
 Cache-Control: public            # 可以 CDN 緩存
-Expires: Wed, 23 Feb 2020 00:00:00 GMT  # 老式寫法，以服務器時間為準
+Expires: Wed, 23 Feb 2020 00:00:00 GMT  # 老式寫法，以伺服器時間為準
 ```
 
 `Cache-Control` 優先級高於 `Expires`，現代項目用 `Cache-Control`。
@@ -49,9 +49,9 @@ Last-Modified: Tue, 22 Feb 2019 10:00:00 GMT
 If-None-Match: "abc123"               # 上次的 ETag
 If-Modified-Since: Tue, 22 Feb 2019 10:00:00 GMT
 
-# 服務器響應：沒有改變
+# 伺服器響應：沒有改變
 HTTP/1.1 304 Not Modified             # 瀏覽器用本地緩存
-# 服務器響應：已改變
+# 伺服器響應：已改變
 HTTP/1.1 200 OK + 新資源
 ```
 
@@ -95,7 +95,7 @@ module.exports = {
     chunkFilename: "[name].[contenthash:8].chunk.js",
   },
   optimization: {
-    // 確保 vendor 的 hash 穩定（隻有依賴變化才變）
+    // 確保 vendor 的 hash 穩定（只有依賴變化才變）
     moduleIds: "hashed",
     runtimeChunk: "single", // runtime 單獨打包，避免影響其他 chunk 的 hash
     splitChunks: {
@@ -113,14 +113,14 @@ module.exports = {
 
 這樣配置後：
 
-- `index.html`：服務器 `no-cache`，每次驗證
+- `index.html`：伺服器 `no-cache`，每次驗證
 - `vendors.xxx.js`：第三方庫變化才重新下載（長期緩存）
-- `app.xxx.js`：業務代碼，改了 hash 變，強製更新
+- `app.xxx.js`：業務代碼，改了 hash 變，強制更新
 
 ## Service Worker 緩存
 
 ```javascript
-// sw.js：更精細的緩存控製
+// sw.js：更精細的緩存控制
 const CACHE_NAME = "v1";
 const STATIC_ASSETS = ["/app.js", "/styles.css"];
 

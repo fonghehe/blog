@@ -40,7 +40,7 @@ function processResponse(response) {
 ## Top-level await
 
 ```javascript
-// 以前：必須包在 async 函數里
+// 以前：必須包在 async 函數裡
 async function main() {
   const config = await loadConfig();
   const db = await connectDB(config);
@@ -57,7 +57,7 @@ const data = await response.json();
 console.log("配置加載完成:", config);
 console.log("數據獲取完成:", data);
 
-// 注意：隻能在 .mjs 或 package.json 中 type: "module" 的檔案中使用
+// 注意：只能在 .mjs 或 package.json 中 type: "module" 的檔案中使用
 ```
 
 ```json

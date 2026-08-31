@@ -4,11 +4,11 @@ date: 2022-10-06 15:28:41
 tags:
   - Vue
 readingTime: 2
-description: "最近在团队中落地Vue 3.2 defineOptions， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 211
+description: "We recently adopted Vue 3.2 defineOptions in our team, and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
+wordCount: 190
 ---
 
-最近在团队中落地Vue 3.2 defineOptions， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently adopted Vue 3.2 defineOptions in our team, and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
 
 ## Core Concepts
 
@@ -120,7 +120,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates the basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Important Notes
 
@@ -152,5 +152,5 @@ This pattern is very practical in large projects and can significantly reduce ma
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vue 3.2 defineOptions不是银弹，需要根据项目规模和技术栈选择
+- Vue 3.2 defineOptions is not a silver bullet; choose based on your project scale and tech stack
 - Understanding underlying principles is more important than memorizing APIs

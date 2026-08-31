@@ -202,7 +202,7 @@ function Counter() {
       console.log('當前值:', countRef.current);
     }, 1000);
     return () => clearInterval(timer);
-  }, []); // 空依賴，隻創建一次
+  }, []); // 空依賴，只創建一次
 
   return <button onClick={() => setCount(c => c + 1)}>{count}</button>;
 }

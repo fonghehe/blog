@@ -5,7 +5,7 @@ tags:
   - Angular
 readingTime: 3
 description: "Angular 23 の Zoneless 変更検出は Zone.js の依存を完全に排除し、アプリケーションのパフォーマンス向上とデバッグの明確化を実現する。Zoneless の動作原理、移行戦略、パフォーマンス向上について解説する。"
-wordCount: 539
+wordCount: 543
 ---
 
 Angular 23 の Zoneless 変更検出は、Angular アーキテクチャにおける大きな革新だ。Zone.js への依存を排除し、変更検出をより予測可能で効率的にした。
@@ -31,11 +31,11 @@ Zone.js の問題：
 1. **パフォーマンスオーバーヘッド**：非同期操作ごとに変更検出が発生する可能性
 2. **デバッグ困難**：エラースタックが Zone.js でラップされる
 3. **予測不可能**：いつ変更検出が発生するかわからない
-4. **バンドルサイズ膨張**：Zone.js 自体が約 15KB
+4. **バンドルサイズの肥大化**：Zone.js 自体が約 15KB
 
 ## Zoneless の動作原理
 
-Zoneless モードでは、変更検出は開発者によって明示的に制御される：
+Zoneless モードでは、変更検出を開発者が明示的に制御する：
 
 ```typescript
 @Component({
@@ -190,4 +190,4 @@ export class ProductListComponent {
 
 ## まとめ
 
-Angular 23 の Zoneless 変更検出は、アプリケーションをより効率的で予測可能にする。移行は段階的に行い、手動マークより Signal を優先的に使用すべきだ。2026 年の Angular 開発において、Zoneless はオプションではなく推奨されるベストプラクティスである。
+Angular 23 の Zoneless 変更検出は、アプリケーションをより効率的で予測可能にする。移行は段階的に進め、手動で変更をマークするよりも Signal を優先して使うべきだ。2026 年の Angular 開発において、Zoneless はオプションではなく推奨されるベストプラクティスである。

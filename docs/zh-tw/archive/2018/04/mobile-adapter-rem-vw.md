@@ -29,7 +29,7 @@ wordCount: 566
 
 - `width=device-width`：視口寬度等於裝置寬度
 - `initial-scale=1.0`：初始縮放比例 1:1
-- `user-scalable=no`：禁止使用者縮放（爭議：無障礙訪問需要能縮放）
+- `user-scalable=no`：禁止使用者縮放（爭議：無障礙瀏覽需要能縮放）
 
 ## 方案二：rem + flexible.js
 

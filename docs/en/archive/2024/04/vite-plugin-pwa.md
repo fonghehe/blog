@@ -5,8 +5,8 @@ tags:
   - Vite
   - PWA
 readingTime: 2
-description: "关于Vite PWA 插件最佳实践，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective"
-wordCount: 206
+description: "Many developers only know Vite PWA plugin best practices at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
+wordCount: 185
 ---
 
 关于Vite PWA 插件最佳实践，Many developers stop at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -131,7 +131,7 @@ export default defineConfig({
 
 This code demonstrates the basic usage. In real projects, you'll also need to consider error handling and edge cases.
 
-## 踩坑记录
+## Pitfalls Log
 
 Building on this, we can further optimize:
 
@@ -161,6 +161,6 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Always verify compatibility thoroughly before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on community trends; technical approaches need continuous iteration

@@ -5,7 +5,7 @@ tags:
   - フロントエンドエンジニアリング
 readingTime: 3
 description: "チームは複数のフロントエンドプロジェクトを pnpm workspace に移行して半年が経ちました。ディスク使用量が60%削減され、インストール速度が顕著に向上し、ファントム依存関係の問題が完全に解決されました。この記事では移行プロセスを記録します。"
-wordCount: 584
+wordCount: 775
 ---
 
 チームは複数のフロントエンドプロジェクトを pnpm workspace に移行して半年が経ちました。ディスク使用量が60%削減され、インストール速度が顕著に向上し、ファントム依存関係の問題が完全に解決されました。この記事では移行プロセスを記録します。
@@ -30,7 +30,7 @@ pnpm store path
 
 ## プロジェクト構造
 
-我们前端 monorepo 的结构：
+私たちのフロントエンド monorepo の構造：
 
 ```
 frontend-monorepo/
@@ -48,7 +48,7 @@ frontend-monorepo/
 └── pnpm-lock.yaml
 ```
 
-## pnpm-workspace.yaml 配置
+## pnpm-workspace.yaml の設定
 
 ```yaml
 packages:
@@ -56,7 +56,7 @@ packages:
   - 'apps/*'
 ```
 
-根目录 `package.json`：
+ルートディレクトリの `package.json`：
 
 ```json
 {
@@ -91,7 +91,7 @@ pnpm -r add -D typescript
 pnpm add -D -w husky lint-staged
 ```
 
-安装后 `admin/package.json` 的依赖会是这样：
+インストール後、`admin/package.json` の依存関係は以下のようになる：
 
 ```json
 {
@@ -102,9 +102,9 @@ pnpm add -D -w husky lint-staged
 }
 ```
 
-`workspace:*` 表示永远使用本地版本，发布时 pnpm 会自动替换成真实版本号。
+`workspace:*` は常にローカルバージョンを使用することを意味し、公開時に pnpm が自動的に実際のバージョン番号に置き換える。
 
-## .npmrc 配置
+## .npmrc の設定
 
 ```ini
 # 使用严格模式，不能访问未声明的依赖
@@ -120,14 +120,14 @@ shared-workspace-lockfile=true
 auto-install-peers=false
 ```
 
-`node-linker` 有三个选项：
-- `isolated`（默认）：严格的符号链接结构，兼容性最差但最安全
-- `hoisted`：类似 npm/yarn 的扁平结构，兼容性最好
-- `hoisted`：折中方案
+`node-linker` には3つのオプションがある：
+- `isolated`（デフォルト）：厳密なシンボリックリンク構造、互換性は最も低いが最も安全
+- `hoisted`：npm/yarn に似たフラット構造、互換性が最も高い
+- `hoisted`：妥協案
 
-我们选 `hoisted` 是因为有些老依赖不支持严格的 node_modules 结构。
+私たちが `hoisted` を選んだのは、一部の古い依存関係が厳密な node_modules 構造をサポートしていないためだ。
 
-## 过滤器的妙用
+## フィルターの活用
 
 ```bash
 # 只执行 admin 及其依赖的 build
@@ -143,7 +143,7 @@ pnpm --filter '...ui-components' --filter 'admin...' build
 pnpm -r --no-filter docs test
 ```
 
-这在 CI 里特别有用——只 build 和 test 有变更的项目。
+これは CI で特に有用だ——変更があったプロジェクトだけを build・test できる。
 
 ## よくある落とし穴
 
@@ -163,9 +163,9 @@ pnpm -r --no-filter docs test
 }
 ```
 
-pnpm 对 peerDependencies 严格，每个消费方都需要显式安装 react。
+pnpm は peerDependencies に対して厳密で、各消費側は明示的に react をインストールする必要がある。
 
-### 2. Workspace 协议的版本范围
+### 2. Workspace プロトコルのバージョン範囲
 
 ```json
 "ui-components": "workspace:^"   // 发布时替换为 ^1.2.3
@@ -173,7 +173,7 @@ pnpm 对 peerDependencies 严格，每个消费方都需要显式安装 react。
 "ui-components": "workspace:~"   // 发布时替换为 ~1.2.3
 ```
 
-### 3. 脚本执行顺序
+### 3. スクリプトの実行順序
 
 ```bash
 # 按拓扑排序执行（先执行依赖，再执行消费方）
@@ -183,7 +183,7 @@ pnpm -r --workspace-concurrency=1 build
 pnpm -r build
 ```
 
-## 迁移步骤总结
+## 移行手順のまとめ
 
 ```bash
 # 1. 全局安装 pnpm
@@ -205,4 +205,4 @@ pnpm install
 
 ## まとめ
 
-pnpm workspace 在磁盘效率和依赖隔离上做到了最佳平衡。对于前端 monorepo，它是目前最务实的选择。接下来我会写 Turborepo 来做构建编排，配合 pnpm 组成完整的 monorepo 工具链。
+pnpm workspace はディスク効率と依存関係の分離において最適なバランスを実現している。フロントエンド monorepo にとって、現時点で最も実用的な選択肢だ。次回は Turborepo を使ったビルドオーケストレーションについて書き、pnpm と組み合わせた完全な monorepo ツールチェーンを紹介する予定だ。

@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "关于Fastify 高性能 API 服务端，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 302
+wordCount: 290
 ---
 
-关于Fastify 高性能 API 服务端，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+很多开发者对 Fastify 的理解还停留在 API 调用层面。本文尝试从生产环境出发，聊聊实际落地时遇到的问题和对应的解法。
 
 ## 基本原理
 
@@ -30,7 +30,7 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+这样既提升了可测试性，也方便后续扩展。
 
 ## 高级特性
 

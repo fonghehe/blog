@@ -1,5 +1,5 @@
 ---
-title: "Node.js 24 LTS In-Depth: 新特性Explained & MigrationGuide"
+title: "Node.js 24 LTS In Depth: New Features Explained and a Migration Guide"
 date: 2025-08-15 16:49:26
 tags:
   - Node.js

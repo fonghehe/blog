@@ -1,5 +1,5 @@
 ---
-title: "Bun Shell Scripting Practice: 替代 npm scripts RealProjectExperience"
+title: "Bun Shell Scripting in Practice 2024: Replacing npm Scripts in a Real Project"
 date: 2024-08-29 12:23:00
 tags:
   - Frontend

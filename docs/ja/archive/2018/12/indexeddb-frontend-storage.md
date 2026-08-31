@@ -5,10 +5,10 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "localStorage は文字列しか保存できず、容量は 5MB で、クエリも不便です。IndexedDB はブラウザ内蔵の NoSQL データベースで、容量は数百 MB に達し、トランザクションとインデックスクエリをサポートしており、オフラインアプリに適しています。"
-wordCount: 287
+wordCount: 282
 ---
 
-localStorage は文字列しか保存できず、容量は 5MB で、クエリも不便です。IndexedDB はブラウザ内蔵の NoSQL データベースで、容量は数百 MB に達し、トランザクションとインデックスクエリをサポートしており、オフラインアプリに適しています。
+localStorage は文字列しか保存できず、容量は 5MB で、クエリも不便だ。IndexedDB はブラウザ内蔵の NoSQL データベースで、容量は数百 MB に達し、トランザクションとインデックスクエリをサポートしており、オフラインアプリに適している。
 
 ## 基本概念
 
@@ -21,7 +21,7 @@ Database（データベース）
 
 ## シンプルなユーティリティクラスの実装
 
-IndexedDB のネイティブ API はイベントベースでやや煩雑なので、Promise にラップします：
+IndexedDB のネイティブ API はイベントベースでやや煩雑なので、Promise にラップする：
 
 ```javascript
 class IDB {
@@ -115,7 +115,7 @@ const article = await db.get("articles", "vue-reactivity");
 const all = await db.getAll("articles");
 ```
 
-## 実際のシナリオ：オフライン下書き
+## 実際の場面：オフライン下書き
 
 ```javascript
 class DraftManager {

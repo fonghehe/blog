@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "React 18 SSR 流式渲染 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
-wordCount: 185
+description: "React 18 SSR streaming rendering is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 175
 ---
 
-React 18 SSR 流式渲染 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+React 18 streaming SSR is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Getting Started
 
@@ -136,7 +136,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Summary
 
-- React 18 SSR 流式渲染不是银弹，需要根据项目规模和技术栈选择
+- React 18 streaming SSR is not a silver bullet; choose it based on your project's scale and tech stack.
 - Understanding underlying principles is more important than memorizing APIs
 - Always verify compatibility before using in production
 - In team collaboration, conventions and documentation are more important than the technology itself

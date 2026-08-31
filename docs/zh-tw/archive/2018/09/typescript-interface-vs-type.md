@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 1
 description: "剛學 TypeScript 時經常困惑：`interface` 和 `type` 都能定義型別，什麼時候用哪個？"
-wordCount: 222
+wordCount: 221
 ---
 
 剛學 TypeScript 時經常困惑：`interface` 和 `type` 都能定義型別，什麼時候用哪個？
@@ -28,7 +28,7 @@ type User = {
 // 兩者都可以：
 // - 描述物件結構
 // - 可選屬性 ?
-// - 隻讀屬性 readonly
+// - 只讀屬性 readonly
 // - 被 class implements
 // - 互相 extends/交叉
 ```
@@ -51,7 +51,7 @@ type Foo = { a: string };
 type Foo = { b: number }; // ❌ 報錯：重複宣告
 ```
 
-這對擴充套件全域性型別（如 `Window`、`Vue`）很有用。
+這對擴充套件全域型別（如 `Window`、`Vue`）很有用。
 
 ### 2. type 能表示更多型別
 

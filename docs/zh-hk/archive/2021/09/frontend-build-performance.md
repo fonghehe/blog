@@ -9,7 +9,7 @@ description: "最近幾個項目陸續從 Webpack 遷移到了 Vite，構建速�
 wordCount: 508
 ---
 
-最近幾個項目陸續從 Webpack 遷移到了 Vite，構建速度的差距比想象中大。這篇整理一下構建性能優化的思路，從 Webpack 調優到直接換 Vite 的決策過程。
+最近幾個項目陸續從 Webpack 遷移到了 Vite，構建速度的差距比想象中大。這篇整理一下構建效能優化的思路，從 Webpack 調優到直接換 Vite 的決策過程。
 
 ## Webpack 的瓶頸在哪
 
@@ -122,7 +122,7 @@ module.exports = {
 
 ### Webpack 調優的天花板
 
-實測一箇中型項目（200+ 模塊）：
+實測一個中型項目（200+ 模塊）：
 
 | 優化項 | 時間 |
 |--------|------|
@@ -170,7 +170,7 @@ import { createApp } from '/node_modules/.vite/deps/vue.js?v=abc123'
 
 - 依賴預構建：esbuild（Go 語言寫的，比 JS 快 10-100 倍）
 - 源碼按需編譯：ESM + 瀏覽器原生導入
-- HMR：隻編譯修改的檔案，和依賴圖大小無關
+- HMR：只編譯修改的檔案，和依賴圖大小無關
 
 ## 效能對比實測
 

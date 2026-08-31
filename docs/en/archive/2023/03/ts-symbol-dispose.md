@@ -4,11 +4,11 @@ date: 2023-03-23 14:31:49
 tags:
   - TypeScript
 readingTime: 1
-description: "TypeScript 5.2 Symbol.dispose在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 177
+description: "TypeScript 5.2 Symbol.dispose has evolved quickly in recent years. This article digs into how it works and how to apply it in practice."
+wordCount: 135
 ---
 
-TypeScript 5.2 Symbol.dispose在近年来发展迅速，本文将深入分析其原理和实践方法。
+TypeScript 5.2 Symbol.dispose has evolved quickly in recent years. This article digs into how it works and how to apply it in practice.
 
 ## Basic Concepts
 
@@ -44,7 +44,7 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Core Implementation
 
-核心代码如下：
+The core code is as follows:
 
 ```javascript
 // 核心实现
@@ -65,7 +65,7 @@ Be sure to handle edge cases and exceptions properly.
 
 ## Practical Application
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 使用示例
@@ -82,7 +82,7 @@ app.mount('#root')
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+With this pattern, the code's maintainability improves.
 
 ## Best Practices
 
@@ -118,6 +118,6 @@ It is recommended to unify conventions within the team to reduce inconsistency.
 
 ## Summary
 
-- 在实际项目中，选择合适的方案比追求最新技术更重要
-- 团队协作中保持代码风格一致，降低维护成本
-- 持续关注社区动态，及时更新技术方案
+- In real projects, choosing the right solution matters more than chasing the newest technology
+- Keep code style consistent across the team to cut maintenance costs
+- Keep an eye on community developments and update the technical approach in time

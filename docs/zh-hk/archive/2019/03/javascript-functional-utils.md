@@ -5,14 +5,14 @@ tags:
   - JavaScript
 readingTime: 1
 description: "函數式編程的核心工具函數在實際項目中並不遠。Redux middleware、Lodash/fp、RxJS 操作符背後都是這些思想。手寫實現能幫你完全吹散它們。"
-wordCount: 141
+wordCount: 146
 ---
 
-函數式編程的核心工具函數在實際項目中並不遠。Redux middleware、Lodash/fp、RxJS 操作符背後都是這些思想。手寫實現能幫你完全吹散它們。
+函數式編程的核心工具函數，在實際項目中其實並不遙遠。Redux middleware、Lodash/fp、RxJS 操作符背後都是這些思想。手寫實現能幫你完全掌握它們。
 
-## curry 梯度化
+## curry：分步接收參數
 
-將一個多參數函數轉成尚可以逐步接收參數的函數：
+將一個多參數函數轉成可以逐步接收參數的函數：
 
 ```javascript
 const curry = (fn) => {
@@ -100,14 +100,14 @@ const memoize = (fn) => {
   };
 };
 
-// 昂貴計算隻執行一次
+// 昂貴計算只執行一次
 const expensiveFn = memoize((n) => {
   // 模擬耗時計算
   return n * n;
 });
 ```
 
-## once 隻執行一次
+## once 只執行一次
 
 ```javascript
 const once = (fn) => {
@@ -122,7 +122,7 @@ const once = (fn) => {
   };
 };
 
-// 加載設定隻初始化一次
+// 加載設定只初始化一次
 const initConfig = once(async () => {
   const config = await fetch("/api/config").then((r) => r.json());
   return config;

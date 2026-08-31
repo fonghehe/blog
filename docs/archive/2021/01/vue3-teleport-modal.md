@@ -7,10 +7,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常开发中，Vue 3 Teleport 实现全局 Modal的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 312
+wordCount: 314
 ---
 
-在日常开发中，Vue 3 Teleport 实现全局 Modal的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+在日常开发中，Vue 3 Teleport 实现全局 Modal 的使用频率越来越高。本文系统讲解其用法、原理与优化策略。
 
 ## 快速上手
 
@@ -136,5 +136,5 @@ function useCounter(initial = 0) {
 ## 小结
 
 - 代码示例仅供参考，需根据业务场景调整
-- Vue 3 Teleport 实现全局 Modal不是银弹，需要根据项目规模和技术栈选择
+- Vue 3 Teleport 实现的全局 Modal 不是银弹，需要根据项目规模和技术栈选择
 - 理解底层原理比记住 API 更重要

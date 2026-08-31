@@ -6,15 +6,15 @@ tags:
   - TypeScript
 
 readingTime: 1
-description: "GraphQL 实时数据方案在近年来发展迅速，本文将深入分析其原理和实践方法。"
-wordCount: 183
+description: "Real-time data solutions with GraphQL have evolved quickly in recent years. This article digs into how they work and how to apply them in practice."
+wordCount: 140
 ---
 
-GraphQL 实时数据方案在近年来发展迅速，本文将深入分析其原理和实践方法。
+GraphQL real-time data solutions have developed rapidly in recent years. This article takes an in-depth look at their principles and practical approaches.
 
 ## Basic Concepts
 
-我们可以这样实现：
+Here is one way to implement it:
 
 ```javascript
 // 工具函数封装
@@ -42,7 +42,7 @@ function createHandler(options = {}) {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+This pattern improves the maintainability of the code.
 
 ## Core Implementation
 
@@ -120,6 +120,6 @@ In real projects, you need to make appropriate adjustments based on specific req
 
 ## Summary
 
-- 持续关注社区动态，及时更新技术方案
-- 性能优化需要基于实际数据，避免过度优化
-- GraphQL 实时数据方案的核心在于理解底层原理，而非仅仅记住 API
+- Keep up with the community and update your technical solutions in a timely manner
+- Performance optimization should be based on real data — avoid over-optimization
+- The core of GraphQL real-time solutions lies in understanding the underlying principles, not just memorizing APIs

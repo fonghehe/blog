@@ -5,9 +5,9 @@ tags:
   - Web3
   - DApp
   - Architecture
-readingTime: 12
+readingTime: 9
 description: "Web3 is a multi-chain world. Frontends need to connect to Ethereum, Polygon, Arbitrum, Optimism, BSC, and more simultaneously. This article systematically breaks down the architecture design, state management, and cross-chain data synchronization solutions for multi-chain DApps."
-wordCount: 3200
+wordCount: 530
 ---
 
 The Ethereum mainnet is no longer the sole deployment target for DApps. High gas fees and scaling needs have driven the growth of Layer 2s and sidechains. A typical DeFi protocol is now deployed across multiple chains—Ethereum, Polygon, Arbitrum, Optimism, and BSC among them. The frontend architecture challenges brought by multi-chain deployment are fundamental: how to manage different contract addresses on different chains, how to handle user chain switching, and how to synchronize cross-chain state.

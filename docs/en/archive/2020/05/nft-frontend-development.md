@@ -5,6 +5,9 @@ tags:
   - Web3
   - NFT
   - Ethereum
+readingTime: 8
+wordCount: 602
+description: "The ERC-721 standard was formally proposed in EIP-721 in January 2018, defining the interface specification for non-fungible tokens. Unlike ERC-20, where \"each "
 ---
 
 ## The ERC-721 Standard and Non-Fungible Tokens

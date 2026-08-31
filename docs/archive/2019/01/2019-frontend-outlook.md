@@ -5,14 +5,14 @@ tags:
   - 前端
 readingTime: 2
 description: "2018 年过得充实。React Hooks 在 React Conf 了亮相，Vue 3 RFC 开始公开审阅，TypeScript 在大型项目中的渗透率持续上升。展望 2019，我认为有几个方向尤其就展望。"
-wordCount: 511
+wordCount: 518
 ---
 
-2018 年过得充实。React Hooks 在 React Conf 了亮相，Vue 3 RFC 开始公开审阅，TypeScript 在大型项目中的渗透率持续上升。展望 2019，我认为有几个方向尤其就展望。
+2018 年过得充实。React Hooks 在 React Conf 上亮相，Vue 3 RFC 开始公开审阅，TypeScript 在大型项目中的渗透率持续上升。展望 2019，我认为有几个方向尤其值得关注。
 
 ## React Hooks 将改变写法
 
-React 16.8 打算 2019 Q1 正式发布 Hooks。这不是小改变，而是会影响整个 React 生态的范式转射。
+React 16.8 预计于 2019 Q1 正式发布 Hooks。这不是小改变，而是会影响整个 React 生态的范式转变。
 
 ```jsx
 // 之前：类组件
@@ -35,7 +35,7 @@ function Counter() {
 
 ## Vue 3 Composition API 正式落地
 
-Vue 3 的 Composition API RFC 已在 2018 年末公开，2019 年预计进入 alpha 阶段。核心思路是用函数投射替代选项对象，解决逐渐大型项目中的逻辑复用困题。
+Vue 3 的 Composition API RFC 已在 2018 年末公开，2019 年预计进入 alpha 阶段。核心思路是用函数组合替代选项对象，解决日益庞大的项目中的逻辑复用难题。
 
 ## TypeScript 全面普及
 
@@ -43,7 +43,7 @@ Vue 3 的 Composition API RFC 已在 2018 年末公开，2019 年预计进入 al
 
 ## WebAssembly 进入实用期
 
-Figma 用 WebAssembly 路线实现了浏覈器端的高性能渲染。尽管大多数前端工程师不会编写 Wasm，但了解它的使用场景（视频编制、CAD 渲染、加密库）越来越重要。
+Figma 用 WebAssembly 路线实现了浏览器端的高性能渲染。尽管大多数前端工程师不会编写 Wasm，但了解它的使用场景（视频编辑、CAD 渲染、加密库）越来越重要。
 
 ## 工程化：目标是消灭配置
 
@@ -62,4 +62,4 @@ Create React App、Vue CLI 3、Angular CLI 共同指向同一个目标：让开�
 
 ## 总结
 
-2019 年的主调是“更好的开发体验”：Hooks 让 React 组件更简洁，Composition API 让 Vue 逻辑更清晰，TypeScript 让重构更安全。展望是展望，仳第一个要把 2018 的知识消化成实力。
+2019 年的主调是“更好的开发体验”：Hooks 让 React 组件更简洁，Composition API 让 Vue 逻辑更清晰，TypeScript 让重构更安全。展望是展望，但最要紧的，还是先把 2018 年的知识消化成实力。

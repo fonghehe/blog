@@ -5,10 +5,10 @@ tags:
   - Node.js
 readingTime: 3
 description: "Node.js 26 は Streams の実装をリファクタリングし、Node.js Streams と Web Streams API を統一した。新しい Streams アーキテクチャと、これらの改善を活用した I/O パフォーマンスの向上について深く解説する。"
-wordCount: 528
+wordCount: 533
 ---
 
-Node.js の Streams は大規模 I/O 処理のコアであり続けているが、Node.js Streams と Web Streams の 2 つの API が並存していることは開発者に選択の困難をもたらしていた。Node.js 26 は、下層のリファクタリングにより、後方互換性を保ちながら 2 つの API の相互運用性をよりスムーズにした。
+Node.js の Streams は大規模 I/O 処理のコアであり続けているが、Node.js Streams と Web Streams という 2 つの API が並存し、開発者はどちらを使うべきか迷わされる状況が続いていた。Node.js 26 は、下層のリファクタリングにより、後方互換性を保ちながら 2 つの API の相互運用性をよりスムーズにした。
 
 ## 二重 Streams 体制の現状
 

@@ -4,13 +4,13 @@ date: 2022-03-02 14:50:11
 tags:
   - Angular
 readingTime: 2
-description: "Angular Router 是 Angular 生态中最成熟的路由方案之一。这篇文章深入讲解懒加载配置、路由守卫的各种形式以及大型应用的路由组织模式，适合已经熟悉基础 Angular 路由的开发者。"
-wordCount: 238
+description: "Angular Router is one of the most mature routing solutions in the Angular ecosystem. This article dives into lazy-loading configuration, the various forms of route guards, and routing organization patterns for large applications — aimed at developers already comfortable with basic Angular routing."
+wordCount: 157
 ---
 
-Angular Router 是 Angular 生态中最成熟的路由方案之一。这篇文章深入讲解懒加载配置、路由守卫的各种形式以及大型应用的路由组织模式，适合已经熟悉基础 Angular 路由的开发者。
+Angular Router is one of the most mature routing solutions in the Angular ecosystem. This article dives into lazy-loading configuration, the various forms of route guards, and routing organization patterns for large applications — aimed at developers already comfortable with basic Angular routing.
 
-## 懒加载配置
+## Lazy Loading Configuration
 
 ```typescript
 // app-routing.module.ts
@@ -35,12 +35,12 @@ const routes: Routes = [
 ];
 ```
 
-**canLoad vs canActivate 的区别**：
+**The difference between canLoad and canActivate**:
 
-- `canActivate`：每次访问路由时检查，但代码已下载
-- `canLoad`：阻止懒加载模块的代码**下载**，更彻底的权限控制
+- `canActivate`: checked every time the route is accessed, but the code has already been downloaded
+- `canLoad`: prevents the lazy-loaded module's code from being **downloaded** at all, providing more thorough access control
 
-## 路由守卫类型
+## Route Guard Types
 
 ```typescript
 // auth.guard.ts
@@ -76,7 +76,7 @@ export class AuthGuard implements CanActivate, CanLoad, CanActivateChild {
 }
 ```
 
-## 数据预加载（Resolver）
+## Data Preloading (Resolver)
 
 ```typescript
 // product.resolver.ts
@@ -111,7 +111,7 @@ export class ProductDetailComponent {
 }
 ```
 
-## 路由预加载策略
+## Route Preloading Strategies
 
 ```typescript
 // app.module.ts - 路由模块配置
@@ -145,7 +145,7 @@ export class SelectivePreloadingStrategy implements PreloadingStrategy {
 { path: 'products', data: { preload: true }, loadChildren: () => ... }
 ```
 
-## 大型应用路由组织
+## Routing Organization for Large Applications
 
 ```typescript
 // 按功能模块组织路由
@@ -169,7 +169,7 @@ const dashboardRoutes: Routes = [
 ];
 ```
 
-## 路由动画
+## Route Animations
 
 ```typescript
 @Component({
@@ -200,4 +200,4 @@ export class AppComponent {
 
 ## Summary
 
-Angular Router 的功能远不止基础路由配置。`canLoad` 在权限控制上比 `canActivate` 更彻底；`Resolve` 守卫确保组件渲染时数据已就绪；自定义预加载策略能精确控制模块下载时机。合理使用这些特性，可以让大型 Angular 应用的路由层既安全又高效。
+Angular Router goes far beyond basic route configuration. `canLoad` provides more thorough access control than `canActivate`; the `Resolve` guard ensures data is ready before a component renders; and custom preloading strategies give you precise control over when modules are downloaded. Used wisely, these features make the routing layer of a large Angular application both secure and efficient.

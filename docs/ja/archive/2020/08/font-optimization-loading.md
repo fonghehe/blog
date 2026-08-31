@@ -4,15 +4,15 @@ date: 2020-08-12 10:22:29
 tags:
   - パフォーマンス最適化
 readingTime: 2
-description: "在日常开发中，Web 字体加载优化策略的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 309
+description: "日々の開発でWeb フォント読み込み最適化戦略の利用頻度はますます高まっている。本記事ではその使い方・原理・最適化戦略を体系的に解説する。"
+wordCount: 473
 ---
 
-在日常开发中，Web 字体加载优化策略的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+日々の開発において、Web フォントの読み込み最適化戦略の利用頻度は高まっている。本記事ではその使い方、原理、最適化戦略を体系的に解説する。
 
 ## クイックスタート
 
-实际项目中的用法会更复杂一些：
+実際のプロジェクトでは、使い方はもう少し複雑になる：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -29,11 +29,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+この方法なら、コードのテスト容易性と拡張性の両方が高まる。
 
 ## 内部原理
 
-以下是一个完整的示例：
+以下は全体のサンプルだ：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -50,11 +50,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+境界条件の処理に注意すること。これは本番環境では極めて重要だ。
 
 ## ビジネス実践
 
-关键在于理解核心逻辑：
+肝心なのはコアとなるロジックを理解することだ：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -71,11 +71,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+パフォーマンス最適化は具体的な状況に合わせる必要があり、すべてのケースで過度な最適化が必要なわけではない。
 
 ## パフォーマンス比較
 
-我们可以通过以下方式来改进：
+次の方法で改善できる：
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -92,12 +92,12 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+このアプローチは本番環境で半年以上安定して動いており、実際に検証済みだ。
 
 ## まとめ
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Web 字体加载优化策略不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- コミュニティの動向を追い、技術的なアプローチは継続的に磨き込む
+- 新しい技術のために新しい技術を使ってはいけない
+- コード例はあくまで参考で、業務の場面に合わせて調整すること
+- Web フォントの読み込み最適化戦略は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある
+- API を丸暗記するよりも、その背後にある原理を理解する方が重要だ

@@ -1,18 +1,18 @@
 ---
-title: "React Concurrent Mode 2020: Experiment to Production第一步"
+title: "React Concurrent Mode 2020: From Experiment to Production"
 date: 2020-02-26 17:29:17
 tags:
   - React
 readingTime: 2
-description: "最近在团队中落地React Concurrent Mode 初探，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 341
+description: "We recently started adopting React Concurrent Mode on our team and gained valuable experience along the way. I'm sharing it here as a reference for anyone doing similar work."
+wordCount: 218
 ---
 
-最近在团队中落地React Concurrent Mode 初探，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+We recently started adopting React Concurrent Mode on our team and picked up quite a bit of experience along the way. I'm sharing it here as a reference, hoping it helps anyone doing similar work.
 
 ## Core Concepts
 
-我们可以通过以下方式来改进：
+Here's one way we can improve on this:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -35,11 +35,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## In-Depth Analysis
 
-先来看基本的实现方式：
+Let's start with the basic implementation:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -62,11 +62,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you still need to think about error handling and edge cases.
 
 ## Implementation Experience
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -89,11 +89,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very useful in large projects and noticeably lowers maintenance cost.
 
-## 调优策略
+## Tuning Strategies
 
-实际项目中的用法会更复杂一些：
+In real projects, usage gets a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -116,11 +116,11 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This way, both the testability and extensibility of the code improve.
 
 ## Important Notes
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'
@@ -143,12 +143,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — it's critical in production.
 
 ## Summary
 
-- 代码示例仅供参考，需根据业务场景调整
-- React Concurrent Mode 初探不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
+- The code examples are for reference only and should be adapted to your actual use case
+- Adopting Concurrent Mode isn't a silver bullet — choose based on your project's scale and tech stack
+- Understanding the underlying principles matters more than memorizing APIs
+- Be sure to validate compatibility before using it in production
+- In team collaboration, conventions and documentation matter more than the tech itself

@@ -4,7 +4,7 @@ date: 2024-01-15 16:44:54
 tags:
   - Frontend
 readingTime: 2
-description: "Astro 4 发布了，用了一年多 Astro 做内容站，说说它为什么适合某类项目，以及真实的工程化体验。"
+description: "Astro 4 is out. I've used Astro for content sites for over a year — here's why it fits certain projects, and what the engineering experience is really like."
 wordCount: 268
 ---
 
@@ -167,7 +167,7 @@ import { ViewTransitions } from 'astro:transitions'
 ---
 
 <head>
-  <ViewTransitions />  <!-- 启用页面过渡动画（MPA 也可以！）-->
+Astro 4 is out. I've used Astro for content sites for over a year — here's why it fits certain projects, and what the engineering experience is really like.
 </head>
 ```
 

@@ -4,7 +4,7 @@ date: 2023-12-04 14:50:02
 tags:
   - Frontend
 readingTime: 2
-description: "Zod Schema 校验进阶 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+description: "Advanced Zod schema validation is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 184
 ---
 

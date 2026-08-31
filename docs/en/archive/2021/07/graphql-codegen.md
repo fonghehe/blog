@@ -6,11 +6,11 @@ tags:
   - TypeScript
 
 readingTime: 2
-description: "最近在团队中落地GraphQL Code Generator 代码生成， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 164
+description: "We recently rolled out GraphQL Code Generator for code generation on our team and have picked up quite a bit of experience along the way. This is a summary I'm sharing for reference, in the hope that it helps anyone doing similar work."
+wordCount: 166
 ---
 
-最近在团队中落地GraphQL Code Generator 代码生成， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+We recently rolled out GraphQL Code Generator for code generation on our team and have picked up quite a bit of experience along the way. This is a summary I'm sharing for reference, in the hope that it helps anyone doing similar work.
 
 ## Core Concepts
 
@@ -76,7 +76,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Implementation Experience
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more involved:
 
 ```graphql
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
@@ -134,7 +134,7 @@ const client = new ApolloClient({
 
 ```
 
-Pay attention to boundary condition handling, which is critical in production.
+Pay attention to edge case handling, which is critical in production.
 
 ## Summary
 

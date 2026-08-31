@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常开发中，JavaScript 顶层 await 使用场景的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 303
+wordCount: 298
 ---
 
-在日常开发中，JavaScript 顶层 await 使用场景的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
+日常开发中，JavaScript 顶层 await 的使用场景越来越多。本文系统讲解它的用法、原理和优化策略。
 
 ## 快速上手
 

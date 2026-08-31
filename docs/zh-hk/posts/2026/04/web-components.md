@@ -5,7 +5,7 @@ tags:
   - Web Components
 readingTime: 2
 description: "關於Web Components 2026 成熟度，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 303
+wordCount: 299
 ---
 
 關於Web Components 2026 成熟度，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
@@ -36,7 +36,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-通過這種方式，代碼的可測試性和可擴展性都得到了提升。
+這樣做能同時提升代碼的可測試性和可擴展性。
 
 ## 高級特性
 
@@ -139,7 +139,7 @@ class TypedEmitter<T extends Record<string, any>> {
 ## 小結
 
 - 不要為了用新技術而用新技術
-- 代碼示例僅供參考，需根據業務場景調整
+- 代碼示例僅供參考，需根據應用場景調整
 - Web Components 2026 成熟度不是銀彈，需要根據項目規模和技術棧選擇
 - 理解底層原理比記住 API 更重要
 - 生產環境使用前務必做好兼容性驗證

@@ -8,16 +8,16 @@ tags:
   - JavaScript
   - TypeScript
 
-readingTime: 1
+readingTime: 2
 description: "Vite 2.0 正式发布！和 1.0 相比几乎是重写，最重要的变化是框架无关（不再绑定 Vue）。"
-wordCount: 227
+wordCount: 360
 ---
 
-Vite 2.0 正式发布！和 1.0 相比几乎是重写，最重要的变化是框架无关（不再绑定 Vue）。
+Vite 2.0 が正式リリースされた！1.0 と比べてほぼ書き直されており、最大の変更点はフレームワーク非依存（Vue 専用ではなくなった）になったことだ。
 
 ## コアの改善
 
-**框架无关**
+**フレームワーク非依存**
 
 ```bash
 # Vue 3
@@ -30,7 +30,7 @@ npm init vite@latest my-app -- --template react-ts
 npm init vite@latest my-app -- --template svelte-ts
 ```
 
-**插件 API 兼容 Rollup**
+**プラグイン API が Rollup と互換**
 
 ```javascript
 // vite.config.ts
@@ -92,7 +92,7 @@ npm install -D vite @vitejs/plugin-vue
 }
 ```
 
-**踩坑：process.env 不可用**
+**つまずきポイント：process.env が使えない**
 
 ```javascript
 // Vue CLI（Webpack）：使用 process.env
@@ -106,7 +106,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 // Vite：VITE_*
 ```
 
-**踩坑：require() 不可用**
+**つまずきポイント：require() が使えない**
 
 ```javascript
 // ❌ Vite 不支持 CommonJS require
@@ -129,9 +129,9 @@ const img = new URL("./image.png", import.meta.url).href;
 | 生产构建   | ~80s                | ~30s（Rollup） |
 | 配置复杂度 | 高                  | 低             |
 
-冷启动的差距在大项目里特别明显。
+コールドスタートの差は大規模なプロジェクトで特に顕著だ。
 
-## SSR 支持
+## SSR 対応
 
 ```javascript
 // vite.config.ts
@@ -145,11 +145,11 @@ export default defineConfig({
 });
 ```
 
-Vite 2 的 SSR 支持虽然还不够完善（和 Nuxt 比），但为 Nuxt 3 奠定了基础。
+Vite 2 の SSR 対応はまだ十分に成熟していない（Nuxt と比べると）が、Nuxt 3 の基礎を築いた。
 
 ## まとめ
 
-- Vite 2 最大变化：框架无关，Vue/React/Svelte 都支持
-- 迁移要注意：`process.env` → `import.meta.env`，`require` → `import`
-- 开发体验提升显著，新项目推荐用 Vite 替代 Vue CLI / Create React App
-- SSR 还不完善，需要 Nuxt 3 / Remix 等上层框架
+- Vite 2 最大の変化：フレームワーク非依存となり、Vue/React/Svelte すべてに対応。
+- 移行時の注意点：`process.env` → `import.meta.env`、`require` → `import` に変える。
+- 開発体験の向上は著しく、新規プロジェクトでは Vue CLI / Create React App の代わりに Vite を使うことを推奨する。
+- SSR はまだ成熟しておらず、Nuxt 3 / Remix などの上位フレームワークが必要だ。

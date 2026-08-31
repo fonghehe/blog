@@ -7,11 +7,11 @@ tags:
   - JavaScript
 
 readingTime: 1
-description: "Vue 3 script-setup 语法糖 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pro"
-wordCount: 176
+description: "The script setup syntax sugar is being adopted more and more widely. This article starts from real projects and digs into its mechanics and best practices."
+wordCount: 163
 ---
 
-Vue 3 script-setup 语法糖 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Vue 3's script-setup syntax sugar is being adopted more and more widely in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -64,7 +64,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Practical Cases
 
-实际项目中的用法会更复杂一些：
+In real projects the usage gets a bit more complex:
 
 ```javascript
 import { ref, computed, watch, onMounted } from 'vue'
@@ -114,5 +114,5 @@ Pay attention to boundary condition handling, which is critical in production.
 ## Summary
 
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Vue 3 script-setup 语法糖不是银弹，需要根据项目规模和技术栈选择
+- script-setup isn't a silver bullet; choose it based on your project's size and tech stack
 - Understanding underlying principles is more important than memorizing APIs

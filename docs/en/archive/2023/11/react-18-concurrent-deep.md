@@ -4,7 +4,7 @@ date: 2023-11-23 09:48:52
 tags:
   - React
 readingTime: 2
-description: "关于React 18 并发模式深入，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+description: "Many developers only scratch the surface of React 18 concurrent mode. This deep dive looks at it from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 191
 ---
 

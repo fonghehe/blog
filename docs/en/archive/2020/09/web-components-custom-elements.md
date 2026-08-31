@@ -4,23 +4,23 @@ date: 2020-09-30 14:45:02
 tags:
   - TypeScript
 readingTime: 2
-description: "Web Components 是浏览器原生的组件化方案，无需任何框架即可创建可复用的自定义 HTML 元素。2020 年所有主流浏览器均已支持，现在是深入了解它的好时机。"
-wordCount: 312
+description: "A practical guide to Web Components, the browser-native approach to creating reusable custom HTML elements without any framework, now supported across all major browsers."
+wordCount: 205
 ---
 
-Web Components 是浏览器原生的组件化方案，无需任何框架即可创建可复用的自定义 HTML 元素。2020 年所有主流浏览器均已支持，现在是深入了解它的好时机。
+Web Components are the browser's native componentization approach — you can create reusable custom HTML elements without any framework. By 2020 all major browsers support them, so now is a good time to dig in.
 
-## 三个核心 API
+## The Three Core APIs
 
 ```
 Web Components = Custom Elements + Shadow DOM + HTML Templates
 ```
 
-- **Custom Elements**：定义自定义 HTML 标签（`<my-button>`）
-- **Shadow DOM**：隔离的 DOM 子树，样式不外泄、不受外部影响
-- **HTML Templates**：`<template>` 标签，惰性解析的模板
+- **Custom Elements**: define custom HTML tags (`<my-button>`)
+- **Shadow DOM**: an isolated DOM subtree whose styles don't leak out and aren't affected from outside
+- **HTML Templates**: the `<template>` tag, a lazily parsed template
 
-## 创建第一个 Custom Element
+## Creating Your First Custom Element
 
 ```javascript
 class UserCard extends HTMLElement {
@@ -98,9 +98,9 @@ customElements.define("user-card", UserCard);
 </script>
 ```
 
-## Slots：内容投影
+## Slots: Content Projection
 
-类似 Vue 的 `<slot>` 或 Angular 的 `<ng-content>`：
+Similar to Vue's `<slot>` or Angular's `<ng-content>`:
 
 ```javascript
 class MyCard extends HTMLElement {
@@ -131,9 +131,9 @@ customElements.define("my-card", MyCard);
 </my-card>
 ```
 
-## 与框架集成
+## Integrating with Frameworks
 
-Custom Elements 可以无缝嵌入任何框架：
+Custom Elements can be embedded seamlessly into any framework:
 
 ```jsx
 // React 中使用
@@ -153,19 +153,19 @@ function App() {
 <user-card :name="user.name" :email="user.email" @follow="handleFollow" />
 ```
 
-## 何时选择 Web Components
+## When to Choose Web Components
 
-**适合**：
+**Good fits:**
 
-- 跨框架共享 UI 组件（设计系统）
-- 需要严格样式隔离的组件（第三方嵌入）
-- 不想绑定特定框架的组件库
+- Sharing UI components across frameworks (design systems)
+- Components that need strict style isolation (third-party embeds)
+- Component libraries that don't want to be tied to a specific framework
 
-**不太适合**：
+**Less suitable:**
 
-- 纯 React/Vue/Angular 项目（用框架自身的组件系统更方便）
-- 需要 TypeScript 强类型支持（Web Components 原生 TS 支持较弱）
+- Pure React/Vue/Angular projects (the framework's own component system is more convenient)
+- Cases needing strong TypeScript typing (Web Components' native TS support is weak)
 
 ## Summary
 
-Web Components 的价值在于**框架无关性**。越来越多的设计系统（如 Adobe Spectrum、IBM Carbon）开始提供 Web Components 版本。即使你的日常工作在 Angular 或 React 框架内，理解 Web Components 也有助于你设计更通用的组件边界。
+The value of Web Components lies in their **framework independence**. More and more design systems (such as Adobe Spectrum and IBM Carbon) are shipping Web Components versions. Even if your day-to-day work stays inside Angular or React, understanding Web Components helps you design more universal component boundaries.

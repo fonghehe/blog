@@ -144,7 +144,7 @@ dep.notify() → 通知所有 subscribers
 
 ## Vue 2 響應式的侷限性
 
-理解了原理，就能理解為什麼有這些限製：
+理解了原理，就能理解為什麼有這些限制：
 
 ### 無法檢測屬性的添加/刪除
 
@@ -156,7 +156,7 @@ this.user.age = 18; // 沒有被 defineProperty，不會觸發更新
 this.$set(this.user, "age", 18);
 ```
 
-原因：`defineProperty` 隻能攔截已存在的屬性，無法攔截新增屬性。
+原因：`defineProperty` 只能攔截已存在的屬性，無法攔截新增屬性。
 
 ### 無法檢測數組下標賦值
 
@@ -177,7 +177,7 @@ Vue 對數組的 push/pop/splice 等方法做了攔截，這些方法會觸發�
 
 ## Vue 2 vs Vue 3 的響應式
 
-Vue 3 用 `Proxy` 替代 `Object.defineProperty`，解決了以上限製：
+Vue 3 用 `Proxy` 替代 `Object.defineProperty`，解決了以上限制：
 
 ```javascript
 // Proxy 可以攔截屬性添加和刪除
@@ -197,5 +197,5 @@ proxy.newProp = "value"; // 能被檢測到！
 
 - Vue 2 響應式基於 `Object.defineProperty` + Dep/Watcher 模式
 - Observer 遞歸處理對象屬性，Dep 管理依賴，Watcher 響應變化
-- `Object.defineProperty` 的限製導致無法檢測屬性新增/刪除
-- Vue 3 用 Proxy 解決了這些限製
+- `Object.defineProperty` 的限制導致無法檢測屬性新增/刪除
+- Vue 3 用 Proxy 解決了這些限制

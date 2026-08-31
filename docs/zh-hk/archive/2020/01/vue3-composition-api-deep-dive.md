@@ -8,7 +8,7 @@ description: "Vue 3 的 Composition API 是自 Vue 誕生以來最重大的範�
 wordCount: 448
 ---
 
-Vue 3 的 Composition API 是自 Vue 誕生以來最重大的範式轉變。對於習慣了 Options API 的開發者來説，這套 API 的學習曲線並不陡峭，但要真正用好它，需要理解其設計哲學和底層機製。本文從實際工程角度出發，剖析 Composition API 的核心用法。
+Vue 3 的 Composition API 是自 Vue 誕生以來最重大的範式轉變。對於習慣了 Options API 的開發者來説，這套 API 的學習曲線並不陡峭，但要真正用好它，需要理解其設計哲學和底層機制。本文從實際工程角度出發，剖析 Composition API 的核心用法。
 
 ## setup 函數與響應式基礎
 
@@ -127,11 +127,11 @@ export default {
 }
 ```
 
-選擇建議：需要獲取舊值或精確控製觸發條件時用 `watch`；需要自動追蹤多個依賴時用 `watchEffect`。
+選擇建議：需要獲取舊值或精確控制觸發條件時用 `watch`；需要自動追蹤多個依賴時用 `watchEffect`。
 
 ## 生命週期鈎子的映射
 
-Composition API 中的生命週期鈎子都以 `on` 開頭，且隻在 `setup` 中有效。
+Composition API 中的生命週期鈎子都以 `on` 開頭，且只在 `setup` 中有效。
 
 ```javascript
 import { onMounted, onUpdated, onUnmounted, onBeforeMount, onBeforeUpdate, onBeforeUnmount } from 'vue'
@@ -171,4 +171,4 @@ export default {
 - `ref` 用於基本類型，`reactive` 用於對象，注意 `.value` 的使用場景
 - Composables 替代 mixins，解決了命名衝突和來源不明的問題
 - `watchEffect` 自動追蹤依賴，`watch` 顯式指定且可獲取舊值
-- 生命週期鈎子全部以 `on` 前綴命名，隻能在 `setup` 中調用
+- 生命週期鈎子全部以 `on` 前綴命名，只能在 `setup` 中調用

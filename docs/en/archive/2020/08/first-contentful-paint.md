@@ -4,15 +4,15 @@ date: 2020-08-14 15:39:05
 tags:
   - Performance Optimization
 readingTime: 2
-description: "关于FCP 首次内容绘制优化，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 310
+description: "A production-focused guide to optimizing First Contentful Paint (FCP), addressing real-world performance problems and their solutions."
+wordCount: 187
 ---
 
-关于FCP 首次内容绘制优化，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
+When it comes to FCP (First Contentful Paint) optimization, many developers only operate at the API-call level. This article tries to discuss the real-world problems and solutions from a production-environment perspective.
 
 ## Basic Principles
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -29,11 +29,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay attention to edge-case handling — this is critical in production.
 
 ## Advanced Features
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -50,11 +50,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to fit the specific scenario; not every case calls for over-optimization.
 
 ## Project Practice
 
-我们可以通过以下方式来改进：
+We can improve things in the following ways:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -71,11 +71,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Best Practices
 
-先来看基本的实现方式：
+Let's first look at the basic implementation:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -92,11 +92,11 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This snippet shows the basic usage. In real projects you also need to consider error handling and edge cases.
 
 ## Common Pitfalls
 
-在这个基础上，我们可以进一步优化：
+Building on this, we can optimize further:
 
 ```javascript
 const observer = new PerformanceObserver((list) => {
@@ -113,10 +113,10 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这种模式在大型项目中非常实用，能显著降低维护成本。
+This pattern is very practical in large projects and can significantly reduce maintenance cost.
 
 ## Summary
 
-- 生产环境使用前务必做好兼容性验证
-- 团队协作中约定和文档比技术本身更重要
-- 关注社区动态，技术方案需要持续迭代
+- Be sure to verify compatibility before using it in production
+- In team collaboration, conventions and documentation matter more than the technology itself
+- Keep an eye on the community; technical solutions need continuous iteration

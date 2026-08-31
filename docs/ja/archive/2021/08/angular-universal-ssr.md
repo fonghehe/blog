@@ -5,12 +5,12 @@ tags:
   - Angular
   - TypeScript
 
-readingTime: 2
+readingTime: 3
 description: "Angular Universal 让 Angular 应用可以在服务端预渲染 HTML，解决两个核心问题：SEO（搜索引擎抓取 SPA 困难）和首屏性能（FCP 指标优化）。Angular 12 的 Universal 已经相当成熟，这篇文章覆盖从集成到优化的完整流程。"
-wordCount: 335
+wordCount: 573
 ---
 
-Angular Universal 让 Angular 应用可以在服务端预渲染 HTML，解决两个核心问题：SEO（搜索引擎抓取 SPA 困难）和首屏性能（FCP 指标优化）。Angular 12 的 Universal 已经相当成熟，这篇文章覆盖从集成到优化的完整流程。
+Angular Universal を使うと、Angular アプリをサーバー側で事前レンダリングして HTML を生成できる。これにより 2 つの本質的な課題が解決する。すなわち、SEO（検索エンジンが SPA をクロールしにくい問題）と初回表示のパフォーマンス（FCP の指標改善）だ。Angular 12 の Universal はすでに十分に成熟しており、本記事では導入から最適化までの一連の流れを解説する。
 
 ## クイック統合
 
@@ -23,7 +23,7 @@ ng add @nguniversal/express-engine
 # └── src/main.server.ts         # 服务端入口
 ```
 
-生成的 `server.ts` 开箱即用，无需大量配置：
+生成された `server.ts` はそのまま使えて、大量の設定は不要だ：
 
 ```typescript
 // server.ts（简化版）
@@ -45,7 +45,7 @@ app.get("*", (req, res) => res.render("index", { req }));
 
 ## サーバーとブラウザ環境の違い
 
-SSR 最大的坑是：服务端没有 `window`、`document`、`localStorage` 等浏览器 API。
+SSR 最大の落とし穴は、サーバー側には `window`、`document`、`localStorage` といったブラウザ API が存在しないことだ。
 
 ```typescript
 import { isPlatformBrowser, isPlatformServer } from "@angular/common";
@@ -72,7 +72,7 @@ export class ThemeService {
 
 ## TransferState：避免双重数据请求
 
-SSR 的典型问题：服务端已经请求了 API 数据，但客户端 hydration 时又请求一次。`TransferState` 解决这个问题：
+SSR の典型的な問題は、サーバー側ですでに API データを取得しているのに、クライアントのハイドレーション時に再リクエストしてしまうことだ。`TransferState` がこの問題を解決する：
 
 ```typescript
 import { TransferState, makeStateKey } from "@angular/platform-browser";
@@ -158,7 +158,7 @@ npm run serve:ssr
 # └── server/    # Node.js 服务器代码
 ```
 
-**性能优化建议**：
+**パフォーマンス最適化のポイント**：
 
 ```typescript
 // server.ts - 添加页面缓存
@@ -179,7 +179,7 @@ app.get("*", (req, res) => {
 
 ## SSR vs 预渲染
 
-如果页面内容是静态的（博客、文档），用预渲染（Prerendering）比 SSR 更简单：
+ページの内容が静的（ブログやドキュメントなど）な場合、SSR よりもプリレンダリング（Prerendering）のほうがシンプルだ：
 
 ```bash
 # 构建时预渲染指定路由
@@ -193,8 +193,8 @@ npm run prerender
 }
 ```
 
-预渲染产物是纯静态 HTML，可以直接部署到 CDN，无需 Node.js 服务器。
+プリレンダリングの成果物は純粋な静的 HTML であり、Node.js サーバーなしでそのまま CDN にデプロイできる。
 
 ## まとめ
 
-Angular Universal 的集成成本在 Angular 12 已经相当低——`ng add` 一行命令就能搭好骨架。关键是要处理好平台差异（`isPlatformBrowser`）和 `TransferState` 数据传递。对内容型页面（博客、商品详情）来说，SSR 或预渲染带来的 SEO 和首屏性能提升非常可观。
+Angular 12 では Universal の導入コストはすでにかなり低い。`ng add` ひとつで雛形が組める。重要なのはプラットフォームの違い（`isPlatformBrowser`）と `TransferState` によるデータの受け渡しを適切に扱うことだ。ブログや商品詳細といったコンテンツ型のページであれば、SSR やプリレンダリングによる SEO と初回表示パフォーマンスの向上は非常に大きい。

@@ -3,9 +3,9 @@ title: "React Router 7 Framework Mode Migration: From SPA + API to Full-Stack Fr
 date: 2026-08-16 10:58:26
 tags:
   - React
-readingTime: 8
+readingTime: 7
 description: "A complete account of migrating an internal dashboard from a traditional SPA + Express API architecture to React Router 7 framework mode: routes.ts configuration, loader/action data flow design, single-fetch and typegen, hydration pitfalls, Error Boundary UX, and when to stick with declarative mode."
-wordCount: 3300
+wordCount: 1015
 ---
 
 An internal operations dashboard our team maintains grew over three years from a simple React SPA into two separate codebases: frontend with Vite + React Router v6, backend with Express + Prisma. Every time we added a new page, it required changing route config, writing an API endpoint, adding a frontend fetch call, and handling loading/error states — four steps spread across two repositories. React Router 7's framework mode promises to unify all of this into a single project. I spent two weeks completing the migration, and this article documents the real-world gains and pitfalls.

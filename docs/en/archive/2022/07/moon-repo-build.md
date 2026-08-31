@@ -4,15 +4,15 @@ date: 2022-07-21 09:48:26
 tags:
   - Frontend
 readingTime: 2
-description: "Moon 构建系统 Monorepo 管理 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real proj"
-wordCount: 203
+description: "Moon for monorepo build management is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 192
 ---
 
-Moon 构建系统 Monorepo 管理 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Moon for monorepo build management is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
 
 ## Basic Usage
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { defineConfig } from 'vite'
@@ -136,4 +136,4 @@ This approach has been running stably in production for over six months and has 
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Moon 构建系统 Monorepo 管理不是银弹，需要根据项目规模和技术栈选择
+- Moon for monorepo build management is not a silver bullet — choose based on your project scale and tech stack

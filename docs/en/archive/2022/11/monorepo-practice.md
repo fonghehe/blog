@@ -4,7 +4,7 @@ date: 2022-11-02 14:50:29
 tags:
   - Frontend Engineering
 readingTime: 2
-description: "关于前端 Monorepo 实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+description: "Many developers only know frontend monorepo practice at the tool level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 191
 ---
 

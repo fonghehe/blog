@@ -4,11 +4,11 @@ date: 2022-07-26 10:22:05
 tags:
   - Frontend
 readingTime: 2
-description: "2022 年 7 月，Jarred Sumner 发布了 Bun——一个用 Zig 编写的 JavaScript 运行时。它的目标很激进：替代 Node.js、npm、esbuild、Jest，成为 JavaScript 工具链的统一解决方案。"
-wordCount: 357
+description: "In July 2022, Jarred Sumner released Bun — a JavaScript runtime written in Zig. Its goal is ambitious: replace Node.js, npm, esbuild, and Jest to become the unified solution for the JavaScript toolchain."
+wordCount: 238
 ---
 
-2022 年 7 月，Jarred Sumner 发布了 Bun——一个用 Zig 编写的 JavaScript 运行时。它的目标很激进：替代 Node.js、npm、esbuild、Jest，成为 JavaScript 工具链的统一解决方案。
+In July 2022, Jarred Sumner released Bun — a JavaScript runtime written in Zig. Its goal is ambitious: replace Node.js, npm, esbuild, and Jest to become the unified solution for the JavaScript toolchain.
 
 ## Installation and Basic Usage
 
@@ -46,7 +46,7 @@ time node --loader ts-node/esm script.ts
 # 2.1s
 ```
 
-冷启动快了 100 倍。这是因为 Bun 用 JavaScriptCore（Safari 的引擎）而不是 V8，并且用 Zig 写了底层 IO。
+Cold start is 100x faster. This is because Bun uses JavaScriptCore (Safari's engine) instead of V8, and implements low-level IO in Zig.
 
 ## As a Package Manager
 
@@ -65,7 +65,7 @@ time pnpm install
 # node_modules: 2.8s
 ```
 
-Bun 使用硬链接 + 全局缓存（和 pnpm 类似），但实现更快。
+Bun uses hard links + global caching (similar to pnpm), but with a faster implementation.
 
 ## Built-in Bundler
 
@@ -114,7 +114,7 @@ describe('math', () => {
 // bun test
 ```
 
-Bun 的测试运行器兼容 Jest API，但快得多。
+Bun's test runner is compatible with the Jest API, but much faster.
 
 ## HTTP Server
 
@@ -149,7 +149,7 @@ const server = Bun.serve({
 console.log(`Listening on http://localhost:${server.port}`);
 ```
 
-性能对比（简单的 JSON 响应）：
+Performance comparison (simple JSON response):
 
 ```
 Node.js (http):     ~50,000 req/s
@@ -179,12 +179,12 @@ console.log(file.lastModified);
 
 ## Real-World Problems
 
-2022 年 7 月的 Bun 还很早期：
+In July 2022, Bun was still very early:
 
-1. **兼容性**：不是所有 npm 包都能跑，尤其是用了 Node.js 原生模块的
-2. **稳定性**：还在 0.x 版本，API 可能变化
-3. **生态**：没有社区插件和工具链
-4. **Windows 支持**：2022 年还没有
+1. **Compatibility**: not all npm packages work, especially those using Node.js native modules
+2. **Stability**: still at 0.x, APIs may change
+3. **Ecosystem**: no community plugins or toolchain
+4. **Windows support**: not available yet in 2022
 
 ```bash
 # 测试你的项目兼容性
@@ -195,15 +195,15 @@ bun test
 
 ## Positioning Against Node.js and Deno
 
-| 特性 | Node.js | Deno | Bun |
+| Feature | Node.js | Deno | Bun |
 |------|---------|------|-----|
-| 引擎 | V8 | V8 | JavaScriptCore |
-| 语言 | C++ | Rust | Zig |
-| TypeScript | 需要编译 | 原生支持 | 原生支持 |
-| 包管理 | npm/pnpm/yarn | URL 导入 | 内置 |
-| 测试 | 需要框架 | 内置 | 内置 |
-| 成熟度 | 生产就绪 | 较成熟 | 早期 |
+| Engine | V8 | V8 | JavaScriptCore |
+| Language | C++ | Rust | Zig |
+| TypeScript | Requires compilation | Native support | Native support |
+| Package management | npm/pnpm/yarn | URL imports | Built-in |
+| Testing | Requires framework | Built-in | Built-in |
+| Maturity | Production-ready | Fairly mature | Early stage |
 
 ## Summary
 
-Bun 的方向是对的——统一 JavaScript 工具链，减少碎片化。2022 年的 Bun 还不适合生产环境，但它的速度表现令人印象深刻。关注它的发展，但别急着迁移。2023 年会是 Bun 关键的一年。
+Bun's direction is right — unifying the JavaScript toolchain and reducing fragmentation. In 2022, Bun isn't production-ready yet, but its speed is impressive. Keep an eye on its development, but don't rush to migrate. 2023 will be a pivotal year for Bun.

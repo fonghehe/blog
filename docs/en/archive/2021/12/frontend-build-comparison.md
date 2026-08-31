@@ -7,11 +7,11 @@ tags:
   - Vite
 
 readingTime: 2
-description: "2021 年是前端构建工具大变革的一年。Vite 2.0 成熟、esbuild 被广泛采用、Webpack 5 逐步普及。作为一个维护多个项目的技术负责人，今年的构建工具选型让我重新思考了\"什么是最合适的工具\"。"
-wordCount: 327
+description: "2021 was a year of upheaval for frontend build tools. Vite 2.0 matured, esbuild was widely adopted, and Webpack 5 spread steadily. As a tech lead maintaining multiple projects, this year's build-tool choices made me rethink what 'the right tool' really means."
+wordCount: 202
 ---
 
-2021 年是前端构建工具大变革的一年。Vite 2.0 成熟、esbuild 被广泛采用、Webpack 5 逐步普及。作为一个维护多个项目的技术负责人，今年的构建工具选型让我重新思考了"什么是最合适的工具"。
+2021 was a year of major change for frontend build tools. Vite 2.0 matured, esbuild was widely adopted, and Webpack 5 gradually became mainstream. As a tech lead maintaining several projects, this year's build-tool choices made me rethink what the right tool really is.
 
 ## Current State Analysis
 
@@ -26,7 +26,7 @@ wordCount: 327
 
 ## Developer Experience Comparison
 
-基于实际项目数据：
+Based on real project data:
 
 ```
 指标                    Webpack 4    Webpack 5    Vite 2
@@ -67,10 +67,10 @@ export default defineConfig({
 })
 ```
 
-Vite 最适合：
-- 新项目，特别是 Vue 3 项目
-- 对开发体验有高要求的团队
-- 中小型项目（大型项目需要手动优化分包）
+Vite is best suited for:
+- New projects, especially Vue 3 projects
+- Teams with high developer-experience requirements
+- Small-to-medium projects (large projects need manual chunk optimization)
 
 ## Scenarios Where Webpack Is Irreplaceable
 
@@ -109,14 +109,14 @@ module.exports = {
 }
 ```
 
-Webpack 仍然不可替代的场景：
-- Module Federation 微前端
-- 需要大量自定义 loader/plugin 的复杂项目
-- 已有大量 Webpack 配置投资的遗留项目
+Scenarios where Webpack remains irreplaceable:
+- Module Federation for micro-frontends
+- Complex projects needing lots of custom loaders/plugins
+- Legacy projects with heavy existing Webpack configuration investment
 
 ## esbuild's Positioning
 
-esbuild 不适合直接做应用打包（缺少 code splitting、CSS 处理等），但作为底层工具非常出色：
+esbuild isn't suited to direct application bundling (it lacks code splitting, CSS handling, etc.), but it excels as a low-level tool:
 
 ```javascript
 // esbuild 适合的场景
@@ -153,8 +153,8 @@ Node.js 服务                  esbuild
 
 ## Summary
 
-- Vite 在开发体验上已经全面超越 Webpack，新项目推荐首选
-- Webpack 在复杂场景和 Module Federation 上仍然不可替代
-- esbuild 不是应用级打包器的替代品，而是优秀的底层工具
-- 构建工具选型要结合团队能力、项目特点和生态兼容性
-- 2021 年的趋势是 Rust 化和 esbuild 化——更快的底层，更好的 DX
+- Vite has comprehensively surpassed Webpack in developer experience; it's the recommended first choice for new projects
+- Webpack remains irreplaceable in complex scenarios and for Module Federation
+- esbuild is not a replacement for application-level bundlers, but an excellent low-level tool
+- Build-tool selection should weigh team capability, project characteristics, and ecosystem compatibility
+- The 2021 trend is toward Rust and esbuild — faster foundations and better DX

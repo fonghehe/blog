@@ -4,7 +4,7 @@ date: 2024-11-26 12:20:57
 tags:
   - React
 readingTime: 2
-description: "React 19 新 Hooks 汇总 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projec"
+description: "A summary of React 19's new hooks is increasingly relevant in frontend development. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 190
 ---
 

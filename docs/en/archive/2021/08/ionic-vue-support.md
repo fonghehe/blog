@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "Ionic Vue 跨平台移动开发 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects"
-wordCount: 205
+description: "Ionic Vue for cross-platform mobile development is being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 194
 ---
 
-Ionic Vue 跨平台移动开发 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Ionic Vue cross-platform mobile development is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices drawn from real projects.
 
 ## Basic Usage
 
@@ -113,7 +113,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Optimization
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more complex:
 
 ```javascript
 import React, { useState, useCallback } from 'react'

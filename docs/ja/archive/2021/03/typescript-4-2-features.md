@@ -6,14 +6,14 @@ tags:
 
 readingTime: 3
 description: "TypeScript 4.2 が2月末にリリースされ、実用的な型システムの改善がいくつかもたらされました。日常の開発に最も影響のある機能をいくつか紹介します。"
-wordCount: 590
+wordCount: 584
 ---
 
-TypeScript 4.2 は 2 月末にリリースされ、実用的な型システムの改良がいくつかもたらされました。日常の開発に最も影響のある機能をいくつかご紹介します。
+TypeScript 4.2 は 2 月末にリリースされ、実用的な型システムの改良がいくつかもたらされた。日常の開発に最も影響のある機能をいくつか紹介する。
 
-## Rest 元组类型中的命名元素
+## Rest タプル型における名前付き要素
 
-之前元组类型只能这样写：
+以前はタプル型はこのようにしか書けなかった：
 
 ```typescript
 // 以前：位置でしか意味を理解できなかった
@@ -27,7 +27,7 @@ function processArgs(...args: [string, number, boolean]) {
 }
 ```
 
-4.2 ではタプル要素に名前を付けられます：
+4.2 ではタプル要素に名前を付けられる：
 
 ```typescript
 // 4.2：タプル要素に名前を付けられる
@@ -39,7 +39,7 @@ function processArgs(...args: [name: string, count: number, flag: boolean]) {
 }
 ```
 
-ライブラリ作成者にとって、API シグネチャの可読性向上は明らかです：
+ライブラリ作成者にとって、API シグネチャの可読性向上は明らかだ：
 
 ```typescript
 // 実際のシナリオ：イベントハンドラのパラメータ
@@ -58,7 +58,7 @@ function handleMouseEvent(...[event, data, callback]: EventHandler) {
 
 ## よりスマートな型エイリアスの展開
 
-以前は特定の状況で TypeScript が型エイリアスを展開する際に中間の参照名を表示していましたが、現在は正しく最終型に展開されるようになりました：
+以前は特定の状況で TypeScript が型エイリアスを展開する際に中間の参照名を表示していたが、現在は正しく最終型に展開されるようになった：
 
 ```typescript
 type ApiSuccess<T> = {
@@ -81,7 +81,7 @@ type ApiResponse<T> = ApiSuccess<T> | ApiError
 
 ## `abstract` コンストラクトシグネチャ
 
-TypeScript 4.2 は `abstract` コンストラクトシグネチャをサポートし、型制約で抽象クラスでなければならないことを指定できます：
+TypeScript 4.2 は `abstract` コンストラクトシグネチャをサポートし、型制約で抽象クラスでなければならないことを指定できる：
 
 ```typescript
 abstract class Animal {
@@ -113,7 +113,7 @@ function createAnimal(ctor: abstract new () => Animal) {
 // ✅ createAnimal(Cat)    // OK
 ```
 
-フレームワーク設計において、この機能は渡す具象実装クラスを強制するのに役立ちます：
+フレームワーク設計において、この機能は渡す具象実装クラスを強制するのに役立つ：
 
 ```typescript
 // DI コンテナのシナリオ
@@ -133,7 +133,7 @@ class Container {
 
 ## `--noPropertyAccessFromIndexSignature`
 
-このコンパイラオプションは、TypeScript の長年の「緩すぎる」問題を解決します：
+このコンパイラオプションは、TypeScript の長年の「緩すぎる」問題を解決する：
 
 ```typescript
 interface Config {
@@ -156,7 +156,7 @@ config.timeout     // ❌ エラー！明示的に宣言されたプロパティ
 config['timeout']  // ✅ OK，ブラケットを使いインデックスシグネチャだと明確に示す
 ```
 
-実際のプロジェクトではこのオプションは非常に有用です——スペルミスを発見できる一方で、インデックスシグネチャの柔軟性を失いません：
+実際のプロジェクトではこのオプションは非常に有用だ——スペルミスを発見できる一方で、インデックスシグネチャの柔軟性を失わない：
 
 ```typescript
 // スペルミスがキャッチされる
@@ -168,7 +168,7 @@ config[dynamicKey] // ✅ OK
 
 ## 型推論の改善
 
-4.2 では条件付き型での推論がより正確になりました：
+4.2 では条件付き型での推論がより正確になった：
 
 ```typescript
 // より正確なタプル型推論
@@ -183,6 +183,6 @@ const result = tail([1, 'hello', true])
 ## まとめ
 
 - タプル要素の名前付けは API シグネチャの可読性を高め、ライブラリ作成者にとって特に有益
-- `abstract` コンストラクトシグネチャはフレームワークや DI のシナリオで実用的
+- `abstract` コンストラクトシグネチャはフレームワークや DI の場面で実用的
 - `--noPropertyAccessFromIndexSignature` は新規プロジェクトで有効にすることを推奨、スペルミスをキャッチできる
 - TypeScript は毎バージョンで型システムをより正確にしており、追従する価値がある

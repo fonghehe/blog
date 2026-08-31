@@ -5,7 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "最近在团队中落地Vite Environment API 多环境，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 404
+wordCount: 422
 ---
 
 最近在团队中落地Vite Environment API 多环境，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -132,6 +132,6 @@ module.exports = {
 
 ## まとめ
 
-- Vite Environment API 多环境不是银弹，需要根据项目规模和技术栈选择
+- Vite Environment API 多环境 は銀の弾丸ではなく、プロジェクトの規模や技術スタックに応じて選ぶ必要がある
 - 基礎的な原理を理解することは、APIを暗記することより重要です
 - 本番環境で使用する前に必ず互換性を確認してください

@@ -5,9 +5,9 @@ tags:
   - Web3
   - Ethereum
   - DApp
-readingTime: 12
+readingTime: 13
 description: "ERC-4337 アカウント抽象化のフロントエンド実践を深く解説。UserOperation ライフサイクル、Bundler インタラクション、Paymaster Gas スポンサーシップ、ソーシャルリカバリーソリューションをカバー"
-wordCount: 3800
+wordCount: 2296
 ---
 
 ## ERC-4337 アカウント抽象化の概要

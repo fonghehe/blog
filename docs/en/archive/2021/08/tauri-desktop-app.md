@@ -6,11 +6,11 @@ tags:
   - JavaScript
 
 readingTime: 2
-description: "Tauri 桌面应用开发新选择 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 231
+description: "Tauri is a new option for desktop app development, and it's being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
+wordCount: 215
 ---
 
-Tauri 桌面应用开发新选择 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Tauri, a fresh option for desktop app development, is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices drawn from real projects.
 
 ## Basic Usage
 
@@ -113,7 +113,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Performance Optimization
 
-实际项目中的用法会更复杂一些：
+Real-world usage is a bit more complex:
 
 ```javascript
 import React, { useState, useCallback } from 'react'
@@ -182,5 +182,5 @@ Pay attention to boundary condition handling, which is critical in production.
 - Stay updated with the community; technical solutions need continuous iteration
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Tauri 桌面应用开发新选择不是银弹，需要根据项目规模和技术栈选择
+- Tauri, as a new option for desktop app development, is no silver bullet; choose based on your project size and tech stack
 - Understanding underlying principles is more important than memorizing APIs

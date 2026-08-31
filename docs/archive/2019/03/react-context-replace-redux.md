@@ -8,7 +8,7 @@ description: "在团队推广React Context 替代 Redux的过程中，踩了不�
 wordCount: 262
 ---
 
-在团队推广React Context 替代 Redux的过程中，踩了不少坑。整理出来希望对大家有所帮助。
+在团队推广 React Context 替代 Redux 的过程中踩了不少坑，整理出来希望对大家有帮助。
 
 ## 核心原理
 

@@ -5,10 +5,10 @@ tags:
   - Angular
 readingTime: 2
 description: "Angular Materialは、AngularオフィシャルのMaterial Design UIコンポーネントライブラリです。すぐに使えてアクセシビリティも良好で、企業の管理システムを素早く構築するのに適しています。"
-wordCount: 299
+wordCount: 292
 ---
 
-Angular Materialは、AngularオフィシャルのMaterial Design UIコンポーネントライブラリです。すぐに使えてアクセシビリティも良好で、企業の管理システムを素早く構築するのに適しています。
+Angular Materialは、Angular公式のMaterial Design UIコンポーネントライブラリです。すぐに使えてアクセシビリティも良好で、企業の管理システムを素早く構築するのに適しています。
 
 ## インストールと設定
 
@@ -63,7 +63,7 @@ export class MaterialModule {}
 
 ## データテーブル + ページネーション + ソート
 
-企業アプリで最も一般的なシナリオ：
+企業アプリで最も一般的な場面：
 
 ```typescript
 {% raw %}
@@ -153,4 +153,4 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 ## まとめ
 
-Angular Materialは企業アプリのUI要件の90%をカバーしています。Angular CDKと組み合わせれば、より複雑なインタラクションシナリオにも対応できます。重要なのは共有の`MaterialModule`を構築して、各featureモジュールでの重複インポートを避けることです。
+Angular Materialは企業アプリのUI要件の90%をカバーしています。Angular CDKと組み合わせれば、より複雑なインタラクションの場面にも対応できます。重要なのは共有の`MaterialModule`を構築して、各featureモジュールでの重複インポートを避けることです。

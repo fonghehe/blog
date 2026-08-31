@@ -4,11 +4,11 @@ date: 2022-09-08 10:39:17
 tags:
   - Frontend
 readingTime: 2
-description: "Declarative Shadow DOM 声明式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real"
-wordCount: 212
+description: "Declarative Shadow DOM is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
+wordCount: 186
 ---
 
-Declarative Shadow DOM 声明式 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
+Declarative Shadow DOM is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
 
 ## Basic Usage
 
@@ -119,7 +119,7 @@ Let's start with the basic implementation:
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code demonstrates basic usage. In real projects, you also need to consider error handling and edge cases.
 
 ## Common Traps
 
@@ -154,4 +154,4 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 - Don't adopt new technology just for the sake of it
 - Code examples are for reference only and need to be adjusted according to your business scenario
-- Declarative Shadow DOM 声明式不是银弹，需要根据项目规模和技术栈选择
+- Declarative Shadow DOM is not a silver bullet — choose based on your project scale and tech stack

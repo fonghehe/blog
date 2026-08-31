@@ -6,14 +6,14 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Three.js 3D Web 視覺化入門這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 332
+wordCount: 326
 ---
 
 Three.js 3D Web 視覺化入門這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
 
 ## 入門指南
 
-在這個基礎上，我們可以進一步最佳化：
+在這個基礎上，我們可以進一步優化：
 
 ```javascript
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
@@ -73,7 +73,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-通過這種方式，程式碼的可測試性和可擴充套件性都得到了提升。
+透過這種方式，程式碼的可測試性和可擴展性都得到了提升。
 
 ## 真實場景應用
 
@@ -98,7 +98,7 @@ function reducer(state, action) {
 
 注意邊界條件處理，這在生產環境中至關重要。
 
-## 最佳化技巧
+## 優化技巧
 
 關鍵在於理解核心邏輯：
 
@@ -131,11 +131,11 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-效能最佳化需要結合具體場景，不是所有情況都需要過度最佳化。
+效能優化需要結合具體場景，不是所有情況都需要過度優化。
 
 ## 避坑指南
 
-我們可以通過以下方式來改進：
+我們可以透過以下方式來改進：
 
 ```javascript
 const express = require('express')

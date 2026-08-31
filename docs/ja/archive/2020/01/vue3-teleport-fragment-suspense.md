@@ -3,16 +3,16 @@ title: "Vue 3 新機能：Teleport・Fragment・Suspense"
 date: 2020-01-10 15:48:35
 tags:
   - Vue
-readingTime: 2
+readingTime: 3
 description: "Vue 3 引入了三个实用的内置组件：Teleport 将子节点渲染到 DOM 树的任意位置，Fragment 支持多根节点模板，Suspense 处理异步组件的加载态。这三个特性解决了 Vue 2 中长期存在的痛点。"
-wordCount: 465
+wordCount: 731
 ---
 
-Vue 3 引入了三个实用的内置组件：Teleport 将子节点渲染到 DOM 树的任意位置，Fragment 支持多根节点模板，Suspense 处理异步组件的加载态。这三个特性解决了 Vue 2 中长期存在的痛点。
+Vue 3 は3つの実用的な組み込みコンポーネントを導入した：Teleport は子ノードを DOM ツリーの任意の位置に描画し、Fragment は複数ルートのテンプレートをサポートし、Suspense は非同期コンポーネントの読み込み状態を扱う。これら3つの特性は、Vue 2 で長年抱えていた課題を解決する。
 
 ## Teleport：コンポーネントツリーから抜け出す
 
-Modal、Tooltip、全屏 Loading 这类组件经常因为父级的 `overflow: hidden` 或 `z-index` 被遮挡。Teleport 可以将 DOM 移动到指定位置，同时保持组件的逻辑归属不变。
+Modal、Tooltip、全画面 Loading のようなコンポーネントは、親の `overflow: hidden` や `z-index` のせいで隠されがちだ。Teleport は DOM を指定位置に移動させつつ、コンポーネントの論理的な所属はそのままに保つ。
 
 ```vue
 <template>
@@ -48,11 +48,11 @@ export default {
 </script>
 ```
 
-关键点：Teleport 的 `to` 接受任何 CSS 选择器。组件卸载时，Teleport 的内容也会自动移除。
+要点：Teleport の `to` は任意の CSS セレクターを受け取る。コンポーネントのアンマウント時には、Teleport の内容も自動的に削除される。
 
 ## Fragment：余分なラッパーノードとの別れ
 
-Vue 2 要求模板只有一个根节点，这导致大量无意义的 `<div>` 包裹层。Vue 3 支持多根节点。
+Vue 2 はテンプレートに1つのルートノードしか許さず、そのため無意味な `<div>` のラップ層が大量に生まれた。Vue 3 は複数ルートノードをサポートする。
 
 ```vue
 <template>
@@ -79,11 +79,11 @@ export default {
 </script>
 ```
 
-注意：使用多根节点时，不能通过 `$attrs` 直接透传属性到根元素，需要显式绑定 `v-bind="$attrs"` 到某个具体元素上。
+注意：複数ルートノードを使う場合、`$attrs` を通じて属性をルート要素に直接流し込むことはできず、特定の要素に `v-bind="$attrs"` を明示的に結びつける必要がある。
 
 ## Suspense：非同期コンポーネントの読み込み状態
 
-Suspense 可以等待嵌套的异步依赖（异步组件或组件内的异步 setup）全部就绪后再渲染。
+Suspense は、ネストした非同期の依存（非同期コンポーネントやコンポーネント内の非同期 setup）がすべて揃ってから描画するのを待てる。
 
 ```vue
 <template>
@@ -119,7 +119,7 @@ export default {
 </script>
 ```
 
-配合 setup 中的异步操作，Suspense 可以等待 `setup` 函数返回 Promise。
+setup 内の非同期処理と組み合わせると、Suspense は `setup` 関数が Promise を返すのを待てる。
 
 ```vue
 <script>
@@ -137,9 +137,9 @@ export default {
 </script>
 ```
 
-## 三个特性的组合使用
+## 3つの特性の組み合わせ
 
-实际项目中这三个特性经常配合使用。比如一个异步加载的全局 Dialog：
+実際のプロジェクトでは、これら3つの特性はよく組み合わせて使われる。たとえば非同期読み込みするグローバルな Dialog なら：
 
 ```vue
 <template>
@@ -171,7 +171,7 @@ export default {
 
 ## まとめ
 
-- Teleport 解决了 Modal/Tooltip 被父级 CSS 影响的经典问题，组件逻辑不移动，只移动 DOM
-- Fragment 消除了无意义的包裹节点，但要注意 `$attrs` 显式绑定
-- Suspense 统一管理异步组件和异步 setup 的加载态，替代手动 loading 状态
-- 三个特性可以自由组合，构建更灵活的组件结构
+- Teleport は Modal/Tooltip が親の CSS の影響を受ける古典的な問題を解決し、コンポーネントのロジックは動かさず DOM だけを移動させる
+- Fragment は無意味なラップノードをなくすが、`$attrs` の明示的な結びつけに注意
+- Suspense は非同期コンポーネントと非同期 setup の読み込み状態を一元管理し、手動の loading 状態に代わる
+- 3つの特性は自由に組み合わせられ、より柔軟なコンポーネント構造を作れる

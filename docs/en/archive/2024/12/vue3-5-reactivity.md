@@ -1,14 +1,14 @@
 ---
-title: "Vue 3.5 Reactivity Optimization Practice: 大型ProjectUpgradeReal收益"
+title: "Vue 3.5 Reactivity Optimization in Practice: Real Gains from Upgrading a Large Project"
 date: 2024-12-13 16:47:24
 tags:
   - Vue
 readingTime: 2
-description: "最近在团队中落地Vue 3.5 响应式重构， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 226
+description: "I recently applied the Vue 3.5 reactivity rework with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
+wordCount: 197
 ---
 
-最近在团队中落地Vue 3.5 响应式重构， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
+I recently applied the Vue 3.5 reactivity rework with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
 
 ## Core Concepts
 
@@ -62,7 +62,7 @@ Let's start with the basic implementation:
 
 ```
 
-这段代码展示了基本的使用方式。实际项目中还需要考虑错误处理和边界条件。
+This code shows the basic usage. In real projects you also need to think about error handling and edge cases.
 
 ## Implementation Experience
 
@@ -95,7 +95,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 ## Optimization Strategies
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { useRef, useEffect, useState } from 'react'

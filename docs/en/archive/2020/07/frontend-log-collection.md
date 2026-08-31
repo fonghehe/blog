@@ -3,16 +3,16 @@ title: "Frontend Log Collection Solutions"
 date: 2020-07-23 14:34:38
 tags:
   - Frontend
-readingTime: 2
-description: "在日常工作中经常用到前端日志收集方案，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。"
-wordCount: 278
+readingTime: 1
+description: "A systematic summary of frontend log collection solutions used in daily development, helping teams better understand and implement logging strategies."
+wordCount: 174
 ---
 
-在日常工作中经常用到前端日志收集方案，整理一篇系统性的总结，希望能帮助大家更好地理解和应用。
+Frontend log collection is something we use often in daily work. I've put together a systematic summary, hoping it helps everyone understand and apply it better.
 
 ## Basic Concepts
 
-核心代码如下：
+The core code looks like this:
 
 ```javascript
 // 使用示例
@@ -29,11 +29,11 @@ app.mount('#root')
 
 ```
 
-注意处理好边界条件和异常情况。
+Be sure to handle edge cases and exceptions properly.
 
 ## Core Implementation
 
-我们可以这样实现：
+We can implement it like this:
 
 ```javascript
 // 工具函数封装
@@ -61,11 +61,11 @@ function createHandler(options = {}) {
 
 ```
 
-通过这种模式，代码的可维护性得到了提升。
+This pattern improves the maintainability of the code.
 
 ## Practical Application
 
-具体用法参考以下代码：
+For concrete usage, refer to the following code:
 
 ```javascript
 // 核心实现
@@ -82,11 +82,11 @@ const processData = (input) => {
 
 ```
 
-建议在团队中统一规范，减少不一致的问题。
+It's a good idea to standardize conventions across the team to reduce inconsistencies.
 
 ## Best Practices
 
-来看具体的实现方式：
+Let's look at the concrete implementation:
 
 ```javascript
 // 使用示例
@@ -103,11 +103,11 @@ app.mount('#root')
 
 ```
 
-这种实现方式简洁高效，适合大多数场景。
+This implementation is concise and efficient, and fits most scenarios.
 
 ## Common Issues
 
-下面是一个实际的示例：
+Here is a practical example:
 
 ```javascript
 // 工具函数封装
@@ -135,11 +135,11 @@ function createHandler(options = {}) {
 
 ```
 
-在实际项目中，还需要根据具体需求做适当调整。
+In real projects, you'll need to adjust it according to specific requirements.
 
 ## Summary
 
-- 团队协作中保持代码风格一致，降低维护成本
-- 持续关注社区动态，及时更新技术方案
-- 性能优化需要基于实际数据，避免过度优化
-- 前端日志收集方案的核心在于理解底层原理，而非仅仅记住 API
+- Keep a consistent code style across the team to lower maintenance cost.
+- Keep an eye on the community and update your tech choices in time.
+- Performance optimization should be based on real data — avoid over-optimizing.
+- The core of a frontend log collection solution lies in understanding the underlying principles, not just memorizing APIs.

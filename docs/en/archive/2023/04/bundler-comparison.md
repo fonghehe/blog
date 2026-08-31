@@ -4,7 +4,7 @@ date: 2023-04-13 16:06:49
 tags:
   - Frontend
 readingTime: 2
-description: "关于前端构建工具 2023 对比，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
+description: "Many comparisons of 2023 frontend build tools stay at the surface level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 189
 ---
 

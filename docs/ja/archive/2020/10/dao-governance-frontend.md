@@ -5,6 +5,9 @@ tags:
   - Web3
   - Blockchain
   - DApp
+readingTime: 9
+wordCount: 1021
+description: "DAO（Decentralized Autonomous Organization、自律分散型組織）はスマートコントラクトでガバナンスルールを実現するオンチェーン組織です。Compound のガバナンスシステムがリリースされた後、DAO ガバナンスインターフェースは DeFi フロントエンドの重要な細分領域となりました"
 ---
 
 ## DAO とオンチェーンガバナンス

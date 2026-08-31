@@ -8,7 +8,7 @@ description: "關於React Testing Library 最佳實踐，很多開發者隻停�
 wordCount: 316
 ---
 
-關於React Testing Library 最佳實踐，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+關於React Testing Library 最佳實踐，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
 
 ## 基本原理
 
@@ -40,7 +40,7 @@ function reducer(state, action) {
 ```javascript
 import { test, expect } from '@playwright/test'
 
-test.describe('用户登錄流程', () => {
+test.describe('用戶登錄流程', () => {
   test('成功登錄跳轉到首頁', async ({ page }) => {
     await page.goto('/login')
     await page.fill('[data-testid="email"]', 'admin@example.com')

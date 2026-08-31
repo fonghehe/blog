@@ -8,7 +8,7 @@ description: "給團隊的組件庫搭建文檔站，對比了 VuePress 和 Vite
 wordCount: 252
 ---
 
-給團隊的組件庫搭建文檔站，對比了 VuePress 和 VitePress 後選擇了後者。VitePress 基於 Vite + Vue 3，構建速度快了一個量級，而且配置更簡潔。記錄一下搭建過程和定製化配置。
+給團隊的組件庫搭建文檔站，對比了 VuePress 和 VitePress 後選擇了後者。VitePress 基於 Vite + Vue 3，建構速度快了一個量級，而且設定更簡潔。記錄一下搭建過程和定製化設定。
 
 ## 快速上手
 
@@ -104,7 +104,7 @@ export default defineConfig({
 
 ## 在 Markdown 中嵌入 Vue 組件
 
-VitePress 支持在 Markdown 中直接使用 Vue 組件，這是文檔站最強大的功能：
+VitePress 支援在 Markdown 中直接使用 Vue 組件，這是文檔站最強大的功能：
 
 ````markdown
 # Button 按鈕
@@ -130,7 +130,7 @@ import '@company/components/dist/style.css'
 
 ## API
 
-| 參數 | 説明 | 類型 | 默認值 |
+| 參數 | 說明 | 類型 | 默認值 |
 |
 ------|------|------|--------|
 | type | 按鈕類型 | `'primary' \| 'default'` | `'default'` |
@@ -159,17 +159,17 @@ hero:
 
 features:
   - title: Vue 3 原生
-    details: 基於 Composition API 構建，完整 TypeScript 支持
+    details: 基於 Composition API 建構，完整 TypeScript 支援
   - title: 按需引入
     details: 基於 ESM 的 Tree Shaking，未使用的組件不會打包
   - title: 主題定製
-    details: CSS 變量驅動的主題系統，支持亮色和暗色模式
+    details: CSS 變量驅動的主題系統，支援亮色和暗色模式
 ---
 ```
 
 ## 部署
 
-我們用的是 GitLab CI 自動部署到內網靜態服務器：
+我們用的是 GitLab CI 自動部署到內網靜態伺服器：
 
 ```yaml
 # .gitlab-ci.yml
@@ -188,7 +188,7 @@ pages:
 
 ## 小結
 
-- VitePress 構建速度比 VuePress 快很多，開發體驗更好
+- VitePress 建構速度比 VuePress 快很多，開發體驗更好
 - 在 Markdown 中直接嵌入 Vue 組件是做組件文檔的核心能力
-- 配置簡潔，上手門檻低，適合團隊快速搭建
+- 設定簡潔，上手門檻低，適合團隊快速搭建
 - 目前 VitePress 還在 0.x 階段，API 可能有變動，但已足夠穩定用於內部文檔

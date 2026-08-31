@@ -5,15 +5,15 @@ tags:
   - Vue
 
 readingTime: 2
-description: "Vue 3 正式发布后，Vuex 4 作为其配套状态管理方案也进入了稳定期。在将一个中型后台管理系统从 Vue 2 + Vuex 3 迁移到 Vue 3 + Vuex 4 的过程中，总结了一些实践经验和注意事项。"
-wordCount: 291
+description: "After Vue 3's official release, Vuex 4 as its companion state-management solution also entered a stable phase. While migrating a mid-sized admin system from Vue 2 + Vuex 3 to Vue 3 + Vuex 4, I collected practical lessons and caveats worth sharing."
+wordCount: 194
 ---
 
-Vue 3 正式发布后，Vuex 4 作为其配套状态管理方案也进入了稳定期。在将一个中型后台管理系统从 Vue 2 + Vuex 3 迁移到 Vue 3 + Vuex 4 的过程中，总结了一些实践经验和注意事项。
+After Vue 3's official release, Vuex 4—its companion state-management solution—also reached a stable stage. While migrating a medium-sized admin system from Vue 2 + Vuex 3 to Vue 3 + Vuex 4, we summarized some practical lessons and gotchas.
 
 ## Installation and Initialization Changes
 
-Vuex 4 最大的变化是初始化方式从 `new Vuex.Store()` 变为 `createStore()`，以及挂载方式的变化：
+The biggest change in Vuex 4 is that initialization moved from `new Vuex.Store()` to `createStore()`, along with how the store is mounted:
 
 ```javascript
 // store/index.ts
@@ -41,7 +41,7 @@ app.mount('#app')
 
 ## Accessing Store with Composition API
 
-在 setup 中访问 store 的方式和 Options API 不同：
+Accessing the store inside `setup` differs from the Options API:
 
 ```vue
 <script setup lang="ts">
@@ -71,7 +71,7 @@ const userName = computed(() => store.state.user.profile.name)
 
 ## Modular Design
 
-后台管理系统通常按业务域拆分模块：
+Admin systems are usually split into modules by business domain:
 
 ```typescript
 // store/modules/user.ts
@@ -123,7 +123,7 @@ export default userModule
 
 ## Type Definitions
 
-Vuex 对 TypeScript 的支持一直不太好，建议手动定义类型：
+Vuex's TypeScript support has never been great, so it's best to define the types manually:
 
 ```typescript
 // store/types.ts
@@ -160,7 +160,7 @@ export function useStore() {
 
 ## Comparison with Pinia
 
-坦白说，Pinia 的开发体验更好。在 Vue 3 项目中如果还没有技术包袱，建议直接用 Pinia：
+To be honest, Pinia offers a better developer experience. For a Vue 3 project without existing baggage, we'd suggest going straight to Pinia:
 
 ```
 Vuex 4 的优势：
@@ -177,8 +177,8 @@ Pinia 的优势：
 
 ## Summary
 
-- Vuex 4 的 API 变化不大，主要是初始化方式和 `useStore()` 的引入
-- 在 Composition API 中用 `useStore()` 代替 `this.$store`
-- TypeScript 类型需要手动定义，这是 Vuex 的短板
-- 如果是全新项目且没有历史包袱，建议评估 Pinia
-- 模块化设计和命名空间是大型项目的必备实践
+- Vuex 4's API changes little; the main shifts are the initialization approach and the introduction of `useStore()`.
+- In the Composition API, use `useStore()` instead of `this.$store`.
+- TypeScript types need to be defined manually—a weak spot of Vuex.
+- For a brand-new project with no legacy constraints, consider evaluating Pinia.
+- Modular design and namespacing are essential practices for large projects.

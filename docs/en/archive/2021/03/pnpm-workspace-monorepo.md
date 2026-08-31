@@ -5,19 +5,19 @@ tags:
   - Engineering
 
 readingTime: 3
-description: "用了两年 Lerna + Yarn workspace 的组合后，今年开始尝试 pnpm workspace。pNpm 的硬链接机制天然适合 Monorepo——依赖不会重复安装，磁盘占用大幅减少。对比下来，pnpm workspace 可能是目前最优雅的 Monorepo 方案。"
-wordCount: 487
+description: "After two years on Lerna plus Yarn workspaces, I switched to pnpm workspace this year. pnpm's hard-link mechanism is a natural fit for monorepos — dependencies aren't installed twice and disk usage drops dramatically. All things considered, pnpm workspace may be the most elegant monorepo solution available today."
+wordCount: 336
 ---
 
-用了两年 Lerna + Yarn workspace 的组合后，今年开始尝试 pnpm workspace。pNpm 的硬链接机制天然适合 Monorepo——依赖不会重复安装，磁盘占用大幅减少。对比下来，pnpm workspace 可能是目前最优雅的 Monorepo 方案。
+After two years of using the Lerna + Yarn workspace combination, I started trying pnpm workspace this year. pnpm's hard-link mechanism is a natural fit for monorepos—dependencies aren't installed repeatedly, so disk usage drops dramatically. All things considered, pnpm workspace is probably the most elegant monorepo solution available today.
 
 ## Why Choose pnpm
 
-pnpm 的核心优势在 Monorepo 场景下特别明显：
+pnpm's core advantages are especially clear in a monorepo setup:
 
-1. **硬链接存储**：全局 store + 硬链接，10 个子项目共享同一份依赖，不会像 Yarn v1 那样每个项目都装一份
-2. **严格的依赖管理**：幽灵依赖问题被彻底解决，package.json 里没声明的依赖用不了
-3. **原生 workspace 支持**：不需要 Lerna 这样的上层工具，pnpm 自己就能处理
+1. **Hard-linked storage**: a global store plus hard links means ten subprojects share one copy of a dependency, instead of each project installing its own as in Yarn v1
+2. **Strict dependency management**: the phantom-dependency problem is eliminated—any dependency not declared in package.json simply can't be imported
+3. **Native workspace support**: no top-level tool like Lerna is needed; pnpm handles it on its own
 
 ```bash
 # 安装速度对比（同一个 Monorepo，30 个子项目）
@@ -71,7 +71,7 @@ my-monorepo/
 
 ## Core Configuration
 
-**pnpm-workspace.yaml**：
+**pnpm-workspace.yaml**:
 
 ```yaml
 packages:
@@ -80,7 +80,7 @@ packages:
   - 'tools/*'
 ```
 
-**根 package.json**：
+**Root `package.json`**:
 
 ```json
 {
@@ -102,7 +102,7 @@ packages:
 }
 ```
 
-**子包 package.json**（以 utils 为例）：
+**Sub-package `package.json`** (using `utils` as an example):
 
 ```json
 {
@@ -131,7 +131,7 @@ packages:
 
 ## Cross-Package References
 
-在 Monorepo 中，子包之间互相引用用 `workspace:` 协议：
+In a monorepo, sub-packages reference each other using the `workspace:` protocol:
 
 ```json
 {
@@ -143,7 +143,7 @@ packages:
 }
 ```
 
-发布时 pnpm 会自动将 `workspace:*` 替换为实际版本号。
+At publish time, pnpm automatically replaces `workspace:*` with the actual version number.
 
 ```typescript
 // packages/components/src/Button.vue
@@ -156,9 +156,9 @@ const formatted = computed(() => formatCurrency(props.amount))
 </script>
 ```
 
-## pnpm --filter 命令
+## The pnpm --filter Command
 
-`--filter` 是 pnpm workspace 最强大的功能，可以精确控制命令作用范围：
+`--filter` is the most powerful feature of pnpm workspace; it precisely controls the scope of a command:
 
 ```bash
 # 只在 admin 应用中安装 lodash
@@ -182,7 +182,7 @@ pnpm -r --filter './packages/*' build
 
 ## Vite Build Configuration
 
-子包的 Vite 配置，输出库模式：
+A sub-package's Vite config, set to library mode:
 
 ```typescript
 // packages/utils/vite.config.ts
@@ -212,7 +212,7 @@ export default defineConfig({
 
 ## Common Issues
 
-**幽灵依赖问题（Phantom Dependencies）**：
+**Phantom dependency issue (Phantom Dependencies):**
 
 ```typescript
 // ❌ 在 npm/yarn 的 node_modules 扁平结构中，
@@ -224,9 +224,9 @@ import something from 'transitive-dependency'
 // 报错：Module not found
 ```
 
-这是 pnpm 的设计决策，强制正确的依赖声明。
+This is a deliberate design decision in pnpm that enforces correct dependency declarations.
 
-**`.npmrc` 配置**：
+**.npmrc config:**
 
 ```ini
 # 如果确实需要访问未声明的依赖（不推荐）
@@ -238,21 +238,21 @@ public-hoist-pattern[]=*eslint*
 
 ## Comparison with Lerna
 
-| 维度 | Lerna + Yarn v1 | pnpm workspace |
-|------|----------------|----------------|
-| 依赖管理 | 扁平化，有幽灵依赖 | 严格隔离 |
-| 磁盘占用 | 高（重复安装） | 低（硬链接） |
-| 安装速度 | 慢 | 快 |
-| 需要额外工具 | 需要 Lerna | 不需要 |
-| 版本发布 | Lerna publish | changesets |
-| 学习曲线 | 中等 | 低 |
+| Dimension | Lerna + Yarn v1 | pnpm workspace |
+|----------|-----------------|----------------|
+| Dependency management | Flat, with phantom dependencies | Strict isolation |
+| Disk usage | High (duplicate installs) | Low (hard links) |
+| Install speed | Slow | Fast |
+| Extra tooling required | Lerna | None |
+| Publishing | Lerna publish | changesets |
+| Learning curve | Moderate | Low |
 
-如果你的团队还在用 Lerna，迁移成本不高，收益明显。
+If your team is still on Lerna, the migration cost is low and the benefits are clear.
 
 ## Summary
 
-- pnpm workspace 是目前最轻量的 Monorepo 方案，不需要 Lerna
-- `workspace:*` 协议处理子包间依赖，`--filter` 精确控制命令范围
-- 硬链接存储 + 严格依赖管理是 pnpm 的核心优势
-- 搭配 Vite 构建子包，开发体验很流畅
-- 版本管理推荐用 changesets 替代 Lerna publish
+- pnpm workspace is the lightest-weight monorepo solution today and needs no Lerna
+- The `workspace:*` protocol handles inter-package dependencies, and `--filter` precisely scopes commands
+- Hard-linked storage plus strict dependency management are pnpm's core advantages
+- Pairing it with Vite to build sub-packages makes for a smooth development experience
+- For version management, changesets is recommended over Lerna publish

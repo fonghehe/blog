@@ -1,5 +1,5 @@
 ---
-title: "React Testing 2025 Guide: RTL + Vitest 现代Testing体系"
+title: "React Testing Guide 2025: A Modern Testing System with RTL plus Vitest"
 date: 2025-09-01 17:15:52
 tags:
   - React

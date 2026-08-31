@@ -4,15 +4,15 @@ date: 2020-07-10 11:25:04
 tags:
   - Testing
 readingTime: 2
-description: "Jest 快照测试策略在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 289
+description: "An exploration of Jest snapshot testing strategies, diving into core principles and best practices based on real-world frontend projects."
+wordCount: 189
 ---
 
-Jest 快照测试策略在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
+Jest snapshot testing strategies are being used more and more widely in frontend development. This article starts from real projects to dig into its core principles and best practices.
 
 ## Basic Usage
 
-实际项目中的用法会更复杂一些：
+Usage in real projects is a bit more complex:
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -36,11 +36,11 @@ describe('LoginForm', () => {
 
 ```
 
-通过这种方式，代码的可测试性和可扩展性都得到了提升。
+This approach improves both the testability and extensibility of the code.
 
 ## Advanced Usage
 
-以下是一个完整的示例：
+Here is a complete example:
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -58,11 +58,11 @@ test.describe('用户登录流程', () => {
 
 ```
 
-注意边界条件处理，这在生产环境中至关重要。
+Pay close attention to edge cases — this is critical in production.
 
 ## Practical Cases
 
-关键在于理解核心逻辑：
+The key is to understand the core logic:
 
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
@@ -86,11 +86,11 @@ describe('LoginForm', () => {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+Performance optimization needs to be tied to the specific scenario; not everything needs to be over-optimized.
 
 ## Performance Optimization
 
-我们可以通过以下方式来改进：
+We can improve it in the following ways:
 
 ```javascript
 import { test, expect } from '@playwright/test'
@@ -108,12 +108,12 @@ test.describe('用户登录流程', () => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
+This approach has been running stably in production for over half a year and has been validated in practice.
 
 ## Summary
 
-- 关注社区动态，技术方案需要持续迭代
-- 不要为了用新技术而用新技术
-- 代码示例仅供参考，需根据业务场景调整
-- Jest 快照测试策略不是银弹，需要根据项目规模和技术栈选择
-- 理解底层原理比记住 API 更重要
+- Keep up with the community — your tech stack needs continuous iteration.
+- Don't adopt new tech just for the sake of using it.
+- The code examples are for reference only and should be adapted to your scenario.
+- Jest snapshot testing is no silver bullet; choose it based on your project's size and tech stack.
+- Understanding the underlying principles matters more than memorizing APIs.

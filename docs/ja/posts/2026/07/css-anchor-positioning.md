@@ -3,16 +3,16 @@ title: "CSS Anchor Positioning 実践：宣言的ポジショニングの新パ�
 date: 2026-07-08 14:50:02
 tags:
   - CSS
-readingTime: 6
+readingTime: 11
 description: "CSS Anchor Positioning API はフローティング要素のポジショニングを JavaScript から CSS に戻す。本記事では anchor-name、position-anchor、position-try などのコアプロパティを詳解し、Tooltip、Popover、Dropdown の純 CSS 実装を通じて宣言的ポジショニングの実践を示す。"
-wordCount: 2600
+wordCount: 2534
 ---
 
-フロントエンド開発において、フローティング要素のポジショニングは常に頭の痛い問題であった。Tooltip、Popover、Dropdown これらのコンポーネントのコア要件はシンプルである——「ある要素に寄り添って表示する」——しかし、実装には境界検出、反転、オフセット、スクロール追従などの一連のロジックの処理が必要となる。Floating UI、Popper.js などのライブラリの存在自体がこの問題の複雑さを物語っている。CSS Anchor Positioning API の登場により、これらは CSS の宣言的パラダイムに回帰した。
+フロントエンド開発において、フローティング要素のポジショニングは常に悩みの種であった。Tooltip、Popover、Dropdown これらのコンポーネントのコア要件はシンプルである——「ある要素に寄り添って表示する」——しかし、実装には境界検出、反転、オフセット、スクロール追従などの一連のロジックの処理が必要となる。Floating UI、Popper.js などのライブラリの存在自体がこの問題の複雑さを物語っている。CSS Anchor Positioning API の登場により、これらは CSS の宣言的パラダイムに回帰した。
 
 ## コア概念とブラウザサポート
 
-Anchor Positioning のコア思想は：ある要素が「別の要素にアンカーする」ことを宣言し、CSS プロパティでアンカーに対する位置関係を記述する。ブラウザが境界検出と反転を処理する。
+Anchor Positioning の中心的な考え方は、ある要素が「別の要素にアンカーする」ことを宣言し、CSS プロパティでアンカーに対する位置関係を記述するというものである。ブラウザが境界検出と反転を処理する。
 
 2026 年 7 月時点の Anchor Positioning のブラウザサポート状況：
 
@@ -202,7 +202,7 @@ Tooltip はビューポートの端で切り取られる。`position-try` はブ
 }
 ```
 
-`allow-overflow` はフローティング要素のビューポートはみ出しを反転ではなく許可するもので、コンテンツがクリップできないシーンに適する。`shift-inline` は反転後も収まらない場合、中央揃えを維持せず水平方向にスライドする。
+`allow-overflow` はフローティング要素のビューポートはみ出しを反転ではなく許可するもので、コンテンツをクリップできない場面に適する。`shift-inline` は反転後も収まらない場合、中央揃えを維持せず水平方向にスライドする。
 
 ## Dropdown 実装とインタラクションスタイル
 
@@ -301,7 +301,7 @@ trigger.addEventListener('mouseleave', () => {
 })
 ```
 
-| 次元 | CSS Anchor Positioning | Floating UI / Popper.js |
+| 観点 | CSS Anchor Positioning | Floating UI / Popper.js |
 |------|----------------------|------------------------|
 | コード量 | ~20 行 CSS | ~30 行 JS + 依存パッケージ |
 | 実行時性能 | ブラウザネイティブ、ゼロオーバーヘッド | ResizeObserver + scroll 監視 |
@@ -311,7 +311,7 @@ trigger.addEventListener('mouseleave', () => {
 | ブラウザ互換性 | 2026 年主流フルカバー | 完全互換（IE11+） |
 | 動的コンテンツ | 自動追従 | 手動で update の呼び出しが必要 |
 
-Anchor Positioning はシンプルなシナリオでは JS ソリューションをほぼ完全に代替できる。しかし、複雑なロジック（sticky ポジショニング、仮想化リスト内の tooltip、クロス iframe ポジショニングなど）が必要な場合、Floating UI の方が依然として適している。
+Anchor Positioning はシンプルなケースでは JS ソリューションをほぼ完全に代替できる。しかし、複雑なロジック（sticky ポジショニング、仮想化リスト内の tooltip、クロス iframe ポジショニングなど）が必要な場合、Floating UI の方が依然として適している。
 
 ## アクセシビリティ（a11y）の考慮
 
@@ -414,7 +414,7 @@ if (!supportsAnchor) {
 }
 ```
 
-プログレッシブエンハンスメント戦略：モダンブラウザはネイティブ体験を获得し、旧ブラウザは JS fallback を使用し、二つのソリューションを `@supports` で切り替える。
+プログレッシブエンハンスメント戦略：モダンブラウザはネイティブな体験を得て、旧ブラウザは JS fallback を使用し、二つのソリューションを `@supports` で切り替える。
 
 ## メリット・デメリット分析
 
@@ -423,12 +423,12 @@ if (!supportsAnchor) {
 - ゼロ JavaScript 実行時オーバーヘッド、ポジショニング計算はブラウザネイティブで実行
 - Popover API との深い統合、表示/非表示/ポジショニングが一体化
 - 宣言的構文は命令的 JS より保守しやすい
-- スクロール、resize などの境界シナリオを自動処理
+- スクロール、resize などの境界ケースを自動処理
 - SSR フレンドリ、クライアント JS に依存しない
 
 **デメリット：**
 
-- Fallback 戦略が Floating UI ほど柔軟でなく、複雑なシナリオで制限あり
+- Fallback 戦略が Floating UI ほど柔軟でなく、複雑なケースでは制限がある
 - 動的アンカー（リスト項目の tooltip など）では動的に `anchor-name` を設定する必要があり、少量の JS が依然必要
 - アニメーション制御が CSS transition に制限され、物理ベースのスプリングアニメーションは不可
 - クロスコンテナポジショニング（modal 内の tooltip など）に stacking context の問題あり
@@ -447,9 +447,9 @@ CSS Anchor Positioning Level 2 では以下の拡張が議論されている。
 
 ## 個人的見解
 
-Anchor Positioning は CSS が宣言的本質に回帰した又一つのマイルストーンである。Flexbox から Grid、Container Queries、そして Anchor Positioning へと、CSS は JavaScript に奪われた領域を段階的に取り戻している。大多数の Tooltip と Dropdown シナリオにおいて、純 CSS ソリューションはすでに十分であり、しかも性能がより良く、コードがより少ない。
+Anchor Positioning は CSS が宣言的本質に回帰したまた一つのマイルストーンである。Flexbox から Grid、Container Queries、そして Anchor Positioning へと、CSS は JavaScript に奪われた領域を段階的に取り戻している。大多数の Tooltip と Dropdown のケースにおいて、純 CSS ソリューションはすでに十分であり、しかもパフォーマンスも高く、コードも少ない。
 
-しかし本番環境で完全に Floating UI を破棄することはお勧めしない。理由は二つある：一つは互換性の移行期間に polyfill が必要なこと、二つ目は複雑なシナリオ（リッチテキストエディタ内のフローティングメニューなど）では依然として JS の精密な制御が必要なことである。現実的なアプローチは：シンプルなシナリオは CSS、複雑なシナリオは JS、`@supports` で両者を共存させることである。
+しかし本番環境で完全に Floating UI を破棄することはお勧めしない。理由は二つある。一つは互換性の移行期間に polyfill が必要なこと、二つ目は複雑なケース（リッチテキストエディタ内のフローティングメニューなど）では依然として JS によるきめ細かな制御が必要なことである。現実的なアプローチは、シンプルなケースは CSS、複雑なケースは JS とし、`@supports` で両者を共存させることである。
 
 ## まとめ
 

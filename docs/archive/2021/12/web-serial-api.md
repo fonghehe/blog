@@ -6,10 +6,10 @@ tags:
   - JavaScript
 readingTime: 2
 description: "最近在团队中落地Web Serial API 硬件通信，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 289
+wordCount: 284
 ---
 
-最近在团队中落地Web Serial API 硬件通信，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
+最近在团队里落地了 Web Serial API（硬件通信），积累了一些经验。整理出来供参考，希望对做类似工作的同学有帮助。
 
 ## 核心概念
 
@@ -44,7 +44,7 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-性能优化需要结合具体场景，不是所有情况都需要过度优化。
+性能优化要结合具体场景，没必要处处都过度优化。
 
 ## 深度解析
 

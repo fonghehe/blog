@@ -5,14 +5,14 @@ tags:
   - JavaScript
 readingTime: 3
 description: "WebAssembly Component Model は WASM モジュールが他のモジュールの関数を呼び出し、真のモジュール性を実現可能にした。Component Model の動作原理、フロントエンド統合方法、パフォーマンス最適化を議論する。"
-wordCount: 459
+wordCount: 477
 ---
 
 WebAssembly Component Model は WASM エコシステムにおける重要な進歩だ。異なる WASM モジュールが互いに呼び出し合い、真のモジュール性と組み合わせ可能性を実現する。
 
 ## Component Model の基礎
 
-従来の WASM モジュールは分離されたサンドボックスで、他のモジュールの関数を直接呼び出すことができなかった。Component Model はこの制限を打破する：
+従来の WASM モジュールは分離されたサンドボックスで、他のモジュールの関数を直接呼び出すことができなかった。Component Model はこの制限を打ち破る：
 
 ```wit
 // インターフェース定義（WIT フォーマット）
@@ -109,7 +109,7 @@ interface processor {
 }
 ```
 
-このインターフェースは Rust、Go、C++ などの任意の言語で実装でき、フロントエンドは JavaScript から呼び出す。
+このインターフェースは Rust、Go、C++ などの任意の言語で実装でき、フロントエンド側は JavaScript からこれを呼び出すことができる。
 
 **利点 2：型安全**
 
@@ -158,7 +158,7 @@ component app {
 
 ## パフォーマンス最適化
 
-**最適化 1：境界クロスを削減**
+**最適化 1：境界越しの呼び出しを減らす**
 
 ```rust
 // 悪い例：頻繁な呼び出し
@@ -212,4 +212,4 @@ async function processImage(file: File) {
 
 ## まとめ
 
-WebAssembly Component Model は WASM モジュールが互いに呼び出し、真のモジュール性を実現可能にする。言語非依存、型安全、組み合わせ可能な能力を提供する。2026 年のフロントエンド開発者は Component Model の利点を理解し、高性能計算が必要なシナリオで使用すべきだ。WASM は JavaScript を置き換えるのではなく、補完するものだ。
+WebAssembly Component Model は WASM モジュールが互いに呼び出し、真のモジュール性を実現できるようにする。言語非依存、型安全、組み合わせ可能な能力を提供する。2026 年のフロントエンド開発者は Component Model の利点を理解し、高性能計算が必要なシナリオで使用すべきだ。WASM は JavaScript を置き換えるのではなく、補完するものだ。

@@ -5,11 +5,11 @@ tags:
   - Webpack
   - 工程化
 readingTime: 1
-description: "包體積是前端效能的重要指標。沒有限製的專案往往會漸漸膀起來——加個庫、唐唐就進得 100KB。效能預算的思路是：像財務預算一樣，把體積就是預算，超過就是超支。"
-wordCount: 303
+description: "包體積是前端效能的重要指標。沒有限制的專案往往會漸漸胖起來——加個庫、偷偷就進了 100KB。效能預算的思路是：像財務預算一樣，把體積當作預算，超過就是超支。"
+wordCount: 304
 ---
 
-包體積是前端效能的重要指標。沒有限製的專案往往會漸漸膀起來——加個庫、唐唐就進得 100KB。效能預算的思路是：像財務預算一樣，把體積就是預算，超過就是超支。
+包體積是前端效能的重要指標。沒有限制的專案往往會漸漸胖起來——加個庫、偷偷就進了 100KB。效能預算的思路是：像財務預算一樣，把體積當作預算，超過就是超支。
 
 ## 包體積對載入效能的影響
 
@@ -88,10 +88,10 @@ npx source-map-explorer dist/main.*.js
 常見的超出原因：
 
 1. `moment.js` 打包了全部 locale（用 `date-fns` 或 `dayjs` 替代）
-2. `lodash` 運用了全量引入（詛 `import _ from 'lodash'`）
+2. `lodash` 運用了全量引入（諸如 `import _ from 'lodash'`）
 3. 第三方 CSS 庫進了 index bundle（應動態引入）
 4. 圖片/字型進了 JS bundle（應配置單獨輸出）
 
 ## 總結
 
-效能預算的核心是建立指標並自動化守護。`webpack performance hints` + `bundlesize` + CI 整合〔—這三層防線能確保包體積不會在不知不覺中腰脰變粗。
+效能預算的核心是建立指標並自動化守護。`webpack performance hints` + `bundlesize` + CI 整合——這三層防線能確保包體積不會在不知不覺中腰圍變粗。

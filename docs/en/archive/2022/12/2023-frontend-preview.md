@@ -4,11 +4,11 @@ date: 2022-12-30 15:09:14
 tags:
   - Frontend
 readingTime: 3
-description: "2022 年是前端格局重塑的一年：Next.js 13 带来 App Router，Angular 完成从 NgModule 到 Standalone 的转型，SvelteKit 1.0 正式发布，Vite 成为无可争议的构建工具标准。站在年末，我们来看 2023 年前端的关键走向。"
-wordCount: 500
+description: "2022 was the year the frontend landscape was reshaped: Next.js 13 brought the App Router, Angular completed its move from NgModule to Standalone, SvelteKit 1.0 shipped, and Vite became the undisputed build-tool standard. Standing at year's end, let's look at where frontend goes in 2023."
+wordCount: 479
 ---
 
-2022 年是前端格局重塑的一年：Next.js 13 带来 App Router，Angular 完成从 NgModule 到 Standalone 的转型，SvelteKit 1.0 正式发布，Vite 成为无可争议的构建工具标准。站在年末，我们来看 2023 年前端的关键走向。
+2022 was the year the frontend landscape was reshaped: Next.js 13 brought the App Router, Angular completed its move from NgModule to Standalone, SvelteKit 1.0 shipped, and Vite became the undisputed build-tool standard. Standing at year's end, let's look at where frontend goes in 2023.
 
 ## React Server Components: From Experiment to Production
 

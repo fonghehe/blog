@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "async/await 喺 ES2017 正式成為標準，Node.js 7.6+ 原生支援，配合 Babel 可以喺前端項目裡面使用。用咗半年幾，記錄一啲實際項目入面累積嘅經驗。"
-wordCount: 301
+wordCount: 302
 ---
 
 async/await 喺 ES2017 正式成為標準，Node.js 7.6+ 原生支援，配合 Babel 可以喺前端項目裡面使用。用咗半年幾，記錄一啲實際項目入面累積嘅經驗。
@@ -113,7 +113,7 @@ async function loadDashboard() {
 }
 ```
 
-隻有當後一個請求依賴前一個請求嘅結果時，先需要串行 await。否則優先考慮 `Promise.all`。
+只有當後一個請求依賴前一個請求嘅結果時，先至需要串行 await。否則優先考慮 `Promise.all`。
 
 ## 循環中嘅 async/await
 
@@ -213,7 +213,7 @@ npm install --save-dev babel-preset-env
 }
 ```
 
-`useBuiltIns: "usage"` 隻引入實際用到嘅 polyfill，避免全量引入 babel-polyfill 嘅體積負擔。
+`useBuiltIns: "usage"` 只引入實際用到嘅 polyfill，避免全量引入 babel-polyfill 嘅體積負擔。
 
 ---
 

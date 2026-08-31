@@ -5,16 +5,16 @@ tags:
   - Vite
   - テスト
 
-readingTime: 2
+readingTime: 3
 description: "Vitest 在 2021 年底作为 Vite 生态的测试框架正式亮相。作为一个从 Jest 迁移过来的项目，Vitest 最大的卖点是和 Vite 共享配置和转换管线——不需要额外的打包配置，HMR 支持，以及原生 ESM。"
-wordCount: 329
+wordCount: 523
 ---
 
-Vitest 在 2021 年底作为 Vite 生态的测试框架正式亮相。作为一个从 Jest 迁移过来的项目，Vitest 最大的卖点是和 Vite 共享配置和转换管线——不需要额外的打包配置，HMR 支持，以及原生 ESM。
+Vitest は 2021 年末に Vite エコシステムのテストフレームワークとして正式に登場した。Jest から移行してきたプロジェクトにとって、最大の売りは Vite と設定や変換パイプラインを共有することだ――別途バンドル設定は不要で、HMR にも対応し、ネイティブな ESM もサポートする。
 
 ## なぜ Vitest が必要か
 
-在 Vite 项目中用 Jest 并不顺畅：
+Vite のプロジェクトで Jest を使うのはスムーズではない：
 
 ```
 Jest 的问题：
@@ -24,7 +24,7 @@ Jest 的问题：
 4. 两套配置文件，维护成本高
 ```
 
-Vitest 直接复用 `vite.config.ts`，零配置起步。
+Vitest は `vite.config.ts` をそのまま流用でき、設定ゼロで始められる。
 
 ## クイックスタート
 
@@ -41,7 +41,7 @@ npm install -D vitest
 }
 ```
 
-Vitest 会自动读取 `vite.config.ts`，不需要额外配置。如果需要覆盖：
+Vitest は `vite.config.ts` を自動で読み込み、追加の設定は不要だ。上書きしたい場合は：
 
 ```typescript
 // vite.config.ts
@@ -64,7 +64,7 @@ export default defineConfig({
 
 ## テストの記述
 
-API 和 Jest 几乎完全兼容：
+API は Jest とほぼ完全に互換性がある：
 
 ```typescript
 // src/utils/format.test.ts
@@ -95,7 +95,7 @@ describe('formatDate', () => {
 
 ## Vue コンポーネントテスト
 
-用 `@vue/test-utils`，和 Jest 中的用法一样：
+`@vue/test-utils` を使い、Jest と同じ使い方だ：
 
 ```typescript
 // src/components/Button.test.ts
@@ -129,7 +129,7 @@ describe('Button', () => {
 
 ## Mock 功能
 
-Vitest 内置了 `vi` 对象，提供 mock 功能：
+Vitest には `vi` オブジェクトが組み込まれており、モック機能を提供する：
 
 ```typescript
 import { describe, it, expect, vi, beforeEach } from 'vitest'
@@ -158,7 +158,7 @@ describe('useUser', () => {
 
 ## パフォーマンス比較
 
-在我们组件库项目中的实测数据：
+自社のコンポーネントライブラリプロジェクトでの実測データ：
 
 ```
 项目规模：120 个测试文件，约 800 个测试用例
@@ -169,13 +169,13 @@ Vitest：    ~4s
 vitest --watch 的 HMR 响应：约 200ms
 ```
 
-性能提升主要来自 Vite 的 esbuild 预构建和原生 ESM 支持。
+性能向上の主因は、Vite の esbuild によるプリビルドとネイティブ ESM サポートだ。
 
 ## まとめ
 
-- Vitest 和 Vite 共享配置，零配置起步，学习成本低
-- API 和 Jest 高度兼容，迁移成本小
-- 性能显著优于 Jest，特别是在大型项目中
-- 内置 UI 界面（`--ui`）让调试体验更好
-- 目前还在快速迭代中，但核心功能已经稳定可用
-- 如果项目用 Vite，Vitest 是最自然的测试方案选择
+- Vitest は Vite と設定を共有し、ゼロコンフィグで始められ、学習コストも低い
+- API は Jest と高い互換性があり、移行コストは小さい
+- 性能は Jest を大きく上回り、特に大規模プロジェクトで顕著だ
+- 組み込みの UI（`--ui`）によりデバッグ体験が向上する
+- 現在も急速に開発が進んでいるが、コア機能はすでに安定して使える
+- プロジェクトが Vite を使っているなら、Vitest が最も自然なテスト手法の選択肢だ

@@ -9,14 +9,14 @@ description: "Angular 13 於 2021 年 11 月 3 日正式發佈。這個版本最
 wordCount: 457
 ---
 
-Angular 13 於 2021 年 11 月 3 日正式發佈。這個版本最大的意義是**徹底清理歷史包袱**：完全移除 View Engine 相關代碼、廢棄 IE 11 支持、重新設計 Angular Package Format（APF）。對於已經在 Ivy 上穩定運行的項目，這次升級帶來了更小的依賴體積和更快的編譯速度。
+Angular 13 於 2021 年 11 月 3 日正式發佈。這個版本最大的意義是**徹底清理歷史包袱**：完全移除 View Engine 相關代碼、廢棄 IE 11 支援、重新設計 Angular Package Format（APF）。對於已經在 Ivy 上穩定運行的項目，這次升級帶來了更小的依賴體積和更快的編譯速度。
 
 ## 徹底移除 View Engine
 
 Angular 12 標記了 View Engine 為廢棄，Angular 13 **完全刪除**了相關代碼：
 
 - 移除 `@angular/compiler` 中的 View Engine 編譯邏輯
-- 不再生成 `ngfactory` 和 `ngsummary` 文件
+- 不再生成 `ngfactory` 和 `ngsummary` 檔案
 - `TestBed` 不再調用 `compileComponents()`（異步編譯）：
 
 ```typescript
@@ -102,7 +102,7 @@ componentRef.instance.data = "some data";
 
 ## inline fonts 改進
 
-Angular 13 的 CLI 改進了字體內聯策略，支持更多 Google Fonts 格式：
+Angular 13 的 CLI 改進了字體內聯策略，支援更多 Google Fonts 格式：
 
 ```html
 <!-- Angular 13 構建後，字體 CSS 會被內聯 -->
@@ -137,4 +137,4 @@ ng update --list
 
 ## 總結
 
-Angular 13 是一個"清掃型"版本——刪掉歷史包袱，讓框架更輕、更快。移除 View Engine 和 IE 11 支持後，Angular 應用的構建產物平均減少 10-15%。如果你的用户中已經沒有 IE 11，這次升級性價比非常高。
+Angular 13 是一個"清掃型"版本——刪掉歷史包袱，讓框架更輕、更快。移除 View Engine 和 IE 11 支援後，Angular 應用的構建產物平均減少 10-15%。如果你的用戶中已經沒有 IE 11，這次升級性價比非常高。
