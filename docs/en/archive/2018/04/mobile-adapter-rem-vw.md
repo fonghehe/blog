@@ -2,7 +2,7 @@
 title: "Mobile Adaptation: From rem to vw/vh"
 date: 2018-04-05 09:43:44
 tags:
-  - CSS
+  - Mobile
 readingTime: 3
 description: "Mobile adaptation is an unavoidable topic in frontend development. From early percentage layouts to rem, and now to vw/vh — each approach has its trade-offs. He"
 wordCount: 385

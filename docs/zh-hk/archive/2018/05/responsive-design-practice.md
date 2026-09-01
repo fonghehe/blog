@@ -2,7 +2,7 @@
 title: "響應式設計實踐：從移動優先開始"
 date: 2018-05-26 11:18:01
 tags:
-  - CSS
+  - 移動端
 readingTime: 1
 description: "做了好幾個移動端項目，總結一下響應式設計的實踐經驗。"
 wordCount: 147

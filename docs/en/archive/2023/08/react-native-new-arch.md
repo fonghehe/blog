@@ -2,7 +2,7 @@
 title: "React Native New Architecture: Full Rollout"
 date: 2023-08-18 11:47:09
 tags:
-  - React
+  - Mobile
 readingTime: 2
 description: "I recently completed a full rollout of React Native's new architecture with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 207

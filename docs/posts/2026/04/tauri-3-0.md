@@ -2,7 +2,7 @@
 title: "Tauri 3.0 跨平台新版本"
 date: 2026-04-29 11:03:40
 tags:
-  - 前端
+  - 移动端
 readingTime: 2
 description: "Tauri 3.0 跨平台新版本在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
 wordCount: 307

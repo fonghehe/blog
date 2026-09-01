@@ -2,7 +2,7 @@
 title: "Capacitorクロスプラットフォームアプリ開発"
 date: 2020-11-18 09:32:57
 tags:
-  - 跨平台
+  - モバイル
 readingTime: 3
 description: "最近チームでCapacitor クロスプラットフォームアプリ開発を導入し、かなりの経験を積んだ。同様の作業の参考になれば幸いだ。"
 wordCount: 502

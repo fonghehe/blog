@@ -2,7 +2,7 @@
 title: "Expo Router 檔案路由方案"
 date: 2023-08-22 17:22:32
 tags:
-  - 前端
+  - 移動端
 readingTime: 2
 description: "最近在團隊中落地Expo Router 檔案路由方案，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
 wordCount: 326

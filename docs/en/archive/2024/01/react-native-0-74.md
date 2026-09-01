@@ -2,7 +2,7 @@
 title: "React Native 0.74: New Architecture as Default"
 date: 2024-01-26 10:22:20
 tags:
-  - React
+  - Mobile
 readingTime: 2
 description: "Regarding React Native 0.74: New Architecture as Default, many developers only stay at the API call level. This article discusses real-world problems and soluti"
 wordCount: 170

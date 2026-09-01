@@ -2,7 +2,7 @@
 title: "Tauri 2.0 移動端支援預覽：特性解讀與遷移建議"
 date: 2023-08-24 09:48:24
 tags:
-  - 前端
+  - 移動端
 readingTime: 2
 description: "Tauri 2.0 移動端支援預覽在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
 wordCount: 299

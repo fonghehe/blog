@@ -2,7 +2,7 @@
 title: "React Native 導航方案對比"
 date: 2020-11-10 11:20:14
 tags:
-  - React
+  - 移動端
 readingTime: 2
 description: "在日常開發中，React Native 導航方案對比的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
 wordCount: 290

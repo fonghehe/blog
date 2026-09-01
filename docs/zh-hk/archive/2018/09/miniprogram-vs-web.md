@@ -2,7 +2,7 @@
 title: "微信小程序開發：與 Web 開發的異同"
 date: 2018-09-24 15:29:30
 tags:
-  - 前端
+  - 移動端
 readingTime: 2
 description: "最近接了一個微信小程序需求，有 Web 基礎的情況下上手還挺快，但也有不少地方需要適應。"
 wordCount: 249

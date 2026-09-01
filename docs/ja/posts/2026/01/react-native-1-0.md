@@ -2,7 +2,7 @@
 title: "React Native 1.0 安定版"
 date: 2026-01-29 18:03:40
 tags:
-  - React
+  - モバイル
 readingTime: 4
 description: "React Nativeがついに1.0正式版をリリースしました。2015年の0.xから2026年の1.0まで、この道のりは11年かかりました。新アーキテクチャ（New Architecture）が完全にデフォルト有効化され、HermesエンジンがサポートされるJS唯一のエンジンとなり、Fabricレンダラーが全面展開さ"
 wordCount: 648

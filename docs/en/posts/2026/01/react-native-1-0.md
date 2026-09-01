@@ -2,7 +2,7 @@
 title: "React Native 1.0 Stable Release"
 date: 2026-01-29 18:03:40
 tags:
-  - React
+  - Mobile
 readingTime: 3
 description: "React Native has finally released its official 1.0. From 0.x in 2015 to 1.0 in 2026, this journey took 11 years. The New Architecture is now fully enabled by de"
 wordCount: 244

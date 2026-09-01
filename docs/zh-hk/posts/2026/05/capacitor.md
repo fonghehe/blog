@@ -2,7 +2,7 @@
 title: "Capacitor 2026 跨平臺方案：落地路徑與實戰建議"
 date: 2026-05-01 16:15:52
 tags:
-  - 工程化
+  - 移動端
 readingTime: 2
 description: "在日常開發中，Capacitor 2026 跨平臺方案的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
 wordCount: 271

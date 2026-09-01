@@ -2,8 +2,7 @@
 title: "Ionic Vue：クロスプラットフォームモバイル開発"
 date: 2021-08-24 14:31:51
 tags:
-  - Vue
-  - JavaScript
+  - モバイル
 
 readingTime: 3
 description: "Ionic Vue 跨平台移动开发のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"

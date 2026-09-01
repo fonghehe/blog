@@ -2,7 +2,7 @@
 title: "WeChat ミニプログラム開発：Web 開発との違い"
 date: 2018-09-24 15:29:30
 tags:
-  - フロントエンド
+  - モバイル
 readingTime: 2
 description: "最近 WeChat ミニプログラムの案件を受けました。Web の基礎があれば比較的早くキャッチアップできましたが、慣れが必要な点もいくつかありました。"
 wordCount: 436

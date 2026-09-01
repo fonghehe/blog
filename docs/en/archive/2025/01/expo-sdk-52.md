@@ -2,7 +2,7 @@
 title: "Expo SDK 52 New Features"
 date: 2025-01-22 12:16:53
 tags:
-  - Frontend
+  - Mobile
 readingTime: 3
 description: "Expo SDK 52 is built on React Native 0.78, with the theme of \"democratizing native capabilities\" — turning features that previously required ejecting into zero-"
 wordCount: 294

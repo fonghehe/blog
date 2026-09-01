@@ -2,7 +2,7 @@
 title: "React Native 0.74 新架構默認：實踐方法與治理思路"
 date: 2024-01-26 10:22:20
 tags:
-  - React
+  - 移動端
 readingTime: 2
 description: "關於React Native 0.74 新架構默認，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
 wordCount: 298

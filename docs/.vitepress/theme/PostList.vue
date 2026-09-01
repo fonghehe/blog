@@ -134,6 +134,13 @@ const CATEGORIES: Category[] = [
       "ブロックチェーン", "スマートコントラクト",
     ],
   },
+  {
+    id: "Mobile",
+    label: "Mobile",
+    icon: "📱",
+    desc: "React Native / Flutter / Mobile Web",
+    matchTags: ["移动端", "移動端", "Mobile", "モバイル"],
+  },
 ];
 
 // ── i18n strings ──────────────────────────────────────────────────────────────
@@ -208,6 +215,16 @@ const i18n = computed(() => {
     monthLabel: (m: number) => `${m}月`,
   };
 });
+
+const mobileLabel = computed(() => {
+  if (lang.value.startsWith("en")) return "Mobile";
+  if (lang.value.startsWith("ja")) return "モバイル";
+  return lang.value === "zh-CN" || lang.value === "zh" ? "移动端" : "移動端";
+});
+
+function categoryLabel(cat: Category): string {
+  return cat.id === "Mobile" ? mobileLabel.value : cat.label;
+}
 
 const PER_PAGE = 20;
 const page = ref(1);
@@ -363,7 +380,7 @@ const archiveLinks = computed(() => {
         @click="selectCategory(cat.id)"
       >
         <span class="cat-icon">{{ cat.icon }}</span>
-        <div class="cat-name">{{ cat.label }}</div>
+        <div class="cat-name">{{ categoryLabel(cat) }}</div>
         <div class="cat-desc">{{ cat.desc }}</div>
         <div class="cat-count">{{ getCategoryCount(cat) }}</div>
       </button>
@@ -401,7 +418,7 @@ const archiveLinks = computed(() => {
     <!-- 筛选状态 -->
     <div class="filter-status" v-if="isFiltering">
       <span v-if="selectedCategory" class="filter-tag"
-        >📂 {{ selectedCategory }}</span
+        >📂 {{ selectedCategory === "Mobile" ? mobileLabel : selectedCategory }}</span
       >
       <span v-if="searchQuery.trim()" class="filter-tag"
         >🔍 {{ searchQuery.trim() }}</span

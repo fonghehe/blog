@@ -2,7 +2,7 @@
 title: "Tauri 2.0 Mobile Support Preview"
 date: 2023-08-24 09:48:24
 tags:
-  - Frontend
+  - Mobile
 readingTime: 2
 description: "Tauri 2.0's preview of mobile support is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 189

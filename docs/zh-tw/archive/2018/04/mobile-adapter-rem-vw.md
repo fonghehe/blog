@@ -2,7 +2,7 @@
 title: "移動端適配：從 rem 到 vw/vh"
 date: 2018-04-05 09:43:44
 tags:
-  - CSS
+  - 移動端
 readingTime: 3
 description: "移動端適配是前端繞不開的話題。從早期的百分比佈局，到 rem 方案，再到現在的 vw/vh，各有利弊。整理一下各方案的原理和選擇依據。"
 wordCount: 566

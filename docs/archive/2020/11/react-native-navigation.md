@@ -2,7 +2,7 @@
 title: "React Native 导航方案对比"
 date: 2020-11-10 11:20:14
 tags:
-  - React
+  - 移动端
 readingTime: 2
 description: "在日常开发中，React Native 导航方案对比的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 wordCount: 291

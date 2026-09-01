@@ -2,8 +2,7 @@
 title: "Flutter vs React Native 2021 對比：落地路徑與實戰建議"
 date: 2021-09-01 09:31:27
 tags:
-  - React
-  - JavaScript
+  - 移動端
 readingTime: 2
 description: "最近在團隊中落地Flutter vs React Native 2021 對比，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
 wordCount: 310

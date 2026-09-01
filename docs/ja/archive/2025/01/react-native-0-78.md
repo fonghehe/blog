@@ -2,7 +2,7 @@
 title: "React Native 0.78：New Architecture正式安定版とHermes 0.15"
 date: 2025-01-14 19:08:45
 tags:
-  - React
+  - モバイル
 readingTime: 2
 description: "React Native 0.78は2025年1月にリリースされ、New Architecture（Fabric + TurboModules）が正式に安定版（General Availability）に達しました。また、Hermes 0.15エンジンの統合、StyleSheetの静的抽出最適化など、パフォーマンスと互"
 wordCount: 344

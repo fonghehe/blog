@@ -2,8 +2,7 @@
 title: "Flutter vs React Native 2021 Comparison"
 date: 2021-09-01 09:31:27
 tags:
-  - React
-  - JavaScript
+  - Mobile
 
 readingTime: 2
 description: "I recently evaluated Flutter vs React Native (2021 edition) in a real team setting and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."

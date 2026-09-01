@@ -2,8 +2,7 @@
 title: "React Native 0.64: Hermes Engine"
 date: 2021-08-19 11:47:48
 tags:
-  - React
-  - JavaScript
+  - Mobile
 
 readingTime: 2
 description: "React Native 0.64 and the Hermes engine are being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."

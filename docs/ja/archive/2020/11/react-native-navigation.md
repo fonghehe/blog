@@ -2,7 +2,7 @@
 title: "React Navigationソリューション比較"
 date: 2020-11-10 11:20:14
 tags:
-  - React
+  - モバイル
 readingTime: 2
 description: "日々の開発でReact Native ナビゲーション構成の比較の利用頻度はますます高まっている。本記事ではその使い方・原理・最適化戦略を体系的に解説する。"
 wordCount: 459

@@ -2,7 +2,7 @@
 title: "React Native 0.74：新アーキテクチャがデフォルトに"
 date: 2024-01-26 10:22:20
 tags:
-  - React
+  - モバイル
 readingTime: 2
 description: "React Native 0.74：新アーキテクチャがデフォルトにについて、多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
 wordCount: 495

@@ -2,7 +2,7 @@
 title: "Expo Router: File-Based Routing for React Native"
 date: 2023-08-22 17:22:32
 tags:
-  - Frontend
+  - Mobile
 readingTime: 2
 description: "I recently adopted Expo Router's file-based routing with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
 wordCount: 188

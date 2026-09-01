@@ -2,7 +2,7 @@
 title: "React Native 新アーキテクチャ全面展開"
 date: 2023-08-18 11:47:09
 tags:
-  - React
+  - モバイル
 readingTime: 3
 description: "最近チームでReact Native 新架构全面落地，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
 wordCount: 525

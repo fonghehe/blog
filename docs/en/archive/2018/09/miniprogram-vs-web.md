@@ -2,7 +2,7 @@
 title: "WeChat Mini Program Development: Differences from Web"
 date: 2018-09-24 15:29:30
 tags:
-  - Frontend
+  - Mobile
 readingTime: 2
 description: "I recently picked up a WeChat Mini Program project. Having a web background made the learning curve manageable, but there are plenty of things to adapt to."
 wordCount: 165

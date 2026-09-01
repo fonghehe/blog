@@ -2,7 +2,7 @@
 title: "React Native 0.70 新アーキテクチャ"
 date: 2022-07-28 15:09:19
 tags:
-  - React
+  - モバイル
 readingTime: 3
 description: "关于React Native 0.70 新架构，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
 wordCount: 569

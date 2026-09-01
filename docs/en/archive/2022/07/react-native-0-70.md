@@ -2,7 +2,7 @@
 title: "React Native 0.70 New Architecture"
 date: 2022-07-28 15:09:19
 tags:
-  - React
+  - Mobile
 readingTime: 2
 description: "Many developers only know the React Native 0.70 new architecture at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 226

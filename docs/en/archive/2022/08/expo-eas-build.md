@@ -2,7 +2,7 @@
 title: "Expo EAS Build: Cloud-Based Builds"
 date: 2022-08-01 09:31:10
 tags:
-  - Frontend
+  - Mobile
 readingTime: 2
 description: "When it comes to Expo EAS Build, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
 wordCount: 210

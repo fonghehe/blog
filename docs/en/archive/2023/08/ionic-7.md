@@ -2,7 +2,7 @@
 title: "Ionic 7: New Features and Improvements"
 date: 2023-08-29 10:22:23
 tags:
-  - Frontend
+  - Mobile
 readingTime: 2
 description: "Many developers only know Ionic 7's new features and improvements at the surface level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 173

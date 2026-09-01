@@ -2,7 +2,7 @@
 title: "Capacitor 4 Cross-Platform Updates"
 date: 2022-08-03 14:50:26
 tags:
-  - Frontend
+  - Mobile
 readingTime: 2
 description: "The Capacitor 4 cross-platform update is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
 wordCount: 192

@@ -2,7 +2,7 @@
 title: "React Native 0.75 新アーキテクチャ"
 date: 2024-10-17 19:31:08
 tags:
-  - React
+  - モバイル
 readingTime: 2
 description: "关于React Native 0.75 新架构，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
 wordCount: 432

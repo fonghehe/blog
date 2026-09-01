@@ -2,7 +2,7 @@
 title: "Capacitor 2026 跨平台方案"
 date: 2026-05-01 16:15:52
 tags:
-  - 工程化
+  - 移动端
 readingTime: 2
 description: "在日常开发中，Capacitor 2026 跨平台方案的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
 wordCount: 274

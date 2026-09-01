@@ -2,7 +2,7 @@
 title: "Capacitor 4 跨平臺更新：落地路徑與實戰建議"
 date: 2022-08-03 14:50:26
 tags:
-  - 前端
+  - 移動端
 readingTime: 2
 description: "Capacitor 4 跨平臺更新在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
 wordCount: 303

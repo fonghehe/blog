@@ -2,7 +2,7 @@
 title: "Expo SDK 52 新特性：特性解讀與遷移建議"
 date: 2025-01-22 12:16:53
 tags:
-  - 前端
+  - 移動端
 readingTime: 3
 description: "Expo SDK 52 基於 React Native 0.78 構建，主題是「原生能力民主化」——把以前需要 eject 才能用的功能變成零設定可用。新增的 Expo Modules API v3、Router v4、和 New Architecture 全面默認開啓是這個版本的三大支柱。"
 wordCount: 470

@@ -2,7 +2,7 @@
 title: "Expo Router ファイルルーティングソリューション"
 date: 2023-08-22 17:22:32
 tags:
-  - フロントエンド
+  - モバイル
 readingTime: 3
 description: "最近チームでExpo Router 文件路由方案，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
 wordCount: 510

@@ -2,8 +2,7 @@
 title: "Ionic Vue 跨平臺移動開發：落地路徑與實戰建議"
 date: 2021-08-24 14:31:51
 tags:
-  - Vue
-  - JavaScript
+  - 移動端
 readingTime: 2
 description: "Ionic Vue 跨平臺移動開發在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
 wordCount: 342

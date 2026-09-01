@@ -2,7 +2,7 @@
 title: "Expo SDK 52：Expo Router v4とモジュールAPIの刷新"
 date: 2025-01-22 12:16:53
 tags:
-  - フロントエンド
+  - モバイル
 readingTime: 3
 description: "Expo SDK 52は2024年末にリリースされ、React Nativeエコシステム全体に多くの重要な更新をもたらしました。最も注目すべきは**Expo Router v4**のメジャーバージョンアップ、**Modules API v3**によるネイティブモジュール構築の簡素化、そして**EAS Build**（E"
 wordCount: 415

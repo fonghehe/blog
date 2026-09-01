@@ -2,7 +2,7 @@
 title: "移动端适配：从 rem 到 vw/vh"
 date: 2018-04-05 09:43:44
 tags:
-  - CSS
+  - 移动端
 readingTime: 3
 description: "移动端适配是前端绕不开的话题。从早期的百分比布局，到 rem 方案，再到现在的 vw/vh，各有利弊。整理一下各方案的原理和选择依据。"
 wordCount: 563

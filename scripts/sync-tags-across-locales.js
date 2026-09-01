@@ -45,6 +45,7 @@ const CATEGORIES = [
   { id: "Node.js", tags: ["Node.js", "Express", "Koa"] },
   { id: "Testing", tags: ["测试", "測試", "テスト", "Testing", "Vitest", "Playwright", "Jest"] },
   { id: "Security", tags: ["安全", "Security", "セキュリティ", "XSS", "CSP", "CSRF"] },
+  { id: "Mobile", tags: ["移动端", "移動端", "Mobile", "モバイル"] },
 ];
 
 // The canonical tag to ADD per locale when a category is missing
@@ -88,6 +89,8 @@ const CANONICAL_TAG = {
       "zh-tw": "安全",
       "zh-hk": "安全",
     })[locale],
+  Mobile: (locale) =>
+    ({ zh: "移动端", en: "Mobile", ja: "モバイル", "zh-tw": "移動端", "zh-hk": "移動端" })[locale],
 };
 
 const RE_FRONTMATTER = /^---\n([\s\S]*?)\n---/;

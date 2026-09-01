@@ -2,7 +2,7 @@
 title: "React Native 新架構全面落地：實踐方法與治理思路"
 date: 2023-08-18 11:47:09
 tags:
-  - React
+  - 移動端
 readingTime: 2
 description: "最近在團隊中落地React Native 新架構全面落地，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
 wordCount: 329

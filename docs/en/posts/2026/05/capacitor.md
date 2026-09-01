@@ -2,7 +2,7 @@
 title: "Capacitor 2026: Cross-Platform Development Guide"
 date: 2026-05-01 16:15:52
 tags:
-  - Engineering
+  - Mobile
 readingTime: 1
 description: "Capacitor has become an increasingly common choice for cross-platform development in 2026. This article covers its usage, underlying model, and optimization str"
 wordCount: 190

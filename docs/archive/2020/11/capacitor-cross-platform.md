@@ -2,7 +2,7 @@
 title: "Capacitor 跨平台应用开发"
 date: 2020-11-18 09:32:57
 tags:
-  - 跨平台
+  - 移动端
 readingTime: 2
 description: "最近在团队中落地Capacitor 跨平台应用开发，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
 wordCount: 318

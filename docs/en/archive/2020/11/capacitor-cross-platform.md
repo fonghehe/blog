@@ -2,7 +2,7 @@
 title: "Capacitor Cross-Platform App Development"
 date: 2020-11-18 09:32:57
 tags:
-  - Cross-Platform
+  - Mobile
 readingTime: 2
 description: "Lessons learned from rolling out Capacitor for cross-platform app development on a team, shared as a practical reference for similar efforts."
 wordCount: 194

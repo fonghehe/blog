@@ -2,7 +2,7 @@
 title: "React Native 0.75 New Architecture"
 date: 2024-10-17 19:31:08
 tags:
-  - React
+  - Mobile
 readingTime: 2
 description: "Many developers only know the React Native 0.75 new architecture at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
 wordCount: 162

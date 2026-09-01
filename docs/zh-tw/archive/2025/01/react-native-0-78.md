@@ -2,7 +2,7 @@
 title: "React Native 0.78 效能飛躍"
 date: 2025-01-14 19:08:45
 tags:
-  - React
+  - 移動端
 readingTime: 3
 description: "React Native 0.78 是近年來效能提升最大的一個版本。新架構（New Architecture）成為唯一支援的架構，Hermes 引擎升級到 0.15，啟動時間減少了約 35%。對長期維護 RN 專案的人來說，這個版本值得認真對待。"
 wordCount: 499

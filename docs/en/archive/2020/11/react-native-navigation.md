@@ -2,7 +2,7 @@
 title: "React Native Navigation Solutions Comparison"
 date: 2020-11-10 11:20:14
 tags:
-  - React
+  - Mobile
 readingTime: 2
 description: "A systematic comparison of React Native navigation solutions, covering usage patterns, internals, and optimization strategies for day-to-day development."
 wordCount: 169

@@ -2,7 +2,7 @@
 title: "React Native 0.78 Performance Leap"
 date: 2025-01-14 19:08:45
 tags:
-  - React
+  - Mobile
 readingTime: 3
 description: "React Native 0.78 is the version with the largest performance improvements in recent years. The New Architecture has become the only supported architecture, the"
 wordCount: 326

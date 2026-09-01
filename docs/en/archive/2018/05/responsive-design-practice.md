@@ -2,7 +2,7 @@
 title: "Responsive Design in Practice: Starting Mobile-First"
 date: 2018-05-26 11:18:01
 tags:
-  - CSS
+  - Mobile
 readingTime: 1
 description: "After working on several mobile projects, here's a summary of responsive design best practices."
 wordCount: 87

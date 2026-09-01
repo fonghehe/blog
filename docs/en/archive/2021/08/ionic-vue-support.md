@@ -2,8 +2,7 @@
 title: "Ionic Vue: Cross-Platform Mobile Development"
 date: 2021-08-24 14:31:51
 tags:
-  - Vue
-  - JavaScript
+  - Mobile
 
 readingTime: 2
 description: "Ionic Vue for cross-platform mobile development is being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
