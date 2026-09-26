@@ -50,9 +50,9 @@ pnpm docs:preview
 
 ## 📝 Article Stats
 
-- 2018–2025: 1,192 articles (archived)
-- 2026: 65 latest articles
-- Total: 1,257+ in-depth technical articles
+- 2018–2025: 1,383 articles (archived)
+- 2026: 134 latest articles
+- Total: 1,517 in-depth technical articles
 
 ## 🎯 Main Topics
 
@@ -66,6 +66,7 @@ pnpm docs:preview
 - Node.js Development
 - Testing & Quality
 - CSS New Features
+- Mobile & Cross-Platform Development
 
 ## 📄 License
 
