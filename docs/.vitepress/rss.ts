@@ -18,7 +18,7 @@ const FEEDS: FeedConfig[] = [
     globs: ["posts/**/*.md", "archive/**/*.md"],
     title: "前端成长记录",
     description:
-      "一个前端工程师从 2018 年开始的学习与成长记录。1200+ 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
+      "一个前端工程师从 2018 年开始的学习与成长记录。1,517 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
     language: "zh-CN",
     outFile: "rss.xml",
   },
@@ -26,7 +26,7 @@ const FEEDS: FeedConfig[] = [
     globs: ["en/posts/**/*.md", "en/archive/**/*.md"],
     title: "Frontend Growth Blog",
     description:
-      "A frontend engineer's learning journey since 2018. 1200+ in-depth articles on framework internals, engineering practices and cutting-edge exploration.",
+      "A frontend engineer's learning journey since 2018. 1,517 in-depth articles on framework internals, engineering practices and cutting-edge exploration.",
     language: "en",
     outFile: "en/rss.xml",
   },
@@ -34,7 +34,7 @@ const FEEDS: FeedConfig[] = [
     globs: ["ja/posts/**/*.md", "ja/archive/**/*.md"],
     title: "フロントエンド成長記録",
     description:
-      "2018年から始まるフロントエンドエンジニアの学習・成長記録。フレームワーク原理、エンジニアリング実践、最新技術探索などの1200+記事。",
+      "2018年から始まるフロントエンドエンジニアの学習・成長記録。フレームワーク原理、エンジニアリング実践、最新技術探索などの1,517記事。",
     language: "ja",
     outFile: "ja/rss.xml",
   },

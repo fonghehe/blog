@@ -5,31 +5,31 @@ comment: false
 
 # 📚 Archive (2018–2025)
 
-> 8 years of growth — 1,192 in-depth technical articles
+> 8 years of growth — 1,383 in-depth technical articles
 
 All technical articles from 2018 to 2025. Each one reflects deep thinking and practical insights from the frontend technology landscape of its era.
 
 ## 📅 Browse by Year
 
-### 2025 (172 articles)
+### 2025 (175 articles)
 
 Latest trends in frontend frameworks, performance optimization, AI integration, and engineering practices.
 
 [View 2025 Archive →](./2025/)
 
-### 2024 (169 articles)
+### 2024 (172 articles)
 
 React latest releases, Vue ecosystem growth, build tool evolution, and more.
 
 [View 2024 Archive →](./2024/)
 
-### 2023 (167 articles)
+### 2023 (172 articles)
 
 Angular Signals, performance optimization, AI-assisted development beginnings.
 
 [View 2023 Archive →](./2023/)
 
-### 2022 (168 articles)
+### 2022 (172 articles)
 
 Frontend framework stabilization, Monorepo practices, deep dives into type systems.
 
@@ -41,19 +41,19 @@ Post-pandemic frontend development, early Web3 exploration, advanced performance
 
 [View 2021 Archive →](./2021/)
 
-### 2020 (181 articles)
+### 2020 (170 articles)
 
 Pandemic accelerates digitalization, full-stack frontend, micro-frontends in production.
 
 [View 2020 Archive →](./2020/)
 
-### 2019 (190 articles)
+### 2019 (186 articles)
 
 Thriving frontend ecosystem, rise of React Hooks, preview of Composition API.
 
 [View 2019 Archive →](./2019/)
 
-### 2018 (176 articles)
+### 2018 (167 articles)
 
 Early career in frontend, framework selection, engineering foundation building.
 

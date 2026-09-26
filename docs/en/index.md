@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Frontend Growth Blog
-description: A frontend engineer's learning journey since 2018. 1200+ in-depth articles covering framework internals, engineering practices, and cutting-edge exploration.
+description: A frontend engineer's learning journey since 2018. 1,517 in-depth articles covering framework internals, engineering practices, and cutting-edge exploration.
 hero:
   name: Frontend Growth Blog
   text: Learning · Practicing · Growing
-  tagline: 8 years of frontend engineering accumulated since 2018. 1200+ in-depth articles covering framework internals, engineering practices, and cutting-edge exploration.
+  tagline: 8 years of frontend engineering accumulated since 2018. 1,517 in-depth articles covering framework internals, engineering practices, and cutting-edge exploration.
   actions:
     - theme: brand
       text: Latest Posts

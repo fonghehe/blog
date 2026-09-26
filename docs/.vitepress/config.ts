@@ -59,7 +59,7 @@ export default defineConfig({
       {
         property: "og:description",
         content:
-          "一个前端工程师从 2018 年开始的学习与成长记录。1200+ 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
+          "一个前端工程师从 2018 年开始的学习与成长记录。1,517 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
       },
     ],
     [
@@ -81,7 +81,7 @@ export default defineConfig({
       {
         name: "twitter:description",
         content:
-          "一个前端工程师从 2018 年开始的学习与成长记录。1200+ 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
+          "一个前端工程师从 2018 年开始的学习与成长记录。1,517 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
       },
     ],
     [
@@ -185,7 +185,7 @@ export default defineConfig({
           name: "前端成长记录",
           short_name: "前端记录",
           description:
-            "一个前端工程师从 2018 年开始的学习与成长记录，1200+ 篇深度文章",
+            "一个前端工程师从 2018 年开始的学习与成长记录，1,517 篇深度文章",
           theme_color: "#3c8772",
           background_color: "#ffffff",
           display: "standalone",
