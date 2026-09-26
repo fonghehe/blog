@@ -5,11 +5,13 @@
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
-    "docs:build": "node scripts/precompute-meta.js && node scripts/parallel-build.js && node docs/.vitepress/merge-builds.js",
+    "docs:build": "node scripts/precompute-meta.js && node scripts/sync-article-counts.js --check && node scripts/parallel-build.js && node docs/.vitepress/merge-builds.js",
     "docs:build:main": "BUILD_MODE=main NODE_OPTIONS=--max-old-space-size=8192 vitepress build docs",
     "docs:build:zh-variants": "BUILD_MODE=zh-variants NODE_OPTIONS=--max-old-space-size=8192 vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "precompute": "node scripts/precompute-meta.js"
+    "precompute": "node scripts/precompute-meta.js",
+    "counts:sync": "node scripts/sync-article-counts.js",
+    "counts:check": "node scripts/sync-article-counts.js --check"
   },
   "devDependencies": {
     "@types/node": "^25.7.0",
