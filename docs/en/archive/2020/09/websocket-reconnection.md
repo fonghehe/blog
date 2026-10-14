@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "A deep dive into WebSocket reconnection and heartbeat mechanisms, exploring core principles and best practices from real-world frontend projects."
-wordCount: 185
+wordCount: 166
 ---
 
 WebSocket reconnection and heartbeat mechanisms are being adopted more and more widely in frontend development. Drawing on real-world projects, this article takes a deep dive into their core principles and best practices.
@@ -69,7 +69,7 @@ Performance optimization always depends on the specific context — not every ca
 
 Here are a few ways we can improve on this:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -89,7 +89,6 @@ Here are a few ways we can improve on this:
 }
 ```
 
-This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Performance Optimization
 

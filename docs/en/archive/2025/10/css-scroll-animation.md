@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Recently implemented CSS Scroll Animations 2025 in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doi"
-wordCount: 213
+wordCount: 196
 ---
 
 Recently implemented CSS Scroll Animations 2025 in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## In-Depth Analysis
 
@@ -70,7 +69,7 @@ This code demonstrates the basic usage. In real projects, you also need to consi
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

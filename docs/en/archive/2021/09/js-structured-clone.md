@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "I recently adopted JavaScript structuredClone for deep copying with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 214
+wordCount: 197
 ---
 
 We recently rolled out JavaScript's structuredClone for deep copying in our team and gained a lot of experience. Shared here for reference, hoping it helps those doing similar work.
@@ -38,7 +38,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## In-Depth Analysis
 
@@ -71,7 +70,7 @@ This code demonstrates the basic usage. In real projects, you also need to consi
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

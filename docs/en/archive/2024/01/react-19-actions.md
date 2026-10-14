@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "In day-to-day development, React 19 Actions: Forms and Mutations is being used more and more frequently. This article systematically explains its usage, princip"
-wordCount: 192
+wordCount: 175
 ---
 
 In day-to-day development, React 19 Actions: Forms and Mutations is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -123,7 +123,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

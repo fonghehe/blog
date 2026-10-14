@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Regarding the major updates in TanStack Query v4, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective."
-wordCount: 198
+wordCount: 181
 ---
 
 Regarding the major updates in TanStack Query v4, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective.
@@ -123,7 +123,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

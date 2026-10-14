@@ -6,7 +6,7 @@ tags:
   - 性能優化
 readingTime: 2
 description: "在日常開發中，TypeScript 效能優化 2025的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 341
+wordCount: 315
 ---
 
 在日常開發中，TypeScript 性能優化 2025的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
@@ -36,13 +36,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 內部原理
 
 先來看基本的實現方式：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -125,7 +124,7 @@ function useIntersectionObserver(options = {}) {
 
 以下是一個完整的示例：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -6,7 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Getting started with React Server Components has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 178
+wordCount: 161
 ---
 
 React Server Components has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
@@ -66,7 +66,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Real-World Applications
 

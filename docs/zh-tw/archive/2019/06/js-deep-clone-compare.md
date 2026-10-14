@@ -30,7 +30,7 @@ const role = pluck(user, 'role')   // 'admin' | 'user' | 'guest'
 
 我們可以透過以下方式實作：
 
-```javascript
+```css
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -58,7 +58,7 @@ const role = pluck(user, 'role')   // 'admin' | 'user' | 'guest'
 
 具體實作請參考以下程式碼：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

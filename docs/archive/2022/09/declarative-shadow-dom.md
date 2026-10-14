@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Declarative Shadow DOM 声明式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 315
+wordCount: 289
 ---
 
 Declarative Shadow DOM 声明式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
@@ -14,7 +14,7 @@ Declarative Shadow DOM 声明式在前端开发中的应用越来越广泛。本
 
 以下是一个完整的示例：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 性能优化
 
 先来看基本的实现方式：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

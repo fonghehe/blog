@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Server-first 2025 前端架构这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 294
+wordCount: 268
 ---
 
 Server-first 2025 前端架构这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
@@ -60,7 +60,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 真实场景应用
 

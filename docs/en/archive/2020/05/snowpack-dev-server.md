@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "When it comes to Snowpack's native ESM development experience, many developers only operate at the API level. This article looks at it from a production perspective, discussing the problems you'll actually encounter and how to solve them."
-wordCount: 204
+wordCount: 185
 ---
 
 When it comes to Snowpack's native ESM development experience, many developers only operate at the API-call level. This article looks at it from a production perspective, discussing the problems you'll actually run into and how to solve them.
@@ -66,7 +66,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Project Practice
 

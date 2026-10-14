@@ -15,7 +15,7 @@ wordCount: 204
 
 核心代碼如下：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

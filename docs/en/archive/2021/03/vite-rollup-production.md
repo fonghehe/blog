@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Deep Rollup customization for Vite production builds is increasingly common. This article systematically covers the usage, internals, and optimization strategies."
-wordCount: 184
+wordCount: 167
 ---
 
 Deep Rollup customization for Vite production builds is being used more and more frequently in day-to-day development. This article systematically explains its usage, principles, and optimization strategies.
@@ -98,7 +98,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Comparison
 

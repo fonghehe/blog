@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "CSS interpolate-size has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 180
+wordCount: 163
 ---
 
 CSS interpolate-size has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
@@ -62,7 +62,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Real-World Applications
 

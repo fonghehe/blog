@@ -5,9 +5,9 @@ tags:
   - React
   - TypeScript
 
-readingTime: 2
+readingTime: 1
 description: "Many developers only know TanStack Table v8 data tables at the API level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 183
+wordCount: 166
 ---
 
 When it comes to TanStack Table v8 for data tables, many developers only engage with it at the API-call level. This article looks at the real problems and solutions from a production-environment perspective.
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

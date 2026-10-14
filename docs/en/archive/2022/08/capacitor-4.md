@@ -5,7 +5,7 @@ tags:
   - Mobile
 readingTime: 2
 description: "The Capacitor 4 cross-platform update is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 192
+wordCount: 175
 ---
 
 The Capacitor 4 cross-platform update is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
@@ -124,7 +124,6 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

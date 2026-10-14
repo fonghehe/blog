@@ -3,9 +3,9 @@ title: "CSS interpolate-size 插值"
 date: 2023-04-03 09:31:52
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "CSS interpolate-size 插值這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 303
+wordCount: 277
 ---
 
 CSS interpolate-size 插值這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -62,7 +62,6 @@ CSS interpolate-size 插值這個話題社群討論了很多次，但隨著版�
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 真實場景應用
 

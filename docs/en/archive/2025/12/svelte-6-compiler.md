@@ -5,7 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Svelte 6 Compiler Improvements is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices "
-wordCount: 181
+wordCount: 164
 ---
 
 Svelte 6 Compiler Improvements is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.
@@ -72,7 +72,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Practical Cases
 

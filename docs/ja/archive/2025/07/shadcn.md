@@ -14,7 +14,7 @@ shadcn/ui 2025 エコシステムの発展はフロントエンド開発でま�
 
 実際のプロジェクトでの使い方はやや複雑になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -100,7 +100,7 @@ function useIntersectionObserver(options = {}) {
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -7,7 +7,7 @@ tags:
 
 readingTime: 1
 description: "Many developers only know visx, Airbnb's data visualization library, at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 173
+wordCount: 156
 ---
 
 On the Visx (Airbnb) data visualization library: many developers only operate at the API-call level. This article discusses real-world problems and solutions from a production perspective.
@@ -118,7 +118,6 @@ export function AIChat() {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

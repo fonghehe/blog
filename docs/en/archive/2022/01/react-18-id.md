@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 18 useId for unique ID generation is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 177
+wordCount: 160
 ---
 
 React 18 useId unique ID generation is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -54,7 +54,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Practical Cases
 

@@ -6,7 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近在团队中落地gRPC Web 前端通信实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 285
+wordCount: 260
 ---
 
 最近在团队里落地了 gRPC Web 前端通信方案，积累了一些经验。整理出来供参考，希望能帮到做类似工作的同学。
@@ -73,7 +73,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这套方案已经在线上稳定运行半年多，是经过实战验证的。
 
 ## 落地经验
 

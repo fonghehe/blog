@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 19 新 Hooks 汇总在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 320
+wordCount: 294
 ---
 
 React 19 新 Hooks 汇总在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

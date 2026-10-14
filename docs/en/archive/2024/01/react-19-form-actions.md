@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Recently implemented React 19 Form Actions: Automatic Form Submission in our team and accumulated quite a bit of experience. Here's a summary for reference, hop"
-wordCount: 209
+wordCount: 192
 ---
 
 Recently implemented React 19 Form Actions: Automatic Form Submission in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -35,7 +35,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## In-Depth Analysis
 

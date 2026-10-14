@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "I recently used the Web Serial API for hardware communication with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 175
+wordCount: 158
 ---
 
 We recently put the Web Serial API (hardware communication) into production in our team, and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -74,7 +74,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

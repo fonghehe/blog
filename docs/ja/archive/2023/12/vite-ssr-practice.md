@@ -5,7 +5,7 @@ tags:
   - Vite
 readingTime: 3
 description: "Vite SSR 实战方案のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 525
+wordCount: 490
 ---
 
 Vite SSR 实战方案のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -71,7 +71,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 以下の方法で改善できます：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## 最適化テクニック
 

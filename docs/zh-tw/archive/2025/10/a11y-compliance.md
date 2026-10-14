@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在日常開發中，前端無障礙 2025 法規的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 355
+wordCount: 329
 ---
 
 在日常開發中，前端無障礙 2025 法規的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 內部原理
 
@@ -70,7 +69,7 @@ function useIntersectionObserver(options = {}) {
 
 在這個基礎上，我們可以進一步最佳化：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

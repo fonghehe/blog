@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Speculation Rules prerendering optimization has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 184
+wordCount: 167
 ---
 
 Speculation Rules prerendering optimization has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
@@ -71,7 +71,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Tips
 

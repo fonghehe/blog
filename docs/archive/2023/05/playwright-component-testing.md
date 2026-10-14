@@ -5,7 +5,7 @@ tags:
   - Playwright
 readingTime: 2
 description: "Playwright 组件测试指南这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 301
+wordCount: 275
 ---
 
 Playwright 组件测试指南这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
@@ -108,7 +108,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

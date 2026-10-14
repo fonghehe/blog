@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "关于VueUse 组合式工具库大全，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 333
+wordCount: 307
 ---
 
 很多开发者对 VueUse 这套组合式工具库的了解，还停留在 API 调用层面。本文试着从生产环境的角度，讨论实际中会遇到的问题和解决方案。
@@ -129,7 +129,6 @@ function useCounter(initial = 0) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

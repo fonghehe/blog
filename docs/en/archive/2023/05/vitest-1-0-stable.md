@@ -6,7 +6,7 @@ tags:
   - Vitest
 readingTime: 2
 description: "The full Vitest 1.0 stable experience matters more and more in everyday development. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 208
+wordCount: 191
 ---
 
 在日常开发中，Vitest 1.0 稳定版全面体验 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -31,7 +31,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Internal Principles
 

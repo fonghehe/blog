@@ -6,7 +6,7 @@ tags:
   - TailwindCSS
 readingTime: 2
 description: "In day-to-day development, Tailwind CSS v4: The Oxide Engine is being used more and more frequently. This article systematically explains its usage, principles,"
-wordCount: 198
+wordCount: 181
 ---
 
 In day-to-day development, Tailwind CSS v4: The Oxide Engine is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -144,7 +144,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -14,7 +14,7 @@ wordCount: 376
 
 コアとなるコードは以下のとおり：
 
-```javascript
+```css
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -42,7 +42,7 @@ wordCount: 376
 
 以下は実際の例である：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

@@ -9,9 +9,9 @@ tags:
   - CSS
   - Node.js
 
-readingTime: 2
+readingTime: 1
 description: "The Vite plugin ecosystem plays an ever bigger role in everyday development. This article systematically covers plugin usage, internals, and how to get the most out of them."
-wordCount: 181
+wordCount: 164
 ---
 
 In day-to-day development, the Vite plugin ecosystem and plugin development are being used more and more frequently. This article systematically explains their usage, principles, and optimization strategies.
@@ -134,7 +134,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

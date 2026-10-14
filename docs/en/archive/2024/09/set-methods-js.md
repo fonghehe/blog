@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "The topic of JavaScript Set New Methods has been discussed many times in the community, but with each new version, many conclusions need updating. This article "
-wordCount: 202
+wordCount: 185
 ---
 
 The topic of JavaScript Set New Methods has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.
@@ -153,7 +153,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

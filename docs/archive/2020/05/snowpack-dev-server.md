@@ -5,7 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "关于Snowpack 原生 ESM 开发体验，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 310
+wordCount: 284
 ---
 
 许多开发者对 Snowpack 原生 ESM 开发体验的了解还停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
@@ -66,7 +66,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 项目实践
 

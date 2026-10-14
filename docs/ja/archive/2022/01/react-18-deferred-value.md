@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "最近チームでReact 18 useDeferredValue 延迟更新，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 484
+wordCount: 445
 ---
 
 最近チームでReact 18 useDeferredValue 延迟更新，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -54,7 +54,6 @@ function reducer(state, action) {
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## 実装経験
 

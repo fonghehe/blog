@@ -5,7 +5,7 @@ tags:
   - Micro Frontend
 readingTime: 2
 description: "The topic of micro-frontend architecture has been discussed many times in the community, but with each new iteration, many prior conclusions need updating. This"
-wordCount: 204
+wordCount: 185
 ---
 
 The topic of micro-frontend architecture has been discussed many times in the community, but with each new iteration, many prior conclusions need updating. This article provides a fresh take based on the latest developments.
@@ -36,7 +36,6 @@ const csvToJson = new Transform({
 });
 ```
 
-This approach has been running stably in production for over six months and has been validated in real-world use.
 
 ## Source Analysis
 
@@ -73,7 +72,7 @@ This code shows the basic usage; in real projects you'll also need to handle err
 
 From here, you can optimize further:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

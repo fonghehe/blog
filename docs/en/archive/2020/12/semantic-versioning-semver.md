@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Many developers only know semantic versioning at the major.minor.patch level. This article looks at SemVer from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 172
+wordCount: 154
 ---
 
 On Semantic Versioning (SemVer): many developers only operate at the API-call level. This post tries to look at the real problems and solutions from a production perspective.
@@ -71,7 +71,7 @@ Performance optimization has to fit the context; not every case needs over-optim
 
 Here's how we can improve it:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ Here's how we can improve it:
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Best Practices
 

@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 3
 description: "最近チームでReact 19 Form Actions：自動フォーム送信を導入し、多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 550
+wordCount: 514
 ---
 
 最近チームでReact 19 Form Actions：自動フォーム送信を導入し、多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -35,7 +35,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 詳細分析
 

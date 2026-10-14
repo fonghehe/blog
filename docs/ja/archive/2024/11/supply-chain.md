@@ -41,7 +41,7 @@ function useIntersectionObserver(options = {}) {
 
 完全な例を以下に示します：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -5,7 +5,7 @@ tags:
   - Testing
 readingTime: 2
 description: "A systematic guide to MSW (Mock Service Worker) API mocking, covering usage patterns, internals, and optimization strategies for day-to-day development."
-wordCount: 181
+wordCount: 162
 ---
 
 In day-to-day development, MSW (Mock Service Worker) API mocking is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -58,7 +58,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over half a year and has been validated in practice.
 
 ## Business Practice
 

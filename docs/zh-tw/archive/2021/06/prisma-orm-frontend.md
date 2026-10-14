@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "關於Prisma ORM 全棧開發實踐，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 352
+wordCount: 326
 ---
 
 談到 Prisma ORM 全棧開發實踐，許多開發者只停留在 API 呼叫的層面。本文從生產環境的角度出發，探討實際會遇到的問題與解決方案。
@@ -38,7 +38,6 @@ const csvToJson = new Transform({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 高階特性
 

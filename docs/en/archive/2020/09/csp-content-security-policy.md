@@ -5,7 +5,7 @@ tags:
   - Security
 readingTime: 1
 description: "A refreshed deep dive into Content Security Policy (CSP), revisiting earlier community conclusions in light of evolving browser support and standards."
-wordCount: 180
+wordCount: 161
 ---
 
 Content Security Policy (CSP) has been discussed many times in the community, but as versions have evolved, many earlier conclusions need revisiting. This article revisits it based on the latest version.
@@ -92,7 +92,6 @@ function setCSP(req, res, next) {
 }
 ```
 
-This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Summary
 

@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "React 18's automatic batching is showing up in more and more everyday code. This article systematically covers its usage, internals, and optimization strategies."
-wordCount: 196
+wordCount: 179
 ---
 
 In day-to-day development, React 18 automatic batching is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -125,7 +125,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

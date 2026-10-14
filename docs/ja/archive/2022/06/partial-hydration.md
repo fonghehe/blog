@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "最近チームでPartial Hydration 部分水合策略，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 567
+wordCount: 528
 ---
 
 最近チームでPartial Hydration 部分水合策略，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -14,7 +14,7 @@ wordCount: 567
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ wordCount: 567
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## 詳細分析
 
@@ -97,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでの使い方はより複雑になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

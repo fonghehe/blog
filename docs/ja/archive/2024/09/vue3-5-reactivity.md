@@ -3,9 +3,9 @@ title: "Vue 3.5 响应式重构：响应式 Props 解构与 useTemplateRef"
 date: 2024-09-19 15:53:30
 tags:
   - Vue
-readingTime: 3
+readingTime: 2
 description: "Vue 3.5 リアクティビティリファクタリングのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コアな原理とベストプラクティスを深く掘り下げます。"
-wordCount: 537
+wordCount: 501
 ---
 
 Vue 3.5 リアクティビティリファクタリングのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コアな原理とベストプラクティスを深く掘り下げます。
@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 コアロジックを理解することが重要です：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## まとめ
 

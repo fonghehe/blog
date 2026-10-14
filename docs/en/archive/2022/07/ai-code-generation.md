@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "The topic of comparing AI code generation tools has been discussed many times in the community, but with version updates, many conclusions need refreshing. This article re-examines the landscape based on the latest versions."
-wordCount: 187
+wordCount: 170
 ---
 
 The topic of comparing AI code generation tools has been discussed many times in the community, but with version updates, many conclusions need refreshing. This article re-examines the landscape based on the latest versions.
@@ -93,7 +93,6 @@ export function AIChat() {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Tips
 

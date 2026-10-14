@@ -6,7 +6,7 @@ tags:
 
 readingTime: 1
 description: "Many developers only know the native CSS nesting proposal at the syntax level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 180
+wordCount: 163
 ---
 
 When it comes to the native CSS nesting proposal, many developers only stay at the API surface. This article looks at the real-world problems and solutions from a production perspective.
@@ -117,7 +117,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

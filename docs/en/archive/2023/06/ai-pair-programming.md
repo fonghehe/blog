@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "AI pair programming best practices is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 195
+wordCount: 178
 ---
 
 AI pair programming best practices is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
@@ -147,7 +147,6 @@ export function AIChat() {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

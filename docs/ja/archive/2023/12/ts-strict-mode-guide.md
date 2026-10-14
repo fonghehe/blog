@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript 严格模式指南のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 561
+wordCount: 526
 ---
 
 TypeScript 严格模式指南のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## ソースコード分析
 
 まず基本的な実装方法を見てみましょう：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ function useIntersectionObserver(options = {}) {
 
 完全な例を以下に示します：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

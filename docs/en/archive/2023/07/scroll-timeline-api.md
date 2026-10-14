@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "The ScrollTimeline API and scroll timelines have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 206
+wordCount: 189
 ---
 
 ScrollTimeline API 滚动时间线This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
@@ -35,7 +35,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Source Code Analysis
 

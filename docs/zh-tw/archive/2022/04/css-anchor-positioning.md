@@ -3,9 +3,9 @@ title: "CSS Anchor Positioning 錨點定位"
 date: 2022-04-07 15:28:38
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "最近在團隊中落地CSS Anchor Positioning 錨點定位，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 299
+wordCount: 273
 ---
 
 最近在團隊中落地CSS Anchor Positioning 錨點定位，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -116,7 +116,6 @@ wordCount: 299
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

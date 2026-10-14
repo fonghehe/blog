@@ -8,7 +8,7 @@ tags:
 
 readingTime: 2
 description: "Headless UI component libraries have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 209
+wordCount: 192
 ---
 
 Headless UI component libraries have been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
@@ -17,7 +17,7 @@ Headless UI component libraries have been discussed many times in the community,
 
 We can improve it in the following ways:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -38,7 +38,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Source Code Analysis
 
@@ -100,7 +99,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 In real projects, the usage gets a bit more involved:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

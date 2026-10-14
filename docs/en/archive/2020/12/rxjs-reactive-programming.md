@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Many developers only scratch the surface of RxJS reactive programming. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 180
+wordCount: 162
 ---
 
 On RxJS reactive programming: many developers only operate at the API-call level. This post tries to look at the real problems and solutions from a production perspective.
@@ -148,7 +148,6 @@ const useStore = create(
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 

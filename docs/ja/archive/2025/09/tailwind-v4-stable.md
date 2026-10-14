@@ -6,7 +6,7 @@ tags:
   - エンジニアリング
 readingTime: 3
 description: "Tailwind CSS v4 安定版について、多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 561
+wordCount: 525
 ---
 
 Tailwind CSS v4 安定版について、多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -38,7 +38,6 @@ const csvToJson = new Transform({
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 高度な機能
 
@@ -71,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 この基盤の上でさらに最適化できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

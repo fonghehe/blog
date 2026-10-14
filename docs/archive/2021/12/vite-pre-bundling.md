@@ -5,7 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "Vite 预构建原理在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 315
+wordCount: 289
 ---
 
 Vite 的预构建机制在项目中用得越来越广。本文结合实际项目，深入剖析它的核心原理与最佳实践。
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

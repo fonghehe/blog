@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Edge-first frontend architecture design has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 180
+wordCount: 163
 ---
 
 Edge-first frontend architecture design has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
@@ -14,7 +14,7 @@ Edge-first frontend architecture design has been discussed many times in the com
 
 Here is a complete example:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Tips
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

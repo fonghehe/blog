@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Recently implemented Ark UI v2 Headless Component Library in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps"
-wordCount: 187
+wordCount: 170
 ---
 
 Recently implemented Ark UI v2 Headless Component Library in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -60,7 +60,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

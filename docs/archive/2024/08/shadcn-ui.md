@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "shadcn/ui 2024 生态发展这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 355
+wordCount: 329
 ---
 
 shadcn/ui 2024 生态发展这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
@@ -14,7 +14,7 @@ shadcn/ui 2024 生态发展这个话题社区讨论了很多次，但随着版�
 
 我们可以通过以下方式来改进：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ shadcn/ui 2024 生态发展这个话题社区讨论了很多次，但随着版�
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 源码分析
 
@@ -97,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 实际项目中的用法会更复杂一些：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

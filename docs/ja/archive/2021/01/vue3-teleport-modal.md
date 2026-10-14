@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，Vue 3 Teleport 实现全局 Modalの使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 533
+wordCount: 493
 ---
 
 日常の開発において、Vue 3 Teleport を使ったグローバル Modal の実装の利用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -82,7 +82,6 @@ function useCounter(initial = 0) {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## パフォーマンス比較
 

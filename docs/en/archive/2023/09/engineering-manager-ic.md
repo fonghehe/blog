@@ -5,7 +5,7 @@ tags:
   - Frontend Engineering
 readingTime: 2
 description: "Reflections on going from IC to EM and back to IC resonate more and more in frontend circles. This article starts from real experience and digs into the core reasoning and lessons."
-wordCount: 186
+wordCount: 169
 ---
 
 从 IC 到 EM 再到 IC 的思考 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

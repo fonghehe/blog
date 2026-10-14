@@ -14,7 +14,7 @@ There are plenty of articles online about how frontend routing works, but most l
 
 Here is a concrete example:
 
-```javascript
+```css
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -42,7 +42,7 @@ After rolling this pattern out across the team, the results were positive and ma
 
 We can implement it in the following way:
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

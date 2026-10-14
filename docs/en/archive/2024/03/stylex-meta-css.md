@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "In day-to-day development, StyleX: Meta's CSS Solution is being used more and more frequently. This article systematically explains its usage, principles, and o"
-wordCount: 190
+wordCount: 173
 ---
 
 In day-to-day development, StyleX: Meta's CSS Solution is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -143,7 +143,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

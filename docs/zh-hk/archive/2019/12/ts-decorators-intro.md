@@ -14,7 +14,7 @@ wordCount: 251
 
 核心代碼如下：
 
-```javascript
+```css
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -42,7 +42,7 @@ wordCount: 251
 
 下面是一個實際的例子：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

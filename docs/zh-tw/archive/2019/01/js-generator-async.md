@@ -14,7 +14,7 @@ JavaScript Generator 與非同步流程控制是日常開發中經常遇到的�
 
 先來看基本的用法：
 
-```javascript
+```css
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -42,7 +42,7 @@ JavaScript Generator 與非同步流程控制是日常開發中經常遇到的�
 
 核心程式碼如下：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

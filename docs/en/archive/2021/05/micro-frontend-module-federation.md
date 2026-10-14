@@ -5,9 +5,9 @@ tags:
   - Micro Frontend
   - Webpack
 
-readingTime: 2
+readingTime: 1
 description: "Landing micro-frontends with Module Federation has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 182
+wordCount: 165
 ---
 
 Micro-frontend Module Federation has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
@@ -16,7 +16,7 @@ Micro-frontend Module Federation has been discussed many times in the community,
 
 In real projects, the usage gets a bit more involved:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -99,7 +99,7 @@ Performance optimization should be tailored to specific scenarios; not all cases
 
 We can improve it in the following ways:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

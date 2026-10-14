@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 18 useId in practice is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 209
+wordCount: 192
 ---
 
 React 18 useId in practice is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Source Code Analysis
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

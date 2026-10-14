@@ -5,7 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "Hands-on Vite SSR solutions are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 193
+wordCount: 176
 ---
 
 Vite SSR 实战方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -71,7 +71,7 @@ Performance optimization should be tailored to specific scenarios; not all cases
 
 We can improve it in the following ways:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Tips
 

@@ -5,7 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "最近在團隊中落地Svelte 6 新一代編譯框架，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 338
+wordCount: 312
 ---
 
 最近在團隊中落地Svelte 6 新一代編譯框架，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -153,7 +153,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

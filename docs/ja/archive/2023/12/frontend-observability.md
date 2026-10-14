@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "前端可观测性方案のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 495
+wordCount: 460
 ---
 
 前端可观测性方案のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 コアロジックを理解することが重要です：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## まとめ
 

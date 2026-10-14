@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "The topic of shadcn/ui 2024 Ecosystem Development has been discussed many times in the community, but with each new version, many conclusions need updating. Thi"
-wordCount: 213
+wordCount: 196
 ---
 
 The topic of shadcn/ui 2024 Ecosystem Development has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.
@@ -14,7 +14,7 @@ The topic of shadcn/ui 2024 Ecosystem Development has been discussed many times 
 
 We can improve it in the following ways:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Source Code Analysis
 
@@ -97,7 +96,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 Usage in real projects tends to be more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -3,9 +3,9 @@ title: "Speculation Rules：プリレンダリング最適化"
 date: 2023-06-01 09:31:29
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 2
 description: "Speculation Rules のプリレンダリング最適化についてはコミュニティで何度も議論されてきましたが、バージョンの反復に伴い、多くの結論を更新する必要があります。本記事は最新バージョンに基づいて再整理します。"
-wordCount: 546
+wordCount: 510
 ---
 
 Speculation Rules のプリレンダリング最適化についてはコミュニティで何度も議論されてきました。しかし、バージョンの反復に伴い、これまでの結論を更新する必要が出てきました。本記事では最新バージョンに基づいて再整理します。
@@ -71,7 +71,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 最適化テクニック
 

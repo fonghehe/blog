@@ -6,7 +6,7 @@ tags:
 
 readingTime: 3
 description: "最近在团队中落地JavaScript structuredClone 深拷贝，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 562
+wordCount: 522
 ---
 
 最近チーム内で JavaScript の structuredClone（ディープコピー）を実践し、多くの経験を積みました。同じような取り組みをされる方の参考になれば幸いです。
@@ -38,7 +38,6 @@ const csvToJson = new Transform({
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## 詳細分析
 
@@ -71,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 この基盤の上でさらに最適化できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "CSS 原生巢狀實戰在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 357
+wordCount: 331
 ---
 
 CSS 原生巢狀實戰在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 進階用法
 
 先來看基本的實現方式：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ function useIntersectionObserver(options = {}) {
 
 以下是一個完整的示例：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

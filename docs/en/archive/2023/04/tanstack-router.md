@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "TanStack Router's type-safe routing is showing up in more and more everyday work. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 187
+wordCount: 170
 ---
 
 在日常开发中，TanStack Router 类型安全路由 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -123,7 +123,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

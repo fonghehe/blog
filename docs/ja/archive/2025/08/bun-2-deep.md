@@ -3,9 +3,9 @@ title: "Bun 2.0 深度解析：原生 Windows 支持与 Node 兼容性突破"
 date: 2025-08-12 09:46:23
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 2
 description: "Bun 2.0 新機能詳解のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コアな原理とベストプラクティスを深く掘り下げます。"
-wordCount: 511
+wordCount: 475
 ---
 
 Bun 2.0 新機能詳解のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コアな原理とベストプラクティスを深く掘り下げます。
@@ -42,7 +42,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 コアロジックを理解することが重要です：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## パフォーマンス最適化
 
@@ -126,7 +125,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 この基盤の上でさらに最適化できます：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

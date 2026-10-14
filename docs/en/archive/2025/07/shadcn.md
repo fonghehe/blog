@@ -14,7 +14,7 @@ The shadcn/ui 2025 ecosystem development is becoming increasingly widespread in 
 
 In real projects, the usage will be somewhat more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -100,7 +100,7 @@ Performance optimization must be tailored to the specific scenario; not every si
 
 We can improve things in the following way:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

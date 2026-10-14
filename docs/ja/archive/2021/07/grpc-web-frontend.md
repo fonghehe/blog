@@ -5,9 +5,9 @@ tags:
   - フロントエンド
   - TypeScript
 
-readingTime: 3
+readingTime: 2
 description: "最近在团队中落地gRPC Web 前端通信实践，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てば幸いです。"
-wordCount: 483
+wordCount: 443
 ---
 
 最近チーム内で gRPC Web フロントエンド通信の実践を導入し、多くの経験を積みました。同じような取り組みをされる方の参考になれば幸いです。
@@ -74,7 +74,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## 実装経験
 

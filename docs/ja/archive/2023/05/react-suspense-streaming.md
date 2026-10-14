@@ -3,9 +3,9 @@ title: "React Suspense：ストリーミングレンダリング最適化"
 date: 2023-05-29 15:09:13
 tags:
   - React
-readingTime: 3
+readingTime: 2
 description: "React Suspense のストリーミングレンダリング最適化についてはコミュニティで何度も議論されてきましたが、バージョンの反復に伴い、多くの結論を更新する必要があります。本記事は最新バージョンに基づいて再整理します。"
-wordCount: 548
+wordCount: 512
 ---
 
 React Suspense のストリーミングレンダリング最適化についてはコミュニティで何度も議論されてきましたが、バージョンの反復に伴い、多くの結論を更新する必要があります。本記事は最新バージョンに基づいて再整理します。
@@ -108,7 +108,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## まとめ
 

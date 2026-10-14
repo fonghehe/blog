@@ -7,7 +7,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "tRPC 類型安全的 API 層這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 334
+wordCount: 308
 ---
 
 tRPC 類型安全的 API 層這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -165,7 +165,6 @@ const client = new ApolloClient({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

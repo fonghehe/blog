@@ -5,7 +5,7 @@ tags:
   - Nuxt.js
 readingTime: 2
 description: "Nuxt DevTools 开发调试利器这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 313
+wordCount: 287
 ---
 
 Nuxt DevTools 开发调试利器这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
@@ -80,7 +80,6 @@ function useCounter(initial = 0) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 优化技巧
 

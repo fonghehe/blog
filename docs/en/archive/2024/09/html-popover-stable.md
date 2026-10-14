@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "In day-to-day development, HTML Popover: Stable Release in Full Production is being used more and more frequently. This article systematically explains its usag"
-wordCount: 204
+wordCount: 187
 ---
 
 In day-to-day development, HTML Popover: Stable Release in Full Production is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Internal Principles
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

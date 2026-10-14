@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "I recently evaluated Flutter vs React Native (2021 edition) in a real team setting and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 189
+wordCount: 172
 ---
 
 We recently rolled out a Flutter vs React Native (2021) comparison in our team and gained a lot of experience. This write-up is shared for reference, in the hope that it helps anyone doing similar work.
@@ -92,7 +92,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Strategies
 

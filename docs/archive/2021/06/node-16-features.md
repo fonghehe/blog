@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常开发中，Node.js 16 新特性与变更的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 323
+wordCount: 297
 ---
 
 日常开发里，Node.js 16 的新特性和变更越来越常被用到。本文系统讲解它的用法、原理和优化策略。
@@ -38,7 +38,6 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 内部原理
 

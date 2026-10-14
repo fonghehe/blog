@@ -3,9 +3,9 @@ title: "CSS Anchor Positioning 稳定版"
 date: 2025-03-21 16:35:12
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "关于CSS Anchor Positioning 稳定版，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 308
+wordCount: 282
 ---
 
 关于CSS Anchor Positioning 稳定版，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
@@ -116,7 +116,6 @@ wordCount: 308
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

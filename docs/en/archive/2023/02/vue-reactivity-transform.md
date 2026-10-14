@@ -4,9 +4,9 @@ date: 2023-02-06 10:05:25
 tags:
   - Vue
   - React
-readingTime: 2
+readingTime: 1
 description: "Many developers only know Vue reactivity syntax sugar $ref at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 198
+wordCount: 181
 ---
 
 Many developers only know Vue reactivity syntax sugar $ref at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
@@ -81,7 +81,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Best Practices
 

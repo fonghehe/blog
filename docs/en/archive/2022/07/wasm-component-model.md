@@ -5,7 +5,7 @@ tags:
   - WebAssembly
 readingTime: 2
 description: "The WebAssembly Component Model is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 193
+wordCount: 176
 ---
 
 the WebAssembly Component Model is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "React 18 SSR streaming rendering is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 175
+wordCount: 158
 ---
 
 React 18 streaming SSR is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -74,7 +74,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Real-World Applications
 

@@ -7,7 +7,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常开发中，Vue 3 Teleport 实现全局 Modal的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 314
+wordCount: 288
 ---
 
 在日常开发中，Vue 3 Teleport 实现全局 Modal 的使用频率越来越高。本文系统讲解其用法、原理与优化策略。
@@ -82,7 +82,6 @@ function useCounter(initial = 0) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 性能对比
 

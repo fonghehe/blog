@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Advanced TypeScript generics techniques have been discussed many times in the community, but as versions evolve, many conclusions need updating. This article revisits them based on the latest version."
-wordCount: 187
+wordCount: 169
 ---
 
 Advanced TypeScript generics have been discussed in the community many times, but as versions iterate, many conclusions need updating. This article revisits them based on the latest version.
@@ -169,7 +169,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 

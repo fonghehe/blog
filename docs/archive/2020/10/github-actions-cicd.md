@@ -3,9 +3,9 @@ title: "GitHub Actions CI/CD 进阶：多环境部署与 Matrix Build"
 date: 2020-06-09 10:54:08
 tags:
   - 工程化
-readingTime: 2
+readingTime: 1
 description: "最近在团队中落地GitHub Actions CI/CD 前端流水线，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 300
+wordCount: 274
 ---
 
 最近在团队中落地GitHub Actions CI/CD 前端流水线，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -58,7 +58,6 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 落地经验
 

@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "Ionic Vue for cross-platform mobile development is being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 194
+wordCount: 177
 ---
 
 Ionic Vue cross-platform mobile development is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices drawn from real projects.
@@ -42,7 +42,6 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Usage
 

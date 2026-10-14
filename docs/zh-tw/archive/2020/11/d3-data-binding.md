@@ -5,7 +5,7 @@ tags:
   - 資料視覺化
 readingTime: 2
 description: "關於D3.js 資料繫結與 DOM 操作，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 334
+wordCount: 308
 ---
 
 關於D3.js 資料繫結與 DOM 操作，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
@@ -42,7 +42,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 關鍵在於理解核心邏輯：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 最佳實踐
 
@@ -126,7 +125,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 在這個基礎上，我們可以進一步最佳化：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

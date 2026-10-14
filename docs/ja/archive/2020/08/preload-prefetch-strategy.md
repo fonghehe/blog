@@ -14,7 +14,7 @@ preload と prefetch のリソース読み込み戦略についてはコミュ�
 
 以下は全体のサンプルです：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -98,7 +98,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 基本的な実装方法を見てみましょう：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

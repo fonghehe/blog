@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "最近在团队中落地CSS Scroll-driven Animations，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 471
+wordCount: 435
 ---
 
 最近在团队中落地CSS Scroll-driven Animations，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -116,7 +116,6 @@ wordCount: 471
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## まとめ
 

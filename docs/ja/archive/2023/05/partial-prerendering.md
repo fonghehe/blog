@@ -3,9 +3,9 @@ title: "Partial Prerendering 部分プリレンダリング"
 date: 2023-05-19 17:22:21
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 2
 description: "最近在团队中落地Partial Prerendering 部分预渲染，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 521
+wordCount: 485
 ---
 
 最近在团队中落地Partial Prerendering 部分预渲染，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -138,7 +138,6 @@ export async function POST(request: NextRequest) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## まとめ
 

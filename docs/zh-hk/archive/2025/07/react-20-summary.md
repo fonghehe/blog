@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "在日常開發中，React 20 新特性彙總的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 288
+wordCount: 262
 ---
 
 在日常開發中，React 20 新特性彙總的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
@@ -14,7 +14,7 @@ wordCount: 288
 
 實際項目中的用法會更復雜一些：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -97,7 +97,7 @@ function useIntersectionObserver(options = {}) {
 
 我們可以通過以下方式來改進：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

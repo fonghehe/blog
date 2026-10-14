@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "SRI 子资源完整性校验このテーマはコミュニティで何度も議論されていますが、バージョンアップに伴い多くの結論は更新が必要です。本記事では最新バージョンをベースに改めて整理します。"
-wordCount: 514
+wordCount: 474
 ---
 
 SRI（サブリソース整合性）の検証はコミュニティで何度も議論されてきたテーマですが、バージョンアップに伴い多くの結論が更新を要します。本記事では最新バージョンをベースに改めて整理します。
@@ -42,7 +42,7 @@ function useIntersectionObserver(options = {}) {
 
 全体のサンプルを以下に示します：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## まとめ
 

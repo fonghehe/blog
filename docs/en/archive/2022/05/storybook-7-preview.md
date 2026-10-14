@@ -5,7 +5,7 @@ tags:
   - Storybook
 readingTime: 2
 description: "I recently explored the Storybook 7.0 preview and migration with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 188
+wordCount: 171
 ---
 
 We recently implemented Storybook 7.0 预览与迁移， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -58,7 +58,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

@@ -5,7 +5,7 @@ tags:
   - Nuxt.js
 readingTime: 2
 description: "Server-side best practices in Nuxt 3 are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 195
+wordCount: 178
 ---
 
 Nuxt 3 服务端最佳实践 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

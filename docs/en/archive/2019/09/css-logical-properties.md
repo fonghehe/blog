@@ -3,9 +3,9 @@ title: "CSS Logical Properties: The First Step Toward Internationalized Layouts"
 date: 2019-09-09 15:05:57
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "In daily development, CSS Logical Properties are being used more and more frequently. This article systematically explains their usage, underlying principles, and optimization strategies."
-wordCount: 176
+wordCount: 156
 ---
 
 In daily development, CSS Logical Properties are being used more and more frequently. This article systematically explains their usage, underlying principles, and optimization strategies.
@@ -89,7 +89,6 @@ We can improve things in the following ways:
 
 ```
 
-This approach has been running stably in production for over half a year and has been proven in real use.
 
 ## Performance Comparison
 

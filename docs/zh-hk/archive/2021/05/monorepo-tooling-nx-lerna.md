@@ -3,9 +3,9 @@ title: "Turborepo 高效能 Monorepo：實踐方法與治理思路"
 date: 2021-05-21 11:47:29
 tags:
   - 前端工程化
-readingTime: 2
+readingTime: 1
 description: "Turborepo 高效能 Monorepo這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 300
+wordCount: 274
 ---
 
 Turborepo 高效能 Monorepo這個話題社群討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -92,7 +92,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

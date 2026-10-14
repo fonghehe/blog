@@ -7,7 +7,7 @@ tags:
   - Next.js
 readingTime: 2
 description: "Next.js 11 新特性 Image Optimization在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 319
+wordCount: 293
 ---
 
 Next.js 11 的 Image Optimization 新特性在前端开发中应用得越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
@@ -85,7 +85,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 性能优化
 

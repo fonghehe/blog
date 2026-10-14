@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "The new features in tRPC v11 are showing up in more and more everyday development. This article systematically covers their usage, mechanics, and practical strategies."
-wordCount: 212
+wordCount: 195
 ---
 
 在日常开发中，tRPC v11 新特性 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Internal Principles
 
@@ -70,7 +69,7 @@ This code demonstrates the basic usage. In real projects, you also need to consi
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

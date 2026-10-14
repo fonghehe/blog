@@ -3,9 +3,9 @@ title: "React 19 Server Components：安定版"
 date: 2024-01-09 10:39:55
 tags:
   - React
-readingTime: 3
+readingTime: 2
 description: "日々の開発において、React 19 Server Components：安定版の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 499
+wordCount: 463
 ---
 
 日々の開発において、React 19 Server Components：安定版の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -128,7 +128,6 @@ export async function POST(request: NextRequest) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## まとめ
 

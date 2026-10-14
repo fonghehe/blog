@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "In day-to-day development, the OAuth 2.0 PKCE frontend authentication flow is being used more and more often. This article systematically walks through its usage, underlying principles, and optimization strategies."
-wordCount: 194
+wordCount: 177
 ---
 
 In day-to-day development, the OAuth 2.0 PKCE frontend authentication flow is being used more and more often. This article systematically walks through its usage, underlying principles, and optimization strategies.
@@ -120,7 +120,6 @@ function setCSP(req, res, next) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "The Node.js 22 permission model is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 183
+wordCount: 166
 ---
 
 The Node.js 22 permission model is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
@@ -66,7 +66,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Business Practice
 

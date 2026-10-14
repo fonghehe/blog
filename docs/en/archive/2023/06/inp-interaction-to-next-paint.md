@@ -5,7 +5,7 @@ tags:
   - Next.js
 readingTime: 1
 description: "I recently applied INP (Interaction to Next Paint) optimization with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 179
+wordCount: 162
 ---
 
 I recently applied INP (Interaction to Next Paint) optimization with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
@@ -50,7 +50,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

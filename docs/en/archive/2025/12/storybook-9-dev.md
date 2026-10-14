@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In day-to-day development, Storybook 9 Component Development is being used more and more frequently. This article systematically explains its usage, principles,"
-wordCount: 194
+wordCount: 177
 ---
 
 In day-to-day development, Storybook 9 Component Development is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -153,7 +153,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

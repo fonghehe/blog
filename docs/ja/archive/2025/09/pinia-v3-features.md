@@ -3,9 +3,9 @@ title: "Pinia v3 新特性速览：类型系统增强与 DevTools 升级"
 date: 2025-09-19 12:33:10
 tags:
   - Vue
-readingTime: 3
+readingTime: 2
 description: "Pinia v3 新機能について、多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 499
+wordCount: 463
 ---
 
 Pinia v3 新機能について、多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -42,7 +42,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 コアロジックを理解することが重要です：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## ベストプラクティス
 
@@ -126,7 +125,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 この基盤の上でさらに最適化できます：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

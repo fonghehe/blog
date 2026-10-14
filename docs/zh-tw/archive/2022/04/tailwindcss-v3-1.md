@@ -4,9 +4,9 @@ date: 2022-04-11 16:06:17
 tags:
   - CSS
   - TailwindCSS
-readingTime: 2
+readingTime: 1
 description: "在日常開發中，Tailwind CSS v3.1 新特性的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 297
+wordCount: 271
 ---
 
 在日常開發中，Tailwind CSS v3.1 新特性的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
@@ -59,7 +59,6 @@ export async function POST(req) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 業務實戰
 

@@ -5,7 +5,7 @@ tags:
   - Testing
 readingTime: 2
 description: "An exploration of Jest snapshot testing strategies, diving into core principles and best practices based on real-world frontend projects."
-wordCount: 189
+wordCount: 170
 ---
 
 Jest snapshot testing strategies are being used more and more widely in frontend development. This article starts from real projects to dig into its core principles and best practices.
@@ -108,7 +108,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over half a year and has been validated in practice.
 
 ## Summary
 

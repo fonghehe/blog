@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "最近在团队中落地Node.js 24 LTS 新特性，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 318
+wordCount: 292
 ---
 
 最近在团队中落地Node.js 24 LTS 新特性，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -158,7 +158,6 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

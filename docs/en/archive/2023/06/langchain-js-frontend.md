@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently applied LangChain.js for frontend AI applications with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 195
+wordCount: 178
 ---
 
 I recently applied LangChain.js for frontend AI applications with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
@@ -147,7 +147,6 @@ export function AIChat() {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

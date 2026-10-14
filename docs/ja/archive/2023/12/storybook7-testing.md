@@ -5,7 +5,7 @@ tags:
   - Storybook
 readingTime: 3
 description: "在日常开发中，Storybook 7 组件测试の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 553
+wordCount: 518
 ---
 
 在日常开发中，Storybook 7 组件测试の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## 内部原理
 
 まず基本的な実装方法を見てみましょう：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ function useIntersectionObserver(options = {}) {
 
 完全な例を以下に示します：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

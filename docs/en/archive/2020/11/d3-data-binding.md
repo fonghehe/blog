@@ -5,7 +5,7 @@ tags:
   - Data Visualization
 readingTime: 2
 description: "A production-focused guide to D3.js data binding and DOM manipulation, addressing real-world problems developers encounter beyond basic API usage."
-wordCount: 201
+wordCount: 184
 ---
 
 When it comes to D3.js data binding and DOM manipulation, many developers stop at the API-call level. This article looks at the problems you actually run into in production, and how to solve them.
@@ -42,7 +42,7 @@ Pay close attention to edge-case handling — that is critical in production.
 
 The key is to understand the core logic:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Best Practices
 
@@ -126,7 +125,7 @@ This snippet shows the basic usage. In a real project you also need to handle er
 
 Building on that, we can push the optimization a step further:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

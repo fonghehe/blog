@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "微前端 Module Federation 落地このテーマはコミュニティで何度も議論されていますが、バージョンアップに伴い多くの結論は更新が必要です。本記事では最新バージョンをベースに改めて整理します。"
-wordCount: 518
+wordCount: 479
 ---
 
 マイクロフロントエンドの Module Federation 導入は、コミュニティで何度も議論されてきたテーマだが、バージョンアップに伴い多くの結論が見直しを必要としている。本記事では最新バージョンをベースに改めて整理する。
@@ -16,7 +16,7 @@ wordCount: 518
 
 実際のプロジェクトでは、より複雑な使い方になる：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -99,7 +99,7 @@ function useIntersectionObserver(options = {}) {
 
 以下の方法で改善できる：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## まとめ
 

@@ -73,7 +73,7 @@ function useIntersectionObserver(options = {}) {
 
 この基礎の上でさらに最適化できる：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

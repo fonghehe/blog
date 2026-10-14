@@ -3,9 +3,9 @@ title: "SolidJS Signals: Cross-Framework Applications"
 date: 2025-05-29 19:03:40
 tags:
   - Frontend
-readingTime: 2
+readingTime: 1
 description: "We've recently rolled out SolidJS Signals across frameworks in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it hel"
-wordCount: 164
+wordCount: 148
 ---
 
 We've recently rolled out SolidJS Signals across frameworks in our team and accumulated a good deal of experience. Sharing it here as a reference, hoping it helps others tackling similar challenges.
@@ -39,13 +39,12 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Deep Dive
 
 Let's start by looking at the basic implementation:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

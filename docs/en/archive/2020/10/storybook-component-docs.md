@@ -5,7 +5,7 @@ tags:
   - Testing
 readingTime: 2
 description: "Lessons learned from adopting Storybook for component documentation and testing on a team, shared as a practical reference for similar efforts."
-wordCount: 197
+wordCount: 179
 ---
 
 I recently rolled out Storybook for component documentation and testing on my team and picked up a lot of experience. I'm writing it up as a reference, hoping it helps anyone doing similar work.
@@ -80,7 +80,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over half a year, so it's proven in practice.
 
 ## Tuning Strategies
 

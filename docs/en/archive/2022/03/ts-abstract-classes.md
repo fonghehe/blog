@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Comparing TypeScript abstract classes and interfaces comes up more and more in everyday development. This article systematically covers their usage, mechanics, and how to choose."
-wordCount: 190
+wordCount: 173
 ---
 
 In daily development, TypeScript 抽象类与接口对比 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -134,7 +134,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -3,9 +3,9 @@ title: "Nuxt Content v3 Content Management"
 date: 2024-02-19 11:47:46
 tags:
   - Nuxt.js
-readingTime: 2
+readingTime: 1
 description: "Recently implemented Nuxt Content v3 Content Management in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps t"
-wordCount: 200
+wordCount: 183
 ---
 
 Recently implemented Nuxt Content v3 Content Management in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -31,7 +31,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## In-Depth Analysis
 

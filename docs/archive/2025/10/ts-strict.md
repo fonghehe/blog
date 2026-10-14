@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "在日常开发中，TypeScript 严格模式 2025的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 312
+wordCount: 286
 ---
 
 在日常开发中，TypeScript 严格模式 2025的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

@@ -5,7 +5,7 @@ tags:
   - PWA
 readingTime: 2
 description: "關於PWA 離線優先架構設計，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 309
+wordCount: 283
 ---
 
 關於PWA 離線優先架構設計，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 關鍵在於理解核心邏輯：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

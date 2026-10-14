@@ -8,7 +8,7 @@ tags:
 
 readingTime: 2
 description: "Vue 3's defineComponent with TypeScript is becoming standard in frontend work. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 185
+wordCount: 168
 ---
 
 Vue 3's defineComponent with TypeScript is being adopted more and more widely in frontend development. This article dives into its core principles and best practices drawn from real projects.
@@ -95,7 +95,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Optimization
 

@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "在日常開發中，Nuxt 4 路線圖與新架構的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 300
+wordCount: 274
 ---
 
 在日常開發中，Nuxt 4 路線圖與新架構的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
@@ -106,7 +106,6 @@ function useCounter(initial = 0) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

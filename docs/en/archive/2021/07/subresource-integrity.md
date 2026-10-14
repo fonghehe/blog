@@ -5,9 +5,9 @@ tags:
   - Frontend
   - Security
 
-readingTime: 2
+readingTime: 1
 description: "SRI (subresource integrity verification) has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version."
-wordCount: 173
+wordCount: 156
 ---
 
 SRI (subresource integrity verification) has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
@@ -43,7 +43,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

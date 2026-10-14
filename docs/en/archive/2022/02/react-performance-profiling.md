@@ -6,7 +6,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "When it comes to React Profiler in practice, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter."
-wordCount: 181
+wordCount: 164
 ---
 
 When it comes to React Profiler in practice, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter.
@@ -80,7 +80,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Best Practices
 

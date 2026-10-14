@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently applied partial prerendering (PPR) with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 191
+wordCount: 174
 ---
 
 I recently applied partial prerendering (PPR) with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
@@ -138,7 +138,6 @@ export async function POST(request: NextRequest) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

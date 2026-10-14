@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Regarding the new features in Node.js 18 LTS, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective."
-wordCount: 194
+wordCount: 177
 ---
 
 Regarding the new features in Node.js 18 LTS, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective.
@@ -129,7 +129,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

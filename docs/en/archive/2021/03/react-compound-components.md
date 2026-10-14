@@ -5,9 +5,9 @@ tags:
   - React
   - TypeScript
 
-readingTime: 2
+readingTime: 1
 description: "The React compound components pattern is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 183
+wordCount: 166
 ---
 
 The React compound component pattern is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "A refreshed examination of preload and prefetch resource-loading strategies, updating earlier community conclusions based on current browser behavior."
-wordCount: 196
+wordCount: 177
 ---
 
 The topic of preload/prefetch resource-loading strategies has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits it based on the current version.
@@ -14,7 +14,7 @@ The topic of preload/prefetch resource-loading strategies has been discussed man
 
 Here is a complete example:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Optimization Tips
 
 Let's first look at the basic implementation:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

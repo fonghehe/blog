@@ -3,9 +3,9 @@ title: "Hono 2025: Full-Stack Framework Ecosystem"
 date: 2025-04-04 10:58:35
 tags:
   - Frontend
-readingTime: 2
+readingTime: 1
 description: "Hono's 2025 full-stack framework ecosystem has been widely discussed in the community, but many conclusions need updating as versions evolve. This article provi"
-wordCount: 159
+wordCount: 143
 ---
 
 Hono's 2025 full-stack framework ecosystem has been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on the latest release.
@@ -96,7 +96,6 @@ const csvToJson = new Transform({
 });
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Optimization Tips
 

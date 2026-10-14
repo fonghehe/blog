@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "When it comes to TypeScript conditional types, many developers only scratch the surface at the API level. This article examines the practical problems you'll hit in production and how to solve them."
-wordCount: 181
+wordCount: 163
 ---
 
 When it comes to TypeScript conditional types, many developers only scratch the surface at the API-call level. This article looks at the practical problems you'll hit in production and how to solve them.
@@ -71,7 +71,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Project Practice
 

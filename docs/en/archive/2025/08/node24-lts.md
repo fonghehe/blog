@@ -73,7 +73,7 @@ Pay attention to boundary condition handling, which is critical in production en
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

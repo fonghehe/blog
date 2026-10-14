@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "GitHub Copilot Workspace has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 179
+wordCount: 162
 ---
 
 GitHub Copilot Workspace has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
@@ -62,7 +62,6 @@ export function AIChat() {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Real-World Applications
 

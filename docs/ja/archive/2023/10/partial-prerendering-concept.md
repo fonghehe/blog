@@ -3,9 +3,9 @@ title: "Partial Prerendering 概念：Next.js 的混合渲染未来"
 date: 2023-10-03 14:50:22
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 2
 description: "最近チームでNext.js 14 Partial Prerendering，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 497
+wordCount: 462
 ---
 
 最近チームでNext.js 14 Partial Prerendering，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -42,7 +42,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 コアロジックを理解することが重要です：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## 最適化戦略
 
@@ -126,7 +125,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 この基盤の上でさらに最適化できます：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

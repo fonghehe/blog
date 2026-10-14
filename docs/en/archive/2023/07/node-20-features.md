@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "I recently worked through the new features in Node.js 20 LTS with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 202
+wordCount: 185
 ---
 
 We recently implemented Node.js 20 LTS 新特性汇总， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -164,7 +164,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

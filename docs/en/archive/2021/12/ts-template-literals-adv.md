@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "Advanced TypeScript template literal types are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 196
+wordCount: 179
 ---
 
 Advanced TypeScript template literal types are becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -148,7 +148,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

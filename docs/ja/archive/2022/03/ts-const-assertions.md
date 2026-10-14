@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "日常開発において、TypeScript const 断言最佳实践の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 501
+wordCount: 462
 ---
 
 日常開発において、TypeScript const 断言最佳实践の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -134,7 +134,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## まとめ
 

@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "Edge Computing 边缘计算前端应用のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 533
+wordCount: 494
 ---
 
 Edge Computing 边缘计算前端应用のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -71,7 +71,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 以下の方法で改善できます：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## パフォーマンス最適化
 

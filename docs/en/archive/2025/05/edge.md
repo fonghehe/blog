@@ -3,9 +3,9 @@ title: "Edge Computing in Frontend 2025"
 date: 2025-05-14 17:48:25
 tags:
   - Frontend
-readingTime: 2
+readingTime: 1
 description: "Edge computing in frontend development has been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides "
-wordCount: 162
+wordCount: 146
 ---
 
 Edge computing in frontend development has been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on the latest state of the art.
@@ -42,7 +42,7 @@ Pay attention to edge-case handling—this is crucial in production environments
 
 The key is to understand the core logic:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -95,7 +95,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 }
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Optimization Tips
 

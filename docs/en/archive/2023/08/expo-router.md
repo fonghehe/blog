@@ -5,7 +5,7 @@ tags:
   - Mobile
 readingTime: 2
 description: "I recently adopted Expo Router's file-based routing with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 188
+wordCount: 171
 ---
 
 We recently implemented Expo Router 文件路由方案， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -173,7 +173,6 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

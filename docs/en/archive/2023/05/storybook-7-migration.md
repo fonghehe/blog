@@ -5,7 +5,7 @@ tags:
   - Storybook
 readingTime: 2
 description: "A complete guide to Storybook 7 migration matters more and more in everyday work. This article systematically covers the process, rationale, and practical strategies."
-wordCount: 207
+wordCount: 190
 ---
 
 在日常开发中，Storybook 7 迁移完整指南 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -30,7 +30,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Internal Principles
 

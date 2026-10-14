@@ -14,7 +14,7 @@ In daily development, the use of React 20 new features is becoming increasingly 
 
 In real projects, the usage will be somewhat more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -100,7 +100,7 @@ Performance optimization must be tailored to the specific scenario; not every si
 
 We can improve things in the following way:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

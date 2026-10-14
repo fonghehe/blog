@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "最近在團隊中落地Vue 3.5 響應式重構，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 340
+wordCount: 314
 ---
 
 最近在團隊中落地Vue 3.5 響應式重構，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 深度解析
 
 先來看基本的實現方式：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ function useIntersectionObserver(options = {}) {
 
 以下是一個完整的示例：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

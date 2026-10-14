@@ -14,7 +14,7 @@ wordCount: 483
 
 実際のプロジェクトでは、より複雑な使い方が求められます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -100,7 +100,7 @@ function useIntersectionObserver(options = {}) {
 
 次の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -8,7 +8,7 @@ tags:
 
 readingTime: 2
 description: "最近在团队中落地Resource Hints 资源提示优化，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 476
+wordCount: 437
 ---
 
 最近チームで Resource Hints（リソースヒント）最適化を導入し、多くの経験を積んだ。参考になればとまとめたので、同様の取り組みをされる方の役に立てば幸いだ。
@@ -95,7 +95,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## まとめ
 

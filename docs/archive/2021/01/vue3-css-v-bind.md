@@ -5,9 +5,9 @@ tags:
   - Vue
   - React
   - CSS
-readingTime: 2
+readingTime: 1
 description: "关于Vue 3.2 v-bind:css 动态样式，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 303
+wordCount: 277
 ---
 
 关于 Vue 3.2 的 `v-bind:css` 动态样式，很多开发者只停留在 API 调用层面。本文从生产环境的角度，讨论实际使用时会遇到的问题与解法。
@@ -60,7 +60,6 @@ function useCounter(initial = 0) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 项目实践
 

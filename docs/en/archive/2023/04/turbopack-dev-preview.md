@@ -3,9 +3,9 @@ title: "Turbopack Dev Mode Performance Benchmarks"
 date: 2023-04-06 10:05:58
 tags:
   - Frontend
-readingTime: 2
+readingTime: 1
 description: "Turbopack dev-mode performance is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 174
+wordCount: 157
 ---
 
 Turbopack dev-mode performance is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
@@ -64,7 +64,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Business Practice
 

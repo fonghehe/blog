@@ -4,9 +4,9 @@ date: 2022-01-19 09:48:07
 tags:
   - React
   - TypeScript
-readingTime: 3
+readingTime: 2
 description: "React Server Components 入门このトピックはコミュニティで何度も議論されてきましたが、バージョンアップに伴い多くの結論を更新する必要があります。本記事では最新バージョンに基づいて再整理します。"
-wordCount: 528
+wordCount: 489
 ---
 
 React Server Components 入门このトピックはコミュニティで何度も議論されてきましたが、バージョンアップに伴い多くの結論を更新する必要があります。本記事では最新バージョンに基づいて再整理します。
@@ -66,7 +66,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## 実際のシナリオへの応用
 

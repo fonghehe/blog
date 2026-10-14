@@ -5,7 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "A practical guide to integrating Sentry for frontend monitoring, analyzing core principles and best practices drawn from real-world projects."
-wordCount: 187
+wordCount: 168
 ---
 
 Sentry adoption for frontend monitoring is becoming increasingly common in frontend development. Drawing on real-world projects, this article takes a deep dive into its core principles and best practices.
@@ -154,7 +154,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 }))
 ```
 
-This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Summary
 

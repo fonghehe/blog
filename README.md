@@ -51,8 +51,8 @@ pnpm docs:preview
 ## 📝 文章统计
 
 - 2018-2025 年: 1,383 篇文章 (归档)
-- 2026 年: 134 篇最新文章
-- 总计: 1,517 篇深度技术文章
+- 2026 年: 135 篇最新文章
+- 总计: 1,518 篇深度技术文章
 
 ## 🎯 主要分类
 
@@ -71,3 +71,21 @@ pnpm docs:preview
 ## 📄 License
 
 MIT
+
+## 内容维护与质量检查
+
+使用 Node.js 22.18+ 和仓库指定的 pnpm 版本（见 `packageManager`）。
+
+```bash
+pnpm check            # 回归测试、文章统计、五种语言的内容与链接检查
+pnpm content:report   # 更新内容质量报告
+pnpm docs:build       # 两组构建、合并 sitemap、生成五语言 RSS 和最终离线缓存
+```
+
+新增 [阅读路线](docs/guides.md) 与 [关于及内容说明](docs/about.md)。文章可使用 `updated`、`lastVerified`、`version`、`series` 字段；仅在真实核验后填写 `lastVerified`。搜索支持标题、摘要、标签，筛选与页码保存在 URL 中。
+
+历史待复核内容见 [质量报告](maintenance/content-quality-report.md)。已清理固定套用的生产声明并修正明确误标的 CSS 代码块；这不代表全部正文已验证。`maintenance/content-baseline.json` 记录剩余问题，CI 阻止新增问题；不要通过重新生成基线掩盖回归。
+
+离线模式缓存首页所需资源及访问过的页面，未访问页面需要联网；不会预下载全部文章。最终发布产物必须在两组构建合并后重新生成 Service Worker。
+
+时间字段约定：无时区的历史 YAML 时间按 UTC 解释，与 VitePress 解析结果保持一致；需要表达中国标准时间时使用显式的 `+08:00` 偏移。日期、修订日期与实际验证日期分别记录。

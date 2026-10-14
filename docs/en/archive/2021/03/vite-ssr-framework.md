@@ -8,7 +8,7 @@ tags:
 
 readingTime: 2
 description: "Vite's SSR server-rendering story is being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 189
+wordCount: 172
 ---
 
 Vite's SSR (server-side rendering) solution is becoming increasingly common in frontend development. This article dives into its core principles and best practices from real projects.
@@ -159,7 +159,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

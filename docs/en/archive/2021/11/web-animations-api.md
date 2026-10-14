@@ -7,7 +7,7 @@ tags:
 
 readingTime: 1
 description: "Native animation with the Web Animations API is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 181
+wordCount: 164
 ---
 
 Native animations built with the Web Animations API are becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -118,7 +118,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

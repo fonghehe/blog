@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "When it comes to LLM frontend integration in 2025, many developers only work at the API call level. This article approaches it from a production-environment ang"
-wordCount: 133
+wordCount: 117
 ---
 
 When it comes to LLM frontend integration in 2025, many developers only work at the API call level. This article approaches it from a production-environment angle, discussing real-world problems and solutions.
@@ -118,7 +118,6 @@ export function AIChat() {
 }
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Summary
 

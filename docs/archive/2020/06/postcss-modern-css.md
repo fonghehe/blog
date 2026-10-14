@@ -3,9 +3,9 @@ title: "PostCSS 现代 CSS 工作流"
 date: 2020-06-05 10:28:15
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "PostCSS 现代 CSS 工作流在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 296
+wordCount: 270
 ---
 
 PostCSS 现代 CSS 工作流在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
@@ -116,7 +116,6 @@ PostCSS 现代 CSS 工作流在前端开发中的应用越来越广泛。本文�
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

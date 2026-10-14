@@ -8,6 +8,10 @@ import ReadingProgress from "./ReadingProgress.vue";
 import NotFound from "./NotFound.vue";
 // Code highlighting CSS (atom-one-dark theme) — loads once, works for all pages
 import "./code-highlight.css";
+import "./enhancements.css";
+import HomeDiscovery from "./HomeDiscovery.vue";
+import RelatedArticles from "./RelatedArticles.vue";
+import ReadingPaths from "./ReadingPaths.vue";
 import type { Theme } from "vitepress";
 
 // Lazy-load Giscus — it's only visible at page bottom and loads external script
@@ -75,15 +79,17 @@ export default {
   Layout() {
     return h(DefaultTheme.Layout, null, {
       "layout-top": () => h(ReadingProgress),
+      "not-found": () => h(NotFound),
       "doc-before": () => h(ArticleTitle),
-      "doc-after": () => h(Giscus),
+      "doc-after": () => [h(RelatedArticles), h(Giscus)],
+      "home-features-after": () => h(HomeDiscovery),
     });
   },
-  NotFound: () => h(NotFound),
   enhanceApp({ app, router }) {
     app.component("PostList", PostList);
     app.component("ArchiveYear", ArchiveYear);
     app.component("ArchiveMonth", ArchiveMonth);
+    app.component("ReadingPaths", ReadingPaths);
 
     // Two separate builds (main: zh/en/ja; zh-variants: zh-tw/zh-hk) produce
     // incompatible app.js bundles. SPA navigation across the boundary causes
@@ -98,10 +104,18 @@ export default {
         }
       };
 
-      // Apply code highlighting after each route change
+      function cacheVisitedPage() {
+        if (!import.meta.env.PROD || !("serviceWorker" in navigator)) return;
+        const url = window.location.href;
+        navigator.serviceWorker.ready.then((registration) => {
+          (navigator.serviceWorker.controller || registration.active)?.postMessage({ type: "CACHE_PAGE", url });
+        }).catch(() => {});
+      }
+      // Save visited HTML and hydration dependencies as well as SPA chunks.
       router.onAfterRouteChanged = () => {
-        nextTick(() => applyHighlighting());
+        nextTick(() => { applyHighlighting(); cacheVisitedPage(); });
       };
+      cacheVisitedPage();
       // Apply on initial page load
       nextTick(() => applyHighlighting());
     }

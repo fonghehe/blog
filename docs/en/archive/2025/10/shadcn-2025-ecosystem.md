@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Shadcn UI 2025 Ecosystem is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from r"
-wordCount: 184
+wordCount: 167
 ---
 
 Shadcn UI 2025 Ecosystem is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.
@@ -153,7 +153,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "I recently applied 2022 Core Web Vitals optimization strategies with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 191
+wordCount: 174
 ---
 
 We recently implemented Core Web Vitals 2022 优化策略， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -92,7 +92,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

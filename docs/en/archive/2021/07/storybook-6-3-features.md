@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "In day-to-day development, Storybook 6.3's new interaction-testing feature is being used more and more often. This article systematically walks through its usage, underlying principles, and optimization strategies."
-wordCount: 182
+wordCount: 165
 ---
 
 In day-to-day development, Storybook 6.3's new interaction-testing feature is being used more and more often. This article systematically walks through its usage, underlying principles, and optimization strategies.
@@ -82,7 +82,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Comparison
 

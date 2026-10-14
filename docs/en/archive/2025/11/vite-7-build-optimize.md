@@ -6,7 +6,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "Recently implemented Vite 7 Build Optimization in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doin"
-wordCount: 189
+wordCount: 172
 ---
 
 Recently implemented Vite 7 Build Optimization in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -42,7 +42,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -119,7 +119,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

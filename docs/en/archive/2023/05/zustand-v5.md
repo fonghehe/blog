@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "A summary of Zustand v5's new features and how they apply in real frontend development, starting from actual projects and digging into the core principles and best practices."
-wordCount: 197
+wordCount: 180
 ---
 
 Zustand v5 新特性总结 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -36,7 +36,6 @@ const useStore = create(
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Usage
 

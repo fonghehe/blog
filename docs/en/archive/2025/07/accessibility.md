@@ -14,7 +14,7 @@ In daily development, frontend accessibility best practices for 2025 are being u
 
 Here is a complete example:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -101,7 +101,7 @@ This solution has been running stably in production for over six months, validat
 
 Let's first look at the basic implementation:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

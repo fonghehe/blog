@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "The topic of vue-i18n v9 Internationalization in Practice has been discussed many times in the community, but with each new version, many conclusions need updat"
-wordCount: 185
+wordCount: 168
 ---
 
 The topic of vue-i18n v9 Internationalization in Practice has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.
@@ -80,7 +80,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Tips
 

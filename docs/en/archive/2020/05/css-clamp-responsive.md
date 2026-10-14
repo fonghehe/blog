@@ -3,9 +3,9 @@ title: "CSS clamp() for Responsive Typography"
 date: 2020-05-25 11:09:36
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "CSS `clamp()` for responsive typography has been debated many times in the community, but as the spec and browser support evolve, much earlier advice needs revisiting. This article re-examines the topic based on the current state."
-wordCount: 207
+wordCount: 188
 ---
 
 CSS `clamp()` for responsive typography has been debated plenty in the community, but as the feature and browser support keep evolving, much of the earlier advice needs revisiting. This article re-examines the topic based on the current state of the spec.
@@ -116,7 +116,6 @@ We can improve on this in the following ways:
 
 ```
 
-This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Summary
 

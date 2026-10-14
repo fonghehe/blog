@@ -7,7 +7,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Headless UI 無頭組件庫這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 357
+wordCount: 331
 ---
 
 Headless UI 無頭組件庫這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -16,7 +16,7 @@ Headless UI 無頭組件庫這個話題社區討論了很多次，但隨着版�
 
 我們可以通過以下方式來改進：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -37,7 +37,6 @@ Headless UI 無頭組件庫這個話題社區討論了很多次，但隨着版�
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 源碼分析
 
@@ -99,7 +98,7 @@ function useIntersectionObserver(options = {}) {
 
 實際項目中的用法會更復雜一些：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

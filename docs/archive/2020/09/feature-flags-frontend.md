@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "前端特性开关 Feature Flags这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 324
+wordCount: 298
 ---
 
 前端特性开关 Feature Flags 这个话题社区已经讨论过很多次，但随着版本迭代，不少结论需要更新。下面基于当前最新版本重新梳理一遍。
@@ -42,7 +42,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 关键在于理解核心逻辑：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 优化技巧
 
@@ -126,7 +125,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 在这个基础上，我们可以进一步优化：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

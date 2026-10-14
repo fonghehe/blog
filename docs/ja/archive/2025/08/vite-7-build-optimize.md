@@ -6,7 +6,7 @@ tags:
   - パフォーマンス最適化
 readingTime: 3
 description: "最近チームでVite 7 ビルド最適化を導入し、多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 571
+wordCount: 535
 ---
 
 最近チームでVite 7 ビルド最適化を導入し、多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -36,13 +36,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 詳細分析
 
 まず基本的な実装方法を見てみましょう：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -125,7 +124,7 @@ function useIntersectionObserver(options = {}) {
 
 完全な例を以下に示します：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 範本字面量進階在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 337
+wordCount: 311
 ---
 
 TypeScript 模板字面量進階在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

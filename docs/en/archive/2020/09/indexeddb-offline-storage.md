@@ -5,7 +5,7 @@ tags:
   - PWA
 readingTime: 2
 description: "A production-focused guide to offline data storage with IndexedDB, addressing real-world problems developers face beyond basic API usage."
-wordCount: 213
+wordCount: 194
 ---
 
 When it comes to offline data storage with IndexedDB, many developers stop at the API-call level. This article looks at the problems you'll actually run into and how to solve them, from a production standpoint.
@@ -34,13 +34,12 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Advanced Features
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +119,7 @@ This improves both the testability and extensibility of the code.
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

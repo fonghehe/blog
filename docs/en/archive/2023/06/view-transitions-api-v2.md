@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "View Transitions API v2 cross-document transitions is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 191
+wordCount: 174
 ---
 
 View Transitions API v2 cross-document transitions is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
@@ -42,7 +42,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Comparison
 
@@ -126,7 +125,7 @@ This code demonstrates the basic usage. In real projects, you also need to consi
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

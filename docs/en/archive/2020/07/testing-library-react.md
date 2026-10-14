@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "A production-focused guide to React Testing Library best practices, going beyond basic API calls to address real-world testing challenges and solutions."
-wordCount: 196
+wordCount: 177
 ---
 
 When it comes to React Testing Library best practices, many developers only stay at the level of API calls. This article tries to discuss the real problems you'll hit and their solutions from a production perspective.
@@ -80,7 +80,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over half a year and has been validated in practice.
 
 ## Best Practices
 

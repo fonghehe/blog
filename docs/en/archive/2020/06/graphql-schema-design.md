@@ -5,7 +5,7 @@ tags:
   - GraphQL
 readingTime: 2
 description: "In everyday development, GraphQL schema design best practices are adopted more and more. This article systematically covers their usage, internals, and optimization strategies."
-wordCount: 181
+wordCount: 165
 ---
 
 In everyday development, GraphQL schema design best practices are being adopted more and more. This article walks through their usage, internals, and optimization strategies in a structured way.
@@ -132,7 +132,6 @@ const client = new ApolloClient({
 
 ```
 
-This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Summary
 

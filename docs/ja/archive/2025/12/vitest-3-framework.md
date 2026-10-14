@@ -6,7 +6,7 @@ tags:
   - テスト
 readingTime: 3
 description: "Vitest 3.0 テストフレームワークのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コアな原理とベストプラクティスを深く掘り下げます。"
-wordCount: 586
+wordCount: 550
 ---
 
 Vitest 3.0 テストフレームワークのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コアな原理とベストプラクティスを深く掘り下げます。
@@ -15,7 +15,7 @@ Vitest 3.0 テストフレームワークのフロントエンド開発におけ
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -36,7 +36,6 @@ Vitest 3.0 テストフレームワークのフロントエンド開発におけ
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## ソースコード解析
 
@@ -98,7 +97,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでの使い方はやや複雑になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "關於Deno 1.0 正式釋出初體驗，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 331
+wordCount: 305
 ---
 
 關於Deno 1.0 正式釋出初體驗，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
@@ -95,7 +95,6 @@ const csvToJson = new Transform({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 最佳實踐
 

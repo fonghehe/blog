@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "Turborepo 高性能 Monorepoこのテーマはコミュニティで何度も議論されていますが、バージョンアップに伴い多くの結論は更新が必要です。本記事では最新バージョンをベースに改めて整理します。"
-wordCount: 517
+wordCount: 478
 ---
 
 Turborepo による高パフォーマンスな Monorepo は、コミュニティで何度も議論されてきたテーマだが、バージョンアップに伴い多くの結論が見直しを必要としている。本記事では最新バージョンをベースに改めて整理する。
@@ -93,7 +93,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## まとめ
 

@@ -3,9 +3,9 @@ title: "CSS 滚动驱动动画 Scroll Animations"
 date: 2021-04-21 17:22:10
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "最近在团队中落地CSS 滚动驱动动画 Scroll Animations，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 292
+wordCount: 268
 ---
 
 最近在团队里落地了 CSS 滚动驱动动画（Scroll-driven Animations），积累了一些经验。整理出来供参考，希望对做类似工作的同学有帮助。
@@ -62,7 +62,6 @@ wordCount: 292
 
 ```
 
-这套方案已经在线上稳定运行半年多，经受过实际验证。
 
 ## 落地经验
 

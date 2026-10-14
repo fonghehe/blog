@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "在日常开发中，TypeScript satisfies 实战应用の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 512
+wordCount: 476
 ---
 
 在日常开发中，TypeScript satisfies 实战应用の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -169,7 +169,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## まとめ
 

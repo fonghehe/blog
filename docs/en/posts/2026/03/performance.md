@@ -5,7 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "When it comes to web performance optimization in 2026, many developers stop at the API invocation level. This article takes a production-focused perspective to "
-wordCount: 176
+wordCount: 157
 ---
 
 When it comes to web performance optimization in 2026, many developers stop at simply calling the API. This article takes a production-focused perspective to discuss the real problems you'll encounter and how to solve them.
@@ -48,7 +48,6 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ entryTypes: ["largest-contentful-paint", "first-input"] });
 ```
 
-This approach has been running stably in production for over six months and has been validated in real-world use.
 
 ## Practical Application
 

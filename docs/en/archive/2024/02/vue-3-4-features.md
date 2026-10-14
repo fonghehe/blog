@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "In day-to-day development, Vue 3.4 Vapor Mode Preview is being used more and more frequently. This article systematically explains its usage, principles, and op"
-wordCount: 176
+wordCount: 159
 ---
 
 In day-to-day development, Vue 3.4 Vapor Mode Preview is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -57,7 +57,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Business Practice
 

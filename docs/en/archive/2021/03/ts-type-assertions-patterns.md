@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "Many developers only know the TypeScript satisfies operator at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 194
+wordCount: 177
 ---
 
 On the TypeScript `satisfies` operator preview, many developers only stay at the API-call level. This article discusses real-world problems and solutions from a production perspective.
@@ -170,7 +170,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

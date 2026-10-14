@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "When it comes to the CSS Cascade Layers @layer specification, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter."
-wordCount: 224
+wordCount: 207
 ---
 
 When it comes to the CSS Cascade Layers @layer specification, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter.
@@ -35,7 +35,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Features
 

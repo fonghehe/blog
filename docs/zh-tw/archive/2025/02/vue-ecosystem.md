@@ -3,9 +3,9 @@ title: "Vue 生態 2025 完整盤點"
 date: 2025-02-11 17:45:22
 tags:
   - Vue
-readingTime: 2
+readingTime: 1
 description: "Vue 生態 2025 完整盤點在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 307
+wordCount: 281
 ---
 
 Vue 生態 2025 完整盤點在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -106,7 +106,6 @@ function useCounter(initial = 0) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

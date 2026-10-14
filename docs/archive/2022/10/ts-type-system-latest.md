@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.9 satisfies 实战在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 299
+wordCount: 273
 ---
 
 TypeScript 4.9 satisfies 实战在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 关键在于理解核心逻辑：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

@@ -5,7 +5,7 @@ tags:
   - GraphQL
 readingTime: 2
 description: "GraphQL Subscriptions 实时数据在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 336
+wordCount: 310
 ---
 
 GraphQL Subscriptions 实时数据在前端开发中用得越来越普遍。下面结合实际项目，聊聊它的核心原理与最佳实践。
@@ -39,7 +39,6 @@ const client = new ApolloClient({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 进阶用法
 

@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "在日常开发中，Nuxt 4 路线图与新架构的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 300
+wordCount: 274
 ---
 
 在日常开发中，Nuxt 4 路线图与新架构的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -106,7 +106,6 @@ function useCounter(initial = 0) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

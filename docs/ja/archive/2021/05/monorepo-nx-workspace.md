@@ -4,9 +4,9 @@ date: 2021-05-19 16:44:43
 tags:
   - エンジニアリング
 
-readingTime: 3
+readingTime: 2
 description: "最近在团队中落地Nx Monorepo 管理工具实践，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 478
+wordCount: 439
 ---
 
 最近チームで Nx を用いた Monorepo 管理ツールの導入を進め、多くの経験を積んだ。参考になればとまとめたので、同様の取り組みをする方の役に立てば幸いだ。
@@ -72,7 +72,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 以下の方法で改善できる：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -93,7 +93,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## 最適化戦略
 

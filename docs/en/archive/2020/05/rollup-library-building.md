@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "In day-to-day development, Rollup library-bundling best practices are adopted more and more frequently. This article systematically covers their usage, underlying principles, and optimization strategies."
-wordCount: 200
+wordCount: 181
 ---
 
 In day-to-day development, Rollup library-bundling best practices are being adopted more and more often. This article systematically covers their usage, the underlying principles, and optimization strategies.
@@ -151,7 +151,6 @@ module.exports = {
 }
 ```
 
-This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Summary
 

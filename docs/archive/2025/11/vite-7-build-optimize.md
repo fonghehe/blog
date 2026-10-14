@@ -6,7 +6,7 @@ tags:
   - 性能优化
 readingTime: 2
 description: "最近在团队中落地Vite 7 构建优化，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 301
+wordCount: 275
 ---
 
 最近在团队中落地Vite 7 构建优化，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -42,7 +42,7 @@ function useIntersectionObserver(options = {}) {
 
 以下是一个完整的示例：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -119,7 +119,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

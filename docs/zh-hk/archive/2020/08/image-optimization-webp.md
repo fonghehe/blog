@@ -3,9 +3,9 @@ title: "前端圖片優化 WebP AVIF：落地路徑與實戰建議"
 date: 2020-08-05 11:17:16
 tags:
   - 性能優化
-readingTime: 2
+readingTime: 1
 description: "前端圖片優化 WebP AVIF這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 303
+wordCount: 277
 ---
 
 前端圖片優化 WebP AVIF這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -50,7 +50,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 真實場景應用
 

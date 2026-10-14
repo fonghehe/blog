@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "I recently adopted Nx as a monorepo management tool with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 183
+wordCount: 166
 ---
 
 We recently adopted the Nx monorepo management tool on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -72,7 +72,7 @@ Performance optimization should be tailored to specific scenarios; not all cases
 
 We can improve it in the following ways:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -93,7 +93,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Strategies
 

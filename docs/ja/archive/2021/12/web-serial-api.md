@@ -5,9 +5,9 @@ tags:
   - JavaScript
   - フロントエンド
 
-readingTime: 3
+readingTime: 2
 description: "最近在团队中落地Web Serial API 硬件通信，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 484
+wordCount: 444
 ---
 
 最近チーム内で Web Serial API を使ったハードウェア通信を実戦導入し、多くの経験を積みました。参考になればとまとめたので、同様の取り組みをされる方のお役に立てば幸いです。
@@ -74,7 +74,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## 実装経験
 

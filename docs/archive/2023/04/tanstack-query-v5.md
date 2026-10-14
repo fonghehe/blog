@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "关于TanStack Query v5 新架构，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 355
+wordCount: 329
 ---
 
 关于TanStack Query v5 新架构，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
@@ -35,7 +35,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 高级特性
 

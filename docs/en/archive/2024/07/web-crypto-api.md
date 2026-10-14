@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Web Crypto API Encryption in Practice is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best pra"
-wordCount: 200
+wordCount: 183
 ---
 
 Web Crypto API Encryption in Practice is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

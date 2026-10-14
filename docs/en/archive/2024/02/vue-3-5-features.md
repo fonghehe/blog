@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "The topic of Vue 3.5: Reactivity Performance Improvements has been discussed many times in the community, but with each new version, many conclusions need updat"
-wordCount: 221
+wordCount: 204
 ---
 
 The topic of Vue 3.5: Reactivity Performance Improvements has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.
@@ -29,7 +29,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Source Code Analysis
 

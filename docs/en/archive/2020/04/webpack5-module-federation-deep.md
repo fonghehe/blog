@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "In day-to-day development, Webpack 5 Module Federation is being used more and more frequently. This article systematically covers its usage, underlying principles, and optimization strategies."
-wordCount: 189
+wordCount: 171
 ---
 
 In day-to-day development, Webpack 5 Module Federation is being used more and more frequently. This article systematically covers its usage, underlying principles, and optimization strategies.
@@ -97,7 +97,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Performance Comparison
 

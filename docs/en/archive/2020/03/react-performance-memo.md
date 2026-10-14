@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React performance optimization with memo and useMemo has been discussed many times in the community, but as versions evolve, many conclusions need updating. This article revisits them based on the latest version."
-wordCount: 186
+wordCount: 168
 ---
 
 React performance optimization with memo and useMemo has been discussed in the community many times, but as versions iterate, many conclusions need updating. This article revisits them based on the latest version.
@@ -108,7 +108,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 

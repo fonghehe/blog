@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "I recently worked through the new features of React 18's official release with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 186
+wordCount: 169
 ---
 
 We recently explored React 18's official release feature overview, and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -116,7 +116,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

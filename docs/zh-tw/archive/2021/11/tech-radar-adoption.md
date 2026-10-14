@@ -6,7 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "在日常開發中，技術雷達 Tech Radar 選型越來越常被運用。本文系統性地說明它的用法、原理與優化策略。"
-wordCount: 325
+wordCount: 299
 ---
 
 在日常開發中，技術雷達 Tech Radar 選型越來越常被運用。本文系統性地說明它的用法、原理與優化策略。
@@ -148,7 +148,6 @@ function reducer(state, action) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

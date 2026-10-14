@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "關於前端測試 2025 最佳實踐，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 303
+wordCount: 277
 ---
 
 關於前端測試 2025 最佳實踐，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
@@ -14,7 +14,7 @@ wordCount: 303
 
 實際項目中的用法會更復雜一些：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -97,7 +97,7 @@ function useIntersectionObserver(options = {}) {
 
 我們可以通過以下方式來改進：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

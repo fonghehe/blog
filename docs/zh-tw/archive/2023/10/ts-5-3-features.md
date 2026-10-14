@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "關於TypeScript 5.3 新特性，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 359
+wordCount: 333
 ---
 
 關於TypeScript 5.3 新特性，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 高階特性
 
@@ -70,7 +69,7 @@ function useIntersectionObserver(options = {}) {
 
 在這個基礎上，我們可以進一步最佳化：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

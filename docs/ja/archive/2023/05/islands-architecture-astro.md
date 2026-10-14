@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "最近在团队中落地Islands Architecture Astro 实践，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 477
+wordCount: 441
 ---
 
 最近在团队中落地Islands Architecture Astro 实践，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 コアロジックを理解することが重要です：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## まとめ
 

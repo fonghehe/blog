@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Onboarding new engineers to a frontend team is increasingly worth doing systematically. This article covers the process, the reasoning, and practical optimization strategies."
-wordCount: 178
+wordCount: 161
 ---
 
 Onboarding new members to the frontend engineering team comes up more and more often in day-to-day development. This article systematically explains its usage, principles, and optimization strategies.
@@ -62,7 +62,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Business Practice
 

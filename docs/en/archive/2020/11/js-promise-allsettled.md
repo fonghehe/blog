@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "An exploration of Promise.allSettled for parallel request handling, diving into core principles and best practices from real-world frontend projects."
-wordCount: 215
+wordCount: 198
 ---
 
 Using Promise.allSettled for parallel request handling is seeing wider use in frontend development. Drawing on real projects, this article digs into its core principles and best practices.
@@ -14,7 +14,7 @@ Using Promise.allSettled for parallel request handling is seeing wider use in fr
 
 Here are a few ways we can improve on this:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ Here are a few ways we can improve on this:
 
 ```
 
-This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Advanced Usage
 
@@ -97,7 +96,7 @@ This pattern is very practical in larger projects and significantly lowers maint
 
 In real projects the usage gets a bit more involved:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

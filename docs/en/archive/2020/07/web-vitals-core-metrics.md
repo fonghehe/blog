@@ -5,7 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "A production-oriented deep dive into Web Vitals core performance metrics, addressing real-world issues developers face beyond basic API usage."
-wordCount: 208
+wordCount: 189
 ---
 
 When it comes to Web Vitals core performance metrics, many developers only stay at the level of API calls. This article tries to discuss the real problems you'll hit and their solutions from a production perspective.
@@ -113,7 +113,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over half a year and has been validated in practice.
 
 ## Summary
 

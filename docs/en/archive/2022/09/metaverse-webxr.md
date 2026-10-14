@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "We recently adopted WebXR metaverse frontend technologies on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 184
+wordCount: 167
 ---
 
 We recently adopted WebXR metaverse frontend technologies on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -66,7 +66,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

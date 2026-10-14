@@ -45,7 +45,7 @@ This approach improves both the testability and extensibility of the code.
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

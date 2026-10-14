@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 18 併發渲染原理這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 369
+wordCount: 343
 ---
 
 React 18 併發渲染原理這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -35,7 +35,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 原始碼分析
 

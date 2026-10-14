@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在日常開發中，structuredClone 瀏覽器全覆蓋的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 348
+wordCount: 322
 ---
 
 在日常開發中，structuredClone 瀏覽器全覆蓋的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 內部原理
 
 先來看基本的實現方式：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ function useIntersectionObserver(options = {}) {
 
 以下是一個完整的示例：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

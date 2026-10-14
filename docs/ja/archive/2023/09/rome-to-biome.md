@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "在日常开发中，Rome 到 Biome 工具链演变の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 523
+wordCount: 488
 ---
 
 在日常开发中，Rome 到 Biome 工具链演变の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## まとめ
 

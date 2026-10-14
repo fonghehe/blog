@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "关于Vue 3 测试 2025 最佳，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 363
+wordCount: 337
 ---
 
 关于Vue 3 测试 2025 最佳，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 高级特性
 
@@ -70,7 +69,7 @@ function useIntersectionObserver(options = {}) {
 
 在这个基础上，我们可以进一步优化：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

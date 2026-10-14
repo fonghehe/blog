@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "This topic has been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on the la"
-wordCount: 162
+wordCount: 146
 ---
 
 This topic has been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on the latest releases.
@@ -14,7 +14,7 @@ This topic has been widely discussed in the community, but many conclusions need
 
 The key is to understand the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -63,7 +63,6 @@ const csvToJson = new Transform({
 });
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Case Studies
 
@@ -100,7 +99,7 @@ This snippet illustrates the fundamental usage. In real projects you'll also nee
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

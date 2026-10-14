@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近在團隊中落地TypeScript 6.0 泛型改進，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 320
+wordCount: 294
 ---
 
 最近在團隊中落地TypeScript 6.0 泛型改進，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -14,7 +14,7 @@ wordCount: 320
 
 以下是一個完整的示例：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 調優策略
 
 先來看基本的實現方式：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

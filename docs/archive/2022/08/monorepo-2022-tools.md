@@ -5,7 +5,7 @@ tags:
   - 前端工程化
 readingTime: 2
 description: "关于Monorepo 2022 工具链对比，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 361
+wordCount: 335
 ---
 
 关于Monorepo 2022 工具链对比，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
@@ -14,7 +14,7 @@ wordCount: 361
 
 我们可以通过以下方式来改进：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ wordCount: 361
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 高级特性
 
@@ -97,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 实际项目中的用法会更复杂一些：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

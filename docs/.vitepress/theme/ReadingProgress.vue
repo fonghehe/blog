@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
-import { useData } from "vitepress";
+import { ref, computed, watch, nextTick, onMounted, onUnmounted } from "vue";
+import { useData, useRoute } from "vitepress";
 
-const { frontmatter } = useData();
+import { uiCopy } from "./locale";
+const { frontmatter, lang } = useData();
+const route = useRoute();
+const label = computed(() => uiCopy(lang.value).progress);
+let observer: ResizeObserver | undefined;
 const progress = ref(0);
 
 function onScroll() {
@@ -14,20 +18,25 @@ function onScroll() {
 
 onMounted(() => {
   window.addEventListener("scroll", onScroll, { passive: true });
+  observer = new ResizeObserver(onScroll);
+  observer.observe(document.body);
   onScroll();
 });
+watch(() => route.path, async () => { await nextTick(); onScroll(); });
 
 onUnmounted(() => {
   window.removeEventListener("scroll", onScroll);
+  observer?.disconnect();
 });
 </script>
 
 <template>
   <div
-    v-if="frontmatter.layout !== 'home'"
+    v-if="frontmatter.date && frontmatter.layout !== 'home'"
     class="reading-progress-bar"
     :style="{ transform: `scaleX(${progress / 100})` }"
     role="progressbar"
+    :aria-label="label"
     :aria-valuenow="Math.round(progress)"
     aria-valuemin="0"
     aria-valuemax="100"

@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Lessons learned from implementing Design Tokens within a team design system, shared as a practical reference for others doing similar work."
-wordCount: 193
+wordCount: 174
 ---
 
 Recently I rolled out a Design System / Design Tokens initiative within my team and accumulated quite a bit of experience. I'm writing it up as a reference, hoping it helps others doing similar work.
@@ -60,7 +60,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Implementation Experience
 

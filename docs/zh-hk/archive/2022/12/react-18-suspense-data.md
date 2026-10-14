@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 18 Suspense 數據獲取在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
-wordCount: 321
+wordCount: 295
 ---
 
 React 18 Suspense 數據獲取在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

@@ -3,9 +3,9 @@ title: "Web 字型載入最佳化策略"
 date: 2020-08-12 10:22:29
 tags:
   - 效能最佳化
-readingTime: 2
+readingTime: 1
 description: "在日常開發中，Web 字型載入最佳化策略的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 306
+wordCount: 280
 ---
 
 在日常開發中，Web 字型載入最佳化策略的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
@@ -92,7 +92,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3.5 響應式效能提升這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 370
+wordCount: 344
 ---
 
 Vue 3.5 響應式效能提升這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -29,7 +29,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 原始碼分析
 

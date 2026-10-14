@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "TypeScript template literal types are showing up in more and more everyday code. This article systematically covers their usage, mechanics, and practical patterns."
-wordCount: 182
+wordCount: 165
 ---
 
 In day-to-day development, TypeScript template literal types are being used more and more frequently. This article systematically explains their usage, underlying principles, and optimization strategies.
@@ -135,7 +135,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

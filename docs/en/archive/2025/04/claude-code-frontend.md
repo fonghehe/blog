@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Claude Code's frontend development workflow is becoming increasingly common in day-to-day development. This article offers a systematic look at its usage, inner"
-wordCount: 158
+wordCount: 142
 ---
 
 Claude Code's frontend development workflow is becoming increasingly common in day-to-day development. This article offers a systematic look at its usage, inner workings, and optimization strategies.
@@ -63,7 +63,6 @@ export function AIChat() {
 }
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Business Practice
 

@@ -8,7 +8,7 @@ tags:
 
 readingTime: 2
 description: "Vue 3 + TypeScript 完整开发指南のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 516
+wordCount: 476
 ---
 
 Vue 3 + TypeScript の完全開発ガイドは、フロントエンド開発での活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -72,7 +72,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## 実践事例
 

@@ -4,9 +4,9 @@ date: 2025-10-23 19:17:54
 tags:
   - Node.js
   - 安全
-readingTime: 3
+readingTime: 2
 description: "Node.js セキュリティ 2025について、多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 512
+wordCount: 476
 ---
 
 Node.js セキュリティ 2025について、多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -67,7 +67,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## プロジェクト実践
 

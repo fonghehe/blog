@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 在此基礎上，還可以進一步優化：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

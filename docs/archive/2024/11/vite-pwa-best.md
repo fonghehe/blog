@@ -6,7 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "关于Vite PWA 最佳实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 305
+wordCount: 279
 ---
 
 关于Vite PWA 最佳实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
@@ -67,7 +67,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 项目实践
 

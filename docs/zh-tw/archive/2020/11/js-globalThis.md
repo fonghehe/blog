@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "JavaScript globalThis 跨環境統一在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 312
+wordCount: 286
 ---
 
 JavaScript globalThis 跨環境統一在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -14,7 +14,7 @@ JavaScript globalThis 跨環境統一在前端開發中的應用越來越廣泛�
 
 以下是一個完整的示例：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 效能最佳化
 
 先來看基本的實現方式：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

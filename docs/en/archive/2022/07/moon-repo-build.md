@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Moon for monorepo build management is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 192
+wordCount: 175
 ---
 
 Moon for monorepo build management is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
@@ -128,7 +128,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

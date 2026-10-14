@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Profiling React component performance is a skill more and more teams need. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 172
+wordCount: 154
 ---
 
 React component performance analysis is being used more and more widely in frontend development. Starting from real projects, this post digs into the core principles and best practices.
@@ -72,7 +72,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Real-World Applications
 

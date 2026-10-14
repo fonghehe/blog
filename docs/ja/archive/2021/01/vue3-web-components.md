@@ -8,9 +8,9 @@ tags:
   - CSS
   - Node.js
 
-readingTime: 3
+readingTime: 2
 description: "在日常开发中，Vue 3 构建 Web Componentsの使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 536
+wordCount: 496
 ---
 
 日常の開発において、Vue 3 で Web Components を構築する利用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -150,7 +150,6 @@ module.exports = {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## まとめ
 

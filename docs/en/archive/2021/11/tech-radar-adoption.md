@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Using a Tech Radar for technology adoption is increasingly common in everyday work. This article systematically covers how it works, why it helps, and practical strategies."
-wordCount: 192
+wordCount: 175
 ---
 
 Tech Radar (technology radar) selection is being used more and more frequently in day-to-day development. This article systematically explains its usage, principles, and optimization strategies.
@@ -149,7 +149,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

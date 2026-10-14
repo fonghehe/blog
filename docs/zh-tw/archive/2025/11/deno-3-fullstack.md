@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Deno 3.0 全棧方案在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 354
+wordCount: 328
 ---
 
 Deno 3.0 全棧方案在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -14,7 +14,7 @@ Deno 3.0 全棧方案在前端開發中的應用越來越廣泛。本文從實�
 
 我們可以通過以下方式來改進：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ Deno 3.0 全棧方案在前端開發中的應用越來越廣泛。本文從實�
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 進階用法
 
@@ -97,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 實際專案中的用法會更復雜一些：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -5,7 +5,7 @@ tags:
   - 移動端
 readingTime: 2
 description: "最近在團隊中落地Flutter vs React Native 2021 對比，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 310
+wordCount: 284
 ---
 
 最近在團隊中落地 Flutter vs React Native 的對比（2021 年），積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -91,7 +91,6 @@ function reducer(state, action) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 調優策略
 

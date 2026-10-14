@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "React Native 0.64 and the Hermes engine are being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 180
+wordCount: 163
 ---
 
 React Native 0.64's Hermes engine is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices drawn from real projects.
@@ -154,7 +154,6 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

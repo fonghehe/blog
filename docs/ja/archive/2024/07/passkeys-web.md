@@ -3,9 +3,9 @@ title: "Passkeys：完全なWeb統合"
 date: 2024-07-24 13:38:15
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 2
 description: "Passkeys：完全なWeb統合について、多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 558
+wordCount: 522
 ---
 
 Passkeys：完全なWeb統合について、多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -30,7 +30,6 @@ function setCSP(req, res, next) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 高度な機能
 

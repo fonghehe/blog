@@ -7,7 +7,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "React Hook Form 表單方案對比這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 344
+wordCount: 318
 ---
 
 React Hook Form 表單方案對比這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -125,7 +125,6 @@ function reducer(state, action) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

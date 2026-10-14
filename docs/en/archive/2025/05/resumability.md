@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Resumability as a new direction in 2025 is seeing increasingly widespread adoption in frontend development. This article digs into its core principles and best "
-wordCount: 166
+wordCount: 150
 ---
 
 Resumability as a new direction in 2025 is seeing increasingly widespread adoption in frontend development. This article digs into its core principles and best practices from a real-project perspective.
@@ -14,7 +14,7 @@ Resumability as a new direction in 2025 is seeing increasingly widespread adopti
 
 We can improve it in the following way:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ We can improve it in the following way:
 
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Advanced Usage
 
@@ -100,7 +99,7 @@ This pattern is very practical in large-scale projects and can significantly red
 
 In a real project, the usage gets a bit more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

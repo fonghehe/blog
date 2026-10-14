@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Recently implemented Radix UI Themes Design System in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those "
-wordCount: 195
+wordCount: 178
 ---
 
 Recently implemented Radix UI Themes Design System in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -42,7 +42,7 @@ Pay attention to boundary condition handling, which is critical in production en
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Strategies
 
@@ -126,7 +125,7 @@ This code demonstrates the basic usage. In real projects, you also need to consi
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Docker multi-stage builds for frontend apps are increasingly common in everyday work. This article systematically covers usage, mechanics, and optimization strategies."
-wordCount: 190
+wordCount: 173
 ---
 
 In day-to-day development, Docker multi-stage builds for frontend applications are being used more and more frequently. This article systematically explains their usage, principles, and optimization strategies.
@@ -106,7 +106,6 @@ export default defineConfig({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Comparison
 

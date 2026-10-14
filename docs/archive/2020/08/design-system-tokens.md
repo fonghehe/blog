@@ -5,7 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "最近在团队中落地Design System 设计令牌 Design Tokens，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 300
+wordCount: 274
 ---
 
 最近在团队里落地了 Design Token（设计令牌）体系，积累了一些经验。整理出来供大家参考，希望能对做类似工作的同学有帮助。
@@ -60,7 +60,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 落地经验
 

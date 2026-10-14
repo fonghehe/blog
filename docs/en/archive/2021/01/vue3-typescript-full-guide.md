@@ -8,7 +8,7 @@ tags:
 
 readingTime: 2
 description: "Vue 3 plus TypeScript is becoming the default for serious projects. This complete guide starts from real projects and digs into the core principles and best practices."
-wordCount: 189
+wordCount: 172
 ---
 
 The complete Vue 3 + TypeScript development guide is being adopted more and more widely in frontend development. This article dives into its core principles and best practices from real projects.
@@ -72,7 +72,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Practical Cases
 

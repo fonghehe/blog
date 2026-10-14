@@ -1,0 +1,12 @@
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+:where(a, button, input, select, textarea):focus-visible { outline: 2px solid var(--vp-c-brand-1); outline-offset: 3px; }
+.vp-doc :where(h1, h2, h3, h4) { scroll-margin-top: calc(var(--vp-nav-height) + 32px); text-wrap: balance; }
+.vp-doc :where(p, li, a), .article-h1 { overflow-wrap: anywhere; }
+.search-input { min-height: 44px; }
+.article-header .meta-tag { text-decoration: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+@media (max-width: 640px) {
+  .reading-links a { min-height: 44px; display: inline-flex; align-items: center; }
+}

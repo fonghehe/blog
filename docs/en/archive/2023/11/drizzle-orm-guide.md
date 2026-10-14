@@ -3,9 +3,9 @@ title: "Drizzle ORM Practical Guide"
 date: 2023-11-29 15:09:38
 tags:
   - Frontend
-readingTime: 2
+readingTime: 1
 description: "Hands-on guides to Drizzle ORM are increasingly relevant in frontend development. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 185
+wordCount: 168
 ---
 
 Drizzle ORM 实战指南 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -41,7 +41,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

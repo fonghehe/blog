@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "最近在团队中落地React Suspense 数据获取新模式，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 319
+wordCount: 293
 ---
 
 最近在团队中落地React Suspense 数据获取新模式，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -95,7 +95,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 调优策略
 

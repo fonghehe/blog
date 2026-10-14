@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "A refreshed look at optional chaining and nullish coalescing best practices, revisiting earlier conclusions in light of updated language support."
-wordCount: 212
+wordCount: 195
 ---
 
 Optional chaining and nullish coalescing have been discussed in the community many times, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest versions.
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Source Code Analysis
 
@@ -70,7 +69,7 @@ This snippet shows the basic usage. In a real project you also need to handle er
 
 Building on that, we can push the optimization a step further:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -7,7 +7,7 @@ tags:
 
 readingTime: 3
 description: "关于前端错误监控告警，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 610
+wordCount: 570
 ---
 
 フロントエンドのエラー監視とアラートについては、多くの開発者が API の呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -39,7 +39,6 @@ const csvToJson = new Transform({
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## 高度な機能
 
@@ -72,7 +71,7 @@ function useIntersectionObserver(options = {}) {
 
 この基盤の上でさらに最適化できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

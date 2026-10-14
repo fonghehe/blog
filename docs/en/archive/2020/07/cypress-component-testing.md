@@ -5,7 +5,7 @@ tags:
   - Testing
 readingTime: 2
 description: "A practical introduction to Cypress component testing, exploring core principles and best practices drawn from real-world frontend projects."
-wordCount: 195
+wordCount: 176
 ---
 
 Cypress component testing is being adopted more and more widely in frontend development. This article starts from real projects to dig into its core principles and best practices.
@@ -80,7 +80,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Performance Optimization
 

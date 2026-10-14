@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "A refreshed examination of frontend feature flags, revisiting earlier community conclusions in light of evolving tools and best practices."
-wordCount: 189
+wordCount: 170
 ---
 
 Frontend feature flags have been discussed many times in the community, but as versions have evolved, many conclusions need revisiting. This article revisits the topic based on the latest version.
@@ -41,7 +41,7 @@ Mind edge-case handling — it is critical in production.
 
 The key is understanding the core logic:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -89,7 +89,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 }
 ```
 
-This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Optimization Tips
 
@@ -122,7 +121,7 @@ This snippet shows the basic usage. In a real project you'll also need to accoun
 
 Building on this, we can optimize further:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

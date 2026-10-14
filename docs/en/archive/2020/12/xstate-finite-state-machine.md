@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Many developers only know XState finite state machines at the API level. This article looks at real frontend usage from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 186
+wordCount: 168
 ---
 
 On XState finite state machines for frontend: many developers only operate at the API-call level. This post tries to look at the real problems and solutions from a production perspective.
@@ -148,7 +148,6 @@ const useStore = create(
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 

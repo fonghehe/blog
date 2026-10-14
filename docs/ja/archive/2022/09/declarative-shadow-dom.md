@@ -14,7 +14,7 @@ Declarative Shadow DOM 声明式のフロントエンド開発における活用
 
 完全な例を以下に示します：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -98,7 +98,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 まず基本的な実装方法を見てみましょう：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

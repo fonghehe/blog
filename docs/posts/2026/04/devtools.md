@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "DevTools 2026 新功能在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 344
+wordCount: 318
 ---
 
 DevTools 的新功能在前端开发中用得越来越广。本文从实际项目出发，讲讲它的核心原理和最佳实践。
@@ -14,7 +14,7 @@ DevTools 的新功能在前端开发中用得越来越广。本文从实际项�
 
 先从一个基础实现看起：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ DevTools 的新功能在前端开发中用得越来越广。本文从实际项�
 
 ```
 
-这套方案已经在线上稳定运行了半年多，是经过实战检验的。
 
 ## 进阶用法
 
@@ -97,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 实际项目里的用法往往要复杂些：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

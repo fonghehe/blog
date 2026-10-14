@@ -1,158 +1,54 @@
 ---
-title: "ESLint v9 Flat Config デフォルト化"
+title: "ESLint v9 Flat Config：設定構造と移行チェック"
 date: 2023-09-08 15:28:03
+updated: 2026-10-24
+version: "ESLint 9.x (historical migration)"
 tags:
   - ESLint
 readingTime: 3
-description: "关于ESLint v9 Flat Config 默认，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 542
+wordCount: 704
+description: "ESLint v9 の設定配列、ファイル対象、除外パターン、移行確認を振り返り、公開日と修正日を区別します。"
 ---
 
-关于ESLint v9 Flat Config 默认，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
+> 修正について：元のアーカイブ日と URL を残し、2026-10-24 に書き直しました。ESLint v9 の正式公開日は 2024-04-05 です。以下は後から整理した移行解説であり、2023 年に v9 が正式公開されていたという意味ではありません。v9 の公式保守は終了しています。新規プロジェクトでは公式のサポート表を確認してください。
 
-## 基本原理
+Flat Config は JavaScript モジュールから設定配列をエクスポートします。同じファイルに一致する設定オブジェクトを順に組み合わせ、後のルール設定が前の設定を上書きします。`files` は各オブジェクトの対象を指定します。
 
-以下の方法で改善できます：
+## 設定配列の例
 
-```javascript
-.container {
-  width: min(90%, 1200px);
-  margin-inline: auto;
-  padding-inline: clamp(1rem, 3vw, 3rem);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
-}
-
-.card { container-type: inline-size; }
-
-@container (min-width: 400px) {
-  .card__content { display: grid; grid-template-columns: 200px 1fr; }
-}
-
-```
-
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
-
-## 高度な機能
-
-まず基本的な実装方法を見てみましょう：
+歴史的な ESLint 9 と `@eslint/js` 9 の組み合わせを説明する学習用設定です。本番稼働や性能測定の実績を示すものではありません。
 
 ```javascript
-const fs = require('fs')
-const { Transform, pipeline } = require('stream')
-const { promisify } = require('util')
-const pipelineAsync = promisify(pipeline)
+// eslint.config.mjs — historical ESLint 9 example
+import js from '@eslint/js'
 
-const csvToJson = new Transform({
-  transform(chunk, encoding, callback) {
-    const lines = chunk.toString().split('\n')
-    const headers = lines[0].split(',')
-    for (let i = 1; i < lines.length; i++) {
-      if (!lines[i].trim()) continue
-      const values = lines[i].split(',')
-      const obj = {}
-      headers.forEach((h, idx) => obj[h.trim()] = values[idx]?.trim())
-      this.push(JSON.stringify(obj) + '\n')
-    }
-    callback()
-  }
-})
-
+export default [
+  { ignores: ['dist/**', 'coverage/**'] },
+  js.configs.recommended,
+  {
+    files: ['**/*.js'],
+    languageOptions: { ecmaVersion: 2022, sourceType: 'module' },
+    rules: { 'no-unused-vars': 'warn' },
+  },
+]
 ```
 
-このコードは基本的な使い方を示しています。実際のプロジェクトでは、エラー処理と境界条件も考慮する必要があります。
+`js.configs.recommended` は推奨ルールを提供し、最後のオブジェクトで JavaScript 向けのルールを調整します。`ignores` だけを持つオブジェクトはグローバル除外を表します。ブラウザや Node.js のグローバル変数、TypeScript や Vue SFC のパーサー、フレームワーク用プラグインは別途設定が必要です。
 
-## プロジェクト実践
+## 移行の確認事項
 
-この基盤の上でさらに最適化できます：
+1. ESLint とプラグインのバージョンを固定し、Flat Config と対象メジャーバージョンへの対応を確認します。
+2. 旧設定の `env`、`parserOptions`、`globals` を新形式へ対応付けます。ファイル名の変更だけでは不十分です。
+3. 除外パターンを設定へ移します。旧 `.eslintignore` の動作が自動的に維持されるとは限らないため、パスの一致を確認します。
+4. `npx eslint --print-config src/example.js` で対象ファイルの最終的なルールと言語オプションを調べます。
+5. 成功、エラー、除外となるべきファイルを確認してから全体の lint を実行します。lint の成功は業務機能の正しさを証明しません。
 
-```javascript
-import { useRef, useEffect, useState } from 'react'
+## バージョンの位置付け
 
-function useIntersectionObserver(options = {}) {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef(null)
+本記事は v9 への移行の背景を残しています。現在の開発では、実際に使うバージョンの公式文書を参照してください。本番検証済みの事例としては扱いません。
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsVisible(entry.isIntersecting)
-    }, { threshold: 0.1, ...options })
-    const el = ref.current
-    if (el) observer.observe(el)
-    return () => { if (el) observer.unobserve(el) }
-  }, [])
+## 参考資料
 
-  return [ref, isVisible]
-}
-
-```
-
-このパターンは大規模プロジェクトで非常に実用的で、保守コストを大幅に削減できます。
-
-## ベストプラクティス
-
-実際のプロジェクトでの使用法はより複雑になります：
-
-```javascript
-.container {
-  width: min(90%, 1200px);
-  margin-inline: auto;
-  padding-inline: clamp(1rem, 3vw, 3rem);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
-}
-
-.card { container-type: inline-size; }
-
-@container (min-width: 400px) {
-  .card__content { display: grid; grid-template-columns: 200px 1fr; }
-}
-
-```
-
-このアプローチにより、コードのテスト可能性とスケーラビリティが向上します。
-
-## よくある落とし穴
-
-完全な例を以下に示します：
-
-```javascript
-const fs = require('fs')
-const { Transform, pipeline } = require('stream')
-const { promisify } = require('util')
-const pipelineAsync = promisify(pipeline)
-
-const csvToJson = new Transform({
-  transform(chunk, encoding, callback) {
-    const lines = chunk.toString().split('\n')
-    const headers = lines[0].split(',')
-    for (let i = 1; i < lines.length; i++) {
-      if (!lines[i].trim()) continue
-      const values = lines[i].split(',')
-      const obj = {}
-      headers.forEach((h, idx) => obj[h.trim()] = values[idx]?.trim())
-      this.push(JSON.stringify(obj) + '\n')
-    }
-    callback()
-  }
-})
-
-```
-
-境界条件の処理に注意してください。これは本番環境で非常に重要です。
-
-## まとめ
-
-- 基礎的な原理を理解することは、APIを暗記することより重要です
-- 本番環境で使用する前に必ず互換性を確認してください
-- チームコラボレーションでは、規約とドキュメントが技術そのものより重要です
-- コミュニティの動向を注視し、技術的なソリューションは継続的な反復が必要です
-- 新しい技術を使うためだけに新しい技術を使わないでください
+- [ESLint v9.0.0 release — 2024-04-05](https://eslint.org/blog/2024/04/eslint-v9.0.0-released/)
+- [ESLint v9 configuration migration guide](https://eslint.org/docs/v9.x/use/configure/migration-guide)
+- [ESLint version support](https://eslint.org/version-support/)

@@ -6,7 +6,7 @@ tags:
   - 性能优化
 readingTime: 2
 description: "关于React 性能分析 Profiler 实战，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 318
+wordCount: 292
 ---
 
 很多开发者对 React 性能分析 Profiler 的掌握，还停留在 API 调用层面。本文试着从生产环境的角度，聊聊实际会遇到的问题与对应的解决方案。
@@ -80,7 +80,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 最佳实践
 

@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Quasar Framework v2, the full-stack UI framework, has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 179
+wordCount: 162
 ---
 
 Quasar Framework v2 全栈 UI 框架This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
@@ -106,7 +106,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

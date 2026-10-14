@@ -5,7 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "The topic of loading performance optimization has been discussed extensively in the community, but with each new version release, many conclusions need revisiti"
-wordCount: 183
+wordCount: 164
 ---
 
 The topic of loading performance optimization has been discussed extensively in the community, but with each new version release, many conclusions need revisiting. This article provides a fresh look based on the latest state of the ecosystem.
@@ -48,7 +48,6 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ entryTypes: ["largest-contentful-paint", "first-input"] });
 ```
 
-This approach has been running stably in production for over six months and has been validated in real-world use.
 
 ## Real-World Application
 

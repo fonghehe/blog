@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Getting started with Three.js for 3D web visualization has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 189
+wordCount: 172
 ---
 
 Getting started with Three.js for 3D web visualization has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
@@ -161,7 +161,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

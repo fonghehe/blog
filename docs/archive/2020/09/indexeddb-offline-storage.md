@@ -5,7 +5,7 @@ tags:
   - PWA
 readingTime: 2
 description: "关于IndexedDB 离线数据存储方案，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 362
+wordCount: 336
 ---
 
 关于 IndexedDB 离线数据存储方案，很多开发者只停留在 API 调用层面。下面试着从生产环境的角度，聊聊实际会遇到哪些问题、又该怎么解决。
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 高级特性
 
 先来看基本的实现方式：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ function useIntersectionObserver(options = {}) {
 
 以下是一个完整的示例：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

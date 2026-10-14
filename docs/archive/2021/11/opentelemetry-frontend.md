@@ -42,7 +42,7 @@ function useIntersectionObserver(options = {}) {
 
 先来看基本的实现方式：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -125,7 +125,7 @@ function useIntersectionObserver(options = {}) {
 
 以下是一个完整的示例：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "在日常开发中，JavaScript 逻辑赋值运算符の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 510
+wordCount: 470
 ---
 
 日常の開発において JavaScript の論理代入演算子を使う頻度が高まっています。本記事では、その使い方、仕組み、最適化戦略を体系的に説明します。
@@ -15,7 +15,7 @@ wordCount: 510
 
 実際のプロジェクトでは使い方がもう少し複雑になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -98,7 +98,7 @@ function useIntersectionObserver(options = {}) {
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -119,7 +119,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## まとめ
 

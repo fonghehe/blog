@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Cursor IDE Advanced Tips 2025 is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices f"
-wordCount: 198
+wordCount: 181
 ---
 
 Cursor IDE Advanced Tips 2025 is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

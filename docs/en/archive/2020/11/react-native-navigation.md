@@ -5,7 +5,7 @@ tags:
   - Mobile
 readingTime: 2
 description: "A systematic comparison of React Native navigation solutions, covering usage patterns, internals, and optimization strategies for day-to-day development."
-wordCount: 169
+wordCount: 152
 ---
 
 In day-to-day development, comparing React Native navigation solutions comes up more and more often. This article systematically walks through their usage, internals, and optimization strategies.
@@ -120,7 +120,6 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Practical applications of TypeScript satisfies are showing up in more and more everyday code. This article systematically covers its usage, mechanics, and practical patterns."
-wordCount: 185
+wordCount: 168
 ---
 
 在日常开发中，TypeScript satisfies 实战应用 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -169,7 +169,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

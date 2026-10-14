@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "When it comes to the Node.js 18 fetch API, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 212
+wordCount: 195
 ---
 
 When it comes to the Node.js 18 fetch API, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Features
 
@@ -70,7 +69,7 @@ This code demonstrates the basic usage. In real projects, you also need to consi
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

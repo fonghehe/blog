@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "A TypeScript strict mode guide is increasingly relevant in frontend development. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 205
+wordCount: 188
 ---
 
 TypeScript 严格模式指南 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Source Code Analysis
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

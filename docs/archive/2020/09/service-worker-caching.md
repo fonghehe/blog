@@ -5,7 +5,7 @@ tags:
   - PWA
 readingTime: 2
 description: "Service Worker 缓存策略详解在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 350
+wordCount: 324
 ---
 
 Service Worker 缓存策略在前端开发中用得越来越普遍。下面结合实际项目，聊聊它的核心原理与最佳实践。
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 进阶用法
 
@@ -70,7 +69,7 @@ function useIntersectionObserver(options = {}) {
 
 在这个基础上，我们可以进一步优化：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

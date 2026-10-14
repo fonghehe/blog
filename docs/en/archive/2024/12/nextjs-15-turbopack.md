@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Next.js 15 Turbopack 默认 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real pr"
-wordCount: 204
+wordCount: 187
 ---
 
 Next.js 15 Turbopack 默认 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Source Code Analysis
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

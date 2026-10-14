@@ -6,7 +6,7 @@ tags:
 
 readingTime: 3
 description: "关于TypeScript satisfies 操作符预览，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 522
+wordCount: 483
 ---
 
 TypeScript の satisfies 演算子のプレビューについて、多くの開発者は API の呼び出しレベルにとどまっている。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論する。
@@ -170,7 +170,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## まとめ
 

@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 3
 description: "Scheduler API 安定版：実践活用というトピックはコミュニティで何度も議論されてきましたが、バージョンアップとともに多くの結論を更新する必要があります。本記事では最新バージョンに基づいて改めて整理します。"
-wordCount: 542
+wordCount: 506
 ---
 
 Scheduler API 安定版：実践活用というトピックはコミュニティで何度も議論されてきましたが、バージョンアップとともに多くの結論を更新する必要があります。本記事では最新バージョンに基づいて改めて整理します。
@@ -14,7 +14,7 @@ Scheduler API 安定版：実践活用というトピックはコミュニティ
 
 完全な例を以下に示します：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 最適化テクニック
 
 まず基本的な実装方法を見てみましょう：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

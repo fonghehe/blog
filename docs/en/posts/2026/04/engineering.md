@@ -73,7 +73,7 @@ Pay attention to edge case handling — it is critical in production environment
 
 The key is understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

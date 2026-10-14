@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "I recently applied a TypeScript incremental migration strategy with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 186
+wordCount: 169
 ---
 
 Recently implemented TypeScript 渐进式迁移策略 in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -106,7 +106,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Strategies
 

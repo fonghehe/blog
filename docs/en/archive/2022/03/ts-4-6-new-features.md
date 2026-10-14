@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "The TypeScript satisfies operator is showing up in more and more everyday code. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 175
+wordCount: 158
 ---
 
 In daily development, TypeScript 4.9 satisfies 操作符 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -134,7 +134,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

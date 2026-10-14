@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "The atomic-state improvements in Jotai v2 matter more and more in everyday development. This article systematically covers their usage, mechanics, and practical strategies."
-wordCount: 171
+wordCount: 154
 ---
 
 In daily development, Jotai v2 原子化状态改进 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -118,7 +118,6 @@ const useStore = create(
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

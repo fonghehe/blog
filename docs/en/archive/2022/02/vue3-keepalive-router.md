@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue 3 KeepAlive route caching solutions are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 185
+wordCount: 168
 ---
 
 Vue 3 KeepAlive 路由缓存方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -129,7 +129,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

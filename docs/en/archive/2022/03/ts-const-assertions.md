@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Best practices for TypeScript const assertions come up more and more in everyday development. This article systematically covers their usage, mechanics, and practical patterns."
-wordCount: 188
+wordCount: 171
 ---
 
 In daily development, TypeScript const 断言最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -134,7 +134,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

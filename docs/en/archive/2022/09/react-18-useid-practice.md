@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "When it comes to React 18 useId in practice, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 205
+wordCount: 188
 ---
 
 When it comes to React 18 useId in practice, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Features
 
@@ -70,7 +69,7 @@ This code demonstrates basic usage. In real projects, you also need to consider 
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

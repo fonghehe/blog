@@ -3,9 +3,9 @@ title: "React Testing Guide 2025: A Modern Testing System with RTL plus Vitest"
 date: 2025-09-01 17:15:52
 tags:
   - React
-readingTime: 2
+readingTime: 1
 description: "React Testing 2025 Guide is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from r"
-wordCount: 177
+wordCount: 160
 ---
 
 React Testing 2025 Guide is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.
@@ -70,7 +70,7 @@ Pay attention to boundary condition handling, which is critical in production en
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 18 useId 唯一 ID 生成在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 292
+wordCount: 266
 ---
 
 React 18 的 useId（唯一 ID 生成）在前端开发中用得越来越广。本文从实际项目出发，深入分析它的核心原理与最佳实践。
@@ -54,7 +54,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 实战案例
 

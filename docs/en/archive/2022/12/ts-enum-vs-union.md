@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript enums vs union types is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 217
+wordCount: 200
 ---
 
 TypeScript enums vs union types is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Usage
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

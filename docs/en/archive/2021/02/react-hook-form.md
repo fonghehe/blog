@@ -8,7 +8,7 @@ tags:
 
 readingTime: 2
 description: "Form-solution comparisons around React Hook Form have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 212
+wordCount: 195
 ---
 
 A comparison of React Hook Form and other form solutions has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
@@ -126,7 +126,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "The React 19 use() hook in practice is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 202
+wordCount: 185
 ---
 
 the React 19 use() hook in practice is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
@@ -71,7 +71,7 @@ Performance optimization should be tailored to specific scenarios; not all cases
 
 We can improve it in the following ways:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Tips
 

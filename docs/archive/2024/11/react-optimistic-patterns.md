@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "在日常开发中，React 乐观更新模式的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 345
+wordCount: 319
 ---
 
 在日常开发中，React 乐观更新模式的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 内部原理
 
@@ -70,7 +69,7 @@ function useIntersectionObserver(options = {}) {
 
 在这个基础上，我们可以进一步优化：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Hono v3, the full-stack web framework, is showing up in more and more everyday development. This article systematically covers its usage, rationale, and practical strategies."
-wordCount: 216
+wordCount: 199
 ---
 
 在日常开发中，Hono v3 全栈 Web 框架 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Internal Principles
 

@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React テスト 2025 ガイドのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コアな原理とベストプラクティスを深く掘り下げます。"
-wordCount: 517
+wordCount: 481
 ---
 
 React テスト 2025 ガイドのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コアな原理とベストプラクティスを深く掘り下げます。
@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 コアロジックを理解することが重要です：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## まとめ
 

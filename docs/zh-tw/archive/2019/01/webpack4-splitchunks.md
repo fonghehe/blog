@@ -15,7 +15,7 @@ wordCount: 208
 
 核心程式碼如下：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

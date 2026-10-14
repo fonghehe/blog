@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "フロントエンド開発におけるエッジコンピューティングについては、コミュニティで何度も議論されていますが、バージョンの反復とともに多くの結論を更新する必要があります。本記事は最新の状況に基づいて整理し直したものです。"
-wordCount: 483
+wordCount: 448
 ---
 
 フロントエンド開発におけるエッジコンピューティングについては、コミュニティで何度も議論されていますが、バージョンの反復とともに多くの結論を更新する必要があります。本記事は最新の状況に基づいて整理し直したものです。
@@ -42,7 +42,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 コアとなるロジックを理解することが重要です：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -95,7 +95,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 }
 ```
 
-このアプローチは半年以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## 最適化のコツ
 

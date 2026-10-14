@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Page transitions with the View Transitions API are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 194
+wordCount: 177
 ---
 
 View Transitions API 页面转场 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -14,7 +14,7 @@ View Transitions API 页面转场 is becoming increasingly widespread in fronten
 
 Here is a complete example:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Optimization
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

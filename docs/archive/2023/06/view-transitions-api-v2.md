@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在日常开发中，View Transitions API v2 跨文档的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 312
+wordCount: 286
 ---
 
 在日常开发中，View Transitions API v2 跨文档的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -42,7 +42,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 关键在于理解核心逻辑：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 性能对比
 
@@ -126,7 +125,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 在这个基础上，我们可以进一步优化：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

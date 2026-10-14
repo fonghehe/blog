@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "A deep dive into metaprogramming with JavaScript Proxy and Reflect, exploring core principles and best practices from real-world frontend projects."
-wordCount: 190
+wordCount: 172
 ---
 
 Metaprogramming with JavaScript's Proxy and Reflect is being used more and more widely in frontend development. Starting from real projects, this article takes a deep look at its core principles and best practices.
@@ -60,7 +60,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over half a year, so it's proven in practice.
 
 ## Practical Cases
 

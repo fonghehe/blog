@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Farm, the Rust frontend build tool is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 188
+wordCount: 171
 ---
 
 Farm, the Rust frontend build tool is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
@@ -96,7 +96,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Optimization
 

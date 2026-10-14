@@ -6,7 +6,7 @@ tags:
   - Vitest
 readingTime: 2
 description: "Vitest 1.0's official stable release has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 193
+wordCount: 176
 ---
 
 Vitest 1.0 正式发布稳定版This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
@@ -119,7 +119,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

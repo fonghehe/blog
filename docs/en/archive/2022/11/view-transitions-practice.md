@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "CSS View Transitions in practice is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 180
+wordCount: 163
 ---
 
 CSS View Transitions in practice is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

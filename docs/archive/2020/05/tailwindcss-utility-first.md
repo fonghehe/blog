@@ -3,9 +3,9 @@ title: "Tailwind CSS 实用优先的 CSS 框架"
 date: 2020-05-27 10:45:06
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "Tailwind CSS 实用优先的 CSS 框架这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 300
+wordCount: 274
 ---
 
 Tailwind CSS 实用优先的 CSS 框架这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
@@ -116,7 +116,6 @@ export async function POST(req) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

@@ -3,9 +3,9 @@ title: "TypeScript 5.2 using 宣言"
 date: 2023-11-02 14:50:24
 tags:
   - TypeScript
-readingTime: 3
+readingTime: 2
 description: "TypeScript 5.2 using 声明のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 496
+wordCount: 461
 ---
 
 TypeScript 5.2 using 声明のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -72,7 +72,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## 実際のシナリオへの応用
 

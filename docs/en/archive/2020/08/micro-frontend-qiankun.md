@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "A deep dive into building micro-frontends with qiankun, analyzing core principles and best practices drawn from a real production project."
-wordCount: 210
+wordCount: 191
 ---
 
 Using qiankun to build micro-frontends is increasingly common in frontend development. Drawing on a real project, this article takes a deep dive into its core principles and best practices.
@@ -15,7 +15,7 @@ Using qiankun to build micro-frontends is increasingly common in frontend develo
 
 We can improve things in the following ways:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -36,7 +36,6 @@ We can improve things in the following ways:
 
 ```
 
-This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Advanced Usage
 
@@ -98,7 +97,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 Usage in real projects is a bit more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

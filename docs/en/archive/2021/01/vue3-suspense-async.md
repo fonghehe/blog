@@ -7,7 +7,7 @@ tags:
 
 readingTime: 1
 description: "I recently rolled out Vue 3 Suspense for async component loading with my team and learned quite a bit along the way. Here's a write-up for anyone doing similar work."
-wordCount: 174
+wordCount: 157
 ---
 
 I recently rolled out Vue 3 Suspense for async component loading on my team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps anyone doing similar work.
@@ -59,7 +59,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

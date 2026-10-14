@@ -5,7 +5,7 @@ tags:
   - 性能优化
 readingTime: 2
 description: "关于FCP 首次内容绘制优化，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 317
+wordCount: 291
 ---
 
 对于 FCP（首次内容绘制），很多开发者只停留在 API 调用层面；本文尝试从生产环境的视角，聊聊实际会遇到的问题与解决方案。
@@ -71,7 +71,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 最佳实践
 

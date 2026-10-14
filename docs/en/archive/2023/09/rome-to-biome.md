@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "The toolchain evolution from Rome to Biome matters more and more in everyday development. This article systematically covers what changed, why, and how to adapt."
-wordCount: 201
+wordCount: 184
 ---
 
 在日常开发中，Rome 到 Biome 工具链演变 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

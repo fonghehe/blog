@@ -1,71 +1,47 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { useData } from "vitepress";
+import { useData, withBase } from "vitepress";
+import { uiCopy, formatArticleDate } from "./locale";
 
-const { frontmatter } = useData();
-
-const shouldShow = computed(
-  () =>
-    frontmatter.value.title &&
-    frontmatter.value.layout !== "home" &&
-    !frontmatter.value.hideTitle,
-);
-
-// Use pre-computed value from frontmatter (set by scripts/precompute-meta.js)
-// so it matches PostList.vue's post.readingTime
+const { frontmatter, lang, page, localeIndex } = useData();
+const t = computed(() => uiCopy(lang.value));
+const prefix = computed(() => localeIndex.value === "root" ? "" : `/${localeIndex.value}`);
+const shouldShow = computed(() => frontmatter.value.title && frontmatter.value.layout !== "home" && !frontmatter.value.hideTitle);
 const readingTime = computed(() => Number(frontmatter.value.readingTime) || 1);
-
-const wordCount = computed(() => {
-  const wc = Number(frontmatter.value.wordCount) || 0;
-  if (wc === 0) return "";
-  return wc >= 1000 ? `${(wc / 1000).toFixed(1)}k` : String(wc);
-});
-
-const isOutdated = computed(() => {
-  const dateStr = frontmatter.value.date;
-  if (!dateStr) return false;
-  // Extract year directly from string to avoid timezone shifts from new Date()
-  const year = parseInt(String(dateStr).slice(0, 4));
-  return year <= 2022;
-});
-
-const articleYear = computed(() => {
-  const dateStr = frontmatter.value.date;
-  if (!dateStr) return "";
-  // Extract year directly from string to avoid timezone shifts from new Date()
-  return String(dateStr).slice(0, 4);
-});
+const wordCount = computed(() => Number(frontmatter.value.wordCount) || 0);
+const historical = computed(() => /^(?:(?:en|ja|zh-tw|zh-hk)\/)?archive\/\d/.test(page.value.relativePath));
+const showNotice = computed(() => historical.value || frontmatter.value.reviewStatus === "needs-review" || frontmatter.value.outdated === true);
 </script>
 
 <template>
-  <div v-if="shouldShow" class="article-header">
-    <div v-if="isOutdated" class="outdated-banner">
-      ⚠️ This article was written in {{ articleYear }}. Some content may be
-      outdated.
-    </div>
+  <header v-if="shouldShow" class="article-header">
+    <aside v-if="showNotice" class="outdated-banner">
+      {{ frontmatter.reviewStatus === 'needs-review' ? t.reviewNeeded : t.review }} <a :href="withBase(prefix + '/about.html#content-policy')">{{ t.policy }}</a>
+    </aside>
     <h1 class="article-h1">{{ frontmatter.title }}</h1>
     <div class="article-meta-bar" v-if="frontmatter.date">
-      <time class="meta-date">{{
-        frontmatter.date.toString().slice(0, 10)
-      }}</time>
-      <span class="meta-separator">·</span>
-      <span class="meta-reading-time">{{ readingTime }} min read</span>
+      <time class="meta-date" :datetime="String(frontmatter.date).slice(0, 10)">{{ formatArticleDate(frontmatter.date, lang) }}</time>
+      <span aria-hidden="true">·</span>
+      <span>{{ readingTime }} {{ t.read }}</span>
       <template v-if="wordCount">
-        <span class="meta-separator">·</span>
-        <span class="meta-word-count">{{ wordCount }} 字</span>
+        <span aria-hidden="true">·</span>
+        <span>{{ new Intl.NumberFormat(lang).format(wordCount) }} {{ t.words }}</span>
       </template>
-      <span v-if="frontmatter.tags?.length" class="meta-separator">·</span>
-      <span
-        v-for="(tag, i) in (frontmatter.tags || []).slice(0, 3)"
-        :key="i"
-        class="meta-tag"
-        >{{ tag }}</span
-      >
     </div>
-  </div>
+    <div v-if="frontmatter.updated || frontmatter.lastVerified || frontmatter.version" class="article-maintenance">
+      <span v-if="frontmatter.updated">{{ t.updated }} <time :datetime="String(frontmatter.updated).slice(0, 10)">{{ formatArticleDate(frontmatter.updated, lang) }}</time></span>
+      <span v-if="frontmatter.lastVerified">{{ t.verified }} <time :datetime="String(frontmatter.lastVerified).slice(0, 10)">{{ formatArticleDate(frontmatter.lastVerified, lang) }}</time></span>
+      <span v-if="frontmatter.version">{{ t.version }}: {{ frontmatter.version }}</span>
+    </div>
+    <div v-if="frontmatter.tags?.length" class="article-tags">
+      <a v-for="tag in frontmatter.tags" :key="tag" class="meta-tag" :href="withBase(prefix + '/posts/?q=' + encodeURIComponent(tag))">{{ tag }}</a>
+    </div>
+  </header>
 </template>
 
 <style scoped>
+.article-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.article-maintenance { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-top: 0.5rem; font-size: 0.85rem; color: var(--vp-c-text-2); }
 .article-header {
   margin-bottom: 1.5rem;
 }
@@ -116,7 +92,7 @@ const articleYear = computed(() => {
 }
 
 .meta-tag {
-  padding: 0.1rem 0.45rem;
+  display: inline-flex; align-items: center; min-height: 32px; padding: 0.2rem 0.6rem;
   background: var(--vp-c-default-soft);
   border-radius: 4px;
   font-size: 0.75rem;

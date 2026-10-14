@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Our team recently explored the new features in React Router v6 and gained valuable experience. I'm writing this up as a reference for anyone doing similar work."
-wordCount: 182
+wordCount: 164
 ---
 
 Recently our team got hands-on with the new features of React Router v6 and accumulated quite a bit of experience. I'm writing it up as a reference, hoping it helps others doing similar work.
@@ -95,7 +95,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Tuning Strategies
 

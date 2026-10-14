@@ -1,158 +1,54 @@
 ---
-title: "ESLint v9 Flat Config as Default"
+title: "ESLint v9 Flat Config: structure and migration checks"
 date: 2023-09-08 15:28:03
+updated: 2026-10-24
+version: "ESLint 9.x (historical migration)"
 tags:
   - ESLint
 readingTime: 2
-description: "Many developers only know ESLint v9's flat config default at the surface level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 199
+wordCount: 296
+description: "A historical guide to ESLint v9 configuration arrays, file matching, ignore patterns and migration checks, with publication and revision dates kept separate."
 ---
 
-关于ESLint v9 Flat Config 默认，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
+> Revision note: the original archive date and URL are preserved. This article was rewritten on 2026-10-24. ESLint v9 was released on 2024-04-05; this is a later migration guide, not a claim that v9 was stable in 2023. ESLint v9 has reached end of life. Consult the official support table for new projects.
 
-## Basic Principles
+Flat Config exports an array from a JavaScript module. Configuration objects that match a file are combined in order; later rule settings override earlier ones. The `files` property scopes each object.
 
-We can improve it in the following ways:
+## A configuration array
 
-```javascript
-.container {
-  width: min(90%, 1200px);
-  margin-inline: auto;
-  padding-inline: clamp(1rem, 3vw, 3rem);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
-}
-
-.card { container-type: inline-size; }
-
-@container (min-width: 400px) {
-  .card__content { display: grid; grid-template-columns: 200px 1fr; }
-}
-
-```
-
-This approach has been running stably in production for over six months and has been practically validated.
-
-## Advanced Features
-
-Let's start with the basic implementation:
+This teaching example targets the historical ESLint 9 and `@eslint/js` 9 pair. It makes no claim about production deployment or measured performance.
 
 ```javascript
-const fs = require('fs')
-const { Transform, pipeline } = require('stream')
-const { promisify } = require('util')
-const pipelineAsync = promisify(pipeline)
+// eslint.config.mjs — historical ESLint 9 example
+import js from '@eslint/js'
 
-const csvToJson = new Transform({
-  transform(chunk, encoding, callback) {
-    const lines = chunk.toString().split('\n')
-    const headers = lines[0].split(',')
-    for (let i = 1; i < lines.length; i++) {
-      if (!lines[i].trim()) continue
-      const values = lines[i].split(',')
-      const obj = {}
-      headers.forEach((h, idx) => obj[h.trim()] = values[idx]?.trim())
-      this.push(JSON.stringify(obj) + '\n')
-    }
-    callback()
-  }
-})
-
+export default [
+  { ignores: ['dist/**', 'coverage/**'] },
+  js.configs.recommended,
+  {
+    files: ['**/*.js'],
+    languageOptions: { ecmaVersion: 2022, sourceType: 'module' },
+    rules: { 'no-unused-vars': 'warn' },
+  },
+]
 ```
 
-This code demonstrates the basic usage. In real projects, you also need to consider error handling and edge cases.
+`js.configs.recommended` supplies recommended rules, while the last object customizes JavaScript files. An object containing only `ignores` defines global ignores. Browser or Node.js globals, TypeScript parsers, Vue SFC parsers and framework plugins require project-specific configuration; this JavaScript example is not a complete setup for every project.
 
-## Project Practice
+## Migration checks
 
-Building on this foundation, we can further optimize:
+1. Pin ESLint and plugin versions, and confirm compatibility with Flat Config and the ESLint major version.
+2. Map old `env`, `parserOptions` and `globals` settings to the new format instead of merely renaming the file.
+3. Move ignore patterns into the configuration. Flat Config does not automatically preserve `.eslintignore` behavior; recheck path matching.
+4. Run `npx eslint --print-config src/example.js` for a real target file and inspect the effective rules and language options.
+5. Check files that should pass, fail and be ignored before running the full project lint. A passing lint result does not establish application correctness.
 
-```javascript
-import { useRef, useEffect, useState } from 'react'
+## Version context
 
-function useIntersectionObserver(options = {}) {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef(null)
+This article preserves the v9 migration context. For a current project, follow the documentation for its actual version. The example is not presented as a production case study.
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsVisible(entry.isIntersecting)
-    }, { threshold: 0.1, ...options })
-    const el = ref.current
-    if (el) observer.observe(el)
-    return () => { if (el) observer.unobserve(el) }
-  }, [])
+## References
 
-  return [ref, isVisible]
-}
-
-```
-
-This pattern is very practical in large projects and can significantly reduce maintenance costs.
-
-## Best Practices
-
-Usage in real projects tends to be more complex:
-
-```javascript
-.container {
-  width: min(90%, 1200px);
-  margin-inline: auto;
-  padding-inline: clamp(1rem, 3vw, 3rem);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
-}
-
-.card { container-type: inline-size; }
-
-@container (min-width: 400px) {
-  .card__content { display: grid; grid-template-columns: 200px 1fr; }
-}
-
-```
-
-Through this approach, both the testability and scalability of the code are improved.
-
-## Common Pitfalls
-
-Here is a complete example:
-
-```javascript
-const fs = require('fs')
-const { Transform, pipeline } = require('stream')
-const { promisify } = require('util')
-const pipelineAsync = promisify(pipeline)
-
-const csvToJson = new Transform({
-  transform(chunk, encoding, callback) {
-    const lines = chunk.toString().split('\n')
-    const headers = lines[0].split(',')
-    for (let i = 1; i < lines.length; i++) {
-      if (!lines[i].trim()) continue
-      const values = lines[i].split(',')
-      const obj = {}
-      headers.forEach((h, idx) => obj[h.trim()] = values[idx]?.trim())
-      this.push(JSON.stringify(obj) + '\n')
-    }
-    callback()
-  }
-})
-
-```
-
-Pay attention to boundary condition handling, which is critical in production.
-
-## Summary
-
-- Understanding underlying principles is more important than memorizing APIs
-- Always verify compatibility before using in production
-- In team collaboration, conventions and documentation are more important than the technology itself
-- Stay updated with the community; technical solutions need continuous iteration
-- Don't adopt new technology just for the sake of it
+- [ESLint v9.0.0 release — 2024-04-05](https://eslint.org/blog/2024/04/eslint-v9.0.0-released/)
+- [ESLint v9 configuration migration guide](https://eslint.org/docs/v9.x/use/configure/migration-guide)
+- [ESLint version support](https://eslint.org/version-support/)

@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "I recently applied the Vue 3.3 feature walkthrough with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 184
+wordCount: 167
 ---
 
 I recently applied the Vue 3.3 feature walkthrough with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
@@ -106,7 +106,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

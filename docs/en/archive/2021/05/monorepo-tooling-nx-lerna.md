@@ -6,7 +6,7 @@ tags:
 
 readingTime: 1
 description: "Turborepo's high-performance take on monorepos has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 185
+wordCount: 168
 ---
 
 Turborepo, a high-performance monorepo tool, has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
@@ -93,7 +93,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

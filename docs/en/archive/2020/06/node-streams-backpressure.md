@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "An in-depth look at Node.js Streams backpressure handling, exploring core principles and best practices drawn from real-world projects."
-wordCount: 206
+wordCount: 190
 ---
 
 Node.js Streams backpressure handling is being applied more and more widely in frontend development. Drawing on real projects, this article digs into its core principles and best practices.
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Advanced Usage
 

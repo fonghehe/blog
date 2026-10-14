@@ -5,7 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Svelte 6 编译器改进在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 299
+wordCount: 273
 ---
 
 Svelte 6 编译器改进在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
@@ -72,7 +72,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 实战案例
 

@@ -5,7 +5,7 @@ tags:
   - Esbuild
 readingTime: 2
 description: "esbuild plugin development in practice has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 187
+wordCount: 170
 ---
 
 esbuild 插件开发实践This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
@@ -68,7 +68,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Real-World Applications
 

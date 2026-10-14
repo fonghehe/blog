@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "CSS Cascade Layers in practice is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 189
+wordCount: 172
 ---
 
 CSS Cascade Layers 实践 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -153,7 +153,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

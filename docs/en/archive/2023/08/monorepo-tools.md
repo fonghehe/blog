@@ -5,7 +5,7 @@ tags:
   - Frontend Engineering
 readingTime: 2
 description: "I recently put together a 2023 summary of monorepo toolchains with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 221
+wordCount: 204
 ---
 
 We recently implemented Monorepo 工具链 2023 总结， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -14,7 +14,7 @@ We recently implemented Monorepo 工具链 2023 总结， and accumulated quite 
 
 We can improve it in the following ways:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## In-Depth Analysis
 
@@ -97,7 +96,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 Usage in real projects tends to be more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

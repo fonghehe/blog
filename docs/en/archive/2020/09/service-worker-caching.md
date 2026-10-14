@@ -5,7 +5,7 @@ tags:
   - PWA
 readingTime: 2
 description: "A deep dive into Service Worker caching strategies, exploring core principles and best practices drawn from real-world frontend projects."
-wordCount: 208
+wordCount: 189
 ---
 
 Service Worker caching strategies are being adopted more and more widely in frontend development. Drawing on real-world projects, this article takes a deep dive into their core principles and best practices.
@@ -36,7 +36,6 @@ const csvToJson = new Transform({
 })
 ```
 
-This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Advanced Usage
 
@@ -68,7 +67,7 @@ This snippet shows the basic usage. In a real project you'll also need to accoun
 
 Building on this, we can optimize further:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

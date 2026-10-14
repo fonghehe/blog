@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "關於VueUse 組合式工具庫大全，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 330
+wordCount: 304
 ---
 
 關於 VueUse 組合式工具庫大全，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，探討實際會遇到的問題與解決方案。
@@ -129,7 +129,6 @@ function useCounter(initial = 0) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

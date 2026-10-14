@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "前端 A/B 测试框架在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 304
+wordCount: 278
 ---
 
 前端 A/B 测试框架在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
@@ -41,7 +41,7 @@ function useIntersectionObserver(options = {}) {
 
 以下是一个完整的示例：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

@@ -7,7 +7,7 @@ tags:
   - JavaScript
 readingTime: 1
 description: "最近在团队中落地Vue 3 Suspense 异步组件加载，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 294
+wordCount: 268
 ---
 
 最近团队在落地 Vue 3 Suspense 异步组件加载的过程中积累了不少经验，整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -59,7 +59,6 @@ function useCounter(initial = 0) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 落地经验
 

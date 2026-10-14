@@ -3,9 +3,9 @@ title: "フロントエンドアクセシビリティ 2023 実践"
 date: 2023-12-26 09:48:30
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 2
 description: "最近チームで前端无障碍 2023 实践，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 532
+wordCount: 497
 ---
 
 最近チームで前端无障碍 2023 实践，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## 詳細分析
 
 まず基本的な実装方法を見てみましょう：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ function useIntersectionObserver(options = {}) {
 
 完全な例を以下に示します：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

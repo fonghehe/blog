@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "最近チームでTypeScript 6.0 ジェネリクスの改善を導入し、多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 522
+wordCount: 486
 ---
 
 最近チームでTypeScript 6.0 ジェネリクスの改善を導入し、多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -14,7 +14,7 @@ wordCount: 522
 
 完全な例を以下に示します：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 最適化戦略
 
 まず基本的な実装方法を見てみましょう：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

@@ -6,7 +6,7 @@ tags:
   - 性能优化
 readingTime: 2
 description: "最近在团队中落地TypeScript 性能优化 2025，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 345
+wordCount: 319
 ---
 
 最近在团队中落地TypeScript 性能优化 2025，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -38,7 +38,6 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 深度解析
 
@@ -71,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 在这个基础上，我们可以进一步优化：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -6,9 +6,9 @@ tags:
   - TypeScript
   - JavaScript
 
-readingTime: 3
+readingTime: 2
 description: "Vue 3 defineComponent 与 TypeScriptのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 515
+wordCount: 475
 ---
 
 Vue 3 の defineComponent と TypeScript は、フロントエンド開発での活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -95,7 +95,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## パフォーマンス最適化
 

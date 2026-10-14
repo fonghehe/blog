@@ -51,8 +51,8 @@ pnpm docs:preview
 ## 📝 記事統計
 
 - 2018–2025年: 1,383本 (アーカイブ)
-- 2026年: 134本の最新記事
-- 合計: 1,517本の深度技術記事
+- 2026年: 135本の最新記事
+- 合計: 1,518本の深度技術記事
 
 ## 🎯 主なトピック
 
@@ -71,3 +71,17 @@ pnpm docs:preview
 ## 📄 ライセンス
 
 MIT
+
+## 保守と品質チェック
+
+Node.js 22.18 以降と `packageManager` 指定の pnpm を使用します。
+
+```bash
+pnpm check
+pnpm content:report
+pnpm docs:build
+```
+
+[学習ルート](docs/ja/guides.md)、[編集方針](docs/ja/about.md)、[内容確認レポート](maintenance/content-quality-report.md)を追加しました。記事には `updated`、`lastVerified`、`version`、`series` を記載できます。検証日は実際の確認後だけ記載します。検索条件とページ番号は URL に保存されます。CI は全言語を確認し、既知の課題に対する新しい問題を検出します。
+
+全体ビルドは両言語グループ、サイトマップ、5言語の RSS を統合し、最後にオフライン用ワーカーを生成します。開始画面の資源と閲覧済みページを保存し、全記事は事前取得しません。機械的な修正は全記事の検証を意味しません。

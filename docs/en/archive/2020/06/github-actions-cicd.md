@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "We recently set up a GitHub Actions CI/CD pipeline for our frontend on our team and gained valuable experience. I'm sharing it here as a reference for anyone doing similar work."
-wordCount: 187
+wordCount: 171
 ---
 
 We recently set up a GitHub Actions CI/CD frontend pipeline in our team and learned a lot along the way. I'm sharing the experience as a reference, hoping it helps anyone doing similar work.
@@ -58,7 +58,6 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Implementation Experience
 

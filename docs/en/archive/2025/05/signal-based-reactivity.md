@@ -3,9 +3,9 @@ title: "Signal-Based Reactivity Frontend Trends"
 date: 2025-05-27 18:01:38
 tags:
   - Frontend
-readingTime: 2
+readingTime: 1
 description: "When it comes to Signal-based reactivity trends, many developers only scratch the surface at the API call level. This article takes a production-environment per"
-wordCount: 167
+wordCount: 151
 ---
 
 When it comes to Signal-based reactivity trends, many developers only scratch the surface at the API call level. This article takes a production-environment perspective to discuss the problems you actually encounter and their solutions.
@@ -39,13 +39,12 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Advanced Features
 
 Let's start by looking at the basic implementation:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "最近在團隊中落地CSS 2025 新特性實戰，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 311
+wordCount: 285
 ---
 
 最近在團隊中落地CSS 2025 新特性實戰，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -71,7 +71,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 我們可以通過以下方式來改進：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 調優策略
 

@@ -6,7 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "The topic of Lit Web Components development practices has been discussed many times in the community, but with version iterations, many conclusions need updating. This article re-examines the topic based on the latest version."
-wordCount: 175
+wordCount: 158
 ---
 
 The topic of Lit Web Components development practices has been discussed many times in the community, but with version iterations, many conclusions need updating. This article re-examines the topic based on the latest version.
@@ -72,7 +72,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Real-World Applications
 

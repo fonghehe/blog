@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "We recently adopted Tauri 1.0 stable for desktop applications on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 194
+wordCount: 177
 ---
 
 We recently adopted Tauri 1.0 stable for desktop applications on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -140,7 +140,6 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

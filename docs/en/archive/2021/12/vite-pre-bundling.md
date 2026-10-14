@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Vite's pre-bundling mechanics matter more and more in everyday development. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 187
+wordCount: 170
 ---
 
 Vite's pre-bundling mechanism is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -149,7 +149,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

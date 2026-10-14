@@ -4,9 +4,9 @@ date: 2021-06-25 09:48:25
 tags:
   - 前端
   - 工程化
-readingTime: 2
+readingTime: 1
 description: "關於Tree Shaking 深度最佳化指南，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 302
+wordCount: 276
 ---
 
 談到 Tree Shaking 深度最佳化，許多開發者只停留在 API 呼叫的層面。本文從生產環境的角度出發，探討實際會遇到的問題與對應的解決方案。
@@ -93,7 +93,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

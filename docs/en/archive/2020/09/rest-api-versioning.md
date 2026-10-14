@@ -3,9 +3,9 @@ title: "REST API Versioning Strategies"
 date: 2020-09-15 10:00:18
 tags:
   - Frontend
-readingTime: 2
+readingTime: 1
 description: "A refreshed look at REST API versioning strategies, revisiting earlier community conclusions in light of evolving practices and standards."
-wordCount: 182
+wordCount: 163
 ---
 
 REST API versioning strategy has been discussed many times in the community, but as versions have evolved, many conclusions need revisiting. This article revisits it based on the latest version.
@@ -14,7 +14,7 @@ REST API versioning strategy has been discussed many times in the community, but
 
 Real-world usage is a bit more involved:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -94,7 +94,7 @@ Performance optimization always depends on the specific context — not every ca
 
 Here are a few ways we can improve on this:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -114,7 +114,6 @@ Here are a few ways we can improve on this:
 }
 ```
 
-This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Summary
 

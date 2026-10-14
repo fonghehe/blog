@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "Navigation API 新一代路由このトピックはコミュニティで何度も議論されてきましたが、バージョンアップに伴い多くの結論を更新する必要があります。本記事では最新バージョンに基づいて再整理します。"
-wordCount: 581
+wordCount: 542
 ---
 
 Navigation API 新一代路由このトピックはコミュニティで何度も議論されてきましたが、バージョンアップに伴い多くの結論を更新する必要があります。本記事では最新バージョンに基づいて再整理します。
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## ソースコード分析
 
@@ -70,7 +69,7 @@ function useIntersectionObserver(options = {}) {
 
 この基盤の上で、さらに最適化できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -14,7 +14,7 @@ wordCount: 404
 
 具体的な実装は以下のコードを参照してください：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

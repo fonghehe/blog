@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Hands-on practice with the Biome toolchain is showing up in more and more everyday development. This article systematically covers its usage, rationale, and practical strategies."
-wordCount: 187
+wordCount: 170
 ---
 
 在日常开发中，Biome 工具链实战 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -66,7 +66,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Business Practice
 

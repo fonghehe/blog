@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在日常开发中，TanStack Router 类型路由的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 313
+wordCount: 287
 ---
 
 在日常开发中，TanStack Router 类型路由的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

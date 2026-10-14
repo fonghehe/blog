@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "Deno 3.0 フルスタックソリューションのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コアな原理とベストプラクティスを深く掘り下げます。"
-wordCount: 589
+wordCount: 553
 ---
 
 Deno 3.0 フルスタックソリューションのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コアな原理とベストプラクティスを深く掘り下げます。
@@ -14,7 +14,7 @@ Deno 3.0 フルスタックソリューションのフロントエンド開発�
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ Deno 3.0 フルスタックソリューションのフロントエンド開発�
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 高度な使い方
 
@@ -97,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでの使い方はやや複雑になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

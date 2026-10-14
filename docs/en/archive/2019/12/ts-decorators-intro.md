@@ -14,7 +14,7 @@ While rolling out a TypeScript decorators primer across the team, I hit quite a 
 
 The core code is as follows:
 
-```javascript
+```css
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -42,7 +42,7 @@ In real projects you also need to account for edge cases and error handling.
 
 Here is a concrete example:
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

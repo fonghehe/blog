@@ -4,9 +4,9 @@ date: 2021-03-25 14:31:30
 tags:
   - TypeScript
 
-readingTime: 3
+readingTime: 2
 description: "在日常开发中，TypeScript 模板字面量类型の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 486
+wordCount: 447
 ---
 
 日々の開発において、TypeScript のテンプレートリテラル型の使用頻度が高まっている。本記事では、その使い方、原理、最適化戦略を体系的に説明する。
@@ -135,7 +135,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## まとめ
 

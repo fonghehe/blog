@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "I recently adopted Vue 3.2 script-setup in earnest with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 217
+wordCount: 200
 ---
 
 We recently implemented Vue 3.2 script-setup 实践， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -31,7 +31,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## In-Depth Analysis
 

@@ -8,7 +8,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Vue 3 defineComponent 与 TypeScript在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 309
+wordCount: 283
 ---
 
 Vue 3 的 `defineComponent` 与 TypeScript 搭配，在前端开发中应用得越来越广泛。本文从实际项目出发，深入分析其核心原理与最佳实践。
@@ -95,7 +95,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 性能优化
 

@@ -5,7 +5,7 @@ tags:
   - フロントエンドエンジニアリング
 readingTime: 3
 description: "最近チームでMonorepo 工具链 2023 总结，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 560
+wordCount: 525
 ---
 
 最近チームでMonorepo 工具链 2023 总结，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -14,7 +14,7 @@ wordCount: 560
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ wordCount: 560
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## 詳細分析
 
@@ -97,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでの使用法はより複雑になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在日常開發中，前端工程化 2026 趨勢的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 296
+wordCount: 270
 ---
 
 在日常開發中，前端工程化 2026 趨勢的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 關鍵在於理解核心邏輯：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

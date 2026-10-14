@@ -5,7 +5,7 @@ tags:
   - Nuxt.js
 readingTime: 1
 description: "The new architecture behind Nuxt 3's RC release is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 179
+wordCount: 162
 ---
 
 Nuxt 3 RC 发布新架构解析 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -106,7 +106,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - Playwright
 readingTime: 2
 description: "关于Playwright 1.40 新功能总结，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 306
+wordCount: 280
 ---
 
 关于Playwright 1.40 新功能总结，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
@@ -108,7 +108,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

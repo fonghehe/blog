@@ -6,7 +6,7 @@ tags:
   - 性能優化
 readingTime: 2
 description: "圖片 CDN 自動優化方案在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
-wordCount: 359
+wordCount: 333
 ---
 
 圖片 CDN 自動優化方案在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。
@@ -30,7 +30,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 進階用法
 

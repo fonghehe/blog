@@ -3,9 +3,9 @@ title: "Vue 3 Composables Advanced"
 date: 2024-11-21 15:15:52
 tags:
   - Vue
-readingTime: 2
+readingTime: 1
 description: "Advanced Vue 3 composables are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 174
+wordCount: 157
 ---
 
 Vue 3 Composables 进阶 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -70,7 +70,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

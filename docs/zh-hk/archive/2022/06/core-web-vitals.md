@@ -3,9 +3,9 @@ title: "Core Web Vitals 2022 優化策略：落地路徑與實戰建議"
 date: 2022-06-14 11:13:10
 tags:
   - 前端
-readingTime: 2
+readingTime: 1
 description: "最近在團隊中落地Core Web Vitals 2022 優化策略，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 300
+wordCount: 274
 ---
 
 最近在團隊中落地Core Web Vitals 2022 優化策略，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -92,7 +92,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

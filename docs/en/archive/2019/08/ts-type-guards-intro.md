@@ -14,7 +14,7 @@ I recently used TypeScript type guards on a project and found them more complex 
 
 See the following code for a concrete implementation:
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

@@ -15,7 +15,7 @@ wordCount: 282
 
 实际项目中的用法更复杂：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -98,7 +98,7 @@ function useIntersectionObserver(options = {}) {
 
 可以用下面这些方式来改进：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

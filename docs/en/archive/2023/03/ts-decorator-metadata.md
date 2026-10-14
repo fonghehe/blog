@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "I recently applied TypeScript decorator metadata with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 205
+wordCount: 188
 ---
 
 I recently applied TypeScript decorator metadata with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
@@ -43,7 +43,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## In-Depth Analysis
 

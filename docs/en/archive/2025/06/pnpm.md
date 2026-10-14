@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "pnpm 2025 new features are seeing increasingly widespread adoption in frontend development. This article digs into its core principles and best practices from a"
-wordCount: 160
+wordCount: 144
 ---
 
 pnpm 2025 new features are seeing increasingly widespread adoption in frontend development. This article digs into its core principles and best practices from a real-project perspective.
@@ -39,13 +39,12 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Deep Dive
 
 The key is to understand the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

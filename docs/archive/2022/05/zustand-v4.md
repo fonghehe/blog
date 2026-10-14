@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Zustand v4 新版本特性在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 321
+wordCount: 295
 ---
 
 Zustand v4 新版本特性在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
@@ -138,7 +138,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

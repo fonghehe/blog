@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Regarding Deno compile: Single-File Executables, many developers only stay at the API call level. This article discusses real-world problems and solutions from "
-wordCount: 211
+wordCount: 194
 ---
 
 Regarding Deno compile: Single-File Executables, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Features
 

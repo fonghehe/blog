@@ -14,7 +14,7 @@ DevTools 2026 new features are seeing increasingly widespread use in frontend de
 
 We can improve things in the following way:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -100,7 +100,7 @@ This pattern is very practical in large-scale projects and can significantly red
 
 Real-world usage tends to be more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

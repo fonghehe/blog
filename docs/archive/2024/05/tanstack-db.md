@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "最近在团队中落地TanStack DB 客户端数据库，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 300
+wordCount: 274
 ---
 
 最近在团队中落地TanStack DB 客户端数据库，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -54,7 +54,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 落地经验
 

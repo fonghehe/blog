@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "In day-to-day development, React 19 Server Components: Stable Release is being used more and more frequently. This article systematically explains its usage, pr"
-wordCount: 185
+wordCount: 168
 ---
 
 In day-to-day development, React 19 Server Components: Stable Release is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -128,7 +128,6 @@ export async function POST(request: NextRequest) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

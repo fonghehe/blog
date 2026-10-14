@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Webpack 5 Asset Modules, as a replacement for file-loader, are seeing wider adoption in frontend development. Starting from real projects, this article analyzes their core principles and best practices."
-wordCount: 188
+wordCount: 170
 ---
 
 Webpack 5 Asset Modules, as a replacement for file-loader, are being used more and more widely in frontend development. Starting from real projects, this article takes a deep look at their core principles and best practices.
@@ -129,7 +129,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 

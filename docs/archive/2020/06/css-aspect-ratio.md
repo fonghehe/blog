@@ -3,9 +3,9 @@ title: "CSS aspect-ratio 原生宽高比 2020：Chrome 88 正式支持"
 date: 2019-11-11 10:30:38
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "最近在团队中落地CSS aspect-ratio 原生宽高比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 290
+wordCount: 264
 ---
 
 最近在团队中落地CSS aspect-ratio 原生宽高比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -62,7 +62,6 @@ wordCount: 290
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 落地经验
 

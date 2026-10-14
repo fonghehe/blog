@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "We recently rolled out native `aspect-ratio` in our team and learned a lot along the way. Writing this up in case it helps anyone doing similar work."
-wordCount: 184
+wordCount: 164
 ---
 
 We recently rolled out native `aspect-ratio` in our team and learned a lot along the way. I'm writing this up in case it helps anyone doing similar work.
@@ -62,7 +62,6 @@ We can improve things in the following ways:
 
 ```
 
-This approach has been running stably in production for over half a year and has stood up to real-world use.
 
 ## Implementation Experience
 

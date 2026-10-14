@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Module Federation 性能优化策略のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 447
+wordCount: 408
 ---
 
 Module Federation のパフォーマンス最適化戦略の活用はフロントエンド開発で広まりつつある。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げる。
@@ -52,7 +52,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## 実践事例
 

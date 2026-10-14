@@ -6,7 +6,7 @@ tags:
   - TailwindCSS
 readingTime: 2
 description: "I recently applied Tailwind CSS v3.3's new features with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 195
+wordCount: 178
 ---
 
 I recently applied Tailwind CSS v3.3's new features with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
@@ -144,7 +144,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

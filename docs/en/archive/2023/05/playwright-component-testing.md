@@ -5,7 +5,7 @@ tags:
   - Playwright
 readingTime: 2
 description: "The Playwright component testing guide has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 187
+wordCount: 170
 ---
 
 The Playwright component testing guide has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
@@ -108,7 +108,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

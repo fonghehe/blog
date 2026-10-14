@@ -3,9 +3,9 @@ title: "React 18 useDeferredValue: Deferred Updates in Practice"
 date: 2022-01-11 16:44:13
 tags:
   - React
-readingTime: 2
+readingTime: 1
 description: "I recently applied React 18 useDeferredValue for deferred updates with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 169
+wordCount: 152
 ---
 
 We recently explored React 18 useDeferredValue deferred updates, and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -54,7 +54,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

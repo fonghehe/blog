@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "We recently rolled out Webpack route-level code splitting on our team and gained valuable experience. I'm sharing it here as a reference for anyone doing similar work."
-wordCount: 216
+wordCount: 197
 ---
 
 We recently rolled out Webpack route-level code splitting on our team and picked up a fair bit of experience along the way. I'm sharing it here in case it helps anyone doing similar work.
@@ -36,7 +36,6 @@ module.exports = {
 }
 ```
 
-This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## In-Depth Analysis
 

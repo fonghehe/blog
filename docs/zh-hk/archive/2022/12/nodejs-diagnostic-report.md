@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Node.js 診斷報告在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
-wordCount: 288
+wordCount: 262
 ---
 
 Node.js 診斷報告在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。
@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 關鍵在於理解核心邏輯：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

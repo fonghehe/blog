@@ -6,7 +6,7 @@ tags:
   - Security
 readingTime: 2
 description: "Regarding Node.js Security 2025, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production env"
-wordCount: 180
+wordCount: 163
 ---
 
 Regarding Node.js Security 2025, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -67,7 +67,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Project Practice
 

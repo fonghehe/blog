@@ -71,7 +71,7 @@ This pattern is very useful in large projects and noticeably cuts maintenance co
 
 In real projects the usage gets more involved:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

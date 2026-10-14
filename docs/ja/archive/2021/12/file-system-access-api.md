@@ -7,7 +7,7 @@ tags:
 
 readingTime: 3
 description: "在日常开发中，File System Access API 文件操作の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 560
+wordCount: 520
 ---
 
 日々の開発において、File System Access API を使ったファイル操作の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -155,7 +155,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## まとめ
 

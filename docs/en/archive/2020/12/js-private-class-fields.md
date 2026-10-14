@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Many developers only know JavaScript private class fields at the syntax level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 176
+wordCount: 158
 ---
 
 On JavaScript private class fields: many developers only operate at the API-call level. This post tries to look at the real problems and solutions from a production perspective.
@@ -153,7 +153,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 

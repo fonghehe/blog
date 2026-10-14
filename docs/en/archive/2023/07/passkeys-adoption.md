@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Rolling out passwordless authentication with passkeys is showing up in more and more everyday work. This article systematically covers the practice, rationale, and strategies."
-wordCount: 184
+wordCount: 167
 ---
 
 在日常开发中，Passkeys 无密码认证推广实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -52,7 +52,6 @@ function setCSP(req, res, next) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Business Practice
 

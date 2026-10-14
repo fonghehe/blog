@@ -3,9 +3,9 @@ title: "Scheduler API：タスクスケジューリング実践"
 date: 2023-06-29 15:09:51
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 2
 description: "关于Scheduler API 任务调度实践，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 492
+wordCount: 456
 ---
 
 关于Scheduler API 任务调度实践，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -72,7 +72,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## プロジェクト実践
 

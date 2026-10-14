@@ -3,9 +3,9 @@ title: "CSS Color Level 4 新色彩函數：落地路徑與實戰建議"
 date: 2021-04-12 16:06:04
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "關於CSS Color Level 4 新色彩函數，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 310
+wordCount: 284
 ---
 
 關於CSS Color Level 4 新色彩函數，很多開發者只停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
@@ -62,7 +62,6 @@ wordCount: 310
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 項目實踐
 

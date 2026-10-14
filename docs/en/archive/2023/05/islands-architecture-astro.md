@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently applied islands architecture with Astro with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 182
+wordCount: 165
 ---
 
 I recently applied islands architecture with Astro with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
@@ -70,7 +70,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

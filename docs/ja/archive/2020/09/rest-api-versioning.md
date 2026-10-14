@@ -14,7 +14,7 @@ REST API のバージョン管理戦略については、コミュニティで�
 
 実際のプロジェクトでの使用方法はもう少し複雑です：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -97,7 +97,7 @@ function useIntersectionObserver(options = {}) {
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -6,7 +6,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Radix UI 无样式组件原语这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 302
+wordCount: 276
 ---
 
 Radix UI 无样式组件原语这个话题，社区里已经讨论过很多轮了。但随着版本不断迭代，不少旧结论已经过时。本文就基于最新版本重新梳理一遍。
@@ -61,7 +61,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行半年多，经受过真实流量验证。
 
 ## 真实场景应用
 

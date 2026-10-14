@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "關於React Testing Library 最佳實踐，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 320
+wordCount: 294
 ---
 
 關於React Testing Library 最佳實踐，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
@@ -80,7 +80,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 最佳實踐
 

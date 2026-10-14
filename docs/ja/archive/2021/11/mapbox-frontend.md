@@ -7,7 +7,7 @@ tags:
 
 readingTime: 3
 description: "在日常开发中，Mapbox GL JS 前端地图开发の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 520
+wordCount: 481
 ---
 
 日常の開発において、Mapbox GL JS を用いたフロントエンド地図開発の利用頻度が高まっている。本記事では、その使い方、原理、最適化戦略を体系的に解説する。
@@ -16,7 +16,7 @@ wordCount: 520
 
 完全なサンプルを以下に示す：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -94,13 +94,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## パフォーマンス比較
 
 基本的な実装方法を見てみよう：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

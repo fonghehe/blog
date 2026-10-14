@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "在日常開發中，Astro 5 View Transitions的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 346
+wordCount: 320
 ---
 
 在日常開發中，Astro 5 View Transitions的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
@@ -14,7 +14,7 @@ wordCount: 346
 
 我們可以通過以下方式來改進：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ wordCount: 346
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 內部原理
 
@@ -97,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 實際專案中的用法會更復雜一些：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

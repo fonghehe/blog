@@ -6,7 +6,7 @@ tags:
   - 測試
 readingTime: 2
 description: "關於Vitest 3.0 測試框架，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 326
+wordCount: 300
 ---
 
 關於Vitest 3.0 測試框架，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
@@ -154,7 +154,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

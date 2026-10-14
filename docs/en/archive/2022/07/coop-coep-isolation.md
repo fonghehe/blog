@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "COOP and COEP cross-origin isolation strategies are becoming increasingly widespread in frontend development. This article dives into their core principles and best practices from real projects."
-wordCount: 179
+wordCount: 162
 ---
 
 COOP and COEP cross-origin isolation strategies are becoming increasingly widespread in frontend development. This article dives into their core principles and best practices from real projects.
@@ -70,7 +70,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

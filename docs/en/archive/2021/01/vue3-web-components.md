@@ -10,7 +10,7 @@ tags:
 
 readingTime: 2
 description: "Building Web Components with Vue 3 is increasingly common in everyday work. This article systematically covers usage, internals, and optimization strategies."
-wordCount: 191
+wordCount: 174
 ---
 
 In day-to-day development, building Web Components with Vue 3 is becoming more and more common. This article systematically explains its usage, principles, and optimization strategies.
@@ -150,7 +150,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -8,7 +8,7 @@ tags:
 
 readingTime: 2
 description: "A complete walkthrough of the Vue 3.0 official release — what changed, why it matters, and how it affects real projects."
-wordCount: 217
+wordCount: 200
 ---
 
 A full breakdown of the Vue 3.0 stable release is being referenced more and more in frontend development. This article dives into its core principles and best practices from real projects.
@@ -34,7 +34,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Usage
 

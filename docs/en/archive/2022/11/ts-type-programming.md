@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript type programming is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 197
+wordCount: 180
 ---
 
 TypeScript 类型编程 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

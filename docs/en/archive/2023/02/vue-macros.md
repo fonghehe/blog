@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 1
 description: "Vue Macros, the syntax-enhancement tool collection, is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 181
+wordCount: 164
 ---
 
 在日常开发中，Vue Macros 语法增强工具集 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -80,7 +80,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Comparison
 

@@ -3,9 +3,9 @@ title: "Frontend Observability Solutions"
 date: 2023-12-01 09:31:54
 tags:
   - Frontend
-readingTime: 2
+readingTime: 1
 description: "Frontend observability solutions are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 171
+wordCount: 154
 ---
 
 前端可观测性方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -70,7 +70,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

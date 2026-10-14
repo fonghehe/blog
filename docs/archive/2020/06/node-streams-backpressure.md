@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Node.js Streams 背压处理在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 351
+wordCount: 325
 ---
 
 Node.js Streams 背压处理在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 进阶用法
 

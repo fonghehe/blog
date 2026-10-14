@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常開發中，HTML Popover 穩定版全面應用的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 342
+wordCount: 316
 ---
 
 在日常開發中，HTML Popover 穩定版全面應用的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 內部原理
 
 先來看基本的實現方式：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ function useIntersectionObserver(options = {}) {
 
 以下是一個完整的示例：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -5,7 +5,7 @@ tags:
   - 移动端
 readingTime: 2
 description: "最近在团队中落地Capacitor 跨平台应用开发，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 318
+wordCount: 292
 ---
 
 最近在团队里落地了 Capacitor 跨平台方案，积累了不少经验。整理出来供参考，希望对做类似工作的同学有帮助。
@@ -157,7 +157,6 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

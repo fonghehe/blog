@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Many developers only know frontend supply-chain security at the buzzword level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 197
+wordCount: 180
 ---
 
 关于前端供应链安全防护，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
@@ -41,7 +41,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

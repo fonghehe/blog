@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 1
 description: "在日常开发中，Passkeys 无密码认证推广实践的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 289
+wordCount: 263
 ---
 
 在日常开发中，Passkeys 无密码认证推广实践的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -52,7 +52,6 @@ function setCSP(req, res, next) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 业务实战
 

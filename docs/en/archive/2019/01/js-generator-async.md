@@ -14,7 +14,7 @@ JavaScript generators and async flow control are topics encountered frequently i
 
 Here is a basic usage example:
 
-```javascript
+```css
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -42,7 +42,7 @@ This pattern is concise and suitable for most scenarios.
 
 Here is the core code:
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

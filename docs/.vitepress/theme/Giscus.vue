@@ -25,7 +25,7 @@ const HIDE_PATHS = [
   "/zh-hk/archive/",
 ];
 const shouldShow = computed(() => {
-  if (frontmatter.value.layout === "home") return false;
+  if (!frontmatter.value.date || frontmatter.value.layout === "home") return false;
   if (frontmatter.value.comment === false) return false;
   const currentPath = route.path;
   if (HIDE_PATHS.some((p) => currentPath === withBase(p))) return false;
@@ -59,7 +59,7 @@ function loadGiscus() {
       ? "en"
       : lang.value.startsWith("ja")
         ? "ja"
-        : "zh-CN",
+        : lang.value === "zh-TW" || lang.value === "zh-HK" ? "zh-TW" : "zh-CN",
   );
   script.setAttribute("data-loading", "lazy");
   script.crossOrigin = "anonymous";

@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "An advanced guide to Next.js 10 — from its headline features to the real-world patterns that hold up in production."
-wordCount: 192
+wordCount: 175
 ---
 
 Next.js 11's new Image Optimization feature is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices drawn from real projects.
@@ -85,7 +85,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Optimization
 

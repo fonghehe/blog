@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Gray (canary) release strategies are increasingly common in frontend work. This article starts from a real project and digs into the core principles and best practices."
-wordCount: 178
+wordCount: 160
 ---
 
 Frontend gray-release (canary) strategies are being used more and more widely in frontend development. Starting from real projects, this post digs into the core principles and best practices.
@@ -153,7 +153,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 

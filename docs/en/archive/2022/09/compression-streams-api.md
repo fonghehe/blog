@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In daily development, the Compression Streams API is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 192
+wordCount: 175
 ---
 
 In daily development, the Compression Streams API is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Internal Principles
 

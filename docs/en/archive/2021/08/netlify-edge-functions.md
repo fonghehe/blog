@@ -7,7 +7,7 @@ tags:
 
 readingTime: 1
 description: "Netlify Edge Functions and edge computing have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 190
+wordCount: 173
 ---
 
 Netlify Edge Functions and edge computing have been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
@@ -60,7 +60,6 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Real-World Applications
 

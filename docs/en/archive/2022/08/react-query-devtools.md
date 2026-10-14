@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React Query Devtools is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects."
-wordCount: 172
+wordCount: 155
 ---
 
 React Query Devtools is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -95,7 +95,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Optimization
 

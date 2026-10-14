@@ -3,9 +3,9 @@ title: "CSS :has() Selector Officially Lands"
 date: 2022-03-23 14:31:25
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "I recently landed the CSS :has() selector in production with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 182
+wordCount: 165
 ---
 
 We recently implemented CSS :has() 选择器正式落地， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -89,7 +89,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Strategies
 

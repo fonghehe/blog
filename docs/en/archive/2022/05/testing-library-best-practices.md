@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Regarding Testing Library best practices in 2022, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective."
-wordCount: 221
+wordCount: 204
 ---
 
 Regarding Testing Library best practices in 2022, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective.
@@ -30,7 +30,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Features
 

@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "Monorepo toolchain comparisons for 2025 are seeing increasingly widespread discussion in frontend development. This article digs into the core principles and be"
-wordCount: 148
+wordCount: 132
 ---
 
 Monorepo toolchain comparisons for 2025 are seeing increasingly widespread discussion in frontend development. This article digs into the core principles and best practices from a real-project perspective.
@@ -45,7 +45,7 @@ This approach improves both the testability and scalability of the code.
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -125,7 +125,6 @@ function useIntersectionObserver(options = {}) {
 }
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Summary
 

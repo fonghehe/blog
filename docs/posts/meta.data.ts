@@ -78,6 +78,7 @@ export default createContentLoader(contentPatterns, {
             : [],
           description: String(p.frontmatter.description || ""),
           readingTime: Number(p.frontmatter.readingTime) || 1,
+          series: typeof p.frontmatter.series === "string" ? p.frontmatter.series : undefined,
         };
       })
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

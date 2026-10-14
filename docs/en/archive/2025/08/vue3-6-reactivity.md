@@ -6,7 +6,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "Recently implemented Vue 3.6 Reactivity Optimization in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps thos"
-wordCount: 200
+wordCount: 183
 ---
 
 Recently implemented Vue 3.6 Reactivity Optimization in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -154,7 +154,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

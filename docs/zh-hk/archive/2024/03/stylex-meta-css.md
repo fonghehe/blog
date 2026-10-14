@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "在日常開發中，StyleX Meta 的 CSS 方案的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 315
+wordCount: 289
 ---
 
 在日常開發中，StyleX Meta 的 CSS 方案的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
@@ -143,7 +143,6 @@ wordCount: 315
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

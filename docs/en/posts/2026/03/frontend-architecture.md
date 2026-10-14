@@ -73,7 +73,7 @@ Pay close attention to edge cases — they're critical in production.
 
 The key is understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

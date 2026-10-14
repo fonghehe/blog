@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Regarding Pinia v3 New Features, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production env"
-wordCount: 176
+wordCount: 159
 ---
 
 Regarding Pinia v3 New Features, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -42,7 +42,7 @@ Pay attention to boundary condition handling, which is critical in production en
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Best Practices
 
@@ -126,7 +125,7 @@ This code demonstrates the basic usage. In real projects, you also need to consi
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

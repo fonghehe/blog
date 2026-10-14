@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在日常开发中，Rolldown Rust 实现的 Rollup的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 306
+wordCount: 280
 ---
 
 在日常开发中，Rolldown Rust 实现的 Rollup的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -96,7 +96,6 @@ module.exports = {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 性能对比
 

@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "The islands architecture is showing up in more and more everyday work. This article systematically covers its usage, rationale, and optimization strategies."
-wordCount: 205
+wordCount: 188
 ---
 
 In daily development, Islands Architecture 岛屿架构 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -14,7 +14,7 @@ In daily development, Islands Architecture 岛屿架构 is being used more and m
 
 We can improve it in the following ways:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Internal Principles
 
@@ -97,7 +96,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 Usage in real projects tends to be more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

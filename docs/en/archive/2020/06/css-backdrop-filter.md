@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "In day-to-day development, the CSS backdrop-filter frosted-glass effect is appearing more and more often. This article systematically covers its usage, internals, and optimization strategies."
-wordCount: 191
+wordCount: 175
 ---
 
 In day-to-day development, the CSS backdrop-filter frosted-glass effect is showing up more and more often. This article walks through its usage, internals, and optimization strategies in a structured way.
@@ -143,7 +143,6 @@ Here are a few ways we can improve on this:
 
 ```
 
-This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "最近チームでJavaScript Iterator Helpers 提案，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 481
+wordCount: 446
 ---
 
 最近チームでJavaScript Iterator Helpers 提案，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -14,7 +14,7 @@ wordCount: 481
 
 実際のプロジェクトでの使用法はより複雑になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -97,7 +97,7 @@ function useIntersectionObserver(options = {}) {
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## まとめ
 

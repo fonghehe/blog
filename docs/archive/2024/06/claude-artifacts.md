@@ -5,7 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "Claude Artifacts 开发工作流在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 340
+wordCount: 314
 ---
 
 Claude Artifacts 开发工作流在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
@@ -39,7 +39,6 @@ export function AIChat() {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 进阶用法
 

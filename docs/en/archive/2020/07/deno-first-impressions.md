@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "First impressions of the Deno 1.0 release from a production perspective, discussing the real problems you'll encounter and how to solve them."
-wordCount: 201
+wordCount: 182
 ---
 
 When it comes to first impressions of the Deno 1.0 release, many developers only stay at the level of API calls. This article tries to discuss the real problems you'll hit and their solutions from a production perspective.
@@ -95,7 +95,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over half a year and has been validated in practice.
 
 ## Best Practices
 

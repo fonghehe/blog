@@ -3,9 +3,9 @@ title: "Vite 5.0 Released with Rollup 4 Build"
 date: 2023-02-20 17:22:28
 tags:
   - Vite
-readingTime: 2
+readingTime: 1
 description: "I recently applied Vite 5.0 with Rollup 4 with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 177
+wordCount: 160
 ---
 
 I recently applied Vite 5.0 with Rollup 4 with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
@@ -68,7 +68,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

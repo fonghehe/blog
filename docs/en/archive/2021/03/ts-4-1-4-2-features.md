@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "A roundup of the new features in TypeScript 4.1 and 4.2, starting from real projects and digging into how they change daily development."
-wordCount: 206
+wordCount: 189
 ---
 
 A roundup of the new features in TypeScript 4.1 and 4.2 is becoming increasingly common in frontend development. This article dives into their core principles and best practices from real projects.
@@ -170,7 +170,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

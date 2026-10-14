@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Million.js as a virtual DOM alternative is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 194
+wordCount: 177
 ---
 
 Million.js 虚拟 DOM 替代方案 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -153,7 +153,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

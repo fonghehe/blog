@@ -7,6 +7,7 @@ export interface Post {
   tags: string[];
   description: string;
   readingTime: number; // minutes
+  series?: string;
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────

@@ -3,9 +3,9 @@ title: "CSS Logical Properties: Browser Support and Production Practice"
 date: 2019-09-09 15:05:57
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "In day-to-day development, CSS Logical Properties are used more and more frequently. This article systematically covers their usage, underlying principles, and optimization strategies."
-wordCount: 179
+wordCount: 160
 ---
 
 In day-to-day development, CSS Logical Properties are being used more and more often. This article systematically covers their usage, the underlying principles, and optimization strategies.
@@ -89,7 +89,6 @@ We can improve on this in the following ways:
 
 ```
 
-This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Performance Comparison
 

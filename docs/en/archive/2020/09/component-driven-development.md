@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "An in-depth look at Component-Driven Development (CDD) methodology, exploring its core principles and best practices through real-world frontend projects."
-wordCount: 187
+wordCount: 168
 ---
 
 The Component-Driven Development (CDD) methodology is being adopted in frontend development more and more widely. Drawing on real-world projects, this article takes a deep dive into its core principles and best practices.
@@ -56,7 +56,6 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Practical Cases
 

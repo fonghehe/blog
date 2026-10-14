@@ -3,9 +3,9 @@ title: "VueUse: The Complete Composable Utilities Library"
 date: 2022-02-09 16:06:17
 tags:
   - Vue
-readingTime: 2
+readingTime: 1
 description: "When it comes to VueUse's comprehensive composable utilities, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter."
-wordCount: 198
+wordCount: 181
 ---
 
 When it comes to VueUse's comprehensive composable utilities, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter.
@@ -129,7 +129,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

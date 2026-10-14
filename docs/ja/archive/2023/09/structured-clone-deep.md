@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "在日常开发中，structuredClone 深拷贝实践の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 519
+wordCount: 484
 ---
 
 在日常开发中，structuredClone 深拷贝实践の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## まとめ
 

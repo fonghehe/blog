@@ -6,7 +6,7 @@ tags:
   - 安全
 readingTime: 2
 description: "SRI 子资源完整性校验这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 293
+wordCount: 268
 ---
 
 SRI 子资源完整性校验这个话题，社区已经讨论过很多次，但随着版本迭代，不少结论需要更新。本文基于当前最新版本重新梳理一遍。
@@ -42,7 +42,7 @@ function useIntersectionObserver(options = {}) {
 
 下面是一个完整示例：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -119,7 +119,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行半年多，是经过实战验证的。
 
 ## 小结
 

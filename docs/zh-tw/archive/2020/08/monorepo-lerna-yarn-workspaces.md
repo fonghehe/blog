@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "Monorepo 管理 Lerna 與 Yarn Workspaces在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。"
-wordCount: 293
+wordCount: 267
 ---
 
 Monorepo 管理 Lerna 與 Yarn Workspaces在前端開發中的應用越來越廣泛。本文從實際專案出發，深入分析其核心原理和最佳實踐。
@@ -60,7 +60,6 @@ function reducer(state, action) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 實戰案例
 

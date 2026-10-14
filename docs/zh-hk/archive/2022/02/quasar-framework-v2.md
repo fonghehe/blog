@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 1
 description: "Quasar Framework v2 全棧 UI 框架這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 293
+wordCount: 267
 ---
 
 Quasar Framework v2 全棧 UI 框架這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -106,7 +106,6 @@ function useCounter(initial = 0) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

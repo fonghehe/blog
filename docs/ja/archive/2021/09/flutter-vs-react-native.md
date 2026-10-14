@@ -6,7 +6,7 @@ tags:
 
 readingTime: 3
 description: "最近在团队中落地Flutter vs React Native 2021 对比，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 497
+wordCount: 457
 ---
 
 最近チーム内で Flutter と React Native の 2021 年の比較検証を実践し、多くの経験を積みました。同じような取り組みをされる方の参考になれば幸いです。
@@ -92,7 +92,6 @@ function reducer(state, action) {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## 最適化戦略
 

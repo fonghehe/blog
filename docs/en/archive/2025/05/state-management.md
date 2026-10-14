@@ -3,9 +3,9 @@ title: "State Management 2025: A Comparison"
 date: 2025-05-23 16:57:34
 tags:
   - Frontend
-readingTime: 2
+readingTime: 1
 description: "State management in 2025 is becoming increasingly common in day-to-day development. This article offers a systematic look at its usage, inner workings, and opti"
-wordCount: 163
+wordCount: 147
 ---
 
 State management in 2025 is becoming increasingly common in day-to-day development. This article offers a systematic look at its usage, inner workings, and optimization strategies.
@@ -36,7 +36,6 @@ const csvToJson = new Transform({
 });
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Under the Hood
 
@@ -73,7 +72,7 @@ This snippet illustrates the fundamental usage. In real projects you'll also nee
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

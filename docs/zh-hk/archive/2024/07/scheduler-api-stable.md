@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Scheduler API 穩定版實踐這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 312
+wordCount: 286
 ---
 
 Scheduler API 穩定版實踐這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -14,7 +14,7 @@ Scheduler API 穩定版實踐這個話題社區討論了很多次，但隨着版
 
 以下是一個完整的示例：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 優化技巧
 
 先來看基本的實現方式：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

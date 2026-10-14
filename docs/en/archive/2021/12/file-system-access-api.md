@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "File operations with the File System Access API are showing up in more and more everyday work. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 195
+wordCount: 178
 ---
 
 In day-to-day development, the File System Access API is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -155,7 +155,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

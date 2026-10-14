@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "关于TanStack Table v8 数据表格，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 478
+wordCount: 439
 ---
 
 TanStack Table v8 のデータテーブルについて、多くの開発者は API の呼び出しレベルにとどまっている。本記事では本番環境の観点から、実際に直面する問題とその解決策を論じる。
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## まとめ
 

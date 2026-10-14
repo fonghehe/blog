@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "最近チームでTypeScript infer：型の絞り込みとパターンマッチングを導入し、多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 556
+wordCount: 520
 ---
 
 最近チームでTypeScript infer：型の絞り込みとパターンマッチングを導入し、多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -43,7 +43,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 詳細分析
 

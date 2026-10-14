@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Hands-on work with Remix, the full-stack framework, is showing up in more and more everyday development. This article systematically covers its usage, rationale, and practical strategies."
-wordCount: 207
+wordCount: 190
 ---
 
 In daily development, the Remix full-stack framework is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -35,7 +35,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Internal Principles
 

@@ -1,11 +1,20 @@
-import { defineConfig, withBase } from "vitepress";
-import { VitePWA } from "vite-plugin-pwa";
+import { defineConfig } from "vitepress";
+import { createPageHead, renderSearchMarkdown } from "./seo";
+import { finalizePwa, LOCALES } from "../../scripts/lib/publishing.mjs";
 import { buildRSS } from "./rss";
 import { zh } from "./locales/zh";
 import { en } from "./locales/en";
 import { ja } from "./locales/ja";
 import { zhTw } from "./locales/zh-tw";
 import { zhHk } from "./locales/zh-hk";
+import { readFileSync } from "node:fs";
+
+// Review labels come from the checked-in corpus report, without rewriting every
+// historical article's frontmatter or implying that unflagged content is verified.
+const reviewPaths = new Set<string>(
+  JSON.parse(readFileSync(new URL("../../maintenance/content-baseline.json", import.meta.url), "utf8"))
+    .issues.map((issue: string) => issue.split(":")[0]),
+);
 
 // BUILD_MODE splits the build into two lighter passes to avoid OOM:
 //   'main'        → zh + en + ja
@@ -33,9 +42,17 @@ function escapeMustache(content: string): string {
 
 export default defineConfig({
   base: "/blog/",
+  // Share the large page hash map instead of repeating it in every article HTML.
+  metaChunk: true,
   title: "前端成长记录",
-  description: "一个前端工程师从 2018 年开始的学习与成长记录",
-  ignoreDeadLinks: true,
+  description: "一个前端工程师从 2018 年开始的学习与成长记录。1,518 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
+  // The separate content check validates every locale. During a split build,
+  // only links into the other build group are absent from VitePress's page set.
+  ignoreDeadLinks: BUILD_MODE === "main"
+    ? [/^(?:\/blog)?\/(?:zh-tw|zh-hk)\//]
+    : BUILD_MODE === "zh-variants"
+      ? [/^(?:\/blog)?\/(?:en|ja)\//]
+      : false,
   cacheDir:
     BUILD_MODE === "zh-variants"
       ? ".vitepress/cache-zh-variants"
@@ -52,45 +69,11 @@ export default defineConfig({
         : [],
   head: [
     ["link", { rel: "icon", href: "/blog/favicon.ico" }],
-    ["meta", { property: "og:type", content: "website" }],
-    ["meta", { property: "og:title", content: "前端成长记录" }],
-    [
-      "meta",
-      {
-        property: "og:description",
-        content:
-          "一个前端工程师从 2018 年开始的学习与成长记录。1,517 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
-      },
-    ],
-    [
-      "meta",
-      { property: "og:url", content: "https://fonghehe.github.io/blog/" },
-    ],
-    ["meta", { property: "og:locale", content: "zh_CN" }],
-    [
-      "meta",
-      {
-        property: "og:image",
-        content: "https://fonghehe.github.io/blog/icons/icon.svg",
-      },
-    ],
-    ["meta", { name: "twitter:card", content: "summary_large_image" }],
-    ["meta", { name: "twitter:title", content: "前端成长记录" }],
-    [
-      "meta",
-      {
-        name: "twitter:description",
-        content:
-          "一个前端工程师从 2018 年开始的学习与成长记录。1,517 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
-      },
-    ],
-    [
-      "meta",
-      {
-        name: "twitter:image",
-        content: "https://fonghehe.github.io/blog/icons/icon.svg",
-      },
-    ],
+    ["meta", { name: "theme-color", content: "#3c8772" }],
+    ...(IS_PRODUCTION ? [
+      ["link", { rel: "manifest", href: "/blog/manifest.webmanifest" }],
+      ["script", { src: "/blog/registerSW.js", defer: "" }],
+    ] as [string, Record<string, string>][] : []),
     // Umami analytics — only injected in production builds
     ...(IS_PRODUCTION
       ? ([
@@ -108,17 +91,21 @@ export default defineConfig({
   sitemap: {
     hostname: "https://fonghehe.github.io/blog/",
   },
-  transformHead({ pageData }) {
-    const canonical = `https://fonghehe.github.io/blog/${pageData.relativePath}`
-      .replace(/index\.md$/, "")
-      .replace(/\.md$/, ".html");
-    return [["link", { rel: "canonical", href: canonical }]];
+  transformHead({ pageData, siteConfig }) {
+    return createPageHead(pageData, siteConfig.srcDir);
   },
-  locales: allLocales,
+  transformPageData(pageData) {
+    if (reviewPaths.has(pageData.relativePath)) pageData.frontmatter.reviewStatus = "needs-review";
+  },
+  locales: Object.fromEntries(Object.entries(allLocales).map(([key, locale]) => {
+    const metadata = LOCALES.find((item) => item.prefix === (key === "root" ? "" : key));
+    return [key, { ...locale, title: metadata.title, description: metadata.description }];
+  })),
   themeConfig: {
     logo: "/logo.png",
     search: {
       provider: "local",
+      options: { _render: renderSearchMarkdown },
     },
     footer: {
       message: "MIT Licensed",
@@ -172,64 +159,11 @@ export default defineConfig({
     if (BUILD_MODE !== "zh-variants") {
       await buildRSS(config);
     }
+    // Each group has working registration artifacts. Re-run after the merge so
+    // the final version includes both apps and all locale shell fallbacks.
+    finalizePwa(config.outDir);
   },
   vite: {
-    plugins: [
-      VitePWA({
-        // Only register service worker in the main build
-        disable: BUILD_MODE === "zh-variants",
-        registerType: "autoUpdate",
-        outDir: ".vitepress/dist",
-        injectRegister: "script-defer",
-        manifest: {
-          name: "前端成长记录",
-          short_name: "前端记录",
-          description:
-            "一个前端工程师从 2018 年开始的学习与成长记录，1,517 篇深度文章",
-          theme_color: "#3c8772",
-          background_color: "#ffffff",
-          display: "standalone",
-          start_url: "/blog/",
-          scope: "/blog/",
-          icons: [
-            {
-              src: "/blog/icons/icon.svg",
-              sizes: "any",
-              type: "image/svg+xml",
-              purpose: "any maskable",
-            },
-          ],
-        },
-        workbox: {
-          globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2}"],
-          // Exclude local search indexes (5-6 MB each) from precache — served via NetworkFirst at runtime
-          globIgnores: ["**/chunks/@localSearchIndex*"],
-          navigateFallback: null,
-          runtimeCaching: [
-            {
-              // Search indexes are large and change on every build; fetch fresh when online
-              urlPattern: /@localSearchIndex/,
-              handler: "NetworkFirst",
-              options: {
-                cacheName: "search-index",
-                expiration: { maxEntries: 10 },
-              },
-            },
-            {
-              urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
-              handler: "CacheFirst",
-              options: {
-                cacheName: "google-fonts",
-                expiration: {
-                  maxEntries: 20,
-                  maxAgeSeconds: 60 * 60 * 24 * 365,
-                },
-              },
-            },
-          ],
-        },
-      }),
-    ],
     build: {
       reportCompressedSize: false,
       chunkSizeWarningLimit: 4000,

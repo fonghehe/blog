@@ -5,7 +5,7 @@ tags:
   - Frontend Engineering
 readingTime: 2
 description: "Many developers only know frontend monorepo practice at the tool level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 191
+wordCount: 174
 ---
 
 关于前端 Monorepo 实践，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
@@ -153,7 +153,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

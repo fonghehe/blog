@@ -6,7 +6,7 @@ tags:
   - TailwindCSS
 readingTime: 2
 description: "最近在团队中落地Tailwind CSS v3.3 新特性，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 519
+wordCount: 483
 ---
 
 最近在团队中落地Tailwind CSS v3.3 新特性，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -144,7 +144,6 @@ export async function POST(req) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## まとめ
 

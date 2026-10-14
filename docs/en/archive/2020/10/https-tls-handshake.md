@@ -5,7 +5,7 @@ tags:
   - Security
 readingTime: 1
 description: "A production-focused explanation of the HTTPS TLS handshake process, addressing real-world problems developers encounter beyond theoretical understanding."
-wordCount: 196
+wordCount: 178
 ---
 
 When it comes to the HTTPS TLS handshake, many developers only operate at the API-call level. This article tries to look at it from a production-environment perspective, discussing the problems you'll actually run into and how to solve them.
@@ -96,7 +96,6 @@ function setCSP(req, res, next) {
 
 ```
 
-This approach has been running stably in production for over half a year, so it's proven in practice.
 
 ## Summary
 

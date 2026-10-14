@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在日常开发中，前端无障碍 2025 最佳实践的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 319
+wordCount: 293
 ---
 
 在日常开发中，前端无障碍 2025 最佳实践的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -14,7 +14,7 @@ wordCount: 319
 
 以下是一个完整的示例：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 性能对比
 
 先来看基本的实现方式：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

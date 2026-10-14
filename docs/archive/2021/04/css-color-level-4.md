@@ -3,9 +3,9 @@ title: "CSS Color Level 4 新色彩函数"
 date: 2021-04-12 16:06:04
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "关于CSS Color Level 4 新色彩函数，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 308
+wordCount: 284
 ---
 
 关于 CSS Color Level 4 的新色彩函数，多数开发者还停留在单纯调用 API 的层面。本文从生产环境出发，聊聊落地时真正会遇到的坑和对应的解法。
@@ -62,7 +62,6 @@ wordCount: 308
 
 ```
 
-这套方案已经在线上稳定运行半年多，经受过实际验证。
 
 ## 项目实践
 

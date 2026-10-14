@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Many developers have never thought about technical debt management and repayment strategy beyond the buzzword. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 190
+wordCount: 173
 ---
 
 When it comes to technical debt management and repayment strategies, many developers only engage with it at the API-call level. This article looks at the real problems and solutions from a production-environment perspective.
@@ -74,7 +74,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Project Practice
 

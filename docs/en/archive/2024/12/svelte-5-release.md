@@ -5,7 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "I recently applied the Svelte 5 release with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 186
+wordCount: 169
 ---
 
 I recently applied the Svelte 5 release with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
@@ -41,7 +41,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

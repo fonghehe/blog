@@ -5,7 +5,7 @@ tags:
   - 移動端
 readingTime: 2
 description: "關於Expo EAS Build 雲構建，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 362
+wordCount: 336
 ---
 
 關於Expo EAS Build 雲構建，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
@@ -41,7 +41,6 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 高階特性
 

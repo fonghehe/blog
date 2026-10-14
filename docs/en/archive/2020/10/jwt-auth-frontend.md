@@ -5,7 +5,7 @@ tags:
   - Security
 readingTime: 2
 description: "A comprehensive guide to JWT-based frontend authentication and security best practices, drawn from real-world project experience."
-wordCount: 220
+wordCount: 202
 ---
 
 JWT-based frontend authentication and its security practices are being adopted more and more widely in frontend development. Starting from real projects, this article takes a deep look at the core principles and best practices.
@@ -30,7 +30,6 @@ function setCSP(req, res, next) {
 
 ```
 
-This approach has been running stably in production for over half a year, so it's proven in practice.
 
 ## Advanced Usage
 

@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "In day-to-day development, TypeScript Strict Mode 2025 is being used more and more frequently. This article systematically explains its usage, principles, and o"
-wordCount: 181
+wordCount: 164
 ---
 
 In day-to-day development, TypeScript Strict Mode 2025 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

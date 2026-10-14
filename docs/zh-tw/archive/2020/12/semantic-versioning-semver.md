@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "關於語義化版本 SemVer 規範，很多開發者隻停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 325
+wordCount: 299
 ---
 
 關於語義化版本 SemVer 規範，很多開發者只停留在 API 呼叫層面。本文從生產環境的角度出發，探討實際開發中常見的問題與對應的解決方案。
@@ -71,7 +71,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 我們可以通過以下方式來改進：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 最佳實踐
 

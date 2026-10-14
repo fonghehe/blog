@@ -5,7 +5,7 @@ tags:
   - Micro Frontend
 readingTime: 1
 description: "When it comes to micro-frontend 2025 architecture trends, many developers only scratch the surface at the API call level. This article takes a production-enviro"
-wordCount: 156
+wordCount: 140
 ---
 
 When it comes to micro-frontend 2025 architecture trends, many developers only scratch the surface at the API call level. This article takes a production-environment perspective to discuss the problems you actually encounter and their solutions.
@@ -14,7 +14,7 @@ When it comes to micro-frontend 2025 architecture trends, many developers only s
 
 In a real project, the usage gets a bit more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -100,7 +100,7 @@ Performance optimization must be tailored to specific scenarios—not every situ
 
 We can improve it in the following way:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -121,7 +121,6 @@ We can improve it in the following way:
 
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Summary
 

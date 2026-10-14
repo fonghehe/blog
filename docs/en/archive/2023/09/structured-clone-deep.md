@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Deep copying with structuredClone is showing up in more and more everyday code. This article systematically covers its usage, mechanics, and practical patterns."
-wordCount: 197
+wordCount: 180
 ---
 
 在日常开发中，structuredClone 深拷贝实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

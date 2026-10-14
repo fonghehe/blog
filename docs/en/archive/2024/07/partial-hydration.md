@@ -3,9 +3,9 @@ title: "Partial Hydration: Practical Solutions"
 date: 2024-07-01 10:15:52
 tags:
   - Frontend
-readingTime: 2
+readingTime: 1
 description: "Regarding Partial Hydration: Practical Solutions, many developers only stay at the API call level. This article discusses real-world problems and solutions from"
-wordCount: 176
+wordCount: 159
 ---
 
 Regarding Partial Hydration: Practical Solutions, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -70,7 +70,7 @@ Pay attention to boundary condition handling, which is critical in production en
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

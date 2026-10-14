@@ -5,7 +5,7 @@ tags:
   - Frontend Engineering
 readingTime: 2
 description: "When it comes to Monorepo 2022 toolchain comparison, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 205
+wordCount: 188
 ---
 
 When it comes to Monorepo 2022 toolchain comparison, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
@@ -14,7 +14,7 @@ When it comes to Monorepo 2022 toolchain comparison, many developers only stay a
 
 We can improve it in the following ways:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Features
 
@@ -97,7 +96,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 Usage in real projects tends to be more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

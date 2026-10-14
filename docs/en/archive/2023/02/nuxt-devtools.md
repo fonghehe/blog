@@ -5,7 +5,7 @@ tags:
   - Nuxt.js
 readingTime: 1
 description: "Nuxt DevTools has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 185
+wordCount: 168
 ---
 
 Nuxt DevTools has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
@@ -80,7 +80,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Tips
 

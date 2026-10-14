@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "Edge-first フロントエンドアーキテクチャ設計についてはコミュニティで何度も議論されてきましたが、バージョンの反復に伴い、多くの結論を更新する必要があります。本記事は最新バージョンに基づいて再整理します。"
-wordCount: 530
+wordCount: 494
 ---
 
 Edge-first フロントエンドアーキテクチャ設計についてはコミュニティで何度も議論されてきましたが、バージョンの反復に伴い、多くの結論を更新する必要があります。本記事は最新バージョンに基づいて再整理します。
@@ -14,7 +14,7 @@ Edge-first フロントエンドアーキテクチャ設計についてはコミ
 
 完全な例を以下に示します：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 最適化テクニック
 
 まず基本的な実装方法を見てみましょう：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Regarding Iterator Helpers: Official Landing, many developers only stay at the API call level. This article discusses real-world problems and solutions from a p"
-wordCount: 191
+wordCount: 174
 ---
 
 Regarding Iterator Helpers: Official Landing, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -153,7 +153,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

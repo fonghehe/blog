@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "最近在團隊中落地Vue 3.2 script-setup 實踐，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 351
+wordCount: 325
 ---
 
 最近在團隊中落地Vue 3.2 script-setup 實踐，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -31,7 +31,6 @@ function useCounter(initial = 0) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 深度解析
 

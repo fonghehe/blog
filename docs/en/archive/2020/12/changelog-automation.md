@@ -14,7 +14,7 @@ Automating CHANGELOG generation has been discussed in the community many times, 
 
 Let's start with the basic approach:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -98,7 +98,7 @@ This way, both the testability and extensibility of the code improve.
 
 Here is a complete example:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

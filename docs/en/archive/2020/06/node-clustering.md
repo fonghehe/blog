@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "A systematic guide to Node.js Cluster multi-process performance optimization, covering usage patterns, internals, and tuning strategies for production workloads."
-wordCount: 177
+wordCount: 161
 ---
 
 In everyday development, Node.js Cluster multi-process performance optimization is being used more and more. This article walks through its usage, internals, and optimization strategies in a structured way.
@@ -95,7 +95,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Performance Comparison
 

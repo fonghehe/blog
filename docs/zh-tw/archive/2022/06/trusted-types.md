@@ -3,9 +3,9 @@ title: "Trusted Types 防 XSS 攻擊"
 date: 2022-06-29 15:09:11
 tags:
   - 前端
-readingTime: 2
+readingTime: 1
 description: "Trusted Types 防 XSS 攻擊這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 306
+wordCount: 280
 ---
 
 Trusted Types 防 XSS 攻擊這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -52,7 +52,6 @@ function setCSP(req, res, next) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 真實場景應用
 

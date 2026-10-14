@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "Recently implemented CSS 2025 New Features in Practice in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps th"
-wordCount: 181
+wordCount: 164
 ---
 
 Recently implemented CSS 2025 New Features in Practice in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -71,7 +71,7 @@ Performance optimization should be tailored to specific scenarios; not all cases
 
 We can improve it in the following ways:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Strategies
 

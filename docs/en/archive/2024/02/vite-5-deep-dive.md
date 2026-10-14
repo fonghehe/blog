@@ -5,7 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "The topic of Vite 6.0 Releases Environment API has been discussed many times in the community, but with each new version, many conclusions need updating. This a"
-wordCount: 190
+wordCount: 173
 ---
 
 The topic of Vite 6.0 Releases Environment API has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.
@@ -128,7 +128,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - Next.js
 readingTime: 2
 description: "In day-to-day development, Next.js 15 New Features: A Comprehensive Overview is being used more and more frequently. This article systematically explains its us"
-wordCount: 193
+wordCount: 176
 ---
 
 In day-to-day development, Next.js 15 New Features: A Comprehensive Overview is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -138,7 +138,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

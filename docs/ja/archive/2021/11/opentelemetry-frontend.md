@@ -7,7 +7,7 @@ tags:
 
 readingTime: 3
 description: "在日常开发中，OpenTelemetry 前端可观测性の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 566
+wordCount: 527
 ---
 
 日常の開発において、OpenTelemetry を用いたフロントエンドの可観測性の利用頻度が高まっている。本記事では、その使い方、原理、最適化戦略を体系的に解説する。
@@ -37,13 +37,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## 内部原理
 
 基本的な実装方法を見てみよう：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -126,7 +125,7 @@ function useIntersectionObserver(options = {}) {
 
 完全なサンプルを以下に示す：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -14,7 +14,7 @@ Promise.allSettled による並列リクエスト処理は、フロントエン�
 
 次の方法で改善できる：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -97,7 +97,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでは、もう少し複雑な使い方になる：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

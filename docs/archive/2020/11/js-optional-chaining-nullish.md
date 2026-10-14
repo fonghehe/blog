@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "可选链与空值合并最佳实践这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 355
+wordCount: 329
 ---
 
 可选链与空值合并这个话题，社区已经讨论过很多次，但随着版本迭代，不少结论需要更新。本文基于当时的版本重新梳理一遍。
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 源码分析
 
@@ -70,7 +69,7 @@ function useIntersectionObserver(options = {}) {
 
 在这个基础上，我们可以进一步优化：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

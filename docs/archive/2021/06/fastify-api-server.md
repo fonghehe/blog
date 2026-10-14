@@ -4,9 +4,9 @@ date: 2021-06-08 15:28:53
 tags:
   - 前端
   - JavaScript
-readingTime: 2
+readingTime: 1
 description: "关于Fastify 高性能 API 服务端，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 290
+wordCount: 264
 ---
 
 很多开发者对 Fastify 的理解还停留在 API 调用层面。本文尝试从生产环境出发，聊聊实际落地时遇到的问题和对应的解法。
@@ -93,7 +93,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

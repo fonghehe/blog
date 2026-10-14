@@ -3,9 +3,9 @@ title: "Node.js 18 LTS：新機能の概要"
 date: 2022-05-06 15:28:04
 tags:
   - Node.js
-readingTime: 3
+readingTime: 2
 description: "多くの開発者はNode.js 18 LTS の新機能について、API を呼ぶレベルでしか理解していない。本記事では本番環境の視点から、実際に直面する問題とその解決策を議論する。"
-wordCount: 517
+wordCount: 478
 ---
 
 多くの開発者はNode.js 18 LTS の新機能について、API を呼ぶレベルでしか理解していない。本記事では本番環境の視点から、実際に直面する問題とその解決策を議論する。
@@ -129,7 +129,6 @@ const csvToJson = new Transform({
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## まとめ
 

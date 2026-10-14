@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "React Query for server-state management is showing up in more and more everyday code. This article systematically covers its usage, internals, and optimization strategies."
-wordCount: 187
+wordCount: 170
 ---
 
 In day-to-day development, React Query's server-state management is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -97,7 +97,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Comparison
 

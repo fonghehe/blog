@@ -7,7 +7,7 @@ tags:
 
 readingTime: 1
 description: "Many developers only know Vercel frontend deployment and preview environments at the surface level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 177
+wordCount: 160
 ---
 
 When it comes to Vercel frontend deployment and preview environments, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
@@ -110,7 +110,6 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "ESLint v9 稳定版迁移指南这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 325
+wordCount: 299
 ---
 
 ESLint v9 稳定版迁移指南这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

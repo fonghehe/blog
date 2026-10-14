@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Frontend performance benchmarking is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 199
+wordCount: 182
 ---
 
 Frontend performance benchmarking is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

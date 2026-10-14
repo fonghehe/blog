@@ -3,9 +3,9 @@ title: "INP 交互到下一幀繪製優化：落地路徑與實戰建議"
 date: 2023-06-06 15:28:47
 tags:
   - Next.js
-readingTime: 2
+readingTime: 1
 description: "最近在團隊中落地INP 交互到下一幀繪製優化，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 306
+wordCount: 280
 ---
 
 最近在團隊中落地INP 交互到下一幀繪製優化，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -50,7 +50,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 落地經驗
 

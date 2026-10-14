@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Frontend Growth Blog
-description: A frontend engineer's learning journey since 2018. 1,517 in-depth articles covering framework internals, engineering practices, and cutting-edge exploration.
+description: A frontend engineer's learning journey since 2018. 1,518 in-depth articles covering framework internals, engineering practices, and cutting-edge exploration.
 hero:
   name: Frontend Growth Blog
   text: Learning · Practicing · Growing
-  tagline: 8 years of frontend engineering accumulated since 2018. 1,517 in-depth articles covering framework internals, engineering practices, and cutting-edge exploration.
+  tagline: 8 years of frontend engineering accumulated since 2018. 1,518 in-depth articles covering framework internals, engineering practices, and cutting-edge exploration.
   actions:
     - theme: brand
       text: Latest Posts
@@ -18,19 +18,25 @@ features:
   - icon: 🟢
     title: Vue Ecosystem
     details: Vue 2/3 internals, Vuex / Pinia state management, Nuxt.js SSR — from beginner to source-level deep dives
+    link: "/en/posts/?category=Vue"
   - icon: ⚛️
     title: React Ecosystem
     details: Fiber architecture, Concurrent Mode, React Hooks deep dives, Next.js full-stack rendering pipeline
+    link: "/en/posts/?category=React"
   - icon: 🔴
     title: Angular Ecosystem
     details: RxJS reactive programming, NgRx state management, Angular Signals and the evolution away from Zone.js
+    link: "/en/posts/?category=Angular"
   - icon: 📦
     title: Engineering
     details: Webpack → Vite → Rollup build tool evolution, Monorepo, CI/CD pipelines, Module Federation
+    link: "/en/posts/?category=工程化"
   - icon: ⚡
     title: Performance
     details: Core Web Vitals in practice, rendering performance tuning, code splitting, caching strategies, SSR/SSG comparison
+    link: "/en/posts/?category=性能优化"
   - icon: 🔐
     title: Security & Quality
     details: XSS / CSRF / CSP defense practices, Jest / Vitest / Playwright testing systems, TypeScript type engineering
+    link: "/en/posts/?category=安全"
 ---

@@ -70,7 +70,7 @@ This code demonstrates the basic usage pattern. In real-world projects, you also
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

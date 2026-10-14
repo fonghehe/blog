@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "TypeScript 4.9 satisfies in practice is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from rea"
-wordCount: 178
+wordCount: 161
 ---
 
 TypeScript 4.9 satisfies in practice is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -70,7 +70,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

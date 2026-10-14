@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently applied Rspack 1.0, the stable Rust build tool with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 184
+wordCount: 167
 ---
 
 I recently applied Rspack 1.0, the stable Rust build tool with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
@@ -68,7 +68,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

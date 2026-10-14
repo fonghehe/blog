@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "在日常开发中，Hono v3 全栈 Web 框架的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 349
+wordCount: 323
 ---
 
 在日常开发中，Hono v3 全栈 Web 框架的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 内部原理
 

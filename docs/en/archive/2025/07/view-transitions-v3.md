@@ -73,7 +73,7 @@ This code demonstrates the basic usage. In real projects, error handling and edg
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

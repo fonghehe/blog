@@ -7,7 +7,7 @@ tags:
 
 readingTime: 3
 description: "在日常开发中，React 18 Suspense SSR 流式渲染の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 554
+wordCount: 515
 ---
 
 日常の開発において、React 18 の Suspense SSR（ストリーミングレンダリング）の使用頻度が高まっている。本記事では、その使い方、原理、最適化戦略を体系的に説明する。
@@ -37,7 +37,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## 内部原理
 

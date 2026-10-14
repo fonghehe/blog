@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "在日常开发中，TanStack Router 类型安全路由の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 514
+wordCount: 478
 ---
 
 在日常开发中，TanStack Router 类型安全路由の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -123,7 +123,6 @@ function reducer(state, action) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## まとめ
 

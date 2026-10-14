@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "DevTools 2026 新功能在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
-wordCount: 349
+wordCount: 323
 ---
 
 DevTools 2026 新功能在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。
@@ -14,7 +14,7 @@ DevTools 2026 新功能在前端開發中的應用越來越廣泛。本文從實
 
 我們可以通過以下方式來改進：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ DevTools 2026 新功能在前端開發中的應用越來越廣泛。本文從實
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 進階用法
 
@@ -97,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 實際項目中的用法會更複雜一些：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -14,7 +14,7 @@ I recently rolled out Chromatic visual regression testing on my team and picked 
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -98,7 +98,7 @@ This approach improves both the testability and extensibility of the code.
 
 Here is a complete example:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

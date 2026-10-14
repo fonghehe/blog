@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Trusted Types v1 Stable Release is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices"
-wordCount: 188
+wordCount: 171
 ---
 
 Trusted Types v1 Stable Release is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.
@@ -41,7 +41,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

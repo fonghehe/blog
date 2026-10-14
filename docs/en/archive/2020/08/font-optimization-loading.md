@@ -5,7 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 1
 description: "A systematic guide to web font loading optimization strategies, covering usage patterns, principles, and techniques for improving font performance."
-wordCount: 180
+wordCount: 161
 ---
 
 In day-to-day development, web font loading optimization strategies are being used more and more often. This article systematically explains their usage, principles, and optimization strategies.
@@ -92,7 +92,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Summary
 

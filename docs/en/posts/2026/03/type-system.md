@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In everyday development, type system patterns in frontend are being used with increasing frequency. This article systematically covers their usage, underlying p"
-wordCount: 182
+wordCount: 163
 ---
 
 In everyday development, type system patterns in frontend are being used with increasing frequency. This article systematically covers their usage, underlying principles, and optimization strategies.
@@ -74,7 +74,7 @@ Performance optimization must be approached in context — not every situation c
 
 Here's a practical way to build on this:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -95,7 +95,6 @@ Here's a practical way to build on this:
 
 ```
 
-This approach has been running stably in production for over six months and has been validated in real-world use.
 
 ## Performance Comparison
 

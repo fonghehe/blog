@@ -5,7 +5,7 @@ tags:
   - Web Components
 readingTime: 2
 description: "最近在团队中落地Web Components 2025 生态，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 324
+wordCount: 298
 ---
 
 最近在团队中落地Web Components 2025 生态，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -169,7 +169,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

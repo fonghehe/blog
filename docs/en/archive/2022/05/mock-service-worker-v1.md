@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Regarding the official release of MSW v1, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective."
-wordCount: 183
+wordCount: 166
 ---
 
 Regarding the official release of MSW v1, many developers only scratch the surface at the API call level. This article attempts to discuss real-world problems and solutions from a production environment perspective.
@@ -58,7 +58,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Project Practice
 

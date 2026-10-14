@@ -5,7 +5,7 @@ tags:
   - 性能优化
 readingTime: 2
 description: "前端图片优化 WebP AVIF这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 308
+wordCount: 282
 ---
 
 前端图片优化（WebP / AVIF）这个话题，社区已经讨论过很多次，但随着版本迭代，不少结论需要更新。本文基于当前版本重新梳理。
@@ -50,7 +50,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 真实场景应用
 

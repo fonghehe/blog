@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "We recently adopted the Scheduler API for scheduling priorities on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 188
+wordCount: 171
 ---
 
 We recently adopted the Scheduler API for scheduling priorities on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

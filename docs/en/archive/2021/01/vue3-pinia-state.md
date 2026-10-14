@@ -7,7 +7,7 @@ tags:
 
 readingTime: 1
 description: "Pinia, the next-generation Vuex, is increasingly popular for state management. This article starts from real projects and digs into its core principles and best practices."
-wordCount: 184
+wordCount: 167
 ---
 
 Pinia, the next-generation state management library for Vue, is being adopted more and more widely in frontend development. This article dives into its core principles and best practices from real projects.
@@ -82,7 +82,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Optimization
 

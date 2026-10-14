@@ -6,7 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "最近在團隊中落地前端錯誤日誌採集與分析，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 313
+wordCount: 287
 ---
 
 最近在團隊中落地前端錯誤日誌採集與分析，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -71,7 +71,7 @@ function useIntersectionObserver(options = {}) {
 
 關鍵在於理解核心邏輯：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -121,7 +121,6 @@ const csvToJson = new Transform({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

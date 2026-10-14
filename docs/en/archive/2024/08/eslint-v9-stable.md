@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "The topic of ESLint v9 Stable: Migration Guide has been discussed many times in the community, but with each new version, many conclusions need updating. This a"
-wordCount: 192
+wordCount: 175
 ---
 
 The topic of ESLint v9 Stable: Migration Guide has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

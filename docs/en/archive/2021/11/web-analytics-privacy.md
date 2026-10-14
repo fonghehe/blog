@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Privacy-friendly web analytics is showing up in more and more everyday work. This article systematically covers the options, their rationale, and practical strategies."
-wordCount: 188
+wordCount: 171
 ---
 
 Privacy-friendly web analytics solutions are being used more and more frequently in day-to-day development. This article systematically explains their usage, principles, and optimization strategies.
@@ -149,7 +149,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - 前端工程化
 readingTime: 2
 description: "在日常開發中，前端工程團隊對新人 Onboarding 的重視程度也越來越高。本文系統性地說明其做法、原理與優化策略。"
-wordCount: 294
+wordCount: 268
 ---
 
 在日常開發中，前端工程團隊對新人 Onboarding 的重視程度也越來越高。本文系統性地說明其做法、原理與優化策略。
@@ -60,7 +60,6 @@ function reducer(state, action) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 業務實戰
 

@@ -35,7 +35,6 @@ jobs:
       - name: 📦 Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: latest
           run_install: false
 
       - name: 🔧 Setup Node.js
@@ -57,6 +56,9 @@ jobs:
 
       - name: Pre-compute article metadata
         run: node scripts/precompute-meta.js
+
+      - name: Verify tests, counts and all language content
+        run: pnpm check
 
       - name: "🔨 Build (${{ matrix.batch }})"
         run: pnpm exec vitepress build docs
@@ -92,6 +94,12 @@ jobs:
 
       - name: 🔀 Merge builds
         run: node docs/.vitepress/merge-builds.js
+
+      - name: Finalize multilingual offline worker
+        run: node scripts/finalize-pwa.js
+
+      - name: Verify merged pages and offline budget
+        run: node scripts/verify-build.js
 
       - name: 🗑️ Delete old pages artifact
         env:

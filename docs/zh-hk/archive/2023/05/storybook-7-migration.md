@@ -5,7 +5,7 @@ tags:
   - Storybook
 readingTime: 2
 description: "在日常開發中，Storybook 7 遷移完整指南的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 341
+wordCount: 315
 ---
 
 在日常開發中，Storybook 7 遷移完整指南的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
@@ -30,7 +30,6 @@ test.describe('用户登錄流程', () => {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 內部原理
 

@@ -3,9 +3,9 @@ title: "CORS: A Deep Dive into Cross-Origin Resource Sharing"
 date: 2020-10-01 10:58:45
 tags:
   - Security
-readingTime: 2
+readingTime: 1
 description: "A refreshed deep dive into CORS (Cross-Origin Resource Sharing), re-examining earlier community conclusions in light of updated browser behavior."
-wordCount: 200
+wordCount: 182
 ---
 
 The topic of CORS (Cross-Origin Resource Sharing) has been discussed in the community many times, but with each version iteration a lot of the old conclusions need updating. This article re-examines it based on the latest version.
@@ -96,7 +96,6 @@ function setCSP(req, res, next) {
 
 ```
 
-This approach has been running stably in production for over half a year, so it's proven in practice.
 
 ## Summary
 

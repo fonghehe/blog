@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently applied the Navigation API practice guide with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 183
+wordCount: 166
 ---
 
 I recently applied the Navigation API practice guide with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
@@ -60,7 +60,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

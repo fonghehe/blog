@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "AI test generation best practices for 2025 have been widely discussed in the community, but many conclusions need updating as versions evolve. This article prov"
-wordCount: 171
+wordCount: 155
 ---
 
 AI test generation best practices for 2025 have been widely discussed in the community, but many conclusions need updating as versions evolve. This article provides a fresh look based on the latest releases.
@@ -41,7 +41,6 @@ export function AIChat() {
 }
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Source Code Analysis
 

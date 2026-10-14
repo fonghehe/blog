@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "I recently rolled out WebAuthn passkeys for passwordless authentication with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 189
+wordCount: 172
 ---
 
 We recently implemented WebAuthn Passkeys 无密码认证， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -52,7 +52,6 @@ function setCSP(req, res, next) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

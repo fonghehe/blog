@@ -3,9 +3,9 @@ title: "Vue 3 Composables Design Patterns"
 date: 2024-02-15 16:44:18
 tags:
   - Vue
-readingTime: 2
+readingTime: 1
 description: "Regarding Vue 3 Composables Design Patterns, many developers only stay at the API call level. This article discusses real-world problems and solutions from a pr"
-wordCount: 200
+wordCount: 183
 ---
 
 Regarding Vue 3 Composables Design Patterns, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -129,7 +129,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

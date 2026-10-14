@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently applied 2023 frontend accessibility practices with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 201
+wordCount: 184
 ---
 
 We recently implemented 前端无障碍 2023 实践， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## In-Depth Analysis
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

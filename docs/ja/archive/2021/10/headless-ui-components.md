@@ -8,7 +8,7 @@ tags:
 
 readingTime: 3
 description: "Headless UI 无头组件库このテーマはコミュニティで何度も議論されていますが、バージョンアップに伴い多くの結論は更新が必要です。本記事では最新バージョンをベースに改めて整理します。"
-wordCount: 594
+wordCount: 555
 ---
 
 Headless UI（ロジックのみを提供するコンポーネントライブラリ）というテーマはコミュニティで何度も議論されてきたが、バージョンアップに伴い多くの結論は更新が必要だ。本記事では最新バージョンをベースに改めて整理する。
@@ -17,7 +17,7 @@ Headless UI（ロジックのみを提供するコンポーネントライブラ
 
 以下の方法で改善できる：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -38,7 +38,6 @@ Headless UI（ロジックのみを提供するコンポーネントライブラ
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## ソースコード分析
 
@@ -100,7 +99,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでは、もう少し複雑な使い方になる：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

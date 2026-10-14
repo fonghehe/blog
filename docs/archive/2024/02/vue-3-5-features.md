@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3.5 响应式性能提升这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 362
+wordCount: 336
 ---
 
 Vue 3.5 响应式性能提升这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。
@@ -29,7 +29,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 源码分析
 

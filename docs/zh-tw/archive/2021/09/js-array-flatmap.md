@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "JavaScript Array.flatMap 實用技巧這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 298
+wordCount: 272
 ---
 
 JavaScript Array.flatMap 實用技巧這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -67,7 +67,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 真實場景應用
 

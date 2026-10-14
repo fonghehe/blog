@@ -51,8 +51,8 @@ pnpm docs:preview
 ## 📝 文章統計
 
 - 2018-2025 年: 1,383 篇文章 (歸檔)
-- 2026 年: 134 篇最新文章
-- 總計: 1,517 篇深度技術文章
+- 2026 年: 135 篇最新文章
+- 總計: 1,518 篇深度技術文章
 
 ## 🎯 主要分類
 
@@ -71,3 +71,17 @@ pnpm docs:preview
 ## 📄 License
 
 MIT
+
+## 內容維護與品質檢查
+
+使用 Node.js 22.18+ 及 `packageManager` 指定的 pnpm。
+
+```bash
+pnpm check
+pnpm content:report
+pnpm docs:build
+```
+
+新增[閱讀路線](docs/zh-tw/guides.md)、[內容說明](docs/zh-tw/about.md)及[品質報告](maintenance/content-quality-report.md)。文章支援 `updated`、`lastVerified`、`version`、`series`；驗證日期只在實際確認後填寫。搜尋條件與頁碼保存在 URL 中，CI 檢查全部語言並阻止新增問題。
+
+完整建置合併兩組語言、網站地圖與五語 RSS，再生成最終離線快取。離線模式保存首頁資源與已瀏覽頁面，不會預先下載整個歸檔。機械清理不代表所有文章已驗證。

@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Regarding Tailwind CSS v4 Stable Release, many developers only stay at the API call level. This article discusses real-world problems and solutions from a produ"
-wordCount: 185
+wordCount: 168
 ---
 
 Regarding Tailwind CSS v4 Stable Release, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -148,7 +148,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

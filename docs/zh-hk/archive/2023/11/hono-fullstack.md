@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "最近在團隊中落地Hono 全棧框架實戰，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 350
+wordCount: 324
 ---
 
 最近在團隊中落地Hono 全棧框架實戰，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 深度解析
 
@@ -70,7 +69,7 @@ function useIntersectionObserver(options = {}) {
 
 在這個基礎上，我們可以進一步優化：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

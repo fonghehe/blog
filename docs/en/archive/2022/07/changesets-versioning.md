@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "The topic of Changesets version management and publishing has been discussed many times in the community, but with version updates, many conclusions need refreshing. This article re-examines the landscape based on the latest versions."
-wordCount: 189
+wordCount: 172
 ---
 
 The topic of Changesets version management and publishing has been discussed many times in the community, but with version updates, many conclusions need refreshing. This article re-examines the landscape based on the latest versions.
@@ -106,7 +106,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Tips
 

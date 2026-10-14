@@ -42,7 +42,7 @@ This code demonstrates the basic usage. In real projects, you'll also need to co
 
 Building on this, we can further optimize:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

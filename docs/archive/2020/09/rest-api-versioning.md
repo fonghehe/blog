@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "REST API 版本管理策略这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 307
+wordCount: 281
 ---
 
 REST API 版本管理策略 这个话题社区已经讨论过很多次，但随着版本迭代，不少结论需要更新。下面基于当前最新版本重新梳理一遍。
@@ -14,7 +14,7 @@ REST API 版本管理策略 这个话题社区已经讨论过很多次，但随�
 
 实际项目中的用法会更复杂一些：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -97,7 +97,7 @@ function useIntersectionObserver(options = {}) {
 
 我们可以通过以下方式来改进：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

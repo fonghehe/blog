@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Native modals with the HTML dialog element are showing up in more and more everyday work. This article systematically covers their usage, mechanics, and practical strategies."
-wordCount: 198
+wordCount: 181
 ---
 
 在日常开发中，HTML dialog 元素原生弹窗 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -147,7 +147,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

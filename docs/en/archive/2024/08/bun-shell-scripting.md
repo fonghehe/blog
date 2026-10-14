@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Regarding Bun Shell Scripting Capabilities, many developers only stay at the API call level. This article discusses real-world problems and solutions from a pro"
-wordCount: 183
+wordCount: 166
 ---
 
 Regarding Bun Shell Scripting Capabilities, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -124,7 +124,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

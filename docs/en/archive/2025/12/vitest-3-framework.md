@@ -6,7 +6,7 @@ tags:
   - Testing
 readingTime: 2
 description: "Vitest 3.0 Testing Framework is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices fr"
-wordCount: 205
+wordCount: 188
 ---
 
 Vitest 3.0 Testing Framework is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.
@@ -15,7 +15,7 @@ Vitest 3.0 Testing Framework is becoming increasingly widespread in frontend dev
 
 We can improve it in the following ways:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -36,7 +36,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Source Code Analysis
 
@@ -98,7 +97,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 Usage in real projects tends to be more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

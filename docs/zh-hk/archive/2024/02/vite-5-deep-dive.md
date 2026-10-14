@@ -5,7 +5,7 @@ tags:
   - Vite
 readingTime: 2
 description: "Vite 6.0 發佈 Environment API這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 297
+wordCount: 271
 ---
 
 Vite 6.0 發佈 Environment API這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -128,7 +128,6 @@ module.exports = {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

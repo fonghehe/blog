@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "The new features in TypeScript 4.7 and 4.8 are showing up in more and more everyday code. This article systematically covers their usage, mechanics, and practical strategies."
-wordCount: 183
+wordCount: 166
 ---
 
 In daily development, TypeScript 4.7 4.8 新特性 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -71,7 +71,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Business Practice
 

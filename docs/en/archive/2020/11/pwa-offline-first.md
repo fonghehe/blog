@@ -5,7 +5,7 @@ tags:
   - PWA
 readingTime: 2
 description: "A production-focused guide to offline-first PWA architecture, addressing real-world problems developers encounter beyond basic API usage."
-wordCount: 180
+wordCount: 163
 ---
 
 When it comes to offline-first PWA architecture, many developers stop at the API-call level. This article looks at the real-world problems you run into in production, and how to solve them.
@@ -70,7 +70,7 @@ Pay close attention to edge-case handling — that is critical in production.
 
 The key is to understand the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Summary
 

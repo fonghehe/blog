@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "最近在团队中落地Islands Architecture Astro 实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 294
+wordCount: 268
 ---
 
 最近在团队中落地Islands Architecture Astro 实践，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 关键在于理解核心逻辑：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

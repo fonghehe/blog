@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Recently implemented View Transitions Stable: Practical Applications in our team and accumulated quite a bit of experience. Here's a summary for reference, hopi"
-wordCount: 187
+wordCount: 170
 ---
 
 Recently implemented View Transitions Stable: Practical Applications in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -70,7 +70,7 @@ Pay attention to boundary condition handling, which is critical in production en
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

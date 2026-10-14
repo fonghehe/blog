@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Many developers only know pnpm v8's new features and performance gains at the surface level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 203
+wordCount: 186
 ---
 
 关于pnpm v8 新特性与性能提升，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
@@ -71,7 +71,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Best Practices
 

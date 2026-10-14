@@ -5,7 +5,7 @@ tags:
   - 性能优化
 readingTime: 2
 description: "preload prefetch 资源加载策略这个话题社区讨论了很多次，但随着版本迭代，很多结论需要更新。本文基于最新版本重新梳理。"
-wordCount: 326
+wordCount: 300
 ---
 
 preload / prefetch 资源加载策略这个话题，社区已经讨论过很多次，但随着版本迭代，不少结论需要更新。本文基于当前版本重新梳理。
@@ -14,7 +14,7 @@ preload / prefetch 资源加载策略这个话题，社区已经讨论过很多�
 
 以下是一个完整的示例：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 优化技巧
 
 先来看基本的实现方式：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

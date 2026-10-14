@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue 3 testing best practices are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 213
+wordCount: 196
 ---
 
 Vue 3 测试最佳实践 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -14,7 +14,7 @@ Vue 3 测试最佳实践 is becoming increasingly widespread in frontend develop
 
 We can improve it in the following ways:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Usage
 
@@ -97,7 +96,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 Usage in real projects tends to be more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

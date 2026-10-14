@@ -3,9 +3,9 @@ title: "Implementing Modal Components with React Portal"
 date: 2020-03-06 14:53:26
 tags:
   - React
-readingTime: 2
+readingTime: 1
 description: "Our team recently shipped Modal components built with React Portal and gained valuable experience. I'm writing this up as a reference for anyone doing similar work."
-wordCount: 182
+wordCount: 164
 ---
 
 Recently our team shipped Modal components with React Portal and accumulated quite a bit of experience. I'm writing it up as a reference, hoping it helps others doing similar work.
@@ -116,7 +116,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Zig WebAssembly is seeing increasingly broad adoption in frontend development. This article takes a hands-on project perspective to analyze its core principles "
-wordCount: 193
+wordCount: 174
 ---
 
 Zig WebAssembly is seeing increasingly broad adoption in frontend development. This article takes a hands-on project perspective to analyze its core principles and best practices in depth.
@@ -36,7 +36,6 @@ const csvToJson = new Transform({
 });
 ```
 
-This approach has been running stably in production for over six months and has been validated in real-world use.
 
 ## Advanced Usage
 
@@ -73,7 +72,7 @@ This code shows the basic usage; in real projects you'll also need to handle err
 
 From here, you can optimize further:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

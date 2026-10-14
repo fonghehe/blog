@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Regarding Passkeys: Complete Web Integration, many developers only stay at the API call level. This article discusses real-world problems and solutions from a p"
-wordCount: 204
+wordCount: 187
 ---
 
 Regarding Passkeys: Complete Web Integration, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -30,7 +30,6 @@ function setCSP(req, res, next) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Features
 

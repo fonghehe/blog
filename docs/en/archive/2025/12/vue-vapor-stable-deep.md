@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "Vue Vapor Stable Version Deep Dive is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practi"
-wordCount: 201
+wordCount: 184
 ---
 
 Vue Vapor Stable Version Deep Dive is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

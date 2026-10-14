@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Deno 3.0 Full-Stack Solution is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices fr"
-wordCount: 207
+wordCount: 190
 ---
 
 Deno 3.0 Full-Stack Solution is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.
@@ -14,7 +14,7 @@ Deno 3.0 Full-Stack Solution is becoming increasingly widespread in frontend dev
 
 We can improve it in the following ways:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Usage
 
@@ -97,7 +96,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 Usage in real projects tends to be more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

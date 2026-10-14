@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In day-to-day development, Frontend Accessibility 2025 Compliance is being used more and more frequently. This article systematically explains its usage, princi"
-wordCount: 208
+wordCount: 191
 ---
 
 In day-to-day development, Frontend Accessibility 2025 Compliance is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Internal Principles
 
@@ -70,7 +69,7 @@ This code demonstrates the basic usage. In real projects, you also need to consi
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

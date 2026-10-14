@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "最近在團隊中落地TypeScript 工具類型詳解，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 307
+wordCount: 281
 ---
 
 最近在團隊中實踐了 TypeScript 工具類型，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -106,7 +106,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 調優策略
 

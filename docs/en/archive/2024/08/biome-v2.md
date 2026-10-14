@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Biome v2: New Frontend Toolchain Version is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best "
-wordCount: 169
+wordCount: 152
 ---
 
 Biome v2: New Frontend Toolchain Version is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.
@@ -60,7 +60,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Practical Cases
 

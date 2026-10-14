@@ -5,7 +5,7 @@ tags:
   - 效能最佳化
 readingTime: 2
 description: "前端圖片最佳化 WebP AVIF這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 312
+wordCount: 286
 ---
 
 前端圖片最佳化 WebP AVIF這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -50,7 +50,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 真實場景應用
 

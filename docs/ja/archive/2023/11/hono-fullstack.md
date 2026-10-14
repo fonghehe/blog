@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "最近チームでHono 全栈框架实战，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 552
+wordCount: 517
 ---
 
 最近チームでHono 全栈框架实战，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## 詳細分析
 
@@ -70,7 +69,7 @@ function useIntersectionObserver(options = {}) {
 
 この基盤の上でさらに最適化できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

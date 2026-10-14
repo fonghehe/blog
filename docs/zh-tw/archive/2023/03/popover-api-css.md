@@ -3,9 +3,9 @@ title: "CSS Popover API 彈出層實現"
 date: 2023-03-20 17:22:30
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "在日常開發中，CSS Popover API 彈出層實現的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 290
+wordCount: 264
 ---
 
 在日常開發中，CSS Popover API 彈出層實現的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
@@ -62,7 +62,6 @@ wordCount: 290
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 業務實戰
 

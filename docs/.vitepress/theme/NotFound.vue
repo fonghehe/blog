@@ -1,23 +1,26 @@
 <script setup lang="ts">
 import { useData } from "vitepress";
 
-const { site } = useData();
-const base = site.value.base ?? "/";
+import { computed } from "vue";
+import { withBase } from "vitepress";
+import { uiCopy } from "./locale";
+const { lang, localeIndex } = useData();
+const t = computed(() => uiCopy(lang.value));
+const base = computed(() => withBase(localeIndex.value === "root" ? "/" : `/${localeIndex.value}/`));
 </script>
 
 <template>
   <div class="not-found">
     <div class="not-found-inner">
       <div class="error-code">404</div>
-      <h1 class="error-title">页面不见了</h1>
+      <h1 class="error-title">{{ t.notFound }}</h1>
       <p class="error-desc">
-        这个页面可能已被迁移、删除，或者链接有误。<br />
-        你可以从下面的入口重新出发：
+        {{ t.notFoundDesc }}
       </p>
       <div class="error-actions">
-        <a :href="base" class="btn btn-primary">← 返回首页</a>
-        <a :href="base + 'posts/'" class="btn btn-secondary">最新文章</a>
-        <a :href="base + 'archive/'" class="btn btn-secondary">文章归档</a>
+        <a :href="base" class="btn btn-primary">← {{ t.home }}</a>
+        <a :href="base + 'posts/'" class="btn btn-secondary">{{ t.posts }}</a>
+        <a :href="base + 'archive/'" class="btn btn-secondary">{{ t.archive }}</a>
       </div>
     </div>
   </div>

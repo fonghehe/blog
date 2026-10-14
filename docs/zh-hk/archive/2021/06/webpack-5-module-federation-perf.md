@@ -4,9 +4,9 @@ date: 2021-06-14 16:06:33
 tags:
   - Webpack
   - 性能優化
-readingTime: 2
+readingTime: 1
 description: "Module Federation 效能優化策略在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
-wordCount: 290
+wordCount: 264
 ---
 
 Module Federation 效能優化策略在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。
@@ -51,7 +51,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 實戰案例
 

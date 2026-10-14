@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Many developers only know Vite PWA best practices at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 190
+wordCount: 173
 ---
 
 Many developers only know Vite PWA best practices at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
@@ -67,7 +67,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Project Practice
 

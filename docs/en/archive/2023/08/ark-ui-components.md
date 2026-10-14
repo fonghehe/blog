@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Ark UI, the headless component library, has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 204
+wordCount: 187
 ---
 
 Ark UI headless 组件库This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
@@ -153,7 +153,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

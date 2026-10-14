@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Biome 2025 as a frontend toolchain is seeing increasingly widespread adoption in frontend development. This article digs into its core principles and best pract"
-wordCount: 162
+wordCount: 146
 ---
 
 Biome 2025 as a frontend toolchain is seeing increasingly widespread adoption in frontend development. This article digs into its core principles and best practices from a real-project perspective.
@@ -73,7 +73,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Case Studies
 

@@ -51,8 +51,8 @@ pnpm docs:preview
 ## 📝 Article Stats
 
 - 2018–2025: 1,383 articles (archived)
-- 2026: 134 latest articles
-- Total: 1,517 in-depth technical articles
+- 2026: 135 latest articles
+- Total: 1,518 in-depth technical articles
 
 ## 🎯 Main Topics
 
@@ -71,3 +71,17 @@ pnpm docs:preview
 ## 📄 License
 
 MIT
+
+## Maintenance and quality checks
+
+Use Node.js 22.18+ and the pnpm version in `packageManager`.
+
+```bash
+pnpm check
+pnpm content:report
+pnpm docs:build
+```
+
+See [reading paths](docs/en/guides.md), [editorial policy](docs/en/about.md) and the [content review report](maintenance/content-quality-report.md). Articles support `updated`, `lastVerified`, `version` and `series`; only record a verification date after checking the relevant behavior. Filters and pagination are shareable URLs. CI checks every language and rejects new issues against the documented debt baseline.
+
+The full build merges both language groups, sitemaps and five RSS feeds, then regenerates the final worker. Offline caching covers entry resources and visited pages; it does not download the entire archive. Mechanical content cleanup is not verification of every article.

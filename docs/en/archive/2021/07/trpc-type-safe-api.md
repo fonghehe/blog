@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "A type-safe tRPC API layer has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version."
-wordCount: 200
+wordCount: 183
 ---
 
 A type-safe tRPC API layer has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
@@ -165,7 +165,6 @@ const client = new ApolloClient({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

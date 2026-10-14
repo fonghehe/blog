@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "The using declaration in TypeScript 5.2 is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 176
+wordCount: 159
 ---
 
 TypeScript 5.2 using 声明 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -72,7 +72,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Real-World Applications
 

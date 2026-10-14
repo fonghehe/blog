@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "In day-to-day development, Astro 5 View Transitions is being used more and more frequently. This article systematically explains its usage, principles, and opti"
-wordCount: 202
+wordCount: 185
 ---
 
 In day-to-day development, Astro 5 View Transitions is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -14,7 +14,7 @@ In day-to-day development, Astro 5 View Transitions is being used more and more 
 
 We can improve it in the following ways:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Internal Principles
 
@@ -97,7 +96,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 Usage in real projects tends to be more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

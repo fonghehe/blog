@@ -8,7 +8,7 @@ tags:
 
 readingTime: 2
 description: "Roundups of common React design patterns have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 216
+wordCount: 199
 ---
 
 Common React design patterns have been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
@@ -38,7 +38,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Source Code Analysis
 

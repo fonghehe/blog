@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 2
 description: "I recently applied the Vue 3.5 reactivity rework with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 197
+wordCount: 180
 ---
 
 I recently applied the Vue 3.5 reactivity rework with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work.
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## In-Depth Analysis
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -6,7 +6,7 @@ tags:
 
 readingTime: 1
 description: "I recently shipped CSS scroll-linked animations with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 184
+wordCount: 167
 ---
 
 We recently adopted CSS scroll-driven animations (Scroll Animations) on our team and gained quite a bit of experience. Here's a summary in case it helps anyone doing similar work.
@@ -63,7 +63,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

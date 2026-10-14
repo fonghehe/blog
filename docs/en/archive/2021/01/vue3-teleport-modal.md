@@ -5,9 +5,9 @@ tags:
   - Vue
   - JavaScript
 
-readingTime: 2
+readingTime: 1
 description: "Using Vue 3 Teleport to implement global modals is increasingly common in everyday work. This article systematically covers usage, internals, and optimization strategies."
-wordCount: 193
+wordCount: 176
 ---
 
 In day-to-day development, using Vue 3 Teleport to implement a global Modal is becoming more and more common. This article systematically explains its usage, principles, and optimization strategies.
@@ -82,7 +82,6 @@ function useCounter(initial = 0) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Comparison
 

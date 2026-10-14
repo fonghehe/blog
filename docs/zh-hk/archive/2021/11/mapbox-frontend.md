@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常開發中，Mapbox GL JS 前端地圖開發的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 315
+wordCount: 289
 ---
 
 在日常開發中，Mapbox GL JS 前端地圖開發應用得越來越廣泛。本文系統地講解其用法、原理和優化策略。
@@ -15,7 +15,7 @@ wordCount: 315
 
 以下是一個完整的示例：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -93,13 +93,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 效能對比
 
 先來看基本的實現方式：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

@@ -3,9 +3,9 @@ title: "Document Picture-in-Picture API"
 date: 2023-07-04 14:50:46
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 2
 description: "Document Picture-in-Picture APIのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 502
+wordCount: 467
 ---
 
 Document Picture-in-Picture APIのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -14,7 +14,7 @@ Document Picture-in-Picture APIのフロントエンド開発における活用�
 
 完全な例を以下に示します：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## パフォーマンス最適化
 
 まず基本的な実装方法を見てみましょう：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

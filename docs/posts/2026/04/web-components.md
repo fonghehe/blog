@@ -5,7 +5,7 @@ tags:
   - Web Components
 readingTime: 2
 description: "关于Web Components 2026 成熟度，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 299
+wordCount: 273
 ---
 
 聊到 Web Components 的成熟度，很多开发者还停留在 API 调用的层面。本文想从生产环境出发，谈谈实际遇到的问题和应对思路。
@@ -134,7 +134,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年多，是经过实战检验的。
 
 ## 小结
 

@@ -3,9 +3,9 @@ title: "VitePress 2.0 新特性"
 date: 2025-02-13 18:47:24
 tags:
   - 工程化
-readingTime: 2
+readingTime: 1
 description: "关于VitePress 2.0 新特性，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 295
+wordCount: 269
 ---
 
 关于VitePress 2.0 新特性，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
@@ -62,7 +62,6 @@ module.exports = {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 项目实践
 

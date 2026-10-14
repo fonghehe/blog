@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "在日常開發中，Node.js Cluster 多程序效能最佳化的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 312
+wordCount: 286
 ---
 
 在日常開發中，Node.js Cluster 多程序效能最佳化的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
@@ -95,7 +95,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 效能對比
 

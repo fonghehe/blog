@@ -15,7 +15,7 @@ wordCount: 315
 
 コアとなるコードは以下の通り：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

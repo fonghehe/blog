@@ -5,7 +5,7 @@ tags:
   - Mobile
 readingTime: 2
 description: "When it comes to Expo EAS Build, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 210
+wordCount: 193
 ---
 
 When it comes to Expo EAS Build, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
@@ -41,7 +41,6 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Features
 

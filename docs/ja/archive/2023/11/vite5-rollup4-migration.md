@@ -6,7 +6,7 @@ tags:
   - Rollup
 readingTime: 3
 description: "Vite 5 Rollup 4 迁移のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 530
+wordCount: 495
 ---
 
 Vite 5 Rollup 4 迁移のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -154,7 +154,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## まとめ
 

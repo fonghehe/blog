@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Many developers only know documentation-driven development as a slogan. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 196
+wordCount: 179
 ---
 
 When it comes to documentation-driven development, many developers only engage with it at the API-call level. This article looks at the real problems and solutions from a production-environment perspective.
@@ -149,7 +149,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

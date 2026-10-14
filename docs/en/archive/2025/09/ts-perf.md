@@ -6,7 +6,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "Recently implemented TypeScript Performance Optimization 2025 in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it h"
-wordCount: 210
+wordCount: 193
 ---
 
 Recently implemented TypeScript Performance Optimization 2025 in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -38,7 +38,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## In-Depth Analysis
 
@@ -71,7 +70,7 @@ This code demonstrates the basic usage. In real projects, you also need to consi
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

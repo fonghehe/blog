@@ -5,7 +5,7 @@ tags:
   - Next.js
 readingTime: 2
 description: "最近在团队中落地INP 交互到下一帧绘制优化，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 490
+wordCount: 454
 ---
 
 最近在团队中落地INP 交互到下一帧绘制优化，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -50,7 +50,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 実装経験
 

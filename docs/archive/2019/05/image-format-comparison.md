@@ -14,7 +14,7 @@ wordCount: 293
 
 先来看基本的用法：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "A production-focused guide to building ECharts data visualization dashboards, addressing real-world problems developers encounter beyond basic API usage."
-wordCount: 194
+wordCount: 177
 ---
 
 When it comes to building ECharts data-visualization dashboards, many developers stop at the API-call level. This article looks at the real-world problems you run into in production, and how to solve them.
@@ -169,7 +169,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Summary
 

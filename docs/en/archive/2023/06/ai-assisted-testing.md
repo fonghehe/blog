@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "AI-assisted test case generation is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 194
+wordCount: 177
 ---
 
 AI-assisted test case generation is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
@@ -93,7 +93,6 @@ export function AIChat() {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Optimization
 

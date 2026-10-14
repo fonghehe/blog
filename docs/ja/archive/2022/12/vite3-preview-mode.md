@@ -14,7 +14,7 @@ Vite 3 预览模式详解のフロントエンド開発における活用が広�
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -97,7 +97,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでの使い方はもう少し複雑になる：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

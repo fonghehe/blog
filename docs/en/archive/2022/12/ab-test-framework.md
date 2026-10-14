@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Frontend A/B testing frameworks is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 187
+wordCount: 170
 ---
 
 Frontend A/B testing frameworks is being applied more and more widely in frontend development. This article starts from real projects and digs into the core principles and best practices.
@@ -41,7 +41,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

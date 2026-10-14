@@ -14,7 +14,7 @@ DevTools の 2026 年の新機能は、フロントエンド開発の現場で�
 
 次の手順で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -100,7 +100,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでは、もう少し複雑な姿になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

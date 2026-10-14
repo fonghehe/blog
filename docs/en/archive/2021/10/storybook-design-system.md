@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Many developers only know Storybook-driven design systems at the tool level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 184
+wordCount: 167
 ---
 
 When it comes to Storybook-driven design systems, many developers only engage with it at the API-call level. This article looks at the real problems and solutions from a production-environment perspective.
@@ -60,7 +60,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Project Practice
 

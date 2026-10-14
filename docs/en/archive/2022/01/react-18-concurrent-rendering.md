@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React 18 concurrent rendering internals have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 219
+wordCount: 202
 ---
 
 React 18 concurrent rendering has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
@@ -35,7 +35,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Source Code Analysis
 

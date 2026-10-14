@@ -3,9 +3,9 @@ title: "Advanced React useReducer and Context Composition Patterns"
 date: 2020-02-20 10:12:00
 tags:
   - React
-readingTime: 2
+readingTime: 1
 description: "In day-to-day development, useReducer for state management is used more and more frequently. This article systematically covers its usage, internals, and optimization strategies."
-wordCount: 184
+wordCount: 165
 ---
 
 In day-to-day development, `useReducer` for state management is being used more and more often. This article systematically explains its usage, internals, and optimization strategies.
@@ -116,7 +116,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Summary
 

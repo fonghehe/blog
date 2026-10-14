@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "I recently adopted Hono, the lightweight web framework, with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 207
+wordCount: 190
 ---
 
 We recently implemented Hono 轻量级 Web 框架， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## In-Depth Analysis
 

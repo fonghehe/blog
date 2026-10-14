@@ -8,7 +8,7 @@ tags:
 
 readingTime: 2
 description: "Many developers only know styled-components v5 best practices at the API level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 191
+wordCount: 174
 ---
 
 When it comes to Styled Components v5 best practices, many developers only stay at the API surface. This article looks at the real-world problems and solutions from a production perspective.
@@ -137,7 +137,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

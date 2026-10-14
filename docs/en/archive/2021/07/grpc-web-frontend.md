@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "We recently rolled out gRPC-Web frontend communication in practice on our team and have picked up quite a bit of experience along the way. This is a summary I'm sharing for reference, in the hope that it helps anyone doing similar work."
-wordCount: 196
+wordCount: 179
 ---
 
 We recently rolled out gRPC-Web frontend communication in practice on our team and have picked up quite a bit of experience along the way. This is a summary I'm sharing for reference, in the hope that it helps anyone doing similar work.
@@ -74,7 +74,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

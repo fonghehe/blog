@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Vite 6 Environment API 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
-wordCount: 214
+wordCount: 197
 ---
 
 Vite 6 Environment API 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -36,13 +36,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Usage
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -125,7 +124,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

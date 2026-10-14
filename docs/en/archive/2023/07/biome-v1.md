@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Biome v1, the Rust frontend toolchain, is showing up in more and more everyday development. This article systematically covers its usage, rationale, and practical strategies."
-wordCount: 173
+wordCount: 156
 ---
 
 在日常开发中，Biome v1 Rust 前端工具链 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -66,7 +66,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Business Practice
 

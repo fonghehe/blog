@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "TypeScript 可变元组类型のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 589
+wordCount: 550
 ---
 
 TypeScript 可变元组类型のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -43,7 +43,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## 高度な使い方
 

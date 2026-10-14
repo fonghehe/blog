@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 3
 description: "CSS Cascade Layers @layer 仕様について、多くの開発者は API の呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 585
+wordCount: 546
 ---
 
 CSS Cascade Layers @layer 仕様について、多くの開発者は API の呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -35,7 +35,6 @@ CSS Cascade Layers @layer 仕様について、多くの開発者は API の呼�
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## 高度な機能
 

@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "shadcn/ui 2024 エコシステムの発展というトピックはコミュニティで何度も議論されてきましたが、バージョンアップとともに多くの結論を更新する必要があります。本記事では最新バージョンに基づいて改めて整理します。"
-wordCount: 599
+wordCount: 563
 ---
 
 shadcn/ui 2024 エコシステムの発展というトピックはコミュニティで何度も議論されてきましたが、バージョンアップとともに多くの結論を更新する必要があります。本記事では最新バージョンに基づいて改めて整理します。
@@ -14,7 +14,7 @@ shadcn/ui 2024 エコシステムの発展というトピックはコミュニ�
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ shadcn/ui 2024 エコシステムの発展というトピックはコミュニ�
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## ソースコード解析
 
@@ -97,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでの使い方はやや複雑になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "关于pnpm v8 新特性与性能提升，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 523
+wordCount: 488
 ---
 
 关于pnpm v8 新特性与性能提升，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -71,7 +71,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## ベストプラクティス
 

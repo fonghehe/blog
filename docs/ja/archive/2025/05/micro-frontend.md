@@ -5,7 +5,7 @@ tags:
   - マイクロフロントエンド
 readingTime: 2
 description: "マイクロフロントエンド 2025のアーキテクチャトレンドについて、多くの開発者はAPI呼び出しのレベルにとどまっています。本記事は本番環境の視点から、実際に遭遇する問題とその解決策を論じます。"
-wordCount: 450
+wordCount: 415
 ---
 
 マイクロフロントエンド 2025のアーキテクチャトレンドについて、多くの開発者はAPI呼び出しのレベルにとどまっています。本記事は本番環境の視点から、実際に遭遇する問題とその解決策を論じます。
@@ -14,7 +14,7 @@ wordCount: 450
 
 実際のプロジェクトでは使い方がもう少し複雑になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -100,7 +100,7 @@ function useIntersectionObserver(options = {}) {
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -121,7 +121,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは半年以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## まとめ
 

@@ -4,9 +4,9 @@ date: 2021-06-23 17:22:51
 tags:
   - TypeScript
   - 性能优化
-readingTime: 2
+readingTime: 1
 description: "最近在团队中落地Resource Hints 资源提示优化，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 286
+wordCount: 260
 ---
 
 最近在团队里落地了 Resource Hints（资源提示优化），积累了一些经验，整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -93,7 +93,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

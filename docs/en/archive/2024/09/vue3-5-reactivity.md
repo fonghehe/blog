@@ -3,9 +3,9 @@ title: "Vue 3.5 Reactivity Overhaul: Reactive Props Destructuring and useTemplat
 date: 2024-09-19 15:53:30
 tags:
   - Vue
-readingTime: 2
+readingTime: 1
 description: "Vue 3.5 Reactivity Refactor is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices fro"
-wordCount: 177
+wordCount: 160
 ---
 
 Vue 3.5 Reactivity Refactor is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.
@@ -70,7 +70,7 @@ Pay attention to boundary condition handling, which is critical in production en
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

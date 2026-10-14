@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "When it comes to custom Hook patterns, many developers only scratch the surface at the API level. This article examines the real-world problems you'll encounter in production and how to solve them."
-wordCount: 207
+wordCount: 188
 ---
 
 When it comes to custom Hook patterns in React Hooks, many developers only operate at the API-call level. This article tries to look at the problems you'll actually run into and their solutions from a production perspective.
@@ -123,7 +123,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Summary
 

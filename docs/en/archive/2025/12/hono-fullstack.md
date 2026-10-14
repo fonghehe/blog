@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Recently implemented Hono Full-Stack Development 2025 in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps tho"
-wordCount: 193
+wordCount: 176
 ---
 
 Recently implemented Hono Full-Stack Development 2025 in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -14,7 +14,7 @@ Recently implemented Hono Full-Stack Development 2025 in our team and accumulate
 
 Here is a complete example:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Strategies
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "Browser support for native CSS nesting is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 184
+wordCount: 167
 ---
 
 Browser support for native CSS nesting is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
@@ -62,7 +62,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Business Practice
 

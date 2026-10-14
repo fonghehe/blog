@@ -15,7 +15,7 @@ wordCount: 553
 
 次の方法で改善できる：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -98,7 +98,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでは、使い方はもう少し複雑になる：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

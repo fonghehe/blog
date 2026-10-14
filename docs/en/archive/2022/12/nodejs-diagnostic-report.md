@@ -3,9 +3,9 @@ title: "Node.js Diagnostic Reports"
 date: 2022-12-08 10:39:25
 tags:
   - Node.js
-readingTime: 2
+readingTime: 1
 description: "Node.js diagnostic reports are being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 174
+wordCount: 157
 ---
 
 Node.js 诊断报告 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -70,7 +70,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

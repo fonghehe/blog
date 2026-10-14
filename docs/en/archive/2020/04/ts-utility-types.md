@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "We recently did a deep dive into TypeScript utility types on our team and gained valuable experience. I'm sharing it here as a reference for anyone doing similar work."
-wordCount: 190
+wordCount: 172
 ---
 
 We recently adopted a detailed approach to TypeScript utility types in our team and gathered plenty of experience. I'm sharing it here as a reference, hoping it helps anyone doing similar work.
@@ -106,7 +106,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Tuning Strategies
 

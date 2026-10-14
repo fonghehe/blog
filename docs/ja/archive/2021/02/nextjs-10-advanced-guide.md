@@ -5,9 +5,9 @@ tags:
   - React
   - JavaScript
 
-readingTime: 3
+readingTime: 2
 description: "Next.js 11 新特性 Image Optimizationのフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 509
+wordCount: 470
 ---
 
 Next.js 11 の新機能「Image Optimization」のフロントエンド開発での活用が広まりつつある。本記事では実際のプロジェクトをベースに、コアな原理とベストプラクティスを掘り下げる。
@@ -85,7 +85,6 @@ function reducer(state, action) {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## パフォーマンス最適化
 

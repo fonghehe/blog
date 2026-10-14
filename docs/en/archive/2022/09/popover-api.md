@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "We recently adopted the native Popover API on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work."
-wordCount: 181
+wordCount: 164
 ---
 
 We recently adopted the native Popover API on our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -60,7 +60,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

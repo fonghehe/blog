@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Document Picture-in-Picture API is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from"
-wordCount: 176
+wordCount: 159
 ---
 
 Document Picture-in-Picture API is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -14,7 +14,7 @@ Document Picture-in-Picture API is becoming increasingly widespread in frontend 
 
 Here is a complete example:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Optimization
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

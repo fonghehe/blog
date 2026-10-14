@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Jotai's atomic state management is showing up in more and more everyday code. This article systematically covers its usage, internals, and optimization strategies."
-wordCount: 191
+wordCount: 174
 ---
 
 Jotai's atomic state management is being used more and more frequently in daily development. This article systematically explains its usage, principles, and optimization strategies.
@@ -141,7 +141,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

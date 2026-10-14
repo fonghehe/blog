@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Module Federation best practices for 2022 matter more and more in everyday development. This article systematically covers their usage, rationale, and optimization strategies."
-wordCount: 179
+wordCount: 162
 ---
 
 In daily development, Module Federation 2022 最佳实践 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -14,7 +14,7 @@ In daily development, Module Federation 2022 最佳实践 is being used more and
 
 Here is a complete example:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Comparison
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

@@ -14,7 +14,7 @@ When it comes to frontend testing 2026 best practices, many developers remain at
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -101,7 +101,7 @@ This approach improves both testability and extensibility.
 
 Here is a complete example:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

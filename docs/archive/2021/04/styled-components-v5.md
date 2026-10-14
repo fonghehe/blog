@@ -6,7 +6,7 @@ tags:
   - CSS
 readingTime: 2
 description: "关于Styled Components v5 最佳实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 312
+wordCount: 288
 ---
 
 关于 Styled Components v5 的最佳实践，多数开发者还停留在单纯调用 API 的层面。本文从生产环境出发，聊聊落地时真正会遇到的坑和对应的解法。
@@ -135,7 +135,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行半年多，经受过实际验证。
 
 ## 小结
 

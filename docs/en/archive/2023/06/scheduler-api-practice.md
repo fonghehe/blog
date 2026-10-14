@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Many developers only know Scheduler API task scheduling in practice at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 186
+wordCount: 169
 ---
 
 Many developers only know Scheduler API task scheduling in practice at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
@@ -72,7 +72,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Project Practice
 

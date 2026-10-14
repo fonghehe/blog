@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "In daily development, TypeScript project references are being used more and more frequently. This article systematically explains their usage, principles, and optimization strategies."
-wordCount: 178
+wordCount: 161
 ---
 
 In daily development, TypeScript project references are being used more and more frequently. This article systematically explains their usage, principles, and optimization strategies.
@@ -66,7 +66,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Business Practice
 

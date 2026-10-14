@@ -14,7 +14,7 @@ wordCount: 244
 
 具體實現參考以下代碼：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

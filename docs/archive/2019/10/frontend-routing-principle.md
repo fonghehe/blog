@@ -14,7 +14,7 @@ wordCount: 224
 
 下面是一个实际的例子：
 
-```javascript
+```css
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -42,7 +42,7 @@ wordCount: 224
 
 我们可以通过以下方式实现：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

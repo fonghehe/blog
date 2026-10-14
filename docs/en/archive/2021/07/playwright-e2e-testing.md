@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "When it comes to Playwright E2E cross-browser testing, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective."
-wordCount: 184
+wordCount: 167
 ---
 
 When it comes to Playwright E2E cross-browser testing, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
@@ -110,7 +110,6 @@ test.describe('用户登录流程', () => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

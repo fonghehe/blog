@@ -3,9 +3,9 @@ title: "CSS timeline-scope：スクロールタイムライン"
 date: 2024-03-13 16:06:07
 tags:
   - CSS
-readingTime: 3
+readingTime: 2
 description: "CSS timeline-scope：スクロールタイムラインについて、多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 573
+wordCount: 537
 ---
 
 CSS timeline-scope：スクロールタイムラインについて、多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。
@@ -35,7 +35,6 @@ CSS timeline-scope：スクロールタイムラインについて、多くの�
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 高度な機能
 

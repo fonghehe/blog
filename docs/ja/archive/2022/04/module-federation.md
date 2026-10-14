@@ -3,9 +3,9 @@ title: "Module Federation 2022：ベストプラクティス"
 date: 2022-04-22 09:48:37
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 2
 description: "日常開発において、Module Federation 2022 最佳实践の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 511
+wordCount: 472
 ---
 
 日常開発において、Module Federation 2022 最佳实践の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -14,7 +14,7 @@ wordCount: 511
 
 以下は完全な例です：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## パフォーマンス比較
 
 まず基本的な実装方法から見てみましょう：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

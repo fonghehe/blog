@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "In day-to-day development, advanced React useRef usage is becoming increasingly common. This article systematically covers its usage, internals, and optimization strategies."
-wordCount: 193
+wordCount: 175
 ---
 
 In day-to-day development, advanced React useRef usage is becoming more and more common. This article systematically covers its usage, internals, and optimization strategies.
@@ -35,7 +35,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Internal Principles
 

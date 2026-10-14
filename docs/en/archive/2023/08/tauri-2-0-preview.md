@@ -5,7 +5,7 @@ tags:
   - Mobile
 readingTime: 2
 description: "Tauri 2.0's preview of mobile support is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 189
+wordCount: 172
 ---
 
 Tauri 2.0 移动端支持预览 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -74,7 +74,6 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Practical Cases
 

@@ -6,7 +6,7 @@ tags:
   - TailwindCSS
 readingTime: 2
 description: "Tailwind CSS JIT 编译模式在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 338
+wordCount: 314
 ---
 
 Tailwind CSS 的 JIT 编译模式在前端用得越来越普遍。本文从实际项目出发，拆解它的核心原理与最佳实践。
@@ -40,7 +40,6 @@ export function AIChat() {
 
 ```
 
-这套方案已经在线上稳定运行半年多，经受过实际验证。
 
 ## 进阶用法
 

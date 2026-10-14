@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Tauri is a new option for desktop app development, and it's being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 215
+wordCount: 198
 ---
 
 Tauri, a fresh option for desktop app development, is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices drawn from real projects.
@@ -43,7 +43,6 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Usage
 

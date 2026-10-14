@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "When it comes to CSS Subgrid, many developers only operate at the API-call level. This article tries to look at the practical problems and solutions you'll actually run into from a production-environment perspective."
-wordCount: 185
+wordCount: 165
 ---
 
 When it comes to CSS Subgrid, many developers only operate at the API-call level. This article tries to look at the practical problems and solutions you'll actually run into from a production-environment perspective.
@@ -62,7 +62,6 @@ We can improve things in the following ways:
 
 ```
 
-This approach has been running stably in production for over half a year and has been proven in real use.
 
 ## Project Practice
 

@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "在日常开发中，React 19 Server Components 稳定版的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 293
+wordCount: 267
 ---
 
 在日常开发中，React 19 Server Components 稳定版的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -128,7 +128,6 @@ export async function POST(request: NextRequest) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

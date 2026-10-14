@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Our team recently adopted the new React Suspense data-fetching pattern and gained valuable experience. I'm writing this up as a reference for anyone doing similar work."
-wordCount: 185
+wordCount: 167
 ---
 
 Recently our team got hands-on with the new React Suspense data-fetching pattern and accumulated quite a bit of experience. I'm writing it up as a reference, hoping it helps others doing similar work.
@@ -95,7 +95,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Tuning Strategies
 

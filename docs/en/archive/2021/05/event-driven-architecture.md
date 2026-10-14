@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "I recently applied event-driven architecture design in a frontend team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 181
+wordCount: 164
 ---
 
 We recently adopted an event-driven architecture on the frontend at our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -68,7 +68,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Implementation Experience
 

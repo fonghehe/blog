@@ -3,9 +3,9 @@ title: "Waku 軽量 React RSC フレームワーク"
 date: 2023-09-04 14:50:41
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 2
 description: "最近チームでWaku 轻量级 React RSC 框架，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 520
+wordCount: 485
 ---
 
 最近チームでWaku 轻量级 React RSC 框架，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -138,7 +138,6 @@ export async function POST(request: NextRequest) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## まとめ
 

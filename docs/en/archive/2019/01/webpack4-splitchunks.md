@@ -15,7 +15,7 @@ Promoting Webpack 4 SplitChunks within the team came with plenty of pitfalls. Do
 
 Here is the core code:
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

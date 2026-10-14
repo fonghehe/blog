@@ -6,7 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "微前端 Module Federation 落地這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 307
+wordCount: 281
 ---
 
 微前端 Module Federation 落地這個話題社群討論了很多次，但隨著版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -15,7 +15,7 @@ wordCount: 307
 
 實際專案中的用法會更復雜一些：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -98,7 +98,7 @@ function useIntersectionObserver(options = {}) {
 
 我們可以通過以下方式來改進：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -119,7 +119,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

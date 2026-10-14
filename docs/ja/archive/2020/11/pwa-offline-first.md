@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 ポイントは中核となるロジックを理解することだ：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

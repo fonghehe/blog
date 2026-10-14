@@ -4,9 +4,9 @@ date: 2021-09-08 15:28:23
 tags:
   - JavaScript
 
-readingTime: 2
+readingTime: 1
 description: "JavaScript's logical assignment operators are showing up in more and more everyday code. This article systematically covers their usage, mechanics, and practical patterns."
-wordCount: 177
+wordCount: 160
 ---
 
 JavaScript's logical assignment operators are being used more and more frequently in daily development. This article systematically explains their usage, principles, and optimization strategies.
@@ -15,7 +15,7 @@ JavaScript's logical assignment operators are being used more and more frequentl
 
 Real-world usage is a bit more complex:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -98,7 +98,7 @@ Performance optimization should be tailored to specific scenarios; not all cases
 
 We can improve it in the following ways:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -119,7 +119,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

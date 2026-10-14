@@ -5,7 +5,7 @@ tags:
   - Performance Optimization
 readingTime: 2
 description: "A production-focused guide to optimizing First Contentful Paint (FCP), addressing real-world performance problems and their solutions."
-wordCount: 187
+wordCount: 168
 ---
 
 When it comes to FCP (First Contentful Paint) optimization, many developers only operate at the API-call level. This article tries to discuss the real-world problems and solutions from a production-environment perspective.
@@ -71,7 +71,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Best Practices
 

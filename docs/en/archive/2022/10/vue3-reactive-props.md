@@ -72,7 +72,7 @@ This pattern is very practical in large projects and can significantly reduce ma
 
 In real projects, the usage is a bit more complex:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

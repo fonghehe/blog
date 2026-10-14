@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { data as allPosts } from "../../posts/meta.data";
 import { ref, computed, watch } from "vue";
+import { clampPage, filterPosts } from "./post-list";
+import { usePostFilters } from "./usePostFilters";
+import { uiCopy, formatArticleDate } from "./locale";
 import { withBase, useData } from "vitepress";
 
 const { lang } = useData();
+const t = computed(() => uiCopy(lang.value));
 
 interface Category {
   id: string;
@@ -67,6 +71,9 @@ const CATEGORIES: Category[] = [
       "Rollup",
       "ESBuild",
       "Babel",
+      "ESLint",
+      "CI/CD",
+      "Monorepo",
     ],
   },
   {
@@ -223,13 +230,18 @@ const mobileLabel = computed(() => {
 });
 
 function categoryLabel(cat: Category): string {
-  return cat.id === "Mobile" ? mobileLabel.value : cat.label;
+  const labels: Record<string, string> = {
+    "工程化": t.value.engineering, "性能优化": t.value.performance,
+    "测试": t.value.testing, "安全": t.value.security, Mobile: t.value.mobile,
+  };
+  return labels[cat.id] || cat.label;
 }
 
 const PER_PAGE = 20;
-const page = ref(1);
-const selectedCategory = ref<string | null>(null);
-const searchQuery = ref("");
+const {
+  filters, query: searchQuery, page, category: selectedCategory,
+  selectCategory, clear: clearFilters, update,
+} = usePostFilters(CATEGORIES.map((cat) => cat.id));
 
 /** Get the URL prefix for current locale. Root (zh) has no prefix. */
 function getLocalePrefix(): string {
@@ -268,87 +280,39 @@ const isFiltering = computed(
   () => selectedCategory.value !== null || searchQuery.value.trim() !== "",
 );
 
-const displayPosts = computed(() => {
-  let posts = localePosts.value;
-
-  if (selectedCategory.value) {
-    const cat = CATEGORIES.find((c) => c.id === selectedCategory.value);
-    if (cat) {
-      posts = posts.filter((p) => postMatchesCategory(p, cat));
-    }
-  }
-
-  if (searchQuery.value.trim()) {
-    const q = searchQuery.value.trim().toLowerCase();
-    posts = posts.filter((p) => p.title.toLowerCase().includes(q));
-  }
-
-  return posts;
-});
-
-const totalPages = computed(() =>
-  Math.ceil(displayPosts.value.length / PER_PAGE),
-);
-
+const displayPosts = computed(() => filterPosts(localePosts.value, filters.value, CATEGORIES));
+const totalPages = computed(() => Math.max(1, Math.ceil(displayPosts.value.length / PER_PAGE)));
+const currentPage = computed(() => clampPage(page.value, totalPages.value));
 const pagedPosts = computed(() => {
-  const start = (page.value - 1) * PER_PAGE;
+  const start = (currentPage.value - 1) * PER_PAGE;
   return displayPosts.value.slice(start, start + PER_PAGE);
 });
-
-watch([selectedCategory, searchQuery], () => {
-  page.value = 1;
+const categoryCounts = computed(() => Object.fromEntries(CATEGORIES.map((cat) => [
+  cat.id, localePosts.value.filter((post) => postMatchesCategory(post, cat)).length,
+])));
+watch([page, totalPages], () => {
+  if (page.value !== currentPage.value) update({ page: currentPage.value }, true);
 });
-
-function getCategoryCount(cat: Category): number {
-  return localePosts.value.filter((p) => postMatchesCategory(p, cat)).length;
-}
-
-function selectCategory(id: string) {
-  if (selectedCategory.value === id) {
-    selectedCategory.value = null;
-  } else {
-    selectedCategory.value = id;
-    searchQuery.value = "";
+function formatDate(date: string) { return formatArticleDate(date, lang.value); }
+function scrollToTop() {
+  if (typeof window !== "undefined") {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduced ? "instant" : "smooth" });
   }
 }
-
-function clearFilters() {
-  selectedCategory.value = null;
-  searchQuery.value = "";
-}
-
-function normalizeDateString(d: string) {
-  const trimmed = d.trim();
-  if (!trimmed) return "";
-  return trimmed.replace(/^([0-9]{4}-[0-9]{2}-[0-9]{2})[ ]+/, "$1T");
-}
-
-function formatDate(d: string) {
-  if (!d) return "";
-  // The date string from meta.data.ts always starts with YYYY-MM-DD —
-  // extract it directly to avoid timezone shifts from new Date() parsing.
-  // (normalizeDateValue guarantees the first 10 chars are the correct date.)
-  const normalized = normalizeDateString(d);
-  const datePart = normalized.slice(0, 10);
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(datePart)) return "";
-  return datePart;
-}
-
 function prevPage() {
-  if (page.value > 1) {
-    page.value--;
-    scrollToTop();
-  }
+  if (currentPage.value > 1) { page.value = currentPage.value - 1; scrollToTop(); }
 }
 function nextPage() {
-  if (page.value < totalPages.value) {
-    page.value++;
-    scrollToTop();
-  }
+  if (currentPage.value < totalPages.value) { page.value = currentPage.value + 1; scrollToTop(); }
 }
-function scrollToTop() {
-  if (typeof window !== "undefined")
-    window.scrollTo({ top: 0, behavior: "smooth" });
+const jumpPage = ref("");
+function jump() {
+  const value = Number(jumpPage.value);
+  if (!Number.isSafeInteger(value) || value < 1) return;
+  page.value = clampPage(value, totalPages.value);
+  jumpPage.value = "";
+  scrollToTop();
 }
 
 const archiveLinks = computed(() => {
@@ -370,6 +334,8 @@ const archiveLinks = computed(() => {
 
 <template>
   <div class="pl-wrap">
+    <h1 class="list-heading">{{ t.title }}</h1>
+    <button class="all-categories" :aria-pressed="selectedCategory === null" @click="update({ category: null, page: 1 })">{{ t.all }}</button>
     <!-- 分类过滤 -->
     <div class="categories-grid">
       <button
@@ -377,18 +343,19 @@ const archiveLinks = computed(() => {
         :key="cat.id"
         class="cat-card"
         :class="{ active: selectedCategory === cat.id }"
+        :aria-pressed="selectedCategory === cat.id"
         @click="selectCategory(cat.id)"
       >
-        <span class="cat-icon">{{ cat.icon }}</span>
+        <span class="cat-icon" aria-hidden="true">{{ cat.icon }}</span>
         <div class="cat-name">{{ categoryLabel(cat) }}</div>
         <div class="cat-desc">{{ cat.desc }}</div>
-        <div class="cat-count">{{ getCategoryCount(cat) }}</div>
+        <div class="cat-count">{{ categoryCounts[cat.id] }}</div>
       </button>
     </div>
 
     <!-- 搜索栏 -->
     <div class="search-bar">
-      <svg class="search-icon" viewBox="0 0 20 20" fill="none">
+      <svg aria-hidden="true" class="search-icon" viewBox="0 0 20 20" fill="none">
         <circle
           cx="8.5"
           cy="8.5"
@@ -406,19 +373,24 @@ const archiveLinks = computed(() => {
       <input
         v-model="searchQuery"
         type="text"
-        :placeholder="i18n.searchPlaceholder"
+        :placeholder="t.search"
+        :aria-label="t.search"
+        name="article-search"
+        autocomplete="off"
+        maxlength="200"
         class="search-input"
         @keyup.escape="clearFilters"
       />
-      <button v-if="isFiltering" class="clear-btn" @click="clearFilters">
+      <button v-if="isFiltering" class="clear-btn" :aria-label="t.clear" @click="clearFilters">
         ✕
       </button>
     </div>
 
+    <p class="sr-only" role="status" aria-live="polite" aria-atomic="true">{{ displayPosts.length }} {{ i18n.results }}</p>
     <!-- 筛选状态 -->
     <div class="filter-status" v-if="isFiltering">
       <span v-if="selectedCategory" class="filter-tag"
-        >📂 {{ selectedCategory === "Mobile" ? mobileLabel : selectedCategory }}</span
+        >📂 {{ categoryLabel(CATEGORIES.find((cat) => cat.id === selectedCategory)!) }}</span
       >
       <span v-if="searchQuery.trim()" class="filter-tag"
         >🔍 {{ searchQuery.trim() }}</span
@@ -429,11 +401,11 @@ const archiveLinks = computed(() => {
     </div>
 
     <!-- 文章列表 -->
-    <ul class="article-list">
+    <ul class="article-list" id="articles">
       <li v-for="post in pagedPosts" :key="post.url" class="article-item">
         <div class="article-meta">
-          <time class="article-date">{{ formatDate(post.date) }}</time>
-          <span class="article-reading-time">{{ post.readingTime }} min</span>
+          <time class="article-date" :datetime="post.date.slice(0, 10)">{{ formatDate(post.date) }}</time>
+          <span class="article-reading-time">{{ post.readingTime }} {{ t.read }}</span>
         </div>
         <div class="article-content">
           <a :href="withBase(post.url)" class="article-title">{{
@@ -450,19 +422,24 @@ const archiveLinks = computed(() => {
     </ul>
 
     <!-- 分页 -->
-    <div class="pagination" v-if="totalPages > 1">
-      <button class="page-btn" @click="prevPage" :disabled="page === 1">
+    <nav class="pagination" v-if="totalPages > 1" :aria-label="t.pagination">
+      <button class="page-btn" @click="prevPage" :disabled="currentPage === 1">
         {{ i18n.prevPage }}
       </button>
-      <span class="page-info">{{ page }} / {{ totalPages }}</span>
+      <span class="page-info">{{ currentPage }} / {{ totalPages }}</span>
       <button
         class="page-btn"
         @click="nextPage"
-        :disabled="page === totalPages"
+        :disabled="currentPage === totalPages"
       >
         {{ i18n.nextPage }}
       </button>
-    </div>
+      <form class="page-jump" @submit.prevent="jump">
+        <label for="jump-page" class="sr-only">{{ t.page }}</label>
+        <input id="jump-page" v-model="jumpPage" type="number" min="1" :max="totalPages" :placeholder="String(currentPage)" inputmode="numeric" />
+        <button class="page-btn" type="submit">{{ t.go }}</button>
+      </form>
+    </nav>
 
     <!-- 历史归档 -->
     <div class="archive-section" v-if="!isFiltering">
@@ -488,6 +465,13 @@ const archiveLinks = computed(() => {
 </template>
 
 <style scoped>
+.list-heading { font-size: 1.8rem; line-height: 1.3; margin: 0 0 1rem; }
+.all-categories { min-height: 44px; padding: 0.4rem 0.75rem; margin-bottom: 0.75rem; border: 1px solid var(--vp-c-divider); border-radius: 8px; }
+.all-categories[aria-pressed="true"] { color: var(--vp-c-brand-1); background: var(--vp-c-brand-soft); }
+.page-jump { display: flex; gap: 0.5rem; align-items: center; }
+.page-jump input { width: 4.5rem; min-height: 44px; padding: 0.4rem; border: 1px solid var(--vp-c-divider); border-radius: 6px; background: var(--vp-c-bg); }
+.page-btn, .clear-btn { min-height: 44px; min-width: 44px; }
+
 .pl-wrap {
   max-width: 740px;
   padding: 0.5rem 0 4rem;
@@ -511,7 +495,7 @@ const archiveLinks = computed(() => {
   border-radius: 8px;
   background: var(--vp-c-bg);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: border-color 0.15s, background-color 0.15s, color 0.15s;
   text-align: center;
 }
 
@@ -538,7 +522,7 @@ const archiveLinks = computed(() => {
 }
 
 .cat-desc {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   color: var(--vp-c-text-3);
   line-height: 1.3;
 }
@@ -709,7 +693,8 @@ const archiveLinks = computed(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
   margin: 2rem 0;
   padding: 1.5rem 0;
   border-top: 1px solid var(--vp-c-divider);
@@ -724,7 +709,7 @@ const archiveLinks = computed(() => {
   cursor: pointer;
   font-size: 0.88rem;
   color: var(--vp-c-brand-1);
-  transition: all 0.15s;
+  transition: border-color 0.15s, background-color 0.15s, color 0.15s;
 }
 
 .page-btn:hover:not(:disabled) {
@@ -802,11 +787,22 @@ const archiveLinks = computed(() => {
   text-decoration: none;
   padding: 0.08rem 0.4rem;
   border-radius: 3px;
-  transition: all 0.15s;
+  transition: border-color 0.15s, background-color 0.15s, color 0.15s;
 }
 
 .archive-month-link:hover {
   color: var(--vp-c-brand-1);
   background: var(--vp-c-brand-soft);
+}
+
+@media (max-width: 640px) {
+  .categories-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.4rem; }
+  .cat-card { min-height: 44px; flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 0.25rem; padding: 0.45rem 0.25rem; }
+  .cat-icon { font-size: 1rem; }
+  .cat-desc { display: none; }
+  .cat-count { margin-top: 0; }
+  .article-item { display: block; }
+  .article-meta { width: auto; flex-direction: row; gap: 0.75rem; margin-bottom: 0.3rem; }
+  .article-title { font-size: 1rem; }
 }
 </style>

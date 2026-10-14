@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "In daily development, tRPC v10 type-safe APIs are being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 189
+wordCount: 172
 ---
 
 In daily development, tRPC v10 type-safe APIs are being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -163,7 +163,6 @@ const client = new ApolloClient({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

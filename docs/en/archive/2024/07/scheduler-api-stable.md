@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "The topic of Scheduler API Stable: In Practice has been discussed many times in the community, but with each new version, many conclusions need updating. This a"
-wordCount: 192
+wordCount: 175
 ---
 
 The topic of Scheduler API Stable: In Practice has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.
@@ -14,7 +14,7 @@ The topic of Scheduler API Stable: In Practice has been discussed many times in 
 
 Here is a complete example:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Tips
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

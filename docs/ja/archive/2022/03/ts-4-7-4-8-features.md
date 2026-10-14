@@ -3,9 +3,9 @@ title: "TypeScript 4.7 と 4.8 の新機能"
 date: 2022-03-07 15:28:59
 tags:
   - TypeScript
-readingTime: 3
+readingTime: 2
 description: "日常開発において、TypeScript 4.7 4.8 新特性の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 482
+wordCount: 443
 ---
 
 日常開発において、TypeScript 4.7 4.8 新特性の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -71,7 +71,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## ビジネス実践
 

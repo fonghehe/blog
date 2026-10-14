@@ -5,7 +5,7 @@ tags:
   - Mobile
 readingTime: 2
 description: "Lessons learned from rolling out Capacitor for cross-platform app development on a team, shared as a practical reference for similar efforts."
-wordCount: 194
+wordCount: 177
 ---
 
 I recently rolled out Capacitor for cross-platform app development on my team and learned a lot along the way. I'm writing this up as a reference, hoping it helps anyone doing similar work.
@@ -157,7 +157,6 @@ const ItemList = ({ data, onRefresh }) => {
 
 ```
 
-This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Summary
 

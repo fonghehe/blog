@@ -4,9 +4,9 @@ date: 2021-04-14 11:13:58
 tags:
   - CSS
 
-readingTime: 2
+readingTime: 1
 description: "Many developers only know the CSS :has() parent selector at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 185
+wordCount: 168
 ---
 
 When it comes to CSS `:has()` and selecting parent elements, many developers only stay at the API surface. This article looks at the real-world problems you'll encounter and how to solve them.
@@ -90,7 +90,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Best Practices
 

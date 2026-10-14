@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 3
 description: "最近チームでNode.js 20 LTS 新特性汇总，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 520
+wordCount: 485
 ---
 
 最近チームでNode.js 20 LTS 新特性汇总，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -164,7 +164,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## まとめ
 

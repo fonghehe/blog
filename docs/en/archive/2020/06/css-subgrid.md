@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "When it comes to CSS Subgrid layout, many developers only scratch the surface at the API level. This article examines the practical problems you'll hit in production and how to solve them."
-wordCount: 187
+wordCount: 171
 ---
 
 When it comes to CSS Subgrid, many developers only scratch the surface at the API-call level. This article tries to look at it from a production perspective, discussing the problems you'll actually hit and how to solve them.
@@ -62,7 +62,6 @@ Here are a few ways we can improve on this:
 
 ```
 
-This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Project Practice
 

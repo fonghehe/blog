@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "日常開発において、Islands Architecture 岛屿架构の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 575
+wordCount: 536
 ---
 
 日常開発において、Islands Architecture 岛屿架构の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -14,7 +14,7 @@ wordCount: 575
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ wordCount: 575
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## 内部原理
 
@@ -97,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでの使い方はより複雑になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

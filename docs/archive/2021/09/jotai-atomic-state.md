@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常开发中，Jotai 原子化状态管理的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 327
+wordCount: 301
 ---
 
 日常开发中，Jotai 这种原子化状态管理方案用得越来越多了。本文系统讲解它的用法、原理和优化策略。
@@ -140,7 +140,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

@@ -5,7 +5,7 @@ tags:
   - 測試
 readingTime: 2
 description: "最近在團隊中落地Playwright 2025 新功能，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 309
+wordCount: 283
 ---
 
 最近在團隊中落地Playwright 2025 新功能，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -42,7 +42,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 關鍵在於理解核心邏輯：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 調優策略
 
@@ -126,7 +125,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 在這個基礎上，我們可以進一步最佳化：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

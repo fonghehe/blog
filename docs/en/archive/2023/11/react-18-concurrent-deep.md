@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Many developers only scratch the surface of React 18 concurrent mode. This deep dive looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 191
+wordCount: 174
 ---
 
 关于React 18 并发模式深入，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
@@ -66,7 +66,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Project Practice
 

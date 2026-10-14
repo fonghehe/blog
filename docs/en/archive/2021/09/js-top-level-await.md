@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "Top-level await use cases in JavaScript are growing in everyday code. This article systematically covers its usage, mechanics, and practical patterns."
-wordCount: 174
+wordCount: 157
 ---
 
 Top-level await use cases in JavaScript are being used more and more frequently in daily development. This article systematically explains its usage, principles, and optimization strategies.
@@ -94,7 +94,6 @@ export function AIChat() {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Comparison
 

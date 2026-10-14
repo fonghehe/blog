@@ -5,7 +5,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "最近在团队中落地Monorepo 2026 工具链，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 288
+wordCount: 262
 ---
 
 最近团队在 Monorepo 工具链上做了落地，攒了一些经验。整理出来供参考，希望对做类似工作的同学有帮助。
@@ -66,7 +66,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年多，是经过实战检验的。
 
 ## 落地经验
 

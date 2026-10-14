@@ -5,7 +5,7 @@ tags:
   - PWA
 readingTime: 2
 description: "关于PWA 离线优先架构设计，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 299
+wordCount: 273
 ---
 
 很多开发者对 PWA 离线优先架构设计只停留在 API 调用层面。本文从生产实践出发，讲讲实际落地中遇到的问题和应对方案。
@@ -70,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 关键在于理解核心逻辑：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

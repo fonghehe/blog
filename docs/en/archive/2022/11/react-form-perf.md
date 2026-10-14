@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React form performance optimization is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 208
+wordCount: 191
 ---
 
 React form performance optimization is showing up in more and more everyday development. This article systematically covers its usage, mechanics, and practical strategies.
@@ -37,7 +37,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Internal Principles
 
@@ -70,7 +69,7 @@ This code shows the basic usage. In real projects you also need to think about e
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

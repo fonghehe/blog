@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "最近在团队中落地Waku 轻量级 React RSC 框架，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 330
+wordCount: 304
 ---
 
 最近在团队中落地Waku 轻量级 React RSC 框架，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -138,7 +138,6 @@ export async function POST(request: NextRequest) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

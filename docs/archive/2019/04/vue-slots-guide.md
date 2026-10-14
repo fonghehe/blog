@@ -56,7 +56,7 @@ const role = pluck(user, 'role')   // 'admin' | 'user' | 'guest'
 
 下面是一个实际的例子：
 
-```javascript
+```css
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -84,7 +84,7 @@ const role = pluck(user, 'role')   // 'admin' | 'user' | 'guest'
 
 我们可以通过以下方式实现：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

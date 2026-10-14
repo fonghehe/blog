@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Rspack 2.0 Complete Guide is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from "
-wordCount: 191
+wordCount: 174
 ---
 
 Rspack 2.0 Complete Guide is becoming increasingly widespread in frontend development. This article dives deep into its core principles and best practices from real projects.
@@ -71,7 +71,7 @@ Performance optimization should be tailored to specific scenarios; not all cases
 
 We can improve it in the following ways:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Tips
 

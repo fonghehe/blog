@@ -5,7 +5,7 @@ tags:
   - テスト
 readingTime: 2
 description: "日々の開発において、Playwright 2025 新機能の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 496
+wordCount: 460
 ---
 
 日々の開発において、Playwright 2025 新機能の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -66,7 +66,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## ビジネス実践
 

@@ -3,9 +3,9 @@ title: "Web 字體加載優化策略：落地路徑與實戰建議"
 date: 2020-08-12 10:22:29
 tags:
   - 性能優化
-readingTime: 2
+readingTime: 1
 description: "在日常開發中，Web 字體加載優化策略的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 297
+wordCount: 271
 ---
 
 在日常開發中，Web 字體加載優化策略的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
@@ -92,7 +92,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

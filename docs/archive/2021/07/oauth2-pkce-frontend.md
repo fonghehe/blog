@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常开发中，OAuth 2.0 PKCE 前端认证流程的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 303
+wordCount: 278
 ---
 
 日常开发中，OAuth 2.0 PKCE 前端认证流程用得越来越频繁。本文系统讲解它的用法、原理和优化策略。
@@ -119,7 +119,6 @@ function setCSP(req, res, next) {
 
 ```
 
-这套方案已经在线上稳定运行半年多，是经过实战验证的。
 
 ## 小结
 

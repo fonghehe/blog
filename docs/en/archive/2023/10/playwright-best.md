@@ -5,7 +5,7 @@ tags:
   - Playwright
 readingTime: 2
 description: "Many write-ups on Playwright best practices for 2023 stay at the API level. This article looks at them from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 185
+wordCount: 168
 ---
 
 关于Playwright 最佳实践 2023，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
@@ -153,7 +153,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

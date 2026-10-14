@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Many developers only know React 19 Server Components stabilization at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 224
+wordCount: 207
 ---
 
 Many developers only know React 19 Server Components stabilization at the API level. This article looks at it from a production perspective — the problems you actually hit and how to solve them.
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Features
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

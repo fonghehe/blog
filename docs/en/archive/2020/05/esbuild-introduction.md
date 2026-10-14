@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "When it comes to getting started with esbuild, many developers only operate at the API level. This article looks at it from a production perspective, discussing the problems you'll actually run into and how to solve them."
-wordCount: 242
+wordCount: 223
 ---
 
 When it comes to getting started with esbuild, the lightning-fast build tool, many developers only operate at the API-call level. This article looks at it from a production perspective, discussing the problems you'll actually run into and how to solve them.
@@ -35,7 +35,6 @@ module.exports = {
 }
 ```
 
-This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Advanced Features
 

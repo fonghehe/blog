@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "Recently implemented TypeScript infer: Narrowing and Pattern Matching in our team and accumulated quite a bit of experience. Here's a summary for reference, hop"
-wordCount: 208
+wordCount: 191
 ---
 
 Recently implemented TypeScript infer: Narrowing and Pattern Matching in our team and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -43,7 +43,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## In-Depth Analysis
 

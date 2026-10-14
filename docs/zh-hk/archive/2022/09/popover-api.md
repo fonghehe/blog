@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "最近在團隊中落地Popover API 原生彈出層，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 298
+wordCount: 272
 ---
 
 最近在團隊中落地Popover API 原生彈出層，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -60,7 +60,6 @@ function reducer(state, action) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 落地經驗
 

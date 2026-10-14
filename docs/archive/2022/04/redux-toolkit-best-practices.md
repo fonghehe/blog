@@ -5,7 +5,7 @@ tags:
   - 前端
 readingTime: 2
 description: "Redux Toolkit 2.0 迁移指南在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 288
+wordCount: 262
 ---
 
 Redux Toolkit 2.0 迁移指南在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。
@@ -115,7 +115,6 @@ function reducer(state, action) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

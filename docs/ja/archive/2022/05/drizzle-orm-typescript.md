@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 3
 description: "Drizzle ORM TypeScript ORMこのトピックはコミュニティで何度も議論されてきましたが、バージョンアップに伴い多くの結論を更新する必要があります。本記事では最新バージョンに基づいて再整理します。"
-wordCount: 513
+wordCount: 474
 ---
 
 Drizzle ORM TypeScript ORMこのトピックはコミュニティで何度も議論されてきましたが、バージョンアップに伴い多くの結論を更新する必要があります。本記事では最新バージョンに基づいて再整理します。
@@ -71,7 +71,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## 実際のシナリオへの応用
 

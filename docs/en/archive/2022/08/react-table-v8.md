@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "In daily development, React Table v8 headless tables are being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies."
-wordCount: 173
+wordCount: 156
 ---
 
 In daily development, React Table v8 headless tables are being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -95,7 +95,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Comparison
 

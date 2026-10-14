@@ -5,7 +5,7 @@ tags:
   - 前端工程化
 readingTime: 2
 description: "從 IC 到 EM 再到 IC 的思考在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。"
-wordCount: 322
+wordCount: 296
 ---
 
 從 IC 到 EM 再到 IC 的思考在前端開發中的應用越來越廣泛。本文從實際項目出發，深入分析其核心原理和最佳實踐。
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

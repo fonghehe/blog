@@ -3,9 +3,9 @@ title: "HTTPS TLS 握手过程详解"
 date: 2020-10-08 11:02:30
 tags:
   - 安全
-readingTime: 2
+readingTime: 1
 description: "关于HTTPS TLS 握手过程详解，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 311
+wordCount: 285
 ---
 
 关于HTTPS TLS 握手过程详解，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
@@ -96,7 +96,6 @@ function setCSP(req, res, next) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

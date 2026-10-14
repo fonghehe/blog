@@ -5,7 +5,7 @@ tags:
   - 性能优化
 readingTime: 2
 description: "在日常开发中，Web 性能优化 2025 指南的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。"
-wordCount: 336
+wordCount: 310
 ---
 
 在日常开发中，Web 性能优化 2025 指南的使用频率越来越高。本文系统地讲解其用法、原理和优化策略。
@@ -29,7 +29,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 内部原理
 

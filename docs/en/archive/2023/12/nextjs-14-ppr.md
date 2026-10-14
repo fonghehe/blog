@@ -5,7 +5,7 @@ tags:
   - Next.js
 readingTime: 2
 description: "We recently implemented Next.js 14 Partial Prerendering， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing "
-wordCount: 186
+wordCount: 169
 ---
 
 We recently implemented Next.js 14 Partial Prerendering， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -41,7 +41,7 @@ Through this approach, both the testability and scalability of the code are impr
 
 Here is a complete example:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

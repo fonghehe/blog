@@ -8,7 +8,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Vue 3 + TypeScript 完整开发指南在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 308
+wordCount: 282
 ---
 
 Vue 3 配合 TypeScript 的完整开发指南，在前端开发中应用得越来越广泛。本文从实际项目出发，深入分析其核心原理与最佳实践。
@@ -72,7 +72,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 实战案例
 

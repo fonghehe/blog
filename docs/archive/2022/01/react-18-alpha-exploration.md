@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "最近在团队中落地React 18 正式发布新特性总览，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 307
+wordCount: 281
 ---
 
 最近在团队里落地了 React 18 正式发布新特性总览，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。
@@ -116,7 +116,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

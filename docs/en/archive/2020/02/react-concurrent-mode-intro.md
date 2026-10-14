@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "We recently started adopting React Concurrent Mode on our team and gained valuable experience along the way. I'm sharing it here as a reference for anyone doing similar work."
-wordCount: 218
+wordCount: 199
 ---
 
 We recently started adopting React Concurrent Mode on our team and picked up quite a bit of experience along the way. I'm sharing it here as a reference, hoping it helps anyone doing similar work.
@@ -35,7 +35,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## In-Depth Analysis
 

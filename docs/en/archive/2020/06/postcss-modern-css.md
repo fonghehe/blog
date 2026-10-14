@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "An exploration of PostCSS and modern CSS workflows, analyzing core principles and best practices based on real project experience."
-wordCount: 179
+wordCount: 163
 ---
 
 The PostCSS modern CSS workflow is being adopted more and more widely in frontend development. Drawing on real projects, this article digs into its core principles and best practices.
@@ -116,7 +116,6 @@ Here are a few ways we can improve on this:
 
 ```
 
-This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 1
 description: "Trusted Types for XSS defense has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 186
+wordCount: 169
 ---
 
 Trusted Types 防 XSS 攻击This topic has been widely discussed in the community, but as versions iterate, many conclusions need updating. This article provides a fresh overview based on the latest version.
@@ -52,7 +52,6 @@ function setCSP(req, res, next) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Real-World Applications
 

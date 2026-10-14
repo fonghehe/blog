@@ -3,9 +3,9 @@ title: "LangChain.js フロントエンド AI アプリケーション"
 date: 2023-06-20 17:22:12
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 2
 description: "最近在团队中落地LangChain.js 前端 AI 应用，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 519
+wordCount: 483
 ---
 
 最近在团队中落地LangChain.js 前端 AI 应用，して多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -147,7 +147,6 @@ export function AIChat() {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## まとめ
 

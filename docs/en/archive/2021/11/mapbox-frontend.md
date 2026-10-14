@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "Map development with Mapbox GL JS is showing up in more and more everyday work. This article systematically covers its usage, mechanics, and optimization strategies."
-wordCount: 192
+wordCount: 175
 ---
 
 Mapbox GL JS frontend map development is being used more and more frequently in day-to-day development. This article systematically explains its usage, principles, and optimization strategies.
@@ -16,7 +16,7 @@ Mapbox GL JS frontend map development is being used more and more frequently in 
 
 Here is a complete example:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -94,13 +94,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Performance Comparison
 
 Let's start with the basic implementation:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

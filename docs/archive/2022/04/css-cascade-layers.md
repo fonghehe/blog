@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "关于CSS Cascade Layers @layer 规范，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 361
+wordCount: 335
 ---
 
 关于CSS Cascade Layers @layer 规范，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。
@@ -35,7 +35,6 @@ wordCount: 361
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 高级特性
 

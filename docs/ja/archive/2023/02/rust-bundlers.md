@@ -3,9 +3,9 @@ title: "Rolldown：Rust 実装の Rollup"
 date: 2023-02-27 10:22:35
 tags:
   - フロントエンド
-readingTime: 3
+readingTime: 2
 description: "在日常开发中，Rolldown Rust 实现的 Rollupの使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 495
+wordCount: 459
 ---
 
 在日常开发中，Rolldown Rust 实现的 Rollupの使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -96,7 +96,6 @@ module.exports = {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## パフォーマンス比較
 

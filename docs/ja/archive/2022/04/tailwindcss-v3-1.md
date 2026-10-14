@@ -6,7 +6,7 @@ tags:
   - TailwindCSS
 readingTime: 2
 description: "日常開発において、Tailwind CSS v3.1 新特性の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。"
-wordCount: 488
+wordCount: 449
 ---
 
 日常開発において、Tailwind CSS v3.1 新特性の使用頻度が高まっています。本記事では、その使い方、原理、最適化戦略を体系的に説明します。
@@ -59,7 +59,6 @@ export async function POST(req) {
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## ビジネス実践
 

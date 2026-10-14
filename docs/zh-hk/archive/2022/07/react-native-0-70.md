@@ -5,7 +5,7 @@ tags:
   - 移動端
 readingTime: 2
 description: "關於React Native 0.70 新架構，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 361
+wordCount: 335
 ---
 
 關於React Native 0.70 新架構，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
@@ -31,7 +31,6 @@ function reducer(state, action) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 高級特性
 

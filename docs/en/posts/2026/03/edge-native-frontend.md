@@ -73,7 +73,7 @@ This snippet shows the basic usage; in real projects you'll also need to handle 
 
 From here, you can take it further:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

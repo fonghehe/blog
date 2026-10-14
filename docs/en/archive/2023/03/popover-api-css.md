@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "Building popovers with the CSS Popover API is showing up in more and more everyday work. This article systematically covers its usage, mechanics, and practical strategies."
-wordCount: 173
+wordCount: 156
 ---
 
 在日常开发中，CSS Popover API 弹出层实现 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -62,7 +62,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Business Practice
 

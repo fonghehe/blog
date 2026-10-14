@@ -3,9 +3,9 @@ title: "WebAuthn Passkeys 無密碼認證"
 date: 2022-06-27 10:22:18
 tags:
   - 前端
-readingTime: 2
+readingTime: 1
 description: "最近在團隊中落地WebAuthn Passkeys 無密碼認證，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 304
+wordCount: 278
 ---
 
 最近在團隊中落地WebAuthn Passkeys 無密碼認證，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -52,7 +52,6 @@ function setCSP(req, res, next) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 落地經驗
 

@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 2
 description: "最近在团队中落地Windi CSS 与 Tailwind 对比，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 348
+wordCount: 324
 ---
 
 最近在团队里落地了 Windi CSS，并和 Tailwind 做了对比，积累了一些经验。整理出来供参考，希望对做类似工作的同学有帮助。
@@ -35,7 +35,6 @@ wordCount: 348
 
 ```
 
-这套方案已经在线上稳定运行半年多，经受过实际验证。
 
 ## 深度解析
 

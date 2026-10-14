@@ -5,7 +5,7 @@ tags:
   - Nuxt.js
 readingTime: 1
 description: "Nuxt 3 RC 发布新架构解析在前端开发中的应用越来越广泛。本文从实际项目出发，深入分析其核心原理和最佳实践。"
-wordCount: 297
+wordCount: 271
 ---
 
 Nuxt 3 RC 发布后，这套新架构在前端开发中应用得越来越广泛。本文从实际项目出发，深入分析其核心原理与最佳实践。
@@ -106,7 +106,6 @@ function useCounter(initial = 0) {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 小结
 

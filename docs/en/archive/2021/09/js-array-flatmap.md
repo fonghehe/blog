@@ -6,7 +6,7 @@ tags:
 
 readingTime: 2
 description: "Practical tricks with JavaScript Array.flatMap have been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 172
+wordCount: 155
 ---
 
 JavaScript Array.flatMap tips have been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits the topic based on the latest version.
@@ -67,7 +67,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Real-World Applications
 

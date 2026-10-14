@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Advanced Zod schema validation is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 184
+wordCount: 167
 ---
 
 Zod Schema 校验进阶 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -159,7 +159,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

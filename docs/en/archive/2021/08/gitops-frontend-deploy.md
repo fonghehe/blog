@@ -7,7 +7,7 @@ tags:
 
 readingTime: 1
 description: "GitOps deployment workflows for frontends are being adopted more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 178
+wordCount: 161
 ---
 
 GitOps frontend deployment workflows are becoming increasingly widespread in frontend development. This article dives into their core principles and best practices drawn from real projects.
@@ -110,7 +110,6 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

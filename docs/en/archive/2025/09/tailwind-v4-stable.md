@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Regarding Tailwind CSS v4 Stable Release, many developers only stay at the API call level. This article discusses real-world problems and solutions from a produ"
-wordCount: 210
+wordCount: 193
 ---
 
 Regarding Tailwind CSS v4 Stable Release, many developers only stay at the API call level. This article discusses real-world problems and solutions from a production environment perspective.
@@ -38,7 +38,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Features
 
@@ -71,7 +70,7 @@ This code demonstrates the basic usage. In real projects, you also need to consi
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

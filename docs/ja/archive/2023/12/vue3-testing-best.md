@@ -5,7 +5,7 @@ tags:
   - Vue
 readingTime: 3
 description: "Vue 3 测试最佳实践のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 560
+wordCount: 525
 ---
 
 Vue 3 测试最佳实践のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -14,7 +14,7 @@ Vue 3 测试最佳实践のフロントエンド開発における活用が広�
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ Vue 3 测试最佳实践のフロントエンド開発における活用が広�
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## 高度な使い方
 
@@ -97,7 +96,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでの使用法はより複雑になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

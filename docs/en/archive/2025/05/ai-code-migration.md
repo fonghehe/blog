@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 1
 description: "AI code migration and refactoring tools are becoming increasingly common in day-to-day development. This article offers a systematic look at their usage, inner "
-wordCount: 165
+wordCount: 149
 ---
 
 AI code migration and refactoring tools are becoming increasingly common in day-to-day development. This article offers a systematic look at their usage, inner workings, and optimization strategies.
@@ -41,7 +41,6 @@ export function AIChat() {
 }
 ```
 
-This approach has been running stably in production for over six months and has been battle-tested.
 
 ## Under the Hood
 

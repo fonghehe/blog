@@ -4,9 +4,9 @@ date: 2021-09-10 10:39:44
 tags:
   - JavaScript
 
-readingTime: 3
+readingTime: 2
 description: "JavaScript Array.flatMap 实用技巧このテーマはコミュニティで何度も議論されていますが、バージョンアップに伴い多くの結論は更新が必要です。本記事では最新バージョンをベースに改めて整理します。"
-wordCount: 507
+wordCount: 467
 ---
 
 JavaScript の Array.flatMap の実用テクニックというテーマはコミュニティで何度も議論されていますが、バージョンアップに伴い多くの結論は更新が必要です。本記事では最新バージョンをベースに改めて整理します。
@@ -67,7 +67,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みです。
 
 ## 実際の場面への応用
 

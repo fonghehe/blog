@@ -14,7 +14,7 @@ JavaScriptのジェネレーターと非同期フロー制御は、日々の開�
 
 基本的な使い方を見てみよう：
 
-```javascript
+```css
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -42,7 +42,7 @@ JavaScriptのジェネレーターと非同期フロー制御は、日々の開�
 
 コアとなるコードは以下の通り：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "Express middleware design patterns are seeing wider adoption in frontend development. Drawing on real projects, this article digs into their core principles and best practices."
-wordCount: 184
+wordCount: 168
 ---
 
 Express middleware design patterns are being used more and more widely in frontend development. Drawing on real projects, this article digs into their core principles and best practices.
@@ -95,7 +95,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Performance Optimization
 

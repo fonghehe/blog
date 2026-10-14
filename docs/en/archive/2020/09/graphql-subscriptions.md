@@ -5,7 +5,7 @@ tags:
   - GraphQL
 readingTime: 2
 description: "A deep dive into GraphQL Subscriptions for real-time data, exploring core principles and best practices from real-world frontend applications."
-wordCount: 203
+wordCount: 184
 ---
 
 GraphQL Subscriptions for real-time data are being adopted more and more widely in frontend development. Drawing on real-world projects, this article takes a deep dive into their core principles and best practices.
@@ -38,7 +38,6 @@ const client = new ApolloClient({
 })
 ```
 
-This approach has been running stably in production for over six months and has proven itself in real use.
 
 ## Advanced Usage
 

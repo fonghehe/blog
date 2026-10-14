@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "关于Immer 不可变数据实践，很多开发者只停留在 API 调用层面。本文试图从生产环境的角度，讨论实际中会遇到的问题和解决方案。"
-wordCount: 291
+wordCount: 265
 ---
 
 很多开发者对 Immer 不可变数据方案的理解，只停留在调 API 这一步。本文想从生产环境的真实视角，聊聊实际会遇到的问题和解决思路。
@@ -65,7 +65,6 @@ const useStore = create(
 
 ```
 
-这套方案已经在线上稳定运行半年多，经受过真实流量验证。
 
 ## 项目实践
 

@@ -3,9 +3,9 @@ title: "Node.js 24 LTS 生产実践：升级后的性能对比与踩坑记录"
 date: 2025-11-20 17:54:31
 tags:
   - Node.js
-readingTime: 3
+readingTime: 2
 description: "最近チームでNode.js 24 LTS 新機能を導入し、多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 533
+wordCount: 497
 ---
 
 最近チームでNode.js 24 LTS 新機能を導入し、多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。
@@ -35,13 +35,12 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-このアプローチは6ヶ月以上本番環境で安定して動作し、実際に検証されています。
 
 ## 詳細分析
 
 まず基本的な実装方法を見てみましょう：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -124,7 +123,7 @@ function useIntersectionObserver(options = {}) {
 
 完全な例を以下に示します：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

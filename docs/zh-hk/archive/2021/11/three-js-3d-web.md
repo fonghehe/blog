@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "Three.js 3D Web 可視化入門這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。"
-wordCount: 324
+wordCount: 298
 ---
 
 Three.js 3D Web 可視化入門這個話題社區討論了很多次，但隨着版本迭代，很多結論需要更新。本文基於最新版本重新梳理。
@@ -160,7 +160,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

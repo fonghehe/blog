@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 2
 description: "2025年の新しい方向性としてのレジューマビリティはフロントエンド開発での活用が急速に広がっています。本記事は実際のプロジェクトから出発し、そのコアとなる原理とベストプラクティスを深く掘り下げます。"
-wordCount: 491
+wordCount: 456
 ---
 
 2025年の新しい方向性としてのレジューマビリティはフロントエンド開発での活用が急速に広がっています。本記事は実際のプロジェクトから出発し、そのコアとなる原理とベストプラクティスを深く掘り下げます。
@@ -14,7 +14,7 @@ wordCount: 491
 
 以下の方法で改善できます：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -35,7 +35,6 @@ wordCount: 491
 
 ```
 
-このアプローチは半年以上本番環境で安定稼働しており、実際に検証済みです。
 
 ## 応用
 
@@ -100,7 +99,7 @@ function useIntersectionObserver(options = {}) {
 
 実際のプロジェクトでは使い方がもう少し複雑になります：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

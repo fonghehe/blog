@@ -6,7 +6,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "Vite 6 Environment API 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real "
-wordCount: 186
+wordCount: 169
 ---
 
 Vite 6 Environment API 实战 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -61,7 +61,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Practical Cases
 

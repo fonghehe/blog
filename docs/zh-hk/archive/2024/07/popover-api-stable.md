@@ -5,7 +5,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "在日常開發中，Popover API 穩定版實戰的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。"
-wordCount: 312
+wordCount: 286
 ---
 
 在日常開發中，Popover API 穩定版實戰的使用頻率越來越高。本文系統地講解其用法、原理和優化策略。
@@ -42,7 +42,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 關鍵在於理解核心邏輯：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 效能對比
 
@@ -126,7 +125,7 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 在這個基礎上，我們可以進一步優化：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

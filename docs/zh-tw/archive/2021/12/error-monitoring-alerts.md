@@ -6,7 +6,7 @@ tags:
   - 工程化
 readingTime: 2
 description: "關於前端錯誤監控告警，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 369
+wordCount: 343
 ---
 
 關於前端錯誤監控告警，很多開發者只停留在 API 呼叫層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
@@ -38,7 +38,6 @@ const csvToJson = new Transform({
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 高階特性
 
@@ -71,7 +70,7 @@ function useIntersectionObserver(options = {}) {
 
 在這個基礎上，我們可以進一步最佳化：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;

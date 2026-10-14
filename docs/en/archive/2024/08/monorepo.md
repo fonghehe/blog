@@ -5,7 +5,7 @@ tags:
   - Engineering
 readingTime: 2
 description: "The topic of Monorepo 2024 Toolchain Summary has been discussed many times in the community, but with each new version, many conclusions need updating. This art"
-wordCount: 189
+wordCount: 172
 ---
 
 The topic of Monorepo 2024 Toolchain Summary has been discussed many times in the community, but with each new version, many conclusions need updating. This article revisits it based on the latest version.
@@ -71,7 +71,7 @@ Performance optimization should be tailored to specific scenarios; not all cases
 
 We can improve it in the following ways:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Optimization Tips
 

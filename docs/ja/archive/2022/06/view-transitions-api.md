@@ -5,7 +5,7 @@ tags:
   - フロントエンド
 readingTime: 3
 description: "View Transitions API 页面转场のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。"
-wordCount: 526
+wordCount: 487
 ---
 
 View Transitions API 页面转场のフロントエンド開発における活用が広まっています。本記事では実際のプロジェクトをベースに、コア原理とベストプラクティスを掘り下げます。
@@ -14,7 +14,7 @@ View Transitions API 页面转场のフロントエンド開発における活�
 
 以下は完全な例です：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,13 +92,12 @@ function mergeConfig(defaults: AppConfig, overrides: PartialConfig): AppConfig {
 
 ```
 
-このアプローチは半年以上本番環境で安定して稼働しており、実際に検証されています。
 
 ## パフォーマンス最適化
 
 まず基本的な実装方法から見てみましょう：
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

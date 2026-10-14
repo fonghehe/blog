@@ -5,7 +5,7 @@ tags:
   - Frontend
 readingTime: 2
 description: "When it comes to the Turbopack Alpha experience, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter."
-wordCount: 210
+wordCount: 193
 ---
 
 When it comes to the Turbopack Alpha experience, many developers only scratch the surface with API calls. This article takes a production-environment perspective and discusses the real-world problems and solutions you'll encounter.
@@ -36,7 +36,6 @@ module.exports = {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Advanced Features
 

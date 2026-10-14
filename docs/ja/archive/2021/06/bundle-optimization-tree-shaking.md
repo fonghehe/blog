@@ -8,7 +8,7 @@ tags:
 
 readingTime: 2
 description: "关于Tree Shaking 深度优化指南，：多くの開発者はAPIの呼び出しレベルにとどまっています。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論します。"
-wordCount: 471
+wordCount: 432
 ---
 
 Tree Shaking の徹底最適化について、多くの開発者は API の呼び出しレベルにとどまっている。本記事では本番環境の観点から、実際に遭遇する問題と解決策を議論する。
@@ -95,7 +95,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## まとめ
 

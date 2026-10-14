@@ -7,7 +7,7 @@ tags:
 
 readingTime: 2
 description: "最近在团队中落地前端错误日志采集与分析，において多くの経験を積みました。参考のためにまとめましたので、同様の作業をされる方のお役に立てれば幸いです。"
-wordCount: 520
+wordCount: 481
 ---
 
 最近チームでフロントエンドのエラーログ収集・分析を本番導入し、多くの経験を積んだ。参考になればとまとめたので、同様の取り組みをする方の役に立てば幸いだ。
@@ -72,7 +72,7 @@ function useIntersectionObserver(options = {}) {
 
 中核となるロジックを理解することが重要だ：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -122,7 +122,6 @@ const csvToJson = new Transform({
 
 ```
 
-このアプローチは半年以上にわたって本番環境で安定稼働しており、実際に検証済みだ。
 
 ## まとめ
 

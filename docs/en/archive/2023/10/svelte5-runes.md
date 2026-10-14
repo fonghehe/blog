@@ -5,7 +5,7 @@ tags:
   - Svelte
 readingTime: 2
 description: "Many developers only know Svelte 5 Runes at the API level. This detailed guide looks at them from a production perspective — the problems you actually hit and how to solve them."
-wordCount: 177
+wordCount: 160
 ---
 
 关于Svelte 5 Runes 详解，: many developers only stay at the API call level. This article discusses real-world problems and solutions from a production perspective.
@@ -42,7 +42,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);
@@ -92,7 +92,6 @@ function DataList({ endpoint, pageSize = 20 }) {
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Best Practices
 
@@ -126,7 +125,7 @@ This code demonstrates the basic usage. In real projects, you also need to consi
 
 Building on this foundation, we can further optimize:
 
-```javascript
+```css
 :root {
   --bg: light-dark(#fff, #1a1a2e);
   --text: light-dark(#333, #e0e0e0);

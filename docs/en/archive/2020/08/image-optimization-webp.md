@@ -3,9 +3,9 @@ title: "Frontend Image Optimization: WebP and AVIF"
 date: 2020-08-05 11:17:16
 tags:
   - Performance Optimization
-readingTime: 2
+readingTime: 1
 description: "A refreshed look at frontend image optimization with WebP and AVIF, updating community conclusions based on the latest format versions and tooling."
-wordCount: 196
+wordCount: 177
 ---
 
 The topic of frontend image optimization with WebP and AVIF has been discussed many times in the community, but as versions iterate, many conclusions need updating. This article revisits it based on the latest versions.
@@ -50,7 +50,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Real-World Applications
 

@@ -3,9 +3,9 @@ title: "Popover API: Practical Applications"
 date: 2023-09-25 09:48:56
 tags:
   - Frontend
-readingTime: 2
+readingTime: 1
 description: "Hands-on practice with the Popover API is being applied more and more widely. This article starts from real projects and digs into the core principles and best practices."
-wordCount: 178
+wordCount: 161
 ---
 
 Popover API 实战应用 is becoming increasingly widespread in frontend development. This article dives into its core principles and best practices from real projects.
@@ -70,7 +70,7 @@ Pay attention to boundary condition handling, which is critical in production.
 
 The key lies in understanding the core logic:
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -120,7 +120,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

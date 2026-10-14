@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "A deep dive into monorepo management with Lerna and Yarn Workspaces, exploring core principles and best practices from real-world frontend projects."
-wordCount: 179
+wordCount: 160
 ---
 
 Managing a monorepo with Lerna and Yarn Workspaces is increasingly common in frontend development. Drawing on a real project, this article takes a deep dive into its core principles and best practices.
@@ -60,7 +60,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over half a year and has been proven in practice.
 
 ## Practical Cases
 

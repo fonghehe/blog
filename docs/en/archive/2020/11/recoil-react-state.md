@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "A production-focused look at Recoil as a new option for React state management, addressing real-world problems developers encounter beyond basic API usage."
-wordCount: 208
+wordCount: 191
 ---
 
 When it comes to Recoil as a new option for React state management, many developers stop at the API-call level. This article looks at the real-world problems you run into in production, and how to solve them.
@@ -88,7 +88,6 @@ const useStore = create(
 
 ```
 
-This approach has been running stably in production for over half a year, so it is battle-tested.
 
 ## Best Practices
 

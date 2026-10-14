@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "In day-to-day development, CSS View Transitions v2 is being used more and more frequently. This article systematically explains its usage, principles, and optim"
-wordCount: 179
+wordCount: 162
 ---
 
 In day-to-day development, CSS View Transitions v2 is being used more and more frequently. This article systematically explains its usage, principles, and optimization strategies.
@@ -62,7 +62,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Business Practice
 

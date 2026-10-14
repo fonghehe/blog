@@ -1,158 +1,54 @@
 ---
-title: "ESLint v9 Flat Config 默認：落地路徑與實戰建議"
+title: "ESLint v9 Flat Config：設定結構與遷移檢查"
 date: 2023-09-08 15:28:03
+updated: 2026-10-24
+version: "ESLint 9.x (historical migration)"
 tags:
   - ESLint
 readingTime: 2
-description: "關於ESLint v9 Flat Config 默認，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。"
-wordCount: 347
+wordCount: 497
+description: "回顧 ESLint v9 的 Flat Config 設定陣列、檔案匹配、忽略規則與遷移驗證，區分歷史發佈日期及後續修訂。"
 ---
 
-關於ESLint v9 Flat Config 默認，很多開發者隻停留在 API 調用層面。本文試圖從生產環境的角度，討論實際中會遇到的問題和解決方案。
+> 修訂說明：保留原始歸檔日期及連結，本文於 2026-10-24 重寫。ESLint v9 正式版發佈於 2024-04-05，以下是後續整理的遷移說明，不代表 2023 年該版本已正式發佈。ESLint v9 已結束官方維護，新專案應參考官方版本支援表選擇仍受維護的版本。
 
-## 基本原理
+Flat Config 的重點是用 JavaScript 模組匯出設定陣列。符合相同檔案的多個設定物件依序組合，後面的同名規則可以覆蓋前面的值；`files` 決定物件套用至哪些檔案。
 
-我們可以通過以下方式來改進：
+## 一個設定陣列
 
-```javascript
-.container {
-  width: min(90%, 1200px);
-  margin-inline: auto;
-  padding-inline: clamp(1rem, 3vw, 3rem);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
-}
-
-.card { container-type: inline-size; }
-
-@container (min-width: 400px) {
-  .card__content { display: grid; grid-template-columns: 200px 1fr; }
-}
-
-```
-
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
-
-## 高級特性
-
-先來看基本的實現方式：
+以下針對歷史上的 ESLint 9 及 `@eslint/js` 9，說明遷移結構。這是教學設定，不包含正式環境部署或效能驗證的聲明。
 
 ```javascript
-const fs = require('fs')
-const { Transform, pipeline } = require('stream')
-const { promisify } = require('util')
-const pipelineAsync = promisify(pipeline)
+// eslint.config.mjs — historical ESLint 9 example
+import js from '@eslint/js'
 
-const csvToJson = new Transform({
-  transform(chunk, encoding, callback) {
-    const lines = chunk.toString().split('\n')
-    const headers = lines[0].split(',')
-    for (let i = 1; i < lines.length; i++) {
-      if (!lines[i].trim()) continue
-      const values = lines[i].split(',')
-      const obj = {}
-      headers.forEach((h, idx) => obj[h.trim()] = values[idx]?.trim())
-      this.push(JSON.stringify(obj) + '\n')
-    }
-    callback()
-  }
-})
-
+export default [
+  { ignores: ['dist/**', 'coverage/**'] },
+  js.configs.recommended,
+  {
+    files: ['**/*.js'],
+    languageOptions: { ecmaVersion: 2022, sourceType: 'module' },
+    rules: { 'no-unused-vars': 'warn' },
+  },
+]
 ```
 
-這段代碼展示了基本的使用方式。實際項目中還需要考慮錯誤處理和邊界條件。
+`js.configs.recommended` 提供建議規則，最後一個物件為 JavaScript 檔案調整特定規則。只有 `ignores` 的物件表達全域忽略規則。瀏覽器或 Node.js 全域變數、TypeScript 解析器、Vue 單檔元件解析器及框架外掛需要另外設定，這個範例不適用於所有專案。
 
-## 項目實踐
+## 遷移時檢查甚麼
 
-在這個基礎上，我們可以進一步優化：
+1. 固定 ESLint 及外掛版本，確認支援 Flat Config 及對應 ESLint 主版本。
+2. 將舊設定的 `env`、`parserOptions`、`globals` 逐項對應至新格式，不只更改檔名。
+3. 把忽略路徑移入設定。Flat Config 不會自動保留舊 `.eslintignore` 的行為，須重新檢查路徑匹配。
+4. 對目標檔案執行 `npx eslint --print-config src/example.js`，確認最終規則及語言選項。
+5. 分別檢查應通過、應報錯和應忽略的檔案，再執行完整 lint。通過 lint 不代表業務功能已驗證。
 
-```javascript
-import { useRef, useEffect, useState } from 'react'
+## 版本與更新
 
-function useIntersectionObserver(options = {}) {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef(null)
+本篇保留 v9 的遷移背景；目前專案請以實際版本的官方文件為準，不把設定範例標記成正式環境驗證案例。
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsVisible(entry.isIntersecting)
-    }, { threshold: 0.1, ...options })
-    const el = ref.current
-    if (el) observer.observe(el)
-    return () => { if (el) observer.unobserve(el) }
-  }, [])
+## 參考資料
 
-  return [ref, isVisible]
-}
-
-```
-
-這種模式在大型項目中非常實用，能顯著降低維護成本。
-
-## 最佳實踐
-
-實際項目中的用法會更復雜一些：
-
-```javascript
-.container {
-  width: min(90%, 1200px);
-  margin-inline: auto;
-  padding-inline: clamp(1rem, 3vw, 3rem);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
-}
-
-.card { container-type: inline-size; }
-
-@container (min-width: 400px) {
-  .card__content { display: grid; grid-template-columns: 200px 1fr; }
-}
-
-```
-
-通過這種方式，代碼的可測試性和可擴展性都得到了提升。
-
-## 踩坑記錄
-
-以下是一個完整的示例：
-
-```javascript
-const fs = require('fs')
-const { Transform, pipeline } = require('stream')
-const { promisify } = require('util')
-const pipelineAsync = promisify(pipeline)
-
-const csvToJson = new Transform({
-  transform(chunk, encoding, callback) {
-    const lines = chunk.toString().split('\n')
-    const headers = lines[0].split(',')
-    for (let i = 1; i < lines.length; i++) {
-      if (!lines[i].trim()) continue
-      const values = lines[i].split(',')
-      const obj = {}
-      headers.forEach((h, idx) => obj[h.trim()] = values[idx]?.trim())
-      this.push(JSON.stringify(obj) + '\n')
-    }
-    callback()
-  }
-})
-
-```
-
-注意邊界條件處理，這在生產環境中至關重要。
-
-## 小結
-
-- 理解底層原理比記住 API 更重要
-- 生產環境使用前務必做好兼容性驗證
-- 團隊協作中約定和文檔比技術本身更重要
-- 關注社區動態，技術方案需要持續迭代
-- 不要為了用新技術而用新技術
+- [ESLint v9.0.0 release — 2024-04-05](https://eslint.org/blog/2024/04/eslint-v9.0.0-released/)
+- [ESLint v9 configuration migration guide](https://eslint.org/docs/v9.x/use/configure/migration-guide)
+- [ESLint version support](https://eslint.org/version-support/)

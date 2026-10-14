@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "Our team recently adopted React SuspenseList for controlling load order and gained valuable experience. I'm writing this up as a reference for anyone doing similar work."
-wordCount: 194
+wordCount: 176
 ---
 
 Recently our team got hands-on with React SuspenseList for controlling load order and accumulated quite a bit of experience. I'm writing it up as a reference, hoping it helps others doing similar work.
@@ -123,7 +123,6 @@ function reducer(state, action) {
 
 ```
 
-This approach has been running stably in production for over half a year and is proven in practice.
 
 ## Summary
 

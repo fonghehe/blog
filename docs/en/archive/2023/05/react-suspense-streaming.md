@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "React Suspense streaming rendering optimization has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release."
-wordCount: 187
+wordCount: 170
 ---
 
 React Suspense streaming rendering optimization has been discussed many times in the community, but versions move fast and many conclusions are outdated. This article revisits the topic against the latest release.
@@ -108,7 +108,6 @@ observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] })
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

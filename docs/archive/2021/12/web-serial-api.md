@@ -6,7 +6,7 @@ tags:
   - JavaScript
 readingTime: 2
 description: "最近在团队中落地Web Serial API 硬件通信，积累了不少经验。整理出来供参考，希望对做类似工作的同学有所帮助。"
-wordCount: 284
+wordCount: 258
 ---
 
 最近在团队里落地了 Web Serial API（硬件通信），积累了一些经验。整理出来供参考，希望对做类似工作的同学有帮助。
@@ -73,7 +73,6 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 
 ```
 
-这套方案已经在线上稳定运行了半年以上，经过了实际验证。
 
 ## 落地经验
 

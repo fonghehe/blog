@@ -14,7 +14,7 @@ wordCount: 242
 
 具体实现参考以下代码：
 
-```javascript
+```css
 :root {
   --primary: #3498db;
   --bg: #fff;

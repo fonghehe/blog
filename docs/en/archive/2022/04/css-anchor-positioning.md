@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "I recently explored CSS Anchor Positioning with my team and accumulated quite a bit of experience. Here's a write-up for anyone doing similar work."
-wordCount: 179
+wordCount: 162
 ---
 
 We recently implemented CSS Anchor Positioning 锚点定位， and accumulated quite a bit of experience. Here's a summary for reference, hoping it helps those doing similar work.
@@ -116,7 +116,6 @@ We can improve it in the following ways:
 
 ```
 
-This approach has been running stably in production for over six months and has been practically validated.
 
 ## Summary
 

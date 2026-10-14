@@ -5,7 +5,7 @@ tags:
   - TypeScript
 readingTime: 2
 description: "在日常開發中，TypeScript 專案引用的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 296
+wordCount: 270
 ---
 
 在日常開發中，TypeScript 專案引用的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
@@ -66,7 +66,6 @@ class TypedEmitter<T extends Record<string, any>> {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 業務實戰
 

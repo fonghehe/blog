@@ -3,9 +3,9 @@ title: "Tailwind CSS: A Utility-First CSS Framework"
 date: 2020-05-27 10:45:06
 tags:
   - CSS
-readingTime: 2
+readingTime: 1
 description: "Tailwind CSS, the utility-first CSS framework, has been discussed many times in the community, but as the framework evolves, much earlier advice needs updating. This article revisits the topic based on the current version."
-wordCount: 196
+wordCount: 177
 ---
 
 Tailwind CSS, the utility-first CSS framework, has been discussed many times in the community, but as the framework has evolved, a lot of earlier advice needs updating. This article revisits the topic based on the current version.
@@ -116,7 +116,6 @@ We can improve on this in the following ways:
 
 ```
 
-This approach has been running stably in production for over half a year and has proven itself in practice.
 
 ## Summary
 

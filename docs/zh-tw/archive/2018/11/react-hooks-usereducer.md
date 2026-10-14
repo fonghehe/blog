@@ -5,7 +5,7 @@ tags:
   - React
 readingTime: 2
 description: "在日常開發中，React useReducer 狀態管理詳解的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 306
+wordCount: 280
 ---
 
 在日常開發中，React useReducer 狀態管理詳解的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
@@ -116,7 +116,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

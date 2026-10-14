@@ -5,7 +5,7 @@ tags:
   - Node.js
 readingTime: 2
 description: "A systematic walkthrough of PM2-based Node.js production deployment, covering usage, internals, and optimization strategies."
-wordCount: 185
+wordCount: 169
 ---
 
 In everyday development, PM2-based Node.js production deployment is being used more and more. This article walks through its usage, internals, and optimization strategies in a structured way.
@@ -153,7 +153,6 @@ const csvToJson = new Transform({
 
 ```
 
-This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Summary
 

@@ -5,7 +5,7 @@ tags:
   - 移動端
 readingTime: 2
 description: "最近在團隊中落地React Native 新架構全面落地，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。"
-wordCount: 329
+wordCount: 303
 ---
 
 最近在團隊中落地React Native 新架構全面落地，積累了不少經驗。整理出來供參考，希望對做類似工作的同學有所幫助。
@@ -143,7 +143,6 @@ function reducer(state, action) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 

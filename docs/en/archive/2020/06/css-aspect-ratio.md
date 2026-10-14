@@ -5,7 +5,7 @@ tags:
   - CSS
 readingTime: 1
 description: "We recently adopted native CSS aspect-ratio on our team and gained valuable experience. I'm writing this up as a reference for anyone doing similar work."
-wordCount: 180
+wordCount: 164
 ---
 
 We recently adopted native CSS aspect-ratio in our team and learned a lot in the process. I'm writing this up as a reference, hoping it helps others who are doing similar work.
@@ -62,7 +62,6 @@ Here are a few ways we can improve on this:
 
 ```
 
-This approach has been running stably in production for over half a year, so it's battle-tested.
 
 ## Implementation Experience
 

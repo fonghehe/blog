@@ -5,7 +5,7 @@ tags:
   - PWA
 readingTime: 2
 description: "在日常開發中，PWA 2025 新特性與最佳實踐的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。"
-wordCount: 311
+wordCount: 285
 ---
 
 在日常開發中，PWA 2025 新特性與最佳實踐的使用頻率越來越高。本文系統地講解其用法、原理和最佳化策略。
@@ -41,7 +41,7 @@ function useIntersectionObserver(options = {}) {
 
 以下是一個完整的示例：
 
-```javascript
+```css
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -118,7 +118,6 @@ function useIntersectionObserver(options = {}) {
 
 ```
 
-這套方案已經在線上穩定運行了半年以上，經過了實際驗證。
 
 ## 小結
 
