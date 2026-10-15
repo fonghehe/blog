@@ -51,8 +51,8 @@ pnpm docs:preview
 ## 📝 Article Stats
 
 - 2018–2025: 1,383 articles (archived)
-- 2026: 139 latest articles
-- Total: 1,522 in-depth technical articles
+- 2026: 140 latest articles
+- Total: 1,523 in-depth technical articles
 
 ## 🎯 Main Topics
 
