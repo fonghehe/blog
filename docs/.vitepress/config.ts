@@ -45,7 +45,7 @@ export default defineConfig({
   // Share the large page hash map instead of repeating it in every article HTML.
   metaChunk: true,
   title: "前端成长记录",
-  description: "一个前端工程师从 2018 年开始的学习与成长记录。1,523 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
+  description: "一个前端工程师从 2018 年开始的学习与成长记录。1,524 篇深度文章，涵盖框架原理、工程化实践与前沿探索。",
   // The separate content check validates every locale. During a split build,
   // only links into the other build group are absent from VitePress's page set.
   ignoreDeadLinks: BUILD_MODE === "main"
