@@ -6,4 +6,8 @@ docs/.vitepress/dist/
 docs/.vitepress/cache*/
 docs/.vitepress/.temp*/
 *.log
-.workbuddy/
+# Tool memory is local; reusable agent guides remain trackable.
+/.workbuddy/memory/
+
+# Local run evidence; shared maintenance guides and reports remain tracked.
+/maintenance/local/

@@ -1,6 +1,6 @@
 # Content quality report
 
-Scanned 8147 pages and 7590 article translations.
+Scanned 8212 pages and 7655 article translations.
 
 These are review candidates found by mechanical checks, not a claim that all other content is correct.
 Existing issues are baselined transparently; CI rejects newly introduced issues. Fixing a repeated sentence does not validate the rest of an article.

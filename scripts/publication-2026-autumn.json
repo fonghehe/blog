@@ -1,0 +1,280 @@
+{
+  "timezone": "Asia/Shanghai",
+  "start": "2026-10-02",
+  "end": "2026-11-12",
+  "entries": [
+    {
+      "slug": "cursor-pagination-consistency",
+      "title": "游标分页的一致性：新增、删除和排序变化后，列表还可信吗",
+      "publishedAt": "2026-10-02T10:28:31+08:00",
+      "commitAt": "2026-10-02T10:51:42+08:00",
+      "message": "docs: publish cursor pagination consistency",
+      "files": [
+        "docs/posts/2026/10/cursor-pagination-consistency.md",
+        "docs/en/posts/2026/10/cursor-pagination-consistency.md",
+        "docs/ja/posts/2026/10/cursor-pagination-consistency.md",
+        "docs/zh-tw/posts/2026/10/cursor-pagination-consistency.md",
+        "docs/zh-hk/posts/2026/10/cursor-pagination-consistency.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/10/cursor-pagination-consistency.md": "a0d1e4764fa2d3194c455d8b12a69e97ebfe292a137453f38ef9b8906e73b5fd",
+        "docs/en/posts/2026/10/cursor-pagination-consistency.md": "b82845f689b84d9d3b7e25ba4543c969b215d9ddd1c1e76ef486ce7bb4f02cd8",
+        "docs/ja/posts/2026/10/cursor-pagination-consistency.md": "5ee25131c945010fefb6b97eb96a9428fa90ea108fe1ff3bb32d962dde82091c",
+        "docs/zh-tw/posts/2026/10/cursor-pagination-consistency.md": "c65421342142d624895fe1220dab9b14904a855ae249acde749d4de6d5adf5b3",
+        "docs/zh-hk/posts/2026/10/cursor-pagination-consistency.md": "f5f27c267d5c30f5551b5880206aba401c5d3d6b7da2bc477b6390b4d3d622a8"
+      }
+    },
+    {
+      "slug": "unicode-grapheme-offset-contract",
+      "title": "Unicode 文本偏移契约：为什么一个表情能把高亮和字数限制弄错",
+      "publishedAt": "2026-10-06T11:29:53+08:00",
+      "commitAt": "2026-10-06T11:51:11+08:00",
+      "message": "docs: publish unicode grapheme offset contract",
+      "files": [
+        "docs/posts/2026/10/unicode-grapheme-offset-contract.md",
+        "docs/en/posts/2026/10/unicode-grapheme-offset-contract.md",
+        "docs/ja/posts/2026/10/unicode-grapheme-offset-contract.md",
+        "docs/zh-tw/posts/2026/10/unicode-grapheme-offset-contract.md",
+        "docs/zh-hk/posts/2026/10/unicode-grapheme-offset-contract.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/10/unicode-grapheme-offset-contract.md": "5ae20869a945aa693d9df3c5af78864f523e14508bbcfa02842a0c2d330d1944",
+        "docs/en/posts/2026/10/unicode-grapheme-offset-contract.md": "1b2157c7de648330eb3982c74e7283ef4f498eefc9a2e029206a1d58bde6b541",
+        "docs/ja/posts/2026/10/unicode-grapheme-offset-contract.md": "20d64a7f8e1e54741ba158e47516bbe25f2f6c1af8a057c219585af66f7974c8",
+        "docs/zh-tw/posts/2026/10/unicode-grapheme-offset-contract.md": "dcf9c9c9f6867c61226eca46dc229e7c55aba2fba45a0b585c5ad3d7790805c4",
+        "docs/zh-hk/posts/2026/10/unicode-grapheme-offset-contract.md": "7d76cb992f6db551f6b624770c69d7a5fa19259d70c60d4d454cfa15ac01fa59"
+      }
+    },
+    {
+      "slug": "timezone-calendar-intent",
+      "title": "预约时间怎么存：把日历意图、时区和真实时刻分开",
+      "publishedAt": "2026-10-08T14:11:42+08:00",
+      "commitAt": "2026-10-08T14:39:34+08:00",
+      "message": "docs: publish timezone calendar intent",
+      "files": [
+        "docs/posts/2026/10/timezone-calendar-intent.md",
+        "docs/en/posts/2026/10/timezone-calendar-intent.md",
+        "docs/ja/posts/2026/10/timezone-calendar-intent.md",
+        "docs/zh-tw/posts/2026/10/timezone-calendar-intent.md",
+        "docs/zh-hk/posts/2026/10/timezone-calendar-intent.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/10/timezone-calendar-intent.md": "57ceb876d5f89a9a33aeb92e21a4714ea416d42634b465b227d6cd6c5296413e",
+        "docs/en/posts/2026/10/timezone-calendar-intent.md": "8d6dd9d9f4569f1fd95a484fde16c09bef4c728e991410fc36947117605d1c44",
+        "docs/ja/posts/2026/10/timezone-calendar-intent.md": "faa7b09e07e28fdf15d5b2f0368afe6617ce57f8aad82510e212283a3723febb",
+        "docs/zh-tw/posts/2026/10/timezone-calendar-intent.md": "c30189afab29bbf584db3ad5302b58a9e89fa09ce8ce7ff616c4e598e5b30db6",
+        "docs/zh-hk/posts/2026/10/timezone-calendar-intent.md": "7eab8e5ffe8f51527a422c03c3d05e56c869963a4ea4c3210e9ce6e5b5357aa2"
+      }
+    },
+    {
+      "slug": "csv-export-data-boundary",
+      "title": "CSV 导出的数据边界：引号转义之后，单元格仍可能执行公式",
+      "publishedAt": "2026-10-13T16:08:01+08:00",
+      "commitAt": "2026-10-13T16:20:29+08:00",
+      "message": "docs: publish csv export data boundary",
+      "files": [
+        "docs/posts/2026/10/csv-export-data-boundary.md",
+        "docs/en/posts/2026/10/csv-export-data-boundary.md",
+        "docs/ja/posts/2026/10/csv-export-data-boundary.md",
+        "docs/zh-tw/posts/2026/10/csv-export-data-boundary.md",
+        "docs/zh-hk/posts/2026/10/csv-export-data-boundary.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/10/csv-export-data-boundary.md": "eefedd754bca1ea6237c8285d598d3c013685638a1421a83d2a4c82ab11fcf67",
+        "docs/en/posts/2026/10/csv-export-data-boundary.md": "75087cd890a9aa4c730c354d8723b7f923a3cee105708f5fff876ec96751bcfc",
+        "docs/ja/posts/2026/10/csv-export-data-boundary.md": "0bb4bd06f9d056afaf8bf7c441c1789984a46d5278b22a14e703e6efe833d9ae",
+        "docs/zh-tw/posts/2026/10/csv-export-data-boundary.md": "ea05ed9c008b7c432a7a7575ae5d6666231f3238a3f8c9d6fb45dca70b57748b",
+        "docs/zh-hk/posts/2026/10/csv-export-data-boundary.md": "88a7a1bce312e8dbfbd70a2a42c5d759bf623db00505c8d6d67784db2ba9443f"
+      }
+    },
+    {
+      "slug": "sse-framing-fetch-streams",
+      "title": "Fetch 读取 SSE：网络分块不是消息边界",
+      "publishedAt": "2026-10-15T09:06:03+08:00",
+      "commitAt": "2026-10-15T09:16:44+08:00",
+      "message": "docs: publish sse framing fetch streams",
+      "files": [
+        "docs/posts/2026/10/sse-framing-fetch-streams.md",
+        "docs/en/posts/2026/10/sse-framing-fetch-streams.md",
+        "docs/ja/posts/2026/10/sse-framing-fetch-streams.md",
+        "docs/zh-tw/posts/2026/10/sse-framing-fetch-streams.md",
+        "docs/zh-hk/posts/2026/10/sse-framing-fetch-streams.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/10/sse-framing-fetch-streams.md": "cf6476ba4d9baa34c285539e2eab07fc997c84c7d6c1746941122e8d4986f994",
+        "docs/en/posts/2026/10/sse-framing-fetch-streams.md": "fded1229b6d2d9c9dde6089d6916636a96cc21dc4fd7a6ce45722e4068796817",
+        "docs/ja/posts/2026/10/sse-framing-fetch-streams.md": "55fa35cfde4690a678c979c7d25b432017c8d12a76ee091d591233c888b5fbc7",
+        "docs/zh-tw/posts/2026/10/sse-framing-fetch-streams.md": "ad3cd8e641ad8aa001317bcb495c7498b0f6ffb6c9ca7b93222b26405f6f8886",
+        "docs/zh-hk/posts/2026/10/sse-framing-fetch-streams.md": "15bacc5318ac6f583c4e5dd9d7327f24dbf5aa1d4b6b66e6ad8cc8aeca026d4a"
+      }
+    },
+    {
+      "slug": "web-locks-leader-fencing",
+      "title": "多标签页任务选主：Web Locks 解决互斥，服务端仍要拒绝旧写入",
+      "publishedAt": "2026-10-20T09:57:55+08:00",
+      "commitAt": "2026-10-20T10:24:03+08:00",
+      "message": "docs: publish web locks leader fencing",
+      "files": [
+        "docs/posts/2026/10/web-locks-leader-fencing.md",
+        "docs/en/posts/2026/10/web-locks-leader-fencing.md",
+        "docs/ja/posts/2026/10/web-locks-leader-fencing.md",
+        "docs/zh-tw/posts/2026/10/web-locks-leader-fencing.md",
+        "docs/zh-hk/posts/2026/10/web-locks-leader-fencing.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/10/web-locks-leader-fencing.md": "44ef9079172291aa3ebcadfed8e3b5db60f0f4b09d0cd00ae4512936e3a3073c",
+        "docs/en/posts/2026/10/web-locks-leader-fencing.md": "d0395ee2a237941cf44b090ddd42698a2b26539f5914bfa32914740265a2fee1",
+        "docs/ja/posts/2026/10/web-locks-leader-fencing.md": "9761bff87061c50557ffe636ce1f856c889c7c4b5a820e41fadeb7e9a0b6f72d",
+        "docs/zh-tw/posts/2026/10/web-locks-leader-fencing.md": "2f62f6cbe4ed73a5ab1086ffc0ecf3a52000d8dc9ff8e4640cc3fc9da36677c0",
+        "docs/zh-hk/posts/2026/10/web-locks-leader-fencing.md": "0d56522b7f1e1f7044844a4f1836cd10b5562f4c716e6cf19d0e2846d09b9cff"
+      }
+    },
+    {
+      "slug": "large-download-stream-lifecycle",
+      "title": "大文件下载的内存预算：从 response.blob 到可取消的写入流水线",
+      "publishedAt": "2026-10-22T09:34:27+08:00",
+      "commitAt": "2026-10-22T09:41:30+08:00",
+      "message": "docs: publish large download stream lifecycle",
+      "files": [
+        "docs/posts/2026/10/large-download-stream-lifecycle.md",
+        "docs/en/posts/2026/10/large-download-stream-lifecycle.md",
+        "docs/ja/posts/2026/10/large-download-stream-lifecycle.md",
+        "docs/zh-tw/posts/2026/10/large-download-stream-lifecycle.md",
+        "docs/zh-hk/posts/2026/10/large-download-stream-lifecycle.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/10/large-download-stream-lifecycle.md": "7d452a2277a3260412395cbba013b7697cb6d864dc2fc29c848470efb03afe46",
+        "docs/en/posts/2026/10/large-download-stream-lifecycle.md": "3ba256beb53904ed09d457623c0d443744f0ce9c9efd342a5be92753ba608f7a",
+        "docs/ja/posts/2026/10/large-download-stream-lifecycle.md": "e424ea7c116170983ff1a1327014ed6ea829ebfb21cc3494e5fcd70756b32cc4",
+        "docs/zh-tw/posts/2026/10/large-download-stream-lifecycle.md": "ff878e1c0eb93d8f2ec353e805667ac0288be6c1a8abe21189558be13a2650d9",
+        "docs/zh-hk/posts/2026/10/large-download-stream-lifecycle.md": "f45afb4af8b869aca108d0ee44eefbe4a2cadc9bcbc917da0bc5c6ecd6622bde"
+      }
+    },
+    {
+      "slug": "undo-redo-command-history",
+      "title": "撤销与重做的命令历史：一次操作到底应该恢复什么",
+      "publishedAt": "2026-10-27T15:18:29+08:00",
+      "commitAt": "2026-10-27T15:35:44+08:00",
+      "message": "docs: publish undo redo command history",
+      "files": [
+        "docs/posts/2026/10/undo-redo-command-history.md",
+        "docs/en/posts/2026/10/undo-redo-command-history.md",
+        "docs/ja/posts/2026/10/undo-redo-command-history.md",
+        "docs/zh-tw/posts/2026/10/undo-redo-command-history.md",
+        "docs/zh-hk/posts/2026/10/undo-redo-command-history.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/10/undo-redo-command-history.md": "4483e071862f6252c2425e93bb80db8367f0e7eee7ee7a1d9df848987af439c5",
+        "docs/en/posts/2026/10/undo-redo-command-history.md": "a8755162560faf66813827f33c5618145032dae9664f3f807493ea8bbeae744a",
+        "docs/ja/posts/2026/10/undo-redo-command-history.md": "c288c56554b5b3dcae17ac831e6411f74b954cd05a7ada5c7d1dae953cf617ce",
+        "docs/zh-tw/posts/2026/10/undo-redo-command-history.md": "806c650037ae8a08d77c68ec3c883ffdca1abad06a586ee8a4cf48903def5a0b",
+        "docs/zh-hk/posts/2026/10/undo-redo-command-history.md": "b6aff36ecf5385cc1abe961ab855093e10cc277ad33117b5e030b9c2421757d8"
+      }
+    },
+    {
+      "slug": "url-query-state-canonicalization",
+      "title": "把筛选条件放进 URL：可分享页面需要一个规范化协议",
+      "publishedAt": "2026-10-29T11:01:42+08:00",
+      "commitAt": "2026-10-29T11:16:26+08:00",
+      "message": "docs: publish url query state canonicalization",
+      "files": [
+        "docs/posts/2026/10/url-query-state-canonicalization.md",
+        "docs/en/posts/2026/10/url-query-state-canonicalization.md",
+        "docs/ja/posts/2026/10/url-query-state-canonicalization.md",
+        "docs/zh-tw/posts/2026/10/url-query-state-canonicalization.md",
+        "docs/zh-hk/posts/2026/10/url-query-state-canonicalization.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/10/url-query-state-canonicalization.md": "171475740e26210a137c49669bc300e026b89f09b1bf6785d822b109d49916f4",
+        "docs/en/posts/2026/10/url-query-state-canonicalization.md": "549022ba8652567e3583c1d8aa48a5523207211615b31ca0aa5de4c849ab0915",
+        "docs/ja/posts/2026/10/url-query-state-canonicalization.md": "5fff159ce52f63ce8bd3ef2ebbd134840801a61925399cacfc1259cccd7b43cf",
+        "docs/zh-tw/posts/2026/10/url-query-state-canonicalization.md": "92f724bd2bf03ffdc424622c20c2e716710816ef8f1d9f66bb2f27600da0c348",
+        "docs/zh-hk/posts/2026/10/url-query-state-canonicalization.md": "79070a8cd33a79c09c336017849465e8cf4ea3fb3491460dd11b22d9dd770091"
+      }
+    },
+    {
+      "slug": "ime-composition-input-contract",
+      "title": "输入法组合态：搜索框为什么会吞字、误提交和重复请求",
+      "publishedAt": "2026-11-03T10:28:18+08:00",
+      "commitAt": "2026-11-03T10:39:17+08:00",
+      "message": "docs: publish ime composition input contract",
+      "files": [
+        "docs/posts/2026/11/ime-composition-input-contract.md",
+        "docs/en/posts/2026/11/ime-composition-input-contract.md",
+        "docs/ja/posts/2026/11/ime-composition-input-contract.md",
+        "docs/zh-tw/posts/2026/11/ime-composition-input-contract.md",
+        "docs/zh-hk/posts/2026/11/ime-composition-input-contract.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/11/ime-composition-input-contract.md": "8c48561b57e437c0aa1289041d9d357f816c7ceefbedacbe71c9e6de4da50ae1",
+        "docs/en/posts/2026/11/ime-composition-input-contract.md": "33c6f1401735148568e7a8b1889b597bcd5f53e9e75c3ca38f6b3d65036189c8",
+        "docs/ja/posts/2026/11/ime-composition-input-contract.md": "3ca2356b41d20769ef86747d5a0213362e842919f88d33833ef051e93f1f755e",
+        "docs/zh-tw/posts/2026/11/ime-composition-input-contract.md": "7be84c4e290c9124c478996e67c354fab528e559e37a4e7ff86be77503ecba87",
+        "docs/zh-hk/posts/2026/11/ime-composition-input-contract.md": "25cdf44bd8951e9671a4d07c955a0653cc4058d65e0ba8b0fe3529c403d634e9"
+      }
+    },
+    {
+      "slug": "camera-resource-lease-lifecycle",
+      "title": "摄像头预览的资源租约：权限弹窗晚返回时，页面已经关闭了",
+      "publishedAt": "2026-11-05T14:40:22+08:00",
+      "commitAt": "2026-11-05T15:08:27+08:00",
+      "message": "docs: publish camera resource lease lifecycle",
+      "files": [
+        "docs/posts/2026/11/camera-resource-lease-lifecycle.md",
+        "docs/en/posts/2026/11/camera-resource-lease-lifecycle.md",
+        "docs/ja/posts/2026/11/camera-resource-lease-lifecycle.md",
+        "docs/zh-tw/posts/2026/11/camera-resource-lease-lifecycle.md",
+        "docs/zh-hk/posts/2026/11/camera-resource-lease-lifecycle.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/11/camera-resource-lease-lifecycle.md": "cc3708c158472bdac894401fc77df5e1870d44085a58b8807c0165197f822a78",
+        "docs/en/posts/2026/11/camera-resource-lease-lifecycle.md": "ed8873a26ba5eb14a11d4a5ae91fc1544fc16d13b94f265b070726798794a1cb",
+        "docs/ja/posts/2026/11/camera-resource-lease-lifecycle.md": "fa0b3d954b7c3b7917cec8964543450b06ea0044fc90a104ea9b8086e38e4995",
+        "docs/zh-tw/posts/2026/11/camera-resource-lease-lifecycle.md": "8e4ee9a6455bf140b47c144681a6810a5cfe99ba34a9bac26183b1f74d383713",
+        "docs/zh-hk/posts/2026/11/camera-resource-lease-lifecycle.md": "22c20951380a4d16780557b6288ed72c9097e5732a774b75b0f7a82b9f4b0ee9"
+      }
+    },
+    {
+      "slug": "etag-concurrent-edit-conflicts",
+      "title": "用 ETag 处理并发编辑：别让后保存的人无声覆盖前一个人",
+      "publishedAt": "2026-11-10T11:31:22+08:00",
+      "commitAt": "2026-11-10T11:38:24+08:00",
+      "message": "docs: publish etag concurrent edit conflicts",
+      "files": [
+        "docs/posts/2026/11/etag-concurrent-edit-conflicts.md",
+        "docs/en/posts/2026/11/etag-concurrent-edit-conflicts.md",
+        "docs/ja/posts/2026/11/etag-concurrent-edit-conflicts.md",
+        "docs/zh-tw/posts/2026/11/etag-concurrent-edit-conflicts.md",
+        "docs/zh-hk/posts/2026/11/etag-concurrent-edit-conflicts.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/11/etag-concurrent-edit-conflicts.md": "296fc9fba294c59ee5cae609333b67a6a73e32d3f28edea4bff9b5a307c5e640",
+        "docs/en/posts/2026/11/etag-concurrent-edit-conflicts.md": "e342a750156d8d48d07642ce04054702824831e1793a02f951c85e22d87fdd6a",
+        "docs/ja/posts/2026/11/etag-concurrent-edit-conflicts.md": "3bd5f91104c4d1e169fee0fcd4ffc6cf4d4bf1e30736d676d787af2549b31e1c",
+        "docs/zh-tw/posts/2026/11/etag-concurrent-edit-conflicts.md": "0e2211774ae9855ae91504c52e5d17bcdf688c3568e15b813072057d6cc315ee",
+        "docs/zh-hk/posts/2026/11/etag-concurrent-edit-conflicts.md": "b28d31b2bab598c019024583b645ffe3d6e96b0b0edf04e927e480f2accba704"
+      }
+    },
+    {
+      "slug": "decimal-money-input-rounding",
+      "title": "金额输入与舍入契约：显示两位小数不等于计算准确",
+      "publishedAt": "2026-11-12T15:33:05+08:00",
+      "commitAt": "2026-11-12T15:54:22+08:00",
+      "message": "docs: publish decimal money input rounding",
+      "files": [
+        "docs/posts/2026/11/decimal-money-input-rounding.md",
+        "docs/en/posts/2026/11/decimal-money-input-rounding.md",
+        "docs/ja/posts/2026/11/decimal-money-input-rounding.md",
+        "docs/zh-tw/posts/2026/11/decimal-money-input-rounding.md",
+        "docs/zh-hk/posts/2026/11/decimal-money-input-rounding.md"
+      ],
+      "sha256": {
+        "docs/posts/2026/11/decimal-money-input-rounding.md": "dc8424bbd4035932377146d3c37dbb871aeb141cfb3312d193b91bdf5012acdd",
+        "docs/en/posts/2026/11/decimal-money-input-rounding.md": "b7f92bbdf5b4768e4ed0f9f3addffbec7c4a1619c7596ee07a576262bcb40b69",
+        "docs/ja/posts/2026/11/decimal-money-input-rounding.md": "6306d4ffd40aa217afee986b1661631e6d42961b695df77eb25f3679347d813a",
+        "docs/zh-tw/posts/2026/11/decimal-money-input-rounding.md": "71f878d6b99c037cca8bf581f9faf3eb6bfa7f77993288c28bf2cfdccfbc0aad",
+        "docs/zh-hk/posts/2026/11/decimal-money-input-rounding.md": "e379e4db34dc8684bf92ca3f59ebedeb1f9d12650e0f7c4ef8225f4569830156"
+      }
+    }
+  ]
+}
