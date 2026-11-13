@@ -637,17 +637,20 @@ const archiveLinks = computed(() => {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
-  width: 6.2rem;
+  width: max-content;
+  min-width: 8rem;
   padding-top: 0.15rem;
 }
 
 .article-date {
+  white-space: nowrap;
   font-size: 0.8rem;
   color: var(--vp-c-text-3);
   font-family: "SFMono-Regular", Consolas, monospace;
 }
 
 .article-reading-time {
+  white-space: nowrap;
   font-size: 0.7rem;
   color: var(--vp-c-text-3);
 }
@@ -802,7 +805,7 @@ const archiveLinks = computed(() => {
   .cat-desc { display: none; }
   .cat-count { margin-top: 0; }
   .article-item { display: block; }
-  .article-meta { width: auto; flex-direction: row; gap: 0.75rem; margin-bottom: 0.3rem; }
+  .article-meta { width: auto; min-width: 0; flex-direction: row; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.3rem; }
   .article-title { font-size: 1rem; }
 }
 </style>
